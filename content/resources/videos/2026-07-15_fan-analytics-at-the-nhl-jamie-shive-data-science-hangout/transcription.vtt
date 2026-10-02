@@ -1,0 +1,1873 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.680
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.680 --> 00:00:22.040
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:22.040 --> 00:00:27.280
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.280 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:35.639
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.639 --> 00:00:40.360
+Can't wait to see you there. I would love to introduce our featured leader today. We're
+
+00:00:40.360 --> 00:00:45.639
+talking to Jamie Shive, Director of Data Science at the National Hockey League or the NHL.
+
+00:00:45.639 --> 00:00:50.360
+Jamie, it's so fantastic to have you here. I would love it if you could introduce yourself,
+
+00:00:50.360 --> 00:00:54.680
+tell us a little bit about you and something you like to do for fun.
+
+00:00:55.680 --> 00:01:02.840
+Sure. Hi, y'all. So if I move very slowly, my camera doesn't lag with my voice. This
+
+00:01:02.840 --> 00:01:08.160
+was an issue when we were trying this out. So I'm going to move as little as possible
+
+00:01:08.160 --> 00:01:16.800
+so that my voice syncs with my mouth. So if I look insane, that's why. So hi, I am Jamie
+
+00:01:16.879 --> 00:01:24.959
+Shive. I'm the Director of Data Science at the NHL. I have worked at the league for a
+
+00:01:24.959 --> 00:01:33.599
+year and I believe around four months. So for the hockey fans in the room, I started
+
+00:01:33.599 --> 00:01:38.239
+at the league in the middle of February. I actually started in the middle of the Four
+
+00:01:38.239 --> 00:01:44.440
+Nations Face-Off tournament, which was a very, yes, I love seeing a lot of nods. This is
+
+00:01:44.480 --> 00:01:53.959
+good. So huge, huge time, arguably the most exciting time to ever join an organization.
+
+00:01:55.320 --> 00:02:06.639
+I am a hockey fan. I'm arguably much more of a hockey fan now that I work here. A little
+
+00:02:06.639 --> 00:02:11.600
+bit about the work that I do. So Director of Data Science, I oversee our fan data. So
+
+00:02:11.600 --> 00:02:18.759
+we're doing predictive and descriptive models and analytics on our fans to help improve
+
+00:02:18.759 --> 00:02:29.240
+the fan experience. I lead, I'm a part of a team of three. So I've got two wonderful,
+
+00:02:29.479 --> 00:02:37.279
+brilliant, incredibly kind and amazing data scientists that I oversee. The whole point
+
+00:02:37.279 --> 00:02:43.240
+of my job is to help meet the fans where they're at, which is nice because selfishly,
+
+00:02:43.520 --> 00:02:48.880
+if I do my job really well, I get to have a better experience because of what I do. So
+
+00:02:49.800 --> 00:02:56.600
+that's me and what I do. My background, just really quickly, brief background. I'm a
+
+00:02:57.399 --> 00:03:03.559
+mathematician. That's what I was trained in. I have studied at Virginia Commonwealth
+
+00:03:03.559 --> 00:03:09.080
+University. I got a bachelor's in Applied Mathematics, went on to do my PhD in Systems
+
+00:03:09.080 --> 00:03:16.160
+Modeling and Analysis. Actually, my research focus was in discrete mathematics, graph theory
+
+00:03:16.160 --> 00:03:23.520
+for any mathematicians in the room. So that is what I did my dissertation in. I had an
+
+00:03:23.559 --> 00:03:30.839
+extraordinarily nontraditional path to find my way into sports. This is not the plan. This
+
+00:03:30.839 --> 00:03:36.199
+is not what I thought I would be doing when I was growing up. It is where I landed. I
+
+00:03:36.199 --> 00:03:43.399
+could not be happier to be here. This is the right place for me to be. To speak a little
+
+00:03:43.399 --> 00:03:49.800
+bit about my nontraditional path. My fun fact, one interesting thing about myself is that
+
+00:03:50.080 --> 00:03:57.880
+I do recreational ballet now as an adult, but for the about 15 years when I was growing
+
+00:03:57.880 --> 00:04:00.839
+up, I did ballet very seriously and I wanted to be a ballerina.
+
+00:04:01.919 --> 00:04:04.800
+Aha, there lies the, this was not the plan.
+
+00:04:05.720 --> 00:04:06.960
+This was not the plan.
+
+00:04:07.199 --> 00:04:11.360
+So math wasn't even the plan. And I can identify with that. There's a bunch of people in the
+
+00:04:11.360 --> 00:04:18.320
+chat who are throwing love behind having a math background. Also, Sadie said that she got to
+
+00:04:18.320 --> 00:04:22.440
+ride a Zamboni at a Canes game. Gosh, that would be my dream.
+
+00:04:22.920 --> 00:04:24.399
+I've never been on a Zamboni.
+
+00:04:24.399 --> 00:04:31.440
+No, that sounds like so much fun. All of the little like fun facts from everybody are like
+
+00:04:31.480 --> 00:04:36.399
+hockey based today, which I love. Tell us something that you like to do for fun.
+
+00:04:39.200 --> 00:04:43.559
+Oh, oh, mine was gonna be so boring. It's watching hockey. That's what I do in my free
+
+00:04:43.559 --> 00:04:52.239
+time. I am, I call myself club agnostic or club secular depending on how you want to think
+
+00:04:52.239 --> 00:04:57.600
+about it. I don't have a, I don't have a team necessarily. And it's probably for the best
+
+00:04:57.600 --> 00:05:02.000
+interest of the league if I just, if I just remain impartial here. But I do, well, I will
+
+00:05:02.000 --> 00:05:08.679
+put on any hockey game that is on. In order, though, I like to watch any sport. So it'll be
+
+00:05:08.679 --> 00:05:15.959
+hockey first. Baseball if it's on, basketball if it's on, football if it's on, but it's
+
+00:05:15.959 --> 00:05:22.559
+usually hockey first. Ballet is what I like to do for fun. Now in my free time. I take a class
+
+00:05:22.559 --> 00:05:28.160
+once or twice a week, just recreationally as an adult. One of my favorite things. Yeah.
+
+00:05:28.679 --> 00:05:32.720
+That's amazing. You have a fellow ballerina in chat too. Tricia says that she's a ballerina
+
+00:05:32.720 --> 00:05:39.640
+too. Well, I would love to hear a little bit about like, just as a context building question
+
+00:05:39.640 --> 00:05:46.119
+for us so that we can ask good questions. There are so many things inside of sports
+
+00:05:46.119 --> 00:05:52.880
+analytics. So many things that can be analyzed, but you work on fan analytics. So I'm
+
+00:05:52.880 --> 00:05:56.959
+wondering what that means. If you could like give us an example so that we understand what
+
+00:05:56.959 --> 00:06:04.640
+type of tools you use, what type of analytics you do, and then also sort of like how data
+
+00:06:05.480 --> 00:06:10.519
+helps solve fan problems or improve fan experience across the league.
+
+00:06:12.160 --> 00:06:17.559
+Yeah, absolutely. I did just see pop up in the chat. Somebody asked why and why we don't call
+
+00:06:17.559 --> 00:06:26.000
+it fan analytics. We do. Oh, we do. Trust me. It's not popular. I have been told that it is
+
+00:06:26.000 --> 00:06:30.320
+corny and cheesy to call it fan analytics and I do not care. I'm corny and cheesy and I'm
+
+00:06:30.320 --> 00:06:40.119
+going to call it fan analytics anyway. So working with fan data, so folks will come and
+
+00:06:40.160 --> 00:06:46.399
+interact with the league in some way for the most part. When you're a hockey fan or someone
+
+00:06:46.399 --> 00:06:50.679
+who's gone to a hockey game or something like that, you're a fan of a club, you're a fan of a
+
+00:06:50.679 --> 00:06:58.640
+team. And those teams will collect data about when you go to games and what you do. So
+
+00:06:58.640 --> 00:07:03.040
+sometimes that data will get rerouted through the league if you come and interact with the
+
+00:07:03.040 --> 00:07:08.559
+league in some way. So sign up maybe for an NHL.com account, maybe play bracket challenge or
+
+00:07:08.559 --> 00:07:15.679
+something like that. And then we will take a look at sort of the behaviors, the ways in which you
+
+00:07:15.679 --> 00:07:22.920
+engage, try to find trends. And through those trends, we start to take some action items off of
+
+00:07:22.920 --> 00:07:30.720
+those. So what is driving you to go to a game? What is driving you to make a purchase? When you
+
+00:07:30.720 --> 00:07:36.200
+go to the game, what do you do in there? Do you buy food? Do you buy merch? Do you get to the
+
+00:07:36.200 --> 00:07:42.679
+game 20 minutes late because there's traffic? And how can we help make sure that you have the
+
+00:07:42.679 --> 00:07:50.200
+smoothest experience possible? So that's generally overarching the North Star of what we do. Maybe a
+
+00:07:50.200 --> 00:07:59.320
+project that I've overseen, for example, we did a fan sort of personas clustering exercise. That
+
+00:07:59.320 --> 00:08:08.480
+was something that I oversaw. So that 30 or so million fans in our in our warehouse right now,
+
+00:08:08.480 --> 00:08:14.079
+all with unique personalities and unique ways of engaging with the league. But in some senses,
+
+00:08:14.079 --> 00:08:21.200
+there are ways that we can group you all together to make it a little easier to digest and figure out
+
+00:08:21.200 --> 00:08:29.600
+how to action off of you to meet you where you're at. So we took the 30 million fans and squish you
+
+00:08:29.600 --> 00:08:38.760
+all down into about 14 unique personas of fans based on their behaviors, digital engagement, so
+
+00:08:38.760 --> 00:08:42.599
+ways in which you've come and interacted with the league specifically, just so that we can figure
+
+00:08:42.599 --> 00:08:49.320
+out how to better reach you. It's a lot easier, instead of trying to find 30 million different ways
+
+00:08:49.320 --> 00:08:56.400
+to reach a fan, if we maybe just tried 14. Instead, that's a little bit easier to, to attack. That is
+
+00:08:57.840 --> 00:08:59.640
+an example of what we do here.
+
+00:08:59.919 --> 00:09:07.599
+Awesome. Well, what kind of tools do you use? Are you a Python team and our team? Do you do use a
+
+00:09:07.599 --> 00:09:09.919
+ton of SQL power bi stuff like that?
+
+00:09:10.440 --> 00:09:19.880
+Yeah, so Python and R over here, it's pick your pick your favorite. So both of my my data scientists and
+
+00:09:19.880 --> 00:09:24.239
+then a variety of other analytics folks under the team, they get to pick whichever they want, whichever
+
+00:09:24.239 --> 00:09:30.320
+makes the most sense. And through doing that, there's a little bit of learning that everyone can do. So
+
+00:09:30.320 --> 00:09:35.520
+everyone can kind of do a little bit of both. I like to think that everyone here can read both languages,
+
+00:09:35.520 --> 00:09:46.799
+which is a good start. So Python, R, we've got Tableau as our BI tool. We've our Snowflake
+
+00:09:46.799 --> 00:09:54.520
+Warehouse. And so SQL all day. I think that's, that's our standard tooling here.
+
+00:09:55.080 --> 00:09:57.799
+Awesome. Well, thank you so much for all of that context building.
+
+00:09:57.840 --> 00:09:58.840
+Oh, it's my pleasure.
+
+00:09:58.919 --> 00:10:05.559
+I think that was really helpful. So we have a question that I would love to start with, because I find it
+
+00:10:05.559 --> 00:10:11.880
+super interesting. I want to know as well. It's from an anonymous asker. And it says, one of the concerns
+
+00:10:11.880 --> 00:10:16.479
+with working in sports analytics is night slash weekend work. Have you found that to be the case for you
+
+00:10:16.520 --> 00:10:19.039
+in fan analytics? Are you working nights and weekends, Jamie?
+
+00:10:19.880 --> 00:10:29.400
+Boy, do I get out of here at five. The nice thing about I would say, so fan and like fan work
+
+00:10:29.400 --> 00:10:34.919
+specifically. So not working with I'm not working with hockey stats data, I'm not working with things
+
+00:10:34.919 --> 00:10:41.679
+that are happening in the game. Fortunately, for me, I'm not the one who's putting the like very fun
+
+00:10:41.679 --> 00:10:48.799
+and niche stats up on the screen during the hockey game that says like, this is the second time
+
+00:10:48.799 --> 00:10:53.719
+someone has gotten four goals on their birthday or something like I like I'm not the one that's doing
+
+00:10:53.719 --> 00:11:01.840
+that. So I don't have to be a part of that. Though, that would be lovely. But working with fan data,
+
+00:11:01.840 --> 00:11:11.280
+there's there's a little bit of a slower pace. I don't work nights and weekends unless I'm feeling
+
+00:11:11.280 --> 00:11:18.080
+particularly passionate to do so. But that that's a me thing and should definitely never be anything
+
+00:11:18.080 --> 00:11:28.679
+that anyone else takes from me. And the nature of fan data is that I like to be strategic and
+
+00:11:28.679 --> 00:11:35.000
+thoughtful. And so it's a little bit slower moving. And that means that I build in a lot of extra time
+
+00:11:36.080 --> 00:11:42.000
+under promising over delivering on a variety of projects to make sure that myself and my team we
+
+00:11:42.000 --> 00:11:46.400
+don't, we can leave at five on Monday through Friday.
+
+00:11:47.520 --> 00:11:53.880
+Some of the questions I see do have to do with game analytics, player analytics and market
+
+00:11:53.880 --> 00:11:59.080
+analytics. So if you asked a question about that, that is less than Jamie's wheelhouse, we might
+
+00:11:59.479 --> 00:12:04.039
+modify some of those questions so that they fit what Jamie does in fan analytics across the whole
+
+00:12:04.039 --> 00:12:10.039
+league. But nor you asked a question that I think is great. I'm highlighting it and I'm going to put
+
+00:12:10.039 --> 00:12:15.320
+it in the chat as well. So if nor could ask her question live, that'd be amazing.
+
+00:12:15.919 --> 00:12:23.080
+Hello, can people hear me? Yeah. Excellent. Hi, Jamie. I also come from a math background. I
+
+00:12:23.080 --> 00:12:28.400
+didn't do a PhD in it. I did mine for max instead. But it's very much a fan of graph theory. So I was
+
+00:12:28.400 --> 00:12:35.479
+like, yes, graph theory. Yay. Um, and actually, one of my best friends who also did math also is a
+
+00:12:35.679 --> 00:12:42.840
+part time ballerina. She did it. So yes, I there's a lot of the community. Where are we? Let's find
+
+00:12:42.840 --> 00:12:51.039
+us. But regarding my question, I guess what is unique to sports analytics? And I guess in your
+
+00:12:51.039 --> 00:12:57.760
+case, fan analytics, part of sports analytics, compared to other domains, and sort of tagging
+
+00:12:57.760 --> 00:13:05.159
+onto that question, what role do you think things like a poly market are influencing the fan
+
+00:13:05.159 --> 00:13:08.000
+analytics sort of like realm of things as well?
+
+00:13:08.919 --> 00:13:13.640
+Oh, I don't know much about the words in the second half of your question. So I'm going to ask
+
+00:13:13.679 --> 00:13:20.119
+more about them in a second. But I can start with the first half. We'll do the first half first. So
+
+00:13:20.440 --> 00:13:33.719
+unique to sports, sports analytics and fan analytics. So the one thing that I didn't
+
+00:13:33.719 --> 00:13:43.559
+understand a lot about, but understand a lot more about now is the the history of the league and its
+
+00:13:43.559 --> 00:13:50.640
+fandom and how that has an impact on sort of the avidity of a fan. And we're not we're selling a
+
+00:13:50.640 --> 00:13:58.359
+product. But like, are we like what I'm the goal, of course, is to get people to come to games and
+
+00:13:58.640 --> 00:14:05.000
+to like, make money. That's the thing that we're trying to do. But in order to do that, I we need a
+
+00:14:05.000 --> 00:14:15.039
+variety of touch points to to to engage the fan and get them to come to the game. I didn't really
+
+00:14:15.039 --> 00:14:21.799
+understand sort of coming from a very different background, just the the different journeys that
+
+00:14:21.799 --> 00:14:28.640
+someone can take to becoming a fan. That is something that I ended up sort of studying here. And in
+
+00:14:28.640 --> 00:14:35.559
+the first day, six or so months of my job was like, how does someone actually become a fan? And at what
+
+00:14:35.559 --> 00:14:43.200
+point do we decide that someone has done behaviors that we are now going to call them a fan? Like,
+
+00:14:43.200 --> 00:14:48.520
+what does that mean? And there are different arguments and levels about ways in which you can
+
+00:14:48.520 --> 00:14:55.320
+become a fan on the spectrum of casual to avid. But all of these things are new to me. I wouldn't say
+
+00:14:55.320 --> 00:15:02.320
+that they're necessarily new to fan analytics. But to me, that is very, very different approach from
+
+00:15:02.320 --> 00:15:09.000
+sport to say, different industry. It's something but I want to answer the second part of your
+
+00:15:09.000 --> 00:15:12.359
+question as well. I just I think I don't know what the words mean. And that's
+
+00:15:12.359 --> 00:15:19.880
+yeah, Polly Market is basically and forgive me if I'm messing this up people in the chat, essentially,
+
+00:15:20.280 --> 00:15:27.679
+fancy prediction market, i.e. gambling, i.e. people who are very invested using Polly Market. And so
+
+00:15:27.679 --> 00:15:33.880
+sort of like, obviously, there's probably like a big subset of fans that that's like a big aspect of
+
+00:15:33.880 --> 00:15:39.679
+it. So like, I guess, how are you engaging them? Slash? Are you engaging them and things of like
+
+00:15:40.679 --> 00:15:45.760
+Great question. I'm gonna I'm gonna come from sort of the like, let's just say we're talking about gambling,
+
+00:15:45.760 --> 00:15:53.559
+like, let's just say that that's what we're doing here. So we're not we're not engaging them. And not
+
+00:15:53.559 --> 00:16:00.919
+because we like there's no reason to but just be the sort of lack of data that we have in in that
+
+00:16:00.919 --> 00:16:07.440
+respect to the league is actually quite cautious about the data that it collects. We really value
+
+00:16:07.599 --> 00:16:14.520
+sort of the this is going back to the history of the league, but sort of the the fan sort of the
+
+00:16:14.520 --> 00:16:19.520
+respect that we have for the fan and their privacy. So we're very, very specific about ways in which we
+
+00:16:19.520 --> 00:16:26.039
+collect data. So if you're sports betting way far away from us, there's it's really unlikely we're
+
+00:16:26.280 --> 00:16:31.239
+going to even know you exist, except we probably are going to know you exist in some way, we just
+
+00:16:31.239 --> 00:16:37.039
+might not know that you are the one doing, say, sports betting. Certainly, you'll have come to us
+
+00:16:37.039 --> 00:16:43.359
+and interacted with us at some point if you're betting on hockey games, but it's hard to say we
+
+00:16:43.359 --> 00:16:50.039
+don't quite have the connection. We do know that that exists, though. And I've always I've theorized
+
+00:16:50.039 --> 00:17:00.200
+about there are a variety of ways I would love to incorporate sort of odds and things like that in
+
+00:17:00.200 --> 00:17:05.359
+our predictive models, especially when it comes to like, what fan sentiment is around a game,
+
+00:17:05.359 --> 00:17:11.119
+because I think that's pretty much like a live connection to getting an understanding of how a fan
+
+00:17:11.119 --> 00:17:19.719
+feels about what is going to happen in game. That's not a perfect answer. It is an answer.
+
+00:17:20.040 --> 00:17:23.880
+It's an answer. Thank you so much. And thank you, Nora, for asking.
+
+00:17:24.199 --> 00:17:25.040
+Thank you.
+
+00:17:25.520 --> 00:17:33.000
+And we had a question from Anna as well that I will highlight here. And let's see if we can get Anna
+
+00:17:33.319 --> 00:17:40.839
+unmuted in the chat to ask her question live. Do we have it? Oh, there she is. Hey.
+
+00:17:41.520 --> 00:17:49.319
+Hey, perfect. Hi, Jamie. My question is, what's the difference between working for a league versus working
+
+00:17:49.319 --> 00:17:51.880
+for a specific team from like an analytics perspective?
+
+00:17:52.880 --> 00:17:58.760
+That's a great question. So I will only I can only speak to what it's like to work NHL versus a club through
+
+00:17:58.760 --> 00:18:09.959
+the NHL. So the way that the data exists at the league versus at the clubs is quite different. So we've
+
+00:18:09.959 --> 00:18:19.000
+got every club has its own data team, just like mine, and own data warehouse, own set of tools, own
+
+00:18:20.520 --> 00:18:26.079
+philosophies around what it means to be data driven, and how that shows up and who they support and what
+
+00:18:26.079 --> 00:18:34.359
+verticals they support. So they are doing their own data and analytics largely around
+
+00:18:37.599 --> 00:18:43.359
+getting season ticket members or like how to how to fill the arena with people, what are the right theme
+
+00:18:43.359 --> 00:18:51.800
+nights to to host? How do they get people to buy more hot dogs or more popcorn, or put the beer in like a
+
+00:18:51.800 --> 00:18:58.439
+really giant saber or like an ice skate boot? And then how much is that going to sell? That's the sort of
+
+00:18:58.439 --> 00:19:05.119
+stuff that the clubs do. And then we at the league over here, figure out how to engage the fans every
+
+00:19:05.119 --> 00:19:12.760
+other every other way, hitting them with emails during the offseason, trying to get them to come and play
+
+00:19:12.760 --> 00:19:22.439
+games in our game zone. And using analytics to drive those. So finding the fans who like to come and play
+
+00:19:22.439 --> 00:19:29.920
+and then telling them to maybe make a bracket during bracket challenge. And then we will take the results
+
+00:19:29.920 --> 00:19:35.719
+of all of the analyses that we do and share them back with the clubs so that they can help that can help them
+
+00:19:35.719 --> 00:19:39.079
+make more informed decisions about the fans that they that they're working with.
+
+00:19:39.839 --> 00:19:44.680
+Awesome. Thank you. Thank you for the question. Anna. That was great. Yeah, thank you. We had several questions
+
+00:19:44.719 --> 00:19:52.920
+sort of around league versus overall NHL. I think that that gave us a good answer for a lot of those. There's so
+
+00:19:52.920 --> 00:19:59.199
+many questions in the Slido rolling in. Oh my goodness, everybody. Okay, Logan, you had a question and it was
+
+00:19:59.199 --> 00:20:05.280
+more around like player analytics, but you said that you would switch it around to be more fan analytics. If
+
+00:20:05.280 --> 00:20:11.359
+you would like to ask your question live. I will let you do that. Yeah, absolutely. And I have to say, go
+
+00:20:11.359 --> 00:20:21.680
+Canes. I just had to. North Carolina born person. So yeah, I asked this and it's a bit of what you just answered.
+
+00:20:21.680 --> 00:20:27.640
+But I was wondering kind of how you support teams if they're if they have their own or if you do a lot of
+
+00:20:27.640 --> 00:20:36.479
+supporting teams when working with their fan analytics. Like I know, Eric Trotsky, our GM is like a big analytics
+
+00:20:36.479 --> 00:20:43.680
+guy. Yeah, just wanted to know how you guys the league might support them in different areas, but it kind of
+
+00:20:43.680 --> 00:20:49.839
+something you talked about. So maybe I'll just say go. There's more I can say more. I can definitely say more. I
+
+00:20:49.839 --> 00:20:58.680
+did leave out one sort of part of my job, not intentionally. Honestly, I do a lot of things. Sometimes I forget what I
+
+00:20:58.680 --> 00:21:04.719
+do. So I can at least talk to I can at least speak to a little bit more about the ways in which I specifically work with
+
+00:21:04.719 --> 00:21:11.680
+the class. I think that's probably helpful. So in addition to all of the work that we do to support from sort of an
+
+00:21:11.680 --> 00:21:20.920
+analytics perspective, I also in my effort, when I started here to learn as much as I possibly could about the history of
+
+00:21:20.920 --> 00:21:31.199
+the league and the clubs and how we could best support them, I set up time to talk to sort of one data slash analytics
+
+00:21:31.199 --> 00:21:44.079
+counterpart at each club. So 32 different folks, one from each club, ballpark in the data science and analytics realm. We, I
+
+00:21:44.079 --> 00:21:52.880
+now talk to each of those people and some others, maybe one to two representatives from each club quarterly, where we talk
+
+00:21:52.880 --> 00:22:03.160
+about the projects that they are working on. If they're considering a switch in vendor, moving tools, maybe moving their
+
+00:22:03.160 --> 00:22:14.079
+warehouse, migrating that something like that. If they are getting pushback from their C suite about trying to implement AI in
+
+00:22:14.079 --> 00:22:21.719
+some way, we talk about all of those things. It's very casual. It's very like, kind of, I think how we're talking right now is
+
+00:22:21.719 --> 00:22:30.880
+casual. I don't know how you all feel, but it's very much like this. So we just we just chat. In some senses, I do feel like it is a
+
+00:22:30.880 --> 00:22:39.359
+catch up slash event session every once in a while. But I have worked really hard to maintain those relationships, because I think
+
+00:22:39.359 --> 00:22:47.079
+it's really important to know what the clubs are working on so that I can figure out how we can best support them. Most of the time, my
+
+00:22:47.079 --> 00:22:55.479
+support is commiseration. But that's okay, that you never know when it's going to be more than that. But sometimes it does turn into
+
+00:22:55.479 --> 00:23:05.319
+actual projects where, say, my data scientists are working on the personas model that they were just working on. What if we took that and
+
+00:23:05.319 --> 00:23:14.160
+filtered that down on a club by club basis, so every club could see their club sort of against league average and with a personas model
+
+00:23:14.160 --> 00:23:24.479
+like that, that tells the clubs what makes their fans unique to them against sort of the overarching hockey fan. That's interesting
+
+00:23:24.479 --> 00:23:31.959
+information. And how many of them are in each persona? And what can they do off of that, then we can have a conversation about that. So that
+
+00:23:31.959 --> 00:23:42.280
+is, that's, that's how I specifically think I make the most impact in supporting clubs. I also host a business strategy and analytics
+
+00:23:42.280 --> 00:23:50.760
+workshop that happens in March, where I get all of my all of those people, all of my friends, we are all in one room where they talk to each other
+
+00:23:50.800 --> 00:23:57.119
+about what they work on the problems they're having. It's basically just a rinse and repeat of the conversation except we've got like a giant
+
+00:23:57.119 --> 00:24:00.119
+community. That that's my favorite part of my job.
+
+00:24:00.959 --> 00:24:08.920
+That's awesome. Yeah, we I work for the community college system in North Carolina. That's how they support us. So that's really cool. Thanks.
+
+00:24:08.920 --> 00:24:19.319
+Great. Absolutely. I love this. Y'all if you want to talk more about internal data community building as well, we're gonna be having a conversation
+
+00:24:19.319 --> 00:24:27.479
+that's all about that, like a special one outside the hangout coming up in August. So look out for for that to be able to register because this is my
+
+00:24:27.479 --> 00:24:34.719
+favorite topic to getting people in the same room to talk about what they're doing and what they need help with or what they're building, or what
+
+00:24:34.719 --> 00:24:43.160
+they're having trouble with is so magically transformative and helps with innovation and helps people get unstuck. Okay, well, we have a great
+
+00:24:43.160 --> 00:24:52.239
+follow on to this. It was asked in the chat and not in the chat. It was asked in the Slido by Amrit. And it also covers another question that was
+
+00:24:52.239 --> 00:25:01.160
+anonymous. So I would love it if Amrit could ask his question live since it sort of covers two and I will put your question in the chat as well.
+
+00:25:01.959 --> 00:25:15.719
+Thanks, Libby. Hey, Jamie. Earlier, yeah, earlier you mentioned about customer personas, but I was just wondering if you had any advice as to how do you
+
+00:25:15.719 --> 00:25:28.520
+map those segments that have been created to tell an actual story to the business like that you're working with? You know, I've been in a similar
+
+00:25:28.520 --> 00:25:38.000
+situation in a fintech company, where it was quite challenging to stay to come up with a story around those personas. So yeah, I was just wondering if you
+
+00:25:38.000 --> 00:25:41.199
+had any sense, two cents. Yeah.
+
+00:25:42.319 --> 00:25:57.439
+So I did. So I do. One thing I will say is when it came to creating those these personas, one thing that I did sort of benefit from as a fan was being a fan.
+
+00:25:57.439 --> 00:26:14.079
+So when we did the personas exercise, and came out with sort of these 14 really crispy, distinct personas, I could look at them and say, yeah, I've seen that fan
+
+00:26:14.079 --> 00:26:25.239
+before. Like I know that one. Like I know, I know what's going on here. Had I not known that had I not had the benefit of sort of being not gonna call myself an expert
+
+00:26:25.280 --> 00:26:51.239
+as a fan, but had I not had sort of that level of knowledge, I think I would have tapped in probably one key sort of stakeholder from each function of the organization to have them take a look at what we've produced and see if they have an
+
+00:26:51.239 --> 00:27:06.000
+understanding of who these fans are. These are fans that they're also seeing and working with and familiar with. If the answer is yes, great. And if not, it doesn't necessarily mean that we go back to the drawing board. But it does
+
+00:27:06.000 --> 00:27:24.920
+mean that we maybe try an additional iteration to see if what comes out makes a little bit more sense. One way that we did approach this project that I don't think is new or novel, but did make a lot of sense for the business specifically
+
+00:27:24.920 --> 00:27:47.079
+here was to create personas that were just around digital behavior engagements. So it wasn't personas that included demographics, it wasn't demographics and psychographics and fan behavior, it was just the fan behavior. Because layering in the demographic data and the
+
+00:27:47.079 --> 00:28:16.359
+psychographic data produced giant clumps of nothing that told us anything about the people that were actually showing up in the building. We wanted them to be more distinct. I'm not going to get personas that represent all 30 million fans, but I can at least get them to ballpark represent the behaviors and then adding in the demographics and
+
+00:28:16.359 --> 00:28:46.280
+psychographics after to see where those people fell in those digital behavioral engagement buckets meant that we could take these personas and share them with every different vertical of the organization. And if they wanted demographic information, then we could add that in. If they wanted psychographic information, we could layer that on top of these personas, rather than having those be the defining features.
+
+00:28:46.400 --> 00:28:47.920
+That was the most important part.
+
+00:28:47.920 --> 00:29:17.880
+Awesome. And for anybody who has not worked, like a segmentation project, and you are interested in learning about it, it's really, really fun. Demographics is more like who the person is, maybe their like, age or where they live. And then psychographics is more understanding why they are making the decisions that they're making. It's fascinating. You can work with like, large scale survey data, for example.
+
+00:29:17.920 --> 00:29:31.760
+For some of this market survey data. Super interesting. You can use PCA to do your sort of like, clustering. And who are these people? If you want a project, and you want to work in fan analytics, that's the way that I would go.
+
+00:29:31.760 --> 00:29:34.119
+Go for sure.
+
+00:29:34.479 --> 00:29:49.079
+Okay, so we did have a question that was anonymous. That was a follow up to that, which was about that, like segmentation. It was, do they change over time? Do you like, has it been long enough for you to recheck? Are you going to recheck?
+
+00:29:50.079 --> 00:30:09.839
+This is the reason that I cared so much to do this project is, okay, so we know, we know who's in the building, we know how they're behaving. What do we want them to do? Like, what's the goal? What would be the goal of knowing who they are, if it's not to take an action item off of it?
+
+00:30:09.839 --> 00:30:30.040
+So my overarching goal has always been, find people in a cluster, find people who are this persona, and see if you can move them. And what would it mean to move them? And can you? Is really the more important, I think, the more interesting question.
+
+00:30:30.040 --> 00:30:51.040
+The answer, if, depending on how we've approached the project, could be yes or no. But that is, that is what I've always wanted to do with this. So one of the behaviors specifically is like email engagement, who's opening, who's opening emails, who's clicking on things.
+
+00:30:51.040 --> 00:31:10.040
+And say, we've got a cluster of folks who always engage over email and love to play in sort of our game zones, a playing bracket challenge or lines, and we have a whole game zone, by the way, this is not an ad, this is just, it's fun to play in there. It's great.
+
+00:31:11.477 --> 00:31:12.477
+2013.
+
+00:31:12.477 --> 00:31:15.057
+But, they don't buy merch.
+
+00:31:15.057 --> 00:31:19.657
+They just, they just, they're kind of just like our chronically online folk.
+
+00:31:19.657 --> 00:31:21.477
+They don't really buy merch.
+
+00:31:21.477 --> 00:31:23.537
+That's not the name of the persona, by the way.
+
+00:31:23.537 --> 00:31:29.356
+I just made up that name, but I do feel like it encompasses sort of the vibe of the behavior.
+
+00:31:29.356 --> 00:31:31.116
+But, they don't buy merch.
+
+00:31:31.116 --> 00:31:33.457
+So, do we want them to?
+
+00:31:33.457 --> 00:31:34.597
+Are they going to?
+
+00:31:34.597 --> 00:31:38.237
+There's a couple of folks in there who are right on the cusp of maybe do buy merch.
+
+00:31:38.237 --> 00:31:41.077
+Why don't you hit them with an email?
+
+00:31:41.077 --> 00:31:42.677
+You know they open emails.
+
+00:31:42.677 --> 00:31:45.837
+Like, go and give that a shot.
+
+00:31:45.837 --> 00:31:50.197
+If you're going to try to get them to do a behavior, tap into the ones that they're already
+
+00:31:50.197 --> 00:31:51.197
+doing.
+
+00:31:51.197 --> 00:31:56.557
+Maybe make an advertisement or something on GameZone or add in some incentives or something
+
+00:31:56.557 --> 00:32:02.357
+like that to have them say buy merch, if that's the goal here.
+
+00:32:02.357 --> 00:32:05.276
+So, there's that.
+
+00:32:05.276 --> 00:32:10.916
+We haven't looked yet at who's moved.
+
+00:32:10.916 --> 00:32:11.916
+That is sort of off-season.
+
+00:32:11.916 --> 00:32:16.517
+Because this happened, we kind of implemented this in the off-season and have been tracking
+
+00:32:16.517 --> 00:32:17.517
+for a full season.
+
+00:32:17.517 --> 00:32:19.756
+And now I'm excited to see what comes out of that.
+
+00:32:19.756 --> 00:32:20.756
+TBD.
+
+00:32:20.756 --> 00:32:21.756
+All right.
+
+00:32:21.756 --> 00:32:22.756
+That is exciting.
+
+00:32:22.756 --> 00:32:23.756
+Sorry to leave you all hanging.
+
+00:32:23.756 --> 00:32:27.716
+I was just thinking about how Posit.co doesn't have a game section.
+
+00:32:27.716 --> 00:32:28.716
+Missed opportunity.
+
+00:32:28.716 --> 00:32:36.197
+Somebody pitch us some games to add to a game zone on the Posit website.
+
+00:32:36.197 --> 00:32:37.197
+Lots of thoughts here.
+
+00:32:37.197 --> 00:32:38.917
+Could we make games in R?
+
+00:32:39.917 --> 00:32:43.797
+Would it be ggames2 or dggames2?
+
+00:32:43.797 --> 00:32:44.797
+You guys, get on this.
+
+00:32:44.797 --> 00:32:46.996
+Let me know what your thoughts are.
+
+00:32:46.996 --> 00:32:47.996
+Okay.
+
+00:32:47.996 --> 00:32:54.676
+So, we've got an anonymous question that rose to the top here and it says, what is the most
+
+00:32:54.676 --> 00:32:59.116
+interesting insight about fans that your data has discovered?
+
+00:32:59.116 --> 00:33:05.356
+Besides people in the game zone are not buying merch, but are opening emails.
+
+00:33:05.356 --> 00:33:06.356
+And you know what?
+
+00:33:07.356 --> 00:33:08.917
+Those are who we're going after.
+
+00:33:08.917 --> 00:33:10.676
+So come back and we'll see.
+
+00:33:10.676 --> 00:33:13.396
+Maybe they are buying merch now.
+
+00:33:13.396 --> 00:33:23.956
+So this kind of started, I'm sure it predated me, but I've always found, I've found this
+
+00:33:23.956 --> 00:33:32.077
+interesting and would like to continue the work to see if this sort of trend continues.
+
+00:33:32.477 --> 00:33:40.637
+This is largely coming from sort of our social space, social analytics and digital analytics
+
+00:33:40.637 --> 00:33:51.837
+is the evolution of fandom, meaning how do people enter in and become fans and what are
+
+00:33:51.837 --> 00:33:58.596
+they, who are they a fan of and how do they sort of engage as fans?
+
+00:33:58.596 --> 00:34:06.357
+So to give an example and sort of where I'm going with this, when I think about fandom
+
+00:34:06.357 --> 00:34:12.357
+and how I grew up becoming a fan, it was my family as a fan of a team.
+
+00:34:12.357 --> 00:34:13.477
+I'm immersed in it.
+
+00:34:13.477 --> 00:34:14.997
+I was born into it.
+
+00:34:14.997 --> 00:34:21.637
+I didn't really have an option to be anything but the fan, the team that my parents and
+
+00:34:21.637 --> 00:34:23.236
+siblings and friends were fans of.
+
+00:34:24.997 --> 00:34:27.316
+And that's how I became a fan.
+
+00:34:27.956 --> 00:34:31.876
+That's the entry point was through my friends and family.
+
+00:34:31.876 --> 00:34:34.277
+And I'm a fan of that team.
+
+00:34:34.277 --> 00:34:35.236
+Die hard.
+
+00:34:35.236 --> 00:34:36.917
+You cannot convince me otherwise.
+
+00:34:36.917 --> 00:34:38.357
+Doesn't matter who's on it.
+
+00:34:38.357 --> 00:34:39.956
+Doesn't matter who's leading it.
+
+00:34:40.676 --> 00:34:42.036
+Doesn't matter how they do.
+
+00:34:42.676 --> 00:34:43.956
+I'm a fan of that team.
+
+00:34:46.516 --> 00:34:49.156
+That is sort of the traditional fan model.
+
+00:34:49.717 --> 00:34:52.197
+That's how it's been in hockey for a long time.
+
+00:34:52.197 --> 00:35:00.676
+We're seeing the early signs of evolution from fan of team to fan of players.
+
+00:35:02.357 --> 00:35:03.717
+Players move teams.
+
+00:35:04.516 --> 00:35:12.197
+So the change then is we're approaching fan analytics sort of from the like on a club
+
+00:35:12.197 --> 00:35:13.557
+by club basis.
+
+00:35:13.557 --> 00:35:15.156
+This is what your fans are doing.
+
+00:35:15.156 --> 00:35:19.717
+But I'm thinking, I mean, we're years away from this.
+
+00:35:19.717 --> 00:35:26.756
+What it would be like to change the perspective of like fans of this player behave in this
+
+00:35:26.756 --> 00:35:26.997
+way.
+
+00:35:27.556 --> 00:35:32.357
+The reason that this is happening, the why of this and sort of we've seen this a little
+
+00:35:32.357 --> 00:35:37.716
+bit more in the data, the way that we've seen this show up in data is people changing their
+
+00:35:37.716 --> 00:35:39.716
+favorite team on the website.
+
+00:35:40.276 --> 00:35:41.316
+Like what?
+
+00:35:41.316 --> 00:35:41.637
+I know.
+
+00:35:42.517 --> 00:35:43.957
+Wait, do you have profiles?
+
+00:35:44.917 --> 00:35:45.237
+Mm hmm.
+
+00:35:45.237 --> 00:35:45.477
+Yeah.
+
+00:35:45.477 --> 00:35:46.677
+So you can select your favorite team.
+
+00:35:47.477 --> 00:35:48.917
+Oh, interesting.
+
+00:35:48.917 --> 00:35:50.117
+What a big indicator.
+
+00:35:50.117 --> 00:35:53.637
+Like somebody actually choosing something for themselves instead of you guessing.
+
+00:35:53.637 --> 00:35:53.876
+Right.
+
+00:35:54.917 --> 00:35:57.077
+And we are working on a project on that as well.
+
+00:35:57.077 --> 00:35:58.357
+Happy to talk more about that.
+
+00:35:58.357 --> 00:36:05.077
+But so it doesn't happen often because that's a lot of work.
+
+00:36:05.077 --> 00:36:07.477
+It's a lot of work to go in and be like, you know what?
+
+00:36:07.477 --> 00:36:09.237
+I am not a fan of this team anymore.
+
+00:36:09.237 --> 00:36:12.836
+I'm a fan of this other team and I'm going to tell the league like no one really does
+
+00:36:13.316 --> 00:36:13.876
+that often.
+
+00:36:14.517 --> 00:36:21.797
+But this is combined with our social analytics data and how our casual fans, we don't have
+
+00:36:21.797 --> 00:36:29.077
+a ton of data on, but our casual fans are following the players quite seriously on social
+
+00:36:29.077 --> 00:36:29.957
+media.
+
+00:36:29.957 --> 00:36:38.197
+So the transition of your entryway into hockey was your parents had hockey on the TV all
+
+00:36:38.197 --> 00:36:38.517
+the time.
+
+00:36:38.517 --> 00:36:41.797
+You were always going to watch that team and that was always going to be what shows up.
+
+00:36:42.517 --> 00:36:49.716
+The why behind this change is theoretical, still early and anecdotal, is the community
+
+00:36:49.716 --> 00:36:56.117
+now is sort of expanded to your social media community, your friends, your acquaintances,
+
+00:36:56.117 --> 00:37:01.556
+people you follow, people you interact with just through DM and not really much more.
+
+00:37:02.436 --> 00:37:06.917
+They're the ones who are putting the players into your universe.
+
+00:37:06.917 --> 00:37:10.836
+So it's less of a team focus and now more of a player focus.
+
+00:37:10.836 --> 00:37:15.716
+And so the avidity is for the player and players can move teams all the time.
+
+00:37:15.716 --> 00:37:16.677
+It happens all the time.
+
+00:37:18.357 --> 00:37:18.836
+Yeah.
+
+00:37:18.836 --> 00:37:22.917
+This is also pointing towards a question that I think I just saw pop up, but I'm trying
+
+00:37:22.917 --> 00:37:23.237
+to find it.
+
+00:37:23.237 --> 00:37:23.637
+There it is.
+
+00:37:23.637 --> 00:37:28.836
+It's an anonymous question that just popped in the Slido that says, are you noticing the
+
+00:37:28.836 --> 00:37:34.276
+younger generations like Gen Z and Gen Alpha acting different than older sports fans?
+
+00:37:34.276 --> 00:37:39.716
+And it's got to be one of those that like for older sports fans or at an earlier point
+
+00:37:39.716 --> 00:37:44.276
+in time, social media wasn't part of the equation for fan analytics, right?
+
+00:37:44.276 --> 00:37:44.756
+What do you think?
+
+00:37:44.756 --> 00:37:45.556
+That's absolutely right.
+
+00:37:45.556 --> 00:37:46.197
+Yeah, yeah.
+
+00:37:46.996 --> 00:37:54.357
+And so the use of social media by and large for our younger generations.
+
+00:37:54.357 --> 00:38:01.716
+And so when we sort of have been doing these analyses on like, okay, who likes teams, who
+
+00:38:01.716 --> 00:38:05.237
+likes players, and there's a variety of different approaches to that.
+
+00:38:05.237 --> 00:38:12.677
+But a lot of it is when we're getting the signals that either someone is engaging through
+
+00:38:13.397 --> 00:38:19.556
+social media in a variety of different ways with a variety of different teams, or they're
+
+00:38:19.556 --> 00:38:22.036
+actually literally telling us that they have a new team.
+
+00:38:22.036 --> 00:38:26.517
+And then we can go and look and see like, ah, they changed this and that team made a
+
+00:38:26.517 --> 00:38:27.637
+transaction with this team.
+
+00:38:27.637 --> 00:38:30.436
+And now that player went there and we've got it.
+
+00:38:30.436 --> 00:38:30.996
+It's pretty clear.
+
+00:38:30.996 --> 00:38:32.036
+That's why that's happening.
+
+00:38:32.436 --> 00:38:37.237
+And so of course, that is where we are seeing it when we overlay demographics, it did tend
+
+00:38:37.237 --> 00:38:38.517
+to be the younger generations.
+
+00:38:40.436 --> 00:38:45.876
+This is important to know, because those are the ones who are going to be filling the building
+
+00:38:46.517 --> 00:38:48.357
+and are filling the building soon.
+
+00:38:48.357 --> 00:38:55.876
+And as a gate driven league, gate driven league, meaning we make most of our money, actually,
+
+00:38:55.876 --> 00:38:59.237
+basically all of our money by people going to games.
+
+00:38:59.237 --> 00:39:05.637
+It does matter knowing that the people that are in your building are there with team spirit,
+
+00:39:05.637 --> 00:39:07.716
+but really with player spirit.
+
+00:39:07.716 --> 00:39:12.276
+And they've got their own sets of behaviors and things that motivate them.
+
+00:39:12.276 --> 00:39:18.357
+They have their own economic and societal factors that we need to consider in order
+
+00:39:18.357 --> 00:39:19.637
+to meet them where they're at.
+
+00:39:20.517 --> 00:39:26.596
+Whether it's like something around season ticket memberships, like what's feasible for
+
+00:39:26.596 --> 00:39:34.357
+those folks and sort of while also balancing the fact that we do have a variety of traditional
+
+00:39:34.357 --> 00:39:36.756
+fans here and they want the game that they know.
+
+00:39:36.756 --> 00:39:37.957
+That's challenging.
+
+00:39:37.957 --> 00:39:39.316
+This is very interesting to me.
+
+00:39:39.316 --> 00:39:42.677
+As you're saying this, I'm thinking about all of this in terms of basketball, because
+
+00:39:42.677 --> 00:39:43.557
+I can't help it.
+
+00:39:43.557 --> 00:39:50.196
+And I'm thinking like, OK, if Wemby left, would fan allegiance go that way?
+
+00:39:50.196 --> 00:39:52.036
+Not if you are from San Antonio.
+
+00:39:52.036 --> 00:39:52.757
+Absolutely not.
+
+00:39:52.997 --> 00:39:56.117
+You would be go Spurs go, team silver and black all the way.
+
+00:39:56.117 --> 00:39:58.757
+And there would be no way that your allegiance would follow.
+
+00:39:58.757 --> 00:40:04.196
+But for people outside of San Antonio who are in love with Wemby, maybe their allegiance
+
+00:40:04.196 --> 00:40:04.757
+might hop.
+
+00:40:05.557 --> 00:40:10.757
+Well, speaking of psychological questions, our resident deep thinker, Adam, had a question
+
+00:40:10.757 --> 00:40:12.516
+and I would love it if he could ask live.
+
+00:40:12.516 --> 00:40:16.516
+Adam Taggart, I'm going to highlight your question and let me put it in the chat for
+
+00:40:16.516 --> 00:40:17.396
+everybody as well.
+
+00:40:19.237 --> 00:40:21.237
+I'm a resident deep thinker.
+
+00:40:21.237 --> 00:40:21.716
+I'll take that.
+
+00:40:22.196 --> 00:40:22.696
+Thanks.
+
+00:40:23.716 --> 00:40:24.357
+Hi, Jamie.
+
+00:40:25.396 --> 00:40:27.237
+Thank you for everything that you've said so far.
+
+00:40:27.237 --> 00:40:31.317
+I kind of picked up on a few things that I want to add to this question.
+
+00:40:31.317 --> 00:40:35.477
+The question originally was that your background sounded like pure math and you said graph
+
+00:40:35.477 --> 00:40:36.596
+mathematics.
+
+00:40:36.596 --> 00:40:42.516
+And the examples you were giving of fan analytics started to sound a little more like my background,
+
+00:40:42.516 --> 00:40:46.516
+which is exercise, cognitive and social sports psych.
+
+00:40:46.516 --> 00:40:49.076
+So I I'm not in hockey.
+
+00:40:49.076 --> 00:40:50.836
+All I know is what a Gordie Howe hat trick is.
+
+00:40:51.396 --> 00:40:52.437
+I don't know any teams.
+
+00:40:52.437 --> 00:40:53.716
+I don't know any players.
+
+00:40:53.716 --> 00:40:54.516
+I just know that.
+
+00:40:55.317 --> 00:40:57.877
+And my background was MMA where the fan.
+
+00:40:58.997 --> 00:40:59.636
+Is that a good thing?
+
+00:41:00.516 --> 00:41:08.036
+Yeah, I started as I was a very big UFC fan and my way through hockey was figuring out
+
+00:41:08.036 --> 00:41:10.757
+that hockey is just UFC on ice.
+
+00:41:10.757 --> 00:41:11.557
+On ice.
+
+00:41:11.557 --> 00:41:12.437
+Oh, I like that.
+
+00:41:12.437 --> 00:41:14.437
+Oh, yeah, I might take that from you.
+
+00:41:14.437 --> 00:41:20.357
+But what I was going to get to is that obviously there's this massive diversity in the fans
+
+00:41:21.477 --> 00:41:23.237
+as you pointed out with the profiles.
+
+00:41:23.237 --> 00:41:27.396
+And there are some fans of MMA that I don't think I would get along well with.
+
+00:41:27.396 --> 00:41:30.276
+But then there are there's my community inside of the community.
+
+00:41:31.477 --> 00:41:35.317
+And I couldn't help thinking about diversity in your team.
+
+00:41:35.317 --> 00:41:37.317
+So you've obviously got this pure math background.
+
+00:41:37.317 --> 00:41:43.797
+Do you have people with the psych background or other forms of of data wrangling backgrounds?
+
+00:41:43.797 --> 00:41:49.237
+And do you think that sports analytics as a whole is diverse enough to cater for all
+
+00:41:49.237 --> 00:41:49.956
+of these different needs?
+
+00:41:49.956 --> 00:41:53.956
+Or does it need a few more people in it from different backgrounds and foundations?
+
+00:41:54.917 --> 00:41:57.237
+That's a great, great question.
+
+00:41:57.237 --> 00:42:02.276
+I'm going to answer the second part of your question first, because recency bias and I
+
+00:42:02.276 --> 00:42:02.997
+remember it better.
+
+00:42:03.797 --> 00:42:07.956
+So, yes, yes, we need more.
+
+00:42:07.956 --> 00:42:10.516
+We need more diversity and background.
+
+00:42:12.117 --> 00:42:14.117
+Truthfully, to do a job like this.
+
+00:42:14.357 --> 00:42:20.757
+And if you're if you're on this call and you work in Python, you work in R and you do analytics
+
+00:42:20.757 --> 00:42:23.636
+like that, that's that's just that's the bare minimum.
+
+00:42:23.636 --> 00:42:26.276
+That's not something that that's most people can do it.
+
+00:42:27.076 --> 00:42:32.196
+It's the psychology element of it and sort of understanding behavior is something that
+
+00:42:32.196 --> 00:42:38.997
+I think is really important, because that is how you see a trend and can put yourself
+
+00:42:39.076 --> 00:42:44.516
+inside of it and think to yourself whether this is something that makes sense or not.
+
+00:42:44.516 --> 00:42:47.396
+And if it does make sense, you can speak to it.
+
+00:42:47.396 --> 00:42:50.357
+And if it doesn't make sense, then you can go and figure out why.
+
+00:42:50.997 --> 00:42:52.437
+So I do think that's really important.
+
+00:42:53.156 --> 00:42:59.877
+So, of course, my background, pure mathematics, someone on my team also has background in
+
+00:42:59.877 --> 00:43:05.317
+mathematics and then another sort of in sort of like sports science and sort of analytics
+
+00:43:05.317 --> 00:43:05.877
+based on.
+
+00:43:05.877 --> 00:43:14.196
+So that has also been really helpful because she comes at every she comes at every project
+
+00:43:14.196 --> 00:43:22.036
+with this like and then this is what happened on the ice and this is what the players were
+
+00:43:22.036 --> 00:43:27.076
+doing and this is how and this is how the fans responded to that, which is like that
+
+00:43:27.076 --> 00:43:28.276
+I can't like that.
+
+00:43:28.276 --> 00:43:30.036
+That's quite quite outside of me.
+
+00:43:30.516 --> 00:43:37.076
+The more diversity that we have on the team, the better.
+
+00:43:39.156 --> 00:43:40.516
+We're talking about fans here.
+
+00:43:41.716 --> 00:43:43.076
+Fans are diverse.
+
+00:43:43.076 --> 00:43:51.396
+And and I want the representation of the fan base to be represented on my team as well
+
+00:43:51.396 --> 00:43:58.117
+so that we are reaching every fan where they're at, not just the ones that we hear the loudest.
+
+00:43:58.276 --> 00:43:58.836
+Amazing.
+
+00:43:58.836 --> 00:43:59.396
+Thank you.
+
+00:43:59.396 --> 00:43:59.877
+Yeah.
+
+00:43:59.877 --> 00:44:01.156
+Thank you for your question, Adam.
+
+00:44:02.036 --> 00:44:03.237
+I always love your questions.
+
+00:44:03.237 --> 00:44:09.156
+OK, we had a question from Daniel and it has an asterisk, so I'm going to read it for him
+
+00:44:09.156 --> 00:44:13.956
+and I will also put it in the chat here so everybody can read it as well.
+
+00:44:14.997 --> 00:44:20.596
+And it says, do you have any advice for any new budding data scientist who wants to get
+
+00:44:20.596 --> 00:44:25.797
+into hockey, sports analytics, any kinds of data sets, projects, techniques that you would
+
+00:44:26.036 --> 00:44:27.557
+like to see in a portfolio?
+
+00:44:30.357 --> 00:44:31.877
+I think if I were.
+
+00:44:33.877 --> 00:44:36.357
+Say hiring and taking a look.
+
+00:44:39.956 --> 00:44:41.956
+Oh, I'm such I'm such a bad choice for this.
+
+00:44:42.757 --> 00:44:43.557
+That's OK.
+
+00:44:44.196 --> 00:44:49.477
+I'm in here, too, because we would love to know where the data sets live, where the like
+
+00:44:49.477 --> 00:44:54.596
+sample projects live, where the access to data might live that people are really interested
+
+00:44:54.836 --> 00:44:55.317
+in.
+
+00:44:56.036 --> 00:44:57.956
+I would I would say at least that.
+
+00:44:59.797 --> 00:45:03.877
+Building a portfolio of someone wants to work in sports, pick a sport for starters, doesn't
+
+00:45:03.877 --> 00:45:04.677
+have to be hockey.
+
+00:45:05.636 --> 00:45:10.357
+If I were, say, someone they included a portfolio in an application, I would I would click it
+
+00:45:10.357 --> 00:45:11.396
+whether it was hockey or not.
+
+00:45:11.396 --> 00:45:12.757
+I'd piece through it.
+
+00:45:12.836 --> 00:45:13.477
+Piece through it.
+
+00:45:14.836 --> 00:45:22.997
+I would want to see a variety of projects that touch a lot of different.
+
+00:45:25.716 --> 00:45:27.877
+Aspects, areas of the business.
+
+00:45:27.877 --> 00:45:29.797
+It could be on ice or it could be fan.
+
+00:45:31.557 --> 00:45:34.117
+What I'd really want to see is.
+
+00:45:35.716 --> 00:45:37.076
+You've done an analysis.
+
+00:45:39.076 --> 00:45:40.437
+Tell me why it mattered.
+
+00:45:41.237 --> 00:45:43.396
+Tell me what you can do with it.
+
+00:45:43.396 --> 00:45:45.156
+So the action off of that.
+
+00:45:45.156 --> 00:45:47.076
+So you're seeing a trend of something.
+
+00:45:47.636 --> 00:45:49.396
+Who would you tell about it?
+
+00:45:49.396 --> 00:45:51.956
+Why would you tell them what matters from it?
+
+00:45:53.557 --> 00:46:01.797
+My the most important job, most important part of my job and the job of my team is communicating
+
+00:46:01.797 --> 00:46:02.357
+what we see.
+
+00:46:04.596 --> 00:46:08.516
+It doesn't really matter so much if we just put numbers in front of people.
+
+00:46:08.516 --> 00:46:11.156
+The numbers are scary and hard and they don't want to see them.
+
+00:46:11.156 --> 00:46:12.437
+They want to know what to do with them.
+
+00:46:12.997 --> 00:46:19.636
+So being able to show that aspect of it somewhere within your portfolio, like here's what I
+
+00:46:19.636 --> 00:46:20.117
+see.
+
+00:46:20.117 --> 00:46:21.797
+Here's what you should do about it.
+
+00:46:21.797 --> 00:46:23.877
+That's the part that I would care much more about.
+
+00:46:25.636 --> 00:46:31.636
+That's the part that I would take and say this person clearly has the technical background,
+
+00:46:31.636 --> 00:46:36.677
+but they have the soft skill, the one about communication that I care the most about.
+
+00:46:38.516 --> 00:46:40.276
+I love that advice.
+
+00:46:40.917 --> 00:46:45.396
+I love it because an LLM can write any analysis you want now, right?
+
+00:46:45.396 --> 00:46:50.276
+But it's not going to be in the room explaining things and answering all of the questions
+
+00:46:50.276 --> 00:46:50.917
+live, is it?
+
+00:46:50.917 --> 00:46:52.917
+So I love it.
+
+00:46:52.917 --> 00:46:56.757
+Also, everybody is being mean to this person in the chat.
+
+00:46:56.757 --> 00:46:57.477
+I'm very sad.
+
+00:46:58.357 --> 00:47:02.196
+Okay, thank you so much, Dan, for asking that very hard question.
+
+00:47:02.196 --> 00:47:08.917
+Daniel is a lecturer at a university and he works with up and coming data scientists
+
+00:47:08.917 --> 00:47:09.477
+all the time.
+
+00:47:10.117 --> 00:47:14.357
+Thank you for being a representative for the people who are trying to break in and get
+
+00:47:14.357 --> 00:47:16.117
+noticed, as always, Dan.
+
+00:47:17.156 --> 00:47:20.117
+Okay, I saw an anonymous question in the chat.
+
+00:47:20.117 --> 00:47:20.997
+We have eight minutes left.
+
+00:47:20.997 --> 00:47:24.836
+So I would love to ask this question and one more because we always try to get a career
+
+00:47:24.836 --> 00:47:27.237
+advice question in, but I love this one.
+
+00:47:27.237 --> 00:47:33.797
+It says, from anonymous, has the recent rise in new NHL fans from the popularity of books
+
+00:47:33.797 --> 00:47:37.797
+or shows like Heated Rivalry and Off Campus affected your analyses?
+
+00:47:41.396 --> 00:47:48.196
+Yes, very much yes, in that all of a sudden, they were there.
+
+00:47:48.196 --> 00:47:54.677
+All of a sudden, we noticed that the numbers were really different on demographic slices,
+
+00:47:54.677 --> 00:48:00.997
+who was coming to the games, who was interacting in a variety of different ways, who was new
+
+00:48:01.557 --> 00:48:07.317
+to the warehouse that we'd never seen before, and when did they enter, and was it after
+
+00:48:07.317 --> 00:48:11.396
+Episode 4 of Heated Rivalry or Episode 6 or 7?
+
+00:48:13.076 --> 00:48:13.956
+It's all of them.
+
+00:48:14.516 --> 00:48:15.956
+We absolutely saw it.
+
+00:48:15.956 --> 00:48:23.157
+A lot of this analysis lives with one of our social analytics, our manager of social analytics,
+
+00:48:23.157 --> 00:48:24.196
+Hope, who is wonderful.
+
+00:48:25.316 --> 00:48:30.037
+She is the one who is sort of in charge of the, well, the follower accounts are off the
+
+00:48:30.037 --> 00:48:30.596
+charts.
+
+00:48:30.596 --> 00:48:32.436
+The video views are off the charts.
+
+00:48:32.436 --> 00:48:34.676
+What are the demographics of those fans?
+
+00:48:34.676 --> 00:48:36.436
+It's they're new.
+
+00:48:36.436 --> 00:48:37.796
+We haven't seen them before.
+
+00:48:39.956 --> 00:48:46.916
+It was coincidental but beautiful that it worked out this way, that one of our sort
+
+00:48:46.916 --> 00:48:52.676
+of league initiatives for this season, which is it's always there, but we worked, we were
+
+00:48:52.676 --> 00:48:59.157
+working really diligently towards this North Star of growing the female fan base, which
+
+00:48:59.157 --> 00:49:00.117
+is a great idea.
+
+00:49:00.676 --> 00:49:01.477
+Love that.
+
+00:49:01.477 --> 00:49:02.596
+Should always be doing that.
+
+00:49:04.037 --> 00:49:10.037
+We had sort of set up a variety of baselines and sort of had these ways to track and trend
+
+00:49:10.037 --> 00:49:13.796
+and do analysis and figure out where we were missing them, where they were coming in from,
+
+00:49:13.796 --> 00:49:18.596
+and how we can continue to nurture their fandom, and what do they need from us to keep going.
+
+00:49:19.157 --> 00:49:22.436
+It turns out they just need more of them, and that's fair.
+
+00:49:22.436 --> 00:49:22.916
+That's great.
+
+00:49:24.676 --> 00:49:33.237
+So when Heated Rivalry and others came into existence, all of a sudden, everything was
+
+00:49:33.237 --> 00:49:34.676
+literally off the charts.
+
+00:49:35.237 --> 00:49:44.517
+Everything was off the charts, and we have a variety of wonderful employee resource
+
+00:49:44.517 --> 00:49:45.237
+groups here.
+
+00:49:45.237 --> 00:49:48.357
+One of them is for sort of the pride folk.
+
+00:49:48.357 --> 00:49:53.556
+The Heated Rivalry was posted in that Slack channel just as like a hey for anyone who's
+
+00:49:53.556 --> 00:49:56.596
+interested, and that was how I heard about it.
+
+00:49:56.596 --> 00:50:00.676
+Then the first episode happened, and then the second episode happened, and then we knew
+
+00:50:00.676 --> 00:50:05.796
+that something very, very big and different was happening for us at the league because
+
+00:50:05.796 --> 00:50:06.357
+we could see.
+
+00:50:07.316 --> 00:50:08.436
+How fortuitous, too.
+
+00:50:08.436 --> 00:50:13.877
+It's not like the NHL was like, let's plan this thing that's going to happen, right?
+
+00:50:14.436 --> 00:50:21.316
+Truly, we had nothing to do with it, which is just really, as a representative of the
+
+00:50:21.316 --> 00:50:22.596
+league, I feel like it's important to say.
+
+00:50:22.596 --> 00:50:26.436
+We didn't have anything to do with Heated Rivalry, and that's okay.
+
+00:50:26.436 --> 00:50:34.117
+It's really lovely that that helped to show folks that hockey exists.
+
+00:50:34.117 --> 00:50:35.237
+Hockey's for everyone.
+
+00:50:35.237 --> 00:50:35.956
+Please come.
+
+00:50:35.956 --> 00:50:36.916
+Please enjoy it.
+
+00:50:36.916 --> 00:50:42.037
+You're welcome here, and that we could use that to sort of just nurture and grow.
+
+00:50:42.997 --> 00:50:47.637
+This isn't an isolated incident because somebody mentioned in the chat, too, this is the Taylor
+
+00:50:47.637 --> 00:50:49.237
+Swift NFL effect.
+
+00:50:49.237 --> 00:50:57.076
+Also, when Ted Lasso came out, I think that club football got so much more coverage, and
+
+00:50:57.076 --> 00:51:02.676
+it was being talked about so much more than I'd ever seen it before between normal people
+
+00:51:02.676 --> 00:51:07.556
+who were just enamored with this Apple TV show, which I am, too.
+
+00:51:07.556 --> 00:51:08.757
+I'm a huge Ted Lasso fan.
+
+00:51:10.277 --> 00:51:11.556
+This is super interesting.
+
+00:51:11.556 --> 00:51:14.436
+I wish we could talk more and go on forever, but we have four minutes left.
+
+00:51:15.477 --> 00:51:20.676
+Jamie, I'm going to ask you, do you have a piece of career advice, or is there something
+
+00:51:20.676 --> 00:51:25.956
+you wish you knew before you went into data science that would have helped you out?
+
+00:51:26.997 --> 00:51:27.956
+Absolutely.
+
+00:51:27.956 --> 00:51:29.076
+I do have a piece of advice.
+
+00:51:30.117 --> 00:51:38.277
+My piece of advice is when it comes to choosing where you work, so you know you want to do
+
+00:51:38.277 --> 00:51:43.477
+data science, you know you want to be in the data science space, choosing where you
+
+00:51:43.477 --> 00:51:47.716
+work is largely down to choosing work that aligns with your values.
+
+00:51:48.436 --> 00:51:53.796
+Doing data science somewhere, make sure that the work that you are doing aligns with your
+
+00:51:53.796 --> 00:51:54.196
+values.
+
+00:51:54.196 --> 00:52:00.277
+That is the only way to ensure that what you are doing nourishes you and makes you feel
+
+00:52:00.277 --> 00:52:04.436
+good at the end of the day because you're going to be doing it for eight hours a day.
+
+00:52:05.397 --> 00:52:12.517
+The way that I do that here and the way that I ended up at the League here, my general
+
+00:52:12.517 --> 00:52:21.877
+core values are authenticity, transparent and honest communication, accessibility, equity,
+
+00:52:21.877 --> 00:52:30.117
+equality, and so everything that I do in the fan space is making the game as accessible
+
+00:52:30.196 --> 00:52:35.716
+as possible to all of the fans who are here and making sure that they can be themselves
+
+00:52:35.716 --> 00:52:37.716
+so that they can enjoy the game as much as possible.
+
+00:52:38.277 --> 00:52:50.436
+Every piece of work that I do touches those and so my day is filled with me touching my
+
+00:52:50.436 --> 00:52:51.076
+values.
+
+00:52:51.076 --> 00:52:56.517
+So my piece of advice is to figure out what your values are, find a job that does those.
+
+00:52:57.956 --> 00:52:58.836
+Amazing.
+
+00:52:58.836 --> 00:53:00.436
+Thank you so much, Jamie.
+
+00:53:00.436 --> 00:53:02.836
+Thank you everybody who asked a question in the Slido.
+
+00:53:02.836 --> 00:53:05.956
+There are so many still in there that we didn't even get to.
+
+00:53:05.956 --> 00:53:09.477
+Go troll through the Slido everybody and see what everybody asks.
+
+00:53:09.477 --> 00:53:10.517
+It's very interesting.
+
+00:53:10.517 --> 00:53:15.556
+Jamie, I'll send you the Slido afterwards if you would like to just for any FOMO purposes
+
+00:53:15.556 --> 00:53:16.196
+be able to see.
+
+00:53:17.237 --> 00:53:18.757
+Thank you so much for joining us.
+
+00:53:18.757 --> 00:53:20.676
+I hope that you had a wonderful time.
+
+00:53:20.676 --> 00:53:22.997
+I know that we all had a really, really good time.
+
+00:53:22.997 --> 00:53:26.596
+Shout out to all the camera on crew for hanging out, especially everybody with their hockey
+
+00:53:26.596 --> 00:53:27.316
+backgrounds.
+
+00:53:28.277 --> 00:53:29.556
+I hope that you enjoyed it.
+
+00:53:29.556 --> 00:53:33.157
+If you want to save the chat today, you can click the three dots in the top right of your
+
+00:53:33.157 --> 00:53:34.357
+screen if you're actually on Zoom.
+
+00:53:35.397 --> 00:53:41.397
+If there were any links or anything that was shared and next week, please, please join
+
+00:53:41.397 --> 00:53:45.076
+us, especially if you are a fan of the targets package, because we are going to be joined
+
+00:53:45.076 --> 00:53:47.556
+by Will Landau at Eli Lilly.
+
+00:53:47.556 --> 00:53:53.157
+He's a senior advisor of innovative statistics at Eli Lilly and also author of the targets
+
+00:53:53.157 --> 00:53:53.637
+package.
+
+00:53:53.637 --> 00:53:58.436
+And I am hoping that we're going to have Charlie Gao join us as well in the in the
+
+00:53:58.436 --> 00:54:03.477
+crowd to talk about some of the ways that targets and Mariah are working together.
+
+00:54:04.357 --> 00:54:05.237
+Amazing.
+
+00:54:05.237 --> 00:54:05.796
+I can't wait.
+
+00:54:05.796 --> 00:54:07.157
+It's going to be so much fun.
+
+00:54:07.157 --> 00:54:08.757
+I will see you next week.
+
+00:54:08.757 --> 00:54:10.757
+Jamie, thank you so much for joining us.
+
+00:54:10.757 --> 00:54:12.757
+I hope everybody has a fantastic week and weekend.
+
+00:54:13.556 --> 00:54:14.196
+Thank you all.
+
+00:54:14.196 --> 00:54:15.477
+It was a pleasure.

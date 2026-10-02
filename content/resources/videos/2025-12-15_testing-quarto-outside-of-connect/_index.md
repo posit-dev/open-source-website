@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Testing Quarto outside of Connect
 
@@ -19,16 +19,16 @@ external:  # updated automatically, do not edit
   duration: 156
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:26.434689+00:00'
+  last_updated: '2026-09-18T13:58:07.250634+00:00'
   like_count: 3
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/KLYiv6-4Wc0/maxresdefault.jpg
   title: Testing Quarto outside of Connect
   url: https://www.youtube.com/watch?v=KLYiv6-4Wc0
-  view_count: 91
+  view_count: 95
 ---
 image: thumbnail.jpg
 

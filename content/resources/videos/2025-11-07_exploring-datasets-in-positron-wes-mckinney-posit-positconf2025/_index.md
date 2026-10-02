@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - posit::conf(2025)
 - rstats
@@ -30,7 +30,7 @@ override:
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 6
+  comment_count: 7
   date: '2025-11-07T16:13:58Z'
   definition: hd
   description: 'Exploring Datasets in Positron
@@ -46,11 +46,11 @@ external:  # updated automatically, do not edit
   duration: 1154
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.255301+00:00'
-  like_count: 44
+  last_updated: '2026-09-18T13:58:08.448241+00:00'
+  like_count: 50
   playlist: ''
   software:
-  - Positron
+  - positron
   tags:
   - posit::conf(2025)
   - rstats
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/R71WCIO6RyY/maxresdefault.jpg
   title: Exploring Datasets in Positron (Wes McKinney, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=R71WCIO6RyY
-  view_count: 1389
+  view_count: 1764
 ---
 image: thumbnail.jpg
 

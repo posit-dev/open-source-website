@@ -69,8 +69,8 @@ external:  # updated automatically, do not edit
   duration: 1296
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.701413+00:00'
-  like_count: 80
+  last_updated: '2026-09-18T13:58:17.860919+00:00'
+  like_count: 81
   playlist: ''
   software:
   - dplyr
@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HwRrEIPiTyk/hqdefault.jpg
   title: Tyson Barrett | List-columns in data.table | RStudio (2020)
   url: https://www.youtube.com/watch?v=HwRrEIPiTyk
-  view_count: 3356
+  view_count: 3400
 ---
 image: thumbnail.jpg
 

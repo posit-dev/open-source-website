@@ -1,0 +1,17 @@
+---
+title: "Make your SciPy presentation in Quarto"
+author:
+  - Isabella Velásquez
+  - Charlotte Wickham
+date: 2026-07-14
+format:
+  revealjs:
+    incremental: true
+    embed-resources: true
+---
+
+Slides are just Markdown and code:
+
+- Write your narrative in **Markdown**
+- Weave in **Python** code and its output
+- Render it all to one reproducible file

@@ -18,13 +18,13 @@
 
 {{- if (findRE "<pre" .Content 1) }}
 <!-- hidden element for JS to get inner element and tailwind to output related CSS classes -->
-<div class="hidden top-1 right-1" id="code-copy">
-  <i class="h-6 w-6 block" aria-hidden="true">
+<div class="hidden top-[34px] right-4 absolute" id="code-copy">
+  <i class="h-4.5 w-4.5 block" aria-hidden="true">
     {{ partial "icon.html" "copy" }}
   </i>
 </div>
-<div class="hidden top-1 right-1" id="code-copy-done">
-  <i class="h-6 w-6 block" aria-hidden="true">
+<div class="hidden top-[34px] right-4 absolute" id="code-copy-done">
+  <i class="h-5 w-5 block" aria-hidden="true">
     {{ partial "icon.html" "check" }}
   </i>
 </div>
@@ -38,6 +38,14 @@
 {{ if .Params.asciinema }}{{ partial "asciinema.html" . }}{{ end }}
 
 {{- /* image-lightbox.js disabled */ -}}
+
+{{- if or (findRE "data-gallery-group" .Content 1) (and (eq .Section "resources") (eq .Params.resource_type "cheatsheet") .Params.thumbnails) }}
+{{- $galleryLb := resources.Get "js/gallery-lightbox.js" | js.Build "gallery-lightbox.js" -}}
+{{- if not hugo.IsDevelopment }}
+  {{- $galleryLb = $galleryLb | minify | fingerprint -}}
+{{ end -}}
+<script src="{{ $galleryLb.RelPermalink }}" defer></script>
+{{ end -}}
 
 {{- if (findRE "panel-tabset-tabby" .Content 1) }}
 {{- $jsTabby := resources.Get "js/tabby.min.js" -}}
@@ -84,5 +92,36 @@
   {{- $filterSort = $filterSort | minify | fingerprint -}}
 {{ end -}}
 <script>if(document.querySelector('[data-item-container]')){var s=document.createElement('script');s.src='{{ $filterSort.RelPermalink }}';s.defer=true;document.body.appendChild(s);}</script>
+
+{{- /* Quarto Live: interactive R/Python code cells */ -}}
+{{- $hasPyodide := findRE `data-engine="pyodide"` .Content 1 -}}
+{{- $hasWebR := findRE `data-engine="webr"` .Content 1 -}}
+{{- if or $hasPyodide $hasWebR -}}
+  {{- $resources := .Params.live_resources | default slice -}}
+  {{- if $hasPyodide -}}
+  {{- $pyodideBase := slice "pyodide_http" "micropip" "ipython" -}}
+  {{- $pyodideExtra := .Params.pyodide_packages | default slice -}}
+  {{- $pyodideScratch := .Scratch.Get "live_pyodide_pkgs" | default slice -}}
+  {{- $pyodidePkgs := union $pyodideBase (union $pyodideExtra $pyodideScratch) -}}
+  {{- $pyodideURL := .Params.pyodide_url | default "https://cdn.jsdelivr.net/pyodide/v0.28.1/full/" -}}
+  {{- $pyodideData := dict "options" (dict "indexURL" $pyodideURL "env" (dict "PLOTLY_RENDERER" "plotly_mimetype")) "packages" (dict "pkgs" $pyodidePkgs) -}}
+<script type="pyodide-data">{{ $pyodideData | jsonify | base64Encode }}</script>
+  {{- end -}}
+  {{- if $hasWebR -}}
+  {{- $webrBase := slice "evaluate" "knitr" "htmltools" -}}
+  {{- $webrExtra := .Params.webr_packages | default slice -}}
+  {{- $webrScratch := .Scratch.Get "live_webr_pkgs" | default slice -}}
+  {{- $webrPkgs := union $webrBase (union $webrExtra $webrScratch) -}}
+  {{- $webrURL := .Params.webr_url | default "https://webr.r-wasm.org/v0.6.0/" -}}
+  {{- $webrRepos := .Params.webr_repos | default slice -}}
+  {{- $webrData := dict "options" (dict "baseUrl" $webrURL) "packages" (dict "pkgs" $webrPkgs "repos" $webrRepos) "render_df" "default" -}}
+<script type="webr-data">{{ $webrData | jsonify | base64Encode }}</script>
+  {{- end -}}
+<script type="vfs-file">{{ $resources | jsonify | base64Encode }}</script>
+<link rel="stylesheet" href="/css/live-runtime.css">
+<link rel="stylesheet" href="/css/live-compat.css">
+<script type="module" src="/js/live-runtime.js"></script>
+<script type="module" src="/js/live-init.js"></script>
+{{- end -}}
 
 {{- partial "custom_footer.html" . -}}

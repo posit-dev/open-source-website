@@ -1,0 +1,2179 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.520
+Welcome to The Test Set. Here we talk with some of the brightest thinkers and tinkerers
+
+00:00:06.520 --> 00:00:11.440
+in statistical analysis, scientific computing, and machine learning. Digging into what makes
+
+00:00:11.440 --> 00:00:18.120
+them tick, plus the insights, experiments, and OMG moments that shape the field.
+
+00:00:18.120 --> 00:00:23.360
+On this episode, we talk with Leland McInnes, creator of UMAP, an algorithm that turns high-dimensional
+
+00:00:23.360 --> 00:00:27.879
+data into something easier to visualize. It's been used all over, from tracing illegally
+
+00:00:27.879 --> 00:00:33.320
+mined gold, studying solar wind, and even helping artists work with whale song.
+
+00:00:33.320 --> 00:00:37.040
+Leland joined the Tutte Institute as a pure mathematician, but kept finding interesting
+
+00:00:37.040 --> 00:00:42.240
+problems on the data science side. He says, I just want to find ways to condense and extract
+
+00:00:42.240 --> 00:00:46.939
+information to just allow someone to explore a dataset better. We talk about the challenge
+
+00:00:46.939 --> 00:00:51.959
+of imposter syndrome and interdisciplinary work, his approach to AI, and why he thinks
+
+00:00:51.959 --> 00:00:55.639
+exploring data depends on human taste and curiosity.
+
+00:00:56.639 --> 00:01:04.639
+Hey everyone, welcome to The Test Set. We're joined by Leland McInnes, who's a research
+
+00:01:04.639 --> 00:01:11.599
+mathematician and data scientist at the Tutte Institute for Mathematics and Computing, and
+
+00:01:11.599 --> 00:01:18.860
+contributed to HDBSCAN and created UMAP, a really interesting and popular algorithm for
+
+00:01:18.860 --> 00:01:24.639
+clustering and you've probably seen it in a lot of visualization. So, Leland, so happy
+
+00:01:24.639 --> 00:01:26.320
+to have you on. Thanks for coming on.
+
+00:01:26.320 --> 00:01:29.199
+Thank you so much for having me. Really appreciate it.
+
+00:01:29.199 --> 00:01:35.440
+Yeah, and then just by way of introduction, I'm the host, Michael Chow, and I'm joined
+
+00:01:35.440 --> 00:01:41.559
+by Hadley Wickham, who's chief scientist at Posit, and Wes McKinney, who's a principal
+
+00:01:41.559 --> 00:01:50.400
+architect at Posit and founder of Kenio AI Computing Tools Company. So, happy to have
+
+00:01:50.400 --> 00:01:54.120
+everyone together. Do y'all, I'm curious, have y'all met before?
+
+00:01:54.120 --> 00:01:58.599
+I feel like we've likely crossed paths, maybe at like a Sci-Pi conference or something,
+
+00:01:58.599 --> 00:02:00.839
+but I'm having a hard time placing it.
+
+00:02:00.839 --> 00:02:05.480
+Met you at a Sci-Pi, Wes. I obviously remember it because it was a chance for me to meet
+
+00:02:05.480 --> 00:02:12.759
+one of my heroes. You obviously will not remember it because it was a long time ago and I hadn't
+
+00:02:12.759 --> 00:02:14.119
+done much by that point.
+
+00:02:14.119 --> 00:02:19.800
+Yeah, I think the first Sci-Pi that I went to was in 2010. And so, there've been a lot
+
+00:02:19.800 --> 00:02:24.119
+of years, a lot of conferences, and a lot of alcoholic beverages in between now and
+
+00:02:24.119 --> 00:02:25.119
+then.
+
+00:02:25.119 --> 00:02:31.880
+It makes sense though, Sci-Pi. I think Leland, a lot of your tools have been in Python and
+
+00:02:31.880 --> 00:02:38.320
+you have a lot of implementations of things in Python. Do you go to most of the Sci-Pi
+
+00:02:38.320 --> 00:02:39.960
+conferences?
+
+00:02:40.279 --> 00:02:49.240
+I went for many years. I didn't go this year and I missed a few years around COVID. So,
+
+00:02:50.039 --> 00:02:53.000
+otherwise I try and get there whenever I can. It's a great conference.
+
+00:02:54.360 --> 00:03:01.240
+I went to Sci-Pi this year, so we could have crossed paths, but I missed out.
+
+00:03:01.240 --> 00:03:06.679
+I think the joke is Hadley and I are trading places. I think some years he's at a Python
+
+00:03:06.679 --> 00:03:13.080
+conference, I'm in an R conference. It's happened once or twice. Pigs aren't flying,
+
+00:03:13.080 --> 00:03:20.199
+I can see, but times have certainly evolved. A great deal is the field of data science
+
+00:03:20.199 --> 00:03:25.960
+has become more polyglot and the communities are intersecting a lot more.
+
+00:03:27.000 --> 00:03:33.479
+Yeah, I have not made it to an R conference yet. That's on my list of things to get around
+
+00:03:33.479 --> 00:03:41.399
+to doing. I do have colleagues that do a lot of R. Python's where I landed, but I'm not wedded.
+
+00:03:43.720 --> 00:03:47.080
+And you must go to a bunch of academic CS conferences too?
+
+00:03:47.639 --> 00:03:49.800
+Yeah, math and CS conferences as well.
+
+00:03:50.360 --> 00:03:54.199
+Yeah, reading about your background and a lot of things you've done,
+
+00:03:55.160 --> 00:04:00.360
+so interesting where you're kind of straddling pure mathematics and data science.
+
+00:04:01.320 --> 00:04:07.960
+And I think one thing that really caught me from some of what you said before this interview is
+
+00:04:09.800 --> 00:04:12.759
+you mentioned when thinking about the downstream impact of your work,
+
+00:04:14.199 --> 00:04:22.119
+people reaching out sometimes for help or feedback on problems. And I almost wondered
+
+00:04:22.119 --> 00:04:28.600
+if one way to really kind of introduce people to UMAP and some of this is I saw you mentioned
+
+00:04:28.760 --> 00:04:36.200
+people reaching out about things even like illegal gold mining. I don't know how much
+
+00:04:36.200 --> 00:04:41.000
+you can say about that, but I'd be curious how people are using things like UMAP.
+
+00:04:41.880 --> 00:04:48.279
+So this is one of those things where I know nothing about the subject matter and
+
+00:04:50.679 --> 00:04:56.440
+I got someone reached out for a little advice and just consultation on using UMAP within this
+
+00:04:56.440 --> 00:05:04.920
+framework, but it was about managing to identify gold samples that had come from locations where
+
+00:05:04.920 --> 00:05:10.200
+there were not supposed to be mining and they try and I'm going to get all the details probably
+
+00:05:10.200 --> 00:05:15.320
+wrong, but I'll get the gist of it right. They were essentially trying to mix it in with other
+
+00:05:15.320 --> 00:05:23.880
+gold. So it just gets laundered into the general supply, but there are like impurities in gold
+
+00:05:23.880 --> 00:05:32.519
+that can be traced back and so for just managing to pull out clusters and structure in this sort of
+
+00:05:32.519 --> 00:05:40.200
+analysis of the trace minerals in gold, UMAP was one of the tools that got used in that and
+
+00:05:40.200 --> 00:05:45.640
+they were just wanting to clarify some things on that, but this is not a field I would
+
+00:05:45.640 --> 00:05:50.279
+have expected to see it used in and so it's just really interesting to see the different ways that
+
+00:05:50.279 --> 00:05:55.559
+these tools actually get used in practice to solve real world problems.
+
+00:05:55.559 --> 00:06:01.880
+If I understand what you're saying is sort of like they have a lot of samples and they can take a lot
+
+00:06:01.880 --> 00:06:07.720
+of measurements on the gold and that sort of makes it a really high dimensional problem, like each
+
+00:06:07.720 --> 00:06:14.839
+measurement is kind of a dimension and they kind of want to break it down to cluster
+
+00:06:15.799 --> 00:06:21.239
+all the observations to say like what are these groupings and maybe one of these groupings is sort
+
+00:06:21.239 --> 00:06:25.640
+of like the illegally mined gold, is that?
+
+00:06:25.640 --> 00:06:31.799
+Yeah, that's my understanding. It's been a while, but it was an interesting use case. There are a lot of
+
+00:06:32.920 --> 00:06:41.079
+very strange little use cases like that that crop up and I unfortunately am unable to keep up with the
+
+00:06:42.040 --> 00:06:47.000
+sort of subject matter specifics, so all I have is the rough idea. But yeah,
+
+00:06:47.959 --> 00:06:56.760
+I mean it's been used in astronomy for something to do with identifying things in solar wind.
+
+00:06:56.760 --> 00:07:03.079
+Again, I'm not an expert in astronomy and I can't comment on the specifics, but it's just
+
+00:07:03.079 --> 00:07:06.839
+intriguing to see the kinds of use cases that crop up.
+
+00:07:06.839 --> 00:07:10.359
+It's super interesting where you're kind of dipping into different areas and
+
+00:07:11.160 --> 00:07:13.559
+almost like playing in everyone's backyard a little bit.
+
+00:07:14.200 --> 00:07:21.160
+Yeah, I've had to try and desperately quickly learn various different subjects as they come up.
+
+00:07:22.200 --> 00:07:28.119
+I'm never going to be an expert in it, but I've had to learn more biology than I ever wanted to
+
+00:07:28.119 --> 00:07:38.279
+know because UMAP gets used a lot in various fields in biosciences and that is 100% not my
+
+00:07:38.279 --> 00:07:45.559
+field. But it comes up often enough that I think I have had to try and learn as much as I can to at
+
+00:07:45.559 --> 00:07:49.640
+least give vaguely reasonable advice if people ask questions.
+
+00:07:50.200 --> 00:07:57.480
+Yeah, I'm really curious. I know you also mentioned you studied math and then after
+
+00:07:57.480 --> 00:08:04.200
+your master's you were working in a casino a lot. It seems like you've done a lot of this sort of
+
+00:08:05.079 --> 00:08:13.559
+pure math to data science. I'm really curious almost to give people a sense of kind of how
+
+00:08:13.559 --> 00:08:20.200
+you got into all this. If you could run us through a bit of your background and how you
+
+00:08:20.200 --> 00:08:31.239
+got to the casino and where you went from there. Yeah, so I went through an accelerated program
+
+00:08:31.239 --> 00:08:37.000
+at university that kind of put me through undergrad and then master's in a somewhat
+
+00:08:37.000 --> 00:08:44.840
+more compressed program. I started out actually in physics but ended up just being pure math by
+
+00:08:44.840 --> 00:08:53.320
+the end. So my master's was in algorithms in algebraic geometry. But by that point I was
+
+00:08:53.320 --> 00:09:00.359
+kind of burned out on academia to be honest because it had been a pretty intense environment.
+
+00:09:01.159 --> 00:09:09.559
+So I decided to just try doing something else. So I looked around and there was a company that
+
+00:09:09.559 --> 00:09:16.520
+was hiring mathematicians which you know doesn't happen that often. So I applied there and that
+
+00:09:16.520 --> 00:09:25.000
+was a company that turned out they specialized in analytics for casinos. So it was all about
+
+00:09:25.000 --> 00:09:33.479
+doing complex data analytics on casinos and that's a really strange field to be involved in
+
+00:09:33.479 --> 00:09:43.799
+because their primary product in practice really was helping casino managers rearrange slot machines
+
+00:09:43.799 --> 00:09:49.400
+on the slot floor. Because apparently if you carefully rearrange the slot machines just
+
+00:09:49.400 --> 00:09:54.440
+right you can increase your revenue by one percent and if you increase your revenue by one
+
+00:09:54.440 --> 00:10:00.679
+percent at casinos that turns out to be a lot of money. So I was involved in that and so that's
+
+00:10:00.679 --> 00:10:07.400
+where I learned data analytics originally. So that work actually I did a lot of data analytics
+
+00:10:07.400 --> 00:10:14.200
+and visualization and oddly enough that was like back in 2000 and I remember I was actually playing
+
+00:10:14.200 --> 00:10:21.400
+around with self-organizing maps there and different ways of doing visualization. But
+
+00:10:22.280 --> 00:10:29.640
+ultimately working for casinos is kind of soul crushing and I just couldn't quite bring myself
+
+00:10:29.640 --> 00:10:37.880
+to do that anymore. So I looked back to academia and ended up heading off to university to do a
+
+00:10:37.960 --> 00:10:47.000
+PhD in pure math. So that's where I went and that was in algebra and with topological algebra really
+
+00:10:47.640 --> 00:10:54.440
+and I also did a bunch of algebraic topology. That was my math background and once I was done
+
+00:10:54.440 --> 00:10:59.640
+that I wanted something a little bit different. I didn't want to stay in academia and the Tata
+
+00:10:59.640 --> 00:11:05.080
+Institute here in Canada they're sort of they're a government research institute. They have
+
+00:11:05.080 --> 00:11:12.359
+government clients who are looking for applied things to some extent but it's a pretty it's a
+
+00:11:12.359 --> 00:11:18.919
+very small research institute but it's very diverse. So we have people who just do really
+
+00:11:18.919 --> 00:11:26.200
+pure math stuff and data scientists doing real data science things. I actually joined as a
+
+00:11:26.200 --> 00:11:34.440
+mathematician and was in the pure math space working there but you know what pure math is hard
+
+00:11:35.960 --> 00:11:40.840
+and you spend a while beating your head against problems that just don't want to be solved and
+
+00:11:40.840 --> 00:11:45.559
+then occasionally because we're a small group we'd chat with the other people there and the
+
+00:11:45.559 --> 00:11:51.640
+data scientists they had they had easy problems. So it was just a chance to try out some problems
+
+00:11:51.640 --> 00:11:57.000
+that I could at least work on attractively and so I spent a little while doing that and have
+
+00:11:57.559 --> 00:12:04.039
+now now I guess I'm fully on the data science side and I try and pretend I'm still a
+
+00:12:04.039 --> 00:12:09.479
+mathematician at heart. I guess you and I guess you and I kind of have that in common like I I
+
+00:12:09.479 --> 00:12:15.719
+actually started out as a as a as a pure math pure math person. I didn't end up going to graduate
+
+00:12:15.719 --> 00:12:21.479
+school or PhD in pure math but I think one of the one of the reasons why I stopped doing pure math
+
+00:12:21.479 --> 00:12:26.919
+was similar similar to your story like I had this feeling that you could spend your entire career
+
+00:12:26.919 --> 00:12:31.479
+and maybe you would happen on a handful of important problems or problems that would have
+
+00:12:31.479 --> 00:12:36.520
+impact if you were lucky but you would spend a lot of time working on you know writing papers and
+
+00:12:36.520 --> 00:12:41.320
+doing work that like was important within the context of the field but like it would be difficult
+
+00:12:41.320 --> 00:12:46.119
+to have especially in pure math would be difficult to have practical practical impact in the world
+
+00:12:46.119 --> 00:12:51.479
+whereas like when I first got exposure to data science problems and data problems I had this
+
+00:12:51.479 --> 00:12:55.559
+palpable feeling of like oh there's all these problems that need to be solved and I can go and
+
+00:12:55.559 --> 00:13:00.919
+do something it's very practical and like it has impact on it has impact uh you know and all these
+
+00:13:00.919 --> 00:13:05.880
+different all these different ways so I ended up a little bit in data science as as an accident but
+
+00:13:05.880 --> 00:13:11.080
+it sounds like your your path was a little bit a little bit a little bit similar so not to knock
+
+00:13:11.080 --> 00:13:15.159
+on pure math like the world needs pure mathematicians like you know we need you know we
+
+00:13:15.159 --> 00:13:19.239
+need cryptography and all like you know to keep our our system safe and all those things and all
+
+00:13:19.239 --> 00:13:24.840
+that comes out of pure mathematics um but um you know I I also found that there's way people that
+
+00:13:24.840 --> 00:13:30.119
+are way smarter than I am working on doing pure math research and so when once I observed like
+
+00:13:30.119 --> 00:13:37.479
+some of those you know really uh incredibly um super genius pure math people who are just so far
+
+00:13:37.479 --> 00:13:43.479
+out ahead of me I'm like I just don't think I can uh I don't think I can I can succeed I can
+
+00:13:43.479 --> 00:13:47.080
+succeed quite the way I would like in this in this field if that makes sense
+
+00:13:47.960 --> 00:13:55.000
+yeah no I I think uh it's a it's a very similar sort of story um working in pure math is is
+
+00:13:55.000 --> 00:14:00.760
+definitely a challenge I mean it's very rewarding and I still love pure math but um
+
+00:14:01.400 --> 00:14:07.559
+yeah instead of looking for uh low-hanging fruit to try and pick uh it's pretty much just
+
+00:14:07.559 --> 00:14:12.919
+picking fruit up off the ground in data science there are so many problems and
+
+00:14:14.760 --> 00:14:20.440
+I some of them are very hard but uh there's just so many to choose from that are just
+
+00:14:20.440 --> 00:14:26.840
+sitting there waiting to be tried uh whereas you know math has many thousands of years of
+
+00:14:26.840 --> 00:14:33.479
+people hammering away at these problems the easy ones have been found although now you can just
+
+00:14:33.479 --> 00:14:39.880
+tell AI to do a breakthrough yeah yeah I mean math is certainly one of the fields that I think is
+
+00:14:39.880 --> 00:14:47.400
+going to change the most with AI I I think that's going to be a really interesting change to see
+
+00:14:47.400 --> 00:14:54.520
+happening over the next several years is it common for the pure math people to collaborate
+
+00:14:54.520 --> 00:15:00.280
+with the data science people so I think this is one of the places where the Tutte Institute is
+
+00:15:00.280 --> 00:15:07.960
+pretty special uh in that it is a place where that happens um we we do have like people like myself I
+
+00:15:07.960 --> 00:15:14.760
+I came from the pure math side and ended up working in data science but also you know we've got others
+
+00:15:14.840 --> 00:15:21.559
+who kind of dip back and forth between between each side as it goes and as I said it's a relatively
+
+00:15:21.559 --> 00:15:25.559
+small research institute we don't have that many people so everyone talks to everyone else
+
+00:15:26.119 --> 00:15:32.919
+and you know if you can if you can take a data science problem and turn it into a pure math
+
+00:15:32.919 --> 00:15:38.200
+problem it's not that hard to get the pure math people working on it and and uh as we said yeah
+
+00:15:38.200 --> 00:15:43.320
+there are people a lot smarter in the pure math realm working on these things so if you can turn
+
+00:15:43.320 --> 00:15:48.200
+your problem into something that they will want to chew on then you can get a lot of talent
+
+00:15:48.760 --> 00:15:58.280
+working on a problem for you so but I I think it's I haven't seen it as much uh in in other places to
+
+00:15:58.280 --> 00:16:07.400
+have quite the same degree of interplay between the the very applied and the pure math side
+
+00:16:07.559 --> 00:16:13.640
+yeah I mean it sounds like a really kind of serendipitous setup to be able to straddle both
+
+00:16:14.760 --> 00:16:23.479
+uh parts um I know Hadley mentioned AI a little bit yeah I'm curious how it's affected has it
+
+00:16:23.479 --> 00:16:29.799
+changed the way you approach your data science work or your math work? Oh caveat and say not
+
+00:16:30.760 --> 00:16:39.719
+really not yet um but that's mostly because I'm still really trying to figure out how best to use
+
+00:16:39.719 --> 00:16:45.239
+it so it hasn't changed my work because I'm still playing with it uh I don't think I've settled on
+
+00:16:46.359 --> 00:16:53.159
+how best to make it fit because there are like it's very powerful it is done I've certainly
+
+00:16:53.159 --> 00:16:59.960
+been working with it playing with it and learning a lot and it it certainly has helped but I don't
+
+00:16:59.960 --> 00:17:05.719
+think I have a settled workflow or decision about exactly where it fits. I'm curious about the ways
+
+00:17:05.719 --> 00:17:11.800
+you've been sort of like experimenting with it or trying it like what what does that look like?
+
+00:17:12.760 --> 00:17:21.880
+Uh so one of the easy ones is in software development and coding um it's it's just uh
+
+00:17:21.959 --> 00:17:28.040
+that some of the latest models are remarkably good at that and that has been just an interesting
+
+00:17:28.040 --> 00:17:33.719
+learning curve to understand how much it can do and also trying to learn what it what it can't do
+
+00:17:33.719 --> 00:17:40.199
+so well but that's just sitting at loose on uh coding projects and seeing what happens uh or
+
+00:17:40.199 --> 00:17:48.920
+just getting like minor help but otherwise I've mostly been using it as a way to just
+
+00:17:49.880 --> 00:17:57.319
+uh I guess it's a rubber duck to talk to um I'll talk to the AI and throw out some ideas of of
+
+00:17:57.319 --> 00:18:04.599
+directions I'm interested in going and it throws back a bunch of ideas and they're not always great
+
+00:18:04.599 --> 00:18:12.599
+but they're not bad it's it's a useful just sounding board um to explore ideas. I mean I take
+
+00:18:13.560 --> 00:18:20.760
+I certainly take anything that it says says or does with a grain of salt um but um I I mostly
+
+00:18:20.760 --> 00:18:27.800
+use it as a as a tool to to clarify my clarify my thinking or or like help me like what are
+
+00:18:27.800 --> 00:18:32.520
+questions that I should be asking like is there something that I might be missing here and so
+
+00:18:33.079 --> 00:18:38.599
+I think in terms of like helping you think laterally or like maybe look at a look at
+
+00:18:38.599 --> 00:18:44.920
+something from a different perspective it can be it can be really really helpful for that um
+
+00:18:44.920 --> 00:18:50.599
+unfortunately you know even the latest generation of models like have seem to have like a cognitive
+
+00:18:50.599 --> 00:18:55.479
+bias where they're inclined to like say that they're inclined to say that whatever you ask
+
+00:18:55.479 --> 00:18:59.000
+them about like they'll they're inclined to agree with you and tell you that you have a good idea
+
+00:18:59.000 --> 00:19:05.319
+even still and that was like always the always the joke early on with like the sycophancy and like
+
+00:19:05.319 --> 00:19:13.319
+essentially glazing your glazing your ideas um and so for that reason like I I even if the AI
+
+00:19:13.319 --> 00:19:18.439
+AI appears to agree with what I say or say yeah that's a great idea um I'm like is it though
+
+00:19:18.439 --> 00:19:25.319
+really and so sometimes a gentle pushback say like you just you can say like is it though really like
+
+00:19:25.319 --> 00:19:29.560
+let's be critical you're not going to hurt my feelings and it will actually have some criticisms
+
+00:19:29.560 --> 00:19:34.119
+that it withheld in the first go around because it was worried about worried about hurting your
+
+00:19:34.119 --> 00:19:40.839
+feelings I think worried is giving a little bit too much credit but um my uh my go-to uh approach
+
+00:19:40.839 --> 00:19:46.520
+for that is I find it's useful for me to if I'll I'll write up an idea it's just a little markdown
+
+00:19:46.520 --> 00:19:54.520
+document sketch something um upload that and say I I uh got this uh suggestion from someone I think
+
+00:19:54.520 --> 00:20:01.239
+it's not very good I think it has real problems can you explain what's wrong with it and uh then
+
+00:20:01.239 --> 00:20:05.880
+it tries to agree with you and tell you how bad it is um which is which is great because that's
+
+00:20:05.880 --> 00:20:12.040
+what I actually want since uh Leland's also from New Zealand I can share my pet theory that the
+
+00:20:12.040 --> 00:20:17.640
+problem is that too much of the reinforcement learning is trained on Americans who like to be
+
+00:20:17.640 --> 00:20:23.719
+sucked up sucked up to more than like New Zealanders so I think if they had New Zealanders
+
+00:20:23.719 --> 00:20:30.280
+do more of that there would be like less sucking up and more uh brutal honesty I think that's a
+
+00:20:30.280 --> 00:20:37.160
+good plan do you are New Zealanders brutally honest is that a not brutally I'm more blunt
+
+00:20:37.160 --> 00:20:42.040
+than Americans yeah there's there's a great there's like a really great book that I recommend
+
+00:20:42.040 --> 00:20:48.760
+to everyone called called the culture map um that's basically about like the the way like the
+
+00:20:48.760 --> 00:20:54.040
+different working styles obviously it's like every individual is different but like in generality like
+
+00:20:54.119 --> 00:21:01.160
+the the the sort of median working style of different countries and and cultures and Americans
+
+00:21:01.160 --> 00:21:08.680
+notably um have a hard time delivering critical feedback without wrapping it in in a sugar coating
+
+00:21:08.680 --> 00:21:14.199
+and this is extremely confusing for like other cultures that are used to receiving more blunt
+
+00:21:14.199 --> 00:21:18.920
+critical feedback like without so you might say like you know here's some good things but then
+
+00:21:18.920 --> 00:21:24.280
+here's the one piece of criticism that I want to land in this conversation and so if you're not
+
+00:21:24.280 --> 00:21:29.560
+used to you know that sugar coating of of criticisms then you might hear like oh three
+
+00:21:29.560 --> 00:21:36.359
+compliments and then one one uh one criticism but like the purpose of the conversation for an
+
+00:21:36.359 --> 00:21:41.719
+American working workplace is to deliver that one piece of critical feedback like without being too
+
+00:21:41.719 --> 00:21:50.760
+offensive that reminds me of this blog post from um Kieran Healy Kieran Healy which is like this
+
+00:21:51.560 --> 00:21:58.359
+about academic feedback and like how US grad students should interpret what faculty trained
+
+00:21:58.359 --> 00:22:05.800
+in the UK say like yeah like if they say that's not bad the US student hears that's poor but what
+
+00:22:05.800 --> 00:22:14.280
+the faculty member actually meant is like that's good or if you say I am confused the US PhD student
+
+00:22:14.280 --> 00:22:20.280
+thinks means that means I am confused but what the faculty member actually meant to say actually
+
+00:22:20.280 --> 00:22:25.479
+meant to convey is you are an idiot I just and I just thought it was like hilarious and I like
+
+00:22:25.479 --> 00:22:32.280
+read this like as I was like starting to advise my my first like US PhD students I was like wow
+
+00:22:32.280 --> 00:22:37.719
+these PhD students are probably really confused by the feedback that I am giving them because
+
+00:22:37.719 --> 00:22:43.160
+they're hearing it very differently to how I have it I like the idea of pretending like you found
+
+00:22:43.160 --> 00:22:49.959
+your idea though somewhere and you you're needing help roasting it I feel like yeah yeah I think you
+
+00:22:49.959 --> 00:22:55.719
+have to disown your idea a little bit to get them to be honest about it yeah and Wes I know you were
+
+00:22:55.719 --> 00:23:02.359
+feeding a lot of don't you you follow a an approach pretty commonly of feeding one thing's
+
+00:23:02.359 --> 00:23:09.719
+plan or advice into another thing is that right like you have codex review clod or vice versa
+
+00:23:09.719 --> 00:23:16.439
+yeah I have like a pretty like a pretty systematic adversarial review pipeline for for everything I
+
+00:23:16.439 --> 00:23:23.560
+everything I do and in particular I don't whenever I present something for review by a
+
+00:23:23.560 --> 00:23:29.560
+adversarial in the sense that like you you give something you provide a piece of like a
+
+00:23:29.560 --> 00:23:35.640
+specification or something for review by another like a fresh agent session that has no prior
+
+00:23:35.640 --> 00:23:40.680
+knowledge of what you're working on and you don't tell them you don't tell the agent like you know
+
+00:23:40.680 --> 00:23:45.319
+you don't tell the agent that that you wrote it just like here is a plan that was written by
+
+00:23:45.319 --> 00:23:50.359
+another agent and and so like without any context and just ask for critical feedback like I think
+
+00:23:50.359 --> 00:23:54.119
+you could even say like I think there's things wrong with it like find what the things wrong
+
+00:23:54.119 --> 00:24:00.520
+with it are in the software engineering community there's this very alluring idea of of the dark
+
+00:24:00.520 --> 00:24:05.719
+factory like this idea of like being able to produce things with AI like without any without
+
+00:24:05.719 --> 00:24:11.239
+much human intervention basically using like feedback loops of adversarial agents like
+
+00:24:11.239 --> 00:24:16.760
+one agent writes the specification other agents review one agent implements like other agents
+
+00:24:16.760 --> 00:24:26.280
+verify but I I you know I'm more of like the human assisted factory type of mindset like
+
+00:24:26.280 --> 00:24:31.640
+the clankers as we call them are still doing the doing the work but but we need to be in the loop
+
+00:24:31.640 --> 00:24:37.719
+to provide judgment and and steering and I think without that like you get you get slop out on on
+
+00:24:37.719 --> 00:24:44.040
+the other end and so I think early on in my my journey building software and tools and systems
+
+00:24:44.040 --> 00:24:49.880
+with with with AI I there were times when I delegated a little too much to the to the agents
+
+00:24:49.880 --> 00:24:53.959
+and was surprised to see that what came out on the other end wasn't very good and so finding the
+
+00:24:53.959 --> 00:24:59.079
+right like striking the right balance of like you know not letting them run with it too much and
+
+00:24:59.079 --> 00:25:06.359
+and certainly like adversarial feedback I think helps a lot but but I think unfortunately like
+
+00:25:06.359 --> 00:25:11.160
+they they can't be given too much you know you can't delegate your taste to the to them like
+
+00:25:11.160 --> 00:25:17.479
+taste is provided by humans and um it's it's it's unfortunate because everyone is really hoping
+
+00:25:17.479 --> 00:25:22.839
+desperately that they can you know write a prompt and step back from the computer and go you know
+
+00:25:22.839 --> 00:25:27.160
+have a beer or go for a walk or something and come back to like something that is good but
+
+00:25:27.160 --> 00:25:32.199
+in my experience like that almost never happens and so like if you want it to be good like you
+
+00:25:32.199 --> 00:25:38.359
+know you need to be a maniac about the details and really um engaged with like the the fine details
+
+00:25:38.359 --> 00:25:45.000
+of what what you want the agents to produce for you it seems like two one almost like one theme
+
+00:25:45.000 --> 00:25:50.439
+with a lot of your tools and the more applied data science work is it is it is does seem very
+
+00:25:50.439 --> 00:25:58.359
+human-centric like even like the that you map and things like this commonly end in a visualization
+
+00:25:58.359 --> 00:26:04.599
+like it does seem like one thread is that a lot of your work has been really useful for
+
+00:26:04.599 --> 00:26:12.920
+people to like dig around and make sense of things and visualize yeah i i mean i guess if
+
+00:26:12.920 --> 00:26:20.439
+there's one one theme in my work it was that when i started very early in data analytics and data
+
+00:26:20.439 --> 00:26:25.640
+science obviously the first big problem that you you come across is you get data and now you have
+
+00:26:25.640 --> 00:26:31.079
+to do all the data cleaning and eda work and all this stuff to sort through that and then you can
+
+00:26:31.079 --> 00:26:34.520
+finally get around to the like supervised machine learning once you've got it sorted
+
+00:26:35.160 --> 00:26:41.319
+and i guess i never got past the first part uh i'm still trying to trying to build the tools to
+
+00:26:41.319 --> 00:26:49.719
+to do uh that eda framework uh to do exploratory data analysis and i guess my focus has been on
+
+00:26:49.719 --> 00:26:59.800
+the fact that i feel like we're lacking in tools for eda on unstructured data like i think i think
+
+00:26:59.800 --> 00:27:06.680
+you know tabular data is something for which we have amazing tools and uh hadley and west have
+
+00:27:06.680 --> 00:27:12.599
+both written plenty of amazing tools for doing great eda on tabular data but when you have a
+
+00:27:12.599 --> 00:27:20.439
+giant pile of documents or images or videos or a mixture of all three how do you work out what's
+
+00:27:20.439 --> 00:27:27.880
+in that data set and how do you explore it in a meaningful way and i don't i'm like i think i
+
+00:27:27.880 --> 00:27:32.839
+think the answer is you're going to need to feed that to a human somehow because i don't think an
+
+00:27:32.839 --> 00:27:39.239
+ai can just have all the answers because of exactly as west was saying it's about taste like
+
+00:27:39.239 --> 00:27:44.839
+you have to have some i have some sense of what i'm looking to find or know more about and it's
+
+00:27:44.839 --> 00:27:52.680
+very hard for ai right now to to do that but you know what's the channels via which i can get the
+
+00:27:52.680 --> 00:27:58.520
+information about that data set into my brain and visualization is one of the strongest ones
+
+00:27:58.520 --> 00:28:03.000
+but you know other means of building summarizations that's where a lot of the clustering
+
+00:28:03.000 --> 00:28:09.479
+and things like that come in as well i just want to find ways to condense and extract information
+
+00:28:09.479 --> 00:28:14.680
+to just allow someone to explore a data set better and that's that's the through line of
+
+00:28:14.680 --> 00:28:20.439
+of all the various kinds of tools i've i've been building that's just i want to help people
+
+00:28:20.439 --> 00:28:27.239
+understand their data yeah yeah it's so interesting and i guess even the art
+
+00:28:27.800 --> 00:28:33.239
+uh behind you really speaks to that that it's like scientists and it's it's people looking for
+
+00:28:33.239 --> 00:28:40.439
+illegal gold mining but also artists um have found found use for this of almost taking
+
+00:28:41.319 --> 00:28:47.479
+data in the world or like relationships and even rendering it like artistically
+
+00:28:48.439 --> 00:28:55.400
+as like a work of art on its own is i think a really powerful testament to that like the taste
+
+00:28:55.959 --> 00:29:02.680
+and an aesthetic aspect of it yeah yeah so so the work behind me is by an artist
+
+00:29:02.680 --> 00:29:10.280
+Rafik Anadol uh who does a lot of digital art uh he uses umap in some of his work he uses a lot
+
+00:29:10.359 --> 00:29:18.199
+of ai tools and a bunch of his work but he's i think his his tagline is he wants to use data
+
+00:29:18.199 --> 00:29:24.119
+as a pigment for generating art data is his paintbrush and i i think that's that's an
+
+00:29:24.119 --> 00:29:32.760
+intriguing uh view on this i think there's a lot you can do with uh a lot of modern tools
+
+00:29:32.760 --> 00:29:39.079
+ai tools and otherwise for actually generating art and i don't mean in the the
+
+00:29:39.547 --> 00:29:46.107
+actually generating art. And I don't mean in the sense where you write a prompt and it
+
+00:29:46.107 --> 00:29:51.707
+generates a picture for you, but more as a tool to do more interesting things.
+
+00:29:53.387 --> 00:29:59.387
+There was a great artist, Kyle McDonald, who I've had back and forth with a couple of times.
+
+00:29:59.387 --> 00:30:06.186
+He's reached out and one of his projects was just analyzing whale song for a physical art
+
+00:30:06.186 --> 00:30:10.827
+installation that was going to get built, but it was just in the background of the analysis.
+
+00:30:10.827 --> 00:30:14.986
+He was using UMAP for some things and so I had some back and forth with him about that.
+
+00:30:18.346 --> 00:30:24.107
+Fancy tooling in data science was not showing up necessarily in the end product art,
+
+00:30:24.107 --> 00:30:28.107
+but it's a useful tool in the building structure.
+
+00:30:24.009 --> 00:30:30.009
+It's a useful tool in the building structure that goes into producing the art.
+
+00:30:30.009 --> 00:30:34.949
+And I mean, I think there's a lot of processing like that, that I think...
+
+00:30:34.949 --> 00:30:40.568
+These tools have a lot of ways they can be used that aren't obvious.
+
+00:30:40.568 --> 00:30:47.529
+And the map, the idea of the map is such a powerful metaphor, and people love to look
+
+00:30:47.529 --> 00:30:48.609
+at maps.
+
+00:30:48.609 --> 00:30:56.049
+Not just of physical things, but it'd be like maps of the internet, and maps of music, and
+
+00:30:56.049 --> 00:30:57.049
+it's...
+
+00:30:57.049 --> 00:31:05.209
+Yeah, those spatial connections are something that feels like humans just have some in-built
+
+00:31:05.209 --> 00:31:10.369
+desire to think about and look at and experience.
+
+00:31:10.369 --> 00:31:17.729
+Yeah, spatially navigating data is a magical thing if you can make it happen, and it's
+
+00:31:17.729 --> 00:31:21.089
+challenging to make it happen well, it turns out.
+
+00:31:21.089 --> 00:31:27.689
+I mean, I wrote UMAP quite some time ago.
+
+00:31:27.689 --> 00:31:32.248
+I still think there's better algorithms out there, and that's one of the things that I'm
+
+00:31:32.248 --> 00:31:40.648
+busy working on now, is just trying to understand better how this actually should work, because
+
+00:31:40.648 --> 00:31:43.528
+I think there's more answers out there.
+
+00:31:43.528 --> 00:31:51.528
+And I think managing to make data spatial and the geometry of data is actually a fundamental
+
+00:31:51.528 --> 00:31:58.329
+thing in all these AI representations, like the neural embedding models and these things.
+
+00:31:58.329 --> 00:32:03.968
+That's really about the interrelationships and geometry of the data, and so it's about
+
+00:32:03.968 --> 00:32:06.928
+geometry and topology of information.
+
+00:32:06.928 --> 00:32:17.288
+And so everything is spatial for the internals of the AI, and I think if we can make that
+
+00:32:17.288 --> 00:32:23.049
+interpretable to people, that will be very, very helpful.
+
+00:32:23.049 --> 00:32:28.329
+And you mentioned neural embedding models, could you break that down for someone who
+
+00:32:28.329 --> 00:32:29.848
+maybe doesn't...
+
+00:32:29.848 --> 00:32:36.009
+Might interact with AI like Claude, but is less in the guts of it?
+
+00:32:36.089 --> 00:32:38.449
+Okay, I'll see what I can do.
+
+00:32:38.449 --> 00:32:46.809
+So if you're interacting with Claude, you have your prompt that you send it, and it
+
+00:32:46.809 --> 00:32:53.648
+basically does some processing, but it's processing stuff in pure numbers, eventually, as it's
+
+00:32:53.648 --> 00:32:57.089
+shoving it all through the neural network.
+
+00:32:57.089 --> 00:33:02.329
+And you can take an individual layer of that neural network and pull out the numbers that
+
+00:33:02.329 --> 00:33:06.848
+it has for processing a single thing.
+
+00:33:06.848 --> 00:33:10.568
+And that's a vector of numbers.
+
+00:33:10.568 --> 00:33:17.029
+And it turns out that these vectors of numbers actually organize themselves in space.
+
+00:33:17.029 --> 00:33:18.249
+In a meaningful way.
+
+00:33:18.249 --> 00:33:25.469
+And so instead of handing something in to Claude to get a textual response out, there
+
+00:33:25.469 --> 00:33:29.648
+are other models that are designed specifically for I'm gonna hand some text in, or I'm gonna
+
+00:33:29.648 --> 00:33:34.848
+hand an image in, and it's just gonna spit out the vector of numbers associated to that.
+
+00:33:34.848 --> 00:33:42.208
+And though the interrelationships between those vectors are meaningful on a semantic
+
+00:33:42.208 --> 00:33:51.208
+level, the vectors will be similar, close to each other in space, if the semantics of
+
+00:33:51.208 --> 00:33:53.009
+the text was similar.
+
+00:33:53.009 --> 00:33:58.208
+And so this is a very powerful way of dealing with these things.
+
+00:33:58.208 --> 00:34:04.568
+But now we're trying to do geometry in very high dimensional spaces, because these vectors
+
+00:34:04.568 --> 00:34:07.848
+that they spit out, they're not nice ones you can plot easily.
+
+00:34:07.848 --> 00:34:11.568
+They're in usually, these days, thousands of dimensions.
+
+00:34:11.568 --> 00:34:18.249
+And so the geometry of high dimensional space turns out to be very important if we want
+
+00:34:18.249 --> 00:34:23.449
+to understand what's going on inside the neural networks.
+
+00:34:24.208 --> 00:34:30.329
+That's a fun challenge that I enjoy trying to work on, because I think it's almost impossible
+
+00:34:30.329 --> 00:34:36.848
+for people to have good intuitions for what geometry in high dimensional space looks like.
+
+00:34:36.848 --> 00:34:44.568
+If you want, I can give you a slew of examples for how to break your intuition.
+
+00:34:44.568 --> 00:34:45.568
+I'm open to it.
+
+00:34:45.568 --> 00:34:50.649
+I mean, when you mentioned high dimensional geometry, I was like, I have no idea how we'll
+
+00:34:50.649 --> 00:34:51.649
+unpack that.
+
+00:34:51.729 --> 00:34:55.408
+So if you have any examples, I'm all ears.
+
+00:34:55.408 --> 00:34:56.408
+Yeah.
+
+00:34:56.408 --> 00:34:57.408
+Yeah.
+
+00:34:57.408 --> 00:34:58.408
+Okay.
+
+00:34:58.408 --> 00:35:05.688
+So if I make a sphere, if I draw a circle and then draw a box around it, the sphere
+
+00:35:05.688 --> 00:35:08.128
+mostly fills the box.
+
+00:35:08.128 --> 00:35:10.128
+If I, and the circle mostly fills the box.
+
+00:35:10.128 --> 00:35:15.049
+If I do a sphere and draw a cube around it, there's slightly more space in the corners
+
+00:35:15.049 --> 00:35:16.729
+of the cube.
+
+00:35:16.729 --> 00:35:25.248
+If I just keep going up in dimensions, eventually the sphere contains almost no volume whatsoever
+
+00:35:25.248 --> 00:35:29.489
+and all the volume lives in the corners of the box.
+
+00:35:29.489 --> 00:35:32.848
+So somehow everything lives in the corners.
+
+00:35:32.848 --> 00:35:39.088
+So another way to think about it, I can take a circle and draw a little tiny thin shell
+
+00:35:39.088 --> 00:35:40.489
+around it.
+
+00:35:40.489 --> 00:35:44.049
+What's the area of the circle compared to the area of the shell?
+
+00:35:44.049 --> 00:35:46.729
+Well, I mean, it's almost entirely circle.
+
+00:35:46.729 --> 00:35:55.009
+I can do a ball and make a thin candy coating, the rind around an orange.
+
+00:35:55.009 --> 00:35:56.649
+The orange contains most of the meat.
+
+00:35:56.649 --> 00:35:58.929
+The rind is just this little thin bit.
+
+00:35:58.929 --> 00:36:03.769
+But no matter how thin you make that thin bit, there's a high enough dimension that
+
+00:36:03.769 --> 00:36:08.568
+more volume lives in the rind of the orange than inside the orange itself.
+
+00:36:08.568 --> 00:36:14.248
+So suddenly everything is living on the surface of these spheres.
+
+00:36:14.248 --> 00:36:15.248
+What's another one?
+
+00:36:15.248 --> 00:36:26.449
+If you take a sphere, ball, and draw a band around the equator, what height of band do
+
+00:36:26.449 --> 00:36:32.848
+you need to cover 99% of the surface area of the ball?
+
+00:36:32.848 --> 00:36:40.889
+In what we're used to, you have to cover, it's mostly the height of the ball.
+
+00:36:40.889 --> 00:36:44.729
+In high dimensions, that value goes to almost zero.
+
+00:36:44.729 --> 00:36:50.368
+Almost all the surface area of a ball in high dimensions lives on the equator.
+
+00:36:50.368 --> 00:36:52.649
+But I said the equator.
+
+00:36:52.649 --> 00:36:54.368
+Any rotation will do.
+
+00:36:54.368 --> 00:37:00.649
+So any equator you draw around the ball contains most of the surface area of the ball.
+
+00:37:00.649 --> 00:37:04.368
+It's very hard to conceptualize all of that.
+
+00:37:04.368 --> 00:37:06.729
+And this is the problem.
+
+00:37:06.729 --> 00:37:13.649
+It behaves, high dimensional spaces just behave in ways that are run entirely counter to our
+
+00:37:13.649 --> 00:37:15.808
+intuitions about how this should work.
+
+00:37:15.808 --> 00:37:16.808
+Yeah.
+
+00:37:16.808 --> 00:37:17.808
+Yeah.
+
+00:37:17.808 --> 00:37:22.049
+I appreciate you taking a stab at that because I think that it's, I don't know, it seems
+
+00:37:22.049 --> 00:37:29.568
+important if like high dimensional geometry seems like a really useful, fruitful area.
+
+00:37:29.568 --> 00:37:33.009
+And it sounds like you're really aimed at it.
+
+00:37:33.009 --> 00:37:39.649
+I feel like it's such a helpful kind of like way to prime the pump on how this behaves.
+
+00:37:39.649 --> 00:37:44.308
+If everything's in the rind of the orange, it's such a helpful analogy for at least trying
+
+00:37:44.308 --> 00:37:54.568
+to like glimpse what these problems might kind of like feel like to someone.
+
+00:37:54.568 --> 00:38:00.169
+And you're saying that these are important because these are like, like UMAP essentially
+
+00:38:00.169 --> 00:38:07.408
+is for high dimensional problems where you have a lot of like measurements per observation.
+
+00:38:07.408 --> 00:38:11.688
+And this space is just kind of like a weird space.
+
+00:38:11.688 --> 00:38:12.688
+Yeah.
+
+00:38:12.688 --> 00:38:20.329
+Your intuitions for how it should behave are all based on, you know, your everyday experience,
+
+00:38:20.329 --> 00:38:22.848
+which is in a like three dimensional world.
+
+00:38:22.848 --> 00:38:29.968
+And if those intuitions are just really wrong, it turns out for these problems.
+
+00:38:29.968 --> 00:38:36.009
+And so it's very easy to design algorithms and work with the data thinking you know how
+
+00:38:36.009 --> 00:38:37.609
+it should behave.
+
+00:38:37.609 --> 00:38:40.009
+And it turns out it doesn't.
+
+00:38:40.009 --> 00:38:45.408
+So, you know, the examples I was trying to give, they're less, they're mostly just to
+
+00:38:45.408 --> 00:38:50.868
+try and demonstrate that you just shouldn't trust any of your intuitions because your
+
+00:38:50.868 --> 00:38:52.989
+intuitions are probably wrong.
+
+00:38:52.989 --> 00:38:59.269
+And you're going to have to do the hard work of really reasoning through very carefully
+
+00:38:59.269 --> 00:39:04.909
+rather than just basing everything on, oh, yeah, you know, everything should behave this
+
+00:39:04.909 --> 00:39:06.349
+way.
+
+00:39:06.349 --> 00:39:07.789
+It makes sense.
+
+00:39:07.789 --> 00:39:12.628
+Well, not in high dimensional data, unfortunately.
+
+00:39:12.628 --> 00:39:17.389
+I guess maybe that leads us into, I'd be curious, like some of the things you're working on
+
+00:39:17.389 --> 00:39:18.748
+now.
+
+00:39:18.748 --> 00:39:21.428
+I know I saw a little bit about evoke.
+
+00:39:21.428 --> 00:39:22.428
+Yeah.
+
+00:39:22.428 --> 00:39:28.748
+So, evoke is for embedding vector oriented clustering.
+
+00:39:28.748 --> 00:39:37.909
+And the goal there is that essentially these neural embedding vectors are how a lot of
+
+00:39:37.909 --> 00:39:40.949
+our data is represented now.
+
+00:39:40.949 --> 00:39:43.628
+There's still always going to be lots of tabular data.
+
+00:39:44.029 --> 00:39:50.548
+But for all the things, as I said, like documents, text, video, audio, images, the way people
+
+00:39:50.548 --> 00:39:55.149
+represent those now is with these neural embedding vectors because you can do lots of machine
+
+00:39:55.149 --> 00:39:56.829
+learning with them.
+
+00:39:56.829 --> 00:39:59.909
+But now we need ways to work with those.
+
+00:39:59.909 --> 00:40:06.228
+So, it's a clustering algorithm designed specifically with that kind of high dimensional data in
+
+00:40:06.228 --> 00:40:15.108
+mind to be as fast as possible and just get you to some decent clustering results quickly.
+
+00:40:15.108 --> 00:40:21.108
+Because it's, again, for that exploratory data analysis view, you want quick turnaround.
+
+00:40:21.108 --> 00:40:25.228
+You want to be able to do something and explore it and go, oh, okay, I learned something and
+
+00:40:25.228 --> 00:40:28.628
+then pivot to the next experiment and the next experiment, tweak some parameters and
+
+00:40:28.628 --> 00:40:31.509
+just keep playing around in an experimental fashion.
+
+00:40:31.589 --> 00:40:36.589
+So, it's a clustering algorithm for high dimensional embedding vectors designed for that kind of
+
+00:40:36.589 --> 00:40:39.748
+exploratory quick turnaround.
+
+00:40:39.748 --> 00:40:44.228
+And you're working with data scientists at the Tutte Institute on it?
+
+00:40:44.228 --> 00:40:46.308
+What does that look like?
+
+00:40:46.308 --> 00:40:47.868
+That one's primarily my project.
+
+00:40:47.868 --> 00:40:54.269
+I'm working with some people on a different project called Toponomy.
+
+00:40:54.269 --> 00:40:55.269
+That's from the Greek.
+
+00:40:55.269 --> 00:40:57.709
+It's the idea of naming places.
+
+00:40:57.909 --> 00:41:03.868
+So, this is very much, as Hadley was saying, that spatial sense and the sense of a map
+
+00:41:03.868 --> 00:41:06.949
+is pretty important.
+
+00:41:06.949 --> 00:41:12.068
+But a map is meaningful when you can put some place names on it.
+
+00:41:12.068 --> 00:41:23.029
+And so, if the map is of an information space generated from the space of all these documents
+
+00:41:23.269 --> 00:41:30.389
+about something, how do I put meaningful names at many different resolutions on that map?
+
+00:41:30.389 --> 00:41:37.509
+And so, with that one, LLMs and AI is playing a big role because they're, turns out, really
+
+00:41:37.509 --> 00:41:40.829
+good at language.
+
+00:41:40.829 --> 00:41:47.868
+But a lot of it comes down to just managing to do things like provide that multi-resolution
+
+00:41:47.868 --> 00:41:54.628
+clustering and how do I extract the right information to feed an LLM to have it give
+
+00:41:54.628 --> 00:41:56.668
+a good name to this thing?
+
+00:41:56.668 --> 00:42:03.108
+So, it's kind of related to topic modeling, but its goal is to be a little bit richer.
+
+00:42:03.108 --> 00:42:08.668
+And ideally, topic modeling for whatever you can turn into embedding vectors.
+
+00:42:08.668 --> 00:42:12.308
+So, you might notice a theme.
+
+00:42:12.308 --> 00:42:15.548
+I just assume these days that lots of stuff is going to be turned into these embedding
+
+00:42:15.589 --> 00:42:16.589
+vectors.
+
+00:42:16.589 --> 00:42:21.988
+And then, how do I look at or explore that space of data?
+
+00:42:21.988 --> 00:42:27.829
+That made me realize there's a little project that I've been working on that I started to
+
+00:42:27.829 --> 00:42:29.829
+use embeddings for.
+
+00:42:29.829 --> 00:42:36.589
+So, at Posit, we do these monthly Ask Me Anythings where anyone in the company can ask questions
+
+00:42:36.589 --> 00:42:37.789
+of leadership.
+
+00:42:37.789 --> 00:42:42.269
+And so, now we have this kind of database of questions and answers.
+
+00:42:42.269 --> 00:42:46.628
+And of course, people ask the same question, but there's no great way to say, here's all
+
+00:42:46.628 --> 00:42:50.068
+the similar questions that you asked in the past.
+
+00:42:50.068 --> 00:42:54.308
+And so, I was like, okay, well, I can at least do some related.
+
+00:42:54.308 --> 00:42:56.428
+When I look at one question, show me the related question.
+
+00:42:56.428 --> 00:42:58.509
+So, I was like, well, that's easy to do now.
+
+00:42:58.509 --> 00:43:03.909
+Just do some embeddings and then find the ones that are closest.
+
+00:43:03.909 --> 00:43:09.068
+But that's making me think it would be great to have a map of this as well, so you can
+
+00:43:09.068 --> 00:43:16.428
+kind of see these are the sort of clusters that questions tend to come into.
+
+00:43:16.428 --> 00:43:23.909
+And that's exactly your example of, here's an unstructured data analysis, where we 100%
+
+00:43:23.909 --> 00:43:29.868
+know that there's some really rich structure here, but how do you quickly figure that out
+
+00:43:29.868 --> 00:43:34.108
+and iterate and then give it to people in a way that they can understand?
+
+00:43:34.108 --> 00:43:35.108
+Yeah.
+
+00:43:35.108 --> 00:43:36.108
+Yeah.
+
+00:43:36.108 --> 00:43:38.988
+It sounds like it's probably a fascinating dataset.
+
+00:43:38.988 --> 00:43:43.988
+There are probably some really tight clusters where people keep asking almost the same question.
+
+00:43:43.988 --> 00:43:47.709
+And then there's probably some interesting clusters where it's diffuse and it's lots
+
+00:43:47.709 --> 00:43:53.149
+of people asking variations of the same question, but heading in all sorts of different directions.
+
+00:43:53.149 --> 00:43:58.248
+I mean, there's so much you could learn and explore in that sort of data.
+
+00:43:58.248 --> 00:44:06.068
+And so, yeah, this is the tooling that I want to try and build is how to explore when it's
+
+00:44:06.068 --> 00:44:09.188
+not a nice tabular dataset anymore.
+
+00:44:09.188 --> 00:44:10.188
+Yeah.
+
+00:44:10.188 --> 00:44:17.789
+And also accepting that any 2D rendering is going to be a massive simplification of reality.
+
+00:44:17.789 --> 00:44:23.548
+And you probably don't just want one, but you want a selection that maybe people can
+
+00:44:23.548 --> 00:44:24.889
+iterate through.
+
+00:44:24.889 --> 00:44:27.709
+But then how do you help them find the right one for their needs?
+
+00:44:27.709 --> 00:44:30.748
+And yeah, lots of interesting questions.
+
+00:44:30.748 --> 00:44:31.748
+Yeah.
+
+00:44:31.909 --> 00:44:39.709
+I mean, my mental model of these things, especially the 2D map views, is that it's a lens through
+
+00:44:39.709 --> 00:44:43.748
+which you're viewing the data and it's deliberately providing a distortion.
+
+00:44:43.748 --> 00:44:48.628
+I mean, a lens is not very useful unless you want a microscope lens that will show you
+
+00:44:48.628 --> 00:44:54.868
+detail or a telescope lens that'll take in a lot of information and condense it down.
+
+00:44:54.868 --> 00:44:56.548
+Whatever you do, you're going to distort the data.
+
+00:44:56.548 --> 00:45:00.909
+So you just want to have as many different lenses through which you can look at the data.
+
+00:45:00.909 --> 00:45:05.188
+And so you just want to swap between lenses so you get these different views.
+
+00:45:05.188 --> 00:45:09.668
+And that's, I think, the best way you can get to data understanding.
+
+00:45:09.668 --> 00:45:15.509
+Because, yeah, I mean, to bring it back to maps again, the classic example of this is
+
+00:45:15.509 --> 00:45:21.949
+the London tube map, which fundamentally distorts distance but gives you a much better understanding
+
+00:45:21.949 --> 00:45:24.029
+of the network.
+
+00:45:24.029 --> 00:45:27.988
+You don't want multiple views like that of your data.
+
+00:45:27.988 --> 00:45:28.988
+Yeah.
+
+00:45:28.988 --> 00:45:29.988
+Yeah.
+
+00:45:30.068 --> 00:45:35.668
+And if you've ever looked at the London tube map rendered onto an actual geographic map,
+
+00:45:35.668 --> 00:45:38.428
+it's a mess and hard to make any sense of.
+
+00:45:38.428 --> 00:45:42.108
+But at least you understand how far apart some of the stations are, which is not at
+
+00:45:42.108 --> 00:45:45.349
+all obvious from the classic map.
+
+00:45:45.349 --> 00:45:47.349
+And these are the challenges.
+
+00:45:47.349 --> 00:45:51.428
+You want to present different views for different tasks.
+
+00:45:51.428 --> 00:45:59.188
+I did cognitive psychology and a little neuroscience, and that does remind me of brain anatomy,
+
+00:46:00.068 --> 00:46:04.149
+where we have names for a lot of the different parts of the brain and how they connect to
+
+00:46:04.149 --> 00:46:05.149
+each other.
+
+00:46:05.149 --> 00:46:10.868
+But obviously, all our brains are different, even the shape of various places.
+
+00:46:10.868 --> 00:46:17.428
+So somehow we agreed upon these labels, but also in research, you have to figure out how
+
+00:46:17.428 --> 00:46:25.628
+to mash them onto each other, register it onto a canonical brain.
+
+00:46:25.628 --> 00:46:32.628
+And it is interesting that need to categorize the parts, but also sometimes map them onto
+
+00:46:32.628 --> 00:46:38.188
+each other and what you keep and what you lose in the process.
+
+00:46:38.188 --> 00:46:39.188
+Yeah.
+
+00:46:39.188 --> 00:46:46.349
+I mean, it's the constant conflict between the desire to understand it in the continuous
+
+00:46:46.349 --> 00:46:53.589
+space and our constant desire to be able to categorize.
+
+00:46:53.589 --> 00:47:00.149
+These are always in conflict, but they're both useful and you've got to be able to somehow
+
+00:47:00.149 --> 00:47:04.668
+pivot between those two instincts that I think we have.
+
+00:47:04.668 --> 00:47:10.389
+That also reminds me of Procrustes analysis, which I kind of love because it's so called
+
+00:47:10.389 --> 00:47:16.228
+because this Greek myth of Procrustes, who is like a smith who used his hammer to make
+
+00:47:16.228 --> 00:47:19.149
+people fit the shape of his bed exactly.
+
+00:47:19.149 --> 00:47:24.868
+And that's kind of like what you're doing in this brain, you're just hammering bits
+
+00:47:24.868 --> 00:47:30.149
+to make it fit this reference brain.
+
+00:47:30.149 --> 00:47:31.149
+I was curious.
+
+00:47:31.149 --> 00:47:38.029
+Do you drive anyone crazy from your desire to categorize and dimensionality reduce?
+
+00:47:38.029 --> 00:47:42.909
+Is there anyone who's like, you got to stop clustering things?
+
+00:47:42.909 --> 00:47:48.309
+So my colleagues are all great and they're mostly the people I talk to.
+
+00:47:48.309 --> 00:47:54.748
+So I don't have that problem.
+
+00:47:54.748 --> 00:47:59.509
+One of the advantages of working at the Institute, as I said, I'm from the pure math side.
+
+00:47:59.509 --> 00:48:03.108
+There are the data science people who get more and more applied.
+
+00:48:03.108 --> 00:48:09.429
+And so generally speaking, they're the people talking to the frontline analysts actually
+
+00:48:09.429 --> 00:48:10.549
+doing the work.
+
+00:48:10.549 --> 00:48:15.909
+So I want that one level of remove where the problems get abstracted a little bit away
+
+00:48:15.909 --> 00:48:19.988
+to something I can work on.
+
+00:48:19.988 --> 00:48:23.628
+So I guess that saves me from having to be told that.
+
+00:48:23.628 --> 00:48:30.549
+I'm sure they are sick of being told that maps or clusters or summarizations like this
+
+00:48:30.549 --> 00:48:33.228
+are the answer.
+
+00:48:33.228 --> 00:48:37.409
+I mean, again, it's an answer.
+
+00:48:37.409 --> 00:48:40.269
+It's what I've got.
+
+00:48:40.269 --> 00:48:41.269
+It's the hammer.
+
+00:48:41.269 --> 00:48:47.868
+I'll throw at things, but I'm not going to pretend that it's the answer.
+
+00:48:47.868 --> 00:48:52.409
+It's just the best tools I have at hand at the moment.
+
+00:48:52.409 --> 00:48:57.069
+If somebody can come up with some better tools, I'll be more than happy to start reaching
+
+00:48:57.069 --> 00:48:59.909
+out in that direction.
+
+00:48:59.909 --> 00:49:05.269
+Do you see those like tendencies playing out in your personal life as well?
+
+00:49:05.868 --> 00:49:10.868
+Are there like households or tasks that you want to map?
+
+00:49:10.868 --> 00:49:13.868
+No, actually.
+
+00:49:13.868 --> 00:49:20.988
+My work and personal life manages to stay reasonably separate.
+
+00:49:20.988 --> 00:49:23.228
+So I think that one's a good one.
+
+00:49:23.228 --> 00:49:26.049
+I'm glad it stays that way.
+
+00:49:26.049 --> 00:49:29.948
+Like household chores, you're not like, this is a high dimensional space.
+
+00:49:29.948 --> 00:49:31.748
+We got to reduce it.
+
+00:49:31.748 --> 00:49:33.149
+No, no, no.
+
+00:49:33.149 --> 00:49:36.828
+At some point, I just want to get things done.
+
+00:49:36.828 --> 00:49:43.868
+Or are you the person who wants things to be perfectly arranged in the dishwasher for
+
+00:49:43.868 --> 00:49:46.269
+maximum packing efficiency?
+
+00:49:46.269 --> 00:49:47.269
+Yeah.
+
+00:49:47.269 --> 00:49:53.509
+So, no, it turns out that's not me.
+
+00:49:53.509 --> 00:49:58.468
+I think that's a thing that people expect in some ways, maybe from a mathematician,
+
+00:49:58.468 --> 00:50:03.748
+is like the desire for organization.
+
+00:50:03.748 --> 00:50:06.948
+And I drive my wife crazy because she's a list maker.
+
+00:50:06.948 --> 00:50:11.828
+She always wants to make lists, to-do lists, any lists to check things off.
+
+00:50:11.828 --> 00:50:18.509
+And I don't, and she gets very frustrated with me because I'm not organized and making
+
+00:50:18.509 --> 00:50:23.029
+lists and keeping everything neatly categorized.
+
+00:50:23.029 --> 00:50:27.669
+She's probably the one more likely to rearrange things in the dishwasher than I am to do better
+
+00:50:27.909 --> 00:50:33.748
+So, yeah, oddly enough, I'm on the opposite of the stereotype, I guess.
+
+00:50:34.468 --> 00:50:42.389
+I saw that you mentioned like imposter syndrome that even, I mean, I would say you like have
+
+00:50:42.389 --> 00:50:48.868
+an incredible list of accomplishments and I would say like dancing in pure mathematics
+
+00:50:48.868 --> 00:50:52.549
+and in data science is a pretty astounding feat.
+
+00:50:52.789 --> 00:51:00.549
+I was really surprised to see you mention that you experienced imposter syndrome in
+
+00:51:00.549 --> 00:51:01.269
+some of the places.
+
+00:51:01.269 --> 00:51:03.269
+I think that's really common.
+
+00:51:04.468 --> 00:51:09.189
+But I'm curious if you could say a bit about that piece.
+
+00:51:10.868 --> 00:51:11.429
+Sure.
+
+00:51:11.429 --> 00:51:17.909
+Well, I mean, one example you said is I'm in pure math and data science, but that mostly
+
+00:51:17.909 --> 00:51:22.468
+means I feel like I'm failing to keep up with the pure math.
+
+00:51:22.468 --> 00:51:29.828
+Like I go to math conferences and it's a struggle because there are people doing amazing things
+
+00:51:29.828 --> 00:51:32.228
+that I can barely wrap my head around.
+
+00:51:33.669 --> 00:51:40.789
+And then in data science, I'm a dilettante, dabbling in data science.
+
+00:51:40.789 --> 00:51:45.588
+I'm not a data science expert and I don't really know what I'm doing.
+
+00:51:45.588 --> 00:51:48.309
+So I feel out of place in both worlds.
+
+00:51:50.069 --> 00:51:57.269
+I have ended up writing software tools in Python, but I'm certainly not a software engineer
+
+00:51:57.269 --> 00:51:58.789
+and I don't really feel like one.
+
+00:52:00.149 --> 00:52:04.789
+And I constantly feel like I don't know what I'm doing as far as software engineering goes.
+
+00:52:05.669 --> 00:52:12.468
+I'm doing the best I can and it seems to be working, but this is an ongoing thing.
+
+00:52:12.708 --> 00:52:15.029
+I constantly feel a little bit out of place.
+
+00:52:15.029 --> 00:52:21.909
+And so, yeah, imposter syndrome is certainly something that I do try to deal with.
+
+00:52:22.708 --> 00:52:28.069
+And so mostly my way to deal with that is to just try and keep my head down and focused on
+
+00:52:29.269 --> 00:52:34.948
+what I'm doing and try not to worry about how it fits into everything else.
+
+00:52:34.948 --> 00:52:40.228
+Which, as you mentioned, it happens to show up in lots of places.
+
+00:52:40.228 --> 00:52:47.988
+So I guess I get people reaching out and talking about it in these ways, but I try
+
+00:52:47.988 --> 00:52:55.748
+and keep my head down because otherwise I feel like I mostly don't know anything about anything
+
+00:52:57.029 --> 00:52:58.948
+and I'm just doing the best I can.
+
+00:53:00.468 --> 00:53:05.029
+Yeah, I'd imagine when you're straddling, it sounds like when you're straddling two
+
+00:53:05.988 --> 00:53:12.389
+areas, that's like a big challenge of just the net you've cast.
+
+00:53:13.669 --> 00:53:14.628
+But I don't know.
+
+00:53:14.628 --> 00:53:20.228
+It's so interesting to hear because I feel like it's such a useful spot to be in,
+
+00:53:20.228 --> 00:53:24.549
+like that kind of interdisciplinary zone.
+
+00:53:25.269 --> 00:53:28.069
+I'm a huge fan of interdisciplinary work.
+
+00:53:28.069 --> 00:53:34.789
+I think I really feel like that's where a lot of really useful things happen.
+
+00:53:35.348 --> 00:53:42.149
+When different things end up mixing together, that's when interesting things happen.
+
+00:53:42.149 --> 00:53:47.269
+And so I'm happy to be able to be in this interdisciplinary spot.
+
+00:53:47.269 --> 00:53:51.269
+As I said, I feel like that's one of the real strengths of the TUT Institute,
+
+00:53:51.269 --> 00:53:55.669
+the Research Institute, is that we have a bunch of this interdisciplinary.
+
+00:53:55.669 --> 00:53:59.748
+And I mean, to some people, I guess it's not very interdisciplinary because it's like math
+
+00:53:59.748 --> 00:54:03.429
+and computer science and data science, and maybe those are all the same as far as some
+
+00:54:03.429 --> 00:54:04.228
+people are concerned.
+
+00:54:04.228 --> 00:54:08.868
+But they're wildly different to people working in those fields.
+
+00:54:08.868 --> 00:54:13.189
+I would love to see more, more interdisciplinary work.
+
+00:54:14.069 --> 00:54:19.748
+I was curious too, like in the, this is a bit of a tangent, but I noticed like on the
+
+00:54:19.748 --> 00:54:26.069
+topic of sort of doing programming and pure math, I noticed, are you, you're working on
+
+00:54:26.069 --> 00:54:28.069
+a Rust library now too, is that?
+
+00:54:28.069 --> 00:54:29.828
+Who isn't working on a Rust library?
+
+00:54:30.628 --> 00:54:41.669
+So actually that one is, I said I needed projects so I could try out AI and learn how good it
+
+00:54:41.669 --> 00:54:42.708
+is at programming.
+
+00:54:42.708 --> 00:54:46.069
+So that was one of my AI projects.
+
+00:54:46.948 --> 00:54:54.468
+I am not Rust fluent at all, but I had a Python library for approximate nearest neighbor search
+
+00:54:54.628 --> 00:55:02.389
+that made use of the number library, which JIT compiles the Python down to LLVM machine
+
+00:55:02.389 --> 00:55:02.948
+code.
+
+00:55:02.948 --> 00:55:06.309
+So it actually runs surprisingly fast, even though it's pure Python.
+
+00:55:06.868 --> 00:55:13.269
+And so I was just curious, like this seemed like a good task for AI models.
+
+00:55:13.988 --> 00:55:18.628
+Rewrite this library in Rust, because you should be able to make it go faster.
+
+00:55:19.348 --> 00:55:31.429
+And so what I've just put up on GitHub is the final output, but it took way, way longer
+
+00:55:31.429 --> 00:55:32.149
+than I expected.
+
+00:55:32.149 --> 00:55:36.708
+I started on this well over a year ago.
+
+00:55:37.988 --> 00:55:45.669
+And the models back then, I think it was like Opus 4.5 with Claude I started out with.
+
+00:55:46.628 --> 00:55:47.509
+It could not do it.
+
+00:55:49.588 --> 00:55:56.708
+It wrote a Rust version of the library and it did function eventually, but there was
+
+00:55:56.708 --> 00:56:03.269
+a lot of back and forth with the model saying, this is great, but please run the benchmark
+
+00:56:03.269 --> 00:56:05.108
+again, because it's still slower than the Python.
+
+00:56:06.868 --> 00:56:07.988
+And it took a long time.
+
+00:56:08.628 --> 00:56:13.029
+And so I think only the latest models have actually gotten to a point where it could
+
+00:56:13.029 --> 00:56:15.348
+make it run faster than Python code.
+
+00:56:15.988 --> 00:56:19.348
+Well, because it was already being just in time compiled by number, right?
+
+00:56:19.348 --> 00:56:19.828
+Yeah.
+
+00:56:19.828 --> 00:56:20.309
+Yeah, yeah.
+
+00:56:20.309 --> 00:56:29.108
+It's fast Python code, but still, I feel like a Rust native implementation specialized
+
+00:56:29.108 --> 00:56:31.988
+should be able to get at least as performant as that.
+
+00:56:33.429 --> 00:56:37.588
+And so it turns out that this is a challenge for the model.
+
+00:56:37.588 --> 00:56:41.429
+So this was a learning experience for me to learn how good are the models at this.
+
+00:56:41.429 --> 00:56:46.389
+And so I think they've gotten there in as much as I've produced it, it's slightly
+
+00:56:46.389 --> 00:56:48.868
+faster than the Python in a number of ways.
+
+00:56:48.868 --> 00:56:49.748
+So this is good.
+
+00:56:49.748 --> 00:56:53.348
+It's not as flexible, but that's your trade-off.
+
+00:56:54.468 --> 00:57:00.149
+But that was me having a learning curve and an excuse to play around with the models.
+
+00:57:00.149 --> 00:57:01.828
+Yeah, it's such an interesting experiment.
+
+00:57:03.269 --> 00:57:09.269
+And I was curious as I saw it, the kind of like Rust library standing out to what's
+
+00:57:09.269 --> 00:57:12.868
+this point, it seems like a really nice testing ground to see.
+
+00:57:13.669 --> 00:57:19.029
+Do you, coming out of it, did you, do you feel like, did you learn anything useful for,
+
+00:57:20.149 --> 00:57:24.708
+like that you took out of it for working with AI, like coding with AI or?
+
+00:57:25.509 --> 00:57:31.509
+Yeah, I think the thing that really made it work was that there was a very targeted goal
+
+00:57:31.509 --> 00:57:34.468
+and I could actually have it write tests and benchmarks.
+
+00:57:34.468 --> 00:57:35.988
+I had test suites in the pipe.
+
+00:57:35.988 --> 00:57:38.628
+So there was, this was very much what Wes was talking about.
+
+00:57:38.628 --> 00:57:44.228
+If you can make it very specific, you can, you can have it run away and do a bunch of
+
+00:57:44.228 --> 00:57:44.728
+stuff.
+
+00:57:45.108 --> 00:57:49.669
+But it needed the specificity and it needed the, the ability to just go back and forth
+
+00:57:49.669 --> 00:57:53.189
+and benchmark against the Python code and have it run it itself and go, Oh yeah, no,
+
+00:57:53.189 --> 00:57:53.828
+you're right.
+
+00:57:53.828 --> 00:57:54.789
+It is still slower.
+
+00:57:55.988 --> 00:58:00.309
+That was kind of critical to manage for me to make it work.
+
+00:58:00.309 --> 00:58:06.228
+So I guess that that was one of the big takeaways for me is I, if I, if I want to actually have
+
+00:58:06.228 --> 00:58:11.909
+a large scale project, because this was, as opposed to just editing what's there a
+
+00:58:11.909 --> 00:58:16.309
+little bit, it needs to be able to be very specific.
+
+00:58:16.309 --> 00:58:20.228
+And I need to be able to frame everything that it needs to be able to do with a great
+
+00:58:20.228 --> 00:58:21.669
+deal of specificity.
+
+00:58:21.669 --> 00:58:27.909
+Do you have any new Rust libraries you'll be making or next experiments?
+
+00:58:28.468 --> 00:58:30.228
+Ah, I don't know.
+
+00:58:30.228 --> 00:58:35.828
+I mean, I guess in theory I should, I should see if it can port UMAP to Rust.
+
+00:58:35.828 --> 00:58:37.828
+I'm sure people have already done this.
+
+00:58:37.828 --> 00:58:44.868
+Um, but I mean, from the point of view of, of running the experiment to see what it can
+
+00:58:44.868 --> 00:58:48.789
+do, that would be, that would be a, uh, an interesting challenge.
+
+00:58:48.789 --> 00:58:52.389
+Um, I don't know how much difference that'll make.
+
+00:58:53.108 --> 00:58:59.108
+I, yeah, still, still learning Rust really myself that the LLMs are good at it though.
+
+00:59:00.309 --> 00:59:04.309
+I don't, you know, one last thing I wanted to bring up to make sure to bring up is, um,
+
+00:59:05.108 --> 00:59:11.828
+I, I heard in an interview with, um, Vincent Vormerdam that you did, he, he brought up
+
+00:59:11.828 --> 00:59:18.948
+a really interesting quote that I think Hadley gave at some point, um, which was essentially
+
+00:59:18.948 --> 00:59:22.549
+that algorithms can scale, but they often don't surprise you.
+
+00:59:23.748 --> 00:59:25.828
+Uh, does this sound familiar Hadley?
+
+00:59:27.509 --> 00:59:32.389
+Yeah, this was my, always my pitch for why you needed visualization and modeling like
+
+00:59:32.948 --> 00:59:38.228
+visualization doesn't scale because a human's got to look at it, but it can surprise you.
+
+00:59:38.948 --> 00:59:44.389
+And models like every model makes some assumptions and they can never question those
+
+00:59:44.389 --> 00:59:44.868
+assumptions.
+
+00:59:44.868 --> 00:59:47.909
+So at some level it can't surprise you.
+
+00:59:49.269 --> 00:59:54.389
+Uh, although now I have to maybe reconsider that if we think of LLMs as being a model,
+
+00:59:54.389 --> 00:59:58.708
+since they certainly like surprise us all the time in interesting ways.
+
+00:59:58.708 --> 01:00:04.309
+Different sense of model though, because I mean, it's, it's very much closer to a visualization
+
+01:00:04.309 --> 01:00:09.108
+and that it's distilling something out to a summary that you still have to feed through
+
+01:00:09.108 --> 01:00:09.588
+a human.
+
+01:00:10.149 --> 01:00:15.029
+So I'd put it in the same class as visualization.
+
+01:00:15.029 --> 01:00:17.588
+It's something you're feeding to, to a human.
+
+01:00:17.588 --> 01:00:19.429
+And that's the part that surprises you.
+
+01:00:19.988 --> 01:00:20.948
+I love that quote.
+
+01:00:20.948 --> 01:00:22.309
+I think it's fabulous.
+
+01:00:22.309 --> 01:00:30.948
+I reuse it all the time because it is very much, I think the motivation for the kind
+
+01:00:30.948 --> 01:00:34.549
+of exploratory work that, that I'm interested in.
+
+01:00:34.549 --> 01:00:36.549
+I want the thing that will surprise people.
+
+01:00:38.309 --> 01:00:47.108
+That's the most important part, um, because I, so I'm interested in helping people ask
+
+01:00:47.108 --> 01:00:49.429
+better questions rather than finding answers.
+
+01:00:49.429 --> 01:00:52.948
+Um, that's, I guess my.
+
+01:00:48.902 --> 01:00:54.262
+So, I'm interested in helping people ask better questions rather than finding answers.
+
+01:00:55.462 --> 01:01:04.582
+That's, I guess, my would-be quote. Because I think there are lots of ways to squeeze data
+
+01:01:04.582 --> 01:01:11.781
+and get answers. But I think knowing what question you should be asking is a much harder problem
+
+01:01:11.781 --> 01:01:14.902
+these days. Yeah, and I guess that goes back,
+
+01:01:14.902 --> 01:01:21.942
+too, to your focus on the EDA stage. Essentially, like, what question should I ask?
+
+01:01:22.742 --> 01:01:29.622
+Feeling like you're always at that early stage, trying to sort out the questions.
+
+01:01:30.422 --> 01:01:34.021
+Yeah. My colleague, John Healy, his go-to quote is just, look at your data.
+
+01:01:35.222 --> 01:01:39.382
+That's all he ever says. And he means that in the broadest possible sense of look at your data.
+
+01:01:40.102 --> 01:01:45.861
+Open it up in Excel and stare at lines in a spreadsheet. Whatever. Just actually look at
+
+01:01:45.861 --> 01:01:54.022
+what's in your data. I've seen him working with analysts who bring a data set. And he'll ask a
+
+01:01:54.022 --> 01:01:58.501
+bunch of questions about, well, what's true of this data? What do you at least know about it?
+
+01:01:59.942 --> 01:02:04.582
+Because whatever they say is true of the data, it's almost always a thing that he will then
+
+01:02:04.582 --> 01:02:10.821
+go and falsify by going through the data. No, that, in fact, is false. There are negative values
+
+01:02:10.821 --> 01:02:19.062
+in here. I'm sorry, but the timestamps are not contiguous and not they're duplicated in some
+
+01:02:19.062 --> 01:02:25.302
+places or whatever. Whatever assumptions people make about their data turn out not to be true.
+
+01:02:25.302 --> 01:02:30.902
+And so, that's a lot of the motivation for my desire to just try and ask better questions
+
+01:02:31.622 --> 01:02:37.141
+is people assume they know what's in data and it is almost never true. And you just need to
+
+01:02:37.141 --> 01:02:41.702
+be able to get people to a point where they can realize that for themselves.
+
+01:02:42.262 --> 01:02:48.662
+It seems like incredible advice. And especially in the AI era too, with evals, I guess that
+
+01:02:49.302 --> 01:02:54.662
+has surfaced with people like Hamel, Hussein mentioning, you could put a number on it,
+
+01:02:54.662 --> 01:03:01.782
+but you should probably also look at what's going on and get close to examples and outputs
+
+01:03:02.661 --> 01:03:10.181
+to see if what you're measuring is even sort of what you want. Yeah, it's honestly so fascinating
+
+01:03:10.181 --> 01:03:18.422
+to hear about your path through pure mathematics and data science and to see these tools and
+
+01:03:18.422 --> 01:03:26.661
+algorithms like UMAP just cut across so many areas. Yeah, I think I'll be thinking about
+
+01:03:26.661 --> 01:03:32.581
+for a while also just the exploratory nature of it and how we could live and
+
+01:03:33.941 --> 01:03:40.902
+we could drill into exploration way more than maybe we expect. Any parting words?
+
+01:03:41.381 --> 01:03:45.941
+Look at your data. Ask better questions.
+
+01:03:47.222 --> 01:03:50.021
+Yep, Leland, thanks for coming on and great seeing you.
+
+01:03:50.021 --> 01:03:52.502
+Yeah, thanks so much for having me on. I really enjoyed it.
+
+01:03:52.502 --> 01:03:53.381
+Yeah, thanks, Steven.
+
+01:03:53.381 --> 01:03:54.101
+Thanks for coming on.
+
+01:03:55.622 --> 01:04:00.262
+The Test Set is a production of PositPBC, an open source and enterprise tooling data
+
+01:04:00.262 --> 01:04:05.461
+science software company. This episode was produced in collaboration with creative studio
+
+01:04:05.461 --> 01:04:14.422
+Agi. For more episodes, visit thetestset.co or find us on your favorite podcast platform.

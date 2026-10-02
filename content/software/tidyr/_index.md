@@ -13,10 +13,10 @@ people:
 - Jenny Bryan
 - Mine Çetinkaya-Rundel
 - Julia Silge
-- Julia Silge
 - Gábor Csárdi
 - Thomas Lin Pedersen
 - Christophe Dervieux
+- Kevin Ushey
 tags:
 - tidyverse
 title: tidyr
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   forks: 419
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.030373+00:00'
+  last_updated: '2026-09-18T14:20:18.935039+00:00'
   latest_release: '2026-01-09T14:13:04+00:00'
   license: NOASSERTION
   people:
@@ -44,14 +44,14 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Mine Çetinkaya-Rundel
   - Julia Silge
-  - Julia Silge
   - Jeroen Janssens
   - Gábor Csárdi
   - Thomas Lin Pedersen
   - Christophe Dervieux
+  - Kevin Ushey
   readme_image: man/figures/logo.png
   repo: tidyverse/tidyr
-  stars: 1429
+  stars: 1439
   title: tidyr
   website: https://tidyr.tidyverse.org/
 ---
@@ -59,3 +59,19 @@ external:  # updated automatically, do not edit
 tidyr is an R package for creating tidy data, where each variable is a column, each observation is a row, and each value is a cell. This standardized data structure is used throughout the tidyverse ecosystem and reduces time spent reformatting data during analysis.
 
 The package provides five main categories of functions: pivoting between long and wide formats (`pivot_longer()`, `pivot_wider()`), rectangling nested lists like JSON into tibbles, nesting and unnesting grouped data frames, splitting and combining character columns, and handling missing values. It supersedes the older reshape and reshape2 packages with a focused design specifically for data tidying rather than general reshaping or aggregation.
+
+## Try it
+
+{{< webr packages="tidyr" >}}
+library(tidyr)
+
+# Wide data: one column per quarter
+sales <- data.frame(
+  product = c("Widget", "Gadget"),
+  Q1 = c(120, 85), Q2 = c(134, 99),
+  Q3 = c(110, 120), Q4 = c(145, 130)
+)
+
+# Pivot to long format: one row per product-quarter combination
+pivot_longer(sales, cols = Q1:Q4, names_to = "quarter", values_to = "units")
+{{< /webr >}}

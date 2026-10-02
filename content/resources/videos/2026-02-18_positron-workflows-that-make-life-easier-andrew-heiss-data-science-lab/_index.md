@@ -7,8 +7,8 @@ resource_type: video
 resources: []
 software:
 - air
-- Positron
-- Quarto
+- positron
+- quarto
 - rstudio
 tags: []
 title: Positron workflows that make life easier | Andrew Heiss | Data Science Lab
@@ -22,19 +22,19 @@ external:  # updated automatically, do not edit
   duration: 3423
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.044710+00:00'
-  like_count: 65
+  last_updated: '2026-09-18T13:58:07.250064+00:00'
+  like_count: 79
   playlist: ''
   software:
   - air
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/kqYbJoebrwE/maxresdefault.jpg
   title: Positron workflows that make life easier | Andrew Heiss | Data Science Lab
   url: https://www.youtube.com/watch?v=kqYbJoebrwE
-  view_count: 2920
+  view_count: 3561
 ---
 image: thumbnail.jpg
 

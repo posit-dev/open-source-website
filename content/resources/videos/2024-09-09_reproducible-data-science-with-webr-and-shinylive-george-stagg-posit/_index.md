@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - shinylive
 tags:
 - rstudio
@@ -65,13 +65,13 @@ external:  # updated automatically, do not edit
   duration: 2280
   has_captions: false
   language: en-US
-  last_updated: '2026-05-19T10:15:29.246678+00:00'
-  like_count: 152
+  last_updated: '2026-09-18T13:58:10.631549+00:00'
+  like_count: 156
   people:
   - George Stagg
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - shinylive
   tags:
   - rstudio
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wK3vPbcSoFE/maxresdefault.jpg
   title: Reproducible data science with webR and Shinylive | George Stagg | Posit
   url: https://www.youtube.com/watch?v=wK3vPbcSoFE
-  view_count: 3628
+  view_count: 3690
 ---
 image: thumbnail.jpg
 

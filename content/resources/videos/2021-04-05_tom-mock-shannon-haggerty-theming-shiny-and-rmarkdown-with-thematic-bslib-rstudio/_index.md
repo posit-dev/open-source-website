@@ -22,7 +22,7 @@ software:
 - bslib
 - rmarkdown
 - rstudio
-- Shiny
+- shiny-r
 - thematic
 tags:
 - rstudio
@@ -95,14 +95,14 @@ external:  # updated automatically, do not edit
   duration: 1390
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.071282+00:00'
+  last_updated: '2026-09-18T13:58:16.539705+00:00'
   like_count: 137
   playlist: ''
   software:
   - bslib
   - rmarkdown
   - rstudio
-  - Shiny
+  - shiny-r
   - thematic
   tags:
   - rstudio
@@ -154,7 +154,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/z-uFVfsaVzc/maxresdefault.jpg
   title: Tom Mock & Shannon Haggerty | Theming Shiny and RMarkdown with {thematic} & {bslib} | RStudio
   url: https://www.youtube.com/watch?v=z-uFVfsaVzc
-  view_count: 5151
+  view_count: 5176
 ---
 image: thumbnail.jpg
 

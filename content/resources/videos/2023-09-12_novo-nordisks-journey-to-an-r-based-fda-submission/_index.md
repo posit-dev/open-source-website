@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 4385
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:30.948413+00:00'
+  last_updated: '2026-09-18T13:58:12.905584+00:00'
   like_count: 234
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/t33dS17QHuA/maxresdefault.jpg
   title: Novo Nordisk's Journey to an R based FDA Submission
   url: https://www.youtube.com/watch?v=t33dS17QHuA
-  view_count: 12061
+  view_count: 12189
 ---
 image: thumbnail.jpg
 

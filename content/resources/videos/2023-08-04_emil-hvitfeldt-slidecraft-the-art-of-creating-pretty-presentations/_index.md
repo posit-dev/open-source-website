@@ -23,7 +23,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - revealjs
 - tidymodels
 tags: []
@@ -53,21 +53,21 @@ external:  # updated automatically, do not edit
   duration: 1238
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.764565+00:00'
-  like_count: 93
+  last_updated: '2026-09-18T13:58:21.309359+00:00'
+  like_count: 95
   people:
   - Emil Hvitfeldt
   - Julia Silge
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   - revealjs
   - tidymodels
   tags: []
   thumbnail: https://i.ytimg.com/vi/SAi8-P49F2Y/maxresdefault.jpg
   title: 'Emil Hvitfeldt - Slidecraft: The Art of Creating Pretty Presentations'
   url: https://www.youtube.com/watch?v=SAi8-P49F2Y
-  view_count: 4149
+  view_count: 4428
 ---
 image: thumbnail.jpg
 

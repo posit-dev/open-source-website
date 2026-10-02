@@ -80,7 +80,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 tags:
 - python
 - realpython
@@ -180,13 +180,13 @@ external:  # updated automatically, do not edit
   duration: 4259
   has_captions: false
   language: en-US
-  last_updated: '2026-05-19T10:15:36.520416+00:00'
+  last_updated: '2026-09-18T13:58:21.308553+00:00'
   like_count: 19
   people:
   - Michael Chow
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Great Tables
+  - great-tables
   tags:
   - python
   - realpython
@@ -205,7 +205,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/B38EGlWJyfY/maxresdefault.jpg
   title: 'Build Captivating Display Tables in Python With Great Tables | Real Python Podcast #214'
   url: https://www.youtube.com/watch?v=B38EGlWJyfY
-  view_count: 1582
+  view_count: 1591
 ---
 image: thumbnail.jpg
 

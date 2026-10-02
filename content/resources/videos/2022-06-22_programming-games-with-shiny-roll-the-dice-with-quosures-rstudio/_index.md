@@ -10,7 +10,7 @@ software:
 - reactlog
 - rlang
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   duration: 2820
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.955022+00:00'
+  last_updated: '2026-09-18T13:58:15.367059+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   - reactlog
   - rlang
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -133,7 +133,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BaQldCBZhCI/maxresdefault.jpg
   title: 'Programming Games with Shiny || Roll the Dice: with Quosures! || RStudio'
   url: https://www.youtube.com/watch?v=BaQldCBZhCI
-  view_count: 1409
+  view_count: 1418
 ---
 image: thumbnail.jpg
 

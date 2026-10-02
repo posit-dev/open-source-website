@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - data science
 - machine learning
@@ -51,11 +51,11 @@ external:  # updated automatically, do not edit
   duration: 2038
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.318325+00:00'
-  like_count: 251
+  last_updated: '2026-09-18T13:58:09.332885+00:00'
+  like_count: 280
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - data science
   - machine learning
@@ -92,7 +92,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TS0w-tSH3Jc/maxresdefault.jpg
   title: Fastest way to Convert Jupyter Notebooks into Analytics Reports! (using Quarto)
   url: https://www.youtube.com/watch?v=TS0w-tSH3Jc
-  view_count: 11930
+  view_count: 13504
 ---
 image: thumbnail.jpg
 

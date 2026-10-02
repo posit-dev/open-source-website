@@ -10,6 +10,7 @@ software:
 - dbplyr
 - dplyr
 - rstudio
+- sparklyr
 tags:
 - Edgar Ruiz
 - rstudio
@@ -65,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 1162
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243400+00:00'
-  like_count: 110
+  last_updated: '2026-09-18T13:58:18.222032+00:00'
+  like_count: 109
   people:
   - Edgar Ruiz
   playlist: ''
@@ -74,6 +75,7 @@ external:  # updated automatically, do not edit
   - dbplyr
   - dplyr
   - rstudio
+  - sparklyr
   tags:
   - Edgar Ruiz
   - rstudio
@@ -121,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/aVI4YZ1CB2c/maxresdefault.jpg
   title: Edgar Ruiz | Databases using R The latest | RStudio (2019)
   url: https://www.youtube.com/watch?v=aVI4YZ1CB2c
-  view_count: 4434
+  view_count: 4440
 ---
 image: thumbnail.jpg
 

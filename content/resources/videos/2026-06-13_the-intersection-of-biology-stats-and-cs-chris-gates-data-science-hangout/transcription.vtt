@@ -1,0 +1,1675 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.660
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.660 --> 00:00:22.020
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.020 --> 00:00:27.260
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.260 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:35.700
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.700 --> 00:00:41.340
+Can't wait to see you there. I'm really excited to introduce our featured leader today. It's
+
+00:00:41.340 --> 00:00:47.380
+Chris Gates, Director of the Bioinformatics Core at University of Michigan. Chris, it's
+
+00:00:47.380 --> 00:00:51.060
+so nice to have you here today. I would love it if you could introduce yourself, tell us
+
+00:00:51.060 --> 00:00:57.220
+a little bit about what you do, and I will also ask you what you like to do for fun.
+
+00:00:57.220 --> 00:01:06.019
+That's great. Thank you, Libby. It's great to be here. So yeah, I work at the Bioinformatics
+
+00:01:06.019 --> 00:01:12.500
+Core at the University of Michigan. Let me just explain that. Bioinformatics means different
+
+00:01:12.500 --> 00:01:21.739
+things to different people, so it's useful to unpack that a little bit. For us, bioinformatics
+
+00:01:21.739 --> 00:01:27.139
+lives at the intersection of three different domains. One is molecular biology, which you
+
+00:01:27.139 --> 00:01:37.739
+can think of for our purposes as DNA, genes, proteins, but also statistics, and finally
+
+00:01:37.900 --> 00:01:44.900
+computer science and software engineering, where those two overlap, AI now. Really, what
+
+00:01:44.900 --> 00:01:50.739
+we do at the Bioinformatics Core is that we work with biological researchers, and they
+
+00:01:50.739 --> 00:01:57.419
+come to us with sequence data or proteomics data, and we help them identify patterns in
+
+00:01:57.419 --> 00:02:05.300
+DNA, then try to help them interpret what those patterns mean. So we do that a couple
+
+00:02:05.300 --> 00:02:13.940
+different ways. One way is that the algorithms that people use to analyze DNA are constantly
+
+00:02:13.940 --> 00:02:19.860
+changing, so we're always hip-deep in literature review to try to figure out what the best
+
+00:02:19.860 --> 00:02:25.460
+practices are and apply those and also share those out to the research community. Another
+
+00:02:25.460 --> 00:02:32.460
+way that we help people is that we have a series of workshops that are focused on bioinformatic
+
+00:02:32.500 --> 00:02:38.259
+analysis, and the deal there is that a lot of bioinformaticians, they might have some
+
+00:02:38.259 --> 00:02:45.139
+computational chops, but it's a steep learning curve, so we try to give them an intro to
+
+00:02:45.139 --> 00:02:49.899
+some of the basics there so they have more independence. Then the final way we help them
+
+00:02:49.899 --> 00:02:56.899
+out is that we will do analyses on their behalf, and that happens a lot because biologists
+
+00:02:57.020 --> 00:03:02.179
+come to us and they have a deep expertise in their domain, so they really know a lot
+
+00:03:02.179 --> 00:03:11.339
+about diabetes or the human retina or adenocarcinoma, but they don't necessarily know all of the
+
+00:03:11.339 --> 00:03:20.059
+idiosyncrasies behind the informatics and all of, frankly, kind of strange data types
+
+00:03:20.059 --> 00:03:28.339
+and algorithms that can be a little bit wonky, and even if all those things work, they typically
+
+00:03:28.339 --> 00:03:35.020
+don't have the deeper training in how do you wire this up and execute it at scale in a
+
+00:03:35.020 --> 00:03:44.619
+computational reproducible way, so we help them with that.
+
+00:03:44.619 --> 00:03:49.820
+I think that's probably raised a few questions just by itself, but that was a two-parter,
+
+00:03:49.820 --> 00:03:50.820
+absolutely.
+
+00:03:50.820 --> 00:03:54.860
+Yeah, well, the other question that I was going to ask is what you like to do for fun,
+
+00:03:54.860 --> 00:03:59.300
+but now I'm dying because people in the chat are asking why there's an NBC logo in the
+
+00:03:59.300 --> 00:04:00.300
+bottom of your screen.
+
+00:04:00.300 --> 00:04:07.419
+Oh, sorry, this is homage to Ron Swanson's office. This is not actually my office. Okay,
+
+00:04:07.419 --> 00:04:14.220
+but, okay, sorry. I should take that out, but yeah. Here, you can get the whole shot.
+
+00:04:14.220 --> 00:04:18.220
+You can take a snapshot and then use it for your own. There you go.
+
+00:04:18.220 --> 00:04:21.260
+We figured it out. Somebody was like, oh, my God, that's Ron Swanson's office, and as
+
+00:04:21.260 --> 00:04:25.579
+soon as someone said that, I saw the bacon and egg, like the breakfast picture, and I
+
+00:04:25.579 --> 00:04:31.540
+was like, oh, my gosh, yes, but we will get the crazy train back on track for one second
+
+00:04:31.540 --> 00:04:32.540
+here.
+
+00:04:32.540 --> 00:04:34.579
+Sorry, no, no, sorry. I didn't mean to distract everybody.
+
+00:04:34.579 --> 00:04:36.260
+That's so good.
+
+00:04:36.260 --> 00:04:39.859
+I should have a boring science lab in back of me, but no, sorry.
+
+00:04:39.859 --> 00:04:44.820
+Absolutely not. Never change, but that brings us to what does Chris Gates like to do for
+
+00:04:44.820 --> 00:04:45.820
+fun?
+
+00:04:45.899 --> 00:04:53.260
+This is such a weird thing. I have off and on for many years played drums in various
+
+00:04:55.019 --> 00:05:05.579
+groups and venues, but around last Thanksgiving, it's a long story, but the short version is
+
+00:05:06.540 --> 00:05:15.420
+somebody turned me on to steel pans, steel drums, sometimes people call them, and my wife and I
+
+00:05:15.500 --> 00:05:21.339
+just kind of went all in, and so now we have these three steel drums in our house, and
+
+00:05:22.140 --> 00:05:31.339
+whenever I can get any time at all, I'm on that steel drum and practicing, and now we're actually
+
+00:05:31.339 --> 00:05:35.899
+going to perform in an open mic coming up in a couple of weeks, so it really got away from us,
+
+00:05:35.899 --> 00:05:40.220
+but it's super fun. Yeah, so that's what I do.
+
+00:05:40.220 --> 00:05:44.540
+Music gets away from you. It's a very good thing. Your house is probably very,
+
+00:05:44.540 --> 00:05:50.459
+very fun all the time. I am married to a drummer, and so I know the noise and chaos and fun that
+
+00:05:50.459 --> 00:05:57.579
+comes with that. Okay, well, we have a couple of questions in the Slido, and hilariously,
+
+00:05:57.579 --> 00:06:02.940
+they're both from Noor. Noor always gets us started with the best questions, so I will
+
+00:06:02.940 --> 00:06:09.019
+highlight one of Noor's questions and stick it in the chat here, and if we could have
+
+00:06:09.019 --> 00:06:11.899
+Noor unmute and ask this question, that'd be amazing. Hey, Noor.
+
+00:06:12.859 --> 00:06:22.220
+Hi, my name is Noor. I'm also a bioinformatician. You've got to keep me honest. I also understand the
+
+00:06:23.260 --> 00:06:28.059
+dilemma we often have of explaining what we do. I often say it's like, I'm like a biological
+
+00:06:28.059 --> 00:06:33.579
+data scientist, until I talk to other bioinformaticians. They're like, hi, I don't do protein. I
+
+00:06:35.019 --> 00:06:41.660
+thought it was kind of boring, so yeah, that's on me. I'm a microbial genomic,
+
+00:06:41.980 --> 00:06:47.420
+like microbiome and stuff, so that's my gen, but everyone's like humans, and I'm like,
+
+00:06:47.420 --> 00:06:54.779
+I guess I'll do them, but anyway, the question that I have or I'm allowed to ask, at least,
+
+00:06:54.779 --> 00:07:01.660
+is that my dream job is actually your job. How did you sort of get into that avenue,
+
+00:07:01.660 --> 00:07:06.140
+or how do you basically go to the university and be like, hi, I would like to just touch
+
+00:07:06.140 --> 00:07:12.859
+all your data and help you, and I'll do it for a reasonable, cheap fee, essentially, or hire me,
+
+00:07:13.899 --> 00:07:20.779
+but yeah, how did you get along that avenue, per se? Yeah, that's a great question. I said
+
+00:07:20.779 --> 00:07:25.339
+at the outset, there's the notion that bioinformatics sits at the intersection of molecular
+
+00:07:25.339 --> 00:07:30.700
+biology and statistics and computer science and software engineering, and I feel like that's a
+
+00:07:30.700 --> 00:07:38.059
+useful kind of paradigm, if you imagine that three-circle Venn diagram, that in general,
+
+00:07:38.619 --> 00:07:44.940
+not a lot of bioinformaticians just kind of emerge from the center of that Venn diagram.
+
+00:07:44.940 --> 00:07:49.579
+What they do is they come in, and a lot of times, bioinformaticians will come in from the biology
+
+00:07:49.579 --> 00:07:55.019
+side, so that they're on the bench, they're working, they're running experiments, and then
+
+00:07:55.019 --> 00:07:59.179
+at a certain point, they start getting involved in some of the analysis, and that just kind of
+
+00:07:59.179 --> 00:08:04.380
+continues to build, to a point where they're like, I would rather be working on the computer
+
+00:08:04.380 --> 00:08:08.540
+than working on the bench, but that's not the only way to get there. There are people that
+
+00:08:08.540 --> 00:08:14.140
+are coming in from the stats side. I personally actually came in from the software engineering
+
+00:08:14.140 --> 00:08:23.660
+side, which is, it is not a well-traveled trailhead, but yeah, the short version of this
+
+00:08:23.660 --> 00:08:30.459
+is that in 2007, I hooked up with a biotech. It was building a giant data mining platform based on
+
+00:08:30.459 --> 00:08:37.900
+microarray data, and I just kind of got the bug for the molecular biology. I couldn't get enough
+
+00:08:37.900 --> 00:08:43.820
+molecular biology, and I was a trade software engineer at the time, and they were like, why
+
+00:08:43.820 --> 00:08:50.059
+do you care about this stuff? I'm like, I don't know, but it's so amazing, isn't it? It really is
+
+00:08:50.059 --> 00:08:57.979
+this really rich, deep, complex domain. At the time, I remember a guy explaining to me,
+
+00:08:58.940 --> 00:09:08.219
+he was trying to explain a concept that has to do with how the body translates DNA into
+
+00:09:08.219 --> 00:09:17.580
+individual genes. This is called translation. He was explaining this, and he kept getting
+
+00:09:17.580 --> 00:09:21.099
+into more and more detail. At a certain point, I just stopped him and said, Dan,
+
+00:09:21.739 --> 00:09:28.299
+that cannot possibly be the way it works. It's just too complicated. He smiled at me,
+
+00:09:28.299 --> 00:09:33.900
+he was really nice. He was like, Chris, it's not optimising for you to be able to understand it.
+
+00:09:34.460 --> 00:09:41.340
+It's this way because it makes more. That's the only reason this works. That was scary to me.
+
+00:09:41.900 --> 00:09:49.260
+It was like, oh, this is turtles all the way down. I might never understand this.
+
+00:09:51.419 --> 00:10:00.539
+I've spent the last 17 years trying to pick up all the molecular biology that I didn't start out
+
+00:10:00.539 --> 00:10:11.099
+with. I think that you also, in your question, hinted at a problem that I have in a bioinformatics
+
+00:10:11.099 --> 00:10:18.299
+core inside of a university, inside of an academic research institution, which is that
+
+00:10:19.739 --> 00:10:28.059
+researchers don't have any money. They can't really afford to pay you a lot of money to do
+
+00:10:28.140 --> 00:10:36.780
+the analysis. But there are these circling biotechs and pharmaceuticals all around me
+
+00:10:36.780 --> 00:10:43.179
+that are looking at my staff and saying, wow, we could really use that expertise.
+
+00:10:44.219 --> 00:10:47.820
+So that's scary. I have to do a lot of jazz hands with my staff and just be like, hey,
+
+00:10:47.820 --> 00:10:53.580
+look over here, isn't it fun to work here? I'm mostly successful with that.
+
+00:10:53.979 --> 00:10:58.539
+But it's a tricky problem because, again, a lot of the stuff that they're doing here,
+
+00:10:58.539 --> 00:11:04.859
+they could be doing in a biotech or a big pharma, and that has a different benefits profile.
+
+00:11:05.580 --> 00:11:10.859
+I won't say anything more about that. But does that actually answer your question, Noor?
+
+00:11:13.020 --> 00:11:16.700
+Kind of, kind of. You wanted the front door. Send an email here.
+
+00:11:16.940 --> 00:11:23.500
+No, I'll say one more thing then, which is, you're already a bioinformatician,
+
+00:11:23.500 --> 00:11:30.299
+though, so you know this. But those three circles of biology and statistics and computer science,
+
+00:11:31.820 --> 00:11:38.140
+wherever you are, keep building those out. To feel really comfortable in that center,
+
+00:11:39.659 --> 00:11:43.900
+you're going to have to lean into these other spots at a moment's notice.
+
+00:11:43.900 --> 00:11:48.539
+I think that's good advice, and I think this leans right into another question in Slido that's
+
+00:11:48.539 --> 00:11:53.580
+anonymous, and it says, since bioinformatics is the intersection of three highly complex fields,
+
+00:11:53.580 --> 00:11:58.219
+how do you balance continued education and professional development with all three? So
+
+00:11:58.219 --> 00:12:02.859
+if the suggestion is like, keep going with all three, get to that center of the overlapping
+
+00:12:02.859 --> 00:12:08.859
+Venn diagram that looks like a little pie piece, do you have any tips on how you do that? How do
+
+00:12:08.859 --> 00:12:14.619
+you stay in that zone? Although, I think one of the answers is that you have spent over a decade
+
+00:12:15.419 --> 00:12:25.340
+doing that. Yes, I have. I think that is also a really good question, because one of the kind of
+
+00:12:26.380 --> 00:12:31.900
+false aspects of this metaphor that I just drew with my hands with the three overlapping circles
+
+00:12:31.900 --> 00:12:36.219
+is that those circles are actually the center of the overlapping Venn diagram.
+
+00:12:37.179 --> 00:12:42.780
+The way I draw them and the way you imagine them, they're very static, and they're very
+
+00:12:42.780 --> 00:12:48.460
+kind of regular shapes. In real life, they are not regular shapes. They are like this bubbly,
+
+00:12:48.460 --> 00:12:56.299
+effervescent mess. Balancing in the center, it's not a flat surface. You're always having
+
+00:12:56.299 --> 00:13:03.020
+to maintain the balance in the center of those three. I will tell you that in the last couple
+
+00:13:03.179 --> 00:13:12.059
+years, we have had a couple of interesting shocks to the system. I'll just tell you one.
+
+00:13:14.619 --> 00:13:22.460
+To do this kind of analysis at scale, an important thing that we have to do is we have to put all the
+
+00:13:22.460 --> 00:13:29.500
+analyses in some kind of an automated workflow automation system, like Snakemake or Nextflow.
+
+00:13:30.299 --> 00:13:35.739
+If you're not familiar with those, those are very cool tools. We started with Snakemake,
+
+00:13:35.739 --> 00:13:42.700
+and then the Nextflow kind of community of developers, they kind of eclipsed the offerings
+
+00:13:42.700 --> 00:13:48.299
+in Snakemake. We said, okay, well, we kind of have to transition to Snakemake, or sorry,
+
+00:13:48.299 --> 00:13:53.179
+we have to transition to Nextflow. That meant we had to learn a whole new workflow automation system,
+
+00:13:53.179 --> 00:13:56.780
+which, I don't know, the first one's the hardest, but that was a challenge.
+
+00:14:00.460 --> 00:14:06.299
+I think you're right in pointing out that this is a dynamic balance that you have to attend.
+
+00:14:07.099 --> 00:14:11.979
+If you want to master something, I would recommend ancient Latin or ancient Greek.
+
+00:14:12.780 --> 00:14:18.380
+Bioinformatics is not that. You're always one meeting away from looking kind of ignorant about
+
+00:14:18.380 --> 00:14:23.419
+something. That's the trade-off. It's like, do you want to look smart, or do you want to learn
+
+00:14:23.419 --> 00:14:30.700
+something? If you're okay sacrificing the looking smart part, you can learn a ton at every consultation
+
+00:14:30.700 --> 00:14:37.659
+that we have. That's what's happening. I'll also say that the diversity of the projects that we get
+
+00:14:38.460 --> 00:14:43.900
+are constantly kind of testing where we should go next. Sometimes it's like, oh, well,
+
+00:14:44.539 --> 00:14:50.460
+like right now, I don't want to get into the details, because it's going to be,
+
+00:14:50.460 --> 00:14:56.059
+I mean, you'll like it, but we support a lot of different sequencing platforms.
+
+00:14:56.940 --> 00:15:02.059
+The sequencing platforms themselves keep changing. There's a new sequencing platform that we're
+
+00:15:02.059 --> 00:15:10.539
+standing up right now called Ultima Genomics. The problem is that they generate such large
+
+00:15:10.539 --> 00:15:15.419
+volumes of data that we have to use our GPU high-performance clusters.
+
+00:15:18.140 --> 00:15:23.500
+We're so on the edge of what they're able to do that the techs at Ultima Genomics cannot
+
+00:15:23.500 --> 00:15:31.500
+fully answer the questions that we're putting to them. Now we've got to learn how GPUs are
+
+00:15:31.500 --> 00:15:36.219
+being allocated on this high-performance cluster. Anyway, yeah, it is a constant
+
+00:15:36.780 --> 00:15:43.340
+balance across what you're learning. Fortunately, I live in a domain where the consultations are
+
+00:15:43.340 --> 00:15:49.179
+always pushing me to the edge all the time. Yeah, that's the best I could do, I think,
+
+00:15:49.179 --> 00:15:51.820
+for that. It's a great question. Thank you. Yeah, it is a great question.
+
+00:15:53.179 --> 00:15:58.380
+The talk about Venn diagrams always reminds me of Drew Conway's diagram of data science,
+
+00:15:58.380 --> 00:16:02.299
+which is another thing that I feel like nobody's ever going to fully achieve. I'll put that in the
+
+00:16:02.299 --> 00:16:10.299
+chat if you haven't seen it. It's computer science, math and statistics, and domain expertise. It's
+
+00:16:10.299 --> 00:16:15.820
+so hard to live in the very, very middle of that Venn diagram. I don't know if it's worth
+
+00:16:16.619 --> 00:16:21.739
+striving to fully get to the center of either of these Venn diagrams because you will never,
+
+00:16:21.739 --> 00:16:26.059
+ever know everything. Just like Chris just said, there will always be something new.
+
+00:16:26.700 --> 00:16:32.059
+Even if you lived in that very, very center of the data science Venn diagram two years ago,
+
+00:16:32.059 --> 00:16:38.619
+then AI came on the scene and you had instantly more to learn that you never would have really
+
+00:16:38.619 --> 00:16:45.260
+had to learn before. Just be nice to yourself. Okay, so fantastic question, anonymous asker.
+
+00:16:45.260 --> 00:16:52.059
+Thank you so much for asking. We had one from Natasha Lang, which is fantastic. It has a little
+
+00:16:52.059 --> 00:16:57.020
+asterisk, so I'll ask it for you, Natasha. It says, what does a typical day look like for you, Chris?
+
+00:16:57.179 --> 00:16:58.140
+Typical week?
+
+00:16:58.140 --> 00:17:05.500
+Yeah, typical week. Typical day is, there's no such thing as a typical day for me. I actually
+
+00:17:05.500 --> 00:17:13.020
+am the director of the core, so I don't get to do nearly as much analysis as I would love to do.
+
+00:17:13.020 --> 00:17:19.900
+The people working at the core are actually doing a lot of the analyses. I'm going to create a
+
+00:17:20.300 --> 00:17:30.219
+fictional entity that's a blend of me and the analysts, but in a typical day, or a typical
+
+00:17:30.219 --> 00:17:36.459
+week, I'll say, we're going to be meeting with biologists who are coming to us basically with
+
+00:17:36.459 --> 00:17:43.979
+a research question and saying, hey, we're interested in understanding how genes are
+
+00:17:43.979 --> 00:17:55.739
+expressed when you have retinal diabetes. How are the genes different, retinal diabetes?
+
+00:17:58.380 --> 00:18:03.579
+Are those genes different in a way where we could actually start to use that information to
+
+00:18:03.579 --> 00:18:08.380
+recommend an intervention? You should have VEGF therapy, or you shouldn't have VEGF therapy.
+
+00:18:09.020 --> 00:18:14.780
+They'll articulate that question, and it's nice when they come to us before they've submitted
+
+00:18:14.780 --> 00:18:20.140
+the samples, because we can guide them and say, oh, you're going to need more samples,
+
+00:18:20.140 --> 00:18:24.619
+or you're going to need this kind of sequencing. But sometimes, they just show up with the data
+
+00:18:24.619 --> 00:18:27.979
+in their pocket, and they say, we thought we were going to get an answer, and what we got
+
+00:18:27.979 --> 00:18:35.900
+was a bunch of data. Then we'll create a project plan, which actually, to a lot of researchers,
+
+00:18:35.900 --> 00:18:40.540
+is kind of an alien thing, like the idea of a project plan that articulates an analysis.
+
+00:18:41.900 --> 00:18:45.660
+They thought we were just going to go off and do it while they were on the call,
+
+00:18:46.300 --> 00:18:55.660
+which doesn't typically happen. Then another huge part of the week is running the code,
+
+00:18:55.660 --> 00:19:01.020
+building the pipelines, kind of shepherding the data as it moves through the different
+
+00:19:01.819 --> 00:19:09.020
+compute systems that we have, and then trying to interpret the results.
+
+00:19:10.780 --> 00:19:17.260
+Interpreting the results is actually difficult, in a way, because first off,
+
+00:19:17.260 --> 00:19:22.140
+the data are complicated, the tools are complicated, the visualizations can be complicated,
+
+00:19:22.140 --> 00:19:28.859
+and also, under all of this, the researchers are coming to us with novel ideas. They're running
+
+00:19:28.859 --> 00:19:35.979
+things that generally haven't been done before, so it can sometimes be a little bit elusive.
+
+00:19:35.979 --> 00:19:40.939
+You can't just be like, oh, that looks like this other dataset, because there is no other precedent
+
+00:19:40.939 --> 00:19:46.060
+for that particular analysis. That said, a lot of what we're looking at,
+
+00:19:47.420 --> 00:19:51.579
+we kind of understand the informatics, we understand how the genes work, we understand
+
+00:19:51.579 --> 00:19:56.459
+how the sequencing platforms work, so we can kind of look at it with a cup of coffee in our hand
+
+00:19:56.459 --> 00:20:00.699
+and say, that looks about right. I think that what we're seeing here is important.
+
+00:20:01.339 --> 00:20:06.060
+But then, I think one of the most important meetings that we have is when we come back
+
+00:20:06.060 --> 00:20:11.500
+together with the researcher, and we kind of go through this and say, we think we're seeing this,
+
+00:20:11.500 --> 00:20:17.339
+but what are you seeing? That's a really tricky part of this kind of engagement model, because
+
+00:20:18.060 --> 00:20:22.060
+we have the expertise in the informatics, but they have the expertise in the domain.
+
+00:20:22.060 --> 00:20:25.979
+They really understand the disease, or they understand the biology in a way that we won't.
+
+00:20:26.619 --> 00:20:34.540
+So, kind of being able to lean into that and try to pull out the actual knowledge from these
+
+00:20:34.540 --> 00:20:39.420
+visualizations and that information, that's a really important part of our week. And also,
+
+00:20:40.219 --> 00:20:43.900
+we have to archive a lot, because there's a lot of data that's generated all the time,
+
+00:20:43.900 --> 00:20:50.540
+so we're moving data around. Yeah, so that's, I don't know, I'm going to say that's a typical week.
+
+00:20:50.540 --> 00:20:51.579
+Yeah, okay, we'll go with that.
+
+00:20:52.219 --> 00:20:58.219
+I think it's hard to define, it's hard to fit, you know, a week or a day in the life into a
+
+00:20:58.219 --> 00:21:02.859
+description, but it's so helpful for context, so I appreciate trying to squeeze it all in there.
+
+00:21:03.660 --> 00:21:08.540
+And thank you, Natasha, for asking that question. There is another one in the Slido,
+
+00:21:09.420 --> 00:21:13.660
+which has risen to the top from Abigail. Again, I see an asterisk, I'm going to read this for
+
+00:21:13.660 --> 00:21:20.300
+Abigail. It says, how weird is hiring right now? Are you swamped with applications? Are some of
+
+00:21:20.300 --> 00:21:24.859
+them fake people? Are you changing anything about how you do it? Hiring is one of those
+
+00:21:24.859 --> 00:21:29.739
+questions where some people do a lot of hiring and some people don't. What experience have you
+
+00:21:29.739 --> 00:21:37.339
+had lately? Yeah, the truth is, I'm kind of insulated from that question simply because
+
+00:21:37.339 --> 00:21:45.739
+the research climate is so constrained by funding right now. Yeah, and you know, I'm looking around
+
+00:21:46.459 --> 00:21:51.260
+because there's other groups like mine on campus. We're kind of looking around and we're like,
+
+00:21:51.260 --> 00:21:56.939
+are you okay? Is everybody okay? And we're like, yeah, we're okay, as long as nothing else happens,
+
+00:21:56.939 --> 00:22:03.420
+we're okay. But I don't think anybody's really hiring actively in the academic space right now
+
+00:22:03.420 --> 00:22:09.739
+because everything is so tentative. It does seem like there's more hiring in some of the more
+
+00:22:09.739 --> 00:22:16.859
+traditional software engineering roles. It feels like there's a little bit of a turn in the path.
+
+00:22:19.420 --> 00:22:26.859
+I think that there was a sentiment that like, oh, well, we're all going to be replaced by AI.
+
+00:22:26.859 --> 00:22:31.900
+And I think that that sentiment is shifting a little bit. That always struck me as a little
+
+00:22:31.900 --> 00:22:38.859
+bit simplistic. And I think that that sentiment is shifting. And there's, I think, an emerging
+
+00:22:40.380 --> 00:22:47.339
+idea that, oh, people are actually really important. And that AI is actually a useful
+
+00:22:47.339 --> 00:22:54.380
+tool in the hands of good people. So let's make sure that we keep engaging good people.
+
+00:22:55.900 --> 00:23:00.540
+But yeah, I have not seen fake people, but I also can't prove that the people I've been
+
+00:23:00.540 --> 00:23:04.939
+interacting with are actually real. So I don't have a good ground truth there.
+
+00:23:05.579 --> 00:23:11.420
+No, but you gave us a fantastic peek into what things look like in academia and in research
+
+00:23:11.420 --> 00:23:14.380
+right now. So I really appreciate that. I almost hesitated to ask that question because like,
+
+00:23:14.380 --> 00:23:18.540
+I don't think that Chris does a ton of hiring, but I know that there's good conversation to
+
+00:23:18.540 --> 00:23:24.540
+be had behind this. So thank you, Abigail, for asking that one. And this leads us right into
+
+00:23:24.540 --> 00:23:28.380
+another two questions that we have in Slido. So we're going to smush them together. One was from
+
+00:23:28.380 --> 00:23:36.060
+Noor and one was anonymous. And they both are asking about that sort of claim that AI is about
+
+00:23:36.060 --> 00:23:41.260
+to replace bioinformatics analyses or processes. What do you think about that?
+
+00:23:43.020 --> 00:23:49.260
+It's an interesting question. I will tell you that at this moment, well, first off,
+
+00:23:49.260 --> 00:23:56.619
+I just want to back up and say like AI as a phenomenon is definitely a disruptive innovation.
+
+00:23:56.619 --> 00:24:02.780
+And it's also very clearly disruptive at scale, in a way that people are like,
+
+00:24:02.780 --> 00:24:11.979
+oh, this is like the Industrial Revolution, or this is like the invention of the printing press,
+
+00:24:11.979 --> 00:24:21.260
+or this is like the invention of a circular saw. I haven't found the perfect analogy for this yet,
+
+00:24:21.260 --> 00:24:32.540
+but bioinformatics is definitely disrupted. I think that one of the problems, and just by the
+
+00:24:32.540 --> 00:24:38.780
+way, just so that you understand the filter through which all of this is being said, I just
+
+00:24:38.780 --> 00:24:44.699
+recently realised that I am what's called a sceptical optimist about AI. I think that AI
+
+00:24:44.699 --> 00:24:50.619
+is important and it can do good things, but I'm not taking anybody's word for it. I am watching
+
+00:24:50.619 --> 00:24:55.900
+what it's doing, and I am testing what it's doing, and I am drawing conclusions as I go.
+
+00:24:56.780 --> 00:24:59.900
+So, sceptical optimist, if you want to sign up for that camp.
+
+00:25:03.500 --> 00:25:10.219
+It's easier for me to get to this through the software engineering perspective, because people
+
+00:25:10.219 --> 00:25:16.939
+are using AI for software creation in a couple different ways. First off, they're using AI
+
+00:25:16.939 --> 00:25:21.900
+basically as what Google should have been doing 20 years ago. It's basically giving you a better
+
+00:25:21.900 --> 00:25:29.099
+answer that's articulated more clearly. So, that's cool. That's interesting.
+
+00:25:31.579 --> 00:25:39.500
+Then, I think further down the continuum, they're using agentic agents to write blocks of code, or
+
+00:25:40.380 --> 00:25:51.739
+passages of analysis. The concern I have about this is that it's nice when you have code that
+
+00:25:51.739 --> 00:26:00.939
+works. It's even better when you understand the code that works. I feel like for many years,
+
+00:26:00.939 --> 00:26:06.540
+we were really trained in reading code and the importance of reading code as a mechanism of
+
+00:26:06.540 --> 00:26:11.020
+understanding it. Now, I think that there's a class of people that are generating code and
+
+00:26:11.020 --> 00:26:16.140
+bragging about never reading it. We just shipped this, and nobody ever looked at it. Isn't that
+
+00:26:16.140 --> 00:26:25.099
+cool? Software engineering actually has a word or a phrase for code that works that nobody
+
+00:26:25.099 --> 00:26:30.060
+understands. They just call that legacy code. That's the code that somebody else wrote that
+
+00:26:30.060 --> 00:26:35.099
+you inherited, and now you have to maintain it. Now, we figured out a way to make more legacy
+
+00:26:35.099 --> 00:26:42.540
+code faster. I didn't know that was the problem, but that's interesting. All that said, I do think
+
+00:26:43.260 --> 00:26:49.339
+the stronger swimmers are going to be able to surf this wave. I think it's actually going to
+
+00:26:49.339 --> 00:26:53.979
+be pretty cool. I think that there are going to be weak swimmers that are towed out into dangerous
+
+00:26:53.979 --> 00:26:59.339
+currents. I'm a little bit worried for them. We try not to do that when we're engaging researchers,
+
+00:26:59.339 --> 00:27:03.979
+but researchers also come to us and are like, hey, I ran my data through this AI.
+
+00:27:05.180 --> 00:27:14.780
+What does it say? We're like, okay, well, let's back up. What was your prompt? Let's look at the
+
+00:27:14.780 --> 00:27:22.459
+code together. I've had people take code bases and run it through AI to refactor it and basically
+
+00:27:22.459 --> 00:27:26.619
+make it easier to understand and maintain. Then come back to me and say, well, I understood the
+
+00:27:26.619 --> 00:27:29.979
+old version, but I don't understand the new version. Can you explain why it did this?
+
+00:27:31.900 --> 00:27:35.099
+I don't know. I think that research is really important. I think that computationally
+
+00:27:35.099 --> 00:27:39.260
+reproducible research is really important. I think an essential ingredient in that is
+
+00:27:39.260 --> 00:27:48.140
+understanding. Frankly, I think we're still on the learning curve to understand how can we deploy AI
+
+00:27:48.140 --> 00:27:53.819
+in a way where we're not compromising our human understanding and the patterns of collaboration
+
+00:27:53.819 --> 00:28:00.140
+that can really advance the domain and still get the benefits of a large language model on
+
+00:28:02.219 --> 00:28:07.819
+that existing knowledge. It's going to be cool in five or ten years to look back on this
+
+00:28:09.339 --> 00:28:15.099
+and realize we've all been using Roman numerals the whole time. This is so much easier now.
+
+00:28:16.780 --> 00:28:21.339
+I wish I had the answer. If I did, I would tell you, but I don't. I just feel like it's a little
+
+00:28:21.339 --> 00:28:26.380
+early to figure that out. We're all still figuring things out, but it's wonderful to hear
+
+00:28:27.339 --> 00:28:33.579
+varied opinions and experiences from different people. Thank you for sharing yours. Sometimes,
+
+00:28:33.579 --> 00:28:38.060
+I think that we just cycle through the same problems in different ways. I'm looking at the
+
+00:28:38.060 --> 00:28:41.579
+chat. I know that you're not looking at the chat because I don't want you to because it's a lot.
+
+00:28:42.219 --> 00:28:48.699
+There's a conversation in the chat that's like getting access to high-end GPU is a bottleneck
+
+00:28:48.699 --> 00:28:53.660
+for us right now. It makes me think about all the conversations that I heard growing up, which were
+
+00:28:54.300 --> 00:29:00.380
+trying to get time on the mainframe at campus and using tape and stuff. It's the same problem,
+
+00:29:00.380 --> 00:29:07.420
+but it's different because now the capacity is just so much higher. We are still in the same
+
+00:29:07.420 --> 00:29:17.579
+cycle. It just looks different. It's a different flavor. If no one's experienced that or heard
+
+00:29:17.579 --> 00:29:21.260
+stories of that, like I was born in the 80s when people were trying to get time on the
+
+00:29:21.260 --> 00:29:25.099
+mainframe at campus. I didn't experience it, but I heard lots of stories.
+
+00:29:28.619 --> 00:29:32.780
+Thank you for asking that question, Noor, and our anonymous asker. I really appreciate it.
+
+00:29:34.780 --> 00:29:39.660
+I saw a question from Zach that has an asterisk. I'm going to read it. It says,
+
+00:29:39.660 --> 00:29:44.780
+what are your thoughts on specializing in one specific domain versus being a generalist?
+
+00:29:44.780 --> 00:29:59.739
+I really like this question. It's interesting. To a degree, I think that's almost a personal
+
+00:29:59.739 --> 00:30:10.300
+decision. I'll also just point out that I had no foreknowledge of how I got to here. Nothing
+
+00:30:10.300 --> 00:30:15.579
+makes sense to me in the moment. Why are you doing this? Everything makes sense in retrospect.
+
+00:30:15.579 --> 00:30:19.819
+I just feel like I've been in this beautiful canoe ride down this beautiful river and facing
+
+00:30:19.819 --> 00:30:26.540
+the wrong way the whole time. I'm a little hesitant to give you any advice on how to steer,
+
+00:30:26.540 --> 00:30:37.819
+because again, I'm generally facing the wrong way. For me, I really like the interdisciplinary
+
+00:30:37.819 --> 00:30:45.819
+aspect of bioinformatics. I feel like I'm often at the interface of a couple fields, and also at
+
+00:30:45.819 --> 00:30:51.900
+the interface of people, in the sense that there's the people at the high-performance compute
+
+00:30:51.900 --> 00:30:56.859
+environment here that are like, oh, well, we have these kind of GPUs, but we don't have those kind
+
+00:30:56.859 --> 00:31:02.780
+of GPUs. We've got these GPUs, but you can only queue them up this way. Almost nobody really
+
+00:31:02.780 --> 00:31:07.660
+understands when they're talking, and I can step in and be like, okay, I think what they're trying
+
+00:31:07.660 --> 00:31:13.339
+to say is, which is probably a rude thing to say if they're actually on the call, but that interface,
+
+00:31:13.339 --> 00:31:19.979
+that translational aspect of, I understand the informatics, you understand the molecular biology,
+
+00:31:20.780 --> 00:31:23.099
+and together, we can have a super interesting conversation.
+
+00:31:25.579 --> 00:31:32.140
+To get to your question, for me, I felt like I really had a deep background of computer science
+
+00:31:32.140 --> 00:31:39.420
+and engineering, so I had been scrambling to learn the statistics and to learn the molecular biology.
+
+00:31:41.607 --> 00:31:47.927
+and I found that those things just kind of had their own wellspring of enthusiasm.
+
+00:31:47.927 --> 00:31:52.007
+So I was just chasing, I was chasing what felt important and felt good at the time.
+
+00:31:52.647 --> 00:31:54.007
+I think that
+
+00:31:52.682 --> 00:32:00.202
+time. I think that if you look at, I mean, if you look at the Drew Conway, did you put that on the
+
+00:32:00.202 --> 00:32:07.962
+Slack, Libby? I did, I put it on the, in the chat. Okay. The Venn diagram, yeah. Yeah, yeah. So that's
+
+00:32:07.962 --> 00:32:11.561
+perfect. So I mean, like, if you look at that, and there's a couple variations on that, but
+
+00:32:11.561 --> 00:32:18.042
+I think having exposure to the different petals of that Venn diagram, I think it's super useful
+
+00:32:18.042 --> 00:32:21.962
+because it gives you the flexibility to have those different conversations and to kind of,
+
+00:32:21.962 --> 00:32:29.321
+like, move among those different activities. Where you actually land and where your sweet
+
+00:32:29.321 --> 00:32:33.801
+spot is, this is, I think, a little bit more personal. The flip side of that is, though,
+
+00:32:33.801 --> 00:32:38.842
+I would definitely get enough exposure in some of those other domains to feel comfortable.
+
+00:32:38.842 --> 00:32:45.002
+Like, and I guess, to say it a different way, there are times where I'm like, ooh,
+
+00:32:46.042 --> 00:32:49.882
+I don't feel like I really understand the linear mix model well enough to explain it to this PI.
+
+00:32:50.601 --> 00:32:56.202
+So that to me is a sign, I need to get over there. I need to, I need to go deeper on this because I
+
+00:32:56.202 --> 00:33:01.082
+want to be able to explain this to the PI, sorry, the principal investigator. That's, that's, that's
+
+00:33:01.082 --> 00:33:05.961
+kind of our customers. So I want to be able to explain to the customer. So I got to go a little
+
+00:33:05.961 --> 00:33:10.601
+bit deeper over here so that I can actually have that conversation. So for me, it's like,
+
+00:33:10.601 --> 00:33:14.201
+it's almost this weird thing of like, I'm afraid of this. I should go closer to it.
+
+00:33:15.002 --> 00:33:20.842
+Um, so, but I mean, ultimately, like, I think it is up to you and like where your sweet spot is in
+
+00:33:20.842 --> 00:33:25.802
+that domain. I think if you go deeper, you're going to have that experience and, and you're
+
+00:33:25.802 --> 00:33:30.762
+gonna have that depth. But if, uh, if you stay, if you stay a little bit, a little bit shallower,
+
+00:33:30.762 --> 00:33:34.042
+then you're going to have that breadth. I like breadth. That's just where I'm at.
+
+00:33:35.241 --> 00:33:41.162
+Yeah. I will bring up again, the book range, go check out the book range. Um, I'm a generalist
+
+00:33:41.162 --> 00:33:46.362
+by nature, just because I'm easily bored and I, my brain likes to hop around and do everything.
+
+00:33:46.362 --> 00:33:52.042
+So I will also recommend the book refuse to choose by Barbara share all of Barbara shares books.
+
+00:33:52.042 --> 00:33:57.722
+Really? If you're a person like me, who she, she calls scanners, um, or multi potentialites.
+
+00:33:58.281 --> 00:34:04.441
+I think that there is, there are a lot of people who don't choose actively choose that as a career
+
+00:34:04.441 --> 00:34:09.241
+path, being a generalist, but they kind of are by nature. There's a reply to Zach's question in
+
+00:34:09.241 --> 00:34:14.042
+Slido that I wanted to just read before I mark it as answered. And it says, if people stay in a
+
+00:34:14.042 --> 00:34:19.002
+role long enough, they will pick up domain knowledge. I prioritize coding skills, being a
+
+00:34:19.002 --> 00:34:24.122
+good fit for the team and the ability to ask good questions, which is what helps you pick up domain
+
+00:34:24.122 --> 00:34:30.521
+knowledge. Yes. Fantastic. Whoever you are anonymous person who, who answered this is
+
+00:34:30.521 --> 00:34:36.682
+perfect. Yeah. Okay. Sorry, if I could just piggyback on that, if you are, if you were,
+
+00:34:36.682 --> 00:34:42.762
+if you were in a place in, in kind of your own personal equilibrium where you can, um,
+
+00:34:42.762 --> 00:34:46.922
+where you're comfortable asking a question where you're comfortable, basically, and I'll put a
+
+00:34:46.922 --> 00:34:52.521
+finer point on it. If you're comfortable asking a dumb question, you will open up such an interesting
+
+00:34:52.521 --> 00:34:57.721
+conversation. And it's not just a conversation where you learn more. It's a conversation where
+
+00:34:57.721 --> 00:35:03.562
+the whole collaboration opens up, like, because I will tell you that domain experts come to me
+
+00:35:03.562 --> 00:35:06.282
+and I do not know what they're talking about. And I'll just say like,
+
+00:35:07.241 --> 00:35:13.642
+can you put a few more words around this thing that you said? And, and they love to talk about
+
+00:35:13.642 --> 00:35:19.721
+it. And so they're like, absolutely. I'm so glad you asked that question. Um, so I think that
+
+00:35:19.721 --> 00:35:25.002
+the willingness or the ability to be a little bit vulnerable just creates such a more satisfying
+
+00:35:25.002 --> 00:35:30.441
+and deeper and productive collaboration. So if you can do it, it's, it's a huge win.
+
+00:35:31.002 --> 00:35:38.122
+Wonderful. Thank you to both of you. Okay. Um, I have a question from Nellie. Nellie,
+
+00:35:38.122 --> 00:35:43.721
+our, our resident treadmiller these days. Um, I will put your question in the chat right now.
+
+00:35:44.762 --> 00:35:50.122
+Wonderful. Uh, I wanted to, or hi, my name is Nellie. Thank you so much for joining us today.
+
+00:35:50.762 --> 00:35:56.441
+Uh, I am curious. Um, a lot of people tend to ask like how people are using AI or how that's
+
+00:35:57.402 --> 00:36:02.762
+affecting their life or their work and their lives or whatever. I'm curious, what human aspects are
+
+00:36:02.762 --> 00:36:07.961
+you leaning into, especially as you mentioned, you're skeptical optimist. And I kind of agree
+
+00:36:07.961 --> 00:36:13.162
+with that phrasing. I'm also kind of in that space. And so I was just kind of curious where
+
+00:36:13.162 --> 00:36:20.842
+you lean into the human aspects of work and other things like that. Yeah. I mean, so it is,
+
+00:36:20.842 --> 00:36:26.521
+it's really interesting question. Like, like in the age of AI, what does it mean to be a good
+
+00:36:26.521 --> 00:36:31.882
+human? Um, uh, and I mean, in my case, what does it mean to be a good researcher or what does it
+
+00:36:31.882 --> 00:36:40.041
+mean? How can you support good research? Um, AI is a, is an interesting tool in that. Like you
+
+00:36:40.041 --> 00:36:44.361
+can come to AI with a research question and you can just put it to AI and AI.
+
+00:36:45.322 --> 00:36:50.361
+Well, I'm going to share a little conversation that I had with Claude, the agent, like not too
+
+00:36:50.361 --> 00:36:55.641
+long ago, like I was in, I, I, I sat down, I was in a meeting and the meeting wasn't going well.
+
+00:36:55.641 --> 00:37:02.602
+And so I started a conversation with Claude and I said to Claude, um, how can you achieve
+
+00:37:02.602 --> 00:37:08.361
+computationally reproducible research results when you're using a nondeterministic tool like AI?
+
+00:37:08.761 --> 00:37:13.641
+And it said, well, it's harder, but there's ways to do it, but that's not really the problem.
+
+00:37:13.641 --> 00:37:19.562
+The problem is that people over-claim like the impact or the significance of their results.
+
+00:37:20.521 --> 00:37:28.442
+And I said, and I kept going and I said, well, okay, but in a domain that rewards, um,
+
+00:37:29.002 --> 00:37:36.041
+positive results over negative results, how is using a tool to do that? And he said, well,
+
+00:37:36.842 --> 00:37:44.602
+how is using a tool that is optimized to offer really confident, comprehensive answers?
+
+00:37:46.201 --> 00:37:51.402
+How is that going to shape the direction of the research and the science? I mean,
+
+00:37:51.402 --> 00:37:58.921
+won't that just reinforce positive over-claiming? And it said, this was the most disarming answer
+
+00:37:58.921 --> 00:38:02.842
+I've ever gotten from an AI. It said, yeah, that's a really good question.
+
+00:38:03.722 --> 00:38:08.921
+This might get worse before it gets better, which I was like, that's such a gangster answer. I was
+
+00:38:08.921 --> 00:38:15.081
+totally unprepared for Claude to be that like vulnerable. Um, but it also was really scary.
+
+00:38:15.081 --> 00:38:23.002
+Um, I think one of the problems that I have with AI as a kind of faux collaborator is simply that
+
+00:38:23.002 --> 00:38:28.521
+it isn't a collaborator, that it is not teaching us to be vulnerable. It is not teaching us to be
+
+00:38:29.322 --> 00:38:35.641
+better. It's not, it's not helping us to trust other humans more. Um, and so I feel like it's
+
+00:38:35.641 --> 00:38:41.722
+kind of, um, encroaching on the nature of collaborative research, um, which I think
+
+00:38:41.722 --> 00:38:46.921
+is built on trust. And I think trust is built on vulnerability. And I, I never, I like almost,
+
+00:38:46.921 --> 00:38:51.162
+almost never, except for that one moment that I just described, Claude doesn't say, I don't know,
+
+00:38:52.122 --> 00:38:57.562
+like it's hard. I mean, it does, but you have to push it really hard. Um, and so to, to interact
+
+00:38:57.562 --> 00:39:01.481
+with people that are like, I don't know, I don't know the answer to that. I'm unfamiliar with this.
+
+00:39:01.481 --> 00:39:05.882
+That's a whole different muscle that AI doesn't exercise. And I think it's really important for
+
+00:39:05.882 --> 00:39:15.081
+research. Um, so I, and another thing that, uh, that Libby and I talked about a little bit, um,
+
+00:39:15.081 --> 00:39:23.002
+earlier, uh, off offline was this notion, uh, it's called Conway's law, Conway's law. It's by
+
+00:39:23.002 --> 00:39:29.801
+this guy, Melvin Conway, who was a computer scientist, uh, in the mid 1900s and Conway,
+
+00:39:29.801 --> 00:39:35.002
+he observed this thing where it's like, uh, basically what he said was all other things
+
+00:39:35.002 --> 00:39:43.081
+being equal, the architecture of a technical solution will mirror the organizational structure
+
+00:39:43.081 --> 00:39:48.041
+that created it. And specifically what he said was the architecture of the solution is going to
+
+00:39:48.041 --> 00:39:51.801
+look like the communication structure of the organization that created it.
+
+00:39:51.801 --> 00:39:58.041
+So if you have like three chief architects and you say, you guys got to go build a compiler,
+
+00:39:58.041 --> 00:40:02.442
+they're going to build a three pass compiler, right? Because there's three chief architects,
+
+00:40:03.002 --> 00:40:12.282
+that pattern of like code reflects the thing that created it, right. That can be bad and that can be
+
+00:40:12.282 --> 00:40:21.641
+good. Um, but I do wonder what relying on AI is doing to that pattern. I'm wondering like,
+
+00:40:21.641 --> 00:40:28.202
+is AI creating patterns that are easy for us to consume that fit into the organizations that are,
+
+00:40:28.202 --> 00:40:33.721
+um, easy for us to understand and communicate to other people answers? I'm not sure. I'm just
+
+00:40:33.721 --> 00:40:40.762
+not sure yet. So, um, I think if I can just the short summary of that is I rely on people to be
+
+00:40:40.762 --> 00:40:46.762
+people and I rely on people to remind me how to be vulnerable and to build trust and like to
+
+00:40:46.762 --> 00:40:52.921
+collaborate. Um, and you know, and those people are using AI and I don't begrudge them that. Um,
+
+00:40:52.921 --> 00:40:58.122
+but I'm not getting, I'm not, I'm not exercising that muscle very much with AI. So I rely on people
+
+00:40:58.122 --> 00:41:05.562
+for that. Does that, does that get at it? I think it gets at it enough. I think, I don't know right
+
+00:41:05.562 --> 00:41:12.601
+now is a valid answer to pretty much anything. It's always a valid answer. Um, okay. I have
+
+00:41:12.601 --> 00:41:20.361
+another anonymous question in Slido here. Um, which is I recently complete, I recently completed
+
+00:41:20.361 --> 00:41:26.442
+a highly statistical masters in statistics and data science bioinformatics in Belgium,
+
+00:41:26.442 --> 00:41:32.682
+but I realized that academia and interest in industry are quite different. Can't talk today.
+
+00:41:33.241 --> 00:41:38.522
+What advice would you give for successfully moving into industry as a recent graduate?
+
+00:41:39.882 --> 00:41:45.562
+Any thoughts here on moving into industry and academia and industry are,
+
+00:41:46.601 --> 00:41:52.202
+that's a good question. I mean, I actually came from biotech that was, um, I mean,
+
+00:41:52.202 --> 00:41:56.442
+yeah, it was commercial biotech and I went to academia. So that was a different, that was,
+
+00:41:56.442 --> 00:42:07.082
+that was a different route. Um, well, it was confusing. There is, I mean, like the academic
+
+00:42:07.082 --> 00:42:12.762
+route, you know, is optimized for knowledge generation and that creates some interesting
+
+00:42:12.762 --> 00:42:19.161
+patterns and kind of in the code basis that you end up using. Um, they tend to be a little bit
+
+00:42:19.161 --> 00:42:24.841
+more exploratory. They tend to work really well in the labs that designed them and don't always
+
+00:42:24.841 --> 00:42:33.082
+generalize. Um, commercial solutions are typically optimized, um, along different axes. I
+
+00:42:33.082 --> 00:42:39.322
+mean, they, they, they have to be robust. They have to be, uh, scalable. Um, they don't necessarily
+
+00:42:39.322 --> 00:42:45.322
+need to generalize across a whole bunch of different users. Um, so it's different. Um,
+
+00:42:47.562 --> 00:42:51.401
+I think it depends. I'm sorry. This is like, sorry, as a bioinformatician,
+
+00:42:51.401 --> 00:42:55.481
+every conversation that I'm going to have with you starts off with the phrase, it depends.
+
+00:42:56.841 --> 00:42:58.361
+Classic statistics answer.
+
+00:42:58.361 --> 00:43:02.921
+Okay, good. So yeah, there you go. You know what I'm talking about? Um, I think it does depend a
+
+00:43:02.921 --> 00:43:09.642
+little bit on like, I guess what I'm, I'm thinking about, like, I'm not really sure that I would
+
+00:43:09.642 --> 00:43:16.601
+treat it too monolithically in the sense that like industry is not industry. It's like, it's like,
+
+00:43:16.601 --> 00:43:22.841
+are you going into a small biotech that's trying to like try to find biomarkers? Are you trying to,
+
+00:43:22.841 --> 00:43:28.921
+you know, go into, um, like, uh, a sequencing platform that's trying to build out visualization
+
+00:43:28.921 --> 00:43:36.522
+tools or analytical tools? Um, I think it depends a little bit on like what direction that you want
+
+00:43:36.522 --> 00:43:48.122
+to go. Um, I will say that you can get an immense amount of depth in the industry side. Um, but I
+
+00:43:48.122 --> 00:43:53.882
+think if you want breadth, you can get more in the academic side, um, especially in a service kind of
+
+00:43:53.882 --> 00:43:59.241
+slot, like where we are, where we're dealing with like, um, you know, 75 to a hundred PIs every
+
+00:43:59.241 --> 00:44:04.601
+year. Um, so they're always coming to us with something new. Uh, we don't give as much depth
+
+00:44:04.601 --> 00:44:10.202
+though. Um, so I think it depends. I think it depends on the organization that you're looking
+
+00:44:10.202 --> 00:44:15.882
+at or the kind of sub domain that you're looking at. It definitely does. Gonzalo in the chat says
+
+00:44:15.882 --> 00:44:21.161
+industry be prepared for messy datasets. Yes, absolutely. And if you would like to learn more
+
+00:44:21.161 --> 00:44:27.481
+from somebody who is at a small biotech place, um, I really recommend watching the data science
+
+00:44:27.481 --> 00:44:35.322
+hangout with Varun Dwaraka. He is the director of bioinformatics at True Diagnostic. Um, speaking
+
+00:44:35.322 --> 00:44:41.002
+of looking for biomarkers, I will put the YouTube video URL in the chat. Oh, I should have like put
+
+00:44:41.002 --> 00:44:47.562
+a little thing there that says this is Varun here. I'll put a little note there. Um, that might give
+
+00:44:47.562 --> 00:44:54.281
+you some perspective, whoever our asker is. Thank you for asking. Okay. So we have just nine minutes
+
+00:44:54.281 --> 00:44:59.962
+left. I would love it if we could sneak in a question that we always try to sneak in, which is
+
+00:44:59.962 --> 00:45:05.241
+a piece of career advice. Is there something you wish that you knew before you got into the domain
+
+00:45:05.241 --> 00:45:10.442
+you're in or a piece of advice that you like to give others that always helps? So weird. It's,
+
+00:45:10.442 --> 00:45:14.921
+it's, this is a weird answer, but I think, I think a lot of people on the call might get it.
+
+00:45:14.921 --> 00:45:22.442
+Um, frankly, I wish I knew more linear algebra before I got into this. Um, um, and I can't say
+
+00:45:22.442 --> 00:45:29.481
+that in a lot of venues and have anybody understand why or like what even that means, but, um, I think
+
+00:45:29.481 --> 00:45:38.361
+that for me, I, and actually the interesting thing is that like, I, again, I came into it with computer
+
+00:45:38.361 --> 00:45:43.161
+science and software engineering. So that was the, I had already checked that box, but, um,
+
+00:45:43.882 --> 00:45:48.041
+the molecular biology was almost self-powering. It's like, I'm really interested in this. So I
+
+00:45:48.041 --> 00:45:55.882
+got to learn about this. This is fascinating. Um, the statistics was the hardest thing for me,
+
+00:45:55.882 --> 00:46:00.202
+like in learning the statistics and learning the statistics well enough to be able to explain it
+
+00:46:00.762 --> 00:46:05.562
+to somebody that doesn't understand statistics and maybe even doesn't quite believe statistics.
+
+00:46:06.442 --> 00:46:13.642
+Um, so yeah, I think that, uh, the, the, the basic career advice, if you want to go into
+
+00:46:13.642 --> 00:46:19.082
+bioinformatics, you're going to want to take a tour of duty in like all three of those domains
+
+00:46:19.082 --> 00:46:25.962
+and just suss out, like, do I like this? Is this, and if you do, then I think that they're like
+
+00:46:25.962 --> 00:46:30.041
+staying in the middle, it's hard, but it can be really rewarding. But if you get in there and
+
+00:46:30.041 --> 00:46:35.562
+you're like, I don't really like molecular biology, um, you still have a vibrant data science career
+
+00:46:35.562 --> 00:46:41.721
+ahead of you. If you, if you get in there and you know, you find out that you don't like computer
+
+00:46:41.721 --> 00:46:46.361
+science, like there's still like that Venn diagram, those three overlapping circles,
+
+00:46:46.361 --> 00:46:52.841
+all of the pedals have like, like, those are, those are vibrant and powerful careers.
+
+00:46:52.841 --> 00:46:57.962
+So, um, but if, yeah, if all three are lighting up, then yeah, bioinformatics could be a really
+
+00:46:57.962 --> 00:47:05.481
+cool thing. Um, yeah, I don't know. That's what I'll say. That is good enough. Well, I tell you,
+
+00:47:06.041 --> 00:47:10.361
+you have people agreeing with you in the chat and I will agree with you a plus one for linear
+
+00:47:10.361 --> 00:47:15.002
+algebra, as far as like, if you would like to up your game in anything and linear algebra has
+
+00:47:15.002 --> 00:47:19.082
+been left out of your curriculum, the way that it was left out of my two degrees that we're all
+
+00:47:19.082 --> 00:47:25.882
+about statistics. Um, it under underpins so much of all of the things that you might otherwise
+
+00:47:25.882 --> 00:47:30.601
+learn without it, uh, like PCA, like all kinds of things. So if you're, if you're like wondering,
+
+00:47:30.601 --> 00:47:36.442
+well, what is a vector? What is an eigenvalue? What, what are all these things? If you even
+
+00:47:36.442 --> 00:47:41.082
+scratch the surface of linear algebra, I think that they will all make more sense to you.
+
+00:47:41.882 --> 00:47:47.161
+Okay. Six minutes left. Can we squeeze in more questions? I think that we can do it.
+
+00:47:47.161 --> 00:47:51.241
+Let's see. I have a question from Jared Allen here. It's got asterisks and I'll read it.
+
+00:47:51.882 --> 00:47:56.522
+It says working with academics, do you find that you have to commit more time than you would like
+
+00:47:56.522 --> 00:48:01.962
+to data curation and data wrangling, or do you insist on then submitting curated datasets to you?
+
+00:48:02.921 --> 00:48:06.841
+Yeah, good. Great question. Like some, somebody said earlier, get, get, you know,
+
+00:48:06.841 --> 00:48:12.122
+if you're going into industry, get ready to work with, uh, with some kind of hairy datasets. Yeah.
+
+00:48:12.122 --> 00:48:18.601
+Hairy datasets is probably a good starting position for everybody. Um, like one of the things that,
+
+00:48:20.522 --> 00:48:25.801
+like we're dealing with a lot of sequence data. Sometimes it's proteomics data, but
+
+00:48:26.762 --> 00:48:34.522
+mostly it's sequence data. And we collaborate with a group that runs a bunch of sequencers,
+
+00:48:34.522 --> 00:48:43.161
+um, that, uh, that literally work right behind me. Um, so the datasets that we get are often,
+
+00:48:44.122 --> 00:48:52.361
+are often fairly rectangular datasets. Um, and they're annotated well enough for us to run the
+
+00:48:52.361 --> 00:48:58.442
+experiment, but it is also the case that people come to us and they say, Hey, I want to run this,
+
+00:48:59.001 --> 00:49:03.001
+but I also want to use this public dataset that's over here in this public repository.
+
+00:49:03.001 --> 00:49:07.482
+Now it's very cool that there are public repositories for all of our, all of, uh,
+
+00:49:07.482 --> 00:49:13.482
+or almost all of our datasets. That's powerful. That makes our research so much more impactful.
+
+00:49:13.482 --> 00:49:20.842
+The problem is the public datasets are not evenly curated. They do not have controlled
+
+00:49:20.842 --> 00:49:27.562
+vocabularies yet about how the samples are characterized, um, and described. They are not
+
+00:49:27.562 --> 00:49:32.521
+necessarily, uh, normalized along the kind of molecular measurements that are, that are being
+
+00:49:32.521 --> 00:49:38.281
+made on that platform. So, and, and the problem is I love the idea. I mean, I got to tell you,
+
+00:49:38.281 --> 00:49:43.082
+it's kind of a novel idea, uh, of just saying like, Hey, no, you got to clean this up before
+
+00:49:43.082 --> 00:49:49.401
+we look at it. The people that are coming to us, they have no idea there's anything wrong with
+
+00:49:49.401 --> 00:49:54.521
+these datasets. They have no idea like, like how much effort it's going to take to make this into
+
+00:49:54.521 --> 00:50:00.041
+a clean rectangle that we can actually put into any kind of a model. Um, and even if they did,
+
+00:50:00.041 --> 00:50:04.921
+they wouldn't know how to do it. They wouldn't know how to clean it. Um, so that is a lift.
+
+00:50:04.921 --> 00:50:10.682
+We kind of absorb that. We will tell them that and say like, just so you know, what you're asking
+
+00:50:10.682 --> 00:50:15.641
+is hard for surprising reasons. Um, and, and they assume that it's like, Oh, it's in a public
+
+00:50:15.641 --> 00:50:21.562
+repository. It must be super clean and awesome and a perfect rectangle. And it is generally not.
+
+00:50:21.562 --> 00:50:27.962
+Um, so yeah, um, I, I, I, I, I'll put that with the teams. Like, could we just say, no,
+
+00:50:29.242 --> 00:50:33.562
+can we start saying, no, I think I would be, I've been thinking about this as you've been talking.
+
+00:50:33.562 --> 00:50:38.682
+I think if somebody else cleans the data and then gave it to me, I would be missing so much context
+
+00:50:38.682 --> 00:50:44.761
+in that missing, missing data. I would be missing things that would have allowed me to ask questions
+
+00:50:44.761 --> 00:50:50.362
+about it and learn more about the dataset. So I think that the person who's analyzing it,
+
+00:50:50.362 --> 00:50:55.082
+getting that mess is actually maybe the best thing. I don't know. What do you think?
+
+00:50:55.722 --> 00:51:01.641
+Yeah. I will say this, that like, sometimes we work with electronic medical records and this
+
+00:51:01.641 --> 00:51:07.881
+is one case where I almost feel like I might have a, I might have a little love for AI
+
+00:51:07.881 --> 00:51:12.362
+because electronic medical records are very informative and they are impossible to work with.
+
+00:51:12.442 --> 00:51:18.281
+Um, so the idea of AI kind of distilling that into fielded computable information,
+
+00:51:19.242 --> 00:51:25.242
+it's not that that's not a crazy idea. Like now there's still hallucination and slop. Um,
+
+00:51:25.242 --> 00:51:31.482
+so you have to trust and verify, but yeah, I could, I could, I could see that as helping.
+
+00:51:31.482 --> 00:51:39.641
+And in fairness, like our, like the AI tools, um, do actually a reasonable job of taking weird kind
+
+00:51:39.641 --> 00:51:45.722
+of, um, nominally incompatible datasets and cleaning them up and making them kind of, you
+
+00:51:45.722 --> 00:51:53.322
+know, making them, you know, stackable and, uh, and regular. Um, so it does make that easier,
+
+00:51:53.322 --> 00:51:58.602
+but you really have to pay attention because it, it, it doesn't always make, it doesn't always
+
+00:51:58.602 --> 00:52:03.801
+make perfect decisions. And if you go fast, you could, you could do something that would be,
+
+00:52:04.602 --> 00:52:11.001
+um, incorrect. Yeah. Yeah. Takes that old, uh, move fast, break things.
+
+00:52:11.001 --> 00:52:16.041
+It turns into a warning, which is like, uh, if you move fast, you might break things. Okay. I
+
+00:52:16.041 --> 00:52:20.041
+have a question that I would love to stick in our last one minute here. It's from Elizabeth
+
+00:52:20.041 --> 00:52:25.161
+and it has an asterisk. It says, do you miss anything from the strictly software engineering
+
+00:52:25.161 --> 00:52:31.001
+side? Uh, I really, yeah. Do I miss anything from the strictly software engineering side?
+
+00:52:31.001 --> 00:52:41.242
+Um, well, my first answer is like, I miss the clarity of it because again, it really is turtles
+
+00:52:41.242 --> 00:52:47.001
+all the way down. Like you, you, you don't always have a ground truth. But before I worked in the
+
+00:52:47.001 --> 00:52:53.242
+biotech, I worked, uh, in a company that, um, that built software to process dental claims.
+
+00:52:53.801 --> 00:52:59.722
+And I will tell you that having done that for just seven months, there is emerging complexity
+
+00:52:59.722 --> 00:53:03.962
+in processing dental claims. Like you think that like somebody somewhere figured this out.
+
+00:53:03.962 --> 00:53:09.641
+I'm telling you that that's just about as mysterious as molecular biology. Um,
+
+00:53:10.761 --> 00:53:15.161
+so yeah, you're giving me new appreciation for my mom who used to be an insurance specialist
+
+00:53:15.161 --> 00:53:20.121
+at a dental office for a long time. I've never known what she does. Maybe I should start asking
+
+00:53:20.121 --> 00:53:26.602
+questions. Don't start something you don't want to finish, but yeah. Uh, yeah, yeah. So yeah. Um,
+
+00:53:26.602 --> 00:53:30.602
+yeah, I don't know. That's a great question. What do I miss? I don't have a really good answer for
+
+00:53:30.602 --> 00:53:35.562
+it. Um, Chris, Chris will be thinking about this later and post about it on LinkedIn tomorrow or
+
+00:53:35.562 --> 00:53:39.482
+something. Well, thank you, Elizabeth, for asking that question. You have a great name. It's my
+
+00:53:39.482 --> 00:53:43.482
+name too. Uh, this was really, really fun. We've reached the top of our hours, so we have to say
+
+00:53:43.482 --> 00:53:48.602
+goodbye. Thank you so much, Chris. I hope you had a good time. I had a great time. Thanks everybody.
+
+00:53:48.602 --> 00:53:56.202
+Wonderful. You can find Chris on LinkedIn, Chris Gates, University of Michigan, and you can also
+
+00:53:56.362 --> 00:54:00.442
+find all of us after the call on Discord. So please get on Discord. We would love to hang
+
+00:54:00.442 --> 00:54:04.121
+out with you there. Thank you for hanging out with us, everybody. If there is good stuff in
+
+00:54:04.121 --> 00:54:07.962
+the chat that you don't want to lose, like someone's name you were having a great conversation
+
+00:54:07.962 --> 00:54:15.161
+with, save it, three dots in the top, save chat, find them on the Discord, post on the, the, uh,
+
+00:54:15.161 --> 00:54:18.682
+data science hangout channel on Discord and be like, who is this person who we were having a
+
+00:54:18.682 --> 00:54:24.842
+great conversation? Um, so we can connect you to each other. Libby, can you say and just test that
+
+00:54:24.842 --> 00:54:29.161
+out real quick? Cause somebody told me they weren't able to save the chat and I just want to
+
+00:54:29.161 --> 00:54:36.202
+make sure if other people can't, can you let me know? Yeah, let us know. Somebody click the top
+
+00:54:36.202 --> 00:54:40.842
+three dots right now, unless you're in the browser in zoom, which often is different and you might
+
+00:54:40.842 --> 00:54:47.001
+have three dots in the bottom right of your screen and let us know. Can't save chat on mobile. Okay.
+
+00:54:47.962 --> 00:54:55.962
+Okay. Isabella put it in the chat too. So can people download that? I'm just trying to figure
+
+00:54:55.962 --> 00:55:00.602
+out if it's when you're on certain browsers or for certain company firewalls too. Yeah.
+
+00:55:00.602 --> 00:55:06.121
+Cameron says can't save it on the web browser either. Um, zoom makes changes all the time.
+
+00:55:06.121 --> 00:55:11.881
+They don't tell us, they don't ask us if we just, you know, deal with them as they come. Um, but
+
+00:55:11.881 --> 00:55:16.281
+yeah, if you do not see it, I might also be able to just pop it on discord. It's not a reason to
+
+00:55:16.281 --> 00:55:22.362
+get on discord. I can download it, um, after the fact. Okay. Steve says it works on safari.
+
+00:55:23.001 --> 00:55:32.202
+Oh yeah. And it goes into a very weird spot. Um, so when I, when you download it in zoom,
+
+00:55:32.202 --> 00:55:38.842
+it shows like, can you show this in your finder? It should show that. And then you can find like
+
+00:55:38.842 --> 00:55:44.041
+a zoom folder and hopefully we cut this out from the recording, but I just wanted to figure that
+
+00:55:44.041 --> 00:55:48.761
+out with everybody. Okay. Everybody. Yeah. And if you have more updates on things that did or did
+
+00:55:48.761 --> 00:55:53.161
+not work, uh, go to the discord, Jeffrey, I will see you on the discord. I'll put the chat there
+
+00:55:53.161 --> 00:55:58.842
+for you. Thank you everybody for hanging out with us. If you are going to join us on Tuesday,
+
+00:55:58.842 --> 00:56:03.641
+and I highly recommend you do at the data science lab, Nick crane's going to be joining us. They're
+
+00:56:03.641 --> 00:56:09.242
+going to teach us all about parquet files. I have so much parquet FOMO. You have no idea. And parquet
+
+00:56:09.242 --> 00:56:13.881
+is so valuable and powerful. Chris is giving a thumbs up. Is this an endorsement for parquet
+
+00:56:13.881 --> 00:56:20.281
+file? You need it. You need it. Okay. So come learn about it with Nick and with me and with
+
+00:56:20.281 --> 00:56:23.801
+Isabella at the data science lab. It's a messy screen sharing place where we just hang out and
+
+00:56:23.801 --> 00:56:28.202
+have fun. We are totally in the discord for chat. So it's another reason to get on the discord and
+
+00:56:28.202 --> 00:56:33.722
+get acclimated there. We're in the data science lab channel. And then if you are joining us on
+
+00:56:33.722 --> 00:56:39.001
+next Thursday, we're going to have a very special guest, Amy Rossi. She's the chief people officer
+
+00:56:39.801 --> 00:56:46.121
+at Posit. So if you've ever wondered about people analytics, about, you know, what decisions,
+
+00:56:46.121 --> 00:56:52.041
+what data helps decision-making in people analytics in the people area in general,
+
+00:56:52.041 --> 00:56:54.842
+she's wonderful. And it's going to be a very good time.
+
+00:56:55.482 --> 00:56:58.602
+Thanks for hanging out with us, everybody. See you next week. Bye.

@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio::conf(2020)
 - Colin Fay
@@ -67,12 +67,12 @@ external:  # updated automatically, do not edit
   duration: 1351
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.962276+00:00'
+  last_updated: '2026-09-18T13:58:17.861320+00:00'
   like_count: 86
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio::conf(2020)
   - Colin Fay
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SE6TnUV4nC4/hqdefault.jpg
   title: Colin Fay | Production-grade Shiny Apps with golem | RStudio (2020)
   url: https://www.youtube.com/watch?v=SE6TnUV4nC4
-  view_count: 5191
+  view_count: 5254
 ---
 image: thumbnail.jpg
 

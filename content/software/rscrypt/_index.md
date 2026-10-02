@@ -5,6 +5,8 @@ github: rstudio/rscrypt
 image: logo.svg
 languages:
 - C
+people:
+- Kevin Ushey
 title: rscrypt
 topics:
 - MLOps and Admin
@@ -18,6 +20,8 @@ external:  # updated automatically, do not edit
   - C
   last_updated: '2026-05-20T08:05:35.017596+00:00'
   license: BSD-2-Clause
+  people:
+  - Kevin Ushey
   repo: rstudio/rscrypt
   stars: 33
   title: rscrypt

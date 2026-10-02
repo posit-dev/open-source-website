@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - rstudio
 - data science
@@ -61,11 +61,11 @@ external:  # updated automatically, do not edit
   duration: 119
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.006578+00:00'
-  like_count: 37
+  last_updated: '2026-09-18T13:58:08.949302+00:00'
+  like_count: 38
   playlist: ''
   software:
-  - Positron
+  - positron
   tags:
   - rstudio
   - data science
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9i7rCSL5EVM/maxresdefault.jpg
   title: Let's set up your Python environment with only 2 steps | PydyTuesday Python Projects
   url: https://www.youtube.com/watch?v=9i7rCSL5EVM
-  view_count: 1144
+  view_count: 1208
 ---
 image: thumbnail.jpg
 

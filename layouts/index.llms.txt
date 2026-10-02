@@ -1,0 +1,45 @@
+# Posit Open Source
+
+> The home of open-source software from [Posit, PBC](https://posit.co) (formerly RStudio): Shiny, Quarto, the tidyverse, Positron, and hundreds of other open-source projects for data science, scientific research, and technical communication in R and Python. This site catalogs the software, the people who build it, and related blog posts, events, and learning resources.
+
+## Software
+
+Most popular projects by GitHub stars (see the [full software directory](https://opensource.posit.co/software/) for all {{ len site.Taxonomies.software }} projects):
+
+{{ $software := slice -}}
+{{ range $term, $wp := site.Taxonomies.software -}}
+  {{ with $wp.Page -}}
+    {{ if .Params.external.stars -}}
+      {{ $software = $software | append . -}}
+    {{ end -}}
+  {{ end -}}
+{{ end -}}
+{{ range first 25 (sort $software "Params.external.stars" "desc") -}}
+- [{{ .Title }}]({{ .Permalink }}): {{ with .Params.description }}{{ . | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}{{ else }}Open-source software from Posit.{{ end }}
+{{ end }}
+## People
+
+- [Maintainers and contributors](https://opensource.posit.co/people/): Profiles of the people who build and maintain Posit's open-source software, with links to the projects they work on.
+
+## Blog
+
+Recent posts (see [all posts](https://opensource.posit.co/blog/)):
+
+{{ range first 15 (where site.RegularPages "Section" "blog") -}}
+- [{{ .Title }}]({{ .Permalink }}): {{ with .Params.description }}{{ . | plainify | replaceRE `\s+` " " | strings.TrimSpace | truncate 200 | htmlUnescape }}{{ else }}{{ .Summary | plainify | replaceRE `\s+` " " | strings.TrimSpace | truncate 200 | htmlUnescape }}{{ end }}
+{{ end }}
+## Events
+
+- [Events](https://opensource.posit.co/events/): Conferences, meetups, and community events where Posit open-source software is presented, including posit::conf.
+
+## Resources
+
+- [Cheatsheets](https://opensource.posit.co/resources/cheatsheets/): Concise reference guides for popular R and Python packages.
+- [Videos](https://opensource.posit.co/resources/videos/): Talks, tutorials, and community hangouts about Posit open-source software.
+- [Tutorials](https://opensource.posit.co/resources/tutorials/): Guided learning materials.
+- [Webinars](https://opensource.posit.co/resources/webinars/): Recorded webinars and demos.
+
+## Optional
+
+- [About Posit](https://opensource.posit.co/about/posit/): What Posit is and how its open-source and commercial work fit together.
+- [Posit main site](https://posit.co/): Commercial products, enterprise support, and company information ([llms.txt](https://posit.co/llms.txt)).

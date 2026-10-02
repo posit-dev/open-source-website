@@ -24,9 +24,9 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - r-shinylive
-- Shiny
+- shiny-r
 - shinylive
 tags:
 - rstudio
@@ -77,7 +77,7 @@ title: '{shinylive}: Serverless Shiny Apps | Barret Schloerke | Posit'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 17
+  comment_count: 18
   date: '2024-06-06T20:47:48Z'
   definition: hd
   description: 'In the rapidly evolving landscape of web technologies, the integration of R (and Python) with modern web frameworks has become increasingly important for data scientists and developers. This presentation introduces {shinylive}, a new R package that exports Shiny applications to be run within statically hosted websites. We will explore the capabilities of {shinylive} through its use of the innovative R package {webR}, which allows for the execution of R code in the browser (via WebAssembly and service workers) without the need for a centralized server.
@@ -101,15 +101,15 @@ external:  # updated automatically, do not edit
   duration: 709
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.567006+00:00'
-  like_count: 289
+  last_updated: '2026-09-18T13:58:10.945110+00:00'
+  like_count: 294
   people:
   - Barret Schloerke
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - r-shinylive
-  - Shiny
+  - shiny-r
   - shinylive
   tags:
   - rstudio
@@ -159,7 +159,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/RcwvG7dtMqU/maxresdefault.jpg
   title: '{shinylive}: Serverless Shiny Apps | Barret Schloerke | Posit'
   url: https://www.youtube.com/watch?v=RcwvG7dtMqU
-  view_count: 9860
+  view_count: 10155
 ---
 image: thumbnail.jpg
 

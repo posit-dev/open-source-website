@@ -1,0 +1,365 @@
+model,lab,id,epoch,score,has_smooth
+Claude Fable 5,Anthropic,assay_rerun_specimens,1,I,TRUE
+Claude Fable 5,Anthropic,assay_rerun_specimens,2,I,FALSE
+Claude Fable 5,Anthropic,bridges_repeated_inspections,1,I,TRUE
+Claude Fable 5,Anthropic,bridges_repeated_inspections,2,I,FALSE
+Claude Fable 5,Anthropic,claims_join_strings,1,P,FALSE
+Claude Fable 5,Anthropic,claims_join_strings,2,P,FALSE
+Claude Fable 5,Anthropic,clinic_systolic_heaping,1,C,FALSE
+Claude Fable 5,Anthropic,clinic_systolic_heaping,2,I,TRUE
+Claude Fable 5,Anthropic,energy_imputed_heating,1,I,FALSE
+Claude Fable 5,Anthropic,energy_imputed_heating,2,I,FALSE
+Claude Fable 5,Anthropic,expenses_threshold_bunching,1,P,FALSE
+Claude Fable 5,Anthropic,expenses_threshold_bunching,2,P,FALSE
+Claude Fable 5,Anthropic,feedback_straight_liners,1,I,TRUE
+Claude Fable 5,Anthropic,feedback_straight_liners,2,I,FALSE
+Claude Fable 5,Anthropic,field_grid,1,I,TRUE
+Claude Fable 5,Anthropic,field_grid,2,C,FALSE
+Claude Fable 5,Anthropic,greenhouse_stuck_sensor,1,I,TRUE
+Claude Fable 5,Anthropic,greenhouse_stuck_sensor,2,P,FALSE
+Claude Fable 5,Anthropic,growth_crossing_species,1,I,FALSE
+Claude Fable 5,Anthropic,growth_crossing_species,2,I,FALSE
+Claude Fable 5,Anthropic,labs_imputed_cholesterol,1,I,FALSE
+Claude Fable 5,Anthropic,labs_imputed_cholesterol,2,I,TRUE
+Claude Fable 5,Anthropic,outlets_copied_sales,1,I,FALSE
+Claude Fable 5,Anthropic,outlets_copied_sales,2,I,FALSE
+Claude Fable 5,Anthropic,ponds_stuck_probe,1,I,FALSE
+Claude Fable 5,Anthropic,ponds_stuck_probe,2,C,FALSE
+Claude Fable 5,Anthropic,potency_parallel_bands,1,P,FALSE
+Claude Fable 5,Anthropic,potency_parallel_bands,2,I,FALSE
+Claude Fable 5,Anthropic,quotes_filtered_void,1,I,FALSE
+Claude Fable 5,Anthropic,quotes_filtered_void,2,I,TRUE
+Claude Fable 5,Anthropic,rentals_crossing_bands,1,I,FALSE
+Claude Fable 5,Anthropic,rentals_crossing_bands,2,I,TRUE
+Claude Fable 5,Anthropic,revenue_forward_filled,1,C,FALSE
+Claude Fable 5,Anthropic,revenue_forward_filled,2,I,FALSE
+Claude Fable 5,Anthropic,river_drifting_sensor,1,I,TRUE
+Claude Fable 5,Anthropic,river_drifting_sensor,2,P,FALSE
+Claude Fable 5,Anthropic,screening_selection,1,I,FALSE
+Claude Fable 5,Anthropic,screening_selection,2,I,FALSE
+Claude Fable 5,Anthropic,screentime_minutes_heaping,1,P,FALSE
+Claude Fable 5,Anthropic,screentime_minutes_heaping,2,I,TRUE
+Claude Fable 5,Anthropic,seals_too_clean_batch,1,I,FALSE
+Claude Fable 5,Anthropic,seals_too_clean_batch,2,I,TRUE
+Claude Fable 5,Anthropic,stores_folded_negatives,1,I,FALSE
+Claude Fable 5,Anthropic,stores_folded_negatives,2,I,TRUE
+Claude Fable 5,Anthropic,tags_repeated_fish,1,P,FALSE
+Claude Fable 5,Anthropic,tags_repeated_fish,2,I,FALSE
+Claude Fable 5,Anthropic,trial_locf,1,I,FALSE
+Claude Fable 5,Anthropic,trial_locf,2,I,FALSE
+Claude Fable 5,Anthropic,weather_swapped_temps,1,I,FALSE
+Claude Fable 5,Anthropic,weather_swapped_temps,2,I,TRUE
+Claude Fable 5,Anthropic,wellbeing_imputed_stress,1,I,TRUE
+Claude Fable 5,Anthropic,wellbeing_imputed_stress,2,I,TRUE
+Claude Opus 4.8,Anthropic,assay_rerun_specimens,1,I,FALSE
+Claude Opus 4.8,Anthropic,assay_rerun_specimens,2,P,FALSE
+Claude Opus 4.8,Anthropic,bridges_repeated_inspections,1,I,FALSE
+Claude Opus 4.8,Anthropic,bridges_repeated_inspections,2,I,FALSE
+Claude Opus 4.8,Anthropic,claims_join_strings,1,P,FALSE
+Claude Opus 4.8,Anthropic,claims_join_strings,2,I,TRUE
+Claude Opus 4.8,Anthropic,clinic_systolic_heaping,1,I,TRUE
+Claude Opus 4.8,Anthropic,clinic_systolic_heaping,2,I,TRUE
+Claude Opus 4.8,Anthropic,energy_imputed_heating,1,I,TRUE
+Claude Opus 4.8,Anthropic,energy_imputed_heating,2,I,TRUE
+Claude Opus 4.8,Anthropic,expenses_threshold_bunching,1,I,FALSE
+Claude Opus 4.8,Anthropic,expenses_threshold_bunching,2,P,FALSE
+Claude Opus 4.8,Anthropic,feedback_straight_liners,1,I,TRUE
+Claude Opus 4.8,Anthropic,feedback_straight_liners,2,I,FALSE
+Claude Opus 4.8,Anthropic,field_grid,1,P,TRUE
+Claude Opus 4.8,Anthropic,field_grid,2,P,TRUE
+Claude Opus 4.8,Anthropic,greenhouse_stuck_sensor,1,P,FALSE
+Claude Opus 4.8,Anthropic,greenhouse_stuck_sensor,2,P,FALSE
+Claude Opus 4.8,Anthropic,growth_crossing_species,1,I,FALSE
+Claude Opus 4.8,Anthropic,growth_crossing_species,2,I,FALSE
+Claude Opus 4.8,Anthropic,labs_imputed_cholesterol,1,I,TRUE
+Claude Opus 4.8,Anthropic,labs_imputed_cholesterol,2,I,TRUE
+Claude Opus 4.8,Anthropic,outlets_copied_sales,1,I,FALSE
+Claude Opus 4.8,Anthropic,outlets_copied_sales,2,I,FALSE
+Claude Opus 4.8,Anthropic,ponds_stuck_probe,1,I,TRUE
+Claude Opus 4.8,Anthropic,ponds_stuck_probe,2,I,TRUE
+Claude Opus 4.8,Anthropic,potency_parallel_bands,1,I,TRUE
+Claude Opus 4.8,Anthropic,potency_parallel_bands,2,I,FALSE
+Claude Opus 4.8,Anthropic,quotes_filtered_void,1,I,TRUE
+Claude Opus 4.8,Anthropic,quotes_filtered_void,2,I,FALSE
+Claude Opus 4.8,Anthropic,rentals_crossing_bands,1,I,TRUE
+Claude Opus 4.8,Anthropic,rentals_crossing_bands,2,I,TRUE
+Claude Opus 4.8,Anthropic,revenue_forward_filled,1,P,FALSE
+Claude Opus 4.8,Anthropic,revenue_forward_filled,2,I,FALSE
+Claude Opus 4.8,Anthropic,river_drifting_sensor,1,I,TRUE
+Claude Opus 4.8,Anthropic,river_drifting_sensor,2,P,FALSE
+Claude Opus 4.8,Anthropic,screening_selection,1,I,TRUE
+Claude Opus 4.8,Anthropic,screening_selection,2,I,FALSE
+Claude Opus 4.8,Anthropic,screentime_minutes_heaping,1,I,FALSE
+Claude Opus 4.8,Anthropic,screentime_minutes_heaping,2,I,TRUE
+Claude Opus 4.8,Anthropic,seals_too_clean_batch,1,I,FALSE
+Claude Opus 4.8,Anthropic,seals_too_clean_batch,2,I,TRUE
+Claude Opus 4.8,Anthropic,stores_folded_negatives,1,I,TRUE
+Claude Opus 4.8,Anthropic,stores_folded_negatives,2,I,FALSE
+Claude Opus 4.8,Anthropic,tags_repeated_fish,1,I,FALSE
+Claude Opus 4.8,Anthropic,tags_repeated_fish,2,P,FALSE
+Claude Opus 4.8,Anthropic,trial_locf,1,I,FALSE
+Claude Opus 4.8,Anthropic,trial_locf,2,I,FALSE
+Claude Opus 4.8,Anthropic,weather_swapped_temps,1,I,FALSE
+Claude Opus 4.8,Anthropic,weather_swapped_temps,2,I,TRUE
+Claude Opus 4.8,Anthropic,wellbeing_imputed_stress,1,I,TRUE
+Claude Opus 4.8,Anthropic,wellbeing_imputed_stress,2,I,TRUE
+Claude Sonnet 5,Anthropic,assay_rerun_specimens,1,I,FALSE
+Claude Sonnet 5,Anthropic,assay_rerun_specimens,2,I,FALSE
+Claude Sonnet 5,Anthropic,bridges_repeated_inspections,1,I,FALSE
+Claude Sonnet 5,Anthropic,bridges_repeated_inspections,2,I,FALSE
+Claude Sonnet 5,Anthropic,claims_join_strings,1,I,FALSE
+Claude Sonnet 5,Anthropic,claims_join_strings,2,I,TRUE
+Claude Sonnet 5,Anthropic,clinic_systolic_heaping,1,I,TRUE
+Claude Sonnet 5,Anthropic,clinic_systolic_heaping,2,I,FALSE
+Claude Sonnet 5,Anthropic,energy_imputed_heating,1,I,TRUE
+Claude Sonnet 5,Anthropic,energy_imputed_heating,2,I,FALSE
+Claude Sonnet 5,Anthropic,expenses_threshold_bunching,1,I,FALSE
+Claude Sonnet 5,Anthropic,expenses_threshold_bunching,2,C,FALSE
+Claude Sonnet 5,Anthropic,feedback_straight_liners,1,I,TRUE
+Claude Sonnet 5,Anthropic,feedback_straight_liners,2,I,FALSE
+Claude Sonnet 5,Anthropic,field_grid,1,I,FALSE
+Claude Sonnet 5,Anthropic,field_grid,2,I,TRUE
+Claude Sonnet 5,Anthropic,greenhouse_stuck_sensor,1,I,FALSE
+Claude Sonnet 5,Anthropic,greenhouse_stuck_sensor,2,I,FALSE
+Claude Sonnet 5,Anthropic,growth_crossing_species,1,I,TRUE
+Claude Sonnet 5,Anthropic,growth_crossing_species,2,I,FALSE
+Claude Sonnet 5,Anthropic,labs_imputed_cholesterol,1,I,FALSE
+Claude Sonnet 5,Anthropic,labs_imputed_cholesterol,2,I,TRUE
+Claude Sonnet 5,Anthropic,outlets_copied_sales,1,I,FALSE
+Claude Sonnet 5,Anthropic,outlets_copied_sales,2,I,FALSE
+Claude Sonnet 5,Anthropic,ponds_stuck_probe,1,I,FALSE
+Claude Sonnet 5,Anthropic,ponds_stuck_probe,2,I,FALSE
+Claude Sonnet 5,Anthropic,potency_parallel_bands,1,I,FALSE
+Claude Sonnet 5,Anthropic,potency_parallel_bands,2,I,FALSE
+Claude Sonnet 5,Anthropic,quotes_filtered_void,1,I,FALSE
+Claude Sonnet 5,Anthropic,quotes_filtered_void,2,I,FALSE
+Claude Sonnet 5,Anthropic,rentals_crossing_bands,1,I,FALSE
+Claude Sonnet 5,Anthropic,rentals_crossing_bands,2,I,FALSE
+Claude Sonnet 5,Anthropic,revenue_forward_filled,1,I,FALSE
+Claude Sonnet 5,Anthropic,revenue_forward_filled,2,P,FALSE
+Claude Sonnet 5,Anthropic,river_drifting_sensor,1,I,FALSE
+Claude Sonnet 5,Anthropic,river_drifting_sensor,2,I,FALSE
+Claude Sonnet 5,Anthropic,screening_selection,1,I,FALSE
+Claude Sonnet 5,Anthropic,screening_selection,2,I,FALSE
+Claude Sonnet 5,Anthropic,screentime_minutes_heaping,1,I,FALSE
+Claude Sonnet 5,Anthropic,screentime_minutes_heaping,2,I,FALSE
+Claude Sonnet 5,Anthropic,seals_too_clean_batch,1,I,TRUE
+Claude Sonnet 5,Anthropic,seals_too_clean_batch,2,I,TRUE
+Claude Sonnet 5,Anthropic,stores_folded_negatives,1,I,FALSE
+Claude Sonnet 5,Anthropic,stores_folded_negatives,2,P,TRUE
+Claude Sonnet 5,Anthropic,tags_repeated_fish,1,I,FALSE
+Claude Sonnet 5,Anthropic,tags_repeated_fish,2,P,FALSE
+Claude Sonnet 5,Anthropic,trial_locf,1,I,FALSE
+Claude Sonnet 5,Anthropic,trial_locf,2,I,FALSE
+Claude Sonnet 5,Anthropic,weather_swapped_temps,1,P,FALSE
+Claude Sonnet 5,Anthropic,weather_swapped_temps,2,P,FALSE
+Claude Sonnet 5,Anthropic,wellbeing_imputed_stress,1,I,FALSE
+Claude Sonnet 5,Anthropic,wellbeing_imputed_stress,2,I,TRUE
+Gemini 3.5 Flash,Google,assay_rerun_specimens,1,I,FALSE
+Gemini 3.5 Flash,Google,assay_rerun_specimens,2,I,FALSE
+Gemini 3.5 Flash,Google,bridges_repeated_inspections,1,I,TRUE
+Gemini 3.5 Flash,Google,bridges_repeated_inspections,2,P,FALSE
+Gemini 3.5 Flash,Google,claims_join_strings,1,P,TRUE
+Gemini 3.5 Flash,Google,claims_join_strings,2,I,FALSE
+Gemini 3.5 Flash,Google,clinic_systolic_heaping,1,I,TRUE
+Gemini 3.5 Flash,Google,clinic_systolic_heaping,2,I,TRUE
+Gemini 3.5 Flash,Google,energy_imputed_heating,1,I,TRUE
+Gemini 3.5 Flash,Google,energy_imputed_heating,2,I,FALSE
+Gemini 3.5 Flash,Google,expenses_threshold_bunching,1,P,FALSE
+Gemini 3.5 Flash,Google,expenses_threshold_bunching,2,P,FALSE
+Gemini 3.5 Flash,Google,feedback_straight_liners,1,I,TRUE
+Gemini 3.5 Flash,Google,feedback_straight_liners,2,I,TRUE
+Gemini 3.5 Flash,Google,field_grid,1,P,TRUE
+Gemini 3.5 Flash,Google,field_grid,2,P,FALSE
+Gemini 3.5 Flash,Google,greenhouse_stuck_sensor,1,I,FALSE
+Gemini 3.5 Flash,Google,greenhouse_stuck_sensor,2,I,FALSE
+Gemini 3.5 Flash,Google,growth_crossing_species,1,I,TRUE
+Gemini 3.5 Flash,Google,growth_crossing_species,2,P,TRUE
+Gemini 3.5 Flash,Google,labs_imputed_cholesterol,1,I,TRUE
+Gemini 3.5 Flash,Google,labs_imputed_cholesterol,2,I,TRUE
+Gemini 3.5 Flash,Google,outlets_copied_sales,1,C,FALSE
+Gemini 3.5 Flash,Google,outlets_copied_sales,2,C,FALSE
+Gemini 3.5 Flash,Google,ponds_stuck_probe,1,I,TRUE
+Gemini 3.5 Flash,Google,ponds_stuck_probe,2,I,TRUE
+Gemini 3.5 Flash,Google,potency_parallel_bands,1,P,FALSE
+Gemini 3.5 Flash,Google,potency_parallel_bands,2,P,FALSE
+Gemini 3.5 Flash,Google,quotes_filtered_void,1,I,TRUE
+Gemini 3.5 Flash,Google,quotes_filtered_void,2,I,TRUE
+Gemini 3.5 Flash,Google,rentals_crossing_bands,1,I,TRUE
+Gemini 3.5 Flash,Google,rentals_crossing_bands,2,I,TRUE
+Gemini 3.5 Flash,Google,revenue_forward_filled,1,P,FALSE
+Gemini 3.5 Flash,Google,revenue_forward_filled,2,P,FALSE
+Gemini 3.5 Flash,Google,river_drifting_sensor,1,I,TRUE
+Gemini 3.5 Flash,Google,river_drifting_sensor,2,I,TRUE
+Gemini 3.5 Flash,Google,screening_selection,1,I,FALSE
+Gemini 3.5 Flash,Google,screening_selection,2,I,FALSE
+Gemini 3.5 Flash,Google,screentime_minutes_heaping,1,I,TRUE
+Gemini 3.5 Flash,Google,screentime_minutes_heaping,2,P,TRUE
+Gemini 3.5 Flash,Google,seals_too_clean_batch,1,I,TRUE
+Gemini 3.5 Flash,Google,seals_too_clean_batch,2,I,TRUE
+Gemini 3.5 Flash,Google,stores_folded_negatives,1,I,FALSE
+Gemini 3.5 Flash,Google,stores_folded_negatives,2,I,TRUE
+Gemini 3.5 Flash,Google,tags_repeated_fish,1,I,FALSE
+Gemini 3.5 Flash,Google,tags_repeated_fish,2,I,FALSE
+Gemini 3.5 Flash,Google,trial_locf,1,I,FALSE
+Gemini 3.5 Flash,Google,trial_locf,2,I,FALSE
+Gemini 3.5 Flash,Google,weather_swapped_temps,1,I,TRUE
+Gemini 3.5 Flash,Google,weather_swapped_temps,2,P,FALSE
+Gemini 3.5 Flash,Google,wellbeing_imputed_stress,1,I,TRUE
+Gemini 3.5 Flash,Google,wellbeing_imputed_stress,2,I,TRUE
+GPT-5.5,OpenAI,assay_rerun_specimens,1,I,FALSE
+GPT-5.5,OpenAI,assay_rerun_specimens,2,I,FALSE
+GPT-5.5,OpenAI,bridges_repeated_inspections,1,I,TRUE
+GPT-5.5,OpenAI,bridges_repeated_inspections,2,I,FALSE
+GPT-5.5,OpenAI,claims_join_strings,1,I,FALSE
+GPT-5.5,OpenAI,claims_join_strings,2,I,FALSE
+GPT-5.5,OpenAI,clinic_systolic_heaping,1,I,TRUE
+GPT-5.5,OpenAI,clinic_systolic_heaping,2,I,FALSE
+GPT-5.5,OpenAI,energy_imputed_heating,1,I,FALSE
+GPT-5.5,OpenAI,energy_imputed_heating,2,I,TRUE
+GPT-5.5,OpenAI,expenses_threshold_bunching,1,I,FALSE
+GPT-5.5,OpenAI,expenses_threshold_bunching,2,I,FALSE
+GPT-5.5,OpenAI,feedback_straight_liners,1,I,FALSE
+GPT-5.5,OpenAI,feedback_straight_liners,2,I,FALSE
+GPT-5.5,OpenAI,field_grid,1,I,FALSE
+GPT-5.5,OpenAI,field_grid,2,I,TRUE
+GPT-5.5,OpenAI,greenhouse_stuck_sensor,1,I,TRUE
+GPT-5.5,OpenAI,greenhouse_stuck_sensor,2,I,FALSE
+GPT-5.5,OpenAI,growth_crossing_species,1,I,FALSE
+GPT-5.5,OpenAI,growth_crossing_species,2,I,TRUE
+GPT-5.5,OpenAI,labs_imputed_cholesterol,1,I,FALSE
+GPT-5.5,OpenAI,labs_imputed_cholesterol,2,I,TRUE
+GPT-5.5,OpenAI,outlets_copied_sales,1,I,FALSE
+GPT-5.5,OpenAI,outlets_copied_sales,2,I,FALSE
+GPT-5.5,OpenAI,ponds_stuck_probe,1,I,FALSE
+GPT-5.5,OpenAI,ponds_stuck_probe,2,I,TRUE
+GPT-5.5,OpenAI,potency_parallel_bands,1,P,FALSE
+GPT-5.5,OpenAI,potency_parallel_bands,2,I,TRUE
+GPT-5.5,OpenAI,quotes_filtered_void,1,I,FALSE
+GPT-5.5,OpenAI,quotes_filtered_void,2,I,FALSE
+GPT-5.5,OpenAI,rentals_crossing_bands,1,I,FALSE
+GPT-5.5,OpenAI,rentals_crossing_bands,2,I,FALSE
+GPT-5.5,OpenAI,revenue_forward_filled,1,I,FALSE
+GPT-5.5,OpenAI,revenue_forward_filled,2,I,FALSE
+GPT-5.5,OpenAI,river_drifting_sensor,1,I,FALSE
+GPT-5.5,OpenAI,river_drifting_sensor,2,I,FALSE
+GPT-5.5,OpenAI,screening_selection,1,I,FALSE
+GPT-5.5,OpenAI,screening_selection,2,I,TRUE
+GPT-5.5,OpenAI,screentime_minutes_heaping,1,I,TRUE
+GPT-5.5,OpenAI,screentime_minutes_heaping,2,I,FALSE
+GPT-5.5,OpenAI,seals_too_clean_batch,1,I,FALSE
+GPT-5.5,OpenAI,seals_too_clean_batch,2,I,TRUE
+GPT-5.5,OpenAI,stores_folded_negatives,1,I,FALSE
+GPT-5.5,OpenAI,stores_folded_negatives,2,I,FALSE
+GPT-5.5,OpenAI,tags_repeated_fish,1,I,FALSE
+GPT-5.5,OpenAI,tags_repeated_fish,2,I,FALSE
+GPT-5.5,OpenAI,trial_locf,1,I,FALSE
+GPT-5.5,OpenAI,trial_locf,2,I,FALSE
+GPT-5.5,OpenAI,weather_swapped_temps,1,P,FALSE
+GPT-5.5,OpenAI,weather_swapped_temps,2,I,FALSE
+GPT-5.5,OpenAI,wellbeing_imputed_stress,1,I,TRUE
+GPT-5.5,OpenAI,wellbeing_imputed_stress,2,I,FALSE
+GPT-5.6 Sol,OpenAI,assay_rerun_specimens,1,I,FALSE
+GPT-5.6 Sol,OpenAI,assay_rerun_specimens,2,I,FALSE
+GPT-5.6 Sol,OpenAI,bridges_repeated_inspections,1,I,FALSE
+GPT-5.6 Sol,OpenAI,bridges_repeated_inspections,2,I,FALSE
+GPT-5.6 Sol,OpenAI,claims_join_strings,1,I,FALSE
+GPT-5.6 Sol,OpenAI,claims_join_strings,2,I,FALSE
+GPT-5.6 Sol,OpenAI,clinic_systolic_heaping,1,I,TRUE
+GPT-5.6 Sol,OpenAI,clinic_systolic_heaping,2,I,FALSE
+GPT-5.6 Sol,OpenAI,energy_imputed_heating,1,I,FALSE
+GPT-5.6 Sol,OpenAI,energy_imputed_heating,2,I,FALSE
+GPT-5.6 Sol,OpenAI,expenses_threshold_bunching,1,I,FALSE
+GPT-5.6 Sol,OpenAI,expenses_threshold_bunching,2,I,FALSE
+GPT-5.6 Sol,OpenAI,feedback_straight_liners,1,I,TRUE
+GPT-5.6 Sol,OpenAI,feedback_straight_liners,2,I,TRUE
+GPT-5.6 Sol,OpenAI,field_grid,1,I,FALSE
+GPT-5.6 Sol,OpenAI,field_grid,2,I,TRUE
+GPT-5.6 Sol,OpenAI,greenhouse_stuck_sensor,1,I,FALSE
+GPT-5.6 Sol,OpenAI,greenhouse_stuck_sensor,2,I,TRUE
+GPT-5.6 Sol,OpenAI,growth_crossing_species,1,I,FALSE
+GPT-5.6 Sol,OpenAI,growth_crossing_species,2,I,FALSE
+GPT-5.6 Sol,OpenAI,labs_imputed_cholesterol,1,I,TRUE
+GPT-5.6 Sol,OpenAI,labs_imputed_cholesterol,2,I,TRUE
+GPT-5.6 Sol,OpenAI,outlets_copied_sales,1,P,FALSE
+GPT-5.6 Sol,OpenAI,outlets_copied_sales,2,P,FALSE
+GPT-5.6 Sol,OpenAI,ponds_stuck_probe,1,I,FALSE
+GPT-5.6 Sol,OpenAI,ponds_stuck_probe,2,I,FALSE
+GPT-5.6 Sol,OpenAI,potency_parallel_bands,1,I,TRUE
+GPT-5.6 Sol,OpenAI,potency_parallel_bands,2,I,TRUE
+GPT-5.6 Sol,OpenAI,quotes_filtered_void,1,I,FALSE
+GPT-5.6 Sol,OpenAI,quotes_filtered_void,2,I,FALSE
+GPT-5.6 Sol,OpenAI,rentals_crossing_bands,1,I,FALSE
+GPT-5.6 Sol,OpenAI,rentals_crossing_bands,2,I,FALSE
+GPT-5.6 Sol,OpenAI,revenue_forward_filled,1,I,FALSE
+GPT-5.6 Sol,OpenAI,revenue_forward_filled,2,I,FALSE
+GPT-5.6 Sol,OpenAI,river_drifting_sensor,1,P,FALSE
+GPT-5.6 Sol,OpenAI,river_drifting_sensor,2,I,FALSE
+GPT-5.6 Sol,OpenAI,screening_selection,1,I,FALSE
+GPT-5.6 Sol,OpenAI,screening_selection,2,I,FALSE
+GPT-5.6 Sol,OpenAI,screentime_minutes_heaping,1,P,TRUE
+GPT-5.6 Sol,OpenAI,screentime_minutes_heaping,2,I,FALSE
+GPT-5.6 Sol,OpenAI,seals_too_clean_batch,1,I,FALSE
+GPT-5.6 Sol,OpenAI,seals_too_clean_batch,2,I,TRUE
+GPT-5.6 Sol,OpenAI,stores_folded_negatives,1,I,TRUE
+GPT-5.6 Sol,OpenAI,stores_folded_negatives,2,I,FALSE
+GPT-5.6 Sol,OpenAI,tags_repeated_fish,1,I,FALSE
+GPT-5.6 Sol,OpenAI,tags_repeated_fish,2,P,FALSE
+GPT-5.6 Sol,OpenAI,trial_locf,1,I,FALSE
+GPT-5.6 Sol,OpenAI,trial_locf,2,I,FALSE
+GPT-5.6 Sol,OpenAI,weather_swapped_temps,1,I,FALSE
+GPT-5.6 Sol,OpenAI,weather_swapped_temps,2,I,FALSE
+GPT-5.6 Sol,OpenAI,wellbeing_imputed_stress,1,I,FALSE
+GPT-5.6 Sol,OpenAI,wellbeing_imputed_stress,2,I,FALSE
+GPT-5.6 Terra,OpenAI,assay_rerun_specimens,1,I,FALSE
+GPT-5.6 Terra,OpenAI,assay_rerun_specimens,2,I,FALSE
+GPT-5.6 Terra,OpenAI,bridges_repeated_inspections,1,I,FALSE
+GPT-5.6 Terra,OpenAI,bridges_repeated_inspections,2,I,FALSE
+GPT-5.6 Terra,OpenAI,claims_join_strings,1,I,TRUE
+GPT-5.6 Terra,OpenAI,claims_join_strings,2,I,TRUE
+GPT-5.6 Terra,OpenAI,clinic_systolic_heaping,1,I,TRUE
+GPT-5.6 Terra,OpenAI,clinic_systolic_heaping,2,I,FALSE
+GPT-5.6 Terra,OpenAI,energy_imputed_heating,1,I,FALSE
+GPT-5.6 Terra,OpenAI,energy_imputed_heating,2,I,FALSE
+GPT-5.6 Terra,OpenAI,expenses_threshold_bunching,1,I,FALSE
+GPT-5.6 Terra,OpenAI,expenses_threshold_bunching,2,P,FALSE
+GPT-5.6 Terra,OpenAI,feedback_straight_liners,1,I,FALSE
+GPT-5.6 Terra,OpenAI,feedback_straight_liners,2,I,FALSE
+GPT-5.6 Terra,OpenAI,field_grid,1,I,TRUE
+GPT-5.6 Terra,OpenAI,field_grid,2,I,TRUE
+GPT-5.6 Terra,OpenAI,greenhouse_stuck_sensor,1,I,TRUE
+GPT-5.6 Terra,OpenAI,greenhouse_stuck_sensor,2,I,FALSE
+GPT-5.6 Terra,OpenAI,growth_crossing_species,1,I,FALSE
+GPT-5.6 Terra,OpenAI,growth_crossing_species,2,I,FALSE
+GPT-5.6 Terra,OpenAI,labs_imputed_cholesterol,1,I,FALSE
+GPT-5.6 Terra,OpenAI,labs_imputed_cholesterol,2,I,FALSE
+GPT-5.6 Terra,OpenAI,outlets_copied_sales,1,I,FALSE
+GPT-5.6 Terra,OpenAI,outlets_copied_sales,2,I,FALSE
+GPT-5.6 Terra,OpenAI,ponds_stuck_probe,1,I,FALSE
+GPT-5.6 Terra,OpenAI,ponds_stuck_probe,2,I,FALSE
+GPT-5.6 Terra,OpenAI,potency_parallel_bands,1,I,FALSE
+GPT-5.6 Terra,OpenAI,potency_parallel_bands,2,I,TRUE
+GPT-5.6 Terra,OpenAI,quotes_filtered_void,1,I,TRUE
+GPT-5.6 Terra,OpenAI,quotes_filtered_void,2,I,FALSE
+GPT-5.6 Terra,OpenAI,rentals_crossing_bands,1,I,TRUE
+GPT-5.6 Terra,OpenAI,rentals_crossing_bands,2,I,TRUE
+GPT-5.6 Terra,OpenAI,revenue_forward_filled,1,I,FALSE
+GPT-5.6 Terra,OpenAI,revenue_forward_filled,2,I,FALSE
+GPT-5.6 Terra,OpenAI,river_drifting_sensor,1,I,TRUE
+GPT-5.6 Terra,OpenAI,river_drifting_sensor,2,I,FALSE
+GPT-5.6 Terra,OpenAI,screening_selection,1,I,FALSE
+GPT-5.6 Terra,OpenAI,screening_selection,2,I,FALSE
+GPT-5.6 Terra,OpenAI,screentime_minutes_heaping,1,I,FALSE
+GPT-5.6 Terra,OpenAI,screentime_minutes_heaping,2,P,TRUE
+GPT-5.6 Terra,OpenAI,seals_too_clean_batch,1,I,TRUE
+GPT-5.6 Terra,OpenAI,seals_too_clean_batch,2,I,TRUE
+GPT-5.6 Terra,OpenAI,stores_folded_negatives,1,I,TRUE
+GPT-5.6 Terra,OpenAI,stores_folded_negatives,2,I,TRUE
+GPT-5.6 Terra,OpenAI,tags_repeated_fish,1,I,FALSE
+GPT-5.6 Terra,OpenAI,tags_repeated_fish,2,I,FALSE
+GPT-5.6 Terra,OpenAI,trial_locf,1,I,FALSE
+GPT-5.6 Terra,OpenAI,trial_locf,2,I,FALSE
+GPT-5.6 Terra,OpenAI,weather_swapped_temps,1,I,TRUE
+GPT-5.6 Terra,OpenAI,weather_swapped_temps,2,I,TRUE
+GPT-5.6 Terra,OpenAI,wellbeing_imputed_stress,1,I,TRUE
+GPT-5.6 Terra,OpenAI,wellbeing_imputed_stress,2,I,FALSE

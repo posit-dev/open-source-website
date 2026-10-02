@@ -1,0 +1,270 @@
+/*
+ * Bootstrap utility class fallbacks for quarto-live runtime.
+ * This site uses Tailwind, not Bootstrap. The runtime's JS creates elements
+ * with Bootstrap classes so we provide minimal equivalents here.
+ */
+
+.d-none { display: none !important; }
+.d-flex { display: flex !important; }
+.align-items-center { align-items: center !important; }
+.justify-content-between { justify-content: space-between !important; }
+.gap-1 { gap: 0.25rem !important; }
+.gap-2 { gap: 0.5rem !important; }
+.gap-3 { gap: 0.75rem !important; }
+.gap-4 { gap: 1rem !important; }
+.gap-6 { gap: 1.5rem !important; }
+
+/* Set gap in card header left side (between title and buttons) */
+.card-header > div:first-child {
+  gap: 1rem !important;
+}
+
+@keyframes spinner-grow {
+  0% { transform: scale(0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+.spinner-grow {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: -0.125em;
+  background-color: currentcolor;
+  border-radius: 50%;
+  opacity: 0;
+  animation: 0.75s linear infinite spinner-grow;
+}
+
+.spinner-grow-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: white;
+  background-clip: border-box;
+  border: 1px solid var(--color-blue-200, #d1dbe5);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  background-color: var(--color-blue-50, #f8fafb);
+  border-bottom: 1px solid var(--color-blue-100, #e8edf2);
+}
+
+.card-header > div:first-child > div:first-child {
+  font-weight: 500;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+}
+
+.btn:disabled, .btn.disabled {
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: var(--color-blue-500, #447099);
+  border-color: var(--color-blue-500, #447099);
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: var(--color-blue-600, #305775);
+  border-color: var(--color-blue-600, #305775);
+}
+
+.btn-outline-dark {
+  color: var(--color-gray-500, #404041);
+  border-color: var(--color-gray-300, #d1d5db);
+  background-color: transparent;
+}
+
+.btn-outline-dark:hover {
+  color: var(--color-gray-500, #404041);
+  background-color: var(--color-gray-100, #f3f4f6);
+  border-color: var(--color-gray-400, #9ca3af);
+}
+
+.btn-group {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.btn-group > .btn:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group > .btn:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -1px;
+}
+
+.alert {
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+}
+
+.alert-success { color: #0a3622; background-color: #d1f4e0; border-color: #9de9c5; }
+.alert-danger  { color: #7f1d1d; background-color: #fee2e2; border-color: #fca5a5; }
+.alert-warning { color: #78350f; background-color: #fef3c7; border-color: #fcd34d; }
+.alert-info    { color: var(--color-blue-700, #294a62); background-color: var(--color-blue-50, #f8fafb); border-color: var(--color-blue-200, #d1dbe5); }
+
+/* Theme variables — live-runtime.css uses .quarto-light which we add via JS */
+/* Override with Posit brand colors */
+:root {
+  --bs-body-color: var(--color-gray-500, #404041);
+  --bs-body-bg: #ffffff;
+  --bs-black: #000000;
+  --bs-primary-rgb: 68, 112, 153; /* Posit blue-500 */
+  --bs-gray-300: var(--color-gray-200, #e5e7eb);
+  --bs-body-font-size: 0.875rem;
+}
+
+/* Exercise editor color overrides for Posit brand */
+.quarto-light {
+  --exercise-primary-rgb: 68, 112, 153; /* Posit blue-500 */
+  --exercise-gray: var(--color-blue-100, #e8edf2);
+  --exercise-cap-bg: var(--color-blue-50, #f8fafb);
+}
+
+/* Override live-runtime.css borders with blue-100 */
+.card.exercise-editor .card-header {
+  border-bottom: 1px solid var(--color-blue-100, #e8edf2) !important;
+}
+
+.card.exercise-editor .cm-gutters {
+  border-right: 1px solid var(--color-blue-100, #e8edf2) !important;
+}
+
+.card.exercise-editor .cm-gutter.cm-foldGutter {
+  width: 0 !important;
+  min-width: 0 !important;
+}
+
+.card.exercise-editor .cm-gutterElement {
+  text-align: right !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  font-size: 0.875rem !important;
+}
+
+.card.exercise-editor .cm-content {
+  font-size: 0.875rem !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.card.exercise-editor .cm-line {
+  font-size: 0.875rem !important;
+}
+
+.card.exercise-editor .cm-editor.cm-focused {
+  outline: none !important;
+  border-top: none !important;
+}
+
+.exercise-cell {
+  margin: 1rem 0;
+}
+
+.exercise-cell .card.exercise-editor {
+  font-family: "Source Code Pro", monospace;
+}
+
+/* Inline loading status in card headers */
+.exercise-inline-loading-status {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--color-gray-400, #9ca3af);
+  margin-right: 0.75rem;
+}
+
+.exercise-inline-loading-prefix {
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.exercise-inline-loading-label {
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Ensure button container stays on right */
+.card-header .d-flex.align-items-center.gap-3:last-child {
+  margin-left: auto;
+}
+
+/* Hide the built-in editor loading spinner since we show our own */
+.card-header .exercise-editor-eval-indicator {
+  display: none !important;
+}
+
+/* Hide the Start Over button */
+.card-header a[aria-label="Start Over"] {
+  display: none !important;
+}
+
+/* Output area container with smooth height transitions */
+.exercise-output-container {
+  transition: height 0.3s ease-out;
+}
+
+/* Output area loading indicator */
+.exercise-output-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  color: var(--color-gray-500, #404041);
+  font-size: 0.875rem;
+  opacity: 0;
+  animation: fadeIn 0.2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

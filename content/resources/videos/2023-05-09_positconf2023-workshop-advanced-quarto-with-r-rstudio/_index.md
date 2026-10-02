@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags:
 - rstudio
@@ -64,11 +64,11 @@ external:  # updated automatically, do not edit
   duration: 137
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.335904+00:00'
-  like_count: 24
+  last_updated: '2026-09-18T13:58:12.906495+00:00'
+  like_count: 25
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UXkiwU_hfkg/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Advanced Quarto with R + RStudio'
   url: https://www.youtube.com/watch?v=UXkiwU_hfkg
-  view_count: 2419
+  view_count: 2422
 ---
 image: thumbnail.jpg
 

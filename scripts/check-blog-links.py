@@ -109,11 +109,15 @@ def main():
 
     # source_page -> [(raw_href, resolved_url)]
     broken: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    files_scanned = 0
+    links_checked = 0
 
     for html_file in sorted(blog_dir.rglob("*.html")):
+        files_scanned += 1
         for href in extract_links(html_file):
             if not is_internal_page_link(href):
                 continue
+            links_checked += 1
             resolved = resolve_href(href, html_file, build_dir)
             if not path_exists(resolved):
                 source = str(html_file.relative_to(build_dir))
@@ -131,7 +135,17 @@ def main():
             total += 1
         print()
 
+    print(
+        f"Checked {links_checked} internal link(s) across "
+        f"{files_scanned} HTML file(s)."
+    )
     print(f"{total} broken link(s) in {len(broken)} file(s).")
+    if files_scanned == 0:
+        print(
+            "Warning: scanned 0 HTML files — is the build complete?",
+            file=sys.stderr,
+        )
+        sys.exit(1)
     sys.exit(1 if total > 0 else 0)
 
 

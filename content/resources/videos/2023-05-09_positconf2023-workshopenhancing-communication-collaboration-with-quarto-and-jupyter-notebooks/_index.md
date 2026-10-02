@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - rstudio
 - data science
@@ -63,11 +63,11 @@ external:  # updated automatically, do not edit
   duration: 240
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.336071+00:00'
+  last_updated: '2026-09-18T13:58:13.378923+00:00'
   like_count: 7
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - rstudio
   - data science
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TTLLvhRyLMA/maxresdefault.jpg
   title: posit::conf(2023) Workshop:Enhancing Communication & Collaboration with Quarto and Jupyter Notebooks
   url: https://www.youtube.com/watch?v=TTLLvhRyLMA
-  view_count: 427
+  view_count: 430
 ---
 image: thumbnail.jpg
 

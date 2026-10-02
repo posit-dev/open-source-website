@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - plotnine
-- Quarto
+- quarto
 tags:
 - rstudio
 - data science
@@ -64,12 +64,12 @@ external:  # updated automatically, do not edit
   duration: 154
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.336129+00:00'
+  last_updated: '2026-09-18T13:58:13.379018+00:00'
   like_count: 5
   playlist: ''
   software:
   - plotnine
-  - Quarto
+  - quarto
   tags:
   - rstudio
   - data science
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/a8OWo8iHrdY/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Introduction to Data Science with Python'
   url: https://www.youtube.com/watch?v=a8OWo8iHrdY
-  view_count: 522
+  view_count: 526
 ---
 image: thumbnail.jpg
 

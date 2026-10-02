@@ -70,14 +70,14 @@ external:  # updated automatically, do not edit
   duration: 3643
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:30.948330+00:00'
+  last_updated: '2026-09-18T13:58:12.905436+00:00'
   like_count: 12
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/HfM6nvLOubk/maxresdefault.jpg
   title: Ari Siggaard Knoph @ Novo Nordisk | Data Science Hangout
   url: https://www.youtube.com/watch?v=HfM6nvLOubk
-  view_count: 611
+  view_count: 615
 ---
 image: thumbnail.jpg
 

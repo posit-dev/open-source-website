@@ -5,7 +5,7 @@ github: r-lib/withr
 image: logo.png
 languages:
 - R
-latest_release: '2024-10-28T10:59:02+00:00'
+latest_release: '2026-06-17T11:50:30+00:00'
 people:
 - Lionel Henry
 - Hadley Wickham
@@ -25,11 +25,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Methods For Temporarily Modifying Global State
   first_commit: '2015-04-21T19:18:28+00:00'
-  forks: 45
+  forks: 46
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.060725+00:00'
-  latest_release: '2024-10-28T10:59:02+00:00'
+  last_updated: '2026-09-18T14:26:13.343567+00:00'
+  latest_release: '2026-06-17T11:50:30+00:00'
   license: NOASSERTION
   people:
   - Lionel Henry
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   readme_image: man/figures/logo.png
   repo: r-lib/withr
-  stars: 178
+  stars: 180
   title: withr
   website: http://withr.r-lib.org
 ---

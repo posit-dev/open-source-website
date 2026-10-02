@@ -14,7 +14,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - shinyapps
 - shinydashboard
 tags:
@@ -40,14 +40,14 @@ external:  # updated automatically, do not edit
   duration: 2875
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532317+00:00'
+  last_updated: '2026-09-18T13:58:18.646087+00:00'
   like_count: 0
   people:
   - Winston Chang
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyapps
   - shinydashboard
   tags:
@@ -59,7 +59,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tmHh89VTanw/maxresdefault.jpg
   title: Shiny and R to Build Dynamic Dashboards
   url: https://www.youtube.com/watch?v=tmHh89VTanw
-  view_count: 67745
+  view_count: 67821
 ---
 image: thumbnail.jpg
 

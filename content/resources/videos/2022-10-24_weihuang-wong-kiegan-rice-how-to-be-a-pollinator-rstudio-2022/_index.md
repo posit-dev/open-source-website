@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   duration: 1038
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.321039+00:00'
+  last_updated: '2026-09-18T13:58:14.440806+00:00'
   like_count: 1
   playlist: ''
   software:
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JuxMCmgKaOI/maxresdefault.jpg
   title: Weihuang Wong & Kiegan Rice | How to be a pollinatoR | RStudio (2022)
   url: https://www.youtube.com/watch?v=JuxMCmgKaOI
-  view_count: 187
+  view_count: 189
 ---
 image: thumbnail.jpg
 

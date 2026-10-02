@@ -14,11 +14,12 @@ description: '10 Years of Data Science Tools... and What Happens Next
 
   📁 Slides - https://github.com/rstudio/rstudio-conf/blob/main/2025/jonathanmcpherson/10%20Years%20of%20Data%20Science%20Tools.key posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
 image: thumbnail.jpg
-people: []
+people:
+- Jonathan McPherson
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 - rstudio-conf
 tags:
@@ -54,11 +55,13 @@ external:  # updated automatically, do not edit
   duration: 3079
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.867977+00:00'
-  like_count: 31
+  last_updated: '2026-09-18T13:58:07.659113+00:00'
+  like_count: 32
+  people:
+  - Jonathan McPherson
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   - rstudio-conf
   tags:
@@ -71,7 +74,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/tGrePGYj7Uw/maxresdefault.jpg
   title: 10 Years of Data Science Tools...and What Happens Next (Jonathan McPherson) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=tGrePGYj7Uw
-  view_count: 1325
+  view_count: 1462
 ---
 image: thumbnail.jpg
 

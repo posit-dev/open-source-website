@@ -9,13 +9,14 @@ people:
 resource_type: video
 resources: []
 software:
+- commons
 - ggbot2
 - nanoparquet
-- Positron
-- Quarto
+- positron
+- quarto
 - renv
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Analyzing a TidyTuesday dataset with Posit Assistant in RStudio | Hadley Wickham | Data Science Lab
 
@@ -28,25 +29,26 @@ external:  # updated automatically, do not edit
   duration: 3362
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.044276+00:00'
-  like_count: 71
+  last_updated: '2026-09-18T13:58:06.854326+00:00'
+  like_count: 83
   people:
   - Garrick Aden-Buie
   - Hadley Wickham
   - Simon Couch
   playlist: ''
   software:
+  - commons
   - ggbot2
   - nanoparquet
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - renv
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/N_oT_8xVRXg/maxresdefault.jpg
   title: Analyzing a TidyTuesday dataset with Posit Assistant in RStudio | Hadley Wickham | Data Science Lab
   url: https://www.youtube.com/watch?v=N_oT_8xVRXg
-  view_count: 2705
+  view_count: 3795
 ---
 

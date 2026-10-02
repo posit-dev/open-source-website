@@ -6,8 +6,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 tags: []
 title: 'How-to: Dark Mode on Shiny for Python apps✨'
 
@@ -20,17 +20,17 @@ external:  # updated automatically, do not edit
   duration: 54
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.567045+00:00'
-  like_count: 59
+  last_updated: '2026-09-18T13:58:10.945201+00:00'
+  like_count: 61
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/r5KaQswW7rw/maxresdefault.jpg
   title: 'How-to: Dark Mode on Shiny for Python apps✨'
   url: https://www.youtube.com/watch?v=r5KaQswW7rw
-  view_count: 1938
+  view_count: 1992
 ---
 image: thumbnail.jpg
 

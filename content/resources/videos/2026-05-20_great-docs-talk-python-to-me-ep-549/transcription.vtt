@@ -1,0 +1,3373 @@
+WEBVTT
+
+00:00:00.560 --> 00:00:07.360
+Rich, Michael, welcome back to Talk Python to Me. Awesome to have you both back on the show.
+
+00:00:08.720 --> 00:00:09.680
+Yeah, thanks for having us.
+
+00:00:11.120 --> 00:00:15.760
+Yeah, for sure. We're going to talk about great things. I know it's going to be a great show.
+
+00:00:16.959 --> 00:00:17.920
+It's undoubtable, right?
+
+00:00:19.200 --> 00:00:19.760
+I have no doubt.
+
+00:00:19.760 --> 00:00:25.760
+It's a great day, you know, and we're ready for I think what's going to be a great chat.
+
+00:00:25.840 --> 00:00:26.340
+Yeah.
+
+00:00:26.879 --> 00:00:30.480
+About great docs, great tables, all of those things.
+
+00:00:30.480 --> 00:00:31.200
+All the great things.
+
+00:00:31.760 --> 00:00:37.840
+Yeah. So I had you on to talk about Great Tables, which was really fun. You're both from Posit.
+
+00:00:38.720 --> 00:00:44.160
+And other than that, maybe let's do a quick introduction for folks. I mean, I don't know
+
+00:00:44.160 --> 00:00:49.360
+why anybody would not have listened to the Great Tables episode, but in case they haven't. No,
+
+00:00:49.360 --> 00:00:54.080
+honestly, we get a bunch of new listeners all the time. So yeah, let's do a quick
+
+00:00:54.080 --> 00:00:57.840
+round of introductions. Who are you? What do you do? Why are you working on this project?
+
+00:00:57.840 --> 00:00:59.040
+Rich, start with you.
+
+00:00:59.040 --> 00:01:05.760
+Yeah. Yeah, I'm Rich. I work at Posit, PVC. I've been doing traditionally lots of R stuff,
+
+00:01:05.760 --> 00:01:10.959
+like in the past. But more lately, this is like the last three or four years, a lot more Python
+
+00:01:10.959 --> 00:01:17.360
+stuff. And actually, Michael, who's with me today, he taught me a lot about Python. Like, I was
+
+00:01:18.239 --> 00:01:22.160
+pretty bad starting. I mean, I used in the past, but I was open source stuff. I was,
+
+00:01:22.800 --> 00:01:28.800
+ugh, I was bad. Michael has so much patience, though. So he helped me get up to speed over
+
+00:01:28.800 --> 00:01:35.040
+a period of a year or so. So I owe a lot to him. And he's a great guy.
+
+00:01:35.040 --> 00:01:37.120
+That's really cool. I agree with that.
+
+00:01:39.760 --> 00:01:45.519
+I think it's hard to change a language. It's hard to switch to another language. And maybe
+
+00:01:45.519 --> 00:01:51.440
+you could speak to that real quick before Michael jumps in. And just, I've done that
+
+00:01:51.440 --> 00:01:55.680
+a couple of times. You know, you spend so much time and energy and effort and getting
+
+00:01:55.680 --> 00:01:59.680
+really good at, not just the language, the tools, the ecosystem, everything.
+
+00:01:59.680 --> 00:02:03.279
+And then you're like, I'm 1.0. I think I have to go over there for a while.
+
+00:02:03.279 --> 00:02:06.879
+Yeah, it feels like a bizarre situation. Like, I know what I could be doing, what I should be
+
+00:02:06.879 --> 00:02:13.839
+doing, like, theoretically. But things just don't jive sometimes. It's like, oh, yeah. But then you
+
+00:02:13.839 --> 00:02:18.960
+get used to it. And then your previous language degrades. It's kind of like that sort of thing.
+
+00:02:18.960 --> 00:02:25.759
+It's a little bit sad in that regard. But for me, the real challenge was, I have such a deep
+
+00:02:25.759 --> 00:02:32.080
+knowledge and mastery of this technology. And if I switch, at least the first time or two I did,
+
+00:02:32.080 --> 00:02:37.600
+I felt like, I'm going to go back to the noobiest of noobs. And it's going to feel really bad. And
+
+00:02:37.600 --> 00:02:44.880
+I worked so hard for this knowledge and this experience. Why am I going to do this? Maybe I
+
+00:02:44.880 --> 00:02:49.919
+should never do that. It was a big deal for me. I want to say that for other people out there who
+
+00:02:49.919 --> 00:02:53.600
+are not necessarily going R to Python, but just one tech to another.
+
+00:02:54.479 --> 00:03:00.160
+Yeah, it's humbling, like I said. And well, with a good mentor and lots of patience,
+
+00:03:01.039 --> 00:03:02.000
+it can happen.
+
+00:03:02.000 --> 00:03:05.600
+Yeah, it's good to expand your skills. But the initial decision is rough.
+
+00:03:05.600 --> 00:03:11.600
+Michael, you've been shepherding Rich along the way. I love it. Tell us about yourself.
+
+00:03:12.479 --> 00:03:18.160
+Yeah, I wouldn't even say shepherding. Or maybe there's some mutual shepherding going on.
+
+00:03:19.600 --> 00:03:24.639
+So I'm Michael Chow. I'm a software engineer at Posit and have been for about four years on the
+
+00:03:25.679 --> 00:03:30.720
+open source team. So I've worked with Rich on things like great tables.
+
+00:03:31.360 --> 00:03:35.839
+And I think that, yeah, I'm really interested in Python. I work on Python full time.
+
+00:03:36.639 --> 00:03:44.399
+And I think if I had to send back what Rich is really good at, Rich just has this crazy,
+
+00:03:44.399 --> 00:03:49.839
+freaky sense of style. And I think that's one thing that's drawn me to work with him on things
+
+00:03:50.399 --> 00:03:55.039
+is you just never know. Like, to be totally honest, people at Posit just never know what
+
+00:03:55.039 --> 00:04:01.600
+Rich is going to pull out. And I don't think any of us could have imagined it. He's our wildcard.
+
+00:04:01.600 --> 00:04:06.399
+And it's been interesting because you can imagine like a programming language.
+
+00:04:06.399 --> 00:04:09.279
+Yeah, you could be like, oh, this person taught me this programming language.
+
+00:04:09.279 --> 00:04:13.520
+I don't really know how you teach Rich's style, but I feel like I'm kind of along for the ride.
+
+00:04:13.520 --> 00:04:18.559
+I'm like eating popcorn, helping out. And I think tools like Great Docs really reflect that, this
+
+00:04:19.359 --> 00:04:25.679
+interesting sense of style. Like Great Tables, he's just dipped into this rich history of table
+
+00:04:25.679 --> 00:04:33.119
+styling. How would you style it to present and maybe publish it? And so I've been excited to be
+
+00:04:33.119 --> 00:04:41.519
+along for the ride to just watch him cook and bring this unique sense of style and design into
+
+00:04:41.519 --> 00:04:50.559
+tools. Yeah, that's really cool. Certain people just have a knack for APIs and the way that
+
+00:04:51.519 --> 00:04:57.760
+developer UX sort of thing. That's cool. I personally am excited for the mascot.
+
+00:04:59.040 --> 00:04:59.920
+The mascots.
+
+00:04:59.920 --> 00:05:07.119
+Rich, I blew your cover. So Michael and I were talking a little bit at PyCon
+
+00:05:08.399 --> 00:05:17.679
+about Tablin, how you're a mascot wizard. Who is Tablin, though, I wonder?
+
+00:05:17.760 --> 00:05:22.160
+He's just a little table guy, a little table dude, that appears, gives you help,
+
+00:05:22.880 --> 00:05:26.959
+and then disappears just as fast. He doesn't fully realize that.
+
+00:05:28.239 --> 00:05:33.040
+He's always thinking of you. He's never thinking of himself. He's showing up, helping you out.
+
+00:05:33.040 --> 00:05:37.200
+He's like the new Libby or Bob, but much cooler because he's a table.
+
+00:05:40.959 --> 00:05:46.720
+And I do think this speaks to our dynamic where Tablin just appeared one day. While we were
+
+00:05:46.720 --> 00:05:52.720
+preparing a PyCon talk two years ago, Tablin just appeared in the slides, and I didn't know who
+
+00:05:52.720 --> 00:05:58.559
+Tablin was, and I was like, who or what is this? It was like a slide of a table, and Tablin was
+
+00:05:58.559 --> 00:06:04.079
+popped out on the side, was saying, good job. And I was like, who's this spreadsheet with eyes and a
+
+00:06:04.079 --> 00:06:09.040
+mouth cheering people on? And Rich was like, it's Tablin, of course.
+
+00:06:09.040 --> 00:06:11.519
+Yeah, it's helpful to have a little dude that just wants to help.
+
+00:06:12.480 --> 00:06:14.959
+It's like having a pet, like a cat.
+
+00:06:17.920 --> 00:06:24.559
+I love it. That's really good. So Michael, we had the great opportunity to meet up at PyCon
+
+00:06:24.559 --> 00:06:28.160
+just last week. I don't know how you feel about it personally. I'm still just a little bit
+
+00:06:28.160 --> 00:06:35.359
+recovering from the whole energy that was extracted from me, but it was really fun.
+
+00:06:37.119 --> 00:06:40.799
+Maybe just give us your thoughts on PyCon and how'd that go?
+
+00:06:41.679 --> 00:06:48.799
+Yeah, it's a great question. It's so interesting because we work on tools for data analysis,
+
+00:06:49.519 --> 00:06:54.720
+but PyCon is much more general. It's almost like all things Python. I think it's a really
+
+00:06:54.720 --> 00:07:01.279
+interesting conference versus like a PyData or a SciPy, which are way oriented towards like
+
+00:07:01.279 --> 00:07:08.239
+data tools specifically. But I love it. I find it really nice to be able to drop in and talk to
+
+00:07:08.239 --> 00:07:15.200
+just the full range of Python people who maybe have never used or done a lot of data analysis.
+
+00:07:16.079 --> 00:07:20.880
+So I find it really interesting to talk to folks who maybe almost universally, I think everybody
+
+00:07:20.880 --> 00:07:28.640
+has touched Pandas, the library for data frames. And so that's the funny point you can always talk
+
+00:07:28.640 --> 00:07:37.519
+to anyone about at PyCon. But I find it really nice and I find the PyCon organizers and the
+
+00:07:37.760 --> 00:07:44.239
+Python Software Foundation, it's just so down to earth that, yeah, I really love dropping in. It
+
+00:07:44.239 --> 00:07:50.720
+doesn't feel super corporate. It feels like they're really a group of passionate volunteers
+
+00:07:51.359 --> 00:07:58.399
+putting this pretty big conference on. So yeah, I always love dropping in, even if it's a broader
+
+00:07:59.359 --> 00:08:05.359
+audience than the data crew. I'm curious, your experience, have you gone to a lot of PyCons?
+
+00:08:06.239 --> 00:08:16.640
+I think my first one, when was my first? Mid-teens, I would say 2015, 2016, something like that.
+
+00:08:17.440 --> 00:08:23.119
+Yeah, nice. I'd probably have gone to maybe two thirds since then, most. I mean, we did have
+
+00:08:23.119 --> 00:08:29.279
+COVID in the middle, that was challenging. But yeah, I've been to a fair number and I really
+
+00:08:29.279 --> 00:08:36.000
+enjoy it. And for me, it's just nice to get together, meet folks like you and everyone else
+
+00:08:36.000 --> 00:08:43.039
+and just kind of remember, hey, this is a community of humans and not just docs. I mean, docs are
+
+00:08:43.039 --> 00:08:46.239
+great. We're going to talk about how great docs can be, but it's also nice to just have these
+
+00:08:46.239 --> 00:08:55.520
+human connections and just connect with people outside of width, but also outside of technology.
+
+00:08:56.239 --> 00:08:59.840
+Hey, let's just go sit in the sun for a while and talk. Have you seen the sun lately? No,
+
+00:08:59.840 --> 00:09:05.280
+I haven't seen it either. Let's go sit there. All day, yeah. Yeah, for real. I feel like it is.
+
+00:09:06.239 --> 00:09:12.479
+Just putting the face behind the name or actually touching down to chat does seem like a huge
+
+00:09:13.280 --> 00:09:18.400
+thing that you only do like, say, once or twice a year with those folks.
+
+00:09:18.400 --> 00:09:22.960
+Yeah, at least for me, I can come back and revitalize to do more. So that's really,
+
+00:09:22.960 --> 00:09:31.440
+really sweet. Let's start our journey here talking about, let's just do a quick
+
+00:09:32.799 --> 00:09:37.200
+review of Great Tables. Because I know Great Tables was one of the inspirations for Great
+
+00:09:37.200 --> 00:09:46.239
+Docs. All three of us got together last year, I guess, to talk about Great Tables. So who wants
+
+00:09:46.239 --> 00:09:54.640
+to just do a quick reminder of this one? I'll go. So basically, yeah, Great Tables,
+
+00:09:55.440 --> 00:10:00.799
+it's maybe not being people notice, it's a port of an R package called GT.
+
+00:10:01.440 --> 00:10:07.840
+Not that important, but the idea is good as it was then. You want display tables,
+
+00:10:07.840 --> 00:10:13.359
+what I call them, essentially summary tables, like static tables. And you want to present them,
+
+00:10:13.359 --> 00:10:19.039
+say, in a notebook or, say, in some other publishable document as HTML. We also have
+
+00:10:19.039 --> 00:10:24.960
+a LaTeX output format. But the idea is you compose tables step by step. You add a header,
+
+00:10:26.320 --> 00:10:31.840
+you want a title, you get that too. You structure the table. You can format different cells,
+
+00:10:31.840 --> 00:10:39.440
+like usually entire columns of cells. And you can also style a table, which could be like changing
+
+00:10:39.440 --> 00:10:44.880
+orders, adding cell backgrounds, things like that. And really, the idea is to make a table
+
+00:10:44.880 --> 00:10:50.640
+that you might see in a print publication, but using your data directly, using a data frame.
+
+00:10:51.359 --> 00:10:59.599
+So you have the data in a form which is amenable to a summary table. And then in just a few method
+
+00:10:59.599 --> 00:11:06.880
+calls, you've got the table. You know what's, yeah, that's awesome. What strikes me about this?
+
+00:11:07.359 --> 00:11:12.960
+Um, you know, when we had our conversation last year, it's just how much more there is to think
+
+00:11:12.960 --> 00:11:20.960
+about with tables than, you know, just an Excel-like thing. I came away realizing that
+
+00:11:20.960 --> 00:11:25.520
+it goes way deeper, and there's a lot more nuance. It felt a little bit like, oh gosh,
+
+00:11:25.520 --> 00:11:32.159
+I can't remember the guy's name, but I'm sure you both have seen his books, but it's...
+
+00:11:32.719 --> 00:11:34.159
+Is his name Tufty?
+
+00:11:34.159 --> 00:11:40.320
+No, no, no, Tufty. Tufty, yes. He's just like, oh, I see, like there's some lines and stuff. Like,
+
+00:11:40.320 --> 00:11:45.919
+no, no, no, no, hold on. There's a lot going on. Like, there's many things you can communicate
+
+00:11:45.919 --> 00:11:51.840
+subtly without just being like, well, let's just call this out. Like, no, you don't even have to
+
+00:11:51.840 --> 00:11:59.359
+call it out. It's communicated through something more interesting. You know, Tufty is that about
+
+00:11:59.760 --> 00:12:06.080
+just presenting sort of scientific information in general, but I felt that way about tables as well.
+
+00:12:06.719 --> 00:12:10.559
+Yeah, it's pretty well. We talked about this in our talk a few years back in PyCon,
+
+00:12:12.239 --> 00:12:17.200
+how you can tell a story with a table, where you can communicate data in a better way,
+
+00:12:19.359 --> 00:12:25.440
+not a more optimized way, but a more legible way, where your main point is described like a title
+
+00:12:25.440 --> 00:12:30.960
+and a subtitle, and you have notes at the bottom, and you can guide people through
+
+00:12:30.960 --> 00:12:35.840
+an analysis summary that way. And so just like with many different things, there's a good way
+
+00:12:35.840 --> 00:12:40.960
+to do it, or a better way to do it. Yeah, you could just look at certain
+
+00:12:40.960 --> 00:12:46.960
+types of presented information, and go, well, that looks really professional, or that looks
+
+00:12:46.960 --> 00:12:51.440
+really, really good, but I don't know why. You know what I mean?
+
+00:12:52.000 --> 00:12:59.520
+Yeah. That was good, but I can't put my finger on exactly what is really different,
+
+00:12:59.520 --> 00:13:04.880
+but that's really good, and that's not. And I feel like great tables kind of leans into that.
+
+00:13:05.520 --> 00:13:10.320
+Yeah, I guess it takes the Tufty principle to having just the right amount of ink, I guess,
+
+00:13:10.320 --> 00:13:16.559
+like not too much, just enough to communicate the structure of things, like the architecture
+
+00:13:16.559 --> 00:13:22.640
+of the data you're laying out, and not doing much more of that. So there's a lot of that
+
+00:13:22.640 --> 00:13:24.159
+that goes into this. Indeed.
+
+00:13:24.159 --> 00:13:25.760
+As a default thing. Yeah.
+
+00:13:25.760 --> 00:13:32.880
+To the Tufty point, too, Tufty's website, Tufty has like all of these just dumps of examples,
+
+00:13:32.880 --> 00:13:37.520
+just like example plot, example plot, example plot. It's almost like a very rough notebook,
+
+00:13:38.400 --> 00:13:44.880
+and I feel like with great tables, it was kind of similar, like when I first came on, I knew
+
+00:13:44.880 --> 00:13:51.520
+basically nothing about this topic, and I saw the components of the table diagram, so you have it
+
+00:13:51.520 --> 00:13:58.000
+pulled up, but it has like a table broken apart into all its pieces, like a title, subtitle.
+
+00:13:58.000 --> 00:14:04.239
+There's this funny thing called the stubhead and spanners, and I thought, like, does a person
+
+00:14:04.239 --> 00:14:10.080
+really need to know all this? But I think to the point of Tufty, like maybe what you're getting
+
+00:14:10.080 --> 00:14:17.359
+at, too, is Tufty really dives into like very specific, almost like dimensions of how you could
+
+00:14:17.359 --> 00:14:23.280
+represent data. One thing he gets really into is like spark lines, this idea that like how far
+
+00:14:23.280 --> 00:14:28.719
+could you get with a line that basically doesn't have any axis labels, but it's just like a trend,
+
+00:14:29.280 --> 00:14:34.320
+like is it going up or is it going down? And that happens a lot in tables, you'll put like
+
+00:14:34.320 --> 00:14:39.840
+these spark lines in a cell, like if you're looking at stocks, you'll have like the stock
+
+00:14:39.840 --> 00:14:43.599
+numbers, and then you'll have a spark line that like indicates the kind of trend,
+
+00:14:44.559 --> 00:14:49.679
+so people can grab it really fast. But I find what's interesting about Tufty is just that
+
+00:14:49.679 --> 00:14:56.400
+willingness to dive in so detailed about this one very specific action, and I feel like this
+
+00:14:56.400 --> 00:15:03.200
+table diagram is sort of similar to me, the willingness to like break it apart so thoroughly.
+
+00:15:03.200 --> 00:15:09.280
+At first, I wasn't really convinced. It seemed like a lot of work, but yeah, I think to your
+
+00:15:09.280 --> 00:15:13.359
+point about Tufty, once you start looking at examples, you start to realize this kind of
+
+00:15:13.359 --> 00:15:20.880
+captures the like flavor or design of like good examples out there in the world.
+
+00:15:20.880 --> 00:15:25.200
+Yeah, I think it's really out there. Like initially, my idea, too, is like, oh, is this too
+
+00:15:25.200 --> 00:15:29.919
+much? But naming things is so important, otherwise you're just awkwardly describing something over and
+
+00:15:30.000 --> 00:15:36.080
+over again, like that cell to the top left or these cells off to the side. And eventually,
+
+00:15:36.080 --> 00:15:40.479
+you just have to give it a name, even if it's not the best name. And it's actually names I stole
+
+00:15:40.479 --> 00:15:49.679
+from like basically a census manual on tables, I think written in 1949. Great ideas, like
+
+00:15:49.679 --> 00:15:54.880
+wonderful book, and it's on the web as a PDF still. It's a scam.
+
+00:15:54.880 --> 00:15:56.479
+Yeah, I remember I was talking about that.
+
+00:15:56.479 --> 00:15:56.640
+Yeah, really good stuff.
+
+00:15:56.640 --> 00:15:59.359
+How interesting is it? Yeah, how interesting is it that
+
+00:16:02.719 --> 00:16:06.479
+the inspiration comes from pre-digital times?
+
+00:16:08.400 --> 00:16:16.000
+Yeah, because a lot of the software produces some of these ideas. It's like, well, I have grids.
+
+00:16:16.960 --> 00:16:22.559
+I have a grid of cells, and sometimes the rows can be taller. Sometimes you can span a row. Okay,
+
+00:16:22.559 --> 00:16:26.960
+that's that. But if you just write it by hand, when you have to way back in the day,
+
+00:16:28.159 --> 00:16:30.799
+it's like, oh, well, maybe we could draw it differently, right?
+
+00:16:31.359 --> 00:16:37.119
+Yeah. Yeah, it's like I was searching, researching anything on tables I could find just to get ideas
+
+00:16:37.119 --> 00:16:42.320
+and what people thought was good. And it's really hard to find anything on tables. It's like, oh,
+
+00:16:42.320 --> 00:16:47.520
+but I did find that one thing, and I'm forever in debt to the person who wrote it.
+
+00:16:47.520 --> 00:16:54.400
+Yeah, that's awesome. So let's move on. But if people are out there, and they're
+
+00:16:54.400 --> 00:16:58.559
+doing presentations that involve tables, and especially if it's code generating those tables,
+
+00:17:00.479 --> 00:17:05.040
+check this out. It's quite interesting. So the next thing I want to talk about is just
+
+00:17:05.040 --> 00:17:13.599
+surveying the landscape of what is out there. Because we're going to talk about great docs,
+
+00:17:13.599 --> 00:17:20.800
+and great docs can generate static sites. There's some existing tools that generate docs
+
+00:17:20.800 --> 00:17:24.880
+as static sites. There's some really good tools that just generate static sites that maybe people
+
+00:17:24.880 --> 00:17:30.319
+could put into docs. There's a lot of things that are somewhat similar. There's also stuff that's
+
+00:17:30.880 --> 00:17:35.359
+in the same space, but different. So maybe we could kind of go through and, you know, like,
+
+00:17:35.359 --> 00:17:39.439
+I know you all have mentioned Sphinx is a real popular one in the Python space.
+
+00:17:40.239 --> 00:17:48.000
+There's mkdocs. I had Martin from Zenzicle on not too long ago. So maybe we could talk
+
+00:17:48.000 --> 00:17:53.839
+first about some of the existing tools that are, I guess, as similar as possible to what you're
+
+00:17:53.839 --> 00:18:00.719
+doing. Yeah. Michael, would you like to speak on this? Because I know you did a deep dive recently
+
+00:18:00.719 --> 00:18:07.119
+on these. Yeah. So Sphinx, I think, and maybe to kick off some helpful context to great docs is
+
+00:18:07.199 --> 00:18:14.560
+that, yeah, I worked a lot on early support for documentation with a tool called QuarterDoc.
+
+00:18:15.280 --> 00:18:19.920
+But Rich actually took it to the next level. And this goes to, I think, Rich's style
+
+00:18:21.439 --> 00:18:28.479
+with great docs. So I have a lot of bizarre, like, experience looking at the history of Python docs.
+
+00:18:29.280 --> 00:18:39.040
+And I think Sphinx is one of the OG site builders. I can't I think this is the case.
+
+00:18:39.040 --> 00:18:43.359
+So I think one interesting fact is, as I understand it, I think Python.org,
+
+00:18:43.359 --> 00:18:48.640
+don't quote me on this, I think it was originally done in, like, LaTeX or something like that,
+
+00:18:48.640 --> 00:18:56.880
+the Python docs. And I think that they moved to Sphinx at some point. So, like,
+
+00:18:57.760 --> 00:19:03.040
+Sphinx has a really interesting history in Python. Like, if you go back 25, 30 years,
+
+00:19:03.680 --> 00:19:09.280
+Python docs had to exist using some tool, right? And at some point Sphinx emerged as kind of like
+
+00:19:09.280 --> 00:19:19.680
+this dominant site builder for Python and Python docs. Yeah, does it say? Yeah. So
+
+00:19:20.640 --> 00:19:27.040
+Python docs are in Sphinx. You know, this Python doc site has a how-to, Python how-tos.
+
+00:19:28.079 --> 00:19:35.599
+This is another weird fact. The how-tos emerged, I don't remember exactly when they emerged. It
+
+00:19:35.599 --> 00:19:42.959
+was, like, in the last 30 years, I think, as part of the Linux project. So the term how-to,
+
+00:19:43.359 --> 00:19:50.880
+as I understand it, emerged in the Linux docs. But all these things, like, it's so funny,
+
+00:19:50.880 --> 00:19:57.199
+we see them today and maybe it seems we just think about, like, oh, there's the Python docs.
+
+00:19:57.199 --> 00:20:03.520
+But actually at a certain point, you know, Sphinx emerged, this concept of a how-to emerged.
+
+00:20:04.239 --> 00:20:09.280
+These are all things that over the last, I think, like, 30 years sort of, like,
+
+00:20:10.079 --> 00:20:17.439
+came into existence. So Sphinx is like the OG doc site. A lot of tools use it. Pandas uses it
+
+00:20:17.439 --> 00:20:26.160
+to generate its APIs. Polars uses it as well. So some really big Python tools use it to generate
+
+00:20:26.160 --> 00:20:34.400
+their API docs. It uses this thing called restructured text. I will say, like, I don't
+
+00:20:34.800 --> 00:20:44.079
+know that a lot of open tool developers love it. I want to be a bit careful here because I think
+
+00:20:44.079 --> 00:20:51.280
+it's been so useful. But I do think that restructured text is kind of not the thing
+
+00:20:51.280 --> 00:20:57.040
+most open source developers are reaching for these days. But Sphinx is, like, the OG
+
+00:20:58.000 --> 00:21:03.280
+doc site. And it powers a ton of docs like Python.org and Pandas.
+
+00:21:03.280 --> 00:21:09.680
+Yeah. I'm sure if, you know, I'm sure it was really made a huge improvement when it came out,
+
+00:21:09.680 --> 00:21:14.319
+though, right? If you're doing a lot of tech before, that's got to be pretty rough.
+
+00:21:14.319 --> 00:21:20.959
+Yeah. It's like zero to one, essentially, I think, switching from the tech to Sphinx for, like,
+
+00:21:20.959 --> 00:21:21.839
+your Python docs.
+
+00:21:22.800 --> 00:21:27.599
+Yeah. And if I see an RST file, just a little tear wells up in my eye. I'm like, oh, gosh,
+
+00:21:27.599 --> 00:21:28.239
+here we go.
+
+00:21:29.520 --> 00:21:34.800
+It's almost like a rite of passage, I feel like. Like, as a Python developer producing docs
+
+00:21:35.520 --> 00:21:41.920
+in the, like, Sphinx world, you just kind of, like, I learned Sphinx and RST to generate docs,
+
+00:21:41.920 --> 00:21:47.680
+essentially. It's like, yeah, I feel like that was my rite of passage into, like, software
+
+00:21:47.760 --> 00:21:48.319
+development.
+
+00:21:49.280 --> 00:21:57.119
+Yeah. 100%. So, we've also got mkdocs, or mkdocs, probably. I don't know. I always feel like...
+
+00:21:58.079 --> 00:22:03.839
+I say mkdocs, but I have no... So, I mean, you had the Zensucle people, so I feel like they...
+
+00:22:05.439 --> 00:22:07.520
+Do you have a read on it?
+
+00:22:07.520 --> 00:22:11.839
+If I try to remember, I feel like Martin said mkdocs, but...
+
+00:22:13.680 --> 00:22:17.040
+He could have easily said mkdocs, and I was not paying attention.
+
+00:22:17.760 --> 00:22:20.640
+I'm a main doctor, so...
+
+00:22:21.199 --> 00:22:26.880
+Yeah, no, I think that makes sense. A lot of these that could be said one way or another,
+
+00:22:26.880 --> 00:22:31.599
+I really wish, and maybe this does, but I really wish on their GitHub repo, they just have a
+
+00:22:31.599 --> 00:22:34.560
+little mp3, like, here's how you say it. You know what I mean?
+
+00:22:36.079 --> 00:22:36.880
+A little audio button.
+
+00:22:37.439 --> 00:22:43.680
+Yeah, exactly. Like, green unicorn, like, g-unicorn versus goonicorn is, like,
+
+00:22:43.680 --> 00:22:46.319
+one that I think goes around and around still.
+
+00:22:46.719 --> 00:22:53.760
+So, Zensucle is one of the more modern ones. So, I think that that's pretty interesting.
+
+00:22:54.959 --> 00:23:01.359
+Honestly, I'm not sure how much it lands in the Sphinx mkdocs world, or in the other,
+
+00:23:01.359 --> 00:23:04.719
+maybe the just pure static site generator side of things.
+
+00:23:06.079 --> 00:23:08.319
+So, yeah, go ahead.
+
+00:23:09.199 --> 00:23:15.280
+The Zensucle folks came on and probably have the best sense, but my sense is it's also
+
+00:23:15.280 --> 00:23:20.479
+meant to be kind of a, it might be ROM drop-in replacement for mkdocs. I know they're community.
+
+00:23:20.479 --> 00:23:27.839
+Yeah, yeah, it is a compatibility, at least compatible for a material for mkdocs.
+
+00:23:28.400 --> 00:23:30.479
+Yeah, right, right, right, right.
+
+00:23:30.479 --> 00:23:33.199
+Yeah, for sure. So, yeah, I would say it's in that realm.
+
+00:23:33.199 --> 00:23:37.520
+It also seems like they're heading towards general purpose or knowledge bases, which goes
+
+00:23:37.520 --> 00:23:39.520
+maybe a bit beyond just like...
+
+00:23:39.520 --> 00:23:44.000
+Yes, exactly. That was my, like, uncertainty is how do I classify it, right? Because it's,
+
+00:23:44.000 --> 00:23:50.319
+it doesn't even necessarily, if you look at their H2, it doesn't say the best way to
+
+00:23:50.319 --> 00:23:58.239
+make your docs, right? It's a scalable way for technical writing, which makes it, I think,
+
+00:23:58.239 --> 00:24:07.119
+land a little more in the Hugo or Ghost side of things. So, that's another part to talk
+
+00:24:07.119 --> 00:24:11.920
+about is just like static sites in general, you know, why would I choose, say, Sphinx
+
+00:24:12.000 --> 00:24:15.119
+over Hugo or Hugo over Sphinx or something like that?
+
+00:24:15.119 --> 00:24:20.000
+Yeah, it seems a bit like Mintlify. They have the same sort of thing going to, they do
+
+00:24:20.000 --> 00:24:24.319
+documentation sites, but they go a bit beyond. It's like general purpose, lots of different
+
+00:24:25.040 --> 00:24:31.280
+languages supported, but it is documentation, but not really so much like a site, like just
+
+00:24:31.280 --> 00:24:32.479
+general purpose site generator.
+
+00:24:33.680 --> 00:24:40.160
+Right, so Hugo and Ghost, I don't know Ghost very well, but Hugo, for example, I use that a lot for
+
+00:24:40.719 --> 00:24:46.719
+blogs. I've seen one of my friends does really cool stuff just in general with Hugo, making
+
+00:24:46.719 --> 00:24:54.160
+general purpose sites. I feel like this is much more focused on, I just need a static site and
+
+00:24:54.160 --> 00:25:02.640
+much less, I need it to read my doc strings and categorize my modules and API calls and put in
+
+00:25:02.640 --> 00:25:09.199
+that kind of stuff, right? So, that's another realm that is similar to what you all are doing,
+
+00:25:09.280 --> 00:25:10.400
+but certainly not the same.
+
+00:25:10.959 --> 00:25:15.920
+Yeah, if you want to throw another one in, there's Korto by the company we work at, Posit,
+
+00:25:15.920 --> 00:25:20.000
+and that does sites and much more beyond.
+
+00:25:21.760 --> 00:25:28.560
+I do think, yeah, I had JJ on, and I'm so sorry, I'm forgetting the name of the other
+
+00:25:29.280 --> 00:25:29.920
+guy I had on.
+
+00:25:29.920 --> 00:25:30.479
+Oh, Charles.
+
+00:25:30.479 --> 00:25:31.520
+Yeah, I think it was Charles.
+
+00:25:31.520 --> 00:25:32.079
+Oh, cool.
+
+00:25:32.079 --> 00:25:34.479
+To talk about Korto a little while ago. That was fun.
+
+00:25:34.880 --> 00:25:44.000
+Yeah, I do think a lot of the questions with Hugo versus something more targeted at docs for a tool
+
+00:25:45.520 --> 00:25:53.040
+is hitting on what are the parts of a doc site? What's technical writing versus package
+
+00:25:53.040 --> 00:26:00.800
+documentation? Am I just doing a Hugo thing? Is what I'm doing similar enough to a blog or a
+
+00:26:00.800 --> 00:26:08.800
+website with content, which is really common? My website's in Hugo, or do I need something
+
+00:26:08.800 --> 00:26:15.599
+special to dump out my API docs to dump out the things from my functions and classes?
+
+00:26:16.479 --> 00:26:24.160
+Or could I jam that into Hugo? That's a common kind of hybrid path. Could my thing just dump my
+
+00:26:24.800 --> 00:26:31.119
+info into Hugo? It's all kind of this dance between, is this a general content problem?
+
+00:26:32.000 --> 00:26:41.520
+Is this a very specific tool problem? Or can I jam them both together into something?
+
+00:26:44.800 --> 00:26:50.800
+Yeah, that's an interesting problem. So maybe a good time to start talking about great docs.
+
+00:26:51.680 --> 00:26:59.599
+What is it? What's its value prop and positioning with regard to these other areas?
+
+00:27:00.400 --> 00:27:02.400
+Well, on your screen, you have package down.
+
+00:27:02.400 --> 00:27:04.160
+Yes, it's an origin.
+
+00:27:04.160 --> 00:27:09.920
+It actually comes from R. I can't help but to be a little bit influenced by package down. I use it
+
+00:27:09.920 --> 00:27:17.359
+a lot in my R projects. And it kind of felt like there was a package down sized hole in the Python
+
+00:27:17.760 --> 00:27:23.839
+docs ecosystem, just a little bit, where you can just point something at your docs and it makes
+
+00:27:23.839 --> 00:27:29.280
+something pretty fast with pretty much no configuration. That's the challenge. Does it
+
+00:27:29.280 --> 00:27:35.199
+present something that's serviceable, usable right away? And that's what I was shooting for. And I
+
+00:27:35.199 --> 00:27:40.400
+think that's kind of where I landed. And of course, we have tons of options to do way more things.
+
+00:27:40.400 --> 00:27:46.880
+But I wanted to give something that was, you just start it right away and it gives you something.
+
+00:27:48.160 --> 00:27:55.439
+For instance, you have doc strings and such, and they all just get captured and put into the API
+
+00:27:55.439 --> 00:28:01.119
+reference section. And then later on, you would attend to it and organize it and then arrange it
+
+00:28:01.119 --> 00:28:04.959
+and exclude things. At the very beginning, it would just give you something at least.
+
+00:28:05.520 --> 00:28:08.640
+So that was kind of my goal, I think.
+
+00:28:09.439 --> 00:28:13.520
+Yeah, the up and running super quick is one of the themes, right?
+
+00:28:14.079 --> 00:28:19.839
+Yeah, absolutely. Because I suspect maybe a lot of people are getting more into Python
+
+00:28:19.839 --> 00:28:25.040
+now because of agents, AI, LLMs, and such, and are spinning up small projects.
+
+00:28:26.000 --> 00:28:32.479
+And maybe they're even building their documentation sites with using the same things like LLMs.
+
+00:28:33.760 --> 00:28:37.520
+So getting something up quickly, and maybe the project doesn't last very long. It's just
+
+00:28:37.599 --> 00:28:43.680
+like something just to get going. And you don't want to spend a ton of time on learning the docs,
+
+00:28:43.680 --> 00:28:48.640
+a new doc system. So this sort of thing is pretty valuable. But we still give you the opportunity,
+
+00:28:48.640 --> 00:28:54.400
+of course, to add things and do really cool, sophisticated sites. But just the up and running
+
+00:28:54.400 --> 00:28:58.880
+part, it was super important to me. So by default, you can point it at
+
+00:28:59.839 --> 00:29:05.119
+a package or set of Python files or something and say, generate docs around that. And it will look
+
+00:29:05.119 --> 00:29:09.280
+for doc strings and so on, and then generate some kind of hierarchical.
+
+00:29:09.280 --> 00:29:15.359
+Yeah, exactly. And we tested it quite a bit on different package layouts, like different
+
+00:29:15.359 --> 00:29:20.160
+packaging systems. And it seems to introspect pretty well based on all sorts of variation.
+
+00:29:21.680 --> 00:29:27.199
+And we do test this a lot. So the promise is that it does give you something.
+
+00:29:29.599 --> 00:29:33.680
+And you can also create just more static site type stuff as well, yeah?
+
+00:29:33.760 --> 00:29:35.439
+Yeah. Oh, absolutely. Yeah, you can.
+
+00:29:36.239 --> 00:29:41.680
+Yeah, I think the user guide's a good example. Like, if you click the expandable
+
+00:29:42.719 --> 00:29:43.839
+thing in the top left.
+
+00:29:44.719 --> 00:29:49.359
+Yeah, everything's so zoomed. Yeah, everything's so zoomed on my little small streaming
+
+00:29:49.359 --> 00:29:51.680
+screen. So yeah, the user guide got it.
+
+00:29:52.479 --> 00:29:58.079
+That's, it's nice. The user guide's just a folder in the repo with files in it.
+
+00:29:58.719 --> 00:30:04.800
+But it's nice, like, that puts up this, like, yeah, more kind of general bit of content,
+
+00:30:06.640 --> 00:30:13.839
+where it's not your API reference, which is like each individual function explained,
+
+00:30:14.400 --> 00:30:22.560
+but a more general kind of guide, kind of like a bigger, higher level, like introduction to the
+
+00:30:23.280 --> 00:30:28.800
+package. But it's nice that, to your point, like, can you have more general kind of content?
+
+00:30:28.800 --> 00:30:33.760
+It's nice, this is just a folder in the repo. So getting started with the user guide's like,
+
+00:30:33.760 --> 00:30:34.479
+super fast.
+
+00:30:35.040 --> 00:30:38.880
+Yeah, and this site is like a demonstration, we're showing like the great docs site,
+
+00:30:38.880 --> 00:30:45.040
+and we're just looking at it. And you can just add another directory, and like recipes at the
+
+00:30:45.040 --> 00:30:50.000
+top nav. That's just another directory. And we sort of declared it in our configuration file.
+
+00:30:50.640 --> 00:30:54.640
+So you can just create something similar to a user guide. But we sort of treat a user guide
+
+00:30:54.640 --> 00:31:00.400
+as a sort of like a first class thing. Because we, well, I'm a little bit opinionated about
+
+00:31:01.040 --> 00:31:06.160
+how sites, these docs sites should be. So it kind of serves as a model. So like, the idea is that
+
+00:31:06.160 --> 00:31:10.400
+if someone sees this and says, yeah, I would like something like this, then like, great docs would
+
+00:31:10.400 --> 00:31:14.959
+be a good fit. You just have sort of emulate what we have here, do a few things, and you've
+
+00:31:14.959 --> 00:31:19.359
+pretty much got it beyond the simple sort of like init, and then like build, you can just go a
+
+00:31:19.359 --> 00:31:24.160
+little bit beyond. Yeah, talk. Yeah, sitting here talking to you makes me think, you know,
+
+00:31:24.160 --> 00:31:29.199
+I've got some open source projects, I really should have better docs with them. Maybe,
+
+00:31:29.199 --> 00:31:32.640
+maybe I'll try working on them with great docs. That would be really fun.
+
+00:31:33.199 --> 00:31:36.640
+Oh, yeah. And I love your feedback. I'm always looking for like ideas and feedback.
+
+00:31:37.680 --> 00:31:42.719
+Right now, I'm not gonna make a big deal of it. But I'm looking for users, because it's a brand
+
+00:31:42.719 --> 00:31:49.119
+new project. So like, feedback is a bit scant at this point. So yeah, let me know how it goes.
+
+00:31:49.359 --> 00:31:54.079
+Yeah, I will definitely. One of the things that's nice here that I'm noticing is it's got a lot of
+
+00:31:55.903 --> 00:31:57.083
+Yeah, I will definitely.
+
+00:31:57.083 --> 00:31:59.283
+One of the things that's nice here that I'm noticing
+
+00:31:59.283 --> 00:32:05.003
+is it's got a lot of elements of the display
+
+00:32:05.003 --> 00:32:07.443
+that go beyond just standard markdown
+
+00:32:07.443 --> 00:32:09.163
+that I think are really nice.
+
+00:32:09.163 --> 00:32:13.683
+Like, for example, you've got these,
+
+00:32:13.683 --> 00:32:16.362
+I guess these are probably like little tags or badges.
+
+00:32:16.362 --> 00:32:17.803
+Yeah, they're actually tags, right.
+
+00:32:17.803 --> 00:32:22.903
+Yeah, and then also you've got a tabbed UI for, like,
+
+00:32:22.923 --> 00:32:26.643
+here's how you install it on Mac, Linux, Windows,
+
+00:32:26.643 --> 00:32:27.803
+but in the same little area, right?
+
+00:32:27.803 --> 00:32:30.002
+You just, like, click the tab for your OS.
+
+00:32:30.002 --> 00:32:31.682
+Yeah, we call those tab sets in Quarto.
+
+00:32:31.682 --> 00:32:33.923
+They're like a Quarto special, really.
+
+00:32:34.522 --> 00:32:35.202
+Yeah.
+
+00:32:35.202 --> 00:32:37.443
+They just come part and parcel with Quarto.
+
+00:32:37.443 --> 00:32:38.803
+Yeah, sweet.
+
+00:32:38.803 --> 00:32:44.763
+So, yeah, I feel like you can do some nice authorship beyond that.
+
+00:32:44.763 --> 00:32:46.283
+Like, when I was working on my book,
+
+00:32:46.283 --> 00:32:48.763
+I'm like, I want to write it in markdown,
+
+00:32:48.763 --> 00:32:50.403
+but I also want to have these little callouts
+
+00:32:50.423 --> 00:32:53.143
+or, like, an action or, you know, the little sidebar.
+
+00:32:53.143 --> 00:32:55.943
+Like, how in the heck am I going to get that
+
+00:32:55.943 --> 00:32:57.862
+to come out of Pandoc, you know what I mean?
+
+00:32:57.862 --> 00:32:59.063
+Yeah, yeah.
+
+00:32:59.063 --> 00:33:03.462
+I eventually got it to work by basically getting
+
+00:33:03.462 --> 00:33:06.943
+a little pre-parser that would just turn those into HTML
+
+00:33:06.943 --> 00:33:09.542
+and allow the markdown to have HTML, but.
+
+00:33:09.542 --> 00:33:12.502
+I think that's what makes a good user guide a good user guide.
+
+00:33:12.502 --> 00:33:14.883
+We actually show, like, not just, like, show the code,
+
+00:33:14.883 --> 00:33:17.983
+but actually show the results, and you can totally do that.
+
+00:33:18.083 --> 00:33:20.962
+You know, with a good user guide,
+
+00:33:20.962 --> 00:33:23.282
+and that's what I try to demonstrate here
+
+00:33:23.282 --> 00:33:27.682
+in the Great Docs User Guide, that we have these things.
+
+00:33:27.682 --> 00:33:29.282
+Here's how they look.
+
+00:33:29.282 --> 00:33:32.203
+You can have these, too.
+
+00:33:32.203 --> 00:33:35.042
+Yeah, yeah, that definitely looks good.
+
+00:33:35.042 --> 00:33:36.602
+That's the one thing, too, with Quarto,
+
+00:33:36.602 --> 00:33:40.123
+that, like, if I had to make the case for Quarto
+
+00:33:40.123 --> 00:33:43.723
+for a lot of people doing documentation,
+
+00:33:43.723 --> 00:33:45.803
+it's that it's really easy to run code.
+
+00:33:45.822 --> 00:33:49.943
+Running code is kind of, like, most of Quarto's game,
+
+00:33:49.943 --> 00:33:53.663
+that it's a, you author using a QMD.
+
+00:33:53.663 --> 00:33:56.023
+It's essentially a markdown file,
+
+00:33:56.023 --> 00:34:00.142
+but your code blocks can be executed.
+
+00:34:00.142 --> 00:34:01.862
+So it's really inconvenient for docs,
+
+00:34:01.862 --> 00:34:05.582
+like, being able to include code snippets with their,
+
+00:34:05.582 --> 00:34:08.343
+and then they get run, and their outputs are there.
+
+00:34:09.582 --> 00:34:12.302
+So that's kind of the impetus, I think, in this case
+
+00:34:12.302 --> 00:34:17.302
+for Quarto, is doing, like, really easy execution of code.
+
+00:34:18.802 --> 00:34:20.843
+It's possible in other tools,
+
+00:34:20.843 --> 00:34:25.843
+and I know MakeDocStrings, who I think its author
+
+00:34:25.882 --> 00:34:28.882
+is working with Zensicle now, too,
+
+00:34:28.882 --> 00:34:32.483
+but, like, they've created a lot of good ways
+
+00:34:32.483 --> 00:34:35.363
+for you to be able to do this as well, like execute code,
+
+00:34:35.363 --> 00:34:37.682
+but I do think that's one area
+
+00:34:37.682 --> 00:34:38.983
+where people stub their toe a lot,
+
+00:34:38.983 --> 00:34:41.843
+is, like, oh, like, if I'm Polars or Pandas,
+
+00:34:42.382 --> 00:34:43.503
+or if I'm a DataFrame library,
+
+00:34:43.503 --> 00:34:45.462
+I probably want a lot of examples,
+
+00:34:47.063 --> 00:34:48.863
+and then you get stuck in this, like, funny dance,
+
+00:34:48.863 --> 00:34:52.263
+like, how do I execute the code for my examples?
+
+00:34:52.263 --> 00:34:54.182
+And so I think tools like Quarto
+
+00:34:54.182 --> 00:34:58.582
+are really kind of aimed at that use case.
+
+00:34:58.582 --> 00:35:00.302
+Like, you're a person running code
+
+00:35:00.302 --> 00:35:03.022
+and generating reports, you know,
+
+00:35:03.022 --> 00:35:07.223
+that have code and that produce graphs and tables and-
+
+00:35:07.223 --> 00:35:10.863
+Yeah, and I think the examples, like, being executable
+
+00:35:10.863 --> 00:35:14.203
+made the great tables examples really powerful.
+
+00:35:14.203 --> 00:35:15.843
+You can see the code for a table
+
+00:35:15.843 --> 00:35:17.802
+and then see the table right below,
+
+00:35:17.802 --> 00:35:19.322
+like, in the actual, like, site,
+
+00:35:19.322 --> 00:35:21.602
+which is, we didn't have to paste that in.
+
+00:35:21.602 --> 00:35:23.843
+It was basically just generated right there.
+
+00:35:23.843 --> 00:35:24.682
+Yeah, that's amazing.
+
+00:35:24.682 --> 00:35:25.682
+Which is actually incredible.
+
+00:35:25.682 --> 00:35:27.602
+You can put pros around it as well,
+
+00:35:27.602 --> 00:35:30.483
+so it's like, it reads just like a little mini guide
+
+00:35:30.483 --> 00:35:32.643
+in each docstring.
+
+00:35:32.643 --> 00:35:35.363
+Does it run at build time,
+
+00:35:35.363 --> 00:35:39.442
+or does it somehow run in the website?
+
+00:35:39.462 --> 00:35:40.542
+Oh, build time, at build time.
+
+00:35:40.542 --> 00:35:42.542
+Yeah, yeah, yeah, yeah.
+
+00:35:42.542 --> 00:35:43.623
+But you can also-
+
+00:35:43.623 --> 00:35:45.182
+WebAssembly or something fun like that?
+
+00:35:45.182 --> 00:35:46.022
+No.
+
+00:35:46.022 --> 00:35:47.923
+You could do that, you could do that.
+
+00:35:47.923 --> 00:35:52.022
+Yeah, another nice thing is you can freeze it.
+
+00:35:52.022 --> 00:35:55.742
+So, like, if you have a bit of code that,
+
+00:35:55.742 --> 00:35:57.322
+or, like, let's say you have a blog post
+
+00:35:57.322 --> 00:36:00.942
+and you don't want to rerun it every time,
+
+00:36:00.942 --> 00:36:02.382
+because, like, over the years,
+
+00:36:02.382 --> 00:36:03.623
+maybe you just, you, like,
+
+00:36:03.623 --> 00:36:05.143
+know the code's gonna get out of date
+
+00:36:05.143 --> 00:36:08.263
+or it takes a long time to run.
+
+00:36:08.263 --> 00:36:10.042
+You can do something called freeze.
+
+00:36:10.042 --> 00:36:11.643
+You can quarter freeze it.
+
+00:36:11.643 --> 00:36:16.642
+And that essentially, like, caches the outputs
+
+00:36:16.642 --> 00:36:18.962
+so that you can re-render it
+
+00:36:18.962 --> 00:36:23.962
+without executing the code every time.
+
+00:36:24.043 --> 00:36:24.883
+So that's useful.
+
+00:36:24.883 --> 00:36:29.482
+Like, GreatTables, we have kind of a growing log of blog posts
+
+00:36:29.482 --> 00:36:32.003
+and we don't want to re-execute them every time
+
+00:36:32.003 --> 00:36:35.283
+because that starts to get pretty time-consuming.
+
+00:36:35.283 --> 00:36:37.603
+So we can just freeze their outputs
+
+00:36:37.603 --> 00:36:40.103
+and then they generate super fast.
+
+00:36:41.262 --> 00:36:42.742
+Another reason you might want to freeze it
+
+00:36:42.742 --> 00:36:47.503
+is you're accessing live data off an API or website
+
+00:36:47.503 --> 00:36:49.022
+and you want to talk about the results.
+
+00:36:49.022 --> 00:36:51.702
+And if it changes, like, all of a sudden,
+
+00:36:51.702 --> 00:36:53.783
+your pros is like, why are you talking about this?
+
+00:36:53.783 --> 00:36:54.623
+It doesn't say that.
+
+00:36:54.623 --> 00:36:56.103
+Like, well, it used to when I did it.
+
+00:36:56.103 --> 00:36:58.742
+Yeah, you might imagine, like, a benchmark section example
+
+00:36:58.742 --> 00:36:59.903
+if it runs a long time
+
+00:36:59.903 --> 00:37:03.702
+or you're just accessing some keys on your personal machine.
+
+00:37:03.702 --> 00:37:05.182
+Absolutely, freezing is great for that.
+
+00:37:05.182 --> 00:37:08.482
+You basically froze stuff on your personal computer
+
+00:37:08.482 --> 00:37:11.563
+and you're just like, you know, sending it off to like CI.
+
+00:37:11.563 --> 00:37:12.862
+Yeah, yeah.
+
+00:37:12.862 --> 00:37:14.642
+And I think there's like a million,
+
+00:37:14.642 --> 00:37:16.283
+there's also like a million of these things
+
+00:37:16.283 --> 00:37:19.642
+that you encounter when you start generating doc sites
+
+00:37:19.642 --> 00:37:23.582
+or like personal content, which is like,
+
+00:37:23.582 --> 00:37:25.823
+yeah, maybe I don't want to run some stuff.
+
+00:37:25.823 --> 00:37:28.082
+Maybe I want to like include a snippet
+
+00:37:28.082 --> 00:37:30.202
+from one thing somewhere else.
+
+00:37:30.223 --> 00:37:33.443
+Or maybe I want to do like all kinds of,
+
+00:37:34.623 --> 00:37:37.742
+like output customization.
+
+00:37:37.742 --> 00:37:40.823
+I just feel like there's a million little boxes to check.
+
+00:37:40.823 --> 00:37:45.823
+So that's one, I mean, one other reason we use Cordo
+
+00:37:46.343 --> 00:37:49.403
+is we belong to the company that created Cordo.
+
+00:37:49.403 --> 00:37:53.123
+But I think those like little pieces of detail
+
+00:37:53.123 --> 00:37:55.982
+for people generating like scientific documents
+
+00:37:55.982 --> 00:37:58.142
+and stuff goes a long way.
+
+00:37:59.003 --> 00:38:00.403
+And it's pretty wild too,
+
+00:38:00.403 --> 00:38:04.043
+because Cordo has a pretty big extension system as well,
+
+00:38:04.043 --> 00:38:05.742
+like pretty active.
+
+00:38:05.742 --> 00:38:07.202
+So there's like ways, I mean,
+
+00:38:07.202 --> 00:38:08.723
+besides like different output types,
+
+00:38:08.723 --> 00:38:11.362
+there's like extensions and different types of extensions
+
+00:38:11.362 --> 00:38:13.883
+to like different classes of extensions.
+
+00:38:13.883 --> 00:38:15.163
+So it goes really deep.
+
+00:38:15.163 --> 00:38:16.522
+Yeah, Cordo is really neat.
+
+00:38:18.522 --> 00:38:19.922
+And you all keep talking about Cordo
+
+00:38:19.922 --> 00:38:21.802
+because it's the foundation
+
+00:38:21.802 --> 00:38:24.443
+of what's happening with Great Tables, right?
+
+00:38:24.443 --> 00:38:26.362
+It's been a while since it was,
+
+00:38:26.362 --> 00:38:27.982
+it's been a while since I had JJ and Carlos
+
+00:38:27.982 --> 00:38:32.022
+on the podcast to talk about Cordo.
+
+00:38:32.022 --> 00:38:36.663
+But so maybe just give folks a bit of a refresher
+
+00:38:36.663 --> 00:38:37.702
+of what is Cordo
+
+00:38:37.702 --> 00:38:40.063
+and then how that relates back to Great Tables.
+
+00:38:42.503 --> 00:38:46.903
+Yeah, so Cordo is like an open source publishing system.
+
+00:38:46.903 --> 00:38:49.103
+So you can make things like sites,
+
+00:38:49.103 --> 00:38:52.422
+like documents, like books, for instance.
+
+00:38:52.422 --> 00:38:53.883
+You can make presentations.
+
+00:38:54.862 --> 00:38:56.202
+There's probably a few more I'm missing.
+
+00:38:57.022 --> 00:38:57.982
+And it's cross-language as well.
+
+00:38:57.982 --> 00:38:59.462
+And like code cells.
+
+00:38:59.462 --> 00:39:01.823
+So it has computational notebooks is what they call them
+
+00:39:01.823 --> 00:39:02.982
+because they have cells
+
+00:39:02.982 --> 00:39:05.022
+which are basically computational cells,
+
+00:39:05.022 --> 00:39:07.262
+which can accept, which have different engines.
+
+00:39:07.262 --> 00:39:09.022
+So you can like say, like run some R code,
+
+00:39:09.022 --> 00:39:11.462
+run some Python, some Julia, what have you,
+
+00:39:11.462 --> 00:39:13.262
+many other things as well.
+
+00:39:13.262 --> 00:39:14.103
+And then you can stitch them,
+
+00:39:14.103 --> 00:39:16.063
+you know, basically render them into documents
+
+00:39:16.063 --> 00:39:17.982
+using Pandoc for the most part
+
+00:39:17.982 --> 00:39:21.343
+and probably other things too for different output types.
+
+00:39:21.343 --> 00:39:23.343
+And it just really, batteries included,
+
+00:39:23.343 --> 00:39:25.462
+has things like you just see on the site,
+
+00:39:25.522 --> 00:39:30.043
+citations, cross-refs, you know, it's got all essentially.
+
+00:39:30.043 --> 00:39:35.043
+And so how it relates to Cordoc and to Great Docs,
+
+00:39:35.482 --> 00:39:38.202
+we're using Cordoc as like, you know,
+
+00:39:38.202 --> 00:39:39.022
+but not really.
+
+00:39:39.022 --> 00:39:41.043
+Like I think with Cordoc, it's,
+
+00:39:42.883 --> 00:39:44.503
+the way I see it is like,
+
+00:39:46.362 --> 00:39:47.482
+and correct me if I'm wrong, Michael,
+
+00:39:47.482 --> 00:39:50.802
+Cordoc, you're creating a reference API,
+
+00:39:50.802 --> 00:39:52.403
+but you're still basically using Cordo.
+
+00:39:52.403 --> 00:39:53.922
+You're within the Cordo itself.
+
+00:39:53.922 --> 00:39:55.922
+You're still creating the Cordo config.
+
+00:39:57.982 --> 00:39:59.663
+But with Great Docs, it's kind of like Cordo
+
+00:39:59.663 --> 00:40:01.503
+is a bit sort of like a,
+
+00:40:01.503 --> 00:40:02.702
+we're using it obviously,
+
+00:40:02.702 --> 00:40:04.343
+but you don't have to know a lot about Cordo.
+
+00:40:04.343 --> 00:40:07.403
+You can basically get by with just a few things you see,
+
+00:40:08.702 --> 00:40:09.982
+you know, in like the user guide
+
+00:40:09.982 --> 00:40:12.103
+and not have to like go deeply into Cordo.
+
+00:40:12.103 --> 00:40:14.383
+It sort of like hides it a little bit
+
+00:40:14.383 --> 00:40:17.223
+or doesn't really advertise it as much,
+
+00:40:17.223 --> 00:40:18.943
+even though we use it a lot.
+
+00:40:18.943 --> 00:40:20.223
+Just for some context.
+
+00:40:21.223 --> 00:40:22.783
+Yeah, I mentioned before I developed a tool
+
+00:40:22.883 --> 00:40:23.723
+called Cordoc,
+
+00:40:23.723 --> 00:40:28.322
+which is another documentation generator for Cordo.
+
+00:40:28.322 --> 00:40:32.122
+So just to clarify like the context,
+
+00:40:33.202 --> 00:40:37.002
+yeah, like Cordoc is a much more kind of like low level,
+
+00:40:37.002 --> 00:40:37.882
+no frills.
+
+00:40:37.882 --> 00:40:40.043
+So like the IBIS project uses it.
+
+00:40:41.283 --> 00:40:44.363
+So that's another pretty big Python tool,
+
+00:40:44.363 --> 00:40:48.442
+but it's like very like simple.
+
+00:40:48.442 --> 00:40:51.403
+It's more about like dump your API reference
+
+00:40:51.403 --> 00:40:53.382
+and then you're responsible for like customizing
+
+00:40:53.382 --> 00:40:54.223
+your website.
+
+00:40:54.223 --> 00:40:57.142
+And so it's for people who really wanna like be in control
+
+00:40:57.142 --> 00:40:58.822
+and set it all up.
+
+00:40:58.822 --> 00:41:01.702
+I think Rich is kind of underselling.
+
+00:41:01.702 --> 00:41:04.423
+I think GreatDocs is just dripping in style.
+
+00:41:04.423 --> 00:41:06.022
+I think that's one of the keys
+
+00:41:06.022 --> 00:41:09.743
+is it's made to be kind of like an all-in-one,
+
+00:41:09.743 --> 00:41:14.062
+something really nice out of the box that's opinionated.
+
+00:41:14.062 --> 00:41:16.183
+But I just wanted to clarify for context,
+
+00:41:16.183 --> 00:41:19.622
+Cordodoc is another tool outside of Cordo.
+
+00:41:19.622 --> 00:41:22.022
+So I know we've checked a lot of tools out,
+
+00:41:23.622 --> 00:41:27.243
+but one thing that's interesting is I know,
+
+00:41:27.243 --> 00:41:29.923
+like when we look at GreatDocs,
+
+00:41:29.923 --> 00:41:33.082
+it's easy to see like some of the stuff that jumps out,
+
+00:41:33.082 --> 00:41:36.002
+but there's actually, I think to Rich's credit,
+
+00:41:36.002 --> 00:41:39.202
+there's a ton of like little things inside GreatDocs
+
+00:41:39.202 --> 00:41:43.283
+that you almost don't notice until you need them.
+
+00:41:44.663 --> 00:41:48.562
+Like there's a million little pieces to doc sites
+
+00:41:48.562 --> 00:41:50.283
+and some of them are actually pretty intriguing.
+
+00:41:50.283 --> 00:41:55.283
+Like if you go to the GreatDocs API reference,
+
+00:41:55.803 --> 00:42:00.043
+I think it kind of like speaks to Rich's style
+
+00:42:00.043 --> 00:42:05.043
+that he's included a ton of stuff out of the box for this,
+
+00:42:05.942 --> 00:42:09.163
+including this little like filter bar.
+
+00:42:09.163 --> 00:42:11.882
+So if you click on the top left,
+
+00:42:14.002 --> 00:42:16.962
+you can sort of like filter on the page
+
+00:42:16.962 --> 00:42:18.642
+for different pieces.
+
+00:42:18.642 --> 00:42:21.483
+That's like, yeah.
+
+00:42:21.483 --> 00:42:24.283
+I think for just to illustrate the difference,
+
+00:42:24.283 --> 00:42:26.163
+so Cordodoc is a really bare bones tool.
+
+00:42:26.163 --> 00:42:30.243
+It's like we generate an API for you.
+
+00:42:30.243 --> 00:42:32.363
+GreatDocs, like this thing, this filter bar
+
+00:42:32.363 --> 00:42:33.562
+where you can like type in it
+
+00:42:33.562 --> 00:42:35.923
+and it shows you live on the page.
+
+00:42:35.923 --> 00:42:39.522
+Like it filters your reference items.
+
+00:42:39.522 --> 00:42:41.163
+That's just pure Rich,
+
+00:42:41.163 --> 00:42:46.163
+just like wilding out on what docs could be.
+
+00:42:46.163 --> 00:42:49.803
+And I think there are like a million little examples
+
+00:42:49.803 --> 00:42:52.723
+of this kind of in GreatDocs.
+
+00:42:52.723 --> 00:42:53.562
+Kind of, yeah.
+
+00:42:53.562 --> 00:42:55.122
+Because like I find little things that annoy me
+
+00:42:55.122 --> 00:42:56.322
+and I want to fix them.
+
+00:42:56.322 --> 00:43:01.002
+But, and so this is my,
+
+00:43:01.002 --> 00:43:04.723
+this is almost like a Python site generator
+
+00:43:04.723 --> 00:43:06.283
+for me in lots of ways.
+
+00:43:06.283 --> 00:43:07.642
+But I'm hoping that other people
+
+00:43:07.642 --> 00:43:10.762
+feel these little pain points as well.
+
+00:43:10.762 --> 00:43:11.603
+I've certainly felt it.
+
+00:43:11.603 --> 00:43:13.962
+I've gone to documentation sites
+
+00:43:13.962 --> 00:43:15.762
+and searched for stuff on there.
+
+00:43:16.363 --> 00:43:19.243
+And then you see a little spinner searching, searching.
+
+00:43:19.243 --> 00:43:20.683
+Static site, what are we doing?
+
+00:43:20.683 --> 00:43:21.803
+Why am I waiting?
+
+00:43:21.803 --> 00:43:24.202
+This doesn't make any sense to me, but okay.
+
+00:43:24.202 --> 00:43:25.122
+Yeah.
+
+00:43:25.122 --> 00:43:29.202
+Even the CLI button, like, oh, sorry.
+
+00:43:29.202 --> 00:43:31.082
+If you click that,
+
+00:43:31.082 --> 00:43:33.283
+that's like if you have a command line interface
+
+00:43:33.283 --> 00:43:35.603
+for your tool, which is so hot today,
+
+00:43:35.603 --> 00:43:39.962
+like AI loves command line interfaces.
+
+00:43:39.962 --> 00:43:43.882
+Cloud code's just bash executing everything.
+
+00:43:44.283 --> 00:43:46.562
+You know, a lot of people have CLIs.
+
+00:43:48.442 --> 00:43:50.403
+I think it also speaks a lot to Registar
+
+00:43:50.403 --> 00:43:55.082
+that he created this spot for your CLI docs to live.
+
+00:43:56.483 --> 00:43:57.322
+Very important.
+
+00:43:58.683 --> 00:44:01.363
+And then at the top right, if you look,
+
+00:44:03.243 --> 00:44:04.202
+there's like a copy.
+
+00:44:04.202 --> 00:44:07.002
+You can copy the whole page to Markdown
+
+00:44:07.002 --> 00:44:09.082
+or view it as Markdown.
+
+00:44:09.082 --> 00:44:11.043
+I never would have thought of that.
+
+00:44:11.043 --> 00:44:13.723
+Like to me, I would never go that far
+
+00:44:14.522 --> 00:44:15.442
+to give people something nice.
+
+00:44:15.442 --> 00:44:19.363
+I don't know if I'm just like a chromogeny engineer.
+
+00:44:19.363 --> 00:44:23.683
+I think Rich is just dreaming up like, I don't know,
+
+00:44:23.683 --> 00:44:26.642
+different ways you could interact with docs,
+
+00:44:26.642 --> 00:44:28.122
+copy the page to Markdown.
+
+00:44:28.122 --> 00:44:31.603
+And I don't doubt that it's like incredibly useful.
+
+00:44:31.603 --> 00:44:32.442
+To me, this strikes me as like-
+
+00:44:32.442 --> 00:44:34.122
+I think it's very useful, yeah.
+
+00:44:34.122 --> 00:44:34.962
+Yeah.
+
+00:44:35.923 --> 00:44:38.163
+When I saw that table graph for Great Tables,
+
+00:44:38.163 --> 00:44:42.322
+like breaking apart the table into every little piece,
+
+00:44:42.322 --> 00:44:44.483
+this strikes me as Rich again,
+
+00:44:44.483 --> 00:44:49.322
+like imagining every little thing a doc site could do.
+
+00:44:49.322 --> 00:44:53.202
+So I think that's what I'm so kind of gassed up about.
+
+00:44:53.202 --> 00:44:55.882
+Yeah, that's delightful.
+
+00:44:55.882 --> 00:44:58.642
+And we're gonna come back to AI stuff later,
+
+00:44:58.642 --> 00:45:03.642
+but we don't have that much time left, honestly,
+
+00:45:03.642 --> 00:45:04.642
+you guys, we've been talking,
+
+00:45:04.642 --> 00:45:06.082
+and not making a lot of progress,
+
+00:45:06.082 --> 00:45:07.483
+because it's really, we're just diving into it.
+
+00:45:07.483 --> 00:45:08.322
+Docs talk.
+
+00:45:08.322 --> 00:45:09.163
+It's so fun.
+
+00:45:09.163 --> 00:45:10.082
+I know, it's so fun.
+
+00:45:10.082 --> 00:45:14.522
+But I can easily see I'm working on a project,
+
+00:45:14.522 --> 00:45:17.762
+and I've got Claude or some codex or whatever,
+
+00:45:17.762 --> 00:45:21.522
+and it's just not getting it for a certain function.
+
+00:45:21.522 --> 00:45:24.122
+Just go to the docs, hit copy pages Markdown,
+
+00:45:24.122 --> 00:45:28.322
+and just go, no AI, this is the docs, read it.
+
+00:45:28.322 --> 00:45:31.363
+Because giving it a Markdown result of what this is,
+
+00:45:31.363 --> 00:45:33.882
+versus all the nav and all the stuff,
+
+00:45:33.882 --> 00:45:35.442
+and it's trying to understand
+
+00:45:35.442 --> 00:45:36.923
+what's the essence of the page,
+
+00:45:36.923 --> 00:45:39.082
+if you tell it to just go to the page,
+
+00:45:39.163 --> 00:45:40.762
+it's really, really different.
+
+00:45:41.923 --> 00:45:43.442
+Yeah, it's a bit more immediate, I think.
+
+00:45:43.442 --> 00:45:45.243
+And also you can change the URL,
+
+00:45:45.243 --> 00:45:47.002
+if you really want to, to .md,
+
+00:45:47.002 --> 00:45:48.122
+and just give it the URL.
+
+00:45:48.122 --> 00:45:50.803
+So many ways to do it.
+
+00:45:50.803 --> 00:45:52.723
+Yeah, yeah, yeah, I love that.
+
+00:45:52.723 --> 00:45:54.562
+So instead of html.md.
+
+00:45:54.562 --> 00:45:55.403
+Yeah.
+
+00:45:55.403 --> 00:45:57.202
+Yeah, that's really cool.
+
+00:45:57.202 --> 00:46:00.082
+So if you, you or Claude Code are reading the docs,
+
+00:46:00.082 --> 00:46:03.082
+you know, a lot of good, a lot of good stuff.
+
+00:46:03.082 --> 00:46:04.283
+Yeah, here's some tokens.
+
+00:46:04.283 --> 00:46:05.882
+Yeah, yeah, yeah, that's cool.
+
+00:46:05.882 --> 00:46:07.122
+Did I do that for TalkPython?
+
+00:46:07.122 --> 00:46:08.163
+I think I did.
+
+00:46:09.202 --> 00:46:12.163
+Yeah, if you do that on TalkPython, by the way,
+
+00:46:12.163 --> 00:46:17.002
+you can do, just put .md on the end of any episode name,
+
+00:46:17.002 --> 00:46:20.562
+and it gives you the markdown equivalent of that as well.
+
+00:46:20.562 --> 00:46:22.043
+So which is all the rage.
+
+00:46:22.043 --> 00:46:23.483
+Yeah, so I mean, we're on the same vibes here.
+
+00:46:23.483 --> 00:46:24.882
+I'm loving it, you know what I mean?
+
+00:46:24.882 --> 00:46:27.122
+Yeah, and it might even help for context.
+
+00:46:27.122 --> 00:46:28.762
+I'd be curious to hear your,
+
+00:46:28.762 --> 00:46:30.483
+like when you added that markdown,
+
+00:46:30.483 --> 00:46:35.322
+and some of your motivation for markdownifying your site.
+
+00:46:36.562 --> 00:46:37.562
+I didn't do it for people.
+
+00:46:37.562 --> 00:46:39.163
+I did it for AI and SEO.
+
+00:46:39.163 --> 00:46:40.202
+For the machine stuff.
+
+00:46:40.202 --> 00:46:41.562
+Yeah, for the machine.
+
+00:46:41.562 --> 00:46:45.603
+So I added a, if I could type,
+
+00:46:48.363 --> 00:46:51.562
+I did an llms.txt to try to get the AIs
+
+00:46:51.562 --> 00:46:54.122
+to understand the podcast better.
+
+00:46:54.122 --> 00:46:56.603
+And some of the things that I gave it
+
+00:46:56.603 --> 00:46:59.562
+was this ability to just put markdown at the end,
+
+00:46:59.562 --> 00:47:02.442
+but also I added like a CLI and an MCP
+
+00:47:02.442 --> 00:47:06.762
+and different things for an API, search API.
+
+00:47:06.762 --> 00:47:08.283
+And I'm like, okay, AI,
+
+00:47:08.283 --> 00:47:11.562
+there's 7.5 million words of content over 11 years.
+
+00:47:11.562 --> 00:47:14.562
+I want you to know about it and be able to use it.
+
+00:47:14.562 --> 00:47:18.243
+How many ways can I imagine giving something to it?
+
+00:47:18.243 --> 00:47:21.522
+And this render as markdown was certainly one of them.
+
+00:47:21.522 --> 00:47:22.363
+That's great.
+
+00:47:22.363 --> 00:47:23.803
+Yeah, that's awesome.
+
+00:47:23.803 --> 00:47:27.483
+I also added some silly stuff that's like for,
+
+00:47:28.723 --> 00:47:31.043
+just for me, because I've got, for example,
+
+00:47:31.043 --> 00:47:36.043
+I've got to update, say, the YouTube recommendations.
+
+00:47:37.002 --> 00:47:39.522
+So, or listings after the live stream,
+
+00:47:39.522 --> 00:47:40.762
+I want them to have like links and stuff.
+
+00:47:40.762 --> 00:47:43.243
+So I can say .youtube on the end,
+
+00:47:43.243 --> 00:47:46.923
+and it gives me the contents for like the YouTube renders.
+
+00:47:46.923 --> 00:47:48.522
+So it kind of was building on this,
+
+00:47:48.522 --> 00:47:51.483
+like how can I help myself be more efficient,
+
+00:47:51.483 --> 00:47:52.322
+but also a machine?
+
+00:47:52.322 --> 00:47:54.043
+So anyway, that's the story.
+
+00:47:54.043 --> 00:47:56.603
+This is where it's like Doc's workflow really, right?
+
+00:47:56.603 --> 00:47:57.522
+Fits in nicely.
+
+00:47:58.363 --> 00:47:59.202
+Yeah.
+
+00:47:59.202 --> 00:48:00.043
+Yeah.
+
+00:48:00.043 --> 00:48:01.723
+So, you know, circling back around,
+
+00:48:01.723 --> 00:48:04.283
+I'm really impressed with some of these little nuances
+
+00:48:04.283 --> 00:48:05.562
+that are super nice.
+
+00:48:05.603 --> 00:48:06.562
+Yeah.
+
+00:48:06.562 --> 00:48:07.522
+I think that's great.
+
+00:48:07.522 --> 00:48:08.363
+Yeah, thank you.
+
+00:48:08.363 --> 00:48:09.962
+I'll go further on this.
+
+00:48:09.962 --> 00:48:11.522
+It's basically just nicing up the docs
+
+00:48:11.522 --> 00:48:12.843
+and make them good for humans,
+
+00:48:12.843 --> 00:48:17.283
+but also consumable by LLMs or digits.
+
+00:48:17.283 --> 00:48:20.243
+It's just, Rich, it's a fad.
+
+00:48:20.243 --> 00:48:21.762
+We don't really need to worry about it.
+
+00:48:21.762 --> 00:48:23.322
+It's going to go away.
+
+00:48:23.322 --> 00:48:24.283
+The bubble's going to burst.
+
+00:48:24.283 --> 00:48:25.843
+We can just, we can just ignore it.
+
+00:48:25.843 --> 00:48:27.002
+It's going to be fine.
+
+00:48:28.082 --> 00:48:28.923
+No.
+
+00:48:28.923 --> 00:48:30.442
+So let's talk,
+
+00:48:30.442 --> 00:48:32.002
+I want to talk about a couple of things here.
+
+00:48:32.002 --> 00:48:33.683
+So let's just do like a real quick,
+
+00:48:33.683 --> 00:48:37.163
+little walkthrough of maybe getting started with this.
+
+00:48:38.283 --> 00:48:41.202
+Because it's honestly not a whole lot to get started,
+
+00:48:41.202 --> 00:48:42.202
+but give us this,
+
+00:48:43.082 --> 00:48:45.363
+one of you all walk us through the quick start,
+
+00:48:45.363 --> 00:48:47.322
+just so people kind of know what's involved.
+
+00:48:47.322 --> 00:48:48.163
+Yeah.
+
+00:48:48.163 --> 00:48:50.562
+So really that command, like great docs init,
+
+00:48:50.562 --> 00:48:52.283
+that'll make the file that is basically
+
+00:48:52.283 --> 00:48:54.122
+what you need for the build.
+
+00:48:54.122 --> 00:48:56.962
+And with a lot of testing,
+
+00:48:56.962 --> 00:48:59.403
+it should work on many different like Python package,
+
+00:48:59.403 --> 00:49:01.482
+like layouts and types.
+
+00:49:01.482 --> 00:49:02.323
+So you just need that.
+
+00:49:02.323 --> 00:49:04.242
+Of course, yeah, install great docs,
+
+00:49:04.242 --> 00:49:05.963
+install cordo as well.
+
+00:49:05.963 --> 00:49:08.803
+So we got that as well before that.
+
+00:49:08.803 --> 00:49:09.722
+But once you have those things,
+
+00:49:09.722 --> 00:49:11.283
+it should do what it says on the screen,
+
+00:49:11.283 --> 00:49:13.323
+basically show you stuff in the terminal,
+
+00:49:13.323 --> 00:49:14.522
+which is all positive.
+
+00:49:14.522 --> 00:49:18.203
+It's creating that great docs.yaml file.
+
+00:49:18.203 --> 00:49:20.323
+And it should be pretty minimal what's in there.
+
+00:49:20.323 --> 00:49:22.602
+It should actually also be a little bit dynamic.
+
+00:49:22.602 --> 00:49:23.522
+Based on your project,
+
+00:49:23.522 --> 00:49:28.522
+it'll craft like the correct great docs.yaml file
+
+00:49:28.522 --> 00:49:30.083
+or the config file.
+
+00:49:30.083 --> 00:49:31.722
+And then you could go ahead and customize,
+
+00:49:31.722 --> 00:49:34.602
+but you might just jump to building your documentation
+
+00:49:34.602 --> 00:49:36.122
+because that's the next easiest thing.
+
+00:49:36.122 --> 00:49:38.522
+It's just another command, great docs build.
+
+00:49:39.362 --> 00:49:44.362
+And what you get is a great hyphen docs directory
+
+00:49:45.283 --> 00:49:46.882
+in your working directory.
+
+00:49:46.882 --> 00:49:49.122
+And that contains like the site folder,
+
+00:49:49.122 --> 00:49:50.443
+but you don't really have to worry about that
+
+00:49:50.443 --> 00:49:53.242
+because you have another command called great docs preview,
+
+00:49:53.242 --> 00:49:57.283
+which will basically launch like a web server
+
+00:49:57.283 --> 00:50:01.083
+and then put the site in your default browser,
+
+00:50:01.362 --> 00:50:04.522
+basically just like let you see the site locally.
+
+00:50:04.522 --> 00:50:05.923
+And then because I'm a big fan
+
+00:50:05.923 --> 00:50:07.163
+of letting people know what's going on.
+
+00:50:07.163 --> 00:50:08.642
+So it should be totally a black box.
+
+00:50:08.642 --> 00:50:11.122
+I give on this page, like a structure,
+
+00:50:11.122 --> 00:50:13.722
+the basic structure of how it should look
+
+00:50:13.722 --> 00:50:15.443
+on your working directory.
+
+00:50:16.563 --> 00:50:17.403
+But that's kind of it.
+
+00:50:17.403 --> 00:50:19.163
+And I believe the next step for most people
+
+00:50:19.163 --> 00:50:21.362
+will just be getting this on CI if they're satisfied
+
+00:50:21.362 --> 00:50:22.803
+and then just working from there,
+
+00:50:22.803 --> 00:50:25.203
+like modifying their initialization,
+
+00:50:25.203 --> 00:50:28.642
+not initialization, their config file
+
+00:50:28.642 --> 00:50:31.362
+to give the site more customization personality
+
+00:50:31.362 --> 00:50:35.083
+and there'll be authoring guides and things like that.
+
+00:50:35.083 --> 00:50:35.923
+Very cool.
+
+00:50:35.923 --> 00:50:39.362
+So you've got the really nice watch feature.
+
+00:50:39.362 --> 00:50:41.642
+So great docs build dash dash watch.
+
+00:50:41.642 --> 00:50:42.482
+Yes.
+
+00:50:42.482 --> 00:50:44.323
+Which feels very Hugo to me, you know,
+
+00:50:44.323 --> 00:50:48.642
+like you're gonna build it so you can look at it,
+
+00:50:48.642 --> 00:50:49.602
+but then you wanna edit it.
+
+00:50:49.602 --> 00:50:53.882
+So just if you see any changes, just rebuild, right?
+
+00:50:53.882 --> 00:50:54.882
+Yeah, exactly.
+
+00:50:54.882 --> 00:50:56.242
+Small sites will build fast,
+
+00:50:56.242 --> 00:50:57.642
+but this is way faster, obviously.
+
+00:50:57.642 --> 00:51:00.762
+So yeah, this is pretty essential for iterating,
+
+00:51:00.762 --> 00:51:02.762
+especially initially, yeah.
+
+00:51:02.762 --> 00:51:03.602
+Yeah.
+
+00:51:03.602 --> 00:51:04.443
+And what about this version?
+
+00:51:04.443 --> 00:51:06.963
+So this is an interesting aspect of the project.
+
+00:51:08.283 --> 00:51:09.122
+Versions.
+
+00:51:10.362 --> 00:51:15.362
+Well, essentially you may have, you know,
+
+00:51:15.443 --> 00:51:17.283
+multiple tagged versions of your site.
+
+00:51:17.283 --> 00:51:19.722
+And this is kind of like a wild thing.
+
+00:51:19.722 --> 00:51:22.362
+You can have different documentation sites
+
+00:51:22.362 --> 00:51:23.242
+based on your version.
+
+00:51:23.242 --> 00:51:26.882
+Cause you have, for instance, new things in your API.
+
+00:51:26.923 --> 00:51:27.762
+Right.
+
+00:51:27.762 --> 00:51:29.362
+People maybe know that from Python
+
+00:51:29.362 --> 00:51:30.683
+where you can go up here and drop down.
+
+00:51:30.683 --> 00:51:31.522
+Exactly.
+
+00:51:31.522 --> 00:51:33.803
+So this is kind of like just seeing like certain versions
+
+00:51:33.803 --> 00:51:35.482
+of your site and it gives you a selector
+
+00:51:35.482 --> 00:51:36.882
+on the great docs site itself.
+
+00:51:36.882 --> 00:51:39.122
+We have a selector, which is maximal.
+
+00:51:39.122 --> 00:51:41.683
+It has like every single version from the very first
+
+00:51:41.683 --> 00:51:43.563
+and you can cruise in there and you'll see
+
+00:51:43.563 --> 00:51:46.283
+that there'll be way less in the earliest versions.
+
+00:51:46.283 --> 00:51:50.002
+Like the, if you look at the user guide for 0.1,
+
+00:51:50.002 --> 00:51:52.163
+which is a little icon, a little scary.
+
+00:51:52.163 --> 00:51:53.283
+It's unsupported.
+
+00:51:53.283 --> 00:51:55.122
+If you look at the user guide, it's pretty sparse.
+
+00:51:55.163 --> 00:51:57.762
+Like it's, you know, it's not as long as the other one.
+
+00:51:57.762 --> 00:51:59.882
+And if you look at the reference as well,
+
+00:52:00.923 --> 00:52:02.963
+it'll have less items.
+
+00:52:02.963 --> 00:52:06.403
+So it's aware of like what's available in which versions.
+
+00:52:08.122 --> 00:52:09.722
+And so you sort of set that up yourself
+
+00:52:09.722 --> 00:52:12.242
+or you can just do it through that command.
+
+00:52:12.242 --> 00:52:14.323
+Is that based on get tags or what is that?
+
+00:52:14.323 --> 00:52:15.163
+Based on get tags.
+
+00:52:15.163 --> 00:52:16.002
+Yeah, that's right.
+
+00:52:16.002 --> 00:52:16.842
+Okay.
+
+00:52:16.842 --> 00:52:18.362
+I was wondering how does it even know?
+
+00:52:18.362 --> 00:52:19.842
+Yeah, you have to give it some information.
+
+00:52:19.842 --> 00:52:21.362
+Like you have to of course get the tags,
+
+00:52:21.362 --> 00:52:23.803
+but if you actually configure it to do what it's doing here,
+
+00:52:23.803 --> 00:52:25.083
+like make the site,
+
+00:52:25.083 --> 00:52:27.642
+you just change your configuration to have,
+
+00:52:27.642 --> 00:52:31.923
+it's basically just like a small config that you have to do.
+
+00:52:31.923 --> 00:52:34.203
+And you can set labels and things like that.
+
+00:52:34.203 --> 00:52:35.923
+Can I wild card it
+
+00:52:35.923 --> 00:52:38.203
+or have it somehow pick up all the versions?
+
+00:52:38.203 --> 00:52:39.683
+I mean, you don't wanna pick up all tags,
+
+00:52:39.683 --> 00:52:42.803
+but it'd be like star dot star.
+
+00:52:42.803 --> 00:52:45.043
+I don't think we have version expressions like that yet.
+
+00:52:45.043 --> 00:52:45.882
+Yeah.
+
+00:52:45.882 --> 00:52:46.842
+Not yet, okay.
+
+00:52:46.842 --> 00:52:48.563
+You know, throw it in there.
+
+00:52:48.563 --> 00:52:49.762
+I'm just thinking if I have a project
+
+00:52:49.762 --> 00:52:53.083
+with 27 versions over time.
+
+00:52:53.122 --> 00:52:54.163
+Yeah, you probably wouldn't do it
+
+00:52:54.163 --> 00:52:56.043
+through like this interface, like great docs build.
+
+00:52:56.043 --> 00:52:58.683
+This is just for like a very quick comparison.
+
+00:52:58.683 --> 00:52:59.522
+Got it.
+
+00:52:59.522 --> 00:53:00.362
+But if you would do it,
+
+00:53:00.362 --> 00:53:03.043
+like you probably put that in the config file
+
+00:53:03.043 --> 00:53:05.242
+and you'd have to manually edit those.
+
+00:53:05.242 --> 00:53:07.283
+But I think with a small app or something like that
+
+00:53:07.283 --> 00:53:08.642
+would be better.
+
+00:53:08.642 --> 00:53:09.803
+And there's an API, of course,
+
+00:53:09.803 --> 00:53:11.043
+if you wanna just have a control.
+
+00:53:11.043 --> 00:53:12.522
+Yeah, it's kind of, you wouldn't do this,
+
+00:53:12.522 --> 00:53:15.803
+but it's just, I threw it in there just.
+
+00:53:15.803 --> 00:53:19.002
+Well, probably because your commands use that, right?
+
+00:53:19.002 --> 00:53:19.963
+Yeah, exactly.
+
+00:53:19.963 --> 00:53:20.803
+Might as well just let people know.
+
+00:53:20.803 --> 00:53:22.923
+Just being transparent, I suppose, yeah.
+
+00:53:23.722 --> 00:53:24.563
+Okay.
+
+00:53:26.443 --> 00:53:28.882
+Where do we wanna go next?
+
+00:53:28.882 --> 00:53:32.203
+Let's cover just a couple of remaining things here
+
+00:53:32.203 --> 00:53:34.683
+while we got time.
+
+00:53:34.683 --> 00:53:37.323
+What about open source sustainability?
+
+00:53:37.323 --> 00:53:40.443
+Like I know you all at Posit are doing a lot of things
+
+00:53:40.443 --> 00:53:43.242
+to open source your work and so on.
+
+00:53:44.963 --> 00:53:46.882
+Yeah, well, we're pretty much like full time
+
+00:53:46.882 --> 00:53:48.242
+doing open source work.
+
+00:53:49.242 --> 00:53:53.323
+So essentially, and so I think these projects
+
+00:53:53.323 --> 00:53:57.122
+have long life cycles with the same maintainer
+
+00:53:57.122 --> 00:53:58.722
+for long periods of time,
+
+00:53:58.722 --> 00:54:01.563
+which is great for project stability and things like that.
+
+00:54:01.563 --> 00:54:05.443
+And we're accountable for issues that come in
+
+00:54:05.443 --> 00:54:10.443
+and for releases and making sure it's not dead projects
+
+00:54:12.083 --> 00:54:14.163
+all the way down or whatever.
+
+00:54:14.163 --> 00:54:16.522
+So I think that's a great thing.
+
+00:54:16.602 --> 00:54:18.563
+And for instance, like Great Tables,
+
+00:54:18.563 --> 00:54:19.602
+I've been at it since the beginning,
+
+00:54:19.602 --> 00:54:22.362
+GT, which is where it came from, since 2017.
+
+00:54:23.602 --> 00:54:24.963
+So I think that helps a lot,
+
+00:54:24.963 --> 00:54:26.683
+adds a lot of credibility to these projects
+
+00:54:26.683 --> 00:54:27.923
+that are not just being abandoned.
+
+00:54:27.923 --> 00:54:31.522
+There's no fear of it being abandoned or things like that.
+
+00:54:31.522 --> 00:54:33.563
+There's a person there, at least.
+
+00:54:34.963 --> 00:54:38.882
+Yeah, and I think Posit's found
+
+00:54:38.882 --> 00:54:40.203
+an interesting business model
+
+00:54:40.203 --> 00:54:44.242
+that's been long term sustaining,
+
+00:54:44.242 --> 00:54:45.882
+but still allows you, as you said,
+
+00:54:46.242 --> 00:54:48.002
+to sort of work in open source.
+
+00:54:49.722 --> 00:54:52.163
+Maybe speak to that, either one of you real quick.
+
+00:54:52.163 --> 00:54:53.002
+Michael, would you?
+
+00:54:53.002 --> 00:54:53.842
+Sure.
+
+00:54:53.842 --> 00:54:55.522
+Yeah, it's really interesting
+
+00:54:55.522 --> 00:55:00.043
+and it's almost like not diving crazy deep
+
+00:55:00.043 --> 00:55:01.043
+in doing a podcast.
+
+00:55:01.043 --> 00:55:03.323
+My favorite thing to say to people is that,
+
+00:55:03.323 --> 00:55:06.043
+like we have a really large open source engineering team,
+
+00:55:06.043 --> 00:55:08.203
+dozens of open source engineers.
+
+00:55:08.203 --> 00:55:12.203
+People often ask like, how does Posit pay the bills
+
+00:55:12.203 --> 00:55:14.482
+for people to work on open source?
+
+00:55:14.683 --> 00:55:16.002
+My favorite thing to say is like,
+
+00:55:16.002 --> 00:55:21.002
+we have a bunch of boring enterprise tools.
+
+00:55:21.203 --> 00:55:23.403
+And no shade on Posit,
+
+00:55:23.403 --> 00:55:26.122
+I actually think that this is the best case scenario.
+
+00:55:26.122 --> 00:55:28.923
+Like we have a lot of tools that solve
+
+00:55:30.122 --> 00:55:33.842
+really painful problems if you're an enterprise.
+
+00:55:33.842 --> 00:55:35.283
+They could be useful in other settings,
+
+00:55:35.283 --> 00:55:38.362
+but it's like, how do I run a report every day?
+
+00:55:39.522 --> 00:55:42.923
+Or how do I host like Jupyter Notebooks
+
+00:55:42.963 --> 00:55:47.362
+or VS Code for my, say like data team or RStudio?
+
+00:55:47.362 --> 00:55:49.163
+Those essentially pay the bills.
+
+00:55:49.163 --> 00:55:51.362
+That's Posit connected to Posit teams.
+
+00:55:51.362 --> 00:55:53.443
+You've got a team of data scientists,
+
+00:55:53.443 --> 00:55:55.683
+but you don't necessarily have a DevOps team,
+
+00:55:55.683 --> 00:55:58.842
+but you still wanna have their stuff running reliably, right?
+
+00:55:58.842 --> 00:55:59.683
+Yeah.
+
+00:55:59.683 --> 00:56:01.482
+Yeah, and it's a hard problem.
+
+00:56:01.482 --> 00:56:03.083
+If you're a company, right?
+
+00:56:03.083 --> 00:56:04.443
+These are kind of tricky problems.
+
+00:56:04.443 --> 00:56:07.722
+Or you have like a really mean IT team.
+
+00:56:07.722 --> 00:56:12.722
+These, a cruel IT team could like hamstring you for years.
+
+00:56:12.842 --> 00:56:14.602
+But that's just to say like,
+
+00:56:14.602 --> 00:56:19.122
+we get to work on open source because these tools exist.
+
+00:56:19.122 --> 00:56:21.283
+And I think Posit exists,
+
+00:56:21.283 --> 00:56:23.323
+I think because the maintainers care
+
+00:56:23.323 --> 00:56:25.083
+so much about open source.
+
+00:56:26.683 --> 00:56:29.403
+I will say in terms of sustainability,
+
+00:56:29.403 --> 00:56:32.242
+one interaction I've really liked over the years
+
+00:56:32.242 --> 00:56:34.963
+is like in the docs realm,
+
+00:56:36.602 --> 00:56:40.642
+there's this person, I only know him as Pawel Moi.
+
+00:56:40.642 --> 00:56:45.362
+His GitHub handle, I think it's Timothy or Timothy
+
+00:56:45.362 --> 00:56:48.482
+in France, I think.
+
+00:56:48.482 --> 00:56:52.043
+But he maintains the tools upstream of tools
+
+00:56:52.043 --> 00:56:55.002
+like PortaDoc and GreatDocs.
+
+00:56:55.002 --> 00:56:57.563
+And we've interacted a bit in the past
+
+00:56:57.563 --> 00:57:00.722
+where I've done PRs on his tools.
+
+00:57:00.722 --> 00:57:01.923
+One's called Griff.
+
+00:57:03.563 --> 00:57:05.283
+And I think that's such an important part
+
+00:57:05.283 --> 00:57:06.443
+of sustainability too,
+
+00:57:06.443 --> 00:57:09.963
+is that he works on a documentation tool,
+
+00:57:09.963 --> 00:57:11.522
+make doc strings,
+
+00:57:11.522 --> 00:57:15.522
+but we're all able to collaborate on his tool Griff
+
+00:57:15.522 --> 00:57:18.043
+that actually powers all of our documentation sites.
+
+00:57:18.043 --> 00:57:21.323
+So I think that's a really important piece.
+
+00:57:21.323 --> 00:57:23.482
+I think to your point about being at PyCon
+
+00:57:23.482 --> 00:57:24.882
+and seeing people,
+
+00:57:24.882 --> 00:57:27.722
+I think us as open source maintainers,
+
+00:57:27.722 --> 00:57:30.002
+chatting and even contributing
+
+00:57:30.002 --> 00:57:33.283
+and working on say like upstream tools
+
+00:57:33.283 --> 00:57:34.482
+is a really important part
+
+00:57:34.482 --> 00:57:37.443
+of keeping the ecosystem healthy and sustainable.
+
+00:57:37.443 --> 00:57:42.443
+We're not like multiple doc tools competing to degree.
+
+00:57:42.762 --> 00:57:44.482
+I do think they compete,
+
+00:57:44.482 --> 00:57:47.522
+but ultimately like we're working on open source
+
+00:57:47.522 --> 00:57:48.762
+because we're passionate.
+
+00:57:48.762 --> 00:57:50.963
+And I think it helps to collaborate
+
+00:57:50.963 --> 00:57:54.083
+on our kind of like shared tools.
+
+00:57:55.283 --> 00:57:58.522
+Yeah, 100% agree, very cool.
+
+00:57:58.522 --> 00:58:03.522
+Now, Rich, you mentioned that it's a pretty new project.
+
+00:58:05.803 --> 00:58:06.642
+Yeah.
+
+00:58:06.642 --> 00:58:07.563
+Where are we going?
+
+00:58:08.762 --> 00:58:09.602
+What's next?
+
+00:58:09.602 --> 00:58:10.563
+What's on the roadmap?
+
+00:58:10.563 --> 00:58:11.683
+Yeah, lots of things.
+
+00:58:11.683 --> 00:58:15.443
+I even have a roadmap on the site if anyone's interested,
+
+00:58:15.443 --> 00:58:18.163
+but I think it would be like a lot more like
+
+00:58:18.163 --> 00:58:21.283
+documentation for different things, like new things.
+
+00:58:21.283 --> 00:58:23.563
+Like the other day I was suggested
+
+00:58:23.563 --> 00:58:26.762
+to create documentation for MCP servers.
+
+00:58:26.762 --> 00:58:28.602
+I was like, good idea.
+
+00:58:28.602 --> 00:58:29.602
+We don't really have that.
+
+00:58:29.602 --> 00:58:34.323
+And it's pretty easy to document, it's JSON essentially.
+
+00:58:34.323 --> 00:58:35.163
+So we can take that apart,
+
+00:58:35.163 --> 00:58:37.362
+parse that and present something.
+
+00:58:37.362 --> 00:58:40.563
+That's a good point because if you look at the MCP servers,
+
+00:58:40.563 --> 00:58:42.683
+they don't have structure in the way
+
+00:58:42.683 --> 00:58:46.882
+that traditional projects do, right?
+
+00:58:46.882 --> 00:58:48.362
+They don't just have like a separate function
+
+00:58:48.362 --> 00:58:49.203
+for each thing.
+
+00:58:49.203 --> 00:58:52.803
+They've got this kind of weird invocation entry point
+
+00:58:52.803 --> 00:58:54.923
+where you pass like the tool you wanna use.
+
+00:58:54.923 --> 00:58:56.762
+And yeah, it's a little different thing.
+
+00:58:56.762 --> 00:59:00.163
+Documentation, prompt suggestions, things like that.
+
+00:59:00.163 --> 00:59:02.002
+So I think we can do a pretty good job there.
+
+00:59:02.002 --> 00:59:04.043
+The idea is pretty new, but like,
+
+00:59:04.043 --> 00:59:06.642
+I guess we're, yeah, just trying to be
+
+00:59:06.642 --> 00:59:08.683
+or go where things are going.
+
+00:59:08.683 --> 00:59:10.242
+And it'll be a little bit better.
+
+00:59:10.242 --> 00:59:13.522
+So would that somehow show itself as like
+
+00:59:15.122 --> 00:59:17.522
+where you've got the API and the CLI?
+
+00:59:17.522 --> 00:59:19.122
+Was there also be an MCP or what do you think?
+
+00:59:19.122 --> 00:59:19.963
+It's gonna be a bit crowded.
+
+00:59:19.963 --> 00:59:20.803
+So I'm rethinking.
+
+00:59:20.803 --> 00:59:21.642
+I know.
+
+00:59:21.642 --> 00:59:22.482
+Yeah.
+
+00:59:22.482 --> 00:59:23.323
+Yeah, I was like, I don't really know what to do.
+
+00:59:23.323 --> 00:59:24.163
+I think this would be it.
+
+00:59:24.163 --> 00:59:25.803
+Like, but no, it's not quite it.
+
+00:59:25.803 --> 00:59:28.242
+There's one or two more things.
+
+00:59:29.163 --> 00:59:32.242
+So it might be just a dropdown nav on the top,
+
+00:59:32.283 --> 00:59:34.923
+like a dropdown on the top nav, I'm thinking.
+
+00:59:34.923 --> 00:59:39.522
+So that's part of what I have to think about.
+
+00:59:40.443 --> 00:59:41.522
+But there's things like that.
+
+00:59:41.522 --> 00:59:44.002
+And also like a recent thing we just did,
+
+00:59:44.002 --> 00:59:44.842
+and this is very new.
+
+00:59:44.842 --> 00:59:48.122
+So it's almost like it's new enough,
+
+00:59:48.122 --> 00:59:50.043
+is like skills, like publishing skills
+
+00:59:50.043 --> 00:59:54.762
+and making them available and making them browsable, right?
+
+00:59:54.762 --> 00:59:56.443
+So on the grave, it's not top level.
+
+00:59:56.443 --> 00:59:57.683
+If you go to the first page,
+
+00:59:57.683 --> 00:59:59.043
+there's like a sidebar on the right,
+
+00:59:59.043 --> 01:00:00.803
+which gives you a lot of metadata.
+
+01:00:00.803 --> 01:00:02.563
+And one of the first few things is skills.
+
+01:00:02.563 --> 01:00:04.602
+And that gives you like a page
+
+01:00:04.602 --> 01:00:05.642
+on how to install these skills.
+
+01:00:05.642 --> 01:00:08.122
+So it's kind of like a, almost like a way,
+
+01:00:08.122 --> 01:00:09.203
+not to just distribute,
+
+01:00:09.203 --> 01:00:11.722
+but a way to sort of like get a hold of skills.
+
+01:00:13.002 --> 01:00:15.482
+And there's a nice little sort of like disclosure there.
+
+01:00:15.482 --> 01:00:16.403
+Install these skills.
+
+01:00:16.403 --> 01:00:19.963
+It gives you instructions on how to do such things.
+
+01:00:19.963 --> 01:00:22.043
+And you can just browse the skills below
+
+01:00:22.043 --> 01:00:22.882
+and see what's there.
+
+01:00:22.882 --> 01:00:25.242
+You might just take bits of them, make your own skill,
+
+01:00:25.242 --> 01:00:27.163
+or you might just say, no, these all look good.
+
+01:00:27.163 --> 01:00:28.762
+I'll just follow these instructions
+
+01:00:28.762 --> 01:00:31.122
+and install them for my project or globally.
+
+01:00:32.443 --> 01:00:33.283
+We're trying to make that easy.
+
+01:00:33.283 --> 01:00:34.122
+Yeah, it's super cool.
+
+01:00:34.122 --> 01:00:35.642
+Yeah, kind of expose these things, yeah.
+
+01:00:35.642 --> 01:00:37.443
+Yeah, that kind of brings me to the last thing
+
+01:00:37.443 --> 01:00:42.122
+that I want to talk about is the AI-fication.
+
+01:00:42.122 --> 01:00:46.963
+And by that, I don't mean, how do I,
+
+01:00:46.963 --> 01:00:48.563
+are you using AI to write it or not?
+
+01:00:48.563 --> 01:00:50.963
+Like I imagine there's some degree of that or whatever,
+
+01:00:50.963 --> 01:00:55.963
+but if I am a person with a project,
+
+01:00:56.043 --> 01:00:58.403
+a package or something that I want to document,
+
+01:00:59.882 --> 01:01:01.642
+AI is really good at going like,
+
+01:01:01.642 --> 01:01:03.963
+well, let me pull out all these pieces
+
+01:01:03.963 --> 01:01:06.522
+and then like sketch some stuff out for you.
+
+01:01:08.242 --> 01:01:10.722
+And I can see now that you pointed me in the right direction
+
+01:01:10.722 --> 01:01:12.203
+that there's a whole AI section,
+
+01:01:12.203 --> 01:01:16.482
+like how do AIs work with great docs, right?
+
+01:01:16.482 --> 01:01:21.203
+And so you've got the llms.txt, which is really nice.
+
+01:01:21.203 --> 01:01:22.443
+I referenced that before.
+
+01:01:22.443 --> 01:01:24.482
+People don't know there's an,
+
+01:01:24.482 --> 01:01:25.842
+this comes from, I believe from Jeremy,
+
+01:01:25.842 --> 01:01:26.803
+yeah, Jeremy Howard.
+
+01:01:26.803 --> 01:01:27.923
+Yeah, that's right.
+
+01:01:27.923 --> 01:01:29.362
+Yeah, we looked at this closely, yeah.
+
+01:01:29.362 --> 01:01:31.923
+Putting, yeah, so did I, and I find it super interesting.
+
+01:01:31.923 --> 01:01:33.803
+Like this, the idea is that if you,
+
+01:01:33.803 --> 01:01:38.083
+you know, there's a robots.txt and a sitemap.xml.
+
+01:01:38.083 --> 01:01:40.283
+These are standard web things on sites
+
+01:01:40.283 --> 01:01:43.602
+that humans rarely use to get any value from,
+
+01:01:43.602 --> 01:01:46.963
+but machines and traditionally search engines
+
+01:01:46.963 --> 01:01:48.522
+really, really do.
+
+01:01:48.522 --> 01:01:51.443
+And so, well, what do we put for AI to make it better?
+
+01:01:51.443 --> 01:01:53.443
+And so what we're doing is we're putting
+
+01:01:53.443 --> 01:01:57.362
+this llms.txt file that describes in Markdown
+
+01:01:57.362 --> 01:01:59.323
+to the llms, like how you can better work with this.
+
+01:01:59.323 --> 01:02:02.002
+So with that, you all have that, right?
+
+01:02:02.002 --> 01:02:07.002
+So you've got your llms.txt and the full one.
+
+01:02:07.882 --> 01:02:09.043
+You know, this is not something I'm doing.
+
+01:02:09.043 --> 01:02:10.362
+Maybe I need to do a full one.
+
+01:02:10.362 --> 01:02:11.283
+This one's interesting.
+
+01:02:11.283 --> 01:02:12.203
+It's a lot.
+
+01:02:12.203 --> 01:02:14.602
+So basically it's the entire bit of documentation
+
+01:02:14.602 --> 01:02:15.842
+distilled down, not distilled,
+
+01:02:15.842 --> 01:02:18.323
+but like written as one file, essentially.
+
+01:02:18.323 --> 01:02:21.122
+All doc strings mash together, you might say,
+
+01:02:21.803 --> 01:02:23.642
+including guide material as well.
+
+01:02:23.642 --> 01:02:24.602
+So that's one.
+
+01:02:24.602 --> 01:02:26.242
+Yeah, and you've got these skills as well,
+
+01:02:26.242 --> 01:02:28.002
+which is looking super interesting
+
+01:02:28.002 --> 01:02:32.203
+and also pretty neat, the CLI that you've created.
+
+01:02:32.203 --> 01:02:33.482
+Well, a couple of things on that.
+
+01:02:33.482 --> 01:02:36.602
+First of all, that it will actually install the skills.
+
+01:02:36.602 --> 01:02:39.083
+Yeah, so if you're an author,
+
+01:02:39.083 --> 01:02:41.602
+you would just use great docs, install,
+
+01:02:41.602 --> 01:02:44.923
+skill install, and then maybe the name of your library.
+
+01:02:44.923 --> 01:02:45.762
+Nice.
+
+01:02:45.762 --> 01:02:47.522
+For the people, that's what other people see on their site.
+
+01:02:47.522 --> 01:02:49.122
+I think it's an interesting piece.
+
+01:02:49.163 --> 01:02:51.122
+Because if I'm, I have to admit,
+
+01:02:51.122 --> 01:02:52.602
+I haven't seen the skills piece a lot,
+
+01:02:52.602 --> 01:02:55.323
+but if I'm understanding, Rich, too,
+
+01:02:55.323 --> 01:02:58.043
+this means great docs is also for like,
+
+01:02:58.043 --> 01:02:59.242
+kind of all users, right?
+
+01:02:59.242 --> 01:03:02.283
+Like people who are interested in reading
+
+01:03:02.283 --> 01:03:05.122
+or consuming docs or using it with AI.
+
+01:03:05.122 --> 01:03:06.043
+Is that right?
+
+01:03:06.043 --> 01:03:07.163
+Yeah, yeah.
+
+01:03:07.163 --> 01:03:08.002
+I'd say so.
+
+01:03:08.002 --> 01:03:10.043
+That's kind of where we're going more and more.
+
+01:03:10.043 --> 01:03:11.403
+Yeah, so it looks like you're really leaning
+
+01:03:11.403 --> 01:03:14.443
+into making great docs something that works well
+
+01:03:14.443 --> 01:03:16.683
+if you're trying to generate docs
+
+01:03:16.683 --> 01:03:18.323
+and maintain them with AI, right?
+
+01:03:19.002 --> 01:03:21.963
+If you point your agent at this site,
+
+01:03:21.963 --> 01:03:23.963
+it should be able to find these things pretty quickly.
+
+01:03:23.963 --> 01:03:25.803
+And you can actually like use tools.
+
+01:03:25.803 --> 01:03:29.203
+Like there's one called whatdoagency.runtime.app.
+
+01:03:29.203 --> 01:03:30.403
+Just search it up.
+
+01:03:30.403 --> 01:03:31.563
+You can put it in your URL,
+
+01:03:31.563 --> 01:03:34.642
+and it'll show you what pieces are picked up
+
+01:03:34.642 --> 01:03:35.722
+by different agents.
+
+01:03:35.722 --> 01:03:39.083
+It actually simulates it really nicely.
+
+01:03:39.083 --> 01:03:40.963
+And I found, just to validate things,
+
+01:03:40.963 --> 01:03:45.283
+that different agents do pick up LLMs.text, LLMs.full,
+
+01:03:45.283 --> 01:03:47.842
+and there's other little.
+
+01:03:47.634 --> 01:03:58.634
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto
+
+01:04:21.113 --> 01:04:27.653
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto
+
+01:04:51.113 --> 01:04:56.113
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto
+
+01:05:51.113 --> 01:05:56.113
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto
+
+01:06:21.113 --> 01:06:26.113
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto
+
+01:06:51.113 --> 01:06:56.113
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto
+
+01:07:21.113 --> 01:07:26.113
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto
+
+01:07:51.113 --> 01:07:56.113
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto
+
+01:08:21.113 --> 01:08:26.113
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto
+
+01:09:21.113 --> 01:09:26.113
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto
+
+01:09:52.012 --> 01:09:57.012
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto
+
+01:10:11.213 --> 01:10:16.213
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto
+
+01:10:21.113 --> 01:10:26.113
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto
+
+01:10:51.113 --> 01:10:56.113
+549, cli, Great Docs, Great Tables, gt, pkgdown, Quarto

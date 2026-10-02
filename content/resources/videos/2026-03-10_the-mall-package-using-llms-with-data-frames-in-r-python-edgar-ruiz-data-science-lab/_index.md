@@ -10,7 +10,8 @@ resources: []
 software:
 - chatlas
 - ellmer
-- Positron
+- mall
+- positron
 - tidyverse
 - tidyverse.org
 - vitals
@@ -26,8 +27,8 @@ external:  # updated automatically, do not edit
   duration: 3243
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.044565+00:00'
-  like_count: 30
+  last_updated: '2026-09-18T13:58:07.249905+00:00'
+  like_count: 33
   people:
   - Edgar Ruiz
   - Simon Couch
@@ -35,7 +36,8 @@ external:  # updated automatically, do not edit
   software:
   - chatlas
   - ellmer
-  - Positron
+  - mall
+  - positron
   - tidyverse
   - tidyverse.org
   - vitals
@@ -43,6 +45,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ZNHNVWUMTJA/maxresdefault.jpg
   title: 'The mall package: using LLMs with data frames in R & Python | Edgar Ruiz | Data Science Lab'
   url: https://www.youtube.com/watch?v=ZNHNVWUMTJA
-  view_count: 1122
+  view_count: 1375
 ---
 

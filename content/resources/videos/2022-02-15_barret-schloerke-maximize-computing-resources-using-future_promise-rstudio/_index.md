@@ -56,7 +56,7 @@ resources: []
 software:
 - plumber
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -162,7 +162,7 @@ external:  # updated automatically, do not edit
   duration: 1329
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:33.373397+00:00'
+  last_updated: '2026-09-18T13:58:15.784349+00:00'
   like_count: 0
   people:
   - Barret Schloerke
@@ -170,7 +170,7 @@ external:  # updated automatically, do not edit
   software:
   - plumber
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -221,7 +221,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3gtk8uRrrL4/maxresdefault.jpg
   title: Barret Schloerke || Maximize computing resources using future_promise() || RStudio
   url: https://www.youtube.com/watch?v=3gtk8uRrrL4
-  view_count: 2335
+  view_count: 2338
 ---
 image: thumbnail.jpg
 

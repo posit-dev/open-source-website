@@ -19,7 +19,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - rstats
 - rconsortium
@@ -46,20 +46,20 @@ external:  # updated automatically, do not edit
   duration: 3081
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.830285+00:00'
-  like_count: 6
+  last_updated: '2026-09-18T13:58:19.320702+00:00'
+  like_count: 10
   people:
   - Charlotte Wickham
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags:
   - rstats
   - rconsortium
   thumbnail: https://i.ytimg.com/vi/ouupXnDNpBo/maxresdefault.jpg
   title: Building Accessible, On-Brand Documents with Quarto
   url: https://www.youtube.com/watch?v=ouupXnDNpBo
-  view_count: 177
+  view_count: 358
 ---
 
 ## Resources

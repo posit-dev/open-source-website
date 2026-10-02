@@ -74,8 +74,8 @@ external:  # updated automatically, do not edit
   duration: 1713
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532225+00:00'
-  like_count: 25
+  last_updated: '2026-09-18T13:58:18.646034+00:00'
+  like_count: 24
   playlist: ''
   software:
   - rstudio
@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/y_zkI-LkS58/maxresdefault.jpg
   title: Tareef Kawaf | Welcome and the Posit Vision | Posit (2019)
   url: https://www.youtube.com/watch?v=y_zkI-LkS58
-  view_count: 2137
+  view_count: 2196
 ---
 image: thumbnail.jpg
 

@@ -32,12 +32,23 @@ function CodeBlock(el)
     text = text .. "\n"
   end
 
+  -- Use an outer fence longer than any run of backticks inside the code, so
+  -- nested ``` fences (e.g. example blocks showing code chunks) don't close it
+  -- early. This mirrors CommonMark's own rule for nesting fenced code.
+  local max_ticks = 0
+  for ticks in text:gmatch("`+") do
+    if #ticks > max_ticks then
+      max_ticks = #ticks
+    end
+  end
+  local fence = string.rep("`", math.max(3, max_ticks + 1))
+
   -- Leading newline ensures a blank line before the fence, which Goldmark
   -- requires when the preceding block is raw HTML (e.g. a callout closing tag).
   -- Extra blank lines are harmless in Markdown.
-  local raw = "\n```" .. lang .. " { filename=\"" .. filename .. "\" }\n"
+  local raw = "\n" .. fence .. lang .. " { filename=\"" .. filename .. "\" }\n"
     .. text
-    .. "```\n"
+    .. fence .. "\n"
 
   return pandoc.RawBlock("markdown", raw)
 end

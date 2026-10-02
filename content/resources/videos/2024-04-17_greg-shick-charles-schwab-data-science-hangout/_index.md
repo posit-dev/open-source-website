@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3605
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.567303+00:00'
+  last_updated: '2026-09-18T13:58:11.310977+00:00'
   like_count: 9
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/wsuuznXzMjc/maxresdefault.jpg
   title: Greg Shick @ Charles Schwab | Data Science Hangout
   url: https://www.youtube.com/watch?v=wsuuznXzMjc
-  view_count: 499
+  view_count: 501
 ---
 image: thumbnail.jpg
 

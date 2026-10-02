@@ -18,13 +18,13 @@ external:  # updated automatically, do not edit
   description: ''
   first_commit: '2022-12-11T22:25:02+00:00'
   forks: 9
-  last_updated: '2026-05-20T08:05:44.706997+00:00'
+  last_updated: '2026-09-18T14:21:44.628783+00:00'
   people:
   - Davis Vaughan
   - Emil Hvitfeldt
   - Hadley Wickham
   repo: tidyverse/code-review
-  stars: 35
+  stars: 36
   title: code-review
   website: https://code-review.tidyverse.org/
 ---

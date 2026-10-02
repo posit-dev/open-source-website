@@ -1,3 +1,5 @@
+set positional-arguments
+
 # List all available recipes
 default:
     @just --list
@@ -7,15 +9,26 @@ clean:
 
 # Install Node.js dependencies
 install:
-    npm install
+    yarn install
 
 # Start local development server (Hugo + Tailwind watcher)
-dev:
-    npm run dev
+# Pass "all" to also include expired/future content with the production environment
+dev mode="": build-tailwind
+    #!/usr/bin/env bash
+    port=1313
+    while lsof -i :$port >/dev/null 2>&1; do
+        port=$((port + 1))
+    done
+    hugo_flags="-D --disableFastRender -p $port"
+    if [ "{{ mode }}" = "all" ]; then
+        hugo_flags="-DEF --disableFastRender -p $port -e production"
+    fi
+    ( sleep 2 && open "http://localhost:$port" ) &
+    yarn dev-tailwind & hugo server $hugo_flags
 
 # Build Tailwind CSS
 build-tailwind:
-    npm run build-tailwind
+    yarn build-tailwind
 
 # Build the site (Tailwind + Hugo)
 build: build-tailwind
@@ -23,7 +36,7 @@ build: build-tailwind
 
 # Build the search index with Pagefind
 build-search:
-    npm run build-search
+    yarn build-search
 
 # Update GitHub repository metadata
 update-github-repos *args:
@@ -32,6 +45,30 @@ update-github-repos *args:
 # Update software frontmatter from github-repos.toml
 update-software-frontmatter:
     ./scripts/update-software-frontmatter.py
+
+# Create software directories for repos in github-repos.toml that don't exist yet
+create-new-software *args:
+    ./scripts/create-new-software.py {{args}}
+
+# Download images from GitHub READMEs for software without an image
+download-software-images *args:
+    ./scripts/download-software-images.py {{args}}
+
+# Download README files from GitHub for all software entries
+download-software-readmes *args:
+    ./scripts/download-software-readmes.py {{args}}
+
+# Summarize software README files using Claude CLI
+summarize-software-readmes *args:
+    ./scripts/summarize-software-readmes.py {{args}}
+
+# Extract dominant colors from software logos into frontmatter
+extract-software-colors:
+    ./scripts/extract-software-colors.py
+
+# Create hex-placeholder logos for software projects missing an image
+create-hex-logos:
+    ./scripts/create-hex-logos.py
 
 # Update videos
 update-youtube-videos:
@@ -69,3 +106,7 @@ create-cheatsheet-thumbnails *args:
 # Resize oversized images in content/ to reduce Hugo memory usage
 resize-images *args:
     ./scripts/resize-images.py {{args}}
+
+# Create or update a person profile in content/people/
+people-profile *args:
+    ./scripts/people-profile.py "$@"

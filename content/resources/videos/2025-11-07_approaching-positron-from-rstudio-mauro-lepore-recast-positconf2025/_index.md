@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags:
 - posit::conf(2025)
@@ -29,11 +29,11 @@ external:  # updated automatically, do not edit
   duration: 302
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868152+00:00'
-  like_count: 27
+  last_updated: '2026-09-18T13:58:07.659334+00:00'
+  like_count: 37
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags:
   - posit::conf(2025)
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/X6PZ_RiZp44/hqdefault.jpg
   title: Approaching Positron from RStudio (Mauro Lepore, Recast) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=X6PZ_RiZp44
-  view_count: 1420
+  view_count: 2301
 ---
 image: thumbnail.jpg
 

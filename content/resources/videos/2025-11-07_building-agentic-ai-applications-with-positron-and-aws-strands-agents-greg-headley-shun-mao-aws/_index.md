@@ -1,12 +1,12 @@
 ---
 date: '2025-09-18'
-description: "In this video, Greg Headley and Shun Mao introduce developers to AWS tools designed\nto support the creation of agentic AI applications. \n\nposit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/"
+description: "In this video, Greg Headley and Shun Mao introduce developers to AWS tools designed\nto support the creation of agentic AI applications. \n\nLearn more about how Posit and AWS work together deliver the enterprise platform for R and Python data science on scalable, secure cloud infrastructure. https://posit.co/solutions/aws\n\nposit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/"
 image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - posit::conf(2025)
 - rstats
@@ -24,15 +24,15 @@ external:  # updated automatically, do not edit
   comment_count: 0
   date: '2025-11-07T16:13:52Z'
   definition: hd
-  description: "In this video, Greg Headley and Shun Mao introduce developers to AWS tools designed\nto support the creation of agentic AI applications. \n\nposit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/"
+  description: "In this video, Greg Headley and Shun Mao introduce developers to AWS tools designed\nto support the creation of agentic AI applications. \n\nLearn more about how Posit and AWS work together deliver the enterprise platform for R and Python data science on scalable, secure cloud infrastructure. https://posit.co/solutions/aws\n\nposit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/"
   duration: 965
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.604678+00:00'
-  like_count: 6
+  last_updated: '2026-09-18T13:58:08.448392+00:00'
+  like_count: 7
   playlist: ''
   software:
-  - Positron
+  - positron
   tags:
   - posit::conf(2025)
   - rstats
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jLyudeHXjJc/maxresdefault.jpg
   title: Building Agentic AI applications with Positron and AWS Strands Agents (Greg Headley & Shun Mao, AWS)
   url: https://www.youtube.com/watch?v=jLyudeHXjJc
-  view_count: 172
+  view_count: 207
 ---
 image: thumbnail.jpg
 

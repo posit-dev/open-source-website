@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 319
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.962478+00:00'
+  last_updated: '2026-09-18T13:58:18.221636+00:00'
   like_count: 33
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wb76gXropuw/hqdefault.jpg
   title: Davis Vaughn | Sliding Windows and Calendars | RStudio (2020)
   url: https://www.youtube.com/watch?v=wb76gXropuw
-  view_count: 896
+  view_count: 898
 ---
 image: thumbnail.jpg
 

@@ -24,8 +24,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - shinylive
 tags: []
 title: 'Barret Schloerke - Editable data frames in Py-Shiny: Updating original data in real-time'
@@ -56,20 +56,20 @@ external:  # updated automatically, do not edit
   duration: 1166
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.914305+00:00'
+  last_updated: '2026-09-18T13:58:10.630662+00:00'
   like_count: 8
   people:
   - Barret Schloerke
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/AXH52WNOErc/maxresdefault.jpg
   title: 'Barret Schloerke - Editable data frames in Py-Shiny: Updating original data in real-time'
   url: https://www.youtube.com/watch?v=AXH52WNOErc
-  view_count: 582
+  view_count: 599
 ---
 image: thumbnail.jpg
 

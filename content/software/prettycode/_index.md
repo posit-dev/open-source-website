@@ -20,10 +20,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Syntax highlight R code in the terminal
   first_commit: '2016-11-15T13:30:58+00:00'
-  forks: 12
+  forks: 13
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.595335+00:00'
+  last_updated: '2026-09-18T14:27:21.720243+00:00'
   latest_release: '2019-12-16T13:00:40+00:00'
   license: NOASSERTION
   people:

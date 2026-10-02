@@ -1,0 +1,440 @@
+WEBVTT
+
+00:00:00.320 --> 00:00:01.320
+Hi.
+
+00:00:01.320 --> 00:00:02.320
+Hello, everyone.
+
+00:00:02.320 --> 00:00:04.440
+Welcome to my talk.
+
+00:00:04.440 --> 00:00:13.960
+I'll be presenting to you today ggsql, which is a tool in alpha right now.
+
+00:00:13.960 --> 00:00:20.280
+The idea is basically that we have the grammar of graphics for SQL.
+
+00:00:20.280 --> 00:00:26.920
+To explain this a little bit, the grammar of graphics is a theory, and we combine it
+
+00:00:26.920 --> 00:00:29.000
+with SQL.
+
+00:00:29.000 --> 00:00:36.439
+You have a grammar and a language, so it can kind of go together.
+
+00:00:36.439 --> 00:00:43.919
+I want to make a quick example to get everyone's noses pointing the same way.
+
+00:00:43.919 --> 00:00:45.599
+You may all recognize this.
+
+00:00:45.599 --> 00:00:47.840
+You have a SQL query.
+
+00:00:47.840 --> 00:00:52.400
+Anybody coming from the R ecosystem might recognize these penguins.
+
+00:00:52.400 --> 00:00:58.080
+But the problem, if you're working with data like this, is that it's not immediately obvious
+
+00:00:58.080 --> 00:01:00.360
+what's going on here.
+
+00:01:00.360 --> 00:01:03.400
+What is going on with these penguins?
+
+00:01:03.400 --> 00:01:10.199
+The thing that we are adding is that if you work from WB, you can install the ggsql extension
+
+00:01:10.199 --> 00:01:18.000
+from the community extensions, and then you can add additional syntax to make a plot out
+
+00:01:18.000 --> 00:01:19.519
+of this.
+
+00:01:19.519 --> 00:01:21.800
+This is your query executed.
+
+00:01:21.800 --> 00:01:27.919
+It has only penguins living on the Biscay Island, and we are visualizing the build length
+
+00:01:27.919 --> 00:01:34.120
+of their beaks versus their build depth, and we're drawing these with a point layer, and
+
+00:01:34.120 --> 00:01:37.800
+this has all been done before.
+
+00:01:37.800 --> 00:01:43.080
+But now we can also draw a trend line, make some groups, and you can all do this from
+
+00:01:43.080 --> 00:01:48.360
+the comfort of your SQL analysis.
+
+00:01:48.400 --> 00:01:51.440
+I was explicitly told no demos today.
+
+00:01:51.440 --> 00:01:54.279
+That's why I'm trying to get you to do the demo.
+
+00:01:54.279 --> 00:02:01.120
+There's the ggsql.org website, and you see the text input there.
+
+00:02:01.120 --> 00:02:02.239
+It's an interactive example.
+
+00:02:02.239 --> 00:02:07.680
+You can try it out right now if you want.
+
+00:02:07.680 --> 00:02:14.839
+And now I'm going to brag a little bit, because I have been working as a maintainer of ggplot2
+
+00:02:14.839 --> 00:02:22.160
+and wrote my first SQL query maybe seven months ago, but we have had a long time of
+
+00:02:22.160 --> 00:02:23.919
+maintaining ggplot2.
+
+00:02:23.919 --> 00:02:34.580
+It's the most downloaded R package at all, so even more popular than some hardcore infrastructure
+
+00:02:34.580 --> 00:02:46.300
+packages like rcpp or jsonlite, but the ggplot2 project is mature, but also constrained by
+
+00:02:46.300 --> 00:02:52.779
+backward compatibility, and for us, ggplot2 is a new adventure with a carte blanche for
+
+00:02:52.779 --> 00:02:56.419
+new ideas.
+
+00:02:56.419 --> 00:03:04.839
+And for those not on the same page yet, the grammar of graphics is a theory that was developed
+
+00:03:04.839 --> 00:03:11.199
+by Leland Wilkinson, which was published in this book.
+
+00:03:11.199 --> 00:03:18.660
+And this theory has several software implementations, of which ggplot2 is one, but there are also
+
+00:03:18.660 --> 00:03:29.419
+ggplot9 for mPython, and notably missing from this list is SQL.
+
+00:03:29.419 --> 00:03:33.100
+So what do we kind of mean?
+
+00:03:33.100 --> 00:03:40.300
+We presume that many of your data analytics workflows are kind of like this.
+
+00:03:40.300 --> 00:03:46.899
+You have your data living somewhere in a database, preferably duckDB for this audience, and you
+
+00:03:46.940 --> 00:03:54.860
+send your data either to R or Python, use pandas or dplyr to do your data wrangling,
+
+00:03:54.860 --> 00:03:59.380
+and then you make a plot with ggplot9 or ggplot2.
+
+00:03:59.380 --> 00:04:05.020
+The big downside of this is that you need to cross an ecosystem gap, so you go from
+
+00:04:05.020 --> 00:04:11.820
+your SQL, from your duckDB to R or Python, and this is inconvenient.
+
+00:04:11.820 --> 00:04:21.899
+So we try to posture ggSQL as belonging right here at the SQL side of things, so you can
+
+00:04:21.899 --> 00:04:31.820
+just not interrupt your workflows and get plots straight out of your databases.
+
+00:04:31.820 --> 00:04:35.820
+We are not the first to attempt this particular strategy.
+
+00:04:35.820 --> 00:04:39.220
+This path has been trodden by others before.
+
+00:04:39.220 --> 00:04:45.660
+For example, there is a mini-plot extension in the community extensions as well.
+
+00:04:45.660 --> 00:04:51.019
+Mini-plot has a functional approach, so you have this scatter chart function, which you
+
+00:04:51.019 --> 00:04:57.100
+give a list of your variables, and that will also produce the same plot as the first one
+
+00:04:57.100 --> 00:04:58.100
+I showed you.
+
+00:04:58.100 --> 00:05:01.859
+However, you can only make a scatter plot with this function, and it doesn't have any
+
+00:05:01.859 --> 00:05:08.660
+other customisations for it, so this is quite constrained, and the opposite effect is if
+
+00:05:08.660 --> 00:05:13.779
+you want to build everything in a function, you get a giant monolith which is also terrible
+
+00:05:13.779 --> 00:05:15.220
+to use.
+
+00:05:15.220 --> 00:05:18.540
+So that's why we're not doing a functional approach.
+
+00:05:18.540 --> 00:05:24.420
+What we're also not doing is treading into Microsoft territory and make business intelligence
+
+00:05:24.420 --> 00:05:35.079
+tools, so there's this closed-source Microsoft BI Power BI desktop which allows you to also
+
+00:05:35.079 --> 00:05:40.000
+make plots from your database-backed data.
+
+00:05:40.000 --> 00:05:45.519
+This is point-and-clicking, and this is not open source, and we believe that code is the
+
+00:05:45.519 --> 00:05:50.920
+primary way in which visualisation should be expressed.
+
+00:05:50.920 --> 00:05:56.200
+So we believe code is better than point-and-clicking.
+
+00:05:56.200 --> 00:06:03.799
+And actually, when you think about it a little bit, like language, grammar, there are a bunch
+
+00:06:03.799 --> 00:06:06.640
+of commonalities that the two have.
+
+00:06:06.640 --> 00:06:07.640
+Both are declarative.
+
+00:06:07.640 --> 00:06:14.720
+SQL, for example, allows you to speak into information structures, like give me the revenue
+
+00:06:14.720 --> 00:06:21.000
+grouped by month, whereas the grammar of graphics allows you to speak information and codings,
+
+00:06:21.000 --> 00:06:25.079
+like show revenue as bars by month.
+
+00:06:25.079 --> 00:06:28.959
+Both of them are compositional with a small core grammar, and in SQL you have to select
+
+00:06:28.959 --> 00:06:34.200
+clauses, grouped by where, whereas in the grammar of graphics, you have things like
+
+00:06:34.200 --> 00:06:41.600
+layers or things like scales, and you can recombine all these different words to get
+
+00:06:41.600 --> 00:06:44.839
+the task done.
+
+00:06:44.839 --> 00:06:50.480
+SQL is also sort of portable.
+
+00:06:50.480 --> 00:06:56.200
+Now I'm not so sure any more after hearing about the Spice Park migration talk, but in
+
+00:06:56.200 --> 00:07:02.279
+theory, SQL might be portable.
+
+00:07:02.279 --> 00:07:13.079
+So yeah, you can run SQL on DocDB, on other database backends, and similarly-ish, you
+
+00:07:13.079 --> 00:07:19.720
+can also execute the grammar of graphics on different backends, like ggplot2, the difference
+
+00:07:19.720 --> 00:07:27.279
+is mostly that the syntax is not conserved across the execution platforms.
+
+00:07:27.279 --> 00:07:36.839
+I am going to skim this one, because I just need to tell you that what we receive from
+
+00:07:36.839 --> 00:07:42.200
+the user is this select statement, for example, followed by visualize.
+
+00:07:42.200 --> 00:07:45.119
+What we do is we split the two.
+
+00:07:45.119 --> 00:07:49.000
+We throw the select to the database.
+
+00:07:49.000 --> 00:07:50.920
+We keep the visualize.
+
+00:07:50.920 --> 00:07:58.640
+We build the plots, and out comes a graphic.
+
+00:07:58.640 --> 00:08:05.320
+So to demonstrate this a little bit more fully, it is a darling in the database community
+
+00:08:05.320 --> 00:08:10.720
+to reproduce this famous chart by Charles Minard.
+
+00:08:10.720 --> 00:08:20.559
+This chart is an illustration of Napoleon's 1912 campaign into Russia, and the main things
+
+00:08:20.559 --> 00:08:28.000
+that we can see here, there's a beige line going to the right, and there's a black line
+
+00:08:28.000 --> 00:08:29.000
+returning.
+
+00:08:29.000 --> 00:08:36.440
+The thickness of the line indicates how many troops Napoleon's army has left.
+
+00:08:36.440 --> 00:08:44.479
+So as you can see it well, but as Napoleon marches to Moscow, he's losing troops and
+
+00:08:44.479 --> 00:08:45.479
+troops and troops.
+
+00:08:45.479 --> 00:08:50.039
+He reaches Moscow and then has to retreat and loses troops and troops and troops.
+
+00:08:50.039 --> 00:08:57.000
+So while technically he did get to Moscow, he didn't come back very well.
+
+00:08:57.000 --> 00:09:05.760
+So that is what this chart shows, and we can have very similar data.
+
+00:09:05.760 --> 00:09:12.640
+We can have the longitude and latitude coordinates of where the troops are at some point, the
+
+00:09:12.640 --> 00:09:18.080
+number of troops that Napoleon had at that point, whether they're advancing or retreating,
+
+00:09:18.080 --> 00:09:23.039
+and which group of the army it is, and the simplest thing that you can do is just add
+
+00:09:23.039 --> 00:09:27.679
+a visualize, longitude is X, latitude is Y, draw a path.
+
+00:09:27.679 --> 00:09:34.159
+So you have spoken this plot into existence, and then you can from this basis you can start
+
+00:09:34.159 --> 00:09:38.719
+iterating and building more and more stuff up on top the plot.
+
+00:09:38.719 --> 00:09:43.599
+For example, you can properly split the lines by doing a partition.
+
+00:09:43.599 --> 00:09:47.640
+You can add the direction as a color.
+
+00:09:47.640 --> 00:09:52.359
+You can also add the line width representing the number of survivors.
+
+00:09:52.359 --> 00:09:55.719
+You can add a scale to have the colors match more.
+
+00:09:55.719 --> 00:09:57.960
+You can have a scale to have thicker lines.
+
+00:09:57.960 --> 00:10:07.200
+You can add a text layer to give some context of which cities are at what place.
+
+00:10:07.200 --> 00:10:14.799
+And lastly, you can use the spatial extension as well to do some map projections.
+
+00:10:14.799 --> 00:10:24.880
+For example, if we project to Mercator, then we will have a properly proportioned plot.
+
+00:10:24.880 --> 00:10:36.359
+We can also add a spatial layer, this was added Monday, where you can just have geospatial
+
+00:10:36.359 --> 00:10:46.400
+data and you can flip through a few projections, zoom in, and as a finishing touch, put the
+
+00:10:46.400 --> 00:10:48.479
+correct labels at the right spot.
+
+00:10:48.479 --> 00:10:51.320
+So this is what you could do.
+
+00:10:51.320 --> 00:10:53.880
+And our idea is that we want it to work wherever.
+
+00:10:53.880 --> 00:10:58.119
+We distribute it as a lone executable.
+
+00:10:58.119 --> 00:11:07.760
+We don't want to bundle it with R and Python environments, so we don't have a runtime.
+
+00:11:07.760 --> 00:11:12.200
+We want to constrain the execution so that the possibility to execute malicious code
+
+00:11:12.200 --> 00:11:13.200
+is minimal.
+
+00:11:13.200 --> 00:11:17.719
+We have a variety of integrations with, for example, a docDB extension, we have a command
+
+00:11:17.719 --> 00:11:20.960
+line interface, a Jupyter kernel.
+
+00:11:20.960 --> 00:11:25.239
+And we also hope that it is kind of nice to work with assistance for this.
+
+00:11:25.239 --> 00:11:29.520
+Of course, there's a bunch of SQL training data out there that's not out there for GGSQL,
+
+00:11:29.520 --> 00:11:35.919
+but we hope that some properties of SQL will transfer well to GGSQL.
+
+00:11:35.919 --> 00:11:41.799
+We are also kind of exploring for how do you want to maybe you want to use LLM assistance
+
+00:11:41.799 --> 00:11:46.799
+for interfacing with your dashboards and your data visualizations.
+
+00:11:46.799 --> 00:11:52.440
+There's a query chat package out there that can help you with this, and we wrote a skill
+
+00:11:52.440 --> 00:11:57.880
+to also teach your LLM assistance to work with GGSQL.
+
+00:11:57.880 --> 00:12:03.479
+You can hopefully get this someday, wherever SQL is, but for now, there's interactive examples
+
+00:12:03.479 --> 00:12:04.479
+on the website.
+
+00:12:04.479 --> 00:12:08.280
+There's language support for VS Code and Positron.
+
+00:12:08.280 --> 00:12:10.479
+There's a kernel for Jupyter and Quarto.
+
+00:12:10.479 --> 00:12:15.479
+There's a command line interface, R, Python, and the WebAssembly, which drives the interactive
+
+00:12:15.479 --> 00:12:16.679
+examples.
+
+00:12:16.679 --> 00:12:21.119
+And of course, the DougDB extension is actually a DougDB sandwich, really.
+
+00:12:21.119 --> 00:12:28.039
+It's DougDB in the back, GGSQL in the middle, and DougDB on front.
+
+00:12:28.039 --> 00:12:29.039
+So yeah.
+
+00:12:29.039 --> 00:12:33.880
+In closing, we have made a new SQL-based tool for data visualization based on the grammar
+
+00:12:33.880 --> 00:12:34.880
+of graphics.
+
+00:12:34.880 --> 00:12:43.000
+DougDB is a first-class citizen herein, and with that, I would like to thank you, and
+
+00:12:43.000 --> 00:12:48.960
+in particular Posit, for paying me money, and Thomas, George, and Hadley, who collaborated
+
+00:12:48.960 --> 00:12:49.960
+with me on this.
+
+00:12:49.960 --> 00:12:49.960
+
+

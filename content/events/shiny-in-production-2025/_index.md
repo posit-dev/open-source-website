@@ -10,7 +10,7 @@ description: "Hosted in the centre of Newcastle Upon Tyne, UK, this conference d
 people:
 - Charlie Gao
 software:
-- Shiny
+- shiny-r
 languages:
 - R
 resources:

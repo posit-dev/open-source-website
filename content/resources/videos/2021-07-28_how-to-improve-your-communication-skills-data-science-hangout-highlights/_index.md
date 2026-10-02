@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 111
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.070739+00:00'
+  last_updated: '2026-09-18T13:58:16.539313+00:00'
   like_count: 32
   playlist: ''
   software:
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SUZw5GjKNRg/maxresdefault.jpg
   title: How to Improve Your Communication Skills | Data Science Hangout Highlights
   url: https://www.youtube.com/watch?v=SUZw5GjKNRg
-  view_count: 1649
+  view_count: 1685
 ---
 image: thumbnail.jpg
 

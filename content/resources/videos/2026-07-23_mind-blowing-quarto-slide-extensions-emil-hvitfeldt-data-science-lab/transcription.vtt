@@ -1,0 +1,2206 @@
+WEBVTT
+
+00:00:00.680 --> 00:00:07.400
+🖍️ 🗣 🖍️ 🖍️ 🖍️ 🖍️ 🖍️ 🖍️ 🖍️ 🖍️ 🖍️ 🖍️ 🖍️ 🖍️ 🖍️ 🖍️ 🖍️ 🖍️
+
+00:00:07.400 --> 00:00:14.440
+Okay, today I am so excited to introduce our featured Lab Manager who is a two-time guest
+
+00:00:14.440 --> 00:00:20.840
+he's in the Leaderboard for repeat guests at the Data Science Lab, Emil Hvitfeldt.
+
+00:00:20.840 --> 00:00:23.879
+Thank you so much for being here. Would you like to introduce yourself?
+
+00:00:24.879 --> 00:00:31.879
+Thank you for having me. So I'm Emil Hvitfeldt. I'm on the Tidy Models team, trying to make modeling better.
+
+00:00:31.879 --> 00:00:40.880
+And in my spare time, I do a little bit of slide art, which is what we'll be talking about today.
+
+00:00:40.880 --> 00:00:44.880
+It's his secret passion. We're going to talk all about that today.
+
+00:00:44.880 --> 00:00:49.880
+I'm also joined by Isabella Velasquez. She is here. Would you like to say hello?
+
+00:00:49.880 --> 00:00:52.880
+Hi, everyone. Thanks so much for joining.
+
+00:00:52.880 --> 00:01:01.880
+All right. I say let's go ahead and get started. So Emil, today we are going to be talking about slide crafting in Quarto.
+
+00:01:01.880 --> 00:01:05.879
+And slide crafting, I feel like, is a word that you use a lot. I like it.
+
+00:01:05.879 --> 00:01:14.879
+What we're really talking about is the output format of Reveal.js and all of the magical extensions that you have been working on over the years,
+
+00:01:14.879 --> 00:01:22.879
+including very recently, to make slides better. Would you like to share your screen and give us a little bit of a primer?
+
+00:01:22.879 --> 00:01:23.879
+Yes.
+
+00:01:23.879 --> 00:01:25.879
+Before we dig in. OK, awesome.
+
+00:01:25.879 --> 00:01:40.879
+Moving everything away. All right. So everything we'll be doing today is Quarto-related.
+
+00:01:40.879 --> 00:01:47.879
+So it's how you would expect everything to be. So you do Quarto, and you put a format.
+
+00:01:47.879 --> 00:01:51.879
+But we're doing slide crafting, or making slides, presentations.
+
+00:01:52.879 --> 00:01:56.879
+And the main difference here is we're setting a different format.
+
+00:01:56.879 --> 00:02:03.879
+So here is an example of where we create an HTML page and also make PDFs in different ways.
+
+00:02:03.879 --> 00:02:10.880
+But by setting this format to Reveal.js, we are getting something that looks like this.
+
+00:02:11.880 --> 00:02:22.880
+So now everything is in a non-scrollable format, and we can advance and see how you would expect slides to be in a presentation format.
+
+00:02:22.880 --> 00:02:28.880
+And you can do most everything you can do in a normal Quarto document.
+
+00:02:28.880 --> 00:02:35.880
+So we have a whole chunk highlighting, a little animation highlighting.
+
+00:02:35.880 --> 00:02:42.880
+You can basically do everything you expect and a couple of things that are specific to slides.
+
+00:02:42.880 --> 00:02:54.880
+So one of the things, which we'll get to later, is normally you press the arrows to advance to the next slide.
+
+00:02:54.880 --> 00:02:59.880
+But sometimes you also want something to happen within the slide itself.
+
+00:02:59.880 --> 00:03:05.880
+And that's in Reveal.js terminology called a fragment.
+
+00:03:05.880 --> 00:03:09.880
+So you have the whole slide, but you're turning it into fragments.
+
+00:03:09.880 --> 00:03:15.880
+So an easy way of this is just the idea of an instrumental list.
+
+00:03:15.880 --> 00:03:26.880
+So here we are not actually creating three or four different slides, each with one more element.
+
+00:03:26.880 --> 00:03:29.880
+They're all happening on the same page.
+
+00:03:29.880 --> 00:03:38.880
+But when we press Next, it just modifies the slide itself instead of creating copies over.
+
+00:03:38.880 --> 00:03:44.880
+And it can do all the little things like zoom in, fades in, and what have you.
+
+00:03:44.880 --> 00:03:49.880
+And this is all just built into Quarto. No extension needed. This is default behavior.
+
+00:03:50.880 --> 00:03:53.880
+All of it, yeah. And just a few more things.
+
+00:03:53.880 --> 00:03:57.880
+There's a little menu where you can see the slides.
+
+00:03:57.880 --> 00:04:00.880
+And there's some tools, too, which I think is very nice.
+
+00:04:00.880 --> 00:04:05.880
+And you can also see it says what they are, but it's also a little...
+
+00:04:05.880 --> 00:04:08.880
+If you look at the top, it's full screen, but it's also an F.
+
+00:04:08.880 --> 00:04:13.880
+So if you press F, it full screens as well.
+
+00:04:13.880 --> 00:04:16.880
+Yeah, my favorite one is E.
+
+00:04:16.880 --> 00:04:20.880
+If you're ever like, I'm looking at this, but I just want to print this out as a PDF.
+
+00:04:20.880 --> 00:04:25.880
+Just hit the E key, and it will turn into a PDF for you to print out.
+
+00:04:25.880 --> 00:04:35.880
+Yeah. So if you press E, it turns into a scrollable thing, which doesn't seem useful.
+
+00:04:35.880 --> 00:04:44.880
+But if you line it up and try to print it, it prints in how you would expect it to print.
+
+00:04:44.880 --> 00:04:56.880
+So as long as you're not doing anything crazy or have videos, you now have something that you can turn into a PDF.
+
+00:04:56.880 --> 00:05:03.880
+But this is technically a website that is being hosted.
+
+00:05:03.880 --> 00:05:10.880
+This one is being hosted online, using local hosted as yourself.
+
+00:05:10.880 --> 00:05:18.880
+Gregory is asking, does that PDF export still use Pandoc, or is there an option of exporting via Typed?
+
+00:05:18.880 --> 00:05:25.880
+So none of this uses Pandoc, technically.
+
+00:05:25.880 --> 00:05:30.880
+I'm pretty sure, and I might be wrong, because I'm not that deep in the portal.
+
+00:05:30.880 --> 00:05:36.880
+But I'm pretty sure Reveal.js is one of our non-Pandoc paths.
+
+00:05:37.880 --> 00:05:41.880
+So we're just turning something into something that Reveal.js understands.
+
+00:05:41.880 --> 00:05:44.880
+And then Reveal.js does a thing.
+
+00:05:44.880 --> 00:05:58.880
+And then this PDF export mode is just basically fancy CSS that makes it so when you try to print it, everything aligns how you would expect it to align.
+
+00:05:58.880 --> 00:06:00.880
+So I'm pretty sure it doesn't do it.
+
+00:06:00.880 --> 00:06:10.880
+There's other ways, too. I found a way where you can use the Office Libre CLI that can turn things around.
+
+00:06:10.880 --> 00:06:13.880
+So a bunch of different things.
+
+00:06:13.880 --> 00:06:23.880
+And this also doesn't use Typed, because this is technically an HTML format, first and foremost.
+
+00:06:24.880 --> 00:06:32.880
+All right, I'm going to pause for two quick seconds and ask you if you might change your mic to your laptop.
+
+00:06:32.880 --> 00:06:39.880
+I think we are having some Bluetooth connectivity issues.
+
+00:06:39.880 --> 00:06:44.880
+If you go down to your audio in Zoom.
+
+00:06:44.880 --> 00:06:47.880
+So you might need to stop sharing.
+
+00:06:47.880 --> 00:06:48.880
+Yeah, in Zoom.
+
+00:06:48.880 --> 00:06:51.880
+Go down to audio in the little arrow next to your audio button.
+
+00:06:51.880 --> 00:06:55.880
+And then change your mic at the top to be your laptop.
+
+00:06:55.880 --> 00:06:58.880
+Let's see if that sounds a little bit better.
+
+00:06:58.880 --> 00:07:01.880
+Wait, I have an audio button?
+
+00:07:01.880 --> 00:07:04.880
+You might need to stop sharing.
+
+00:07:04.880 --> 00:07:06.880
+Oh, stop sharing.
+
+00:07:06.880 --> 00:07:08.880
+And at the bottom left, you'll have an audio button.
+
+00:07:08.880 --> 00:07:09.880
+Yes.
+
+00:07:09.880 --> 00:07:13.880
+Sorry, sound engineer Libby is making us stop for two seconds.
+
+00:07:13.880 --> 00:07:15.880
+We should have done this beforehand.
+
+00:07:16.880 --> 00:07:23.880
+Everybody, if you use AirPods as your microphone on your Zoom calls, I want you to know that the sound is probably not as good as you think it is.
+
+00:07:23.880 --> 00:07:25.880
+All right, what about now?
+
+00:07:25.880 --> 00:07:27.880
+Oh, so much better.
+
+00:07:27.880 --> 00:07:29.880
+We have thumbs up from Gregory.
+
+00:07:29.880 --> 00:07:30.880
+Okay, amazing.
+
+00:07:30.880 --> 00:07:31.880
+I'm sorry about that.
+
+00:07:31.880 --> 00:07:32.880
+We should have done that before.
+
+00:07:32.880 --> 00:07:33.880
+We should have.
+
+00:07:33.880 --> 00:07:34.880
+I know.
+
+00:07:34.880 --> 00:07:35.880
+We missed it.
+
+00:07:35.880 --> 00:07:37.880
+Gregory says it's crispy and clear.
+
+00:07:37.880 --> 00:07:38.880
+Perfect.
+
+00:07:39.880 --> 00:07:42.880
+As we said, everything is just an HTML format.
+
+00:07:42.880 --> 00:07:45.880
+And Reveal.js is its own thing.
+
+00:07:45.880 --> 00:07:52.880
+And so Toro is just creating something that Reveal.js understands.
+
+00:07:52.880 --> 00:07:57.880
+All right, so let's see how it actually looks on our end.
+
+00:07:58.880 --> 00:08:12.880
+So, I always like to be on the desktop, at least for demos, because I have a lot of different things in here.
+
+00:08:12.880 --> 00:08:16.880
+So, you can create actually many things.
+
+00:08:16.880 --> 00:08:17.880
+Let's see.
+
+00:08:17.880 --> 00:08:18.880
+New file.
+
+00:08:18.880 --> 00:08:19.880
+Do we have it?
+
+00:08:19.880 --> 00:08:20.880
+We have it.
+
+00:08:20.880 --> 00:08:27.880
+If you're in Positron and have the Toro extension installed, which I will show in just a little bit.
+
+00:08:27.880 --> 00:08:30.880
+Oh, we don't have.
+
+00:08:30.880 --> 00:08:36.880
+We don't have a slide deck project template, but we can just change our format.
+
+00:08:36.880 --> 00:08:37.880
+Yeah.
+
+00:08:37.880 --> 00:08:43.880
+We can just for now.
+
+00:08:43.880 --> 00:08:46.880
+So, if you just do nothing.
+
+00:08:46.880 --> 00:08:49.880
+When we went on save.
+
+00:08:49.880 --> 00:08:53.880
+So, the way you normally do it is you have a section.
+
+00:08:53.880 --> 00:09:00.880
+And new slide text.
+
+00:09:00.880 --> 00:09:07.880
+And we can do that.
+
+00:09:07.880 --> 00:09:11.880
+All right, so we added.
+
+00:09:11.880 --> 00:09:15.880
+So, the way it works is if you have a title, it will show up.
+
+00:09:15.880 --> 00:09:22.880
+And if you do a subtitle, it will show up.
+
+00:09:22.880 --> 00:09:32.880
+I don't really use the title and subtitle because the styling is weird and very esoteric and specific only to the title slide.
+
+00:09:32.880 --> 00:09:40.880
+And if you just remove it, it just go directly to the first section.
+
+00:09:40.880 --> 00:09:44.880
+So, you can note each new slide with like a level two heading.
+
+00:09:44.880 --> 00:09:47.880
+So, there's like these two hashtags.
+
+00:09:47.880 --> 00:09:50.880
+And that denotes a new slide.
+
+00:09:50.880 --> 00:09:52.880
+So, we have the text here.
+
+00:09:52.880 --> 00:09:54.880
+We advance over.
+
+00:09:54.880 --> 00:09:57.880
+And we're putting in the plot by itself.
+
+00:09:57.880 --> 00:10:10.880
+There's technically also a level one heading that also does something.
+
+00:10:10.880 --> 00:10:15.880
+So, that's the idea of technically a section.
+
+00:10:15.880 --> 00:10:18.880
+So, here we have our slide.
+
+00:10:18.880 --> 00:10:26.880
+And then this level one heading here is like slightly differently styled to be like down in the middle.
+
+00:10:26.880 --> 00:10:34.880
+And it doesn't really mean much, but it has this like nested idea in it.
+
+00:10:34.880 --> 00:10:49.880
+I don't really think it's that important, but I sometimes use it if you imagine you have a slide that reflects three parts of like idea, implementation, results.
+
+00:10:49.880 --> 00:10:59.880
+You could have those as level one headings to give a little bit of a different vibe and sort things by, but you don't actually do much.
+
+00:10:59.880 --> 00:11:06.880
+There's a million little settings.
+
+00:11:06.880 --> 00:11:13.880
+The YAML doesn't always do what I want it to do.
+
+00:11:13.880 --> 00:11:16.880
+It doesn't for me either.
+
+00:11:16.880 --> 00:11:20.880
+And that will be improved a little bit later.
+
+00:11:20.880 --> 00:11:27.880
+So, if you have Toro, you probably also have it installed as a CLI tool.
+
+00:11:27.880 --> 00:11:36.880
+So, you can use Toro use template, and then you can put in like a GitHub name of something.
+
+00:11:37.880 --> 00:11:40.880
+So, I have a template.
+
+00:11:40.880 --> 00:11:52.880
+So, if you use Toro use template and then Emil Wittfeld Toro reveal JS template, we say I trust myself and I want it as a subdirectory.
+
+00:11:52.880 --> 00:11:53.880
+Yes.
+
+00:11:53.880 --> 00:11:56.880
+And we just call it demo.
+
+00:11:56.880 --> 00:11:59.880
+And then we can open it.
+
+00:11:59.880 --> 00:12:15.880
+So, this is a very small demo, or the template I use for all my slides.
+
+00:12:15.880 --> 00:12:20.880
+And it doesn't have a lot, but it has enough of the things you need to remember.
+
+00:12:20.880 --> 00:12:24.880
+So, the slides look the same as how they did before.
+
+00:12:24.880 --> 00:12:27.880
+But I added a couple of things I never remember.
+
+00:12:28.880 --> 00:12:32.880
+So, I'm setting a different width and height to everything.
+
+00:12:32.880 --> 00:12:34.880
+The aspect ratio is fine in the other one.
+
+00:12:34.880 --> 00:12:47.880
+But if you do any total slides with a font size big enough that people can read it, I find that this aspect ratio is slightly better.
+
+00:12:47.880 --> 00:12:54.880
+Because otherwise, you can only really put like 40 characters in it before it starts wrapping, and then it's not nice.
+
+00:12:55.880 --> 00:13:01.880
+This page title here is kind of weird.
+
+00:13:01.880 --> 00:13:10.880
+Because what this actually means is the name of the tab in the browser of this specific page.
+
+00:13:10.880 --> 00:13:13.880
+Because otherwise, I think it's untitled or just index.
+
+00:13:13.880 --> 00:13:21.880
+So, if you're giving a talk, you can put the name of the talk here, and then it actually shows up in the browser totally when other people read it.
+
+00:13:21.880 --> 00:13:23.880
+I really like that.
+
+00:13:24.880 --> 00:13:26.880
+And I don't remember what all of this is.
+
+00:13:26.880 --> 00:13:27.880
+I have them here.
+
+00:13:27.880 --> 00:13:29.880
+I don't like total line numbers.
+
+00:13:29.880 --> 00:13:42.880
+So, if you have a total chart, if we set echo to true here, we see that it's not that style that last right here.
+
+00:13:42.880 --> 00:13:48.880
+But the 1 plus 1 is being shown, but it's being shown without the numbers.
+
+00:13:48.880 --> 00:13:52.880
+But if we add the numbers back in, it's just like a little 1.
+
+00:13:52.880 --> 00:13:54.880
+I don't really care for that.
+
+00:13:54.880 --> 00:13:57.880
+So, in my default, I turn it off.
+
+00:13:57.880 --> 00:13:58.880
+I like this, too.
+
+00:13:58.880 --> 00:14:06.880
+This leads us into Raha's question, actually, which is, this UI that you're using for slide generation, is this exclusive to Positron?
+
+00:14:06.880 --> 00:14:07.880
+No.
+
+00:14:07.880 --> 00:14:10.880
+This should work anywhere, really.
+
+00:14:10.880 --> 00:14:15.880
+Because we're in Positron, we have some affordances.
+
+00:14:16.880 --> 00:14:23.880
+And that's why we have the preview button and the random save and some little niceties like that.
+
+00:14:23.880 --> 00:14:27.880
+But you can also do everything like this by just going.
+
+00:14:29.880 --> 00:14:36.880
+A lot of this is just that Positron's UI is just really, really changeable and customizable.
+
+00:14:36.880 --> 00:14:44.880
+So, what Emil has is a side-by-side view where his source is on the left and his terminal and viewer and everything else is on the right.
+
+00:14:44.880 --> 00:14:46.880
+And he also has render on save on.
+
+00:14:46.880 --> 00:14:52.880
+So, every time he makes a change, he's just going back to the viewer and it's listening for his changes constantly.
+
+00:14:52.880 --> 00:14:55.880
+He saves, and then that change is just showing up in the viewer.
+
+00:14:55.880 --> 00:14:56.880
+Yes.
+
+00:14:56.880 --> 00:15:07.880
+And then the last two things I have in my template is I already have preset up a slot, like some very light CSS.
+
+00:15:08.880 --> 00:15:14.880
+And it's already put into the theme, and I know this is the syntax I need for it.
+
+00:15:14.880 --> 00:15:24.880
+Another thing is if you do anything where you need JavaScript, you need to put it under include after body.
+
+00:15:24.880 --> 00:15:31.880
+So, I already have just an empty HTML file with a strip tag in there.
+
+00:15:31.880 --> 00:15:39.880
+So, if I need to add some JavaScript somehow, it's already lined up how it needs to be.
+
+00:15:40.880 --> 00:15:41.880
+And it doesn't hurt right now.
+
+00:15:41.880 --> 00:15:44.880
+So, if you use this and don't use that file, it's fine.
+
+00:15:44.880 --> 00:15:50.880
+But I never remember where to put it, if it's include after, before, whatever.
+
+00:15:50.880 --> 00:15:52.880
+So, this is just everything I need.
+
+00:15:53.880 --> 00:15:54.880
+All right.
+
+00:15:56.880 --> 00:16:05.880
+So, one last thing before we move on is there's this idea in, I want to say it's in PaintDrop, but it might just be a Markdown thing.
+
+00:16:05.880 --> 00:16:07.880
+But this idea of a nest.
+
+00:16:07.880 --> 00:16:11.880
+Oh, no. Actually, before we do any of that, let's quickly do extensions.
+
+00:16:12.880 --> 00:16:19.880
+So, if you go to the extension marketplace, I'm pretty sure you already have Toro installed.
+
+00:16:19.880 --> 00:16:21.880
+That was my question.
+
+00:16:21.880 --> 00:16:24.880
+I was just putting in the Discord.
+
+00:16:24.880 --> 00:16:28.880
+I think it's bundled with Positron.
+
+00:16:28.880 --> 00:16:33.880
+I know at one point it wasn't, and at one point it was, but I don't know where we are now.
+
+00:16:33.880 --> 00:16:37.880
+Okay. It might depend on when you install Positron, then.
+
+00:16:38.880 --> 00:16:39.880
+Yes.
+
+00:16:39.880 --> 00:16:41.880
+But it's easy to install.
+
+00:16:41.880 --> 00:16:43.880
+You just type Toro.
+
+00:16:43.880 --> 00:16:48.880
+It should pop up fairly high, and then you just press install, and it reloads.
+
+00:16:48.880 --> 00:16:50.880
+And that gives us a bunch.
+
+00:16:50.880 --> 00:16:53.880
+Well, that gives us all of the preview, render, and save.
+
+00:16:53.880 --> 00:16:57.880
+That's how all of that has happened, I think, is through the extension.
+
+00:16:57.880 --> 00:17:01.880
+But it also gives us a couple of other little niceties.
+
+00:17:02.880 --> 00:17:08.880
+One of them is this idea of short codes, I think it's called.
+
+00:17:08.880 --> 00:17:16.880
+So, if I do columns, I get these two little insert things.
+
+00:17:19.880 --> 00:17:24.880
+So, this is what we call a fenced div.
+
+00:17:25.880 --> 00:17:26.880
+In...
+
+00:17:28.880 --> 00:17:30.880
+I want to say Mac.id is Toro.
+
+00:17:30.880 --> 00:17:36.880
+So, on a slide, we typically want to put things side by side.
+
+00:17:36.880 --> 00:17:44.880
+And since all of this is HTML, CSS, things that sometimes can be a little bit annoying to deal with,
+
+00:17:44.880 --> 00:17:48.880
+we have this built-in thing called columns.
+
+00:17:48.880 --> 00:17:53.880
+So, we start with just like this.
+
+00:17:54.880 --> 00:17:59.880
+This is a div, which is HTML, like container of content.
+
+00:17:59.880 --> 00:18:01.880
+And we add on.
+
+00:18:01.880 --> 00:18:06.880
+This syntax here means divit the class name columns.
+
+00:18:06.880 --> 00:18:09.880
+And then this is a nested structure.
+
+00:18:09.880 --> 00:18:14.880
+So, inside of it, we are putting two columns in it.
+
+00:18:14.880 --> 00:18:18.880
+And then inside those, and then we put content.
+
+00:18:18.880 --> 00:18:23.880
+So, this is a way of us to make sure we have things that happen side by side.
+
+00:18:23.880 --> 00:18:28.880
+You can do with here to be...
+
+00:18:33.880 --> 00:18:34.880
+Yeah.
+
+00:18:34.880 --> 00:18:36.880
+So, you can also set the width.
+
+00:18:36.880 --> 00:18:43.880
+So, we can technically put like five.
+
+00:18:43.880 --> 00:18:44.880
+I'm glad that you're adding more.
+
+00:18:44.880 --> 00:18:48.880
+Because Andrew had just asked, is there a maximum number of columns you can have?
+
+00:18:48.880 --> 00:18:49.880
+So, there's technically...
+
+00:18:49.880 --> 00:18:51.880
+Like, functionally, there's not a match.
+
+00:18:51.880 --> 00:18:53.880
+But visually, you're going to run out of space real fast.
+
+00:18:53.880 --> 00:18:54.880
+Right. Yeah.
+
+00:18:54.880 --> 00:18:58.880
+Visually, it's going to push you off the margins after a little bit.
+
+00:18:58.880 --> 00:19:01.880
+And this is some CSS that I think...
+
+00:19:01.880 --> 00:19:07.880
+This is a bundle with reveal.js itself or something that Toro added on top.
+
+00:19:07.880 --> 00:19:12.880
+But this is how we can add a div and we can ship some CSS with it.
+
+00:19:12.880 --> 00:19:13.880
+Right.
+
+00:19:13.880 --> 00:19:20.880
+But the exciting part is, since all of this is just HTML and CSS,
+
+00:19:20.880 --> 00:19:26.880
+we as the users of this can do the same things.
+
+00:19:26.880 --> 00:19:30.880
+So, in here...
+
+00:19:30.880 --> 00:19:34.880
+So, let's just do...
+
+00:19:34.880 --> 00:19:36.880
+So, if I do a thing called read...
+
+00:19:36.880 --> 00:19:39.880
+So, I'm making a CSS class called read.
+
+00:19:40.880 --> 00:19:45.880
+And I'm saying the color should be red.
+
+00:19:45.880 --> 00:19:50.880
+So, I just created a little CSS class here called read.
+
+00:19:50.880 --> 00:19:59.880
+If I now add that in here, it now turns everything in that one column red.
+
+00:19:59.880 --> 00:20:02.880
+Or the text inside that column red.
+
+00:20:02.880 --> 00:20:05.880
+So, this is obviously not the best example.
+
+00:20:05.880 --> 00:20:10.880
+But imagine that this expands out of different things.
+
+00:20:10.880 --> 00:20:16.880
+And this is basically how all the slide works in here.
+
+00:20:16.880 --> 00:20:22.880
+So, let's look at one extension I know.
+
+00:20:22.880 --> 00:20:25.880
+Wait, no.
+
+00:20:25.880 --> 00:20:29.880
+Let's look at one extension that I made recently that, in a way,
+
+00:20:29.880 --> 00:20:32.880
+showcases a similar thing to this.
+
+00:20:32.880 --> 00:20:34.880
+I'm so excited about extensions.
+
+00:20:34.880 --> 00:20:37.880
+If you don't know what an extension is, it's not a package.
+
+00:20:37.880 --> 00:20:38.880
+It's a little bit different.
+
+00:20:38.880 --> 00:20:45.880
+So, Emil's going to talk a little bit about how they differ.
+
+00:20:45.880 --> 00:20:48.880
+So, here's that one extension.
+
+00:20:48.880 --> 00:20:54.880
+So, the important thing is we first look in and see how do we install it.
+
+00:20:54.880 --> 00:20:59.880
+And most extensions have an installation link.
+
+00:20:59.880 --> 00:21:01.880
+So, we just look in.
+
+00:21:01.880 --> 00:21:04.880
+And this is a piece of terminal code that you're running.
+
+00:21:04.880 --> 00:21:06.880
+It's not in your R console.
+
+00:21:06.880 --> 00:21:07.880
+Yes.
+
+00:21:07.880 --> 00:21:10.880
+And I will show a different way to install it to the read and use.
+
+00:21:10.880 --> 00:21:13.880
+But I'm partial to the terminal.
+
+00:21:13.880 --> 00:21:16.880
+So, we then say, yes, I trust myself.
+
+00:21:16.880 --> 00:21:21.880
+And then, basically, this.
+
+00:21:21.880 --> 00:21:23.880
+We would like to continue.
+
+00:21:23.880 --> 00:21:27.880
+So, basically, it first asks, do you trust this person to download these files?
+
+00:21:28.880 --> 00:21:35.880
+Essentially, the total add command is a very fancy copy-paste.
+
+00:21:35.880 --> 00:21:45.880
+So, it looks at the repo and then copy-pastes a folder into your working directory.
+
+00:21:45.880 --> 00:21:46.880
+There's a couple of things.
+
+00:21:46.880 --> 00:21:48.880
+So, you can exclude things.
+
+00:21:48.880 --> 00:21:50.880
+But essentially, just copy-paste over.
+
+00:21:50.880 --> 00:21:56.880
+And at the end, it also asks, hey, do you want to open the documentation?
+
+00:21:56.880 --> 00:21:59.880
+But since I wrote it, I know what happens.
+
+00:21:59.880 --> 00:22:12.880
+So, what really happened is it added this understore extensions folder, if it wasn't already there.
+
+00:22:12.880 --> 00:22:17.880
+And then it added this extension called chatbubbles, which we'll see.
+
+00:22:17.880 --> 00:22:22.880
+And it has some information about what happens.
+
+00:22:22.880 --> 00:22:27.880
+And then it bundles some CSS and some JavaScript.
+
+00:22:27.880 --> 00:22:35.880
+So, it's just functionally copied over some CSS and some JavaScript that we can now use.
+
+00:22:39.880 --> 00:22:42.880
+Should we answer some of the questions about extensions before we move on?
+
+00:22:42.880 --> 00:22:45.880
+Yes. I was just going to say, do you want to pause for a second?
+
+00:22:45.880 --> 00:22:48.880
+Because extensions can kind of be confusing.
+
+00:22:49.880 --> 00:22:51.880
+This is a weird thing.
+
+00:22:51.880 --> 00:22:52.880
+It's in the terminal.
+
+00:22:52.880 --> 00:22:53.880
+I'm not calling something.
+
+00:22:53.880 --> 00:22:55.880
+I'm not using library.
+
+00:22:55.880 --> 00:23:02.880
+So, let's start with Gregory's question, which is one that I don't exactly know the answer to.
+
+00:23:02.880 --> 00:23:13.880
+Gregory said, I saw in the release notes from Positron 179 that the extensions will default to using the Posit public package manager.
+
+00:23:13.880 --> 00:23:19.880
+Do we know if extensions will still be submitted to the OpenVSX marketplace still?
+
+00:23:19.880 --> 00:23:22.880
+Yes. So, that is a great question.
+
+00:23:22.880 --> 00:23:23.880
+It's a little bit different.
+
+00:23:23.880 --> 00:23:30.880
+So, this is a question about VS Code extensions.
+
+00:23:30.880 --> 00:23:34.880
+But we'll still cover it because I'm showing that too.
+
+00:23:34.880 --> 00:23:38.880
+So, because names are hard.
+
+00:23:38.880 --> 00:23:52.880
+So, we're using extension both to encompass things like the Twotor extension and all these other extensions that you can install on your Positron or VS Code.
+
+00:23:52.880 --> 00:24:00.880
+But we're also using it for these add-ins that you can add to your Twotor projects.
+
+00:24:01.880 --> 00:24:10.880
+So, all the Twotor extensions don't go on any marketplace because they're just mostly on GitHub.
+
+00:24:10.880 --> 00:24:14.880
+But you can also have them on a file on desk or whatever.
+
+00:24:14.880 --> 00:24:22.880
+But they don't have anything to do with the OpenVSX marketplace at all.
+
+00:24:22.880 --> 00:24:24.880
+Correct.
+
+00:24:24.880 --> 00:24:35.880
+For Positron, just to round it up, Positron can only install extensions that are on the OpenVSX marketplace.
+
+00:24:35.880 --> 00:24:47.880
+So, if you have an extension and publish it, a VS Code extension and publish it, it by default don't go to the OpenVSX.
+
+00:24:47.880 --> 00:24:49.880
+You need to do that separately.
+
+00:24:49.880 --> 00:25:01.880
+So, if you want to make an extension that works on Positron, you need to publish both places, which I've done and it isn't terribly hard.
+
+00:25:01.880 --> 00:25:04.880
+But it is another set of domains you need to do.
+
+00:25:04.880 --> 00:25:10.880
+Okay, great. We have one more extension question and then we have a couple that are about styling.
+
+00:25:10.880 --> 00:25:17.880
+So, Hubert asked, are these Quarto extensions global or are they per project? Great question.
+
+00:25:17.880 --> 00:25:24.880
+So, they work within the project itself, right?
+
+00:25:24.880 --> 00:25:31.880
+So, you could have, which is not super recommended, but you could have multiple projects nested, but that becomes really messy.
+
+00:25:31.880 --> 00:25:39.880
+So, you can have an underscore Quarto YAML file and that denotes its project.
+
+00:25:39.880 --> 00:25:43.880
+But if it isn't there, it just assumes that it's within the folder you're in.
+
+00:25:44.880 --> 00:25:50.880
+But yeah, all these extensions are just within their folder that they're being used in.
+
+00:25:52.880 --> 00:25:54.880
+But they're also not that heavy.
+
+00:25:54.880 --> 00:25:56.880
+Like, I feel most of them are fairly small.
+
+00:25:56.880 --> 00:25:57.880
+So, it isn't.
+
+00:25:58.880 --> 00:26:01.880
+I find that they don't bloat your project.
+
+00:26:01.880 --> 00:26:02.880
+Yeah.
+
+00:26:02.880 --> 00:26:11.880
+And the thing that I have been helping or trying to explain is, like, since it's not a package and you're not calling it,
+
+00:26:13.880 --> 00:26:16.880
+the version changes aren't as big of a problem.
+
+00:26:16.880 --> 00:26:20.880
+Like, you've downloaded this thing that is now sort of static, for the most part.
+
+00:26:20.880 --> 00:26:23.880
+I mean, for most extensions. I'm not going to say for all of them.
+
+00:26:23.880 --> 00:26:25.880
+I think there are some more complex ones.
+
+00:26:25.880 --> 00:26:30.880
+But for the most part, you are downloading assets that then you can use in your project.
+
+00:26:30.880 --> 00:26:39.880
+And you don't have to worry so much about whether or not that GitHub repo that contains that extension that you downloaded at one time changes.
+
+00:26:39.880 --> 00:26:41.880
+It's not as big of a problem.
+
+00:26:43.880 --> 00:26:47.880
+It's just a copy-paste of a folder, essentially.
+
+00:26:47.880 --> 00:27:05.880
+And because one of the problems you can get a little bit if you worry about problems like this is dependent extensions, which doesn't actually happen in Tor.
+
+00:27:05.880 --> 00:27:12.880
+Most people have looked at it a little bit because it's kind of useful sometimes.
+
+00:27:12.880 --> 00:27:19.880
+But basically, all Tor extensions are separate. Very few of them, if any, install other things.
+
+00:27:19.880 --> 00:27:24.880
+So, it is the version that it is when you download it.
+
+00:27:24.880 --> 00:27:26.880
+There's no compile thing.
+
+00:27:26.880 --> 00:27:30.880
+There's no, oh, let me find the most recent thing of all the dependencies.
+
+00:27:30.880 --> 00:27:35.880
+No, it's whatever is in the repo of the time that you did it.
+
+00:27:36.880 --> 00:27:39.880
+Yes, it's a snapshot in time copy-paste.
+
+00:27:39.880 --> 00:27:47.880
+Okay, we have one from Zach that said, when you change those text fonts inside of those columns, could you do it for all the columns at once?
+
+00:27:47.880 --> 00:27:49.880
+Maybe by changing the top div?
+
+00:27:50.880 --> 00:27:51.880
+Yes.
+
+00:27:51.880 --> 00:27:53.880
+I'm going to demonstrate that real quick.
+
+00:27:54.880 --> 00:28:01.880
+If we change the red up to all of them.
+
+00:28:01.880 --> 00:28:15.880
+And this is where you need to know just how CSS works because we have the specificity in here.
+
+00:28:15.880 --> 00:28:21.880
+So, if we want to change all of them except the inside one.
+
+00:28:22.880 --> 00:28:27.880
+So, we can set the outside one to red, but then one of the inside ones to blue.
+
+00:28:27.880 --> 00:28:31.880
+And then the blue wins because it's more specific.
+
+00:28:31.880 --> 00:28:34.880
+Right. And these are also just variables, right?
+
+00:28:34.880 --> 00:28:44.880
+So, this .red is a variable that's representing a hex value inside of that .scss file, which stands for sassy CSS.
+
+00:28:44.880 --> 00:28:51.880
+So, Emile could go into that .scss file and he could define blue as whatever hex code he wanted to.
+
+00:28:57.880 --> 00:28:59.880
+That might not show that well.
+
+00:28:59.880 --> 00:29:00.880
+The darker red, yeah.
+
+00:29:00.880 --> 00:29:04.880
+Yeah. And so, you can do a lot of neat things with that.
+
+00:29:04.880 --> 00:29:11.880
+And honestly, not to turn this into an AI lab, but AI is really good at CSS.
+
+00:29:12.880 --> 00:29:17.880
+Yes. CSS is a very well-documented thing, which is great.
+
+00:29:17.880 --> 00:29:20.880
+We have one more question, if we could get to it really quickly.
+
+00:29:20.880 --> 00:29:26.880
+And then we can move on to showing these amazing extensions because we only have like 25 minutes left.
+
+00:29:26.880 --> 00:29:33.880
+Notobeco had asked, do you also get grid logic like you have with CSS Grid?
+
+00:29:33.880 --> 00:29:36.880
+I don't know anything about CSS Grid.
+
+00:29:36.880 --> 00:29:40.880
+We don't, but it's a great idea and I might look into that.
+
+00:29:40.880 --> 00:29:51.880
+The problem is the way the slides work is the width really easy to define, but it's just like from left to right.
+
+00:29:51.880 --> 00:29:54.880
+The height of the slide is really hard to define.
+
+00:29:55.880 --> 00:29:58.880
+Because, and if I can...
+
+00:30:06.880 --> 00:30:08.880
+So, if we go into...
+
+00:30:10.880 --> 00:30:12.880
+I can't move in this one anymore.
+
+00:30:25.880 --> 00:30:30.880
+So, in this slide, you have everything looks nice and you can imagine what the height is.
+
+00:30:30.880 --> 00:30:40.880
+But because of the way the styling is done, things move around according to the width.
+
+00:30:40.880 --> 00:30:51.880
+So, now suddenly, if we wanted to break our slide into a 4x4 grid of values, how do we do it here?
+
+00:30:51.880 --> 00:30:55.880
+When does it stop? When do we do off the page?
+
+00:30:55.880 --> 00:31:03.880
+So, you need to do some annoying math based on what it looks like underneath.
+
+00:31:03.880 --> 00:31:09.880
+So, here, technically, this is the slide area of where everything is.
+
+00:31:09.880 --> 00:31:16.880
+But it's kind of hard to fetch in a way where things don't just go off the page.
+
+00:31:16.880 --> 00:31:20.880
+So, width-based calculations in reveal.js, really easy.
+
+00:31:20.880 --> 00:31:23.880
+Height-based stuff, hard.
+
+00:31:23.880 --> 00:31:27.880
+But it's not a bad idea and I might try some of that.
+
+00:31:27.880 --> 00:31:29.880
+Community-driven development.
+
+00:31:29.880 --> 00:31:32.880
+All right, let's talk about some of the amazing extensions.
+
+00:31:32.880 --> 00:31:36.880
+So, we know what Cork.to can do right out of the box, which is a lot.
+
+00:31:36.880 --> 00:31:41.880
+There are so many things that it would be cool if Cork.to could do.
+
+00:31:41.880 --> 00:31:44.880
+And let me tell you, Emil has been making them.
+
+00:31:45.880 --> 00:31:54.880
+So, I'm actually swapping quickly just into auto-related VS Code extensions.
+
+00:31:54.880 --> 00:31:58.880
+So, one of them is just a little one I wrote about things that happen.
+
+00:31:58.880 --> 00:32:03.880
+It does a lot of neat, mostly auto-complete things.
+
+00:32:03.880 --> 00:32:08.880
+Oh my gosh, I love this. Oh my gosh, how did I not know about this?
+
+00:32:08.880 --> 00:32:13.880
+So, one of them is this thing called a short code of the meta tag.
+
+00:32:13.880 --> 00:32:18.880
+So, basically anything that's in the YAML, you can reuse in the document.
+
+00:32:18.880 --> 00:32:20.880
+But there's no auto-complete in it.
+
+00:32:20.880 --> 00:32:24.880
+So, this extension adds auto-complete on it.
+
+00:32:24.880 --> 00:32:31.880
+If you have a short code, it also auto-completes on all your short codes.
+
+00:32:31.880 --> 00:32:34.880
+So, you don't need to remember all the names.
+
+00:32:35.880 --> 00:32:43.880
+So, it just adds a lot of little things that are kind of nice.
+
+00:32:43.880 --> 00:32:45.880
+Oh, another thing.
+
+00:32:45.880 --> 00:32:51.880
+So, here we're adding width and everything, but you can also add style tags directly.
+
+00:32:51.880 --> 00:32:53.880
+So, you just add CSS inline.
+
+00:32:53.880 --> 00:32:57.880
+The extension adds the auto-complete for that here.
+
+00:32:57.880 --> 00:33:04.880
+So, we can say background color, and I want it to be green, which is a bad idea.
+
+00:33:06.880 --> 00:33:09.880
+And now we messed up something here.
+
+00:33:09.880 --> 00:33:11.880
+Oh boy, not accessible at all.
+
+00:33:11.880 --> 00:33:19.880
+But you can add style inline, but it's easy to do now because the Toro extension helper does that.
+
+00:33:19.880 --> 00:33:29.880
+Another really useful extension is Toro Wizard, which does a lot of things, which I feel like we don't have time to do.
+
+00:33:29.880 --> 00:33:33.880
+But this is an alternative way of installing extensions.
+
+00:33:33.880 --> 00:33:45.880
+So, it has a UI, but why I just wanted to mention it real quick was that I'm tapping into a thing that Toro Wizard does in my extensions.
+
+00:33:46.880 --> 00:33:52.880
+So, I know that I'm adding new syntax and whatever when I make these extensions.
+
+00:33:52.880 --> 00:33:55.880
+So, I did the chat bubbles, right?
+
+00:33:58.880 --> 00:34:03.880
+So, here it adds these.
+
+00:34:03.880 --> 00:34:05.880
+So, let's just...
+
+00:34:06.880 --> 00:34:09.879
+Oh no, that's not good.
+
+00:34:09.879 --> 00:34:11.879
+This should work.
+
+00:34:11.879 --> 00:34:13.879
+Oh no.
+
+00:34:13.879 --> 00:34:15.879
+Oh no.
+
+00:34:15.879 --> 00:34:16.879
+It doesn't work.
+
+00:34:16.879 --> 00:34:19.879
+Someone forgot to light a candle somewhere.
+
+00:34:19.879 --> 00:34:20.879
+Yeah.
+
+00:34:20.879 --> 00:34:22.879
+Well, I'll fix that.
+
+00:34:22.879 --> 00:34:27.879
+But essentially, what we have is I'm tapping in.
+
+00:34:27.879 --> 00:34:34.879
+In my extension, I'm tapping in and adding shortcodes to the extension.
+
+00:34:34.879 --> 00:34:42.879
+So, you don't necessarily have to remember all the new syntax in all the new extensions.
+
+00:34:42.879 --> 00:34:50.879
+Because if you have Toro Wizard installed, all the tab completion and all of that is just built in.
+
+00:34:50.879 --> 00:34:53.879
+Anyway, let's look at it. We can just find it.
+
+00:34:55.879 --> 00:34:57.879
+We'll just have to do it.
+
+00:34:58.949 --> 00:35:00.949
+Let's look at it. We can just find it.
+
+00:35:03.949 --> 00:35:07.949
+We'll just have to do it in the example itself.
+
+00:35:09.949 --> 00:35:12.949
+The syntax was like how we saw it before.
+
+00:35:14.949 --> 00:35:19.949
+Instead of doing tolems and tolem, we call it the Bit 1 Chat.
+
+00:35:21.949 --> 00:35:26.949
+We either put bubbleLeft and bubbleRight...
+
+00:35:26.949 --> 00:35:28.949
+...as the inside names.
+
+00:35:28.949 --> 00:35:32.949
+Here we're also adding fragments so it shows incrementally.
+
+00:35:35.949 --> 00:35:41.949
+Then we put in text inside.
+
+00:35:46.949 --> 00:35:51.949
+Now it basically looks like we're sending chats on a phone.
+
+00:35:52.949 --> 00:35:54.949
+We can just go forward.
+
+00:35:54.949 --> 00:35:58.949
+It does this annoying math that no one else wants to do.
+
+00:35:58.949 --> 00:36:05.949
+When we advance far enough, it pushes things up and down, which took a while to do.
+
+00:36:09.949 --> 00:36:16.949
+This is using the exact same idea as the tolems and tolem idea.
+
+00:36:17.949 --> 00:36:20.949
+But now it's just slightly differently formatted.
+
+00:36:20.949 --> 00:36:24.949
+You can change it.
+
+00:36:24.949 --> 00:36:29.949
+This is where we're also saying instead of bubbleLeft, we have bubbleLeft2 and 3...
+
+00:36:29.949 --> 00:36:33.949
+...to give the illusion of there's different people talking here.
+
+00:36:34.949 --> 00:36:37.949
+This is just a little fun thing that isn't useful.
+
+00:36:38.949 --> 00:36:48.949
+It's essentially just a JavaScript file that helps push the bubbles up...
+
+00:36:48.949 --> 00:36:51.949
+...when it detects that we're filling the page too much.
+
+00:36:52.949 --> 00:36:56.949
+And then the CSS to do the rounding and the colors.
+
+00:36:56.949 --> 00:37:00.949
+But now that we have that, we just fill it in like this.
+
+00:37:01.949 --> 00:37:02.949
+I love this so much.
+
+00:37:02.949 --> 00:37:06.949
+I feel like somebody has to interject here and say how cool this is...
+
+00:37:06.949 --> 00:37:09.949
+...because we're all silently saying it on Discord...
+
+00:37:09.949 --> 00:37:14.949
+...and it needs to be documented on YouTube Live, that it's so cool.
+
+00:37:14.949 --> 00:37:18.949
+Rahat had said, you said this is a funny little thing that isn't useful.
+
+00:37:18.949 --> 00:37:20.949
+It's very useful.
+
+00:37:20.949 --> 00:37:24.949
+And I feel like everybody who teaches could find a use for this.
+
+00:37:25.949 --> 00:37:29.949
+And anybody who wants to get everybody's attention in a meeting...
+
+00:37:29.949 --> 00:37:32.949
+...by showing them something that they don't expect to see.
+
+00:37:32.949 --> 00:37:35.949
+This is a super, super fun thing.
+
+00:37:36.949 --> 00:37:37.949
+Another one.
+
+00:37:37.949 --> 00:37:41.949
+I'm just doing a little showcase right now of various different things.
+
+00:37:42.949 --> 00:37:45.949
+So one thing I really think fragments are useful for...
+
+00:37:45.949 --> 00:37:49.949
+...is for highlighting a word or a sentence.
+
+00:37:50.949 --> 00:37:54.949
+So if you want to put emphasis or something, obviously you can bold it.
+
+00:37:54.949 --> 00:37:56.949
+And you can bold it as a fragment.
+
+00:37:57.949 --> 00:37:59.949
+So a fragment has three stages.
+
+00:37:59.949 --> 00:38:03.949
+So it's before the fragment is being treated...
+
+00:38:03.949 --> 00:38:06.949
+...as the fragment is being treated, and after.
+
+00:38:07.949 --> 00:38:13.949
+And the simplest form of fragment just adds different CSS styling to different ones.
+
+00:38:13.949 --> 00:38:17.949
+So that's also how you can make text appear as a fragment...
+
+00:38:17.949 --> 00:38:21.949
+...because you just say made it invisible before and made it visible after.
+
+00:38:25.949 --> 00:38:27.949
+And you can do a lot with that.
+
+00:38:27.949 --> 00:38:32.949
+But there's also this JavaScript library that's been around for a while...
+
+00:38:32.949 --> 00:38:34.949
+...called Rough Notation.
+
+00:38:41.949 --> 00:38:43.949
+Where's my basic usage?
+
+00:38:44.949 --> 00:38:49.949
+So the way you use it is you have some text you want to highlight...
+
+00:38:50.949 --> 00:38:55.949
+...and then you put on it .rnFragment.
+
+00:38:55.949 --> 00:38:57.949
+So that's Rough Notation fragment.
+
+00:38:57.949 --> 00:39:00.949
+I maybe should have used a different syntax for this.
+
+00:39:00.949 --> 00:39:02.949
+But basically you do that.
+
+00:39:04.949 --> 00:39:10.949
+And then when you extend, you have this highlighter thing.
+
+00:39:10.949 --> 00:39:12.949
+So it pretends to paint over it.
+
+00:39:13.949 --> 00:39:16.949
+But it also has other modes.
+
+00:39:17.949 --> 00:39:21.949
+But it has this handwritten feel to it.
+
+00:39:21.949 --> 00:39:24.949
+So it has a little bit of noise in it.
+
+00:39:24.949 --> 00:39:27.949
+And you can just add all of that in here.
+
+00:39:28.949 --> 00:39:32.949
+And since it's a fragment, it's like an extra step in your slides.
+
+00:39:32.949 --> 00:39:35.949
+It doesn't show and then you hit the next on your slide...
+
+00:39:35.949 --> 00:39:38.949
+...and it's sort of an animation that it's highlighting and underlining.
+
+00:39:39.949 --> 00:39:43.949
+And it's just a way of emphasizing a thing that happens.
+
+00:39:43.949 --> 00:39:48.949
+And there's a bunch of different types that you can do.
+
+00:39:48.949 --> 00:39:50.949
+And you can change the colors.
+
+00:39:50.949 --> 00:39:52.949
+And there's a bunch of different arguments.
+
+00:39:52.949 --> 00:39:54.949
+You can change color and whatever.
+
+00:39:54.949 --> 00:39:58.949
+All of them just happen with the inline.
+
+00:40:01.949 --> 00:40:03.949
+So this doesn't work here.
+
+00:40:03.949 --> 00:40:06.949
+Can you see all the reaction emojis that are happening?
+
+00:40:06.949 --> 00:40:08.949
+No, they're not popping out.
+
+00:40:08.949 --> 00:40:10.949
+I don't know if you can.
+
+00:40:10.949 --> 00:40:12.949
+They're all like, we're mind-blown.
+
+00:40:13.949 --> 00:40:17.949
+And I spent some time trying to make it as usable as possible.
+
+00:40:17.949 --> 00:40:20.949
+You can set colors in different ways and whatever.
+
+00:40:21.949 --> 00:40:23.949
+Oh, and one thing.
+
+00:40:23.949 --> 00:40:25.949
+It took a long time to work.
+
+00:40:25.949 --> 00:40:27.949
+So there's a different extension.
+
+00:40:27.949 --> 00:40:29.949
+This is not my extension.
+
+00:40:41.949 --> 00:40:44.949
+So this extension right here...
+
+00:40:45.949 --> 00:40:49.949
+...solves another problem.
+
+00:40:49.949 --> 00:40:52.949
+That is, if you have Toad...
+
+00:40:53.949 --> 00:40:57.949
+So you can add fragments and styling to text itself.
+
+00:40:57.949 --> 00:41:02.949
+But it's really hard to do it in the Toad chunks that happen.
+
+00:41:03.949 --> 00:41:07.949
+Because of various reasons, that's what's really hard to do.
+
+00:41:07.949 --> 00:41:12.949
+So Flourish is an extension that allows you to...
+
+00:41:15.949 --> 00:41:20.949
+...make fragments happen on your Toad itself.
+
+00:41:23.949 --> 00:41:25.949
+I was able to line it up.
+
+00:41:25.949 --> 00:41:27.949
+In Toad chunks?
+
+00:41:27.949 --> 00:41:28.949
+Yeah.
+
+00:41:28.949 --> 00:41:29.949
+Okay.
+
+00:41:29.949 --> 00:41:31.949
+So here we have a Toad chunk.
+
+00:41:31.949 --> 00:41:34.949
+But let's say we want to highlight a word here.
+
+00:41:34.949 --> 00:41:36.949
+We'll obviously highlight the word up here.
+
+00:41:36.949 --> 00:41:38.949
+But we can also...
+
+00:41:38.949 --> 00:41:40.949
+This was just a box around ggplot2.
+
+00:41:40.949 --> 00:41:42.949
+Or ggplot.
+
+00:41:42.949 --> 00:41:46.949
+We can use the Flourish syntax...
+
+00:41:46.949 --> 00:41:50.949
+...with the rough notation...
+
+00:41:50.949 --> 00:41:53.949
+...if they're both installed at the same time.
+
+00:41:53.949 --> 00:41:56.949
+It will note, hey, I've seen both.
+
+00:41:56.949 --> 00:41:58.949
+And then there's a thing around it.
+
+00:41:58.949 --> 00:42:03.949
+So you can also do the rough notation in Toad chunks...
+
+00:42:03.949 --> 00:42:05.949
+...which before wasn't a thing.
+
+00:42:05.949 --> 00:42:09.949
+Because I'm doing things weirdly to make things happen here.
+
+00:42:10.949 --> 00:42:12.949
+All right.
+
+00:42:20.949 --> 00:42:21.949
+This is so cool.
+
+00:42:21.949 --> 00:42:22.949
+I wanted to ask.
+
+00:42:22.949 --> 00:42:26.949
+The rough notation is like a JavaScript library on its own, right?
+
+00:42:26.949 --> 00:42:27.949
+Yeah.
+
+00:42:27.949 --> 00:42:29.949
+So this is under bundling it in.
+
+00:42:29.949 --> 00:42:33.949
+And I'm technically bundling in...
+
+00:42:33.949 --> 00:42:36.949
+...something that happened in a branch.
+
+00:42:36.949 --> 00:42:42.949
+Because I wanted the animation to also work in reverse.
+
+00:42:42.949 --> 00:42:46.949
+And the project is basically abandoned.
+
+00:42:46.949 --> 00:42:50.949
+But someone did a PR to make animations happen in reverse.
+
+00:42:50.949 --> 00:42:52.949
+And I'm stealing that too.
+
+00:42:52.949 --> 00:42:53.949
+Well, with attribution.
+
+00:42:53.949 --> 00:42:56.949
+But it's happening.
+
+00:42:56.949 --> 00:43:02.949
+One thing that I'm actively working on right now...
+
+00:43:02.949 --> 00:43:05.949
+...but also is public is...
+
+00:43:05.949 --> 00:43:08.949
+Let's go into the sample slide.
+
+00:43:12.949 --> 00:43:18.949
+So one of the issues when you're writing slides...
+
+00:43:18.949 --> 00:43:22.949
+...is that you might think, oh, I kind of don't...
+
+00:43:22.949 --> 00:43:24.949
+Like the image here is fine.
+
+00:43:24.949 --> 00:43:29.949
+But I want to move it just a little bit.
+
+00:43:29.949 --> 00:43:32.949
+And the normal approach to do that is...
+
+00:43:32.949 --> 00:43:34.949
+Here I set it with absolute.
+
+00:43:34.949 --> 00:43:39.949
+So adding this absolute class to basically anything...
+
+00:43:39.949 --> 00:43:41.949
+...but really with images.
+
+00:43:41.949 --> 00:43:45.949
+You're specifying the position with left, right, top, and bottom.
+
+00:43:45.949 --> 00:43:46.949
+And you specify the widths.
+
+00:43:46.949 --> 00:43:48.949
+And it moves around.
+
+00:43:48.949 --> 00:43:52.949
+But let's say I kind of want this to be a little bit more to the right.
+
+00:43:53.949 --> 00:44:00.949
+You can go in here and change it to be 10 pixels to the left.
+
+00:44:00.949 --> 00:44:01.949
+And then you render.
+
+00:44:01.949 --> 00:44:03.949
+And it moves over a little bit, or maybe a little more.
+
+00:44:03.949 --> 00:44:05.949
+And you do 20.
+
+00:44:05.949 --> 00:44:07.949
+And it moves over just a little bit by a little bit.
+
+00:44:07.949 --> 00:44:10.949
+But this can just take a while to do.
+
+00:44:10.949 --> 00:44:14.949
+And so where this extension comes in...
+
+00:44:14.949 --> 00:44:21.949
+You install the editable extension the way you would all the other ones.
+
+00:44:21.949 --> 00:44:23.949
+And you add little things to the YAML.
+
+00:44:23.949 --> 00:44:25.949
+Sometimes you need to add things.
+
+00:44:25.949 --> 00:44:27.949
+Oh, that's probably why the chat thing didn't work.
+
+00:44:27.949 --> 00:44:30.949
+Because I didn't finish installation.
+
+00:44:30.949 --> 00:44:36.949
+But you need to add it as probably a filter in the YAML to activate it.
+
+00:44:36.949 --> 00:44:38.949
+But all of that is on the README.
+
+00:44:38.949 --> 00:44:42.949
+So if you follow the README, it should just work.
+
+00:44:42.949 --> 00:44:46.949
+But if you have the editable extension installed...
+
+00:44:46.949 --> 00:44:53.949
+You will see that in the slide area, there's also a little bit of a menu at the top.
+
+00:44:53.949 --> 00:44:59.949
+So if you click on the modify...
+
+00:44:59.949 --> 00:45:01.949
+This looks kind of weird.
+
+00:45:01.949 --> 00:45:04.949
+But essentially, clicking on the modify...
+
+00:45:04.949 --> 00:45:08.949
+I can click on a thing like this text field over here.
+
+00:45:08.949 --> 00:45:12.949
+And I can move it a little bit around.
+
+00:45:13.949 --> 00:45:16.949
+Oh, that doesn't work yet. Shoot.
+
+00:45:16.949 --> 00:45:23.949
+If we add another text field down here...
+
+00:45:23.949 --> 00:45:30.949
+And modify it, I can say, like, hello, data science lab.
+
+00:45:30.949 --> 00:45:38.949
+And I want data science to be purple.
+
+00:45:38.949 --> 00:45:41.949
+But I'm also moving the image around a little bit.
+
+00:45:42.949 --> 00:45:44.949
+This is a bad idea, right?
+
+00:45:44.949 --> 00:45:48.949
+Anybody who has not worked in Core 2 Slides...
+
+00:45:48.949 --> 00:45:54.949
+You might not realize that clicking and dragging things like this...
+
+00:45:54.949 --> 00:45:58.949
+In a visual editor mode is not possible.
+
+00:45:58.949 --> 00:46:03.949
+This is completely only made possible by Emil's extension.
+
+00:46:03.949 --> 00:46:06.949
+So it's still a little slow.
+
+00:46:06.949 --> 00:46:09.949
+So as you saw, you modify some things.
+
+00:46:09.949 --> 00:46:16.949
+You click save, and then you find where it isn't overrided.
+
+00:46:16.949 --> 00:46:19.949
+You can also copy it and paste it in.
+
+00:46:19.949 --> 00:46:24.949
+But then hopefully, it's still very well in progress, some of these new things.
+
+00:46:24.949 --> 00:46:26.949
+Oh, so the image disappeared.
+
+00:46:26.949 --> 00:46:28.949
+Oh, we lost it somehow.
+
+00:46:28.949 --> 00:46:32.949
+But it basically moves things around.
+
+00:46:32.949 --> 00:46:36.949
+And when it releases, it doesn't have these issues.
+
+00:46:36.949 --> 00:46:41.949
+So it basically allows you to modify things on the slide side.
+
+00:46:41.949 --> 00:46:42.949
+Yes.
+
+00:46:42.949 --> 00:46:46.949
+And this is a work-in-progress version that Emil is using.
+
+00:46:46.949 --> 00:46:47.949
+Yeah.
+
+00:46:47.949 --> 00:46:50.949
+Like, this should work.
+
+00:46:50.949 --> 00:46:52.949
+The ones you download should work.
+
+00:46:52.949 --> 00:46:54.949
+But I'm adding a lot of...
+
+00:46:54.949 --> 00:46:57.949
+Basically, the modify button doesn't work yet.
+
+00:46:57.949 --> 00:47:07.949
+But the way you have to do things before was you put an editable class to something.
+
+00:47:07.949 --> 00:47:09.949
+So you have to specify the source document.
+
+00:47:09.949 --> 00:47:12.949
+Hey, I want editable on this image.
+
+00:47:12.949 --> 00:47:14.949
+And then we can modify it over.
+
+00:47:14.949 --> 00:47:19.949
+If you hold shift, it understands the ratios.
+
+00:47:19.949 --> 00:47:24.949
+You can set opacity or flip things around.
+
+00:47:24.949 --> 00:47:29.949
+And then when we save it, it overwrites.
+
+00:47:29.949 --> 00:47:30.949
+It updates over here.
+
+00:47:30.949 --> 00:47:35.949
+So now when we re-render it, now it's no longer editable.
+
+00:47:35.949 --> 00:47:38.949
+But it remembered everything we did.
+
+00:47:38.949 --> 00:47:43.949
+Andrew says, this is magic.
+
+00:47:43.949 --> 00:47:45.949
+So this will get better over time.
+
+00:47:45.949 --> 00:47:48.949
+Surely, but slowly.
+
+00:47:48.949 --> 00:47:53.949
+It will be faster for many things.
+
+00:47:53.949 --> 00:47:58.949
+And there's a lot of code to make this happen.
+
+00:47:58.949 --> 00:48:06.949
+Because I'm technically parsing the Twitter document in JavaScript with regular expressions, which you shouldn't do.
+
+00:48:06.949 --> 00:48:09.949
+But that will be...
+
+00:48:09.949 --> 00:48:17.949
+With the Twotto2, that can be linked somewhere.
+
+00:48:17.949 --> 00:48:21.949
+They're rewriting Twotto in Rust from the ground up.
+
+00:48:21.949 --> 00:48:25.949
+And that is improving speeds a lot.
+
+00:48:25.949 --> 00:48:33.949
+And once we have that with this, then suddenly we have a much faster feedback loop.
+
+00:48:33.949 --> 00:48:35.949
+But the problem is, here's a slide.
+
+00:48:35.949 --> 00:48:37.949
+It's one slide. It doesn't take any time.
+
+00:48:37.949 --> 00:48:44.949
+But the re-render still takes a couple of seconds, depending on how long your slides are.
+
+00:48:44.949 --> 00:48:55.949
+So modifying something, pressing preview, then modifying it on the right-hand side, clicking save.
+
+00:48:55.949 --> 00:48:58.949
+And then have to re-wait for the render again.
+
+00:48:58.949 --> 00:49:02.949
+Even if it takes a couple of seconds, that becomes quite a slow loop.
+
+00:49:02.949 --> 00:49:07.949
+Where the new render is so much faster.
+
+00:49:07.949 --> 00:49:13.949
+So it will feel instantaneously once we have it set up with Twotto2.
+
+00:49:13.949 --> 00:49:18.949
+Amazing. Okay. So we have five to six minutes left.
+
+00:49:18.949 --> 00:49:22.949
+We have a couple of questions that we could get to.
+
+00:49:22.949 --> 00:49:29.949
+And also, is there any other extension that you are burning to show us that's very cool?
+
+00:49:29.949 --> 00:49:32.949
+Or should we go to questions?
+
+00:49:32.949 --> 00:49:35.949
+Think of the Maya one.
+
+00:49:36.949 --> 00:49:43.949
+So this is slightly different than extensions.
+
+00:49:43.949 --> 00:49:46.949
+It was Twotto theme.
+
+00:49:46.949 --> 00:49:49.949
+And then you install it.
+
+00:49:49.949 --> 00:49:56.949
+So here is the Twotto use template and then the VLJ, Sync to the Maya.
+
+00:49:56.949 --> 00:49:59.949
+It also topics a whole bunch of things.
+
+00:49:59.949 --> 00:50:05.949
+But it is this Sync to the Maya theme that I was working on.
+
+00:50:05.949 --> 00:50:08.949
+So it's just fun and happy.
+
+00:50:08.949 --> 00:50:14.949
+I think the concept of this translates really well into just, you can create themes for slide decks if you want to.
+
+00:50:14.949 --> 00:50:20.949
+And we might want to talk about more of that later in the future if people are interested.
+
+00:50:20.949 --> 00:50:29.949
+But a lot of the hard work with setting up slides can be the first time.
+
+00:50:29.949 --> 00:50:36.949
+And if you're doing it in a corporate setting, you don't want all your people to redo all this work all the time.
+
+00:50:36.949 --> 00:50:45.949
+So you can have one person or a group of people make your theme and then make it into a Twotto theme.
+
+00:50:45.949 --> 00:50:48.949
+And then people just have to import it once.
+
+00:50:48.949 --> 00:50:50.949
+It copies all the things over.
+
+00:50:50.949 --> 00:50:52.949
+And then you just fill in content.
+
+00:50:52.949 --> 00:50:57.949
+You don't have to worry about, oh, are the colors correct? Are the sizing right?
+
+00:50:57.949 --> 00:50:59.949
+You can do little neat things like here.
+
+00:50:59.949 --> 00:51:05.949
+So I called this a slide theme.
+
+00:51:05.949 --> 00:51:12.949
+So basically for each slide, I have a theme dash and then a name.
+
+00:51:12.949 --> 00:51:17.949
+So title one, title two, section, and whatever.
+
+00:51:17.949 --> 00:51:25.949
+And obviously, they're all similar in vibe of fonts and colors and sizes.
+
+00:51:25.949 --> 00:51:32.949
+But also this one, I know that, hey, we have some flourish here on the right-hand side of the slide.
+
+00:51:32.949 --> 00:51:35.949
+So we are constraining everything to be the left-hand side.
+
+00:51:35.949 --> 00:51:43.949
+So you can have just nice little things like this.
+
+00:51:43.949 --> 00:51:45.949
+But I highly recommend it.
+
+00:51:45.949 --> 00:51:47.949
+And then this is just a copy-paste.
+
+00:51:47.949 --> 00:51:58.949
+If you use this, it just copies over this template file that just kind of has all the things, the CSS file.
+
+00:51:58.949 --> 00:52:05.949
+And yeah, so it's very light in what it actually does.
+
+00:52:05.949 --> 00:52:06.949
+Very cool.
+
+00:52:06.949 --> 00:52:07.949
+Okay.
+
+00:52:07.949 --> 00:52:10.949
+Well, we have a poll going in Discord asking,
+
+00:52:10.949 --> 00:52:15.949
+do we want Emil to come back and talk about slide themes so that we can deep dive into it?
+
+00:52:15.949 --> 00:52:20.949
+And so far, it is exclusively yes votes, and it's climbing.
+
+00:52:20.949 --> 00:52:28.949
+So I think that Emil might be at the top of the leaderboard very soon for repeat data science lab leaders.
+
+00:52:28.949 --> 00:52:30.949
+We have a couple of questions.
+
+00:52:30.949 --> 00:52:40.949
+One is from Raha, and she was asking if there is a Korto extension that can help dynamically create tabs or chunks.
+
+00:52:40.949 --> 00:52:43.949
+And this might be something that Raha needs to explain herself.
+
+00:52:43.949 --> 00:52:47.949
+But she says, say I'm working on a Korto report, and I want to create a series of tabs,
+
+00:52:47.949 --> 00:52:51.949
+but the name and the number of the tabs is not something I know in advance,
+
+00:52:51.949 --> 00:52:53.949
+and I figure it out in the report based on my data.
+
+00:52:53.949 --> 00:52:59.949
+So I basically write code to write the code and render it so it looks like tabs and chunks,
+
+00:52:59.949 --> 00:53:01.949
+but it's messy and it takes a lot of work.
+
+00:53:01.949 --> 00:53:04.949
+Oh, yeah.
+
+00:53:04.949 --> 00:53:07.949
+She did put an example of her code, by the way,
+
+00:53:07.949 --> 00:53:15.949
+which is like looping over and creating the right number for the right number of variables that she's got.
+
+00:53:15.949 --> 00:53:16.949
+Yeah.
+
+00:53:16.949 --> 00:53:23.949
+So I'll have to look at that, and I can get back into the – because this is Discord, right?
+
+00:53:23.949 --> 00:53:25.949
+Yes, in Discord.
+
+00:53:25.949 --> 00:53:26.949
+Yeah.
+
+00:53:26.949 --> 00:53:28.949
+So I'll loop around and see.
+
+00:53:28.949 --> 00:53:35.949
+So my first instinct is – so since everything here is based on HTML,
+
+00:53:35.949 --> 00:53:41.949
+there's this HTML tools package that you can use to help put things in,
+
+00:53:41.949 --> 00:53:46.949
+and you just have to make sure styling works with it.
+
+00:53:46.949 --> 00:53:55.949
+So I think I'll be better helped by just looking at the example and the more precise feedback here.
+
+00:53:55.949 --> 00:53:56.949
+Okay, great.
+
+00:53:56.949 --> 00:53:58.949
+We will continue talking about this.
+
+00:53:58.949 --> 00:54:01.949
+Maybe it doesn't exist yet, but maybe it could exist.
+
+00:54:01.949 --> 00:54:06.949
+And then Andrew had asked about seeing some slides at a conference
+
+00:54:06.949 --> 00:54:09.949
+and seeing that they were highlighting code chunks,
+
+00:54:09.949 --> 00:54:12.949
+so certain sections of the code were more prominent or emphasized,
+
+00:54:12.949 --> 00:54:18.949
+and I wanted to let everybody know that that is actually a default capability in Quarto,
+
+00:54:18.949 --> 00:54:19.949
+is code highlighting.
+
+00:54:19.949 --> 00:54:23.949
+So you can make it so that your code chunks have highlighting in them.
+
+00:54:23.949 --> 00:54:24.949
+Yeah.
+
+00:54:24.949 --> 00:54:25.949
+There we go.
+
+00:54:25.949 --> 00:54:26.949
+That's a great example.
+
+00:54:26.949 --> 00:54:27.949
+So we have that here with the code highlighting.
+
+00:54:27.949 --> 00:54:30.949
+Like code line numbers, you pass in a range.
+
+00:54:30.949 --> 00:54:36.949
+You can also do – if you pass in a range, here it says, like, 6 to 8.
+
+00:54:36.949 --> 00:54:39.949
+It highlights line 6 to 8.
+
+00:54:39.949 --> 00:54:40.949
+Well, it actually doesn't highlight.
+
+00:54:40.949 --> 00:54:44.949
+It actually hides everything else by fading it out.
+
+00:54:44.949 --> 00:54:50.949
+If you Thomas separate them, it's not a list.
+
+00:54:50.949 --> 00:54:55.949
+If you do the virtual bar, it basically turns into fragments
+
+00:54:55.949 --> 00:55:01.949
+by first not highlighting anything, then highlighting 6, then highlighting 9.
+
+00:55:01.949 --> 00:55:06.949
+So, yeah, this is a default thing that we can do in.
+
+00:55:06.949 --> 00:55:07.949
+Yeah.
+
+00:55:07.949 --> 00:55:08.949
+Yeah.
+
+00:55:08.949 --> 00:55:09.949
+And there's more types of highlighting.
+
+00:55:09.949 --> 00:55:11.949
+So, yeah, go take a look at the Quarto documentation
+
+00:55:11.949 --> 00:55:13.949
+to look at all the different types of highlighting.
+
+00:55:13.949 --> 00:55:14.949
+It's very cool.
+
+00:55:14.949 --> 00:55:15.949
+Okay.
+
+00:55:15.949 --> 00:55:18.949
+We have reached the top of the hour.
+
+00:55:18.949 --> 00:55:21.949
+Colin had a question that's in the Discord about getting clarity
+
+00:55:21.949 --> 00:55:25.949
+on how to embed a Reveal.js site into another Quarto document.
+
+00:55:25.949 --> 00:55:28.949
+Colin, we will hop in the Discord and help with that.
+
+00:55:28.949 --> 00:55:29.949
+Yes.
+
+00:55:29.949 --> 00:55:30.949
+Okay.
+
+00:55:30.949 --> 00:55:31.949
+Amazing.
+
+00:55:31.949 --> 00:55:34.949
+Thank you so much, Emil, for hanging out with us, teaching us so much.
+
+00:55:34.949 --> 00:55:35.949
+Thank you for having me.
+
+00:55:35.949 --> 00:55:36.949
+Yes.
+
+00:55:36.949 --> 00:55:37.949
+We're all clapping.
+
+00:55:37.949 --> 00:55:38.949
+Camera on Clue is clapping.
+
+00:55:38.949 --> 00:55:43.949
+You're getting tons of reactions and thank yous in Discord.
+
+00:55:43.949 --> 00:55:46.949
+We will find a time for you to come back and talk to us
+
+00:55:46.949 --> 00:55:49.949
+about creating themes for Slido Reveal.
+
+00:55:49.949 --> 00:55:50.949
+Not Slido.
+
+00:55:50.949 --> 00:55:51.949
+Slides.
+
+00:55:51.949 --> 00:55:53.949
+We're using Reveal.js.
+
+00:55:53.949 --> 00:55:55.949
+Slido is something different.
+
+00:55:55.949 --> 00:55:57.949
+Okay, everybody, this was so much fun.
+
+00:55:57.949 --> 00:55:59.949
+I'll see you in Discord with more questions.
+
+00:55:59.949 --> 00:56:01.949
+Thank you for voting in our polls,
+
+00:56:01.949 --> 00:56:06.949
+and I will see you on Thursday at the Data Science Hangout, perhaps.
+
+00:56:06.949 --> 00:56:08.949
+Thank you for hanging out with us, everybody.

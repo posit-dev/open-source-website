@@ -5,6 +5,8 @@ github: rstudio/shinyapps
 image: logo.svg
 people:
 - JJ Allaire
+- Jonathan McPherson
+- Kevin Ushey
 - Joe Cheng
 - Winston Chang
 title: shinyapps
@@ -20,6 +22,8 @@ external:  # updated automatically, do not edit
   last_updated: '2026-05-20T08:05:34.910144+00:00'
   people:
   - JJ Allaire
+  - Jonathan McPherson
+  - Kevin Ushey
   - Joe Cheng
   - Winston Chang
   repo: rstudio/shinyapps

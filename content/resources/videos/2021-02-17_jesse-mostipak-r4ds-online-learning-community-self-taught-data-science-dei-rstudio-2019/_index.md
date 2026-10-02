@@ -74,7 +74,7 @@ external:  # updated automatically, do not edit
   duration: 1144
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.701085+00:00'
+  last_updated: '2026-09-18T13:58:17.359979+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/haRPXmWX13c/maxresdefault.jpg
   title: 'Jesse Mostipak | R4DS online learning community: self-taught data science & DEI | RStudio (2019)'
   url: https://www.youtube.com/watch?v=haRPXmWX13c
-  view_count: 650
+  view_count: 656
 ---
 image: thumbnail.jpg
 

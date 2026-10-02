@@ -17,7 +17,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Workflow Demo Live Q&A - May 29th
 
@@ -41,16 +41,16 @@ external:  # updated automatically, do not edit
   duration: 1775
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.567082+00:00'
-  like_count: 14
+  last_updated: '2026-09-18T13:58:10.945290+00:00'
+  like_count: 13
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/d21PQyOGlgY/maxresdefault.jpg
   title: Workflow Demo Live Q&A - May 29th
   url: https://www.youtube.com/watch?v=d21PQyOGlgY
-  view_count: 606
+  view_count: 609
 ---
 image: thumbnail.jpg
 

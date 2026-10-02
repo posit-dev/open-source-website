@@ -62,13 +62,13 @@ external:  # updated automatically, do not edit
   duration: 5263
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:26.044230+00:00'
-  like_count: 19
+  last_updated: '2026-09-18T13:58:06.854271+00:00'
+  like_count: 22
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/wxHz9nTFIY8/maxresdefault.jpg
   title: Your VP Is Doing a Rogue Analysis in Cursor Right Now — with Nell Thomas
   url: https://www.youtube.com/watch?v=wxHz9nTFIY8
-  view_count: 777
+  view_count: 1004
 ---
 

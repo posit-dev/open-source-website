@@ -58,7 +58,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - rstudio
 - data science
@@ -167,11 +167,11 @@ external:  # updated automatically, do not edit
   duration: 1551
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.318377+00:00'
-  like_count: 177
+  last_updated: '2026-09-18T13:58:09.670026+00:00'
+  like_count: 179
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - rstudio
   - data science
@@ -220,7 +220,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_kjs_u3Ctt4/maxresdefault.jpg
   title: Generate 100s of custom reports in minutes with Python & Quarto! (Parameterized report automation)
   url: https://www.youtube.com/watch?v=_kjs_u3Ctt4
-  view_count: 8807
+  view_count: 9635
 ---
 image: thumbnail.jpg
 

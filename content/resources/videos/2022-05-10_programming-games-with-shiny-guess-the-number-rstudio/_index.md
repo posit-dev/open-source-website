@@ -40,7 +40,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -129,14 +129,14 @@ external:  # updated automatically, do not edit
   duration: 2101
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.955375+00:00'
+  last_updated: '2026-09-18T13:58:15.783524+00:00'
   like_count: 0
   people:
   - Barret Schloerke
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -185,7 +185,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/87rpiuRyhaQ/maxresdefault.jpg
   title: Programming Games with Shiny || Guess the Number || RStudio
   url: https://www.youtube.com/watch?v=87rpiuRyhaQ
-  view_count: 2066
+  view_count: 2082
 ---
 image: thumbnail.jpg
 

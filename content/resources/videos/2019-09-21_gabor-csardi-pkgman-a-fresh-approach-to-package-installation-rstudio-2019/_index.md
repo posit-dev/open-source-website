@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 1271
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243669+00:00'
+  last_updated: '2026-09-18T13:58:18.645864+00:00'
   like_count: 19
   people:
   - Gábor Csárdi
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/01QrIAXiJVA/maxresdefault.jpg
   title: Gabor Csardi | pkgman A fresh approach to package installation | RStudio (2019)
   url: https://www.youtube.com/watch?v=01QrIAXiJVA
-  view_count: 1015
+  view_count: 1018
 ---
 image: thumbnail.jpg
 

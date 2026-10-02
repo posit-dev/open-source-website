@@ -11,7 +11,6 @@ people:
 - Garrick Aden-Buie
 - George Stagg
 - Carson Sievert
-- Carson Sievert
 - Winston Chang
 title: r-shinylive
 topics:
@@ -33,7 +32,6 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Garrick Aden-Buie
   - George Stagg
-  - Carson Sievert
   - Carson Sievert
   - Winston Chang
   repo: posit-dev/r-shinylive

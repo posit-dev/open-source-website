@@ -1,0 +1,73 @@
+```{=html}
+<div><button class="webr-run-button" disabled type="button">Loading webR...</button></div>
+<div class="webr-editor"></div>
+<div class="webr-code-output"><pre style="visibility: hidden"></pre></div>
+<script type="module">
+  const runButton = document.getElementsByClassName('webr-run-button')[globalThis.webRIndex];
+  const editorDiv = document.getElementsByClassName('webr-editor')[globalThis.webRIndex];
+  const outputDiv = document.getElementsByClassName('webr-code-output')[globalThis.webRIndex];
+  const codeValue = globalThis.webREditorCode[globalThis.webRIndex];
+  globalThis.webRIndex++;
+  const editor = CodeMirror((elt) => {
+    elt.style.border = '1px solid #eee';
+    elt.style.height = 'auto';
+    editorDiv.append(elt);
+  },{
+    value: codeValue,
+    lineNumbers: true,
+    mode: 'r',
+    theme: 'light default',
+    viewportMargin: Infinity,
+  });
+  runButton.onclick = async () => {
+    runButton.disabled = true;
+    let canvas = undefined;
+    await webR.init();
+    await webR.evalRVoid(`webr::canvas(width = ${globalThis.webRPlotWidth}, height = ${globalThis.webRPlotHeight})`);
+    const result = await webRCodeShelter.captureR(editor.getValue(), {
+      withAutoprint: true,
+      captureStreams: true,
+      captureConditions: false,
+      captureGraphics: false,
+      env: {},
+    });
+    try {
+      await webR.evalRVoid("dev.off()");
+      const out = result.output.filter(
+        evt => evt.type == 'stdout' || evt.type == 'stderr'
+      ).map((evt) => evt.data).join('\n');
+      outputDiv.innerHTML = '';
+      const pre = document.createElement("pre");
+      if (/\S/.test(out)) {
+        const code = document.createElement("code");
+        code.innerText = out;
+        pre.appendChild(code);
+      } else {
+        pre.style.visibility = 'hidden';
+      }
+      outputDiv.appendChild(pre);
+      const msgs = await webR.flush();
+      msgs.forEach(msg => {
+        if (msg.type === 'canvas'){
+          if (msg.data.event === 'canvasImage') {
+            canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+          } else if (msg.data.event === 'canvasNewPage') {
+            canvas = document.createElement('canvas');
+            canvas.setAttribute('width', 2 * globalThis.webRPlotWidth);
+            canvas.setAttribute('height', 2 * globalThis.webRPlotHeight);
+            canvas.style.width="640px";
+            canvas.style.display="block";
+            canvas.style.margin="auto";
+            const p = document.createElement("p");
+            p.appendChild(canvas);
+            outputDiv.appendChild(p);
+          }
+        }
+      });
+    } finally {
+      webRCodeShelter.purge();
+      runButton.disabled = false;
+    }
+  }
+</script>
+```

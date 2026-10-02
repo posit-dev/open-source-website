@@ -1,0 +1,203 @@
+WEBVTT
+
+00:00:00.560 --> 00:00:05.120
+The biggest gap that I see is where organizations,
+
+00:00:05.120 --> 00:00:08.880
+they are mistaking this work that they're doing
+
+00:00:08.880 --> 00:00:10.440
+for actual output.
+
+00:00:10.440 --> 00:00:13.000
+So at the board level, we have all of these kind of,
+
+00:00:13.000 --> 00:00:15.640
+we're investing in AI initiatives,
+
+00:00:15.640 --> 00:00:17.080
+but when you think about the ground floor
+
+00:00:17.080 --> 00:00:18.799
+and where we're actually working,
+
+00:00:18.799 --> 00:00:20.840
+there's a lot of fragmentation still,
+
+00:00:20.840 --> 00:00:22.799
+and data scientists and analysts
+
+00:00:22.799 --> 00:00:24.740
+are working with different tools.
+
+00:00:24.740 --> 00:00:28.160
+And until an organization is employing data science
+
+00:00:28.200 --> 00:00:30.600
+to the level where they can actually
+
+00:00:30.600 --> 00:00:32.560
+base their business decisions on,
+
+00:00:32.560 --> 00:00:33.759
+they'll always kind of be stuck
+
+00:00:33.759 --> 00:00:35.480
+in this experimentation phase.
+
+00:00:35.480 --> 00:00:37.599
+And so that's the biggest gap I think organizations
+
+00:00:37.599 --> 00:00:39.040
+need to think about.
+
+00:00:39.040 --> 00:00:40.880
+They're delivering really good value
+
+00:00:40.880 --> 00:00:43.520
+in terms of speeding up your productivity,
+
+00:00:43.520 --> 00:00:45.520
+being able to automatically code,
+
+00:00:45.520 --> 00:00:47.320
+being able to generate things
+
+00:00:47.320 --> 00:00:49.959
+that have a lot of that high frequency.
+
+00:00:49.959 --> 00:00:53.200
+And when you start thinking about agents,
+
+00:00:53.200 --> 00:00:56.220
+it's not so much, can an agent do this?
+
+00:00:56.220 --> 00:00:58.580
+Where it falls apart is fitting that
+
+00:00:58.580 --> 00:01:00.099
+into your actual environment.
+
+00:01:00.099 --> 00:01:01.900
+So thinking about your governance,
+
+00:01:01.900 --> 00:01:03.820
+the different tools that you're working with,
+
+00:01:03.820 --> 00:01:06.660
+your whole environment as an organization.
+
+00:01:06.660 --> 00:01:09.059
+Can your agents actually adapt
+
+00:01:09.059 --> 00:01:11.379
+to your organization's environment?
+
+00:01:11.379 --> 00:01:13.300
+And so that's the biggest part
+
+00:01:13.300 --> 00:01:14.860
+where I feel like they fail.
+
+00:01:14.860 --> 00:01:17.260
+The organizations that are really successful with that
+
+00:01:17.260 --> 00:01:19.180
+are treating it more like a spectrum
+
+00:01:19.180 --> 00:01:22.260
+rather than this kind of binary automate everything
+
+00:01:22.260 --> 00:01:24.320
+or just do manual processes.
+
+00:01:24.320 --> 00:01:26.000
+So they're really looking at it
+
+00:01:26.000 --> 00:01:28.120
+from two different decisions.
+
+00:01:28.120 --> 00:01:29.839
+One, do I have this process
+
+00:01:29.839 --> 00:01:32.459
+that has high frequency and low risk?
+
+00:01:32.459 --> 00:01:34.120
+Yes, let's automate this.
+
+00:01:34.120 --> 00:01:35.599
+Do we have this other process
+
+00:01:35.599 --> 00:01:39.239
+that might be more ambiguous in terms of the result
+
+00:01:39.239 --> 00:01:42.900
+and also has a lot of risk involved in that?
+
+00:01:42.900 --> 00:01:44.919
+That's where you still want that human in the loop.
+
+00:01:44.919 --> 00:01:47.760
+And so we're not looking at everything
+
+00:01:47.760 --> 00:01:50.360
+as automate everything, throw it in there,
+
+00:01:50.360 --> 00:01:52.440
+or we're doing everything by hand.
+
+00:01:52.440 --> 00:01:54.760
+We really have to look at it from a spectrum.
+
+00:01:54.760 --> 00:01:55.599
+Yeah.
+
+00:01:56.480 --> 00:02:00.480
+It's not seeing your data science and AI organizations
+
+00:02:00.480 --> 00:02:03.580
+as kind of like this experimentation kitchen.
+
+00:02:03.580 --> 00:02:06.839
+It's really embracing AI and data
+
+00:02:06.839 --> 00:02:10.399
+as an organizational product,
+
+00:02:10.399 --> 00:02:12.740
+embedding that into your workflows
+
+00:02:12.740 --> 00:02:15.800
+and essentially making that a repeatable process.
+
+00:02:15.800 --> 00:02:17.880
+It might be one thing to take a model
+
+00:02:17.880 --> 00:02:19.860
+and be able to put it into production,
+
+00:02:19.860 --> 00:02:21.080
+but how easy is it for you
+
+00:02:21.080 --> 00:02:23.600
+to take more of your data science workflows
+
+00:02:23.600 --> 00:02:26.759
+and spread that across the organization and really scale?
+
+00:02:26.759 --> 00:02:29.559
+And unless those organizations are really looking at it
+
+00:02:29.559 --> 00:02:31.360
+from a holistic view,
+
+00:02:31.360 --> 00:02:34.600
+you're always going to be stuck in experimenting,
+
+00:02:34.600 --> 00:02:36.759
+prototyping, and not really getting things
+
+00:02:36.759 --> 00:02:38.300
+to that production level.
+

@@ -9,6 +9,8 @@ download_url: nlp-with-llms.pdf
 thumbnails:
 - page-1.png
 - page-2.png
+software:
+- mall
 languages:
 - Python
 ---

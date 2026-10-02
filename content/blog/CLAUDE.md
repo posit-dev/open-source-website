@@ -2,13 +2,13 @@
 
 For full authoring guidance — post placement, format choice, environments, previewing — see `_authoring-guide.md` in this directory.
 
-To create a new post, use the `/new-post` skill — it handles branch creation, scaffolding, frontmatter inference, and environment setup interactively. Only scaffold manually if the skill is unavailable.
+To create a new post, use the `new-post` skill — it handles branch creation, scaffolding, frontmatter inference, and environment setup interactively. Only scaffold manually if the skill is unavailable.
 
 For porting guidance, see `_porting-notes.md` (how to port) and `_editing-ported-posts.md` (working with ported posts).
 
 ## Validation
 
-Use the `/check-post` skill to validate a post's frontmatter interactively — it runs `scripts/validate-blog-posts.py`, reports issues, and can offer fixes. CI also runs this automatically on PRs that touch `content/blog/**`.
+Use the `check-post` skill to validate a post's frontmatter interactively — it runs `scripts/validate-blog-posts.py`, reports issues, and can offer fixes. CI also runs this automatically on PRs that touch `content/blog/**`.
 
 ## Required Metadata
 
@@ -104,8 +104,8 @@ Each entry in the JSON array has:
 
 ```json
 {
-  "md_path": "content/blog/tidyverse/my-post/index.md",
-  "source_path": "content/blog/tidyverse/my-post/index.qmd",  // null if no source file
+  "md_path": "content/blog/ported/tidyverse/my-post/index.md",
+  "source_path": "content/blog/ported/tidyverse/my-post/index.qmd",  // null if no source file
   "frontmatter": {
     "title": "My Post",
     "date": "2025-01-15",

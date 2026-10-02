@@ -10,10 +10,13 @@ latest_release: '2026-03-31T11:30:10+00:00'
 people:
 - Davis Vaughan
 - Lionel Henry
+- Kevin Ushey
+- Jonathan McPherson
 - Barret Schloerke
 - Dianyi Yang
 - Garrick Aden-Buie
 - Julia Silge
+- Wasim Lorgat
 title: air
 topics:
 - Best Practices
@@ -36,10 +39,13 @@ external:  # updated automatically, do not edit
   people:
   - Davis Vaughan
   - Lionel Henry
+  - Kevin Ushey
+  - Jonathan McPherson
   - Barret Schloerke
   - Dianyi Yang
   - Garrick Aden-Buie
   - Julia Silge
+  - Wasim Lorgat
   readme_image: docs/images/air.png
   repo: posit-dev/air
   stars: 421

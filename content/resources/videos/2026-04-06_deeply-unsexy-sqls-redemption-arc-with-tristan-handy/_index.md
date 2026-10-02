@@ -60,8 +60,8 @@ external:  # updated automatically, do not edit
   duration: 4128
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:26.044196+00:00'
-  like_count: 19
+  last_updated: '2026-09-18T13:58:06.854237+00:00'
+  like_count: 21
   people:
   - Hadley Wickham
   - Michael Chow
@@ -70,6 +70,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/VrERkCt0-4U/maxresdefault.jpg
   title: 'Deeply Unsexy: SQL''s Redemption Arc — with Tristan Handy'
   url: https://www.youtube.com/watch?v=VrERkCt0-4U
-  view_count: 696
+  view_count: 816
 ---
 

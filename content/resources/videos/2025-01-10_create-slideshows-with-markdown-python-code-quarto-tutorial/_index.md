@@ -47,7 +47,7 @@ resource_type: video
 resources: []
 software:
 - brand-yml
-- Quarto
+- quarto
 - revealjs
 tags:
 - rstudio
@@ -125,12 +125,12 @@ external:  # updated automatically, do not edit
   duration: 2410
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.318168+00:00'
-  like_count: 228
+  last_updated: '2026-09-18T13:58:09.332717+00:00'
+  like_count: 258
   playlist: ''
   software:
   - brand-yml
-  - Quarto
+  - quarto
   - revealjs
   tags:
   - rstudio
@@ -160,7 +160,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kWnMc0GwX-U/maxresdefault.jpg
   title: Create slideshows with Markdown & Python Code! (Quarto Tutorial)
   url: https://www.youtube.com/watch?v=kWnMc0GwX-U
-  view_count: 9645
+  view_count: 11773
 ---
 image: thumbnail.jpg
 

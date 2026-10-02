@@ -4,10 +4,11 @@ description: "To join future data science hangouts, add it to your calendar here
 image: thumbnail.jpg
 people:
 - Joe Cheng
+- Jonathan McPherson
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags: []
 title: Posit Conf 2025 Keynote Previews | Kieran Healy & Jonathan McPherson | Data Science Hangout
@@ -21,19 +22,20 @@ external:  # updated automatically, do not edit
   duration: 3260
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.006522+00:00'
+  last_updated: '2026-09-18T13:58:08.949220+00:00'
   like_count: 18
   people:
   - Joe Cheng
+  - Jonathan McPherson
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/1sROVZ83FNg/maxresdefault.jpg
   title: Posit Conf 2025 Keynote Previews | Kieran Healy & Jonathan McPherson | Data Science Hangout
   url: https://www.youtube.com/watch?v=1sROVZ83FNg
-  view_count: 863
+  view_count: 877
 ---
 image: thumbnail.jpg
 

@@ -16,8 +16,8 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - shinylive
 tags:
 - rstudio
@@ -83,15 +83,15 @@ external:  # updated automatically, do not edit
   duration: 242
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.607799+00:00'
+  last_updated: '2026-09-18T13:58:14.441396+00:00'
   like_count: 57
   people:
   - Winston Chang
   playlist: ''
   software:
   - rstudio
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - shinylive
   tags:
   - rstudio
@@ -141,7 +141,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qEyE-tRZn90/maxresdefault.jpg
   title: Multiple Inputs in Shiny for Python || Winston Chang || RStudio
   url: https://www.youtube.com/watch?v=qEyE-tRZn90
-  view_count: 7419
+  view_count: 7601
 ---
 image: thumbnail.jpg
 

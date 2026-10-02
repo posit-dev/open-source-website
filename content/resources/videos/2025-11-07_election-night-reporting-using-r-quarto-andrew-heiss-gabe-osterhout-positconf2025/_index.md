@@ -20,7 +20,7 @@ resources: []
 software:
 - dbplyr
 - leaflet
-- Quarto
+- quarto
 tags:
 - posit::conf(2025)
 - rstats
@@ -51,16 +51,16 @@ external:  # updated automatically, do not edit
 
 
     📁 GitHub Repo - https://github.com/andrewheiss/election-desk posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
-  duration: 1339
+  duration: 1340
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.604644+00:00'
-  like_count: 32
+  last_updated: '2026-09-18T13:58:08.448380+00:00'
+  like_count: 34
   playlist: ''
   software:
   - dbplyr
   - leaflet
-  - Quarto
+  - quarto
   tags:
   - posit::conf(2025)
   - rstats
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UCloM4GcfVY/maxresdefault.jpg
   title: Election Night Reporting Using R & Quarto (Andrew Heiss & Gabe Osterhout) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=UCloM4GcfVY
-  view_count: 745
+  view_count: 874
 ---
 image: thumbnail.jpg
 

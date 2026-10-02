@@ -19,13 +19,13 @@ external:  # updated automatically, do not edit
   forks: 13
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.210275+00:00'
+  last_updated: '2026-09-18T14:26:30.386517+00:00'
   latest_release: '2022-06-11T08:15:53+00:00'
   license: NOASSERTION
   people:
   - Jeroen Ooms
   repo: r-lib/sodium
-  stars: 72
+  stars: 74
   title: sodium
   website: https://docs.ropensci.org/sodium
 ---

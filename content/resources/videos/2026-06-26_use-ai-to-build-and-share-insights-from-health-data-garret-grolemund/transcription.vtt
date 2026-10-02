@@ -1,0 +1,5518 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:08.000
+Welcome. Excited today to kick off the APAC workshop here through RnPharma. We just had
+
+00:00:08.720 --> 00:00:14.560
+a good, gosh, probably about six to seven hours of talks this morning. We'll be posting
+
+00:00:15.200 --> 00:00:23.280
+those videos on the YouTube RnPharma in a couple weeks from now. Now for the APAC session,
+
+00:00:23.280 --> 00:00:29.040
+we've got an exciting hands-on workshop with Garret Grolemund. Garret's going to take you
+
+00:00:29.040 --> 00:00:34.480
+through working with Positron, working with AI, and doing some exciting work with querychat.
+
+00:00:35.520 --> 00:00:39.439
+And so feel free to ask questions. This is going to be a hands-on workshop with Garret.
+
+00:00:39.439 --> 00:00:44.639
+He's a colleague of mine at Posit and leads up the educational practice. And so we're very excited to
+
+00:00:44.639 --> 00:00:51.040
+have him. It's a unique opportunity to work with Garret. So Garret, I will pass it over to you
+
+00:00:51.680 --> 00:00:56.000
+and I'll be backstage. And if you have any questions, you just let me know and I can
+
+00:00:56.000 --> 00:01:02.959
+jump back to the main lobby. Thank you so much, Phil. And thank you everyone attending and maybe
+
+00:01:02.959 --> 00:01:10.000
+watching later. Let me make things a little visual for us by sharing some slides. So I think this
+
+00:01:11.360 --> 00:01:17.760
+should be working. As Phil said, my name's Garret. I've been working alongside Phil for,
+
+00:01:17.760 --> 00:01:23.919
+I guess, over a decade now at a company called Posit. Before that, we were known as RStudio,
+
+00:01:23.919 --> 00:01:30.160
+and we do a lot of work creating open source packages for data scientists. And that's why
+
+00:01:30.160 --> 00:01:36.559
+I'm here today to talk about some more recent work in the world of AI that we've done. And
+
+00:01:37.360 --> 00:01:43.919
+I have some data just to sort of provide a macguffin for us to work with this. Now, it's
+
+00:01:43.919 --> 00:01:48.959
+more healthcare related, so it might be a little further from what some of you who are primarily in
+
+00:01:48.959 --> 00:01:55.599
+pharmacy are doing at this conference, but this talk will mostly be about the tools that we use
+
+00:01:55.599 --> 00:02:00.320
+to touch this data. And those tools, I'm very confident, will be useful for you no matter what
+
+00:02:00.320 --> 00:02:04.160
+it is you're doing with the data. But what is this data that we're going to use today?
+
+00:02:05.279 --> 00:02:11.199
+It's just a simulated data set of incident rates for different types of cancer in one of the states
+
+00:02:11.199 --> 00:02:16.559
+in the United States. This is the state of Georgia. And it's the sort of data that you might use to
+
+00:02:16.559 --> 00:02:22.240
+find hot spots of different types of diseases. This is an actual snapshot of the data, but as I
+
+00:02:22.240 --> 00:02:28.399
+said, the data is not going to matter as much as the tools today. We're going to use those tools
+
+00:02:28.399 --> 00:02:32.720
+in this data set to build something that looks like this over the next two hours.
+
+00:02:32.720 --> 00:02:38.080
+This is an interactive app that includes a map, a table, and a plot, and it can include anything
+
+00:02:38.080 --> 00:02:45.119
+else you want to build with R. But what it uniquely includes on the side here will be a chat bot
+
+00:02:45.119 --> 00:02:51.199
+powered by an AI model, something like Anthropic Cloud or something like Amazon Bedrock or
+
+00:02:51.199 --> 00:02:57.440
+ChatGPT, that sort of thing. And researchers will be able to use the apps that you make like this
+
+00:02:57.440 --> 00:03:01.919
+to ask questions of the data. The components of the app will update based on what they're
+
+00:03:01.919 --> 00:03:06.960
+searching for. And since they're talking to an intelligent chat bot, they could ask questions
+
+00:03:06.960 --> 00:03:11.360
+of the data that would be really hard to sort of formulate by moving sliders around
+
+00:03:11.360 --> 00:03:18.160
+or selecting things from drop-down menus. Now we got an hour, well, 115 minutes to get there.
+
+00:03:18.160 --> 00:03:22.960
+So we'll start simple with R, and then we'll progressively build more and more
+
+00:03:22.960 --> 00:03:30.240
+sophisticated ways of reporting the things that you make with R to non-R users, finishing at
+
+00:03:30.240 --> 00:03:37.360
+what I'm going to call a query chat app, which is what this is. So for the couple of you who
+
+00:03:37.360 --> 00:03:44.399
+are here, this is Zoom, and there should be a green pencil icon down at the bottom corner.
+
+00:03:44.399 --> 00:03:50.399
+And I want to ask you a few questions that'd be hard to sort of coordinate through the chat.
+
+00:03:51.039 --> 00:03:56.399
+So look for that pencil icon. It's an annotate icon. Click it, and that should give you a pencil
+
+00:03:56.399 --> 00:04:00.639
+that you could actually use to draw on my screen and see if you could use it to circle, like the
+
+00:04:00.639 --> 00:04:05.279
+green text that says circle me. And then I'll know this is working and we can proceed. If not, I'll
+
+00:04:05.279 --> 00:04:21.920
+fall back to the backup plan. If you're having trouble, if you're trying to do this and it's not
+
+00:04:21.920 --> 00:04:26.880
+working, please just drop me a line in the Zoom chat. I can see anything there, but I don't see
+
+00:04:27.519 --> 00:04:32.799
+any annotations happening. So I'm going to assume either people aren't interested in interacting
+
+00:04:32.799 --> 00:04:37.839
+right now or maybe something about the Zoom webinar prevents annotations.
+
+00:04:40.480 --> 00:04:47.679
+Yeah, Garrett, I was looking backstage. I don't know if we have the annotate capability for the
+
+00:04:47.679 --> 00:04:53.760
+audience because I think it has been disabled with Zoom. So I don't know if there's a way for
+
+00:04:53.760 --> 00:04:59.359
+us to add it here for the participants. So I think the main way to communicate with them is through
+
+00:04:59.359 --> 00:05:08.799
+the chat built in to Zoom. Yeah, that'll work. Okay, thanks. Zoom comes in a variety of flavors,
+
+00:05:08.799 --> 00:05:14.959
+so I never really know what to expect. But this is actually the Zoom conference platform,
+
+00:05:14.959 --> 00:05:21.920
+so it's even different than regular Zoom. So we can't circle anything here, but I do want to know
+
+00:05:22.559 --> 00:05:29.519
+what IDEs you use so I could speak to that. And this is very simple. Just count across the screen.
+
+00:05:30.480 --> 00:05:35.440
+Well, actually, there's not many of us here right now. So if you could take a moment and just type
+
+00:05:35.440 --> 00:05:41.279
+in the Zoom chat, which I know people have access to, the names of the IDs here that you're used to.
+
+00:05:41.279 --> 00:05:45.279
+And if you're used to one that's not here, put that there too, and that could help me
+
+00:05:45.279 --> 00:05:47.040
+invest time where it matters to you.
+
+00:05:52.399 --> 00:05:56.239
+All of them. Hey, that's great, Daniel.
+
+00:06:04.880 --> 00:06:07.440
+All right. RStudio and Positron.
+
+00:06:12.799 --> 00:06:17.920
+Positron. Okay, how about that? All right. So it sounds like people are pretty familiar
+
+00:06:17.920 --> 00:06:21.359
+with Positron. I'll try to point out the essential things as we go, but I won't spend
+
+00:06:21.359 --> 00:06:26.799
+too much time explaining this ID that you may already have used. I put right here in the middle
+
+00:06:26.799 --> 00:06:31.279
+between RStudio and VS Code because it borrows from both of those. And so if you use any of those
+
+00:06:31.279 --> 00:06:37.760
+three IDs today, or if you use them, what you see today will look familiar to you. All right.
+
+00:06:39.119 --> 00:06:43.679
+All right. So let's get our own instance of Positron. This is meant to be an interactive
+
+00:06:43.679 --> 00:06:49.600
+workshop, and you can interact with it by going to this URL. I'm going to put it in the chat,
+
+00:06:49.600 --> 00:06:54.160
+so you could just click on it. And while you're doing that, I will go there as well.
+
+00:06:54.720 --> 00:06:59.359
+It's workshop.posit.team. And this is an instance.
+
+00:07:04.399 --> 00:07:10.239
+This is an instance of some hosting products that Posit makes that we'll be able to use
+
+00:07:10.239 --> 00:07:16.320
+to access the data and also to access some AI throughout the workshop. So go there. It's like
+
+00:07:16.320 --> 00:07:20.000
+a sandbox that you could get messy in and not have to worry about the consequences.
+
+00:07:20.959 --> 00:07:27.359
+When you go to that URL, you'll see a screen like this. These are the three products in Posit team.
+
+00:07:27.359 --> 00:07:31.519
+And we're going to use those today just for simplicity. And we're going to use the Workbench
+
+00:07:31.519 --> 00:07:36.000
+product. So the first thing I want you to do is click Posit Workbench if you're following along.
+
+00:07:37.839 --> 00:07:42.640
+And that will launch Posit Workbench, which is a server product that spins up.
+
+00:07:43.600 --> 00:07:48.239
+Here we go. Get right in there. Let me sign out. It spins up sessions where you can write code,
+
+00:07:48.239 --> 00:07:52.880
+like we'll be doing today. Now, when you go to Posit Workbench, it'll ask you to sign in. It
+
+00:07:52.880 --> 00:07:58.320
+will look like this. Once you click Sign In with OpenID, this is your first time at this server,
+
+00:07:58.320 --> 00:08:03.600
+I anticipate, although maybe you were here earlier in the day. But what I recommend you do is go to
+
+00:08:03.600 --> 00:08:09.040
+the bottom of the signup where it says Register, and we'll all just create new free accounts.
+
+00:08:10.000 --> 00:08:12.399
+So if you click Register and take a minute to fill out this form,
+
+00:08:12.959 --> 00:08:16.720
+it doesn't matter so much what you put in here. But remember what you put in here,
+
+00:08:16.720 --> 00:08:22.079
+because we will use it later to host our apps that we make. So I'm just going to
+
+00:08:22.720 --> 00:08:33.599
+make a quick account here so I don't get too far ahead of you guys. And do this along with me.
+
+00:08:40.000 --> 00:08:43.200
+Once you fill out your information, there's a little bit of a dance at the beginning,
+
+00:08:43.200 --> 00:08:47.440
+but hopefully it'll go smoothly for us. You can click Register.
+
+00:08:51.200 --> 00:08:55.919
+And then the most likely thing is you're going to get this misleading page that says,
+
+00:08:55.919 --> 00:09:01.520
+we are sorry, we don't recognize you. That's because the timing's a little off and we're
+
+00:09:01.520 --> 00:09:05.039
+actually trying to get into the product before it finishes making our accounts. There's two
+
+00:09:05.359 --> 00:09:11.359
+different pieces of software involved here. That's okay. Once you see the we are sorry sign,
+
+00:09:12.719 --> 00:09:17.599
+fix it. If you got in, that's great. Don't do anything. Just wait for me. But if you see a sign,
+
+00:09:17.599 --> 00:09:25.520
+go back to where it says sign in and then just sign in with the account you just made. So for
+
+00:09:25.679 --> 00:09:31.760
+instance, my username was gare42 and I had a password.
+
+00:09:40.159 --> 00:09:43.599
+And then that should take you through. If it takes you to this screen with
+
+00:09:43.599 --> 00:09:46.559
+the scary red message, just ignore it and click sign in.
+
+00:09:46.640 --> 00:09:52.640
+And then against all odds, you'll be in here. So this, this is a free instance of Paws at Workbench
+
+00:09:52.640 --> 00:09:58.719
+that we have access to today. Getting through the scary warning signs at the beginning is
+
+00:09:58.719 --> 00:10:03.520
+intimidating, but you should be here. If you're trying to get here and you haven't made it,
+
+00:10:03.520 --> 00:10:06.559
+let me know in the chat and I'll try to help you get through.
+
+00:10:06.559 --> 00:10:09.760
+All right. So I'll keep an eye on the chat as we go forward, but it looks like everyone
+
+00:10:10.320 --> 00:10:14.719
+is either content to watch or having success. And those are both great outcomes.
+
+00:10:15.359 --> 00:10:19.200
+So now that we're inside Paws at Workbench, what we want to do is create a session where we can
+
+00:10:19.200 --> 00:10:23.599
+write code. We'll try out all the tools we have in store for us. And to do that, all you have to do
+
+00:10:23.599 --> 00:10:28.479
+is go to the Paws at Workbench website, go to the Paws at Workbench website, go to the Paws at Workbench
+
+00:10:28.479 --> 00:10:32.799
+website, go to the Paws at Workbench website, go to the Paws at Workbench website, go to the Paws
+
+00:10:33.280 --> 00:10:43.679
+at Workbench, go to the Paws at Workbench website, go to the Paws at Workbench website,
+
+00:10:43.679 --> 00:10:49.599
+go to the Paws at Workbench website, go to the Paws at Workbench website, go to the Paws at Workbench
+
+00:10:49.599 --> 00:10:57.760
+website, go to the Paws at Workbench website, go to the Paws at Workbench website, go to the Paws
+
+00:10:57.760 --> 00:11:03.919
+image down here, we should use the very last image, that's the one that ends in A112a.
+
+00:11:05.359 --> 00:11:10.159
+So if you go to image click the drop down menu and select the last image
+
+00:11:11.599 --> 00:11:17.119
+it'll switch to A112a, there'll be a check mark next to it and that means you're good to go and
+
+00:11:17.119 --> 00:11:23.919
+all you have to do is click launch. It takes about 30 seconds sometimes a little longer
+
+00:11:24.000 --> 00:11:30.080
+to launch a new session but you could watch the progress appear up here. So my new session is
+
+00:11:30.080 --> 00:11:36.159
+pending, I'm about seven seconds into it and you're probably experiencing something similar
+
+00:11:36.159 --> 00:11:40.559
+and in a few seconds we'll be taken into a new session where we can start writing code.
+
+00:11:42.080 --> 00:11:46.799
+If it takes longer than 60 seconds that probably means there's been some miscommunication over the
+
+00:11:46.799 --> 00:11:52.080
+web and you should just hit cancel and then click new session again and the second time
+
+00:11:52.080 --> 00:11:57.840
+I work fast. So now let's move to starting
+
+00:12:01.840 --> 00:12:07.520
+and here we go it's opening up a new session on the server and this is the Positron code editor.
+
+00:12:07.520 --> 00:12:12.960
+So if you haven't seen Positron before this is what it looks like. It is a code editor that we
+
+00:12:12.960 --> 00:12:17.679
+that's free and source available so you can download this if you google Positron or go
+
+00:12:18.159 --> 00:12:22.239
+to positron.posit.co and you could use it on your desktop and there's no charge
+
+00:12:23.520 --> 00:12:32.640
+involved. It's free software. It is an instance or a fork of the open source visual studio code editor
+
+00:12:32.640 --> 00:12:37.599
+that Posit has developed a lot of features out of the box for data science that come with it
+
+00:12:37.599 --> 00:12:44.000
+including an integrated Python console or if you like an integrated R console
+
+00:12:44.880 --> 00:12:51.200
+and maybe I'll go into some of that a little bit but many other features we'll touch on some today
+
+00:12:51.200 --> 00:12:55.280
+but I like to think of as a combination of visual studio code and the R studio IDE.
+
+00:12:56.880 --> 00:13:01.359
+Now the first thing that happens whenever you open a Positron session is it wants you to choose a
+
+00:13:01.359 --> 00:13:06.719
+folder to work from. This is just like in R whenever you use R it's working from a working
+
+00:13:06.719 --> 00:13:10.640
+directory on your computer. That's the place where it looks for files. That's the place where it
+
+00:13:10.960 --> 00:13:16.320
+saves files and that's where it assumes file paths will start from. Well Positron is exactly the same
+
+00:13:16.320 --> 00:13:21.760
+and the first thing we should do is choose a folder to work out of and if you go to open
+
+00:13:21.760 --> 00:13:27.359
+folder I have a folder with today's contents in here for you so we could click open folder.
+
+00:13:29.760 --> 00:13:37.599
+No this is not here. Okay my folder for you is actually on github so don't do whatever I just
+
+00:13:37.599 --> 00:13:44.559
+did. Instead click new folder from git. If you haven't clicked anything yet that'll be one of
+
+00:13:44.559 --> 00:13:49.200
+the options here on the side or in the middle but we want to get new folder from git and this
+
+00:13:49.200 --> 00:13:58.080
+will ask us for a url to paste in here and let me fetch the url of the git repo for us.
+
+00:14:01.440 --> 00:14:06.159
+This is the repo it has the content we'll use and I'm going to paste it into the chat
+
+00:14:07.119 --> 00:14:11.919
+so you could take it you could click that link and visit the website. I actually recommend visiting
+
+00:14:11.919 --> 00:14:16.000
+the website versus copying it from zoom because I've been noticing a lot of formatting issues
+
+00:14:16.000 --> 00:14:22.559
+that zoom's inserting. Once you get to the website you can copy it from there go back to Positron
+
+00:14:22.559 --> 00:14:28.000
+and give it to Positron. All Positron needs to know is the url of this git repo and if you paste
+
+00:14:28.000 --> 00:14:34.239
+it in here don't adjust what what you see in here. I think I messed something up so I'm fixing it.
+
+00:14:37.119 --> 00:14:43.359
+Or actually is it by browsing? Once you paste the url click ok and you should be
+
+00:14:43.359 --> 00:14:48.320
+taken where you need to go. I'm going to find carrot
+
+00:14:51.359 --> 00:14:55.119
+three two one I've been here quite often okay
+
+00:14:56.000 --> 00:15:02.000
+it's downloading the class contents restarting instead of asking us to open a folder it's shown
+
+00:15:02.000 --> 00:15:06.960
+us the contents for the folder and here we have that georgia cases data set that I mentioned before
+
+00:15:08.239 --> 00:15:14.960
+and we have an R session loaded now and it's ready for us to write code down here or to start
+
+00:15:15.280 --> 00:15:25.039
+and it's ready for us to write code down here or to start a a document up above now in the the code
+
+00:15:26.880 --> 00:15:30.799
+files that come in this folder there's something called miscellaneous.r
+
+00:15:30.799 --> 00:15:36.960
+m-i-s-c.r it's an R script with some code in it and if you click on it it'll open in the source
+
+00:15:36.960 --> 00:15:47.760
+editor part of positron if you um if you click on it one time it opens positron will open as a
+
+00:15:47.760 --> 00:15:52.000
+ephemeral file so you could look at it but as soon as you click on a different file that will go away
+
+00:15:52.000 --> 00:15:56.559
+but if you double click on it it'll be permanently there which is what I did you'll notice it's no
+
+00:15:56.559 --> 00:16:02.159
+longer italicized and it's it's there until you close it when I was new at positron that was very
+
+00:16:02.159 --> 00:16:06.719
+frustrating so I like to point that out for folks. All right now that we have this file here let's go
+
+00:16:06.719 --> 00:16:19.039
+back to the slides for just a minute and sort of catch up to where we are all right so positron
+
+00:16:19.039 --> 00:16:25.119
+is an id for data scientists it's a combination of R studio and vs code the difference between
+
+00:16:25.119 --> 00:16:30.239
+it and the R studio id that posit also makes is positron is multilingual we can use it for python
+
+00:16:30.239 --> 00:16:37.200
+we can use it for R and it inherits a lot of the newer features that have come about in the 15 years
+
+00:16:37.200 --> 00:16:42.880
+since we made R studio so it's a place where we could create AI tools very easily while we work
+
+00:16:42.880 --> 00:16:49.359
+on backporting them to the R studio id if you're unfamiliar with posit we're a company that likes
+
+00:16:49.359 --> 00:16:53.280
+to make free and open source software we're a public benefit corporation and we support the
+
+00:16:53.280 --> 00:16:58.719
+open source pledge and we're kind of threading the needle today in the tools that we're using
+
+00:16:58.719 --> 00:17:04.319
+so just want to point out we make free stuff for scientists scientists use it for free but some
+
+00:17:04.319 --> 00:17:08.400
+companies employ scientists and whether they're scientists using free software or paid software
+
+00:17:08.400 --> 00:17:12.800
+those companies are spending a lot of money to get the scientists to collaborate and work together
+
+00:17:12.800 --> 00:17:19.359
+efficiently so we do also make products that help scientists who work in companies using
+
+00:17:19.359 --> 00:17:23.280
+open source products to collaborate more efficiently those are professional products
+
+00:17:23.280 --> 00:17:26.319
+and we take the money we make from those and reinvest it into the open source cycle
+
+00:17:26.880 --> 00:17:32.000
+so what does that mean for us well i want everyone to be very clear that the positron code editor and
+
+00:17:32.000 --> 00:17:36.640
+the packages that we're using today are all the free and open source side of things so what we're
+
+00:17:36.640 --> 00:17:43.359
+doing you can use at your institution and elsewhere we are going to use ai ai is not from posit and
+
+00:17:43.359 --> 00:17:47.839
+it's also not free you'll probably have to pay amazon bedrock or anthropic to use it but i think
+
+00:17:47.839 --> 00:17:53.199
+that's that will be obvious when we get there today we're sort of like a team of scientists
+
+00:17:53.199 --> 00:17:57.359
+trying to all work in the same environment and coordinate so just out of convenience all the free
+
+00:17:57.359 --> 00:18:02.319
+stuff we're using i'm hosting on the server which comes from the professional side of things we call
+
+00:18:02.319 --> 00:18:09.119
+a positive workbench and that's that that's just for today so we can all just talk together so we
+
+00:18:09.119 --> 00:18:14.640
+don't have to really think about as part of your workflow it's not necessary later we'll share some
+
+00:18:14.640 --> 00:18:20.719
+things and they'll also be shared on a pro platform all right wow that was a lot of setup but let's
+
+00:18:20.719 --> 00:18:26.160
+get started we're going to look at coding with our making reports out of that code then dashboards
+
+00:18:26.160 --> 00:18:31.520
+interacts interactive apps and then those ai apps with create chat like i showed along the way you'll
+
+00:18:31.520 --> 00:18:36.560
+learn how to use ai tools to do data science in that free positron editor you'll learn how to
+
+00:18:36.560 --> 00:18:42.719
+publish what you make to connect or connect to cloud and if you publish there you'll also learn
+
+00:18:42.719 --> 00:18:48.160
+how to configure those platforms so they can support the ai that it will appear in your apps
+
+00:18:48.800 --> 00:18:53.839
+so starting with r this is the r and pharma conference so i think we're probably pretty
+
+00:18:53.839 --> 00:19:02.000
+fresh on how r works but there's not much we need to know today about r that said let's
+
+00:19:02.880 --> 00:19:09.680
+let's take a poll see if there's any um in the chat room which languages do you use
+
+00:19:10.000 --> 00:19:13.119
+if you hover over that chat there's an emoticon
+
+00:19:13.119 --> 00:19:16.400
+picture and there's three dots on the emoticon so you could
+
+00:19:16.400 --> 00:19:19.920
+search for emoticons to put there including
+
+00:19:24.319 --> 00:19:29.359
+oh heck there's like five of us if you don't mind just tell me what languages you program with in
+
+00:19:29.359 --> 00:19:29.920
+the chat
+
+00:19:30.719 --> 00:19:33.839
+if you don't mind just tell me what languages you program with in the chat
+
+00:19:36.880 --> 00:19:37.680
+one r
+
+00:19:40.479 --> 00:19:49.680
+okay great one and two okay that's good so on everything we do today our pit you can do with
+
+00:19:49.680 --> 00:19:54.640
+python as well as r if that happens to be your preference one day all right let's let's forge
+
+00:19:54.640 --> 00:20:02.479
+ahead so we have the script misplaced art i would like you to open that and run each line of code in
+
+00:20:02.479 --> 00:20:08.000
+the script and see if you could tell what it does we'll recycle that code over and over again today
+
+00:20:09.119 --> 00:20:14.560
+one of those lines of code will return an error so when you see that don't be surprised you haven't
+
+00:20:14.560 --> 00:20:19.280
+done anything wrong i'm going to start the the time we'll spend about two minutes doing that
+
+00:20:19.280 --> 00:20:25.439
+and that's the perfect time to ask questions that you've been saving or other things well
+
+00:20:25.439 --> 00:20:30.959
+people are focused on this in fact i see a question from chris um chris what's on your mind
+
+00:20:37.040 --> 00:20:41.359
+and you'll have to click your unmute button to speak or you can type into the chat
+
+00:20:42.239 --> 00:20:50.000
+uh so in here garrett they um i don't think they can actually um go off and mute as participants
+
+00:20:50.640 --> 00:20:56.400
+uh so i would just have people post questions in the chat if they raise their hand so i think the
+
+00:20:56.400 --> 00:21:05.199
+zoom platform keeps them on mute by default so just a quick sorry all right so so y'all heard
+
+00:21:06.079 --> 00:21:13.040
+phil for all communication in the chat so yeah
+
+00:21:16.880 --> 00:21:20.959
+oh you just pressed the wrong one that's fine let's see i think i actually lower your hand so
+
+00:21:20.959 --> 00:21:27.040
+there you go
+
+00:21:35.199 --> 00:21:35.699
+you
+
+00:22:05.439 --> 00:22:05.939
+you
+
+00:22:19.119 --> 00:22:25.599
+okay so let's take a look at what this file does the first few lines are just loading packages
+
+00:22:25.599 --> 00:22:30.560
+so let's see if we have those it's great if you did this and it said you need to install the
+
+00:22:30.560 --> 00:22:35.680
+packages that probably that means you probably selected the wrong image when we launched this
+
+00:22:35.680 --> 00:22:40.640
+session and all you have to do is install those packages but some of these packages may take a
+
+00:22:40.640 --> 00:22:45.839
+while to install the second line reads in the georgia cases data set that we were looking at
+
+00:22:45.839 --> 00:22:51.680
+before and once we read it in now that it exists in memory we see it in our variables pane and if
+
+00:22:51.680 --> 00:22:57.199
+you want to take a closer look at it you can use the data explorer icon next to its name in the
+
+00:22:57.199 --> 00:23:03.839
+variables pane that'll open it up over here and then if you're new to positron i'll probably go
+
+00:23:03.839 --> 00:23:08.800
+use these three buttons at the top very often they just hide and bring back parts of the ide
+
+00:23:08.800 --> 00:23:12.400
+so this makes it a little easier to look at the data if i remove the rest of the ide
+
+00:23:13.119 --> 00:23:18.239
+and we see that we have different demographic groups in different counties of georgia the
+
+00:23:18.239 --> 00:23:22.239
+number of cases for different types of cancer and then the number of people in those groups so we
+
+00:23:22.239 --> 00:23:26.959
+could calculate a rate if we want to and then over here on the side there's sort of a top level view
+
+00:23:27.520 --> 00:23:31.839
+each of the variables in this data set and the distribution of values so that's the data we'll
+
+00:23:31.839 --> 00:23:39.040
+be using it's loaded bring back the rest of my id and close the data viewer the next lines go source
+
+00:23:39.040 --> 00:23:44.800
+helpers.r helpers.r is a file that defines a couple functions talks about them too
+
+00:23:46.640 --> 00:23:53.199
+one of those functions is create incident map that makes a leaflet plot the choropleth map
+
+00:23:53.199 --> 00:23:59.520
+we saw in the slides the next function makes an interactive table of the georgia cases table
+
+00:24:00.959 --> 00:24:05.839
+it's kind of a big data set so it takes a few seconds for the table to load but this is you
+
+00:24:05.839 --> 00:24:10.880
+know sort of a tidy way to let someone interactively explore the raw data and then the final line of
+
+00:24:10.880 --> 00:24:17.199
+code returns an error and there's a reason for that we're calling a function called plot incident
+
+00:24:17.760 --> 00:24:24.160
+incidents by demographic and i meant to write that function in helpers.r
+
+00:24:25.359 --> 00:24:31.359
+but somewhere between writing it documenting and writing it something got erased and so we
+
+00:24:31.359 --> 00:24:36.800
+have an error that function has not been defined this gives us the perfect opportunity to put ai
+
+00:24:36.800 --> 00:24:42.400
+to the test so let's look at how ai works here in positron how you could bring ai into your workflows
+
+00:24:42.400 --> 00:24:50.000
+and then we'll ask it to write that missing function inside of positron there is an ai
+
+00:24:50.000 --> 00:24:59.359
+assistant called posit assistant and what that means is it is a think of it as a portal into
+
+00:24:59.359 --> 00:25:04.719
+your session for a large language model it doesn't have its own large language model
+
+00:25:05.280 --> 00:25:10.319
+posit doesn't make large language models that's it's quite a big business and we're just not into
+
+00:25:10.319 --> 00:25:18.079
+that and also we know that if you're working at an institution or a company or anywhere you've
+
+00:25:18.079 --> 00:25:22.640
+probably negotiated the ability to use large language models from one model provider or
+
+00:25:22.640 --> 00:25:27.359
+another based on some things that are very important to you like security arrangements or
+
+00:25:27.359 --> 00:25:32.959
+validation or even just budget negotiations with that model provider that's a lot of hard work to
+
+00:25:32.959 --> 00:25:36.640
+get to the point where you can use a model and we don't want to get in the way of any of that
+
+00:25:37.359 --> 00:25:42.800
+so positron allows you to take the models that you want to use and use them inside of positron
+
+00:25:43.359 --> 00:25:49.599
+it looks a little like this when you first try to use it it would say choose a model and it take
+
+00:25:49.599 --> 00:25:53.439
+you to this window and that window might be configured with more models than this this is
+
+00:25:53.439 --> 00:25:59.359
+just the way i have it set up locally i could go to the model provider i want to use that day when
+
+00:25:59.359 --> 00:26:04.880
+i click on it i'll have whatever credentials they ask for so i could sign into my account
+
+00:26:04.880 --> 00:26:11.119
+with anthropic or bedrock or gemini and from that moment on those models will be like the
+
+00:26:11.119 --> 00:26:16.560
+batteries that power my coding session when i type something into posit assistant
+
+00:26:18.319 --> 00:26:23.920
+it will send the query to the model provider i'm logged in with that model will provide the
+
+00:26:23.920 --> 00:26:28.640
+response and they'll come back to me in posit assistant and i'll get to read it there but it's
+
+00:26:28.640 --> 00:26:33.760
+not like i'm opening anthropic in the window beside posit assistant if i were to do that
+
+00:26:33.760 --> 00:26:38.000
+and i ask you about you know what's going wrong in my r session or can you write some code that
+
+00:26:38.000 --> 00:26:42.800
+works with my table you would say yes i'd love to but you got to tell me more about this r session
+
+00:26:43.439 --> 00:26:48.719
+because to models your r session or your python session will be a black box it just doesn't know
+
+00:26:48.719 --> 00:26:54.319
+what's happening in there but posit assistant is a way to bring it into your r session where it can
+
+00:26:54.319 --> 00:27:01.280
+see what's happening so it can help you be productive inside your r session we also upskill
+
+00:27:01.280 --> 00:27:06.079
+the models as we bring them into positron because we know you're doing certain things with r and
+
+00:27:06.079 --> 00:27:11.280
+python and data and we could teach the models how to do those things so they will be better
+
+00:27:11.280 --> 00:27:16.880
+data scientists than they will be out of the box as it were i'm going to take a look at the chat
+
+00:27:16.880 --> 00:27:28.959
+for just a second because i think things happening perfect looks like we worked through a snag there
+
+00:27:28.959 --> 00:27:34.959
+all right so this is what i mean by once you load a model into posit assistant it can see the scripts
+
+00:27:34.959 --> 00:27:40.079
+that you're writing it could see your console your r session your python session if you're using python
+
+00:27:40.079 --> 00:27:43.680
+you can see the plots you've made and most importantly you can see what exists in the
+
+00:27:43.680 --> 00:27:49.520
+memory of your r session that's where a lot of bugs happen and that's where whenever you write
+
+00:27:49.520 --> 00:27:53.359
+code whether it's code that fixes a bug or it's just going to work with everything else that's
+
+00:27:53.359 --> 00:27:59.839
+going on it you need to be aware of those variable names what tables does the code touch what are the
+
+00:27:59.839 --> 00:28:04.800
+names of the columns in that table we it's not really so helpful to have ai write dummy code
+
+00:28:04.800 --> 00:28:09.760
+that you then need to edit before you can use you can go so much faster and that's the job of positive
+
+00:28:09.760 --> 00:28:15.040
+assistant so let's take a look at positive assistant and how it lets us do that in on this
+
+00:28:15.040 --> 00:28:19.680
+server one of the reasons i'm having us use it today is it's pre-configured with ai that we
+
+00:28:19.680 --> 00:28:26.719
+could try out for the workshop positive system itself appears in this blue ribbon on the side
+
+00:28:26.719 --> 00:28:31.760
+it looks like two diamonds overlapping if you hover over that for a second it'll say positive
+
+00:28:31.760 --> 00:28:37.839
+assistant if you're zoomed in which you might be it might be collapsed inside of these three dots
+
+00:28:37.839 --> 00:28:42.880
+in that case click the three dots and see if something says positive system and then select
+
+00:28:42.880 --> 00:28:48.959
+positive system this is a symbol we'll see it up here in a second i think looks like that
+
+00:28:49.839 --> 00:28:56.160
+and then it's going to say um you know use a slightly outdated version of positive that's
+
+00:28:56.160 --> 00:29:02.800
+fine just dismiss this message now we can start chatting i have it set up so you don't have to
+
+00:29:02.800 --> 00:29:07.439
+sign into a model but if you were signing into it you it would take you there'd be a bright blue
+
+00:29:07.439 --> 00:29:12.400
+button it'd just take you right to where you'd go if you go to the gear icon configure llm providers
+
+00:29:13.680 --> 00:29:18.719
+you don't need to do any of this we're signed into amazon bedrock do not click sign out that
+
+00:29:18.719 --> 00:29:23.920
+would be very counterproductive but if you look at some of these other models you could see oh if
+
+00:29:23.920 --> 00:29:29.680
+i wonder with anthropic today i'd have to provide an api key and click sign in and if i'm over with
+
+00:29:29.680 --> 00:29:35.920
+get up copilot i click here and it asks for a github pat or something open ai every model has
+
+00:29:35.920 --> 00:29:42.479
+its own way of sort of letting you log in and that's how you get to those models but today
+
+00:29:42.479 --> 00:29:46.560
+we already have a model at our disposal it's amazon bedrock so i'm just going to close this
+
+00:29:46.560 --> 00:29:52.400
+we could start using this and what we can do is we could type to it as if it were a chat bot down
+
+00:29:52.400 --> 00:29:58.719
+here we could select which model we wanted to use amazon bedrock provides all these different models
+
+00:29:58.719 --> 00:30:04.079
+so depending on what i'm going for i might ask opus to do the work or i might stick with sonnet
+
+00:30:04.079 --> 00:30:09.439
+or use haiku for everything we're doing today claude sonnet 4.6 is just fine that's the most
+
+00:30:09.439 --> 00:30:15.359
+tested version that i've done this with and even though we won't go into all the bells and whistles
+
+00:30:15.359 --> 00:30:21.599
+of posit assistant you could see um you can decide how much effort you want to put into thinking for
+
+00:30:21.599 --> 00:30:27.199
+any of your queries with this light bulb the paintbrush is very interesting that's a data
+
+00:30:27.199 --> 00:30:33.119
+cleaning mode if you were just using positive system to clean data click that mode on ask it
+
+00:30:33.119 --> 00:30:38.160
+to clean your data it will clean it up and it will save the work as an r script that you would then
+
+00:30:38.160 --> 00:30:42.400
+put like maybe in your data folder next to the raw data the sort of reproducible script that you want
+
+00:30:42.400 --> 00:30:47.439
+to keep around and then the last one is a plan mode which is just a typical plan mode that you
+
+00:30:47.439 --> 00:30:54.959
+see with most models these days thank you phil for the heavy lifting you're doing in the background
+
+00:30:54.959 --> 00:31:02.160
+there in the chat i see that all right so let's put positive system to the test i have a prompt
+
+00:31:02.160 --> 00:31:07.520
+for us to use you don't have to use this prompt but i'll paste it into the chat so you can copy
+
+00:31:07.520 --> 00:31:14.239
+and paste if you want the whole idea here is we're going to ask posit assistant to write the
+
+00:31:14.239 --> 00:31:24.880
+missing function so i'm pasting it in there and then you do that and press the up arrow it will
+
+00:31:24.880 --> 00:31:29.920
+have a bit of a dialogue it'll ask you for permission to do things today i encourage you to
+
+00:31:29.920 --> 00:31:36.160
+just experiment and always allow it to do things but see if you could get that function to appear
+
+00:31:36.160 --> 00:31:40.000
+and then rerun miscellaneous.r and see if that function works at the end
+
+00:31:41.520 --> 00:31:44.719
+so let's let's spend a few minutes doing that all i will also check
+
+00:31:44.719 --> 00:31:51.599
+in on the chat to see if everything's going smoothly there
+
+00:32:06.160 --> 00:32:07.199
+you
+
+00:32:36.160 --> 00:32:37.199
+you
+
+00:33:06.160 --> 00:33:07.199
+you
+
+00:33:36.160 --> 00:33:36.239
+you
+
+00:33:50.640 --> 00:33:53.359
+if you're feeling curious about anything or have any questions feel
+
+00:33:53.359 --> 00:34:05.199
+free to type them in the chat i'm happy to answer them if i can
+
+00:34:07.040 --> 00:34:07.119
+you
+
+00:34:20.800 --> 00:34:24.639
+all right so we're at the 30 second warning i'm going to
+
+00:34:24.639 --> 00:34:29.199
+try to catch up to you guys because i haven't run mine yet
+
+00:34:36.879 --> 00:34:36.959
+you
+
+00:34:44.159 --> 00:34:50.000
+all right so i have my my prompt here uh the reason this prompt is going to work is inside
+
+00:34:50.000 --> 00:34:54.399
+of helpers.r i've actually done a lot of work describing how this function should work
+
+00:34:55.199 --> 00:35:00.159
+uh ai is not a mind reader so if i hadn't written this out here i should probably add that to my
+
+00:35:00.159 --> 00:35:04.639
+prompt to tell it how i expect the function to work but between these two things it should be
+
+00:35:04.639 --> 00:35:09.600
+able to get the job done so i'll send this over and we'll get to see a little bit of how
+
+00:35:09.600 --> 00:35:16.479
+posit assistant works it is going to be powered by the models you signed up and logged in for
+
+00:35:16.479 --> 00:35:19.679
+but we teach those models to behave in a certain way inside of positron
+
+00:35:20.239 --> 00:35:26.719
+so first it it's very deferential it wants to ask permission to do the things that's going to do
+
+00:35:26.719 --> 00:35:31.520
+right now it's telling me that it feels like it needs to read helpers.r to do what i asked it to
+
+00:35:32.239 --> 00:35:40.000
+definitely does so i could click decline here i could click allow if i click decline i could use
+
+00:35:40.000 --> 00:35:45.120
+this pencil to edit it i'm not going to do that right yet but i will later or if i'm if i want
+
+00:35:45.120 --> 00:35:51.120
+to allow it i could allow it just this time or i could use the drop down menu to say you could do
+
+00:35:51.120 --> 00:35:56.399
+this sort of thing for this whole session today or you could do this sort of thing anytime i'm
+
+00:35:56.399 --> 00:36:00.800
+working in this project whether it's tomorrow or the next week and i'm going to do that just to be
+
+00:36:00.800 --> 00:36:08.159
+permissive today so we don't see that this allow step as so often okay so it's reading that file
+
+00:36:08.159 --> 00:36:14.719
+if i want to see what happened in there i could you know see what what it was doing now it says
+
+00:36:14.719 --> 00:36:19.040
+okay i've read that file let me check the structure of georgia cases because i told it to try it out
+
+00:36:19.040 --> 00:36:24.159
+georgia cases so here it's calling something called execute code
+
+00:36:24.337 --> 00:36:36.337
+So here it's calling something called execute code, and what it did is it sent this line of code, it wrote that code, and sent it down to Positron on my computer to be run.
+
+00:36:36.337 --> 00:36:45.337
+And then Positron ran it against the data, which lives on my computer, and then it sent back the response to the chatbot to read.
+
+00:36:45.337 --> 00:36:51.337
+And this sort of round-trip is the basic mode for Posit Assistant.
+
+00:36:51.337 --> 00:36:57.337
+It never wants to send its data across to the model because that would burn up tokens very fast and be quite expensive.
+
+00:36:57.337 --> 00:37:08.337
+Also, that doesn't really play to the model's strength. LLMs are really good at writing code, so it asks the model in the background to try to answer your question by writing code,
+
+00:37:08.337 --> 00:37:14.337
+and then it'll send that code into Positron to be run. Your R session is very good at running code.
+
+00:37:14.337 --> 00:37:19.337
+And it will send the results of that code back to the model.
+
+00:37:19.337 --> 00:37:23.337
+And those results are going to be so much more concise token-wise than the actual data set.
+
+00:37:23.337 --> 00:37:26.337
+So we'll see that pattern play out a few times.
+
+00:37:26.337 --> 00:37:35.337
+Now let's look at the data. It's read my helper's file. It feels like it has everything it needs, and it's asking for permission to edit my helper's file.
+
+00:37:35.337 --> 00:37:41.337
+And it's going to show me here what it wants to do. These are the edits it wants to make.
+
+00:37:41.337 --> 00:37:48.337
+And the way to read this is like reading a diff on GitHub. The pink lines are lines it wants to delete.
+
+00:37:48.337 --> 00:37:51.337
+And the green lines are new lines it wants to write into the file.
+
+00:37:51.337 --> 00:37:58.337
+And it's writing the definition of a function. I can't tell if it works just by glancing at it, but this is what I asked it to do.
+
+00:37:58.337 --> 00:38:03.337
+So I'm going to allow it to do that. And once again, I'm going to be permissive today.
+
+00:38:03.337 --> 00:38:09.337
+And here I can see it wrote it into my file. Now the last part of my prompt asks it to try out that function.
+
+00:38:09.337 --> 00:38:13.337
+And I think this is good practice. AI can hallucinate.
+
+00:38:13.337 --> 00:38:20.337
+So if you're asking it to write code, if you can, you should have it immediately run that code, because that will catch a hallucination.
+
+00:38:20.337 --> 00:38:25.337
+If the code produces the result you're after, it works, and you'll know it.
+
+00:38:25.337 --> 00:38:29.337
+If it doesn't, you'll fail fast, and then you can just iterate with AI and say,
+
+00:38:29.337 --> 00:38:33.337
+oh, that didn't work. Please debug it. AI is very good at debugging code.
+
+00:38:33.337 --> 00:38:40.337
+All right. So here I have this plot, and it's testing it out, once again, by running code on my computer.
+
+00:38:40.337 --> 00:38:45.337
+I see it come across into my console. I see the results over here. The results also come back here.
+
+00:38:45.337 --> 00:38:50.337
+It looks like it did its job. And if I go to miscellaneous.r now,
+
+00:38:50.337 --> 00:38:55.337
+I could resource helpers.r to get the updated version with the second function definition.
+
+00:38:55.337 --> 00:39:00.337
+And if I run this code, that should work. And it's just going to recreate the same plot I saw before,
+
+00:39:00.337 --> 00:39:05.337
+because I tested it out with exactly this code. But you know, when I did this,
+
+00:39:05.337 --> 00:39:10.337
+I thought the bar chart might go up and down. So this is a little unexpected.
+
+00:39:10.337 --> 00:39:14.337
+And that's the perfect place for me to just iterate with this conversation.
+
+00:39:14.337 --> 00:39:20.337
+I could keep it going. So I could say, please change the function.
+
+00:39:20.337 --> 00:39:25.337
+So that if I look over here in the function definition,
+
+00:39:25.337 --> 00:39:31.337
+I want to switch the axes. It's put a bar on the y-axis.
+
+00:39:31.337 --> 00:39:37.337
+So I'll just say such that bar is on the x-axis.
+
+00:39:40.337 --> 00:39:45.337
+And that this is completely something AI can do. So let's go make that change.
+
+00:39:46.337 --> 00:39:51.337
+If I thought the plot would do better with a different theme or some annotations or whatever,
+
+00:39:51.337 --> 00:39:55.337
+these are all sorts of things you can ask it to do, and it will be able to figure out how to do that with R
+
+00:39:55.337 --> 00:40:00.337
+and put it into your code very well. OK, so now I have the bar chart I was looking for.
+
+00:40:00.337 --> 00:40:04.337
+I think I'm all set up to go. We've used AI to write some R code.
+
+00:40:04.337 --> 00:40:08.337
+And those principles will apply to any R code that you want to write.
+
+00:40:08.337 --> 00:40:13.337
+Now let's start producing a product with this code.
+
+00:40:14.337 --> 00:40:18.337
+What do I mean by a product? So we have our code. We looked at Positive Assistant,
+
+00:40:18.337 --> 00:40:23.337
+how to access it, how you'll need to sign into some LLM to use it, to power it,
+
+00:40:23.337 --> 00:40:27.337
+and how it will use that LLM to do data science for you.
+
+00:40:27.337 --> 00:40:31.337
+If for some reason you didn't get that to work and you couldn't add that function,
+
+00:40:31.337 --> 00:40:36.337
+there is a folder that you could dip into any time during this workshop by going to the file browser.
+
+00:40:36.337 --> 00:40:41.337
+It's the solutions folder. And all the waypoints we're going to visit today are available here.
+
+00:40:41.337 --> 00:40:46.337
+You can just open one up, copy and paste the code out to the actual files we're working with.
+
+00:40:46.337 --> 00:40:51.337
+I will caution you, don't try to run any of these solutions from within the solutions folder,
+
+00:40:51.337 --> 00:40:56.337
+because all the file paths they use are designed to work out here, outside of the solutions folder.
+
+00:40:56.337 --> 00:41:01.337
+They won't work if you run it from inside of solutions.
+
+00:41:01.337 --> 00:41:06.337
+All right, so Cordo. What is a Cordo report? This is the way I do my work,
+
+00:41:06.337 --> 00:41:09.337
+and I recommend Cordo strongly to you as R users.
+
+00:41:09.337 --> 00:41:14.337
+If you've ever used Sweave or Knitter or R Markdown, Cordo is the same type of thing.
+
+00:41:14.337 --> 00:41:22.337
+It's a way to do literate programming to combine text with your code and to produce reports from it.
+
+00:41:22.337 --> 00:41:27.337
+There is a website called cordo.org that explains how to use Cordo. It's very, very well documented.
+
+00:41:27.337 --> 00:41:32.337
+We can see right here from the screenshot of the title page that you can use Cordo to build websites,
+
+00:41:32.337 --> 00:41:38.337
+dashboards, articles, presentations, books, knowledge repos, and also just simple reports,
+
+00:41:38.337 --> 00:41:45.337
+whether those are in PDFs or HTML or even Microsoft Word. Let's use it to make a report.
+
+00:41:45.337 --> 00:41:50.337
+If you're an R Markdown user and you're wondering why you'd want to use Cordo,
+
+00:41:50.337 --> 00:41:55.337
+Cordo was written by UAZ, who made R Markdown, who is the next version of R Markdown.
+
+00:41:55.337 --> 00:41:59.337
+We just had to change the name because R Markdown, you use R, but in Cordo,
+
+00:41:59.337 --> 00:42:03.337
+you can actually use Python, Julia, Observable, and R. You can use any language.
+
+00:42:03.337 --> 00:42:08.337
+The R Markdown name didn't really stick, so instead of calling it R Markdown 2.0, we called it Cordo.
+
+00:42:08.337 --> 00:42:13.337
+Other than that, the syntax is very, very similar, and you basically already know how to use it
+
+00:42:13.337 --> 00:42:20.337
+since you're an R Markdown user. Let's go over here to this. Let me open up some files here.
+
+00:42:20.337 --> 00:42:26.337
+Let's go close all the files, make things simple. I'll reopen miscellaneous.r because I'll need that in a second.
+
+00:42:26.337 --> 00:42:31.337
+I'm going to double-click it so it sticks around, and then I'm going to open report.qmd.
+
+00:42:31.337 --> 00:42:37.337
+Report.qmd is a Cordo file, so we can take a look at it and see what Cordo looks like.
+
+00:42:37.337 --> 00:42:44.337
+Make some space to look at. Cordo files have an optional YAML header that contains some metadata
+
+00:42:44.337 --> 00:42:49.337
+we'll get into in a second, and then these have text format in the Markdown syntax,
+
+00:42:49.337 --> 00:42:54.337
+so you might recognize things like a second-level header. I use a lot of those.
+
+00:42:54.337 --> 00:42:59.337
+A blank line, some italicized text because it's surrounded by asterisks,
+
+00:42:59.337 --> 00:43:04.337
+but the most interesting thing about Cordo document is in between the text,
+
+00:43:04.337 --> 00:43:08.337
+you can insert code cells, and you could run R code from these cells,
+
+00:43:08.337 --> 00:43:15.337
+so if I'm working on some R script, I could write my code here. I'll make a histogram,
+
+00:43:15.337 --> 00:43:20.337
+and then I could put my cursor there and hit Command-Return or Control-Enter
+
+00:43:20.337 --> 00:43:24.337
+to send that code down to the console and run it, and I've just made a histogram.
+
+00:43:24.337 --> 00:43:30.337
+Or I could click the Run Cell button, and it'll run every line of code that I add in here.
+
+00:43:30.337 --> 00:43:34.337
+I could put as many lines as I want. It'll just run them all for me.
+
+00:43:34.337 --> 00:43:37.337
+So this is a perfect development environment. That's how I use it,
+
+00:43:37.337 --> 00:43:42.337
+and if you develop your code in a Cordo document, you'll make the next step of your life
+
+00:43:42.337 --> 00:43:47.337
+even easier, which is reporting. Because Cordo documents are designed
+
+00:43:47.337 --> 00:43:53.337
+so you could click this Preview button at the top, and it will generate a report from your document.
+
+00:43:53.337 --> 00:43:56.337
+This document becomes source code for what it will make.
+
+00:43:56.337 --> 00:44:03.337
+In this case, it's set up to make an HTML file, so let me make some space over here on the side
+
+00:44:03.337 --> 00:44:09.337
+and click Preview, and what will happen is R will create an HTML file.
+
+00:44:09.337 --> 00:44:15.337
+It'll run every code chunk in this document, and it'll insert the results of those code chunks
+
+00:44:15.337 --> 00:44:21.337
+into the document where the code cell lives. But these code cells are all empty.
+
+00:44:21.337 --> 00:44:25.337
+Ideally, they'd be inserting plots here throughout this readable document,
+
+00:44:25.337 --> 00:44:32.337
+and we have the tools to make that happen. What I'd like you to do is go to miscellaneous.R,
+
+00:44:32.337 --> 00:44:37.337
+take all this code, and move it all over to report. Every single line should appear there,
+
+00:44:37.337 --> 00:44:42.337
+but it'd make more sense than not to put different lines in different code cells,
+
+00:44:42.337 --> 00:44:46.337
+and I think you could figure out how you'd want this to look just by reading the text
+
+00:44:46.337 --> 00:44:51.337
+or reading the labels for the code cells. But that's our next assignment.
+
+00:44:51.337 --> 00:44:56.337
+Copy and paste the code in miscellaneous.R to the various code cells within report.qmd,
+
+00:44:56.337 --> 00:45:00.337
+and then preview the report by clicking that Preview button.
+
+00:45:12.337 --> 00:45:18.337
+Thank you for sharing that info in the chat, Daniel. That's exactly right.
+
+00:45:42.337 --> 00:45:45.337
+Thank you.
+
+00:46:12.337 --> 00:46:25.337
+I'm sure it would be cheating if we used the AI tool to help us.
+
+00:46:25.337 --> 00:46:31.337
+It wouldn't be cheating. Actually, it's worth trying it when you practice with the AI.
+
+00:46:31.337 --> 00:46:41.337
+I think that's the sort of low-hanging fruit that I don't think is necessary to use AI.
+
+00:46:41.337 --> 00:46:48.337
+It's interesting. If we do that, people may get different reports.
+
+00:46:48.337 --> 00:46:56.337
+They might, but if you tell it to just stick with the code in miscellaneous.R, it should.
+
+00:46:56.337 --> 00:47:00.337
+It should be pretty consistent.
+
+00:47:00.337 --> 00:47:04.337
+Cool.
+
+00:47:05.337 --> 00:47:10.337
+Did you mention at the beginning the data for the Georgia cases?
+
+00:47:10.337 --> 00:47:15.337
+Is that synthetic or data you found online?
+
+00:47:15.337 --> 00:47:21.337
+It's simulated. It's based on real trends, but they do not show up exactly in there.
+
+00:47:21.337 --> 00:47:24.337
+It's not perfect.
+
+00:47:24.337 --> 00:47:27.337
+Cool.
+
+00:47:28.337 --> 00:47:33.337
+You're going to have a late night, Garrett.
+
+00:47:33.337 --> 00:47:38.337
+Yeah. It's good to have a change.
+
+00:47:38.337 --> 00:47:41.337
+Temporal scenery.
+
+00:47:41.337 --> 00:47:44.337
+Ten seconds. I'll go backstage.
+
+00:47:44.337 --> 00:47:47.337
+Okay.
+
+00:47:47.337 --> 00:47:50.337
+I guess I better do this, too.
+
+00:47:51.337 --> 00:47:58.337
+All of this code from line 11 up doesn't produce anything, but nothing below it will work unless this is run.
+
+00:47:58.337 --> 00:48:01.337
+That makes it setup code.
+
+00:48:01.337 --> 00:48:06.337
+I like to put setup code in its own setup chunk at the start of the document.
+
+00:48:06.337 --> 00:48:13.337
+Then each of these things create something, and there's three code cells remaining here, and they each sort of ask for something.
+
+00:48:13.337 --> 00:48:19.337
+The text says we're going to show them a map, so I'm going to put one that creates a map in the cell that goes with that text.
+
+00:48:19.337 --> 00:48:22.337
+Similar for this plot.
+
+00:48:22.337 --> 00:48:27.337
+Next thing it says is create a chart about income, so I'll put plot here.
+
+00:48:27.337 --> 00:48:30.337
+Actually, it says race, ethnicity.
+
+00:48:30.337 --> 00:48:32.337
+That's a poor label. Maybe I should fix that.
+
+00:48:32.337 --> 00:48:37.337
+Then finally, the data table line creates a table, and that would be appropriate for down here.
+
+00:48:37.337 --> 00:48:43.337
+Now that I have all this in here, I know all that code runs because we've already run it as a script.
+
+00:48:43.337 --> 00:48:45.337
+I'll just click preview.
+
+00:48:45.337 --> 00:48:52.337
+I'll be able to run each of those code cells with no error messages, and it will regenerate my HTML file.
+
+00:48:52.337 --> 00:48:56.337
+I'll see how it looks here in a second.
+
+00:48:56.337 --> 00:49:01.337
+Now instead of just having the text, it's including the results of these code cells.
+
+00:49:01.337 --> 00:49:06.337
+The code cells don't show up because I can tell Cordo not to echo back the code.
+
+00:49:06.337 --> 00:49:10.337
+I could have the code in there if I want, but if I just go give this to a colleague who doesn't write code,
+
+00:49:10.337 --> 00:49:13.337
+they probably don't want to read the code. They just want to see the plot.
+
+00:49:13.337 --> 00:49:19.337
+I'm also telling it not to pass through any warning messages or just regular messages the code might generate.
+
+00:49:19.337 --> 00:49:25.337
+Then this HTML file now lives right beside report.qmd, so if I wanted to host this somewhere,
+
+00:49:25.337 --> 00:49:27.337
+I know where to go to get the file to host.
+
+00:49:27.337 --> 00:49:32.337
+That could be my personal blog, that could be something my institute makes in Reports of the World,
+
+00:49:32.337 --> 00:49:36.337
+or that could be something like Posit Connect or Connect Cloud.
+
+00:49:36.337 --> 00:49:41.337
+But this is a pretty attractive-looking report now, and if I gave it to someone and they said,
+
+00:49:41.337 --> 00:49:45.337
+hey, that's great, but I want this plot a little different, maybe different variables or something,
+
+00:49:45.337 --> 00:49:47.337
+or I want to see something new.
+
+00:49:47.337 --> 00:49:51.337
+Instead of having to remember where I wrote the code that made that plot
+
+00:49:51.337 --> 00:49:55.337
+and how I set up the environment to get that code to work right so I could recreate it
+
+00:49:55.337 --> 00:49:58.337
+and copy and paste it into my Microsoft Word document,
+
+00:49:58.337 --> 00:50:01.337
+it's all right here, self-contained in this Cordo document.
+
+00:50:01.337 --> 00:50:04.337
+All I have to do is open the document, make the change in the code,
+
+00:50:04.337 --> 00:50:09.337
+and then rerun it from the top, and I'll have a new HTML file to replace the old one with.
+
+00:50:09.337 --> 00:50:14.337
+It'll keep my life a lot easier and cleaner as I manage the reports I put out there.
+
+00:50:14.337 --> 00:50:16.337
+So those are Cordo reports.
+
+00:50:16.337 --> 00:50:20.337
+And again, I recommend to you Cordo.org is the place to learn more about that.
+
+00:50:20.337 --> 00:50:29.337
+And one thing you will see at Cordo.org is using Cordo lets you make more than just those reports.
+
+00:50:29.337 --> 00:50:34.337
+So we're already halfway to making, believe it or not, a website or a slideshow.
+
+00:50:34.337 --> 00:50:41.337
+And this website will show you everything you need to know about the different things you want to make.
+
+00:50:41.337 --> 00:50:43.337
+Depending on what you want to make, you can click through to it.
+
+00:50:43.337 --> 00:50:48.337
+But what I would like us to do next is make a dashboard.
+
+00:50:48.337 --> 00:50:51.337
+A dashboard is basically a website.
+
+00:50:51.337 --> 00:50:54.337
+It's a very visual way to display data.
+
+00:50:54.337 --> 00:50:58.337
+And we can do it with what we have here.
+
+00:50:58.337 --> 00:51:02.337
+But one thing I'll point out is dashboards usually don't have that much text in them.
+
+00:51:02.337 --> 00:51:06.337
+So we're going to want to get rid of all the text that's in our Cordo report.
+
+00:51:06.337 --> 00:51:09.337
+They also have a nice layout to them.
+
+00:51:09.337 --> 00:51:15.337
+So let's learn about how to make a layout to turn that Cordo report we just looked at into a dashboard.
+
+00:51:15.337 --> 00:51:17.337
+Now, everything we're doing is to go start building it.
+
+00:51:17.337 --> 00:51:20.337
+So it's going to be easier and easier to do what comes next.
+
+00:51:20.337 --> 00:51:28.337
+To make the dashboard, we will change the format from HTML to dashboard.
+
+00:51:28.337 --> 00:51:34.337
+Once you do that, I recommend stripping out all the text in your document and even all the headers in the beginning,
+
+00:51:34.337 --> 00:51:36.337
+leaving just the code cells.
+
+00:51:36.337 --> 00:51:40.337
+Each code cell will become its own card in the dashboard.
+
+00:51:40.337 --> 00:51:45.337
+That means it will just have a self-contained box, keeping everything in that code cell together.
+
+00:51:45.337 --> 00:51:48.337
+And those cards by default will be laid out one on top of another.
+
+00:51:48.337 --> 00:51:53.337
+So each card sort of makes its own row in the dashboard.
+
+00:51:53.337 --> 00:51:56.337
+And that's a fine layout, but not particularly sophisticated.
+
+00:51:56.337 --> 00:52:03.337
+You can control this layout, and the way you can control it with Cordo is by putting headers back into your document.
+
+00:52:03.337 --> 00:52:10.337
+The text of the headers will not appear anywhere, but the fact that there is a header there will change the layout.
+
+00:52:10.337 --> 00:52:16.337
+Each second-level header you add to your document will start a new row in the dashboard,
+
+00:52:16.337 --> 00:52:23.337
+and everything will be arranged in that row until you tell it to make a new row at this point.
+
+00:52:23.337 --> 00:52:30.337
+So here if I add these two second-level headers in these two places, those four cards would now be arranged like this into two rows.
+
+00:52:30.337 --> 00:52:33.337
+I'm skipping over first-level headers. You can put those in there too.
+
+00:52:33.337 --> 00:52:40.337
+Those make different tabs in your dashboard. It's a website thing, but I don't have enough content to worry about tabs.
+
+00:52:40.337 --> 00:52:47.337
+If you want to break it up even further, you might want to take one of those rows and put columns in it.
+
+00:52:47.337 --> 00:52:49.337
+You can do that with a third-level header.
+
+00:52:50.337 --> 00:52:57.337
+So within the row defined by the second-level header, I can now make two columns defined by these third-level headers,
+
+00:52:57.337 --> 00:53:03.337
+and everything in a column will be arranged going down in the column until I start a new column.
+
+00:53:03.337 --> 00:53:05.337
+That's how I get this layout.
+
+00:53:05.337 --> 00:53:13.337
+Now, by experimenting with those two things, you can create half of the dashboard layouts that you imagine.
+
+00:53:14.337 --> 00:53:22.337
+The other half will be layouts that begin by splitting your dashboard by columns, not by splitting it by rows.
+
+00:53:22.337 --> 00:53:34.337
+You can get to those by adding this second value up here, orientation columns.
+
+00:53:34.337 --> 00:53:38.337
+It just flips everything. So now the cards are laid out one column at a time.
+
+00:53:38.337 --> 00:53:42.337
+Now second-level headers start a new column.
+
+00:53:42.337 --> 00:53:46.337
+And now third-level headers start a row within the column.
+
+00:53:46.337 --> 00:53:50.337
+So it just exactly flips what happened before.
+
+00:53:50.337 --> 00:53:57.337
+Between those two things, you now can spend enough time with the fiddly details, make any sort of arrangement you want.
+
+00:53:57.337 --> 00:54:04.337
+The last bit of power that's missing is right now core is going to split everything in equal proportions,
+
+00:54:04.337 --> 00:54:08.337
+but sometimes a good layout isn't split equally.
+
+00:54:08.337 --> 00:54:16.337
+If you want to change the width or the height of one of these elements, you can do that when you set the header.
+
+00:54:16.337 --> 00:54:20.337
+And you can either change the height or the width with this syntax.
+
+00:54:20.337 --> 00:54:22.337
+It's borrowed from CSS.
+
+00:54:22.337 --> 00:54:26.337
+Use braces, no quotation marks, and no spaces.
+
+00:54:26.337 --> 00:54:32.337
+You can set the height to some percentage of the thing it's occupying.
+
+00:54:32.337 --> 00:54:40.337
+So this would make that row only 30% of the total column height that it's in.
+
+00:54:40.337 --> 00:54:46.337
+Okay, that's a lot in like three or four, five minutes to go through, but it's actually not that much conceptually.
+
+00:54:46.337 --> 00:54:52.337
+And if you sit with it for a while, like 10 minutes, I think you'll find that you can master this pretty quickly
+
+00:54:52.337 --> 00:54:57.337
+and start laying out things into web page dashboards that you can then share with your colleagues.
+
+00:54:57.337 --> 00:55:00.337
+And that's what I'd like you to do with report.qmd.
+
+00:55:00.337 --> 00:55:02.337
+I want us...
+
+00:55:02.337 --> 00:55:05.337
+Sorry, this is what that looks like in situ.
+
+00:55:05.337 --> 00:55:07.337
+I want us to do something like this.
+
+00:55:07.337 --> 00:55:11.337
+I want us to turn the report into a dashboard.
+
+00:55:11.337 --> 00:55:16.337
+It'll look a little like this dashboard, which you'll notice is halfway towards our shiny app.
+
+00:55:16.337 --> 00:55:20.337
+And I want you to do that with these steps.
+
+00:55:20.337 --> 00:55:23.337
+Go to report.qmd as it exists.
+
+00:55:23.337 --> 00:55:27.337
+Change format HTML to these three lines here.
+
+00:55:27.337 --> 00:55:32.337
+Notice that each line is indented two more spaces from the one above it.
+
+00:55:32.337 --> 00:55:35.337
+And then remove all of the text and headers.
+
+00:55:35.337 --> 00:55:37.337
+You can keep them in there and preview it.
+
+00:55:37.337 --> 00:55:40.337
+It'll make some weirdly laid out dashboard with text everywhere.
+
+00:55:40.337 --> 00:55:43.337
+But to get where we want to go, you're going to want to erase all that.
+
+00:55:43.337 --> 00:55:50.337
+And then purposefully go back in there with column and row headers to create the layout you see here.
+
+00:55:50.337 --> 00:55:53.337
+And spend four minutes doing that.
+
+00:55:53.337 --> 00:55:56.337
+In the last minute, I'll swoop in and do it with you.
+
+00:55:56.337 --> 00:56:00.337
+And if there's any questions, let me know.
+
+00:56:27.337 --> 00:56:32.337
+So these are new packages I haven't used before.
+
+00:56:32.337 --> 00:56:36.337
+What's the Tigris one?
+
+00:56:36.337 --> 00:56:40.337
+Maybe I just haven't come across it.
+
+00:56:40.337 --> 00:56:45.337
+I think it's a new version of something we might have done with census.
+
+00:56:46.337 --> 00:56:49.337
+I think it's getting the shape files to make that map.
+
+00:56:49.337 --> 00:56:52.337
+Shape files. Got it.
+
+00:56:52.337 --> 00:56:56.337
+I was impressed with the map popped up so quickly.
+
+00:56:56.337 --> 00:56:59.337
+Like in the MISC file.
+
+00:56:59.337 --> 00:57:02.337
+It was like create incident map.
+
+00:57:02.337 --> 00:57:04.337
+That's just lethal.
+
+00:57:04.337 --> 00:57:07.337
+I don't know if that's a good thing.
+
+00:57:07.337 --> 00:57:10.337
+I don't know if that's a good thing.
+
+00:57:10.337 --> 00:57:13.337
+I don't know if that's a good thing.
+
+00:57:14.337 --> 00:57:17.337
+It's using leaflet.
+
+00:57:17.337 --> 00:57:20.337
+I wrote that function so it's easy to call.
+
+00:57:20.337 --> 00:57:23.337
+I wrote that function so it's easy to call.
+
+00:57:23.337 --> 00:57:26.337
+If you look in helper, you can see the actual code for it.
+
+00:57:26.337 --> 00:57:29.337
+If you look in helper, you can see the actual code for it.
+
+00:57:29.337 --> 00:57:32.337
+You went with Georgia.
+
+00:57:32.337 --> 00:57:35.337
+I thought you'd go with your hometown.
+
+00:57:35.337 --> 00:57:38.337
+I was at a conference in Georgia.
+
+00:57:38.337 --> 00:57:41.337
+Georgia is an interesting state.
+
+00:57:42.337 --> 00:57:45.337
+It was there where I had the Waymo driving at me in an Uber.
+
+00:57:45.337 --> 00:57:48.337
+It was there where I had the Waymo driving at me in an Uber.
+
+00:57:48.337 --> 00:57:51.337
+You can see on the map right there,
+
+00:57:51.337 --> 00:57:54.337
+You can see on the map right there,
+
+00:57:54.337 --> 00:57:57.337
+that white spot at the top, that's basically Atlanta.
+
+00:57:57.337 --> 00:58:00.337
+Georgia is like the suburbs of Atlanta to the ocean.
+
+00:58:00.337 --> 00:58:03.337
+Georgia is like the suburbs of Atlanta to the ocean.
+
+00:58:03.337 --> 00:58:06.337
+You and I were there back in March.
+
+00:58:06.337 --> 00:58:09.337
+You and I were there back in March.
+
+00:58:10.337 --> 00:58:13.337
+We had a conference there last year.
+
+00:58:13.337 --> 00:58:16.337
+It seems like a long time ago.
+
+00:58:16.337 --> 00:58:19.337
+My hometown is not too far from the Georgia border.
+
+00:58:19.337 --> 00:58:22.337
+I'm practically in Tennessee.
+
+00:58:22.337 --> 00:58:25.337
+I live near Chattanooga, which is right over the state line.
+
+00:58:25.337 --> 00:58:28.337
+I live near Chattanooga, which is right over the state line.
+
+00:58:30.337 --> 00:58:33.337
+That's cool, Georgia.
+
+00:58:33.337 --> 00:58:36.337
+It's a nice big state.
+
+00:58:36.337 --> 00:58:39.337
+It's a long drive to get to Florida.
+
+00:58:39.337 --> 00:58:42.337
+Unfortunately, it is.
+
+00:58:42.337 --> 00:58:45.337
+Unfortunately, it is.
+
+00:58:45.337 --> 00:58:48.337
+There's a new truck stop everyone likes to hit on the way down.
+
+00:58:48.337 --> 00:58:51.337
+There's a new truck stop everyone likes to hit on the way down.
+
+00:58:51.337 --> 00:58:54.337
+Buc-ee's.
+
+00:58:54.337 --> 00:58:57.337
+There's one at every truck stop.
+
+00:58:57.337 --> 00:59:00.337
+There's something special.
+
+00:59:00.337 --> 00:59:03.337
+My kids like them.
+
+00:59:03.337 --> 00:59:06.337
+I think Indiana meets grocery store meets restaurant meets theme park.
+
+00:59:06.337 --> 00:59:09.337
+I think Indiana meets grocery store meets restaurant meets theme park.
+
+00:59:09.337 --> 00:59:12.337
+Kids seem happy there too.
+
+00:59:12.337 --> 00:59:15.337
+Kids love it.
+
+00:59:15.337 --> 00:59:18.337
+It's good branding too.
+
+00:59:18.337 --> 00:59:21.337
+I think Indiana is going to start getting them.
+
+00:59:21.337 --> 00:59:24.337
+We don't have them yet.
+
+00:59:24.337 --> 00:59:27.337
+I made a shiny app for another workshop.
+
+00:59:27.337 --> 00:59:30.337
+I made a shiny app for another workshop.
+
+00:59:30.337 --> 00:59:33.337
+How did you get the data for that?
+
+00:59:33.337 --> 00:59:36.337
+How did you get the data for that?
+
+00:59:36.337 --> 00:59:39.337
+I think the workshop was about scraping data from the web.
+
+00:59:39.337 --> 00:59:42.337
+I think the workshop was about scraping data from the web.
+
+00:59:42.337 --> 00:59:45.337
+I used to have Starbucks data for that.
+
+00:59:45.337 --> 00:59:48.337
+I loved it, but they stopped maintaining the latitude and longitude
+
+00:59:48.337 --> 00:59:51.337
+for the data set I was pulling.
+
+00:59:51.337 --> 00:59:54.337
+Buc-ee's would work though.
+
+00:59:54.337 --> 00:59:57.337
+Back to you.
+
+00:59:57.337 --> 01:00:00.337
+Arpit has a question in the chat.
+
+01:00:00.337 --> 01:00:03.337
+Quora looks like a great way to organize an update report
+
+01:00:03.337 --> 01:00:06.337
+and has an audit trail.
+
+01:00:06.337 --> 01:00:09.337
+We often use MS Word or Excel
+
+01:00:09.337 --> 01:00:12.337
+for sharing results and reports with stakeholders.
+
+01:00:12.337 --> 01:00:15.337
+One benefit is that it allows stakeholders to add comments
+
+01:00:15.337 --> 01:00:18.337
+and provide feedback within the document.
+
+01:00:18.337 --> 01:00:21.337
+Does Quora reporting capabilities allow for similar functionality?
+
+01:00:21.337 --> 01:00:24.337
+Any other recommendation on how you may have handled something like that?
+
+01:00:24.337 --> 01:00:27.337
+You know, it's interesting, Arpit,
+
+01:00:27.337 --> 01:00:30.337
+because I remember JJ Lair building in
+
+01:00:30.337 --> 01:00:33.337
+commenting functionality to Quora, but I'm not sure that went anywhere.
+
+01:00:33.337 --> 01:00:36.337
+If it didn't, I'm pretty sure the reason is
+
+01:00:36.337 --> 01:00:39.337
+because people do what I do,
+
+01:00:39.337 --> 01:00:42.337
+which is your Quora documents are just text files,
+
+01:00:42.337 --> 01:00:45.337
+so they're very easy to host on GitHub or Git repo
+
+01:00:45.337 --> 01:00:48.337
+and look at differences and see things there.
+
+01:00:48.337 --> 01:00:51.337
+It's not like JSON or some weird
+
+01:00:51.337 --> 01:00:54.337
+HTML format or anything where you can't really tell what's going on.
+
+01:00:54.337 --> 01:00:57.337
+It's literally what you see in your Positron
+
+01:00:57.337 --> 01:01:00.337
+or RStudio is what appears on GitHub,
+
+01:01:00.337 --> 01:01:03.337
+and then people leave their comments on GitHub as a pull request.
+
+01:01:03.337 --> 01:01:06.337
+That's what I recommend doing,
+
+01:01:06.337 --> 01:01:09.337
+but I could see how
+
+01:01:09.337 --> 01:01:12.337
+you may be interacting with people who are
+
+01:01:12.337 --> 01:01:15.337
+quite fine leaving a comment on Microsoft Word, but perhaps not on GitHub.
+
+01:01:15.337 --> 01:01:18.337
+I don't think I could help you there.
+
+01:01:19.337 --> 01:01:22.337
+Oh, there you go.
+
+01:01:22.337 --> 01:01:25.337
+Then Daniel says, you can always render a Quora document in PDF format
+
+01:01:25.337 --> 01:01:28.337
+and then use annotations and comments in the PDF.
+
+01:01:28.337 --> 01:01:31.337
+That's true, and then I'm being very short-sighted
+
+01:01:31.337 --> 01:01:34.337
+because not only can you render in PDF, you actually can render
+
+01:01:34.337 --> 01:01:37.337
+a Quora document to a Microsoft Word format
+
+01:01:37.337 --> 01:01:40.337
+and then use the Microsoft Word commenting.
+
+01:01:40.337 --> 01:01:43.337
+I guess that would take you full circle.
+
+01:01:43.337 --> 01:01:46.337
+Speaking of full circle, let's turn this into a dashboard.
+
+01:01:47.337 --> 01:01:50.337
+Here it says format HTML.
+
+01:01:50.337 --> 01:01:53.337
+If you wanted to turn this into that PDF we're talking about,
+
+01:01:53.337 --> 01:01:56.337
+it's format PDF, and if you want to turn it into a Microsoft Word document,
+
+01:01:56.337 --> 01:01:59.337
+I think it's format Microsoft Word.
+
+01:01:59.337 --> 01:02:02.337
+You can learn about both of those on the Quora website.
+
+01:02:02.337 --> 01:02:05.337
+Both of them do require you to have other bits of software installed on your computer,
+
+01:02:05.337 --> 01:02:08.337
+like maybe Types or LaTeX to make a PDF,
+
+01:02:08.337 --> 01:02:11.337
+and probably Microsoft Word to make Microsoft Word.
+
+01:02:11.337 --> 01:02:14.337
+Today, we want to
+
+01:02:14.337 --> 01:02:17.337
+turn it into a dashboard,
+
+01:02:17.337 --> 01:02:20.337
+and not only that, I want to add an extra value under dashboard
+
+01:02:20.337 --> 01:02:23.337
+saying orientation columns.
+
+01:02:23.337 --> 01:02:26.337
+I go to the next line, and I'm going to indent two more to show that this is
+
+01:02:26.337 --> 01:02:29.337
+a sub-value of dashboard orientation,
+
+01:02:29.337 --> 01:02:32.337
+and the orientation will be columns.
+
+01:02:32.337 --> 01:02:35.337
+Then this would work
+
+01:02:35.337 --> 01:02:38.337
+as a dashboard, and I'll preview it
+
+01:02:38.337 --> 01:02:41.337
+so I can run while I'm doing other things,
+
+01:02:41.337 --> 01:02:44.337
+and there's pretty much rhyme or reason to how it just comes out
+
+01:02:44.337 --> 01:02:47.337
+by happenstance based on what I wrote for the report.
+
+01:02:47.337 --> 01:02:50.337
+I'm going to erase all of this, but I'm going to keep every single code cell.
+
+01:02:50.337 --> 01:02:53.337
+Now it's loading
+
+01:02:53.337 --> 01:02:56.337
+those files.
+
+01:02:56.337 --> 01:02:59.337
+Sometimes you can't really tell what's going on
+
+01:02:59.337 --> 01:03:02.337
+until you make this bigger,
+
+01:03:02.337 --> 01:03:05.337
+or there's a pop-out button here
+
+01:03:05.337 --> 01:03:08.337
+that you can use to launch the whole thing in a webpage
+
+01:03:08.337 --> 01:03:11.337
+so you can see better how someone else would see it.
+
+01:03:11.337 --> 01:03:14.337
+It still looks like the report, actually.
+
+01:03:14.337 --> 01:03:17.337
+It doesn't look like much of a dashboard at all.
+
+01:03:17.337 --> 01:03:20.337
+I'm going to change that by working with the layout here.
+
+01:03:20.337 --> 01:03:23.337
+I still need to erase a couple more lines of text
+
+01:03:23.337 --> 01:03:26.337
+and a couple of headers.
+
+01:03:29.337 --> 01:03:32.337
+Now that that's all gone,
+
+01:03:32.337 --> 01:03:35.337
+if I preview this,
+
+01:03:35.337 --> 01:03:38.337
+it's orientation columns.
+
+01:03:38.337 --> 01:03:41.337
+Every code cell should be its own column
+
+01:03:41.337 --> 01:03:44.337
+minus the setup code cell, which just won't appear
+
+01:03:44.337 --> 01:03:47.337
+because it's not producing anything that could appear.
+
+01:03:47.337 --> 01:03:50.337
+If I bring this back...
+
+01:03:53.337 --> 01:03:56.337
+Okay, so we achieved that.
+
+01:03:56.337 --> 01:03:59.337
+Everything is its own column, three columns.
+
+01:03:59.337 --> 01:04:02.337
+It's not really the layout I'm going for, but now I know that it's working.
+
+01:04:02.337 --> 01:04:05.337
+Now I need to think about this.
+
+01:04:05.337 --> 01:04:08.337
+I want to divide it into two columns,
+
+01:04:08.337 --> 01:04:11.337
+and I can do that with the second-level header.
+
+01:04:11.337 --> 01:04:14.337
+The name I choose for the header won't show up,
+
+01:04:14.337 --> 01:04:17.337
+but if I use column, that'll be a good reminder to me of what I'm doing.
+
+01:04:17.337 --> 01:04:20.337
+The first column, I just want to have this Georgia map,
+
+01:04:20.337 --> 01:04:23.337
+so after the Georgia map, I'll start a new column,
+
+01:04:23.337 --> 01:04:26.337
+a second column.
+
+01:04:26.337 --> 01:04:29.337
+That will combine these two things into one column.
+
+01:04:29.337 --> 01:04:32.337
+I'll make it obvious what's going to happen.
+
+01:04:32.337 --> 01:04:35.337
+Maybe I should pay attention to this warning.
+
+01:04:35.337 --> 01:04:38.337
+No, that's not an important warning. I'll just stop paying attention.
+
+01:04:38.337 --> 01:04:41.337
+There it goes. It's remaking the app.
+
+01:04:45.337 --> 01:04:48.337
+This app looks pretty good, and if you get to here with this app,
+
+01:04:48.337 --> 01:04:51.337
+that'd be fine. Maybe you want to keep going forward.
+
+01:04:51.337 --> 01:04:54.337
+The only thing that I'd tweak is maybe I want that plot
+
+01:04:54.337 --> 01:04:57.337
+to be a little smaller. In real life, the more I do this,
+
+01:04:57.337 --> 01:05:00.337
+the more I realize I probably don't, but I do want to know
+
+01:05:00.337 --> 01:05:03.337
+that I could do that if I wanted to. To do that,
+
+01:05:03.337 --> 01:05:06.337
+I need to put it in a row so I could add
+
+01:05:06.337 --> 01:05:09.337
+the height thing to that row.
+
+01:05:09.337 --> 01:05:12.337
+It is in a row right now, but I have nowhere to really type
+
+01:05:12.337 --> 01:05:15.337
+height equals 30%
+
+01:05:15.337 --> 01:05:18.337
+or whatever I want.
+
+01:05:18.337 --> 01:05:21.337
+To have a place to type that, I'm just going to manually,
+
+01:05:21.337 --> 01:05:24.337
+explicitly put it into a row with a third-level header.
+
+01:05:24.337 --> 01:05:27.337
+That third-level header will have that.
+
+01:05:27.337 --> 01:05:30.337
+If I just left it like this, these two would both be scooped up
+
+01:05:30.337 --> 01:05:33.337
+in the same row, and I don't even know what I'm doing.
+
+01:05:33.337 --> 01:05:36.337
+I definitely want a row up there. I better put this in the right place.
+
+01:05:36.337 --> 01:05:39.337
+I'm going to put it down here at the start of this column.
+
+01:05:39.337 --> 01:05:42.337
+I don't want those to end up being back in the same row,
+
+01:05:42.337 --> 01:05:45.337
+so I'll also put this in its own row.
+
+01:05:45.337 --> 01:05:48.337
+I won't bother giving it a height criteria
+
+01:05:48.337 --> 01:05:51.337
+because it'll expand the fill to 70%
+
+01:05:51.337 --> 01:05:54.337
+left over. Let's preview that.
+
+01:05:54.337 --> 01:05:57.337
+We'll have our dashboard.
+
+01:05:57.337 --> 01:06:00.337
+For those of you who are getting bored at home,
+
+01:06:00.337 --> 01:06:03.337
+this is exactly the sort of thing you could ask Positive Assistant
+
+01:06:03.337 --> 01:06:06.337
+over here to do and then see how it does.
+
+01:06:06.337 --> 01:06:09.337
+I think it's another task where if you
+
+01:06:09.337 --> 01:06:12.337
+know the syntax for laying this out,
+
+01:06:12.337 --> 01:06:15.337
+it might actually be easier to do it yourself than try to explain
+
+01:06:15.337 --> 01:06:18.337
+this visual idea with English words to the model
+
+01:06:18.337 --> 01:06:21.337
+and see if it gets it. Here I have a nice small plot.
+
+01:06:21.337 --> 01:06:24.337
+I have a large area for my data set. I have my map.
+
+01:06:24.337 --> 01:06:27.337
+This is a nice looking dashboard, and I could host it
+
+01:06:27.337 --> 01:06:30.337
+like any other web page because it's an HTML
+
+01:06:30.337 --> 01:06:33.337
+file. If I come back to the file browser,
+
+01:06:33.337 --> 01:06:36.337
+it's still the report to HTML file since I've been
+
+01:06:36.337 --> 01:06:39.337
+updating reports just overwriting this.
+
+01:06:39.337 --> 01:06:42.337
+I see I have some tag-along files now for this dashboard
+
+01:06:42.337 --> 01:06:45.337
+that I'd probably want to upload with that report
+
+01:06:45.337 --> 01:06:48.337
+if I'm actually putting this on the Internet so it all looks
+
+01:06:48.337 --> 01:06:51.337
+nice on the web.
+
+01:06:51.337 --> 01:06:54.337
+Those are dashboards.
+
+01:06:54.337 --> 01:06:57.337
+Then
+
+01:06:57.337 --> 01:07:00.337
+the things to pay attention
+
+01:07:00.337 --> 01:07:03.337
+to there are changing the format at the top and then
+
+01:07:03.337 --> 01:07:06.337
+using the second and third level headers wisely and intentionally.
+
+01:07:06.337 --> 01:07:09.337
+If things have gotten
+
+01:07:09.337 --> 01:07:12.337
+jumbled up for you and
+
+01:07:12.337 --> 01:07:15.337
+you need to just catch right back up to where we are,
+
+01:07:15.337 --> 01:07:18.337
+the O2 dashboard file and solutions will give you what we
+
+01:07:18.337 --> 01:07:21.337
+have here. But we're about to jump files from
+
+01:07:21.337 --> 01:07:24.337
+report.cumd to app.r, so it's not that important
+
+01:07:24.337 --> 01:07:27.337
+to be caught up at this point.
+
+01:07:27.337 --> 01:07:30.337
+Let me just walk back
+
+01:07:30.337 --> 01:07:33.337
+everything I just said. I guess actually you should be caught up here
+
+01:07:33.337 --> 01:07:36.337
+because we're going to try to publish this. Right now we have the last
+
+01:07:36.337 --> 01:07:39.337
+static file available to us.
+
+01:07:39.337 --> 01:07:42.337
+We're going to try to publish that while we're still in a relatively
+
+01:07:42.337 --> 01:07:45.337
+simple space of static files. That way when we get to these interactive
+
+01:07:45.337 --> 01:07:48.337
+apps, which we're going to build next, publishing them won't be such a large
+
+01:07:48.337 --> 01:07:51.337
+leap. The way we're going to publish them is we're going to share
+
+01:07:51.337 --> 01:07:54.337
+them with Pushbun Publishing right from Positron to
+
+01:07:54.337 --> 01:07:57.337
+PositConnect. PositConnect
+
+01:07:57.337 --> 01:08:00.337
+is the
+
+01:08:00.337 --> 01:08:03.337
+sharing platform that we have available to us on the server
+
+01:08:03.337 --> 01:08:06.337
+because we have all three of these on there. It's something that your
+
+01:08:06.337 --> 01:08:09.337
+institution or your company might have for you to share things with
+
+01:08:09.337 --> 01:08:12.337
+non-data scientists and decision makers.
+
+01:08:12.337 --> 01:08:15.337
+It's also available as a freemium service called
+
+01:08:15.337 --> 01:08:18.337
+Connect Cloud, which means if you don't have Connect, you can still
+
+01:08:18.337 --> 01:08:21.337
+share things for free on Connect Cloud.
+
+01:08:21.337 --> 01:08:24.337
+I say freemium because if you want to pay for a lot of compute resources
+
+01:08:24.337 --> 01:08:27.337
+or make it private and stuff, then you could pay for
+
+01:08:27.337 --> 01:08:30.337
+a higher level service there.
+
+01:08:30.337 --> 01:08:33.337
+Let's try that out.
+
+01:08:33.337 --> 01:08:36.337
+I'm going to go back to my app.
+
+01:08:36.337 --> 01:08:39.337
+I have a couple different ways to share this dashboard that I've
+
+01:08:39.337 --> 01:08:42.337
+made. When I say a couple, I mean exactly two.
+
+01:08:42.337 --> 01:08:45.337
+Two big ones to think about. One is
+
+01:08:45.337 --> 01:08:48.337
+if you use version control, specifically
+
+01:08:48.337 --> 01:08:51.337
+Git version control in Positron,
+
+01:08:51.337 --> 01:08:54.337
+we inherit the VS Code Git client.
+
+01:08:54.337 --> 01:08:57.337
+It looks like this branching icon. Right now there'll probably be a big
+
+01:08:57.337 --> 01:09:00.337
+red number in front of it.
+
+01:09:00.337 --> 01:09:03.337
+This directory came from a Git repo.
+
+01:09:03.337 --> 01:09:06.337
+This number is telling us the number of files that we have changed since
+
+01:09:06.337 --> 01:09:09.337
+we last checked into that repo. 56 files.
+
+01:09:09.337 --> 01:09:12.337
+Most of them CSS for this dashboard.
+
+01:09:12.337 --> 01:09:15.337
+This is what the Git client looks like.
+
+01:09:15.337 --> 01:09:18.337
+You have a place to see the things you've changed.
+
+01:09:18.337 --> 01:09:21.337
+You could stage them in a GUI sort of way so I could add
+
+01:09:21.337 --> 01:09:24.337
+helpers to a stage commit. I could write a commit message.
+
+01:09:24.337 --> 01:09:27.337
+I could even use AI by clicking these
+
+01:09:27.337 --> 01:09:30.337
+circles here to write the commit message for me.
+
+01:09:30.337 --> 01:09:33.337
+It's telling me it added this new function.
+
+01:09:33.337 --> 01:09:36.337
+I could also do all the GitHub stuff you do,
+
+01:09:36.337 --> 01:09:39.337
+like push and pull and fetch and all that.
+
+01:09:39.337 --> 01:09:42.337
+Down below I see the commit history for this repo.
+
+01:09:42.337 --> 01:09:45.337
+I could dig into any of these and see what the
+
+01:09:45.337 --> 01:09:48.337
+file looked like in that version of the file.
+
+01:09:48.337 --> 01:09:51.337
+It'll open in Positron and it'll show me that
+
+01:09:51.337 --> 01:09:54.337
+Git diff we were talking about earlier. In this case it really is just a
+
+01:09:54.337 --> 01:09:57.337
+Git diff. We'll close that up.
+
+01:09:57.337 --> 01:10:00.337
+Down here at the very bottom I can see which branch I'm on and I can
+
+01:10:00.337 --> 01:10:03.337
+click on this to create new branches. I'm not going to go into
+
+01:10:03.337 --> 01:10:06.337
+Git, but if you're interested in version control, I do think it's the
+
+01:10:06.337 --> 01:10:09.337
+way to go. This Git client
+
+01:10:09.337 --> 01:10:12.337
+here comes from Visual Studio Code, which is made by
+
+01:10:12.337 --> 01:10:15.337
+Microsoft, who owns GitHub.com, which is
+
+01:10:15.337 --> 01:10:18.337
+the largest collection of Git repositories. VS Code
+
+01:10:18.337 --> 01:10:21.337
+probably has the largest collection of Git users using it.
+
+01:10:21.337 --> 01:10:24.337
+I think we'd all feel pretty confident this is
+
+01:10:24.337 --> 01:10:27.337
+as good as it gets for Git clients and it's here available
+
+01:10:27.337 --> 01:10:30.337
+for you to use. That would be a way
+
+01:10:30.337 --> 01:10:33.337
+to share your code somewhere, so it's kind of like you're publishing your code.
+
+01:10:33.337 --> 01:10:36.337
+But how would you publish that dashboard?
+
+01:10:36.337 --> 01:10:39.337
+Well, for that let's use the second method,
+
+01:10:39.337 --> 01:10:42.337
+PositConnect. We have
+
+01:10:42.337 --> 01:10:45.337
+push-button publishing to connect through the
+
+01:10:45.337 --> 01:10:48.337
+Posit Publisher
+
+01:10:48.337 --> 01:10:51.337
+icon at the top of your file. It looks
+
+01:10:51.337 --> 01:10:54.337
+like a
+
+01:10:54.337 --> 01:10:57.337
+circle with an arrow going into it.
+
+01:10:57.337 --> 01:11:00.337
+You'll find it at the top of your file
+
+01:11:00.337 --> 01:11:03.337
+and you can click on that to start
+
+01:11:03.337 --> 01:11:06.337
+the process of publishing. You could do it with me
+
+01:11:06.337 --> 01:11:09.337
+or you could just watch if that's where you're at.
+
+01:11:09.337 --> 01:11:12.337
+I'm going to click it and I'll show you what it looks like.
+
+01:11:12.337 --> 01:11:15.337
+If you want to follow along, go ahead. If not, it's OK.
+
+01:11:15.337 --> 01:11:18.337
+The first thing it asks is, do you just want to publish
+
+01:11:18.337 --> 01:11:21.337
+these static HTML files as they are or would you
+
+01:11:21.337 --> 01:11:24.337
+prefer to publish the source code? I'm going to
+
+01:11:24.337 --> 01:11:27.337
+select the source code and that's going to have some benefits once it's
+
+01:11:27.337 --> 01:11:30.337
+published. I'll show you what those are. I'm selecting source code
+
+01:11:30.337 --> 01:11:33.337
+and then it asks me for a title for this
+
+01:11:33.337 --> 01:11:36.337
+when it lives on Connect. I'm just going to click enter. That looks
+
+01:11:36.337 --> 01:11:39.337
+like a great title. It borrowed it right from my metadata.
+
+01:11:39.337 --> 01:11:42.337
+Now it says, do I want to publish to Connect Cloud or
+
+01:11:42.337 --> 01:11:45.337
+Connect? Well, on the server we have an instance of Connect.
+
+01:11:45.337 --> 01:11:48.337
+I'm going to click Connect, which
+
+01:11:48.337 --> 01:11:51.337
+I actually don't think I did because it just
+
+01:11:51.337 --> 01:11:54.337
+went there.
+
+01:11:54.337 --> 01:11:57.337
+No, I don't want Connect Cloud. I'm going to click escape.
+
+01:11:57.337 --> 01:12:00.337
+Sorry, I didn't mean to tap anything.
+
+01:12:03.337 --> 01:12:06.337
+Source code, Cancer in Georgia, Connect.
+
+01:12:06.337 --> 01:12:09.337
+There we go. It found the
+
+01:12:09.337 --> 01:12:12.337
+Connect instance. It scanned my server and said, oh, look, there's an instance of Connect.
+
+01:12:12.337 --> 01:12:15.337
+Is this the URL of Connect that you want to publish to?
+
+01:12:15.337 --> 01:12:18.337
+Yes, it is. Say enter.
+
+01:12:18.337 --> 01:12:21.337
+Now it says, okay, I just need to make sure you have permission
+
+01:12:21.337 --> 01:12:24.337
+to publish this instance of Connect. Connect won't let just anyone
+
+01:12:24.337 --> 01:12:27.337
+publish their stuff here. It's very easy to prove
+
+01:12:27.337 --> 01:12:30.337
+that. I'll click token authentication. It says,
+
+01:12:30.337 --> 01:12:33.337
+okay, I'm going to open up Connect. Can you sign in?
+
+01:12:33.337 --> 01:12:36.337
+Here's where you need to remember
+
+01:12:36.337 --> 01:12:39.337
+your sign in from before you sign in
+
+01:12:39.337 --> 01:12:42.337
+with the account you made. That shows that,
+
+01:12:42.337 --> 01:12:45.337
+well, it tells Connect who you are.
+
+01:12:45.738 --> 01:12:49.738
+close connect who you are, and then, what is it?
+
+01:12:54.738 --> 01:12:55.738
+All right.
+
+01:12:49.682 --> 01:12:54.682
+I'll post connect who you are and then, what did I?
+
+01:12:58.922 --> 01:13:00.562
+All right, signed in correctly.
+
+01:13:00.562 --> 01:13:02.282
+And then connect says, hey, someone claiming to you
+
+01:13:02.282 --> 01:13:03.842
+is trying to publish this account.
+
+01:13:03.842 --> 01:13:05.002
+Is that actually you?
+
+01:13:05.002 --> 01:13:07.641
+If so, let me know by pressing connect.
+
+01:13:07.641 --> 01:13:08.481
+I will.
+
+01:13:08.481 --> 01:13:09.362
+It says, okay, that's great.
+
+01:13:09.362 --> 01:13:10.362
+I'll let it through.
+
+01:13:11.321 --> 01:13:12.362
+And then I can go back over here.
+
+01:13:12.362 --> 01:13:13.561
+It says success.
+
+01:13:16.561 --> 01:13:18.762
+And now we're ready to organize what we published.
+
+01:13:18.762 --> 01:13:21.882
+So before it sends everything over to connect, it stops.
+
+01:13:21.882 --> 01:13:23.882
+It says, why don't you collect the files
+
+01:13:23.882 --> 01:13:25.882
+you want to put together to give connect?
+
+01:13:25.882 --> 01:13:30.961
+And our dashboard here has a couple of files that it uses.
+
+01:13:30.961 --> 01:13:32.402
+So it's not exactly self-contained.
+
+01:13:32.402 --> 01:13:34.562
+It's reading in this Georgia cases file
+
+01:13:34.562 --> 01:13:37.121
+and it's sourcing this helpers.r file.
+
+01:13:37.121 --> 01:13:38.842
+And connects go get what I send it
+
+01:13:38.842 --> 01:13:40.641
+and try to rebuild this dashboard.
+
+01:13:40.641 --> 01:13:43.202
+And if I want that to work, I better include those two files
+
+01:13:43.202 --> 01:13:45.801
+because they're going to be necessary.
+
+01:13:45.801 --> 01:13:48.082
+So over here in the sidebar that it opened for me,
+
+01:13:48.082 --> 01:13:51.481
+I could just select Georgia cases and helpers.r.
+
+01:13:51.481 --> 01:13:53.522
+Report.qmd is already selected.
+
+01:13:53.522 --> 01:13:56.281
+And then it's selected some files that I created
+
+01:13:56.281 --> 01:13:58.802
+to tell connect how to rebuild the packages I'm using
+
+01:13:58.802 --> 01:14:00.042
+in the version of R I'm using.
+
+01:14:00.042 --> 01:14:02.641
+So connect can run this code for me.
+
+01:14:02.641 --> 01:14:05.921
+Once that's already gone, go click deploy project.
+
+01:14:05.921 --> 01:14:08.122
+Then it's packaging those things up.
+
+01:14:08.122 --> 01:14:10.281
+It's going to send them over to connect.
+
+01:14:10.281 --> 01:14:13.641
+Connect is going to run the code to make this dashboard.
+
+01:14:13.641 --> 01:14:15.362
+So it will have its own version of the dashboard
+
+01:14:15.362 --> 01:14:16.521
+to give to the world.
+
+01:14:16.521 --> 01:14:18.722
+And then it's going to host it at a URL
+
+01:14:18.722 --> 01:14:20.241
+that I could give to folks
+
+01:14:20.241 --> 01:14:22.321
+that I want to visit the dashboard.
+
+01:14:22.321 --> 01:14:24.601
+They will not need to have R or Python
+
+01:14:24.601 --> 01:14:25.921
+or anything like that running.
+
+01:14:25.921 --> 01:14:28.641
+They'll just need to have a web browser
+
+01:14:28.641 --> 01:14:32.842
+and a login to connect if it's a private asset.
+
+01:14:34.002 --> 01:14:36.321
+So let's give that a second to work.
+
+01:14:44.042 --> 01:14:45.881
+And I see that Phil has some good ideas
+
+01:14:45.921 --> 01:14:48.682
+for that comment question earlier in the chat.
+
+01:14:48.682 --> 01:14:49.521
+So that's great.
+
+01:14:49.521 --> 01:14:51.561
+Now it tells me the deployment was successful
+
+01:14:51.561 --> 01:14:53.722
+and I could click this to view content
+
+01:14:53.722 --> 01:14:54.921
+or over here in the sidebar
+
+01:14:54.921 --> 01:14:57.601
+it also is giving me a view content link.
+
+01:14:57.601 --> 01:14:59.122
+So I'll click that.
+
+01:14:59.122 --> 01:15:01.042
+I'll open up and connect.
+
+01:15:01.042 --> 01:15:03.801
+And now if you're following along,
+
+01:15:03.801 --> 01:15:06.081
+hopefully you'll see what I'm hopefully going to see
+
+01:15:06.081 --> 01:15:07.601
+which is our dashboard.
+
+01:15:07.601 --> 01:15:08.922
+There it is.
+
+01:15:08.922 --> 01:15:10.922
+This is what it looks like when you're the author.
+
+01:15:10.922 --> 01:15:12.521
+You have some settings up here
+
+01:15:12.521 --> 01:15:16.042
+that you can use to configure this.
+
+01:15:16.042 --> 01:15:19.282
+People who visit it will see just the standalone version
+
+01:15:21.361 --> 01:15:25.321
+which looks like the app without that stuff up there.
+
+01:15:25.321 --> 01:15:27.842
+So you can give this URL to someone
+
+01:15:27.842 --> 01:15:28.721
+and they could come here
+
+01:15:28.721 --> 01:15:31.441
+and they could use this to monitor cancer hotspots
+
+01:15:31.441 --> 01:15:33.881
+in Georgia or what have you.
+
+01:15:33.881 --> 01:15:35.321
+There's some interactivity here
+
+01:15:35.321 --> 01:15:39.202
+because Leaflet is an interactive HTML powered map
+
+01:15:39.202 --> 01:15:43.042
+and data tables is an interactive HTML powered data table.
+
+01:15:44.241 --> 01:15:45.762
+ggplot2 is not interactive.
+
+01:15:45.762 --> 01:15:47.282
+So nothing happens with that one.
+
+01:15:47.282 --> 01:15:48.321
+But for all these,
+
+01:15:48.321 --> 01:15:50.241
+the nice thing about dashboards is you can expand it
+
+01:15:50.241 --> 01:15:52.482
+and sort of see it on a bigger scale.
+
+01:15:52.482 --> 01:15:53.402
+Close that.
+
+01:15:53.402 --> 01:15:54.241
+Okay.
+
+01:15:54.241 --> 01:15:56.562
+But let's go back to the author view.
+
+01:15:58.482 --> 01:15:59.321
+With the settings,
+
+01:15:59.321 --> 01:16:02.601
+we could do things like decide
+
+01:16:02.601 --> 01:16:04.601
+who specifically has permission to see this
+
+01:16:04.601 --> 01:16:06.601
+or we can make it open to the world.
+
+01:16:06.642 --> 01:16:07.682
+We can also,
+
+01:16:07.682 --> 01:16:11.122
+if we don't like the random component of the URL,
+
+01:16:11.122 --> 01:16:14.161
+we could give it some sort of stub
+
+01:16:14.161 --> 01:16:16.361
+that it will use here instead.
+
+01:16:16.361 --> 01:16:20.321
+And then the cool thing about publishing the source files,
+
+01:16:20.321 --> 01:16:22.002
+we'll discard those changes,
+
+01:16:22.002 --> 01:16:24.922
+is it now has all the code it needs to rebuild this
+
+01:16:24.922 --> 01:16:26.441
+whenever I want it to.
+
+01:16:26.441 --> 01:16:29.241
+And so I could ask it to rebuild this dashboard
+
+01:16:29.241 --> 01:16:30.801
+on a schedule,
+
+01:16:30.801 --> 01:16:34.721
+which makes sense if my code is reading in a data source
+
+01:16:34.721 --> 01:16:37.002
+and it gets updated from time to time.
+
+01:16:37.002 --> 01:16:37.881
+So for example,
+
+01:16:37.881 --> 01:16:42.881
+I could ask Connect to maybe every week
+
+01:16:43.562 --> 01:16:46.081
+on Monday or maybe Sunday night,
+
+01:16:46.081 --> 01:16:47.241
+I don't know,
+
+01:16:47.241 --> 01:16:48.922
+to rebuild this.
+
+01:16:48.922 --> 01:16:51.801
+And then it will collect the most recent version
+
+01:16:51.801 --> 01:16:53.601
+of that data file when it rebuilds it.
+
+01:16:53.601 --> 01:16:55.642
+And so when people come in Monday morning,
+
+01:16:55.642 --> 01:16:56.482
+all that week,
+
+01:16:56.482 --> 01:16:59.202
+they'll be seeing the most updated data for that week.
+
+01:16:59.202 --> 01:17:01.321
+And the next week it'll update again.
+
+01:17:01.321 --> 01:17:03.642
+But I will never have to do anything with that
+
+01:17:03.642 --> 01:17:05.842
+because I've handed it off to Connect
+
+01:17:05.842 --> 01:17:07.122
+and made it automatic.
+
+01:17:07.122 --> 01:17:10.361
+Connect will monitor that till I tell it to stop.
+
+01:17:10.361 --> 01:17:13.041
+I can even ask it to email me or someone else
+
+01:17:13.041 --> 01:17:14.002
+each time it does it,
+
+01:17:14.002 --> 01:17:16.282
+so I could see the report that it makes
+
+01:17:16.282 --> 01:17:19.641
+or see if it ran into any trouble or something.
+
+01:17:19.641 --> 01:17:20.481
+All right.
+
+01:17:20.481 --> 01:17:22.562
+But let's come away from Connect.
+
+01:17:22.562 --> 01:17:25.921
+We'll be back here a little later to configure AI stuff,
+
+01:17:25.921 --> 01:17:28.162
+but let's get to the AI stuff.
+
+01:17:28.162 --> 01:17:30.081
+All right, discard those changes.
+
+01:17:30.081 --> 01:17:31.241
+I'm gonna close some stuff down
+
+01:17:31.241 --> 01:17:33.361
+just so I'm not drowning in tabs.
+
+01:17:37.162 --> 01:17:38.002
+All right, here we are.
+
+01:17:38.002 --> 01:17:39.201
+We're back there.
+
+01:17:39.201 --> 01:17:41.842
+And if we go to the slides,
+
+01:17:41.842 --> 01:17:43.641
+done some cool things with Connect.
+
+01:17:44.761 --> 01:17:46.562
+Let's talk about Shiny.
+
+01:17:46.562 --> 01:17:49.602
+Shiny is a wonderful package for R.
+
+01:17:49.602 --> 01:17:51.442
+You've probably heard of it before.
+
+01:17:51.442 --> 01:17:53.081
+Maybe you've used it before.
+
+01:17:53.081 --> 01:17:55.442
+If not, I'll tell you what it's all about.
+
+01:17:55.442 --> 01:17:57.602
+In the past, I'd spend half a day to a whole day
+
+01:17:57.602 --> 01:18:00.282
+teaching you how to build your first Shiny app.
+
+01:18:00.322 --> 01:18:03.241
+In the age of AI, that's no longer necessary.
+
+01:18:03.241 --> 01:18:06.162
+Shiny is also available for both R and Python
+
+01:18:06.162 --> 01:18:07.961
+for those who said use Python.
+
+01:18:07.961 --> 01:18:09.562
+But today, we're just gonna use R.
+
+01:18:09.562 --> 01:18:13.241
+So like Cordo, Shiny has a wonderfully well-documented
+
+01:18:13.241 --> 01:18:16.041
+webpage at shiny.posit.co.
+
+01:18:16.041 --> 01:18:18.081
+Anything you wanna dig into deeper here
+
+01:18:18.081 --> 01:18:20.921
+or things we don't cover about Shiny today,
+
+01:18:20.921 --> 01:18:23.801
+you can learn here at shiny.posit.co.
+
+01:18:23.801 --> 01:18:27.402
+And what we'll focus on today
+
+01:18:27.402 --> 01:18:29.241
+is understanding the concept of Shiny
+
+01:18:29.241 --> 01:18:30.801
+and being able to interpret and check up
+
+01:18:30.801 --> 01:18:33.602
+on what AI writes when we tell it to write Shiny.
+
+01:18:33.602 --> 01:18:35.201
+So the way you think of a Shiny app
+
+01:18:35.201 --> 01:18:37.002
+is it is a webpage,
+
+01:18:37.002 --> 01:18:38.722
+a webpage that you're gonna build
+
+01:18:38.722 --> 01:18:41.842
+only by writing R code or Python code.
+
+01:18:41.842 --> 01:18:45.041
+And that webpage will have two classes of things.
+
+01:18:45.041 --> 01:18:47.162
+It'll have what I'm gonna call inputs.
+
+01:18:47.162 --> 01:18:50.842
+And these are widgets your visitor can manipulate
+
+01:18:50.842 --> 01:18:54.402
+with their mouse to provide values to the app.
+
+01:18:54.402 --> 01:18:56.081
+Those are things like dropdown menus,
+
+01:18:56.081 --> 01:18:58.882
+sliders, calendar date pickers,
+
+01:18:58.961 --> 01:19:01.442
+check boxes, the things you've done on the web
+
+01:19:01.442 --> 01:19:04.562
+with your mouse, you could do them in Shiny.
+
+01:19:04.562 --> 01:19:07.241
+The second class of things are outputs.
+
+01:19:07.241 --> 01:19:09.641
+These are things that you can build with R
+
+01:19:09.641 --> 01:19:11.602
+and they will appear for the user.
+
+01:19:11.602 --> 01:19:14.961
+The idea is the outputs will use the inputs
+
+01:19:14.961 --> 01:19:18.641
+that the user provide to give that user a custom experience.
+
+01:19:19.682 --> 01:19:21.481
+And we're gonna make that make sense.
+
+01:19:21.481 --> 01:19:24.761
+It comes together in actually a pretty elegant way, I think.
+
+01:19:25.602 --> 01:19:29.682
+So if the user changed the dropdown menu to stomach cancer,
+
+01:19:29.682 --> 01:19:33.162
+it would show the hotspots for stomach cancer in the map.
+
+01:19:33.162 --> 01:19:35.761
+But if they change the dropdown menu to an other site,
+
+01:19:35.761 --> 01:19:38.122
+that's just like a catch all other types of cancer,
+
+01:19:38.122 --> 01:19:40.641
+the map would update to show that data.
+
+01:19:40.641 --> 01:19:42.162
+Same map, same place of the app,
+
+01:19:42.162 --> 01:19:43.282
+but it's just changing every time
+
+01:19:43.282 --> 01:19:44.761
+the user changes their input.
+
+01:19:47.241 --> 01:19:48.521
+How do we do that?
+
+01:19:48.521 --> 01:19:51.081
+Well, we're going to do it by starting with this code.
+
+01:19:51.081 --> 01:19:53.122
+I like to tell people to think of this code
+
+01:19:53.122 --> 01:19:56.641
+as a boilerplate or a template for making a Shiny app.
+
+01:19:56.641 --> 01:19:58.562
+Every Shiny app you write will start with something
+
+01:19:58.562 --> 01:20:01.882
+that looks either exactly like this or very similar to this.
+
+01:20:01.882 --> 01:20:06.402
+And I've made it available to you in the app.r file.
+
+01:20:06.402 --> 01:20:08.602
+Let's go visit the app.r file and run it
+
+01:20:08.602 --> 01:20:10.722
+and see our first Shiny app.
+
+01:20:11.641 --> 01:20:14.521
+So if you come to Positron,
+
+01:20:14.521 --> 01:20:16.521
+click on the file explorer up here
+
+01:20:17.402 --> 01:20:21.682
+and then find app.r and open it.
+
+01:20:22.442 --> 01:20:25.641
+You can start closing the other files if you like.
+
+01:20:25.641 --> 01:20:27.641
+This is the same code that was on the slide.
+
+01:20:27.641 --> 01:20:30.722
+And I consider this to be like the minimal Shiny app.
+
+01:20:30.722 --> 01:20:32.402
+When you have a Shiny app open,
+
+01:20:32.402 --> 01:20:35.041
+you can run it and preview it in Positron
+
+01:20:35.041 --> 01:20:38.041
+by clicking the play button at the top of the file.
+
+01:20:38.041 --> 01:20:41.041
+So press that play button and let's see what it does.
+
+01:20:42.282 --> 01:20:44.361
+All right, that's what it does.
+
+01:20:44.361 --> 01:20:46.801
+It makes a blank Shiny app.
+
+01:20:46.801 --> 01:20:48.122
+But notice the one thing it doesn't make,
+
+01:20:48.122 --> 01:20:49.562
+it doesn't make an error message.
+
+01:20:49.562 --> 01:20:52.442
+This works, this is a viable Shiny app.
+
+01:20:52.442 --> 01:20:56.122
+This is what it looks like as a sidebar with nothing in it,
+
+01:20:56.122 --> 01:20:57.801
+as a main panel with nothing in it.
+
+01:20:57.801 --> 01:21:00.282
+It's waiting for us to add things to it.
+
+01:21:00.282 --> 01:21:01.961
+But one thing I wanna draw your attention to,
+
+01:21:01.961 --> 01:21:05.521
+there's a red square here, that is a stop button
+
+01:21:05.521 --> 01:21:09.722
+because there's now a R process on our server
+
+01:21:09.722 --> 01:21:12.442
+or our computer watching this app,
+
+01:21:12.442 --> 01:21:14.801
+waiting for the user to change an input
+
+01:21:14.801 --> 01:21:19.041
+so the computer can then change the outputs for the user.
+
+01:21:19.041 --> 01:21:20.921
+And every Shiny app is built like this.
+
+01:21:20.921 --> 01:21:22.762
+There is a computer watching the app,
+
+01:21:22.762 --> 01:21:26.481
+ready to serve the user by updating the outputs.
+
+01:21:26.481 --> 01:21:27.682
+We call that the server.
+
+01:21:27.682 --> 01:21:30.401
+And oftentimes it is a literal web server,
+
+01:21:30.401 --> 01:21:33.682
+but when you do it locally, it's your own computer.
+
+01:21:33.682 --> 01:21:35.962
+What I found is working with Shiny apps,
+
+01:21:35.962 --> 01:21:37.921
+sometimes you do this and you forget that's running
+
+01:21:37.921 --> 01:21:39.682
+and you try to run some code and it doesn't run
+
+01:21:39.682 --> 01:21:41.361
+because where you try to run it,
+
+01:21:41.361 --> 01:21:42.882
+it's busy looking at the Shiny app.
+
+01:21:42.882 --> 01:21:45.002
+So it's good practice to always stop this
+
+01:21:45.002 --> 01:21:46.841
+after you've previewed the app.
+
+01:21:46.841 --> 01:21:50.202
+And then you know everything's ready to do new stuff.
+
+01:21:52.202 --> 01:21:54.401
+So you know how to make a blank Shiny app,
+
+01:21:54.401 --> 01:21:56.442
+but that's nothing to write home about.
+
+01:21:56.442 --> 01:21:58.762
+Let's, we just did that together.
+
+01:21:58.762 --> 01:22:00.882
+Let's dissect this and sort of see
+
+01:22:00.882 --> 01:22:03.322
+how to add things to that app.
+
+01:22:03.322 --> 01:22:05.721
+There's two parts of this file
+
+01:22:05.721 --> 01:22:10.481
+where we will be adding stuff or expecting AI to add stuff.
+
+01:22:10.481 --> 01:22:13.642
+And that is here in this UI object.
+
+01:22:13.642 --> 01:22:15.041
+This is where you put the things
+
+01:22:15.041 --> 01:22:16.721
+that will appear in your app.
+
+01:22:17.601 --> 01:22:22.601
+So that's where you'll put your inputs and your outputs.
+
+01:22:23.962 --> 01:22:24.962
+And then down below,
+
+01:22:24.962 --> 01:22:27.122
+this is where you'll tell the server computer
+
+01:22:27.122 --> 01:22:30.122
+how to build those outputs from the inputs.
+
+01:22:30.122 --> 01:22:32.522
+And I like to think of it with a restaurant analogy
+
+01:22:32.522 --> 01:22:34.202
+up top this UI part,
+
+01:22:34.202 --> 01:22:36.401
+that's like where you create a restaurant
+
+01:22:36.401 --> 01:22:38.962
+for people to come in and order things off a menu
+
+01:22:38.962 --> 01:22:40.721
+to also put there for them.
+
+01:22:40.721 --> 01:22:41.562
+Then down below,
+
+01:22:41.562 --> 01:22:42.882
+this is like where you write the cookbook
+
+01:22:42.882 --> 01:22:44.082
+to give to the kitchen staff.
+
+01:22:44.082 --> 01:22:46.682
+So when someone orders something off the menu,
+
+01:22:47.481 --> 01:22:48.721
+they could look up how to make it.
+
+01:22:52.002 --> 01:22:54.122
+So there's your crash course on Shiny.
+
+01:22:54.122 --> 01:22:55.522
+The rest of the course,
+
+01:22:55.522 --> 01:22:57.002
+we'll do better if we have an app.
+
+01:22:57.002 --> 01:23:00.562
+So let's ask AI to build a Shiny app for us.
+
+01:23:00.562 --> 01:23:04.082
+I'm going to copy and paste this prompt into the chat
+
+01:23:04.082 --> 01:23:06.962
+and you can copy and paste it in Depositron Assistant,
+
+01:23:14.562 --> 01:23:15.841
+which I will do too.
+
+01:23:16.682 --> 01:23:20.481
+So what I want you to do is find Depositron Assistant again
+
+01:23:20.481 --> 01:23:22.882
+and we could keep the same session going
+
+01:23:22.882 --> 01:23:25.161
+and we could just paste this in there
+
+01:23:25.161 --> 01:23:26.841
+and let it start working.
+
+01:23:28.401 --> 01:23:31.161
+And then I think that'll take about three minutes.
+
+01:23:31.161 --> 01:23:33.801
+So I'm going to check in on the chat again.
+
+01:23:35.921 --> 01:23:38.122
+Well, you'll have a chance to work on this.
+
+01:23:47.682 --> 01:23:49.682
+I got my dashboard deployed.
+
+01:23:51.522 --> 01:23:52.361
+Good job, Phil.
+
+01:23:52.361 --> 01:23:53.202
+Yeah, thanks.
+
+01:23:55.202 --> 01:23:56.601
+It actually is really cool.
+
+01:23:56.601 --> 01:24:00.002
+I like the, it's got this like count up.
+
+01:24:01.601 --> 01:24:03.962
+And so I fed the AI,
+
+01:24:03.962 --> 01:24:06.361
+I fed the AI the AI,
+
+01:24:06.361 --> 01:24:09.361
+I fed the AI the AI and I fed the AI the AI,
+
+01:24:09.361 --> 01:24:12.361
+and I fed the AI the AI and I fed the AI the AI.
+
+01:24:12.361 --> 01:24:13.921
+So I'm going to go ahead and do that.
+
+01:24:14.801 --> 01:24:16.962
+And so I fed the AI,
+
+01:24:16.962 --> 01:24:20.522
+the shiny contest winners from 2024.
+
+01:24:21.442 --> 01:24:23.882
+I told it to pull inspiration from that.
+
+01:24:23.882 --> 01:24:26.762
+So obviously dark is popular.
+
+01:24:27.642 --> 01:24:30.241
+Oh, I have to take a peek at this dashboard.
+
+01:24:32.041 --> 01:24:33.962
+It looks pretty good.
+
+01:24:33.962 --> 01:24:36.281
+I know, I was impressed.
+
+01:24:36.281 --> 01:24:38.962
+The AI did a pretty good job.
+
+01:24:38.962 --> 01:24:41.522
+Well, if you still have the prompt that you used,
+
+01:24:41.522 --> 01:24:42.762
+you should be, maybe you already did this,
+
+01:24:42.762 --> 01:24:43.601
+but you should be-
+
+01:24:43.601 --> 01:24:47.202
+I was a little, I was a little mean with it,
+
+01:24:47.202 --> 01:24:49.322
+because at first it stopped working
+
+01:24:49.322 --> 01:24:51.122
+and I thought it just gave up.
+
+01:24:51.122 --> 01:24:54.002
+But I told it to impress me,
+
+01:24:54.002 --> 01:24:57.642
+and then I just fed it the shiny apps, contest winners.
+
+01:24:57.642 --> 01:24:59.002
+And what was cool was,
+
+01:24:59.002 --> 01:25:01.682
+so we had the dashboard that you made,
+
+01:25:01.682 --> 01:25:04.841
+and I said to just make it look fancy, basically.
+
+01:25:04.841 --> 01:25:09.122
+So yeah, I told it to try to impress me.
+
+01:25:10.122 --> 01:25:11.002
+It looks pretty good.
+
+01:25:11.002 --> 01:25:11.962
+I love Leaflet.
+
+01:25:11.962 --> 01:25:13.322
+I've always been a big fan.
+
+01:25:14.241 --> 01:25:16.442
+Maybe those could be interactive
+
+01:25:16.442 --> 01:25:18.882
+if we want to get more HTML widgets into it.
+
+01:25:18.882 --> 01:25:20.082
+But-
+
+01:25:20.082 --> 01:25:21.721
+There's some interactivity.
+
+01:25:21.721 --> 01:25:22.562
+Yeah, a little bit.
+
+01:25:22.562 --> 01:25:23.762
+A little bit.
+
+01:25:23.762 --> 01:25:24.601
+Yeah.
+
+01:25:24.601 --> 01:25:27.601
+Anyway, it's currently converting it to shiny,
+
+01:25:27.601 --> 01:25:29.801
+so we'll see what it does.
+
+01:25:31.322 --> 01:25:32.161
+Thanks for sharing.
+
+01:25:32.161 --> 01:25:33.002
+That's pretty good.
+
+01:25:33.002 --> 01:25:34.281
+Yeah, good stuff.
+
+01:25:35.442 --> 01:25:38.841
+Be careful being mean to the AI, you never...
+
+01:25:38.841 --> 01:25:39.682
+Yeah.
+
+01:25:40.642 --> 01:25:42.241
+Drones are on their way, Phil.
+
+01:25:43.721 --> 01:25:44.562
+What'd you say?
+
+01:25:45.481 --> 01:25:47.361
+The drones might be on their way to your-
+
+01:25:47.361 --> 01:25:48.481
+Oh, you mean being mean to it?
+
+01:25:48.481 --> 01:25:50.202
+Yeah, you know, someone recently,
+
+01:25:50.202 --> 01:25:51.041
+I don't know where I was,
+
+01:25:51.041 --> 01:25:51.882
+I was at a conference,
+
+01:25:51.882 --> 01:25:54.682
+told me they did a study
+
+01:25:54.682 --> 01:25:56.522
+and found that it actually does a little bit better
+
+01:25:56.522 --> 01:25:59.122
+if you're a little more direct with it.
+
+01:26:00.002 --> 01:26:01.161
+Oh, okay.
+
+01:26:01.161 --> 01:26:04.801
+I mean, I'm not trying to tell people to be mean to it.
+
+01:26:04.801 --> 01:26:06.161
+And I shouldn't say I was being mean.
+
+01:26:06.161 --> 01:26:08.762
+I was being overly direct.
+
+01:26:09.801 --> 01:26:12.161
+Sometimes I feel like I have to give it a nudge
+
+01:26:12.161 --> 01:26:13.682
+to keep going, you know?
+
+01:26:17.562 --> 01:26:19.002
+But it did a good job.
+
+01:26:19.002 --> 01:26:21.202
+I like the skills that are built in
+
+01:26:21.202 --> 01:26:24.361
+to the positive system.
+
+01:26:24.361 --> 01:26:26.882
+It makes things a little bit easier.
+
+01:26:28.161 --> 01:26:29.921
+Yeah, this will be a good chance.
+
+01:26:29.921 --> 01:26:30.762
+Look at that.
+
+01:26:32.161 --> 01:26:34.601
+So I just started mine
+
+01:26:34.601 --> 01:26:37.041
+and I guess it finished.
+
+01:26:37.041 --> 01:26:38.041
+But where?
+
+01:26:40.682 --> 01:26:42.401
+Oh, normally at this step,
+
+01:26:42.401 --> 01:26:44.921
+I see it use a skill so I could show people,
+
+01:26:44.921 --> 01:26:46.161
+but maybe,
+
+01:26:49.041 --> 01:26:49.882
+maybe, I don't know,
+
+01:26:49.882 --> 01:26:51.241
+maybe I read the skill earlier.
+
+01:26:51.241 --> 01:26:52.721
+So if you've made your Shiny app,
+
+01:26:52.721 --> 01:26:53.962
+there's a chance you might see it saying
+
+01:26:53.962 --> 01:26:55.322
+it's reading a skill file
+
+01:26:55.322 --> 01:26:57.082
+or it's looking up a skill file.
+
+01:26:57.082 --> 01:26:59.401
+And what that means is it's using one of the skills
+
+01:26:59.401 --> 01:27:00.361
+that we teach the model
+
+01:27:00.361 --> 01:27:02.442
+when it comes into Positron
+
+01:27:02.442 --> 01:27:03.762
+to build this Shiny app.
+
+01:27:03.762 --> 01:27:06.481
+So I said, oh, it's time to build a Shiny app.
+
+01:27:06.481 --> 01:27:07.921
+There's some education in there.
+
+01:27:08.202 --> 01:27:11.281
+There's some education here I could avail myself to
+
+01:27:11.281 --> 01:27:13.361
+to learn how to do this correctly.
+
+01:27:13.361 --> 01:27:14.522
+And it reads that on its way
+
+01:27:14.522 --> 01:27:16.762
+and then it builds a better Shiny app.
+
+01:27:16.762 --> 01:27:18.322
+So mine built this app.
+
+01:27:18.322 --> 01:27:20.202
+So my app.r has a lot more stuff in it.
+
+01:27:20.202 --> 01:27:22.002
+And if I run it,
+
+01:27:22.002 --> 01:27:24.442
+I'll see if it did a good job.
+
+01:27:28.202 --> 01:27:30.161
+So here we go.
+
+01:27:30.161 --> 01:27:31.002
+Things are loading.
+
+01:27:31.002 --> 01:27:34.921
+Okay, so I got bladder cancer hotspots.
+
+01:27:35.442 --> 01:27:36.281
+Um,
+
+01:27:37.642 --> 01:27:40.082
+this might do better if I put in some tab.
+
+01:27:40.082 --> 01:27:40.921
+Okay.
+
+01:27:41.882 --> 01:27:42.962
+Everything's there.
+
+01:27:42.962 --> 01:27:45.962
+The last test is just to see if it's interactive
+
+01:27:45.962 --> 01:27:48.122
+and it passes.
+
+01:27:48.122 --> 01:27:50.962
+All right, so I now have a Shiny app
+
+01:27:50.962 --> 01:27:51.921
+that is interactive
+
+01:27:51.921 --> 01:27:54.002
+and I can look at the different types of cancer
+
+01:27:54.002 --> 01:27:55.721
+one type at a time
+
+01:27:55.721 --> 01:27:58.122
+going through this Shiny app.
+
+01:27:58.122 --> 01:27:59.241
+So that's pretty cool.
+
+01:27:59.241 --> 01:28:00.442
+Let's just take a little peek
+
+01:28:00.442 --> 01:28:01.882
+to see how that's wired up
+
+01:28:01.882 --> 01:28:05.241
+so you could understand what the AI did
+
+01:28:05.241 --> 01:28:06.481
+and if it did a good job.
+
+01:28:07.562 --> 01:28:10.002
+There is a solution in 03app.r
+
+01:28:10.002 --> 01:28:12.002
+that's where I'm going to draw from
+
+01:28:12.002 --> 01:28:13.721
+for the next few slides.
+
+01:28:13.721 --> 01:28:14.562
+But to be honest,
+
+01:28:14.562 --> 01:28:17.122
+I have no idea what code my AI wrote
+
+01:28:17.122 --> 01:28:18.202
+or your AI wrote.
+
+01:28:18.202 --> 01:28:20.002
+It is different every time
+
+01:28:20.002 --> 01:28:22.241
+but not probably too different.
+
+01:28:22.241 --> 01:28:24.361
+So let's start with the UI side of things.
+
+01:28:26.361 --> 01:28:27.762
+It put an input in there.
+
+01:28:27.762 --> 01:28:29.601
+How does that happen?
+
+01:28:29.601 --> 01:28:32.082
+Well, you can put inputs in the UI
+
+01:28:32.082 --> 01:28:33.601
+by using a set of functions
+
+01:28:33.601 --> 01:28:34.921
+that all begin with something
+
+01:28:34.921 --> 01:28:36.682
+followed by input
+
+01:28:36.682 --> 01:28:38.481
+provided by Shiny.
+
+01:28:38.481 --> 01:28:40.522
+And for each of these functions,
+
+01:28:40.522 --> 01:28:42.161
+we're going to pass it the name
+
+01:28:42.161 --> 01:28:44.202
+to save a value app.
+
+01:28:44.202 --> 01:28:45.161
+Pay attention to that.
+
+01:28:45.161 --> 01:28:47.002
+We'll look for it in the code.
+
+01:28:47.002 --> 01:28:48.122
+This is a group of functions
+
+01:28:48.122 --> 01:28:49.122
+provided by Shiny
+
+01:28:49.122 --> 01:28:51.041
+for adding different types of input.
+
+01:28:51.041 --> 01:28:52.562
+And you can see they each added,
+
+01:28:52.562 --> 01:28:55.202
+you know, a different way of interacting with the app.
+
+01:28:55.202 --> 01:28:56.882
+We're going to use select input.
+
+01:28:56.882 --> 01:28:58.762
+That's the dropdown menu.
+
+01:28:58.762 --> 01:29:00.361
+And then you might find other R packages
+
+01:29:00.361 --> 01:29:02.841
+that add additional input functions you can use.
+
+01:29:04.241 --> 01:29:05.801
+Each input function
+
+01:29:05.801 --> 01:29:07.762
+follows the same basic syntax
+
+01:29:07.762 --> 01:29:08.921
+until it gets to arguments
+
+01:29:08.921 --> 01:29:11.442
+that are specific to that sort of input.
+
+01:29:11.442 --> 01:29:12.762
+But the most important thing
+
+01:29:12.762 --> 01:29:14.841
+will always be the first argument
+
+01:29:14.841 --> 01:29:15.921
+because that's the name
+
+01:29:15.921 --> 01:29:18.082
+that's going to save the user value under.
+
+01:29:18.082 --> 01:29:19.801
+You get to choose that name.
+
+01:29:19.801 --> 01:29:21.762
+You'll have to look it up later.
+
+01:29:21.762 --> 01:29:22.882
+So here I chose site.
+
+01:29:22.882 --> 01:29:25.442
+So when that dropdown menu is set to stomach,
+
+01:29:25.442 --> 01:29:29.041
+the value of site in something called input
+
+01:29:29.041 --> 01:29:30.442
+will be stomach.
+
+01:29:30.442 --> 01:29:32.562
+Shiny will collect all the inputs,
+
+01:29:32.562 --> 01:29:33.682
+as many as you want,
+
+01:29:33.682 --> 01:29:34.721
+you can add to the app.
+
+01:29:34.721 --> 01:29:35.801
+We'll put all their values
+
+01:29:35.801 --> 01:29:37.882
+in the same list named input.
+
+01:29:37.882 --> 01:29:41.281
+So here input site is how I look at that value.
+
+01:29:41.281 --> 01:29:43.322
+If I change the dropdown,
+
+01:29:43.322 --> 01:29:46.322
+the value of input site will change as well.
+
+01:29:46.322 --> 01:29:47.161
+All right.
+
+01:29:49.322 --> 01:29:50.601
+We don't have annotation working.
+
+01:29:50.601 --> 01:29:53.041
+So look at this for a second
+
+01:29:53.041 --> 01:29:54.242
+and see if you could spot
+
+01:29:54.242 --> 01:29:57.362
+where the select input function appears.
+
+01:29:58.641 --> 01:30:00.242
+I'll show you, it's right there.
+
+01:30:00.242 --> 01:30:01.682
+And what I want you to pay attention to
+
+01:30:01.682 --> 01:30:06.041
+is it's inside of the sidebar function in our template.
+
+01:30:06.041 --> 01:30:07.761
+For this UI stuff,
+
+01:30:07.761 --> 01:30:09.242
+it's really simple.
+
+01:30:09.242 --> 01:30:10.482
+Where you put the function
+
+01:30:10.482 --> 01:30:12.842
+that calls the input or the output
+
+01:30:12.842 --> 01:30:14.442
+determines where that input or output
+
+01:30:14.442 --> 01:30:15.842
+will live in the app.
+
+01:30:15.842 --> 01:30:16.761
+If you put the function
+
+01:30:16.761 --> 01:30:19.322
+inside the sidebar portion of the template,
+
+01:30:19.322 --> 01:30:20.842
+it will live in the sidebar.
+
+01:30:20.842 --> 01:30:23.641
+If you put it outside of the sidebar portion,
+
+01:30:23.641 --> 01:30:25.281
+that'd be that function sidebar there.
+
+01:30:25.281 --> 01:30:27.761
+It will live outside of the sidebar.
+
+01:30:27.761 --> 01:30:29.121
+So our dropdown menu in this case
+
+01:30:29.121 --> 01:30:30.521
+will be in the sidebar
+
+01:30:30.521 --> 01:30:32.921
+and it's collecting a value called site.
+
+01:30:32.921 --> 01:30:33.962
+All right.
+
+01:30:33.962 --> 01:30:36.641
+So the next thing that we know in the UI is outputs.
+
+01:30:36.641 --> 01:30:38.202
+And it's almost the same thing,
+
+01:30:38.202 --> 01:30:40.242
+just wash, rinse and repeat.
+
+01:30:40.242 --> 01:30:41.761
+But this time we're using a set of functions
+
+01:30:41.761 --> 01:30:43.521
+that are called output functions.
+
+01:30:43.521 --> 01:30:45.322
+They also go in the UI.
+
+01:30:45.322 --> 01:30:46.161
+In this case,
+
+01:30:46.161 --> 01:30:47.761
+we'll probably put them outside the sidebar functions
+
+01:30:47.761 --> 01:30:49.521
+so they're not in the sidebar.
+
+01:30:49.521 --> 01:30:53.082
+And they also take the name of an object.
+
+01:30:53.082 --> 01:30:55.682
+This case will be an object we define somewhere else,
+
+01:30:55.682 --> 01:30:57.442
+but that's how they're gonna know what object
+
+01:30:57.442 --> 01:30:59.521
+to put in that plot space they're making.
+
+01:31:00.521 --> 01:31:02.041
+So over here,
+
+01:31:02.041 --> 01:31:04.962
+this is a list of the standard output functions
+
+01:31:04.962 --> 01:31:06.921
+that come with Shiny.
+
+01:31:06.921 --> 01:31:08.962
+You can learn all of this on the Shiny website
+
+01:31:08.962 --> 01:31:10.962
+if you wanna look any of these up later.
+
+01:31:12.281 --> 01:31:15.401
+And they all have the same syntax again,
+
+01:31:15.401 --> 01:31:17.682
+some sort of output name,
+
+01:31:17.682 --> 01:31:20.202
+the name of the object to place in that position.
+
+01:31:20.202 --> 01:31:21.722
+And then some of them take extra arguments
+
+01:31:21.722 --> 01:31:23.121
+based on what they're doing.
+
+01:31:24.921 --> 01:31:27.521
+Right, so here are output functions.
+
+01:31:27.521 --> 01:31:28.881
+We have three of them.
+
+01:31:28.881 --> 01:31:30.881
+They're all outside of the sidebar.
+
+01:31:30.881 --> 01:31:32.801
+And you can see there's some layout functions
+
+01:31:32.801 --> 01:31:34.442
+that AI has put in here.
+
+01:31:34.442 --> 01:31:36.202
+I'm not gonna go into that.
+
+01:31:36.202 --> 01:31:38.401
+AI can do that better than a human can.
+
+01:31:38.401 --> 01:31:40.682
+It's very tedious, but straightforward.
+
+01:31:40.682 --> 01:31:42.962
+And you can learn about it on the Shiny website.
+
+01:31:44.641 --> 01:31:45.482
+Now look,
+
+01:31:45.482 --> 01:31:47.161
+each of the outputs is gonna play something
+
+01:31:47.161 --> 01:31:48.161
+with a different name.
+
+01:31:48.161 --> 01:31:50.722
+AI has unimaginatively named these things
+
+01:31:50.761 --> 01:31:52.722
+map, plot, and table.
+
+01:31:52.722 --> 01:31:53.562
+That's good.
+
+01:31:53.562 --> 01:31:56.161
+That'll let us see exactly what it's talking about.
+
+01:31:56.161 --> 01:32:00.202
+Now let's look at how map, plot, and table get built
+
+01:32:00.202 --> 01:32:01.602
+because on the server side,
+
+01:32:01.602 --> 01:32:02.761
+we're gonna build these things.
+
+01:32:02.761 --> 01:32:04.202
+So here on the UI side,
+
+01:32:04.202 --> 01:32:06.082
+there's something for leaflet output
+
+01:32:06.082 --> 01:32:09.482
+and plot output and DP output to put into the app.
+
+01:32:10.482 --> 01:32:12.602
+All right, the server instructions.
+
+01:32:12.602 --> 01:32:14.722
+This is what these look like on the app.
+
+01:32:16.362 --> 01:32:17.521
+On the server side,
+
+01:32:17.521 --> 01:32:20.362
+we're building up a list called output.
+
+01:32:21.041 --> 01:32:21.881
+And each of the elements of that list
+
+01:32:21.881 --> 01:32:25.001
+will correspond to something that we're placing into the UI.
+
+01:32:25.001 --> 01:32:27.482
+The UI is gonna look for this output list
+
+01:32:27.482 --> 01:32:30.602
+and those elements to build out the app.
+
+01:32:30.602 --> 01:32:32.562
+What we're putting into those elements
+
+01:32:32.562 --> 01:32:35.242
+won't be objects per se,
+
+01:32:35.242 --> 01:32:37.161
+like you do with regular R code.
+
+01:32:37.161 --> 01:32:39.722
+There'll be recipes of code that gets stored there
+
+01:32:39.722 --> 01:32:42.761
+for the Shiny server to pull up and run
+
+01:32:42.761 --> 01:32:44.842
+when it needs to run them.
+
+01:32:44.842 --> 01:32:47.801
+And if I asked you to guess
+
+01:32:47.801 --> 01:32:49.962
+which of these elements here would store the code
+
+01:32:50.562 --> 01:32:52.801
+that makes the output object named map,
+
+01:32:52.801 --> 01:32:55.161
+you could probably make that guess.
+
+01:32:55.161 --> 01:32:57.161
+It will be the output map one.
+
+01:32:57.161 --> 01:32:59.082
+The one that stores the code that makes plot
+
+01:32:59.082 --> 01:33:01.362
+will be output plot and so on.
+
+01:33:01.362 --> 01:33:03.482
+So the names that we choose up front
+
+01:33:03.482 --> 01:33:04.842
+we're gonna use throughout the app.
+
+01:33:04.842 --> 01:33:07.722
+They're gonna be what connects everything together.
+
+01:33:07.722 --> 01:33:10.962
+Now, how we package those code recipes up
+
+01:33:10.962 --> 01:33:12.521
+involves one other set of functions.
+
+01:33:12.521 --> 01:33:14.442
+They're called render functions.
+
+01:33:15.921 --> 01:33:17.801
+We write whatever code we want,
+
+01:33:17.801 --> 01:33:19.521
+but we wrap it in the render function
+
+01:33:20.082 --> 01:33:21.722
+and save that into the list.
+
+01:33:21.722 --> 01:33:23.001
+And the render function we use
+
+01:33:23.001 --> 01:33:25.281
+will depend on the type of thing we're saving.
+
+01:33:27.041 --> 01:33:28.881
+And we actually already saw the render functions.
+
+01:33:28.881 --> 01:33:29.921
+They were on the side, we didn't see them,
+
+01:33:29.921 --> 01:33:31.281
+but there's a render function
+
+01:33:31.281 --> 01:33:32.962
+that pairs with every output function.
+
+01:33:32.962 --> 01:33:34.641
+So if you're gonna place a table,
+
+01:33:34.641 --> 01:33:36.602
+you're gonna render a table first.
+
+01:33:36.602 --> 01:33:38.482
+If you're gonna place a plot,
+
+01:33:38.482 --> 01:33:39.442
+you're gonna render a plot.
+
+01:33:39.442 --> 01:33:40.442
+And then you have weird ones
+
+01:33:40.442 --> 01:33:41.842
+where the names don't match up,
+
+01:33:41.842 --> 01:33:44.362
+like render print and verbatim text.
+
+01:33:44.362 --> 01:33:45.682
+I can't tell you what that's about,
+
+01:33:45.682 --> 01:33:47.801
+but those things go together.
+
+01:33:50.242 --> 01:33:51.682
+All right, so this is what our code looks like.
+
+01:33:51.682 --> 01:33:54.242
+We have these render functions.
+
+01:33:54.242 --> 01:33:55.881
+They're stored into the output map
+
+01:33:55.881 --> 01:33:57.881
+and inside those render functions,
+
+01:33:57.881 --> 01:33:59.722
+it's just the familiar code we've been using all along
+
+01:33:59.722 --> 01:34:01.842
+that makes these things.
+
+01:34:01.842 --> 01:34:04.161
+But notice the dataset they're all calling
+
+01:34:04.161 --> 01:34:06.041
+or using is filtered.
+
+01:34:06.041 --> 01:34:07.082
+And filtered is something
+
+01:34:07.082 --> 01:34:09.242
+that we're also making on the server side.
+
+01:34:11.322 --> 01:34:13.482
+If you think about what filtered might be
+
+01:34:13.482 --> 01:34:15.682
+or how that app works,
+
+01:34:15.682 --> 01:34:18.641
+you might strike upon it pretty quickly.
+
+01:34:18.682 --> 01:34:21.482
+We're using the dropdown menu to filter the dataset.
+
+01:34:21.482 --> 01:34:23.001
+And then we have three separate things
+
+01:34:23.001 --> 01:34:25.161
+that work with that filtered dataset.
+
+01:34:25.161 --> 01:34:28.281
+So it's a good idea to just make the filtered dataset
+
+01:34:28.281 --> 01:34:31.482
+and have those three things borrow it.
+
+01:34:31.482 --> 01:34:33.521
+But that filtered dataset,
+
+01:34:33.521 --> 01:34:35.761
+bare and of itself doesn't appear in the UI.
+
+01:34:35.761 --> 01:34:37.602
+It's just something that floats around on the server side
+
+01:34:37.602 --> 01:34:40.881
+so we can make the three things that do appear in the UI.
+
+01:34:40.881 --> 01:34:42.722
+And that's what filtered is here.
+
+01:34:42.722 --> 01:34:45.641
+It's an intermediate object that we're making
+
+01:34:45.641 --> 01:34:48.082
+for the things downstream to use.
+
+01:34:48.082 --> 01:34:50.801
+And this object uses that input value.
+
+01:34:50.801 --> 01:34:52.242
+So here's where I'm looking up
+
+01:34:52.242 --> 01:34:54.001
+the value of the dropdown menu.
+
+01:34:54.001 --> 01:34:55.442
+And then the things downstream
+
+01:34:55.442 --> 01:34:58.001
+are gonna call this object like a function.
+
+01:34:58.001 --> 01:34:59.682
+That's just how Shiny works.
+
+01:35:01.362 --> 01:35:03.921
+But when they call it as a function,
+
+01:35:03.921 --> 01:35:06.281
+they're gonna end up running the code that's in it,
+
+01:35:06.281 --> 01:35:08.562
+which is gonna call input site.
+
+01:35:08.562 --> 01:35:11.242
+And it's gonna look up the current value of input site.
+
+01:35:11.242 --> 01:35:14.322
+And then that will be used to build the new value of map.
+
+01:35:14.322 --> 01:35:16.521
+And that's how everything always stays up to date.
+
+01:35:16.521 --> 01:35:17.442
+When it gets rerun,
+
+01:35:17.442 --> 01:35:20.242
+it's scooping up the current value that the user supply.
+
+01:35:21.562 --> 01:35:24.801
+The magic here with Shiny is,
+
+01:35:24.801 --> 01:35:28.082
+as long as the code that you use to make map,
+
+01:35:28.082 --> 01:35:33.001
+plot and table depends upon one of the input values,
+
+01:35:33.001 --> 01:35:36.242
+either directly or through a reactive intermediary,
+
+01:35:36.242 --> 01:35:39.842
+Shiny will notice that and keep track of it.
+
+01:35:39.842 --> 01:35:41.722
+And then it will take care of all the rest.
+
+01:35:41.722 --> 01:35:43.682
+It will make sure it rebuilds the things
+
+01:35:43.682 --> 01:35:47.001
+that depend on an input when that input changes.
+
+01:35:47.001 --> 01:35:49.562
+And if something does not depend on the input that changed,
+
+01:35:49.562 --> 01:35:51.881
+it won't bother rebuilding it, it's very lazy.
+
+01:35:51.881 --> 01:35:53.482
+But every time the user makes a change,
+
+01:35:53.482 --> 01:35:55.641
+everything that depends on it will be updated.
+
+01:35:55.641 --> 01:35:56.921
+And the user will be quite happy
+
+01:35:56.921 --> 01:35:59.602
+with this fast, nimble, reactive experience.
+
+01:35:59.602 --> 01:36:03.442
+And that is how you build an interactive website
+
+01:36:03.442 --> 01:36:06.362
+with only our code, in our case,
+
+01:36:06.362 --> 01:36:08.881
+and like half an hour max.
+
+01:36:10.242 --> 01:36:13.041
+Imagine doing that 10 years ago, it'd be crazy.
+
+01:36:13.401 --> 01:36:17.041
+So we now have this Shiny app, it's interactive.
+
+01:36:17.041 --> 01:36:20.482
+What we wanna do now is the masterclass
+
+01:36:20.482 --> 01:36:23.001
+of adding an AI chatbot to it.
+
+01:36:23.001 --> 01:36:25.801
+And it's going to be easier than you think.
+
+01:36:25.801 --> 01:36:27.082
+It's certainly much easier
+
+01:36:27.082 --> 01:36:29.281
+than learning to build a Shiny app would be.
+
+01:36:31.161 --> 01:36:34.001
+So we have an app, it has a dropdown menu.
+
+01:36:34.001 --> 01:36:36.082
+Our goal is to take the dropdown menu
+
+01:36:36.082 --> 01:36:38.161
+and replace it with a chatbot.
+
+01:36:38.161 --> 01:36:39.722
+The chatbot can do the filtering better
+
+01:36:39.722 --> 01:36:41.362
+than the dropdown menu and the rest of the app
+
+01:36:41.362 --> 01:36:42.962
+can respond to that.
+
+01:36:44.362 --> 01:36:46.082
+The package that makes this easy,
+
+01:36:46.082 --> 01:36:49.281
+that lets this happen, is called Query Chat.
+
+01:36:49.281 --> 01:36:52.602
+It's an R package, it also exists as a Python package.
+
+01:36:52.602 --> 01:36:54.641
+It's designed to work with Shiny
+
+01:36:54.641 --> 01:36:57.281
+to make these chatbot-powered apps.
+
+01:37:00.722 --> 01:37:02.362
+Like everything else that Posit makes,
+
+01:37:02.362 --> 01:37:05.442
+it has its own documentation page.
+
+01:37:05.442 --> 01:37:06.921
+And everything we're gonna do here
+
+01:37:06.921 --> 01:37:08.682
+is actually written up as articles
+
+01:37:08.682 --> 01:37:10.562
+on this documentation page.
+
+01:37:10.562 --> 01:37:13.121
+So it is a great resource to go back to.
+
+01:37:14.482 --> 01:37:17.082
+And I will put these links at the end of the talk
+
+01:37:17.082 --> 01:37:18.842
+so you could take a picture or screenshot of them.
+
+01:37:18.842 --> 01:37:21.121
+You don't have to worry about them right now.
+
+01:37:22.322 --> 01:37:24.082
+Here's how Query Chat works.
+
+01:37:24.082 --> 01:37:26.562
+I think it's pretty nice.
+
+01:37:26.562 --> 01:37:29.962
+It's going to talk to an LLM, like Anthropic today
+
+01:37:29.962 --> 01:37:32.161
+or some other LLM some other day.
+
+01:37:32.161 --> 01:37:34.722
+And it's going to tell that LLM
+
+01:37:34.722 --> 01:37:38.322
+that it wants it to just write SQL queries.
+
+01:37:38.322 --> 01:37:41.082
+It'll give the LLM everything your user asks for,
+
+01:37:41.082 --> 01:37:42.962
+but it will also instruct the LLM
+
+01:37:42.962 --> 01:37:47.641
+to just write SQL queries that answers the user's questions.
+
+01:37:47.641 --> 01:37:50.202
+So it doesn't give the LLM your data set.
+
+01:37:50.202 --> 01:37:52.842
+It takes your data set and it puts it
+
+01:37:52.842 --> 01:37:54.761
+into an on-disk database,
+
+01:37:54.761 --> 01:37:57.921
+either made with DuckDB or RSQLite.
+
+01:37:57.921 --> 01:38:00.401
+And so there's a database that's now sitting
+
+01:38:00.401 --> 01:38:02.041
+right next to your Shiny app.
+
+01:38:02.041 --> 01:38:04.562
+When the LLM writes a SQL query,
+
+01:38:04.562 --> 01:38:07.082
+Query Chat will give that SQL query to the database,
+
+01:38:07.121 --> 01:38:09.041
+which will then run it on the table.
+
+01:38:09.041 --> 01:38:11.562
+The database is going to be just great at running SQL.
+
+01:38:11.562 --> 01:38:13.202
+And the LLM is actually going to be pretty terrific
+
+01:38:13.202 --> 01:38:15.121
+at writing SQL because that's one of the tasks
+
+01:38:15.121 --> 01:38:17.641
+that LLM's large language models
+
+01:38:17.641 --> 01:38:18.722
+have been the most trained on,
+
+01:38:18.722 --> 01:38:20.521
+so they're quite good at it.
+
+01:38:20.521 --> 01:38:21.842
+Database runs that query.
+
+01:38:21.842 --> 01:38:24.362
+If it doesn't work, it tells the LLM to try again.
+
+01:38:25.281 --> 01:38:28.641
+When it does work, it returns the filtered data set,
+
+01:38:28.641 --> 01:38:31.121
+the data set filtered by that SQL query.
+
+01:38:31.121 --> 01:38:34.242
+And then everything downstream can use that filtered data
+
+01:38:34.242 --> 01:38:36.962
+to do their job of showing a map or a table or whatnot.
+
+01:38:36.962 --> 01:38:40.281
+And this is how you let the LLM drive your app
+
+01:38:40.281 --> 01:38:42.801
+without sending your data back to the LLM
+
+01:38:42.801 --> 01:38:44.962
+because that would consume a lot of tokens.
+
+01:38:46.202 --> 01:38:49.281
+This architecture has some real benefits.
+
+01:38:49.281 --> 01:38:51.242
+One, it's quite reliable.
+
+01:38:51.242 --> 01:38:52.641
+The database is running SQL.
+
+01:38:52.641 --> 01:38:54.001
+The LLM's writing SQL.
+
+01:38:54.001 --> 01:38:56.202
+If anything hallucinates, it just tries again
+
+01:38:56.202 --> 01:38:57.921
+before it messes anything up.
+
+01:38:59.242 --> 01:39:00.082
+It works pretty well.
+
+01:39:00.082 --> 01:39:02.082
+I mean, it's well-tested at this point.
+
+01:39:02.082 --> 01:39:04.801
+Two, it's safe for a number of reasons.
+
+01:39:04.801 --> 01:39:08.482
+One, QueryChat won't let the LLM run
+
+01:39:08.482 --> 01:39:11.761
+or it won't let the database run destructive queries.
+
+01:39:11.761 --> 01:39:14.362
+But even if it did, that database was spun up
+
+01:39:14.362 --> 01:39:17.121
+at the time the Shiny app was launched.
+
+01:39:17.121 --> 01:39:19.041
+The next time someone launches the Shiny app,
+
+01:39:19.041 --> 01:39:20.161
+a new database will be spun up.
+
+01:39:20.161 --> 01:39:23.682
+Like, there's nothing permanent that could be destroyed here.
+
+01:39:23.682 --> 01:39:25.401
+Third, it's reproducible.
+
+01:39:25.401 --> 01:39:28.562
+You can give, your user will have access to that SQL code.
+
+01:39:28.562 --> 01:39:31.082
+You can even feature it inside your Shiny app.
+
+01:39:31.082 --> 01:39:32.041
+So if they wanted to,
+
+01:39:32.041 --> 01:39:36.161
+they could then collect it and rerun it, use it later.
+
+01:39:36.161 --> 01:39:38.842
+And then four, it's kind of private
+
+01:39:38.842 --> 01:39:42.082
+in that the LLM doesn't ever really see the raw data,
+
+01:39:42.082 --> 01:39:44.121
+but it can query the data
+
+01:39:44.121 --> 01:39:47.041
+to give the user responses in the chat.
+
+01:39:47.041 --> 01:39:49.442
+And that can certainly reveal things about the data.
+
+01:39:49.442 --> 01:39:52.362
+So it's definitely not, like, secure in and of itself.
+
+01:39:52.362 --> 01:39:55.801
+This is a situation, a lot like Positive Assistant itself,
+
+01:39:55.801 --> 01:40:00.121
+where you would want to trust the model that you are using.
+
+01:40:00.121 --> 01:40:02.442
+And what we've discovered working with clients,
+
+01:40:02.442 --> 01:40:04.401
+working with AI for about a year now,
+
+01:40:04.401 --> 01:40:06.962
+is there's no way around trusting the model.
+
+01:40:06.962 --> 01:40:09.962
+If you don't trust your model, don't use it with your data.
+
+01:40:09.962 --> 01:40:12.801
+And it is very easy these days
+
+01:40:12.801 --> 01:40:17.442
+to secure a use of a model that you can trust.
+
+01:40:17.442 --> 01:40:20.001
+The model providers want to make the models trustworthy
+
+01:40:20.001 --> 01:40:20.842
+and secure, because they know
+
+01:40:20.842 --> 01:40:22.121
+no one would use them otherwise.
+
+01:40:22.121 --> 01:40:26.041
+So normally people just arrange with Anthropic, whatever,
+
+01:40:26.041 --> 01:40:29.242
+to have their data not be used.
+
+01:40:29.242 --> 01:40:30.082
+Okay.
+
+01:40:31.121 --> 01:40:33.562
+So here's what the articles look like,
+
+01:40:33.562 --> 01:40:36.602
+but I'm here to tell you how it works.
+
+01:40:36.602 --> 01:40:39.281
+First, how is QueryChat going to connect
+
+01:40:39.281 --> 01:40:41.521
+to a large language model?
+
+01:40:41.521 --> 01:40:44.521
+It does this through something called environment variables.
+
+01:40:44.521 --> 01:40:46.801
+You may have used these before, you may not have.
+
+01:40:46.801 --> 01:40:50.082
+They're variables that you set in your R session
+
+01:40:50.082 --> 01:40:51.921
+or your Python session.
+
+01:40:51.921 --> 01:40:54.842
+And your code, in this case, QueryChat's code,
+
+01:40:54.842 --> 01:40:58.281
+knows to look them up by their specific names.
+
+01:40:58.281 --> 01:41:00.682
+You can share that code on GitHub,
+
+01:41:00.682 --> 01:41:02.602
+and what's in these environment variables
+
+01:41:02.602 --> 01:41:05.442
+is not in the code, so it's safe.
+
+01:41:05.442 --> 01:41:06.921
+If someone takes that code and tries to run it
+
+01:41:06.921 --> 01:41:08.761
+on their computer, it will look up
+
+01:41:08.761 --> 01:41:11.602
+these environment variables on that person's computer.
+
+01:41:11.602 --> 01:41:13.401
+If they've set them with a value,
+
+01:41:13.401 --> 01:41:16.722
+it will find those values and their code will work for them.
+
+01:41:16.722 --> 01:41:17.921
+If they haven't set those values,
+
+01:41:17.921 --> 01:41:21.521
+it'll say I couldn't find that environment variable.
+
+01:41:21.521 --> 01:41:25.001
+But it's a way for you to write code that uses secrets
+
+01:41:25.001 --> 01:41:26.682
+that will never get shared with the code
+
+01:41:26.682 --> 01:41:29.482
+because the secrets kind of stay with your computer
+
+01:41:29.482 --> 01:41:30.761
+when you share the code.
+
+01:41:32.121 --> 01:41:33.281
+So the first environment variable
+
+01:41:33.281 --> 01:41:35.322
+let's go look for is called QueryChat
+
+01:41:35.322 --> 01:41:37.682
+and QueryChat client, I should say.
+
+01:41:37.682 --> 01:41:40.202
+And that's going to be set to a model provider
+
+01:41:40.202 --> 01:41:43.761
+slash model pair, and that tells QueryChat
+
+01:41:43.761 --> 01:41:46.521
+which model provider and which model it's going to use.
+
+01:41:49.121 --> 01:41:51.001
+So that's pretty straightforward.
+
+01:41:51.001 --> 01:41:54.962
+And then the second one will be the credential
+
+01:41:54.962 --> 01:41:57.202
+for that model provider that proves
+
+01:41:57.202 --> 01:41:59.082
+that you actually have an account of the model
+
+01:41:59.082 --> 01:42:02.082
+and that the queries will be sent to that account.
+
+01:42:03.962 --> 01:42:06.082
+I have a key I'll share with you in a second.
+
+01:42:06.082 --> 01:42:07.401
+We'll use Anthropic today
+
+01:42:07.401 --> 01:42:10.801
+because I find it to be one of the more straightforward ones.
+
+01:42:10.801 --> 01:42:12.881
+All of this is piggybacking
+
+01:42:12.881 --> 01:42:15.801
+on another R package called Elmer,
+
+01:42:15.801 --> 01:42:19.242
+which is more low-level tools for using chatbots
+
+01:42:19.242 --> 01:42:23.562
+and LLMs inside of R or Python.
+
+01:42:25.121 --> 01:42:28.482
+And to look up your options and your details here
+
+01:42:28.482 --> 01:42:30.442
+you'll need to go to the Elmer package,
+
+01:42:30.442 --> 01:42:33.082
+it's Google it, go to its documentation page.
+
+01:42:33.082 --> 01:42:34.602
+And then it has many functions,
+
+01:42:34.602 --> 01:42:38.962
+models, underscore, and some model provider.
+
+01:42:38.962 --> 01:42:39.801
+Just look through the reference
+
+01:42:39.801 --> 01:42:42.242
+for the model provider you're interested in using
+
+01:42:42.242 --> 01:42:44.202
+and then read the details about how to work
+
+01:42:44.202 --> 01:42:45.482
+with that model provider.
+
+01:42:45.482 --> 01:42:48.722
+And it will tell you what sort of Anthropic API key
+
+01:42:48.722 --> 01:42:50.121
+or GitHub pat variable
+
+01:42:50.121 --> 01:42:53.082
+or what variable you have to set to work with it.
+
+01:42:53.082 --> 01:42:54.401
+All right.
+
+01:42:54.401 --> 01:42:57.521
+So today we're going to set this up.
+
+01:42:58.962 --> 01:43:00.322
+We're in the final 10 minutes.
+
+01:43:00.322 --> 01:43:04.921
+So instead of setting up once for our local session
+
+01:43:04.921 --> 01:43:06.562
+and once on connect,
+
+01:43:06.562 --> 01:43:07.962
+we'll look at how query chat works
+
+01:43:07.962 --> 01:43:10.041
+and then we'll just set it up on connect.
+
+01:43:10.962 --> 01:43:13.442
+If you want to set these environment variables up
+
+01:43:13.442 --> 01:43:15.041
+in your R session,
+
+01:43:15.041 --> 01:43:16.322
+I think the best way to do it
+
+01:43:16.322 --> 01:43:19.161
+is to create a .r environment file.
+
+01:43:19.161 --> 01:43:20.242
+That's a hidden file.
+
+01:43:20.281 --> 01:43:24.761
+And if you have one on your computer under your username,
+
+01:43:24.761 --> 01:43:26.602
+every time you start a new R session,
+
+01:43:26.602 --> 01:43:28.121
+this file will be run.
+
+01:43:28.121 --> 01:43:28.962
+It's a great way to set up
+
+01:43:28.962 --> 01:43:31.362
+all the environment variables you depend on.
+
+01:43:31.362 --> 01:43:33.041
+And when you're working with Shiny apps,
+
+01:43:33.041 --> 01:43:34.242
+every time you launch a new Shiny app,
+
+01:43:34.242 --> 01:43:36.442
+it gets started in a fresh session,
+
+01:43:36.442 --> 01:43:37.921
+but this R environment script will be run
+
+01:43:37.921 --> 01:43:39.161
+at the start of that session too.
+
+01:43:39.161 --> 01:43:41.482
+So it gives you a way to insert
+
+01:43:41.482 --> 01:43:42.921
+some variable definitions in there
+
+01:43:42.921 --> 01:43:45.442
+before the Shiny app really starts going.
+
+01:43:45.442 --> 01:43:46.881
+It's a hidden file.
+
+01:43:46.881 --> 01:43:48.921
+So it's kind of a pain to work with,
+
+01:43:48.921 --> 01:43:51.562
+but luckily there's a package called use this,
+
+01:43:51.562 --> 01:43:53.482
+which comes with this lifesaver function.
+
+01:43:53.482 --> 01:43:55.761
+It's called edit R environment.
+
+01:43:55.761 --> 01:43:58.401
+If you run that code at the R command line,
+
+01:43:58.401 --> 01:44:01.401
+it will find and open your .r environment file.
+
+01:44:01.401 --> 01:44:02.562
+If you don't have one yet,
+
+01:44:02.562 --> 01:44:05.001
+it'll just make one and save it in the right place.
+
+01:44:05.001 --> 01:44:08.521
+And that's how you could shape your variables.
+
+01:44:10.041 --> 01:44:10.881
+All right.
+
+01:44:10.881 --> 01:44:11.722
+But we're not going to go into that
+
+01:44:11.722 --> 01:44:12.602
+because we won't set it locally.
+
+01:44:12.602 --> 01:44:14.041
+We'll just set it on connect.
+
+01:44:15.881 --> 01:44:17.001
+This is what we'll set.
+
+01:44:17.001 --> 01:44:18.682
+So I'll come back to that in a minute,
+
+01:44:19.442 --> 01:44:21.161
+but you can see I have an Anthropic API key,
+
+01:44:21.161 --> 01:44:23.482
+which will work for at least today.
+
+01:44:23.482 --> 01:44:24.482
+So we'll be good.
+
+01:44:25.962 --> 01:44:28.242
+By the way, don't share your Anthropic API keys.
+
+01:44:28.242 --> 01:44:30.121
+That's a bad way to lose money.
+
+01:44:30.121 --> 01:44:32.281
+Also, I found out the hard way,
+
+01:44:32.281 --> 01:44:33.761
+if you put them on GitHub,
+
+01:44:33.761 --> 01:44:35.881
+Anthropic's actively scanning GitHub
+
+01:44:35.881 --> 01:44:38.682
+and it immediately disables it as soon as it sees it there.
+
+01:44:38.682 --> 01:44:42.281
+So you can't share them with students over GitHub.
+
+01:44:42.281 --> 01:44:43.121
+Okay.
+
+01:44:44.281 --> 01:44:45.121
+Before we get there,
+
+01:44:45.121 --> 01:44:47.041
+let's talk about what Query Chat's going to do.
+
+01:44:47.041 --> 01:44:49.001
+So you could set up your apps to use it.
+
+01:44:49.001 --> 01:44:50.442
+There's five lines of code
+
+01:44:50.442 --> 01:44:52.921
+you have to pay attention to, just five.
+
+01:44:52.921 --> 01:44:56.161
+One side is our app, the way it may look right now.
+
+01:44:56.161 --> 01:44:59.482
+And the other side is the solution file of Query Chat.
+
+01:44:59.482 --> 01:45:01.322
+And we're going to play spot the differences
+
+01:45:01.322 --> 01:45:03.921
+because we'll be able to spot the five differences.
+
+01:45:04.801 --> 01:45:05.761
+So if you scan through it,
+
+01:45:05.761 --> 01:45:08.562
+the first difference you'll probably see is in line five.
+
+01:45:09.482 --> 01:45:11.041
+We're going to use functions
+
+01:45:11.041 --> 01:45:12.242
+from the Query Chat library now.
+
+01:45:12.242 --> 01:45:14.562
+So we're going to need to load that package
+
+01:45:14.562 --> 01:45:15.881
+with library Query Chat.
+
+01:45:15.921 --> 01:45:20.602
+So first difference, load Query Chat as you load your app.
+
+01:45:21.482 --> 01:45:24.482
+The second difference, it's on line 10.
+
+01:45:24.482 --> 01:45:26.401
+We're going to set up Query Chat
+
+01:45:26.401 --> 01:45:28.682
+with this Query Chat function.
+
+01:45:28.682 --> 01:45:31.562
+We're going to save the output to something to call later.
+
+01:45:32.482 --> 01:45:34.322
+And this is what Query Chat does.
+
+01:45:34.322 --> 01:45:36.761
+We pass it the table to put in the database
+
+01:45:36.761 --> 01:45:38.082
+to start filtering.
+
+01:45:38.082 --> 01:45:39.521
+And we can also set up a greeting
+
+01:45:39.521 --> 01:45:41.482
+that's just waiting there for the user
+
+01:45:41.482 --> 01:45:42.881
+when they first log in as a chat bot,
+
+01:45:42.881 --> 01:45:44.761
+you know, it should say something to them just,
+
+01:45:44.761 --> 01:45:46.801
+and that's what the greeting would say.
+
+01:45:46.801 --> 01:45:48.962
+Now that's going to return a list of elements
+
+01:45:48.962 --> 01:45:50.242
+that we're going to use throughout the app.
+
+01:45:50.242 --> 01:45:52.362
+So we want to save that list.
+
+01:45:52.362 --> 01:45:54.962
+And we do all this before we even set up the UI
+
+01:45:54.962 --> 01:45:55.881
+and the rest of the app.
+
+01:45:55.881 --> 01:45:58.202
+This is sort of like sourcing a file.
+
+01:45:58.202 --> 01:45:59.921
+And so we do it in the same place.
+
+01:46:01.401 --> 01:46:04.641
+What's inside that list are three main things.
+
+01:46:04.641 --> 01:46:09.322
+QC sidebar is a function that sets up the chat bot sidebar.
+
+01:46:09.322 --> 01:46:11.921
+QC UI sets up an isolated chat bot
+
+01:46:11.921 --> 01:46:13.842
+that you can insert elsewhere in the UI if you like.
+
+01:46:13.842 --> 01:46:15.362
+We're not going to use that today.
+
+01:46:15.362 --> 01:46:18.161
+And QC server creates a new list of things
+
+01:46:18.161 --> 01:46:19.562
+to use over on the server side.
+
+01:46:19.562 --> 01:46:21.482
+So we'll come back to that.
+
+01:46:21.482 --> 01:46:22.842
+Let's use sidebar right now.
+
+01:46:22.842 --> 01:46:26.202
+So here, all the stuff, you know,
+
+01:46:26.202 --> 01:46:29.322
+I actually do have my tools, so I'm going to use this.
+
+01:46:29.322 --> 01:46:31.801
+All the stuff over here in the sidebar,
+
+01:46:31.801 --> 01:46:33.121
+we don't need that anymore.
+
+01:46:33.121 --> 01:46:35.001
+Query Chat's going to take care of it.
+
+01:46:35.001 --> 01:46:37.041
+So we're just going to replace all of that
+
+01:46:37.041 --> 01:46:39.322
+by just send the sidebar equal to query chat,
+
+01:46:39.322 --> 01:46:41.041
+QC dollar sign sidebar.
+
+01:46:41.082 --> 01:46:43.722
+That's how you get the chat bot into your UI.
+
+01:46:43.722 --> 01:46:44.921
+Bam, taken care of.
+
+01:46:45.842 --> 01:46:47.121
+So let's get rid of that.
+
+01:46:48.322 --> 01:46:50.001
+Now let's look at the server side.
+
+01:46:53.962 --> 01:46:56.442
+So this is the bottom half of the app server side.
+
+01:46:58.202 --> 01:47:00.042
+We're going to do two things over here.
+
+01:47:00.042 --> 01:47:02.522
+First, we're going to call that QC server,
+
+01:47:02.522 --> 01:47:05.682
+which will give us a list of new values
+
+01:47:05.682 --> 01:47:06.962
+to use on the server side.
+
+01:47:06.962 --> 01:47:09.522
+And I have to call it inside the server function
+
+01:47:09.561 --> 01:47:11.601
+because this is something that's going to run
+
+01:47:11.601 --> 01:47:13.002
+each time we launch the app
+
+01:47:13.002 --> 01:47:15.161
+over here in the server function.
+
+01:47:15.161 --> 01:47:18.442
+What's inside of QC Vals are three more things.
+
+01:47:18.442 --> 01:47:20.321
+One, there's the filtered data frame.
+
+01:47:20.321 --> 01:47:23.601
+So this is how I could call it from within the app.
+
+01:47:23.601 --> 01:47:27.841
+QC Vals or whatever I save this output as, dollar sign DF.
+
+01:47:27.841 --> 01:47:29.641
+And then there's actual SQL query
+
+01:47:29.641 --> 01:47:31.641
+if I want to display that within the app.
+
+01:47:31.641 --> 01:47:34.242
+It will get displayed in the chat side anyway,
+
+01:47:34.242 --> 01:47:36.601
+so I'm not going to use it today.
+
+01:47:36.601 --> 01:47:40.442
+And then title is a shot that the AI takes
+
+01:47:40.442 --> 01:47:42.042
+at writing a title that describes
+
+01:47:42.042 --> 01:47:44.081
+whatever filter is in place right now.
+
+01:47:44.081 --> 01:47:45.962
+So you could maybe set the title of your plot
+
+01:47:45.962 --> 01:47:47.282
+or your table to that,
+
+01:47:47.282 --> 01:47:50.561
+and it will kind of intelligently give it a title
+
+01:47:50.561 --> 01:47:53.161
+that seems to explain the data it's showing.
+
+01:47:53.161 --> 01:47:54.442
+I'm not going to use that today either,
+
+01:47:54.442 --> 01:47:58.002
+but we will use QC Vals, dollar sign DF.
+
+01:47:58.002 --> 01:48:00.561
+And the way this app is set up, it's so simple.
+
+01:48:00.561 --> 01:48:05.321
+Everything is just pulling this filter data set.
+
+01:48:05.321 --> 01:48:07.762
+So up here we have filtered
+
+01:48:07.762 --> 01:48:10.002
+and these things just call filtered.
+
+01:48:10.002 --> 01:48:12.561
+So I'm going to let them keep calling filtered.
+
+01:48:12.561 --> 01:48:15.561
+I'm just going to change how I make that filter data set.
+
+01:48:15.561 --> 01:48:18.161
+I'm just going to make it by calling the filter data set
+
+01:48:18.161 --> 01:48:21.242
+that Query Chat gives us back.
+
+01:48:21.242 --> 01:48:24.762
+Once you make those changes, that app will work.
+
+01:48:26.522 --> 01:48:29.242
+Okay, clear all my drawings.
+
+01:48:30.282 --> 01:48:31.121
+All right.
+
+01:48:32.242 --> 01:48:34.682
+So our job is just take that code
+
+01:48:35.042 --> 01:48:36.682
+that's already been written in Query Chat 4,
+
+01:48:36.682 --> 01:48:40.002
+paste it over what's in our app and run it.
+
+01:48:40.002 --> 01:48:41.762
+And let's do that together,
+
+01:48:41.762 --> 01:48:43.401
+and then we'll put it on Connect.
+
+01:48:46.282 --> 01:48:48.282
+All right, so stopping this,
+
+01:48:48.282 --> 01:48:50.242
+which I forgot to do earlier, closing that.
+
+01:48:50.242 --> 01:48:53.042
+I have App.R, about to paste over all that.
+
+01:48:54.081 --> 01:48:55.641
+Finding solutions.
+
+01:48:55.829 --> 01:49:05.709
+solutions, and the fourth one, querychat app. I'll just go select all, copy, find app again,
+
+01:49:05.709 --> 01:49:11.829
+select all, paste. So now it's set up to use querychat. And then if I were to run it right
+
+01:49:11.829 --> 01:49:16.229
+now, I don't think it would work because I haven't set up the model. Although since we
+
+01:49:16.229 --> 01:49:19.628
+do have some models configured, there's a chance it might do something. I'm just going
+
+01:49:19.628 --> 01:49:26.149
+to immediately publish this to Kinect. I'm going to click Kinect, publish, go through
+
+01:49:26.149 --> 01:49:27.189
+the process.
+
+01:49:17.812 --> 01:49:25.812
+I'm going to publish this to Kinect. I'm going to click Kinect, or Publish. I'm going to go through the process.
+
+01:49:25.812 --> 01:49:31.812
+This time it remembers who I am. Sorry, it's signed into Kinect, so I don't have any trouble.
+
+01:49:31.812 --> 01:49:36.812
+But I do need to remember that it uses helpers and it uses Georgia Cases.
+
+01:49:36.812 --> 01:49:39.812
+I'll deploy my project.
+
+01:49:39.812 --> 01:49:43.812
+And if you're following along at home, I mean, feel free to go through this if you like.
+
+01:49:43.812 --> 01:49:52.812
+But at this point, I'd say sit back and let's watch it together.
+
+01:49:52.812 --> 01:49:59.812
+So it's running everything, sending the bundle over.
+
+01:49:59.812 --> 01:50:03.812
+It's taking maybe 30 more seconds. There, it's successful.
+
+01:50:03.812 --> 01:50:12.812
+If I view it over here on Kinect, we have a nice-looking app with a nice-looking sidebar chatbot.
+
+01:50:12.812 --> 01:50:25.812
+But if I were to do something like show me cancers of the digestive tract, it's just going to run forever because I haven't set up a model for it.
+
+01:50:25.812 --> 01:50:30.812
+And this is what it means to set up environment variables. It's being run in this Kinect environment.
+
+01:50:30.812 --> 01:50:34.812
+It can be run in a local environment. Whatever environment it's running in,
+
+01:50:34.812 --> 01:50:41.812
+QueryChat is trying to ask the environment, hey, what value do you have on this server for QueryChat client?
+
+01:50:41.812 --> 01:50:45.812
+Right now, Kinect's saying, I don't have any value for QueryChat client.
+
+01:50:45.812 --> 01:50:51.812
+But if I go to settings here in advance, there's a section where I can add environment variables.
+
+01:50:51.812 --> 01:50:56.812
+This is how I'll do it. I'll add QueryChat underscore client.
+
+01:50:57.812 --> 01:51:05.812
+Now I need to find the value for it, which is conveniently in the slides a little ways back.
+
+01:51:05.812 --> 01:51:13.812
+So I'll tell it to use Sonic 4.5 this time.
+
+01:51:13.812 --> 01:51:15.812
+And I'll paste that in there. So I add that.
+
+01:51:15.812 --> 01:51:22.812
+Once you add a value to Kinect, and I guess I suppose anywhere else that you're adding values that's worth its salt,
+
+01:51:22.812 --> 01:51:28.812
+no one can read it. The code can read it, but it's just not accessible anymore to humans, even my collaborators.
+
+01:51:28.812 --> 01:51:32.812
+They could come back and edit it by overwriting it, but it's truly a secret.
+
+01:51:32.812 --> 01:51:40.812
+And that is good because I'm about to put something that bills to my employer's account in here.
+
+01:51:40.812 --> 01:51:47.812
+Go add that, and then I'll save these two variables.
+
+01:51:47.812 --> 01:51:53.812
+So now it's relaunching the app, but this time when QueryChat in the background is trying to look up these values,
+
+01:51:53.812 --> 01:52:03.812
+there's a value that it will find. And if my IT friend gave me a real live API key, this should work.
+
+01:52:03.812 --> 01:52:17.812
+So I'll say, show me only cancers related to the digestive tract.
+
+01:52:17.812 --> 01:52:21.812
+Okay, it's working. It's holding my breath. And this is what QueryChat looks like.
+
+01:52:21.812 --> 01:52:25.812
+So it's showing me, you know, this is the SQL query that it wrote.
+
+01:52:25.812 --> 01:52:30.812
+So it decided, like, if it's related to the colon, rectum, esophagus, stomach, all this stuff,
+
+01:52:31.812 --> 01:52:35.812
+that's related to the digestive tract, that would have been hard to do with a dropdown menu.
+
+01:52:35.812 --> 01:52:38.812
+And it filtered the data, everything updated to show that.
+
+01:52:38.812 --> 01:52:44.812
+And then it's even saying, hey, based on what you're looking at, maybe you want to, like,
+
+01:52:44.812 --> 01:52:47.812
+look at the difference between males and females. It's giving me suggestions.
+
+01:52:47.812 --> 01:52:50.812
+I don't have to take them, but I can go pretty far by taking them.
+
+01:52:50.812 --> 01:52:54.812
+So I'm going to take those suggestions. And now we see the next thing QueryChat can do.
+
+01:52:54.812 --> 01:53:07.812
+In addition to updating the data, show me the total number of cancers by digestive tract.
+
+01:53:07.812 --> 01:53:11.812
+It can compute simple things about the data and show me those in the chat here.
+
+01:53:11.812 --> 01:53:16.812
+So here it's running a SQL query to make this little table and shows me this.
+
+01:53:16.812 --> 01:53:20.812
+Okay, so there's a lot of fun there. And if you have this setup,
+
+01:53:20.812 --> 01:53:22.812
+you could play with yours over the break or whatnot.
+
+01:53:22.812 --> 01:53:25.812
+I know we just barely got to the cool thing. We're not going to have a chance to play with it.
+
+01:53:25.812 --> 01:53:29.812
+But we got to it. And you saw what was involved in all of this.
+
+01:53:29.812 --> 01:53:34.812
+And what I want to make sure I give you is this slide here.
+
+01:53:34.812 --> 01:53:37.812
+So these are all the resources we went through today.
+
+01:53:37.812 --> 01:53:42.812
+And if you want to learn more about them, go to those websites or take a screenshot of this.
+
+01:53:42.812 --> 01:53:46.812
+And this is where you'd go. And then I should put this on the same screen.
+
+01:53:46.812 --> 01:53:49.812
+But if you want to go even past where we went today, this is definitely the next step.
+
+01:53:49.812 --> 01:53:55.812
+The low-level tools for R about how to work with AI.
+
+01:53:55.812 --> 01:54:00.812
+Now, I was told to stop at 55 past the hour. And look at that. It's 55 past the hour.
+
+01:54:00.812 --> 01:54:04.812
+So thank you so much, everyone, for your attention and going through this with me.
+
+01:54:04.812 --> 01:54:08.812
+I hope there's something in here that sparked an interest that you can build on afterwards.
+
+01:54:08.812 --> 01:54:14.812
+And yeah, so I'll pass it back over to Daniel. I think he'll lead us into the break.

@@ -24,9 +24,9 @@ external:  # updated automatically, do not edit
     In this talk, I''ll discuss how to design an effective user guide for open source software. I''ll explain how the guides for Polars, DuckDB, and FastAPI balance working end-to-end like a course, with being browsable like a reference.'
   duration: 1927
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:36.183541+00:00'
-  like_count: 10
+  language: ''
+  last_updated: '2026-09-18T13:58:19.321242+00:00'
+  like_count: 11
   people:
   - Michael Chow
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/lHCOVqCZRFw/maxresdefault.jpg
   title: 'Michael Chow - User guides: engaging new users, delighting old ones | SciPy 2025'
   url: https://www.youtube.com/watch?v=lHCOVqCZRFw
-  view_count: 266
+  view_count: 279
 ---
 image: thumbnail.jpg
 

@@ -10,16 +10,22 @@ languages:
 latest_release: '2026-05-13T18:37:26+00:00'
 people:
 - Brian Lambert
+- Jonathan McPherson
+- Wasim Lorgat
 - Julia Silge
 - Isabel Zimmerman
 - Nick Strayer
 - Lionel Henry
 - Daniel Falbel
+- Kevin Ushey
 - Davis Vaughan
+- Austin Dickey
 - JJ Allaire
 - Jenny Bryan
+- Brice Stacey
 - George Stagg
 - Simon Couch
+- Gary Ritchie
 - Winston Chang
 - Joe Cheng
 - Dianyi Yang
@@ -47,16 +53,22 @@ external:  # updated automatically, do not edit
   license: NOASSERTION
   people:
   - Brian Lambert
+  - Jonathan McPherson
+  - Wasim Lorgat
   - Julia Silge
   - Isabel Zimmerman
   - Nick Strayer
   - Lionel Henry
   - Daniel Falbel
+  - Kevin Ushey
   - Davis Vaughan
+  - Austin Dickey
   - JJ Allaire
   - Jenny Bryan
+  - Brice Stacey
   - George Stagg
   - Simon Couch
+  - Gary Ritchie
   - Winston Chang
   - Joe Cheng
   - Dianyi Yang

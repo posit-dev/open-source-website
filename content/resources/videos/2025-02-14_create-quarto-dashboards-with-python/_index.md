@@ -27,7 +27,7 @@ resource_type: video
 resources: []
 software:
 - python-tidytuesday
-- Quarto
+- quarto
 tags:
 - rstudio
 - data science
@@ -104,14 +104,14 @@ external:  # updated automatically, do not edit
   duration: 575
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.317934+00:00'
+  last_updated: '2026-09-18T13:58:09.332495+00:00'
   like_count: 63
   people:
   - Isabella Velásquez
   playlist: ''
   software:
   - python-tidytuesday
-  - Quarto
+  - quarto
   tags:
   - rstudio
   - data science
@@ -161,7 +161,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uLGe9zuuNl0/maxresdefault.jpg
   title: Create Quarto dashboards with Python
   url: https://www.youtube.com/watch?v=uLGe9zuuNl0
-  view_count: 2176
+  view_count: 2334
 ---
 image: thumbnail.jpg
 

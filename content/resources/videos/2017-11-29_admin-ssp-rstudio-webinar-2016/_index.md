@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 205
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532453+00:00'
+  last_updated: '2026-09-18T13:58:19.005311+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/7-VBDzqgWpw/maxresdefault.jpg
   title: Admin SSP | RStudio Webinar - 2016
   url: https://www.youtube.com/watch?v=7-VBDzqgWpw
-  view_count: 128
+  view_count: 129
 ---
 image: thumbnail.jpg
 

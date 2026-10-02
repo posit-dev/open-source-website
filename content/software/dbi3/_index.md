@@ -17,9 +17,9 @@ external:  # updated automatically, do not edit
   forks: 2
   languages:
   - R
-  last_updated: '2026-05-20T08:05:59.224023+00:00'
+  last_updated: '2026-09-18T14:32:41.543875+00:00'
   repo: r-dbi/dbi3
-  stars: 41
+  stars: 42
   title: dbi3
   website: https://r-dbi.github.io/dbi3
 ---

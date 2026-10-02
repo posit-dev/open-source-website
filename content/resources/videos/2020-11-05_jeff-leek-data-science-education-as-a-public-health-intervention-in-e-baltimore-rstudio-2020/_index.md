@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: Originally posted at https://rstudio.com/resources/rstudioconf-2020/data-science-education-as-an-economic-and-public-health-intervention-in-east-baltimore/
   duration: 1124
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962335+00:00'
+  language: ''
+  last_updated: '2026-09-18T13:58:17.861409+00:00'
   like_count: 28
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GG5Vl7N5vCo/hqdefault.jpg
   title: Jeff Leek | Data science education as a public health intervention in E. Baltimore | RStudio (2020)
   url: https://www.youtube.com/watch?v=GG5Vl7N5vCo
-  view_count: 713
+  view_count: 722
 ---
 image: thumbnail.jpg
 

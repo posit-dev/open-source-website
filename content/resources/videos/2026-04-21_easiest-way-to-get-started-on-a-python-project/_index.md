@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags:
 - rstudio
@@ -57,18 +57,18 @@ title: Easiest way to get started on a Python project?!
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 5
+  comment_count: 4
   date: '2026-04-21T14:20:34Z'
   definition: hd
   description: 'If we do say so ourselves #datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #cursor #windsurf #positshorts'
   duration: 31
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:26.044094+00:00'
+  last_updated: '2026-09-18T13:58:06.854073+00:00'
   like_count: 52
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags:
   - rstudio
@@ -118,6 +118,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/jm6ptGOTEvI/maxresdefault.jpg
   title: Easiest way to get started on a Python project?!
   url: https://www.youtube.com/watch?v=jm6ptGOTEvI
-  view_count: 3127
+  view_count: 3200
 ---
 

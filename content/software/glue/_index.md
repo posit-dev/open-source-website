@@ -28,10 +28,10 @@ external:  # updated automatically, do not edit
   description: Glue strings to data in R. Small, fast, dependency free interpreted
     string literals.
   first_commit: '2016-12-23T21:07:25+00:00'
-  forks: 63
+  forks: 64
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.366172+00:00'
+  last_updated: '2026-09-18T14:21:05.781484+00:00'
   latest_release: '2026-04-16T22:52:32+00:00'
   license: NOASSERTION
   people:
@@ -44,7 +44,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   readme_image: man/figures/logo.png
   repo: tidyverse/glue
-  stars: 747
+  stars: 750
   title: glue
   website: https://glue.tidyverse.org
 ---
@@ -52,3 +52,16 @@ external:  # updated automatically, do not edit
 The glue package provides interpreted string literals for R by embedding R expressions inside curly braces, which are then evaluated and inserted into strings. It offers a small, fast, and dependency-free approach to string interpolation.
 
 The package makes string formatting more readable and predictable compared to base R functions like paste() and sprintf(). It handles whitespace intelligently by automatically trimming common leading indentation, making code formatting align with output formatting. glue works with data from multiple sources including the local environment, named arguments, and data frames, and includes specialized variants like glue_sql() for database queries.
+
+## Try it
+
+{{< webr packages="glue" >}}
+library(glue)
+
+name <- "world"
+n <- 42
+items <- c("apples", "bananas", "cherries")
+
+glue("Hello, {name}! The answer is {n}, and {n * 2} is twice that.")
+glue("You have {length(items)} items: {glue_collapse(items, sep = ', ', last = ' and ')}.")
+{{< /webr >}}

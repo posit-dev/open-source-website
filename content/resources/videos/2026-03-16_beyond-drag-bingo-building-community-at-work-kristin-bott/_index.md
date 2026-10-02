@@ -18,8 +18,8 @@ external:  # updated automatically, do not edit
   description: 'Talk from rainbowR conference 2026: https://conference.rainbowr.org'
   duration: 272
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:35.830326+00:00'
+  language: ''
+  last_updated: '2026-09-18T13:58:19.320764+00:00'
   like_count: 0
   people:
   - Kristin Bott
@@ -28,6 +28,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AccUwp70MWQ/maxresdefault.jpg
   title: 'Beyond drag bingo: Building community at work | Kristin Bott'
   url: https://www.youtube.com/watch?v=AccUwp70MWQ
-  view_count: 25
+  view_count: 28
 ---
 

@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags:
 - rstudio
@@ -64,11 +64,11 @@ external:  # updated automatically, do not edit
   duration: 50
   has_captions: false
   language: en-US
-  last_updated: '2026-05-19T10:15:26.043871+00:00'
-  like_count: 94
+  last_updated: '2026-09-18T13:58:06.853597+00:00'
+  like_count: 96
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags:
   - rstudio
@@ -118,6 +118,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/j1iNSAjcb6Q/maxresdefault.jpg
   title: Wake up babe, new IDE for Jupyter notebooks just dropped
   url: https://www.youtube.com/watch?v=j1iNSAjcb6Q
-  view_count: 2820
+  view_count: 2988
 ---
 

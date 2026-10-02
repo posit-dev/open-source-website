@@ -33,7 +33,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 - gt
 - rstudio
 tags: []
@@ -73,21 +73,21 @@ external:  # updated automatically, do not edit
   duration: 6045
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.183458+00:00'
-  like_count: 7
+  last_updated: '2026-09-18T13:58:19.321183+00:00'
+  like_count: 9
   people:
   - Michael Chow
   - Rich Iannone
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Great Tables
+  - great-tables
   - gt
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/rrAGYiXBuWQ/maxresdefault.jpg
   title: Tables in Python with Great Tables
   url: https://www.youtube.com/watch?v=rrAGYiXBuWQ
-  view_count: 427
+  view_count: 501
 ---
 image: thumbnail.jpg
 

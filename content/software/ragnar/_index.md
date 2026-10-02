@@ -5,7 +5,7 @@ github: tidyverse/ragnar
 image: logo.png
 languages:
 - R
-latest_release: '2026-01-23T17:26:32+00:00'
+latest_release: '2026-09-10T16:16:31+00:00'
 people:
 - Tomasz Kalinowski
 - Daniel Falbel
@@ -28,11 +28,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: RAG in R
   first_commit: '2025-01-20T19:30:06+00:00'
-  forks: 24
+  forks: 25
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.748341+00:00'
-  latest_release: '2026-01-23T17:26:32+00:00'
+  last_updated: '2026-09-18T14:21:50.011588+00:00'
+  latest_release: '2026-09-10T16:16:31+00:00'
   license: NOASSERTION
   people:
   - Tomasz Kalinowski
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   readme_image: man/figures/logo.png
   repo: tidyverse/ragnar
-  stars: 176
+  stars: 189
   title: ragnar
   website: http://ragnar.tidyverse.org
 ---

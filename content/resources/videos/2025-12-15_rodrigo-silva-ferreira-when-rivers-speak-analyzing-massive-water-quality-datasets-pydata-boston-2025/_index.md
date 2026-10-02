@@ -18,7 +18,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - Python
 - Tutorial
@@ -57,11 +57,11 @@ external:  # updated automatically, do not edit
   duration: 2348
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.830488+00:00'
+  last_updated: '2026-09-18T13:58:19.321006+00:00'
   like_count: 0
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Positron
+  - positron
   tags:
   - Python
   - Tutorial
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/gQBqxMVaNpA/maxresdefault.jpg
   title: Rodrigo Silva Ferreira-When Rivers Speak Analyzing Massive Water Quality Datasets-PyData Boston 2025
   url: https://www.youtube.com/watch?v=gQBqxMVaNpA
-  view_count: 72
+  view_count: 87
 ---
 image: thumbnail.jpg
 

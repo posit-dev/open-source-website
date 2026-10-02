@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - rstudio
 - data science
@@ -64,13 +64,13 @@ external:  # updated automatically, do not edit
   duration: 2901
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.318502+00:00'
-  like_count: 181
+  last_updated: '2026-09-18T13:58:09.670291+00:00'
+  like_count: 187
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - rstudio
   - data science
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KdsQgwaY950/maxresdefault.jpg
   title: 'Quarto Dashboards 2: Components | Mine Çetinkaya-Rundel | Posit'
   url: https://www.youtube.com/watch?v=KdsQgwaY950
-  view_count: 8241
+  view_count: 8928
 ---
 image: thumbnail.jpg
 

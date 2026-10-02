@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags: []
 title: Building a Blog with Quarto | Led by Isabella Velásquez, RStudio
@@ -21,19 +21,19 @@ external:  # updated automatically, do not edit
   duration: 4352
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:32.607960+00:00'
+  last_updated: '2026-09-18T13:58:15.366720+00:00'
   like_count: 310
   people:
   - Isabella Velásquez
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/CVcvXfRyfE0/maxresdefault.jpg
   title: Building a Blog with Quarto | Led by Isabella Velásquez, RStudio
   url: https://www.youtube.com/watch?v=CVcvXfRyfE0
-  view_count: 12747
+  view_count: 12883
 ---
 image: thumbnail.jpg
 

@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4491
   has_captions: false
   language: es-ES
-  last_updated: '2026-05-19T10:15:36.184139+00:00'
+  last_updated: '2026-09-18T13:58:20.752949+00:00'
   like_count: 1
   people:
   - Hannah Frick

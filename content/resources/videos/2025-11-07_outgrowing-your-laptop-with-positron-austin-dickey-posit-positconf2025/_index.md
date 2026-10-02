@@ -14,11 +14,12 @@ description: 'Outgrowing Your Laptop with Positron
 
   📁 Materials - https://github.com/austin3dickey/ssh-demo posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
 image: thumbnail.jpg
-people: []
+people:
+- Austin Dickey
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - posit::conf(2025)
 - rstats
@@ -51,11 +52,13 @@ external:  # updated automatically, do not edit
   duration: 1236
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.254498+00:00'
-  like_count: 7
+  last_updated: '2026-09-18T13:58:08.099050+00:00'
+  like_count: 8
+  people:
+  - Austin Dickey
   playlist: ''
   software:
-  - Positron
+  - positron
   tags:
   - posit::conf(2025)
   - rstats
@@ -65,7 +68,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/I748784S7WI/maxresdefault.jpg
   title: Outgrowing Your Laptop with Positron (Austin Dickey, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=I748784S7WI
-  view_count: 389
+  view_count: 550
 ---
 image: thumbnail.jpg
-

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1186
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.607065+00:00'
+  last_updated: '2026-09-18T13:58:12.093393+00:00'
   like_count: 11
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/VDu2qdpYko8/maxresdefault.jpg
   title: The Need for Speed - AccelerateR-ing R Adoption in GSK - posit::conf(2023)
   url: https://www.youtube.com/watch?v=VDu2qdpYko8
-  view_count: 674
+  view_count: 680
 ---
 image: thumbnail.jpg
 

@@ -9,7 +9,7 @@ thumbnails:
 - page-1.png
 - page-2.png
 software:
-- keras
+- keras3
 languages:
 - R
 - Python

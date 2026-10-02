@@ -1,0 +1,7 @@
+<p><a data-t="0">We got this great question asking about the difference between Numpy and Polars.</a></p>
+
+<p><a data-t="5">At the high level, Numpy is meant for matrices, and matrices require homogeneous data types,</a> <a data-t="11">so everything in the grid must be the exact same type, so for example,</a> <a data-t="16">floating point numbers.</a> <a data-t="21">This makes Numpy incredibly fast for things like linear algebra</a> <a data-t="21">and multidimensional math.</a> <a data-t="27">Polars, on the other hand, is a data frame library.</a> <a data-t="27">Data frames are</a> <a data-t="27">built for tabular data, so think of like a spreadsheet, and with data frames, your columns</a> <a data-t="34">can be of different types, so you can have strings, integers, dates, and so on in the same table.</a></p>
+
+<p><a data-t="41">In terms of their relationship, they both use structured data.</a> <a data-t="48">Polars uses Apache Arrow and</a> <a data-t="48">is built on Rust, and it also does something called lazy execution, so it makes it incredibly fast</a> <a data-t="54">for querying massive tables.</a> <a data-t="61">And so, in conclusion, Numpy for complex matrix math,</a> <a data-t="61">and Polars for fast tabular data processing.</a></p>
+
+<blockquote><a data-t="61">And so, in conclusion, Numpy for complex matrix math,</a> <a data-t="61">and Polars for fast tabular data processing.</a></blockquote>

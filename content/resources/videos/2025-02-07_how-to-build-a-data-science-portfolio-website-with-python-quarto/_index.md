@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - data science
 - python
@@ -31,11 +31,11 @@ external:  # updated automatically, do not edit
   duration: 3128
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.317984+00:00'
-  like_count: 93
+  last_updated: '2026-09-18T13:58:09.332537+00:00'
+  like_count: 96
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - data science
   - python
@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TbegWSPETs0/maxresdefault.jpg
   title: How to Build a Data Science Portfolio Website with Python & Quarto!
   url: https://www.youtube.com/watch?v=TbegWSPETs0
-  view_count: 3316
+  view_count: 3752
 ---
 image: thumbnail.jpg
 

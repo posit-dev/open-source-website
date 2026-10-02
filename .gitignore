@@ -1,6 +1,7 @@
-# Dependencies
-node_modules/
-themes/hugo-theme-tailwind/package-lock.json
+# Dependencies (Yarn PnP — no node_modules)
+.pnp.*
+.yarn/install-state.gz
+.yarn/unplugged/
 
 # Hugo build output
 public/
@@ -12,6 +13,7 @@ assets/css/index.css
 
 # OS files
 .DS_Store
+*.tmp
 
 # IDE files
 .vscode/
@@ -21,6 +23,7 @@ assets/css/index.css
 
 /.quarto/
 **/*.quarto_ipynb
+**/_mall_cache/
 
 .env
 
@@ -50,3 +53,9 @@ content/blog/_lychee/
 
 # Panache cache
 .panache-cache/
+
+# Build log captured for the CI no-warnings assert
+hugo-build.log
+
+# Python
+__pycache__/

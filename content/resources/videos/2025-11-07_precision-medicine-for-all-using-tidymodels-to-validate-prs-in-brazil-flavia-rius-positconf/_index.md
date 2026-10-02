@@ -47,8 +47,8 @@ external:  # updated automatically, do not edit
   duration: 1036
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868581+00:00'
-  like_count: 9
+  last_updated: '2026-09-18T13:58:08.098741+00:00'
+  like_count: 8
   playlist: ''
   software:
   - tidymodels
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/phh8p2ImBMQ/maxresdefault.jpg
   title: 'Precision Medicine for All: Using Tidymodels to Validate PRS in Brazil (Flávia Rius) | posit::conf'
   url: https://www.youtube.com/watch?v=phh8p2ImBMQ
-  view_count: 194
+  view_count: 216
 ---
 image: thumbnail.jpg
 

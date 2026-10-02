@@ -10,6 +10,7 @@ people:
 - Barret Schloerke
 - Thomas Lin Pedersen
 - Joe Cheng
+- Gary Ritchie
 - Garrick Aden-Buie
 - Charlie Gao
 - Carson Sievert
@@ -34,6 +35,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Thomas Lin Pedersen
   - Joe Cheng
+  - Gary Ritchie
   - Garrick Aden-Buie
   - Charlie Gao
   - Carson Sievert

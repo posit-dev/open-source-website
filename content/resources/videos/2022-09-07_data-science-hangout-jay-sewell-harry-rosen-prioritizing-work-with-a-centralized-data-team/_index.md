@@ -103,7 +103,7 @@ external:  # updated automatically, do not edit
   duration: 3625
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:32.607924+00:00'
+  last_updated: '2026-09-18T13:58:15.366672+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/xKvd_BG8xZM/maxresdefault.jpg
   title: Data Science Hangout | Jay Sewell, Harry Rosen | Prioritizing work with a centralized data team
   url: https://www.youtube.com/watch?v=xKvd_BG8xZM
-  view_count: 459
+  view_count: 460
 ---
 image: thumbnail.jpg
 

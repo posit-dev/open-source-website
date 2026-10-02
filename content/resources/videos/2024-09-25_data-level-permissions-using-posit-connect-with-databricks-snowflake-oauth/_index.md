@@ -6,10 +6,11 @@ people: []
 resource_type: video
 resources: []
 software:
-- DBI
+- dbi
 - odbc
 - ps
-- Quarto
+- quarto
+- sparklyr
 tags: []
 title: Data-level permissions using Posit Connect (with Databricks, Snowflake, OAuth)
 
@@ -22,19 +23,20 @@ external:  # updated automatically, do not edit
   duration: 1003
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.246538+00:00'
+  last_updated: '2026-09-18T13:58:10.631307+00:00'
   like_count: 25
   playlist: ''
   software:
-  - DBI
+  - dbi
   - odbc
   - ps
-  - Quarto
+  - quarto
+  - sparklyr
   tags: []
   thumbnail: https://i.ytimg.com/vi/ivEoeyWJzVY/maxresdefault.jpg
   title: Data-level permissions using Posit Connect (with Databricks, Snowflake, OAuth)
   url: https://www.youtube.com/watch?v=ivEoeyWJzVY
-  view_count: 1940
+  view_count: 1973
 ---
 image: thumbnail.jpg
 

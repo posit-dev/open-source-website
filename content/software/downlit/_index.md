@@ -23,10 +23,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Syntax Highlighting and Automatic Linking
   first_commit: '2020-05-28T18:00:36+00:00'
-  forks: 25
+  forks: 27
   languages:
   - R
-  last_updated: '2026-05-20T08:05:57.001203+00:00'
+  last_updated: '2026-09-18T14:30:06.276324+00:00'
   latest_release: '2025-11-13T22:37:02+00:00'
   license: NOASSERTION
   people:

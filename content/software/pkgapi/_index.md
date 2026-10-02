@@ -16,10 +16,10 @@ website: ''
 external:  # updated automatically, do not edit
   description: Create a map of functions for an R package - WORK IN PROGRESS!
   first_commit: '2016-11-28T03:02:36+00:00'
-  forks: 11
+  forks: 10
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.637958+00:00'
+  last_updated: '2026-09-18T14:27:25.918609+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi

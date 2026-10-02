@@ -19,10 +19,10 @@ website: https://hugodown.r-lib.org
 external:  # updated automatically, do not edit
   description: Make websites with hugo and RMarkdown
   first_commit: '2020-05-18T14:26:06+00:00'
-  forks: 23
+  forks: 22
   languages:
   - R
-  last_updated: '2026-05-20T08:05:56.979513+00:00'
+  last_updated: '2026-09-18T14:30:03.695095+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham

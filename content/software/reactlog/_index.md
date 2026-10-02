@@ -9,7 +9,7 @@ latest_release: '2022-09-26T16:21:09+00:00'
 people:
 - Barret Schloerke
 - Karan Gathani
-- Karan Gathani
+- Gary Ritchie
 title: reactlog
 topics:
 - Interactive Apps
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   people:
   - Barret Schloerke
   - Karan Gathani
-  - Karan Gathani
+  - Gary Ritchie
   readme_image: man/figures/logo.svg
   repo: rstudio/reactlog
   stars: 131

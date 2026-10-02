@@ -8,7 +8,7 @@ resources: []
 software:
 - rstudio
 - rstudio-conf
-- Shiny
+- shiny-r
 tags:
 - Nic Crane
 - human genome project
@@ -64,13 +64,13 @@ external:  # updated automatically, do not edit
   duration: 1147
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243794+00:00'
+  last_updated: '2026-09-18T13:58:18.645957+00:00'
   like_count: 19
   playlist: ''
   software:
   - rstudio
   - rstudio-conf
-  - Shiny
+  - shiny-r
   tags:
   - Nic Crane
   - human genome project
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dCLgpnF1DD8/maxresdefault.jpg
   title: 'Nic Crane | The future''s Shiny: Pioneering genomic medicine in R | Posit (2019)'
   url: https://www.youtube.com/watch?v=dCLgpnF1DD8
-  view_count: 947
+  view_count: 950
 ---
 image: thumbnail.jpg
 

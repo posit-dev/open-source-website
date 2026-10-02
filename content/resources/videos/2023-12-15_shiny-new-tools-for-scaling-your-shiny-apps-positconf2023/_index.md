@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - databricks
 - data science
@@ -65,11 +65,11 @@ external:  # updated automatically, do not edit
   duration: 1099
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.606654+00:00'
+  last_updated: '2026-09-18T13:58:12.093049+00:00'
   like_count: 33
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - databricks
   - data science
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vhhBG8GzMmE/maxresdefault.jpg
   title: Shiny New Tools for Scaling your Shiny Apps - posit::conf(2023)
   url: https://www.youtube.com/watch?v=vhhBG8GzMmE
-  view_count: 1195
+  view_count: 1230
 ---
 image: thumbnail.jpg
 

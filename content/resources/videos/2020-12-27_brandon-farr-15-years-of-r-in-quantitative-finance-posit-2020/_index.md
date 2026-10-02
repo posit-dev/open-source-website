@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   duration: 1195
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.701290+00:00'
-  like_count: 105
+  last_updated: '2026-09-18T13:58:17.360225+00:00'
+  like_count: 106
   playlist: ''
   tags:
   - rstudio::conf(2020)
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3sroV_RltQA/hqdefault.jpg
   title: Brandon Farr | 15 Years of R in Quantitative Finance | Posit (2020)
   url: https://www.youtube.com/watch?v=3sroV_RltQA
-  view_count: 3447
+  view_count: 3481
 ---
 image: thumbnail.jpg
 

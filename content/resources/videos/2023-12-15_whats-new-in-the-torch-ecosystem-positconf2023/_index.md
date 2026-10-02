@@ -7,6 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
+- luz
 - torch
 tags:
 - rstudio
@@ -66,12 +67,13 @@ external:  # updated automatically, do not edit
   duration: 306
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.286996+00:00'
+  last_updated: '2026-09-18T13:58:11.685943+00:00'
   like_count: 28
   people:
   - Daniel Falbel
   playlist: ''
   software:
+  - luz
   - torch
   tags:
   - rstudio
@@ -123,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FQ9R30XUHcU/maxresdefault.jpg
   title: What's New in the Torch Ecosystem - posit::conf(2023)
   url: https://www.youtube.com/watch?v=FQ9R30XUHcU
-  view_count: 696
+  view_count: 709
 ---
 image: thumbnail.jpg
 

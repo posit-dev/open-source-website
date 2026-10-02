@@ -65,7 +65,7 @@ For quick fixes, edit the `.md` file directly. If you plan to re-render, fix the
 **Link guidelines:**
 
 - Use **absolute URLs** for external sites: `https://shiny.posit.co/r/getstarted/`
-- Use **site-root paths** for internal blog links: `/blog/shiny/foo/`
+- Use **permalink-form paths** for internal blog links: `/blog/YYYY-MM-DD_<slug>/` (see `_authoring-guide.md`). Don't use content-directory paths like `/blog/ported/<source>/<post>/` — those break if posts are reorganized.
 - Never use `https://posit.co/blog/...` for internal links — that's a different site
 - In source files, avoid relative paths like `../` — they break when posts move
 
@@ -84,22 +84,22 @@ Some blogs have shared virtual environments for rendering posts with executable 
 
 | Blog | R (renv) | Python (uv) |
 |------|----------|-------------|
-| `content/blog/ai/` | Yes | — |
-| `content/blog/shiny/` | Yes | Yes |
-| `content/blog/great-tables/` | — | Yes |
-| `content/blog/pointblank/` | — | Yes |
-| `content/blog/plotnine/` | — | Yes |
+| `content/blog/ported/ai/` | Yes | — |
+| `content/blog/ported/shiny/` | Yes | Yes |
+| `content/blog/ported/great-tables/` | — | Yes |
+| `content/blog/ported/pointblank/` | — | Yes |
+| `content/blog/ported/plotnine/` | — | Yes |
 
 **To render with the environment:**
 
 ```bash
 # Python (uv)
-cd content/blog/<blog>
+cd content/blog/ported/<blog>
 uv sync
 uv run quarto render <post>/index.qmd --to hugo-md
 
 # R (renv) - start R from the blog directory
-cd content/blog/<blog>
+cd content/blog/ported/<blog>
 R
 # then in R: renv::restore()
 ```
@@ -115,7 +115,7 @@ R
 
 ## Blog-specific notes
 
-### AI blog (`content/blog/ai/`)
+### AI blog (`content/blog/ported/ai/`)
 
 The AI blog has the biggest gap between source and rendered frontmatter. Source files typically have:
 - `author:` with name/affiliation/url structure
@@ -125,15 +125,15 @@ The AI blog has the biggest gap between source and rendered frontmatter. Source 
 
 **If re-rendering:** Posts with bibliographies won't get a "References" heading without a full Quarto project setup.
 
-### Tidyverse blog (`content/blog/tidyverse/`)
+### Tidyverse blog (`content/blog/ported/tidyverse/`)
 
 Source `.Rmd` files have `output: hugodown::hugo_document`. Remove this before rendering with Quarto.
 
-### Education blog (`content/blog/education/`)
+### Education blog (`content/blog/ported/education/`)
 
 Uses `.Rmarkdown` (source) and `.markdown` (rendered). These are usually well-synced.
 
-### Shiny blog (`content/blog/shiny/`)
+### Shiny blog (`content/blog/ported/shiny/`)
 
 `.qmd` and `.md` files are usually in sync. Watch for `imagealt` vs `image-alt`.
 

@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: How to automate your reporting with Quarto Dashboards and Posit Connect
 
@@ -20,18 +20,18 @@ external:  # updated automatically, do not edit
   duration: 1740
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.567092+00:00'
-  like_count: 168
+  last_updated: '2026-09-18T13:58:10.945306+00:00'
+  like_count: 170
   people:
   - Isabella Velásquez
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/xnJuXOw7iu8/maxresdefault.jpg
   title: How to automate your reporting with Quarto Dashboards and Posit Connect
   url: https://www.youtube.com/watch?v=xnJuXOw7iu8
-  view_count: 9141
+  view_count: 9395
 ---
 image: thumbnail.jpg
 

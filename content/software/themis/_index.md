@@ -5,7 +5,7 @@ github: tidymodels/themis
 image: logo.png
 languages:
 - R
-latest_release: '2025-01-22T23:40:45+00:00'
+latest_release: '2026-08-01T23:38:30+00:00'
 people:
 - Emil Hvitfeldt
 - Max Kuhn
@@ -22,11 +22,11 @@ website: https://themis.tidymodels.org/
 external:  # updated automatically, do not edit
   description: Extra recipes steps for dealing with unbalanced data
   first_commit: '2019-10-12T18:46:35+00:00'
-  forks: 13
+  forks: 14
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.372783+00:00'
-  latest_release: '2025-01-22T23:40:45+00:00'
+  last_updated: '2026-09-18T14:23:12.740146+00:00'
+  latest_release: '2026-08-01T23:38:30+00:00'
   license: NOASSERTION
   people:
   - Emil Hvitfeldt

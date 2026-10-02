@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags:
 - RStats
@@ -24,13 +24,13 @@ external:  # updated automatically, do not edit
   duration: 3940
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.520527+00:00'
+  last_updated: '2026-09-18T13:58:21.308685+00:00'
   like_count: 9
   people:
   - Isabel Zimmerman
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags:
   - RStats
@@ -39,7 +39,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ddQiNiIr3Mk/maxresdefault.jpg
   title: 'R-Ladies Rome (English) - Extending the data science workflow: {vetiver} and {pins}'
   url: https://www.youtube.com/watch?v=ddQiNiIr3Mk
-  view_count: 358
+  view_count: 359
 ---
 image: thumbnail.jpg
 

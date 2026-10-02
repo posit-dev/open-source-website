@@ -46,7 +46,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: 'Getting Started with Positron: A Quick Tour'
 
@@ -99,16 +99,16 @@ external:  # updated automatically, do not edit
   duration: 1848
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:27.604898+00:00'
-  like_count: 133
+  last_updated: '2026-09-18T13:58:08.448467+00:00'
+  like_count: 148
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/mru9z50IOhI/maxresdefault.jpg
   title: 'Getting Started with Positron: A Quick Tour'
   url: https://www.youtube.com/watch?v=mru9z50IOhI
-  view_count: 7240
+  view_count: 9348
 ---
 image: thumbnail.jpg
 

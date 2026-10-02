@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1336
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.701365+00:00'
+  last_updated: '2026-09-18T13:58:17.860852+00:00'
   like_count: 72
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BQMDOxWGrQg/hqdefault.jpg
   title: Danielle Navarro | Toward a grammar of psychological experiments | RStudio (2020)
   url: https://www.youtube.com/watch?v=BQMDOxWGrQg
-  view_count: 2220
+  view_count: 2260
 ---
 image: thumbnail.jpg
 

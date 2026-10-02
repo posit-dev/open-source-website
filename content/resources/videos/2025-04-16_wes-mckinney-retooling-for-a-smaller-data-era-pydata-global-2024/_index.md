@@ -32,8 +32,8 @@ external:  # updated automatically, do not edit
   duration: 1804
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.183809+00:00'
-  like_count: 32
+  last_updated: '2026-09-18T13:58:20.752598+00:00'
+  like_count: 31
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags:
   - Python
@@ -53,7 +53,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/w4aYrav8-zE/maxresdefault.jpg
   title: Wes McKinney - Retooling for a Smaller Data Era | PyData Global 2024
   url: https://www.youtube.com/watch?v=w4aYrav8-zE
-  view_count: 1091
+  view_count: 1102
 ---
 image: thumbnail.jpg
 

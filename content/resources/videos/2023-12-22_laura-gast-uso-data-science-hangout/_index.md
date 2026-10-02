@@ -34,7 +34,8 @@ image: thumbnail.jpg
 people: []
 resource_type: video
 resources: []
-software: []
+software:
+- mall
 tags: []
 title: Laura Gast @ USO | Data Science Hangout
 
@@ -76,14 +77,16 @@ external:  # updated automatically, do not edit
   duration: 3632
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.973837+00:00'
+  last_updated: '2026-09-18T13:58:11.685466+00:00'
   like_count: 4
   playlist: ''
+  software:
+  - mall
   tags: []
   thumbnail: https://i.ytimg.com/vi/AwpjwbANo7k/maxresdefault.jpg
   title: Laura Gast @ USO | Data Science Hangout
   url: https://www.youtube.com/watch?v=AwpjwbANo7k
-  view_count: 444
+  view_count: 452
 ---
 image: thumbnail.jpg
 

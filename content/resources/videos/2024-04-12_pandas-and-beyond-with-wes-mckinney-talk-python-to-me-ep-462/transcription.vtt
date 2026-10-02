@@ -1,0 +1,3010 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:04.000
+Hey, Wes, welcome to Talk Python to Me.
+
+00:00:04.000 --> 00:00:06.000
+Thanks for having me.
+
+00:00:06.000 --> 00:00:11.000
+You know, honestly, I feel like it's been a long time coming, having you on the show.
+
+00:00:11.000 --> 00:00:15.000
+You've had such a big impact in the Python space, especially the data science side of that space,
+
+00:00:15.000 --> 00:00:19.000
+and it's high time to have you on the show, so welcome. Good to have you.
+
+00:00:19.000 --> 00:00:27.000
+Yeah, it's great to be here. I've been heads down a lot the last N years,
+
+00:00:27.000 --> 00:00:33.000
+and I actually haven't been, because I think a lot of my work has been more like data infrastructure
+
+00:00:33.000 --> 00:00:42.000
+and working at even a lower level than Python, so I haven't been engaging as much directly with the Python community.
+
+00:00:42.000 --> 00:00:49.000
+But it's been great to kind of get back more involved and start catching up on all the things that people have been building.
+
+00:00:49.000 --> 00:00:57.000
+And yeah, so being at Posit gives me the ability to sort of have more exposure to what's going on
+
+00:00:57.000 --> 00:01:01.000
+and people that are using Python in the real world.
+
+00:01:01.000 --> 00:01:06.000
+Yeah, there's a ton of stuff going on at Posit that's super interesting, and we'll talk about some of that.
+
+00:01:06.000 --> 00:01:10.000
+You know, sometimes it's just really fun to build, you know, and work with people building things,
+
+00:01:10.000 --> 00:01:13.000
+and I'm sure you're enjoying that aspect of it.
+
+00:01:13.000 --> 00:01:14.000
+For sure.
+
+00:01:14.000 --> 00:01:21.000
+Nice. Well, before we dive into Pandas and all the things that you've been working on after that,
+
+00:01:21.000 --> 00:01:25.000
+you know, let's just hear a quick bit about yourself for folks who don't know you.
+
+00:01:25.000 --> 00:01:33.000
+Sure. So, yeah, my name is Wes McKinney. I grew up in Akron, Ohio, mostly,
+
+00:01:33.000 --> 00:01:39.000
+and I got involved, started getting involved in Python development around 2007, 2008,
+
+00:01:39.000 --> 00:01:42.000
+and I was working in quant finance at the time.
+
+00:01:42.000 --> 00:01:48.000
+I started building a personal data analysis toolkit that turned into the Pandas project,
+
+00:01:48.000 --> 00:01:53.000
+and then open sourced that in 2009, started getting involved in the Python community,
+
+00:01:53.000 --> 00:01:58.000
+and I spent several years writing my book, Python for Data Analysis,
+
+00:01:58.000 --> 00:02:04.000
+and then working with the broader scientific Python data science community
+
+00:02:04.000 --> 00:02:11.000
+to help enable Python to become a mainstream programming language for doing data analysis and data science.
+
+00:02:11.000 --> 00:02:14.000
+And in the meantime, I've become an entrepreneur.
+
+00:02:14.000 --> 00:02:24.000
+I've started some companies and have been working to, you know, innovate and improve the computing infrastructure
+
+00:02:24.000 --> 00:02:28.000
+that powers data science tools and libraries like Pandas.
+
+00:02:28.000 --> 00:02:34.000
+So that's led to some other projects like Apache Arrow and Ibis and some other things.
+
+00:02:34.000 --> 00:02:42.000
+And, yeah, and in recent years, I've worked on a startup, Voltron Data,
+
+00:02:42.000 --> 00:02:51.000
+which is still, you know, very much going strong and, you know, has a big team and is off to the races.
+
+00:02:51.000 --> 00:02:55.000
+And I've had a long relationship with Posit, formerly RStudio,
+
+00:02:55.000 --> 00:03:02.000
+and they were, you know, my home for doing Arrow development from 2018 to 2020.
+
+00:03:02.000 --> 00:03:07.000
+They helped me incubate the startup that became Voltron Data.
+
+00:03:07.000 --> 00:03:15.000
+And so I've gone back to work full time there as a software architect to help them with their Python strategy
+
+00:03:16.000 --> 00:03:24.000
+to make sort of their data science platform a delight to use for the Python user base.
+
+00:03:24.000 --> 00:03:26.000
+I'm pretty impressed with what they're doing.
+
+00:03:26.000 --> 00:03:29.000
+I didn't realize the connection between Voltron and Posit,
+
+00:03:29.000 --> 00:03:35.000
+but I have had Joe Chung on the show before to talk about Shiny for Python.
+
+00:03:35.000 --> 00:03:42.000
+And I've seen him demo a few really interesting things, how it integrates into notebooks these days.
+
+00:03:42.000 --> 00:03:46.000
+Some of the stuff that you all are doing and, yeah, it's fascinating.
+
+00:03:46.000 --> 00:03:51.000
+Maybe give people a quick elevator pitch on that while we're on that subject.
+
+00:03:51.000 --> 00:03:55.000
+On Shiny or on Posit in general?
+
+00:03:55.000 --> 00:03:57.000
+Yeah, whichever you feel like.
+
+00:03:57.000 --> 00:04:04.000
+Yeah, so Posit started out 2009 as RStudio.
+
+00:04:04.000 --> 00:04:07.000
+And so it didn't start out intending to be a company.
+
+00:04:07.000 --> 00:04:14.000
+J.J. Allaire and Joe Chung built a new IDE, Integrated Development Environment for R,
+
+00:04:14.000 --> 00:04:17.000
+because what was available at the time wasn't great.
+
+00:04:17.000 --> 00:04:23.000
+And so they made that into, I think, probably one of the best data science IDEs that's ever been built.
+
+00:04:23.000 --> 00:04:26.000
+It's really an amazing piece of tech.
+
+00:04:26.000 --> 00:04:33.000
+So it started becoming a company with customers and revenue in the 2013 timeframe.
+
+00:04:33.000 --> 00:04:37.000
+And they've built a whole suite of tools to support enterprise data science teams
+
+00:04:37.000 --> 00:04:42.000
+to make open source data science work in the real world.
+
+00:04:42.000 --> 00:04:47.000
+But the company itself, it's a certified B corporation, has no plans to go public or IPO.
+
+00:04:47.000 --> 00:04:52.000
+It is dedicated to the mission of open source software for data science and technical communication.
+
+00:04:52.000 --> 00:05:00.000
+And basically building itself to be a 100-year company that has a revenue generating enterprise product side
+
+00:05:00.000 --> 00:05:07.000
+and an open source side so that the open source feeds the enterprise part of the business.
+
+00:05:07.000 --> 00:05:11.000
+The enterprise part of the business generates revenue to support the open source development.
+
+00:05:11.000 --> 00:05:18.000
+And the goal is to be able to sustainably support the mission of open source data science
+
+00:05:18.000 --> 00:05:22.000
+for hopefully the rest of our lives.
+
+00:05:22.000 --> 00:05:25.000
+And it's an amazing company.
+
+00:05:25.000 --> 00:05:30.000
+One of the most successful companies that dedicates a large fraction of its engineering time
+
+00:05:30.000 --> 00:05:33.000
+to open source software development.
+
+00:05:33.000 --> 00:05:41.000
+So it's been very impressed with the company and JJ Allaire, its founder.
+
+00:05:41.000 --> 00:05:51.000
+So I'm excited to be helping it grow and become a sustainable long-term fixture in the ecosystem.
+
+00:05:52.000 --> 00:05:57.000
+It's definitely doing cool stuff as incentives are aligned well.
+
+00:05:57.000 --> 00:06:01.000
+It's not private equity or IPO.
+
+00:06:01.000 --> 00:06:04.000
+I think it helps.
+
+00:06:04.000 --> 00:06:15.000
+Many people know JJ Allaire created ColdFusion, which is the original dynamic web development framework in the 1990s.
+
+00:06:15.000 --> 00:06:21.000
+He and his brother Jeremy and some others built AllaireCorp to commercialize ColdFusion.
+
+00:06:21.000 --> 00:06:24.000
+And they built a successful software business that was acquired by Macromedia,
+
+00:06:24.000 --> 00:06:27.000
+which was eventually acquired by Adobe.
+
+00:06:27.000 --> 00:06:31.000
+But they did go public as AllaireCorp during the dot-com bubble.
+
+00:06:31.000 --> 00:06:36.000
+And JJ went on to found a couple of other successful startups.
+
+00:06:37.000 --> 00:06:46.000
+I think he found himself in his late 30s 15 years ago or around the age I am now.
+
+00:06:46.000 --> 00:06:51.000
+Having been very successful as an entrepreneur, no need to make money.
+
+00:06:51.000 --> 00:06:56.000
+And looking for a mission to spend the rest of his career on.
+
+00:06:57.000 --> 00:07:03.000
+Identifying data science and statistical computing as an open source,
+
+00:07:03.000 --> 00:07:08.000
+in particular making open source for data science work,
+
+00:07:08.000 --> 00:07:14.000
+was the mission that he aligned with and something that he had been interested in earlier in his career.
+
+00:07:14.000 --> 00:07:16.000
+But he had gotten busy with other things.
+
+00:07:16.000 --> 00:07:20.000
+So I think it's really refreshing to work with people who are really mission-focused
+
+00:07:20.000 --> 00:07:24.000
+and focused on making impact in the world, creating great software,
+
+00:07:24.000 --> 00:07:27.000
+empowering people, increasing accessibility,
+
+00:07:27.000 --> 00:07:31.000
+and making most of it available for free on the internet.
+
+00:07:31.000 --> 00:07:39.000
+And not being so focused on empire building and producing great profits
+
+00:07:39.000 --> 00:07:43.000
+for venture investors and things like that.
+
+00:07:43.000 --> 00:07:50.000
+So I think the goal of the company is to provide an amazing home
+
+00:07:50.000 --> 00:07:54.000
+for top-tier software developers to work on this software,
+
+00:07:54.000 --> 00:07:57.000
+to spend their careers, and to build families,
+
+00:07:57.000 --> 00:08:04.000
+and to be a happy and healthy culture for working on this type of software.
+
+00:08:04.000 --> 00:08:06.000
+That sounds excellent.
+
+00:08:06.000 --> 00:08:09.000
+I didn't realize the history all the way back to ColdFusion.
+
+00:08:09.000 --> 00:08:12.000
+Speaking of history, let's jump in.
+
+00:08:12.000 --> 00:08:18.000
+Wes, there's a possibility that people out there listening don't know what Pandas is.
+
+00:08:19.000 --> 00:08:24.000
+You would think it's pretty ubiquitous, and I certainly would say that it is,
+
+00:08:24.000 --> 00:08:26.000
+especially in the data science space.
+
+00:08:26.000 --> 00:08:32.000
+But I've got a bunch of listeners who listen, and they say really surprising things.
+
+00:08:32.000 --> 00:08:34.000
+They'll say stuff to me like,
+
+00:08:34.000 --> 00:08:36.000
+Michael, I've been listening for six weeks now,
+
+00:08:36.000 --> 00:08:39.000
+and I'm starting to understand some of the stuff you all are talking about.
+
+00:08:39.000 --> 00:08:41.000
+Why did you listen for six weeks?
+
+00:08:41.000 --> 00:08:43.000
+You didn't know what I was talking about.
+
+00:08:43.000 --> 00:08:44.000
+That's crazy.
+
+00:08:45.000 --> 00:08:49.000
+A lot of people use it as language immersion to get into the Python space.
+
+00:08:49.000 --> 00:08:52.000
+I'm sure there's plenty of people out there who are immersing themselves
+
+00:08:52.000 --> 00:08:54.000
+but are pretty new.
+
+00:08:54.000 --> 00:08:58.000
+Maybe for that crew, we could introduce what Pandas is then.
+
+00:08:58.000 --> 00:08:59.000
+Absolutely.
+
+00:08:59.000 --> 00:09:05.000
+It's a data manipulation and analysis toolkit for Python.
+
+00:09:05.000 --> 00:09:10.000
+It's a Python library that you install that enables you to read data files,
+
+00:09:10.000 --> 00:09:15.000
+so read many different types of data files off of disk or off of remote storage
+
+00:09:15.000 --> 00:09:20.000
+or read data out of a database or some other remote data storage system.
+
+00:09:20.000 --> 00:09:24.000
+This is tabular data, so it's structured data like with columns.
+
+00:09:24.000 --> 00:09:28.000
+You can think of it like a spreadsheet or some other tabular data set.
+
+00:09:28.000 --> 00:09:35.000
+And then it provides you with this data frame object,
+
+00:09:35.000 --> 00:09:40.000
+which is kind of pandas.dataframe, that is the main tabular data object.
+
+00:09:40.000 --> 00:09:47.000
+And it has a ton of methods for accessing, slicing, grabbing subsets of the data,
+
+00:09:47.000 --> 00:09:52.000
+applying functions on it that do filtering and subsetting and selection,
+
+00:09:52.000 --> 00:09:56.000
+as well as more analytical operations like things that you might do
+
+00:09:56.000 --> 00:10:01.000
+with a database system or SQL, so joins and lookups,
+
+00:10:01.000 --> 00:10:04.000
+as well as analytical functions like summary statistics,
+
+00:10:04.000 --> 00:10:09.000
+grouping by some key and producing summary statistics.
+
+00:10:09.000 --> 00:10:14.000
+So it's basically a Swiss army knife for doing data manipulation,
+
+00:10:14.000 --> 00:10:18.000
+data cleaning, and supporting the data analysis workflow.
+
+00:10:18.000 --> 00:10:23.000
+But it doesn't actually include very much as far as actual statistics or models
+
+00:10:23.000 --> 00:10:28.000
+or if you're doing something with LLMs or linear regression
+
+00:10:28.000 --> 00:10:32.000
+or some type of machine learning, you have to use another library,
+
+00:10:32.000 --> 00:10:39.000
+but pandas is the on-ramp for all of the data into your environment in Python.
+
+00:10:39.000 --> 00:10:44.000
+So when people are building some kind of application that touches data in Python,
+
+00:10:44.000 --> 00:10:50.000
+pandas is often the initial on-ramp for how data gets into Python,
+
+00:10:50.000 --> 00:10:55.000
+where you clean up the data, you regularize it, you get it ready for analysis,
+
+00:10:55.000 --> 00:11:02.000
+and then you feed the clean data into the downstream statistical library
+
+00:11:02.000 --> 00:11:05.000
+or data analysis library that you're using.
+
+00:11:05.000 --> 00:11:08.000
+That whole data wrangling side of things, right?
+
+00:11:08.000 --> 00:11:11.000
+Yeah, that's right.
+
+00:11:11.000 --> 00:11:15.000
+And so it's some history.
+
+00:11:15.000 --> 00:11:22.000
+So Python had arrays like matrices and what we call tensors now,
+
+00:11:22.000 --> 00:11:26.000
+multidimensional arrays going back all the way to 1995,
+
+00:11:26.000 --> 00:11:31.000
+which is pretty early history for Python.
+
+00:11:31.000 --> 00:11:35.000
+The Python programming language has only been around since 1990 or 1991,
+
+00:11:35.000 --> 00:11:38.000
+if my memory serves.
+
+00:11:38.000 --> 00:11:45.000
+But what became NumPy in 2005, 2006 started out as numeric in 1995,
+
+00:11:45.000 --> 00:11:50.000
+and it provided numerical computing, multidimensional arrays, matrices,
+
+00:11:50.000 --> 00:11:52.000
+the kind of stuff that you might do in MATLAB,
+
+00:11:52.000 --> 00:11:55.000
+but it was mainly focused on numerical computing
+
+00:11:55.000 --> 00:12:00.000
+and not with the type of business data sets that you find in database systems,
+
+00:12:00.000 --> 00:12:05.000
+which contain a lot of strings or dates or non-numeric data.
+
+00:12:05.000 --> 00:12:10.000
+And so my initial interest was I found Python to be a really productive
+
+00:12:10.000 --> 00:12:11.000
+programming language.
+
+00:12:11.000 --> 00:12:13.000
+I really liked writing code in it, writing simple scripts,
+
+00:12:13.000 --> 00:12:17.000
+like doing random things for my job.
+
+00:12:18.000 --> 00:12:21.000
+And you had this numerical computing library, NumPy,
+
+00:12:21.000 --> 00:12:24.000
+which enabled you to work with large numeric arrays
+
+00:12:24.000 --> 00:12:28.000
+and large data sets with a single data type.
+
+00:12:28.000 --> 00:12:30.000
+But working with this more tabular type data,
+
+00:12:30.000 --> 00:12:33.000
+stuff that you would do in Excel or stuff that you do in a database,
+
+00:12:33.000 --> 00:12:36.000
+it wasn't very easy to do that with NumPy
+
+00:12:36.000 --> 00:12:38.000
+or it wasn't really designed for that.
+
+00:12:38.000 --> 00:12:42.000
+And so that's what led to building this higher level library
+
+00:12:42.000 --> 00:12:46.000
+that deals with these tabular data sets in the Pandas library,
+
+00:12:46.000 --> 00:12:49.000
+which was originally focused on, you know,
+
+00:12:49.000 --> 00:12:52.000
+building with a really close relationship with NumPy.
+
+00:12:52.000 --> 00:12:57.000
+So Pandas itself was like a thin layer on top of NumPy originally.
+
+00:12:57.000 --> 00:13:01.000
+One thing I find interesting about Pandas is it's almost
+
+00:13:01.000 --> 00:13:06.000
+its own programming environment these days in the sense that,
+
+00:13:06.000 --> 00:13:10.000
+you know, traditional Python, we do a lot of loops,
+
+00:13:10.000 --> 00:13:16.000
+we do a lot of attribute dereferencing, function calling,
+
+00:13:16.000 --> 00:13:20.000
+and a lot of what happens in Pandas is more functional,
+
+00:13:20.000 --> 00:13:25.000
+it's more applied to us, it's almost like set operations, right?
+
+00:13:25.000 --> 00:13:29.000
+And a lot of vector operations and so on.
+
+00:13:29.000 --> 00:13:35.000
+Yeah, and that was behaviors inherited from NumPy.
+
+00:13:35.000 --> 00:13:39.000
+So NumPy is very array oriented, vector oriented.
+
+00:13:39.000 --> 00:13:41.000
+So you, rather than write a for loop,
+
+00:13:41.000 --> 00:13:45.000
+you would write an array expression,
+
+00:13:45.000 --> 00:13:48.000
+which would operate on whole batches of data
+
+00:13:48.000 --> 00:13:52.000
+in a single function call, which is a lot faster
+
+00:13:52.000 --> 00:13:55.000
+because you can drop down into C code
+
+00:13:55.000 --> 00:13:57.000
+and get good performance that way.
+
+00:13:57.000 --> 00:14:01.000
+And so Pandas adopted the NumPy way of,
+
+00:14:01.000 --> 00:14:07.000
+like the NumPy-like array expression or vector operations.
+
+00:14:08.000 --> 00:14:12.000
+But it's true that that's extended to the types of
+
+00:14:12.000 --> 00:14:15.000
+like non-numeric data operations that you can do in Pandas,
+
+00:14:15.000 --> 00:14:18.000
+like, you know, vectorized set lookups,
+
+00:14:18.000 --> 00:14:20.000
+where you can say like, you would say like,
+
+00:14:20.000 --> 00:14:22.000
+oh, like this, I have this array of strings
+
+00:14:22.000 --> 00:14:23.000
+and I have this subset of strings
+
+00:14:23.000 --> 00:14:26.000
+and I want to compute a Boolean array,
+
+00:14:26.000 --> 00:14:29.000
+which says whether or not each string is contained
+
+00:14:29.000 --> 00:14:30.000
+in this set of strings.
+
+00:14:30.000 --> 00:14:33.000
+And so in Pandas, that's the is in function.
+
+00:14:33.000 --> 00:14:35.000
+So you would say like, you know,
+
+00:14:35.000 --> 00:14:39.000
+column A like is in some set of substrings
+
+00:14:39.000 --> 00:14:41.000
+and that produces, that single function call
+
+00:14:41.000 --> 00:14:43.000
+produces a whole Boolean array
+
+00:14:43.000 --> 00:14:46.000
+that you can use for subsetting later on.
+
+00:14:46.000 --> 00:14:50.000
+Yeah, there's a ton of things
+
+00:14:50.000 --> 00:14:51.000
+that are really interesting in there.
+
+00:14:51.000 --> 00:14:52.000
+One of the challenges,
+
+00:14:52.000 --> 00:14:54.000
+maybe you could speak to this a little bit,
+
+00:14:54.000 --> 00:14:57.000
+then I want to come back to your performance comment.
+
+00:14:57.000 --> 00:14:59.000
+One of the challenges I think is that
+
+00:14:59.000 --> 00:15:02.000
+some of these operations are not super obvious
+
+00:15:02.000 --> 00:15:05.000
+that they exist or that they're discoverable, right?
+
+00:15:05.000 --> 00:15:08.000
+Like instead of just indexing into say a column,
+
+00:15:08.000 --> 00:15:10.000
+you can index on an expression
+
+00:15:10.000 --> 00:15:11.000
+that might filter out the columns
+
+00:15:11.000 --> 00:15:13.000
+or project them or things like that.
+
+00:15:13.000 --> 00:15:16.000
+How do you recommend people like kind of
+
+00:15:16.000 --> 00:15:19.000
+discover a little bigger breadth of what they can do?
+
+00:15:21.000 --> 00:15:23.000
+I mean, there's plenty of, I mean,
+
+00:15:23.000 --> 00:15:28.000
+I think there's great books written about Pandas.
+
+00:15:28.000 --> 00:15:31.000
+So there's my book, Python for Datasets.
+
+00:15:31.000 --> 00:15:33.000
+I think Matt Harrison has written an excellent book,
+
+00:15:33.000 --> 00:15:35.000
+Effective Pandas.
+
+00:15:35.000 --> 00:15:37.000
+The Pandas documentation I think has,
+
+00:15:37.000 --> 00:15:39.000
+provides really nitty gritty detail
+
+00:15:39.000 --> 00:15:42.000
+about how all the different things work.
+
+00:15:42.000 --> 00:15:47.000
+But when I was writing this book,
+
+00:15:47.000 --> 00:15:48.000
+Python for Data Analysis,
+
+00:15:48.000 --> 00:15:51.000
+my goal was to provide a primer,
+
+00:15:51.000 --> 00:15:57.000
+like a tutorial on how to solve data problems with Pandas.
+
+00:15:57.000 --> 00:15:58.000
+And so for that,
+
+00:15:58.000 --> 00:16:01.000
+I had to introduce some basics of how NumPy works.
+
+00:16:01.000 --> 00:16:04.000
+So people, array oriented computing,
+
+00:16:04.000 --> 00:16:06.000
+basics of Python,
+
+00:16:06.000 --> 00:16:09.000
+so you know enough Python to be able to understand
+
+00:16:09.000 --> 00:16:12.000
+what things that Pandas is doing.
+
+00:16:12.000 --> 00:16:15.000
+But the, yeah, kind of, it builds incrementally.
+
+00:16:15.000 --> 00:16:17.000
+And so like, as you go through the book,
+
+00:16:17.000 --> 00:16:21.000
+the content gets more and more advanced.
+
+00:16:21.000 --> 00:16:22.000
+It introduces, you learn,
+
+00:16:22.000 --> 00:16:24.000
+you master initial set of techniques
+
+00:16:24.000 --> 00:16:27.000
+and then you can start learning
+
+00:16:27.000 --> 00:16:29.000
+about more advanced techniques.
+
+00:16:29.000 --> 00:16:32.000
+So it's definitely a pedagogical,
+
+00:16:32.000 --> 00:16:34.000
+you know, pedagogical resource.
+
+00:16:34.000 --> 00:16:35.000
+And it is now freely,
+
+00:16:35.000 --> 00:16:37.000
+as you're showing there on the screen,
+
+00:16:37.000 --> 00:16:40.000
+it is freely available on the internet.
+
+00:16:40.000 --> 00:16:45.000
+So JJ Allaire helped me port the book to use Quarto,
+
+00:16:45.000 --> 00:16:48.000
+which is a new technical publishing system
+
+00:16:48.000 --> 00:16:51.000
+for writing books and blogs and website,
+
+00:16:51.000 --> 00:16:54.000
+you know, quarto.org.
+
+00:16:54.000 --> 00:16:56.000
+And there it is.
+
+00:16:56.000 --> 00:17:00.000
+And yeah, so that's how I was able to publish my book
+
+00:17:00.000 --> 00:17:03.000
+on the internet as, you know,
+
+00:17:03.000 --> 00:17:06.000
+essentially you can use Quarto to write books
+
+00:17:06.000 --> 00:17:08.000
+using notebooks, which is cool.
+
+00:17:08.000 --> 00:17:10.000
+My book was written a long time ago
+
+00:17:10.000 --> 00:17:12.000
+in O'Reilly's doc XML.
+
+00:17:12.000 --> 00:17:14.000
+So not particularly fun to edit,
+
+00:17:14.000 --> 00:17:18.000
+but yeah, but because Quarto is built on Pandoc,
+
+00:17:18.000 --> 00:17:23.000
+which is a sort of markup language transpilation system.
+
+00:17:23.000 --> 00:17:27.000
+So you can use Pandoc to convert from one, you know,
+
+00:17:27.000 --> 00:17:31.000
+you can to convert documents from one format to another.
+
+00:17:31.000 --> 00:17:35.000
+And so that's the kind of the root framework
+
+00:17:35.000 --> 00:17:37.000
+that Quarto is built on for, you know,
+
+00:17:37.000 --> 00:17:39.000
+generating starting with one document format
+
+00:17:39.000 --> 00:17:43.000
+and generating many different types of output formats.
+
+00:17:43.000 --> 00:17:44.000
+That's cool.
+
+00:17:44.000 --> 00:17:46.000
+I didn't realize your book was available
+
+00:17:46.000 --> 00:17:48.000
+just to read on the internet.
+
+00:17:48.000 --> 00:17:49.000
+Yeah.
+
+00:17:49.000 --> 00:17:50.000
+Yeah.
+
+00:17:50.000 --> 00:17:52.000
+So in the third edition,
+
+00:17:52.000 --> 00:17:56.000
+I was able to negotiate with O'Reilly
+
+00:17:56.000 --> 00:18:04.000
+and make an amendment to my very old book contract from 2011
+
+00:18:04.000 --> 00:18:08.000
+to let me release the book for free on my website.
+
+00:18:08.000 --> 00:18:10.000
+So it's, yeah, it's just available there
+
+00:18:10.000 --> 00:18:13.000
+at westmckinney.com slash book.
+
+00:18:13.000 --> 00:18:16.000
+I find that like a lot of people really like the print book.
+
+00:18:16.000 --> 00:18:20.000
+And so I think that having the online book just available,
+
+00:18:20.000 --> 00:18:22.000
+like whenever you are somewhere
+
+00:18:22.000 --> 00:18:24.000
+and you want to look something up is great.
+
+00:18:24.000 --> 00:18:26.000
+But yeah, I've been-
+
+00:18:26.000 --> 00:18:28.000
+Print books are hard to search.
+
+00:18:28.000 --> 00:18:29.000
+Yeah, that's true.
+
+00:18:29.000 --> 00:18:30.000
+That's true.
+
+00:18:30.000 --> 00:18:31.000
+Yeah.
+
+00:18:31.000 --> 00:18:32.000
+And like if you go to the search bar
+
+00:18:32.000 --> 00:18:35.000
+and if you go back to the book and just look at the search bar,
+
+00:18:35.000 --> 00:18:37.000
+you know, just search for like group buy,
+
+00:18:37.000 --> 00:18:39.000
+like all one word or, you know, yeah,
+
+00:18:39.000 --> 00:18:41.000
+it's like it comes up really fast.
+
+00:18:41.000 --> 00:18:46.000
+You can go to that section and it's pretty cool.
+
+00:18:46.000 --> 00:18:48.000
+I thought that releasing the book for free online
+
+00:18:48.000 --> 00:18:50.000
+would affect sales,
+
+00:18:50.000 --> 00:18:52.000
+but now people just really like having paper books,
+
+00:18:52.000 --> 00:18:55.000
+it seems, even in 2024.
+
+00:18:55.000 --> 00:18:56.000
+Yeah.
+
+00:18:56.000 --> 00:18:58.000
+Even digital books are nice.
+
+00:18:58.000 --> 00:18:59.000
+You got them with you all the time.
+
+00:18:59.000 --> 00:19:00.000
+You can-
+
+00:19:00.000 --> 00:19:01.000
+I think it's about taking the notes.
+
+00:19:01.000 --> 00:19:04.000
+Where do I put my highlights and how do I remember it?
+
+00:19:04.000 --> 00:19:05.000
+That's right.
+
+00:19:05.000 --> 00:19:06.000
+Yeah, yeah.
+
+00:19:06.000 --> 00:19:08.000
+Stuff like that.
+
+00:19:08.000 --> 00:19:11.000
+This quarter thing looks super interesting.
+
+00:19:11.000 --> 00:19:14.000
+If you look at Pandoc,
+
+00:19:14.000 --> 00:19:16.000
+if people haven't looked at this before,
+
+00:19:16.000 --> 00:19:19.000
+the conversion matrix,
+
+00:19:19.000 --> 00:19:22.000
+I don't know how you would,
+
+00:19:22.000 --> 00:19:23.000
+how would you describe this, Wes?
+
+00:19:23.000 --> 00:19:24.000
+Busy?
+
+00:19:24.000 --> 00:19:25.000
+Complete?
+
+00:19:25.000 --> 00:19:26.000
+What is this?
+
+00:19:26.000 --> 00:19:27.000
+This is crazy.
+
+00:19:27.000 --> 00:19:28.000
+It's very busy, yeah.
+
+00:19:28.000 --> 00:19:30.000
+It can convert from,
+
+00:19:30.000 --> 00:19:31.000
+it looks like about, you know,
+
+00:19:31.000 --> 00:19:34.000
+30 or 40 input formats to, you know,
+
+00:19:34.000 --> 00:19:36.000
+50 or 60 output formats,
+
+00:19:36.000 --> 00:19:37.000
+maybe more than that.
+
+00:19:37.000 --> 00:19:39.000
+It's kind of my just eyeballing it,
+
+00:19:39.000 --> 00:19:42.000
+but yeah, it's like a pretty impressive.
+
+00:19:43.000 --> 00:19:45.000
+And then if you took the combinatorial
+
+00:19:45.000 --> 00:19:47.000
+of like how many different ways
+
+00:19:47.000 --> 00:19:49.000
+could you combine the 30 to the 50?
+
+00:19:49.000 --> 00:19:50.000
+It's kind of what it looks like.
+
+00:19:50.000 --> 00:19:52.000
+It's truly amazing.
+
+00:19:52.000 --> 00:19:53.000
+So if you've got Markdown,
+
+00:19:53.000 --> 00:19:54.000
+you want to turn it into a PDF
+
+00:19:54.000 --> 00:19:57.000
+or you've got a Doku wiki
+
+00:19:57.000 --> 00:19:59.000
+and you want to turn it into an EPUB
+
+00:19:59.000 --> 00:20:00.000
+or whatever, right?
+
+00:20:00.000 --> 00:20:03.000
+Or even like RevealJS,
+
+00:20:03.000 --> 00:20:04.000
+probably to PowerPoint, I would imagine.
+
+00:20:04.000 --> 00:20:05.000
+I don't know.
+
+00:20:05.000 --> 00:20:06.000
+Yeah.
+
+00:20:06.000 --> 00:20:08.000
+Well, as history,
+
+00:20:08.000 --> 00:20:10.000
+like backstory about Korto,
+
+00:20:11.000 --> 00:20:12.000
+so, you know,
+
+00:20:12.000 --> 00:20:13.000
+it helps to keep in mind
+
+00:20:13.000 --> 00:20:15.000
+that JJ created ColdFusion,
+
+00:20:15.000 --> 00:20:17.000
+which was this, you know,
+
+00:20:17.000 --> 00:20:19.000
+essentially publishing system,
+
+00:20:19.000 --> 00:20:22.000
+early publishing system for the internet,
+
+00:20:22.000 --> 00:20:26.000
+similar to CGI and PHP
+
+00:20:26.000 --> 00:20:27.000
+and other dynamic, you know,
+
+00:20:27.000 --> 00:20:29.000
+web publishing systems.
+
+00:20:29.000 --> 00:20:32.000
+And so early on at RStudio,
+
+00:20:32.000 --> 00:20:34.000
+they created RMarkdown,
+
+00:20:34.000 --> 00:20:38.000
+which is basically extensions
+
+00:20:38.000 --> 00:20:40.000
+to Markdown
+
+00:20:40.000 --> 00:20:42.000
+that allow you to have code cells
+
+00:20:42.000 --> 00:20:43.000
+written in R
+
+00:20:43.000 --> 00:20:45.000
+and then eventually they added support
+
+00:20:45.000 --> 00:20:46.000
+for some other languages
+
+00:20:46.000 --> 00:20:48.000
+where it's kind of like a Jupyter Notebook
+
+00:20:48.000 --> 00:20:49.000
+in the sense you could have some Markdown
+
+00:20:49.000 --> 00:20:50.000
+and some code
+
+00:20:50.000 --> 00:20:52.000
+and some plots and output
+
+00:20:52.000 --> 00:20:54.000
+and you would run the RMarkdown render
+
+00:20:54.000 --> 00:20:56.000
+and it would, you know,
+
+00:20:56.000 --> 00:20:57.000
+generate all the output
+
+00:20:57.000 --> 00:21:00.000
+and insert it into the document.
+
+00:21:00.000 --> 00:21:02.000
+And so you could use that to write blogs
+
+00:21:02.000 --> 00:21:04.000
+and websites and everything.
+
+00:21:04.000 --> 00:21:06.000
+But RMarkdown was written in R
+
+00:21:06.000 --> 00:21:08.000
+and so that limited,
+
+00:21:08.000 --> 00:21:09.000
+in a sense, like,
+
+00:21:09.000 --> 00:21:11.000
+it made it harder to install
+
+00:21:11.000 --> 00:21:12.000
+because you would have to install R
+
+00:21:12.000 --> 00:21:13.000
+to use it.
+
+00:21:13.000 --> 00:21:15.000
+And also people, you know,
+
+00:21:15.000 --> 00:21:17.000
+it had an association with R
+
+00:21:17.000 --> 00:21:20.000
+that perhaps was, like, unmerited.
+
+00:21:20.000 --> 00:21:22.000
+And so in the meantime,
+
+00:21:22.000 --> 00:21:24.000
+you know, with everything that's happened
+
+00:21:24.000 --> 00:21:25.000
+with web technology,
+
+00:21:25.000 --> 00:21:28.000
+there's, it's now very easy
+
+00:21:28.000 --> 00:21:31.000
+to put a complete JavaScript engine
+
+00:21:31.000 --> 00:21:33.000
+in a small install footprint,
+
+00:21:33.000 --> 00:21:34.000
+you know, on a machine
+
+00:21:34.000 --> 00:21:36.000
+with no dependencies
+
+00:21:36.000 --> 00:21:39.000
+and to be able to run a system
+
+00:21:39.000 --> 00:21:42.000
+that is, you know, written in,
+
+00:21:42.000 --> 00:21:44.000
+a system that's written in JavaScript.
+
+00:21:44.000 --> 00:21:46.000
+And so Cordo is completely language agnostic.
+
+00:21:46.000 --> 00:21:48.000
+It's written in TypeScript
+
+00:21:48.000 --> 00:21:51.000
+and it uses Pandoc as an underlying engine
+
+00:21:51.000 --> 00:21:53.000
+and it's very easy to install
+
+00:21:53.000 --> 00:21:56.000
+and so it addresses some of the portability
+
+00:21:56.000 --> 00:21:59.000
+and, you know,
+
+00:21:59.000 --> 00:22:03.000
+extents that were in RMarkdown.
+
+00:22:03.000 --> 00:22:04.000
+But as a result, you know,
+
+00:22:04.000 --> 00:22:07.000
+I think our, the Posit team
+
+00:22:07.000 --> 00:22:09.000
+had a lot of, just has more than,
+
+00:22:09.000 --> 00:22:10.000
+you know, a decade
+
+00:22:10.000 --> 00:22:11.000
+or if you include ColdFusion,
+
+00:22:11.000 --> 00:22:13.000
+you know, more than 25 years of experience
+
+00:22:13.000 --> 00:22:16.000
+in building really developer-friendly
+
+00:22:16.000 --> 00:22:18.000
+technical publishing tools.
+
+00:22:18.000 --> 00:22:21.000
+And so I think that it's,
+
+00:22:21.000 --> 00:22:22.000
+it's not data science,
+
+00:22:22.000 --> 00:22:24.000
+but it's something that is an important part
+
+00:22:24.000 --> 00:22:26.000
+of the data science workflow,
+
+00:22:26.000 --> 00:22:28.000
+which is how do you present your,
+
+00:22:28.000 --> 00:22:30.000
+make your analysis and your work
+
+00:22:30.000 --> 00:22:31.000
+available for consumption
+
+00:22:31.000 --> 00:22:32.000
+in different forms.
+
+00:22:32.000 --> 00:22:34.000
+And so having this system
+
+00:22:34.000 --> 00:22:36.000
+that can, you know, publish outputs
+
+00:22:36.000 --> 00:22:38.000
+in many different places
+
+00:22:38.000 --> 00:22:41.000
+is super valuable.
+
+00:22:41.000 --> 00:22:43.000
+So a lot of people start out in Jupyter Notebooks,
+
+00:22:43.000 --> 00:22:45.000
+but, you know,
+
+00:22:45.000 --> 00:22:46.000
+but there's many different,
+
+00:22:46.000 --> 00:22:48.000
+you know, many different possible input formats.
+
+00:22:48.000 --> 00:22:49.000
+And so to be able to, you know,
+
+00:22:49.000 --> 00:22:51.000
+use the same source to publish to a website
+
+00:22:51.000 --> 00:22:55.000
+or to a confluence page or to a PDF
+
+00:22:55.000 --> 00:22:56.000
+is like super valuable.
+
+00:22:56.000 --> 00:22:58.000
+Yeah, it's super interesting.
+
+00:22:58.000 --> 00:22:59.000
+Okay.
+
+00:22:59.000 --> 00:23:01.000
+Something I got to explore some more.
+
+00:23:01.000 --> 00:23:04.000
+All right, let's go back to Pandas for a minute.
+
+00:23:04.000 --> 00:23:07.000
+First, how about some kind words
+
+00:23:07.000 --> 00:23:08.000
+from the audience for you?
+
+00:23:08.000 --> 00:23:09.000
+Ravid says,
+
+00:23:09.000 --> 00:23:11.000
+Wes, your work has changed my life.
+
+00:23:11.000 --> 00:23:14.000
+It's very, very nice.
+
+00:23:14.000 --> 00:23:16.000
+I'm happy to hear it.
+
+00:23:16.000 --> 00:23:18.000
+But yeah, I, yeah,
+
+00:23:18.000 --> 00:23:20.000
+I'm more than happy to,
+
+00:23:20.000 --> 00:23:23.000
+yeah, talk in depth about Pandas.
+
+00:23:23.000 --> 00:23:25.000
+And I think history of the project
+
+00:23:25.000 --> 00:23:26.000
+is interesting.
+
+00:23:26.000 --> 00:23:29.000
+And I think also how the project
+
+00:23:29.000 --> 00:23:33.000
+has developed in the intervening 15, 16 years
+
+00:23:33.000 --> 00:23:35.000
+is pretty interesting as well.
+
+00:23:35.000 --> 00:23:36.000
+Yeah.
+
+00:23:36.000 --> 00:23:37.000
+Let's talk,
+
+00:23:37.000 --> 00:23:39.000
+let's talk derivatives for a minute.
+
+00:23:39.000 --> 00:23:42.000
+So growth and speed of adoption
+
+00:23:42.000 --> 00:23:44.000
+and all those things.
+
+00:23:44.000 --> 00:23:45.000
+All right.
+
+00:23:45.000 --> 00:23:47.000
+When you first started working on this
+
+00:23:47.000 --> 00:23:48.000
+and you first put it down,
+
+00:23:48.000 --> 00:23:51.000
+did you foresee a world where this was
+
+00:23:51.000 --> 00:23:54.000
+so popular and so important?
+
+00:23:54.000 --> 00:23:55.000
+Did you think of,
+
+00:23:55.000 --> 00:23:57.000
+yeah, pretty soon black holes.
+
+00:23:57.000 --> 00:23:59.000
+I'm pretty sure I'll be part of that somehow.
+
+00:24:00.000 --> 00:24:02.000
+I mean, it was,
+
+00:24:02.000 --> 00:24:04.000
+it was always,
+
+00:24:04.000 --> 00:24:06.000
+it was always the aspiration.
+
+00:24:06.000 --> 00:24:09.000
+Like there was the aspiration there
+
+00:24:09.000 --> 00:24:11.000
+of making,
+
+00:24:11.000 --> 00:24:14.000
+making Python this mainstream,
+
+00:24:16.000 --> 00:24:18.000
+mainstream language for statistical computing
+
+00:24:18.000 --> 00:24:20.000
+and data analysis.
+
+00:24:20.000 --> 00:24:22.000
+Like I didn't,
+
+00:24:25.000 --> 00:24:26.000
+it didn't occur to me
+
+00:24:26.000 --> 00:24:28.000
+that it would become this popular
+
+00:24:28.000 --> 00:24:30.000
+or that it would become like the,
+
+00:24:30.000 --> 00:24:32.000
+one of the main tools that people use
+
+00:24:32.000 --> 00:24:34.000
+for working with data in a business,
+
+00:24:34.000 --> 00:24:36.000
+in a business setting like that,
+
+00:24:36.000 --> 00:24:37.000
+you know,
+
+00:24:37.000 --> 00:24:38.000
+it would have been,
+
+00:24:38.000 --> 00:24:39.000
+if that was the,
+
+00:24:39.000 --> 00:24:40.000
+if that was the aspiration
+
+00:24:40.000 --> 00:24:41.000
+or if that was,
+
+00:24:41.000 --> 00:24:43.000
+you know what I needed to achieve to be satisfied,
+
+00:24:43.000 --> 00:24:45.000
+that that would have been completely unreasonable.
+
+00:24:45.000 --> 00:24:47.000
+And I also don't think that,
+
+00:24:47.000 --> 00:24:48.000
+that,
+
+00:24:48.000 --> 00:24:49.000
+you know,
+
+00:24:49.000 --> 00:24:50.000
+in a certain sense,
+
+00:24:50.000 --> 00:24:51.000
+like I don't,
+
+00:24:51.000 --> 00:24:52.000
+I don't know that,
+
+00:24:52.000 --> 00:24:53.000
+that it's popularity,
+
+00:24:53.000 --> 00:24:54.000
+you know,
+
+00:24:54.000 --> 00:24:55.000
+it,
+
+00:24:55.000 --> 00:24:56.000
+I mean,
+
+00:24:56.000 --> 00:24:57.000
+and it's,
+
+00:24:57.000 --> 00:24:58.000
+like I,
+
+00:24:58.000 --> 00:24:59.000
+I think there's,
+
+00:24:59.000 --> 00:25:00.000
+there's many other worthy efforts
+
+00:25:00.000 --> 00:25:01.000
+that have been created over the years
+
+00:25:01.000 --> 00:25:02.000
+that have been the,
+
+00:25:02.000 --> 00:25:03.000
+you know,
+
+00:25:03.000 --> 00:25:04.000
+really,
+
+00:25:04.000 --> 00:25:05.000
+you know,
+
+00:25:05.000 --> 00:25:06.000
+really great work that,
+
+00:25:06.000 --> 00:25:07.000
+that others have,
+
+00:25:07.000 --> 00:25:08.000
+have done in this,
+
+00:25:08.000 --> 00:25:09.000
+this domain.
+
+00:25:09.000 --> 00:25:10.000
+And so the fact that,
+
+00:25:10.000 --> 00:25:11.000
+that Pandas caught on
+
+00:25:11.000 --> 00:25:13.000
+and became as popular as it is,
+
+00:25:13.000 --> 00:25:15.000
+I think it's a combination of timing
+
+00:25:15.000 --> 00:25:16.000
+and,
+
+00:25:16.000 --> 00:25:17.000
+you know,
+
+00:25:17.000 --> 00:25:19.000
+there was like a developer relations aspect
+
+00:25:19.000 --> 00:25:21.000
+that there was content available
+
+00:25:21.000 --> 00:25:22.000
+and like I wrote my book
+
+00:25:22.000 --> 00:25:24.000
+and that made it easier for people to learn
+
+00:25:24.000 --> 00:25:25.000
+about the project.
+
+00:25:25.000 --> 00:25:26.000
+But also like we,
+
+00:25:26.000 --> 00:25:30.000
+we had a serendipitous open source developer community
+
+00:25:30.000 --> 00:25:32.000
+that came together,
+
+00:25:32.000 --> 00:25:34.000
+that the project to,
+
+00:25:34.000 --> 00:25:35.000
+you know,
+
+00:25:35.000 --> 00:25:37.000
+grow and expand like really rapidly
+
+00:25:37.000 --> 00:25:38.000
+in the,
+
+00:25:38.000 --> 00:25:39.000
+in the early 2010s.
+
+00:25:39.000 --> 00:25:40.000
+And,
+
+00:25:40.000 --> 00:25:41.000
+you know,
+
+00:25:41.000 --> 00:25:42.000
+and I,
+
+00:25:42.000 --> 00:25:43.000
+yeah,
+
+00:25:43.000 --> 00:25:44.000
+I definitely spent a lot of work
+
+00:25:44.000 --> 00:25:45.000
+like recruiting people to,
+
+00:25:45.000 --> 00:25:46.000
+to work on the project
+
+00:25:46.000 --> 00:25:47.000
+and encouraging,
+
+00:25:47.000 --> 00:25:48.000
+you know,
+
+00:25:48.000 --> 00:25:49.000
+others to work on it.
+
+00:25:49.000 --> 00:25:50.000
+Cause sometimes people create open source projects
+
+00:25:50.000 --> 00:25:51.000
+and then it's hard for,
+
+00:25:51.000 --> 00:25:53.000
+hard for others to get involved
+
+00:25:53.000 --> 00:25:54.000
+and get a seat at the table,
+
+00:25:54.000 --> 00:25:55.000
+so to speak.
+
+00:25:55.000 --> 00:25:59.000
+But I was very keen to bring on others
+
+00:25:59.000 --> 00:26:02.000
+and to give them responsibility
+
+00:26:02.000 --> 00:26:03.000
+and,
+
+00:26:03.000 --> 00:26:04.000
+you know,
+
+00:26:04.000 --> 00:26:05.000
+ultimately,
+
+00:26:05.000 --> 00:26:06.000
+you know,
+
+00:26:06.000 --> 00:26:07.000
+hand over the reins to the,
+
+00:26:07.000 --> 00:26:08.000
+to the project,
+
+00:26:08.000 --> 00:26:09.000
+to others.
+
+00:26:09.000 --> 00:26:10.000
+And I've,
+
+00:26:10.000 --> 00:26:11.000
+I've spoken a lot about that,
+
+00:26:11.000 --> 00:26:12.000
+you know,
+
+00:26:12.000 --> 00:26:13.000
+over the years,
+
+00:26:13.000 --> 00:26:14.000
+how important that is to,
+
+00:26:14.000 --> 00:26:15.000
+you know,
+
+00:26:15.000 --> 00:26:16.000
+for open source project creators
+
+00:26:16.000 --> 00:26:17.000
+to room for others
+
+00:26:17.000 --> 00:26:18.000
+in,
+
+00:26:18.000 --> 00:26:19.000
+in growing the project
+
+00:26:19.000 --> 00:26:20.000
+so that they can become,
+
+00:26:20.000 --> 00:26:21.000
+you know,
+
+00:26:21.000 --> 00:26:22.000
+owner,
+
+00:26:22.000 --> 00:26:23.000
+owner of the project.
+
+00:26:23.000 --> 00:26:24.000
+It's tough to make space
+
+00:26:24.000 --> 00:26:25.000
+and tough to,
+
+00:26:25.000 --> 00:26:26.000
+to bring on folks.
+
+00:26:26.000 --> 00:26:27.000
+Have you heard of the Django knots?
+
+00:26:27.000 --> 00:26:28.000
+Django knots.
+
+00:26:28.000 --> 00:26:29.000
+I think it's Django knots dot space.
+
+00:26:29.000 --> 00:26:30.000
+They have an awesome domain,
+
+00:26:30.000 --> 00:26:31.000
+but it's basically like,
+
+00:26:31.000 --> 00:26:32.000
+kind of like a bootcamp,
+
+00:26:32.000 --> 00:26:33.000
+but it's for taking people who just like Django
+
+00:26:33.000 --> 00:26:34.000
+and turn them into actually contributors
+
+00:26:34.000 --> 00:26:35.000
+or core contributors.
+
+00:26:35.000 --> 00:26:36.000
+Do you guys have,
+
+00:26:36.000 --> 00:26:37.000
+what's your onboarding story
+
+00:26:37.000 --> 00:26:38.000
+for people who do want to participate?
+
+00:26:38.000 --> 00:26:39.000
+Yeah,
+
+00:26:39.000 --> 00:26:40.000
+I mean,
+
+00:26:40.000 --> 00:26:41.000
+I,
+
+00:26:41.000 --> 00:26:42.000
+I,
+
+00:26:42.000 --> 00:26:43.000
+I,
+
+00:26:43.000 --> 00:26:44.000
+I,
+
+00:26:44.000 --> 00:26:45.000
+I,
+
+00:26:45.000 --> 00:26:46.000
+I,
+
+00:26:46.000 --> 00:26:47.000
+I,
+
+00:26:47.000 --> 00:26:48.000
+I,
+
+00:26:48.000 --> 00:26:49.000
+I,
+
+00:26:49.000 --> 00:26:50.000
+I,
+
+00:26:50.000 --> 00:26:51.000
+I,
+
+00:26:51.000 --> 00:26:52.000
+I,
+
+00:26:52.000 --> 00:26:53.000
+I,
+
+00:26:53.000 --> 00:26:54.000
+I,
+
+00:26:54.000 --> 00:26:55.000
+I,
+
+00:26:55.000 --> 00:26:56.000
+I,
+
+00:26:56.000 --> 00:26:57.000
+I,
+
+00:26:57.000 --> 00:26:58.000
+I,
+
+00:26:58.000 --> 00:26:59.000
+I,
+
+00:26:59.000 --> 00:27:00.000
+I,
+
+00:27:00.000 --> 00:27:01.000
+I,
+
+00:27:01.000 --> 00:27:02.000
+I,
+
+00:27:02.000 --> 00:27:03.000
+I,
+
+00:27:03.000 --> 00:27:04.000
+I,
+
+00:27:04.000 --> 00:27:05.000
+I,
+
+00:27:05.000 --> 00:27:06.000
+I,
+
+00:27:06.000 --> 00:27:07.000
+I,
+
+00:27:07.000 --> 00:27:08.000
+I,
+
+00:27:08.000 --> 00:27:09.000
+I,
+
+00:27:09.000 --> 00:27:10.000
+I,
+
+00:27:10.000 --> 00:27:11.000
+I,
+
+00:27:11.000 --> 00:27:12.000
+I,
+
+00:27:12.000 --> 00:27:13.000
+I,
+
+00:27:13.000 --> 00:27:14.000
+I,
+
+00:27:14.000 --> 00:27:15.000
+I,
+
+00:27:15.000 --> 00:27:16.000
+I.
+
+00:27:16.000 --> 00:27:17.000
+I,
+
+00:27:17.000 --> 00:27:18.000
+I,
+
+00:27:18.000 --> 00:27:19.000
+I.
+
+00:27:19.000 --> 00:27:20.000
+I,
+
+00:27:04.965 --> 00:27:10.705
+the different community outreach channels that the Pandas project has done to help grow
+
+00:27:10.705 --> 00:27:18.865
+new contributors. So one of the core team members, Mark Garcia, has done an amazing
+
+00:27:18.865 --> 00:27:28.585
+job organizing documentation sprints and other contributor sourcing events, essentially creating
+
+00:27:28.585 --> 00:27:33.465
+very friendly accessible events where people who are interested in getting involved in
+
+00:27:33.465 --> 00:27:39.665
+Pandas can meet each other and then assist each other in making their first pull request.
+
+00:27:39.665 --> 00:27:43.945
+And it could be something as simple as, you know, making a small improvement to the Pandas
+
+00:27:43.945 --> 00:27:49.685
+documentation because it's such a large project. The documentation is like always something
+
+00:27:49.685 --> 00:27:55.625
+that could be made better, you know, either adding more examples or documenting things
+
+00:27:55.625 --> 00:28:01.724
+that aren't documented or making, yeah, just making the documentation better. And so it's
+
+00:28:01.724 --> 00:28:07.005
+something that for new contributors is more accessible than working on the internals of
+
+00:28:07.005 --> 00:28:12.804
+like one of the, you know, algorithms or something and, or like we working on some significant
+
+00:28:12.804 --> 00:28:16.725
+performance improvement might be a bit intimidating if you've never worked on the Pandas codebase
+
+00:28:16.725 --> 00:28:21.125
+and it's a pretty large codebase because it's been it's been worked on continuously for,
+
+00:28:21.125 --> 00:28:27.945
+you know, for like going on 20 years. So it's, yeah, it can be takes a while to really get
+
+00:28:27.945 --> 00:28:31.604
+to a place where you can be productive. And that can be discouraging for new contributors,
+
+00:28:31.604 --> 00:28:36.924
+especially those who don't have a lot of open source experience.
+
+00:28:36.924 --> 00:28:41.924
+That's one of the ironies of the challenges of these big projects is they're just so finely
+
+00:28:41.924 --> 00:28:48.125
+polished. So many people are using them. Every edge case matters to somebody, right? And
+
+00:28:48.125 --> 00:28:53.125
+so to become a contributor and make changes to that, it takes a while, I'm sure.
+
+00:28:53.125 --> 00:28:59.325
+Yeah. Yeah. I mean, I think it's definitely a big, I think definitely a big thing that
+
+00:28:59.325 --> 00:29:06.445
+helped is allowing people to get paid to work on Pandas or to be able to contribute
+
+00:29:06.445 --> 00:29:11.545
+to Pandas as, as a part of their job description, like as, you know, maybe part of their job
+
+00:29:11.545 --> 00:29:18.604
+is maintaining, maintaining Pandas. So Anaconda, you know, was like, you know, one of the earliest
+
+00:29:18.604 --> 00:29:25.965
+companies who had engineers on staff, you know, like, yeah, like, you know, Brock Mendel,
+
+00:29:26.125 --> 00:29:30.765
+Tom Augsberger, Jeff Reback, who part of their job was maintaining and developing,
+
+00:29:30.765 --> 00:29:35.804
+developing Pandas. And that was, that was huge because prior to that, the project was purely
+
+00:29:35.804 --> 00:29:41.565
+based on volunteers. Like I, I was a volunteer and everyone was working on the project as a,
+
+00:29:41.565 --> 00:29:47.884
+as a, as a passion project in their, in their free time. And then, you know, Travis Oliphant,
+
+00:29:47.884 --> 00:29:53.325
+one of the founders, he and Peter Wang founded Anaconda. Travis spun out from Anaconda to create
+
+00:29:53.325 --> 00:29:59.485
+Quonsight and has continued to, you know, sponsor, sponsor development in and around,
+
+00:29:59.485 --> 00:30:06.045
+in and around Pandas. And that's enabled people like Mark to do these community building events
+
+00:30:06.045 --> 00:30:11.244
+and, and for it to not be, you know, something that's, you know, totally, totally uncompensated.
+
+00:30:13.244 --> 00:30:18.524
+Yeah, that's a lot of, a lot of stuff going on. And I think, I mean, it's, yeah, interest is
+
+00:30:18.524 --> 00:30:24.285
+awesome, right? I mean, if there's just a different level of problems, I feel like you can,
+
+00:30:24.925 --> 00:30:29.004
+you could take on, you know, you know what, I got this entire week and someone that's my job
+
+00:30:29.004 --> 00:30:33.485
+is to make this work rather than I've, I've got two hours and I can't really take on a huge
+
+00:30:33.485 --> 00:30:37.644
+project. And so I'll work on the smaller improvements or whatever.
+
+00:30:37.644 --> 00:30:44.045
+Yeah. But I, I think, and I think many people know, but I, I haven't been involved day to day
+
+00:30:44.045 --> 00:30:49.244
+in Pandas since 2013. So that's, that's getting on. That's, that's a lot of, that's a lot of years.
+
+00:30:49.884 --> 00:30:56.045
+You know, I still, you know, I still talk to the Pandas contributors. We had a, we had a Pandas
+
+00:30:56.045 --> 00:31:02.685
+meetup, core, core developer meetup here in Nashville, pre COVID, I think it was in 2019,
+
+00:31:02.685 --> 00:31:09.804
+maybe. So, you know, I'm still in active contact with the Pandas developers, but it's, it's been
+
+00:31:09.804 --> 00:31:14.604
+a, you know, a different team of people leading the project. It's taken on a life of its own,
+
+00:31:14.604 --> 00:31:19.084
+which is, which is amazing. And that's exactly, that's, that's as an open, yeah, as a project
+
+00:31:19.084 --> 00:31:24.125
+creator, that's exactly what you want is to not be beholden to the project that you created
+
+00:31:24.685 --> 00:31:31.405
+and forced and, you know, kind of, you know, have to, you know, be responsible for it and take care
+
+00:31:31.405 --> 00:31:37.084
+of it for the rest of the rest of your life. But if you look at like a lot of the community,
+
+00:31:37.084 --> 00:31:41.725
+a lot of the most kind of intensive community development has happened since, like, since I
+
+00:31:41.725 --> 00:31:47.885
+moved on to work on, on other projects. And so now the project has, I don't know the exact count, but
+
+00:31:47.885 --> 00:31:52.685
+it's had thousands of contributors. And so, you know, to have thousands of different unique
+
+00:31:52.685 --> 00:31:57.725
+individuals contributing to an open source project is it's, it's a big, it's a big deal.
+
+00:31:57.725 --> 00:32:02.125
+So I think even, I don't know what it says on the bottom of GitHub, it says, you know,
+
+00:32:02.845 --> 00:32:09.324
+30, 3200 contributors, but that's maybe not even the full story because sometimes,
+
+00:32:09.324 --> 00:32:14.764
+you know, people, you know, they don't have their email address associated with their GitHub profile.
+
+00:32:14.764 --> 00:32:19.005
+And, you know, how GitHub counts contributors, I would say probably the true number is closer
+
+00:32:19.005 --> 00:32:25.324
+to 4000. So that's, yeah, but that's, I think that's a testament, you know, to the, to the
+
+00:32:25.324 --> 00:32:31.324
+core team and all the outreach they've done and work making, making the project accessible and
+
+00:32:31.324 --> 00:32:37.005
+easy to contribute to. Because if people, if you go and try to make a pull request to a project and
+
+00:32:37.565 --> 00:32:42.924
+there's many different ways that you can fail. So, like, either the project is technically,
+
+00:32:42.924 --> 00:32:48.285
+like, there's issues with the build system or the developer tooling. And so you struggle with
+
+00:32:48.285 --> 00:32:51.165
+the developer tooling. And so if you aren't working on it every day and every night,
+
+00:32:51.965 --> 00:32:56.364
+you can't make heads or tails of how the developer tools work. But then there's also,
+
+00:32:56.364 --> 00:33:00.285
+like, the level of accessibility of the core development team. Like, if they don't,
+
+00:33:00.285 --> 00:33:05.725
+if they aren't there to support you in getting involved in the project and learning how it works,
+
+00:33:06.285 --> 00:33:12.204
+and creating documentation, attribute and what's expected of you, that can also be, you know, a
+
+00:33:12.204 --> 00:33:17.165
+source of frustration where people churn out of the project, you know, because it's just,
+
+00:33:17.165 --> 00:33:24.044
+it's too hard to find their sea legs. And maybe, and maybe also, you know, sometimes development
+
+00:33:24.044 --> 00:33:33.484
+teams are unfriendly or unhelpful or, you know, they make others feel like they're annoyed with
+
+00:33:33.484 --> 00:33:37.165
+them or, like, they're wasting their time or something. It's like, I don't want to look at
+
+00:33:37.165 --> 00:33:41.244
+your, you know, this pull request and give you feedback because, you know, I could do it more
+
+00:33:41.244 --> 00:33:46.524
+quickly by myself or something. Like, sometimes you see that in open source projects. But they've
+
+00:33:46.524 --> 00:33:53.804
+created a very, like, they've created a very welcoming environment. And, yeah, I think the
+
+00:33:53.804 --> 00:33:59.244
+contribution numbers speak for themselves. They definitely do. Maybe last thing before we move on
+
+00:33:59.244 --> 00:34:06.125
+to the other stuff you're working on. But the other interesting GitHub statistic here is the
+
+00:34:06.125 --> 00:34:12.204
+used by 1.6 million projects. That's, I don't know if I've ever seen it used by that high. There's
+
+00:34:12.204 --> 00:34:23.005
+probably some that are higher, but not many. Yeah, it's, yeah, it's a lot of projects. I think
+
+00:34:23.005 --> 00:34:34.924
+it's interesting. I think it's, like many projects, it's reached a point where it's an essential and
+
+00:34:34.924 --> 00:34:43.644
+assumed part of many people's toolkit. Like, the first thing that they write at the top of a file
+
+00:34:43.644 --> 00:34:51.565
+that they're working on is, you know, import Pandas as PD or import NumPy as PD. And so,
+
+00:34:52.204 --> 00:34:58.044
+it's, yeah, I think, you know, to create, I think, in a sense, like, I think one of the reasons why,
+
+00:34:58.044 --> 00:35:04.445
+you know, Pandas has gotten so popular is that it is beneficial to the community,
+
+00:35:04.524 --> 00:35:11.084
+to the Python community, to have, you know, fewer solutions. You know, kind of the zen of Python,
+
+00:35:11.084 --> 00:35:18.125
+there should be one and preferably only one obvious way to do things. And so, if there were
+
+00:35:18.125 --> 00:35:24.445
+10 different Pandas-like projects, you know, that creates skill portability problems. And,
+
+00:35:24.445 --> 00:35:28.204
+you know, it's just easier if everyone says, oh, we just, Pandas is the thing that we use.
+
+00:35:28.924 --> 00:35:32.605
+Change jobs and you can take all your skills, like how to use Pandas with you. And
+
+00:35:33.405 --> 00:35:37.884
+I think that's also one of the reasons why Python has become so successful in the business world is
+
+00:35:37.884 --> 00:35:45.004
+because you can teach somebody, even without a lot of programming experience, how to use Python,
+
+00:35:45.004 --> 00:35:52.365
+how to use Pandas and become productive doing, you know, basic work very quickly. And so,
+
+00:35:53.084 --> 00:35:58.845
+you know, one of the solutions, I remember back in the early 2010s, there were a lot of articles
+
+00:35:58.845 --> 00:36:05.245
+and talks about how to address the data science shortage. And my belief, and I gave a
+
+00:36:09.324 --> 00:36:19.405
+talk at Web Summit in Dublin in 2000, gosh, maybe 2017, I have to look exactly. But basically,
+
+00:36:19.405 --> 00:36:27.084
+it was the data scientist shortage. And my thesis was always, we should make it easier to be a data
+
+00:36:27.084 --> 00:36:33.644
+scientist or lower the bar for what sort of skills you have to master before you can do
+
+00:36:33.644 --> 00:36:39.324
+productive work in a business setting. And so, I think the fact that there is just Pandas and
+
+00:36:39.324 --> 00:36:45.165
+that's the one thing that people have to learn how to use is their essential starting point for
+
+00:36:45.165 --> 00:36:52.045
+doing any data has also led to this piling on of people being motivated to make this one thing
+
+00:36:52.045 --> 00:36:55.884
+better because it, you know, you make improvements to Pandas and they benefit
+
+00:36:55.884 --> 00:36:58.605
+millions of projects and millions of people around the world. And that's,
+
+00:36:59.564 --> 00:37:02.444
+yeah. So, it's like a, you know, steady snowballing effect.
+
+00:37:04.365 --> 00:37:10.124
+I agree with you. And I think that, I think doing data science is getting easier. We've got a lot
+
+00:37:10.124 --> 00:37:17.324
+of interesting frameworks and tools for Python, one of them, right? That makes it easier to share
+
+00:37:17.405 --> 00:37:27.644
+and run your code, you know? Yeah. So, yeah. I think the, yeah, Shiny for Python, Streamlit,
+
+00:37:27.644 --> 00:37:32.925
+you know, Dash, like these different interactive data application publishing frameworks. So,
+
+00:37:32.925 --> 00:37:39.165
+you can go from, you know, a few lines of Pandas code, loading some data and doing some analysis
+
+00:37:39.165 --> 00:37:45.245
+and visualization to changing that as an interactive website without having to know
+
+00:37:45.245 --> 00:37:51.165
+how to use any web development frameworks or Node.js or anything like that. And so,
+
+00:37:52.124 --> 00:37:58.444
+to be able to, you know, get up and running and build a working, you know, interactive web
+
+00:37:58.444 --> 00:38:04.684
+application that's powered by Python. Yeah. It's a game changer in terms of, you know, shortening
+
+00:38:05.884 --> 00:38:10.764
+end-to-end development life cycles. What do you think about JupyterLite
+
+00:38:10.845 --> 00:38:21.004
+and these PyOxidized and basically Jupyter in a browser type of things?
+
+00:38:21.725 --> 00:38:30.925
+Yeah. WebAssembly and all that. Yeah. So, I'm definitely very excited about it. I've been
+
+00:38:30.925 --> 00:38:37.084
+following WebAssembly in general. And so, I guess some people listening will know about WebAssembly.
+
+00:38:37.805 --> 00:38:44.204
+But basically, it's a portable machine code that can be compiled and executed
+
+00:38:44.845 --> 00:38:51.564
+in within your browser in a sandbox environment. So, it protects against security issues and
+
+00:38:52.444 --> 00:38:57.084
+allows prevents, like, the person who wrote the WebAssembly code from doing something malicious
+
+00:38:57.084 --> 00:39:02.285
+on your machine, which is very important. Won't necessarily stop them from, like,
+
+00:39:02.285 --> 00:39:05.965
+you know, mining cryptocurrency while you have the browser tab open. That's a whole separate problem.
+
+00:39:06.605 --> 00:39:13.084
+But, yeah, I think it's enabled us to run the whole scientific Python stack, including Jupyter
+
+00:39:13.084 --> 00:39:19.004
+and NumPy and Pandas totally in the browser without having a client and server and needing to,
+
+00:39:19.004 --> 00:39:24.925
+you know, run a container someplace in the cloud. And so, I think in terms of creating
+
+00:39:25.805 --> 00:39:31.084
+application deployment, so, like, being able to deploy an interactive data application,
+
+00:39:31.084 --> 00:39:37.725
+like, with Shiny, for example, without needing to have a server, that's actually pretty amazing.
+
+00:39:37.725 --> 00:39:44.764
+And so, I think that, you know, simplifies and opens up new use cases, like, new,
+
+00:39:44.764 --> 00:39:50.045
+you know, application architectures and makes things a lot easier. Because setting up and
+
+00:39:50.045 --> 00:39:57.084
+running a server creates brittleness, like, it has cost. And so, if the browser is doubling as
+
+00:39:57.084 --> 00:40:02.764
+your server process, like, that's I think that's really cool. You also have, like, other projects,
+
+00:40:02.764 --> 00:40:09.564
+like DuckDB, which is a, you know, high performance, embeddable analytic SQL engine.
+
+00:40:10.204 --> 00:40:16.204
+And so, you know, now with DuckDB compiled to Wasm, you can get a high performance database
+
+00:40:16.204 --> 00:40:21.485
+running in your browser. And so, you can get low latency interactive queries and interactive
+
+00:40:21.485 --> 00:40:29.485
+dashboards. And so, it's yeah, there's it's WebAssembly has opened up this whole kind of
+
+00:40:29.485 --> 00:40:37.725
+new world of possibilities. And so, it's transformative, I think. I think for Python
+
+00:40:37.725 --> 00:40:43.965
+in particular, you mentioned Pyodide, which is kind of a whole package stack. So, it's like a
+
+00:40:43.965 --> 00:40:50.684
+framework for build and build and packaging and, you know, basically building an application and
+
+00:40:50.684 --> 00:40:56.285
+managing its dependencies. So, you could create a WebAssembly version of your application to be
+
+00:40:56.285 --> 00:41:04.684
+deployed like this. But yeah. So, I think the one of the Pyodide either the Pyodide main
+
+00:41:04.684 --> 00:41:09.324
+creator or maintainer went to Anaconda. They created PyScript, which made which is another
+
+00:41:09.324 --> 00:41:16.045
+attempt to make it even easier to use Python to make it even easier to use Python to create
+
+00:41:16.764 --> 00:41:23.324
+web applications, interactive web applications. And yeah. So, there's so many cool things here.
+
+00:41:23.324 --> 00:41:28.045
+Like in the R community, they have WebR, which is similar to PyScript and Pyodide in some ways,
+
+00:41:28.045 --> 00:41:33.564
+like compiling the whole R stack to WebAssembly. There was just an article I saw on Hacker News
+
+00:41:33.564 --> 00:41:39.725
+where they worked on, you know, figuring out how to get how to trick LLVM into compiling Fortran
+
+00:41:39.725 --> 00:41:45.165
+code, like legacy Fortran code to WebAssembly. Because when you're talking about all this,
+
+00:41:45.165 --> 00:41:49.245
+you know, scientific computing stack, you need the linear algebra and all of the,
+
+00:41:49.245 --> 00:41:53.805
+you know, 40 years of Fortran code that have been built to support scientific applications,
+
+00:41:53.805 --> 00:41:57.485
+like you need all that to compile to and run in the browser. So.
+
+00:41:57.485 --> 00:42:04.204
+Yeah. That's pretty wild to think of putting that in there, but very useful. I didn't realize that
+
+00:42:04.204 --> 00:42:08.524
+you could use DuckDB as a WebAssembly component. That's pretty cool.
+
+00:42:08.524 --> 00:42:13.245
+Yeah. Like there's a company, I'm not an investor or plugging them or anything,
+
+00:42:13.245 --> 00:42:18.764
+but it's called evidence.dev. And it's like a whole business intelligence,
+
+00:42:20.845 --> 00:42:27.004
+open source business intelligence application that's powered by DuckDB. And so if you have
+
+00:42:27.004 --> 00:42:32.365
+data that fits in the browser, you know, to have a whole like interactive dashboard,
+
+00:42:32.365 --> 00:42:38.365
+or to be able to do business intelligence, like fully in the browser with no need of a server.
+
+00:42:39.324 --> 00:42:46.365
+It's, yeah, it's, it's, it's, it's very, very cool. So I'm, yeah, I've been following DuckDB
+
+00:42:46.365 --> 00:42:54.365
+since the early days. And, you know, my company, Voltron Data, like, you know, we, we became
+
+00:42:54.365 --> 00:42:59.324
+members of the DuckDB foundation and built, you know, build, actively build a relationship with
+
+00:42:59.324 --> 00:43:04.925
+with DuckDB labs, so we could help accelerate progress in this space, because I think the
+
+00:43:05.084 --> 00:43:11.485
+impact, the impact is so, is so immense. And we just, we, it's hard to predict, like what,
+
+00:43:12.045 --> 00:43:17.405
+you know, what people are going to build, build with all this stuff. And, and so that was all,
+
+00:43:17.405 --> 00:43:22.684
+you know, with, I guess, going back, you know, 15 years ago to Python, like one of the reasons I
+
+00:43:22.684 --> 00:43:30.684
+became so passionate about building stuff for Python was about in, I think, the way that Peter
+
+00:43:30.684 --> 00:43:37.324
+Wang puts that, it puts it as, you know, giving people superpowers. So we want to enable people to
+
+00:43:37.965 --> 00:43:44.045
+build things with much less code and much less time. And so by making it things that much more
+
+00:43:44.045 --> 00:43:49.564
+accessible, that much easier to do, like in the mantra in pandas was like, how do we make things,
+
+00:43:49.564 --> 00:43:53.644
+you know, one line of code, or like, this must be easy. It's like, one line of code,
+
+00:43:53.644 --> 00:43:59.405
+one line of code, it must be like, like, make this as terse and simple as possible so that you
+
+00:43:59.405 --> 00:44:03.485
+can move on and focus on building the more interesting parts of your application rather
+
+00:44:03.485 --> 00:44:08.925
+than struggling with how to read a CSV file or, you know, how to do, you know, whichever,
+
+00:44:09.885 --> 00:44:15.245
+whichever, you know, data munging technique that you need for your, for your data set.
+
+00:44:16.924 --> 00:44:21.005
+Maybe an interesting mental model for DuckDB is kind of an equivalent to SQLite,
+
+00:44:21.005 --> 00:44:26.365
+but more analytics database for folks, you know, in process. Yeah, things right. What do you think?
+
+00:44:26.365 --> 00:44:32.684
+Yeah. So yeah, DuckDB is like SQLite. And in fact, it can run the whole SQLite test suite,
+
+00:44:32.684 --> 00:44:39.645
+I believe. So it's a full database, but it's, it's, it's for analytic processing. So it's
+
+00:44:39.645 --> 00:44:44.284
+optimized for analytic processing. And as compared, you know, with SQLite, which is not,
+
+00:44:45.564 --> 00:44:47.965
+it's, it's not designed for, for data processing.
+
+00:44:48.684 --> 00:44:53.404
+Yeah, cool. All right. Well, let's talk about some things that you're working on
+
+00:44:53.404 --> 00:45:00.845
+beyond pandas. You talked about Apache Aero earlier. What's, what are you doing with Aero and,
+
+00:45:00.845 --> 00:45:06.125
+and how's it fit in your world? Yeah. So the, the, the backstory there was,
+
+00:45:08.284 --> 00:45:12.204
+I don't know if you can hear the sirens in, in, in downtown Nashville, but...
+
+00:45:12.204 --> 00:45:15.645
+No, actually it's... That's good. It's filled, the microphone filters it out,
+
+00:45:15.645 --> 00:45:20.525
+filters it out pretty well. Yay for dynamic microphones. They're amazing.
+
+00:45:20.525 --> 00:45:28.204
+Yeah. So in, like around the mid, like the mid 2010s, 2015, I, I started working,
+
+00:45:29.404 --> 00:45:34.204
+I started working at Cloudera, like in the, which is a company that was like one of the pioneers in
+
+00:45:34.204 --> 00:45:41.885
+the big data ecosystem, big data ecosystem. And yeah, I had, you know, been, spent several years
+
+00:45:41.885 --> 00:45:47.164
+working on five, five years, five, six years working on pandas. And so I had gone through
+
+00:45:47.164 --> 00:45:53.164
+the experience of building pandas from top to bottom. And it was this, you know, full stack
+
+00:45:54.525 --> 00:46:00.204
+system that had, had its own, you know, mini query engine, all of its own algorithms and
+
+00:46:00.204 --> 00:46:04.044
+data structures and all this stuff that we had to build from, build from scratch.
+
+00:46:04.044 --> 00:46:09.564
+And I started thinking about, you know, what if it was possible to build some of the underlying
+
+00:46:09.564 --> 00:46:16.204
+computing technology, like data readers, like file readers all the algorithms that power
+
+00:46:16.765 --> 00:46:22.444
+the core components of pandas, like group operations, aggregations, filtering selection,
+
+00:46:23.084 --> 00:46:28.365
+all those things. Like what if they were possible to have a general purpose library that isn't
+
+00:46:28.365 --> 00:46:34.525
+specific to Python is, but it was really, really fast, really efficient and has a large community
+
+00:46:34.525 --> 00:46:40.044
+building, building it so that you could, you know, take that code with you and use it to build many
+
+00:46:40.044 --> 00:46:45.965
+different types of libraries, not just data frame libraries, but also database engines and, you know,
+
+00:46:45.965 --> 00:46:51.645
+stream processing engines and all kinds of things. And so that was kind of what was in my
+
+00:46:51.645 --> 00:46:57.245
+mind when I started getting interested in what turned into Arrow. And one of the problems we
+
+00:46:57.245 --> 00:47:02.605
+realized we needed to solve, this was like a group of other open source developers and me,
+
+00:47:02.605 --> 00:47:09.245
+was that we needed to create a way to represent data that was not tied to a specific programming
+
+00:47:09.245 --> 00:47:15.885
+language. And that could be used for a very efficient interchange between components.
+
+00:47:16.605 --> 00:47:21.564
+And the idea is that you would have this immutable, like this, this kind of constant
+
+00:47:21.564 --> 00:47:26.444
+data structure, which is like, it's the same in every programming language. And then you can
+
+00:47:26.444 --> 00:47:30.684
+use that as the basis for writing all of your algorithms. So as long as it's Arrow,
+
+00:47:30.684 --> 00:47:36.924
+you have these reusable algorithms that process, process Arrow data. So we started with building
+
+00:47:36.924 --> 00:47:44.204
+the Arrow format and standardizing it. And then we've built a whole ecosystem of components,
+
+00:47:44.204 --> 00:47:49.164
+like library components and different programming languages for building applications that use the,
+
+00:47:49.804 --> 00:47:57.564
+use the Arrow format. So that includes, you know, not only tools for building and interacting with
+
+00:47:57.564 --> 00:48:03.245
+the data, but also file readers. So you can read CSV files and JSON data and Parquet files,
+
+00:48:03.804 --> 00:48:07.885
+read data out of database systems, you know, wherever the data comes from, we want to have
+
+00:48:07.885 --> 00:48:14.044
+an efficient way to get it into the Arrow format. And then we moved on to building
+
+00:48:14.044 --> 00:48:19.725
+data processing engines that are native to the Arrow format, so that Arrow goes in,
+
+00:48:19.725 --> 00:48:26.765
+the data is processed, Arrow goes out. So DuckDB, for example, supports Arrow as a preferred input
+
+00:48:26.765 --> 00:48:33.804
+format and is, DuckDB is more or less Arrow-like in its internals. It has kind of Arrow, Arrow
+
+00:48:33.804 --> 00:48:40.284
+format plus a number of extensions that are DuckDB specific for better performance within the context
+
+00:48:40.284 --> 00:48:47.245
+of, of DuckDB. And so, so in numerous communities, so there's the Rust community, which has built
+
+00:48:47.245 --> 00:48:55.005
+DataFusion, which is an execution engine for Arrow, SQL engine for Arrow. And so, yeah,
+
+00:48:55.005 --> 00:48:59.804
+we've kind of like looked at the different layers of the stack, like data access, computing,
+
+00:48:59.804 --> 00:49:06.284
+data transport, you know, everything under the sun. And then we've built libraries that are across
+
+00:49:06.284 --> 00:49:10.204
+many different programming languages said that, that are, you can pick and choose the pieces that
+
+00:49:10.204 --> 00:49:15.965
+you need to build your, build your system. And the goal ultimately was that we, in the future,
+
+00:49:15.965 --> 00:49:21.164
+which is now, we don't want people to have to reinvent the wheel whenever they're building
+
+00:49:21.164 --> 00:49:24.605
+something like Pandas, that they could just pick up these off the shelf components.
+
+00:49:25.164 --> 00:49:29.885
+They can design the developer experience, the user experience that they want to create.
+
+00:49:30.605 --> 00:49:35.804
+And, and they can get built, you know, so if you were building Pandas now, you could build
+
+00:49:36.765 --> 00:49:42.525
+a Pandas-like library based on the Arrow components in much less time. And it would be,
+
+00:49:43.885 --> 00:49:48.204
+it would be fast and efficient and interoperable with the whole ecosystem of other projects that
+
+00:49:48.204 --> 00:49:55.084
+use Arrow. So it's, it's, it's very cool. It's, I mean, it was really ambitious. In some ways,
+
+00:49:55.084 --> 00:49:58.605
+obvious to people, they would, they would hear about Arrow and they say, that sounds obvious.
+
+00:49:58.605 --> 00:50:04.525
+Like clearly we should have a universal way of transporting data between systems and processing
+
+00:50:04.525 --> 00:50:10.044
+it in memory. Why hasn't this been done in the past? And it turns out that as is true, many
+
+00:50:10.605 --> 00:50:17.164
+open source software problems that, that many of these problems are, the social problems are
+
+00:50:17.164 --> 00:50:22.684
+harder than the technical problems. And so if you can solve the, the kind of people coordination
+
+00:50:22.684 --> 00:50:27.804
+and consensus problems, solving the technical issues is much, much easier by comparison.
+
+00:50:27.804 --> 00:50:34.365
+So I think we were lucky in that we found like the right, you know, the right group of people,
+
+00:50:34.365 --> 00:50:40.044
+the right personalities where we were able to, you know, as soon as I met, I met Jacques Nadeau,
+
+00:50:41.324 --> 00:50:45.645
+who had been at MapR and we, you know, was working on his, his startup Dremio.
+
+00:50:45.645 --> 00:50:50.845
+Like I knew instantly when I met Jacques Nadeau, I was like, it's like, I can work. He's like,
+
+00:50:50.845 --> 00:50:56.044
+it's like him, like, he is going to help me make this happen. When I met Julien Ledam, who had also
+
+00:50:56.044 --> 00:51:01.164
+co-created Parquet, I was like, yes, like we are going to make this, like, like we, like I found
+
+00:51:01.164 --> 00:51:06.365
+the right people, like we are, we are going to make this happen. So it's been a, it's been a labor
+
+00:51:06.365 --> 00:51:13.804
+of love and, and, and, and much, much work and, and stress and everything. But it's yeah, that,
+
+00:51:13.804 --> 00:51:19.005
+that's, you know, I've been working on things circling, you know, with Aero as the sun,
+
+00:51:19.005 --> 00:51:24.684
+you know, I've been building kind of satellites and moons and planets circling the, the, the Aero
+
+00:51:24.684 --> 00:51:29.084
+sun over the last, over the last eight years or so. And that's kept me pretty busy.
+
+00:51:30.525 --> 00:51:34.605
+Yeah. It's only getting more exciting and interesting. Over here, it says,
+
+00:51:35.404 --> 00:51:40.125
+it uses efficient analytic operations on modern hardware, like CPUs and GPUs.
+
+00:51:41.084 --> 00:51:46.444
+You know, one of the big challenges of Python has been the GIL, also one of its big benefits,
+
+00:51:46.444 --> 00:51:50.765
+but one of its challenges when you get to multicore or computational stuff has been the GIL.
+
+00:51:51.485 --> 00:51:58.605
+What's the story here? Yeah. So in, in, in AeroLand, when, when we're talking about
+
+00:51:58.605 --> 00:52:05.485
+analytic efficiency it, it mainly has to do with the like underlying, like how the,
+
+00:52:06.204 --> 00:52:13.645
+how a modern CPU works or how, how, how a GPU works. And so when the data is arranged in
+
+00:52:13.645 --> 00:52:21.645
+column oriented format, that enables the, the data to be moved efficiently through
+
+00:52:22.204 --> 00:52:28.125
+the CPU cache pipelines. So the data is made, made available efficiently to the,
+
+00:52:29.005 --> 00:52:35.965
+to the CPU cores. And so we spent a lot of energy in Aero making decisions, firstly,
+
+00:52:35.965 --> 00:52:43.965
+to enable very cache, like CPU cache or GPU cache efficient analytics on, on the data.
+
+00:52:43.965 --> 00:52:49.005
+And so, so we were kind of always, when we were deciding, we would break ties and make decisions
+
+00:52:49.005 --> 00:52:54.284
+based on like, what's going to be more efficient for the, for the computer chip. The other thing
+
+00:52:54.284 --> 00:53:02.365
+is that modern, and this is true with GPUs, which have a different parallelism model than,
+
+00:53:02.365 --> 00:53:10.845
+or a different kind of multicore parallelism model than CPUs. But in CPUs, they've focused
+
+00:53:10.845 --> 00:53:17.324
+on adding what are called single instruction, multiple data intrinsic, like a built-in
+
+00:53:17.324 --> 00:53:25.245
+operations in the processor where, you know, now you can process up to 512 bytes of data in a single
+
+00:53:25.245 --> 00:53:31.245
+CPU instruction. And so that's like, you know, my brain's doing the math, right? Like 16,
+
+00:53:31.245 --> 00:53:38.765
+32 bit floats, or, you know, eight 64 bit integers in a single cycle. There's like intrinsic operations.
+
+00:53:38.765 --> 00:53:43.564
+Instead of multiply this number by that one, multiply that number to these eight things all
+
+00:53:43.645 --> 00:53:48.525
+at once, something like that. That's right. Yeah. Or you might say like, oh, I, I have a bit mask
+
+00:53:48.525 --> 00:53:55.725
+and I want to select, I want to gather like the, the, the one bits that are set in this, you know,
+
+00:53:55.725 --> 00:54:00.684
+this bit mask from this array of, of integers. And so there's like a gather instruction.
+
+00:54:01.832 --> 00:54:10.832
+which allows you to select a subset, a sort of SIMD vector of integers, you know, using a bit mask.
+
+00:54:10.832 --> 00:54:17.832
+And so that, you know, turns out to be like a pretty, you know, pretty critical operation in certain data analytic workloads.
+
+00:54:17.832 --> 00:54:23.832
+So, yeah, we were really, you know, we wanted to have a data format that was
+
+00:54:18.262 --> 00:54:24.022
+certain data analytic workloads. So yeah, we were really, you know, we wanted to have a data format
+
+00:54:24.022 --> 00:54:31.942
+that was essentially, you know, future-proofed in the sense that it's ideal for the coming wave,
+
+00:54:31.942 --> 00:54:38.661
+like current generation of CPUs, but also given that a lot of processing is moving to GPUs and
+
+00:54:38.661 --> 00:54:48.022
+to FPGAs and to custom silicon, like we wanted Arrow to be usable there as well. And Arrow's
+
+00:54:48.022 --> 00:54:55.461
+been successfully, you know, used as the foundation of GPU computing libraries, like we, you know,
+
+00:54:55.461 --> 00:55:02.422
+kind of at Voltron Data we've built a whole accelerator-native, GPU-native, you know,
+
+00:55:02.422 --> 00:55:08.502
+scalable execution engine that's Arrow-based. And so I think the fact that we, that was our
+
+00:55:08.502 --> 00:55:13.461
+aspiration, and we've been able to prove that out in real-world workloads and show the kinds
+
+00:55:13.461 --> 00:55:20.182
+of efficiency gains that you can get with using modern computing hardware correctly, or at least
+
+00:55:20.182 --> 00:55:26.502
+as well as it's intended to be used. That's a big deal in terms of like making applications faster,
+
+00:55:26.502 --> 00:55:30.342
+reducing the carbon footprint of large-scale data workloads, things like that.
+
+00:55:30.661 --> 00:55:35.301
+Yeah. Amazing. All right. Let's see. What else have I got on deck here to talk to you about?
+
+00:55:35.301 --> 00:55:41.621
+Let's, maybe we can talk about, we got a little time left. We got a couple of things to cover.
+
+00:55:41.621 --> 00:55:46.022
+Yeah, we can talk about this. Yeah, we could probably spend another hour talking.
+
+00:55:46.022 --> 00:55:46.822
+Yes, easy.
+
+00:55:46.822 --> 00:55:53.782
+I think one of the more interesting areas in recent years has been new DataFrame libraries
+
+00:55:54.742 --> 00:56:02.422
+and DataFrame APIs that transpile or compile to different, execute on different backends. And so
+
+00:56:02.422 --> 00:56:08.502
+around the time that I was helping start Arrow, I created this project called Ibis, which is
+
+00:56:08.502 --> 00:56:16.581
+basically a portable DataFrame API that knows how to generate SQL queries and compile to pandas and
+
+00:56:16.742 --> 00:56:25.382
+polars and different DataFrame backends. And the goal is to provide a really productive DataFrame
+
+00:56:25.382 --> 00:56:31.382
+API that gives you portability across different execution backends with the goal of enabling
+
+00:56:31.382 --> 00:56:37.061
+what we call the multi-engine data stack. So you aren't stuck with using one particular system
+
+00:56:37.061 --> 00:56:41.701
+because all of the code that you've written is specialized to that system. You have this tool,
+
+00:56:42.661 --> 00:56:49.701
+so maybe you could work with DuckDB on your laptop or pandas or polars with Ibis on your laptop.
+
+00:56:49.701 --> 00:56:55.061
+But if you need to run that workload someplace else, maybe with ClickHouse or BigQuery,
+
+00:56:55.861 --> 00:56:59.781
+or maybe it's a large big data workload that's too big to fit on your laptop,
+
+00:56:59.781 --> 00:57:06.661
+and you need to use Spark SQL or something that you can just ask Ibis, say, hey, I want to do
+
+00:57:06.661 --> 00:57:12.342
+the same thing on this larger data set over here, and it has all the logic to generate the
+
+00:57:12.342 --> 00:57:17.301
+correct query representation and run that workload for you. So it's super useful.
+
+00:57:18.661 --> 00:57:25.061
+But there's a whole wave of work right now to help enable people to work in a pandas-like way,
+
+00:57:25.061 --> 00:57:32.182
+but work with big data or get better performance than pandas, because pandas is a Swiss army knife,
+
+00:57:32.182 --> 00:57:40.822
+but isn't a chainsaw. So if you were rebuilding pandas from scratch, it would end up a lot.
+
+00:57:42.342 --> 00:57:47.061
+There's areas of the project that are more bloated or have performance overhead that's
+
+00:57:47.061 --> 00:57:53.221
+hard to get rid of. And so that's why you have Richie Fink started the Polars project, which is
+
+00:57:53.221 --> 00:58:01.382
+kind of a reimagining of pandas data frames written in Rust and exposed in Python. And
+
+00:58:02.262 --> 00:58:09.941
+Polars, of course, is built on Apache Aero at its core. So building an Aero-native data frame
+
+00:58:09.941 --> 00:58:16.661
+library in Rust and all the benefits that come with building Python extensions in Rust. You
+
+00:58:16.661 --> 00:58:21.221
+avoid the gill, and you can manage the multithreading in a systems language, all that fun stuff.
+
+00:58:22.182 --> 00:58:24.742
+Yeah, when you're talking about Aero and supporting different
+
+00:58:25.622 --> 00:58:29.141
+ways of using it and things being built on it, certainly Polars came to mind for me.
+
+00:58:30.421 --> 00:58:34.101
+You know, when you talk about Ibis, I think it's interesting that a lot of these
+
+00:58:35.622 --> 00:58:42.342
+data frame libraries, they try to base their API to be pandas-like, but not identical,
+
+00:58:42.342 --> 00:58:48.981
+potentially, you know, thinking of Dask and others. But this Ibis sort of has the
+
+00:58:49.942 --> 00:58:56.342
+ability to configure it and extend it, make it different, kind of like, for example, Dask,
+
+00:58:56.342 --> 00:59:00.821
+which is one of the backends here. Yeah, it does. But the API doesn't change, right? It just,
+
+00:59:02.421 --> 00:59:07.062
+it talks to the different backends. Yeah, there's different schools of thought on this. So there's
+
+00:59:07.942 --> 00:59:12.981
+another project called Modin, which is similar to Ibis in many ways, in the sense of, like,
+
+00:59:12.981 --> 00:59:17.062
+transpilation and sort of dynamically supporting different backends, but sought to
+
+00:59:18.022 --> 00:59:26.342
+closely emulate the, you know, exact details of, like, you know, the API call, the function name,
+
+00:59:26.342 --> 00:59:31.782
+the function arguments must be exactly the same as pandas, with the goal of being a drop-in
+
+00:59:31.782 --> 00:59:39.141
+replacement for people's pandas code. And that's one approach, kind of the pandas emulation route.
+
+00:59:39.141 --> 00:59:45.622
+And there's a library called Koalas for Spark, which is like a PySpark emulation layer for the
+
+00:59:45.701 --> 00:59:52.742
+pandas API. And then there's other projects like Polars and Ibis and Dask DataFrame that take,
+
+00:59:52.742 --> 00:59:58.502
+like, design cues from pandas in the sense of, like, the general way in which the API works,
+
+00:59:58.502 --> 01:00:05.701
+but has made meaningful departures in the interest of doing things better in many ways than pandas
+
+01:00:05.701 --> 01:00:13.541
+did in certain parts of the API, and making things simpler and not being beholden to decisions that
+
+01:00:13.541 --> 01:00:18.662
+were made in pandas, you know, 15 years ago. Not to say there's anything bad about the pandas API,
+
+01:00:18.662 --> 01:00:23.701
+but, like, with any API, it's large. Like, it's very large, as evidenced by, you know,
+
+01:00:23.701 --> 01:00:30.581
+the 2,000 pages of documentation. And so I understand the desire to make things simpler
+
+01:00:30.581 --> 01:00:37.062
+while also refining certain things, making certain types of workloads easier to express.
+
+01:00:37.062 --> 01:00:43.141
+And so Polars, for example, is very expression-based. And so everything is column expressions and is
+
+01:00:43.141 --> 01:00:50.342
+lazy and not eagerly computed, whereas pandas is eager execution, just like NumPy is, which is
+
+01:00:50.342 --> 01:00:58.421
+how pandas, you know, became eagerly executed in the first place. And so I think the mantra with
+
+01:00:58.421 --> 01:01:04.821
+Polars was, we don't want to support the eager execution by default that pandas provides.
+
+01:01:04.821 --> 01:01:09.782
+We want to be able to build expressions so that we can do query optimization and take inefficient
+
+01:01:09.782 --> 01:01:14.981
+code and under the hood rewrite it to, you know, be more efficient, which is, you know, what you can
+
+01:01:14.981 --> 01:01:21.141
+do with a query optimizer. And so ultimately, like, and that matters a lot when you're executing
+
+01:01:21.141 --> 01:01:27.782
+code remotely or in, like, a big data system, that you want to have the freedom to be able to take,
+
+01:01:27.782 --> 01:01:33.381
+like, a lazy, you know, analytic expression and rewrite it, you know, based on it might be, like,
+
+01:01:33.381 --> 01:01:38.902
+you need to seriously rewrite the expression in the case of, like, Dask, for example. Like, Dask has
+
+01:01:38.902 --> 01:01:46.662
+to do planning across a distributed cluster. And so, you know, Dask DataFrame is very pandas-like,
+
+01:01:46.662 --> 01:01:52.261
+but it also includes some explicit details of being able to control how the data is partitioned
+
+01:01:52.261 --> 01:01:58.342
+and being able to have some knobs to turn in terms of, like, having more control over what's happening
+
+01:01:58.342 --> 01:02:02.821
+on a distributed cluster. And I think the goal there is, like, to give the developer more control
+
+01:02:02.821 --> 01:02:06.742
+as opposed to, like, trying to be intelligent, you know, make all of the decisions on behalf of the
+
+01:02:06.742 --> 01:02:13.301
+developer. So if you, you know, if you know about how, you know, know a lot about your data set,
+
+01:02:13.301 --> 01:02:19.301
+then you can make more, you can make, you know, decisions about how to schedule and execute it.
+
+01:02:19.301 --> 01:02:23.861
+Of course, Dask is building, you know, query optimization to start making more of those
+
+01:02:23.861 --> 01:02:30.502
+decisions on behalf of the user. But, you know, Dask has become very popular and impactful in
+
+01:02:30.502 --> 01:02:35.942
+making distributed computing easier in Python. So they've gotten, you know, I think gotten a long
+
+01:02:35.942 --> 01:02:40.981
+way without turning into a database. And I think Dask never aspired to be a database engine,
+
+01:02:40.981 --> 01:02:45.942
+which is a lot of distributed computing is, you know, not database-like. It could be distributed
+
+01:02:45.942 --> 01:02:51.302
+array computing or distributed model training and just being able to easily run distributed,
+
+01:02:51.302 --> 01:02:57.061
+you know, Python functions on a cluster and do distributed computing that way. It was amazing,
+
+01:02:57.061 --> 01:03:02.741
+like, how many people were using PySpark in the early days just for the convenience of being able
+
+01:03:02.741 --> 01:03:09.381
+to run Python functions in parallel on a cluster. Yeah. And that's pretty interesting.
+
+01:03:10.181 --> 01:03:14.581
+Not exactly what it's designed for. Right. With Dask, you know, you probably come across
+
+01:03:14.581 --> 01:03:21.141
+situations where you do a sequence of operations. They're kind of commutative in the end in practice,
+
+01:03:21.141 --> 01:03:25.141
+but from a computational perspective, like how do I distribute this amongst different servers?
+
+01:03:25.782 --> 01:03:31.782
+Maybe one order matters a lot more than the other out of performance, you know? Yeah.
+
+01:03:32.741 --> 01:03:37.621
+Yeah. Interesting. All right. One final thing. SQLglot.
+
+01:03:38.581 --> 01:03:49.701
+Yeah. So SQLglot project started by Toby Mao. So he's a Netflix alum and, you know, really,
+
+01:03:49.701 --> 01:03:55.462
+yeah, really talented, talented developer who's created this SQL query transpilation framework
+
+01:03:56.261 --> 01:04:02.342
+library for Python and, you know, kind of underlying core library. And so the problem
+
+01:04:02.342 --> 01:04:07.621
+that's being solved there is that SQL, despite being a quote unquote standard, is not at all
+
+01:04:07.621 --> 01:04:13.782
+standardized across different database systems. And so if you want to take your SQL queries
+
+01:04:13.782 --> 01:04:19.381
+written for one engine and use them someplace else, without something like SQLglot, you would
+
+01:04:19.381 --> 01:04:25.941
+have to manually rewrite and make sure you get the typecasting and coalescing rules correct.
+
+01:04:25.941 --> 01:04:32.741
+And so SQLglot understands the intricacies and the quirks of every database dialect,
+
+01:04:32.741 --> 01:04:40.741
+SQL dialect, and knows how to correctly translate from one dialect to another. And so Ibis now uses
+
+01:04:40.741 --> 01:04:50.581
+SQLglot as its underlying engine for query transpilation and generating SQL outputs. So
+
+01:04:50.581 --> 01:04:59.381
+originally Ibis had its own kind of bad version of SQLglot, kind of a query like SQL transpilation
+
+01:05:00.741 --> 01:05:08.342
+that was powered by I think powered by SQLalchemy and a bunch of custom code. And so I think they've
+
+01:05:08.342 --> 01:05:14.422
+been able to delete a lot in Ibis by moving to SQLglot. And I know that, you know, SQLglot is
+
+01:05:14.422 --> 01:05:20.662
+also, you know, being used to, you know, power kind of a new, yeah, being used in people building
+
+01:05:20.662 --> 01:05:27.941
+new products that are Python powered and things like that. So, and Toby, like his company,
+
+01:05:27.941 --> 01:05:34.342
+Tobiko Data, they, yeah, they're building a product called SQLmesh that's powered by SQLglot.
+
+01:05:34.342 --> 01:05:39.222
+So very cool project and maybe a bit in the weeds, but if you've ever needed to convert a SQL query
+
+01:05:39.222 --> 01:05:42.902
+from one dialect to another, it's, yeah, SQLglot is here to save the day.
+
+01:05:44.581 --> 01:05:48.501
+I would say, you know, even simple things is how do you specify a parameter
+
+01:05:49.542 --> 01:05:55.381
+variable, you know, for a parameterized query, right? And Microsoft SQL Server, it's like at
+
+01:05:56.422 --> 01:06:01.782
+the parameter name and Oracle, it's like question mark or SQLite, I think it's also, you know,
+
+01:06:01.782 --> 01:06:06.501
+just that, even those simple things. It's a pain. Yeah. And without it, you end up with
+
+01:06:06.501 --> 01:06:11.621
+little bobby tables, which is also not good. So that's true. That's true. Nobody wants to
+
+01:06:11.621 --> 01:06:17.542
+talk to him. Yeah. This is really cool. SQLglot, like polyglot, but all the languages of SQL.
+
+01:06:19.621 --> 01:06:25.061
+Nice. And you do things like, you can say, read DuckDB and write to Hive or
+
+01:06:25.701 --> 01:06:30.022
+read DuckDB and then write to Spark or whatever. It's pretty cool. Yeah.
+
+01:06:30.342 --> 01:06:36.261
+All right, Wes, I think we're getting short on time, but, you know, I know everybody appreciated
+
+01:06:36.261 --> 01:06:40.501
+hearing from you and hearing what you're up to these days. Anything you want to add before we
+
+01:06:41.061 --> 01:06:50.662
+wrap up? I don't think so. Yeah. I enjoyed the conversation and yeah. Yeah, there's a lot of
+
+01:06:50.662 --> 01:06:55.701
+stuff, a lot of stuff going on and still plenty of things to get excited about. So I think often
+
+01:06:56.422 --> 01:07:02.581
+people feel like, you know, all the exciting problems in the Python ecosystem have been
+
+01:07:02.581 --> 01:07:10.662
+solved, but there's still a lot to do. And yeah, we've made a lot of progress in the last 15 plus
+
+01:07:10.662 --> 01:07:17.462
+years, but, you know, in some ways it feels like we're just getting started. So excited to see
+
+01:07:17.462 --> 01:07:21.701
+where things go next. Yeah. Every time I think all the problems are solved, then you just have
+
+01:07:21.701 --> 01:07:25.462
+all these new things that are so creative and you're like, oh, that was a big problem. I didn't
+
+01:07:25.462 --> 01:07:31.862
+even know it was a problem. It's great. Yeah. Well, all right. Thank you for being here and
+
+01:07:31.862 --> 01:07:37.141
+taking the time and yeah. Keep us updated on what you're up to. Sounds good. All right.

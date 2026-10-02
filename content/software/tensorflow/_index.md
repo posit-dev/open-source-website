@@ -1,8 +1,8 @@
 ---
-color: '#9A4665'
+color: '#e23b34'
 description: TensorFlow for R
 github: rstudio/tensorflow
-image: logo.svg
+image: tensorflow.svg
 languages:
 - R
 latest_release: '2025-08-18T20:19:49+00:00'
@@ -10,6 +10,7 @@ people:
 - JJ Allaire
 - Tomasz Kalinowski
 - Daniel Falbel
+- Kevin Ushey
 title: tensorflow
 topics:
 - Artificial Intelligence
@@ -28,6 +29,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   - Tomasz Kalinowski
   - Daniel Falbel
+  - Kevin Ushey
   repo: rstudio/tensorflow
   stars: 1341
   title: tensorflow

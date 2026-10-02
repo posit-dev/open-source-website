@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   duration: 2754
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.070920+00:00'
+  last_updated: '2026-09-18T13:58:16.539412+00:00'
   like_count: 52
   playlist: ''
   software:
@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Y2zoRCXgPwk/maxresdefault.jpg
   title: Matthias Mueller - Campaign Monitor | Marketing Meetup | RStudio
   url: https://www.youtube.com/watch?v=Y2zoRCXgPwk
-  view_count: 2086
+  view_count: 2087
 ---
 image: thumbnail.jpg
 

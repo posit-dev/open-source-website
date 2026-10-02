@@ -25,10 +25,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Manage the life cycle of your exported functions and arguments
   first_commit: '2018-12-27T16:31:45+00:00'
-  forks: 25
+  forks: 26
   languages:
   - R
-  last_updated: '2026-05-20T08:05:56.588090+00:00'
+  last_updated: '2026-09-18T14:29:18.181730+00:00'
   latest_release: '2026-01-09T14:10:39+00:00'
   license: NOASSERTION
   people:

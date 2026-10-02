@@ -76,14 +76,14 @@ external:  # updated automatically, do not edit
   duration: 1206
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.567437+00:00'
-  like_count: 62
+  last_updated: '2026-09-18T13:58:11.311323+00:00'
+  like_count: 64
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/434PZ2nMiJE/maxresdefault.jpg
   title: What is Posit Team?
   url: https://www.youtube.com/watch?v=434PZ2nMiJE
-  view_count: 3933
+  view_count: 4131
 ---
 image: thumbnail.jpg
 

@@ -1,0 +1,197 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.120
+Hi everyone, I'm Chetan Thapar and I lead product for snowflake integration at Posit,
+
+00:00:07.120 --> 00:00:13.680
+which is the code-first open-source data science company, and I'm really excited to be here at
+
+00:00:14.400 --> 00:00:19.840
+CDO Vision Los Angeles. It's nice weather and good people and good conversations.
+
+00:00:19.840 --> 00:00:26.959
+Interesting question because AI just moves so fast, but if I look internally, our engineering
+
+00:00:26.959 --> 00:00:34.320
+team is using coding assistants to basically build all the code flow to do reviews and just
+
+00:00:34.320 --> 00:00:40.240
+accelerate supercharged productivity. We have our data science team building agents on analytical
+
+00:00:40.240 --> 00:00:48.000
+pipelines. We have AI being used for sales workflows, for support, triage and so on,
+
+00:00:48.000 --> 00:00:53.520
+but honestly that all is table stakes. What we are spending, what I'm spending most of the time
+
+00:00:53.520 --> 00:01:00.959
+is building value for customers. And so if you think about Posit, we have a full pipeline,
+
+00:01:00.959 --> 00:01:07.440
+so it goes all the way from data to decision. And if you look at the pipeline, that is mostly
+
+00:01:07.440 --> 00:01:13.360
+coding, thinking and reviewing. And those are the things which are really accelerated by AI. So I'm
+
+00:01:13.360 --> 00:01:18.639
+really excited about that and we have delivered a foundation already, which is building agents for
+
+00:01:18.639 --> 00:01:25.199
+exploratory analysis, for coding and debugging, as well as self-service analytics. However,
+
+00:01:26.639 --> 00:01:34.959
+what we are moving to next is three areas. So we're building a unified AI agent, which extends
+
+00:01:34.959 --> 00:01:41.599
+all the way from data to decision. So a data analyst in one sitting can go from raw data
+
+00:01:41.599 --> 00:01:47.199
+to a self-service natural language powered analytics dashboard using grammar of graphics,
+
+00:01:47.199 --> 00:01:53.360
+all in one sitting, but powered by respecting semantic borders. So I think that's number one,
+
+00:01:53.360 --> 00:02:01.680
+the unified AI, the learners get semantic borders. The second is ensuring that end users can
+
+00:02:01.680 --> 00:02:06.879
+interact with the data, again, powered by the same semantic borders, but using dynamic
+
+00:02:06.879 --> 00:02:12.080
+visualizations. So we don't like pre-canned dashboards. I think that's gone. What we need
+
+00:02:12.080 --> 00:02:18.240
+is an end user asks a question and using grammar of graphics, they can get rich visualizations,
+
+00:02:18.240 --> 00:02:23.919
+which are reproducible, auditable and validated. So I think that's the number two area
+
+00:02:24.720 --> 00:02:32.080
+that we are really focusing on. And the third thing is deterministic skills. So think of AI workflow
+
+00:02:32.080 --> 00:02:37.199
+in which LLM still orchestrate and agents still orchestrate, but you have statistical validated
+
+00:02:37.199 --> 00:02:43.199
+machine learning methods, which are called as skills. So those are the key three areas which
+
+00:02:43.199 --> 00:02:48.399
+we are really focusing on and which I think are new in 2026. It's essentially in two words,
+
+00:02:49.279 --> 00:02:56.559
+calibrating autonomy. So there is a prevailing notion or the prevailing narrative that more
+
+00:02:56.559 --> 00:03:03.119
+autonomy in AI agents is always good. And human in the loop is friction or a stopgap.
+
+00:03:03.679 --> 00:03:09.600
+We believe that data science workflows are slightly different. And so we don't fully agree
+
+00:03:09.600 --> 00:03:14.559
+with that. We think that there are different jobs, different tasks to be done in a data science
+
+00:03:14.559 --> 00:03:20.479
+workflow. And each one of them has to be calibrated on the spectrum of autonomy. So something which is
+
+00:03:20.479 --> 00:03:26.240
+very much verifiable, like building a quick dashboard, human is our friction in that.
+
+00:03:26.240 --> 00:03:31.279
+Let the agent run his job, do his job and complete it. But there are certain things like exploratory
+
+00:03:31.279 --> 00:03:37.440
+analysis in which if the agent just gives you the answer, you actually miss out on the insights
+
+00:03:37.440 --> 00:03:41.600
+that really matter. Because data scientists, when they are doing exploratory analysis, they find
+
+00:03:41.600 --> 00:03:47.279
+something strange, maybe a weird correlation or some kind of statistical anomaly. And that allows
+
+00:03:47.279 --> 00:03:52.559
+them to double click on something and find novel insights. And so the hardest problem is finding a
+
+00:03:52.559 --> 00:03:57.440
+design pattern which can differentiate between these two ends of the spectrum. And so our approach
+
+00:03:57.440 --> 00:04:04.160
+is if something is verifiable, let the agent run. If it requires exploratory analysis or very
+
+00:04:04.160 --> 00:04:11.360
+consequential, in that case, the agent shows insights and then we expect the data scientist
+
+00:04:11.360 --> 00:04:17.760
+to take the seat. So lean in versus lean back. And I think that's kind of key for us.
+
+00:04:17.760 --> 00:04:23.679
+And it's because all of the products that we build are open source and code first,
+
+00:04:23.679 --> 00:04:27.760
+we can enable data scientists to do that. So again, calibrating autonomy, I think,
+
+00:04:27.760 --> 00:04:32.880
+is the hardest problem for agents right now. I think it's a gap between
+
+00:04:34.959 --> 00:04:42.959
+what a plausible AI answer is, a plausibly correct AI answer is, and what actually correct AI answer
+
+00:04:42.959 --> 00:04:50.959
+is. And I think, again, going back to the calibration of autonomy, many data AI agents
+
+00:04:50.959 --> 00:04:55.760
+right now are optimized for, let's call it, obedient autonomy. You give it a question and it
+
+00:04:55.760 --> 00:05:01.519
+just gives you a polished answer and that's it. But that polished answer is sometimes not the
+
+00:05:01.519 --> 00:05:12.559
+correct answer. The trend to watch out for is moving from an AI which answers questions really
+
+00:05:12.559 --> 00:05:19.440
+well to an AI which allows people to ask the right questions. And we can see that actually
+
+00:05:19.440 --> 00:05:23.600
+just outside our sector as well. So if you look at Entropiq's cloud code, it kind of prompts the
+
+00:05:23.600 --> 00:05:29.519
+prompter. So when you ask a question, it asks you more clarifying questions rather than just
+
+00:05:29.519 --> 00:05:36.720
+assuming intent. And so that, in which we provide a data scientist with context and insights and
+
+00:05:36.720 --> 00:05:40.799
+guide them to a certain direction and let them operate at a higher level of asking the right
+
+00:05:40.799 --> 00:05:45.920
+questions, is what we have built in our product. And I think that's the trend we need to be really
+
+00:05:45.920 --> 00:05:50.880
+looking forward to in the next year. I mean, there's no dearth of AI content. There's webinars,
+
+00:05:50.880 --> 00:05:58.000
+there is blogs and a lot of that. But I think what CDO Los Angeles or CDO in general gets right is
+
+00:05:58.000 --> 00:06:03.279
+you all are getting practitioners all together. And they are talking not just about what's
+
+00:06:03.279 --> 00:06:09.279
+theoretically possible, but what exactly is the bottleneck in data science workflows, in
+
+00:06:09.279 --> 00:06:15.119
+execution of AI and adoption of AI. And I think that is critical. And for me personally, all the
+
+00:06:15.119 --> 00:06:19.920
+leaders that are here are the industries for which we build products. So healthcare, financial
+
+00:06:19.920 --> 00:06:25.440
+services, insurance and so on. So what I'm looking for is really finding out in practice what's
+
+00:06:25.440 --> 00:06:31.359
+working for them and what's not working for them. Because that feedback loop allows us to just build
+
+00:06:31.359 --> 00:06:37.440
+the products better and just make the industry go forward in general. So really excited about that.
+
+00:06:45.119 --> 00:06:45.619
+Thank you.
+

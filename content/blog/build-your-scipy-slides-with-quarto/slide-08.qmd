@@ -1,0 +1,96 @@
+---
+title: "Make your SciPy presentation in Quarto"
+author:
+  - Isabella Velásquez
+  - Charlotte Wickham
+date: 2026-07-14
+brand: scipy-brand.yml
+format:
+  revealjs:
+    incremental: true
+    embed-resources: true
+---
+
+Slides are just Markdown and code:
+
+- Write your narrative in **Markdown**
+- Weave in **Python** code and its output
+- Render it all to one reproducible file
+
+# Features for showing code
+
+## Add Python code cells
+
+```{python}
+#| echo: true
+from plotnine import *
+from plotnine.data import anscombe_quartet
+```
+
+## Code output is included 
+
+```{python}
+#| echo: true
+anscombe_quartet.head()
+```
+
+## You can show code without running it
+
+`%view` opens the data in Positron's Data Explorer:
+
+```{python}
+#| echo: true
+#| eval: false
+%view anscombe_quartet
+```
+
+
+## Highlight lines as you talk
+
+```{python}
+#| echo: true
+#| code-line-numbers: "2|3-4|5"
+(
+    anscombe_quartet
+    .groupby("dataset")[["x", "y"]]
+    .apply(lambda g: g["x"].corr(g["y"]))
+    .round(2).to_frame("correlation")
+)
+```
+
+## Send big output to its own slide
+
+```{python}
+#| echo: true
+#| output-location: slide
+(
+    ggplot(anscombe_quartet, aes("x", "y"))
+    + geom_point(color="sienna", fill="orange", size=3)
+    + geom_smooth(method="lm", se=False, fullrange=True,
+                  color="steelblue", size=1)
+    + facet_wrap("dataset")
+    + labs(title="Anscombe’s Quartet")
+    + scale_y_continuous(breaks=(4, 8, 12))
+    + coord_fixed(xlim=(3, 22), ylim=(2, 14))
+    + theme_tufte(base_family="Futura", base_size=16)
+    + theme(
+        axis_line=element_line(color="#4d4d4d"),
+        axis_ticks_major=element_line(color="#00000000"),
+        axis_title=element_blank(),
+        panel_spacing=0.09,
+    )
+)
+```
+
+## Label code with filenames
+
+```{.bash filename="Terminal"}
+pip install pandas
+```
+
+<br>
+
+```{.python filename="script.py"}
+import pandas as pd
+```
+

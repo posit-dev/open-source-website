@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 1
   languages:
   - Python
-  last_updated: '2026-05-20T12:41:49.634245+00:00'
+  last_updated: '2026-05-20T12:49:55.675482+00:00'
   license: MIT
   people:
   - Tomasz Kalinowski

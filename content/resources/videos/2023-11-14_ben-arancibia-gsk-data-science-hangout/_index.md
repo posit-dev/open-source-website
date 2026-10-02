@@ -66,14 +66,14 @@ external:  # updated automatically, do not edit
   duration: 3482
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:30.948064+00:00'
+  last_updated: '2026-09-18T13:58:12.485592+00:00'
   like_count: 11
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/ve51kb4ewxI/maxresdefault.jpg
   title: Ben Arancibia @ GSK | Data Science Hangout
   url: https://www.youtube.com/watch?v=ve51kb4ewxI
-  view_count: 477
+  view_count: 478
 ---
 image: thumbnail.jpg
 

@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   duration: 981
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868168+00:00'
+  last_updated: '2026-09-18T13:58:07.659354+00:00'
   like_count: 16
   playlist: ''
   software:
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HciRoc9TzMc/hqdefault.jpg
   title: Is that LLM feature any good? (Simon P. Couch, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=HciRoc9TzMc
-  view_count: 413
+  view_count: 449
 ---
 image: thumbnail.jpg
 

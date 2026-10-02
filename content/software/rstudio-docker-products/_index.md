@@ -7,6 +7,8 @@ languages:
 - Shell
 people:
 - Neal Richardson
+- Kevin Ushey
+- Gary Ritchie
 title: rstudio-docker-products
 topics:
 - Best Practices
@@ -23,6 +25,8 @@ external:  # updated automatically, do not edit
   license: MIT
   people:
   - Neal Richardson
+  - Kevin Ushey
+  - Gary Ritchie
   repo: rstudio/rstudio-docker-products
   stars: 74
   title: rstudio-docker-products

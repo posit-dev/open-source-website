@@ -63,8 +63,8 @@ external:  # updated automatically, do not edit
   duration: 310
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.652110+00:00'
-  like_count: 31
+  last_updated: '2026-09-18T13:58:13.379588+00:00'
+  like_count: 30
   playlist: ''
   software:
   - rstudio
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/URfTFFFmcQw/maxresdefault.jpg
   title: RStudio on Amazon SageMaker
   url: https://www.youtube.com/watch?v=URfTFFFmcQw
-  view_count: 3501
+  view_count: 3529
 ---
 image: thumbnail.jpg
 

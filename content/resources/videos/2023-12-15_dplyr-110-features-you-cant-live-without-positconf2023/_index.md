@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 328
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.287071+00:00'
-  like_count: 75
+  last_updated: '2026-09-18T13:58:11.686025+00:00'
+  like_count: 76
   people:
   - Davis Vaughan
   playlist: ''
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/K_7UJA2syLk/maxresdefault.jpg
   title: dplyr 1.1.0 Features You Can't Live Without - posit::conf(2023)
   url: https://www.youtube.com/watch?v=K_7UJA2syLk
-  view_count: 1815
+  view_count: 1821
 ---
 image: thumbnail.jpg
 

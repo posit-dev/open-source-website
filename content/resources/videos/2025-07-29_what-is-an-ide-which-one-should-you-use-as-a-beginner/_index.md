@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags:
 - rstudio
@@ -57,18 +57,18 @@ title: What is an IDE & which one should you use as a beginner
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 3
+  comment_count: 4
   date: '2025-07-29T13:23:23Z'
   definition: hd
   description: 'Did you have a first? 💻#datascience #datasciencetok #python #swe #datavisualization #dataanalytics #codinglife #vscode #ide #rstudio #positron #pycharm #jupyter #positshorts'
   duration: 68
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:27.605327+00:00'
-  like_count: 72
+  last_updated: '2026-09-18T13:58:08.948949+00:00'
+  like_count: 83
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6HxJRdqS6Jw/maxresdefault.jpg
   title: What is an IDE & which one should you use as a beginner
   url: https://www.youtube.com/watch?v=6HxJRdqS6Jw
-  view_count: 3777
+  view_count: 5021
 ---
 image: thumbnail.jpg
 

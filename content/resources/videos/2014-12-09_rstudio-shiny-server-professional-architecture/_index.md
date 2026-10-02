@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - Shiny
 - RStudio
@@ -26,12 +26,12 @@ external:  # updated automatically, do not edit
   duration: 1128
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.830228+00:00'
+  last_updated: '2026-09-18T13:58:19.005949+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - Shiny
   - RStudio
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/p4Yl-FzC1JI/maxresdefault.jpg
   title: RStudio Shiny Server Professional Architecture
   url: https://www.youtube.com/watch?v=p4Yl-FzC1JI
-  view_count: 7990
+  view_count: 8005
 ---
 image: thumbnail.jpg
 

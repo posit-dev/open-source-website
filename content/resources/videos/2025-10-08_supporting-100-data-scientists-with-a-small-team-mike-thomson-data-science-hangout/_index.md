@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - dbplyr
-- Quarto
+- quarto
 - tidyverse
 tags: []
 title: Supporting 100 Data Scientists with a Small Team | Mike Thomson | Data Science Hangout
@@ -21,18 +21,18 @@ external:  # updated automatically, do not edit
   duration: 3332
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.604846+00:00'
+  last_updated: '2026-09-18T13:58:08.448449+00:00'
   like_count: 7
   playlist: ''
   software:
   - dbplyr
-  - Quarto
+  - quarto
   - tidyverse
   tags: []
   thumbnail: https://i.ytimg.com/vi/j5XymOoMjMo/maxresdefault.jpg
   title: Supporting 100 Data Scientists with a Small Team | Mike Thomson | Data Science Hangout
   url: https://www.youtube.com/watch?v=j5XymOoMjMo
-  view_count: 244
+  view_count: 246
 ---
 image: thumbnail.jpg
 

@@ -24,7 +24,7 @@ resource_type: video
 resources: []
 software:
 - cli
-- Shiny
+- shiny-r
 tags:
 - posit::conf(2025)
 - rstats
@@ -61,14 +61,14 @@ external:  # updated automatically, do not edit
   duration: 1175
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.254990+00:00'
-  like_count: 21
+  last_updated: '2026-09-18T13:58:08.099546+00:00'
+  like_count: 27
   people:
   - Winston Chang
   playlist: ''
   software:
   - cli
-  - Shiny
+  - shiny-r
   tags:
   - posit::conf(2025)
   - rstats
@@ -78,7 +78,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Kh8xDym8sTg/maxresdefault.jpg
   title: Web applications with Shiny and React and AI (Winston Chang, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=Kh8xDym8sTg
-  view_count: 512
+  view_count: 805
 ---
 image: thumbnail.jpg
 

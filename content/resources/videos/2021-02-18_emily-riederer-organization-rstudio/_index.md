@@ -18,7 +18,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -86,12 +86,12 @@ external:  # updated automatically, do not edit
   duration: 1180
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.701019+00:00'
+  last_updated: '2026-09-18T13:58:17.359898+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -140,7 +140,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/E887K1au5ug/maxresdefault.jpg
   title: Emily Riederer | oRganization | RStudio
   url: https://www.youtube.com/watch?v=E887K1au5ug
-  view_count: 927
+  view_count: 936
 ---
 image: thumbnail.jpg
 

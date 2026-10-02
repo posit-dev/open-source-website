@@ -52,7 +52,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: How to Build a Streamlit App in Positron
 
@@ -111,16 +111,16 @@ external:  # updated automatically, do not edit
   duration: 1260
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.605037+00:00'
-  like_count: 85
+  last_updated: '2026-09-18T13:58:08.948843+00:00'
+  like_count: 87
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/VO2pBeX0g-U/maxresdefault.jpg
   title: How to Build a Streamlit App in Positron
   url: https://www.youtube.com/watch?v=VO2pBeX0g-U
-  view_count: 2823
+  view_count: 2940
 ---
 image: thumbnail.jpg
 

@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4157
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:32.608019+00:00'
+  last_updated: '2026-09-18T13:58:15.366794+00:00'
   like_count: 19
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/7NHe32HvhB0/maxresdefault.jpg
   title: Data Science Hangout | Lindsey Dietz, Federal Reserve Bank | Focus on the impact of the output
   url: https://www.youtube.com/watch?v=7NHe32HvhB0
-  view_count: 1008
+  view_count: 1010
 ---
 image: thumbnail.jpg
 

@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1398
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.962163+00:00'
+  last_updated: '2026-09-18T13:58:17.861150+00:00'
   like_count: 555
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_D-ux3MqGug/hqdefault.jpg
   title: Rob Hyndman | How Rmarkdown changed my life | RStudio (2020)
   url: https://www.youtube.com/watch?v=_D-ux3MqGug
-  view_count: 21084
+  view_count: 21146
 ---
 image: thumbnail.jpg
 

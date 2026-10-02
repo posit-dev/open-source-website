@@ -13,7 +13,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Sep Dadsetan - CONNECTing with our clients
 
@@ -33,16 +33,16 @@ external:  # updated automatically, do not edit
   duration: 1147
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.914280+00:00'
+  last_updated: '2026-09-18T13:58:10.192984+00:00'
   like_count: 2
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/ctv0jOV8AXs/maxresdefault.jpg
   title: Sep Dadsetan - CONNECTing with our clients
   url: https://www.youtube.com/watch?v=ctv0jOV8AXs
-  view_count: 135
+  view_count: 139
 ---
 image: thumbnail.jpg
 

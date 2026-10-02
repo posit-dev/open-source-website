@@ -35,7 +35,7 @@ resource_type: video
 resources: []
 software:
 - flexdashboard
-- Shiny
+- shiny-r
 tags: []
 title: 'Jorge Valente Hernández Castelán | Algunas formas de ver a Uber en datos: Shiny en acción'
 
@@ -76,17 +76,17 @@ external:  # updated automatically, do not edit
   duration: 2443
   has_captions: false
   language: es
-  last_updated: '2026-05-19T10:15:32.955501+00:00'
+  last_updated: '2026-09-18T13:58:15.783777+00:00'
   like_count: 31
   playlist: ''
   software:
   - flexdashboard
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/wXiNaKxEbNI/maxresdefault.jpg
   title: 'Jorge Valente Hernández Castelán | Algunas formas de ver a Uber en datos: Shiny en acción'
   url: https://www.youtube.com/watch?v=wXiNaKxEbNI
-  view_count: 705
+  view_count: 707
 ---
 image: thumbnail.jpg
 

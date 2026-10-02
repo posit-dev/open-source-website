@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - python-tidytuesday
 tags: []
 title: PydyTuesday | Getting Data from the TidyTuesday Repo with Python
@@ -20,17 +20,17 @@ external:  # updated automatically, do not edit
   duration: 428
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.007062+00:00'
-  like_count: 49
+  last_updated: '2026-09-18T13:58:09.332471+00:00'
+  like_count: 50
   playlist: ''
   software:
-  - Positron
+  - positron
   - python-tidytuesday
   tags: []
   thumbnail: https://i.ytimg.com/vi/ol2FrSL5gVU/maxresdefault.jpg
   title: PydyTuesday | Getting Data from the TidyTuesday Repo with Python
   url: https://www.youtube.com/watch?v=ol2FrSL5gVU
-  view_count: 1632
+  view_count: 1688
 ---
 image: thumbnail.jpg
 

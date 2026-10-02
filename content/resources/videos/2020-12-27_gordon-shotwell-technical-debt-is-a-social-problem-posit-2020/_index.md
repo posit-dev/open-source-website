@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1296
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.701258+00:00'
+  last_updated: '2026-09-18T13:58:17.360186+00:00'
   like_count: 13
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Hk3m_mLDzpY/hqdefault.jpg
   title: Gordon Shotwell | Technical Debt is a Social Problem | Posit (2020)
   url: https://www.youtube.com/watch?v=Hk3m_mLDzpY
-  view_count: 420
+  view_count: 426
 ---
 image: thumbnail.jpg
 

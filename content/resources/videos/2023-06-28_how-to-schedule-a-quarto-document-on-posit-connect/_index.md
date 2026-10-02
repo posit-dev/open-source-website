@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - gt
-- Quarto
+- quarto
 - rstudio
 tags: []
 title: How to schedule a Quarto document on Posit Connect
@@ -21,18 +21,18 @@ external:  # updated automatically, do not edit
   duration: 2295
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:31.335415+00:00'
+  last_updated: '2026-09-18T13:58:12.906101+00:00'
   like_count: 67
   playlist: ''
   software:
   - gt
-  - Quarto
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/V82BBU9ldcM/maxresdefault.jpg
   title: How to schedule a Quarto document on Posit Connect
   url: https://www.youtube.com/watch?v=V82BBU9ldcM
-  view_count: 4054
+  view_count: 4125
 ---
 image: thumbnail.jpg
 

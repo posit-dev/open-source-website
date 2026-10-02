@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 326
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.071822+00:00'
-  like_count: 738
+  last_updated: '2026-09-18T13:58:16.946009+00:00'
+  like_count: 736
   playlist: ''
   software:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SdMPh5uphO0/maxresdefault.jpg
   title: A quick tour of RStudio 1.4 | RStudio
   url: https://www.youtube.com/watch?v=SdMPh5uphO0
-  view_count: 37609
+  view_count: 37674
 ---
 image: thumbnail.jpg
 

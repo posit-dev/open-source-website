@@ -24,10 +24,10 @@ website: https://rstd.io/tidy-dev-day
 external:  # updated automatically, do not edit
   description: Tidyverse developer day
   first_commit: '2018-10-24T17:33:49+00:00'
-  forks: 37
+  forks: 40
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.581795+00:00'
+  last_updated: '2026-09-18T14:21:32.154854+00:00'
   people:
   - Mine Çetinkaya-Rundel
   - Hadley Wickham
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - Simon Couch
   - Thomas Lin Pedersen
   repo: tidyverse/tidy-dev-day
-  stars: 88
+  stars: 92
   title: tidy-dev-day
   website: https://rstd.io/tidy-dev-day
 ---

@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - pkgdown
-- Quarto
+- quarto
 tags:
 - rstudio
 - data science
@@ -67,14 +67,14 @@ external:  # updated automatically, do not edit
   duration: 1076
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.287007+00:00'
+  last_updated: '2026-09-18T13:58:11.685955+00:00'
   like_count: 24
   people:
   - Isabel Zimmerman
   playlist: ''
   software:
   - pkgdown
-  - Quarto
+  - quarto
   tags:
   - rstudio
   - data science
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/FS_-fbtwwCs/maxresdefault.jpg
   title: Thanks, I Made It with Quartodoc - posit::conf(2023)
   url: https://www.youtube.com/watch?v=FS_-fbtwwCs
-  view_count: 1033
+  view_count: 1048
 ---
 image: thumbnail.jpg
 

@@ -56,9 +56,9 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 - plotnine
-- Positron
+- positron
 tags: []
 title: 'Exploring Web APIs | PydyTuesday Uncut #1'
 
@@ -119,21 +119,21 @@ external:  # updated automatically, do not edit
   duration: 6079
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.006468+00:00'
-  like_count: 42
+  last_updated: '2026-09-18T13:58:08.949115+00:00'
+  like_count: 41
   people:
   - Jeroen Janssens
   - Michael Chow
   playlist: ''
   software:
-  - Great Tables
+  - great-tables
   - plotnine
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/u9DvqN47l40/maxresdefault.jpg
   title: 'Exploring Web APIs | PydyTuesday Uncut #1'
   url: https://www.youtube.com/watch?v=u9DvqN47l40
-  view_count: 1698
+  view_count: 1712
 ---
 image: thumbnail.jpg
 

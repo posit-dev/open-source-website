@@ -5,7 +5,7 @@ github: r-lib/callr
 image: simple.svg
 languages:
 - R
-latest_release: '2024-03-25T12:09:25+00:00'
+latest_release: '2026-06-05T08:19:36+00:00'
 people:
 - Gábor Csárdi
 - Hadley Wickham
@@ -26,11 +26,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Call R from R
   first_commit: '2016-05-13T10:26:09+00:00'
-  forks: 40
+  forks: 41
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.357277+00:00'
-  latest_release: '2024-03-25T12:09:25+00:00'
+  last_updated: '2026-09-18T14:26:49.660381+00:00'
+  latest_release: '2026-06-05T08:19:36+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/simple.svg
   repo: r-lib/callr
-  stars: 303
+  stars: 304
   title: callr
   website: https://callr.r-lib.org/
 ---

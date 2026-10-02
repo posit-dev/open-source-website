@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags:
 - rstudio
@@ -64,11 +64,11 @@ external:  # updated automatically, do not edit
   duration: 78
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:27.604922+00:00'
+  last_updated: '2026-09-18T13:58:08.448474+00:00'
   like_count: 88
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LA2JPaDMHNQ/maxresdefault.jpg
   title: 10 tips for data science beginners
   url: https://www.youtube.com/watch?v=LA2JPaDMHNQ
-  view_count: 2812
+  view_count: 2845
 ---
 image: thumbnail.jpg
 

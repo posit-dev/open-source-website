@@ -8,7 +8,7 @@ resources: []
 software:
 - dplyr
 - ggplot2
-- Quarto
+- quarto
 - tidyr
 - tidyverse
 tags:
@@ -67,13 +67,13 @@ external:  # updated automatically, do not edit
   duration: 175
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.336146+00:00'
-  like_count: 9
+  last_updated: '2026-09-18T13:58:13.379042+00:00'
+  like_count: 11
   playlist: ''
   software:
   - dplyr
   - ggplot2
-  - Quarto
+  - quarto
   - tidyr
   - tidyverse
   tags:
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Dastzmp-r1E/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Introduction to Data Science with R and Tidyverse'
   url: https://www.youtube.com/watch?v=Dastzmp-r1E
-  view_count: 669
+  view_count: 679
 ---
 image: thumbnail.jpg
 

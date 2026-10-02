@@ -349,7 +349,6 @@ async def call_api(
             response = await client.messages.create(
                 model=model,
                 max_tokens=max_tokens,
-                temperature=0,
                 system=system,
                 messages=[{"role": "user", "content": user_message}],
             )

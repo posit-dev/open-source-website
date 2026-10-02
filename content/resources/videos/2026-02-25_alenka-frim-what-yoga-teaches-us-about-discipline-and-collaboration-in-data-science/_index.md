@@ -58,14 +58,14 @@ external:  # updated automatically, do not edit
   duration: 3843
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:26.044619+00:00'
+  last_updated: '2026-09-18T13:58:07.249953+00:00'
   like_count: 12
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/laipEFmA17Y/maxresdefault.jpg
   title: 'Alenka Frim: What yoga teaches us about discipline and collaboration in data science'
   url: https://www.youtube.com/watch?v=laipEFmA17Y
-  view_count: 383
+  view_count: 401
 ---
 image: thumbnail.jpg
 

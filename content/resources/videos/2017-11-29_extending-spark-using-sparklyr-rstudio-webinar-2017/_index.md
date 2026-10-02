@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- sparklyr
 - webinars
 tags:
 - RStudio
@@ -26,11 +27,12 @@ external:  # updated automatically, do not edit
   duration: 3056
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532604+00:00'
+  last_updated: '2026-09-18T13:58:19.005627+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
+  - sparklyr
   - webinars
   tags:
   - RStudio
@@ -42,7 +44,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KIdxEu-JvXo/maxresdefault.jpg
   title: Extending Spark Using Sparklyr | RStudio Webinar - 2017
   url: https://www.youtube.com/watch?v=KIdxEu-JvXo
-  view_count: 531
+  view_count: 532
 ---
 image: thumbnail.jpg
 

@@ -382,13 +382,13 @@ external:
 
 See [`content/blog/_authoring-guide.md`](content/blog/_authoring-guide.md) for full guidance on post placement, format choice, setting up environments for executable posts, and how to preview your work.
 
-**Quick start with Claude Code:**
+**Quick start with an Agent Skills client:**
 
 1. Clone this repository directly if you're an org member (you have Write access via the Everyone team, so branch PRs get auto-preview). Working from a fork is supported too — you'll just comment `/deploy-preview` on your PR to trigger a preview build.
-2. Open Claude Code in the project root
-3. Run `/new-post` — it will guide you through scaffolding, frontmatter, branch creation, and environment setup interactively
+2. Open your agent in the project root
+3. Ask it to use the `new-post` skill (in Claude Code, just type `/new-post`) — it will guide you through scaffolding, frontmatter, branch creation, and environment setup interactively
 
-**Quick start without Claude Code:**
+**Quick start without an Agent Skills client:**
 ```bash
 hugo new blog/my-post/index.md
 ```
@@ -405,7 +405,7 @@ uv run scripts/validate-blog-posts.py content/blog/my-post/index.md
 uv run scripts/validate-blog-posts.py --no-date-check
 ```
 
-If you're using Claude Code, the `/check-post` skill runs validation interactively and can offer fixes.
+If your agent supports Agent Skills, the `check-post` skill runs validation interactively and can offer fixes.
 
 ### Adding Team Members
 
@@ -487,16 +487,16 @@ The complete build process:
 
 ```bash
 # 1. Install dependencies
-npm ci
+yarn install --immutable
 
 # 2. Build Tailwind CSS (minified)
-npm run build-tailwind
+yarn build-tailwind
 
 # 3. Build Hugo site (minified)
 hugo --minify
 
 # 4. Generate Pagefind search index
-npm run build-search
+yarn build-search
 
 # 5. Deploy to Netlify
 # (automated by GitHub Actions)
@@ -527,6 +527,28 @@ Key settings in `netlify.toml`:
 - **Publish directory**: `public/`
 
 ## Development Tips
+
+### Speeding Up Git
+
+This repo is large enough that git operations can feel slow. Run these once after cloning to enable filesystem monitoring and background maintenance:
+
+```bash
+git config core.fsmonitor true          # use filesystem events instead of scanning
+git config core.untrackedCache true     # cache untracked file state between commands
+git maintenance start                   # enable background optimization tasks
+```
+
+After the first `git status` warms the fsmonitor cache, subsequent commands should be noticeably faster.
+
+### Speeding Up Hugo
+
+The development config `config/development/hugo.toml` excludes heavy content directories (`blog/ported/` and `resources/videos/`) to speed up local builds. Hugo applies this automatically when using `hugo server` (the default environment is `development`), so `just dev` picks it up without any changes.
+
+Production builds (`hugo --minify`) ignore this file and include all content. To test with all content locally, run:
+
+```bash
+hugo server --environment production
+```
 
 ### Hot Reload
 
@@ -707,9 +729,9 @@ git commit -m "Update software metadata from GitHub"
 # Clear Hugo cache
 hugo --gc
 
-# Clear node_modules and reinstall
-rm -rf node_modules package-lock.json
-npm install
+# Clear PnP state and reinstall
+rm -f .pnp.cjs .pnp.loader.mjs
+yarn install
 
 # Check Hugo version
 hugo version  # Should be v0.153.2 or higher

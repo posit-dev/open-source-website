@@ -77,7 +77,7 @@ external:  # updated automatically, do not edit
   duration: 1430
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.701000+00:00'
+  last_updated: '2026-09-18T13:58:17.359874+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/cBM_gV-B3YI/maxresdefault.jpg
   title: 'Grant Fleming | Fairness and Data Science: Failures, Factors, and Futures | RStudio'
   url: https://www.youtube.com/watch?v=cBM_gV-B3YI
-  view_count: 147
+  view_count: 149
 ---
 image: thumbnail.jpg
 

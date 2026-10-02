@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1311
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243783+00:00'
+  last_updated: '2026-09-18T13:58:18.645951+00:00'
   like_count: 23
   people:
   - Jenny Bryan

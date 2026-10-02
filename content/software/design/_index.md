@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   forks: 59
   languages:
   - R
-  last_updated: '2026-05-20T08:05:44.560814+00:00'
+  last_updated: '2026-09-18T14:21:29.893791+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   - Neal Richardson
   repo: tidyverse/design
-  stars: 229
+  stars: 231
   title: design
   website: https://design.tidyverse.org
 ---

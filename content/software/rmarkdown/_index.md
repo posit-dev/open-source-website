@@ -9,6 +9,8 @@ latest_release: '2026-03-26T17:51:49+00:00'
 people:
 - JJ Allaire
 - Christophe Dervieux
+- Jonathan McPherson
+- Kevin Ushey
 - Rich Iannone
 - Hadley Wickham
 - Joe Cheng
@@ -19,6 +21,7 @@ people:
 - Jenny Bryan
 - Karan Gathani
 - Jeroen Ooms
+- Gary Ritchie
 title: rmarkdown
 topics:
 - Best Practices
@@ -37,6 +40,8 @@ external:  # updated automatically, do not edit
   people:
   - JJ Allaire
   - Christophe Dervieux
+  - Jonathan McPherson
+  - Kevin Ushey
   - Rich Iannone
   - Hadley Wickham
   - Joe Cheng
@@ -47,6 +52,7 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Karan Gathani
   - Jeroen Ooms
+  - Gary Ritchie
   readme_image: man/figures/logo.png
   repo: rstudio/rmarkdown
   stars: 3038

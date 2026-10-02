@@ -13,6 +13,7 @@ people:
 - Barret Schloerke
 - Winston Chang
 - Christophe Dervieux
+- Gary Ritchie
 - Joe Cheng
 - Rich Iannone
 title: flexdashboard
@@ -38,6 +39,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Winston Chang
   - Christophe Dervieux
+  - Gary Ritchie
   - Joe Cheng
   - Rich Iannone
   readme_image: man/figures/logo.png

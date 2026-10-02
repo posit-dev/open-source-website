@@ -15,8 +15,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags: []
 title: 'Aleksander Dietrichson - AI for Gaming: How I Built a Bot to Play a Video-Game with R and Python'
 
@@ -38,17 +38,17 @@ external:  # updated automatically, do not edit
   duration: 1174
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.914019+00:00'
-  like_count: 10
+  last_updated: '2026-09-18T13:58:10.192233+00:00'
+  like_count: 13
   playlist: ''
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/oPb9Fedf3WY/maxresdefault.jpg
   title: 'Aleksander Dietrichson - AI for Gaming: How I Built a Bot to Play a Video-Game with R and Python'
   url: https://www.youtube.com/watch?v=oPb9Fedf3WY
-  view_count: 1712
+  view_count: 1972
 ---
 image: thumbnail.jpg
 

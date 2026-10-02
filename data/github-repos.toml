@@ -635,7 +635,6 @@ contributors = [
     "georgestagg",
     "cpsievert",
     "dirkschumacher",
-    "cpsievert",
     "dgkf",
     "rpodcast",
     "wch",
@@ -1479,7 +1478,6 @@ contributors = [
     "jonkeane",
     "karawoo",
     "dethmasque",
-    "karawoo",
     "zackverham",
     "mleary",
     "mconflitti-pbc",
@@ -1487,7 +1485,6 @@ contributors = [
     "schloerke",
     "joshyam-k",
     "marcosnav",
-    "mleary",
     "amol-",
     "dbkegley",
     "lucasrod16",
@@ -1628,7 +1625,6 @@ contributors = [
     "howardbaik",
     "jrycw",
     "gregorywaynepower",
-    "howardbaik",
     "MarcoGorelli",
     "kmasiello",
     "albersonmiranda",
@@ -2433,7 +2429,6 @@ contributors = [
     "bschwedler",
     "dependabot[bot]",
     "ianpittwood",
-    "dependabot[bot]",
 ]
 last_updated = "2026-05-20T08:05:16.690789+00:00"
 releases = 0
@@ -2798,7 +2793,6 @@ contributors = [
     "shikokuchuo",
     "EmilHvitfeldt",
     "atheriel",
-    "shikokuchuo",
     "Copilot",
     "dakvid",
     "georgestagg",
@@ -2939,7 +2933,6 @@ contributors = [
     "amdove",
     "semantic-release-bot",
     "t-margheim",
-    "semantic-release-bot",
     "Lytol",
     "statik",
     "Copilot",
@@ -3235,7 +3228,6 @@ contributors = [
     "bschwedler",
     "cm421",
     "jonkeane",
-    "samcofer",
 ]
 last_updated = "2026-05-20T08:05:17.459992+00:00"
 releases = 70
@@ -3321,7 +3313,6 @@ contributors = [
     "mikebessuille",
     "Jose-Matsuda",
     "colearendt",
-    "ronblum",
     "AndrewMcClain",
     "dmortondev",
     "jonyoder",
@@ -8622,7 +8613,6 @@ contributors = [
     "schloerke",
     "karangattu",
     "daattali",
-    "karangattu",
     "gtritchie",
     "dependabot[bot]",
 ]
@@ -9380,7 +9370,6 @@ contributors = [
     "salim-b",
     "caiohamamura",
     "mns-nordicals",
-    "nodivbyzero",
     "snyk-bot",
 ]
 last_updated = "2026-05-20T08:05:38.452603+00:00"
@@ -9620,8 +9609,6 @@ contributors = [
     "sellorm",
     "meatballhat",
     "ricardofandrade",
-    "dependabot[bot]",
-    "jmwoliver",
     "michaelmayer2",
     "nihara-thomas",
     "jimhester",
@@ -9797,7 +9784,6 @@ contributors = [
     "nodivbyzero",
     "GCRev",
     "nunyunuymi",
-    "github-actions[bot]",
     "koverholt",
     "zackverham",
     "plascaray",
@@ -11550,7 +11536,6 @@ contributors = [
     "jacpete",
     "michaelmayer2",
     "karawoo",
-    "joshyam-k",
     "dotNomad",
     "cgraham-rs",
     "whimsicallyson",
@@ -13585,8 +13570,8 @@ repo = "tidyverse/ggplot2"
 name = "ggplot2"
 description = "An implementation of the Grammar of Graphics in R"
 website = "https://ggplot2.tidyverse.org"
-stars = 6933
-forks = 2134
+stars = 6997
+forks = 2126
 latest_release = "2026-04-21T12:44:21+00:00"
 first_commit = "2008-05-25T01:21:32+00:00"
 license = "NOASSERTION"
@@ -13606,29 +13591,30 @@ contributors = [
     "JakeRuss",
     "batpigandme",
     "joranE",
-    "hrbrmstr",
     "MichaelChirico",
+    "hrbrmstr",
     "JoFrhwld",
     "jimhester",
     "eliocamp",
     "topepo",
     "dkahle",
     "has2k1",
-    "jrnold",
-    "olivroy",
-    "krlmlr",
-    "dpseidel",
     "cpsievert",
+    "dpseidel",
+    "krlmlr",
+    "olivroy",
+    "jrnold",
     "mine-cetinkaya-rundel",
     "tdhock",
-    "mitchelloharawild",
     "baptiste",
+    "mitchelloharawild",
     "foo-bar-baz-qux",
-    "tmshn",
-    "sierrajohnson",
-    "pkq",
-    "noamross",
+    "arcresu",
     "kevinxperese",
+    "noamross",
+    "tmshn",
+    "pkq",
+    "sierrajohnson",
     "richierocks",
     "bfgray3",
     "burchill",
@@ -13638,9 +13624,9 @@ contributors = [
     "davidmorrison",
     "schloerke",
     "tonytonov",
-    "coolbutuseless",
-    "jonocarroll",
     "mikmart",
+    "jonocarroll",
+    "coolbutuseless",
     "veraanadi",
     "microly",
     "stragu",
@@ -13655,10 +13641,10 @@ contributors = [
     "jankatins",
     "jan-glx",
     "gregrs-uk",
-    "etiennebacher",
-    "edzer",
-    "arcresu",
     "92amartins",
+    "edzer",
+    "etiennebacher",
+    "PursuitOfDataScience",
     "wibeasley",
     "steveharoz",
     "seancarmody",
@@ -13667,24 +13653,25 @@ contributors = [
     "mvkorpel",
     "michaelgrund",
     "melimore86",
+    "sims1253",
     "mjskay",
-    "annennenne",
-    "PursuitOfDataScience",
     "agmurray",
     "bbolker",
     "johan-ejstrud",
     "klin333",
     "spaette",
     "mcol",
+    "luisDVA",
     "lindbrook",
     "katrinleinweber",
     "bbrewington",
     "thoolihan",
     "tjmahr",
-    "bjreisman",
-    "AnneLyng",
-    "benyamindsmith",
     "Ahobert",
+    "annennenne",
+    "AnneLyng",
+    "bjreisman",
+    "benyamindsmith",
     "carywreams",
     "CateGitau",
     "infotroph",
@@ -13692,16 +13679,17 @@ contributors = [
     "Maschette",
     "daniel-barnett",
     "davharris",
-    "mrtns",
     "lwjohnst86",
-    "kevinushey",
     "kelseymoty",
+    "kevinushey",
     "slowkow",
     "jfalip",
+    "mrtns",
+    "jeroenjanssens",
     "daattali",
-    "ikosmidis",
     "delferts",
     "dylan-stark",
+    "ikosmidis",
     "Bisaloo",
     "alistaire47",
     "rivaquiroga",
@@ -13731,7 +13719,7 @@ contributors = [
     "smach",
     "Shelmith-Kariuki",
     "smsaladi",
-    "sinarueeger",
+    "andrasberczi",
     "martin-martin",
     "mruessler",
     "MathieuYeche",
@@ -13761,13 +13749,13 @@ contributors = [
     "PeteHaitch",
     "crowding",
     "flying-sheep",
-    "andrasberczi",
     "arilamstein",
     "atusy",
     "beckymaust",
     "bersbersbers",
     "buyske",
     "catalamarti",
+    "dmuenz",
     "dmurdoch",
     "evanhaldane",
     "gregleleu",
@@ -13790,6 +13778,7 @@ contributors = [
     "stefanedwards",
     "timgoodman",
     "tomschloss",
+    "sinarueeger",
     "Songeo",
     "StefanBRas",
     "lianos",
@@ -13819,7 +13808,6 @@ contributors = [
     "yihui",
     "zekiakyol",
     "abhro",
-    "ajschumacher",
     "cwickham",
     "ismayc",
     "cderv",
@@ -13829,6 +13817,7 @@ contributors = [
     "cpenaloza",
     "collinberke",
     "cuixueqin",
+    "CuiweiG",
     "damonbayer",
     "dlependorf",
     "DanRuderman",
@@ -13839,6 +13828,7 @@ contributors = [
     "dariobuttari",
     "dariyasydykova",
     "dvcv",
+    "hughjonesd",
     "davidkretch",
     "munoztd0",
     "wilkox",
@@ -13847,8 +13837,8 @@ contributors = [
     "erictleung",
     "echasnovski",
     "fabern",
-    "fmarotta",
-    "fkohrt",
+    "Jonathan-G",
+    "ajschumacher",
     "yeedle",
     "jabranham",
     "alex-trueman",
@@ -13878,8 +13868,8 @@ contributors = [
     "brianwdavis",
     "brodieG",
     "ccani007",
-    "Symaxion",
     "jmbarbone",
+    "JosephBARBIERDARNAL",
     "jsta",
     "joshhwuu",
     "juliasilge",
@@ -13899,7 +13889,6 @@ contributors = [
     "llrs",
     "lgaborini",
     "lselzer",
-    "luisDVA",
     "jemus42",
     "luhann",
     "mcguinlu",
@@ -13908,6 +13897,9 @@ contributors = [
     "Polkas",
     "MaraAlexeev",
     "tereom",
+    "fmarotta",
+    "fkohrt",
+    "Symaxion",
     "erocoar2",
     "EvaMaeRey",
     "gfiumara",
@@ -13930,16 +13922,14 @@ contributors = [
     "netique",
     "jansim",
     "jgjl",
-    "jeroenjanssens",
     "jeroen",
     "jdonland",
     "botanize",
     "johow",
     "jschoeley",
-    "jonathan-g",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:43.888124+00:00"
+last_updated = "2026-09-18T14:19:50.968784+00:00"
 releases = 30
 language = "R"
 
@@ -13948,8 +13938,8 @@ repo = "tidyverse/lubridate"
 name = "lubridate"
 description = "Make working with dates in R just that little bit easier"
 website = "https://lubridate.tidyverse.org"
-stars = 791
-forks = 215
+stars = 803
+forks = 218
 latest_release = "2026-02-03T09:21:47+00:00"
 first_commit = "2009-03-11T01:18:52+00:00"
 license = "NOASSERTION"
@@ -13962,10 +13952,11 @@ contributors = [
     "imanuelcostigan",
     "jasonelaw",
     "MichaelChirico",
+    "m-muecke",
     "jimhester",
+    "joethorley",
     "larmarange",
     "lorenzwalthert",
-    "joethorley",
     "sushmitavgopalan16",
     "dougmitarotonda",
     "wibeasley",
@@ -13979,7 +13970,6 @@ contributors = [
     "trevorld",
     "stragu",
     "zeehio",
-    "m-muecke",
     "mmaechler",
     "brunj7",
     "jmobrien",
@@ -14002,7 +13992,7 @@ contributors = [
     "mmparker",
     "moslehi",
     "lselzer",
-    "Abdullah-Jannadi",
+    "LeonidasZhak",
     "williamlai2",
     "wch",
     "shrektan",
@@ -14018,6 +14008,7 @@ contributors = [
     "peytonm",
     "rnuske",
     "tszberkowitz",
+    "Abdullah-Jannadi",
     "ateucher",
     "arneschillert",
     "brancengregory",
@@ -14051,7 +14042,7 @@ contributors = [
     "LeeMendelowitz",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:43.921120+00:00"
+last_updated = "2026-09-18T14:19:55.293169+00:00"
 releases = 17
 language = "R"
 
@@ -14060,8 +14051,8 @@ repo = "tidyverse/stringr"
 name = "stringr"
 description = "A fresh approach to string manipulation in R"
 website = "https://stringr.tidyverse.org"
-stars = 661
-forks = 196
+stars = 670
+forks = 200
 latest_release = "2025-11-03T22:09:36+00:00"
 first_commit = "2009-11-08T22:20:08+00:00"
 license = "NOASSERTION"
@@ -14149,7 +14140,7 @@ contributors = [
     "librill",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:43.945885+00:00"
+last_updated = "2026-09-18T14:19:58.972434+00:00"
 releases = 10
 language = "R"
 
@@ -14158,8 +14149,8 @@ repo = "tidyverse/dplyr"
 name = "dplyr"
 description = "dplyr: A grammar of data manipulation"
 website = "https://dplyr.tidyverse.org/"
-stars = 5025
-forks = 2131
+stars = 5067
+forks = 2114
 latest_release = "2026-04-03T14:05:01+00:00"
 first_commit = "2012-10-28T13:39:17+00:00"
 license = "NOASSERTION"
@@ -14263,7 +14254,7 @@ contributors = [
     "robertzk",
     "rivaquiroga",
     "rbjanis",
-    "mattsteadman",
+    "cuixueqin",
     "shanepiesik",
     "shannonpileggi",
     "sharlagelfand",
@@ -14347,7 +14338,6 @@ contributors = [
     "davidkane9",
     "delabj",
     "dpastoor",
-    "cuixueqin",
     "DanChaltiel",
     "strengejacke",
     "dpprdan",
@@ -14418,6 +14408,7 @@ contributors = [
     "markwestcott34",
     "weirdlittlespot",
     "charliejhadley",
+    "mattsteadman",
     "gustavdelius",
     "Bisaloo",
     "Hzanib",
@@ -14439,12 +14430,12 @@ contributors = [
     "jrwinget",
     "jimvine",
     "jcheng5",
-    "JohannesNE",
+    "JohsEnevoldsen",
     "jonkeane",
     "joranE",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:43.967702+00:00"
+last_updated = "2026-09-18T14:20:07.103337+00:00"
 releases = 45
 language = "R"
 
@@ -14453,8 +14444,8 @@ repo = "tidyverse/readr"
 name = "readr"
 description = "Read flat files (csv, tsv, fwf) into R"
 website = "https://readr.tidyverse.org"
-stars = 1032
-forks = 291
+stars = 1041
+forks = 296
 latest_release = "2026-02-19T07:06:02+00:00"
 first_commit = "2013-07-25T15:28:22+00:00"
 license = "NOASSERTION"
@@ -14565,7 +14556,7 @@ contributors = [
     "nacnudus",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:43.988945+00:00"
+last_updated = "2026-09-18T14:20:11.416116+00:00"
 releases = 20
 language = "R"
 
@@ -14574,7 +14565,7 @@ repo = "tidyverse/magrittr"
 name = "magrittr"
 description = "Improve the readability of R code with the pipe"
 website = "https://magrittr.tidyverse.org"
-stars = 970
+stars = 971
 forks = 161
 latest_release = "2026-04-05T05:38:19+00:00"
 first_commit = "2014-01-01T13:30:01+00:00"
@@ -14613,7 +14604,7 @@ contributors = [
     "ajschumacher",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.009455+00:00"
+last_updated = "2026-09-18T14:20:14.347411+00:00"
 releases = 7
 language = "R"
 
@@ -14622,7 +14613,7 @@ repo = "tidyverse/tidyr"
 name = "tidyr"
 description = "Tidy Messy Data"
 website = "https://tidyr.tidyverse.org/"
-stars = 1429
+stars = 1439
 forks = 419
 latest_release = "2026-01-09T14:13:04+00:00"
 first_commit = "2014-06-10T14:24:33+00:00"
@@ -14640,11 +14631,16 @@ contributors = [
     "mgirlich",
     "williamlai2",
     "davisadamw",
-    "aaronwolen",
-    "mine-cetinkaya-rundel",
-    "joshkatz",
     "yutannihilation",
-    "juliasilge",
+    "joshkatz",
+    "mine-cetinkaya-rundel",
+    "aaronwolen",
+    "romainfrancois",
+    "olivroy",
+    "catalamarti",
+    "atusy",
+    "wibeasley",
+    "dev-psych",
     "matthewjnield",
     "juliasilge",
     "tjmahr",
@@ -14655,6 +14651,7 @@ contributors = [
     "lorenzwalthert",
     "jeroenjanssens",
     "gaborcsardi",
+    "billdenney",
     "ax42",
     "dewittpe",
     "schoonees",
@@ -14666,7 +14663,7 @@ contributors = [
     "boshek",
     "SamanthaToet",
     "zeehio",
-    "shanepiesik",
+    "osorensen",
     "nzare",
     "zenggyu",
     "njtierney",
@@ -14679,7 +14676,7 @@ contributors = [
     "maelle",
     "mattroumaya",
     "mfgeary",
-    "osorensen",
+    "eokodie",
     "tverbeke",
     "stephenrknight",
     "spaette",
@@ -14703,7 +14700,7 @@ contributors = [
     "SimonCoulombe",
     "sharleenw",
     "shannonpileggi",
-    "mkcor",
+    "shanepiesik",
     "erictleung",
     "ericgunnink",
     "Dpananos",
@@ -14728,6 +14725,7 @@ contributors = [
     "elgabbas",
     "foundinblank",
     "webbedfeet",
+    "mkcor",
     "mpaulacaldas",
     "mspittler",
     "lazappi",
@@ -14746,15 +14744,15 @@ contributors = [
     "JakeRuss",
     "japhir",
     "hlendway",
+    "hrryt",
     "ha0ye",
     "hplieninger",
     "fartist",
     "echasnovski",
     "statisfactions",
-    "eokodie",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.030373+00:00"
+last_updated = "2026-09-18T14:20:18.935039+00:00"
 releases = 32
 language = "R"
 
@@ -14764,7 +14762,7 @@ name = "nycflights13"
 description = "An R data package containing all out-bound flights from NYC in 2013 + useful metdata"
 website = "https://nycflights13.tidyverse.org"
 stars = 133
-forks = 232
+forks = 231
 latest_release = "2021-04-12T12:50:46+00:00"
 first_commit = "2014-06-27T16:25:59+00:00"
 contributors = [
@@ -14781,7 +14779,7 @@ contributors = [
     "seankross",
     "sjackman",
 ]
-last_updated = "2026-05-20T08:05:44.051024+00:00"
+last_updated = "2026-09-18T14:20:21.502990+00:00"
 releases = 7
 language = "R"
 
@@ -14790,8 +14788,8 @@ repo = "tidyverse/rvest"
 name = "rvest"
 description = "Simple web scraping for R"
 website = "https://rvest.tidyverse.org"
-stars = 1519
-forks = 351
+stars = 1521
+forks = 349
 latest_release = "2025-08-29T12:57:27+00:00"
 first_commit = "2014-07-23T21:22:27+00:00"
 license = "NOASSERTION"
@@ -14819,10 +14817,12 @@ contributors = [
     "WilDoane",
     "sfirke",
     "rjpat",
+    "gayol-openrxiv",
     "MichaelChirico",
     "MattCowgill",
     "joshualeond",
     "jrosell",
+    "jeroenjanssens",
     "hmalmedal",
     "rentrop",
     "dpprdan",
@@ -14831,7 +14831,7 @@ contributors = [
     "bbrewington",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.072382+00:00"
+last_updated = "2026-09-18T14:20:24.421328+00:00"
 releases = 15
 language = "R"
 
@@ -14840,8 +14840,8 @@ repo = "tidyverse/purrr"
 name = "purrr"
 description = "A functional programming toolkit for R"
 website = "https://purrr.tidyverse.org/"
-stars = 1391
-forks = 293
+stars = 1404
+forks = 296
 latest_release = "2026-04-12T06:46:38+00:00"
 first_commit = "2014-11-29T17:33:40+00:00"
 license = "NOASSERTION"
@@ -14959,7 +14959,7 @@ contributors = [
     "jayhesselberth",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.093748+00:00"
+last_updated = "2026-09-18T14:20:28.535305+00:00"
 releases = 21
 language = "R"
 
@@ -14968,8 +14968,8 @@ repo = "tidyverse/haven"
 name = "haven"
 description = "Read SPSS, Stata and SAS files from R"
 website = "https://haven.tidyverse.org"
-stars = 451
-forks = 115
+stars = 452
+forks = 119
 latest_release = "2025-05-30T13:08:26+00:00"
 first_commit = "2015-02-04T16:28:17+00:00"
 license = "NOASSERTION"
@@ -15018,7 +15018,7 @@ contributors = [
     "ajdamico",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.114371+00:00"
+last_updated = "2026-09-18T14:20:31.719929+00:00"
 releases = 24
 language = "C"
 
@@ -15027,7 +15027,7 @@ repo = "tidyverse/readxl"
 name = "readxl"
 description = "Read excel files (.xls and .xlsx) into R 🖇"
 website = "https://readxl.tidyverse.org"
-stars = 751
+stars = 753
 forks = 195
 latest_release = "2026-05-16T14:10:52+00:00"
 first_commit = "2015-03-13T14:50:20+00:00"
@@ -15076,7 +15076,7 @@ contributors = [
     "elgabbas",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.135752+00:00"
+last_updated = "2026-09-18T14:20:35.007062+00:00"
 releases = 14
 language = "C++"
 
@@ -15085,8 +15085,8 @@ repo = "tidyverse/reprex"
 name = "reprex"
 description = "Render bits of R code for sharing, e.g., on GitHub or StackOverflow."
 website = "https://reprex.tidyverse.org"
-stars = 749
-forks = 85
+stars = 754
+forks = 90
 latest_release = "2024-07-06T00:20:34+00:00"
 first_commit = "2015-08-25T17:06:45+00:00"
 license = "NOASSERTION"
@@ -15120,7 +15120,7 @@ contributors = [
     "tappek",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.156808+00:00"
+last_updated = "2026-09-18T14:20:37.368695+00:00"
 releases = 11
 language = "R"
 
@@ -15129,8 +15129,8 @@ repo = "tidyverse/tibble"
 name = "tibble"
 description = "A modern re-imagining of the data frame"
 website = "https://tibble.tidyverse.org/"
-stars = 744
-forks = 134
+stars = 761
+forks = 138
 latest_release = "2026-01-10T18:28:34+00:00"
 first_commit = "2015-10-28T23:57:00+00:00"
 license = "NOASSERTION"
@@ -15174,7 +15174,7 @@ contributors = [
     "topepo",
     "Enchufa2",
     "earino",
-    "imanuelcostigan",
+    "alexwhan",
     "jeroenjanssens",
     "kwstat",
     "Layalchristine24",
@@ -15187,27 +15187,29 @@ contributors = [
     "heavywatal",
     "xiaodaigh",
     "anabbott",
+    "claude[bot]",
     "eitsupi",
     "hs3180",
     "vinhtantran",
-    "web-flow",
-    "etiennebr",
-    "QuLogic",
-    "edwindj",
-    "eibanez",
-    "daviddalpiaz",
-    "craigcitro",
-    "csgillespie",
-    "cderv",
-    "BrianDiggs",
-    "bhive01",
-    "bgreenwell",
-    "arunsrinivasan",
     "andreranza",
-    "alexwhan",
+    "arunsrinivasan",
+    "bgreenwell",
+    "bhive01",
+    "BrianDiggs",
+    "cderv",
+    "claude",
+    "csgillespie",
+    "craigcitro",
+    "daviddalpiaz",
+    "eibanez",
+    "edwindj",
+    "QuLogic",
+    "etiennebr",
+    "web-flow",
+    "imanuelcostigan",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.177922+00:00"
+last_updated = "2026-09-18T14:20:41.173906+00:00"
 releases = 36
 language = "R"
 
@@ -15216,8 +15218,8 @@ repo = "tidyverse/multidplyr"
 name = "multidplyr"
 description = "A dplyr backend that partitions a data frame over multiple processes"
 website = "https://multidplyr.tidyverse.org"
-stars = 649
-forks = 75
+stars = 650
+forks = 76
 latest_release = "2025-11-13T13:40:03+00:00"
 first_commit = "2015-11-05T22:55:06+00:00"
 license = "NOASSERTION"
@@ -15240,7 +15242,7 @@ contributors = [
     "cscheid",
     "bbrewington",
 ]
-last_updated = "2026-05-20T08:05:44.198882+00:00"
+last_updated = "2026-09-18T14:20:44.012513+00:00"
 releases = 5
 language = "R"
 
@@ -15249,8 +15251,8 @@ repo = "tidyverse/dtplyr"
 name = "dtplyr"
 description = "Data table backend for dplyr"
 website = "https://dtplyr.tidyverse.org"
-stars = 674
-forks = 61
+stars = 675
+forks = 62
 latest_release = "2026-02-10T17:24:35+00:00"
 first_commit = "2016-03-07T23:28:16+00:00"
 license = "NOASSERTION"
@@ -15292,7 +15294,7 @@ contributors = [
     "alyst",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.219264+00:00"
+last_updated = "2026-09-18T14:20:47.079729+00:00"
 releases = 13
 language = "R"
 
@@ -15302,7 +15304,7 @@ name = "hms"
 description = "A simple class for storing time-of-day values"
 website = "https://hms.tidyverse.org/"
 stars = 142
-forks = 29
+forks = 31
 latest_release = "2025-10-16T19:10:13+00:00"
 first_commit = "2016-03-31T09:05:58+00:00"
 license = "NOASSERTION"
@@ -15324,11 +15326,12 @@ contributors = [
     "joethorley",
     "romainfrancois",
     "vspinu",
+    "claude[bot]",
     "eitsupi",
     "evanhaldane",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.240107+00:00"
+last_updated = "2026-09-18T14:20:49.690643+00:00"
 releases = 15
 language = "R"
 
@@ -15363,7 +15366,7 @@ contributors = [
     "bensoltoff",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.260840+00:00"
+last_updated = "2026-09-18T14:20:52.311666+00:00"
 releases = 11
 language = "R"
 
@@ -15433,7 +15436,7 @@ contributors = [
     "khusmann",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.282269+00:00"
+last_updated = "2026-09-18T14:20:55.278626+00:00"
 releases = 10
 language = "R"
 
@@ -15442,8 +15445,8 @@ repo = "tidyverse/tidyverse"
 name = "tidyverse"
 description = "Easily install and load packages from the tidyverse"
 website = "https://tidyverse.tidyverse.org"
-stars = 1791
-forks = 295
+stars = 1801
+forks = 292
 latest_release = "2023-02-21T13:20:32+00:00"
 first_commit = "2016-09-06T13:29:39+00:00"
 license = "NOASSERTION"
@@ -15486,7 +15489,7 @@ contributors = [
     "arfon",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.303357+00:00"
+last_updated = "2026-09-18T14:20:58.129556+00:00"
 releases = 9
 language = "R"
 
@@ -15495,7 +15498,7 @@ repo = "tidyverse/tidytemplate"
 name = "tidytemplate"
 description = "A pkgdown template for core tidyverse packages"
 website = "https://tidytemplate.tidyverse.org"
-stars = 49
+stars = 50
 forks = 26
 first_commit = "2016-10-24T19:17:37+00:00"
 license = "NOASSERTION"
@@ -15518,7 +15521,7 @@ contributors = [
     "ras44",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.324682+00:00"
+last_updated = "2026-09-18T14:20:59.933027+00:00"
 releases = 0
 language = "SCSS"
 
@@ -15527,7 +15530,7 @@ repo = "tidyverse/blob"
 name = "blob"
 description = "A simple S3 class for representing BLOBs"
 website = "https://blob.tidyverse.org"
-stars = 49
+stars = 50
 forks = 14
 latest_release = "2026-01-13T06:57:50+00:00"
 first_commit = "2016-10-27T13:11:54+00:00"
@@ -15542,8 +15545,9 @@ contributors = [
     "DavisVaughan",
     "jimhester",
     "MikeJohnPage",
+    "claude[bot]",
 ]
-last_updated = "2026-05-20T08:05:44.345454+00:00"
+last_updated = "2026-09-18T14:21:02.594163+00:00"
 releases = 9
 language = "R"
 
@@ -15552,8 +15556,8 @@ repo = "tidyverse/glue"
 name = "glue"
 description = "Glue strings to data in R. Small, fast, dependency free interpreted string literals."
 website = "https://glue.tidyverse.org"
-stars = 747
-forks = 63
+stars = 750
+forks = 64
 latest_release = "2026-04-16T22:52:32+00:00"
 first_commit = "2016-12-23T21:07:25+00:00"
 license = "NOASSERTION"
@@ -15602,7 +15606,7 @@ contributors = [
     "md0u80c9",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.366172+00:00"
+last_updated = "2026-09-18T14:21:05.781484+00:00"
 releases = 17
 language = "R"
 
@@ -15611,8 +15615,8 @@ repo = "tidyverse/style"
 name = "style"
 description = "The tidyverse style guide for R code"
 website = "https://style.tidyverse.org"
-stars = 356
-forks = 121
+stars = 363
+forks = 122
 first_commit = "2017-03-07T20:15:49+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -15640,7 +15644,7 @@ contributors = [
     "hfrick",
     "jhk0530",
     "j450h1",
-    "JohannesNE",
+    "JohsEnevoldsen",
     "jkennel",
     "endore",
     "karawoo",
@@ -15662,7 +15666,7 @@ contributors = [
     "martin-mfg",
     "xx02al",
 ]
-last_updated = "2026-05-20T08:05:44.387812+00:00"
+last_updated = "2026-09-18T14:21:08.163010+00:00"
 releases = 0
 language = "SCSS"
 
@@ -15671,9 +15675,9 @@ repo = "tidyverse/dbplyr"
 name = "dbplyr"
 description = "Database (DBI) backend for dplyr"
 website = "https://dbplyr.tidyverse.org"
-stars = 507
-forks = 188
-latest_release = "2026-02-13T13:26:38+00:00"
+stars = 517
+forks = 191
+latest_release = "2026-06-17T12:32:36+00:00"
 first_commit = "2017-03-28T20:29:16+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -15698,6 +15702,7 @@ contributors = [
     "cosinequanon",
     "simonpcouch",
     "leondutoit",
+    "fh-mthomson",
     "dpprdan",
     "zeehio",
     "pimentel",
@@ -15706,7 +15711,6 @@ contributors = [
     "arunsrinivasan",
     "rbdixon",
     "imanuelcostigan",
-    "fh-mthomson",
     "shosaco",
     "fh-afrachioni",
     "austenhead",
@@ -15717,13 +15721,14 @@ contributors = [
     "owenjonesuob",
     "NicolasCOUTIN",
     "mkearney",
-    "ablack3",
+    "mkuhn",
     "thomashulst",
     "xiaodaigh",
     "zacdav-db",
     "erikvona",
     "shabbybanks",
     "okhoma",
+    "ablack3",
     "DavisVaughan",
     "derekmorr",
     "earino",
@@ -15734,8 +15739,8 @@ contributors = [
     "jeroenjanssens",
     "kevinykuo",
     "justmarkham",
+    "LeonidasZhak",
     "zozlak",
-    "mkuhn",
     "nhanitvn",
     "noamross",
     "OssiLehtinen",
@@ -15834,8 +15839,8 @@ contributors = [
     "garrettgman",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.408899+00:00"
-releases = 24
+last_updated = "2026-09-18T14:21:13.807296+00:00"
+releases = 25
 language = "R"
 
 [[repos]]
@@ -15843,8 +15848,8 @@ repo = "tidyverse/googledrive"
 name = "googledrive"
 description = "Google Drive R API"
 website = "https://googledrive.tidyverse.org/"
-stars = 342
-forks = 49
+stars = 346
+forks = 53
 latest_release = "2025-09-10T06:09:30+00:00"
 first_commit = "2017-04-26T23:22:32+00:00"
 license = "NOASSERTION"
@@ -15858,6 +15863,7 @@ contributors = [
     "ateucher",
     "Falnesio",
     "hadley",
+    "Hzanib",
     "ianmcook",
     "jeroenjanssens",
     "jcheng5",
@@ -15865,7 +15871,7 @@ contributors = [
     "jli",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.430032+00:00"
+last_updated = "2026-09-18T14:21:16.191906+00:00"
 releases = 9
 language = "R"
 
@@ -15874,8 +15880,8 @@ repo = "tidyverse/googlesheets4"
 name = "googlesheets4"
 description = "Google Spreadsheets R API (reboot of the googlesheets package)"
 website = "https://googlesheets4.tidyverse.org"
-stars = 373
-forks = 54
+stars = 377
+forks = 57
 latest_release = "2025-09-03T23:00:17+00:00"
 first_commit = "2017-04-28T02:03:33+00:00"
 license = "NOASSERTION"
@@ -15895,7 +15901,7 @@ contributors = [
     "mitchelloharawild",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.451843+00:00"
+last_updated = "2026-09-18T14:21:18.706081+00:00"
 releases = 9
 language = "R"
 
@@ -15904,7 +15910,7 @@ repo = "tidyverse/tidyverse.org"
 name = "tidyverse.org"
 description = "Source of tidyverse.org"
 website = "https://tidyverse.org"
-stars = 212
+stars = 213
 forks = 117
 first_commit = "2017-07-27T12:34:02+00:00"
 license = "CC-BY-SA-4.0"
@@ -15986,7 +15992,7 @@ contributors = [
     "jameslairdsmith",
     "jayhesselberth",
 ]
-last_updated = "2026-05-20T08:05:44.473574+00:00"
+last_updated = "2026-09-18T14:21:21.849822+00:00"
 releases = 0
 language = "HTML"
 
@@ -15995,8 +16001,8 @@ repo = "tidyverse/datascience-box"
 name = "datascience-box"
 description = "Data Science Course in a Box"
 website = "https://datasciencebox.org"
-stars = 1010
-forks = 459
+stars = 1021
+forks = 462
 latest_release = "2020-12-18T13:57:19+00:00"
 first_commit = "2017-12-29T22:16:17+00:00"
 license = "NOASSERTION"
@@ -16021,7 +16027,7 @@ contributors = [
     "davidkane9",
     "dhodge180",
 ]
-last_updated = "2026-05-20T08:05:44.495304+00:00"
+last_updated = "2026-09-18T14:21:24.421697+00:00"
 releases = 1
 language = "JavaScript"
 
@@ -16030,8 +16036,8 @@ repo = "tidyverse/tidyversedashboard"
 name = "tidyversedashboard"
 description = "Tidyverse activity dashboard"
 website = "https://tidyverse.org/dashboard"
-stars = 73
-forks = 24
+stars = 72
+forks = 23
 first_commit = "2018-04-27T17:24:10+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -16039,7 +16045,7 @@ contributors = [
     "hadley",
     "Bisaloo",
 ]
-last_updated = "2026-05-20T08:05:44.517000+00:00"
+last_updated = "2026-09-18T14:21:26.243085+00:00"
 releases = 0
 language = "R"
 
@@ -16049,7 +16055,7 @@ name = "dsbox"
 description = "Companion R package to Data Science Course in a Box"
 website = "https://tidyverse.github.io/dsbox/"
 stars = 53
-forks = 26
+forks = 27
 first_commit = "2018-05-14T14:07:26+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -16061,7 +16067,7 @@ contributors = [
     "jmclawson",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.539231+00:00"
+last_updated = "2026-09-18T14:21:28.114201+00:00"
 releases = 0
 language = "R"
 
@@ -16070,7 +16076,7 @@ repo = "tidyverse/design"
 name = "design"
 description = "Tidyverse design principles"
 website = "https://design.tidyverse.org"
-stars = 229
+stars = 231
 forks = 59
 first_commit = "2018-06-13T19:36:47+00:00"
 license = "NOASSERTION"
@@ -16093,7 +16099,7 @@ contributors = [
     "salim-b",
     "ppanko",
 ]
-last_updated = "2026-05-20T08:05:44.560814+00:00"
+last_updated = "2026-09-18T14:21:29.893791+00:00"
 releases = 0
 language = "R"
 
@@ -16102,8 +16108,8 @@ repo = "tidyverse/tidy-dev-day"
 name = "tidy-dev-day"
 description = "Tidyverse developer day"
 website = "https://rstd.io/tidy-dev-day"
-stars = 88
-forks = 37
+stars = 92
+forks = 40
 first_commit = "2018-10-24T17:33:49+00:00"
 contributors = [
     "mine-cetinkaya-rundel",
@@ -16123,6 +16129,8 @@ contributors = [
     "JBrandenburg02",
     "LouisMPenrod",
     "lgibson7",
+    "mhausinger",
+    "gayol-openrxiv",
     "rkb965",
     "SereDef",
     "simonpcouch",
@@ -16137,7 +16145,7 @@ contributors = [
     "jessie-edge",
     "seb09",
 ]
-last_updated = "2026-05-20T08:05:44.581795+00:00"
+last_updated = "2026-09-18T14:21:32.154854+00:00"
 releases = 0
 language = "R"
 
@@ -16146,7 +16154,7 @@ repo = "tidyverse/funs"
 name = "funs"
 description = "Collection of low-level functions for working with vctrs"
 website = ""
-stars = 36
+stars = 37
 forks = 7
 first_commit = "2018-10-31T21:39:12+00:00"
 license = "NOASSERTION"
@@ -16155,7 +16163,7 @@ contributors = [
     "hadley",
     "romainfrancois",
 ]
-last_updated = "2026-05-20T08:05:44.602959+00:00"
+last_updated = "2026-09-18T14:21:33.974099+00:00"
 releases = 0
 language = "R"
 
@@ -16164,8 +16172,8 @@ repo = "tidyverse/vroom"
 name = "vroom"
 description = "Fast reading of delimited files"
 website = "https://vroom.tidyverse.org"
-stars = 641
-forks = 69
+stars = 642
+forks = 71
 latest_release = "2026-03-30T20:24:01+00:00"
 first_commit = "2018-12-11T22:00:39+00:00"
 license = "NOASSERTION"
@@ -16199,7 +16207,7 @@ contributors = [
     "andrie",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.624062+00:00"
+last_updated = "2026-09-18T14:21:36.563527+00:00"
 releases = 26
 language = "C++"
 
@@ -16214,7 +16222,7 @@ first_commit = "2019-11-12T16:55:13+00:00"
 contributors = [
     "hadley",
 ]
-last_updated = "2026-05-20T08:05:44.644627+00:00"
+last_updated = "2026-09-18T14:21:38.330305+00:00"
 releases = 0
 language = "R"
 
@@ -16223,7 +16231,7 @@ repo = "tidyverse/tidyups"
 name = "tidyups"
 description = ""
 website = ""
-stars = 40
+stars = 42
 forks = 7
 first_commit = "2021-06-14T19:18:38+00:00"
 contributors = [
@@ -16231,7 +16239,7 @@ contributors = [
     "hadley",
     "tracykteal",
 ]
-last_updated = "2026-05-20T08:05:44.665646+00:00"
+last_updated = "2026-09-18T14:21:40.140225+00:00"
 releases = 0
 
 [[repos]]
@@ -16239,8 +16247,8 @@ repo = "tidyverse/duckplyr"
 name = "duckplyr"
 description = "A drop-in replacement for dplyr, powered by DuckDB for speed."
 website = "https://duckplyr.tidyverse.org/"
-stars = 388
-forks = 27
+stars = 396
+forks = 33
 latest_release = "2026-03-09T19:38:27+00:00"
 first_commit = "2022-11-29T08:20:48+00:00"
 license = "NOASSERTION"
@@ -16252,19 +16260,21 @@ contributors = [
     "Tmonster",
     "toppyy",
     "hannes",
-    "TimTaylor",
-    "joakimlinde",
     "andreranza",
+    "joakimlinde",
+    "TimTaylor",
     "DavisVaughan",
     "jeroenjanssens",
     "wibeasley",
     "hadley",
     "stefanlinner",
+    "claude",
     "luisDVA",
     "mine-cetinkaya-rundel",
+    "claude[bot]",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.686285+00:00"
+last_updated = "2026-09-18T14:21:42.931791+00:00"
 releases = 19
 language = "R"
 
@@ -16273,7 +16283,7 @@ repo = "tidyverse/code-review"
 name = "code-review"
 description = ""
 website = "https://code-review.tidyverse.org/"
-stars = 35
+stars = 36
 forks = 9
 first_commit = "2022-12-11T22:25:02+00:00"
 contributors = [
@@ -16282,7 +16292,7 @@ contributors = [
     "EmilHvitfeldt",
     "hadley",
 ]
-last_updated = "2026-05-20T08:05:44.706997+00:00"
+last_updated = "2026-09-18T14:21:44.628783+00:00"
 releases = 0
 
 [[repos]]
@@ -16290,32 +16300,35 @@ repo = "tidyverse/ellmer"
 name = "ellmer"
 description = "Call LLM APIs from R"
 website = "https://ellmer.tidyverse.org/"
-stars = 601
-forks = 130
-latest_release = "2026-05-06T20:43:27+00:00"
+stars = 612
+forks = 139
+latest_release = "2026-09-04T13:09:19+00:00"
 first_commit = "2024-08-27T21:55:59+00:00"
 license = "NOASSERTION"
 contributors = [
     "hadley",
     "gadenbuie",
+    "thisisnic",
     "jcheng5",
     "atheriel",
+    "github-actions[bot]",
     "lindbrook",
-    "howardbaik",
     "simonpcouch",
-    "shikokuchuo",
-    "thisisnic",
+    "howardbaik",
     "cpsievert",
+    "shikokuchuo",
+    "xmarquez",
+    "SokolovAnatoliy",
+    "jcrodriguez1989",
     "DavisVaughan",
     "JamesHWade",
     "jeroenjanssens",
+    "karawoo",
     "maciekbanas",
     "michaelgrund",
     "adisarid",
-    "SokolovAnatoliy",
     "schloerke",
     "bgreenwell",
-    "jcrodriguez1989",
     "CoryMcCartan",
     "D-M4rk",
     "elnelson575",
@@ -16347,14 +16360,14 @@ contributors = [
     "cherylisabella",
     "dcomputing",
     "frankiethull",
-    "github-actions[bot]",
+    "kaipingyang",
     "naltmann",
     "neil-bray",
     "xx02al",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.727949+00:00"
-releases = 9
+last_updated = "2026-09-18T14:21:47.546931+00:00"
+releases = 11
 language = "R"
 
 [[repos]]
@@ -16362,9 +16375,9 @@ repo = "tidyverse/ragnar"
 name = "ragnar"
 description = "RAG in R"
 website = "http://ragnar.tidyverse.org"
-stars = 176
-forks = 24
-latest_release = "2026-01-23T17:26:32+00:00"
+stars = 189
+forks = 25
+latest_release = "2026-09-10T16:16:31+00:00"
 first_commit = "2025-01-20T19:30:06+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -16376,6 +16389,7 @@ contributors = [
     "Christophe-Regouby",
     "gadenbuie",
     "howardbaik",
+    "jeis4wpi",
     "luisDVA",
     "mattwarkentin",
     "topepo",
@@ -16384,8 +16398,8 @@ contributors = [
     "bowerth",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.748341+00:00"
-releases = 4
+last_updated = "2026-09-18T14:21:50.011588+00:00"
+releases = 5
 language = "R"
 
 [[repos]]
@@ -16393,9 +16407,9 @@ repo = "tidyverse/vitals"
 name = "vitals"
 description = "Large language model evaluation for R"
 website = "https://vitals.tidyverse.org"
-stars = 54
-forks = 11
-latest_release = "2026-05-15T20:17:44+00:00"
+stars = 60
+forks = 13
+latest_release = "2026-09-02T18:29:57+00:00"
 first_commit = "2025-02-10T16:40:08+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -16413,8 +16427,8 @@ contributors = [
     "github-actions[bot]",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:44.769951+00:00"
-releases = 3
+last_updated = "2026-09-18T14:21:52.340721+00:00"
+releases = 4
 language = "JavaScript"
 
 [[repos]]
@@ -16431,7 +16445,7 @@ contributors = [
     "skaltman",
     "DavisVaughan",
 ]
-last_updated = "2026-05-20T08:05:44.791530+00:00"
+last_updated = "2026-09-18T14:21:54.073860+00:00"
 releases = 0
 language = "R"
 
@@ -16440,8 +16454,8 @@ repo = "tidymodels/broom"
 name = "broom"
 description = "Convert statistical analysis objects from R into tidy format"
 website = "https://broom.tidymodels.org"
-stars = 1514
-forks = 303
+stars = 1525
+forks = 299
 latest_release = "2026-05-13T23:36:12+00:00"
 first_commit = "2014-09-11T19:17:04+00:00"
 license = "NOASSERTION"
@@ -16588,7 +16602,7 @@ contributors = [
     "llendway",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:47.826228+00:00"
+last_updated = "2026-09-18T14:22:04.446080+00:00"
 releases = 41
 language = "R"
 
@@ -16597,8 +16611,8 @@ repo = "tidymodels/corrr"
 name = "corrr"
 description = "Explore correlations in R"
 website = "https://corrr.tidymodels.org"
-stars = 591
-forks = 58
+stars = 592
+forks = 59
 latest_release = "2022-08-16T19:52:49+00:00"
 first_commit = "2016-06-24T06:09:09+00:00"
 license = "NOASSERTION"
@@ -16620,7 +16634,7 @@ contributors = [
     "s-scherrer",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:47.859236+00:00"
+last_updated = "2026-09-18T14:22:07.449699+00:00"
 releases = 10
 language = "R"
 
@@ -16629,9 +16643,9 @@ repo = "tidymodels/recipes"
 name = "recipes"
 description = "Pipeable steps for feature engineering and data preprocessing to prepare for modeling"
 website = "https://recipes.tidymodels.org"
-stars = 613
-forks = 123
-latest_release = "2026-04-01T17:39:45+00:00"
+stars = 621
+forks = 129
+latest_release = "2026-08-24T11:57:50+00:00"
 first_commit = "2016-12-16T02:40:24+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -16654,9 +16668,9 @@ contributors = [
     "seb09",
     "olivroy",
     "gregdenay",
-    "mastoffel",
-    "MichaelChirico",
     "dfalbel",
+    "MichaelChirico",
+    "mastoffel",
     "ewv88",
     "lawwu",
     "lionel-",
@@ -16676,6 +16690,7 @@ contributors = [
     "liamblake",
     "lorenzwalthert",
     "lgaborini",
+    "luisDVA",
     "perluna",
     "msberends",
     "mikemc",
@@ -16698,6 +16713,7 @@ contributors = [
     "dlependorf",
     "dshemetov",
     "doug-friedman",
+    "FvD",
     "gaborcsardi",
     "hnagaty",
     "jameslairdsmith",
@@ -16709,8 +16725,8 @@ contributors = [
     "zecojls",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:47.885219+00:00"
-releases = 28
+last_updated = "2026-09-18T14:22:11.164556+00:00"
+releases = 30
 language = "R"
 
 [[repos]]
@@ -16718,8 +16734,8 @@ repo = "tidymodels/lime"
 name = "lime"
 description = "Local Interpretable Model-Agnostic Explanations (R port of original Python package)"
 website = "https://lime.data-imaginist.com/"
-stars = 492
-forks = 109
+stars = 493
+forks = 111
 latest_release = "2025-12-10T00:23:55+00:00"
 first_commit = "2017-03-17T10:40:29+00:00"
 license = "NOASSERTION"
@@ -16742,7 +16758,7 @@ contributors = [
     "millerjoey",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:47.908138+00:00"
+last_updated = "2026-09-18T14:22:13.703401+00:00"
 releases = 6
 language = "R"
 
@@ -16751,8 +16767,8 @@ repo = "tidymodels/rsample"
 name = "rsample"
 description = "Classes and functions to create and summarize resampling objects"
 website = "https://rsample.tidymodels.org"
-stars = 340
-forks = 68
+stars = 343
+forks = 67
 latest_release = "2026-01-30T11:52:49+00:00"
 first_commit = "2017-04-22T19:19:58+00:00"
 license = "NOASSERTION"
@@ -16767,9 +16783,9 @@ contributors = [
     "Dpananos",
     "EmilHvitfeldt",
     "ClaytonJY",
+    "agmurray",
     "JamesHWade",
     "mdancho84",
-    "agmurray",
     "nmercadeb",
     "simonpcouch",
     "bjornkallerud",
@@ -16801,7 +16817,7 @@ contributors = [
     "alvindev0",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:47.929255+00:00"
+last_updated = "2026-09-18T14:22:16.923563+00:00"
 releases = 15
 language = "R"
 
@@ -16810,8 +16826,8 @@ repo = "tidymodels/infer"
 name = "infer"
 description = "An R package for tidyverse-friendly statistical inference"
 website = "https://infer.tidymodels.org"
-stars = 788
-forks = 87
+stars = 795
+forks = 86
 latest_release = "2025-12-18T14:07:39+00:00"
 first_commit = "2017-06-05T17:41:42+00:00"
 license = "NOASSERTION"
@@ -16842,7 +16858,7 @@ contributors = [
     "wmorgan485",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:47.949939+00:00"
+last_updated = "2026-09-18T14:22:19.870742+00:00"
 releases = 21
 language = "R"
 
@@ -16852,8 +16868,8 @@ name = "tidyposterior"
 description = "Bayesian comparisons of models using resampled statistics"
 website = "https://tidyposterior.tidymodels.org"
 stars = 103
-forks = 12
-latest_release = "2025-07-30T23:43:16+00:00"
+forks = 14
+latest_release = "2026-09-02T13:32:03+00:00"
 first_commit = "2017-10-15T17:39:33+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -16862,16 +16878,19 @@ contributors = [
     "juliasilge",
     "hfrick",
     "aeklant",
+    "c-punturieri",
     "DavisVaughan",
     "ezequielpaura",
     "gaborcsardi",
+    "jeroenjanssens",
     "lawwu",
     "mikemahoney218",
+    "seb09",
     "mone27",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:47.971081+00:00"
-releases = 6
+last_updated = "2026-09-18T14:22:22.596844+00:00"
+releases = 7
 language = "R"
 
 [[repos]]
@@ -16879,8 +16898,8 @@ repo = "tidymodels/yardstick"
 name = "yardstick"
 description = "Tidy methods for measuring model performance"
 website = "https://yardstick.tidymodels.org/"
-stars = 401
-forks = 61
+stars = 402
+forks = 63
 latest_release = "2026-04-07T16:10:30+00:00"
 first_commit = "2017-10-30T19:26:54+00:00"
 license = "NOASSERTION"
@@ -16895,6 +16914,7 @@ contributors = [
     "pierreroudier",
     "gibbona1",
     "mikemahoney218",
+    "frans-ixpantia",
     "riazhedayati",
     "datenzauberai",
     "rudeboybert",
@@ -16920,11 +16940,12 @@ contributors = [
     "stephhazlitt",
     "trangdata",
     "xrobin",
+    "ekivett",
     "jyuu",
     "meta00",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:47.991972+00:00"
+last_updated = "2026-09-18T14:22:25.655266+00:00"
 releases = 15
 language = "R"
 
@@ -16933,8 +16954,8 @@ repo = "tidymodels/parsnip"
 name = "parsnip"
 description = "A tidy unified interface to models"
 website = "https://parsnip.tidymodels.org"
-stars = 651
-forks = 108
+stars = 659
+forks = 115
 latest_release = "2026-05-14T13:10:35+00:00"
 first_commit = "2017-12-10T22:48:42+00:00"
 license = "NOASSERTION"
@@ -16948,20 +16969,21 @@ contributors = [
     "patr1ckm",
     "qiushiyan",
     "malcolmbarrett",
+    "corybrunson",
     "mine-cetinkaya-rundel",
     "rorynolan",
     "grayskripko",
+    "maelle",
     "stevenpawley",
+    "JamesHWade",
     "bcjaeger",
     "klahrich",
     "PursuitOfDataScience",
     "shum461",
-    "oj713",
-    "maelle",
     "mdancho84",
+    "bjornkallerud",
     "kscott-1",
-    "corybrunson",
-    "akhilabburu",
+    "libbymckenna",
     "luisDVA",
     "mattwarkentin",
     "schoonees",
@@ -16978,25 +17000,26 @@ contributors = [
     "jtlandis",
     "kiendang",
     "ledell",
+    "akhilabburu",
     "andrie",
     "abichat",
     "arcenis-r",
-    "bjornkallerud",
     "ccani007",
+    "Copilot",
     "davechilders",
     "edgararuiz",
     "focardozom",
     "gaborcsardi",
+    "Hashim1999164",
     "hlynurhallgrims",
     "blairj09",
     "jameslamb",
-    "JamesHWade",
     "jeroenjanssens",
     "jonthegeek",
-    "libbymckenna",
+    "daltonkw",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.013226+00:00"
+last_updated = "2026-09-18T14:22:28.606916+00:00"
 releases = 35
 language = "R"
 
@@ -17005,14 +17028,14 @@ repo = "tidymodels/tidypredict"
 name = "tidypredict"
 description = "Run predictions inside the database"
 website = "https://tidypredict.tidymodels.org"
-stars = 263
-forks = 33
-latest_release = "2026-02-26T22:11:23+00:00"
+stars = 264
+forks = 34
+latest_release = "2026-09-03T20:43:03+00:00"
 first_commit = "2017-12-18T00:26:43+00:00"
 license = "NOASSERTION"
 contributors = [
-    "edgararuiz",
     "EmilHvitfeldt",
+    "edgararuiz",
     "edgararuiz-zz",
     "topepo",
     "Athospd",
@@ -17027,13 +17050,14 @@ contributors = [
     "bfgray3",
     "dpprdan",
     "DavisVaughan",
+    "jannikbx",
     "jeroenjanssens",
     "washcycle",
     "SimonCoulombe",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.034996+00:00"
-releases = 14
+last_updated = "2026-09-18T14:22:31.079352+00:00"
+releases = 16
 language = "R"
 
 [[repos]]
@@ -17041,7 +17065,7 @@ repo = "tidymodels/modeldb"
 name = "modeldb"
 description = "Run models inside a database using R"
 website = "https://modeldb.tidymodels.org"
-stars = 78
+stars = 80
 forks = 12
 latest_release = "2025-08-22T17:22:28+00:00"
 first_commit = "2018-03-02T02:01:56+00:00"
@@ -17058,7 +17082,7 @@ contributors = [
     "karldw",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.056374+00:00"
+last_updated = "2026-09-18T14:22:33.782114+00:00"
 releases = 7
 language = "R"
 
@@ -17067,9 +17091,9 @@ repo = "tidymodels/embed"
 name = "embed"
 description = "Extra recipes for predictor embeddings"
 website = "https://embed.tidymodels.org"
-stars = 145
+stars = 146
 forks = 22
-latest_release = "2020-10-18T18:13:42+00:00"
+latest_release = "2026-01-29T21:24:25+00:00"
 first_commit = "2018-05-16T18:28:10+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -17095,7 +17119,7 @@ contributors = [
     "asiripanich",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.077891+00:00"
+last_updated = "2026-09-18T14:22:36.314892+00:00"
 releases = 18
 language = "R"
 
@@ -17104,8 +17128,8 @@ repo = "tidymodels/tidymodels"
 name = "tidymodels"
 description = "Easily install and load the tidymodels packages"
 website = "https://tidymodels.tidymodels.org"
-stars = 813
-forks = 76
+stars = 820
+forks = 79
 latest_release = "2026-04-23T11:38:57+00:00"
 first_commit = "2018-07-05T19:38:29+00:00"
 license = "NOASSERTION"
@@ -17119,6 +17143,7 @@ contributors = [
     "alexpghayes",
     "AshleyHenry15",
     "chx5",
+    "dionnecargy",
     "gaborcsardi",
     "jeroenjanssens",
     "jimhester",
@@ -17128,7 +17153,7 @@ contributors = [
     "PursuitOfDataScience",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.099300+00:00"
+last_updated = "2026-09-18T14:22:38.924208+00:00"
 releases = 15
 language = "R"
 
@@ -17137,9 +17162,9 @@ repo = "tidymodels/dials"
 name = "dials"
 description = "Tools for creating tuning parameter values"
 website = "https://dials.tidymodels.org/"
-stars = 116
-forks = 33
-latest_release = "2026-04-13T09:05:00+00:00"
+stars = 117
+forks = 36
+latest_release = "2026-06-22T19:33:40+00:00"
 first_commit = "2018-07-23T03:07:49+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -17150,6 +17175,7 @@ contributors = [
     "juliasilge",
     "joeycouse",
     "simonpcouch",
+    "edgararuiz",
     "jeroenjanssens",
     "corybrunson",
     "kmdupr33",
@@ -17159,11 +17185,12 @@ contributors = [
     "karawoo",
     "gaborcsardi",
     "gabrielodom",
+    "coadkins",
     "adanvr",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.120438+00:00"
-releases = 21
+last_updated = "2026-09-18T14:22:41.462646+00:00"
+releases = 22
 language = "R"
 
 [[repos]]
@@ -17184,7 +17211,7 @@ contributors = [
     "marlycormar",
     "wligtenberg",
 ]
-last_updated = "2026-05-20T08:05:48.141163+00:00"
+last_updated = "2026-09-18T14:22:43.355999+00:00"
 releases = 0
 language = "HTML"
 
@@ -17193,7 +17220,7 @@ repo = "tidymodels/textrecipes"
 name = "textrecipes"
 description = "Extra recipes for Text Processing"
 website = "https://textrecipes.tidymodels.org/"
-stars = 164
+stars = 165
 forks = 17
 latest_release = "2025-03-18T15:37:10+00:00"
 first_commit = "2018-09-10T23:15:56+00:00"
@@ -17213,7 +17240,7 @@ contributors = [
     "hadley",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.161851+00:00"
+last_updated = "2026-09-18T14:22:46.104234+00:00"
 releases = 20
 language = "R"
 
@@ -17222,7 +17249,7 @@ repo = "tidymodels/probably"
 name = "probably"
 description = "Tools for post-processing class probability estimates"
 website = "https://probably.tidymodels.org/"
-stars = 121
+stars = 123
 forks = 16
 latest_release = "2025-10-16T12:05:16+00:00"
 first_commit = "2018-09-11T19:02:58+00:00"
@@ -17230,8 +17257,8 @@ license = "NOASSERTION"
 contributors = [
     "DavisVaughan",
     "topepo",
-    "EmilHvitfeldt",
     "edgararuiz",
+    "EmilHvitfeldt",
     "juliasilge",
     "hfrick",
     "jrwinget",
@@ -17240,7 +17267,7 @@ contributors = [
     "jeroenjanssens",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.183023+00:00"
+last_updated = "2026-09-18T14:22:48.869804+00:00"
 releases = 13
 language = "R"
 
@@ -17269,7 +17296,7 @@ contributors = [
     "marlycormar",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.203982+00:00"
+last_updated = "2026-09-18T14:22:51.773012+00:00"
 releases = 17
 language = "R"
 
@@ -17278,7 +17305,7 @@ repo = "tidymodels/aml-training"
 name = "aml-training"
 description = "The most recent version of the Applied Machine Learning notes"
 website = ""
-stars = 100
+stars = 102
 forks = 29
 latest_release = "2019-05-27T19:19:27+00:00"
 first_commit = "2019-02-23T15:33:16+00:00"
@@ -17286,7 +17313,7 @@ license = "GPL-2.0"
 contributors = [
     "topepo",
 ]
-last_updated = "2026-05-20T08:05:48.224651+00:00"
+last_updated = "2026-09-18T14:22:54.240243+00:00"
 releases = 2
 language = "HTML"
 
@@ -17295,7 +17322,7 @@ repo = "tidymodels/baguette"
 name = "baguette"
 description = "parsnip Model Functions for Bagging"
 website = "https://baguette.tidymodels.org"
-stars = 28
+stars = 29
 forks = 9
 latest_release = "2025-01-28T21:37:53+00:00"
 first_commit = "2019-03-23T01:59:18+00:00"
@@ -17313,7 +17340,7 @@ contributors = [
     "RodDalBen",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.245822+00:00"
+last_updated = "2026-09-18T14:22:56.633694+00:00"
 releases = 8
 language = "R"
 
@@ -17322,8 +17349,8 @@ repo = "tidymodels/butcher"
 name = "butcher"
 description = "Reduce the size of model objects saved to disk"
 website = "https://butcher.tidymodels.org/"
-stars = 138
-forks = 16
+stars = 139
+forks = 17
 latest_release = "2025-12-09T11:27:57+00:00"
 first_commit = "2019-06-06T19:45:18+00:00"
 license = "NOASSERTION"
@@ -17347,7 +17374,7 @@ contributors = [
     "abichat",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.266805+00:00"
+last_updated = "2026-09-18T14:22:59.098671+00:00"
 releases = 13
 language = "R"
 
@@ -17357,7 +17384,7 @@ name = "applicable"
 description = "Quantify extrapolation of new samples given a training set"
 website = "https://applicable.tidymodels.org/"
 stars = 48
-forks = 8
+forks = 10
 latest_release = "2026-02-26T03:05:08+00:00"
 first_commit = "2019-07-08T18:53:53+00:00"
 license = "NOASSERTION"
@@ -17371,7 +17398,7 @@ contributors = [
     "mpadge",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.287948+00:00"
+last_updated = "2026-09-18T14:23:01.703854+00:00"
 releases = 2
 language = "R"
 
@@ -17380,8 +17407,8 @@ repo = "tidymodels/tune"
 name = "tune"
 description = "Tools for tidy parameter tuning"
 website = "https://tune.tidymodels.org"
-stars = 334
-forks = 48
+stars = 343
+forks = 54
 latest_release = "2026-04-17T16:43:58+00:00"
 first_commit = "2019-08-09T20:49:40+00:00"
 license = "NOASSERTION"
@@ -17414,7 +17441,7 @@ contributors = [
     "dmalkr",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.309032+00:00"
+last_updated = "2026-09-18T14:23:04.499358+00:00"
 releases = 21
 language = "R"
 
@@ -17423,8 +17450,8 @@ repo = "tidymodels/workflows"
 name = "workflows"
 description = "Modeling Workflows"
 website = "https://workflows.tidymodels.org/"
-stars = 210
-forks = 25
+stars = 211
+forks = 26
 latest_release = "2025-08-27T09:07:53+00:00"
 first_commit = "2019-09-25T15:45:32+00:00"
 license = "NOASSERTION"
@@ -17441,7 +17468,7 @@ contributors = [
     "jeroenjanssens",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.330624+00:00"
+last_updated = "2026-09-18T14:23:07.603522+00:00"
 releases = 18
 language = "R"
 
@@ -17451,7 +17478,7 @@ name = "discrim"
 description = "Wrappers for discriminant analysis and naive Bayes models for use with the parsnip package"
 website = "https://discrim.tidymodels.org"
 stars = 31
-forks = 4
+forks = 5
 latest_release = "2025-12-01T23:23:30+00:00"
 first_commit = "2019-10-08T02:11:36+00:00"
 license = "NOASSERTION"
@@ -17465,7 +17492,7 @@ contributors = [
     "simonpcouch",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.351991+00:00"
+last_updated = "2026-09-18T14:23:10.100067+00:00"
 releases = 10
 language = "R"
 
@@ -17475,8 +17502,8 @@ name = "themis"
 description = "Extra recipes steps for dealing with unbalanced data"
 website = "https://themis.tidymodels.org/"
 stars = 143
-forks = 13
-latest_release = "2025-01-22T23:40:45+00:00"
+forks = 14
+latest_release = "2026-08-01T23:38:30+00:00"
 first_commit = "2019-10-12T18:46:35+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -17489,12 +17516,13 @@ contributors = [
     "rpln",
     "jxu",
     "bebru",
+    "Dodothereal",
     "mine-cetinkaya-rundel",
     "PursuitOfDataScience",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.372783+00:00"
-releases = 12
+last_updated = "2026-09-18T14:23:12.740146+00:00"
+releases = 13
 language = "R"
 
 [[repos]]
@@ -17503,7 +17531,7 @@ name = "rules"
 description = "parsnip extension for rule-based models"
 website = "https://rules.tidymodels.org"
 stars = 42
-forks = 7
+forks = 8
 latest_release = "2023-03-08T23:13:46+00:00"
 first_commit = "2019-10-27T20:58:03+00:00"
 license = "NOASSERTION"
@@ -17520,7 +17548,7 @@ contributors = [
     "jeroenjanssens",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.393911+00:00"
+last_updated = "2026-09-18T14:23:15.306370+00:00"
 releases = 10
 language = "R"
 
@@ -17529,9 +17557,9 @@ repo = "tidymodels/modeldata"
 name = "modeldata"
 description = "Data Sets Used by tidymodels Packages"
 website = "https://modeldata.tidymodels.org/"
-stars = 24
-forks = 7
-latest_release = "2025-08-22T18:20:39+00:00"
+stars = 25
+forks = 8
+latest_release = "2026-08-22T15:38:26+00:00"
 first_commit = "2019-11-26T17:46:11+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -17545,8 +17573,8 @@ contributors = [
     "mdogucu",
     "simonpcouch",
 ]
-last_updated = "2026-05-20T08:05:48.414605+00:00"
-releases = 11
+last_updated = "2026-09-18T14:23:17.893483+00:00"
+releases = 12
 language = "R"
 
 [[repos]]
@@ -17554,8 +17582,8 @@ repo = "tidymodels/TMwR"
 name = "TMwR"
 description = "Code and content for \"Tidy Modeling with R\""
 website = "https://tmwr.org"
-stars = 625
-forks = 313
+stars = 628
+forks = 318
 latest_release = "2022-07-22T15:57:37+00:00"
 first_commit = "2019-12-11T01:57:18+00:00"
 license = "NOASSERTION"
@@ -17611,7 +17639,7 @@ contributors = [
     "BikramHalder",
     "arisp99",
 ]
-last_updated = "2026-05-20T08:05:48.435531+00:00"
+last_updated = "2026-09-18T14:23:20.874538+00:00"
 releases = 3
 language = "RMarkdown"
 
@@ -17621,7 +17649,7 @@ name = "poissonreg"
 description = "parsnip wrappers for Poisson regression"
 website = "https://poissonreg.tidymodels.org"
 stars = 23
-forks = 5
+forks = 8
 latest_release = "2026-04-19T16:15:32+00:00"
 first_commit = "2020-03-26T01:32:44+00:00"
 license = "NOASSERTION"
@@ -17634,7 +17662,7 @@ contributors = [
     "simonpcouch",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.456704+00:00"
+last_updated = "2026-09-18T14:23:23.336885+00:00"
 releases = 6
 language = "R"
 
@@ -17645,7 +17673,7 @@ description = "Model Wrappers for Projection Methods"
 website = "https://plsmod.tidymodels.org"
 stars = 14
 forks = 6
-latest_release = "2020-10-07T13:39:09+00:00"
+latest_release = "2022-09-06T19:20:47+00:00"
 first_commit = "2020-04-07T02:47:29+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -17658,7 +17686,7 @@ contributors = [
     "batpigandme",
     "simonpcouch",
 ]
-last_updated = "2026-05-20T08:05:48.477409+00:00"
+last_updated = "2026-09-18T14:23:25.740672+00:00"
 releases = 5
 language = "R"
 
@@ -17668,7 +17696,7 @@ name = "multilevelmod"
 description = "Parsnip wrappers for mixed-level and hierarchical models"
 website = "https://multilevelmod.tidymodels.org/"
 stars = 74
-forks = 5
+forks = 6
 latest_release = "2022-06-17T12:13:05+00:00"
 first_commit = "2020-04-23T22:54:06+00:00"
 license = "NOASSERTION"
@@ -17682,7 +17710,7 @@ contributors = [
     "a-difabio",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.498393+00:00"
+last_updated = "2026-09-18T14:23:28.308953+00:00"
 releases = 3
 language = "R"
 
@@ -17692,7 +17720,7 @@ name = "planning"
 description = "Documents to plan and discuss future development"
 website = ""
 stars = 37
-forks = 5
+forks = 6
 first_commit = "2020-04-24T19:51:08+00:00"
 license = "MIT"
 contributors = [
@@ -17706,7 +17734,7 @@ contributors = [
     "juliasilge",
     "turgeonmaxime",
 ]
-last_updated = "2026-05-20T08:05:48.519098+00:00"
+last_updated = "2026-09-18T14:23:30.147834+00:00"
 releases = 0
 
 [[repos]]
@@ -17722,7 +17750,7 @@ contributors = [
     "karaesmen",
     "juliasilge",
 ]
-last_updated = "2026-05-20T08:05:48.540162+00:00"
+last_updated = "2026-09-18T14:23:31.803734+00:00"
 releases = 0
 
 [[repos]]
@@ -17746,7 +17774,7 @@ contributors = [
     "petzi53",
     "FrieseWoudloper",
 ]
-last_updated = "2026-05-20T08:05:48.561766+00:00"
+last_updated = "2026-09-18T14:23:33.573176+00:00"
 releases = 0
 language = "R"
 
@@ -17771,7 +17799,7 @@ contributors = [
     "jeroenjanssens",
     "vinchinzu",
 ]
-last_updated = "2026-05-20T08:05:48.582618+00:00"
+last_updated = "2026-09-18T14:23:36.035315+00:00"
 releases = 3
 language = "R"
 
@@ -17781,7 +17809,7 @@ name = "stacks"
 description = "An R package for tidy stacked ensemble modeling"
 website = "https://stacks.tidymodels.org"
 stars = 302
-forks = 28
+forks = 29
 latest_release = "2025-05-27T19:55:03+00:00"
 first_commit = "2020-06-12T20:51:21+00:00"
 license = "NOASSERTION"
@@ -17796,7 +17824,7 @@ contributors = [
     "osorensen",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.603558+00:00"
+last_updated = "2026-09-18T14:23:38.598983+00:00"
 releases = 14
 language = "R"
 
@@ -17805,13 +17833,13 @@ repo = "tidymodels/extratests"
 name = "extratests"
 description = "Integration and other testing for tidymodels"
 website = ""
-stars = 22
+stars = 23
 forks = 0
 first_commit = "2020-06-23T20:17:16+00:00"
 license = "NOASSERTION"
 contributors = [
-    "topepo",
     "hfrick",
+    "topepo",
     "juliasilge",
     "EmilHvitfeldt",
     "simonpcouch",
@@ -17820,7 +17848,7 @@ contributors = [
     "edgararuiz",
     "mikemahoney218",
 ]
-last_updated = "2026-05-20T08:05:48.624455+00:00"
+last_updated = "2026-09-18T14:23:40.479222+00:00"
 releases = 0
 language = "R"
 
@@ -17829,8 +17857,8 @@ repo = "tidymodels/finetune"
 name = "finetune"
 description = "Additional functions for model tuning"
 website = "https://finetune.tidymodels.org/"
-stars = 64
-forks = 12
+stars = 65
+forks = 13
 latest_release = "2026-04-17T17:36:54+00:00"
 first_commit = "2020-07-04T20:12:07+00:00"
 license = "NOASSERTION"
@@ -17850,7 +17878,7 @@ contributors = [
     "tjburch",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.645994+00:00"
+last_updated = "2026-09-18T14:23:43.108114+00:00"
 releases = 9
 language = "R"
 
@@ -17859,9 +17887,9 @@ repo = "tidymodels/censored"
 name = "censored"
 description = "Parsnip wrappers for survival models"
 website = "https://censored.tidymodels.org/"
-stars = 123
-forks = 16
-latest_release = "2026-04-03T15:34:55+00:00"
+stars = 125
+forks = 18
+latest_release = "2026-09-04T13:08:50+00:00"
 first_commit = "2020-07-31T04:58:54+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -17877,8 +17905,8 @@ contributors = [
     "mattwarkentin",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.667780+00:00"
-releases = 8
+last_updated = "2026-09-18T14:23:45.875827+00:00"
+releases = 9
 language = "R"
 
 [[repos]]
@@ -17886,15 +17914,16 @@ repo = "tidymodels/brulee"
 name = "brulee"
 description = "High-Level Modeling Functions with 'torch'"
 website = "https://brulee.tidymodels.org/"
-stars = 73
-forks = 9
-latest_release = "2025-09-02T10:44:03+00:00"
+stars = 75
+forks = 10
+latest_release = "2026-09-02T21:35:30+00:00"
 first_commit = "2020-08-19T21:34:01+00:00"
 license = "NOASSERTION"
 contributors = [
     "topepo",
     "dfalbel",
     "hfrick",
+    "edgararuiz",
     "EmilHvitfeldt",
     "gaborcsardi",
     "juliasilge",
@@ -17904,8 +17933,8 @@ contributors = [
     "jrosell",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.689052+00:00"
-releases = 7
+last_updated = "2026-09-18T14:23:48.695660+00:00"
+releases = 11
 language = "R"
 
 [[repos]]
@@ -17921,7 +17950,7 @@ contributors = [
     "juliasilge",
     "hfrick",
 ]
-last_updated = "2026-05-20T08:05:48.710432+00:00"
+last_updated = "2026-09-18T14:23:50.399761+00:00"
 releases = 0
 
 [[repos]]
@@ -17929,8 +17958,8 @@ repo = "tidymodels/workflowsets"
 name = "workflowsets"
 description = "Create a collection of modeling workflows"
 website = "https://workflowsets.tidymodels.org/"
-stars = 97
-forks = 11
+stars = 98
+forks = 12
 latest_release = "2025-05-28T13:18:33+00:00"
 first_commit = "2020-11-24T02:30:49+00:00"
 license = "NOASSERTION"
@@ -17947,7 +17976,7 @@ contributors = [
     "jrosell",
 ]
 readme_image = "man/figures/README-plot-1.png"
-last_updated = "2026-05-20T08:05:48.731174+00:00"
+last_updated = "2026-09-18T14:23:52.812206+00:00"
 releases = 8
 language = "R"
 
@@ -17956,7 +17985,7 @@ repo = "tidymodels/spatialsample"
 name = "spatialsample"
 description = "Create and summarize spatial resampling objects 🗺"
 website = "https://spatialsample.tidymodels.org"
-stars = 76
+stars = 80
 forks = 6
 latest_release = "2024-10-02T16:28:40+00:00"
 first_commit = "2021-01-19T21:06:51+00:00"
@@ -17966,9 +17995,10 @@ contributors = [
     "juliasilge",
     "DavisVaughan",
     "hfrick",
+    "jeroenjanssens",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.752421+00:00"
+last_updated = "2026-09-18T14:23:55.501752+00:00"
 releases = 8
 language = "R"
 
@@ -17992,7 +18022,7 @@ contributors = [
     "hfrick",
     "romainfrancois",
 ]
-last_updated = "2026-05-20T08:05:48.774347+00:00"
+last_updated = "2026-09-18T14:23:58.073393+00:00"
 releases = 2
 language = "R"
 
@@ -18010,7 +18040,7 @@ contributors = [
     "EmilHvitfeldt",
     "juliasilge",
 ]
-last_updated = "2026-05-20T08:05:48.795647+00:00"
+last_updated = "2026-09-18T14:24:00.030945+00:00"
 releases = 0
 language = "C"
 
@@ -18019,7 +18049,7 @@ repo = "tidymodels/desirability2"
 name = "desirability2"
 description = "Desirability Functions for Multiparameter Optimization"
 website = "https://desirability2.tidymodels.org"
-stars = 14
+stars = 15
 forks = 2
 latest_release = "2025-08-22T19:17:25+00:00"
 first_commit = "2021-08-14T20:22:48+00:00"
@@ -18033,7 +18063,7 @@ contributors = [
     "mattwarkentin",
 ]
 readme_image = "man/figures/README-choices-1.png"
-last_updated = "2026-05-20T08:05:48.816983+00:00"
+last_updated = "2026-09-18T14:24:02.524890+00:00"
 releases = 3
 language = "R"
 
@@ -18042,9 +18072,9 @@ repo = "tidymodels/tidyclust"
 name = "tidyclust"
 description = "A tidy unified interface to clustering models"
 website = "https://tidyclust.tidymodels.org/"
-stars = 112
+stars = 119
 forks = 20
-latest_release = "2025-01-27T23:10:34+00:00"
+latest_release = "2026-06-28T20:45:40+00:00"
 first_commit = "2021-11-19T19:52:49+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -18052,16 +18082,16 @@ contributors = [
     "kbodwin",
     "michaelgrund",
     "hfrick",
+    "lgaborini",
     "topepo",
     "jeroenjanssens",
-    "lgaborini",
     "mcanouil",
     "avishaitsur",
     "brendad8",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.838309+00:00"
-releases = 8
+last_updated = "2026-09-18T14:24:05.011489+00:00"
+releases = 11
 language = "R"
 
 [[repos]]
@@ -18069,16 +18099,16 @@ repo = "tidymodels/workshops"
 name = "workshops"
 description = "Website and materials for tidymodels workshops"
 website = "https://workshops.tidymodels.org"
-stars = 102
-forks = 58
+stars = 103
+forks = 63
 latest_release = "2025-10-07T00:40:39+00:00"
 first_commit = "2022-04-10T14:43:31+00:00"
 license = "CC-BY-SA-4.0"
 contributors = [
     "hfrick",
-    "juliasilge",
-    "EmilHvitfeldt",
     "topepo",
+    "EmilHvitfeldt",
+    "juliasilge",
     "simonpcouch",
     "edgararuiz",
     "DavisVaughan",
@@ -18087,7 +18117,7 @@ contributors = [
     "Copilot",
     "frans-ixpantia",
 ]
-last_updated = "2026-05-20T08:05:48.859358+00:00"
+last_updated = "2026-09-18T14:24:07.410107+00:00"
 releases = 4
 language = "JavaScript"
 
@@ -18096,9 +18126,9 @@ repo = "tidymodels/bonsai"
 name = "bonsai"
 description = "parsnip wrappers for tree-based models"
 website = "https://bonsai.tidymodels.org"
-stars = 54
+stars = 57
 forks = 9
-latest_release = "2025-06-23T20:18:05+00:00"
+latest_release = "2026-05-21T21:35:14+00:00"
 first_commit = "2022-04-29T13:33:22+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -18111,8 +18141,8 @@ contributors = [
     "jeroenjanssens",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:48.881307+00:00"
-releases = 7
+last_updated = "2026-09-18T14:24:09.993532+00:00"
+releases = 8
 language = "R"
 
 [[repos]]
@@ -18133,7 +18163,7 @@ contributors = [
     "gvelasq",
 ]
 readme_image = "man/figures/logo.svg"
-last_updated = "2026-05-20T08:05:48.902091+00:00"
+last_updated = "2026-09-18T14:24:12.437657+00:00"
 releases = 3
 language = "R"
 
@@ -18148,7 +18178,7 @@ first_commit = "2022-05-26T20:41:18+00:00"
 contributors = [
     "juliasilge",
 ]
-last_updated = "2026-05-20T08:05:48.922721+00:00"
+last_updated = "2026-09-18T14:24:14.193979+00:00"
 releases = 0
 language = "HTML"
 
@@ -18167,7 +18197,7 @@ contributors = [
     "hfrick",
     "jeroenjanssens",
 ]
-last_updated = "2026-05-20T08:05:48.943609+00:00"
+last_updated = "2026-09-18T14:24:16.687192+00:00"
 releases = 3
 language = "R"
 
@@ -18176,18 +18206,19 @@ repo = "tidymodels/tidymodels.org"
 name = "tidymodels.org"
 description = "Source of tidymodels.org"
 website = "https://www.tidymodels.org/"
-stars = 23
+stars = 24
 forks = 26
 first_commit = "2023-01-04T02:49:49+00:00"
 contributors = [
     "EmilHvitfeldt",
+    "github-actions[bot]",
     "simonpcouch",
     "topepo",
     "franceslinyc",
-    "github-actions[bot]",
     "hfrick",
     "edgararuiz",
     "Wander03",
+    "CharlotteZZh",
     "michaelgrund",
     "corybrunson",
     "abichat",
@@ -18199,7 +18230,7 @@ contributors = [
     "flaviaerius",
 ]
 readme_image = "https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
-last_updated = "2026-05-20T08:05:48.964343+00:00"
+last_updated = "2026-09-18T14:24:18.979652+00:00"
 releases = 0
 language = "HTML"
 
@@ -18219,7 +18250,7 @@ contributors = [
     "hfrick",
     "simonpcouch",
 ]
-last_updated = "2026-05-20T08:05:48.985774+00:00"
+last_updated = "2026-09-18T14:24:21.535780+00:00"
 releases = 4
 language = "R"
 
@@ -18228,7 +18259,7 @@ repo = "tidymodels/tailor"
 name = "tailor"
 description = "Iterative Steps for Postprocessing Model Predictions"
 website = "https://tailor.tidymodels.org"
-stars = 16
+stars = 18
 forks = 4
 latest_release = "2025-08-25T23:54:08+00:00"
 first_commit = "2024-04-11T19:12:10+00:00"
@@ -18239,7 +18270,7 @@ contributors = [
     "topepo",
     "EmilHvitfeldt",
 ]
-last_updated = "2026-05-20T08:05:49.006994+00:00"
+last_updated = "2026-09-18T14:24:24.150164+00:00"
 releases = 1
 language = "R"
 
@@ -18248,9 +18279,9 @@ repo = "tidymodels/orbital"
 name = "orbital"
 description = "Turn Tidymodels Workflows Into Series of Equations"
 website = "https://orbital.tidymodels.org"
-stars = 48
+stars = 50
 forks = 3
-latest_release = "2026-02-27T19:57:40+00:00"
+latest_release = "2026-09-04T18:12:08+00:00"
 first_commit = "2024-06-13T19:03:09+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -18258,8 +18289,8 @@ contributors = [
     "jeroenjanssens",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:49.028167+00:00"
-releases = 7
+last_updated = "2026-09-18T14:24:26.773138+00:00"
+releases = 9
 language = "R"
 
 [[repos]]
@@ -18277,7 +18308,7 @@ contributors = [
     "EmilHvitfeldt",
 ]
 readme_image = "man/figures/README-derived-plot-1.png"
-last_updated = "2026-05-20T08:05:49.049797+00:00"
+last_updated = "2026-09-18T14:24:29.426933+00:00"
 releases = 3
 language = "R"
 
@@ -18293,7 +18324,7 @@ contributors = [
     "EmilHvitfeldt",
     "topepo",
 ]
-last_updated = "2026-05-20T08:05:49.071057+00:00"
+last_updated = "2026-09-18T14:24:31.174907+00:00"
 releases = 0
 language = "R"
 
@@ -18302,8 +18333,8 @@ repo = "tidymodels/tabpfn"
 name = "tabpfn"
 description = "Foundation Model for Tabular Data via reticulate"
 website = "http://tabpfn.tidymodels.org/"
-stars = 33
-forks = 4
+stars = 34
+forks = 5
 first_commit = "2025-01-27T16:59:44+00:00"
 license = "Apache-2.0"
 contributors = [
@@ -18311,12 +18342,13 @@ contributors = [
     "edgararuiz",
     "frankiethull",
     "t-kalinowski",
+    "VisruthSK",
 ]
-readme_image = "man/figures/README-boundaries-1.png"
-last_updated = "2026-05-20T08:05:49.092623+00:00"
-releases = 2
+readme_image = "man/figures/logo.png"
+last_updated = "2026-09-18T14:24:33.845761+00:00"
+releases = 3
 language = "R"
-latest_release = "2026-05-14T12:54:06+00:00"
+latest_release = "2026-09-02T13:12:10+00:00"
 
 [[repos]]
 repo = "tidymodels/filtro"
@@ -18334,7 +18366,7 @@ contributors = [
     "EmilHvitfeldt",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:49.114075+00:00"
+last_updated = "2026-09-18T14:24:36.377714+00:00"
 releases = 2
 language = "R"
 
@@ -18344,7 +18376,7 @@ name = "yaml"
 description = "R package for converting objects to and from YAML"
 website = "http://yaml.r-lib.org/"
 stars = 169
-forks = 41
+forks = 43
 latest_release = "2024-07-22T15:23:35+00:00"
 first_commit = "2008-04-28T21:52:03+00:00"
 license = "NOASSERTION"
@@ -18367,7 +18399,7 @@ contributors = [
     "zkamvar",
     "arnaudgallou",
 ]
-last_updated = "2026-05-20T08:05:54.471665+00:00"
+last_updated = "2026-09-18T14:24:56.015932+00:00"
 releases = 3
 language = "C"
 
@@ -18376,7 +18408,7 @@ repo = "r-lib/evaluate"
 name = "evaluate"
 description = "A version of eval for R that returns more information about what happened"
 website = "http://evaluate.r-lib.org/"
-stars = 139
+stars = 138
 forks = 36
 latest_release = "2025-08-27T16:20:44+00:00"
 first_commit = "2008-05-18T13:40:10+00:00"
@@ -18403,7 +18435,7 @@ contributors = [
     "schloerke",
     "adamryczkowski",
 ]
-last_updated = "2026-05-20T08:05:54.505499+00:00"
+last_updated = "2026-09-18T14:24:58.343557+00:00"
 releases = 6
 language = "R"
 
@@ -18412,8 +18444,8 @@ repo = "r-lib/testthat"
 name = "testthat"
 description = "An R 📦 to make testing 😀"
 website = "https://testthat.r-lib.org"
-stars = 926
-forks = 342
+stars = 939
+forks = 346
 latest_release = "2026-01-08T23:38:28+00:00"
 first_commit = "2009-09-02T12:51:44+00:00"
 license = "NOASSERTION"
@@ -18553,7 +18585,7 @@ contributors = [
     "FrancoisGuillem",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:54.531046+00:00"
+last_updated = "2026-09-18T14:25:02.855524+00:00"
 releases = 41
 language = "R"
 
@@ -18562,8 +18594,8 @@ repo = "r-lib/devtools"
 name = "devtools"
 description = "Tools to make an R developer's life easier"
 website = "https://devtools.r-lib.org"
-stars = 2509
-forks = 761
+stars = 2518
+forks = 762
 latest_release = "2026-04-29T15:42:10+00:00"
 first_commit = "2010-05-03T04:08:49+00:00"
 license = "NOASSERTION"
@@ -18701,7 +18733,7 @@ contributors = [
     "bborgesr",
     "tonytonov",
     "Anirban166",
-    "brownag",
+    "AndrewBrown-USDA",
     "adamhsparks",
     "mikemahoney218",
     "MichaelChirico",
@@ -18726,7 +18758,7 @@ contributors = [
     "IndrajeetPatil",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:54.553234+00:00"
+last_updated = "2026-09-18T14:25:08.240842+00:00"
 releases = 39
 language = "R"
 
@@ -18735,20 +18767,21 @@ repo = "r-lib/log4r"
 name = "log4r"
 description = "A fast & lightweight approach to logging in R based on the widely-emulated Apache Log4j project."
 website = "https://log4r.r-lib.org"
-stars = 100
+stars = 101
 forks = 23
-latest_release = "2024-10-12T00:20:05+00:00"
+latest_release = "2026-08-04T20:03:14+00:00"
 first_commit = "2010-08-25T01:56:42+00:00"
 contributors = [
     "atheriel",
+    "hadley",
     "johnmyleswhite",
     "krlmlr",
-    "hadley",
+    "jeroenjanssens",
     "jonthegeek",
     "brooklynbagel",
 ]
-last_updated = "2026-05-20T08:05:54.574635+00:00"
-releases = 9
+last_updated = "2026-09-18T14:25:10.639504+00:00"
+releases = 10
 language = "R"
 
 [[repos]]
@@ -18756,8 +18789,8 @@ repo = "r-lib/scales"
 name = "scales"
 description = "Tools for ggplot2 scales"
 website = "https://scales.r-lib.org"
-stars = 446
-forks = 117
+stars = 448
+forks = 120
 latest_release = "2025-04-23T14:42:43+00:00"
 first_commit = "2010-11-08T00:44:23+00:00"
 license = "NOASSERTION"
@@ -18783,10 +18816,12 @@ contributors = [
     "yutannihilation",
     "dvmlls",
     "ThierryO",
+    "sierrajohnson",
     "zamorarr",
     "mikmart",
     "mjskay",
     "billdenney",
+    "EricMarcon",
     "lepennec",
     "hmalmedal",
     "Moohan",
@@ -18802,10 +18837,11 @@ contributors = [
     "wibeasley",
     "yihui",
     "seaaan",
-    "EricMarcon",
     "nacnudus",
+    "math-mcshane",
     "d-morrison",
     "dmi3kno",
+    "cynthiahqy",
     "colindouglas",
     "cwickham",
     "pearsonca",
@@ -18818,7 +18854,7 @@ contributors = [
     "Aehmlo",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:54.595594+00:00"
+last_updated = "2026-09-18T14:25:13.770862+00:00"
 releases = 13
 language = "R"
 
@@ -18858,7 +18894,7 @@ contributors = [
     "dy-kim",
     "csgillespie",
 ]
-last_updated = "2026-05-20T08:05:54.616277+00:00"
+last_updated = "2026-09-18T14:25:16.330071+00:00"
 releases = 5
 language = "R"
 
@@ -18867,9 +18903,9 @@ repo = "r-lib/roxygen2"
 name = "roxygen2"
 description = "Generate R package documentation from inline R comments"
 website = "https://roxygen2.r-lib.org"
-stars = 647
-forks = 237
-latest_release = "2026-04-30T12:50:09+00:00"
+stars = 664
+forks = 238
+latest_release = "2026-07-31T13:19:48+00:00"
 first_commit = "2011-05-18T08:23:27+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -18884,20 +18920,21 @@ contributors = [
     "kevinushey",
     "maelle",
     "Geoff99",
+    "lionel-",
     "dougmitarotonda",
     "maxheld83",
-    "ateucher",
     "jranke",
-    "lionel-",
-    "wibeasley",
     "jennybc",
-    "salim-b",
-    "olivroy",
+    "wibeasley",
+    "ateucher",
     "jdmanton",
-    "egnha",
-    "batpigandme",
-    "thomasp85",
+    "olivroy",
+    "salim-b",
     "DavisVaughan",
+    "thomasp85",
+    "batpigandme",
+    "egnha",
+    "peterdesmet",
     "msberends",
     "HenrikBengtsson",
     "gustavdelius",
@@ -18907,18 +18944,17 @@ contributors = [
     "tobiaskley",
     "mikefc",
     "lindbrook",
-    "bastistician",
     "eibanez",
-    "cderv",
-    "nealrichardson",
     "jeroen",
-    "mikldk",
+    "bastistician",
     "mikemc",
+    "nealrichardson",
+    "cderv",
+    "mikldk",
     "russHyde",
     "romainfrancois",
     "flying-sheep",
     "PeteHaitch",
-    "peterdesmet",
     "pat-s",
     "pkq",
     "Ironholds",
@@ -18949,6 +18985,7 @@ contributors = [
     "ThierryO",
     "simonpcouch",
     "sgibb",
+    "LiNk-NY",
     "Bisaloo",
     "HenningLorenzen-ext-bayer",
     "jefferis",
@@ -18966,7 +19003,6 @@ contributors = [
     "arilamstein",
     "akersting",
     "samuel-rosa",
-    "LiNk-NY",
     "mjaeugster",
     "Lucaweihs",
     "klmr",
@@ -18975,6 +19011,7 @@ contributors = [
     "jhchou",
     "jmbarbone",
     "jonthegeek",
+    "jeis4wpi",
     "jeis2497052",
     "johnbaums",
     "JesseAlderliesten",
@@ -18985,8 +19022,8 @@ contributors = [
     "ijlyttle",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:54.637345+00:00"
-releases = 28
+last_updated = "2026-09-18T14:25:20.927228+00:00"
+releases = 29
 language = "R"
 
 [[repos]]
@@ -18994,9 +19031,9 @@ repo = "r-lib/httr"
 name = "httr"
 description = "httr: a friendly http package for R"
 website = "https://httr.r-lib.org"
-stars = 982
-forks = 1962
-latest_release = "2026-02-13T13:25:34+00:00"
+stars = 981
+forks = 1955
+latest_release = "2026-08-31T22:59:41+00:00"
 first_commit = "2011-11-11T15:05:00+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -19068,8 +19105,8 @@ contributors = [
     "mnazarov",
     "MichaelChirico",
 ]
-last_updated = "2026-05-20T08:05:54.658485+00:00"
-releases = 20
+last_updated = "2026-09-18T14:25:24.334324+00:00"
+releases = 21
 language = "R"
 
 [[repos]]
@@ -19078,7 +19115,7 @@ name = "gtable"
 description = "The layout packages that powers ggplot2"
 website = "https://gtable.r-lib.org"
 stars = 94
-forks = 18
+forks = 19
 latest_release = "2024-10-25T12:41:50+00:00"
 first_commit = "2011-12-30T16:08:43+00:00"
 license = "NOASSERTION"
@@ -19096,7 +19133,7 @@ contributors = [
     "baptiste",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:54.698671+00:00"
+last_updated = "2026-09-18T14:25:26.675833+00:00"
 releases = 8
 language = "R"
 
@@ -19105,9 +19142,9 @@ repo = "r-lib/pkgdown"
 name = "pkgdown"
 description = "Generate static html documentation for an R package"
 website = "https://pkgdown.r-lib.org/"
-stars = 770
-forks = 346
-latest_release = "2025-11-05T16:48:34+00:00"
+stars = 775
+forks = 355
+latest_release = "2026-07-07T15:24:28+00:00"
 first_commit = "2012-03-15T00:36:24+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -19262,8 +19299,8 @@ contributors = [
     "espinielli",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:54.720848+00:00"
-releases = 26
+last_updated = "2026-09-18T14:25:31.549877+00:00"
+releases = 27
 language = "R"
 
 [[repos]]
@@ -19272,7 +19309,7 @@ name = "rappdirs"
 description = "Find OS-specific directories to store data, caches, and logs. A port of python's AppDirs"
 website = "https://rappdirs.r-lib.org"
 stars = 92
-forks = 15
+forks = 14
 latest_release = "2026-01-16T22:03:17+00:00"
 first_commit = "2012-08-10T14:06:28+00:00"
 license = "NOASSERTION"
@@ -19284,7 +19321,7 @@ contributors = [
     "fmichonneau",
     "jeroenjanssens",
 ]
-last_updated = "2026-05-20T08:05:54.742204+00:00"
+last_updated = "2026-09-18T14:25:33.882655+00:00"
 releases = 5
 language = "R"
 
@@ -19293,7 +19330,7 @@ repo = "r-lib/svglite"
 name = "svglite"
 description = "A lightweight svg graphics device for R"
 website = "https://svglite.r-lib.org"
-stars = 199
+stars = 202
 forks = 41
 latest_release = "2025-10-20T15:57:02+00:00"
 first_commit = "2012-11-27T14:29:49+00:00"
@@ -19318,7 +19355,7 @@ contributors = [
     "pmur002",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:54.763547+00:00"
+last_updated = "2026-09-18T14:25:36.334075+00:00"
 releases = 14
 language = "C++"
 
@@ -19327,8 +19364,8 @@ repo = "r-lib/R6"
 name = "R6"
 description = "Encapsulated object-oriented programming for R"
 website = "https://R6.r-lib.org"
-stars = 424
-forks = 59
+stars = 425
+forks = 58
 latest_release = "2025-02-14T21:15:08+00:00"
 first_commit = "2014-05-07T04:33:54+00:00"
 license = "NOASSERTION"
@@ -19352,7 +19389,7 @@ contributors = [
     "iagogv3",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:54.785347+00:00"
+last_updated = "2026-09-18T14:25:38.694086+00:00"
 releases = 4
 language = "R"
 
@@ -19383,7 +19420,7 @@ contributors = [
     "maelle",
     "obarisk",
 ]
-last_updated = "2026-05-20T08:05:54.807034+00:00"
+last_updated = "2026-09-18T14:25:41.031549+00:00"
 releases = 4
 language = "R"
 
@@ -19402,7 +19439,7 @@ contributors = [
     "richfitz",
     "salim-b",
 ]
-last_updated = "2026-05-20T08:05:54.828157+00:00"
+last_updated = "2026-09-18T14:25:43.439125+00:00"
 releases = 2
 language = "R"
 
@@ -19420,9 +19457,10 @@ contributors = [
     "gaborcsardi",
     "pekkarr",
     "jeroenjanssens",
+    "jeroen",
     "edavidaja",
 ]
-last_updated = "2026-05-20T08:05:54.849200+00:00"
+last_updated = "2026-09-18T14:25:45.937980+00:00"
 releases = 8
 language = "C"
 
@@ -19431,8 +19469,8 @@ repo = "r-lib/crayon"
 name = "crayon"
 description = "🖍️ R package for colored terminal output — now superseded by cli"
 website = "http://r-lib.github.io/crayon/"
-stars = 323
-forks = 38
+stars = 324
+forks = 39
 latest_release = "2024-06-20T11:48:46+00:00"
 first_commit = "2014-09-22T20:07:22+00:00"
 license = "NOASSERTION"
@@ -19456,7 +19494,7 @@ contributors = [
     "mrchypark",
 ]
 readme_image = "https://user-images.githubusercontent.com/660288/102484487-41cd2900-405e-11eb-87d4-65793ad9db6a.png"
-last_updated = "2026-05-20T08:05:54.870213+00:00"
+last_updated = "2026-09-18T14:25:48.218870+00:00"
 releases = 7
 language = "R"
 
@@ -19483,7 +19521,7 @@ contributors = [
     "TimTaylor",
     "yutannihilation",
 ]
-last_updated = "2026-05-20T08:05:54.891665+00:00"
+last_updated = "2026-09-18T14:25:50.740109+00:00"
 releases = 1
 language = "R"
 
@@ -19492,9 +19530,9 @@ repo = "r-lib/lintr"
 name = "lintr"
 description = "Static Code Analysis for R"
 website = "https://lintr.r-lib.org"
-stars = 1275
-forks = 197
-latest_release = "2025-11-27T15:14:26+00:00"
+stars = 1295
+forks = 202
+latest_release = "2026-07-16T04:54:41+00:00"
 first_commit = "2014-09-28T02:48:15+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -19515,10 +19553,10 @@ contributors = [
     "mcol",
     "jrnold",
     "salim-b",
+    "emmanuel-ferdman",
     "schloerke",
     "etiennebacher",
     "krlmlr",
-    "emmanuel-ferdman",
     "jennybc",
     "olivroy",
     "huisman",
@@ -19542,26 +19580,24 @@ contributors = [
     "ashbaldry",
     "dankessler",
     "dchiu911",
-    "karawoo",
-    "Enchufa2",
-    "hadley",
     "gdequeiroz",
-    "batpigandme",
-    "mschilli87",
-    "lschneiderbauer",
-    "prosoitos",
-    "alessandro-gentilini",
-    "markromanmiller",
-    "mattyb",
-    "thisisnic",
-    "nicholas-masel",
-    "pdil",
-    "paulkaefer",
-    "paulstaab",
-    "randy3k",
-    "shaopeng-gh",
-    "StefanBRas",
+    "hadley",
+    "Enchufa2",
+    "karawoo",
     "marberts",
+    "StefanBRas",
+    "shaopeng-gh",
+    "randy3k",
+    "paulkaefer",
+    "pdil",
+    "nicholas-masel",
+    "thisisnic",
+    "markromanmiller",
+    "prosoitos",
+    "mschilli87",
+    "batpigandme",
+    "lschneiderbauer",
+    "leogama",
     "stufield",
     "gitter-badger",
     "TimTaylor",
@@ -19571,9 +19607,11 @@ contributors = [
     "arekbee",
     "bahadzie",
     "clerousset",
+    "fly1d",
     "jeffwong-nflx",
     "jmaspons",
     "ttriche",
+    "alessandro-gentilini",
     "ax42",
     "andrewychoi",
     "andyquinterom",
@@ -19601,11 +19639,10 @@ contributors = [
     "jonthegeek",
     "joshkgold",
     "Arcanemagus",
-    "leogama",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:54.912590+00:00"
-releases = 16
+last_updated = "2026-09-18T14:25:54.972311+00:00"
+releases = 17
 language = "R"
 
 [[repos]]
@@ -19628,7 +19665,7 @@ contributors = [
     "mllg",
     "petermeissner",
 ]
-last_updated = "2026-05-20T08:05:54.933219+00:00"
+last_updated = "2026-09-18T14:25:57.336940+00:00"
 releases = 5
 language = "JavaScript"
 
@@ -19637,7 +19674,7 @@ repo = "r-lib/progress"
 name = "progress"
 description = "Progress bar in your R terminal"
 website = "http://r-lib.github.io/progress/"
-stars = 473
+stars = 474
 forks = 40
 latest_release = "2023-12-05T09:32:50+00:00"
 first_commit = "2014-10-03T20:14:56+00:00"
@@ -19658,7 +19695,7 @@ contributors = [
     "devillemereuil",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:54.953662+00:00"
+last_updated = "2026-09-18T14:25:59.704274+00:00"
 releases = 3
 language = "R"
 
@@ -19667,7 +19704,7 @@ repo = "r-lib/covr"
 name = "covr"
 description = "Test coverage reports for R"
 website = "https://covr.r-lib.org"
-stars = 345
+stars = 347
 forks = 123
 latest_release = "2022-08-24T14:15:38+00:00"
 first_commit = "2014-12-21T03:26:04+00:00"
@@ -19738,7 +19775,7 @@ contributors = [
     "karl-forner-quartz-bio",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:54.974205+00:00"
+last_updated = "2026-09-18T14:26:03.151760+00:00"
 releases = 10
 language = "R"
 
@@ -19748,8 +19785,8 @@ name = "xml2"
 description = "Bindings to libxml2"
 website = "https://xml2.r-lib.org/"
 stars = 223
-forks = 83
-latest_release = "2025-03-13T19:24:32+00:00"
+forks = 84
+latest_release = "2026-06-22T13:32:05+00:00"
 first_commit = "2015-02-12T19:43:52+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -19778,6 +19815,7 @@ contributors = [
     "matthewjnield",
     "luciorq",
     "renkun-ken",
+    "krlmlr",
     "kevinushey",
     "darrkj",
     "KZARCA",
@@ -19787,10 +19825,11 @@ contributors = [
     "jakejh",
     "ddiez",
     "dpastoor",
+    "Copilot",
     "hrbrmstr",
 ]
-last_updated = "2026-05-20T08:05:54.995223+00:00"
-releases = 20
+last_updated = "2026-09-18T14:26:06.179536+00:00"
+releases = 21
 language = "R"
 
 [[repos]]
@@ -19799,8 +19838,8 @@ name = "lobstr"
 description = "Understanding complex R objects with tools similar to str()"
 website = "https://lobstr.r-lib.org/"
 stars = 314
-forks = 30
-latest_release = "2026-04-07T08:05:47+00:00"
+forks = 31
+latest_release = "2026-08-31T23:00:13+00:00"
 first_commit = "2015-03-20T20:57:44+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -19818,8 +19857,8 @@ contributors = [
     "terrytangyuan",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:55.015904+00:00"
-releases = 7
+last_updated = "2026-09-18T14:26:08.635559+00:00"
+releases = 8
 language = "C"
 
 [[repos]]
@@ -19827,7 +19866,7 @@ repo = "r-lib/clisymbols"
 name = "clisymbols"
 description = "Unicode symbols for CLI applications, with fallbacks"
 website = ""
-stars = 83
+stars = 84
 forks = 2
 first_commit = "2015-04-14T02:57:39+00:00"
 license = "NOASSERTION"
@@ -19835,7 +19874,7 @@ contributors = [
     "gaborcsardi",
     "cjyetman",
 ]
-last_updated = "2026-05-20T08:05:55.039202+00:00"
+last_updated = "2026-09-18T14:26:10.403038+00:00"
 releases = 0
 language = "R"
 
@@ -19844,9 +19883,9 @@ repo = "r-lib/withr"
 name = "withr"
 description = "Methods For Temporarily Modifying Global State"
 website = "http://withr.r-lib.org"
-stars = 178
-forks = 45
-latest_release = "2024-10-28T10:59:02+00:00"
+stars = 180
+forks = 46
+latest_release = "2026-06-17T11:50:30+00:00"
 first_commit = "2015-04-21T19:18:28+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -19859,6 +19898,7 @@ contributors = [
     "MichaelChirico",
     "ellessenne",
     "alexcipro",
+    "wendtke",
     "kyleam",
     "lauracion",
     "MLopez-Ibanez",
@@ -19870,7 +19910,6 @@ contributors = [
     "romainfrancois",
     "zkamvar",
     "orichters",
-    "wendtke",
     "jonkeane",
     "jeroenjanssens",
     "javierluraschi",
@@ -19879,12 +19918,13 @@ contributors = [
     "dragosmg",
     "dskard",
     "DavisVaughan",
+    "BjarkeHautop",
     "AshesITR",
     "angelinepro",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:55.060725+00:00"
-releases = 16
+last_updated = "2026-09-18T14:26:13.343567+00:00"
+releases = 17
 language = "R"
 
 [[repos]]
@@ -19892,8 +19932,8 @@ repo = "r-lib/rprojroot"
 name = "rprojroot"
 description = "Finding files in project subdirectories"
 website = "https://rprojroot.r-lib.org/"
-stars = 150
-forks = 24
+stars = 149
+forks = 29
 latest_release = "2025-08-26T15:22:36+00:00"
 first_commit = "2015-05-19T02:10:40+00:00"
 license = "NOASSERTION"
@@ -19909,11 +19949,13 @@ contributors = [
     "karldw",
     "olivroy",
     "gadenbuie",
+    "jeroenjanssens",
     "mitchelloharawild",
     "bastistician",
     "uribo",
+    "claude[bot]",
 ]
-last_updated = "2026-05-20T08:05:55.081910+00:00"
+last_updated = "2026-09-18T14:26:15.924471+00:00"
 releases = 12
 language = "R"
 
@@ -19922,7 +19964,7 @@ repo = "r-lib/commonmark"
 name = "commonmark"
 description = "High Performance CommonMark and Github Markdown Rendering in R"
 website = "https://docs.ropensci.org/commonmark/"
-stars = 101
+stars = 102
 forks = 12
 latest_release = "2025-07-07T12:31:35+00:00"
 first_commit = "2015-05-24T18:58:14+00:00"
@@ -19937,7 +19979,7 @@ contributors = [
     "maelle",
     "trbailey326",
 ]
-last_updated = "2026-05-20T08:05:55.103838+00:00"
+last_updated = "2026-09-18T14:26:18.353141+00:00"
 releases = 17
 language = "C"
 
@@ -19947,7 +19989,7 @@ name = "whoami"
 description = "Username, full name, email address and GitHub username of the current user"
 website = "http://r-lib.github.io/whoami/"
 stars = 20
-forks = 6
+forks = 7
 latest_release = "2019-03-19T11:46:50+00:00"
 first_commit = "2015-06-01T05:52:15+00:00"
 license = "NOASSERTION"
@@ -19958,7 +20000,7 @@ contributors = [
     "jeroenjanssens",
     "m-muecke",
 ]
-last_updated = "2026-05-20T08:05:55.125357+00:00"
+last_updated = "2026-09-18T14:26:20.743267+00:00"
 releases = 2
 language = "R"
 
@@ -19967,9 +20009,9 @@ repo = "r-lib/gh"
 name = "gh"
 description = "Minimalistic GitHub API client in R"
 website = "https://gh.r-lib.org"
-stars = 231
-forks = 56
-latest_release = "2025-05-26T09:31:40+00:00"
+stars = 232
+forks = 57
+latest_release = "2026-07-20T09:37:10+00:00"
 first_commit = "2015-06-08T03:00:11+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -19984,6 +20026,7 @@ contributors = [
     "cderv",
     "gdequeiroz",
     "jimhester",
+    "jharmon-gilead",
     "batpigandme",
     "statnmap",
     "tanho63",
@@ -19999,8 +20042,8 @@ contributors = [
     "realAkhmed",
     "FMKerckhof",
 ]
-last_updated = "2026-05-20T08:05:55.146369+00:00"
-releases = 8
+last_updated = "2026-09-18T14:26:23.214178+00:00"
+releases = 10
 language = "R"
 
 [[repos]]
@@ -20008,8 +20051,8 @@ repo = "r-lib/desc"
 name = "desc"
 description = "Manipulate DESCRIPTION files"
 website = "https://desc.r-lib.org/"
-stars = 125
-forks = 36
+stars = 126
+forks = 39
 latest_release = "2023-12-10T11:07:16+00:00"
 first_commit = "2015-09-07T22:01:43+00:00"
 license = "NOASSERTION"
@@ -20031,6 +20074,7 @@ contributors = [
     "jeroenjanssens",
     "jeroen",
     "muschellij2",
+    "khusmann",
     "llrs",
     "lorenzwalthert",
     "lwjohnst86",
@@ -20038,7 +20082,7 @@ contributors = [
     "richfitz",
     "seankross",
 ]
-last_updated = "2026-05-20T08:05:55.167396+00:00"
+last_updated = "2026-09-18T14:26:25.651762+00:00"
 releases = 5
 language = "R"
 
@@ -20047,8 +20091,8 @@ repo = "r-lib/profvis"
 name = "profvis"
 description = "Visualize R profiling data"
 website = "https://profvis.r-lib.org/"
-stars = 315
-forks = 38
+stars = 314
+forks = 39
 latest_release = "2024-09-19T19:25:49+00:00"
 first_commit = "2015-09-18T18:01:49+00:00"
 license = "NOASSERTION"
@@ -20071,7 +20115,7 @@ contributors = [
     "mnazarov",
     "olivroy",
 ]
-last_updated = "2026-05-20T08:05:55.188556+00:00"
+last_updated = "2026-09-18T14:26:28.006750+00:00"
 releases = 4
 language = "JavaScript"
 
@@ -20080,7 +20124,7 @@ repo = "r-lib/sodium"
 name = "sodium"
 description = "R bindings to libsodium"
 website = "https://docs.ropensci.org/sodium"
-stars = 72
+stars = 74
 forks = 13
 latest_release = "2022-06-11T08:15:53+00:00"
 first_commit = "2015-10-04T19:53:28+00:00"
@@ -20096,7 +20140,7 @@ contributors = [
     "coolbutuseless",
     "snoweye",
 ]
-last_updated = "2026-05-20T08:05:55.210275+00:00"
+last_updated = "2026-09-18T14:26:30.386517+00:00"
 releases = 5
 language = "R"
 
@@ -20106,7 +20150,7 @@ name = "gargle"
 description = "Infrastructure for calling Google APIs from R, including auth"
 website = "https://gargle.r-lib.org/"
 stars = 113
-forks = 40
+forks = 41
 latest_release = "2026-01-28T21:11:46+00:00"
 first_commit = "2015-12-24T19:53:03+00:00"
 license = "NOASSERTION"
@@ -20136,7 +20180,7 @@ contributors = [
     "alexkgold",
     "campbead",
 ]
-last_updated = "2026-05-20T08:05:55.232139+00:00"
+last_updated = "2026-09-18T14:26:32.893857+00:00"
 releases = 17
 language = "R"
 
@@ -20145,8 +20189,8 @@ repo = "r-lib/remotes"
 name = "remotes"
 description = "Install R packages from GitHub, GitLab, Bitbucket, git, svn repositories, URLs"
 website = "https://remotes.r-lib.org/"
-stars = 357
-forks = 157
+stars = 355
+forks = 160
 latest_release = "2024-03-17T12:41:28+00:00"
 first_commit = "2016-01-02T10:24:31+00:00"
 license = "NOASSERTION"
@@ -20227,7 +20271,7 @@ contributors = [
     "jsilve24",
     "kenahoo",
 ]
-last_updated = "2026-05-20T08:05:55.253291+00:00"
+last_updated = "2026-09-18T14:26:36.320355+00:00"
 releases = 13
 language = "R"
 
@@ -20246,7 +20290,7 @@ contributors = [
     "jandix",
     "carlganz",
 ]
-last_updated = "2026-05-20T08:05:55.274224+00:00"
+last_updated = "2026-09-18T14:26:38.944695+00:00"
 releases = 6
 language = "R"
 
@@ -20255,8 +20299,8 @@ repo = "r-lib/backports"
 name = "backports"
 description = "Reimplementations of Functions Introduced Since R-3.0.0"
 website = ""
-stars = 66
-forks = 14
+stars = 67
+forks = 15
 latest_release = "2024-08-12T09:35:38+00:00"
 first_commit = "2016-02-12T08:08:46+00:00"
 contributors = [
@@ -20267,7 +20311,7 @@ contributors = [
     "HughParsonage",
     "Bisaloo",
 ]
-last_updated = "2026-05-20T08:05:55.294932+00:00"
+last_updated = "2026-09-18T14:26:41.295583+00:00"
 releases = 9
 language = "R"
 
@@ -20276,8 +20320,8 @@ repo = "r-lib/rcmdcheck"
 name = "rcmdcheck"
 description = "Run R CMD check from R and collect the results"
 website = "https://rcmdcheck.r-lib.org"
-stars = 122
-forks = 35
+stars = 123
+forks = 38
 latest_release = "2021-09-23T11:00:56+00:00"
 first_commit = "2016-02-25T12:45:25+00:00"
 license = "NOASSERTION"
@@ -20303,7 +20347,7 @@ contributors = [
     "tappek",
 ]
 readme_image = "https://cdn.jsdelivr.net/gh/r-lib/rcmdcheck@main/tools/rcmdcheck.svg"
-last_updated = "2026-05-20T08:05:55.315934+00:00"
+last_updated = "2026-09-18T14:26:44.904958+00:00"
 releases = 5
 language = "R"
 
@@ -20312,8 +20356,8 @@ repo = "r-lib/vdiffr"
 name = "vdiffr"
 description = "Visual regression testing and graphical diffing with testthat"
 website = "https://vdiffr.r-lib.org"
-stars = 196
-forks = 37
+stars = 198
+forks = 38
 latest_release = "2026-02-13T12:48:44+00:00"
 first_commit = "2016-03-10T17:37:46+00:00"
 license = "NOASSERTION"
@@ -20342,7 +20386,7 @@ contributors = [
     "MichaelChirico",
     "maksymiuks",
 ]
-last_updated = "2026-05-20T08:05:55.336667+00:00"
+last_updated = "2026-09-18T14:26:47.311060+00:00"
 releases = 19
 language = "C++"
 
@@ -20351,9 +20395,9 @@ repo = "r-lib/callr"
 name = "callr"
 description = "Call R from R"
 website = "https://callr.r-lib.org/"
-stars = 303
-forks = 40
-latest_release = "2024-03-25T12:09:25+00:00"
+stars = 304
+forks = 41
+latest_release = "2026-06-05T08:19:36+00:00"
 first_commit = "2016-05-13T10:26:09+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -20381,8 +20425,8 @@ contributors = [
     "ChrisMuir",
 ]
 readme_image = "man/figures/simple.svg"
-last_updated = "2026-05-20T08:05:55.357277+00:00"
-releases = 22
+last_updated = "2026-09-18T14:26:49.660381+00:00"
+releases = 23
 language = "R"
 
 [[repos]]
@@ -20409,7 +20453,7 @@ contributors = [
     "sambrightman",
     "kjohnsen",
 ]
-last_updated = "2026-05-20T08:05:55.377997+00:00"
+last_updated = "2026-09-18T14:26:52.013543+00:00"
 releases = 8
 language = "R"
 
@@ -20418,7 +20462,7 @@ repo = "r-lib/here"
 name = "here"
 description = "A simpler way to find your files"
 website = "https://here.r-lib.org/"
-stars = 433
+stars = 436
 forks = 45
 latest_release = "2025-09-14T18:48:48+00:00"
 first_commit = "2016-07-19T14:47:19+00:00"
@@ -20438,10 +20482,11 @@ contributors = [
     "rajanand",
     "sharlagelfand",
     "aviator-app[bot]",
+    "claude[bot]",
     "nzgwynn",
     "t-gummer",
 ]
-last_updated = "2026-05-20T08:05:55.398831+00:00"
+last_updated = "2026-09-18T14:26:54.395257+00:00"
 releases = 4
 language = "R"
 
@@ -20450,8 +20495,8 @@ repo = "r-lib/revdepcheck"
 name = "revdepcheck"
 description = "R package reverse dependency checking"
 website = "https://revdepcheck.r-lib.org"
-stars = 104
-forks = 33
+stars = 105
+forks = 35
 first_commit = "2016-08-06T20:40:42+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -20476,7 +20521,7 @@ contributors = [
     "stevenolen",
     "vspinu",
 ]
-last_updated = "2026-05-20T08:05:55.420500+00:00"
+last_updated = "2026-09-18T14:26:56.353729+00:00"
 releases = 0
 language = "R"
 
@@ -20485,8 +20530,8 @@ repo = "r-lib/processx"
 name = "processx"
 description = "Execute and Control Subprocesses from R"
 website = "https://processx.r-lib.org/"
-stars = 243
-forks = 43
+stars = 247
+forks = 44
 latest_release = "2026-04-22T10:55:57+00:00"
 first_commit = "2016-08-19T13:18:57+00:00"
 license = "NOASSERTION"
@@ -20513,7 +20558,7 @@ contributors = [
     "hugomflavio",
     "davechilders",
 ]
-last_updated = "2026-05-20T08:05:55.448159+00:00"
+last_updated = "2026-09-18T14:26:58.818313+00:00"
 releases = 26
 language = "R"
 
@@ -20522,8 +20567,8 @@ repo = "r-lib/vctrs"
 name = "vctrs"
 description = "Generic programming with typed R vectors"
 website = "https://vctrs.r-lib.org"
-stars = 301
-forks = 72
+stars = 307
+forks = 76
 latest_release = "2026-04-17T13:51:34+00:00"
 first_commit = "2016-09-06T21:32:53+00:00"
 license = "NOASSERTION"
@@ -20569,7 +20614,7 @@ contributors = [
     "olivroy",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:55.468987+00:00"
+last_updated = "2026-09-18T14:27:01.964024+00:00"
 releases = 31
 language = "C"
 
@@ -20579,7 +20624,7 @@ name = "debugme"
 description = "Easy and efficient debugging for R packages"
 website = "https://r-lib.github.io/debugme/"
 stars = 153
-forks = 10
+forks = 11
 latest_release = "2024-04-25T07:24:47+00:00"
 first_commit = "2016-09-25T14:36:52+00:00"
 license = "NOASSERTION"
@@ -20591,7 +20636,7 @@ contributors = [
     "kforner",
     "MHenderson",
 ]
-last_updated = "2026-05-20T08:05:55.490044+00:00"
+last_updated = "2026-09-18T14:27:04.440972+00:00"
 releases = 1
 language = "R"
 
@@ -20600,9 +20645,9 @@ repo = "r-lib/usethis"
 name = "usethis"
 description = "Set up commonly used 📦 components"
 website = "https://usethis.r-lib.org/"
-stars = 905
-forks = 304
-latest_release = "2025-09-05T20:26:57+00:00"
+stars = 922
+forks = 310
+latest_release = "2026-09-10T16:08:47+00:00"
 first_commit = "2016-11-07T14:33:45+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -20624,15 +20669,16 @@ contributors = [
     "maelle",
     "maurolepore",
     "yoni",
+    "jonthegeek",
     "kohske",
     "mine-cetinkaya-rundel",
-    "jonthegeek",
     "gaborcsardi",
     "jdblischak",
     "jeroen",
     "jmgirard",
     "coatless",
     "EmilHvitfeldt",
+    "gadenbuie",
     "salim-b",
     "craigcitro",
     "tracykteal",
@@ -20646,6 +20692,7 @@ contributors = [
     "dchiu911",
     "dpprdan",
     "Cervangirard",
+    "k5cents",
     "pachadotdev",
     "mitchelloharawild",
     "nandriychuk",
@@ -20660,35 +20707,35 @@ contributors = [
     "HenrikBengtsson",
     "charliejhadley",
     "seankross",
-    "gadenbuie",
     "MichaelChirico",
+    "adrtod",
     "bpbond",
     "bquast",
-    "bpbond",
     "cynthiahqy",
-    "adrtod",
     "Maschette",
     "davidchall",
     "daynefiler",
     "daattali",
-    "fmichonneau",
-    "haozhu233",
-    "Bisaloo",
-    "jiho",
-    "jeroenjanssens",
-    "juliasilge",
-    "karl-forner-quartz-bio",
     "karthik",
-    "k5cents",
-    "melissavanbussel",
-    "mikemahoney218",
-    "mkearney",
-    "MikeJohnPage",
-    "njtierney",
-    "noamross",
-    "PeteHaitch",
-    "rkb965",
+    "karl-forner-quartz-bio",
+    "juliasilge",
+    "JesseAlderliesten",
+    "jeroenjanssens",
+    "jiho",
+    "Bisaloo",
+    "haozhu233",
+    "fmichonneau",
+    "richfitz",
     "riccardoporreca",
+    "rkb965",
+    "PeteHaitch",
+    "noamross",
+    "njtierney",
+    "MikeJohnPage",
+    "mkearney",
+    "mikemahoney218",
+    "mhausinger",
+    "melissavanbussel",
     "topepo",
     "markdly",
     "LiNk-NY",
@@ -20700,13 +20747,13 @@ contributors = [
     "KoderKow",
     "klmr",
     "karawoo",
-    "jules32",
     "vinhtantran",
     "VincentGuyader",
     "lindbrook",
     "laurabrianna",
     "khailper",
     "jlburkhead",
+    "dmuenz",
     "bfgray3",
     "atusy",
     "zkamvar",
@@ -20723,7 +20770,7 @@ contributors = [
     "rogerssam",
     "kiwiroy",
     "romainfrancois",
-    "richfitz",
+    "jules32",
     "math-mcshane",
     "dougmet",
     "davechilders",
@@ -20751,7 +20798,6 @@ contributors = [
     "jonocarroll",
     "muschellij2",
     "joeroe",
-    "JesseAlderliesten",
     "jrnold",
     "trestletech",
     "jayhesselberth",
@@ -20773,8 +20819,8 @@ contributors = [
     "dragosmg",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:55.510983+00:00"
-releases = 25
+last_updated = "2026-09-18T14:27:09.841481+00:00"
+releases = 26
 language = "R"
 
 [[repos]]
@@ -20782,9 +20828,9 @@ repo = "r-lib/rlang"
 name = "rlang"
 description = "Low-level API for programming with R"
 website = "https://rlang.r-lib.org"
-stars = 570
-forks = 153
-latest_release = "2026-04-02T12:19:22+00:00"
+stars = 586
+forks = 156
+latest_release = "2026-07-01T15:51:20+00:00"
 first_commit = "2016-11-07T16:28:57+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -20792,29 +20838,30 @@ contributors = [
     "hadley",
     "DavisVaughan",
     "krlmlr",
-    "romainfrancois",
     "jennybc",
+    "romainfrancois",
     "olivroy",
     "egnha",
+    "MichaelChirico",
     "jimhester",
     "jonthegeek",
     "osorensen",
     "yutannihilation",
-    "mikmart",
     "salim-b",
     "kevinykuo",
-    "MichaelChirico",
-    "simonpcouch",
-    "teunbrand",
-    "TimTaylor",
-    "musvaage",
+    "mikmart",
+    "kevinushey",
     "schloerke",
     "gaborcsardi",
+    "musvaage",
+    "TimTaylor",
+    "teunbrand",
+    "simonpcouch",
     "nealrichardson",
     "matthieugomez",
     "batpigandme",
-    "shikokuchuo",
     "Bisaloo",
+    "shikokuchuo",
     "seankross",
     "smingerson",
     "saghirb",
@@ -20873,12 +20920,12 @@ contributors = [
     "jmobrien",
     "JosiahParry",
     "karldw",
-    "kevinushey",
+    "LeonidasZhak",
     "psychelzh",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:55.532568+00:00"
-releases = 41
+last_updated = "2026-09-18T14:27:13.403033+00:00"
+releases = 42
 language = "R"
 
 [[repos]]
@@ -20886,15 +20933,15 @@ repo = "r-lib/pkgload"
 name = "pkgload"
 description = "Simulate installing and loading a package"
 website = "http://pkgload.r-lib.org"
-stars = 60
-forks = 52
-latest_release = "2026-04-21T17:17:55+00:00"
+stars = 61
+forks = 53
+latest_release = "2026-06-15T13:07:26+00:00"
 first_commit = "2016-11-07T21:45:48+00:00"
 license = "NOASSERTION"
 contributors = [
     "hadley",
-    "wch",
     "lionel-",
+    "wch",
     "jimhester",
     "Geoff99",
     "yoni",
@@ -20955,8 +21002,8 @@ contributors = [
     "mdequeljoe",
     "mtkerbeR",
 ]
-last_updated = "2026-05-20T08:05:55.553804+00:00"
-releases = 17
+last_updated = "2026-09-18T14:27:16.814876+00:00"
+releases = 18
 language = "R"
 
 [[repos]]
@@ -20965,7 +21012,7 @@ name = "pkgbuild"
 description = "Find tools needed to build R packages"
 website = "https://pkgbuild.r-lib.org"
 stars = 77
-forks = 39
+forks = 43
 latest_release = "2025-05-26T10:36:19+00:00"
 first_commit = "2016-11-10T14:16:37+00:00"
 license = "NOASSERTION"
@@ -20994,11 +21041,12 @@ contributors = [
     "lorenzwalthert",
     "lionel-",
     "jeroenjanssens",
+    "jennybc",
     "burgerga",
     "dpprdan",
     "cderv",
 ]
-last_updated = "2026-05-20T08:05:55.574657+00:00"
+last_updated = "2026-09-18T14:27:19.352058+00:00"
 releases = 21
 language = "R"
 
@@ -21008,7 +21056,7 @@ name = "prettycode"
 description = "Syntax highlight R code in the terminal"
 website = "https://r-lib.github.io/prettycode/"
 stars = 106
-forks = 12
+forks = 13
 latest_release = "2019-12-16T13:00:40+00:00"
 first_commit = "2016-11-15T13:30:58+00:00"
 license = "NOASSERTION"
@@ -21021,7 +21069,7 @@ contributors = [
     "m-muecke",
     "MilesMcBain",
 ]
-last_updated = "2026-05-20T08:05:55.595335+00:00"
+last_updated = "2026-09-18T14:27:21.720243+00:00"
 releases = 2
 language = "R"
 
@@ -21031,17 +21079,19 @@ name = "roxygen2md"
 description = "Convert elements of roxygen documentation to markdown"
 website = "https://roxygen2md.r-lib.org/"
 stars = 69
-forks = 10
+forks = 11
 latest_release = "2024-02-18T17:50:05+00:00"
 first_commit = "2016-11-24T14:25:44+00:00"
 contributors = [
     "krlmlr",
     "IndrajeetPatil",
     "alexpghayes",
+    "jeroenjanssens",
     "batpigandme",
     "aviator-app[bot]",
+    "claude[bot]",
 ]
-last_updated = "2026-05-20T08:05:55.616405+00:00"
+last_updated = "2026-09-18T14:27:24.142555+00:00"
 releases = 2
 language = "R"
 
@@ -21051,14 +21101,14 @@ name = "pkgapi"
 description = "Create a map of functions for an R package - WORK IN PROGRESS!"
 website = ""
 stars = 70
-forks = 11
+forks = 10
 first_commit = "2016-11-28T03:02:36+00:00"
 license = "NOASSERTION"
 contributors = [
     "krlmlr",
     "gaborcsardi",
 ]
-last_updated = "2026-05-20T08:05:55.637958+00:00"
+last_updated = "2026-09-18T14:27:25.918609+00:00"
 releases = 0
 language = "R"
 
@@ -21068,7 +21118,7 @@ name = "zeallot"
 description = "Variable assignment with zeal! (or multiple, unpacking, and destructuring assignment in R)"
 website = ""
 stars = 272
-forks = 13
+forks = 14
 latest_release = "2025-06-03T01:23:45+00:00"
 first_commit = "2017-01-03T22:33:47+00:00"
 license = "NOASSERTION"
@@ -21076,7 +21126,7 @@ contributors = [
     "nteetor",
     "pteetor",
 ]
-last_updated = "2026-05-20T08:05:55.659209+00:00"
+last_updated = "2026-09-18T14:27:28.434720+00:00"
 releases = 8
 language = "R"
 
@@ -21085,7 +21135,7 @@ repo = "r-lib/liteq"
 name = "liteq"
 description = "Serverless R message queue using SQLite"
 website = ""
-stars = 57
+stars = 58
 forks = 9
 first_commit = "2017-01-07T22:29:26+00:00"
 license = "NOASSERTION"
@@ -21098,7 +21148,7 @@ contributors = [
     "rentrop",
     "wlandau-lilly",
 ]
-last_updated = "2026-05-20T08:05:55.680375+00:00"
+last_updated = "2026-09-18T14:27:30.070364+00:00"
 releases = 0
 language = "R"
 
@@ -21108,7 +21158,7 @@ name = "keyring"
 description = ":closed_lock_with_key: Access the system credential store from R"
 website = "https://keyring.r-lib.org/"
 stars = 203
-forks = 31
+forks = 30
 latest_release = "2025-06-15T20:21:06+00:00"
 first_commit = "2017-01-27T16:18:55+00:00"
 license = "NOASSERTION"
@@ -21133,7 +21183,7 @@ contributors = [
     "nbenn",
     "ras44",
 ]
-last_updated = "2026-05-20T08:05:55.701213+00:00"
+last_updated = "2026-09-18T14:27:32.633900+00:00"
 releases = 8
 language = "C"
 
@@ -21153,7 +21203,7 @@ contributors = [
     "mgirlich",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:55.722597+00:00"
+last_updated = "2026-09-18T14:27:35.023301+00:00"
 releases = 2
 language = "R"
 
@@ -21163,7 +21213,7 @@ name = "styler"
 description = "Non-invasive pretty printing of R code"
 website = "https://styler.r-lib.org"
 stars = 773
-forks = 71
+forks = 73
 latest_release = "2024-04-07T17:55:30+00:00"
 first_commit = "2017-02-08T19:16:37+00:00"
 license = "NOASSERTION"
@@ -21172,17 +21222,17 @@ contributors = [
     "IndrajeetPatil",
     "krlmlr",
     "github-actions[bot]",
+    "MichaelChirico",
     "jonmcalder",
     "olivroy",
     "dependabot[bot]",
-    "MichaelChirico",
     "michaelquinn32",
     "jimhester",
-    "JohannesNE",
-    "yutannihilation",
-    "renkun-ken",
-    "pat-s",
+    "JohsEnevoldsen",
     "riccardoporreca",
+    "pat-s",
+    "renkun-ken",
+    "yutannihilation",
     "espinielli",
     "edmundmiller",
     "katrinleinweber",
@@ -21195,12 +21245,11 @@ contributors = [
     "batpigandme",
     "maelle",
     "0UmfHxcvx5J7JoaOhFSs5mncnisTJJ6q",
-    "pratishrai",
     "bersbersbers",
     "swsoyee",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:55.744379+00:00"
+last_updated = "2026-09-18T14:27:37.401149+00:00"
 releases = 23
 language = "R"
 
@@ -21209,9 +21258,9 @@ repo = "r-lib/archive"
 name = "archive"
 description = "R bindings to libarchive, supporting a large variety of archive formats"
 website = "https://archive.r-lib.org/"
-stars = 147
+stars = 148
 forks = 18
-latest_release = "2026-04-11T20:54:37+00:00"
+latest_release = "2026-07-29T20:43:24+00:00"
 first_commit = "2017-03-07T18:59:55+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -21228,8 +21277,8 @@ contributors = [
     "barracuda156",
     "kalibera",
 ]
-last_updated = "2026-05-20T08:05:55.765752+00:00"
-releases = 15
+last_updated = "2026-09-18T14:27:39.792741+00:00"
+releases = 16
 language = "C++"
 
 [[repos]]
@@ -21255,7 +21304,7 @@ contributors = [
     "mingwandroid",
     "tracykteal",
 ]
-last_updated = "2026-05-20T08:05:55.786654+00:00"
+last_updated = "2026-09-18T14:27:42.335070+00:00"
 releases = 22
 language = "C++"
 
@@ -21273,7 +21322,7 @@ contributors = [
     "hadley",
     "krlmlr",
 ]
-last_updated = "2026-05-20T08:05:55.807614+00:00"
+last_updated = "2026-09-18T14:27:44.012934+00:00"
 releases = 0
 language = "R"
 
@@ -21282,9 +21331,9 @@ repo = "r-lib/zip"
 name = "zip"
 description = "Platform independent zip compression via miniz"
 website = "https://r-lib.github.io/zip/"
-stars = 95
+stars = 99
 forks = 24
-latest_release = "2025-05-13T13:31:24+00:00"
+latest_release = "2026-07-31T21:24:54+00:00"
 first_commit = "2017-04-09T01:06:13+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -21298,6 +21347,7 @@ contributors = [
     "chainsawriot",
     "AshesITR",
     "daattali",
+    "Moohan",
     "jeroenjanssens",
     "jeroen",
     "batpigandme",
@@ -21305,8 +21355,8 @@ contributors = [
     "bart1",
     "jbfagotfede39",
 ]
-last_updated = "2026-05-20T08:05:55.828593+00:00"
-releases = 14
+last_updated = "2026-09-18T14:27:46.428324+00:00"
+releases = 17
 language = "C"
 
 [[repos]]
@@ -21315,8 +21365,8 @@ name = "sessioninfo"
 description = "Print Session Information"
 website = "https://sessioninfo.r-lib.org"
 stars = 80
-forks = 31
-latest_release = "2025-02-05T12:57:20+00:00"
+forks = 32
+latest_release = "2026-06-04T13:11:25+00:00"
 first_commit = "2017-04-21T10:27:47+00:00"
 license = "GPL-2.0"
 contributors = [
@@ -21343,8 +21393,8 @@ contributors = [
     "nash-delcamp-slp",
 ]
 readme_image = "https://raw.githubusercontent.com/r-lib/sessioninfo/main/man/figures/session-info2.svg"
-last_updated = "2026-05-20T08:05:55.850134+00:00"
-releases = 6
+last_updated = "2026-09-18T14:27:48.851796+00:00"
+releases = 7
 language = "R"
 
 [[repos]]
@@ -21352,7 +21402,7 @@ repo = "r-lib/available"
 name = "available"
 description = "Check if a package name is available to use"
 website = "https://r-lib.github.io/available/"
-stars = 144
+stars = 145
 forks = 17
 latest_release = "2022-07-10T18:39:42+00:00"
 first_commit = "2017-04-28T14:59:20+00:00"
@@ -21379,7 +21429,7 @@ contributors = [
     "mpadge",
 ]
 readme_image = "https://i.imgur.com/1KZn3Z5.jpg"
-last_updated = "2026-05-20T08:05:55.871473+00:00"
+last_updated = "2026-09-18T14:27:51.262585+00:00"
 releases = 3
 language = "R"
 
@@ -21388,8 +21438,8 @@ repo = "r-lib/cli"
 name = "cli"
 description = "Tools for making beautiful & useful command line interfaces"
 website = "https://cli.r-lib.org/"
-stars = 706
-forks = 84
+stars = 726
+forks = 94
 latest_release = "2026-04-08T18:14:34+00:00"
 first_commit = "2017-04-28T16:10:28+00:00"
 license = "NOASSERTION"
@@ -21403,19 +21453,20 @@ contributors = [
     "romainfrancois",
     "lionel-",
     "olivroy",
-    "justin-mills-fws",
     "rundel",
+    "justin-mills-fws",
     "rossellhayes",
     "IndrajeetPatil",
     "m-muecke",
     "TimTaylor",
-    "tzakharko",
-    "jimhester",
-    "DavisVaughan",
     "moodymudskipper",
-    "jonocarroll",
-    "mcol",
+    "DavisVaughan",
+    "jimhester",
+    "tzakharko",
+    "simonpcouch",
     "tszberkowitz",
+    "mcol",
+    "jonocarroll",
     "LouisMPenrod",
     "MarkEdmondson1234",
     "multimeric",
@@ -21424,12 +21475,14 @@ contributors = [
     "sgibb",
     "sjentsch",
     "Shians",
-    "simonpcouch",
+    "shreyabyte",
     "zachary-foster",
     "zkamvar",
     "assignUser",
     "cynthiahqy",
     "musvaage",
+    "rikivillalba",
+    "LeonidasZhak",
     "kevinushey",
     "jeroen",
     "jeroenjanssens",
@@ -21445,7 +21498,7 @@ contributors = [
     "bbolker",
 ]
 readme_image = "man/figures/README/alert-success.svg"
-last_updated = "2026-05-20T08:05:55.892058+00:00"
+last_updated = "2026-09-18T14:27:54.393803+00:00"
 releases = 27
 language = "R"
 
@@ -21455,7 +21508,7 @@ name = "filelock"
 description = "Cross platform file locking in R"
 website = "https://r-lib.github.io/filelock/"
 stars = 44
-forks = 8
+forks = 10
 latest_release = "2023-12-11T01:11:32+00:00"
 first_commit = "2017-05-12T18:03:59+00:00"
 license = "NOASSERTION"
@@ -21464,7 +21517,7 @@ contributors = [
     "jeroenjanssens",
     "orichters",
 ]
-last_updated = "2026-05-20T08:05:55.913137+00:00"
+last_updated = "2026-09-18T14:27:56.857955+00:00"
 releases = 2
 language = "R"
 
@@ -21474,7 +21527,7 @@ name = "pillar"
 description = "Format columns with colour"
 website = "https://pillar.r-lib.org/"
 stars = 182
-forks = 41
+forks = 42
 latest_release = "2025-09-17T03:59:06+00:00"
 first_commit = "2017-05-15T19:04:32+00:00"
 license = "NOASSERTION"
@@ -21489,17 +21542,20 @@ contributors = [
     "gvelasq",
     "lionel-",
     "ryanzomorrodi",
+    "claude",
     "davidchall",
-    "gavinsimpson",
     "MichaelChirico",
+    "gavinsimpson",
+    "jeroenjanssens",
     "rkahne",
     "romainfrancois",
     "teunbrand",
     "TSchiefer",
     "wibeasley",
+    "claude[bot]",
     "thothal",
 ]
-last_updated = "2026-05-20T08:05:55.934225+00:00"
+last_updated = "2026-09-18T14:27:59.349109+00:00"
 releases = 33
 language = "R"
 
@@ -21508,7 +21564,7 @@ repo = "r-lib/tidyselect"
 name = "tidyselect"
 description = "A backend for functions taking tidyverse selections"
 website = "https://tidyselect.r-lib.org"
-stars = 129
+stars = 130
 forks = 40
 latest_release = "2024-03-11T11:44:46+00:00"
 first_commit = "2017-05-23T18:19:37+00:00"
@@ -21543,7 +21599,7 @@ contributors = [
     "ddsjoberg",
     "dpprdan",
 ]
-last_updated = "2026-05-20T08:05:55.955358+00:00"
+last_updated = "2026-09-18T14:28:01.787413+00:00"
 releases = 12
 language = "R"
 
@@ -21553,7 +21609,7 @@ name = "rematch2"
 description = "Tidy output from regular expression matches"
 website = ""
 stars = 46
-forks = 6
+forks = 5
 latest_release = "2020-04-30T10:30:07+00:00"
 first_commit = "2017-06-20T15:18:28+00:00"
 license = "NOASSERTION"
@@ -21565,7 +21621,7 @@ contributors = [
     "brodieG",
     "jennybc",
 ]
-last_updated = "2026-05-20T08:05:55.976347+00:00"
+last_updated = "2026-09-18T14:28:04.354824+00:00"
 releases = 3
 language = "R"
 
@@ -21582,7 +21638,7 @@ contributors = [
     "cderv",
     "krlmlr",
 ]
-last_updated = "2026-05-20T08:05:55.996789+00:00"
+last_updated = "2026-09-18T14:28:06.140862+00:00"
 releases = 0
 language = "C"
 
@@ -21606,7 +21662,7 @@ contributors = [
     "batpigandme",
     "maelle",
 ]
-last_updated = "2026-05-20T08:05:56.017891+00:00"
+last_updated = "2026-09-18T14:28:08.877074+00:00"
 releases = 4
 language = "R"
 
@@ -21615,13 +21671,14 @@ repo = "r-lib/pkgdepends"
 name = "pkgdepends"
 description = "R Package Dependency Resolution"
 website = "https://r-lib.github.io/pkgdepends/"
-stars = 132
-forks = 43
+stars = 135
+forks = 47
 latest_release = "2026-04-08T20:57:57+00:00"
 first_commit = "2017-09-09T09:17:38+00:00"
 license = "NOASSERTION"
 contributors = [
     "gaborcsardi",
+    "schloerke",
     "jimhester",
     "pat-s",
     "hadley",
@@ -21632,20 +21689,20 @@ contributors = [
     "jameslairdsmith",
     "olivroy",
     "paleolimbot",
-    "salim-b",
-    "pawelru",
-    "Luke-Symes-Tsy",
-    "lionel-",
-    "joachim-gassen",
-    "jeroenjanssens",
-    "jennybc",
-    "Fan-iX",
-    "cderv",
-    "katrinabrock",
     "billdenney",
+    "katrinabrock",
+    "cderv",
+    "Fan-iX",
+    "jennybc",
+    "jeroenjanssens",
+    "joachim-gassen",
+    "lionel-",
+    "Luke-Symes-Tsy",
+    "pawelru",
+    "salim-b",
 ]
 readme_image = "/Users/gaborcsardi/works/pkgdepends/man/figures/README/deps.svg"
-last_updated = "2026-05-20T08:05:56.038730+00:00"
+last_updated = "2026-09-18T14:28:11.400992+00:00"
 releases = 16
 language = "C"
 
@@ -21654,8 +21711,8 @@ repo = "r-lib/coro"
 name = "coro"
 description = "Coroutines for R"
 website = "https://coro.r-lib.org/"
-stars = 180
-forks = 12
+stars = 184
+forks = 13
 latest_release = "2024-11-05T09:52:00+00:00"
 first_commit = "2017-09-27T08:37:42+00:00"
 license = "NOASSERTION"
@@ -21669,7 +21726,7 @@ contributors = [
     "brookslogan",
     "olivroy",
 ]
-last_updated = "2026-05-20T08:05:56.060165+00:00"
+last_updated = "2026-09-18T14:28:13.836963+00:00"
 releases = 8
 language = "R"
 
@@ -21678,9 +21735,9 @@ repo = "r-lib/pak"
 name = "pak"
 description = "A fresh approach to package installation"
 website = "https://pak.r-lib.org"
-stars = 805
-forks = 82
-latest_release = "2026-04-27T08:54:27+00:00"
+stars = 821
+forks = 88
+latest_release = "2026-07-22T14:04:27+00:00"
 first_commit = "2017-11-02T19:33:56+00:00"
 contributors = [
     "gaborcsardi",
@@ -21723,8 +21780,8 @@ contributors = [
     "andreranza",
 ]
 readme_image = "man/figures/cran.svg"
-last_updated = "2026-05-20T08:05:56.081026+00:00"
-releases = 21
+last_updated = "2026-09-18T14:28:16.756068+00:00"
+releases = 24
 language = "C"
 
 [[repos]]
@@ -21732,8 +21789,8 @@ repo = "r-lib/fs"
 name = "fs"
 description = "Provide cross platform file operations based on libuv."
 website = "https://fs.r-lib.org/"
-stars = 382
-forks = 82
+stars = 384
+forks = 83
 latest_release = "2026-03-23T11:48:01+00:00"
 first_commit = "2017-12-13T21:01:16+00:00"
 license = "NOASSERTION"
@@ -22066,7 +22123,7 @@ contributors = [
     "mcnameej",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:56.101948+00:00"
+last_updated = "2026-09-18T14:28:24.980294+00:00"
 releases = 25
 language = "R"
 
@@ -22082,7 +22139,7 @@ contributors = [
     "gaborcsardi",
     "jeroenjanssens",
 ]
-last_updated = "2026-05-20T08:05:56.122662+00:00"
+last_updated = "2026-09-18T14:28:26.897196+00:00"
 releases = 0
 language = "R"
 
@@ -22097,7 +22154,7 @@ first_commit = "2018-02-06T19:21:31+00:00"
 contributors = [
     "jennybc",
 ]
-last_updated = "2026-05-20T08:05:56.143288+00:00"
+last_updated = "2026-09-18T14:28:28.673540+00:00"
 releases = 0
 
 [[repos]]
@@ -22112,7 +22169,7 @@ contributors = [
     "kevinushey",
     "hadley",
 ]
-last_updated = "2026-05-20T08:05:56.164280+00:00"
+last_updated = "2026-09-18T14:28:30.450978+00:00"
 releases = 0
 language = "C++"
 
@@ -22127,7 +22184,7 @@ first_commit = "2018-04-06T15:23:52+00:00"
 contributors = [
     "gaborcsardi",
 ]
-last_updated = "2026-05-20T08:05:56.185650+00:00"
+last_updated = "2026-09-18T14:28:32.245086+00:00"
 releases = 0
 
 [[repos]]
@@ -22135,7 +22192,7 @@ repo = "r-lib/bench"
 name = "bench"
 description = "High Precision Timing of R Expressions"
 website = "http://bench.r-lib.org/"
-stars = 255
+stars = 257
 forks = 25
 latest_release = "2025-01-16T22:42:26+00:00"
 first_commit = "2018-04-10T18:01:13+00:00"
@@ -22163,7 +22220,7 @@ contributors = [
     "hhau",
 ]
 readme_image = "man/figures/README-autoplot-1.png"
-last_updated = "2026-05-20T08:05:56.206324+00:00"
+last_updated = "2026-09-18T14:28:34.762054+00:00"
 releases = 8
 language = "R"
 
@@ -22172,7 +22229,7 @@ repo = "r-lib/cachem"
 name = "cachem"
 description = "Key-value caches for R"
 website = "https://cachem.r-lib.org"
-stars = 64
+stars = 65
 forks = 16
 latest_release = "2024-05-15T15:53:45+00:00"
 first_commit = "2018-05-04T15:50:05+00:00"
@@ -22188,7 +22245,7 @@ contributors = [
     "tracykteal",
     "bart1",
 ]
-last_updated = "2026-05-20T08:05:56.227180+00:00"
+last_updated = "2026-09-18T14:28:37.247132+00:00"
 releases = 10
 language = "R"
 
@@ -22197,8 +22254,8 @@ repo = "r-lib/conflicted"
 name = "conflicted"
 description = "An alternative conflict resolution strategy for R"
 website = "https://conflicted.r-lib.org/"
-stars = 254
-forks = 14
+stars = 253
+forks = 17
 latest_release = "2023-01-31T19:50:16+00:00"
 first_commit = "2018-05-20T23:37:42+00:00"
 license = "NOASSERTION"
@@ -22212,7 +22269,7 @@ contributors = [
     "nerskin",
     "romainfrancois",
 ]
-last_updated = "2026-05-20T08:05:56.247500+00:00"
+last_updated = "2026-09-18T14:28:39.581601+00:00"
 releases = 8
 language = "R"
 
@@ -22238,7 +22295,7 @@ contributors = [
     "config-i1",
     "jimhester",
 ]
-last_updated = "2026-05-20T08:05:56.268189+00:00"
+last_updated = "2026-09-18T14:28:42.117265+00:00"
 releases = 5
 language = "R"
 
@@ -22248,7 +22305,7 @@ name = "ps"
 description = "R package to query, list, manipulate system processes"
 website = "https://ps.r-lib.org/"
 stars = 83
-forks = 22
+forks = 23
 latest_release = "2026-04-20T12:52:46+00:00"
 first_commit = "2018-06-15T12:19:35+00:00"
 license = "NOASSERTION"
@@ -22269,7 +22326,7 @@ contributors = [
     "ruarai",
     "reikoch",
 ]
-last_updated = "2026-05-20T08:05:56.290276+00:00"
+last_updated = "2026-09-18T14:28:44.726411+00:00"
 releases = 25
 language = "C"
 
@@ -22284,7 +22341,7 @@ first_commit = "2018-06-20T13:21:20+00:00"
 contributors = [
     "hadley",
 ]
-last_updated = "2026-05-20T08:05:56.311232+00:00"
+last_updated = "2026-09-18T14:28:46.453173+00:00"
 releases = 0
 
 [[repos]]
@@ -22308,7 +22365,7 @@ contributors = [
     "dkahle",
     "jyuu",
 ]
-last_updated = "2026-05-20T08:05:56.332595+00:00"
+last_updated = "2026-09-18T14:28:48.816591+00:00"
 releases = 8
 language = "R"
 
@@ -22327,7 +22384,7 @@ contributors = [
     "shikokuchuo",
     "batpigandme",
 ]
-last_updated = "2026-05-20T08:05:56.353077+00:00"
+last_updated = "2026-09-18T14:28:51.177624+00:00"
 releases = 4
 language = "R"
 
@@ -22345,7 +22402,7 @@ contributors = [
     "gaborcsardi",
     "jeroenjanssens",
 ]
-last_updated = "2026-05-20T08:05:56.374067+00:00"
+last_updated = "2026-09-18T14:28:53.679154+00:00"
 releases = 1
 language = "Shell"
 
@@ -22363,7 +22420,7 @@ contributors = [
     "gaborcsardi",
     "jimhester",
 ]
-last_updated = "2026-05-20T08:05:56.396149+00:00"
+last_updated = "2026-09-18T14:28:56.087220+00:00"
 releases = 3
 language = "R"
 
@@ -22373,24 +22430,28 @@ name = "pkgcache"
 description = "Cache CRAN-like metadata and package files"
 website = "https://r-lib.github.io/pkgcache/"
 stars = 30
-forks = 17
+forks = 19
 latest_release = "2026-04-08T20:38:37+00:00"
 first_commit = "2018-09-12T17:49:03+00:00"
 license = "NOASSERTION"
 contributors = [
     "gaborcsardi",
+    "Fan-iX",
     "jimhester",
     "bahadzie",
     "atheriel",
     "QuLogic",
     "jameslairdsmith",
     "jeroenjanssens",
+    "jeroen",
     "batpigandme",
     "timmsm",
     "pawelru",
     "salim-b",
+    "remlapmot",
+    "AdaemmerP",
 ]
-last_updated = "2026-05-20T08:05:56.417310+00:00"
+last_updated = "2026-09-18T14:28:58.640142+00:00"
 releases = 25
 language = "R"
 
@@ -22409,7 +22470,7 @@ contributors = [
     "jennybc",
     "MarkEdmondson1234",
 ]
-last_updated = "2026-05-20T08:05:56.438281+00:00"
+last_updated = "2026-09-18T14:29:00.262775+00:00"
 releases = 0
 language = "R"
 
@@ -22419,8 +22480,8 @@ name = "gert"
 description = "Simple git client for R"
 website = "https://docs.ropensci.org/gert/"
 stars = 162
-forks = 38
-latest_release = "2024-07-18T11:32:08+00:00"
+forks = 39
+latest_release = "2026-08-14T18:03:05+00:00"
 first_commit = "2018-10-19T09:11:55+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -22428,12 +22489,12 @@ contributors = [
     "jennybc",
     "maelle",
     "olivroy",
-    "rundel",
-    "krlmlr",
-    "M-Kusumgar",
-    "zkamvar",
-    "spaette",
     "richfitz",
+    "spaette",
+    "zkamvar",
+    "M-Kusumgar",
+    "krlmlr",
+    "rundel",
     "mpadge",
     "romainfrancois",
     "pat-s",
@@ -22441,7 +22502,9 @@ contributors = [
     "mine-cetinkaya-rundel",
     "MichaelChirico",
     "Fazendaaa",
+    "iofarm",
     "HenningLorenzen-ext-bayer",
+    "etiennebacher",
     "QuLogic",
     "DavisVaughan",
     "dpprdan",
@@ -22449,8 +22512,8 @@ contributors = [
     "csgillespie",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:56.459497+00:00"
-releases = 19
+last_updated = "2026-09-18T14:29:02.724476+00:00"
+releases = 21
 language = "R"
 
 [[repos]]
@@ -22468,7 +22531,7 @@ contributors = [
     "pmur002",
 ]
 readme_image = "man/figures/README-unnamed-chunk-2-1.png"
-last_updated = "2026-05-20T08:05:56.480892+00:00"
+last_updated = "2026-09-18T14:29:05.197841+00:00"
 releases = 2
 language = "C"
 
@@ -22489,7 +22552,7 @@ contributors = [
     "RaymondBalise",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:56.502454+00:00"
+last_updated = "2026-09-18T14:29:07.439292+00:00"
 releases = 1
 language = "R"
 
@@ -22509,7 +22572,7 @@ contributors = [
     "maelle",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:56.523602+00:00"
+last_updated = "2026-09-18T14:29:09.887707+00:00"
 releases = 3
 language = "R"
 
@@ -22527,7 +22590,7 @@ contributors = [
     "jeroen",
     "gaborcsardi",
 ]
-last_updated = "2026-05-20T08:05:56.544871+00:00"
+last_updated = "2026-09-18T14:29:12.263661+00:00"
 releases = 1
 language = "R"
 
@@ -22536,37 +22599,37 @@ repo = "r-lib/httr2"
 name = "httr2"
 description = "Make HTTP requests and process their responses. A modern reimagining of httr."
 website = "https://httr2.r-lib.org"
-stars = 262
-forks = 85
-latest_release = "2025-12-05T17:45:53+00:00"
+stars = 270
+forks = 91
+latest_release = "2026-07-13T19:54:44+00:00"
 first_commit = "2018-11-22T15:32:29+00:00"
 license = "NOASSERTION"
 contributors = [
     "hadley",
-    "jonthegeek",
-    "atheriel",
     "shikokuchuo",
+    "jonthegeek",
     "jeroen",
+    "atheriel",
     "jennybc",
     "salim-b",
     "jcheng5",
     "maelle",
     "jl5000",
     "jameslairdsmith",
-    "MichaelChirico",
     "flahn",
+    "MichaelChirico",
     "arcresu",
     "boshek",
     "romainfrancois",
     "pedrobtz",
+    "nealrichardson",
     "cgiachalis",
+    "dylanpulver",
     "gergness",
     "gaborcsardi",
     "jchrom",
     "m-muecke",
-    "nealrichardson",
     "fh-mthomson",
-    "DyfanJones",
     "MSHelm",
     "feinleib",
     "maxheld83",
@@ -22574,14 +22637,18 @@ contributors = [
     "mdsumner",
     "mthomas-ketchbrook",
     "Nelson-Gon",
+    "thisisnic",
     "owenjonesuob",
     "plietar",
     "ramiromagno",
+    "simonpcouch",
     "marberts",
     "tanho63",
     "taerwin",
+    "zacdav-db",
     "denskh",
     "jeffreyzuber",
+    "wikisqueaks",
     "olivroy",
     "arnaudgallou",
     "verhovsky",
@@ -22595,16 +22662,19 @@ contributors = [
     "yutannihilation",
     "hongooi73",
     "howardbaik",
+    "Bisaloo",
     "jansim",
     "jeroenjanssens",
     "jimbrig",
+    "JosiahParry",
     "judith-bourque",
     "Kevanness",
     "KoderKow",
+    "DyfanJones",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:56.566161+00:00"
-releases = 20
+last_updated = "2026-09-18T14:29:15.816694+00:00"
+releases = 22
 language = "R"
 
 [[repos]]
@@ -22613,7 +22683,7 @@ name = "lifecycle"
 description = "Manage the life cycle of your exported functions and arguments"
 website = "https://lifecycle.r-lib.org"
 stars = 93
-forks = 25
+forks = 26
 latest_release = "2026-01-09T14:10:39+00:00"
 first_commit = "2018-12-27T16:31:45+00:00"
 license = "NOASSERTION"
@@ -22634,11 +22704,12 @@ contributors = [
     "jimhester",
     "maelle",
     "njtierney",
+    "peterdesmet",
     "salim-b",
     "jarauh",
     "musvaage",
 ]
-last_updated = "2026-05-20T08:05:56.588090+00:00"
+last_updated = "2026-09-18T14:29:18.181730+00:00"
 releases = 7
 language = "R"
 
@@ -22648,7 +22719,7 @@ name = "isoband"
 description = "isoband: An R package to generate contour lines and polygons."
 website = "http://isoband.r-lib.org/"
 stars = 132
-forks = 16
+forks = 17
 latest_release = "2025-12-05T12:51:46+00:00"
 first_commit = "2018-12-29T06:05:34+00:00"
 license = "NOASSERTION"
@@ -22663,7 +22734,7 @@ contributors = [
     "MichaelChirico",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:56.615488+00:00"
+last_updated = "2026-09-18T14:29:20.752388+00:00"
 releases = 8
 language = "C++"
 
@@ -22686,7 +22757,7 @@ contributors = [
     "MichaelChirico",
     "nbenn",
 ]
-last_updated = "2026-05-20T08:05:56.636920+00:00"
+last_updated = "2026-09-18T14:29:23.412811+00:00"
 releases = 3
 language = "R"
 
@@ -22695,7 +22766,7 @@ repo = "r-lib/ragg"
 name = "ragg"
 description = "Graphic Devices Based on AGG"
 website = "https://ragg.r-lib.org"
-stars = 180
+stars = 184
 forks = 30
 latest_release = "2026-03-16T07:50:01+00:00"
 first_commit = "2019-03-15T10:11:11+00:00"
@@ -22721,7 +22792,7 @@ contributors = [
     "olivroy",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:56.658942+00:00"
+last_updated = "2026-09-18T14:29:25.946591+00:00"
 releases = 31
 language = "C++"
 
@@ -22742,7 +22813,7 @@ contributors = [
     "jeroenjanssens",
     "batpigandme",
 ]
-last_updated = "2026-05-20T08:05:56.680569+00:00"
+last_updated = "2026-09-18T14:29:28.429524+00:00"
 releases = 5
 language = "C"
 
@@ -22762,7 +22833,7 @@ contributors = [
     "jennybc",
     "tracykteal",
 ]
-last_updated = "2026-05-20T08:05:56.702641+00:00"
+last_updated = "2026-09-18T14:29:30.866891+00:00"
 releases = 5
 language = "C++"
 
@@ -22771,7 +22842,7 @@ repo = "r-lib/ymlthis"
 name = "ymlthis"
 description = "write YAML for R Markdown, bookdown, blogdown, and more"
 website = "https://ymlthis.r-lib.org/"
-stars = 168
+stars = 167
 forks = 10
 latest_release = "2026-02-16T23:52:38+00:00"
 first_commit = "2019-06-03T20:45:14+00:00"
@@ -22783,7 +22854,7 @@ contributors = [
     "katrinleinweber",
     "lquayle88",
 ]
-last_updated = "2026-05-20T08:05:56.724264+00:00"
+last_updated = "2026-09-18T14:29:33.261958+00:00"
 releases = 9
 language = "R"
 
@@ -22815,7 +22886,7 @@ contributors = [
     "pekkarr",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:56.745245+00:00"
+last_updated = "2026-09-18T14:29:35.823029+00:00"
 releases = 23
 language = "C++"
 
@@ -22824,8 +22895,8 @@ repo = "r-lib/slider"
 name = "slider"
 description = "Sliding Window Functions"
 website = "https://slider.r-lib.org"
-stars = 315
-forks = 13
+stars = 317
+forks = 14
 latest_release = "2025-11-14T20:31:30+00:00"
 first_commit = "2019-07-01T03:02:14+00:00"
 license = "NOASSERTION"
@@ -22836,7 +22907,7 @@ contributors = [
     "Edgar-Zamora",
     "jeroenjanssens",
 ]
-last_updated = "2026-05-20T08:05:56.766160+00:00"
+last_updated = "2026-09-18T14:29:38.224515+00:00"
 releases = 13
 language = "R"
 
@@ -22845,7 +22916,7 @@ repo = "r-lib/asciicast"
 name = "asciicast"
 description = "Turn R scripts into terminal screencasts"
 website = "https://asciicast.r-lib.org/"
-stars = 244
+stars = 245
 forks = 11
 latest_release = "2024-01-18T06:18:02+00:00"
 first_commit = "2019-07-16T12:28:14+00:00"
@@ -22861,7 +22932,7 @@ contributors = [
     "olivroy",
 ]
 readme_image = "man/figures/README-/unnamed-chunk-3.svg"
-last_updated = "2026-05-20T08:05:56.787076+00:00"
+last_updated = "2026-09-18T14:29:40.604536+00:00"
 releases = 7
 language = "R"
 
@@ -22870,9 +22941,9 @@ repo = "r-lib/actions"
 name = "actions"
 description = "GitHub Actions for the R community"
 website = ""
-stars = 1060
-forks = 233
-latest_release = "2026-04-30T07:24:40+00:00"
+stars = 1066
+forks = 234
+latest_release = "2026-08-28T13:40:46+00:00"
 first_commit = "2019-10-10T15:13:37+00:00"
 license = "CC0-1.0"
 contributors = [
@@ -22895,10 +22966,10 @@ contributors = [
     "Bisaloo",
     "cderv",
     "ALanguillaume",
+    "DavisVaughan",
     "maelle",
     "nealrichardson",
     "riccardoporreca",
-    "DavisVaughan",
     "maxheld83",
     "iqis",
     "TNonet",
@@ -22910,8 +22981,8 @@ contributors = [
     "imanuelcostigan",
     "davidchall",
     "andrie",
-    "OlivierBinette",
     "nikeee",
+    "nbenn",
     "nick-komick",
     "thisisnic",
     "mikldk",
@@ -22923,7 +22994,10 @@ contributors = [
     "lorenzwalthert",
     "lcolladotor",
     "kadyb",
+    "jpiaskowski",
+    "jtr13",
     "adamhsparks",
+    "OlivierBinette",
     "oshanmodi",
     "spoltier",
     "s-u",
@@ -22932,21 +23006,25 @@ contributors = [
     "TimTaylor",
     "tylfin",
     "vzemlys",
+    "vjymisal0",
     "eitsupi",
     "harupy",
     "jaradkohl-mfj",
     "jpiversen",
     "nikolase90",
-    "adamhsparks",
     "aghaynes",
     "rudeboybert",
     "alwinw",
     "agjendem",
+    "agila5",
     "akersting",
+    "andrjohns",
     "billdenney",
     "bmcdonnell-fb",
     "brshallo",
+    "shikokuchuo",
     "csgillespie",
+    "Copilot",
     "dfalbel",
     "davidski",
     "dselivanov",
@@ -22960,13 +23038,13 @@ contributors = [
     "gavinsimpson",
     "gvelasq",
     "yutannihilation",
+    "NotAFlightRisk",
+    "Moohan",
     "joethorley",
     "jrdnbradford",
     "JSchoenbachler",
-    "jtr13",
-    "jpiaskowski",
 ]
-last_updated = "2026-05-20T08:05:56.809128+00:00"
+last_updated = "2026-09-18T14:29:44.685766+00:00"
 releases = 2
 language = "TypeScript"
 
@@ -22981,7 +23059,7 @@ first_commit = "2020-03-16T09:23:41+00:00"
 contributors = [
     "gaborcsardi",
 ]
-last_updated = "2026-05-20T08:05:56.830247+00:00"
+last_updated = "2026-09-18T14:29:46.588878+00:00"
 releases = 0
 
 [[repos]]
@@ -22990,7 +23068,7 @@ name = "brio"
 description = "Basic R Input Output"
 website = "https://brio.r-lib.org/"
 stars = 59
-forks = 8
+forks = 9
 latest_release = "2024-04-24T18:51:12+00:00"
 first_commit = "2020-03-20T19:53:01+00:00"
 license = "NOASSERTION"
@@ -23005,7 +23083,7 @@ contributors = [
     "salim-b",
     "pbarber",
 ]
-last_updated = "2026-05-20T08:05:56.851238+00:00"
+last_updated = "2026-09-18T14:29:49.008365+00:00"
 releases = 7
 language = "R"
 
@@ -23036,7 +23114,7 @@ contributors = [
     "dmurdoch",
 ]
 readme_image = "man/figures/README/unnamed-chunk-2.svg"
-last_updated = "2026-05-20T08:05:56.872215+00:00"
+last_updated = "2026-09-18T14:29:51.365174+00:00"
 releases = 16
 language = "R"
 
@@ -23059,7 +23137,7 @@ contributors = [
     "Zopolis4",
     "lbm364dl",
 ]
-last_updated = "2026-05-20T08:05:56.893506+00:00"
+last_updated = "2026-09-18T14:29:54.524699+00:00"
 releases = 17
 language = "C"
 
@@ -23078,7 +23156,7 @@ contributors = [
     "eddelbuettel",
     "jeroen",
 ]
-last_updated = "2026-05-20T08:05:56.915535+00:00"
+last_updated = "2026-09-18T14:29:57.208942+00:00"
 releases = 1
 language = "R"
 
@@ -23088,8 +23166,8 @@ name = "bit64"
 description = "An R package with an S3 Class for Vectors of 64bit Integers"
 website = "https://bit64.r-lib.org"
 stars = 40
-forks = 12
-latest_release = "2026-04-21T14:21:06+00:00"
+forks = 13
+latest_release = "2026-09-01T05:45:00+00:00"
 first_commit = "2020-04-12T17:33:29+00:00"
 contributors = [
     "MichaelChirico",
@@ -23100,9 +23178,10 @@ contributors = [
     "QuLogic",
     "jeroenjanssens",
     "jeroen",
+    "NicChr",
 ]
-last_updated = "2026-05-20T08:05:56.937060+00:00"
-releases = 2
+last_updated = "2026-09-18T14:29:59.923831+00:00"
+releases = 5
 language = "R"
 
 [[repos]]
@@ -23117,7 +23196,7 @@ license = "NOASSERTION"
 contributors = [
     "hadley",
 ]
-last_updated = "2026-05-20T08:05:56.958278+00:00"
+last_updated = "2026-09-18T14:30:01.654548+00:00"
 releases = 0
 language = "R"
 
@@ -23127,7 +23206,7 @@ name = "hugodown"
 description = "Make websites with hugo and RMarkdown"
 website = "https://hugodown.r-lib.org"
 stars = 163
-forks = 23
+forks = 22
 first_commit = "2020-05-18T14:26:06+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -23143,7 +23222,7 @@ contributors = [
     "sellorm",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:56.979513+00:00"
+last_updated = "2026-09-18T14:30:03.695095+00:00"
 releases = 0
 language = "R"
 
@@ -23153,7 +23232,7 @@ name = "downlit"
 description = "Syntax Highlighting and Automatic Linking"
 website = "https://downlit.r-lib.org"
 stars = 90
-forks = 25
+forks = 27
 latest_release = "2025-11-13T22:37:02+00:00"
 first_commit = "2020-05-28T18:00:36+00:00"
 license = "NOASSERTION"
@@ -23175,7 +23254,7 @@ contributors = [
     "zeehio",
     "zkamvar",
 ]
-last_updated = "2026-05-20T08:05:57.001203+00:00"
+last_updated = "2026-09-18T14:30:06.276324+00:00"
 releases = 9
 language = "R"
 
@@ -23184,7 +23263,7 @@ repo = "r-lib/cpp11"
 name = "cpp11"
 description = "cpp11 helps you to interact with R objects using C++ code."
 website = "https://cpp11.r-lib.org/"
-stars = 225
+stars = 224
 forks = 52
 latest_release = "2026-05-06T15:12:23+00:00"
 first_commit = "2020-06-10T18:40:48+00:00"
@@ -23226,7 +23305,7 @@ contributors = [
     "Anirban166",
     "andrjohns",
 ]
-last_updated = "2026-05-20T08:05:57.022188+00:00"
+last_updated = "2026-09-18T14:30:09.761868+00:00"
 releases = 25
 language = "C++"
 
@@ -23246,7 +23325,7 @@ contributors = [
     "jbkunst",
     "batpigandme",
 ]
-last_updated = "2026-05-20T08:05:57.043223+00:00"
+last_updated = "2026-09-18T14:30:12.370616+00:00"
 releases = 3
 language = "JavaScript"
 
@@ -23269,7 +23348,7 @@ contributors = [
     "Bisaloo",
     "musvaage",
 ]
-last_updated = "2026-05-20T08:05:57.063855+00:00"
+last_updated = "2026-09-18T14:30:15.115653+00:00"
 releases = 21
 language = "C++"
 
@@ -23279,7 +23358,7 @@ name = "gitcreds"
 description = "Query git credentials from R"
 website = "https://gitcreds.r-lib.org/"
 stars = 30
-forks = 12
+forks = 13
 latest_release = "2022-09-08T10:27:52+00:00"
 first_commit = "2020-08-20T10:04:48+00:00"
 license = "NOASSERTION"
@@ -23294,7 +23373,7 @@ contributors = [
     "MichaelChirico",
     "jayleetx",
 ]
-last_updated = "2026-05-20T08:05:57.084770+00:00"
+last_updated = "2026-09-18T14:30:18.050828+00:00"
 releases = 3
 language = "R"
 
@@ -23314,7 +23393,7 @@ contributors = [
     "dependabot[bot]",
     "cbetta",
 ]
-last_updated = "2026-05-20T08:05:57.106256+00:00"
+last_updated = "2026-09-18T14:30:20.262462+00:00"
 releases = 0
 language = "TypeScript"
 
@@ -23332,7 +23411,7 @@ contributors = [
     "praneetloke",
     "BDQ",
 ]
-last_updated = "2026-05-20T08:05:57.127192+00:00"
+last_updated = "2026-09-18T14:30:22.769107+00:00"
 releases = 0
 
 [[repos]]
@@ -23340,7 +23419,7 @@ repo = "r-lib/oskeyring"
 name = "oskeyring"
 description = "Low level API to macOS Keychain and the Windows Credential store"
 website = "https://r-lib.github.io/oskeyring/"
-stars = 6
+stars = 7
 forks = 2
 latest_release = "2026-04-08T08:35:11+00:00"
 first_commit = "2020-09-21T11:44:09+00:00"
@@ -23349,7 +23428,7 @@ contributors = [
     "gaborcsardi",
     "jeroenjanssens",
 ]
-last_updated = "2026-05-20T08:05:57.148450+00:00"
+last_updated = "2026-09-18T14:30:25.509357+00:00"
 releases = 8
 language = "C"
 
@@ -23359,21 +23438,22 @@ name = "urlchecker"
 description = "Run CRAN URL checks from older versions of R"
 website = "https://urlchecker.r-lib.org/"
 stars = 45
-forks = 6
-latest_release = "2021-11-30T00:26:11+00:00"
+forks = 7
+latest_release = "2026-07-08T15:53:36+00:00"
 first_commit = "2020-10-02T13:26:31+00:00"
 license = "GPL-3.0"
 contributors = [
-    "jimhester",
     "gaborcsardi",
+    "jimhester",
     "ateucher",
     "dpprdan",
     "hadley",
+    "dtburk",
     "jeroenjanssens",
     "krlmlr",
 ]
-last_updated = "2026-05-20T08:05:57.168863+00:00"
-releases = 2
+last_updated = "2026-09-18T14:30:28.533492+00:00"
+releases = 3
 language = "R"
 
 [[repos]]
@@ -23396,7 +23476,7 @@ contributors = [
     "trevorld",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:57.189615+00:00"
+last_updated = "2026-09-18T14:30:30.972751+00:00"
 releases = 14
 language = "R"
 
@@ -23405,9 +23485,9 @@ repo = "r-lib/tree-sitter-r"
 name = "tree-sitter-r"
 description = "Tree-sitter grammar for R"
 website = "https://r-lib.github.io/tree-sitter-r/"
-stars = 140
-forks = 41
-latest_release = "2025-06-05T19:17:25+00:00"
+stars = 155
+forks = 45
+latest_release = "2026-06-19T17:43:15+00:00"
 first_commit = "2020-10-29T20:06:05+00:00"
 license = "MIT"
 contributors = [
@@ -23422,14 +23502,16 @@ contributors = [
     "jennybc",
     "rien",
     "clason",
-    "ezradyck",
+    "Copilot",
+    "felix-andreas",
     "hendrikvanantwerpen",
     "Beebeeoii",
     "mjambon",
     "MichaelChirico",
+    "michel-slm",
 ]
-last_updated = "2026-05-20T08:05:57.210513+00:00"
-releases = 3
+last_updated = "2026-09-18T14:30:33.297527+00:00"
+releases = 4
 language = "R"
 
 [[repos]]
@@ -23445,7 +23527,7 @@ license = "NOASSERTION"
 contributors = [
     "jeroen",
 ]
-last_updated = "2026-05-20T08:05:57.231118+00:00"
+last_updated = "2026-09-18T14:30:35.877880+00:00"
 releases = 1
 language = "R"
 
@@ -23462,7 +23544,7 @@ license = "NOASSERTION"
 contributors = [
     "lionel-",
 ]
-last_updated = "2026-05-20T08:05:57.252109+00:00"
+last_updated = "2026-09-18T14:30:38.272961+00:00"
 releases = 1
 language = "C"
 
@@ -23481,7 +23563,7 @@ contributors = [
     "jeroenjanssens",
     "batpigandme",
 ]
-last_updated = "2026-05-20T08:05:57.272946+00:00"
+last_updated = "2026-09-18T14:30:40.705733+00:00"
 releases = 7
 language = "C++"
 
@@ -23496,7 +23578,7 @@ first_commit = "2021-06-23T19:18:14+00:00"
 contributors = [
     "jimhester",
 ]
-last_updated = "2026-05-20T08:05:57.294231+00:00"
+last_updated = "2026-09-18T14:30:42.429897+00:00"
 releases = 0
 language = "Ruby"
 
@@ -23517,7 +23599,7 @@ contributors = [
     "IndrajeetPatil",
 ]
 readme_image = "https://nacnudus.github.io/duncangarmonsway/posts/2018-12-29-meltcsv/im_melting_wicked_witch_of_the_west.jpg"
-last_updated = "2026-05-20T08:05:57.315306+00:00"
+last_updated = "2026-09-18T14:30:44.787999+00:00"
 releases = 2
 language = "C++"
 
@@ -23525,10 +23607,10 @@ language = "C++"
 repo = "r-lib/rig"
 name = "rig"
 description = "The R Installation Manager"
-website = ""
-stars = 933
-forks = 35
-latest_release = "2026-05-07T11:39:02+00:00"
+website = "http://rig.r-lib.org/"
+stars = 993
+forks = 38
+latest_release = "2026-09-14T13:26:37+00:00"
 first_commit = "2021-11-09T12:13:28+00:00"
 license = "MIT"
 contributors = [
@@ -23547,8 +23629,8 @@ contributors = [
     "eitsupi",
 ]
 readme_image = "tools/rig-app.png"
-last_updated = "2026-05-20T08:05:57.336528+00:00"
-releases = 30
+last_updated = "2026-09-18T14:30:47.215404+00:00"
+releases = 37
 language = "Rust"
 
 [[repos]]
@@ -23556,9 +23638,9 @@ repo = "r-lib/nanonext"
 name = "nanonext"
 description = "R binding for NNG (Nanomsg Next Gen)"
 website = "https://nanonext.r-lib.org/"
-stars = 82
-forks = 11
-latest_release = "2026-05-04T16:04:48+00:00"
+stars = 84
+forks = 14
+latest_release = "2026-08-04T15:46:13+00:00"
 first_commit = "2022-01-23T12:59:16+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -23566,9 +23648,9 @@ contributors = [
     "jcheng5",
     "jeroenjanssens",
 ]
-readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:57.357475+00:00"
-releases = 56
+readme_image = "man/figures/logo.svg"
+last_updated = "2026-09-18T14:30:49.790563+00:00"
+releases = 60
 language = "C"
 
 [[repos]]
@@ -23576,9 +23658,9 @@ repo = "r-lib/mirai"
 name = "mirai"
 description = "Minimalist Async Evaluation Framework for R"
 website = "https://mirai.r-lib.org/"
-stars = 322
-forks = 19
-latest_release = "2026-05-08T14:06:17+00:00"
+stars = 341
+forks = 18
+latest_release = "2026-07-20T09:28:32+00:00"
 first_commit = "2022-02-14T22:11:55+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -23594,9 +23676,9 @@ contributors = [
     "wlandau",
     "VincentGuyader",
 ]
-readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:57.378440+00:00"
-releases = 50
+readme_image = "man/figures/logo.svg"
+last_updated = "2026-09-18T14:30:52.157608+00:00"
+releases = 52
 language = "R"
 
 [[repos]]
@@ -23612,7 +23694,7 @@ contributors = [
     "drblmitchell",
     "jeroen",
 ]
-last_updated = "2026-05-20T08:05:57.399360+00:00"
+last_updated = "2026-09-18T14:30:54.052090+00:00"
 releases = 0
 language = "Ruby"
 
@@ -23621,17 +23703,17 @@ repo = "r-lib/Rapp"
 name = "Rapp"
 description = "Build CLI applications in R"
 website = ""
-stars = 137
+stars = 146
 forks = 2
-latest_release = "2025-12-14T18:49:06+00:00"
+latest_release = "2026-08-24T19:00:41+00:00"
 first_commit = "2022-10-12T15:49:38+00:00"
 license = "NOASSERTION"
 contributors = [
     "t-kalinowski",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:57.420436+00:00"
-releases = 3
+last_updated = "2026-09-18T14:30:56.370199+00:00"
+releases = 5
 language = "R"
 
 [[repos]]
@@ -23650,7 +23732,7 @@ contributors = [
     "jeroenjanssens",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:57.440894+00:00"
+last_updated = "2026-09-18T14:30:58.943460+00:00"
 releases = 8
 language = "R"
 
@@ -23668,7 +23750,7 @@ contributors = [
     "juliasilge",
     "jeroenjanssens",
 ]
-last_updated = "2026-05-20T08:05:57.461994+00:00"
+last_updated = "2026-09-18T14:31:01.345485+00:00"
 releases = 1
 language = "R"
 
@@ -23677,21 +23759,23 @@ repo = "r-lib/nanoparquet"
 name = "nanoparquet"
 description = "R package to read and write Parquet files"
 website = "https://nanoparquet.r-lib.org/"
-stars = 83
-forks = 6
-latest_release = "2026-04-20T10:55:04+00:00"
+stars = 85
+forks = 8
+latest_release = "2026-09-15T19:12:37+00:00"
 first_commit = "2024-03-30T15:40:31+00:00"
 license = "NOASSERTION"
 contributors = [
     "gaborcsardi",
     "hannes",
+    "asgr",
+    "Copilot",
     "yutannihilation",
     "jeroenjanssens",
     "Mytherin",
     "eitsupi",
 ]
-last_updated = "2026-05-20T08:05:57.483186+00:00"
-releases = 9
+last_updated = "2026-09-18T14:31:03.759026+00:00"
+releases = 10
 language = "C++"
 
 [[repos]]
@@ -23711,7 +23795,7 @@ contributors = [
     "salim-b",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:57.503876+00:00"
+last_updated = "2026-09-18T14:31:06.287573+00:00"
 releases = 6
 language = "C"
 
@@ -23727,7 +23811,7 @@ first_commit = "2024-05-07T11:18:03+00:00"
 contributors = [
     "gaborcsardi",
 ]
-last_updated = "2026-05-20T08:05:57.525250+00:00"
+last_updated = "2026-09-18T14:31:08.616206+00:00"
 releases = 2
 
 [[repos]]
@@ -23743,7 +23827,7 @@ contributors = [
     "thomasp85",
     "hfrick",
 ]
-last_updated = "2026-05-20T08:05:57.546200+00:00"
+last_updated = "2026-09-18T14:31:10.483353+00:00"
 releases = 0
 language = "R"
 
@@ -23760,7 +23844,7 @@ contributors = [
     "gaborcsardi",
     "github-actions[bot]",
 ]
-last_updated = "2026-05-20T08:05:57.567168+00:00"
+last_updated = "2026-09-18T14:31:12.251222+00:00"
 releases = 0
 language = "Dockerfile"
 
@@ -23769,17 +23853,17 @@ repo = "r-lib/watcher"
 name = "watcher"
 description = "Watch the File System for Changes"
 website = "https://watcher.r-lib.org/"
-stars = 36
+stars = 38
 forks = 2
-latest_release = "2026-05-09T17:59:48+00:00"
+latest_release = "2026-06-22T09:29:51+00:00"
 first_commit = "2025-01-31T23:11:05+00:00"
 license = "NOASSERTION"
 contributors = [
     "shikokuchuo",
     "jeroenjanssens",
 ]
-last_updated = "2026-05-20T08:05:57.588484+00:00"
-releases = 7
+last_updated = "2026-09-18T14:31:14.860057+00:00"
+releases = 8
 language = "C++"
 
 [[repos]]
@@ -23787,8 +23871,8 @@ repo = "r-lib/otelsdk"
 name = "otelsdk"
 description = "R SDK for OpenTelemetry"
 website = "https://otelsdk.r-lib.org/"
-stars = 16
-forks = 6
+stars = 17
+forks = 5
 latest_release = "2026-04-08T08:10:55+00:00"
 first_commit = "2025-03-07T10:29:11+00:00"
 license = "NOASSERTION"
@@ -23798,7 +23882,7 @@ contributors = [
     "jeroenjanssens",
     "olivroy",
 ]
-last_updated = "2026-05-20T08:05:57.609836+00:00"
+last_updated = "2026-09-18T14:31:17.411418+00:00"
 releases = 6
 language = "R"
 
@@ -23807,7 +23891,7 @@ repo = "r-lib/otel"
 name = "otel"
 description = "R API for OpenTelemetry"
 website = "https://otel.r-lib.org/"
-stars = 20
+stars = 21
 forks = 6
 latest_release = "2025-08-29T12:45:59+00:00"
 first_commit = "2025-03-18T11:45:56+00:00"
@@ -23816,7 +23900,7 @@ contributors = [
     "gaborcsardi",
     "jeroenjanssens",
 ]
-last_updated = "2026-05-20T08:05:57.631298+00:00"
+last_updated = "2026-09-18T14:31:19.926934+00:00"
 releases = 2
 language = "R"
 
@@ -23833,7 +23917,7 @@ contributors = [
     "jeroen",
     "georgestagg",
 ]
-last_updated = "2026-05-20T08:05:57.652166+00:00"
+last_updated = "2026-09-18T14:31:21.717545+00:00"
 releases = 0
 language = "R"
 
@@ -23843,14 +23927,14 @@ name = "jsonedit"
 description = "JSON Parsing and Modification Utilities"
 website = "https://jsonedit.r-lib.org"
 stars = 5
-forks = 2
+forks = 3
 first_commit = "2025-08-06T10:37:12+00:00"
 license = "NOASSERTION"
 contributors = [
     "DavisVaughan",
     "jeroen",
 ]
-last_updated = "2026-05-20T08:05:57.673174+00:00"
+last_updated = "2026-09-18T14:31:23.594991+00:00"
 releases = 0
 language = "JavaScript"
 
@@ -23878,7 +23962,7 @@ name = "RMySQL"
 description = "Legacy DBI interface for MySQL"
 website = "http://cran.r-project.org/package=RMySQL"
 stars = 209
-forks = 107
+forks = 105
 latest_release = "2022-12-05T23:01:14+00:00"
 first_commit = "2012-01-12T17:27:03+00:00"
 contributors = [
@@ -23894,7 +23978,7 @@ contributors = [
     "gaborcsardi",
     "jinzhen-lin",
 ]
-last_updated = "2026-05-20T08:05:58.892865+00:00"
+last_updated = "2026-09-18T14:32:01.908468+00:00"
 releases = 18
 language = "C"
 
@@ -23903,8 +23987,8 @@ repo = "r-dbi/bigrquery"
 name = "bigrquery"
 description = "An interface to Google's BigQuery from R."
 website = "https://bigrquery.r-dbi.org"
-stars = 528
-forks = 192
+stars = 530
+forks = 190
 latest_release = "2026-05-12T12:44:36+00:00"
 first_commit = "2013-05-22T14:04:16+00:00"
 license = "NOASSERTION"
@@ -23951,7 +24035,7 @@ contributors = [
     "ahmohamed",
     "AdeelK93",
 ]
-last_updated = "2026-05-20T08:05:58.925803+00:00"
+last_updated = "2026-09-18T14:32:04.892479+00:00"
 releases = 20
 language = "R"
 
@@ -23960,9 +24044,9 @@ repo = "r-dbi/RSQLite"
 name = "RSQLite"
 description = "R interface for SQLite"
 website = "https://rsqlite.r-dbi.org"
-stars = 336
+stars = 341
 forks = 83
-latest_release = "2026-05-09T17:39:21+00:00"
+latest_release = "2026-06-29T17:36:20+00:00"
 first_commit = "2013-05-26T19:47:56+00:00"
 license = "LGPL-2.1"
 contributors = [
@@ -23979,16 +24063,19 @@ contributors = [
     "wush978",
     "IndrajeetPatil",
     "jeanetteclark",
+    "claude",
     "rfhb",
-    "mkuhn",
     "jjallaire",
-    "jeroen",
-    "maelle",
-    "MichaelChirico",
+    "mkuhn",
     "seth",
+    "MichaelChirico",
+    "maelle",
+    "jeroen",
+    "davidrsch",
     "shrektan",
     "shutinet",
     "psychobas",
+    "claude[bot]",
     "troels",
     "tschoonj",
     "stewid",
@@ -24004,8 +24091,8 @@ contributors = [
     "Copilot",
     "ankane",
 ]
-last_updated = "2026-05-20T08:05:58.950922+00:00"
-releases = 51
+last_updated = "2026-09-18T14:32:08.202066+00:00"
+releases = 54
 language = "R"
 
 [[repos]]
@@ -24013,8 +24100,8 @@ repo = "r-dbi/DBI"
 name = "DBI"
 description = "A database interface (DBI) definition for communication between R and RDBMSs"
 website = "https://dbi.r-dbi.org"
-stars = 317
-forks = 79
+stars = 323
+forks = 81
 latest_release = "2026-02-24T17:22:15+00:00"
 first_commit = "2013-10-16T05:17:38+00:00"
 license = "LGPL-2.1"
@@ -24026,10 +24113,11 @@ contributors = [
     "hannes",
     "bborgesr",
     "nbenn",
-    "IndrajeetPatil",
     "jawond",
+    "IndrajeetPatil",
     "maelle",
     "eauleaf",
+    "claude",
     "cutterkom",
     "renkun-ken",
     "wibeasley",
@@ -24046,10 +24134,11 @@ contributors = [
     "mdsumner",
     "mvkorpel",
     "richfitz",
+    "claude[bot]",
     "jarauh",
     "klin333",
 ]
-last_updated = "2026-05-20T08:05:58.972983+00:00"
+last_updated = "2026-09-18T14:32:11.301840+00:00"
 releases = 20
 language = "R"
 
@@ -24058,8 +24147,8 @@ repo = "r-dbi/RPostgres"
 name = "RPostgres"
 description = "A DBI-compliant interface to PostgreSQL"
 website = "https://rpostgres.r-dbi.org"
-stars = 337
-forks = 80
+stars = 343
+forks = 82
 latest_release = "2026-02-15T18:53:30+00:00"
 first_commit = "2015-01-05T17:43:02+00:00"
 license = "NOASSERTION"
@@ -24067,8 +24156,8 @@ contributors = [
     "krlmlr",
     "hadley",
     "jeroen",
-    "Antonov548",
     "github-actions[bot]",
+    "Antonov548",
     "dpprdan",
     "thrasibule",
     "zozlak",
@@ -24086,17 +24175,19 @@ contributors = [
     "maelle",
     "jaredk-porch",
     "web-flow",
-    "ateucher",
-    "baderstine",
-    "Copilot",
-    "jimhester",
-    "robertzk",
-    "gatscha-trafficon",
-    "troels",
-    "harvey131",
+    "claude",
     "karawoo",
+    "harvey131",
+    "troels",
+    "gatscha-trafficon",
+    "robertzk",
+    "jimhester",
+    "Copilot",
+    "baderstine",
+    "ateucher",
     "oz-r",
     "toppyy",
+    "claude[bot]",
     "hrbrmstr",
     "rstammer",
     "pedrobtz",
@@ -24105,7 +24196,7 @@ contributors = [
     "ClaytonJY",
     "Altons",
 ]
-last_updated = "2026-05-20T08:05:58.994511+00:00"
+last_updated = "2026-09-18T14:32:14.314614+00:00"
 releases = 23
 language = "R"
 
@@ -24115,8 +24206,8 @@ name = "DBItest"
 description = "Testing DBI drivers"
 website = "http://dbitest.r-dbi.org"
 stars = 24
-forks = 18
-latest_release = "2024-12-07T14:52:31+00:00"
+forks = 19
+latest_release = "2026-07-22T20:11:01+00:00"
 first_commit = "2015-08-21T20:00:45+00:00"
 license = "LGPL-2.1"
 contributors = [
@@ -24128,16 +24219,18 @@ contributors = [
     "TSchiefer",
     "IndrajeetPatil",
     "jimhester",
+    "claude",
     "imanuelcostigan",
     "maelle",
     "dpprdan",
     "thrasibule",
     "jonmcalder",
     "michaelquinn32",
+    "claude[bot]",
     "detule",
 ]
-last_updated = "2026-05-20T08:05:59.015317+00:00"
-releases = 17
+last_updated = "2026-09-18T14:32:17.068918+00:00"
+releases = 18
 language = "R"
 
 [[repos]]
@@ -24146,7 +24239,7 @@ name = "RKazam"
 description = "A boilerplate for DBI drivers, fully DBI-compliant"
 website = ""
 stars = 11
-forks = 4
+forks = 3
 first_commit = "2016-01-25T17:46:03+00:00"
 license = "CC0-1.0"
 contributors = [
@@ -24156,8 +24249,9 @@ contributors = [
     "TSchiefer",
     "aviator-app[bot]",
     "maelle",
+    "claude[bot]",
 ]
-last_updated = "2026-05-20T08:05:59.036246+00:00"
+last_updated = "2026-09-18T14:32:18.777489+00:00"
 releases = 0
 language = "R"
 
@@ -24166,9 +24260,9 @@ repo = "r-dbi/odbc"
 name = "odbc"
 description = "Connect to ODBC databases (using the DBI interface)"
 website = "https://odbc.r-dbi.org/"
-stars = 414
-forks = 117
-latest_release = "2026-05-12T13:31:34+00:00"
+stars = 416
+forks = 118
+latest_release = "2026-09-16T13:52:35+00:00"
 first_commit = "2016-07-13T19:32:07+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -24181,11 +24275,11 @@ contributors = [
     "devjgm",
     "jmcphers",
     "atheriel",
+    "jeroen",
     "shrektan",
     "edgararuiz",
     "blairj09",
     "javierluraschi",
-    "jeroen",
     "khotilov",
     "vkapartzianis",
     "wibeasley",
@@ -24203,6 +24297,7 @@ contributors = [
     "mnel",
     "schuemie",
     "lberki",
+    "LeonidasZhak",
     "kevinushey",
     "jonmcalder",
     "jeroenjanssens",
@@ -24215,8 +24310,8 @@ contributors = [
     "alexkowa",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:59.057219+00:00"
-releases = 23
+last_updated = "2026-09-18T14:32:22.109194+00:00"
+releases = 24
 language = "C++"
 
 [[repos]]
@@ -24225,8 +24320,8 @@ name = "RMariaDB"
 description = "An R interface to MariaDB"
 website = "https://rmariadb.r-dbi.org"
 stars = 137
-forks = 39
-latest_release = "2025-02-24T18:19:14+00:00"
+forks = 40
+latest_release = "2026-02-05T19:48:32+00:00"
 first_commit = "2017-07-05T15:35:16+00:00"
 license = "NOASSERTION"
 contributors = [
@@ -24247,11 +24342,13 @@ contributors = [
     "gagern",
     "maelle",
     "gaborcsardi",
+    "claude",
     "ggrothendieck",
     "jph98",
     "rjoomen",
     "twentytitus",
     "jinzhen-lin",
+    "claude[bot]",
     "stevenranney",
     "rorynolan",
     "pekkarr",
@@ -24264,8 +24361,8 @@ contributors = [
     "dirkschumacher",
     "dpprdan",
 ]
-last_updated = "2026-05-20T08:05:59.078036+00:00"
-releases = 20
+last_updated = "2026-09-18T14:32:25.298544+00:00"
+releases = 21
 language = "R"
 
 [[repos]]
@@ -24279,8 +24376,9 @@ first_commit = "2019-02-28T00:22:08+00:00"
 contributors = [
     "krlmlr",
     "IndrajeetPatil",
+    "claude[bot]",
 ]
-last_updated = "2026-05-20T08:05:59.099227+00:00"
+last_updated = "2026-09-18T14:32:27.196738+00:00"
 releases = 0
 language = "R"
 
@@ -24290,13 +24388,13 @@ name = "backends"
 description = "Details on DBI backends"
 website = "https://www.r-dbi.org/backends/"
 stars = 18
-forks = 7
+forks = 6
 first_commit = "2019-12-16T20:36:07+00:00"
 contributors = [
     "krlmlr",
     "dependabot[bot]",
 ]
-last_updated = "2026-05-20T08:05:59.119873+00:00"
+last_updated = "2026-09-18T14:32:29.197677+00:00"
 releases = 0
 language = "R"
 
@@ -24392,7 +24490,7 @@ contributors = [
     "hamilton",
     "mapleFU",
     "drabastomek",
-    "penguian",
+    "paul-leopardi",
     "nicku33",
     "jonathanswenson",
     "IanCal",
@@ -24474,7 +24572,7 @@ contributors = [
     "marcboeker",
 ]
 readme_image = "https://duckdb.org/images/DuckDB_Logo_dl.png"
-last_updated = "2026-05-20T08:05:59.140575+00:00"
+last_updated = "2026-09-18T14:32:34.053281+00:00"
 releases = 0
 language = "C++"
 
@@ -24491,7 +24589,7 @@ contributors = [
     "ankane",
     "dpprdan",
 ]
-last_updated = "2026-05-20T08:05:59.161313+00:00"
+last_updated = "2026-09-18T14:32:35.853800+00:00"
 releases = 0
 language = "JavaScript"
 
@@ -24507,7 +24605,7 @@ license = "MIT"
 contributors = [
     "ankane",
 ]
-last_updated = "2026-05-20T08:05:59.182227+00:00"
+last_updated = "2026-09-18T14:32:37.726912+00:00"
 releases = 0
 language = "JavaScript"
 
@@ -24524,7 +24622,7 @@ contributors = [
     "ankane",
     "makigumo",
 ]
-last_updated = "2026-05-20T08:05:59.203357+00:00"
+last_updated = "2026-09-18T14:32:39.616306+00:00"
 releases = 0
 language = "JavaScript"
 
@@ -24533,14 +24631,14 @@ repo = "r-dbi/dbi3"
 name = "dbi3"
 description = "DBI revisited"
 website = "https://r-dbi.github.io/dbi3"
-stars = 41
+stars = 42
 forks = 2
 first_commit = "2021-10-31T23:18:46+00:00"
 contributors = [
     "krlmlr",
     "maelle",
 ]
-last_updated = "2026-05-20T08:05:59.224023+00:00"
+last_updated = "2026-09-18T14:32:41.543875+00:00"
 releases = 0
 language = "R"
 
@@ -24556,7 +24654,7 @@ contributors = [
     "krlmlr",
     "jeroen",
 ]
-last_updated = "2026-05-20T08:05:59.244521+00:00"
+last_updated = "2026-09-18T14:32:43.282666+00:00"
 releases = 0
 
 [[repos]]
@@ -24574,7 +24672,7 @@ contributors = [
     "claude",
     "nbenn",
 ]
-last_updated = "2026-05-20T08:05:59.265509+00:00"
+last_updated = "2026-09-18T14:32:45.097583+00:00"
 releases = 0
 language = "CSS"
 
@@ -24583,8 +24681,8 @@ repo = "r-dbi/adbi"
 name = "adbi"
 description = "Arrow database connectivity (ADBC) for DBI in R"
 website = "http://adbi.r-dbi.org"
-stars = 21
-forks = 7
+stars = 25
+forks = 8
 latest_release = "2025-11-16T09:40:15+00:00"
 first_commit = "2023-07-06T10:11:28+00:00"
 license = "LGPL-2.1"
@@ -24594,8 +24692,9 @@ contributors = [
     "github-actions[bot]",
     "maelle",
     "yutannihilation",
+    "claude[bot]",
 ]
-last_updated = "2026-05-20T08:05:59.286780+00:00"
+last_updated = "2026-09-18T14:32:48.176647+00:00"
 releases = 1
 language = "R"
 
@@ -24611,7 +24710,7 @@ license = "NOASSERTION"
 contributors = [
     "maelle",
 ]
-last_updated = "2026-05-20T08:05:59.307330+00:00"
+last_updated = "2026-09-18T14:32:50.127614+00:00"
 releases = 0
 
 [[repos]]
@@ -24628,7 +24727,7 @@ contributors = [
     "krlmlr",
     "wael-sadek",
 ]
-last_updated = "2026-05-20T08:05:59.328327+00:00"
+last_updated = "2026-09-18T14:32:51.932117+00:00"
 releases = 0
 language = "Dockerfile"
 
@@ -24643,7 +24742,7 @@ first_commit = "2024-04-07T07:48:30+00:00"
 contributors = [
     "krlmlr",
 ]
-last_updated = "2026-05-20T08:05:59.348826+00:00"
+last_updated = "2026-09-18T14:32:53.670855+00:00"
 releases = 0
 language = "R"
 
@@ -25026,7 +25125,7 @@ stars = 0
 forks = 0
 license = "BSD-2-Clause"
 first_commit = "2026-02-26T12:30:55+00:00"
-last_updated = "2026-05-20T08:05:57.736813+00:00"
+last_updated = "2026-09-18T14:31:47.394396+00:00"
 releases = 0
 contributors = [
     "BrewTestBot",
@@ -25601,16 +25700,16 @@ repo = "shikokuchuo/mori"
 name = "mori"
 description = "Shared Memory for R Objects"
 website = "https://shikokuchuo.net/mori/"
-stars = 19
-forks = 1
-latest_release = "2026-04-22T00:00:00+00:00"
+stars = 137
+forks = 2
+latest_release = "2026-06-09T11:58:34+00:00"
 first_commit = "2026-04-16T12:27:58+01:00"
 license = "MIT License"
 contributors = [
     "shikokuchuo",
 ]
-last_updated = "2026-04-22T00:00:00+00:00"
-releases = 1
+last_updated = "2026-07-01T13:29:07.286100+00:00"
+releases = 3
 language = "R"
 
 [[repos]]
@@ -25625,7 +25724,7 @@ first_commit = "2019-06-14T05:31:13+00:00"
 contributors = [
     "javierluraschi",
 ]
-last_updated = "2026-05-20T08:05:07.188919+00:00"
+last_updated = "2026-09-18T14:17:59.023606+00:00"
 
 [[repos]]
 repo = "mlverse/binder"
@@ -25640,7 +25739,7 @@ first_commit = "2019-09-16T18:56:43+00:00"
 contributors = [
     "javierluraschi",
 ]
-last_updated = "2026-05-20T08:05:07.221039+00:00"
+last_updated = "2026-09-18T14:18:00.778831+00:00"
 
 [[repos]]
 repo = "mlverse/package"
@@ -25655,15 +25754,15 @@ first_commit = "2019-09-16T19:27:13+00:00"
 contributors = [
     "javierluraschi",
 ]
-last_updated = "2026-05-20T08:05:07.246487+00:00"
+last_updated = "2026-09-18T14:18:02.595530+00:00"
 
 [[repos]]
 repo = "mlverse/torch"
 name = "torch"
 description = "R Interface to Torch"
 website = "https://torch.mlverse.org"
-stars = 565
-forks = 92
+stars = 568
+forks = 93
 license = "NOASSERTION"
 language = "C++"
 latest_release = "2026-04-09T12:18:15+00:00"
@@ -25690,23 +25789,24 @@ contributors = [
     "Athospd",
     "actions-user",
     "shikokuchuo",
-    "jnolis",
-    "jonthegeek",
-    "jwijffels",
     "mtkerbeR",
-    "CoreyGiles",
-    "naterajj",
-    "kadyb",
-    "MaximilianPi",
-    "nachodieez",
-    "OJWatson",
-    "ralmond",
-    "cyrusmsk",
-    "SvenVw",
-    "tdhock",
+    "jwijffels",
     "TroyHernandez",
-    "issactoast",
+    "jonthegeek",
+    "jnolis",
+    "CoreyGiles",
     "olivroy",
+    "issactoast",
+    "tdhock",
+    "SvenVw",
+    "cyrusmsk",
+    "ralmond",
+    "OJWatson",
+    "nachodieez",
+    "sims1253",
+    "MaximilianPi",
+    "kadyb",
+    "naterajj",
     "hbaniecki",
     "divinit7",
     "dannymorris",
@@ -25720,7 +25820,7 @@ contributors = [
     "ANAMASGARD",
 ]
 readme_image = "man/figures/torch.png"
-last_updated = "2026-05-20T08:05:07.268443+00:00"
+last_updated = "2026-09-18T14:18:05.629044+00:00"
 
 [[repos]]
 repo = "mlverse/lantern"
@@ -25738,7 +25838,7 @@ contributors = [
     "dfalbel",
     "hbaniecki",
 ]
-last_updated = "2026-05-20T08:05:07.289441+00:00"
+last_updated = "2026-09-18T14:18:08.336569+00:00"
 
 [[repos]]
 repo = "mlverse/distributed"
@@ -25753,7 +25853,7 @@ first_commit = "2020-04-10T23:29:42+00:00"
 contributors = [
     "javierluraschi",
 ]
-last_updated = "2026-05-20T08:05:07.310093+00:00"
+last_updated = "2026-09-18T14:18:10.056597+00:00"
 
 [[repos]]
 repo = "mlverse/pagedtablejs"
@@ -25771,14 +25871,14 @@ contributors = [
     "thebioengineer",
 ]
 readme_image = "https://img.shields.io/npm/dm/pagedtablejs.svg"
-last_updated = "2026-05-20T08:05:07.330896+00:00"
+last_updated = "2026-09-18T14:18:11.764115+00:00"
 
 [[repos]]
 repo = "mlverse/torchvision"
 name = "torchvision"
 description = "R interface to torchvision"
 website = "https://torchvision.mlverse.org"
-stars = 76
+stars = 77
 forks = 31
 license = "NOASSERTION"
 language = "R"
@@ -25790,20 +25890,20 @@ contributors = [
     "cregouby",
     "koshtiakanksha",
     "DerrickUnleashed",
+    "srishtiii28",
     "skeydan",
-    "Christophe-Regouby",
     "sebffischer",
+    "Christophe-Regouby",
     "ANAMASGARD",
     "Chandraveersingh1717",
     "Athospd",
     "statist-bhfz",
     "mohamed-180",
     "dirkschumacher",
-    "srishtiii28",
     "sau1812",
 ]
 readme_image = "https://torch.mlverse.org/css/images/hex/torchvision.png"
-last_updated = "2026-05-20T08:05:07.351123+00:00"
+last_updated = "2026-09-18T14:18:14.293499+00:00"
 
 [[repos]]
 repo = "mlverse/imagenet"
@@ -25819,7 +25919,7 @@ first_commit = "2020-07-27T23:27:57+00:00"
 contributors = [
     "javierluraschi",
 ]
-last_updated = "2026-05-20T08:05:07.371623+00:00"
+last_updated = "2026-09-18T14:18:16.800483+00:00"
 
 [[repos]]
 repo = "mlverse/mlverse-site"
@@ -25835,14 +25935,14 @@ contributors = [
     "javierluraschi",
     "dfalbel",
 ]
-last_updated = "2026-05-20T08:05:07.391919+00:00"
+last_updated = "2026-09-18T14:18:19.746722+00:00"
 
 [[repos]]
 repo = "mlverse/torchaudio"
 name = "torchaudio"
 description = "R interface to torchaudio"
 website = "https://mlverse.github.io/torchaudio/"
-stars = 28
+stars = 29
 forks = 7
 license = "NOASSERTION"
 language = "R"
@@ -25855,7 +25955,7 @@ contributors = [
     "dfalbel",
 ]
 readme_image = "man/figures/torchaudio.png"
-last_updated = "2026-05-20T08:05:07.413211+00:00"
+last_updated = "2026-09-18T14:18:22.146508+00:00"
 
 [[repos]]
 repo = "mlverse/duktape"
@@ -25870,7 +25970,7 @@ first_commit = "2020-09-23T21:01:10+00:00"
 contributors = [
     "javierluraschi",
 ]
-last_updated = "2026-05-20T08:05:07.434227+00:00"
+last_updated = "2026-09-18T14:18:23.937088+00:00"
 
 [[repos]]
 repo = "mlverse/torchdatasets"
@@ -25890,19 +25990,19 @@ contributors = [
     "Athospd",
     "dkgaraujo",
 ]
-last_updated = "2026-05-20T08:05:07.454888+00:00"
+last_updated = "2026-09-18T14:18:26.394205+00:00"
 
 [[repos]]
 repo = "mlverse/tabnet"
 name = "tabnet"
 description = "An R implementation of TabNet"
 website = "https://mlverse.github.io/tabnet/"
-stars = 117
+stars = 119
 forks = 16
 license = "NOASSERTION"
 language = "R"
-latest_release = "2026-01-31T13:32:35+00:00"
-releases = 9
+latest_release = "2026-07-22T06:45:27+00:00"
+releases = 11
 first_commit = "2020-10-16T19:13:14+00:00"
 contributors = [
     "cregouby",
@@ -25916,14 +26016,14 @@ contributors = [
     "zerweck",
 ]
 readme_image = "man/figures/README-model-fit-1.png"
-last_updated = "2026-05-20T08:05:07.475688+00:00"
+last_updated = "2026-09-18T14:18:28.941535+00:00"
 
 [[repos]]
 repo = "mlverse/tft"
 name = "tft"
 description = "R implementation of Temporal Fusion Transformers"
 website = "https://mlverse.github.io/tft/"
-stars = 34
+stars = 33
 forks = 10
 license = "NOASSERTION"
 language = "R"
@@ -25933,7 +26033,7 @@ contributors = [
     "dfalbel",
     "cregouby",
 ]
-last_updated = "2026-05-20T08:05:07.496526+00:00"
+last_updated = "2026-09-18T14:18:30.641901+00:00"
 
 [[repos]]
 repo = "mlverse/test-html-preview"
@@ -25946,14 +26046,14 @@ license = "Apache-2.0"
 releases = 0
 first_commit = "2021-02-03T20:18:01+00:00"
 contributors = []
-last_updated = "2026-05-20T08:05:07.517709+00:00"
+last_updated = "2026-09-18T14:18:32.718784+00:00"
 
 [[repos]]
 repo = "mlverse/torch-learnr"
 name = "torch-learnr"
 description = "Learnr tutorials for Torch"
 website = "https://mlverse.shinyapps.io/torch-tour"
-stars = 20
+stars = 23
 forks = 6
 language = "R"
 releases = 0
@@ -25961,7 +26061,7 @@ first_commit = "2021-04-12T15:16:10+00:00"
 contributors = [
     "dfalbel",
 ]
-last_updated = "2026-05-20T08:05:07.538425+00:00"
+last_updated = "2026-09-18T14:18:34.452585+00:00"
 
 [[repos]]
 repo = "mlverse/madgrad"
@@ -25979,15 +26079,15 @@ contributors = [
     "dfalbel",
 ]
 readme_image = "man/figures/plot.gif"
-last_updated = "2026-05-20T08:05:07.558840+00:00"
+last_updated = "2026-09-18T14:18:37.063705+00:00"
 
 [[repos]]
 repo = "mlverse/luz"
 name = "luz"
 description = "Higher Level API for torch"
 website = "https://mlverse.github.io/luz/"
-stars = 100
-forks = 13
+stars = 101
+forks = 14
 license = "NOASSERTION"
 language = "R"
 latest_release = "2026-04-28T10:41:56+00:00"
@@ -26001,7 +26101,7 @@ contributors = [
     "SvenVw",
     "olivroy",
 ]
-last_updated = "2026-05-20T08:05:07.579663+00:00"
+last_updated = "2026-09-18T14:18:39.415964+00:00"
 
 [[repos]]
 repo = "mlverse/sparklyr-image-classification-demo"
@@ -26015,7 +26115,7 @@ language = "R"
 releases = 0
 first_commit = "2021-06-15T18:16:12+00:00"
 contributors = []
-last_updated = "2026-05-20T08:05:07.600377+00:00"
+last_updated = "2026-09-18T14:18:41.270353+00:00"
 
 [[repos]]
 repo = "mlverse/libcuml-builds"
@@ -26030,26 +26130,27 @@ first_commit = "2021-06-20T15:07:05+00:00"
 contributors = [
     "dfalbel",
 ]
-last_updated = "2026-05-20T08:05:07.621671+00:00"
+last_updated = "2026-09-18T14:18:43.744392+00:00"
 
 [[repos]]
 repo = "mlverse/cuda.ml"
 name = "cuda.ml"
 description = "R interface for cuML"
-website = ""
-stars = 37
-forks = 5
+website = "https://mlverse.github.io/cuda.ml/"
+stars = 50
+forks = 6
 license = "NOASSERTION"
 language = "R"
-latest_release = "2026-04-29T14:39:14+00:00"
-releases = 4
+latest_release = "2026-08-20T14:20:08+00:00"
+releases = 8
 first_commit = "2021-06-23T20:44:53+00:00"
 contributors = [
-    "dfalbel",
     "t-kalinowski",
+    "dfalbel",
+    "nwstephens",
 ]
 readme_image = "https://cranlogs.r-pkg.org/badges/cuda.ml?color=brightgreen"
-last_updated = "2026-05-20T08:05:07.642341+00:00"
+last_updated = "2026-09-18T14:18:46.196574+00:00"
 
 [[repos]]
 repo = "mlverse/ISLR-deeplearning-torch"
@@ -26065,7 +26166,7 @@ first_commit = "2021-08-05T19:00:08+00:00"
 contributors = [
     "dfalbel",
 ]
-last_updated = "2026-05-20T08:05:07.663144+00:00"
+last_updated = "2026-09-18T14:18:47.961877+00:00"
 
 [[repos]]
 repo = "mlverse/lltm"
@@ -26083,15 +26184,15 @@ contributors = [
     "dfalbel",
     "hsbadr",
 ]
-last_updated = "2026-05-20T08:05:07.684118+00:00"
+last_updated = "2026-09-18T14:18:50.337820+00:00"
 
 [[repos]]
 repo = "mlverse/torchvisionlib"
 name = "torchvisionlib"
 description = "torchvision C++ library extensions"
 website = ""
-stars = 9
-forks = 3
+stars = 10
+forks = 5
 license = "NOASSERTION"
 language = "C++"
 latest_release = "2026-04-15T11:08:23+00:00"
@@ -26099,10 +26200,13 @@ releases = 18
 first_commit = "2022-01-10T19:06:29+00:00"
 contributors = [
     "dfalbel",
+    "srishtiii28",
+    "cregouby",
     "Chandraveersingh1717",
+    "DerrickUnleashed",
     "bart1",
 ]
-last_updated = "2026-05-20T08:05:07.704645+00:00"
+last_updated = "2026-09-18T14:18:53.157206+00:00"
 
 [[repos]]
 repo = "mlverse/torchexport"
@@ -26119,7 +26223,7 @@ contributors = [
     "dfalbel",
     "sebffischer",
 ]
-last_updated = "2026-05-20T08:05:07.725683+00:00"
+last_updated = "2026-09-18T14:18:55.115561+00:00"
 
 [[repos]]
 repo = "mlverse/torchsparse"
@@ -26137,7 +26241,7 @@ contributors = [
     "dfalbel",
     "skeydan",
 ]
-last_updated = "2026-05-20T08:05:07.746345+00:00"
+last_updated = "2026-09-18T14:18:57.666823+00:00"
 
 [[repos]]
 repo = "mlverse/tabulate"
@@ -26155,7 +26259,7 @@ contributors = [
     "dfalbel",
 ]
 readme_image = "man/figures/README-/demo.svg"
-last_updated = "2026-05-20T08:05:07.766714+00:00"
+last_updated = "2026-09-18T14:19:00.295508+00:00"
 
 [[repos]]
 repo = "mlverse/docker"
@@ -26170,7 +26274,7 @@ first_commit = "2022-04-23T12:42:04+00:00"
 contributors = [
     "dfalbel",
 ]
-last_updated = "2026-05-20T08:05:07.786983+00:00"
+last_updated = "2026-09-18T14:19:02.253225+00:00"
 
 [[repos]]
 repo = "mlverse/bench-torch"
@@ -26188,7 +26292,7 @@ contributors = [
     "actions-user",
 ]
 readme_image = "man/figures/README-python-1.png"
-last_updated = "2026-05-20T08:05:07.807466+00:00"
+last_updated = "2026-09-18T14:19:04.044887+00:00"
 
 [[repos]]
 repo = "mlverse/torchwavelets"
@@ -26196,21 +26300,21 @@ name = "torchwavelets"
 description = ""
 website = ""
 stars = 3
-forks = 0
+forks = 1
 language = "R"
 releases = 0
 first_commit = "2022-09-30T18:54:34+00:00"
 contributors = [
     "skeydan",
 ]
-last_updated = "2026-05-20T08:05:07.828477+00:00"
+last_updated = "2026-09-18T14:19:05.920777+00:00"
 
 [[repos]]
 repo = "mlverse/libtorch-mac-m1"
 name = "libtorch-mac-m1"
 description = "LibTorch builds for the M1 Macs"
 website = ""
-stars = 55
+stars = 54
 forks = 9
 latest_release = "2023-05-09T14:33:40+00:00"
 releases = 3
@@ -26218,7 +26322,7 @@ first_commit = "2022-10-03T14:23:44+00:00"
 contributors = [
     "dfalbel",
 ]
-last_updated = "2026-05-20T08:05:07.849068+00:00"
+last_updated = "2026-09-18T14:19:08.360133+00:00"
 
 [[repos]]
 repo = "mlverse/tfevents"
@@ -26240,14 +26344,14 @@ contributors = [
     "olivroy",
 ]
 readme_image = "man/figures/README-tensorboard-1.png"
-last_updated = "2026-05-20T08:05:07.869404+00:00"
+last_updated = "2026-09-18T14:19:11.006968+00:00"
 
 [[repos]]
 repo = "mlverse/wav"
 name = "wav"
 description = "Read and write WAV files."
 website = "https://mlverse.github.io/wav"
-stars = 2
+stars = 4
 forks = 0
 license = "NOASSERTION"
 language = "C"
@@ -26257,15 +26361,15 @@ first_commit = "2022-11-24T01:07:45+00:00"
 contributors = [
     "dfalbel",
 ]
-last_updated = "2026-05-20T08:05:07.890171+00:00"
+last_updated = "2026-09-18T14:19:13.503220+00:00"
 
 [[repos]]
 repo = "mlverse/chattr"
 name = "chattr"
 description = ""
 website = "https://mlverse.github.io/chattr/"
-stars = 246
-forks = 25
+stars = 249
+forks = 26
 license = "NOASSERTION"
 language = "R"
 latest_release = "2025-08-18T17:15:54+00:00"
@@ -26281,14 +26385,14 @@ contributors = [
     "hadley",
 ]
 readme_image = "https://www.r-pkg.org/badges/version/chattr"
-last_updated = "2026-05-20T08:05:07.910820+00:00"
+last_updated = "2026-09-18T14:19:16.010919+00:00"
 
 [[repos]]
 repo = "mlverse/tok"
 name = "tok"
 description = "Tokenizers from HuggingFace"
 website = ""
-stars = 47
+stars = 48
 forks = 2
 license = "NOASSERTION"
 language = "R"
@@ -26297,16 +26401,17 @@ releases = 8
 first_commit = "2023-04-20T20:25:27+00:00"
 contributors = [
     "dfalbel",
+    "t-kalinowski",
     "cregouby",
 ]
-last_updated = "2026-05-20T08:05:07.932527+00:00"
+last_updated = "2026-09-18T14:19:18.461686+00:00"
 
 [[repos]]
 repo = "mlverse/hfhub"
 name = "hfhub"
 description = "Download and cache HuggingFace Hub files"
 website = "https://mlverse.github.io/hfhub/"
-stars = 19
+stars = 20
 forks = 7
 license = "NOASSERTION"
 language = "R"
@@ -26319,14 +26424,14 @@ contributors = [
     "jcheng5",
     "TroyHernandez",
 ]
-last_updated = "2026-05-20T08:05:07.953798+00:00"
+last_updated = "2026-09-18T14:19:20.881715+00:00"
 
 [[repos]]
 repo = "mlverse/minhub"
 name = "minhub"
 description = "Minimal implementation of Deep Learning models"
 website = ""
-stars = 35
+stars = 36
 forks = 4
 license = "NOASSERTION"
 language = "R"
@@ -26336,7 +26441,7 @@ contributors = [
     "dfalbel",
     "skeydan",
 ]
-last_updated = "2026-05-20T08:05:07.974843+00:00"
+last_updated = "2026-09-18T14:19:22.658183+00:00"
 
 [[repos]]
 repo = "mlverse/callq"
@@ -26352,26 +26457,28 @@ first_commit = "2023-05-22T14:46:09+00:00"
 contributors = [
     "dfalbel",
 ]
-last_updated = "2026-05-20T08:05:07.995483+00:00"
+last_updated = "2026-09-18T14:19:24.534112+00:00"
 
 [[repos]]
 repo = "mlverse/safetensors"
 name = "safetensors"
 description = "Safetensors File Format"
 website = "https://mlverse.github.io/safetensors/"
-stars = 11
+stars = 12
 forks = 6
 license = "NOASSERTION"
 language = "R"
-latest_release = "2026-04-27T18:26:18+00:00"
-releases = 5
+latest_release = "2026-08-21T18:33:10+00:00"
+releases = 6
 first_commit = "2023-05-30T12:35:48+00:00"
 contributors = [
     "dfalbel",
+    "t-kalinowski",
+    "TroyHernandez",
     "sebffischer",
     "shikokuchuo",
 ]
-last_updated = "2026-05-20T08:05:08.016287+00:00"
+last_updated = "2026-09-18T14:19:27.147775+00:00"
 
 [[repos]]
 repo = "mlverse/pysparklyr"
@@ -26379,28 +26486,29 @@ name = "pysparklyr"
 description = "Extension to {sparklyr} that allows you to interact with Spark & Databricks Connect"
 website = "https://spark.posit.co/deployment/databricks-connect.html"
 stars = 17
-forks = 8
+forks = 10
 license = "NOASSERTION"
 language = "R"
-latest_release = "2026-01-26T23:36:05+00:00"
-releases = 11
+latest_release = "2026-07-16T13:43:27+00:00"
+releases = 12
 first_commit = "2023-06-22T18:02:09+00:00"
 contributors = [
     "edgararuiz",
     "t-kalinowski",
     "falbukrek",
     "tobiasdut",
+    "atheriel",
     "romangehrn",
     "edward-burn",
 ]
-last_updated = "2026-05-20T08:05:08.038069+00:00"
+last_updated = "2026-09-18T14:19:29.583467+00:00"
 
 [[repos]]
 repo = "mlverse/mall"
 name = "mall"
 description = "Run multiple LLM predictions against a data frame with R and Python"
 website = "https://mlverse.github.io/mall/"
-stars = 122
+stars = 129
 forks = 10
 language = "R"
 latest_release = "2025-08-18T21:07:21+00:00"
@@ -26412,7 +26520,7 @@ contributors = [
     "mattwarkentin",
 ]
 readme_image = "site/images/favicon/apple-touch-icon-180x180.png"
-last_updated = "2026-05-20T08:05:08.060012+00:00"
+last_updated = "2026-09-18T14:19:32.094905+00:00"
 
 [[repos]]
 repo = "mlverse/lang"
@@ -26420,17 +26528,17 @@ name = "lang"
 description = "Uses LLMs to translate R help docs on the fly"
 website = "https://mlverse.github.io/lang/"
 stars = 32
-forks = 5
+forks = 4
 license = "NOASSERTION"
 language = "R"
-latest_release = "2025-11-06T18:28:31+00:00"
-releases = 1
+latest_release = "2026-06-11T13:27:18+00:00"
+releases = 3
 first_commit = "2024-11-14T20:00:01+00:00"
 contributors = [
     "edgararuiz",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:08.081847+00:00"
+last_updated = "2026-09-18T14:19:34.465377+00:00"
 
 [[repos]]
 repo = "mlverse/cudatoolkit"
@@ -26446,7 +26554,7 @@ contributors = [
     "dfalbel",
     "sebffischer",
 ]
-last_updated = "2026-05-20T08:05:08.103370+00:00"
+last_updated = "2026-09-18T14:19:36.337228+00:00"
 
 [[repos]]
 repo = "mlverse/mlverse.r-universe.dev"
@@ -26459,8 +26567,9 @@ releases = 0
 first_commit = "2026-03-30T19:48:21+00:00"
 contributors = [
     "dfalbel",
+    "jeroen",
 ]
-last_updated = "2026-05-20T08:05:08.125320+00:00"
+last_updated = "2026-09-18T14:19:38.199104+00:00"
 
 [[repos]]
 repo = "posit-dev/agentic-adoption-scan"
@@ -26986,16 +27095,18 @@ repo = "tidymodels/skills"
 name = "skills"
 description = "Claude Code Skills for Tidymodels"
 website = "https://skills.tidymodels.org/"
-stars = 8
-forks = 0
+stars = 10
+forks = 1
 language = "Python"
-releases = 0
+releases = 1
 first_commit = "2026-03-13T22:04:38+00:00"
 contributors = [
     "edgararuiz",
+    "corybrunson",
     "topepo",
 ]
-last_updated = "2026-05-20T08:05:49.135097+00:00"
+last_updated = "2026-09-18T14:24:39.055109+00:00"
+latest_release = "2026-06-24T19:27:44+00:00"
 
 [[repos]]
 repo = "r-lib/tsitter"
@@ -27006,21 +27117,21 @@ stars = 6
 forks = 0
 license = "NOASSERTION"
 language = "C"
-latest_release = "2026-01-26T10:34:26+00:00"
-releases = 1
+latest_release = "2026-07-29T23:13:14+00:00"
+releases = 3
 first_commit = "2025-11-11T13:44:50+00:00"
 contributors = [
     "gaborcsardi",
 ]
 readme_image = "man/figures/print-json.svg"
-last_updated = "2026-05-20T08:05:57.694144+00:00"
+last_updated = "2026-09-18T14:31:26.210540+00:00"
 
 [[repos]]
 repo = "r-lib/debrief"
 name = "debrief"
 description = "Text-Based Summaries for 'profvis' Profiling Data"
 website = "https://r-lib.github.io/debrief/"
-stars = 14
+stars = 18
 forks = 0
 license = "NOASSERTION"
 language = "R"
@@ -27031,7 +27142,7 @@ contributors = [
     "EmilHvitfeldt",
 ]
 readme_image = "man/figures/logo.png"
-last_updated = "2026-05-20T08:05:57.715386+00:00"
+last_updated = "2026-09-18T14:31:28.737270+00:00"
 
 [[repos]]
 repo = "r-lib/doclisting"
@@ -27048,19 +27159,100 @@ first_commit = "2026-04-03T21:46:25+00:00"
 contributors = [
     "hadley",
 ]
-last_updated = "2026-05-20T08:05:57.758658+00:00"
+last_updated = "2026-09-18T14:31:49.967209+00:00"
 
 [[repos]]
 repo = "sparklyr/sparklyr"
 name = "sparklyr"
 description = "R interface for Apache Spark"
 website = "https://spark.posit.co/"
-stars = 969
-forks = 308
+stars = 971
+forks = 310
 license = "Apache-2.0"
 language = "R"
 first_commit = "2016-05-20T15:28:53+00:00"
-last_updated = "2026-05-20T08:06:00.223702+00:00"
+last_updated = "2026-09-18T14:32:58.353261+00:00"
+latest_release = "2026-06-19T17:19:07+00:00"
+releases = 55
+contributors = [
+    "javierluraschi",
+    "kevinykuo",
+    "edgararuiz",
+    "kevinushey",
+    "jjallaire",
+    "lu-wang-dl",
+    "falaki",
+    "mattpollock",
+    "alibell",
+    "jozefhajnala",
+    "chezou",
+    "nealrichardson",
+    "t-kalinowski",
+    "Loquats",
+    "jmcphers",
+    "richierocks",
+    "jimhester",
+    "shabbybanks",
+    "mtoto",
+    "MarcinKosinski",
+    "yutannihilation",
+    "lgongmsft",
+    "zacdav-db",
+    "AgrawalAmey",
+    "bo-zhou-ms",
+    "rgbkrk",
+    "gregleleu",
+    "zero323",
+    "trestletech",
+    "jspiewak",
+    "edgararuiz-zz",
+    "DavisVaughan",
+    "MrBago",
+    "amruthashok",
+    "martinstuder",
+    "russellpierce",
+    "mnatter",
+    "cderv",
+    "FavioVazquez",
+    "jameslamb",
+    "smingerson",
+    "awblocker",
+    "teramonagi",
+    "pgramme",
+    "rishabhbhardwaj",
+    "sshuklao",
+    "sipemu",
+    "tdhock",
+    "tristanz",
+    "wkdavis",
+    "PursuitOfDataScience",
+    "chenye",
+    "xuzikun2003",
+    "gbouzill",
+    "jangorecki",
+    "mzorko",
+    "nathaneastwood",
+    "weichisyu",
+    "ybjoony",
+    "AMRUTH-ASHOK",
+    "andrew-christianson",
+    "bbrewington",
+    "bpvgoncalves",
+    "meztez",
+    "davidkretch",
+    "dalloliogm",
+    "gfrmin",
+    "gaborcsardi",
+    "ibrahimhaddad",
+    "jlee2000",
+    "jmbarbone",
+    "joveyuan-db",
+    "katrinleinweber",
+    "lionel-",
+    "farrellm",
+    "lawremi",
+]
+readme_image = "tools/readme/dplyr-ggplot2-1.png"
 
 [[repos]]
 repo = "sparklyr/sparklyr-site"
@@ -27071,7 +27263,11 @@ stars = 1
 forks = 0
 language = "HTML"
 first_commit = "2019-12-13T21:45:40+00:00"
-last_updated = "2026-05-20T08:06:00.256693+00:00"
+last_updated = "2026-09-18T14:33:00.161928+00:00"
+releases = 0
+contributors = [
+    "javierluraschi",
+]
 
 [[repos]]
 repo = "sparklyr/artwork"
@@ -27082,4 +27278,195 @@ stars = 0
 forks = 0
 license = "NOASSERTION"
 first_commit = "2020-01-10T17:44:04+00:00"
-last_updated = "2026-05-20T08:06:00.281899+00:00"
+last_updated = "2026-09-18T14:33:01.971150+00:00"
+releases = 0
+contributors = [
+    "ibrahimhaddad",
+]
+
+[[repos]]
+repo = "tidyverse/data-dict"
+name = "data-dict"
+description = ""
+website = "http://data-dict.tidyverse.org/"
+stars = 102
+forks = 8
+language = "Rust"
+releases = 3
+first_commit = "2026-03-17T17:59:53+00:00"
+contributors = [
+    "hadley",
+    "gaborcsardi",
+    "github-actions[bot]",
+    "paul-dicristina",
+    "cscheid",
+]
+last_updated = "2026-09-18T14:21:56.570461+00:00"
+latest_release = "2026-08-21T20:27:42+00:00"
+
+[[repos]]
+repo = "tidymodels/lorax"
+name = "lorax"
+description = "R functions and methods to extract elements of tree- and     rule-based models."
+website = "http://lorax.tidymodels.org/"
+stars = 8
+forks = 1
+license = "NOASSERTION"
+language = "R"
+releases = 0
+first_commit = "2026-03-14T15:01:44+00:00"
+contributors = [
+    "topepo",
+]
+readme_image = "man/figures/logo.png"
+last_updated = "2026-09-18T14:24:40.933478+00:00"
+
+[[repos]]
+repo = "tidymodels/tabby"
+name = "tabby"
+description = "'parsnip' model functions for tabular deep learning models"
+website = "http://tabby.tidymodels.org/"
+stars = 3
+forks = 0
+license = "NOASSERTION"
+language = "R"
+releases = 0
+first_commit = "2026-05-07T20:02:07+00:00"
+contributors = [
+    "topepo",
+    "edgararuiz",
+]
+readme_image = "man/figures/logo.png"
+last_updated = "2026-09-18T14:24:42.889670+00:00"
+
+[[repos]]
+repo = "tidymodels/tabicl-weights"
+name = "tabicl-weights"
+description = "Code to convert TabICL checkpoint files to safetensors format and R ingestion"
+website = ""
+stars = 0
+forks = 0
+license = "BSD-3-Clause"
+language = "Python"
+latest_release = "2026-06-18T21:04:47+00:00"
+releases = 1
+first_commit = "2026-06-17T19:36:31+00:00"
+contributors = [
+    "topepo",
+]
+last_updated = "2026-09-18T14:24:45.283793+00:00"
+
+[[repos]]
+repo = "r-lib/ir"
+name = "ir"
+description = ""
+website = "https://r-lib.github.io/ir/"
+stars = 65
+forks = 2
+license = "MIT"
+language = "Rust"
+latest_release = "2026-08-12T14:16:16+00:00"
+releases = 4
+first_commit = "2026-06-02T17:39:53+00:00"
+contributors = [
+    "t-kalinowski",
+    "shikokuchuo",
+    "cderv",
+    "jeroenjanssens",
+]
+last_updated = "2026-09-18T14:31:55.245348+00:00"
+
+[[repos]]
+repo = "r-lib/rdtools"
+name = "rdtools"
+description = "Efficient Manipulation of 'Rd' Files and Help Topics"
+website = "https://rdtools.r-lib.org"
+stars = 5
+forks = 0
+license = "NOASSERTION"
+language = "R"
+latest_release = "2026-07-07T19:24:20+00:00"
+releases = 1
+first_commit = "2026-07-06T14:57:23+00:00"
+contributors = [
+    "hadley",
+]
+last_updated = "2026-09-18T14:31:57.841111+00:00"
+
+[[repos]]
+repo = "posit-dev/commons"
+name = "commons"
+description = "AI Agents for Data Analysis"
+website = "https://posit-dev.github.io/commons/"
+stars = 24
+forks = 1
+license = "NOASSERTION"
+language = "R"
+latest_release = "2026-09-11T15:27:22+00:00"
+releases = 1
+first_commit = "2026-06-22T12:44:07+00:00"
+contributors = [
+    "simonpcouch",
+    "jat255",
+    "skaltman",
+    "cpsievert",
+    "tdstein",
+    "gadenbuie",
+]
+readme_image = "pkg-r/man/figures/logo.png"
+last_updated = "2026-09-12T21:07:16.598002+00:00"
+
+[[repos]]
+repo = "tidymodels/nestedtune"
+name = "nestedtune"
+description = "Nested cross-validation for the tidymodels ecosystem"
+website = "http://nestedtune.tidymodels.org/"
+stars = 1
+forks = 1
+license = "NOASSERTION"
+language = "R"
+releases = 0
+first_commit = "2026-07-26T01:04:45+00:00"
+contributors = [
+    "jmgirard",
+    "topepo",
+]
+readme_image = "man/figures/logo.png"
+last_updated = "2026-09-18T14:24:47.306673+00:00"
+
+[[repos]]
+repo = "r-lib/mori"
+name = "mori"
+description = "Shared Memory for R Objects"
+website = "https://mori.r-lib.org/"
+stars = 144
+forks = 4
+license = "NOASSERTION"
+language = "C"
+latest_release = "2026-07-21T10:06:26+00:00"
+releases = 4
+first_commit = "2026-04-16T11:27:41+00:00"
+contributors = [
+    "shikokuchuo",
+]
+readme_image = "man/figures/logo.svg"
+last_updated = "2026-09-18T14:31:52.576012+00:00"
+
+[[repos]]
+repo = "posit-dev/shinyreact"
+name = "shinyreact"
+description = "Shiny UI infrastructure for React-based component rendering"
+website = "https://posit-dev.github.io/shinyreact/"
+stars = 17
+forks = 3
+license = "MIT"
+language = "TypeScript"
+latest_release = "2026-09-13T20:16:52+00:00"
+releases = 2
+first_commit = "2026-03-02T16:33:37+00:00"
+contributors = [
+    "schloerke",
+    "samuelbharti",
+]
+readme_image = "logo/shiny-react.png"
+last_updated = "2026-09-29T19:45:28.550123+00:00"

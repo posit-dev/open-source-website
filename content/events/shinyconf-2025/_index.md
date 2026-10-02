@@ -10,7 +10,7 @@ description: "ShinyConf is the biggest virtual Shiny event hosted by Appsilon."
 people:
 - Winston Chang
 software:
-- Shiny
+- shiny-r
 languages:
 - R
 resources:

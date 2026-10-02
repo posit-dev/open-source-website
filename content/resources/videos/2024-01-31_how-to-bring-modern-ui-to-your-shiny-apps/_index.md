@@ -8,7 +8,7 @@ resources: []
 software:
 - bslib
 - rstudio
-- Shiny
+- shiny-r
 - thematic
 tags: []
 title: How to bring modern UI to your Shiny apps
@@ -22,19 +22,19 @@ external:  # updated automatically, do not edit
   duration: 2983
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.973685+00:00'
-  like_count: 304
+  last_updated: '2026-09-18T13:58:11.312603+00:00'
+  like_count: 306
   playlist: ''
   software:
   - bslib
   - rstudio
-  - Shiny
+  - shiny-r
   - thematic
   tags: []
   thumbnail: https://i.ytimg.com/vi/O6WLERr5bKU/maxresdefault.jpg
   title: How to bring modern UI to your Shiny apps
   url: https://www.youtube.com/watch?v=O6WLERr5bKU
-  view_count: 12556
+  view_count: 12764
 ---
 image: thumbnail.jpg
 

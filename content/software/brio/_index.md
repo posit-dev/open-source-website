@@ -21,10 +21,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Basic R Input Output
   first_commit: '2020-03-20T19:53:01+00:00'
-  forks: 8
+  forks: 9
   languages:
   - R
-  last_updated: '2026-05-20T08:05:56.851238+00:00'
+  last_updated: '2026-09-18T14:29:49.008365+00:00'
   latest_release: '2024-04-24T18:51:12+00:00'
   license: NOASSERTION
   people:

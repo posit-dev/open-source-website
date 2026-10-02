@@ -83,7 +83,7 @@ external:  # updated automatically, do not edit
   duration: 177
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.973696+00:00'
+  last_updated: '2026-09-18T13:58:11.312631+00:00'
   like_count: 19
   playlist: ''
   software:
@@ -136,7 +136,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Bq003X4TL8Q/maxresdefault.jpg
   title: GitHub Copilot on Posit Cloud
   url: https://www.youtube.com/watch?v=Bq003X4TL8Q
-  view_count: 1074
+  view_count: 1103
 ---
 image: thumbnail.jpg
 

@@ -90,8 +90,8 @@ resource_type: video
 resources: []
 software:
 - querychat
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -231,13 +231,13 @@ external:  # updated automatically, do not edit
   duration: 1016
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.434420+00:00'
-  like_count: 58
+  last_updated: '2026-09-18T13:58:07.250295+00:00'
+  like_count: 66
   playlist: ''
   software:
   - querychat
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -286,7 +286,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/AntqhLhw4BM/maxresdefault.jpg
   title: 'querychat in Python: Query Your Data with Natural Language | Shiny + LLMs | Veerle van Leemput'
   url: https://www.youtube.com/watch?v=AntqhLhw4BM
-  view_count: 1221
+  view_count: 1485
 ---
 image: thumbnail.jpg
 

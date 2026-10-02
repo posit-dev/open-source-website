@@ -1,0 +1,23 @@
+<p><a data-t="0">The biggest gap that I see is where organizations,</a> <a data-t="5">they are mistaking this work that they're doing</a> <a data-t="8">for actual output.</a> <a data-t="10">So at the board level, we have all of these kind of,</a> <a data-t="13">we're investing in AI initiatives,</a> <a data-t="15">but when you think about the ground floor</a> <a data-t="17">and where we're actually working,</a> <a data-t="18">there's a lot of fragmentation still,</a> <a data-t="20">and data scientists and analysts</a> <a data-t="22">are working with different tools.</a></p>
+
+<p><a data-t="24">And until an organization is employing data science</a> <a data-t="28">to the level where they can actually</a> <a data-t="30">base their business decisions on,</a> <a data-t="32">they'll always kind of be stuck</a> <a data-t="33">in this experimentation phase.</a> <a data-t="35">And so that's the biggest gap I think organizations</a> <a data-t="37">need to think about.</a></p>
+
+<h3>AI productivity and agents</h3>
+
+<p><a data-t="39">They're delivering really good value</a> <a data-t="40">in terms of speeding up your productivity,</a> <a data-t="43">being able to automatically code,</a> <a data-t="45">being able to generate things</a> <a data-t="47">that have a lot of that high frequency.</a> <a data-t="49">And when you start thinking about agents,</a> <a data-t="53">it's not so much, can an agent do this?</a> <a data-t="56">Where it falls apart is fitting that</a> <a data-t="58">into your actual environment.</a></p>
+
+<p><a data-t="60">So thinking about your governance,</a> <a data-t="61">the different tools that you're working with,</a> <a data-t="63">your whole environment as an organization.</a> <a data-t="66">Can your agents actually adapt</a> <a data-t="69">to your organization's environment?</a> <a data-t="71">And so that's the biggest part</a> <a data-t="73">where I feel like they fail.</a></p>
+
+<h3>Treating automation as a spectrum</h3>
+
+<p><a data-t="74">The organizations that are really successful with that</a> <a data-t="77">are treating it more like a spectrum</a> <a data-t="79">rather than this kind of binary automate everything</a> <a data-t="82">or just do manual processes.</a> <a data-t="84">So they're really looking at it</a> <a data-t="86">from two different decisions.</a> <a data-t="88">One, do I have this process</a> <a data-t="89">that has high frequency and low risk?</a> <a data-t="92">Yes, let's automate this.</a></p>
+
+<p><a data-t="94">Do we have this other process</a> <a data-t="95">that might be more ambiguous in terms of the result</a> <a data-t="99">and also has a lot of risk involved in that?</a> <a data-t="102">That's where you still want that human in the loop.</a> <a data-t="104">And so we're not looking at everything</a> <a data-t="107">as automate everything, throw it in there,</a> <a data-t="110">or we're doing everything by hand.</a> <a data-t="112">We really have to look at it from a spectrum.</a></p>
+
+<blockquote><a data-t="74">The organizations that are really successful with that</a> <a data-t="77">are treating it more like a spectrum</a> <a data-t="79">rather than this kind of binary automate everything</a> <a data-t="82">or just do manual processes.</a></blockquote>
+
+<h3>Scaling data science as an organizational product</h3>
+
+<p><a data-t="116">It's not seeing your data science and AI organizations</a> <a data-t="120">as kind of like this experimentation kitchen.</a> <a data-t="123">It's really embracing AI and data</a> <a data-t="126">as an organizational product,</a> <a data-t="130">embedding that into your workflows</a> <a data-t="132">and essentially making that a repeatable process.</a></p>
+
+<p><a data-t="135">It might be one thing to take a model</a> <a data-t="137">and be able to put it into production,</a> <a data-t="139">but how easy is it for you</a> <a data-t="141">to take more of your data science workflows</a> <a data-t="143">and spread that across the organization and really scale?</a> <a data-t="146">And unless those organizations are really looking at it</a> <a data-t="149">from a holistic view,</a> <a data-t="151">you're always going to be stuck in experimenting,</a> <a data-t="154">prototyping, and not really getting things</a> <a data-t="156">to that production level.</a></p>

@@ -6,8 +6,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - tidymodels
 tags:
 - databricks
@@ -67,12 +67,12 @@ external:  # updated automatically, do not edit
   duration: 1096
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.607180+00:00'
+  last_updated: '2026-09-18T13:58:12.093503+00:00'
   like_count: 6
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - tidymodels
   tags:
   - databricks
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/IJ7EkwQ6XUY/maxresdefault.jpg
   title: Making a (Python) Web App is easy! - posit::conf(2023)
   url: https://www.youtube.com/watch?v=IJ7EkwQ6XUY
-  view_count: 578
+  view_count: 587
 ---
 image: thumbnail.jpg
 

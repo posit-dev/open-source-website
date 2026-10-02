@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Driving Shiny adoption by removing friction | Jonathan Lin | Data Science Hangout
 
@@ -19,16 +19,16 @@ external:  # updated automatically, do not edit
   duration: 3243
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.044652+00:00'
+  last_updated: '2026-09-18T13:58:07.249988+00:00'
   like_count: 5
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/Reezfmf7eNM/maxresdefault.jpg
   title: Driving Shiny adoption by removing friction | Jonathan Lin | Data Science Hangout
   url: https://www.youtube.com/watch?v=Reezfmf7eNM
-  view_count: 369
+  view_count: 393
 ---
 image: thumbnail.jpg
 

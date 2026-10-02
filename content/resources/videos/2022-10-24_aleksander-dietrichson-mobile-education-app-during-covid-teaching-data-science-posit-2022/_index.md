@@ -9,7 +9,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Aleksander Dietrichson | Mobile Education App during COVID | Teaching Data Science | Posit (2022)
 
@@ -25,16 +25,16 @@ external:  # updated automatically, do not edit
   duration: 772
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.320786+00:00'
+  last_updated: '2026-09-18T13:58:14.088301+00:00'
   like_count: 1
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/yldz7Rn5zn8/maxresdefault.jpg
   title: Aleksander Dietrichson | Mobile Education App during COVID | Teaching Data Science | Posit (2022)
   url: https://www.youtube.com/watch?v=yldz7Rn5zn8
-  view_count: 80
+  view_count: 88
 ---
 image: thumbnail.jpg
 

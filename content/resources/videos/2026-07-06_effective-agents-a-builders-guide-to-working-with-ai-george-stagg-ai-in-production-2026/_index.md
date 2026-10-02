@@ -1,0 +1,33 @@
+---
+date: '2026-07-06'
+description: "The gap between a working demo and a reliable agent is where most of the interesting engineering happens. George Stagg shares the hard-won lessons from shipping agents in production.\n\nPresented by George Stagg (Posit Software, PBC) at AI in Production 2026 — The Catalyst, Newcastle, 5 June 2026.\n\nABOUT THE TALK\nThe gap between a working demo and a reliable agent is where most of the interesting engineering happens. In this talk, we'll build up a practical mental model for working with AI. I'll start with some perhaps surprising fundamentals, and then share some of our hard-won lessons from shipping agents in production.\n\nLLM APIs behave differently from other services you might have worked with before. They're stateless at the network level, context is everything, and a lot of surprising behaviour only becomes obvious when you look at the raw traffic. They'll also lie to you: confidently reporting that a capability is working when it isn't, or finding creative workarounds to limitations you didn't intend to be optional. So, I'll go over the anatomy of an AI network request and show why proxying your own traffic is one of the most useful tools you can develop in this space.\n\nFrom there, we'll move into the practical realities of building and deploying agents: how to think about context management, why caching deserves more attention than it often gets, and when abstractions help versus when they obscure what's actually happening. I'll share what we learned from agentic tools like Claude Code, covering the best way for agents to interact with the world, why multi-agent systems with limited scope and focused toolsets outperform monolithic agents, and what increasing autonomy and abstraction means for how we build and debug. I'll end with what we'd do differently if we were starting over.\n\nSPEAKER\nGeorge Stagg — Posit Software, PBC: https://posit.co/\n  LinkedIn: https://www.linkedin.com/in/gwstagg/\n  GitHub: https://github.com/georgestagg/\n  Bluesky: https://bsky.app/profile/gws.phd\n  Mastodon: https://fosstodon.org/@gws\n  Website: https://gws.phd\n\n———————————————\nAI in Production is Jumping Rivers' conference for data scientists, ML engineers and AI practitioners building and deploying AI & ML in the real world. The inaugural event was held at The Catalyst, Newcastle Helix, on 4–5 June 2026.\n\n\U0001F39F  Event & full programme: https://ai-in-production-2026.jumpingrivers.com/\n▶  More talks from the conference: https://www.youtube.com/@jumping-rivers\n\U0001F4D1  Full playlist — every AIP 2026 talk: https://www.youtube.com/playlist?list=PLGqNj9r9d0Q8\n\U0001F30A  Organised by Jumping Rivers: https://www.jumpingrivers.com/\n\nWith thanks to our sponsors — Databricks, Posit, the Royal Statistical Society, Chapman & Hall/CRC, and the National Innovation Centre for Data. Community partner: DevITJobs.uk.\n\n#AIinProduction #AIP2026 #MachineLearning #LLMs #AIEngineering"
+image: thumbnail.jpg
+people:
+- George Stagg
+resource_type: video
+resources: []
+software: []
+tags: []
+title: 'Effective Agents: A Builder''s Guide to Working with AI — George Stagg | AI in Production 2026'
+
+external:  # updated automatically, do not edit
+  channel: Jumping Rivers
+  comment_count: 1
+  date: '2026-07-06T09:26:37Z'
+  definition: hd
+  description: "The gap between a working demo and a reliable agent is where most of the interesting engineering happens. George Stagg shares the hard-won lessons from shipping agents in production.\n\nPresented by George Stagg (Posit Software, PBC) at AI in Production 2026 — The Catalyst, Newcastle, 5 June 2026.\n\nABOUT THE TALK\nThe gap between a working demo and a reliable agent is where most of the interesting engineering happens. In this talk, we'll build up a practical mental model for working with AI. I'll start with some perhaps surprising fundamentals, and then share some of our hard-won lessons from shipping agents in production.\n\nLLM APIs behave differently from other services you might have worked with before. They're stateless at the network level, context is everything, and a lot of surprising behaviour only becomes obvious when you look at the raw traffic. They'll also lie to you: confidently reporting that a capability is working when it isn't, or finding creative workarounds to limitations you didn't intend to be optional. So, I'll go over the anatomy of an AI network request and show why proxying your own traffic is one of the most useful tools you can develop in this space.\n\nFrom there, we'll move into the practical realities of building and deploying agents: how to think about context management, why caching deserves more attention than it often gets, and when abstractions help versus when they obscure what's actually happening. I'll share what we learned from agentic tools like Claude Code, covering the best way for agents to interact with the world, why multi-agent systems with limited scope and focused toolsets outperform monolithic agents, and what increasing autonomy and abstraction means for how we build and debug. I'll end with what we'd do differently if we were starting over.\n\nSPEAKER\nGeorge Stagg — Posit Software, PBC: https://posit.co/\n  LinkedIn: https://www.linkedin.com/in/gwstagg/\n  GitHub: https://github.com/georgestagg/\n  Bluesky: https://bsky.app/profile/gws.phd\n  Mastodon: https://fosstodon.org/@gws\n  Website: https://gws.phd\n\n———————————————\nAI in Production is Jumping Rivers' conference for data scientists, ML engineers and AI practitioners building and deploying AI & ML in the real world. The inaugural event was held at The Catalyst, Newcastle Helix, on 4–5 June 2026.\n\n\U0001F39F  Event & full programme: https://ai-in-production-2026.jumpingrivers.com/\n▶  More talks from the conference: https://www.youtube.com/@jumping-rivers\n\U0001F4D1  Full playlist — every AIP 2026 talk: https://www.youtube.com/playlist?list=PLGqNj9r9d0Q8\n\U0001F30A  Organised by Jumping Rivers: https://www.jumpingrivers.com/\n\nWith thanks to our sponsors — Databricks, Posit, the Royal Statistical Society, Chapman & Hall/CRC, and the National Innovation Centre for Data. Community partner: DevITJobs.uk.\n\n#AIinProduction #AIP2026 #MachineLearning #LLMs #AIEngineering"
+  duration: 1588
+  has_captions: true
+  language: en-GB
+  last_updated: '2026-09-18T13:58:19.006108+00:00'
+  like_count: 1
+  people:
+  - George Stagg
+  playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
+  tags: []
+  thumbnail: https://i.ytimg.com/vi/drNz67Pa_-Q/maxresdefault.jpg
+  title: 'Effective Agents: A Builder''s Guide to Working with AI — George Stagg | AI in Production 2026'
+  url: https://www.youtube.com/watch?v=drNz67Pa_-Q
+  view_count: 84
+---
+

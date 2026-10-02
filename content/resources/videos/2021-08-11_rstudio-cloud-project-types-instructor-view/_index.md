@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 129
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:33.697782+00:00'
-  like_count: 5
+  last_updated: '2026-09-18T13:58:16.539071+00:00'
+  like_count: 6
   people:
   - RStudio Team
   playlist: ''
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/UDuuE6eDNrA/maxresdefault.jpg
   title: RStudio Cloud | Project Types | Instructor View
   url: https://www.youtube.com/watch?v=UDuuE6eDNrA
-  view_count: 870
+  view_count: 885
 ---
 image: thumbnail.jpg
 

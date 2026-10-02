@@ -8,7 +8,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags:
 - rstudio
@@ -66,14 +66,14 @@ external:  # updated automatically, do not edit
   duration: 886
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.318421+00:00'
-  like_count: 63
+  last_updated: '2026-09-18T13:58:09.670144+00:00'
+  like_count: 66
   people:
   - Charlotte Wickham
   - Emil Hvitfeldt
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags:
   - rstudio
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/bv_Cw-3HI1Y/maxresdefault.jpg
   title: 'Quarto Websites 4: Add lists of content with listings | Charlotte Wickham | Posit'
   url: https://www.youtube.com/watch?v=bv_Cw-3HI1Y
-  view_count: 3491
+  view_count: 3776
 ---
 image: thumbnail.jpg
 

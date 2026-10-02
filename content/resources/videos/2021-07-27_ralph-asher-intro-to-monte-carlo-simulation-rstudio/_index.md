@@ -18,7 +18,7 @@ resources: []
 software:
 - air
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Ralph Asher | Intro to Monte Carlo Simulation | RStudio
 
@@ -41,18 +41,18 @@ external:  # updated automatically, do not edit
   duration: 1941
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.070842+00:00'
-  like_count: 57
+  last_updated: '2026-09-18T13:58:16.539345+00:00'
+  like_count: 56
   playlist: ''
   software:
   - air
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/VMGQ3mVbYXI/hqdefault.jpg
   title: Ralph Asher | Intro to Monte Carlo Simulation | RStudio
   url: https://www.youtube.com/watch?v=VMGQ3mVbYXI
-  view_count: 2263
+  view_count: 2306
 ---
 image: thumbnail.jpg
 

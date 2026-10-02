@@ -55,7 +55,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Data for good, mentoring, and stellar internships | Sebastien Ouellet | Data Science Hangout
 
@@ -117,16 +117,16 @@ external:  # updated automatically, do not edit
   duration: 3573
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:28.318312+00:00'
-  like_count: 6
+  last_updated: '2026-09-18T13:58:09.332871+00:00'
+  like_count: 5
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/bMa9m-an3J0/maxresdefault.jpg
   title: Data for good, mentoring, and stellar internships | Sebastien Ouellet | Data Science Hangout
   url: https://www.youtube.com/watch?v=bMa9m-an3J0
-  view_count: 308
+  view_count: 311
 ---
 image: thumbnail.jpg
 

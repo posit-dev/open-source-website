@@ -1,0 +1,55 @@
+## _brand.yml — mimics the SciPy 2026 conference style
+## https://www.scipy2026.scipy.org/
+##
+## Colors are taken straight from the SciPy 2026 site.
+## Fonts: the live site uses Adobe Fonts (Typekit) — "fairway" for headings
+## and "mr-eaves-modern" for body — which require an Adobe account to embed.
+## We substitute close, freely available Google Fonts here: Montserrat (which
+## the SciPy site itself uses for buttons) for headings, and Mulish for body.
+## Swap these for the Adobe families if you have access.
+
+meta:
+  name: SciPy 2026
+  link: https://www.scipy2026.scipy.org/
+
+color:
+  palette:
+    coral: "#f0523d"      # primary accent — buttons, highlights
+    blue: "#3853a3"       # secondary accent
+    ink: "#272727"        # near-black, main text
+    black: "#0e0e0e"
+    slate: "#3e3e3e"      # dark gray
+    paper: "#f6f6f6"      # light background
+    white: "#ffffff"
+  foreground: ink
+  background: white
+  primary: coral
+  secondary: blue
+  info: blue
+  light: paper
+  dark: ink
+
+typography:
+  fonts:
+    - family: Montserrat
+      source: google
+      weight: [400, 600, 700]
+      style: normal
+    - family: Mulish
+      source: google
+      weight: [400, 600]
+      style: normal
+    - family: Fira Code
+      source: google
+      weight: [400, 500]
+      style: normal
+  base:
+    family: Mulish
+  headings:
+    family: Montserrat
+    weight: 700
+    color: blue
+  link:
+    color: coral
+  monospace:
+    family: Fira Code

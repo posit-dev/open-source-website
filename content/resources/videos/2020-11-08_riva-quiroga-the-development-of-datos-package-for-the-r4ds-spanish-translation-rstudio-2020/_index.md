@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 770
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.962304+00:00'
+  last_updated: '2026-09-18T13:58:17.861363+00:00'
   like_count: 16
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/kuHjpdgkSxg/hqdefault.jpg
   title: Riva Quiroga | The development of "datos" package for the R4DS Spanish translation| RStudio (2020)
   url: https://www.youtube.com/watch?v=kuHjpdgkSxg
-  view_count: 455
+  view_count: 457
 ---
 image: thumbnail.jpg
 

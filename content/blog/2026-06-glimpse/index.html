@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-06-03">
+<meta name="description" content="Introducing the new home for Posit Open Source and many package and community updates.">
+
+<title>posit::glimpse() Newsletter – June 2026</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-138a6193a3bd40baf1e627da441a4734.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">posit::glimpse() Newsletter – June 2026</h1>
+</div>
+
+<div>
+  <div class="description">
+    <p>Introducing the new home for Posit Open Source and many package and community updates.</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 3, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>Welcome to our newsletter, posit::glimpse()!</p>
+<p>If you’re currently reading this on our blog, consider subscribing to Product Updates - Open Source on our <a href="https://posit.co/about/subscription-management" target="_blank" rel="noopener">subscription page</a> to receive this newsletter directly in your inbox.</p>
+</blockquote>
+<p>posit::glimpse() is our roundup of the most important open-source news for Posit’s community! Check out the amazing updates we have in store.</p>
+<section id="new-home-for-posit-open-source" class="level2">
+<h2 class="anchored" data-anchor-id="new-home-for-posit-open-source">New home for Posit Open Source</h2>
+<p>For over 15 years, Posit has been building wonderful open source software. To make it easier than ever for you to navigate our tools, documentation, and content, we’ve brought everything together into one central hub.</p>
+<p>Head over to <a href="http://opensource.posit.co">opensource.posit.co</a>, take a look around, and let us know what you think! And if you’re on LinkedIn, give our new <a href="https://www.linkedin.com/showcase/posit-open-source/">Posit Open Source LinkedIn showcase page</a> a follow.</p>
+<center>
+<img src="images/osw-packages.gif" alt="OSW Packages">
+</center>
+</section>
+<section id="key-product-updates-and-new-releases" class="level2">
+<h2 class="anchored" data-anchor-id="key-product-updates-and-new-releases">Key product updates and new releases</h2>
+<section id="bringing-opentelemetry-to-r-in-production" class="level3">
+<h3 class="anchored" data-anchor-id="bringing-opentelemetry-to-r-in-production">Bringing OpenTelemetry to R in production</h3>
+<p>Posit has now instrumented eight widely-used R packages (Shiny, plumber2, mirai, httr2, ellmer, knitr, testthat, and DBI) with OpenTelemetry support. This change brings production-grade observability to R applications, enabling traces, logs, and metrics with only environment variable configuration (no code changes required).</p>
+<ul>
+<li>Learn more in the <a href="https://opensource.posit.co/blog/2026-05-07_opentelemetry/">Bringing OpenTelemetry to R in production</a> blog post.</li>
+</ul>
+</section>
+<section id="mirai-2.7.0-and-mori-0.2.0" class="level3">
+<h3 class="anchored" data-anchor-id="mirai-2.7.0-and-mori-0.2.0">mirai 2.7.0 and mori 0.2.0</h3>
+<p>mirai 2.7.0 and mori 0.2.0 are now on CRAN, extending R’s async capabilities for production use. mirai adds bounded queues and <code>try_mirai()</code> for memory-safe async, while mori 0.2.0 graduates from experimental status, providing cross-platform shared memory for R processes without data duplication.</p>
+<ul>
+<li>Read more in the <a href="https://opensource.posit.co/blog/2026-05-12_production-async-r/">A memory model for production async R: mirai 2.7.0 and mori 0.2.0</a> blog post.</li>
+</ul>
+</section>
+<section id="quarto-2-design-and-features" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-2-design-and-features">Quarto 2 design and features</h3>
+<p>Quarto 2 introduces a custom Markdown parser designed to provide actionable syntax errors, preserve source locations throughout the processing pipeline, and maintain syntax stability across the project’s lifetime. The Quarto team wrote a fascinating article on their thought process behind this implementation.</p>
+<ul>
+<li>Check out the <a href="https://opensource.posit.co/blog/2026-05-07_quarto-2-parsing/">Quarto 2: Parsing and source maps</a> post here.</li>
+</ul>
+</section>
+<section id="new-plotnine-skill" class="level3">
+<h3 class="anchored" data-anchor-id="new-plotnine-skill">New Plotnine skill</h3>
+<p>A new plotnine skill is now available for AI coding agents, enabling them to generate consistent and runnable plotnine code. The skill follows the Agent Skills standard and works across any compatible agent including Claude Code and Codex.</p>
+<ul>
+<li>Learn more in the <a href="https://opensource.posit.co/blog/2026-05-05_plotnine-skill-announcement/">A Plotnine Skill for AI Coding Agents</a> blog post.</li>
+</ul>
+</section>
+<section id="ten-great-things-we-added-to-great-docs" class="level3">
+<h3 class="anchored" data-anchor-id="ten-great-things-we-added-to-great-docs">Ten great things we added to Great Docs</h3>
+<p>Great Docs v0.10.0 marks the tenth release of the Python documentation tool. Learn about its transformation from a simple documentation generator into a comprehensive documentation platform via ten key features added since launch, including LLM integration, cross-reference validation, flexible theming, and enhanced API reference generation.</p>
+<ul>
+<li>Read the <a href="https://opensource.posit.co/blog/2026-05-13_great-docs-ten-things/">Ten great things we added to Great Docs</a> blog post.</li>
+</ul>
+</section>
+<section id="whats-new-in-shiny" class="level3">
+<h3 class="anchored" data-anchor-id="whats-new-in-shiny">What’s new in Shiny</h3>
+<p>bslib 0.11.0 and py-shiny 1.6.0 introduce toolbar components: compact UI elements for fitting buttons, selects, and other controls into card headers/footers, input labels, and text input submit areas. These space-efficient components are particularly valuable for dashboards and AI chat interfaces where screen real estate is at a premium.</p>
+<ul>
+<li>Get a walkthrough of toolbars in R and Python in the <a href="https://opensource.posit.co/blog/2026-05-26_introducing-toolbars/">Introducing Toolbars</a> blog post!</li>
+</ul>
+</section>
+<section id="whats-new-in-positron" class="level3">
+<h3 class="anchored" data-anchor-id="whats-new-in-positron">What’s new in Positron</h3>
+<p>Positron’s May release includes a lot of highly requested features:</p>
+<ul>
+<li>Inline output for Quarto</li>
+<li>Packages pane</li>
+<li>Positron Notebook Editor now in beta</li>
+</ul>
+<p>For more, check out the <a href="https://opensource.posit.co/blog/2026-05-11_positron-2026-05-release/">Positron May Release Highlights</a> post and <a href="https://posit.co/positron-updates-signup">subscribe to Positron emails</a>.</p>
+</section>
+</section>
+<section id="community" class="level2">
+<h2 class="anchored" data-anchor-id="community">Community</h2>
+<section id="may-event-roundup" class="level3">
+<h3 class="anchored" data-anchor-id="may-event-roundup">May Event Roundup</h3>
+<p>We were at so many events this month, we can barely keep track! Here’s a quick wrap-up of where the team spent May:</p>
+<ul>
+<li>Charlotte, François, and Sara talked Quarto, larger than memory data, and AI at R/Medicine 2026</li>
+<li>Nick showcased Positron at R Exchange</li>
+<li>Wes joined industry leaders to discuss the future of artificial intelligence at AI Council</li>
+<li>Emil, Isabella, Jeroen, and Michael reconnected with the Python community at PyCon US</li>
+</ul>
+<p>And we’re just getting started! <a href="https://opensource.posit.co/events/">See where we’ll be next</a>, and come say hi.</p>
+</section>
+</section>
+<section id="learning-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="learning-and-discussion">Learning and discussion</h2>
+<section id="in-defense-of-yaml" class="level3">
+<h3 class="anchored" data-anchor-id="in-defense-of-yaml">In Defense of YAML</h3>
+<p>Love YAML? Hate YAML? Rich Iannone and Tomasz Kalinowski dive into the nuances of this finicky configuration format, comparing it to TOML and exploring how the YAML 1.2 specification enables a fast, fully compliant, and simple user experience. Their discussion highlights how the new <a href="https://posit-dev.github.io/py-yaml12/">py-yaml12</a> package delivers a modern, spec-compliant YAML experience for today’s developers.</p>
+<ul>
+<li>Read <a href="https://opensource.posit.co/blog/2026-05-21_in-defense-of-yaml/">In Defense of YAML</a> blog post.</li>
+</ul>
+</section>
+<section id="agentic-engineering-and-the-lost-art-of-verification" class="level3">
+<h3 class="anchored" data-anchor-id="agentic-engineering-and-the-lost-art-of-verification">Agentic Engineering and the Lost Art of Verification</h3>
+<p>“I almost don’t read code now,” says Wes McKinney (creator of Pandas). He talks about the new workflows that allow him to review a million lines of AI-generated code in Show Us Your Agent Skills, a new live session by Vanishing Gradients.</p>
+<ul>
+<li>Listen to the <a href="https://hugobowne.substack.com/p/agentic-engineering-and-the-lost">podcast</a> and read the <a href="https://hugobowne.substack.com/p/the-agentic-software-factory">The Agentic Software Factory</a> blog post.</li>
+</ul>
+</section>
+<section id="comparing-posit-assistant-and-positron-assistant" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-posit-assistant-and-positron-assistant">Comparing Posit Assistant and Positron Assistant</h3>
+<p>Wondering what the difference is between Posit Assistant and Positron Assistant? Sara and Simon dive deep into this topic in their YouTube video:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Y9P2nlFXKnQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Sara and Simon have more to share in the AI newsletter! Check out the recent posts that include <a href="https://opensource.posit.co/blog/2026-05-08_ai-newsletter/">Posit Assistant’s data cleaning mode</a> and <a href="https://opensource.posit.co/blog/2026-05-22_ai-newsletter/">Gemma 4 as a budget-focused model</a>.</p>
+</section>
+<section id="great-docs-on-talk-python" class="level3">
+<h3 class="anchored" data-anchor-id="great-docs-on-talk-python">Great Docs on Talk Python</h3>
+<p>Rich and Michael recently joined Michael Kennedy on the Talk Python podcast, where they discussed Great Docs:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/rj2hY2Bsi30" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="pycascades-2026-videos-are-up" class="level3">
+<h3 class="anchored" data-anchor-id="pycascades-2026-videos-are-up">PyCascades 2026 videos are up!</h3>
+<p>Rodrigo Silva Ferreira gave a great talk on “To Notebook or Not to Notebook: Multilingual Workflows for Data Analysis”:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Q4WuuANQRy8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="showcases-from-the-community" class="level3">
+<h3 class="anchored" data-anchor-id="showcases-from-the-community">Showcases from the community</h3>
+{{&lt; columns &gt;}}
+<p><a href="https://www.linkedin.com/posts/nithinmkp_nithin-m-activity-7459067164256395264-5QC5?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAB0DXA0BRYdwbGNKW2-OfIAa3MsVywURURg">Nithin M</a> created a new website in Quarto! It has beautiful layouts, listings, and aesthetics.</p>
+<p><a href="https://nithinmkp.github.io/">See it here</a>.</p>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image1.png" class="img-fluid figure-img"></p>
+<figcaption>Screenshot of Nithin’s Quarto website.</figcaption>
+</figure>
+</div>
+{{&lt; /columns &gt;}}
+{{&lt; columns &gt;}}
+<p><img src="images/image2.png" class="img-fluid"></p>
+<hr>
+<p><a href="https://www.linkedin.com/posts/nicolas-foss_rstats-datascience-publichealth-share-7461287476876283904-NVTP/?rcm=ACoAABUe3WEBw4M0V14n5v6VMG53LQM8ulIAraY">Nicolas Foss</a> shared his {mirai} + {mori} stack for massive public health tables, resulting in a “massive 25% to 50% reduction in runtimes across our heaviest processing steps”.</p>
+{{&lt; /columns &gt;}}
+{{&lt; columns &gt;}}
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/image3.png" class="img-fluid figure-img"></p>
+<figcaption>Posit logo and Carfax logo saying 35B vehicle records, 150,000 data sources, 12000+ hours saved.</figcaption>
+</figure>
+</div>
+<hr>
+<p>When your database spans 35 billion vehicle records, manual data workflows stop being an inconvenience and start being a real ceiling on what your team can do. We’re proud to spotlight the CARFAX team, who used Posit Team to reclaim 12,000 hours and set a new bar for scalable data work across their organization.</p>
+<p><a href="https://posit.co/about/customer-stories/carfax">Read their story here</a>.</p>
+{{&lt; /columns &gt;}}
+</section>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s next</h2>
+<p>Do you love shorts (not the type you wear, but the vertical video kind)? We’re publishing shorts over at <a href="https://www.youtube.com/channel/UC3xfbCMLCw1Hh4dWop3XtHg/">YouTube</a>, <a href="https://www.instagram.com/posit.pbc/">Instagram</a>, <a href="https://www.tiktok.com/@posit_pbc">TikTok</a>, and our new <a href="https://www.linkedin.com/showcase/posit-open-source">Posit Open Source LinkedIn showcase page</a>. I’d love to hear what short you’d like to see next!</p>
+<p>We continue to have an excellent line up on the <a href="https://pos.it/dsh">Data Science Hangout</a> and <a href="https://pos.it/dslab">Data Science Lab</a>.</p>
+<ul>
+<li>On June 9, we’re doing a Community Showcase with Kylie Ainslie and Daniel Chen! Let’s learn about how others are using open-source tools in really cool ways.</li>
+<li>Jamie Shive, Director of Data Science at the National Hockey League, is the featured leader of the Hangout on June 11 (which could coincide with the Stanley Cup finals!). Let’s talk about everything about hockey and beyond.</li>
+</ul>
+<p>I’m a real person, and I would love to know how to make the Glimpse newsletter better! Find me on <a href="https://www.linkedin.com/in/ivelasq/">LinkedIn</a> and <a href="https://bsky.app/profile/ivelasq3.bsky.social">Bluesky</a>, or email me at isabella [dot] velasquez [at] posit.co.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

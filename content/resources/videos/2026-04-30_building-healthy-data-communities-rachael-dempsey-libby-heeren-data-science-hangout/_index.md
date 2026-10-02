@@ -86,7 +86,7 @@ resource_type: video
 resources: []
 software:
 - mirai
-- Quarto
+- quarto
 tags: []
 title: Building healthy data communities | Rachael Dempsey & Libby Heeren | Data Science Hangout
 
@@ -178,16 +178,16 @@ external:  # updated automatically, do not edit
   duration: 3391
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.043929+00:00'
-  like_count: 10
+  last_updated: '2026-09-18T13:58:06.853801+00:00'
+  like_count: 14
   playlist: ''
   software:
   - mirai
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/lc6ad15gjeo/maxresdefault.jpg
   title: Building healthy data communities | Rachael Dempsey & Libby Heeren | Data Science Hangout
   url: https://www.youtube.com/watch?v=lc6ad15gjeo
-  view_count: 306
+  view_count: 389
 ---
 

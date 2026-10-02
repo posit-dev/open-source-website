@@ -18,7 +18,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - posit::conf(2025)
 - rstats
@@ -52,11 +52,11 @@ external:  # updated automatically, do not edit
   duration: 1203
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868318+00:00'
-  like_count: 20
+  last_updated: '2026-09-18T13:58:07.659551+00:00'
+  like_count: 21
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - posit::conf(2025)
   - rstats
@@ -67,7 +67,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4-dQ2Q985A0/maxresdefault.jpg
   title: Quarto for Business Collaboration & Technical Documentation in Word docx format (Bill Pikounis, J&J)
   url: https://www.youtube.com/watch?v=4-dQ2Q985A0
-  view_count: 436
+  view_count: 517
 ---
 image: thumbnail.jpg
 

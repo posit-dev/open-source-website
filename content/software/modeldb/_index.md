@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 12
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.056374+00:00'
+  last_updated: '2026-09-18T14:22:33.782114+00:00'
   latest_release: '2025-08-22T17:22:28+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   readme_image: man/figures/logo.png
   repo: tidymodels/modeldb
-  stars: 78
+  stars: 80
   title: modeldb
   website: https://modeldb.tidymodels.org
 ---

@@ -77,7 +77,7 @@ external:  # updated automatically, do not edit
   duration: 629
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.417410+00:00'
+  last_updated: '2026-09-18T13:58:16.946600+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -134,7 +134,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/yf0bZAE0ocY/maxresdefault.jpg
   title: Shelmith Kariuki | rKenyaCensus Package | RStudio
   url: https://www.youtube.com/watch?v=yf0bZAE0ocY
-  view_count: 222
+  view_count: 230
 ---
 image: thumbnail.jpg
 

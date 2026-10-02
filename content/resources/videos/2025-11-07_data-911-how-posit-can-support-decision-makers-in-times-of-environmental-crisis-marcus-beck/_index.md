@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - posit::conf(2025)
 - rstats
@@ -46,11 +46,11 @@ external:  # updated automatically, do not edit
   duration: 1219
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868346+00:00'
+  last_updated: '2026-09-18T13:58:07.659591+00:00'
   like_count: 1
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - posit::conf(2025)
   - rstats
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Cnk3770AzuA/maxresdefault.jpg
   title: 'Data 911: how Posit can support decision-makers in times of environmental crisis (Marcus Beck)'
   url: https://www.youtube.com/watch?v=Cnk3770AzuA
-  view_count: 74
+  view_count: 87
 ---
 image: thumbnail.jpg
 

@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   duration: 1868
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.520454+00:00'
+  last_updated: '2026-09-18T13:58:21.308596+00:00'
   like_count: 29
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YPnNNgv_t0A/hqdefault.jpg
   title: Ask Hadley Anything
   url: https://www.youtube.com/watch?v=YPnNNgv_t0A
-  view_count: 816
+  view_count: 829
 ---
 image: thumbnail.jpg
 

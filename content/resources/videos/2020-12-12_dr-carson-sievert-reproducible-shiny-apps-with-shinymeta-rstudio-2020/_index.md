@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - shinymeta
 tags:
 - rstudio::conf(2020)
@@ -68,14 +68,14 @@ external:  # updated automatically, do not edit
   duration: 1293
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.701434+00:00'
-  like_count: 38
+  last_updated: '2026-09-18T13:58:17.860951+00:00'
+  like_count: 39
   people:
   - Carson Sievert
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - shinymeta
   tags:
   - rstudio::conf(2020)
@@ -127,7 +127,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HK0Y40bX7JI/hqdefault.jpg
   title: Dr. Carson Sievert | Reproducible Shiny apps with shinymeta | RStudio (2020)
   url: https://www.youtube.com/watch?v=HK0Y40bX7JI
-  view_count: 1711
+  view_count: 1716
 ---
 image: thumbnail.jpg
 

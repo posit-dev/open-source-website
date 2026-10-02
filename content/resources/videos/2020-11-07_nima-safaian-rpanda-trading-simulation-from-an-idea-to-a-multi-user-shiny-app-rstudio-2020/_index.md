@@ -8,7 +8,7 @@ resources: []
 software:
 - plumber
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio::conf(2020)
 - Nima Safaian
@@ -67,13 +67,13 @@ external:  # updated automatically, do not edit
   duration: 1205
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.962314+00:00'
+  last_updated: '2026-09-18T13:58:17.861378+00:00'
   like_count: 8
   playlist: ''
   software:
   - plumber
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio::conf(2020)
   - Nima Safaian
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/mWAFBUyHsXk/hqdefault.jpg
   title: Nima Safaian | Rpanda trading simulation - from an idea to a multi-user shiny app | RStudio (2020)
   url: https://www.youtube.com/watch?v=mWAFBUyHsXk
-  view_count: 382
+  view_count: 383
 ---
 image: thumbnail.jpg
 

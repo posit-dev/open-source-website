@@ -1,0 +1,7 @@
+<p><a data-t="0">If you create a ggplot without specifying any unique aesthetics or a theme, you'll notice the</a> <a data-t="5">package still makes some choices for you.</a> <a data-t="10">Ever wonder what those choices are? Because each geom</a> <a data-t="10">has a different set of default aesthetics, and you might be surprised to find out that they're</a> <a data-t="15">almost all based on the source code for a specific theme that you haven't even applied.</a></p>
+
+<p><a data-t="19">Theme underscore gray. Theme gray is the default in </a><a href="/software/ggplot2/">ggplot2</a><a data-t="19">, even if you don't select it. And its</a> <a data-t="25">source code holds all the secrets to why your geoms look the way they do by default, like why</a> <a data-t="30">geom point defaults to shape 19, that little filled-in circle.</a> <a data-t="35">Of course, if you do specify your theme, you change some of those defaults, so now they're based on your specified theme.</a></p>
+
+<blockquote><a data-t="19">Theme gray is the default in ggplot2, even if you don't select it. And its</a> <a data-t="25">source code holds all the secrets to why your geoms look the way they do by default.</a></blockquote>
+
+<p><a data-t="40">So, have you checked out the ggplot2 source code lately? And what's your favorite ggplot2 theme?</a></p>

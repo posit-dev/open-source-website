@@ -1,0 +1,1825 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:11.200
+Well, let's go ahead and get started because we have not one lab manager today, but three
+
+00:00:11.200 --> 00:00:16.480
+because we have a selection of fun project showcases from the community to share with
+
+00:00:16.480 --> 00:00:21.559
+you today. And to get us started, we have Damie Pak. Damie, would you like to introduce
+
+00:00:21.559 --> 00:00:22.559
+yourself?
+
+00:00:22.559 --> 00:00:29.639
+Hello, my name is Damie Pak. So I am dressed up as Lubega. I don't have any of the clothes
+
+00:00:29.639 --> 00:00:37.639
+required for it. But I was going to talk about the most serious question of our human existence.
+
+00:00:37.639 --> 00:00:45.799
+If you did not know when Mambo No. 5 came out, how would you know? And through the woman's
+
+00:00:45.799 --> 00:00:51.439
+name in Mambo No. 5, if you remember the bridge that goes, like, a little bit of Jessica or
+
+00:00:51.439 --> 00:00:52.439
+a little bit of Erica.
+
+00:00:52.439 --> 00:00:55.279
+You should know all the lyrics by now.
+
+00:00:56.279 --> 00:01:01.119
+Well, I'm just like, you know, I have one wife, and she does not like me, you know,
+
+00:01:01.119 --> 00:01:06.959
+saying all of these other woman's names. Anyway, so my real wife, not Lubega's wife. Anyway,
+
+00:01:06.959 --> 00:01:14.040
+so I'm going to be talking about, like, how I kind of thought of the project and my kind
+
+00:01:14.040 --> 00:01:18.400
+of, like, philosophy about how to do stupid projects, because I think they're really important
+
+00:01:18.400 --> 00:01:24.199
+to learn. And then just kind of like, more of a, I'm not sure if this is the right way,
+
+00:01:24.199 --> 00:01:28.480
+but this is how I do it. And maybe feedback from the community. And then more of a, where
+
+00:01:28.480 --> 00:01:33.559
+do we go on from here? Like, maybe we could do this with a Bad Bunny song that goes like
+
+00:01:33.559 --> 00:01:37.440
+titi, my Spanish is terrible.
+
+00:01:37.440 --> 00:01:42.320
+All right, little dummy, you have 15 minutes on the clock, just as a reminder.
+
+00:01:42.320 --> 00:01:48.680
+All right. So let's look at my RStudio code. I have not looked at the Mambo No. 5 code
+
+00:01:48.680 --> 00:01:53.760
+since I published it. So we're going to go and then see if we could even, like, figure
+
+00:01:53.839 --> 00:01:58.599
+out what's happening, if I actually documented it well. And then just talk about, like, how
+
+00:01:58.599 --> 00:02:01.680
+I did the structure of it.
+
+00:02:01.680 --> 00:02:07.519
+So this is how I did my Mambo No. 5. And the weird thing is, is that I was in academia
+
+00:02:07.519 --> 00:02:13.440
+before, and a lot of academic coding is a lot about, like, not really reproducibility,
+
+00:02:13.440 --> 00:02:18.679
+or I mean, it is, but I think there's more of, like, this focus on just, like, a script,
+
+00:02:18.679 --> 00:02:22.639
+like just figures, and we don't really care about whether it's modular or not. And I've
+
+00:02:22.639 --> 00:02:25.679
+been trying to, like, learn from that.
+
+00:02:25.679 --> 00:02:30.240
+So basically, how I set up these kind of, like, data analysis scripts, especially if
+
+00:02:30.240 --> 00:02:36.279
+there's a lot of math, is that I really enjoy having the math as a supplement to the GitHub
+
+00:02:36.279 --> 00:02:41.360
+repo. I think that's really important. Because when I do a lot of analysis, or when I did
+
+00:02:41.360 --> 00:02:47.880
+a lot of mathematical modeling in R for my postdoc, I mean, the code is whatever, but
+
+00:02:47.880 --> 00:02:52.520
+the math, the fundamental part that moves the machinery is so important. So, you know,
+
+00:02:52.520 --> 00:02:58.440
+I would love, I love Korto, I love how you could just, like, can you guys see my, sorry,
+
+00:02:58.440 --> 00:02:59.440
+let me just...
+
+00:02:59.440 --> 00:03:03.039
+Well, we were looking at RStudio. I couldn't see RStudio.
+
+00:03:03.039 --> 00:03:08.119
+Oh, yeah. Okay. So this is, like, my, you know, the full mathematical model. So, you
+
+00:03:08.119 --> 00:03:13.639
+know, even the silly side project, where the question was, how do we use Bayesian formula?
+
+00:03:13.639 --> 00:03:19.360
+How do we use the analysis to figure out what year was Mambo No. 5 released based
+
+00:03:19.360 --> 00:03:24.199
+on the woman's name that appear in the song? So, you know, that's a silly question, but
+
+00:03:24.199 --> 00:03:29.919
+that's actually kind of, like, a really interesting, you know, way of thinking about Bayesian statistics.
+
+00:03:29.919 --> 00:03:34.479
+I never did Bayesian science, ever. Like, this was my first time ever doing it. And
+
+00:03:34.479 --> 00:03:39.639
+so I was so scared on starting the project. And I was like, oh, no, what if I mess up?
+
+00:03:39.639 --> 00:03:43.559
+And everyone thinks I'm stupid. They sent me to jail. And then I just tried to think
+
+00:03:43.559 --> 00:03:49.300
+of, like, the silliest project, and that was Mambo No. 5. But even the simple act of taking
+
+00:03:49.300 --> 00:03:56.279
+that simple, you know, question, like, there is a lot of math involved. And so, you know,
+
+00:03:56.279 --> 00:04:01.039
+I really enjoy having Korto, and then just having the math, and then showing it to people
+
+00:04:01.039 --> 00:04:09.320
+in the community to make sure I'm doing it right. Anyway, so let's just move to the coding
+
+00:04:09.320 --> 00:04:16.399
+project. And so let's see. So let's see. I see SRC. So I must have been really smart,
+
+00:04:16.399 --> 00:04:23.760
+and actually made all of my functions. Yeah, I must have made all of my functions, you
+
+00:04:23.760 --> 00:04:30.320
+know, like, documented, and I'm actually really proud of that. I was really mad at HeliWicom,
+
+00:04:30.320 --> 00:04:35.119
+because what I did was I used social security data to figure out the name popularity of
+
+00:04:35.119 --> 00:04:40.160
+babies. And I was going through, like, the actual US government pulling that data. And
+
+00:04:40.160 --> 00:04:45.040
+then HeliWicom had to ruin my day and actually have an R package already out. So I did this
+
+00:04:45.040 --> 00:04:53.600
+for nothing. You can see that that's why I got a little frowny face here. And basically,
+
+00:04:53.600 --> 00:04:59.480
+with that data, I could then try to figure out, calculate the likelihood. So the likelihood
+
+00:04:59.480 --> 00:05:03.679
+that tells me, you know, given this year, you know, what is the probability that I would
+
+00:05:03.679 --> 00:05:11.519
+see these names, the joint probability. And I'm actually proud that I commented. Like,
+
+00:05:11.519 --> 00:05:16.600
+I'm actually really surprised that I actually put comments, because I generally don't, especially
+
+00:05:16.600 --> 00:05:23.320
+for stupid side project. Oh, my God, I actually put like, oh, the parameter names, too. Wow.
+
+00:05:23.320 --> 00:05:30.160
+Past Dami was, I think she was trying to impress someone. But anyway. So basically, what you
+
+00:05:30.160 --> 00:05:36.119
+would do is that you would give like a data frames of the names across the United States.
+
+00:05:36.119 --> 00:05:41.440
+And then, you know, have like a general prior belief of what the release years was, you
+
+00:05:41.440 --> 00:05:46.920
+know, you know, is it did the song come out in 1970, versus like 2000. And then like,
+
+00:05:46.920 --> 00:05:50.720
+maybe some belief of how old the women are, because like, they're in the club, they should
+
+00:05:50.720 --> 00:05:58.679
+be like over 21. Or maybe they're like 18. They're using fake IDs. And then so, wow,
+
+00:05:58.679 --> 00:06:05.480
+I actually put a lot of comments. And I am so surprised at this. Um, but basically, um,
+
+00:06:05.480 --> 00:06:10.399
+I could see that I was like trying to compute the joint probabilities here. And then I was
+
+00:06:10.399 --> 00:06:18.920
+marginalizing by age, I'm not sure what that means. But basically, I think, from this project,
+
+00:06:18.920 --> 00:06:26.160
+I was really forcing myself to actually think more modularly. So how if I want to, you know,
+
+00:06:26.160 --> 00:06:32.519
+adapt this to a different song, how am I going to make it so that it could be completely
+
+00:06:32.519 --> 00:06:38.079
+adapted to another music with like woman's name in it. And then one thing that I'm not
+
+00:06:38.079 --> 00:06:42.359
+quite sure is the best way I'm not sure how people in the community do this is that I
+
+00:06:42.359 --> 00:06:50.760
+try to keep like, the analysis scripts different than the than the functions, like using like,
+
+00:06:50.760 --> 00:06:54.880
+two different R script files. I'm not sure if this is the right way of doing it. This
+
+00:06:54.880 --> 00:07:00.279
+is the way that works for me, that's the most organized. I know people like doing the,
+
+00:07:00.279 --> 00:07:05.239
+you know, actually having like the quarto document, and then just having this one main
+
+00:07:05.239 --> 00:07:11.239
+prod, you know, one main like file that shows everything. But I kind of prefer to script
+
+00:07:11.239 --> 00:07:16.320
+method more with like, the numbers, I can like kind of see like, in which order I should
+
+00:07:16.320 --> 00:07:21.119
+run them. Not sure if this is the best way. But this is kind of how I do it. And then
+
+00:07:21.119 --> 00:07:26.279
+you can see here that this script is just simply for processing the names, like we all
+
+00:07:26.279 --> 00:07:32.600
+know that 99% of the things that you do is processing, cleaning. And then this is kind
+
+00:07:32.600 --> 00:07:37.760
+of like a really bad script, because you can see this is where I got really tired, and
+
+00:07:37.760 --> 00:07:43.679
+did not put much comments on I have no idea what's happening here. But from what I gather
+
+00:07:43.679 --> 00:07:48.959
+is that this script just calculates the posterior distribution. So I'm not going to go too much
+
+00:07:48.959 --> 00:07:54.959
+into the Bayesian math. But, you know, from here, I could see that I process the script,
+
+00:07:54.959 --> 00:07:59.079
+and then calculated the posterior that kind of gives me an ID, or that kind of gives me
+
+00:07:59.079 --> 00:08:06.359
+on the probability, the posterior likelihood that the song was released in this year. And
+
+00:08:06.359 --> 00:08:11.160
+then I think this is like the giant script that made it possible. So we're gonna see
+
+00:08:11.160 --> 00:08:16.679
+if this even runs, who knows, like, let's all pray and hope that it runs. It does not
+
+00:08:16.679 --> 00:08:22.839
+Oh my gosh. Live coding is so dangerous. Oh my god, what do we do? We're going to go
+
+00:08:22.839 --> 00:08:29.519
+to jail. Okay, so I'm just gonna Oh, I guess I'm doing this live and I can just do it the
+
+00:08:29.519 --> 00:08:35.400
+worst way where I just source all of this by hand, but I don't really care. This is
+
+00:08:35.400 --> 00:08:40.000
+bad coding. If you'd like to watch Dami do other things live, you can watch her episode
+
+00:08:40.000 --> 00:08:46.520
+of VizBuzz where she coded plots live. That was pure chaos and tons of fun. And they muted
+
+00:08:46.520 --> 00:08:52.359
+me so I could not swear. It was terrible. Okay, so let's see. Let's see if that worked.
+
+00:08:52.359 --> 00:08:57.760
+Not the best way to do it. But you know, we all can't be saints. Yeah, there is no best
+
+00:08:57.760 --> 00:09:02.440
+way. And also everybody on Discord is saying we do the same things. We keep our stuff separate,
+
+00:09:02.440 --> 00:09:07.799
+our functions separate from our analysis. You're not alone. Okay. Okay. And then so
+
+00:09:07.799 --> 00:09:13.400
+this was kind of like the main figure. So this was a figure that I had in mind. So the
+
+00:09:13.400 --> 00:09:20.280
+posterior distribution and then the different release years. So for example, if from this
+
+00:09:20.280 --> 00:09:23.359
+figure, when do you think mambo number five was released?
+
+00:09:23.359 --> 00:09:25.599
+1998 or 99.
+
+00:09:25.599 --> 00:09:33.159
+99. That was when it was released. And so this, I think this represents a credible interval
+
+00:09:33.159 --> 00:09:37.400
+from what I remember. But you know, I was kind of proud because I actually never done
+
+00:09:37.400 --> 00:09:41.840
+much Bayesian analysis. I was like, Oh, this actually worked. Um, I think I should have
+
+00:09:41.840 --> 00:09:47.960
+gone further, because I should have really like checked some of like my assumptions and
+
+00:09:47.960 --> 00:09:54.320
+like actually made sure that I was doing things correctly. And I'm actually not sure if the
+
+00:09:54.320 --> 00:10:00.159
+math is fully correct. And I think that's fine. So I think a lot of my hang ups on like
+
+00:10:00.159 --> 00:10:05.679
+open science or like showing sharing data project is that I'm terrified of being wrong,
+
+00:10:05.679 --> 00:10:12.559
+again, you're gonna send me to jail. But I think my way of now thinking is that we're all human,
+
+00:10:12.559 --> 00:10:17.599
+we're all going to make a mistake. Like it's just inevitable. Like a lot of the things that we do
+
+00:10:17.599 --> 00:10:23.200
+is really complicated. There's so much moving parts. Like even mambo number five, the silly
+
+00:10:23.200 --> 00:10:31.679
+side project does have some moving parts. And I think my philosophy changed into actually making
+
+00:10:31.679 --> 00:10:36.559
+it easy for people to catch my mistake. So you know, I think, I think that's what I was like
+
+00:10:36.559 --> 00:10:41.840
+trying to do here with like, a lot better like coding and or sorry, commenting and structure
+
+00:10:42.400 --> 00:10:50.000
+is that I want people to find my mistake and to find it easily because I think it's inevitable.
+
+00:10:50.000 --> 00:10:55.280
+I'm not sure if that's like the best philosophy to have. But I think this is better than to,
+
+00:10:56.000 --> 00:11:00.880
+you know, be shy about your mistake and try to hide all of the complexities from people. I think
+
+00:11:00.880 --> 00:11:05.840
+it's just a lot easier to just lay it open. If people find mistake, they're going to forgive you
+
+00:11:05.840 --> 00:11:08.960
+for letting it be simple. How much minutes do I have?
+
+00:11:09.599 --> 00:11:15.039
+You have five minutes and 20 seconds left. And I say showing your mistakes out loud is kind of
+
+00:11:15.039 --> 00:11:19.200
+the entire point of the science lab. So I'm in full agreement that that's a good idea.
+
+00:11:19.200 --> 00:11:25.359
+Yeah. So I guess, you know, that philosophy of like showing your mistake, like, that's why I
+
+00:11:25.359 --> 00:11:30.159
+made the math so like visible, like, you could go through the math, you could write it out,
+
+00:11:30.159 --> 00:11:34.479
+you could actually try to make sure that the math makes sense. Like I made my wife, who is a
+
+00:11:34.479 --> 00:11:39.359
+mathematician, actually go through it, like she had a huge deadline. And there's just me being like,
+
+00:11:39.359 --> 00:11:44.880
+you know, hey, babe, can you actually like look at the math for me? Um, but, you know, that's,
+
+00:11:44.880 --> 00:11:51.440
+I think that's kind of like the main philosophy that I kind of like, got after I left academia,
+
+00:11:51.440 --> 00:11:58.000
+like, when knowledge is kind of like the capital of like, career investment, you kind of get shy
+
+00:11:58.000 --> 00:12:03.440
+about like, letting people know, like, your mistakes, it's like something that is, it just
+
+00:12:03.440 --> 00:12:10.080
+happens. And so I've been a lot more like, very, like, pro, like, just find my mistakes for me,
+
+00:12:10.080 --> 00:12:14.640
+like, you know what, you know, I'm just gonna make it happen. And then one thing I'm gonna say
+
+00:12:14.640 --> 00:12:21.280
+on my last minute, I think I really have to thank Mark, because I actually, he was actually the guy
+
+00:12:21.280 --> 00:12:26.559
+who looked at a lot of my math for me. And I think it shows the importance of community, just like,
+
+00:12:26.559 --> 00:12:31.840
+it's nice having people who see your stupid project. And it's like, you know what, I'm going
+
+00:12:31.840 --> 00:12:36.559
+to treat this as seriously as possible, and actually, like, check your math for you. Like,
+
+00:12:36.559 --> 00:12:41.599
+I think that's the importance of a data science community. It's not really like the technical
+
+00:12:41.599 --> 00:12:47.200
+know how, or I mean, it is a technical know how, but just like, having people who just like,
+
+00:12:47.200 --> 00:12:53.200
+accept and just like, actually are interested and like, actually care about what you stupid thing
+
+00:12:53.200 --> 00:13:00.159
+you're doing. So and you know, in this kind of age of the AI, I don't think like AI coding can
+
+00:13:00.159 --> 00:13:06.640
+replace the human connections of like, the silly projects. So that's why I encourage everyone to
+
+00:13:06.640 --> 00:13:12.320
+do silly projects. Because you should not let machines take away your stupidity. That should
+
+00:13:12.320 --> 00:13:18.640
+be something very human. And I will stand on this. Do not let the machines take away your yearning.
+
+00:13:19.599 --> 00:13:25.599
+Like Lubega's number five, number five, number, mambo number five. A machine cannot write that.
+
+00:13:26.559 --> 00:13:34.559
+I mean, people I mean, you could try do a do a comparison. Now go to go work in cloud. I was
+
+00:13:34.559 --> 00:13:40.159
+gonna ask you, did you use cloud or any other tools to help you with us at all as you were
+
+00:13:40.159 --> 00:13:47.039
+writing? So I try not to for a lot of my stupid projects, because it's just a way of learning.
+
+00:13:47.039 --> 00:13:51.840
+So I give myself three tries. If I'm like, hey, I tried this three times, it does not work.
+
+00:13:51.840 --> 00:13:57.440
+Then I'd like use cloud and try to see not really ask it to like, code me anything, but just to give
+
+00:13:57.440 --> 00:14:02.640
+me like, maybe like an outline of how it code. So I do use cloud for that. And I think I've done it
+
+00:14:02.640 --> 00:14:08.159
+for like, calculating the posterior, but I always make sure to have someone you know, who does
+
+00:14:08.159 --> 00:14:14.880
+mathematics to check. Amazing. Yeah, I think that the community aspect is really, really important
+
+00:14:14.880 --> 00:14:19.200
+to and like, there are so many stories of people working out loud in the community and sharing
+
+00:14:19.200 --> 00:14:24.880
+their stuff. And getting jobs from that, right, like having really life changing things happen
+
+00:14:24.880 --> 00:14:31.440
+from that. And in all of them that I know, it was all very imperfect. It was like, I put out this
+
+00:14:31.440 --> 00:14:36.719
+crappy thing. And the magic happens with the feedback and people engaging with it and people
+
+00:14:38.080 --> 00:14:42.239
+finding it fun and kind of wanting to use it or taking a different direction. So
+
+00:14:42.880 --> 00:14:47.599
+definitely work out loud. There's a place on the discord server where you can share projects.
+
+00:14:49.200 --> 00:14:54.159
+But really anywhere on the discord server is a good place to share projects and show people things.
+
+00:14:54.159 --> 00:14:58.719
+Ask them questions if you share. Well, Dami, you do have like a minute and a half left.
+
+00:14:58.719 --> 00:15:02.880
+Okay. Oh my god. Oh my god. I had something really great. Oh my god. Oh my god. Oh my karaoke talk.
+
+00:15:02.880 --> 00:15:10.640
+Okay, no, not that. Um, I guess. Okay, so in my job interview, so I work at a pharma making
+
+00:15:10.640 --> 00:15:15.440
+vaccines. And he asked me, have you done anything with Bayesian modeling before? And I swear,
+
+00:15:15.440 --> 00:15:21.280
+I was thinking about bringing this project up. And I just did it. I did it. I'm like worried.
+
+00:15:22.320 --> 00:15:27.599
+I don't know. They're gonna be like, so there is a French company. So I was like, Oh, do they have
+
+00:15:27.599 --> 00:15:35.200
+mambo number five in France? I think mambo number five made it all over the globe. Yeah,
+
+00:15:35.200 --> 00:15:38.559
+because it's German looping us German. It's a German song.
+
+00:15:39.014 --> 00:15:43.174
+Who thinks that Damie should have brought this up at an interview? I think so.
+
+00:15:43.814 --> 00:15:47.894
+Well, they'd be like, hey, you have to make vaccines. Do you know Bayesian? I'm like,
+
+00:15:47.894 --> 00:15:51.654
+oh, yeah, I did model number five. Like, do you think that would have gone well?
+
+00:15:52.774 --> 00:15:56.534
+I think it would have. I think it would have been amazing. Well, Damie, thank you so much for
+
+00:15:56.534 --> 00:16:03.894
+sharing your project with us. It was so much fun. Damie, you have a blog, Isabella.
+
+00:16:03.894 --> 00:16:05.014
+Which I haven't updated.
+
+00:16:05.573 --> 00:16:11.574
+Isabella has been sharing it, but that project is there. So if you want to go check out Damie's
+
+00:16:11.574 --> 00:16:17.493
+math, please go take a look at it. And yeah, oh, I love the picture that Mark just shared
+
+00:16:17.493 --> 00:16:26.054
+in the Discord server, which is D Rob's 2019 talk about working out loud and sharing public work or
+
+00:16:26.054 --> 00:16:33.653
+working in public, which is just amazing. And I fully agree with it. Like the more you can do
+
+00:16:34.374 --> 00:16:41.333
+out in the world, the more valuable your work is. Okay. We are on to our next lab manager in our
+
+00:16:41.333 --> 00:16:46.694
+lab manager rotation today, which is Mark Rieke. Everybody give a round of applause for Damie
+
+00:16:46.694 --> 00:16:50.774
+and say hello to Mark. Mark, would you like to introduce yourself?
+
+00:16:50.774 --> 00:16:56.533
+Yeah. Hi, guys. I normally have a standing meeting on Tuesdays from the data science lab. So this is
+
+00:16:56.533 --> 00:17:04.533
+actually my first time joining. But I'm a data scientist and a Bayesian statistician and whatever
+
+00:17:04.533 --> 00:17:12.054
+work needs me to be for the time being. But I'm a big, big Bayesian nerd. So I was very glad when
+
+00:17:12.054 --> 00:17:15.653
+Damie reached out. I was like, oh, hey, can someone look at this? And I was like, oh, yes,
+
+00:17:15.653 --> 00:17:22.054
+absolutely. It's my time. Yeah, exactly. Bayesian stats apply to something like niche and weird and
+
+00:17:22.054 --> 00:17:32.293
+fun. Yes, please. But yeah, so I'll be sharing, I guess like my assumption is that like the Venn
+
+00:17:32.293 --> 00:17:38.213
+diagram of like people who like come to the data science lab and people who are interested in
+
+00:17:38.213 --> 00:17:44.374
+dropout, or at least like are, I don't know, I'm guessing that's like a bigger, there's a lot of
+
+00:17:44.374 --> 00:17:47.973
+overlap in those two groups. Hold on, let's do it. Let's do a poll.
+
+00:17:47.973 --> 00:18:01.813
+Noor and I raised our hands on camera like nerds. Do you watch dropout TV? Let's see. Yes or no.
+
+00:18:03.574 --> 00:18:09.813
+All right, poll in Discord. Let us know if you do watch dropout and you know what dropout is.
+
+00:18:09.813 --> 00:18:16.373
+Can you do like a thumbs up or some sort of like affirmative emoji reaction when you're in Zoom?
+
+00:18:18.533 --> 00:18:23.813
+Oh, we have a few. Yeah, Jared, Greg, Isabella, amazing. I also subscribe to
+
+00:18:24.854 --> 00:18:30.294
+dropout. However, I do not watch the one show that Mark is going to be talking about today,
+
+00:18:30.294 --> 00:18:36.774
+I think so. I'm ready to learn. All right. Yeah. Let's go. I'm going to put 15 minutes on the
+
+00:18:36.774 --> 00:18:43.654
+clock for Mark starting now. Oh, by the way, everybody, you can ask questions. So like if
+
+00:18:43.654 --> 00:18:49.733
+you have questions for Dami in the Discord, tag Dami and ask questions. And if there are some that
+
+00:18:49.733 --> 00:18:54.214
+we can do live at the end, we'll do that. We'll do it in the middle too if we need to. All right.
+
+00:18:54.774 --> 00:19:03.093
+Go, Mark. Okay. I may actually need to quit and rejoin because Zoom is telling me that I
+
+00:19:03.093 --> 00:19:08.694
+needed to update permissions and it's not going to update them. So I'll be back in like 15 seconds.
+
+00:19:08.694 --> 00:19:16.134
+Okay. Dami will do karaoke. Oh, wait. Oh, my God. How does it like Sandra, Jessica,
+
+00:19:17.733 --> 00:19:20.613
+Arita, no, no, no, Derby.
+
+00:19:22.533 --> 00:19:28.373
+Wait, are we going to get like a copyright infringement on YouTube if we sing Mambo
+
+00:19:28.373 --> 00:19:33.973
+No. 5? I replaced all of the girl's name with Caitlyn's name to embarrass her in karaoke.
+
+00:19:34.934 --> 00:19:42.934
+Oh, you guys. Oh, man. Mark, you have to come back as soon as possible and save us from ourselves.
+
+00:19:44.774 --> 00:19:47.173
+Well, I remember all the lyrics to Mambo No. 5.
+
+00:19:47.893 --> 00:19:50.694
+Wait, sing it. You can't just say that and just like nod.
+
+00:19:50.694 --> 00:19:58.854
+I know, right? It goes, one, two, three, four, five, everybody in the car, so come on this side to the liquor
+
+00:19:58.854 --> 00:20:07.493
+store around the corner. You know the words. Mark's back. Okay. We did it. Hold on, Mark.
+
+00:20:08.053 --> 00:20:13.253
+I got to remake you a co-host real quick, my friend. So you can unmute at will. All right.
+
+00:20:13.253 --> 00:20:16.533
+I'm going to restart your timer, Mark. Sorry about that.
+
+00:20:17.653 --> 00:20:21.414
+No, I understand. Max, with the permissions in Zoom, it's crazy.
+
+00:20:21.414 --> 00:20:27.574
+It was fun to come back just to Lubega playing. But yeah, so for folks who don't know,
+
+00:20:28.373 --> 00:20:33.414
+Um! actually is a show on Dropout. It's just a game show. And the whole premise is
+
+00:20:36.694 --> 00:20:44.854
+the host will make statements about nerdy things, pop-culturary things. And in each statement,
+
+00:20:44.854 --> 00:20:51.493
+there is something that is wrong that is said. And the job of the contestants is to buzz in,
+
+00:20:51.493 --> 00:20:58.294
+be quick on the buzzer, and then make the correction of saying, Um! actually, the quote
+
+00:20:58.294 --> 00:21:03.093
+isn't like, Luke, I am your father. It's, no, I am your father. It's that kind of level of pedantry.
+
+00:21:03.813 --> 00:21:12.053
+It's a great doing dishes background noise thing. But in season, in 2024, they swapped hosts
+
+00:21:12.933 --> 00:21:18.454
+from longtime host Mike Trapp to the person, to Ify Nwadiwe, who had-
+
+00:21:18.533 --> 00:21:21.653
+I love both of these people. Mike and Ify are both amazing.
+
+00:21:21.653 --> 00:21:31.093
+Yeah. Ify was referred to as the best contestant. And it was purely based on the fact that he had
+
+00:21:31.093 --> 00:21:40.533
+the most wins. And I was like, well, you can rack up a lot of wins just by playing the game a whole
+
+00:21:40.533 --> 00:21:46.533
+bunch. Or you can rack up a lot of wins by playing the game a whole bunch, or by playing against
+
+00:21:47.493 --> 00:21:58.134
+quote unquote, like lower skilled players. Or, you know, just looking at win count treats a one
+
+00:21:58.134 --> 00:22:05.093
+point win and like a massive like nine point win as the same, you know, they get treated the same.
+
+00:22:05.093 --> 00:22:13.014
+So I was like, I wanted to see if Ify Nwadiwe really was, if you like did the math, if he
+
+00:22:13.014 --> 00:22:20.454
+really was the best I'm actually player. And that led me down like this wonky rabbit hole that is
+
+00:22:21.014 --> 00:22:31.574
+building out this model. It is it's a Bayesian model. And the nice thing about it is let me
+
+00:22:31.574 --> 00:22:38.533
+make this bigger. Sorry. The nice thing about like doing stuff in a Bayesian way is that
+
+00:22:38.773 --> 00:22:44.933
+I'm from like, like, there's like all of this sort of like philosophical reasons that I am a
+
+00:22:46.773 --> 00:22:51.813
+dork for Bayesian statistics. But there is also like the practical benefit of that, like,
+
+00:22:51.813 --> 00:22:58.854
+the input the software to make the like to implement the model itself is super flexible
+
+00:22:58.854 --> 00:23:03.174
+and malleable such that you can rather than try and like hemorrhage your data or like,
+
+00:23:03.734 --> 00:23:08.213
+you know, bash it with a hammer to try and get it to fit your modeling software, you can
+
+00:23:09.014 --> 00:23:14.213
+tweak your model to fit your data generating process. And this is like one of the weirdest
+
+00:23:15.653 --> 00:23:21.653
+models that I've ever fit. There's like normally there's three contestants and like one person
+
+00:23:21.653 --> 00:23:27.894
+gets a point in each round. And that has its own sort of like wonky math that goes along with it.
+
+00:23:28.854 --> 00:23:36.694
+And sometimes, though, multiple contestants like get a point on the same round. And you have to
+
+00:23:36.694 --> 00:23:41.973
+like handle that edge. And sometimes everyone gets a point. So, like, this handles that edge case.
+
+00:23:43.653 --> 00:23:52.373
+Sometimes oh, and this is I was not I am just scrolling through and rediscovering all of the old
+
+00:23:53.334 --> 00:23:58.773
+nightmares of trying to get this to work. This is like the flow tree of like,
+
+00:23:59.574 --> 00:24:04.854
+if two players are awarded a point, what is the probability that like a player is awarded a point
+
+00:24:04.854 --> 00:24:10.694
+based on their underlying skill that the model is calculating? So, I don't know. This is all
+
+00:24:10.694 --> 00:24:17.894
+kind of like a long way of saying that this really wacky, weird, nonsense project had a
+
+00:24:17.894 --> 00:24:28.853
+lot going on under the hood. Much like dummies. Yeah, exactly. I'm gonna scroll down. Yeah,
+
+00:24:28.853 --> 00:24:34.933
+and there's like there was a single one off like four player game that gets got included in this
+
+00:24:34.933 --> 00:24:41.094
+as well. And then there's team games. Oh, my gosh. There were so there's so many there's so
+
+00:24:41.094 --> 00:24:46.933
+many edge cases in this. And again, like the nice thing about like doing this all in one big model
+
+00:24:46.933 --> 00:24:58.053
+is that you can this can all be one big model rather than like, oh, this is a
+
+00:25:02.373 --> 00:25:06.853
+How do you figure out what points were awarded to in a team game?
+
+00:25:07.813 --> 00:25:12.053
+So, in a team game, it is the case that we say
+
+00:25:12.694 --> 00:25:14.534
+I'm so off track.
+
+00:25:14.534 --> 00:25:15.253
+Yeah, no worries.
+
+00:25:15.253 --> 00:25:16.774
+Sorry. You have 10 minutes left.
+
+00:25:17.493 --> 00:25:23.894
+In a team game, it's just that it's just so the way that this thing works underneath the hood is
+
+00:25:23.894 --> 00:25:28.853
+it says every individual player has like some like skill value. And that's kind of like the
+
+00:25:28.853 --> 00:25:34.053
+core of what the model is estimating. And in a team game, you're putting up two players
+
+00:25:34.774 --> 00:25:39.493
+who are on the same team against like, you're just adding their skill values together.
+
+00:25:40.214 --> 00:25:43.173
+And then against the two players on the other team, adding their skill values together.
+
+00:25:45.413 --> 00:25:49.813
+So, it awards a single point per team, but it's determining like the probability of like which
+
+00:25:49.813 --> 00:25:55.654
+team is going to get awarded a point based on the underlying skill of the members of the team.
+
+00:25:59.334 --> 00:26:03.493
+But yeah, I guess all of that to say, though, that like doing this
+
+00:26:03.894 --> 00:26:11.974
+in a single Bayesian model lets you oops, this is the wrong one. This is going to look really
+
+00:26:11.974 --> 00:26:17.894
+nightmarish because it's just it's accounting for all of these extra edge cases and whatnot.
+
+00:26:17.894 --> 00:26:19.654
+Sorry, are we looking at Stan?
+
+00:26:20.214 --> 00:26:21.974
+Yeah, I am.
+
+00:26:21.974 --> 00:26:23.733
+I don't know if anyone knows what Stan is.
+
+00:26:23.733 --> 00:26:30.293
+Oh, Stan. So, Stan is like a it's a hyper focused like probabilistic programming language
+
+00:26:30.293 --> 00:26:37.253
+that has like an interface to R, an interface to Python, but it's really just focused in on like
+
+00:26:38.293 --> 00:26:45.654
+purely writing models. And the really, really nice thing is that Stan code is almost a one for
+
+00:26:45.654 --> 00:26:53.334
+one map to like if you write LaTeX, if you write out a model on pen and paper, it's really,
+
+00:26:53.334 --> 00:26:56.694
+really, really similar looking. So, there's almost like a one to one direct translation.
+
+00:26:57.574 --> 00:27:01.974
+It is like a little bit of a hurdle to get up and running with.
+
+00:27:02.613 --> 00:27:04.613
+And it is to get it installed. Yeah.
+
+00:27:04.613 --> 00:27:10.293
+Yeah. Well, and I'm in just like getting used to like the workflow and whatnot. So, I have to
+
+00:27:10.293 --> 00:27:19.014
+at any at any given opportunity, show Richard McElroy's statistical rethinking for I don't know,
+
+00:27:19.014 --> 00:27:23.574
+everyone should go read that book and it'll unwire your brain about how to think about modeling.
+
+00:27:23.813 --> 00:27:29.334
+But yeah, sorry, I'm just rambling. So, does anyone have any questions? I'm just
+
+00:27:29.894 --> 00:27:32.534
+I'm just yapping about Stan and math and I don't know.
+
+00:27:32.534 --> 00:27:37.894
+We did have a question, which was, have you shared your analysis and you have not shared the
+
+00:27:37.894 --> 00:27:43.094
+end of your analysis yet, but have you shared the analysis with the dropout slash I'm actually
+
+00:27:43.974 --> 00:27:46.933
+people? I know that they do pop into Reddit quite a lot.
+
+00:27:47.654 --> 00:27:53.014
+I don't think I, I, my working assumption was that they are, would not see something from the
+
+00:27:53.014 --> 00:28:01.813
+little, little likes of me. So, I had not. Although I did, I guess like the, I think I shared it on
+
+00:28:03.813 --> 00:28:07.413
+I, at the time I was, I was still on Twitter. I shared it on Twitter and like tag Brennan Lee
+
+00:28:07.413 --> 00:28:12.933
+Mulligan, who is, as this model found, like would have the best sense of like,
+
+00:28:13.894 --> 00:28:17.094
+as this model found like would have the best skill.
+
+00:28:19.334 --> 00:28:21.574
+If you'd like to, you know, taking into all those considerations.
+
+00:28:22.613 --> 00:28:27.253
+But I'm sure he gets like a bajillion people tagging him every day and stuff.
+
+00:28:28.214 --> 00:28:34.053
+Oh, I'm sure. Absolutely. So you found out that Brennan followed by
+
+00:28:34.053 --> 00:28:41.813
+John Jeremy and Erica. Oh, and Matt is up there as well. Actually had the highest skill.
+
+00:28:43.574 --> 00:28:46.214
+Yeah. Relative skill relative to other people.
+
+00:28:46.214 --> 00:28:53.813
+Right. Right. So, if this is looking at like, if, if you were to
+
+00:28:54.917 --> 00:29:01.077
+rank order uh everyone's like underlying skill
+
+00:29:02.201 --> 00:29:04.601
+The way that Bayesian models work is that you generally run
+
+00:29:04.601 --> 00:29:09.801
+like thousands and thousands and thousands of simulations. So
+
+00:29:09.801 --> 00:29:12.641
+this is looking at like, in each of those, like, you know, that
+
+00:29:12.641 --> 00:29:16.081
+set of simulations, we can estimate for an individual
+
+00:29:16.081 --> 00:29:21.401
+player's skill. If you take, if you rank within each simulation,
+
+00:29:22.160 --> 00:29:22.760
+from like,
+
+00:29:23.083 --> 00:29:27.963
+best to worst, those skill values, what's the average across all the simulations,
+
+00:29:28.923 --> 00:29:34.763
+where that person ends up in like that ordered ranking. So Brennan has an average rank of like
+
+00:29:34.763 --> 00:29:43.482
+six, just means he's very often up at the top out of like, I think it's like 187 or so. So he is,
+
+00:29:44.043 --> 00:29:49.482
+on average, the highest ranked player. This accounts for things like, if I scroll down,
+
+00:29:49.482 --> 00:29:55.803
+there are some players here who have, like Jamel Wood, for example, I think he was a
+
+00:29:56.763 --> 00:30:03.083
+guest contestant who did just blew everyone out of the water, but he was also only on like one
+
+00:30:04.042 --> 00:30:11.323
+episode. So his uncertainty interval is really, really, really wide, versus someone like Erica
+
+00:30:11.323 --> 00:30:16.042
+Ishii, who has been on like several, several different episodes. So she has like a little
+
+00:30:16.042 --> 00:30:22.682
+bit of a tighter uncertainty interval interval than like someone who's only on once. So doing
+
+00:30:22.682 --> 00:30:29.162
+this sort of like across all of the simulations comparison negates, or it adjusts for this
+
+00:30:29.162 --> 00:30:35.162
+difference in uncertainty between different people. Okay. One more question. When we're
+
+00:30:35.162 --> 00:30:41.802
+talking about relative skill relative to other people, does that mean that if somebody of high
+
+00:30:41.802 --> 00:30:47.323
+skill is playing against other contestants of low skill, that that win is discounted?
+
+00:30:48.762 --> 00:30:52.683
+It just means that you would expect them to do pretty well. And if they,
+
+00:30:53.482 --> 00:30:58.283
+if they don't do well, then it means then it's probably the case that they
+
+00:31:01.243 --> 00:31:04.762
+that like the model will update their, their skill estimates to be like
+
+00:31:04.762 --> 00:31:07.323
+lower. And then the inverse for the person who is.
+
+00:31:08.212 --> 00:31:14.212
+like low skill and then like did really, really well. I looked at like a couple like hypothetical
+
+00:31:14.212 --> 00:31:18.052
+examples. So if you put this, this match has never happened. But if you put like
+
+00:31:18.052 --> 00:31:22.932
+Brennan Lee Mulligan, Ify Nwadiwe, and then like Ali Beardsley all in a match together,
+
+00:31:24.212 --> 00:31:30.691
+Brennan is likeliest to win. But obviously, like, if he and Ali have like, not a non trivial chance
+
+00:31:30.691 --> 00:31:36.371
+of winning. They at least have a lot of overlap in there. Yeah, exactly. Yeah.
+
+00:31:37.332 --> 00:31:42.052
+Amazing. Well, do we have any questions, Isabella that I have missed? I feel like,
+
+00:31:43.091 --> 00:31:48.372
+I feel like it's hard to compare anybody to Brennan Lee Mulligan, because he's a superhuman brain.
+
+00:31:50.292 --> 00:31:56.132
+But I think that there's something to be said for like, the instinct that everybody has that
+
+00:31:56.132 --> 00:32:02.212
+says that if he is the best, that there's something that is non skill related, that
+
+00:32:02.212 --> 00:32:06.451
+makes us want to just say that if he is the best, and I love if he so I,
+
+00:32:06.451 --> 00:32:12.691
+I would probably be on that same train. I think that there's, I was gonna appear
+
+00:32:12.691 --> 00:32:18.612
+because we did have just like on that note, there's like a big benefit of sort of like the
+
+00:32:19.572 --> 00:32:24.371
+like what what Dami did what this is doing, is that like, rather than like constructing
+
+00:32:24.371 --> 00:32:29.651
+like a proxy from things that you have sort of like readily available, because like Bayesian
+
+00:32:29.651 --> 00:32:32.691
+models themselves are so flexible, and you can implement really like,
+
+00:32:33.492 --> 00:32:45.731
+whatever, there's a really good example of it is this is my favorite paper.
+
+00:32:46.691 --> 00:32:56.132
+I was just gonna say this feels really applicable to sports.
+
+00:32:57.331 --> 00:33:04.451
+Yes. So this yeah, the sorry, I'm like trying to do too much all at once.
+
+00:33:05.892 --> 00:33:07.892
+You're fine. No pressure. Two minutes, 20 seconds.
+
+00:33:09.331 --> 00:33:14.132
+So yeah, here we go. This is so so one of the things that's like nice about like Bayesian
+
+00:33:14.132 --> 00:33:19.491
+models is that you can actually like, if you have some sort of like obscure thing that you're
+
+00:33:19.491 --> 00:33:25.731
+interested in, like the the math nerds will say your if your estimate is your quantity of interest
+
+00:33:25.731 --> 00:33:30.451
+is like difficult to measure, you can still measure it directly and like directly encode,
+
+00:33:31.011 --> 00:33:37.972
+encode that in the model, rather than constructing sort of like a, a weird proxy that like kind of
+
+00:33:37.972 --> 00:33:41.812
+gets out of it kind of doesn't. And that's kind of what, you know, counting up total wins is it's
+
+00:33:41.812 --> 00:33:46.692
+like a proxy for player skill, but it isn't what player skill is directly. So you can include that
+
+00:33:46.692 --> 00:33:52.532
+in the model, even though we don't, like, there's not any observations for player skill. This example
+
+00:33:52.532 --> 00:34:02.371
+is looking at this is like the Bayesian model workflow from that, like, Gelman and some folks
+
+00:34:02.371 --> 00:34:08.451
+on like the standup team like put together a while ago, but as like an example of like, flexible
+
+00:34:08.451 --> 00:34:14.052
+software implementations, they rather than fitting like a logistic regression to like a set of
+
+00:34:14.052 --> 00:34:21.091
+golfers, you know, taking putts, they fit what they call like a geometric model where they actually
+
+00:34:21.091 --> 00:34:27.491
+model, you know, do the sort of like geometry, encode like the actual, like, geometry in terms
+
+00:34:27.491 --> 00:34:36.612
+of like distance and like shot angle and like radius of the radius of the hole in golf, encode
+
+00:34:36.612 --> 00:34:41.332
+that in the model directly to get like, you know, if you were to use a pure statistical model, you
+
+00:34:41.332 --> 00:34:50.291
+get kind of a bad fit. You do this geometric fit and it's much, much better. Yeah.
+
+00:34:51.332 --> 00:34:55.412
+All right. I'm going to interrupt you in your last 30 seconds and say,
+
+00:34:55.412 --> 00:34:57.491
+the people demand you talk about your Arc browser.
+
+00:34:58.132 --> 00:35:05.172
+Oh, I like Arc. I like that it has I like that it does like mirroring across multiple things. The
+
+00:35:05.172 --> 00:35:11.091
+only thing I don't like about it is that sometimes if I pull up something and then
+
+00:35:12.211 --> 00:35:14.772
+like this screen goes like kind of gray and it always throws me off.
+
+00:35:15.571 --> 00:35:17.332
+It's like when your shiny app goes to sleep.
+
+00:35:17.972 --> 00:35:22.132
+Yeah. But I love it. Just quick and easy and snappy.
+
+00:35:22.692 --> 00:35:27.972
+Yeah. I think a lot of people have said like, Hey, it's not supported anymore. It's just not being
+
+00:35:27.972 --> 00:35:33.412
+actively developed, but I think that they are still like applying security patches and stuff,
+
+00:35:33.412 --> 00:35:35.171
+which is good enough for a lot of people.
+
+00:35:35.171 --> 00:35:39.732
+Yeah. Yeah. At some point I will have to I don't know when also at some point I'll have to migrate
+
+00:35:39.732 --> 00:35:44.611
+off of Arc to whatever the new flavor of thing is, but for now it still works.
+
+00:35:45.331 --> 00:35:49.572
+All right. Well, also Zach had said this probably isn't possible or realistic,
+
+00:35:49.572 --> 00:35:52.611
+but what do you think about doing something like this for Game Changer? And I said,
+
+00:35:52.611 --> 00:35:55.331
+I pity the fool who tries to analyze Game Changer.
+
+00:35:56.051 --> 00:36:01.651
+Oh, Zach, I have thought about that. And it is all of the asterisks.
+
+00:36:01.651 --> 00:36:04.931
+Honestly, I have too. I think that Mark and I have talked.
+
+00:36:04.931 --> 00:36:09.412
+Yeah. Everything that I was like, Oh man, this is like the I'm actually thing was so
+
+00:36:10.211 --> 00:36:15.331
+weird and wonky and strange. There's like a myth like that times a million for Game Changer.
+
+00:36:16.292 --> 00:36:20.371
+Yeah. Often Game Changer is so chaotic. If anybody has not watched Game Changer,
+
+00:36:20.371 --> 00:36:25.812
+this last season of Game Changer was probably the funniest that I've ever seen. And it's
+
+00:36:26.611 --> 00:36:32.051
+Game Changer is a game show where the rules are constantly changing according to things
+
+00:36:32.051 --> 00:36:37.732
+that are happening in the game show. And oftentimes rules are abandoned. Things go
+
+00:36:37.732 --> 00:36:43.252
+crazy and you end up with like this inverse reality. I highly recommend it if you have not
+
+00:36:43.252 --> 00:36:48.771
+watched it. I will also plug one more thing for Dropout. If you like D&D and you enjoy watching
+
+00:36:48.771 --> 00:36:54.931
+actual play podcasts, the production value of Dimension 20 is amazing. Go watch the early ones,
+
+00:36:54.931 --> 00:37:02.371
+especially Crown of Candy, Unsleeping City. Like they just have fantasy high, just have amazing
+
+00:37:02.371 --> 00:37:08.452
+production value with their sets. Okay. We have one more lab manager for today and that is Sam
+
+00:37:08.452 --> 00:37:13.732
+Parmer. And we still don't know if his mic works. So let's find out in real time.
+
+00:37:14.211 --> 00:37:17.412
+Sam, does your mic work now? Hello. Can you hear me now?
+
+00:37:17.412 --> 00:37:23.891
+Yay. Oh, he's the Verizon guy. Okay. Let's do it. Sam, would you like to introduce yourself?
+
+00:37:23.891 --> 00:37:30.051
+Yes. So Sam Parmer. I was a, I guess, member of the data science community. It's been a while
+
+00:37:30.051 --> 00:37:36.611
+since I rejoined, just because of work and other obligations. And I'm a part of some external
+
+00:37:36.611 --> 00:37:42.132
+working groups and then I also work in pharma. And yeah, I'll be sharing some of my adventures
+
+00:37:42.211 --> 00:37:45.732
+with Corto Extensions. So I'm going to share my screen. That's okay if you want.
+
+00:37:46.292 --> 00:37:49.891
+Absolutely. Let's do it. I will put 15 minutes on the clock for you, but hey,
+
+00:37:49.891 --> 00:37:55.732
+our time is going to run out around that time anyway. So let's do it. Reminder, everybody,
+
+00:37:55.732 --> 00:37:57.812
+you can ask questions in Discord if you would like to.
+
+00:37:58.611 --> 00:38:03.252
+All right. I need to rejoin. Permissions. Zoom. Yeah. Great. Sorry.
+
+00:38:03.252 --> 00:38:05.171
+You got it. Dami will sing again.
+
+00:38:05.171 --> 00:38:06.132
+Dami will sing again.
+
+00:38:11.491 --> 00:38:12.211
+Rita Ora?
+
+00:38:13.572 --> 00:38:15.171
+Not Rita Ora.
+
+00:38:15.171 --> 00:38:16.292
+Wait, who's Rita Ora?
+
+00:38:17.732 --> 00:38:18.532
+A real person.
+
+00:38:19.972 --> 00:38:21.252
+Danny DeVito's wife.
+
+00:38:22.852 --> 00:38:24.211
+That's Rhea Perlman.
+
+00:38:24.211 --> 00:38:31.252
+Oh. Your disco needs you? No, that's Kyla's.
+
+00:38:31.651 --> 00:38:39.891
+Wait. Wait while we... Rita Ora is like a model and an actress.
+
+00:38:42.371 --> 00:38:42.931
+In what?
+
+00:38:44.292 --> 00:38:48.692
+In things that are maybe in the UK and things that I don't know.
+
+00:38:48.692 --> 00:38:52.292
+Help. Are you from the UK? Do you know who Rita Ora is?
+
+00:38:56.211 --> 00:39:01.012
+You don't see your profile pic in Zoom. I don't know why, Marcos. I don't know.
+
+00:39:01.012 --> 00:39:05.812
+I see everybody else's. I think I do. Or wait, maybe I just see people who are sharing their
+
+00:39:05.812 --> 00:39:14.292
+camera. Sam is back. But Sam, if you are speaking, we cannot hear you.
+
+00:39:14.292 --> 00:39:20.211
+Yeah. Sam, are you sharing your screen? Yeah, I see your screen. But I don't hear you. Hold on.
+
+00:39:20.211 --> 00:39:22.771
+We need to find Sam and make him a co-host again.
+
+00:39:22.771 --> 00:39:23.572
+Perfect. Thank you.
+
+00:39:25.651 --> 00:39:26.611
+He's back. Thank you.
+
+00:39:27.572 --> 00:39:31.812
+I just want to quickly show Corto, if you've never used it before. It's a flavor of Markdown
+
+00:39:31.812 --> 00:39:35.891
+as well as a command line interface. And this is a general scheme of what's going on.
+
+00:39:35.891 --> 00:39:39.971
+You have Corto, and then you have some sort of engine that converts R code over to Markdown
+
+00:39:39.971 --> 00:39:44.291
+or Python code. This engine can be swapped out with other ones, depending on what you're using
+
+00:39:44.291 --> 00:39:48.692
+with Corto. And then ultimately, you end up getting all these different wonderful formats,
+
+00:39:48.692 --> 00:39:55.411
+HTML, PDF, Word, PBTX, Reveal.js. And it's a lot of, I guess, awesomeness there.
+
+00:39:56.851 --> 00:40:01.012
+If you've never been to the Corto website, there's a lot of resources there, documentation there,
+
+00:40:01.012 --> 00:40:05.012
+that's worth checking out. The gallery is great, because you can learn more about some examples
+
+00:40:05.012 --> 00:40:09.252
+people have created. And how I originally learned about extensions, which is what I'm going to be
+
+00:40:09.252 --> 00:40:15.491
+focusing on, is from Rich and the talk he did in PositConf 2023. This was absolutely amazing,
+
+00:40:15.491 --> 00:40:21.012
+and it kind of inspired me to just go down this rabbit hole a little bit and start learning more.
+
+00:40:21.092 --> 00:40:27.491
+So, as a part of this talk, he did plug this, and I'll share links maybe after I'm done,
+
+00:40:28.051 --> 00:40:33.572
+but basically, he plugged this listing that they have on the Corto website. So, if you want to get
+
+00:40:33.572 --> 00:40:40.531
+there, you can basically go to the maincorto.org page, and then you go over to extensions, and then
+
+00:40:40.531 --> 00:40:45.652
+you'll see all these different categories that are available. And basically, these are community-made
+
+00:40:45.652 --> 00:40:52.772
+Corto extensions that people host on GitHub, and you can see the authors for the related types of
+
+00:40:52.772 --> 00:40:58.132
+extensions. As an alternative to this, more recently, within, I think, the last year or so,
+
+00:40:58.772 --> 00:41:05.892
+Mikhail, who's on the Corto development team, has created this awesome alternative Corto listing.
+
+00:41:06.851 --> 00:41:11.572
+And if you, like, Google Corto extensions, you'll see, I think, this in the top, like,
+
+00:41:11.572 --> 00:41:17.491
+10 search results or something like that, or top five. And it's just as good, and it follows a
+
+00:41:17.491 --> 00:41:22.531
+similar scheme. I think he had reached out to get some feedback, and he ended up changing the UI,
+
+00:41:22.531 --> 00:41:26.291
+and I really love it. So, I thought I would plug that, too. And the main reason I'm plugging this
+
+00:41:26.291 --> 00:41:33.092
+is this is kind of like the backend to the extension that I recommend anyone who uses
+
+00:41:33.092 --> 00:41:39.572
+Positron install on their computers. This is basically, I think, the resource or the library
+
+00:41:39.572 --> 00:41:44.371
+of all the extensions that he uses for Corto Wizard. So, Corto Wizard is this wonderful
+
+00:41:44.371 --> 00:41:49.252
+Positron extension that makes installing and managing your Corto extensions that you might
+
+00:41:49.252 --> 00:41:56.291
+have for any project very simple. So, I'm just going to plug that real quick. I'm going to
+
+00:41:56.291 --> 00:42:02.931
+reshare my screen and make sure I share my window. Okay. So, content only.
+
+00:42:03.332 --> 00:42:09.092
+I see a browser in the background, and then in Positron, very, very small in front. There we go.
+
+00:42:09.971 --> 00:42:16.132
+Okay. Yeah. So, it's just an outline that I came up with a few minutes ago. So, basically,
+
+00:42:17.171 --> 00:42:24.692
+the extension is available. If you go to, let me see, extensions, and you can search
+
+00:42:25.171 --> 00:42:32.692
+wizard, and you'll see Corto Wizard. You can install it, and it's on the VSX registry. It's
+
+00:42:32.692 --> 00:42:39.012
+also available on VS Code, their marketplace, if you use that and you still haven't migrated over
+
+00:42:39.012 --> 00:42:44.531
+to Positron, that's fine. And it's wonderful. This is basically what it looks like. I've
+
+00:42:44.531 --> 00:42:49.892
+installed a few of the extensions that I've built over the years here, and the main idea is that you
+
+00:42:49.892 --> 00:42:55.892
+can basically just search the registry, which is the website I showed you, and browse all the
+
+00:42:55.892 --> 00:43:00.772
+different types of extensions that are available there, and I think it's over 300. So, this makes
+
+00:43:00.772 --> 00:43:07.491
+like the user experience of trying to identify extensions or discover them much easier. So,
+
+00:43:07.491 --> 00:43:11.411
+there's like the discovery question, like similar to our universe, or, you know,
+
+00:43:11.411 --> 00:43:14.851
+PyPy that a lot of people run into, like, okay, how do I know what's out there? Well,
+
+00:43:14.851 --> 00:43:19.012
+this is the solution to that. So, I just want to plug that, and the extensions that I've built
+
+00:43:19.491 --> 00:43:25.092
+basically are hosted or available, discoverable on these two resources, the Quarto Wizard or the
+
+00:43:25.092 --> 00:43:31.812
+listings that I shared. Okay. So, I'm going to talk about some of the extensions I made,
+
+00:43:31.812 --> 00:43:37.411
+and I thought I would start with a fun one that I first made to kind of step into this area,
+
+00:43:37.411 --> 00:43:42.291
+and this is based on this kind of funny Easter egg collection in JavaScript that was written
+
+00:43:43.252 --> 00:43:49.652
+by Wei Chia-Ching, and it's really cool. So, if you want to use this, I think we'll be doing an
+
+00:43:49.652 --> 00:43:53.652
+update soon, because I haven't touched it in a while. The general idea is that you can incorporate
+
+00:43:53.652 --> 00:43:58.452
+Easter eggs, and the Easter eggs work where you just type in some sort of secret command,
+
+00:43:58.452 --> 00:44:02.692
+and it does, like this animation just pops in. So, if I type in hi, that'll come in.
+
+00:44:03.652 --> 00:44:07.491
+If I type in haha, this will just go through your web page.
+
+00:44:08.212 --> 00:44:10.051
+Are you typing something? Because I can't see.
+
+00:44:11.332 --> 00:44:17.092
+Oh, yeah. Let me reshare. Sorry. Okay. Yeah, thanks for telling me that.
+
+00:44:18.692 --> 00:44:20.772
+Did anybody else see him typing? No.
+
+00:44:20.772 --> 00:44:22.371
+No. Okay. Okay.
+
+00:44:22.371 --> 00:44:27.092
+Okay. So, this is what it looks like. I'll just need to remember to switch back and forth. Okay.
+
+00:44:27.092 --> 00:44:32.371
+So, it's Quarto Easter eggs, and the idea here is I type in hi, the special command,
+
+00:44:33.332 --> 00:44:40.212
+wink, like it's another command, and then there's a preset collection that he already had built. So,
+
+00:44:40.212 --> 00:44:44.452
+it's really easy for me to port over the JavaScript code, and then I bundle it together in this kind
+
+00:44:44.452 --> 00:44:50.452
+of cool info page for anyone who wants to use it. So, I think there's one pokeball. Let me see.
+
+00:44:55.092 --> 00:44:59.572
+There's bat, and there's other ones. So, yeah, you can check it out if you're interested.
+
+00:45:02.452 --> 00:45:06.611
+UFO. Yeah, there's UFO. Okay. So, that was a kind of like a low stakes project that was fun,
+
+00:45:07.652 --> 00:45:11.892
+and nobody ever uses it. That's fine. It's just something that I can kind of chuckle at,
+
+00:45:11.892 --> 00:45:12.371
+and maybe
+
+00:45:12.371 --> 00:45:15.252
+Please do the pokeball really quickly. We need it.
+
+00:45:15.252 --> 00:45:18.371
+Yeah, let me see if I can type it in without making a typo.
+
+00:45:18.371 --> 00:45:22.291
+No mistakes. That's hard. The longer these words get, the harder it gets to, like,
+
+00:45:22.291 --> 00:45:27.491
+do them with no mistakes. People demand demonstrations.
+
+00:45:27.491 --> 00:45:28.051
+Yeah, there it is.
+
+00:45:28.692 --> 00:45:30.212
+Oh, my goodness.
+
+00:45:30.692 --> 00:45:36.611
+So, yeah. Right now, I think the GIFs or animations are linking to his website,
+
+00:45:36.611 --> 00:45:44.851
+but I'm going to see if I can fix that. So, this is kind of like a fun example that I like
+
+00:45:44.851 --> 00:45:50.611
+Demi's presentation she did. So, I thought I would share this one first. The really more complicated
+
+00:45:50.611 --> 00:45:57.572
+one that I ended up getting into after that was this flashcards extension, and I'll just share
+
+00:45:57.652 --> 00:46:01.731
+the page instead of sharing my screen. Maybe that'll be a little bit easier.
+
+00:46:03.252 --> 00:46:06.611
+So, the general idea is that, let me see here,
+
+00:46:09.812 --> 00:46:13.812
+that I wanted to see if I could, like, create, and I understand Anki is, like,
+
+00:46:13.812 --> 00:46:17.411
+the alternative that a lot of people use for flashcards, and it's great.
+
+00:46:18.518 --> 00:46:21.158
+And I think that the algorithm that they have in Anki is way better
+
+00:46:21.158 --> 00:46:25.118
+But I wanted to have like a very simple alternative in Quarto, so I use reveal.js
+
+00:46:25.678 --> 00:46:28.598
+And and so when you see a Quarto extension
+
+00:46:28.598 --> 00:46:33.238
+You'll usually see this sort of extensions folder, and this is basically whenever you install the extension
+
+00:46:33.238 --> 00:46:35.878
+This is the material that basically gets put into your directory
+
+00:46:36.237 --> 00:46:42.838
+So whenever like you're updating it and it'll reference this information and generally all the extensions will have this like underscore
+
+00:46:42.838 --> 00:46:49.198
+extension yaml file there that has a lot of important information including some of the scripts that are referenced and the config information so this
+
+00:46:49.198 --> 00:46:51.198
+config information is actually what's like
+
+00:46:51.678 --> 00:46:52.518
+updatable
+
+00:46:52.518 --> 00:46:54.598
+And different extensions do this in a different way
+
+00:46:54.598 --> 00:47:00.678
+But the idea is that you like basically surfacing some sort of interface to make it easier for your end-users to maybe customize the extension
+
+00:47:00.678 --> 00:47:03.317
+According to their needs so here's a very simple one
+
+00:47:03.317 --> 00:47:05.317
+There's like a flip key that I have a shuffle key
+
+00:47:05.317 --> 00:47:11.437
+Button that will be shown or hidden depending on what they want and then a reset on slide chain
+
+00:47:11.437 --> 00:47:16.998
+So specifically there was a request from a community member who was actually a teacher who said okay?
+
+00:47:16.998 --> 00:47:19.198
+This is great, but whenever I go to the next slide
+
+00:47:19.198 --> 00:47:24.717
+I wanted to reset the previous slide so then I added that in because they were using it for their class and some of the
+
+00:47:24.717 --> 00:47:26.717
+Students were I guess I'm getting
+
+00:47:26.958 --> 00:47:28.717
+annoyed by that
+
+00:47:28.717 --> 00:47:32.958
+And there's like a different color for the front and color for the back that was another piece of feedback that I had gotten
+
+00:47:32.958 --> 00:47:35.878
+This is what it looks like it's very simple to use easy to set up
+
+00:47:36.318 --> 00:47:39.717
+And let me show you the syntax really quickly
+
+00:47:42.037 --> 00:47:46.638
+Here so the syntax is one where basically use this sort of div
+
+00:47:47.357 --> 00:47:48.757
+triple colon
+
+00:47:48.757 --> 00:47:52.797
+Format and then you specify the class for the flash card in the front flash card for the back
+
+00:47:52.797 --> 00:47:59.238
+And then you basically just use a reveal.js syntax for a slide which is basically like a header to level there
+
+00:47:59.518 --> 00:48:04.878
+So you're basically reusing if you're familiar with a reveal.js in corto you're using that sort of thing
+
+00:48:04.878 --> 00:48:07.198
+But instead your slide is now a flash card
+
+00:48:08.198 --> 00:48:10.198
+Amazing
+
+00:48:10.278 --> 00:48:12.998
+So there's like a dead image from Wikipedia
+
+00:48:12.998 --> 00:48:14.757
+That's why the image doesn't show up initially
+
+00:48:14.757 --> 00:48:19.797
+And then you can sort of use the existing thing stuff from corto and reuse that
+
+00:48:20.838 --> 00:48:22.558
+so the
+
+00:48:22.558 --> 00:48:27.917
+Histogram there you can do a different background and a lot of other stuff if you need to shuffle you can do that
+
+00:48:28.518 --> 00:48:30.038
+So that's like one of the first ones
+
+00:48:30.038 --> 00:48:35.717
+I really got into and there's others that I made that I think or maybe we're sharing the quiz one
+
+00:48:35.797 --> 00:48:41.398
+Is probably the one that I think is maybe out of the most value for people and including some professors
+
+00:48:41.398 --> 00:48:43.398
+especially if you're doing like a workshop and
+
+00:48:43.478 --> 00:48:48.157
+The general idea here is that using a similar scheme with some of the stuff that I talked about the flashcards extension
+
+00:48:48.478 --> 00:48:51.038
+And it has a little bit of a different syntax though
+
+00:48:51.238 --> 00:48:56.557
+So in this case, all you do is specify a class at the end of your sort of slide title
+
+00:48:56.557 --> 00:49:02.518
+And then you can use a list syntax for like your bullet points and instead of reading it as bullet points
+
+00:49:02.518 --> 00:49:09.077
+It reads it as options for your quiz basically and each of the quiz questions are kind of self isolated
+
+00:49:09.077 --> 00:49:13.157
+But you can actually calculate your score and include that if you want to and there's a lot of features baked in
+
+00:49:13.637 --> 00:49:15.518
+So you can sort of decide like for example
+
+00:49:15.518 --> 00:49:21.437
+There's a community member that asked about adding explanations on like why an answer is right or wrong. So that's baked in
+
+00:49:21.838 --> 00:49:27.077
+And like a lot of stuff so each of my cortex and you usually have like some sort of keyboard shortcut
+
+00:49:27.077 --> 00:49:29.437
+So the other one I think you were sure was Q
+
+00:49:29.437 --> 00:49:36.197
+So if you hit the Q button, then it's like really easy to go back and forth very similar with the quiz extension
+
+00:49:36.197 --> 00:49:37.478
+If you hit the number one
+
+00:49:37.478 --> 00:49:39.637
+It'll select the first option if you hit the number two
+
+00:49:39.637 --> 00:49:42.398
+It'll select the second option and so on and then if you hit the C button
+
+00:49:42.398 --> 00:49:45.958
+It'll check it for you. And there's like another one for like resetting as well
+
+00:49:45.958 --> 00:49:51.518
+And basically all the information is there on the footer so you can try it out and sort of learn how to use it as
+
+00:49:51.518 --> 00:49:53.518
+You go through the example
+
+00:49:53.637 --> 00:49:58.678
+Yeah, so this is what it looks like and then you'll see you can render a code
+
+00:49:59.598 --> 00:50:01.598
+And then you can also get
+
+00:50:02.038 --> 00:50:04.197
+Yeah, some examples that will automatically
+
+00:50:04.997 --> 00:50:09.758
+Randomize a little bit to you. So all the options will randomize for some questions if you want that
+
+00:50:10.077 --> 00:50:12.077
+And then you can also embed pictures and that kind of stuff
+
+00:50:12.958 --> 00:50:16.197
+This is so cool. I think we all agree that this is so cool
+
+00:50:16.197 --> 00:50:20.478
+And we have a question actually if we want to step back to the flashcard one
+
+00:50:22.038 --> 00:50:26.958
+Dan Chen had asked is there a way to make it three-sided because when you are
+
+00:50:27.717 --> 00:50:31.318
+Working in I think he was talking about learning Chinese like you need
+
+00:50:32.398 --> 00:50:35.757
+Different versions of characters as options, which is a great
+
+00:50:36.398 --> 00:50:39.278
+Like may probably common use case across a few languages
+
+00:50:41.278 --> 00:50:43.278
+Yeah, maybe maybe that would
+
+00:50:43.917 --> 00:50:46.238
+Mean that I haven't been asked about right now
+
+00:50:46.238 --> 00:50:49.718
+I've only been thinking of flashcards as having like a front and back identity
+
+00:50:49.718 --> 00:50:55.197
+Yeah, but maybe if you raise an issue about that with an example, I could sort of look into how feasible that would be. Yeah
+
+00:50:56.037 --> 00:51:00.238
+Amazing. All right. Do we have five minutes left? Do you happen to have?
+
+00:51:00.958 --> 00:51:05.718
+Anything else you would like to show us or we can do some questions as well
+
+00:51:06.317 --> 00:51:10.917
+Yeah, I mean there's others that I've made the quarto Excalibur one is really cool one
+
+00:51:10.917 --> 00:51:16.077
+We're just like gives you like an Excalibur Dom and it's very similar to the quarto drop extension
+
+00:51:16.077 --> 00:51:17.998
+So all you do is basically you press a button
+
+00:51:17.998 --> 00:51:21.718
+let's see if I can move this right here or you press a shortcut and then you get like a
+
+00:51:22.597 --> 00:51:24.438
+basically
+
+00:51:24.438 --> 00:51:26.438
+see here you get like a
+
+00:51:27.357 --> 00:51:30.037
+Excalibur canvas that you can operate off of so this is great
+
+00:51:30.037 --> 00:51:35.077
+If you have like slides or other information, then I think about Excalibur as you can sort of save some of this information
+
+00:51:35.077 --> 00:51:36.797
+I don't know if I ended up
+
+00:51:36.797 --> 00:51:39.398
+Like filling an issue regarding like local storage
+
+00:51:39.398 --> 00:51:42.917
+So like if you updated any of this content, it would save for your web page instance
+
+00:51:43.158 --> 00:51:45.158
+But maybe I'll do that in the future
+
+00:51:45.238 --> 00:51:48.757
+Yeah, so this is kind of a cool one if you've ever used Excalibur for this kind of thing
+
+00:51:49.278 --> 00:51:53.917
+And then the last one I will just plug really quickly is a speech extension
+
+00:51:53.958 --> 00:51:56.558
+Which I think is also really cool and this supports some reveal
+
+00:51:56.558 --> 00:52:01.597
+Just code those already in the community over to quarto and the idea here is that I'm gonna allow my microphone
+
+00:52:01.597 --> 00:52:03.718
+I think Isabel you might have seen this one
+
+00:52:04.238 --> 00:52:11.797
+But basically I can control my slides with my voice because it uses the voice recognition API in your browsers
+
+00:52:11.797 --> 00:52:13.797
+So if I say next slide
+
+00:52:13.797 --> 00:52:15.797
+You
+
+00:52:17.438 --> 00:52:21.518
+See if it works Wow next slide
+
+00:52:24.678 --> 00:52:31.398
+Yeah, so it's working there sorry, I was worried that zoom would overwrite it yeah, I was worried too and then previous slide
+
+00:52:33.838 --> 00:52:38.797
+Yes, it does that and then there's like additional commands you can bake in and you can even like have an easter egg if you like
+
+00:52:38.797 --> 00:52:40.317
+Really wanted to be cool
+
+00:52:40.597 --> 00:52:43.917
+Example goes over like how you could like count sheep one sheep
+
+00:52:46.637 --> 00:52:48.877
+Yeah, and then you could sort of keep going and that kind of thing
+
+00:52:50.317 --> 00:52:52.317
+Yeah, that'll be cool sure
+
+00:52:52.477 --> 00:52:54.477
+This is so cool
+
+00:52:54.718 --> 00:53:00.637
+This is very very cool. I think that you are one of the most prolific community contributors to
+
+00:53:01.398 --> 00:53:08.278
+Extensions and I had saw a question on blue sky recently about extensions. I think just yesterday that was like
+
+00:53:09.278 --> 00:53:15.158
+Like kind of what is an extension are they as fragile as packages, right if they're all stored on github
+
+00:53:15.158 --> 00:53:19.958
+What happens if they update the extensions that I've used have just like I run a command
+
+00:53:19.958 --> 00:53:25.357
+They pull down into an extensions folder and then they stay there and they don't really need to call back to anything
+
+00:53:26.757 --> 00:53:30.938
+Can you talk a little bit in your last like minute about that how extensions even work?
+
+00:53:31.278 --> 00:53:35.438
+Yeah, so in most cases they don't they're usually self-contained
+
+00:53:35.438 --> 00:53:39.477
+it's worth maybe looking through some of the source code and making sure they're not reaching out to some sort of
+
+00:53:39.917 --> 00:53:43.278
+Website because in some cases like similar some are funny our packages
+
+00:53:44.238 --> 00:53:48.077
+They could do that. So that's just something to be aware of it for security minded
+
+00:53:48.317 --> 00:53:53.958
+But generally speaking like it like I showed you you'll see this sort of underscore extension yaml file along with another
+
+00:53:54.757 --> 00:54:00.797
+Files that accompany that and they'll all be self-contained within an underscore extensions folder as you said
+
+00:54:01.158 --> 00:54:03.357
+So yeah, it's kind of like up to the user
+
+00:54:04.357 --> 00:54:08.317
+These are like self-hosted on github, so it's just important to be aware of that
+
+00:54:09.238 --> 00:54:11.238
+Perfect. Thank you so much for the explanation
+
+00:54:11.518 --> 00:54:17.477
+Big huge. Thank you to Dami Mark and Sam today. Everybody give them a round of applause. This was so much fun
+
+00:54:17.678 --> 00:54:19.958
+Thanks for hanging out. We'll see you soon
+
+00:54:20.597 --> 00:54:22.597
+Thursday or next week. Bye everybody

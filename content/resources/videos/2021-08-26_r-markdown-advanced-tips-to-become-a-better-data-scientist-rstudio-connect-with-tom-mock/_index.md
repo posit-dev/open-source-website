@@ -12,7 +12,7 @@ software:
 - reticulate
 - rmarkdown
 - rstudio
-- Shiny
+- shiny-r
 - webshot2
 tags:
 - rstudio
@@ -70,8 +70,8 @@ external:  # updated automatically, do not edit
   duration: 4396
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:33.697563+00:00'
-  like_count: 1149
+  last_updated: '2026-09-18T13:58:16.154356+00:00'
+  like_count: 1144
   playlist: ''
   software:
   - blastula
@@ -80,7 +80,7 @@ external:  # updated automatically, do not edit
   - reticulate
   - rmarkdown
   - rstudio
-  - Shiny
+  - shiny-r
   - webshot2
   tags:
   - rstudio
@@ -130,7 +130,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WkF7nqEYF1E/maxresdefault.jpg
   title: R Markdown Advanced Tips to Become a Better Data Scientist & RStudio Connect | With Tom Mock
   url: https://www.youtube.com/watch?v=WkF7nqEYF1E
-  view_count: 37666
+  view_count: 37735
 ---
 image: thumbnail.jpg
 

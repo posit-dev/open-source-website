@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 1212
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.701186+00:00'
+  last_updated: '2026-09-18T13:58:17.360102+00:00'
   like_count: 70
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LGy5kPWMJnQ/hqdefault.jpg
   title: Alicia Schep | Auto-magic Package Development | RStudio (2020)
   url: https://www.youtube.com/watch?v=LGy5kPWMJnQ
-  view_count: 1205
+  view_count: 1206
 ---
 image: thumbnail.jpg
 

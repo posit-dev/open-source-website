@@ -9,6 +9,7 @@ software:
 - dplyr
 - rstudio
 - rstudio-conf
+- sparklyr
 tags:
 - Javier Luraschi
 - sparklyr
@@ -64,13 +65,14 @@ external:  # updated automatically, do not edit
   duration: 657
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243756+00:00'
+  last_updated: '2026-09-18T13:58:18.645933+00:00'
   like_count: 45
   playlist: ''
   software:
   - dplyr
   - rstudio
   - rstudio-conf
+  - sparklyr
   tags:
   - Javier Luraschi
   - sparklyr
@@ -118,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/qqq-JrRuchw/maxresdefault.jpg
   title: Javier Luraschi | Scaling R with Spark | RStudio (2019)
   url: https://www.youtube.com/watch?v=qqq-JrRuchw
-  view_count: 1597
+  view_count: 1604
 ---
 image: thumbnail.jpg
 

@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - tidyverse
 tags:
 - Matt Dancho
@@ -65,12 +65,12 @@ external:  # updated automatically, do not edit
   duration: 1220
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532158+00:00'
+  last_updated: '2026-09-18T13:58:18.645998+00:00'
   like_count: 118
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - tidyverse
   tags:
   - Matt Dancho
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9VztG5c1bwk/maxresdefault.jpg
   title: Matt Dancho | Using R, the Tidyverse, H2O, and Shiny to reduce employee attrition | RStudio (2019)
   url: https://www.youtube.com/watch?v=9VztG5c1bwk
-  view_count: 5618
+  view_count: 5619
 ---
 image: thumbnail.jpg
 

@@ -11,7 +11,7 @@ resources: []
 software:
 - rmarkdown
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio::conf
 - rstudio::conf(2020)
@@ -73,13 +73,13 @@ external:  # updated automatically, do not edit
   duration: 1226
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.701353+00:00'
+  last_updated: '2026-09-18T13:58:17.860837+00:00'
   like_count: 24
   playlist: ''
   software:
   - rmarkdown
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio::conf
   - rstudio::conf(2020)

@@ -20,7 +20,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 - shinylive
 tags: []
@@ -48,20 +48,20 @@ external:  # updated automatically, do not edit
   duration: 561
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.520710+00:00'
+  last_updated: '2026-09-18T13:58:21.309125+00:00'
   like_count: 8
   people:
   - Max Kuhn
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   - rstudio
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/1mq9YgAEdXU/maxresdefault.jpg
   title: Max Kuhn - Serverless Quarto
   url: https://www.youtube.com/watch?v=1mq9YgAEdXU
-  view_count: 325
+  view_count: 332
 ---
 image: thumbnail.jpg
 

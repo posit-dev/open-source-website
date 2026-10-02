@@ -5,11 +5,12 @@ github: r-lib/lobstr
 image: logo.png
 languages:
 - C
-latest_release: '2026-04-07T08:05:47+00:00'
+latest_release: '2026-08-31T23:00:13+00:00'
 people:
 - Hadley Wickham
 - Lionel Henry
 - Nick Strayer
+- Jonathan McPherson
 title: lobstr
 topics:
 - Visualization
@@ -22,17 +23,18 @@ exclude:
 external:  # updated automatically, do not edit
   description: Understanding complex R objects with tools similar to str()
   first_commit: '2015-03-20T20:57:44+00:00'
-  forks: 30
+  forks: 31
   languages:
   - C
-  last_updated: '2026-05-20T08:05:55.015904+00:00'
-  latest_release: '2026-04-07T08:05:47+00:00'
+  last_updated: '2026-09-18T14:26:08.635559+00:00'
+  latest_release: '2026-08-31T23:00:13+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Lionel Henry
   - Nick Strayer
   - Jeroen Janssens
+  - Jonathan McPherson
   readme_image: man/figures/logo.png
   repo: r-lib/lobstr
   stars: 314

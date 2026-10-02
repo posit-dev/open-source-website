@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - posit::conf(2025)
 - rstats
@@ -27,11 +27,11 @@ external:  # updated automatically, do not edit
   duration: 1095
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.254481+00:00'
+  last_updated: '2026-09-18T13:58:08.099031+00:00'
   like_count: 6
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - posit::conf(2025)
   - rstats
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/HJs2HVltpcs/maxresdefault.jpg
   title: Modular, layout-as-code approach for customizable Shiny dashboards (Kim Schouten, De NZa)
   url: https://www.youtube.com/watch?v=HJs2HVltpcs
-  view_count: 145
+  view_count: 181
 ---
 image: thumbnail.jpg
 

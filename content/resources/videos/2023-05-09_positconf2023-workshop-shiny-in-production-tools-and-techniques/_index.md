@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 - shinyapps
 tags:
 - rstudio
@@ -64,11 +64,11 @@ external:  # updated automatically, do not edit
   duration: 337
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.651962+00:00'
+  last_updated: '2026-09-18T13:58:13.379302+00:00'
   like_count: 8
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   - shinyapps
   tags:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/MlRwhDYI5Ec/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Shiny in Production: Tools and Techniques'
   url: https://www.youtube.com/watch?v=MlRwhDYI5Ec
-  view_count: 401
+  view_count: 403
 ---
 image: thumbnail.jpg
 

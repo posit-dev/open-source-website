@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 1258
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243491+00:00'
+  last_updated: '2026-09-18T13:58:18.222250+00:00'
   like_count: 57
   playlist: ''
   software:
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/f39_oW4RKfI/maxresdefault.jpg
   title: Karthik Ram | A guide to modern reproducible data science with R | RStudio (2019)
   url: https://www.youtube.com/watch?v=f39_oW4RKfI
-  view_count: 2504
+  view_count: 2525
 ---
 image: thumbnail.jpg
 

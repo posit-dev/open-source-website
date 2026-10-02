@@ -22,7 +22,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 'Kelly Bodwin: Quarto hacks, AI in the classroom, and why R should stay weird'
 
@@ -51,16 +51,16 @@ external:  # updated automatically, do not edit
   duration: 3244
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:26.434770+00:00'
+  last_updated: '2026-09-18T13:58:07.250703+00:00'
   like_count: 29
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/v-uNP6MmU8U/maxresdefault.jpg
   title: 'Kelly Bodwin: Quarto hacks, AI in the classroom, and why R should stay weird'
   url: https://www.youtube.com/watch?v=v-uNP6MmU8U
-  view_count: 1053
+  view_count: 1076
 ---
 image: thumbnail.jpg
 

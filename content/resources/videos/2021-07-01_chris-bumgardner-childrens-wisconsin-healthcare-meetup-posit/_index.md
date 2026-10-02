@@ -36,7 +36,7 @@ resources: []
 software:
 - rmarkdown
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Chris Bumgardner, Children’s Wisconsin || Healthcare Meetup || Posit
 
@@ -77,18 +77,18 @@ external:  # updated automatically, do not edit
   duration: 3184
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.071001+00:00'
+  last_updated: '2026-09-18T13:58:16.539499+00:00'
   like_count: 86
   playlist: ''
   software:
   - rmarkdown
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/pHZ8dsc0PhY/maxresdefault.jpg
   title: Chris Bumgardner, Children’s Wisconsin || Healthcare Meetup || Posit
   url: https://www.youtube.com/watch?v=pHZ8dsc0PhY
-  view_count: 3579
+  view_count: 3619
 ---
 image: thumbnail.jpg
 

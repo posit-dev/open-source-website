@@ -6,13 +6,13 @@ All blog posts should be submitted as a pull request against `main` — don't pu
 
 If you already work from a fork (your own preference, or a personal-fork-first workflow), that's fine too — you'll just need to comment `/deploy-preview` on your PR once to trigger the preview build. Fork PRs can't auto-deploy because GitHub gives the workflow a read-only token with no access to our Netlify secrets.
 
-If you're using Claude Code, the `/new-post` skill will handle scaffolding, frontmatter, branch creation, and environment setup interactively.
+If your agent supports Agent Skills, ask it to use the `new-post` skill (in Claude Code, just type `/new-post`) to handle scaffolding, frontmatter, branch creation, and environment setup interactively.
 
 ## Where to place your post
 
 New posts go at the top level: `content/blog/my-post-slug/`.
 
-The subfolders (`quarto/`, `tidyverse/`, `shiny/`, `ai/`, etc.) contain ported legacy content — don't use them for new posts.
+Ported posts from legacy blogs live under `content/blog/ported/<source>/` — never scaffold a new post in there. New posts always go at the top level of `content/blog/`.
 
 Create a new post with:
 
@@ -122,7 +122,7 @@ This runs Hugo and the Tailwind CSS watcher in parallel. The site will be availa
 
 Before opening a PR, give your draft a once-over for content issues that mechanical frontmatter validation can't catch.
 
-The `/review-post` skill reads the post body and flags:
+The `review-post` skill reads the post body and flags:
 
 - Content-vs-frontmatter drift (e.g. `description` no longer matching the finished draft, `software` / `languages` / `topics` out of date, missing `source`)
 - Placeholders left in the body (`TODO`, `TBD`, `[insert link]`, lorem ipsum)
@@ -130,7 +130,7 @@ The `/review-post` skill reads the post body and flags:
 - Code blocks missing a language tag
 - Body image alt text and heading hierarchy
 
-It re-runs `/check-post` at the end, so it covers frontmatter validation too.
+It uses the `check-post` skill at the end, so it covers frontmatter validation too.
 
 The skill **does not** check writing style, tone, or flow. Get a human reviewer for that as part of the PR — see [Publishing your post](#publishing-your-post) below.
 
@@ -144,7 +144,9 @@ Push your branch and open a PR against `main`. A bot will post a publishing chec
 
 ### Get a review
 
-Request at least one reviewer — they can check content, frontmatter, and the rendered preview.
+Branch protection requires one approving review from someone with **Write access** before you can merge — and you're responsible for requesting it. Anyone on the Everyone team can approve, so ask a colleague to check the content, frontmatter, and rendered preview.
+
+A new post (everything under `content/blog/<slug>/`) has no required reviewer, so any Write-access approval unblocks the merge. But if your PR also touches files *outside* a post folder — ported posts, the blog meta files (`_*.md`, `CLAUDE.md`), templates, or scripts — GitHub adds the relevant code owner as a required reviewer, and the PR stays blocked until **they** approve.
 
 ### Check the preview
 
@@ -194,9 +196,9 @@ Other flags:
 - `--strict` — treat warnings as errors
 - `--format markdown` — output markdown (used by CI for PR comments)
 
-### With Claude Code
+### With an Agent Skills client
 
-The `/check-post` skill runs validation interactively and can offer to fix issues it finds.
+The `check-post` skill runs validation interactively and can offer to fix issues it finds.
 
 ### When warnings are OK to ignore
 
@@ -210,6 +212,7 @@ The other warnings should normally be acted on:
 
 - **`date` is in the past** — only leave it if you really do want the post to publish on merge.
 - **`<name>` looks like a team name** — replace with the individual contributors.
+  - "Shiny Team" is exempt: it has its own people page and is an intentional attribution.
 
 ## Content reference
 
@@ -318,6 +321,24 @@ Quarto sends your `.qmd` through Pandoc, which parses inline HTML and can rewrit
 </div>
 ```
 ````
+
+#### HTML widgets with blank lines (pointblank, great-tables)
+
+Hugo's Goldmark parser closes a CommonMark "type 6" HTML block (one opened by `<div>`, `<table>`, etc.) at the first blank line. Some Python objects — notably pointblank validation reports and great-tables tables — emit their HTML output with blank lines inside the wrapper `<div>`. The blank line tells Goldmark to stop parsing as HTML and resume parsing as markdown mid-table, which wraps CSS in `<p>` tags and turns indented SVG content into `<pre><code>` blocks.
+
+Symptom: a table renders with broken styling, or fragments of raw HTML (`</td>`, escaped tags) appear as text on the page.
+
+Fix: opt the post into the `strip-html-blank-lines` Quarto filter, which collapses blank lines inside raw HTML blocks before Hugo sees them.
+
+```yaml
+---
+title: My Post
+filters:
+  - strip-html-blank-lines
+---
+```
+
+You only need this on posts that embed HTML from libraries known to emit blank lines. If a whole subdirectory of posts needs it (e.g. all `pointblank` posts), add the filter once in a `_metadata.yml` next to those posts instead of repeating it in each frontmatter.
 
 #### Linking to other blog posts
 

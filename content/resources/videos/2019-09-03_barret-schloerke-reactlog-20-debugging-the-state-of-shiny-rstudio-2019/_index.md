@@ -9,7 +9,7 @@ resources: []
 software:
 - reactlog
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - Barret Schloerke
 - Reactlog
@@ -65,15 +65,15 @@ external:  # updated automatically, do not edit
   duration: 1266
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243729+00:00'
-  like_count: 34
+  last_updated: '2026-09-18T13:58:18.645915+00:00'
+  like_count: 35
   people:
   - Barret Schloerke
   playlist: ''
   software:
   - reactlog
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - Barret Schloerke
   - Reactlog
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/9ObBOZ-EVqE/maxresdefault.jpg
   title: Barret Schloerke | Reactlog 2.0 Debugging the state of Shiny | RStudio (2019)
   url: https://www.youtube.com/watch?v=9ObBOZ-EVqE
-  view_count: 1272
+  view_count: 1280
 ---
 image: thumbnail.jpg
 

@@ -12,7 +12,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -75,11 +75,11 @@ external:  # updated automatically, do not edit
   duration: 580
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:31.335514+00:00'
+  last_updated: '2026-09-18T13:58:12.906252+00:00'
   like_count: 28
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -128,7 +128,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JcF-EbDV78k/maxresdefault.jpg
   title: 'Posit Presents: A Game of Numbers with PING'
   url: https://www.youtube.com/watch?v=JcF-EbDV78k
-  view_count: 2263
+  view_count: 2272
 ---
 image: thumbnail.jpg
 

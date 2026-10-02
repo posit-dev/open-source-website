@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - rstudio conference
@@ -26,12 +26,12 @@ external:  # updated automatically, do not edit
   duration: 158
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532267+00:00'
+  last_updated: '2026-09-18T13:58:18.646056+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - rstudio conference
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/u6nCHmCtkCI/maxresdefault.jpg
   title: 'Shiny in Production: Data Products at Scale Workshop - rstudio::conf(2019L)'
   url: https://www.youtube.com/watch?v=u6nCHmCtkCI
-  view_count: 1250
+  view_count: 1251
 ---
 image: thumbnail.jpg
 

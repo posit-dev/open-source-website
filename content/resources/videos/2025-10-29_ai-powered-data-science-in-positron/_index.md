@@ -74,8 +74,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 - rstudio
 tags:
 - rstudio
@@ -201,12 +201,12 @@ external:  # updated automatically, do not edit
   duration: 2800
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:27.604750+00:00'
-  like_count: 233
+  last_updated: '2026-09-18T13:58:08.448415+00:00'
+  like_count: 252
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - rstudio
   tags:
   - rstudio
@@ -256,7 +256,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/TrN-FMcOsOA/maxresdefault.jpg
   title: AI-Powered Data Science in Positron
   url: https://www.youtube.com/watch?v=TrN-FMcOsOA
-  view_count: 11240
+  view_count: 12514
 ---
 image: thumbnail.jpg
 

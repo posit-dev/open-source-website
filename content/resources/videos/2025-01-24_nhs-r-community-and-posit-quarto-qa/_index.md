@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: NHS R Community and Posit Quarto Q&A
 
@@ -19,16 +19,16 @@ external:  # updated automatically, do not edit
   duration: 3301
   has_captions: false
   language: en-GB
-  last_updated: '2026-05-19T10:15:36.184229+00:00'
+  last_updated: '2026-09-18T13:58:20.753141+00:00'
   like_count: 2
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/W8dMHYKrAII/hqdefault.jpg
   title: NHS R Community and Posit Quarto Q&A
   url: https://www.youtube.com/watch?v=W8dMHYKrAII
-  view_count: 167
+  view_count: 169
 ---
 image: thumbnail.jpg
 

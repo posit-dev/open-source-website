@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4310
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:32.955166+00:00'
+  last_updated: '2026-09-18T13:58:15.367170+00:00'
   like_count: 13
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vBcNuhM9VgQ/maxresdefault.jpg
   title: Data Science Hangout | Lindsey Clark, Healthcare Bluebook | Measuring success of data science
   url: https://www.youtube.com/watch?v=vBcNuhM9VgQ
-  view_count: 637
+  view_count: 639
 ---
 image: thumbnail.jpg
 

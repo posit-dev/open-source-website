@@ -11,21 +11,21 @@ title: 'Masters in Data Science: 6 things you need to know'
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 11
+  comment_count: 12
   date: '2024-02-13T18:27:57Z'
   definition: hd
   description: '#positshorts'
   duration: 28
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.973611+00:00'
-  like_count: 621
+  last_updated: '2026-09-18T13:58:11.312272+00:00'
+  like_count: 726
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/e8qqqs9TYDg/maxresdefault.jpg
   title: 'Masters in Data Science: 6 things you need to know'
   url: https://www.youtube.com/watch?v=e8qqqs9TYDg
-  view_count: 23154
+  view_count: 28508
 ---
 image: thumbnail.jpg
 

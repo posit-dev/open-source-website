@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 3256
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.830115+00:00'
+  last_updated: '2026-09-18T13:58:19.005713+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sQjnvaf072M/maxresdefault.jpg
   title: Beyond Static Reports With R Markdown | RStudio Webinar - 2017
   url: https://www.youtube.com/watch?v=sQjnvaf072M
-  view_count: 15995
+  view_count: 16007
 ---
 image: thumbnail.jpg
 

@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: SAS to R, data harmonization, & a career in pharma | Dony Unardi | Data Science Hangout
 
@@ -19,16 +19,16 @@ external:  # updated automatically, do not edit
   duration: 3200
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.604962+00:00'
-  like_count: 11
+  last_updated: '2026-09-18T13:58:08.948709+00:00'
+  like_count: 12
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/B1CxZrmi8Yw/maxresdefault.jpg
   title: SAS to R, data harmonization, & a career in pharma | Dony Unardi | Data Science Hangout
   url: https://www.youtube.com/watch?v=B1CxZrmi8Yw
-  view_count: 513
+  view_count: 538
 ---
 image: thumbnail.jpg
 

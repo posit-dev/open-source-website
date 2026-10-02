@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - cli
-- Quarto
+- quarto
 - rstudio
 tags:
 - rstudio
@@ -66,14 +66,14 @@ external:  # updated automatically, do not edit
   duration: 110
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.607878+00:00'
-  like_count: 163
+  last_updated: '2026-09-18T13:58:14.441515+00:00'
+  like_count: 165
   people:
   - Isabella Velásquez
   playlist: ''
   software:
   - cli
-  - Quarto
+  - quarto
   - rstudio
   tags:
   - rstudio
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/t8qtcDyCRFA/maxresdefault.jpg
   title: Create & Publish a Quarto Blog on Quarto Pub in 100 Seconds | Quarto Pub
   url: https://www.youtube.com/watch?v=t8qtcDyCRFA
-  view_count: 9200
+  view_count: 9371
 ---
 image: thumbnail.jpg
 

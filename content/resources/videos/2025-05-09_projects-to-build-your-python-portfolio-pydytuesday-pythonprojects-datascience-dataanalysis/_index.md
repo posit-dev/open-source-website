@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 58
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.006684+00:00'
+  last_updated: '2026-09-18T13:58:08.949437+00:00'
   like_count: 146
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/uEmNiklPYcc/maxresdefault.jpg
   title: 'Projects to build your Python portfolio #pydytuesday #pythonprojects #datascience #dataanalysis'
   url: https://www.youtube.com/watch?v=uEmNiklPYcc
-  view_count: 3469
+  view_count: 3514
 ---
 image: thumbnail.jpg
 

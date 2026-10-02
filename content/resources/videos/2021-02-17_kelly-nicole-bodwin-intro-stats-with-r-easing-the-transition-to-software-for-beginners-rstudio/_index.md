@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -66,12 +66,12 @@ external:  # updated automatically, do not edit
   duration: 1288
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.701144+00:00'
+  last_updated: '2026-09-18T13:58:17.360050+00:00'
   like_count: 16
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/d3ig2UflmJY/maxresdefault.jpg
   title: 'Kelly Nicole Bodwin | Intro stats with R: Easing the transition to software for beginners | RStudio'
   url: https://www.youtube.com/watch?v=d3ig2UflmJY
-  view_count: 470
+  view_count: 474
 ---
 image: thumbnail.jpg
 

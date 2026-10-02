@@ -10,7 +10,10 @@ people:
 - Christophe Dervieux
 - JJ Allaire
 - Hadley Wickham
+- Kevin Ushey
 - Carson Sievert
+- Jonathan McPherson
+- Gary Ritchie
 title: bookdown
 topics:
 - Data Wrangling
@@ -31,7 +34,10 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   - JJ Allaire
   - Hadley Wickham
+  - Kevin Ushey
   - Carson Sievert
+  - Jonathan McPherson
+  - Gary Ritchie
   readme_image: man/figures/logo.png
   repo: rstudio/bookdown
   stars: 4050

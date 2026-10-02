@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - Eric Nantz
 - rstudio
@@ -62,12 +62,12 @@ external:  # updated automatically, do not edit
   duration: 1258
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243545+00:00'
+  last_updated: '2026-09-18T13:58:18.222374+00:00'
   like_count: 238
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - Eric Nantz
   - rstudio
@@ -114,7 +114,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ylLLVo2VL50/maxresdefault.jpg
   title: Eric Nantz | Effective use of Shiny modules in application development | RStudio (2019)
   url: https://www.youtube.com/watch?v=ylLLVo2VL50
-  view_count: 13040
+  view_count: 13127
 ---
 image: thumbnail.jpg
 

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3535
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:31.335348+00:00'
+  last_updated: '2026-09-18T13:58:12.905980+00:00'
   like_count: 13
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/8HvPbLxvs_Q/maxresdefault.jpg
   title: Brian Fannin @ CAS | Copy & paste is operationally dangerous | Data Science Hangout
   url: https://www.youtube.com/watch?v=8HvPbLxvs_Q
-  view_count: 1076
+  view_count: 1079
 ---
 image: thumbnail.jpg
 

@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - Python
 - Tutorial
@@ -33,11 +33,11 @@ external:  # updated automatically, do not edit
   duration: 2447
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.764675+00:00'
-  like_count: 33
+  last_updated: '2026-09-18T13:58:21.637917+00:00'
+  like_count: 32
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags:
   - Python
   - Tutorial
@@ -56,7 +56,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/rGgqP0othsM/maxresdefault.jpg
   title: J.J. Allaire - Publishing Jupyter Notebooks with Quarto | PyData Seattle 2023
   url: https://www.youtube.com/watch?v=rGgqP0othsM
-  view_count: 1506
+  view_count: 1520
 ---
 image: thumbnail.jpg
 

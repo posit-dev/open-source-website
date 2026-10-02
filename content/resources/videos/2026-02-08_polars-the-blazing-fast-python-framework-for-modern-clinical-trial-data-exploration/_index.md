@@ -25,7 +25,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 - plotnine
 tags: []
 title: 'Polars: The Blazing Fast Python Framework for Modern Clinical Trial Data Exploration'
@@ -56,20 +56,20 @@ external:  # updated automatically, do not edit
   duration: 6654
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.830377+00:00'
+  last_updated: '2026-09-18T13:58:19.320839+00:00'
   like_count: 3
   people:
   - Jeroen Janssens
   - Michael Chow
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Great Tables
+  - great-tables
   - plotnine
   tags: []
   thumbnail: https://i.ytimg.com/vi/SQzJ9I4-uqc/maxresdefault.jpg
   title: 'Polars: The Blazing Fast Python Framework for Modern Clinical Trial Data Exploration'
   url: https://www.youtube.com/watch?v=SQzJ9I4-uqc
-  view_count: 206
+  view_count: 287
 ---
 image: thumbnail.jpg
 

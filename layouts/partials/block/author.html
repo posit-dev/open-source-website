@@ -1,9 +1,13 @@
 {{- $pg := . -}}
 {{- $link := true -}}
+{{- $author_class := "" -}}
 {{- if reflect.IsMap . -}}
   {{- $pg = .page -}}
   {{- if isset . "link" -}}
     {{- $link = .link -}}
+  {{- end -}}
+  {{- if isset . "author_class" -}}
+    {{- $author_class = .author_class -}}
   {{- end -}}
 {{- end -}}
 {{- $people := $pg.GetTerms "people" -}}
@@ -18,10 +22,10 @@
   {{- end -}}
 {{- end -}}
 
-<div class="flex flex-row gap-x-5 items-center">
+<div class="mt-2 flex flex-row gap-x-4 items-center">
 
   {{- if $hasImages -}}
-  <div class="flex flex-row">
+  <div class="flex flex-row flex-shrink-0">
     {{- range $index, $person := $people -}}
       {{- with .Resources.Get .Params.image -}}
         <img 
@@ -36,18 +40,18 @@
   {{- end -}}
 
   {{- if $link -}}
-    <div class="flex flex-wrap gap-x-1 items-center">
+    <div class="flex flex-wrap gap-x-1 items-center {{ $author_class }}">
       {{- range $index, $person := $people -}}
         {{- if $index -}}
-          <span class="text-slate-500 -ml-1">,</span>
+          <span class="text-gray-400 -ml-1">,</span>
         {{- end -}}
-          <a href="{{ $person.RelPermalink }}" class="hover:underline font-medium text-slate-900">
+          <a href="{{ $person.RelPermalink }}" class="hover:underline">
             {{- $person.LinkTitle -}}
           </a>
       {{- end -}}
     </div>
   {{- else -}}
-    <div class="truncate text-slate-900">
+    <div class="line-clamp-2 {{ $author_class }}">
       {{- range $index, $person := $people -}}
         {{- if $index -}},&nbsp;{{- end -}}
         {{- $person.LinkTitle -}}

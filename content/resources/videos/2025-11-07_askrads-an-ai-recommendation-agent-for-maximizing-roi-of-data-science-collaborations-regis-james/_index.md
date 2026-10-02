@@ -15,8 +15,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 tags:
 - posit::conf(2025)
 - rstats
@@ -44,15 +44,15 @@ external:  # updated automatically, do not edit
 
 
     Blockers to crucial data-driven decisions can often be a challenge. To address this, we established RADS, the Regeneron Analysts and Data Scientists, as a Community of Practice for exchanging strategies on eliminating these obstacles. RADS has grown to nearly 500 members, creating a new challenge: avoiding redundancy and helping non-RADS colleagues find the right experts. To solve this, we developed AskRADS, an AI agent on Posit Connect that provides recommendations based on discussions, experts, and relevant resources. It uses R, Shiny for Python, FastAPI, LangGraph, Neo4j GraphRAG, and MySQL. This talk will cover its architecture, AI search solutions, and optimization techniques. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
-  duration: 1154
+  duration: 1155
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.255426+00:00'
-  like_count: 1
+  last_updated: '2026-09-18T13:58:08.448280+00:00'
+  like_count: 2
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   tags:
   - posit::conf(2025)
   - rstats
@@ -63,7 +63,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/v3CCoq7j9Tk/maxresdefault.jpg
   title: 'AskRADS: An AI Recommendation Agent for Maximizing ROI of Data Science Collaborations (Regis James)'
   url: https://www.youtube.com/watch?v=v3CCoq7j9Tk
-  view_count: 69
+  view_count: 89
 ---
 image: thumbnail.jpg
 

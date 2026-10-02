@@ -14,7 +14,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Turbocharge your Shiny Apps with remote submission to HPC
 
@@ -32,19 +32,19 @@ external:  # updated automatically, do not edit
     * Workshop site: https://pub.current.posit.team/public/shiny-remote-hpc/
 
     * Workshop GitHub repository: https://github.com/sol-eng/shiny-hpc-offload'
-  duration: 7392
+  duration: 7393
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.830385+00:00'
+  last_updated: '2026-09-18T13:58:19.320851+00:00'
   like_count: 5
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/9SrM4ZEt3bc/maxresdefault.jpg
   title: Turbocharge your Shiny Apps with remote submission to HPC
   url: https://www.youtube.com/watch?v=9SrM4ZEt3bc
-  view_count: 125
+  view_count: 148
 ---
 image: thumbnail.jpg
 

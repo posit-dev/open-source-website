@@ -18,7 +18,8 @@ people:
 - Max Kuhn
 resource_type: video
 resources: []
-software: []
+software:
+- tabpfn
 tags: []
 title: 'Max Kuhn - TabPFN: A Deep-Learning Solution for Tabular Data'
 
@@ -43,16 +44,18 @@ external:  # updated automatically, do not edit
   duration: 1334
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.830470+00:00'
-  like_count: 19
+  last_updated: '2026-09-18T13:58:19.320980+00:00'
+  like_count: 27
   people:
   - Max Kuhn
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
+  software:
+  - tabpfn
   tags: []
   thumbnail: https://i.ytimg.com/vi/vJVB5N8-21c/maxresdefault.jpg
   title: 'Max Kuhn - TabPFN: A Deep-Learning Solution for Tabular Data'
   url: https://www.youtube.com/watch?v=vJVB5N8-21c
-  view_count: 663
+  view_count: 1165
 ---
 image: thumbnail.jpg
 

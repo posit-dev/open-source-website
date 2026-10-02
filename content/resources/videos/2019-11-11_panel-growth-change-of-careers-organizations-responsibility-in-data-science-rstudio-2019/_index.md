@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   duration: 3481
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243462+00:00'
+  last_updated: '2026-09-18T13:58:18.222179+00:00'
   like_count: 8
   playlist: ''
   software:
@@ -110,7 +110,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/002QkEFRDGA/maxresdefault.jpg
   title: Panel | Growth & change of careers, organizations & responsibility in data science | RStudio (2019)
   url: https://www.youtube.com/watch?v=002QkEFRDGA
-  view_count: 895
+  view_count: 905
 ---
 image: thumbnail.jpg
 

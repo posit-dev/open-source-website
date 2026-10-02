@@ -5,7 +5,7 @@ github: r-lib/archive
 image: logo.svg
 languages:
 - C++
-latest_release: '2026-04-11T20:54:37+00:00'
+latest_release: '2026-07-29T20:43:24+00:00'
 people:
 - Gábor Csárdi
 - Jeroen Ooms
@@ -24,15 +24,15 @@ external:  # updated automatically, do not edit
   forks: 18
   languages:
   - C++
-  last_updated: '2026-05-20T08:05:55.765752+00:00'
-  latest_release: '2026-04-11T20:54:37+00:00'
+  last_updated: '2026-09-18T14:27:39.792741+00:00'
+  latest_release: '2026-07-29T20:43:24+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Jeroen Ooms
   - Jeroen Janssens
   repo: r-lib/archive
-  stars: 147
+  stars: 148
   title: archive
   website: https://archive.r-lib.org/
 ---

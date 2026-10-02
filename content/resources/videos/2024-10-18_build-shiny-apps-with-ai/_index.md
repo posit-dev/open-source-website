@@ -21,7 +21,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 - shinyapps
 tags:
 - rstudio
@@ -94,11 +94,11 @@ external:  # updated automatically, do not edit
   duration: 60
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.246410+00:00'
-  like_count: 143
+  last_updated: '2026-09-18T13:58:10.631100+00:00'
+  like_count: 147
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   - shinyapps
   tags:
   - rstudio
@@ -148,7 +148,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4nvoca0js8E/maxresdefault.jpg
   title: Build Shiny apps with AI ✨
   url: https://www.youtube.com/watch?v=4nvoca0js8E
-  view_count: 2961
+  view_count: 3135
 ---
 image: thumbnail.jpg
 

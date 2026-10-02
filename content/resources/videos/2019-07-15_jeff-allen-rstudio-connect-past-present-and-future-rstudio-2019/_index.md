@@ -8,7 +8,7 @@ resources: []
 software:
 - plumber
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - Jeff Allen
 - rstudio
@@ -66,13 +66,13 @@ external:  # updated automatically, do not edit
   duration: 1337
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532245+00:00'
-  like_count: 31
+  last_updated: '2026-09-18T13:58:18.646045+00:00'
+  like_count: 30
   playlist: ''
   software:
   - plumber
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - Jeff Allen
   - rstudio
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KnG3h41K5Xc/maxresdefault.jpg
   title: Jeff Allen | RStudio Connect Past, present, and future | RStudio (2019)
   url: https://www.youtube.com/watch?v=KnG3h41K5Xc
-  view_count: 1769
+  view_count: 1770
 ---
 image: thumbnail.jpg
 

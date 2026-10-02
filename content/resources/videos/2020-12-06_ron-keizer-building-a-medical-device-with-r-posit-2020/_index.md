@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1193
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.962079+00:00'
+  last_updated: '2026-09-18T13:58:17.861041+00:00'
   like_count: 40
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6q2U48zFOR0/hqdefault.jpg
   title: Ron Keizer | Building a Medical Device with R | Posit (2020)
   url: https://www.youtube.com/watch?v=6q2U48zFOR0
-  view_count: 929
+  view_count: 936
 ---
 image: thumbnail.jpg
 

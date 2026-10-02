@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1262
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.962546+00:00'
+  last_updated: '2026-09-18T13:58:18.221829+00:00'
   like_count: 84
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/JThd3YYQXGg/hqdefault.jpg
   title: Sharla Gelfand | Don’t repeat yourself, talk to yourself! Reporting with R | RStudio (2020)
   url: https://www.youtube.com/watch?v=JThd3YYQXGg
-  view_count: 2125
+  view_count: 2132
 ---
 image: thumbnail.jpg
 

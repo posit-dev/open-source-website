@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - Joe Cheng
 - rstudio
@@ -66,14 +66,14 @@ external:  # updated automatically, do not edit
   duration: 3027
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.532216+00:00'
-  like_count: 494
+  last_updated: '2026-09-18T13:58:18.646028+00:00'
+  like_count: 493
   people:
   - Joe Cheng
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - Joe Cheng
   - rstudio
@@ -123,7 +123,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Wy3TY0gOmJw/maxresdefault.jpg
   title: 'Joe Cheng | Shiny in production: Principles, practices, and tools | RStudio (2019)'
   url: https://www.youtube.com/watch?v=Wy3TY0gOmJw
-  view_count: 28286
+  view_count: 28354
 ---
 image: thumbnail.jpg
 

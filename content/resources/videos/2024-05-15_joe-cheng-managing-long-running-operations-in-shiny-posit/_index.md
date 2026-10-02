@@ -52,7 +52,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -154,13 +154,13 @@ external:  # updated automatically, do not edit
   duration: 1977
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.567121+00:00'
-  like_count: 143
+  last_updated: '2026-09-18T13:58:10.945350+00:00'
+  like_count: 144
   people:
   - Joe Cheng
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -209,7 +209,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GhX0PcEm3CY/maxresdefault.jpg
   title: Joe Cheng | Managing long-running operations in Shiny | Posit
   url: https://www.youtube.com/watch?v=GhX0PcEm3CY
-  view_count: 4718
+  view_count: 4837
 ---
 image: thumbnail.jpg
 

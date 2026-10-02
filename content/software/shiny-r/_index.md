@@ -1,8 +1,8 @@
 ---
-color: '#4388C6'
+color: '#0088da'
 description: Easy interactive web applications with R
 github: rstudio/shiny
-image: shiny-r.png
+image: shiny.svg
 languages:
 - R
 latest_release: '2026-02-24T20:58:46+00:00'
@@ -12,6 +12,7 @@ people:
 - Barret Schloerke
 - Carson Sievert
 - JJ Allaire
+- Jonathan McPherson
 - Garrick Aden-Buie
 - Hadley Wickham
 - Gábor Csárdi
@@ -19,6 +20,7 @@ people:
 - Mine Çetinkaya-Rundel
 - Nick Strayer
 - Charlie Gao
+- Kevin Ushey
 - Sara Altman
 - Rich Iannone
 - Teun Van den Brand
@@ -50,6 +52,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Carson Sievert
   - JJ Allaire
+  - Jonathan McPherson
   - Garrick Aden-Buie
   - Hadley Wickham
   - Gábor Csárdi
@@ -57,6 +60,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   - Nick Strayer
   - Charlie Gao
+  - Kevin Ushey
   - Sara Altman
   - Rich Iannone
   - Teun Van den Brand
@@ -69,6 +73,30 @@ external:  # updated automatically, do not edit
   website: https://shiny.posit.co/
 ---
 
+<div class="callout callout-note bg-blue-100 rounded-r-md" role="note" aria-label="Note">
+<div class="callout-body text-base">
+
+Scale and share your Shiny apps securely with <a class="font-semibold" href="https://posit.co/products/enterprise/connect">Posit Connect</a>
+
+</div>
+</div>
+
 Shiny is an R package for building interactive web applications without requiring HTML, CSS, or JavaScript knowledge. It uses a reactive programming model that automatically updates outputs when users change inputs, making it straightforward to transform existing R code into live web apps.
 
 The package provides prebuilt widgets like plots, tables, and controls with an attractive Bootstrap-based design. It includes performance tools like async programming and caching, supports modular code organization to reduce complexity, and integrates seamlessly with R Markdown for embedding apps in documents. A rich ecosystem of extension packages adds capabilities like custom widgets, input validation, and unit testing.
+
+## Try it
+
+{{< webr packages="shiny" >}}
+library(shiny)
+
+ui <- fluidPage(
+  titlePanel("Hello, Shiny!"),
+  sidebarLayout(
+    sidebarPanel(sliderInput("n", "Number of points:", 10, 100, 50)),
+    mainPanel(plotOutput("plot"))
+  )
+)
+
+cat(as.character(ui))
+{{< /webr >}}

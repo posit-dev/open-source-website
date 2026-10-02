@@ -166,8 +166,6 @@ What has been missing from this landscape is a library that is fast, fully 1.2-c
 
 The [`py-yaml12`](https://github.com/posit-dev/py-yaml12) library is a YAML 1.2 parser and formatter for Python, implemented in Rust for speed and correctness. It is built on the `saphyr` crate[^14] (a Rust YAML library) and exposes a minimal, focused API: `parse_yaml()` and `read_yaml()` for loading, `format_yaml()` and `write_yaml()` for serialization.
 
-<!-- There is also a sibling [`yaml12`](https://github.com/posit-dev/r-yaml12) package for R, built on the same Rust core. -->
-
 ### Simple
 
 The design philosophy is straightforward. For the vast majority of use cases, you work with plain Python builtins end to end: `dict`, `list`, `int`, `float`, `str`, and `None`. There is no special document class, no custom node types in the common path. Because YAML 1.2 is a superset of JSON, all valid JSON parses identically. The library achieves 100% compliance with the yaml-test-suite,[^15] the community-maintained corpus of edge cases and conformance tests.
@@ -281,6 +279,8 @@ The YAML-versus-TOML debate, as typically conducted, is an argument against a fo
 This is, in the end, a familiar pattern in computing. Every generation of configuration format is a correction of the previous generation's excesses: INI was too flat, so XML added hierarchy; XML was too verbose, so JSON stripped it bare; JSON was too austere for humans, so YAML and TOML each offered different compromises. The interesting question is never "which format is best in the abstract" but "which format, with which tooling, serves this particular task well". For complex, nested, human-authored configuration, YAML 1.2 with a modern parser is a strong answer. Perhaps in another decade, something new will arise to correct YAML's remaining rough edges, and the cycle will continue. That is how formats improve.
 
 In the meantime, you can `pip install py-yaml12` and see what a modern, spec-compliant YAML experience looks like in Python.
+
+And if you work in R, the [`r-yaml12`](https://github.com/posit-dev/r-yaml12) package brings the same benefits: full YAML 1.2 compliance, Rust-backed performance, and safe defaults. Everything good about the Python package is in the R version as well.
 
 [^1]: Wikipedia, "[INI file](https://en.wikipedia.org/wiki/INI_file)".
 

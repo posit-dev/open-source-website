@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 974
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.286851+00:00'
-  like_count: 7
+  last_updated: '2026-09-18T13:58:11.685798+00:00'
+  like_count: 6
   playlist: ''
   tags:
   - rstudio
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/OvKPTPqflKQ/maxresdefault.jpg
   title: 'From Novices to Experts: Building a Community of Engaged R Users - posit::conf(2023)'
   url: https://www.youtube.com/watch?v=OvKPTPqflKQ
-  view_count: 337
+  view_count: 338
 ---
 image: thumbnail.jpg
 

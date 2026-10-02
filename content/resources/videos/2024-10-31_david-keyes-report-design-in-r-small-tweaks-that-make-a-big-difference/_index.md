@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 'David Keyes - Report Design in R: Small Tweaks that Make a Big Difference'
 
@@ -37,16 +37,16 @@ external:  # updated automatically, do not edit
   duration: 1200
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.914265+00:00'
-  like_count: 165
+  last_updated: '2026-09-18T13:58:10.192950+00:00'
+  like_count: 169
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/bp1SMhLoz_M/maxresdefault.jpg
   title: 'David Keyes - Report Design in R: Small Tweaks that Make a Big Difference'
   url: https://www.youtube.com/watch?v=bp1SMhLoz_M
-  view_count: 4421
+  view_count: 4677
 ---
 image: thumbnail.jpg
 

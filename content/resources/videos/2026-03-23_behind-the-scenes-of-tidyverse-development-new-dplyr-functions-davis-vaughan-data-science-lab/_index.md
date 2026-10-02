@@ -12,7 +12,7 @@ software:
 - dbplyr
 - dplyr
 - duckplyr
-- Positron
+- positron
 - tidyr
 - tidyups
 - tidyverse
@@ -29,8 +29,8 @@ external:  # updated automatically, do not edit
   duration: 3342
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.044260+00:00'
-  like_count: 63
+  last_updated: '2026-09-18T13:58:06.854307+00:00'
+  like_count: 67
   people:
   - Davis Vaughan
   - Hadley Wickham
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   - dbplyr
   - dplyr
   - duckplyr
-  - Positron
+  - positron
   - tidyr
   - tidyups
   - tidyverse
@@ -49,6 +49,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/BodTJqx05Ws/maxresdefault.jpg
   title: 'Behind the scenes of tidyverse development: new dplyr functions | Davis Vaughan | Data Science Lab'
   url: https://www.youtube.com/watch?v=BodTJqx05Ws
-  view_count: 2530
+  view_count: 2771
 ---
 

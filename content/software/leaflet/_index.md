@@ -14,6 +14,7 @@ people:
 - Winston Chang
 - Carson Sievert
 - Christophe Dervieux
+- Gary Ritchie
 - Karan Gathani
 title: leaflet
 topics:
@@ -39,6 +40,7 @@ external:  # updated automatically, do not edit
   - Winston Chang
   - Carson Sievert
   - Christophe Dervieux
+  - Gary Ritchie
   - Karan Gathani
   repo: rstudio/leaflet
   stars: 839

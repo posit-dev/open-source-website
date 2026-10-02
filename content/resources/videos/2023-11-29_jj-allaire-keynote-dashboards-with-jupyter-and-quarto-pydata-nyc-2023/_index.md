@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags:
 - Python
@@ -35,13 +35,13 @@ external:  # updated automatically, do not edit
   duration: 2415
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.764466+00:00'
-  like_count: 61
+  last_updated: '2026-09-18T13:58:21.309218+00:00'
+  like_count: 62
   people:
   - JJ Allaire
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags:
   - Python
@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/3HCAScFqr10/maxresdefault.jpg
   title: 'J.J. Allaire - Keynote: Dashboards with Jupyter and Quarto | PyData NYC 2023'
   url: https://www.youtube.com/watch?v=3HCAScFqr10
-  view_count: 2219
+  view_count: 2233
 ---
 image: thumbnail.jpg
 

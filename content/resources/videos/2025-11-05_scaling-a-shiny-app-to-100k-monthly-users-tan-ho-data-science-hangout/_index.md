@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Scaling a shiny app to 100K monthly users | Tan Ho | Data Science Hangout
 
@@ -19,16 +19,16 @@ external:  # updated automatically, do not edit
   duration: 3250
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.604722+00:00'
-  like_count: 13
+  last_updated: '2026-09-18T13:58:08.448406+00:00'
+  like_count: 15
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/Eqlh3iE1BiU/maxresdefault.jpg
   title: Scaling a shiny app to 100K monthly users | Tan Ho | Data Science Hangout
   url: https://www.youtube.com/watch?v=Eqlh3iE1BiU
-  view_count: 364
+  view_count: 415
 ---
 image: thumbnail.jpg
 

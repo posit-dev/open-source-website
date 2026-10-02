@@ -1,0 +1,1456 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.680
+Hey there, welcome to the Posit Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.680 --> 00:00:22.040
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.040 --> 00:00:27.280
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.280 --> 00:00:30.719
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.719 --> 00:00:36.320
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.320 --> 00:00:40.599
+Can't wait to see you there. And speaking of people who make impact, I would really
+
+00:00:40.599 --> 00:00:46.180
+like to introduce you to our featured leader today, Vytas Vaiciulis. He is Lead Data Scientist
+
+00:00:46.180 --> 00:00:51.000
+at CSO, which is Central Statistics Office Ireland. Vytas, thank you so much for joining
+
+00:00:51.000 --> 00:00:55.139
+us today. And I would love it if you could introduce yourself, tell us a little bit about
+
+00:00:55.139 --> 00:00:59.900
+what you do at CSO, and then also something that you like to do for fun.
+
+00:00:59.900 --> 00:01:06.099
+Thank you very much. So very happy to be here. So I'm originally from Lithuania, but I've
+
+00:01:06.099 --> 00:01:11.760
+been living in Ireland for more than 30 years. And what do you do at CSO? So I lead a section
+
+00:01:11.760 --> 00:01:17.779
+on analytics and AI innovations, which I'm very proud to say, when I began working in
+
+00:01:17.779 --> 00:01:24.220
+that section, it was team of one, and now it's team of 13. So I build it from the ground
+
+00:01:24.260 --> 00:01:31.260
+up, and the entire idea of the section was to modernize our statistics, which I have
+
+00:01:31.260 --> 00:01:36.620
+done, and I'm very proud of it. And that's where my interaction with POSIT comes in,
+
+00:01:36.620 --> 00:01:42.260
+and our studio. So that's kind of like my professional work. For fun, I have access
+
+00:01:42.260 --> 00:01:47.379
+to the Atlantic Ocean. So I go for swims in the Atlantic Oceans, and in my spare time,
+
+00:01:47.379 --> 00:01:55.300
+I lift heavy objects, and I put them back down. That keeps me sane, because it frees
+
+00:01:55.300 --> 00:02:00.599
+up the mind from my day-to-day thinking, because in data science, there's a lot of thinking,
+
+00:02:00.599 --> 00:02:03.699
+so sometimes I want to forget a little bit, and de-stress.
+
+00:02:03.699 --> 00:02:08.940
+I don't think you're the only lifter here. I used to lift too. You're in good company.
+
+00:02:08.940 --> 00:02:15.740
+All right, everybody, get your questions for Vitus ready. Isabella is going to share Slido
+
+00:02:15.740 --> 00:02:20.899
+links again in the chat so that you know where to ask questions. But I would like to
+
+00:02:20.899 --> 00:02:27.059
+ask you, Vitus, how did you get to Ireland? How did you get to CSL?
+
+00:02:27.059 --> 00:02:32.860
+So I suppose, initially, it was my family. So when I was 13 years old, my parents moved
+
+00:02:32.860 --> 00:02:38.059
+to Ireland. And when I was in Lithuania one of the days, they rang me up and said, son,
+
+00:02:38.059 --> 00:02:43.979
+we're moving to Ireland. I was, OK. So that's how I initially moved to Ireland. Long story
+
+00:02:44.300 --> 00:02:50.779
+short, after that, I did all of my education in Ireland. I went to school, which was a very
+
+00:02:50.779 --> 00:02:57.339
+new experience. And then after I finished up my university, I was applying for jobs.
+
+00:02:57.339 --> 00:03:03.339
+And by pure chance, I ended up in CSO, Central Statistics Office. And I've been always working
+
+00:03:03.339 --> 00:03:09.179
+here, because I always wanted to work with data. It's funny how life works out, because one of the
+
+00:03:09.179 --> 00:03:14.059
+days I was in Lithuania, I was walking around, and I saw Lithuanian Central Statistics Office.
+
+00:03:14.059 --> 00:03:19.979
+I was like, I would like to work for this. And chances happen, I end up working for Ireland's
+
+00:03:19.979 --> 00:03:23.979
+statistical office. But I keep close relationships with Lithuanian statistical office as well.
+
+00:03:25.100 --> 00:03:30.139
+Amazing. Is statistics, straight statistics, your background? How did you get here education-wise?
+
+00:03:31.580 --> 00:03:38.139
+So actually, my education is quite different. My dream was to get into programming. So that's
+
+00:03:38.139 --> 00:03:44.059
+what I actually studied in the university. I studied computers, and my background was programming.
+
+00:03:44.059 --> 00:03:49.100
+And then when I did master's, I did it in data analytics and machine learning. That's how I
+
+00:03:49.100 --> 00:03:55.419
+developed real passion for AI, as I told people way, way back then when AI wasn't popular.
+
+00:03:55.979 --> 00:04:02.380
+So now when actually AI became popular, I must say, I got on that train right away,
+
+00:04:02.380 --> 00:04:08.619
+because that was my passion all along. It just was sleeping there. The moment wasn't quite right.
+
+00:04:09.660 --> 00:04:12.860
+So yeah, so that's how I began working with data. That's my background.
+
+00:04:13.419 --> 00:04:16.459
+And I suppose that's the area where I always wanted to be in.
+
+00:04:17.660 --> 00:04:23.899
+Well, I'm glad that you got there. Could you tell us a little bit about what CSO does, and give an
+
+00:04:23.899 --> 00:04:30.859
+example of the types of data that you work with and see on a daily or weekly basis, just so that
+
+00:04:30.859 --> 00:04:34.859
+we can have a good sort of understanding? Because we come from all different backgrounds, whether
+
+00:04:34.859 --> 00:04:40.779
+that's biology, working with assay data, or maybe we come from financial institutions where everything
+
+00:04:40.779 --> 00:04:45.739
+is transactional. But I think that you see a very specific type of data, or a few types of data.
+
+00:04:46.859 --> 00:04:52.779
+Yeah, to be honest, I think it's a very good question, because sometimes, you know, we forget
+
+00:04:52.779 --> 00:04:58.859
+an area that we're in. So just to give a little bit of context, CSO is a central statistics office
+
+00:04:58.859 --> 00:05:05.100
+for the Irish government. And every government in the world, they have the same, they have a central
+
+00:05:05.100 --> 00:05:11.500
+statistics office. So what we do, we do public releases on various things, like how many people
+
+00:05:11.500 --> 00:05:16.779
+live in the country, which you might know is census. And then we do lots of important economic
+
+00:05:16.779 --> 00:05:24.220
+things like CPI, GDP, things along those lines. And if you combine all the releases together,
+
+00:05:24.220 --> 00:05:31.660
+CSO as an organization does around 300 releases a year. So on various, various different
+
+00:05:32.540 --> 00:05:39.980
+things. And the way we get our data for those releases historically has been surveys. So
+
+00:05:39.980 --> 00:05:46.299
+somebody knocks on your door and asks you to complete a survey. That's historically how we
+
+00:05:46.299 --> 00:05:53.179
+get the data in. Now, in the recent times, all statistical offices around the world,
+
+00:05:53.179 --> 00:05:59.980
+they see that people no longer like to answer doors. It's a different area that we live in. So
+
+00:05:59.980 --> 00:06:05.660
+statistics are changing a little bit, but I guess alternative is there. So statistical offices are
+
+00:06:05.660 --> 00:06:12.380
+now moving more to administrative data sources, basically data that does not come directly from
+
+00:06:12.380 --> 00:06:17.579
+the people. Surveys are still there. There's still like a lot of man in the service that you
+
+00:06:17.579 --> 00:06:22.859
+need to do, but unfortunately the responses, response rates are dropping down. People are
+
+00:06:22.859 --> 00:06:28.940
+just not responding. So as I say, other data sources are coming in. So we'll work closely
+
+00:06:28.940 --> 00:06:34.940
+with other governmental departments, with LinkedIn, with all the governmental agencies,
+
+00:06:34.940 --> 00:06:41.899
+and we get data from them, which is transactional level data. In some cases, it's no longer
+
+00:06:41.980 --> 00:06:49.660
+a survey when you have complete data sets. So in some cases, it's very good. And we also see
+
+00:06:49.660 --> 00:06:57.339
+some very interesting sections set up. I even see in my organizations, geospatial data.
+
+00:06:57.339 --> 00:07:03.899
+That's very new. So like in some cases, we have some mandatory statistics that we need to produce for
+
+00:07:03.899 --> 00:07:11.100
+sustainable development goals. And one of them is CO2 emissions. Now, question is, how do you
+
+00:07:11.100 --> 00:07:16.299
+measure CO2 emissions? You can't ask a person, what's your CO2 emission in your backyard?
+
+00:07:16.940 --> 00:07:22.859
+Satellite. Satellite sees that. So I suppose satellite will be one of the most advanced data
+
+00:07:22.859 --> 00:07:29.019
+sources, but just to say the variety of data sources that are coming in moved way beyond
+
+00:07:29.019 --> 00:07:34.540
+just knocking on the doors and asking for people's information to all these diverse
+
+00:07:34.540 --> 00:07:37.820
+data sources, other governmental departments, satellite,
+
+00:07:37.820 --> 00:07:42.700
+data, and many others. So I suppose like that is how we work now.
+
+00:07:44.540 --> 00:07:50.940
+Okay. Well, we have a fantastic question to get us started in Slido, and it's from Anna.
+
+00:07:51.899 --> 00:07:56.299
+I think that we can have Anna unmute and ask her question live. Let's see if that's possible.
+
+00:07:56.299 --> 00:08:06.940
+Maybe. Sorry, I'm so dazed. And I hope I did it right.
+
+00:08:09.739 --> 00:08:11.579
+Yeah, if you don't mind, I'll stay off the video.
+
+00:08:14.140 --> 00:08:19.179
+My question is, what programming languages do you use in your work? And was that the same
+
+00:08:19.179 --> 00:08:23.820
+language that you study in school? Very good question. That comes very
+
+00:08:23.820 --> 00:08:30.140
+close at heart. No, when I was in school, I developed a passion for Java. I really liked
+
+00:08:30.140 --> 00:08:36.299
+that. But to be honest, it set me up for life because I really liked the object-oriented
+
+00:08:36.299 --> 00:08:43.099
+way of thinking. But then in practice, once I moved into office, Java wasn't really used.
+
+00:08:43.099 --> 00:08:50.219
+Now, in our office, our legacy language for around 40 years, I would say, was SAS.
+
+00:08:50.539 --> 00:08:58.460
+But we're moving away from that. And that's actually the whole purpose of my job is to move
+
+00:08:58.460 --> 00:09:06.940
+to a more modern language, which is R. But because of that, that's why I built up my section,
+
+00:09:06.940 --> 00:09:13.099
+because we can't just say, oh, we want to do R now, which we are doing it. But infrastructure
+
+00:09:13.099 --> 00:09:18.700
+and software needs to be built up. And that's what I did in my office. I built up the capability.
+
+00:09:18.780 --> 00:09:25.659
+So now we're fully into R. And if history is to teach us anything, the previous language was
+
+00:09:26.700 --> 00:09:32.940
+SAS, now R. So we're here to stay. And just to say the reason, because I also did the research
+
+00:09:34.140 --> 00:09:37.979
+when I actually began working in my organization, I was tasked with the task,
+
+00:09:38.780 --> 00:09:44.539
+go and research what is the best alternative language. And I did the research. And it's
+
+00:09:44.539 --> 00:09:50.460
+actually on my source of research that we decided to go to R. Let's just say the only two contesters
+
+00:09:50.460 --> 00:09:57.419
+that really came into play was R and Python. But R won it overall. But I see Python bidding in the
+
+00:09:57.419 --> 00:10:03.260
+mix. But I say, let's just deal with one language, please. When you deal with official statistics,
+
+00:10:04.619 --> 00:10:10.619
+the methodological consistency is very, very important. Just say, as an example, we have
+
+00:10:10.619 --> 00:10:16.219
+vital statistics that's actually a time series that goes back over 100 years. So you really
+
+00:10:16.219 --> 00:10:21.580
+don't want to mess with the methodology. You want to keep it the same. So that's a long answer to
+
+00:10:22.380 --> 00:10:28.460
+a short question. It was a great answer. And I see Chloe in the chat saying that Java was
+
+00:10:28.460 --> 00:10:32.460
+also the first programming language that she learned and hasn't used it in a decade.
+
+00:10:33.820 --> 00:10:38.299
+I feel like someone else said Java as well. We had someone else who was coming from a much more
+
+00:10:38.299 --> 00:10:44.940
+computer science background recently, which I always really love as the sort of transition,
+
+00:10:44.940 --> 00:10:50.140
+because I come from the statistics side, where we're all trying to get into the computer science
+
+00:10:50.140 --> 00:10:54.380
+side perpetually and feeling like we're missing a computer science side all the time.
+
+00:10:55.659 --> 00:11:00.380
+It's nice that there's a mix of us out there. Thank you, Anna, for asking your question.
+
+00:11:01.419 --> 00:11:07.500
+We had an anonymous question come up here in the Slido that says, did you have any pushback
+
+00:11:07.500 --> 00:11:13.260
+on implementing or growing the statistical analysis team? And how did you convince people
+
+00:11:13.260 --> 00:11:17.580
+on the value of statistics? Which might not have been too hard in the literal office of
+
+00:11:18.380 --> 00:11:21.500
+central office of statistics, but have you ever had
+
+00:11:21.500 --> 00:11:25.900
+any pushback on implementing or growing anything in your area?
+
+00:11:28.059 --> 00:11:33.820
+Yeah, the pushback was not major, but I guess from the very beginning,
+
+00:11:34.380 --> 00:11:43.500
+the idea was floating there in the ether. I just sort of took the torch and I showed the value.
+
+00:11:43.500 --> 00:11:48.780
+Okay, so if we move here, what is the value? And I think that's what I've been doing ever
+
+00:11:48.780 --> 00:11:53.179
+since, showing the value. So show them the value, why we're doing this.
+
+00:11:53.820 --> 00:12:01.820
+And once we began moving to it, the reason why my team grew so much,
+
+00:12:02.859 --> 00:12:07.260
+because the management board, the senior management, well, they've seen the value.
+
+00:12:08.780 --> 00:12:15.099
+I never asked for more people. I was always given more people say, you're doing a good thing. We
+
+00:12:15.099 --> 00:12:19.659
+want you basically to scale. Some people say, oh, can you duplicate yourselves? Like, nope.
+
+00:12:20.539 --> 00:12:27.659
+So therefore we'll give you more people. So it was fairly organic, but there was a little pushback
+
+00:12:27.659 --> 00:12:34.059
+every now and then, but my strategy was always show the value, show why we're doing this.
+
+00:12:35.260 --> 00:12:43.099
+And therefore the pushback was minimal because that's the general trend within the statistical
+
+00:12:43.099 --> 00:12:47.260
+offices. And just to say statistical offices worldwide, they're very, very closely connected
+
+00:12:47.260 --> 00:12:52.700
+groups. So I work with many, many other statistical offices across the globe. That's Canada
+
+00:12:52.700 --> 00:12:59.900
+and Australia and from everywhere. We're very close group work together very, very much. So yeah.
+
+00:13:01.659 --> 00:13:04.700
+Wonderful. Thank you, anonymous asker. That was a great question.
+
+00:13:06.059 --> 00:13:10.539
+I wanted to remind everybody that I put a poll in the Slido. That's right. Slido does polls too.
+
+00:13:11.099 --> 00:13:15.260
+I think that from your view, you have a slider at the top that'll show you both the Q and A
+
+00:13:15.260 --> 00:13:22.700
+and polls. And it seems that I'm not alone because my poll was, do you answer your door readily or
+
+00:13:22.700 --> 00:13:29.580
+do you not want anybody to knock on it? And 61, more than 60% of us have said, please don't knock
+
+00:13:29.580 --> 00:13:34.780
+on my door. I don't want to answer it. So I feel a lot better that I'm not alone. But also I wanted
+
+00:13:34.780 --> 00:13:40.460
+to shout out lots and lots of people talking about their first languages in college or wherever they
+
+00:13:40.460 --> 00:13:45.260
+learned them. And it's been so interesting just seeing them filter through. Like Sundae said,
+
+00:13:45.260 --> 00:13:50.940
+I think it was PHP first and then JavaScript. Several other people saying it was Java that
+
+00:13:50.940 --> 00:13:55.659
+was their intro language. Some people saying it was HTML from building their custom MySpace.
+
+00:13:56.460 --> 00:14:04.140
+Yep. That was probably me too, building GeoCities and AngelFire in the 90s. And then a few like
+
+00:14:04.140 --> 00:14:09.739
+C++. I love C as a first language. I feel like that would have been really nice. I learned C
+
+00:14:09.739 --> 00:14:16.380
+after R and SAS syntax. And I really, really loved it. All right. Keep telling us your very,
+
+00:14:16.380 --> 00:14:21.739
+very first languages. I would love to know. I've only seen, I think, one which is SAS. Bill says
+
+00:14:21.739 --> 00:14:31.739
+SAS first. Russ has got Perl first. Oh, my goodness. Okay. Let's hop on to the next question
+
+00:14:31.739 --> 00:14:37.179
+here. I wanted to shout out Adam's question. Adam Taggart, if you would like to unmute and ask yours.
+
+00:14:37.179 --> 00:14:41.820
+And Vitas, feel free to answer this in whatever way you would like to.
+
+00:14:43.179 --> 00:14:47.739
+Do we have Adam? There he is. Hey, Adam. Hi, everybody. Hi, Vitas. Thanks for being here
+
+00:14:47.739 --> 00:14:52.940
+today. You mentioned very early on that it sounded like the most recent thing you've added to your
+
+00:14:52.940 --> 00:14:59.739
+workflow is GIS or geospatial data. And that's something which I'm I wasn't originally trained
+
+00:14:59.739 --> 00:15:04.539
+in, but I've just spent the last three years doing. And now I'm wondering how you're incorporating
+
+00:15:04.539 --> 00:15:09.659
+that into the statistics and the data that you were already processing. Can you give us a case
+
+00:15:09.659 --> 00:15:15.020
+example of how you might put in? You mentioned CO2. So I'm assuming you're getting that from
+
+00:15:15.020 --> 00:15:21.340
+something like the ERA5 system or Copernicus and creaking it in and then applying it to
+
+00:15:22.140 --> 00:15:31.580
+areas of Ireland. Yeah. So I suppose like just to make this claim, I manage analytics platform
+
+00:15:31.580 --> 00:15:39.099
+that does statistics. Now, the GIS has become so big that it's entire different section that
+
+00:15:39.099 --> 00:15:44.780
+got set up within the methodology division. And actually, the person that is leading that
+
+00:15:44.780 --> 00:15:52.780
+section sits right across from me, and he just left. So I guess what I'm
+
+00:15:53.340 --> 00:16:00.380
+saying that the area is so big, I don't deal with it, but I would need to deal with it indirectly
+
+00:16:00.380 --> 00:16:05.979
+because I manage the statistical platform. And you know what happens, people say, you know,
+
+00:16:06.780 --> 00:16:14.059
+it's very compute intensive, so I need to process it. But because it's becoming such impactful thing,
+
+00:16:14.059 --> 00:16:22.140
+entire new section is now made. And a lot of it is too complicated for me. I understand
+
+00:16:22.140 --> 00:16:27.340
+at the high level, but the things that you mentioned, my colleague, Justin, he also mentioned
+
+00:16:27.340 --> 00:16:34.539
+that Copernicus, they get the data, they try to measure it. And there's a lot of international work
+
+00:16:34.539 --> 00:16:41.020
+that I know that my colleague here does here on the satellite data, because there's a lot of things
+
+00:16:41.020 --> 00:16:47.340
+that you can measure from the satellite data that you cannot do otherwise. Now, my interactions,
+
+00:16:47.340 --> 00:16:53.580
+what it would be when he wants to process large amounts of data, and if he crashes his session,
+
+00:16:53.580 --> 00:16:59.820
+because the data moves into terabytes, that's where I come in. But it's getting bigger. It's
+
+00:16:59.820 --> 00:17:05.900
+definitely getting bigger and bigger. And there's a lot of EU projects and UN projects just dedicated
+
+00:17:05.900 --> 00:17:13.819
+to satellite GIS data. All right, wonderful. Thank you, Adam, for asking that amazing question.
+
+00:17:14.459 --> 00:17:19.020
+And I realized what I should have put in as the poll, so I just fixed it, but I actually put it
+
+00:17:19.020 --> 00:17:23.819
+in as a word cloud. Can everybody see it in the Slido? It's asking you what your first coding
+
+00:17:23.819 --> 00:17:28.540
+language was that you learned. It's only going to let you enter one word, I think, like one word.
+
+00:17:29.579 --> 00:17:35.819
+So yes, I see HTML in there, all in one word, or C++ together, or Sass, or yeah. Okay, I'm wondering
+
+00:17:35.819 --> 00:17:41.819
+what will grow here. So far, Java and C++ are winning. And Basic, which I'm really surprised
+
+00:17:41.819 --> 00:17:48.459
+about, there's Python. Okay, we can keep track of that in a minute. And I will put a little screenshot
+
+00:17:48.459 --> 00:17:52.380
+of the final one when we get in there. Let's head back over to Slido, grab some more questions.
+
+00:17:53.819 --> 00:17:59.819
+I see one from Nelson. It's got an asterisk, so I'll read it for you, Nelson. He says,
+
+00:17:59.819 --> 00:18:04.699
+for the administrative data, how easy is it for other organizations to provide
+
+00:18:04.699 --> 00:18:09.339
+the needed information? Do you share across organizations pretty well?
+
+00:18:10.699 --> 00:18:17.900
+So yeah, that's where I suppose it gets a little bit complicated. I suppose we
+
+00:18:17.979 --> 00:18:23.979
+are a governmental agency and work with other governmental agencies. It takes a lot of time
+
+00:18:23.979 --> 00:18:30.619
+and relation building to acquire the data if it's within the other governmental agencies,
+
+00:18:30.619 --> 00:18:36.140
+like it's easier. But then, like, no, we'd be trying to acquire data. I think, like, it was
+
+00:18:37.420 --> 00:18:44.140
+a scanner receipt data is another very rich data source. But I know there's multiple
+
+00:18:45.099 --> 00:18:52.780
+data acquisition initiatives. And we always try to make it very clear, look, we are statistical
+
+00:18:52.780 --> 00:18:58.060
+and that will produce statistics for the greater good. We'll make it all public for the greater
+
+00:18:58.060 --> 00:19:05.900
+good. But again, I don't deal within that area, but I know that it takes a fairly long time to
+
+00:19:05.900 --> 00:19:11.500
+acquire. But once you acquire it, you can produce mountain of statistics. And that's where, as I
+
+00:19:11.660 --> 00:19:19.500
+said, different data sources come in. So there's a scanner data from the shops, which is very rich
+
+00:19:19.500 --> 00:19:27.420
+data source for things like CPI and GDP and purchase of goods. But it does take a fair
+
+00:19:27.420 --> 00:19:33.420
+amount of time. I know that some things go on for a long time. Let's put it that way.
+
+00:19:34.219 --> 00:19:42.619
+Let's put it that way. Okay. Well, we have a word cloud that is growing. Zach, I fixed your name in
+
+00:19:42.619 --> 00:19:50.300
+the word cloud. And BASIC is winning so far, followed by Java, C++ and Python. Go stick your
+
+00:19:50.300 --> 00:19:56.859
+vote in there by typing a single word. And we can see how many more people we can get. We have 44
+
+00:19:57.500 --> 00:20:02.780
+respondents so far. And in the meantime, I will go back over to Slido. And let's grab another
+
+00:20:02.780 --> 00:20:10.459
+question. Okay. Oh, I love this one. It's a two-parter. I'm going to ask the first part of it.
+
+00:20:10.459 --> 00:20:17.099
+And it was, how did you find communicating the uncertainty and interpretation of statistical
+
+00:20:17.099 --> 00:20:27.979
+analysis? The hardest part for me. Uncertainty. I suppose uncertainty. So
+
+00:20:28.859 --> 00:20:38.699
+everything in statistics is an estimate within the confidence interval. Now, as far as I know,
+
+00:20:38.699 --> 00:20:47.900
+we don't use confidence intervals. We just use plain statistics. So if it's a survey,
+
+00:20:47.900 --> 00:20:59.260
+a survey is always a degree of some uncertainty. Now, I'm really going out of my depth here. But
+
+00:21:00.780 --> 00:21:09.099
+I wouldn't want to say anymore. But yeah, we report on statistics in most of the
+
+00:21:09.819 --> 00:21:18.140
+cases. I like to look at the high level. It's a counting exercise. The actual statistics
+
+00:21:19.020 --> 00:21:26.939
+is actually pretty straightforward. What I would say, 90% of the job is actually preparing the
+
+00:21:26.939 --> 00:21:33.979
+data and getting into the right format. So it's actually getting rid of that uncertainty. Is
+
+00:21:34.699 --> 00:21:41.339
+this data good? Is this not data? Cleaning it, formatting it. Once your data is clean,
+
+00:21:41.979 --> 00:21:47.739
+and you know these records are valid, these are not valid, this is from wrong time period,
+
+00:21:47.739 --> 00:21:53.020
+the actual statistics is pretty straightforward. You just say, this is bigger than this one.
+
+00:21:53.020 --> 00:21:58.859
+That's essentially what it is. So to go back to your question, I think I answered it now. So
+
+00:21:58.859 --> 00:22:04.699
+how do you get rid of uncertainty? We spend a lot of time on data preparation. That's where
+
+00:22:04.699 --> 00:22:10.939
+all the time lies. And that's where methodology comes in, formatting, classifications, where we
+
+00:22:11.979 --> 00:22:16.859
+do most famous classification would be NUTS regions, which is geographical regions. And
+
+00:22:16.859 --> 00:22:21.660
+we publish statistics on your geographical regions. And then we have, I think the newest
+
+00:22:21.660 --> 00:22:27.500
+one is the NACE 2.2, which is a classification, let's say, on different jobs. So if we see,
+
+00:22:27.660 --> 00:22:32.939
+there's a rise in IT or rise in this section and this section. So there's multiple tools.
+
+00:22:32.939 --> 00:22:40.699
+And I'll mention another one, there's a GSBPM model, which covers the entire statistical model,
+
+00:22:40.699 --> 00:22:46.060
+from how do you acquire the data to all the way how you disseminate the data. And there's a lot
+
+00:22:46.060 --> 00:22:51.660
+of work being done there. So that's a very long-winded answer to, I'd say, a fairly heavy
+
+00:22:51.660 --> 00:22:57.420
+question. It's a heavy question. It is. It's a really good one though. The other part was,
+
+00:22:57.500 --> 00:23:00.939
+do you work with other governmental departments in Ireland?
+
+00:23:02.060 --> 00:23:08.459
+Oh, yes, closely. I say they work with me because of my work that I've done with the POSIT platform.
+
+00:23:08.459 --> 00:23:14.540
+And I think we are one of the first, a lot of them reach out to me and ask questions.
+
+00:23:14.540 --> 00:23:20.140
+How did you do it? From high level to low level questions, I had more than a half a dozen
+
+00:23:20.140 --> 00:23:25.819
+departments reach out to me because I've done something good and good news spread fast. So
+
+00:23:25.819 --> 00:23:30.780
+they do reach out and they do ask, and like, what are you using and how are you using it?
+
+00:23:30.780 --> 00:23:37.739
+So yes, I do work a lot with them. Sometimes too much, you know, you get to the point where
+
+00:23:37.739 --> 00:23:42.699
+you become failure-prone success when too many people reach out. But I do like engaging with
+
+00:23:42.699 --> 00:23:50.459
+people. So I almost never, never say no. I mean, same. I end up in the same boat,
+
+00:23:50.459 --> 00:23:56.939
+fetus. Okay. We had an anonymous one that bubbled to the top. And if you are not aware,
+
+00:23:56.939 --> 00:24:00.699
+you can upvote questions in Slido. So if you see one that you like, you can press the little
+
+00:24:00.699 --> 00:24:06.459
+upvote button. This one has bubbled to the top and it says, which books, newsletters, and the like,
+
+00:24:06.459 --> 00:24:10.219
+do you follow? Is there anything that you particularly like? I'll throw podcasts in
+
+00:24:10.219 --> 00:24:19.420
+there as well, if you happen to like podcasts. So I am biggest, I suppose, user of LinkedIn.
+
+00:24:19.420 --> 00:24:24.300
+I try to stay away as much as possible from, I suppose, like all the other social media,
+
+00:24:24.300 --> 00:24:30.939
+but I'm trying to use LinkedIn now. On LinkedIn, I wouldn't be able to name you what I follow.
+
+00:24:30.939 --> 00:24:36.859
+Well, I follow, you know, UN pages, all the international organizations, what they do,
+
+00:24:36.859 --> 00:24:43.500
+because it's interesting to see where statistics is moving. So I follow, okay. I follow a lot of
+
+00:24:43.500 --> 00:24:49.339
+other statistical agencies around the world. So I follow them. And then I follow the United
+
+00:24:49.339 --> 00:24:56.060
+Nations, the European commission. Then within Europe, we have organization. This actually
+
+00:24:56.060 --> 00:25:02.140
+would be very interesting. It's called Eurostat. So every country within Europe needs to submit
+
+00:25:02.140 --> 00:25:07.979
+their statistical releases to Eurostat. And Eurostat serves as an entity that takes all
+
+00:25:07.979 --> 00:25:14.619
+statistics from all the countries, and then they're standardized and they easily compare.
+
+00:25:14.619 --> 00:25:23.020
+And then you could get to position that you can say GDP of Ireland is this versus compared GDP
+
+00:25:23.020 --> 00:25:27.979
+of France, because all statistics come into Eurostat and they're compared, they're standardized.
+
+00:25:27.979 --> 00:25:36.300
+So that's the power. So I follow them and many, many followers on LinkedIn. I really try to use
+
+00:25:36.300 --> 00:25:42.060
+LinkedIn because it's a good place to see where things are going and also for events. So yeah.
+
+00:25:43.020 --> 00:25:46.300
+Also for events, that's how you find out about the hangout probably.
+
+00:25:46.939 --> 00:25:47.420
+Yeah.
+
+00:25:47.420 --> 00:25:55.900
+Okay. So we have an in of 64 so far on Slido for our word cloud, and I posted a screenshot of it
+
+00:25:55.900 --> 00:26:05.339
+and still basic is the winner. We have a small problem in that Slido seems to not think that our
+
+00:26:06.140 --> 00:26:10.780
+alone, if you just type in R is anything, it's like you've typed in a single letter. What do
+
+00:26:10.780 --> 00:26:16.380
+you want from me? Therefore we have a little bit of stratification in the R universe here. I see
+
+00:26:16.380 --> 00:26:25.260
+tidy verse R, I see base R, I see R stats. So R may look a little less represented than it is.
+
+00:26:25.260 --> 00:26:30.219
+There's also R programming. And that was my first one as well. I don't think I can vote
+
+00:26:30.219 --> 00:26:34.459
+because I am the host, but you can consider me in the R category as well.
+
+00:26:35.339 --> 00:26:40.780
+But still basic is very, very up there. I think if we combined all of the R ones together,
+
+00:26:42.780 --> 00:26:48.619
+it would be winning because it's not showing R as a single letter as an answer,
+
+00:26:48.619 --> 00:26:52.619
+but I can see on the background that 15 people entered R. And for some reason,
+
+00:26:52.619 --> 00:26:58.859
+it won't let it show in the word cloud. So R is winning from behind the scenes.
+
+00:26:58.859 --> 00:27:03.900
+All right. Let's hop back over to Slido and grab another question. And I saw one from Nelson again
+
+00:27:03.900 --> 00:27:09.579
+that I love. Let's ask this one for him because he's got an asterisk in it. It says, do you use
+
+00:27:09.579 --> 00:27:17.900
+non-traditional data such as sentiment analysis of social media? Short answer, no, I have not
+
+00:27:17.900 --> 00:27:23.260
+heard being used. I have used it in college. I remember it was one of the first projects, but
+
+00:27:24.459 --> 00:27:31.339
+no, we do not use that. I had my own personal ideas. It's an interesting source, but no,
+
+00:27:32.060 --> 00:27:40.219
+we do not use that. We are governmental agency, extremely regulated. The statistics that we do,
+
+00:27:40.219 --> 00:27:46.699
+as I said, we do 300 releases. We do have a thing called frontier statistics. So when
+
+00:27:47.339 --> 00:27:53.819
+somebody says, oh, this would be a cool statistic to do, which is not part of our, let's say,
+
+00:27:53.819 --> 00:28:01.660
+official established 300 statistics, it does become a frontier statistics on X, Y, Z. And
+
+00:28:01.660 --> 00:28:08.780
+sometimes it becomes a new statistic that we continue on. But no, never sentiment analysis
+
+00:28:08.780 --> 00:28:16.780
+because I could see how that would get, that actually goes back like, how do you clean your
+
+00:28:16.780 --> 00:28:23.339
+data? How a lot of ambiguity could be built in there. And like, no, we try to focus as much as
+
+00:28:23.339 --> 00:28:31.020
+we can on pure facts, statistics, like things that are extremely quantitative, 5.2 million people
+
+00:28:31.020 --> 00:28:36.859
+in the country. So we try to do high, high accuracy as much as we can.
+
+00:28:39.020 --> 00:28:43.819
+Totally, totally understandable, but a fantastic and interesting question.
+
+00:28:43.819 --> 00:28:47.260
+You said that you had some thoughts of your own on possibilities there.
+
+00:28:47.260 --> 00:28:52.140
+Do you have any opinions that are non-official that you'd like to share?
+
+00:28:52.140 --> 00:28:59.260
+No, no. I guess just even from my college days, I knew that you could
+
+00:29:01.180 --> 00:29:08.699
+subscribe to and get the entire data stream of some of these platforms. That's, you know,
+
+00:29:08.699 --> 00:29:17.020
+I love data. I love big data. My close thing at heart is speed. How do you process big data fast?
+
+00:29:17.020 --> 00:29:26.699
+So I know that some social media is extremely rich data source. So there's a lot of data there,
+
+00:29:26.699 --> 00:29:33.260
+but to analyze it is very complex. So I suppose like, you know, it's just that it's a very
+
+00:29:34.060 --> 00:29:39.739
+large volume data source, but that's just my own, my own opinions.
+
+00:29:40.619 --> 00:29:45.979
+Wonderful. Well, I saw an anonymous question pop up here that is in the same vein. It's kind of a
+
+00:29:45.979 --> 00:29:52.780
+follow-up and it's, do you analyze any free text data? And if so, how do you deal with the poor
+
+00:29:52.780 --> 00:29:55.420
+data quality that is always present in free text data?
+
+00:29:57.420 --> 00:30:08.300
+Yes, yes, we do. I think this is for job classifications. I can't exactly tell how it
+
+00:30:09.180 --> 00:30:15.900
+comes in, but I do know it's actually one of the big use cases of machine learning and one of the
+
+00:30:15.900 --> 00:30:26.140
+new cases of Gen2BI as well. When a job description is given, like what is your job and you describe
+
+00:30:26.140 --> 00:30:32.780
+it, like I work with computers and servers and yada, yada, yada. What we need to do,
+
+00:30:32.780 --> 00:30:40.380
+we need to take that free text and classify it against NACE 2.2, which is a big classification
+
+00:30:40.380 --> 00:30:47.260
+that has a bucket for each type of job. So if I work with computers and servers and so on,
+
+00:30:47.260 --> 00:30:52.380
+in which bucket would I go? So the only way that we can classify, say, okay, based on this
+
+00:30:52.380 --> 00:30:59.500
+description, you go in this bucket. So yes, we do free text. And I guess for this particular use
+
+00:30:59.500 --> 00:31:04.140
+case, that's where actually, as I said, vanilla machine learning, that's where it actually comes
+
+00:31:04.140 --> 00:31:10.459
+in very handy. Although a lot of people now experimenting and finding that Gen2BI is actually
+
+00:31:11.022 --> 00:31:19.102
+is actually pretty good at classifying which bucket which classification you go in based on the
+
+00:31:19.102 --> 00:31:25.582
+description and there's a lot of use cases and even actually I think some people build thing called
+
+00:31:24.795 --> 00:31:26.795
+Open Source Adoption in Government, Positron, Shiny, shinyapps
+
+00:31:54.795 --> 00:31:56.795
+Open Source Adoption in Government, Positron, Shiny, shinyapps
+
+00:32:24.795 --> 00:32:29.195
+Open Source Adoption in Government, Positron, Shiny, shinyapps
+
+00:32:29.195 --> 00:32:31.195
+Open Source Adoption in Government, Positron, Shiny, shinyapps
+
+00:32:31.195 --> 00:32:35.195
+Open Source Adoption in Government, Positron, Shiny, shinyapps
+
+00:32:37.195 --> 00:32:41.674
+Very slow adoption and acquisition of Open Source tools
+
+00:32:41.674 --> 00:32:46.074
+Took 9 months for my agency to approve Positron for use
+
+00:32:46.074 --> 00:32:49.915
+Do you encounter the same issue? If so, how have you addressed that inertia?
+
+00:32:49.915 --> 00:33:01.595
+Again, it's kind of easy for us that Open Source is being adopted globally
+
+00:33:01.595 --> 00:33:10.875
+and I work a lot with UN and I go to Geneva and I know that there is a project at such a high level
+
+00:33:10.875 --> 00:33:16.475
+that really embraces Open Source at a very, very high level
+
+00:33:16.475 --> 00:33:23.674
+so that helps, so I suppose like you know it pushes from top down and even within my organization
+
+00:33:24.555 --> 00:33:28.555
+Open Source is now being embraced, when I began it wasn't the case
+
+00:33:31.195 --> 00:33:37.595
+because at the beginning when if you want to do Open Source the main question is the support
+
+00:33:37.595 --> 00:33:45.194
+we cannot deal with something that doesn't have official support, so again I showed the value
+
+00:33:45.194 --> 00:33:54.634
+and that's where I suppose again Posit came in, it's like we want to use Open Source but we want support
+
+00:33:55.194 --> 00:33:59.994
+because we cannot support it ourselves but then we want flexibility of the Open Source
+
+00:33:59.994 --> 00:34:08.395
+and that's where like all the R libraries come in and I guess also even at a lower level
+
+00:34:08.634 --> 00:34:17.035
+we'd be using Linux, Linux is Open Source but we want support so therefore we'd use Red Hat
+
+00:34:17.035 --> 00:34:20.474
+because they have support that's the underlying operating system that runs everything so
+
+00:34:21.755 --> 00:34:29.274
+to answer your question I show the value again, I show the value that's what we're getting but what
+
+00:34:29.274 --> 00:34:34.955
+helps is the buy-in from top level which is I suppose like at the UN at the lower level
+
+00:34:34.955 --> 00:34:41.994
+these Open Sources being really embraced so it helps a lot although it wasn't there but now it's there
+
+00:34:43.595 --> 00:34:47.515
+It takes time, I think a lot of people in the chat are saying that they have faced
+
+00:34:47.515 --> 00:34:54.074
+similar things and this answered a question that Paul had entered as well but there was a little
+
+00:34:54.074 --> 00:34:59.834
+bit of a follow-on in Paul's question which was how many SaaS users did you have to convert
+
+00:34:59.834 --> 00:35:03.434
+maybe a little bit about the scale of that sort of conversion
+
+00:35:04.474 --> 00:35:11.274
+A lot, a lot, a lot so we are now we are currently organization of 1200 people
+
+00:35:12.395 --> 00:35:20.714
+and I would say people that you know program and use previously SaaS day-to-day would be
+
+00:35:21.515 --> 00:35:25.434
+and this is my estimate it'd be like 500
+
+00:35:27.354 --> 00:35:33.755
+so a lot and I am I'm estimating I say like in total have 1200 people I guess senior management
+
+00:35:33.755 --> 00:35:39.194
+you know they don't don't really use us but day-to-day people that would be running programs
+
+00:35:39.194 --> 00:35:46.395
+and then we'd have around 200 statisticians now statisticians this is where your like heavy
+
+00:35:46.395 --> 00:35:53.435
+programming lies in these are the people that write all the statistical releases they come up
+
+00:35:53.435 --> 00:35:58.795
+with methodology but after that like nowadays like you know other people as well supporting
+
+00:35:58.795 --> 00:36:07.435
+admin functions they would also be so in total I would say around 500 now I have pushed more than
+
+00:36:07.435 --> 00:36:16.715
+half already into the new platform and just to supplement that like for us it's a it's a five
+
+00:36:16.715 --> 00:36:22.715
+year project and we are more than halfway through this is the biggest project for our organization
+
+00:36:22.715 --> 00:36:31.194
+which I happen to lead and the biggest amount of elephant in the room is the code the infrastructure
+
+00:36:31.275 --> 00:36:37.914
+is built expertise is built we're very big fans of git and our studio integrates with
+
+00:36:37.914 --> 00:36:46.074
+git very well so that's one of the big deals again I show the value and great tool speaks
+
+00:36:46.074 --> 00:36:51.594
+for itself you know it doesn't need advertisement like I would say like you know the git was very
+
+00:36:51.594 --> 00:36:58.154
+very good because once people put their code on git in internal git now need to mention
+
+00:36:58.235 --> 00:37:05.194
+internal version control yeah but I'm still a bit to go in practice you know all the
+
+00:37:06.795 --> 00:37:12.154
+all the suppose people that love R you know they jump on it right on board like you know and once
+
+00:37:12.154 --> 00:37:18.474
+you move closer to the end you know it's people you know there's been on holiday for a bit and
+
+00:37:18.474 --> 00:37:24.634
+then come back it's like oh now I need to move to R so yeah I think that's a great sort of
+
+00:37:24.634 --> 00:37:31.194
+explanation of the scope not only just with the number of 500 and about half of them converted
+
+00:37:31.194 --> 00:37:36.474
+but also the span of time that that is you're not saying this is all going to change in six
+
+00:37:36.474 --> 00:37:41.275
+months or a year you're saying this is a five-year endeavor and it takes a long time for things to
+
+00:37:41.275 --> 00:37:47.995
+change and many people myself included have experienced this in organizations that are
+
+00:37:47.995 --> 00:37:56.474
+tens of thousands of people big and have so many people to change that it that could be a 25 year
+
+00:37:56.474 --> 00:38:01.914
+process of changing things and not not even just a five-year process so I appreciate that question
+
+00:38:01.914 --> 00:38:07.435
+thank you thank you it's a great one um I saw a question from Arsenis in here we have about 14
+
+00:38:07.435 --> 00:38:12.955
+minutes left just as a time check for everybody Arsenis if you could ask your question live
+
+00:38:12.955 --> 00:38:17.675
+that'd be great I'm gonna stick it in the top here and put it in the chat sure cool thanks Libby
+
+00:38:18.235 --> 00:38:25.275
+thanks for joining us today and chatting with us so my question comes from the perspective of a
+
+00:38:25.275 --> 00:38:31.835
+former statistical agency employee in the U.S. and having seen what like Stats Canada does a
+
+00:38:31.835 --> 00:38:37.995
+big difference is that the U.S. has multiple statistical agencies that put out stats,
+
+00:38:37.995 --> 00:38:44.235
+Stats Canada has one singular agency that pretty much does everything and I'm wondering two things
+
+00:38:44.235 --> 00:38:51.835
+first which version like what do you all do in Ireland with with that respect and with that do
+
+00:38:51.835 --> 00:38:59.435
+you find that doing it that way is better or worse in terms of maintaining methodology and code bases
+
+00:38:59.435 --> 00:39:07.194
+and things of that nature so I'm aware I suppose of the U.S. situation because I spoke with few
+
+00:39:07.275 --> 00:39:14.795
+people from the U.S. and I had no idea the U.S. office was set up the way it is which is as I said
+
+00:39:14.795 --> 00:39:20.874
+like a lot of different organizations no we don't have that problem we have a central office in
+
+00:39:20.874 --> 00:39:27.194
+Ireland that does all of the statistics there's no there's no other offices and from my working
+
+00:39:27.194 --> 00:39:35.594
+working with other countries exactly the same so there's a term called NSI national statistics
+
+00:39:35.594 --> 00:39:46.154
+office of NSO sorry and like every country in Europe has it and it's always one as far as I know
+
+00:39:46.154 --> 00:39:52.154
+I was actually speaking with a director from India I think like you know it might be a bit
+
+00:39:52.154 --> 00:39:58.635
+different there like they're a huge country but I think it even there it's organized and
+
+00:39:58.635 --> 00:40:04.235
+was actually interesting to see their their service size alone is half a million so the
+
+00:40:04.795 --> 00:40:10.875
+it was very nice to see it no like it's all the same and actually going beyond that I mentioned
+
+00:40:10.875 --> 00:40:19.834
+we even go like a level higher each country has its own statistical office but then in Luxembourg
+
+00:40:20.474 --> 00:40:26.394
+Eurostat well they compile everything and then we can we basically have European statistics to
+
+00:40:26.394 --> 00:40:34.154
+measure the entire statistics of Europe so I can't imagine what place we'd be in like you know
+
+00:40:34.154 --> 00:40:39.354
+let's say if we had multiple statistical offices that's just not a thing from my experience in
+
+00:40:39.354 --> 00:40:46.714
+Ireland or or in Europe so from methodology everything is standardized even at the format
+
+00:40:46.714 --> 00:40:54.954
+like so how we disseminate statistics even that is fairly standard across Europe so it eliminates
+
+00:40:54.954 --> 00:41:00.795
+a lot of potential problems that could be there but they have never arisen so it don't exist
+
+00:41:03.195 --> 00:41:09.675
+thank you so much Arsenis for asking a great question excuse me I see a question from
+
+00:41:09.675 --> 00:41:13.995
+Noor here that has risen to the top and it also covers a little bit of an anonymous
+
+00:41:13.995 --> 00:41:19.115
+question so Noor I would love it if you could ask that one live hello can everyone hear me
+
+00:41:19.834 --> 00:41:27.675
+yes yeah perfect so Vytautas as someone who is in government what are some of the unique
+
+00:41:27.675 --> 00:41:34.714
+challenges and security limitations involved with integrating AI and other AI like systems
+
+00:41:34.714 --> 00:41:43.914
+into your infrastructure it's extremely cautious and regulated so quality and safety is always
+
+00:41:44.875 --> 00:41:48.154
+first so I suppose like we are proceeding very cautiously so
+
+00:41:49.274 --> 00:41:56.795
+if I want to do AI it takes a long time to get it approved because there's so many assurances
+
+00:41:56.795 --> 00:42:03.354
+that you need to and rightfully so I want to implement AI and I need to jump through many
+
+00:42:03.354 --> 00:42:09.115
+hoops but to be honest I do it with pleasure because I well not with pleasure but I understand
+
+00:42:09.675 --> 00:42:14.635
+the reason behind like you know everybody needs to be assured and we have AI governance board
+
+00:42:14.635 --> 00:42:21.675
+within my organization that involves everybody from all over I suppose like aspects of the
+
+00:42:21.675 --> 00:42:28.235
+organization you know HR IT infrastructure everyone so everybody wants to do AI there's
+
+00:42:28.235 --> 00:42:34.795
+dozens and dozens of use cases but everybody's being very cautious and at the center of it being
+
+00:42:35.675 --> 00:42:42.954
+data so it's an ongoing thing but even at the high level at the senior management level like
+
+00:42:42.954 --> 00:42:47.914
+the language is changing like at like now everybody's aware I actually began I developed
+
+00:42:47.914 --> 00:42:55.514
+a use case for AI which was SASTAR in 2023 which created us immense value and back then they're
+
+00:42:55.514 --> 00:43:01.675
+like what are you using an LLM what's an LLM nobody knew back then it just came out but now
+
+00:43:02.315 --> 00:43:08.714
+now everybody knows it again it comes back to value can you show the value why this is useful
+
+00:43:08.714 --> 00:43:15.195
+if you can show the value useful well that helps and that's my been I suppose that's the way I
+
+00:43:15.195 --> 00:43:22.315
+operate I show the value explicitly clearly and that gets the buying I love it I wanted to ask
+
+00:43:22.315 --> 00:43:25.755
+too as just a quick follow-up because I can't remember if you mentioned this when we were
+
+00:43:25.755 --> 00:43:34.474
+talking about tools do you use Shiny oh yes yes we so I suppose just to give when I built
+
+00:43:35.594 --> 00:43:40.795
+it within my organization I called our platform so we use everything with the workbench the packet
+
+00:43:40.795 --> 00:43:51.514
+manager and the shine now the shiny has become too popular and that's why that's why my team
+
+00:43:51.514 --> 00:44:00.875
+have grown so much so we use it a lot we have a lot of internal apps and yeah we use it a lot a
+
+00:44:00.875 --> 00:44:08.235
+lot there's a lot of internally facing us because when people develop shiny apps there's a skill
+
+00:44:08.235 --> 00:44:12.474
+element because I always say like no before let's say if you're not using shiny what was the
+
+00:44:12.474 --> 00:44:19.115
+alternative you become a full dev developer you learn like html javascript css and nobody really
+
+00:44:19.115 --> 00:44:23.834
+knew that they were like no probably one or three people within the organization but now because we
+
+00:44:23.834 --> 00:44:31.594
+have the connect server anyone can spin up a shiny app and it's very easy and that's where we see like
+
+00:44:31.594 --> 00:44:40.075
+a lot of innovation and then when you combine that with ai well that's another level of capability
+
+00:44:41.354 --> 00:44:48.154
+and it's very easy and to be honest it makes it too easy too easy I actually have to say
+
+00:44:48.154 --> 00:44:56.075
+no to people in in some cases because we use it a lot and we have many many shiny apps it's too
+
+00:44:56.075 --> 00:45:01.914
+easy to make a shiny app it's like really great pr and terrible pr at the same time
+
+00:45:04.154 --> 00:45:09.834
+I am I am I'm the governing body so to say I say like you know who gets it yeah we
+
+00:45:10.714 --> 00:45:16.235
+we actually developed we developed a shiny dashboard to show how many shiny apps we have
+
+00:45:17.115 --> 00:45:25.034
+and I think I think it's very meta it approached three digits yeah it approached it approached
+
+00:45:25.034 --> 00:45:31.435
+three digits okay all right I believe you then it might be a little too easy to create a shiny app
+
+00:45:31.435 --> 00:45:35.995
+well we only have seven minutes left but there's a great question from Hubert in the Slido and I
+
+00:45:35.995 --> 00:45:40.555
+would love it if he could ask that live Hubert let's see if we can unmute you here I'll put
+
+00:45:40.555 --> 00:45:53.195
+your question in the chat as well okay so there he is hey I'm here hello um hello so do you have
+
+00:45:53.195 --> 00:45:57.435
+any issues and I think you've hinted at this and some of your answers today and some of the
+
+00:45:57.435 --> 00:46:05.914
+discussions already but if you do you have issues recoding of old data to new data standards I mean
+
+00:46:05.914 --> 00:46:12.474
+that's a big deal in my area in cancer research to where you know state-of-the-art 20 years ago
+
+00:46:12.474 --> 00:46:19.914
+data versus data that is now you know variables have changed categories have changed algorithms
+
+00:46:19.914 --> 00:46:27.354
+have changed and that's part one part two do I get to ask two parts I don't know we only have six
+
+00:46:27.354 --> 00:46:33.034
+minutes left okay I'll stop at that one do you would Hubert would you call that harmonization
+
+00:46:33.914 --> 00:46:40.235
+yeah you can call that harmonization it's more harmonization and just the re sometimes recoding
+
+00:46:40.235 --> 00:46:47.435
+of those fields you know because you know they may not directly compare so how do you put them
+
+00:46:47.435 --> 00:46:54.235
+together in analysis yeah so just to say that's why the project is five years that's why the project
+
+00:46:54.235 --> 00:47:00.635
+lasts five years because as I said before all of our statistical releases are underpinned by
+
+00:47:00.635 --> 00:47:05.834
+code now all of this code needs to be translated when we translate the code we need to maintain
+
+00:47:06.394 --> 00:47:13.834
+methodological consistency now we have multiple ways to address this I would say one of the
+
+00:47:14.714 --> 00:47:23.354
+most useful ones we do parallel runs so we have a SAS and we have our writing our code we use
+
+00:47:23.354 --> 00:47:29.755
+historical data run it at the same time produces the same results now every statistician is an
+
+00:47:29.755 --> 00:47:37.195
+expert within in their domain and it's their responsibility to do that but we also do code
+
+00:47:37.195 --> 00:47:44.235
+reviews on top of that where methodology quality it would come in but that is the reason why it's
+
+00:47:44.235 --> 00:47:51.115
+taking us five years now we made a very good progress and we'll keep on moving on now I would
+
+00:47:51.115 --> 00:47:58.555
+say in and like we we have found like you know some things were like you know I would have some
+
+00:47:58.635 --> 00:48:03.995
+statisticians to say oh these like inconsistencies like what's inconsistency goes like well if you go
+
+00:48:03.995 --> 00:48:10.075
+to fifth decimal place all around it like that and this is rounded like that like you know something
+
+00:48:10.075 --> 00:48:15.755
+along those lines were like you know it actually goes very very far I goes okay like you know I
+
+00:48:15.755 --> 00:48:22.795
+think we can we can deal with that you know so overall it's going very very well but that is
+
+00:48:22.795 --> 00:48:29.355
+why it's taking five years so it's a parallel runs uh code reviews by other than the statistician
+
+00:48:29.355 --> 00:48:35.754
+that owns the code because you just need somebody from outside to have a look have a sanity check
+
+00:48:35.754 --> 00:48:42.075
+so that's that's how we do it amazing we got it in there we have four minutes left still
+
+00:48:42.795 --> 00:48:48.874
+all right so vitas I would love to ask you the question we ask everybody which is do you have
+
+00:48:48.874 --> 00:48:54.154
+a piece of career advice that maybe you wish that you knew before you had gotten into the
+
+00:48:54.154 --> 00:49:04.315
+data field or that you think would be helpful for others yeah I would say like as I grew I changed
+
+00:49:05.435 --> 00:49:12.154
+I did not remain the same as I when I began my education and I say it might seem a bit
+
+00:49:12.154 --> 00:49:20.075
+stereotypical don't focus on the tool like you know I say like the thing that helps me the most
+
+00:49:20.075 --> 00:49:29.435
+it's kind of like logical reasoning breaking problem down so whatever the tool is it's kind
+
+00:49:29.435 --> 00:49:36.634
+of like you know learn how to solve problems do not shy away from a challenge because even within
+
+00:49:36.634 --> 00:49:41.914
+my organization when I began working like you know tools change and technology changes but within the
+
+00:49:41.914 --> 00:49:49.114
+area that I worked it's always like you know fixing a problem so logical thinking breaking down
+
+00:49:49.114 --> 00:49:54.394
+the problem I think like that's the thing that helps me the most and in addition to that
+
+00:49:56.715 --> 00:50:01.754
+the thing that I neglected the most when I was in college and I thought that it's not
+
+00:50:01.754 --> 00:50:06.315
+important at all it's like I don't even want to do this module which is what I'm doing now
+
+00:50:07.114 --> 00:50:15.514
+it's communication being able to talk to people and communicate well because you could be the
+
+00:50:15.514 --> 00:50:21.034
+smartest person in a room but like if you cannot communicate that if you cannot explain it
+
+00:50:22.154 --> 00:50:31.835
+like in a way you don't scale so also explaining complex matters to people that's serving me a lot
+
+00:50:31.914 --> 00:50:38.234
+so breaking down problems irrelevant of the tool these days AI is a big thing and then
+
+00:50:39.195 --> 00:50:45.195
+communication like a lot of it's like ah no communication come on man like you need to
+
+00:50:45.195 --> 00:50:49.994
+have heavy skills yes you need to have heavy skills and understanding of technology but technology
+
+00:50:50.634 --> 00:50:55.914
+changes if you look back at the history communication I don't think it's gonna go
+
+00:50:56.234 --> 00:51:02.475
+that time soon so and that helped me the most you know that's why I went to UN meetings and
+
+00:51:03.034 --> 00:51:08.234
+Eurostat and all these places because I said okay I think this this guy understands what he's
+
+00:51:08.795 --> 00:51:16.955
+talking about so let me speak. Wonderful all right well with our last minute here I will say
+
+00:51:16.955 --> 00:51:22.075
+thank you so much for everybody joining us Vitas thank you so much this was wonderful I hope you
+
+00:51:22.075 --> 00:51:28.315
+had a good time. I did. Wonderful okay we had a few questions that we didn't get to thank you for
+
+00:51:28.315 --> 00:51:33.835
+asking them anyway everybody your questions as always were so much fun and as a reminder
+
+00:51:34.715 --> 00:51:42.715
+we do not have a data science hangout next week we have two weeks off for summer break I am so so
+
+00:51:42.715 --> 00:51:47.994
+excited Isabella and I are both excited to get time off and Rachel will get some time off of
+
+00:51:47.994 --> 00:51:51.435
+course she's not here today if you see her on LinkedIn later somewhere on the internet say
+
+00:51:51.435 --> 00:51:59.274
+hello to her don't forget the link that we shared from Rachel earlier if you would like to
+
+00:51:59.274 --> 00:52:06.555
+share your story about the changes that you've been able to make using posit tools Rachel is
+
+00:52:06.555 --> 00:52:10.634
+our head of customer marketing so she's going to know a little bit more about this than I do but
+
+00:52:10.634 --> 00:52:15.435
+I'm going to put this impact awards link in in the chat again if you clicked it earlier and you
+
+00:52:15.435 --> 00:52:18.795
+weren't able to get in because you didn't have a google account Rachel let's let me know that
+
+00:52:18.795 --> 00:52:24.154
+she fixed it so that you can get in there were some settings that needed to be changed so take
+
+00:52:24.154 --> 00:52:31.034
+a look at that if you would like to be in the running for six free posit comp tickets in Houston
+
+00:52:31.034 --> 00:52:35.835
+which is really really cool I don't know if we've ever done that before if you would like to save the
+
+00:52:35.835 --> 00:52:39.514
+chat today in the top right corner of your chat there should be three dots that you can click
+
+00:52:39.514 --> 00:52:45.114
+unless you were in the browser in which case it will be much harder but we try to save the chat
+
+00:52:45.114 --> 00:52:49.435
+and share it on the discord server if you have not gotten on the discord server please please
+
+00:52:49.435 --> 00:52:54.315
+do that and join us it's so much fun and we love to see you we will see you next week at the data
+
+00:52:54.315 --> 00:53:00.874
+science lab however where on Tuesday we are going to be talking about data frames in Python why they
+
+00:53:00.874 --> 00:53:05.595
+are a challenge and how narwhals can help solve some of those problems so if you're interested
+
+00:53:05.595 --> 00:53:11.514
+in that come hang out with us you can go to pos.it slash dslab to register and Isabella just put that
+
+00:53:11.514 --> 00:53:15.514
+in the chat all right everybody say goodbye to vitas goodbye

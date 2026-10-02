@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rmarkdown
 - rstudio
 tags: []
@@ -39,18 +39,18 @@ external:  # updated automatically, do not edit
   duration: 986
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.023430+00:00'
-  like_count: 8
+  last_updated: '2026-09-18T13:58:14.087894+00:00'
+  like_count: 9
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rmarkdown
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/K2VYzU0XCmA/maxresdefault.jpg
   title: Lewis Kirvan | Sometimes you just need words | RStudio (2022)
   url: https://www.youtube.com/watch?v=K2VYzU0XCmA
-  view_count: 569
+  view_count: 571
 ---
 image: thumbnail.jpg
 

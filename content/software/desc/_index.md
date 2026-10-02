@@ -9,6 +9,7 @@ latest_release: '2023-12-10T11:07:16+00:00'
 people:
 - Gábor Csárdi
 - Jenny Bryan
+- Kevin Ushey
 - Hadley Wickham
 - Jeroen Ooms
 title: desc
@@ -23,20 +24,21 @@ exclude:
 external:  # updated automatically, do not edit
   description: Manipulate DESCRIPTION files
   first_commit: '2015-09-07T22:01:43+00:00'
-  forks: 36
+  forks: 39
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.167396+00:00'
+  last_updated: '2026-09-18T14:26:25.651762+00:00'
   latest_release: '2023-12-10T11:07:16+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Jenny Bryan
+  - Kevin Ushey
   - Hadley Wickham
   - Jeroen Janssens
   - Jeroen Ooms
   repo: r-lib/desc
-  stars: 125
+  stars: 126
   title: desc
   website: https://desc.r-lib.org/
 ---

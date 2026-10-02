@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 'Gabriel Morrison - Open Source Software in Action: Expanding the Spatial Equity Data Tool'
 
@@ -19,16 +19,16 @@ external:  # updated automatically, do not edit
   duration: 1191
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.651850+00:00'
+  last_updated: '2026-09-18T13:58:09.670455+00:00'
   like_count: 3
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/uVAlqB3QT_M/maxresdefault.jpg
   title: 'Gabriel Morrison - Open Source Software in Action: Expanding the Spatial Equity Data Tool'
   url: https://www.youtube.com/watch?v=uVAlqB3QT_M
-  view_count: 207
+  view_count: 211
 ---
 image: thumbnail.jpg
 

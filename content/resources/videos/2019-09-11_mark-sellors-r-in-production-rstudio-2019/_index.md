@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 1259
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243698+00:00'
+  last_updated: '2026-09-18T13:58:18.645895+00:00'
   like_count: 47
   playlist: ''
   software:
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Z47Xwroa6uE/maxresdefault.jpg
   title: Mark Sellors | R in production | RStudio (2019)
   url: https://www.youtube.com/watch?v=Z47Xwroa6uE
-  view_count: 2526
+  view_count: 2530
 ---
 image: thumbnail.jpg
 

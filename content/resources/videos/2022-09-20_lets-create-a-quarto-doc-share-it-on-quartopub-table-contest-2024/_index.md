@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - gt
-- Quarto
+- quarto
 tags:
 - rstudio
 - data science
@@ -65,14 +65,14 @@ external:  # updated automatically, do not edit
   duration: 143
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:32.607867+00:00'
+  last_updated: '2026-09-18T13:58:14.441497+00:00'
   like_count: 59
   people:
   - Rich Iannone
   playlist: ''
   software:
   - gt
-  - Quarto
+  - quarto
   tags:
   - rstudio
   - data science
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/l-AQ4yAQXy0/maxresdefault.jpg
   title: Let's Create a Quarto Doc & Share it on Quarto.Pub | Table Contest 2024
   url: https://www.youtube.com/watch?v=l-AQ4yAQXy0
-  view_count: 4042
+  view_count: 4094
 ---
 image: thumbnail.jpg
 

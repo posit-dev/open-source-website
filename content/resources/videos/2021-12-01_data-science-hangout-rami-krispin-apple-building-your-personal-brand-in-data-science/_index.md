@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3573
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:33.373975+00:00'
+  last_updated: '2026-09-18T13:58:16.153939+00:00'
   like_count: 16
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/qPMJiXg7XME/maxresdefault.jpg
   title: Data Science Hangout | Rami Krispin, Apple | Building your Personal Brand in Data Science
   url: https://www.youtube.com/watch?v=qPMJiXg7XME
-  view_count: 740
+  view_count: 741
 ---
 image: thumbnail.jpg
 

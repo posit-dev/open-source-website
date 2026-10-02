@@ -15,6 +15,7 @@ people:
 - Neal Richardson
 - Jeroen Ooms
 - Charlie Gao
+- Gary Ritchie
 - Nick Strayer
 - Hadley Wickham
 title: httpuv
@@ -40,6 +41,7 @@ external:  # updated automatically, do not edit
   - Neal Richardson
   - Jeroen Ooms
   - Charlie Gao
+  - Gary Ritchie
   - Nick Strayer
   - Hadley Wickham
   repo: rstudio/httpuv

@@ -18,6 +18,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- sparklyr
 - torch
 tags:
 - rstudio
@@ -89,11 +90,12 @@ external:  # updated automatically, do not edit
   duration: 1164
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.700943+00:00'
+  last_updated: '2026-09-18T13:58:17.359819+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
+  - sparklyr
   - torch
   tags:
   - rstudio
@@ -146,7 +148,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dsfEsJCiH-E/maxresdefault.jpg
   title: Javier Luraschi | Using pins with Python and JavaScript | RStudio
   url: https://www.youtube.com/watch?v=dsfEsJCiH-E
-  view_count: 700
+  view_count: 702
 ---
 image: thumbnail.jpg
 

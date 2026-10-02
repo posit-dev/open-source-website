@@ -5,7 +5,7 @@ github: tidymodels/censored
 image: logo.png
 languages:
 - R
-latest_release: '2026-04-03T15:34:55+00:00'
+latest_release: '2026-09-04T13:08:50+00:00'
 people:
 - Hannah Frick
 - Emil Hvitfeldt
@@ -26,11 +26,11 @@ exclude:
 external:  # updated automatically, do not edit
   description: Parsnip wrappers for survival models
   first_commit: '2020-07-31T04:58:54+00:00'
-  forks: 16
+  forks: 18
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.667780+00:00'
-  latest_release: '2026-04-03T15:34:55+00:00'
+  last_updated: '2026-09-18T14:23:45.875827+00:00'
+  latest_release: '2026-09-04T13:08:50+00:00'
   license: NOASSERTION
   people:
   - Hannah Frick
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   - Julia Silge
   readme_image: man/figures/logo.png
   repo: tidymodels/censored
-  stars: 123
+  stars: 125
   title: censored
   website: https://censored.tidymodels.org/
 ---

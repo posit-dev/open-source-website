@@ -32,8 +32,8 @@ external:  # updated automatically, do not edit
   duration: 61
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.006507+00:00'
-  like_count: 52
+  last_updated: '2026-09-18T13:58:08.949187+00:00'
+  like_count: 51
   people:
   - Hadley Wickham
   - Michael Chow
@@ -42,7 +42,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/4v0rnLN0V3k/maxresdefault.jpg
   title: 'The Test Set: A Posit Podcast Trailer'
   url: https://www.youtube.com/watch?v=4v0rnLN0V3k
-  view_count: 874
+  view_count: 882
 ---
 image: thumbnail.jpg
 

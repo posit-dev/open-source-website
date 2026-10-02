@@ -8,8 +8,8 @@ resources: []
 software:
 - nanonext
 - plotnine
-- Positron
-- Quarto
+- positron
+- quarto
 - tidyverse
 - tidyverse.org
 tags: []
@@ -24,21 +24,21 @@ external:  # updated automatically, do not edit
   duration: 3284
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.604873+00:00'
-  like_count: 11
+  last_updated: '2026-09-18T13:58:08.448458+00:00'
+  like_count: 12
   playlist: ''
   software:
   - nanonext
   - plotnine
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - tidyverse
   - tidyverse.org
   tags: []
   thumbnail: https://i.ytimg.com/vi/UPnOU5D90_o/maxresdefault.jpg
   title: R & Python Interoperability in Data Science Teams | Dave Gruenewald | Data Science Hangout
   url: https://www.youtube.com/watch?v=UPnOU5D90_o
-  view_count: 535
+  view_count: 545
 ---
 image: thumbnail.jpg
 

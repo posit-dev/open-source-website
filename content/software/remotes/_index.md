@@ -10,6 +10,7 @@ latest_release: '2024-03-17T12:41:28+00:00'
 people:
 - Gábor Csárdi
 - Jenny Bryan
+- Kevin Ushey
 - Christophe Dervieux
 - Hannah Frick
 - Lionel Henry
@@ -28,15 +29,16 @@ external:  # updated automatically, do not edit
   description: Install R packages from GitHub, GitLab, Bitbucket, git, svn repositories,
     URLs
   first_commit: '2016-01-02T10:24:31+00:00'
-  forks: 157
+  forks: 160
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.253291+00:00'
+  last_updated: '2026-09-18T14:26:36.320355+00:00'
   latest_release: '2024-03-17T12:41:28+00:00'
   license: NOASSERTION
   people:
   - Gábor Csárdi
   - Jenny Bryan
+  - Kevin Ushey
   - Christophe Dervieux
   - Hannah Frick
   - Lionel Henry
@@ -44,7 +46,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Jeroen Ooms
   repo: r-lib/remotes
-  stars: 357
+  stars: 355
   title: remotes
   website: https://remotes.r-lib.org/
 ---

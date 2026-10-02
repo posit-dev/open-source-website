@@ -10,6 +10,7 @@ people:
 - JJ Allaire
 - Daniel Falbel
 - Tomasz Kalinowski
+- Kevin Ushey
 title: tfruns
 topics:
 - Artificial Intelligence
@@ -29,6 +30,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   - Daniel Falbel
   - Tomasz Kalinowski
+  - Kevin Ushey
   repo: rstudio/tfruns
   stars: 34
   title: tfruns

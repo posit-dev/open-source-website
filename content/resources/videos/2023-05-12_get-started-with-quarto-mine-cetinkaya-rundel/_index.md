@@ -33,7 +33,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - revealjs
 - rstudio
 tags:
@@ -118,13 +118,13 @@ external:  # updated automatically, do not edit
   duration: 1367
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:31.335853+00:00'
-  like_count: 947
+  last_updated: '2026-09-18T13:58:12.906429+00:00'
+  like_count: 986
   people:
   - Mine Çetinkaya-Rundel
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - revealjs
   - rstudio
   tags:
@@ -175,7 +175,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_f3latmOhew/maxresdefault.jpg
   title: Get started with Quarto | Mine Çetinkaya-Rundel
   url: https://www.youtube.com/watch?v=_f3latmOhew
-  view_count: 82589
+  view_count: 89021
 ---
 image: thumbnail.jpg
 

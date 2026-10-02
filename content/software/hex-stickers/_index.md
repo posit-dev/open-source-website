@@ -1,8 +1,8 @@
 ---
-color: '#BA9A62'
+color: '#D1DBE5'
 description: RStudio hex stickers
 github: rstudio/hex-stickers
-image: agua.png
+image: hex-stickers.svg
 languages:
 - R
 people:
@@ -23,6 +23,7 @@ people:
 - Daniel Falbel
 - Winston Chang
 - Lionel Henry
+- Kevin Ushey
 - Julia Silge
 - Jenny Bryan
 - Davis Vaughan
@@ -60,6 +61,7 @@ external:  # updated automatically, do not edit
   - Daniel Falbel
   - Winston Chang
   - Lionel Henry
+  - Kevin Ushey
   - Julia Silge
   - Jenny Bryan
   - Davis Vaughan

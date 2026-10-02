@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   forks: 25
   languages:
   - R
-  last_updated: '2026-05-20T08:05:56.206324+00:00'
+  last_updated: '2026-09-18T14:28:34.762054+00:00'
   latest_release: '2025-01-16T22:42:26+00:00'
   license: NOASSERTION
   people:
@@ -34,7 +34,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/README-autoplot-1.png
   repo: r-lib/bench
-  stars: 255
+  stars: 257
   title: bench
   website: http://bench.r-lib.org/
 ---

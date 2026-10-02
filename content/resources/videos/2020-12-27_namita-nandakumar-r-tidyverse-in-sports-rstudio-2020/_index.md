@@ -66,7 +66,7 @@ external:  # updated automatically, do not edit
   duration: 1237
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.701279+00:00'
+  last_updated: '2026-09-18T13:58:17.360212+00:00'
   like_count: 43
   playlist: ''
   software:
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/L-kRMiYwRC4/hqdefault.jpg
   title: Namita Nandakumar | R + Tidyverse in Sports | RStudio (2020)
   url: https://www.youtube.com/watch?v=L-kRMiYwRC4
-  view_count: 1098
+  view_count: 1101
 ---
 image: thumbnail.jpg
 

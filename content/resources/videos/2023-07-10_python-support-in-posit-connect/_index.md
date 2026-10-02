@@ -9,7 +9,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -69,11 +69,11 @@ external:  # updated automatically, do not edit
   duration: 49
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.335388+00:00'
+  last_updated: '2026-09-18T13:58:12.906048+00:00'
   like_count: 6
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/V2XTPfhqbMk/maxresdefault.jpg
   title: Python support in Posit Connect
   url: https://www.youtube.com/watch?v=V2XTPfhqbMk
-  view_count: 404
+  view_count: 413
 ---
 image: thumbnail.jpg
 

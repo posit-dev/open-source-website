@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - Python
 - Tutorial
@@ -34,13 +34,13 @@ external:  # updated automatically, do not edit
   duration: 1782
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.520153+00:00'
+  last_updated: '2026-09-18T13:58:20.753298+00:00'
   like_count: 14
   people:
   - Christophe Dervieux
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags:
   - Python
   - Tutorial
@@ -59,7 +59,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/7Bw-Dg_xAos/hqdefault.jpg
   title: Christophe Dervieux - Exploring Quarto Dashboard for impactful and visual communication
   url: https://www.youtube.com/watch?v=7Bw-Dg_xAos
-  view_count: 655
+  view_count: 658
 ---
 image: thumbnail.jpg
 

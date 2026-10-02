@@ -65,7 +65,7 @@ external:  # updated automatically, do not edit
   duration: 321
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.962374+00:00'
+  last_updated: '2026-09-18T13:58:17.861470+00:00'
   like_count: 9
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/zEvN0_9i-vs/hqdefault.jpg
   title: Mike K Smith | Learn to teach, for goodness sake | RStudio (2020)
   url: https://www.youtube.com/watch?v=zEvN0_9i-vs
-  view_count: 370
+  view_count: 372
 ---
 image: thumbnail.jpg
 

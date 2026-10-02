@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - gt
-- Shiny
+- shiny-r
 tags: []
 title: Eric Nantz, Alex Lauer, Rich Iannone - A Pivotal Year of Milestones in R Consortium Working Groups
 
@@ -21,19 +21,19 @@ external:  # updated automatically, do not edit
   duration: 1380
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.520726+00:00'
+  last_updated: '2026-09-18T13:58:21.309142+00:00'
   like_count: 0
   people:
   - Rich Iannone
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - gt
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/CnlUccqz9uo/maxresdefault.jpg
   title: Eric Nantz, Alex Lauer, Rich Iannone - A Pivotal Year of Milestones in R Consortium Working Groups
   url: https://www.youtube.com/watch?v=CnlUccqz9uo
-  view_count: 148
+  view_count: 151
 ---
 image: thumbnail.jpg
 

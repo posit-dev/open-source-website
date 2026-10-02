@@ -45,8 +45,8 @@ external:  # updated automatically, do not edit
   duration: 1235
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.604496+00:00'
-  like_count: 9
+  last_updated: '2026-09-18T13:58:08.448329+00:00'
+  like_count: 10
   playlist: ''
   tags:
   - posit::conf(2025)
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/bAA_O_gNhfI/maxresdefault.jpg
   title: Extending the horizons of R with Rust (Andrés Quintero, ixpantia) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=bAA_O_gNhfI
-  view_count: 199
+  view_count: 247
 ---
 image: thumbnail.jpg
 

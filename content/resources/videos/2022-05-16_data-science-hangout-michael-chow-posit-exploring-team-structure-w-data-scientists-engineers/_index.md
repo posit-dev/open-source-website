@@ -73,7 +73,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - shinyapps
 - tidymodels
 tags: []
@@ -152,22 +152,22 @@ external:  # updated automatically, do not edit
     Twitter: https://twitter.com/rstudio'
   duration: 4012
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:32.955360+00:00'
+  language: ''
+  last_updated: '2026-09-18T13:58:15.367497+00:00'
   like_count: 13
   people:
   - Michael Chow
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyapps
   - tidymodels
   tags: []
   thumbnail: https://i.ytimg.com/vi/KubOBhiRfIY/maxresdefault.jpg
   title: Data Science Hangout | Michael Chow, Posit | Exploring Team Structure w/ Data Scientists & Engineers
   url: https://www.youtube.com/watch?v=KubOBhiRfIY
-  view_count: 536
+  view_count: 540
 ---
 image: thumbnail.jpg
 

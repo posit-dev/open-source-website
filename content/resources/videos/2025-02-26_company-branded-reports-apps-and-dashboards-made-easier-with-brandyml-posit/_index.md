@@ -61,7 +61,7 @@ software:
 - brand-yml
 - bslib
 - pkgdown
-- Quarto
+- quarto
 - rstudio
 tags: []
 title: Company-branded reports, apps, and dashboards made easier with brand.yml & Posit
@@ -127,20 +127,20 @@ external:  # updated automatically, do not edit
   duration: 1480
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.007024+00:00'
+  last_updated: '2026-09-18T13:58:09.332426+00:00'
   like_count: 92
   playlist: ''
   software:
   - brand-yml
   - bslib
   - pkgdown
-  - Quarto
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/U48y0_yzEPY/maxresdefault.jpg
   title: Company-branded reports, apps, and dashboards made easier with brand.yml & Posit
   url: https://www.youtube.com/watch?v=U48y0_yzEPY
-  view_count: 3176
+  view_count: 3211
 ---
 image: thumbnail.jpg
 

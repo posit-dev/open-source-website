@@ -9,10 +9,12 @@ people:
 - Winston Chang
 - Edgar Ruiz
 - Mine Çetinkaya-Rundel
+- Kevin Ushey
 - Hadley Wickham
 - Joe Cheng
 - Carson Sievert
 - Jenny Bryan
+- Jonathan McPherson
 - Lionel Henry
 - Max Kuhn
 - Greg Swinehart
@@ -32,10 +34,12 @@ external:  # updated automatically, do not edit
   - Winston Chang
   - Edgar Ruiz
   - Mine Çetinkaya-Rundel
+  - Kevin Ushey
   - Hadley Wickham
   - Joe Cheng
   - Carson Sievert
   - Jenny Bryan
+  - Jonathan McPherson
   - Lionel Henry
   - Max Kuhn
   - Greg Swinehart

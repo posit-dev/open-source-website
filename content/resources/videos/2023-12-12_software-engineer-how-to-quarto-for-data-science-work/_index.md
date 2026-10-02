@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 'Software Engineer How-to: Quarto for Data Science Work'
 
@@ -19,16 +19,16 @@ external:  # updated automatically, do not edit
   duration: 61
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:30.947698+00:00'
-  like_count: 105
+  last_updated: '2026-09-18T13:58:12.485057+00:00'
+  like_count: 122
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/Kra3uHSIuBY/maxresdefault.jpg
   title: 'Software Engineer How-to: Quarto for Data Science Work'
   url: https://www.youtube.com/watch?v=Kra3uHSIuBY
-  view_count: 4038
+  view_count: 4894
 ---
 image: thumbnail.jpg
 

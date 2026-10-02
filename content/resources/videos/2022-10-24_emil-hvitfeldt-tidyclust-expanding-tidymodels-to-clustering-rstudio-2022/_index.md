@@ -34,8 +34,8 @@ external:  # updated automatically, do not edit
   duration: 1147
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.023035+00:00'
-  like_count: 132
+  last_updated: '2026-09-18T13:58:13.768714+00:00'
+  like_count: 133
   people:
   - Emil Hvitfeldt
   playlist: ''
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/vsXJBO6-nQk/maxresdefault.jpg
   title: Emil Hvitfeldt | tidyclust - expanding tidymodels to clustering | RStudio (2022)
   url: https://www.youtube.com/watch?v=vsXJBO6-nQk
-  view_count: 4181
+  view_count: 4210
 ---
 image: thumbnail.jpg
 

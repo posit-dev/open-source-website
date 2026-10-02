@@ -8,8 +8,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 tags: []
 title: How to use Positron's GitHub integration | Isabella Velásquez & Libby Heeren | Data Science Lab
 
@@ -22,19 +22,19 @@ external:  # updated automatically, do not edit
   duration: 3269
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.044436+00:00'
-  like_count: 38
+  last_updated: '2026-09-18T13:58:07.249651+00:00'
+  like_count: 41
   people:
   - Isabel Zimmerman
   - Isabella Velásquez
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/JTv4IbFzI7M/maxresdefault.jpg
   title: How to use Positron's GitHub integration | Isabella Velásquez & Libby Heeren | Data Science Lab
   url: https://www.youtube.com/watch?v=JTv4IbFzI7M
-  view_count: 1305
+  view_count: 1823
 ---
 

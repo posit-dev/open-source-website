@@ -28,10 +28,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Create a collection of modeling workflows
   first_commit: '2020-11-24T02:30:49+00:00'
-  forks: 11
+  forks: 12
   languages:
   - R
-  last_updated: '2026-05-20T08:05:48.731174+00:00'
+  last_updated: '2026-09-18T14:23:52.812206+00:00'
   latest_release: '2025-05-28T13:18:33+00:00'
   license: NOASSERTION
   people:
@@ -45,7 +45,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/README-plot-1.png
   repo: tidymodels/workflowsets
-  stars: 97
+  stars: 98
   title: workflowsets
   website: https://workflowsets.tidymodels.org/
 ---

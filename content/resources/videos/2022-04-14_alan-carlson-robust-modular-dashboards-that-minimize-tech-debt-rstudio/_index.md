@@ -47,7 +47,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - tidyverse
 - tidyverse.org
 tags: []
@@ -101,21 +101,21 @@ external:  # updated automatically, do not edit
   duration: 2484
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.955517+00:00'
+  last_updated: '2026-09-18T13:58:15.783797+00:00'
   like_count: 74
   people:
   - RStudio Team
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - tidyverse
   - tidyverse.org
   tags: []
   thumbnail: https://i.ytimg.com/vi/ssmwUBSpF-8/hqdefault.jpg
   title: Alan Carlson | Robust, modular dashboards that minimize tech debt | RStudio
   url: https://www.youtube.com/watch?v=ssmwUBSpF-8
-  view_count: 2574
+  view_count: 2578
 ---
 image: thumbnail.jpg
 

@@ -9,7 +9,7 @@
 
   function createCopyButton(highlightDiv) {
     const button = document.createElement("button");
-    button.className = "right-1 top-1 absolute";
+    button.className = "right-4 top-[34px] absolute";
     button.type = "button";
     button.setAttribute("aria-label", "Copy code");
     button.innerHTML = copyIcon;
@@ -48,8 +48,27 @@
          leaving the button in a focused state. */
       button.blur();
       button.innerHTML = copyIconDone;
+
+      // Show "Copied!" tooltip
+      const tooltip = document.createElement("div");
+      tooltip.textContent = "Copied!";
+      tooltip.className = "code-copy-tooltip";
+      tooltip.style.opacity = '0';
+      document.body.appendChild(tooltip);
+
+      // Position tooltip above button (wait for next frame to get dimensions)
+      requestAnimationFrame(() => {
+        const buttonRect = button.getBoundingClientRect();
+        tooltip.style.left = buttonRect.left + buttonRect.width / 2 - tooltip.offsetWidth / 2 + 'px';
+        tooltip.style.top = buttonRect.top - tooltip.offsetHeight - 8 + 'px';
+        tooltip.style.opacity = '1';
+      });
+
       setTimeout(function () {
         button.innerHTML = copyIcon;
+        if (tooltip.parentNode) {
+          tooltip.parentNode.removeChild(tooltip);
+        }
       }, 2000);
     }
   }

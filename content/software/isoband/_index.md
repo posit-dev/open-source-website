@@ -21,10 +21,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: 'isoband: An R package to generate contour lines and polygons.'
   first_commit: '2018-12-29T06:05:34+00:00'
-  forks: 16
+  forks: 17
   languages:
   - C++
-  last_updated: '2026-05-20T08:05:56.615488+00:00'
+  last_updated: '2026-09-18T14:29:20.752388+00:00'
   latest_release: '2025-12-05T12:51:46+00:00'
   license: NOASSERTION
   people:

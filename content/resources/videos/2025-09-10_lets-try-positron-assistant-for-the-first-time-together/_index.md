@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags:
 - rstudio
@@ -64,11 +64,11 @@ external:  # updated automatically, do not edit
   duration: 59
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:27.604934+00:00'
-  like_count: 51
+  last_updated: '2026-09-18T13:58:08.448478+00:00'
+  like_count: 53
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/sdyxrCU77MY/maxresdefault.jpg
   title: Let's try Positron Assistant for the first time together
   url: https://www.youtube.com/watch?v=sdyxrCU77MY
-  view_count: 2725
+  view_count: 3011
 ---
 image: thumbnail.jpg
 

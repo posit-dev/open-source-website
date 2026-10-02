@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   duration: 3635
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:32.022910+00:00'
+  last_updated: '2026-09-18T13:58:13.768540+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/SfUCuXCo7Og/maxresdefault.jpg
   title: Data Science Hangout | Patrick Tennant, MMHPI | Welcoming People into Conversations to Make Change
   url: https://www.youtube.com/watch?v=SfUCuXCo7Og
-  view_count: 342
+  view_count: 348
 ---
 image: thumbnail.jpg
 

@@ -42,3 +42,17 @@ external:  # updated automatically, do not edit
 Plotnine brings the power of the grammar of graphics to Python, offering a systematic approach to building visualizations by explicitly mapping data to visual properties. Inspired by R's ggplot2, plotnine enables data scientists and developers to construct complex, publication-quality graphics incrementally through a compositional, layer-based approach. Whether you're conducting exploratory data analysis or creating professional reports, plotnine makes it easy to build sophisticated visualizations by combining simple, intuitive building blocks.
 
 The library excels at making complex plots easy to reason about while keeping simple plots simple to create. With support for faceting, statistical transformations, extensive theming options, and a syntax familiar to ggplot2 users, plotnine provides a consistent and powerful framework for creating data narratives. This project is funded by Posit, bringing the elegance and flexibility of the grammar of graphics to the Python ecosystem.
+
+## Try it
+
+{{< pyodide packages="plotnine,numpy,pandas" >}}
+from plotnine import ggplot, aes, geom_point, labs, theme_minimal
+from plotnine.data import mtcars
+
+(
+    ggplot(mtcars, aes(x="wt", y="mpg", color="factor(cyl)"))
+    + geom_point(size=3)
+    + labs(x="Weight (1000 lbs)", y="Miles per Gallon", color="Cylinders")
+    + theme_minimal()
+).draw(show=True)
+{{< /pyodide >}}

@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   duration: 3602
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:26.044546+00:00'
+  last_updated: '2026-09-18T13:58:07.249886+00:00'
   like_count: 5
   people:
   - Hadley Wickham
@@ -70,6 +70,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CPnUZZY0JJE/maxresdefault.jpg
   title: Sleeping Rats and Sociopathic Agents — with Phillip Cloud
   url: https://www.youtube.com/watch?v=CPnUZZY0JJE
-  view_count: 433
+  view_count: 465
 ---
 

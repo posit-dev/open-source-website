@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - dplyr
-- Positron
+- positron
 - rlang
 - rstudio
 - tidyverse
@@ -67,12 +67,12 @@ external:  # updated automatically, do not edit
   duration: 78
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:26.043884+00:00'
-  like_count: 73
+  last_updated: '2026-09-18T13:58:06.853675+00:00'
+  like_count: 76
   playlist: ''
   software:
   - dplyr
-  - Positron
+  - positron
   - rlang
   - rstudio
   - tidyverse
@@ -124,6 +124,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/R06N2xJYNPA/maxresdefault.jpg
   title: How to use the native pipe in R
   url: https://www.youtube.com/watch?v=R06N2xJYNPA
-  view_count: 1696
+  view_count: 1868
 ---
 

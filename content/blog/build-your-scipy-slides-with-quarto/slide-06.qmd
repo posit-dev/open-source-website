@@ -1,0 +1,58 @@
+---
+title: "Make your SciPy presentation in Quarto"
+author:
+  - Isabella Velásquez
+  - Charlotte Wickham
+date: 2026-07-14
+brand: scipy-brand.yml
+format:
+  revealjs:
+    incremental: true
+    embed-resources: true
+---
+
+Slides are just Markdown and code:
+
+- Write your narrative in **Markdown**
+- Weave in **Python** code and its output
+- Render it all to one reproducible file
+
+# Features for showing code
+
+## Add Python code cells
+
+```{python}
+#| echo: true
+from plotnine import *
+from plotnine.data import anscombe_quartet
+```
+
+## Code output is included
+
+```{python}
+#| echo: true
+anscombe_quartet.head()
+```
+
+## You can show code without running it
+
+`%view` opens the data in Positron's Data Explorer:
+
+```{python}
+#| echo: true
+#| eval: false
+%view anscombe_quartet
+```
+
+## Highlight lines as you talk
+
+```{python}
+#| echo: true
+#| code-line-numbers: "2|3-4|5"
+(
+    anscombe_quartet
+    .groupby("dataset")[["x", "y"]]
+    .apply(lambda g: g["x"].corr(g["y"]))
+    .round(2).to_frame("correlation")
+)
+```

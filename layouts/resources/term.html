@@ -1,7 +1,3 @@
-{{ define "head" }}
-{{ partial "jsonld.html" . }}
-{{ end }}
-
 {{ define "main" }}
 <article class="flex flex-col w-full relative">
   <!-- Hidden Pagefind Image -->
@@ -251,12 +247,21 @@
       {{ with .Params.thumbnails }}
       <div class="mt-6">
         <div class="flex gap-4 overflow-x-auto pb-2">
-          {{ range . }}
-          {{ $thumbnail := $.Resources.Get . }}
+          {{ range $index, $thumbFile := . }}
+          {{ $thumbnail := $.Resources.Get $thumbFile }}
           {{ if $thumbnail }}
+          {{ $pageNum := add $index 1 }}
           <div class="shrink-0">
-            <img src="{{ $thumbnail.RelPermalink }}" alt="Page preview"
-              class="h-48 w-auto rounded-lg border border-gray-300" loading="lazy" />
+            <img src="{{ $thumbnail.RelPermalink }}" alt="Page {{ $pageNum }} preview"
+              class="h-48 w-auto rounded-lg border border-gray-300 cursor-pointer"
+              loading="lazy"
+              data-gallery-group="cheatsheet-preview"
+              data-gallery-src="{{ $thumbnail.RelPermalink }}"
+              data-gallery-pdf="{{ $.Params.download_url }}"
+              data-gallery-pdf-page="{{ $pageNum }}"
+              data-gallery-caption="Page {{ $pageNum }}"
+              role="button"
+              tabindex="0" />
           </div>
           {{ end }}
           {{ end }}
@@ -492,7 +497,7 @@
       {{ end }}
       {{ else }}
       {{- /* Regular TOC for non-video resources */ -}}
-      {{- if or .Params.Toc $.Site.Params.Toc -}}
+      {{- if or .Params.Toc $.Site.Params.Toc (eq .Params.resource_type "cheatsheet") -}}
       {{- if ne .Params.Toc false -}}
       <aside class="hidden md:block md:w-48 lg:w-64 shrink-0">
         <div class="sticky top-8 max-h-[calc(100vh-4rem)] overflow-y-auto">

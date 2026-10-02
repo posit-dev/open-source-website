@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 11
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.973359+00:00'
-  like_count: 53
+  last_updated: '2026-09-18T13:58:11.311555+00:00'
+  like_count: 52
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/jnnjCtpiIhU/maxresdefault.jpg
   title: 'If it works, who cares right🥰 #pythonprogramming'
   url: https://www.youtube.com/watch?v=jnnjCtpiIhU
-  view_count: 2119
+  view_count: 2123
 ---
 image: thumbnail.jpg
 

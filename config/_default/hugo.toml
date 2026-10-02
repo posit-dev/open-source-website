@@ -1,0 +1,165 @@
+baseURL = 'https://opensource.posit.co'
+languageCode = 'en-us'
+title = 'Posit Open Source'
+# Resolve .Lastmod from each file's last git commit date so the Atom feeds'
+# <updated> reflects real edits (not just the publish date in frontmatter).
+# Requires full git history at build time (fetch-depth: 0 in CI); a shallow
+# clone would stamp every page with the same commit date.
+enableGitInfo = true
+ignoreFiles = ['\.qmd$', '\.ipynb$', '\.Rmd$', '\.Rmarkdown$', 'CLAUDE\.md$', '_porting-notes\.md$', '_editing-ported-posts\.md$', '_link-checks\.md$', '_authoring-guide\.md$', '_external-sources', 'blog/.*/renv/', 'renv\.lock$', '\.Rprofile$', '_metadata\.yml$', '\.bib$', 'shinychat-tool-ui/feature/', '_feature-src/', '_screenshot-src/', '\.venv/', 'uv\.lock$', 'pyproject\.toml$', '\.quarto/', '_extensions/', '_quarto\.yml$', '_lychee/', '\.original$']
+
+[permalinks.page]
+  blog = "/blog/:year-:month-:day{}_:slugorcontentbasename/"
+
+[pagination]
+pagerSize = 60
+
+[params]
+subtitle = ""
+showReadingTime = false
+images = ["/images/pos-og.png"]
+
+# Site-wide alert banner (appears above navbar)
+# - enabled: set to true to show the banner
+# - id: unique identifier (change to show a new alert to users who dismissed previous ones)
+# - message: supports markdown and raw HTML with Tailwind classes
+# - icon: optional icon name from assets/icons/ (e.g., "calendar", "rss", "world")
+[params.alert]
+enabled = false
+id = "positconf-2026-07-15"
+message = "**posit::conf is September 14-16 in Houston, TX!**  <span class='block sm:block md:inline ml-0 md:ml-2'>[Register now](https://conf.posit.co/2026/) to attend in person or virtually.</span>"
+icon = ""
+
+[taxonomies]
+  tag = 'tags'
+  topic = 'topics'
+  person = 'people'
+  software = 'software'
+  languages = 'languages'
+  event = 'events'
+  resource = 'resources'
+
+[outputFormats.ItemIndex]
+  mediaType = "application/json"
+  baseName = "item-index"
+  isPlainText = true
+  notAlternative = true
+
+# Generates /llms.txt, a curated site map for AI crawlers (https://llmstxt.org)
+[outputFormats.llms]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+
+# Custom Atom feed carrying rich metadata (see layouts/partials/atom/).
+# baseName "index.md" + suffix "xml" -> "index.md.xml", kept distinct from the
+# built-in RSS "index.xml" so both coexist per section. isPlainText stops Hugo
+# from HTML-escaping the XML we emit.
+[mediaTypes."application/atom+xml"]
+  suffixes = ["xml"]
+
+[outputFormats.AtomContent]
+  mediaType = "application/atom+xml"
+  baseName = "index.md"
+  isPlainText = true
+  notAlternative = true
+  rel = "alternate"
+
+[outputs]
+  home = ['html', 'llms']
+  section = ['html', 'ItemIndex', 'AtomContent']
+  taxonomy = ['html', 'ItemIndex', 'AtomContent']
+  term = ['html', 'ItemIndex']
+  page = ['html']
+
+[services]
+  [services.rss]
+    limit = 20
+
+[markup]
+
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3
+  ordered = false
+
+[markup.highlight]
+  lineNos = false
+  noClasses = false
+
+[markup.goldmark.parser.attribute]
+block = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.goldmark.extensions.passthrough]
+enable = true
+
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [['$$', '$$']]
+inline = [['$', '$']]
+
+[menu]
+  [[menu.main]]
+    name = 'Software'
+    url = '/software/'
+    weight = 2
+  [[menu.main]]
+    name = 'People'
+    url = '/people/'
+    weight = 3
+  [[menu.main]]
+    name = 'Events'
+    url = '/events/'
+    weight = 4
+  [[menu.main]]
+    name = 'Resources'
+    url = '/resources/'
+    weight = 5
+    identifier = 'resources'
+  [[menu.main]]
+    name = 'Cheatsheets'
+    url = '/resources/cheatsheets/'
+    weight = 1
+    parent = 'resources'
+  [[menu.main]]
+    name = 'Videos'
+    url = '/resources/videos/'
+    weight = 2
+    parent = 'resources'
+  [[menu.main]]
+    name = 'Blog'
+    url = '/blog/'
+    weight = 6
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 7
+    identifier = 'about'
+  [[menu.main]]
+    name = 'About Posit'
+    url = '/about/posit/'
+    weight = 1
+    parent = 'about'
+  [[menu.main]]
+    name = 'Our AI Work'
+    url = '/about/ai/'
+    weight = 2
+    parent = 'about'
+  [[menu.main]]
+    name = 'Our Python Work'
+    url = '/about/python/'
+    weight = 3
+    parent = 'about'
+  [[menu.main]]
+    name = 'Our R Work'
+    url = '/about/r/'
+    weight = 4
+    parent = 'about'
+  [[menu.main]]
+    name = 'Community Support'
+    url = '/about/community-support/'
+    weight = 5
+    parent = 'about'

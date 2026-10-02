@@ -8,6 +8,7 @@ languages:
 latest_release: '2025-08-18T20:39:02+00:00'
 people:
 - JJ Allaire
+- Kevin Ushey
 - Tomasz Kalinowski
 - Daniel Falbel
 title: tfestimators
@@ -27,6 +28,7 @@ external:  # updated automatically, do not edit
   latest_release: '2025-08-18T20:39:02+00:00'
   people:
   - JJ Allaire
+  - Kevin Ushey
   - Tomasz Kalinowski
   - Daniel Falbel
   readme_image: vignettes/images/tensorflow-architecture.png

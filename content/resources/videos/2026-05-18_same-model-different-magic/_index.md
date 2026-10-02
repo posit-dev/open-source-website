@@ -8,7 +8,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rlang
 - rstudio
 tags:
@@ -69,11 +69,11 @@ external:  # updated automatically, do not edit
   duration: 60
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:26.043780+00:00'
-  like_count: 18
+  last_updated: '2026-09-18T13:58:06.853459+00:00'
+  like_count: 43
   playlist: ''
   software:
-  - Positron
+  - positron
   - rlang
   - rstudio
   tags:
@@ -124,6 +124,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/5aQtBQuyHeI/maxresdefault.jpg
   title: Same model 🤖 different magic 🪄🎩
   url: https://www.youtube.com/watch?v=5aQtBQuyHeI
-  view_count: 799
+  view_count: 1698
 ---
 

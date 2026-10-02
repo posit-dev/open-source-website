@@ -27,10 +27,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Tidy methods for measuring model performance
   first_commit: '2017-10-30T19:26:54+00:00'
-  forks: 61
+  forks: 63
   languages:
   - R
-  last_updated: '2026-05-20T08:05:47.991972+00:00'
+  last_updated: '2026-09-18T14:22:25.655266+00:00'
   latest_release: '2026-04-07T16:10:30+00:00'
   license: NOASSERTION
   people:
@@ -43,7 +43,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/yardstick
-  stars: 401
+  stars: 402
   title: yardstick
   website: https://yardstick.tidymodels.org/
 ---

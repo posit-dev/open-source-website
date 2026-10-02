@@ -9,7 +9,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rmarkdown
 tags: []
 title: Yihui Xie | Highlights of the Knitr Package | Posit (2022)
@@ -26,17 +26,17 @@ external:  # updated automatically, do not edit
   duration: 1178
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.023108+00:00'
-  like_count: 41
+  last_updated: '2026-09-18T13:58:13.768812+00:00'
+  like_count: 42
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rmarkdown
   tags: []
   thumbnail: https://i.ytimg.com/vi/QZ9mAzrNN3I/maxresdefault.jpg
   title: Yihui Xie | Highlights of the Knitr Package | Posit (2022)
   url: https://www.youtube.com/watch?v=QZ9mAzrNN3I
-  view_count: 1407
+  view_count: 1447
 ---
 image: thumbnail.jpg
 

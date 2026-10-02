@@ -11,7 +11,7 @@ resources: []
 software:
 - blastula
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Kolbi Parrish & Andy Pham | R Markdown + RStudio Connect + R Shiny | Posit (2022)
 
@@ -27,18 +27,18 @@ external:  # updated automatically, do not edit
   duration: 893
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.023135+00:00'
+  last_updated: '2026-09-18T13:58:13.768852+00:00'
   like_count: 7
   playlist: ''
   software:
   - blastula
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/hzxBXZyKilM/maxresdefault.jpg
   title: Kolbi Parrish & Andy Pham | R Markdown + RStudio Connect + R Shiny | Posit (2022)
   url: https://www.youtube.com/watch?v=hzxBXZyKilM
-  view_count: 891
+  view_count: 900
 ---
 image: thumbnail.jpg
 

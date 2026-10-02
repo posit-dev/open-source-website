@@ -23,10 +23,10 @@ exclude:
 external:  # updated automatically, do not edit
   description: Encapsulated object-oriented programming for R
   first_commit: '2014-05-07T04:33:54+00:00'
-  forks: 59
+  forks: 58
   languages:
   - R
-  last_updated: '2026-05-20T08:05:54.785347+00:00'
+  last_updated: '2026-09-18T14:25:38.694086+00:00'
   latest_release: '2025-02-14T21:15:08+00:00'
   license: NOASSERTION
   people:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: r-lib/R6
-  stars: 424
+  stars: 425
   title: R6
   website: https://R6.r-lib.org
 ---

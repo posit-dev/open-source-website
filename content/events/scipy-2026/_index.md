@@ -3,7 +3,7 @@ title: "SciPy 2026"
 event_type: conference
 location: "Minneapolis, MN, USA"
 start_date: 2026-07-13
-end_date: 2026-07-10
+end_date: 2026-07-19
 image: scipy-2026.jpg
 website: https://www.scipy2026.scipy.org/
 description: "SciPy brings together attendees from industry, academia and government to showcase their latest projects, learn from skilled users and developers, and collaborate on code development."
@@ -11,20 +11,35 @@ people:
   - Carlos Scheidegger
   - Carson Sievert
   - Hadley Wickham
-  - Jeroen Janssens
+  - Joe Cheng
+  - Josh Taillon
   - Sara Altman
   - Simon Couch
+  - Winston Chang
 software:
   - chatlas
   - ggsql
-  - Great Docs
+  - great-docs
+  - pointblank
   - querychat
   - raghilda
   - shinychat
 languages:
 - Python
+resources:
+- videos/2026-09-01_grammars-of-data-lessons-from-20-years-of-the-tidyverse-hadley-wickham-scipy-2026/
+- videos/2026-09-01_agents-for-correct-transparent-and-reproducible-data-analysis-sara-altman-simon-couch-scipy/
 ---
 
-We are thrilled to announce that a whole crew of Posit folks will be heading to SciPy 2026! This conference is a cornerstone for the scientific computing community, and we couldn't be more excited to participate in it. Catch our team members sharing insights on the latest developments in open-source tooling and reproducible research.
+A crew of Posit team members attended SciPy 2026, a cornerstone event for the scientific computing community. We enjoyed sharing insights on open-source tooling and reproducible research, and we were honored to sponsor this year's conference to support the scientific Python community.
 
-We are proud to be sponsoring this year's event to help support the incredible work happening in the scientific Python ecosystem. We’ll have a dedicated space for demos and deep dives, and will share more specific information on our booth location as soon as it is available.
+{{< gallery title="Photos from the event" >}}
+- file: photos/scipy1.jpg
+  caption: "Simon presenting on bluffbench"
+- file: photos/scipy2.jpg
+  caption: "Sara presenting on LLMs in data analysis"
+- file: photos/scipy3.jpeg
+  caption: "Hadley presenting on lessons learned from the Grammar of Graphics"
+- file: photos/scipy4.png
+  caption: "Carlos and Josh at the booth"
+{{< /gallery >}}

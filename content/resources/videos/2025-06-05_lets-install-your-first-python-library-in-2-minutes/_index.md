@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - rstudio
 - data science
@@ -59,11 +59,11 @@ external:  # updated automatically, do not edit
   duration: 97
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.006564+00:00'
-  like_count: 36
+  last_updated: '2026-09-18T13:58:08.949285+00:00'
+  like_count: 40
   playlist: ''
   software:
-  - Positron
+  - positron
   tags:
   - rstudio
   - data science
@@ -108,7 +108,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WkKWsrf_2TI/maxresdefault.jpg
   title: Let's install your first Python library in 2 minutes
   url: https://www.youtube.com/watch?v=WkKWsrf_2TI
-  view_count: 6155
+  view_count: 7681
 ---
 image: thumbnail.jpg
 

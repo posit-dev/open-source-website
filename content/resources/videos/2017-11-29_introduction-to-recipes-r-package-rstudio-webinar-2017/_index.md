@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 3342
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.830125+00:00'
+  last_updated: '2026-09-18T13:58:19.005730+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -40,7 +40,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/v6pS061sUlw/maxresdefault.jpg
   title: Introduction to Recipes (R Package) | RStudio Webinar - 2017
   url: https://www.youtube.com/watch?v=v6pS061sUlw
-  view_count: 4380
+  view_count: 4411
 ---
 image: thumbnail.jpg
 

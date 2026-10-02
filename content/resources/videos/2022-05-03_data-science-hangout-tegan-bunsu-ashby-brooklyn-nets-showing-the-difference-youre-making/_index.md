@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3794
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:32.955423+00:00'
+  last_updated: '2026-09-18T13:58:15.783684+00:00'
   like_count: 18
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/OtxU4rc9lUY/maxresdefault.jpg
   title: Data Science Hangout | Tegan Bunsu Ashby, Brooklyn Nets | Showing the Difference You're Making
   url: https://www.youtube.com/watch?v=OtxU4rc9lUY
-  view_count: 664
+  view_count: 670
 ---
 image: thumbnail.jpg
 

@@ -1,0 +1,4834 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.560
+Welcome to The Test Set. Here we talk with some of the brightest thinkers and tinkerers
+
+00:00:06.560 --> 00:00:11.480
+in statistical analysis, scientific computing, and machine learning. Digging into what makes
+
+00:00:11.480 --> 00:00:17.680
+them tick, plus the insights, experiments, and OMG moments that shape the field.
+
+00:00:17.680 --> 00:00:21.200
+Today we're sitting down with Benn Stancil. You may know him from his writing on Benn
+
+00:00:21.200 --> 00:00:26.760
+with 2Ns.substack.com, where he's just as likely to weave in Lorde lyrics or Olympic
+
+00:00:26.760 --> 00:00:31.120
+gymnastics scoring drama as he is to talk about SQL.
+
+00:00:31.120 --> 00:00:36.400
+Benn spent a decade building Mode, one of the early modern analytics and BI tools. We
+
+00:00:36.400 --> 00:00:41.400
+talk about how he got started, we talk about the layers of hype inside the tech ecosystem,
+
+00:00:41.400 --> 00:00:45.360
+and we talk about why he's still optimistic about writing in an AI world where output
+
+00:00:45.360 --> 00:00:46.360
+is cheap.
+
+00:00:46.360 --> 00:00:52.360
+I really like how he uses AI like a thesaurus, idea generator, but not necessarily as a writer.
+
+00:00:52.360 --> 00:00:56.599
+And I have to say, for someone who comes off roundly as a pessimist, Benn gives us
+
+00:00:56.599 --> 00:01:01.480
+a lot to be optimistic about. So without further ado, Benn Stancil.
+
+00:01:01.480 --> 00:01:08.000
+All right, so Benn Stancil, welcome to The Test Set, where we are really interested in
+
+00:01:08.000 --> 00:01:13.839
+talking to the people behind the data. We're here in Times Square, and I'm joined by Wes
+
+00:01:13.839 --> 00:01:19.199
+McKinney, who's a principal architect at Posit. And I'm Michael Chow, a software engineer
+
+00:01:19.199 --> 00:01:27.760
+at Posit. And I think we're so excited to talk today about all of the takes you've had
+
+00:01:27.760 --> 00:01:34.239
+over the past decades on data. And I feel like maybe just by way of introduction, one
+
+00:01:34.239 --> 00:01:39.839
+thing that really stuck out to me as I was looking at your writing is that you're the
+
+00:01:39.839 --> 00:01:44.639
+type of person who seems to be writing like lyrical essays on data that might involve
+
+00:01:44.720 --> 00:01:50.800
+a sequel poem or a bait-and-switch, where you give someone a quote about analytics and
+
+00:01:50.800 --> 00:01:58.959
+then reveal that it was actually a 1904 quote about accounting. I'm so curious about your
+
+00:01:58.959 --> 00:02:03.839
+writing and thoughts on data. But maybe to start, do you mind telling us a little bit
+
+00:02:03.839 --> 00:02:14.080
+about yourself? Sure. So I started working in tech 12, 13 years ago. Initially worked
+
+00:02:14.160 --> 00:02:20.320
+in DC doing a think tank job. It's very like DC job, doing like policy research. It's actually
+
+00:02:20.320 --> 00:02:24.960
+pretty similar to a data analyst job. It's just instead of telling people like PMs or
+
+00:02:24.960 --> 00:02:27.759
+engineers or whatever, like what people are doing on their product, you're basically telling
+
+00:02:27.759 --> 00:02:30.880
+Congress people like what you should do to the economy. And Congress people do not care
+
+00:02:30.880 --> 00:02:34.720
+what the 22-year-old at think tank thinks you should do to the economy. But it's the
+
+00:02:34.720 --> 00:02:38.000
+same kind of idea. Take a bunch of data, make some recommendations. So I did that for a
+
+00:02:38.000 --> 00:02:42.720
+bit, then ended up joining a tech startup in 2012, was there for a little while, and
+
+00:02:42.720 --> 00:02:46.160
+then me and two other folks who worked on the data team at that company started a company
+
+00:02:46.160 --> 00:02:51.839
+called Mode, which built like an analytics and BI tool. We did that for about 10 years
+
+00:02:51.839 --> 00:02:56.240
+and then have kind of done a couple of things since then. I got acquired in 2023,
+
+00:02:56.240 --> 00:03:00.240
+worked at the acquiring company for about a year, spent a little bit of time doing some
+
+00:03:00.240 --> 00:03:04.080
+like kind of side projects, spent a little bit of time working on political campaigns
+
+00:03:04.639 --> 00:03:09.520
+and periodically yelling at the internet about whatever data nonsense or tech nonsense or
+
+00:03:10.160 --> 00:03:17.679
+1904 quotes about accounting, I guess. I saw you started on the Mode blog pretty early. You're
+
+00:03:17.679 --> 00:03:24.880
+sort of like the early posts on the Mode blog, is that? Yeah, so when we started Mode, there
+
+00:03:24.880 --> 00:03:28.880
+were three of us. There was a guy who was an engineer who could like write code and like
+
+00:03:28.880 --> 00:03:34.559
+chain them to his desk and be like, go build our thing. There was the guy who was our CEO
+
+00:03:34.559 --> 00:03:37.520
+who was like personable and could talk to investors and could like make friends with
+
+00:03:37.520 --> 00:03:40.479
+people like Wes, who was also working on something similar at the time. And then there
+
+00:03:40.479 --> 00:03:43.600
+was me who was like, neither of those things, like I was not going to go out, like, please
+
+00:03:43.600 --> 00:03:48.320
+stay inside, but also you can't write code, so what are you going to do? And so I basically
+
+00:03:48.320 --> 00:03:54.399
+started writing this blog as I needed something to do. Like, why was I there to begin with?
+
+00:03:54.399 --> 00:03:59.440
+I don't, you have to ask them. But I started writing this blog that at the time was very
+
+00:04:00.399 --> 00:04:08.720
+538-ish do like analysis on pop culture stuff. Like the first blog post is about Miley Cyrus.
+
+00:04:08.720 --> 00:04:13.440
+There was stuff about like parking spots in San Francisco and weed, like prices of weed
+
+00:04:13.440 --> 00:04:18.320
+scraped from a price of weed website and stuff like that. It was not related to like tech
+
+00:04:18.320 --> 00:04:24.320
+at all. Or Mode, I guess. Or did it, did it have Mode? No, no, it did not have, I mean,
+
+00:04:24.320 --> 00:04:27.920
+nothing existed at that point. Like the first blog post was three days after we started
+
+00:04:28.000 --> 00:04:33.359
+the company. And we were fairly intentional trying not to, or fairly intentionally trying
+
+00:04:33.359 --> 00:04:39.359
+not to do, and at the end of this, here are five tips for running a data team. Tip five is buy
+
+00:04:39.359 --> 00:04:45.839
+modeanalytics.com. So it ended up being like sort of like very niche popular, but a little
+
+00:04:45.839 --> 00:04:49.679
+bit popular around like data people because like, oh, this is, the original inspiration for it was
+
+00:04:49.679 --> 00:04:54.320
+kind of things like the OkCupid blog, which all like 2010 data people are obsessed with.
+
+00:04:54.320 --> 00:04:58.959
+Called like Dataclism or? No, no, no. That was the book. Yeah, yeah, yeah. So,
+
+00:05:00.320 --> 00:05:03.440
+but it was that sort of stuff. And so like some people liked it for that,
+
+00:05:03.440 --> 00:05:08.640
+but eventually we like, I started having other things to do. I, we had customers and we had
+
+00:05:08.640 --> 00:05:11.440
+support tickets to answer and I had to respond to support tickets. And so I kind of stopped doing
+
+00:05:11.440 --> 00:05:17.679
+the blog. And then the, the substack was kind of a return to that or original attempt to return to
+
+00:05:17.679 --> 00:05:22.239
+that. Ended up taking kind of a different direction of like whatever it is now, but
+
+00:05:23.119 --> 00:05:28.720
+it's not pop culture data analysisy stuff to the degree it was. Right. And you've been doing the
+
+00:05:28.720 --> 00:05:34.079
+substack for like five or six, five years, I think. I think I did it. I started doing it in
+
+00:05:34.959 --> 00:05:39.279
+middle of the pandemic. I want to say it was like during COVID. Yeah. Yeah. Yeah. I think it's so
+
+00:05:39.279 --> 00:05:43.600
+interesting. Like, I think we'll have a lot from the substack to discuss. Like there's so many
+
+00:05:43.600 --> 00:05:49.040
+interesting topics on data and AI, but I almost think like for one, maybe one last bit of context
+
+00:05:49.040 --> 00:05:55.760
+is like, I think I've run on the substack a couple of times. Like this substack is not about
+
+00:05:55.760 --> 00:06:01.519
+anything in particular. I think you've like at different times tried to set people's expectations
+
+00:06:01.519 --> 00:06:09.600
+for what the substack's about. Like, I don't know why you go to it. I don't, I'm not really like,
+
+00:06:09.600 --> 00:06:16.000
+not really trying to give anything in particular. It's originally was, okay, you spend a bunch of
+
+00:06:16.000 --> 00:06:20.160
+time building a data thing. You have a bunch of ideas. You're like, okay, I'll write something
+
+00:06:20.160 --> 00:06:23.679
+that was intended to be more like, here are tips for doing stuff. I got kind of bored with that
+
+00:06:23.679 --> 00:06:27.920
+pretty quickly. And it became a little bit more of like, these are the things that are
+
+00:06:27.920 --> 00:06:32.559
+interesting to me. I, my ambition with it. And it's a blog about data stuff. So like,
+
+00:06:32.559 --> 00:06:37.440
+God knows if it actually can do this. It's like, I want people to read it and leave it thinking
+
+00:06:37.440 --> 00:06:42.880
+that was 10 minutes I enjoyed. Like I had a good time. There's no takeaways. There's no like,
+
+00:06:42.880 --> 00:06:46.799
+the intent is not to have someone to come away and be like, oh my God, like, I'm going to go
+
+00:06:46.799 --> 00:06:51.040
+implement this. It's like, no, okay. I, I learned a thing. It was kind of fun. Whatever. I can leave
+
+00:06:51.040 --> 00:06:55.679
+and walk away and not have something I'm supposed to do with it. I don't know whether that delivers
+
+00:06:55.679 --> 00:06:59.279
+that or not. I don't know. It's a blog about like SQL stuff. Probably not, but we can dream.
+
+00:07:00.160 --> 00:07:04.559
+Yeah. I mean, I, I read the, I read the substack. Like I, you know, I think in the early days,
+
+00:07:04.559 --> 00:07:08.079
+I was like, wow, Ben's publishing a lot of substack posts and usually would start
+
+00:07:08.079 --> 00:07:12.000
+on Twitter before it was X. And it would be something like it's Friday. So let's fight
+
+00:07:12.000 --> 00:07:17.600
+about this. And it would be some, some topic in, you know, data engineering, analytics,
+
+00:07:17.600 --> 00:07:22.559
+startups, the tech industry, you know, whatever was on Ben's mind at the moment. And I think
+
+00:07:22.559 --> 00:07:26.720
+the consistent theme is that, yeah, like it's, it's a blog that has a lot of technical content
+
+00:07:26.720 --> 00:07:31.760
+and a lot of like observations and data about like what's going on presently in the industry,
+
+00:07:31.760 --> 00:07:36.000
+but, but mostly it seems like it's written to be enjoyable. Like the reason I keep reading is
+
+00:07:36.000 --> 00:07:41.119
+because, um, I enjoy reading it, but I think, um, you know, Ben and I met, I was also doing a
+
+00:07:41.119 --> 00:07:46.959
+startup in San Francisco back in, in 2013. And, and so I was working on, you know, something in
+
+00:07:46.959 --> 00:07:51.200
+the same kind of domain, visual analytics, business intelligence. Um, you know, my company
+
+00:07:51.200 --> 00:07:56.079
+didn't go very far, you know, mode ended up, you know, um, surviving, you know, over, over a decade.
+
+00:07:56.079 --> 00:07:59.519
+Um, but we got to become, you know, got to know each other back then. And I remember my first,
+
+00:07:59.519 --> 00:08:02.880
+uh, impression of Ben and especially reading the mode blog posts. I was like, wow, this guy knows
+
+00:08:02.880 --> 00:08:07.519
+a lot about SQL. Sure. Yeah. It's like, here's all these, like, it's like, it's like this, this,
+
+00:08:07.519 --> 00:08:11.839
+this person has really suffered writing some tremendously complicated, uh, Vertica queries,
+
+00:08:11.839 --> 00:08:15.679
+essentially, or whatever you're using, uh, back at, back at Yammer. Yeah. Yammer was, Yammer was
+
+00:08:15.679 --> 00:08:19.839
+Vertica. Um, but, but what I, what I like about the writing and, you know, I read a lot of, I read
+
+00:08:19.839 --> 00:08:24.079
+a lot of blogs and it's like, I consume a lot of, you know, I prefer to like, you know, just read
+
+00:08:24.079 --> 00:08:27.440
+people's blogs, especially smart people. People have like spent a lot of time thinking about
+
+00:08:27.440 --> 00:08:31.679
+things that I haven't thought as much about. Um, I'm especially interested in people that have
+
+00:08:32.239 --> 00:08:36.880
+contrarian takes or that are like maybe not accepting the, like the standard dogma,
+
+00:08:36.880 --> 00:08:41.840
+because I feel like in the, in the tech community, especially in the startup ecosystem, like
+
+00:08:41.840 --> 00:08:45.840
+there's almost like these mantras that get repeated or these, these shared, these shared
+
+00:08:45.840 --> 00:08:50.880
+delusions or like things that you're supposed to believe. But then in San Francisco in particular,
+
+00:08:50.880 --> 00:08:56.400
+that there's essentially this, this monoculture, like this group thing where, you know, in a sense,
+
+00:08:56.400 --> 00:09:01.119
+like if you don't conform to, you know, the group, think about like what is good and like what,
+
+00:09:01.119 --> 00:09:05.760
+you know, what seems to serve like the overall operations of, of the tech ecosystem and startup
+
+00:09:05.760 --> 00:09:07.200
+ecosystem in particular.
+
+00:09:07.538 --> 00:09:12.978
+And often, like in the last, you know, 10-15 years, like that has been the, you know, up until very
+
+00:09:12.978 --> 00:09:17.618
+recently, like the zero interest rate period, where, you know, money was cheap. And so startups
+
+00:09:17.618 --> 00:09:23.218
+were raising, raising tons of money. And so, you know, there's a lot of like, it's good, it's great,
+
+00:09:23.218 --> 00:09:27.618
+like, everyone's raising a ton of money. But, you know, is it productive? Like, are the companies
+
+00:09:27.618 --> 00:09:32.818
+making money? Like, are we are we advancing society? And so I think, I don't know that there's
+
+00:09:32.818 --> 00:09:38.257
+any easy answers to that. And just, you know, being contrarian and, you know, like poo-pooing
+
+00:09:38.257 --> 00:09:42.018
+on things, because you don't, you know, you don't like them, or maybe you're not part of like, you
+
+00:09:42.018 --> 00:09:46.257
+know, people, companies that are, that are raising a lot of money or being like nominally successful,
+
+00:09:46.257 --> 00:09:49.698
+like, I think it's worthwhile to like, take a step back. It's like, we're building a lot of stuff,
+
+00:09:49.698 --> 00:09:53.618
+but like, is it, you know, is it helping like the modern data stack? It's very complex, like,
+
+00:09:54.498 --> 00:09:58.178
+the whole diagram, the landscape is like got thousands of companies on it now, like you need
+
+00:09:58.178 --> 00:10:02.818
+a microscope to, to check out like all the ecosystem of different, you know, open source
+
+00:10:02.818 --> 00:10:07.698
+tools and companies and things. And it's a little bit overwhelming, you know, just trying to make
+
+00:10:07.698 --> 00:10:12.177
+make sense of it. Yeah, well, we've we've cleaned that out some. The modern data stack. There are
+
+00:10:12.177 --> 00:10:17.137
+fewer now. Yeah, there's some consolidation happening. Yeah, yeah. Yeah, we've removed
+
+00:10:17.137 --> 00:10:21.618
+some from the map. So yeah, it is interesting, too, that like, I know for the modern data stack
+
+00:10:21.618 --> 00:10:28.098
+stuff, like, I listened to you and Tristan talking, I think last year ish about his,
+
+00:10:28.978 --> 00:10:35.378
+post he released, like, is the modern data stack useful? No. And that's, yeah, that's an interesting
+
+00:10:35.378 --> 00:10:41.778
+one where sort of like you got to ride along with him and almost like discuss this concept. I know
+
+00:10:41.778 --> 00:10:48.257
+you've sort of hit on the modern data stack as a kind of like hyped up. I mean, it might be on
+
+00:10:48.257 --> 00:10:54.978
+that for as far as it's like, it's it's the same as big data. Like, it's an era. It's a it's a
+
+00:10:54.978 --> 00:10:59.857
+useful term for a thing that happened over some period of time. That's like, what is big data?
+
+00:10:59.857 --> 00:11:04.418
+I don't know. Like, it was the thing we all got excited about in 2010 or whatever. That was like,
+
+00:11:04.418 --> 00:11:09.298
+we're going to predict the future with just like magic and data science and stuff. And like,
+
+00:11:09.298 --> 00:11:12.497
+nobody really talks about that anymore. That's not a thing. But it's like, was it successful?
+
+00:11:12.497 --> 00:11:16.738
+Kinda. Was it what people said it was? The Economist had all these articles about it.
+
+00:11:16.738 --> 00:11:19.937
+I remember, like, 2014, it was like, oh, my God, the world. And it's like, was that did that
+
+00:11:19.937 --> 00:11:24.018
+happen? Not really. But it's useful as like a marker in time. And I think that's basically
+
+00:11:24.018 --> 00:11:29.057
+what this was. It was like the joke I kind of always make about it is it's it's data companies
+
+00:11:29.057 --> 00:11:34.898
+that launched on product time because it's like one that's sort of when this happened. Like,
+
+00:11:34.898 --> 00:11:39.857
+I don't know if people use product anymore, but they certainly did in 2017. And there's a little
+
+00:11:39.857 --> 00:11:44.658
+bit of like a grant bottoms up. It was kind of consumer. It wasn't go sell to giant companies.
+
+00:11:44.658 --> 00:11:49.857
+It was all like, oh, we'll do like product led growth type of stuff. So it's like useful for that
+
+00:11:50.577 --> 00:11:54.018
+as a as a bucket to just put these sort of like spiritual things in.
+
+00:11:55.697 --> 00:11:59.298
+Is it still exists? Not really. But like, that's not because everything's dead. It's because like
+
+00:11:59.298 --> 00:12:04.497
+that era is past. We have moved on to something else. Yeah, I guess that's that is interesting
+
+00:12:04.497 --> 00:12:09.857
+in that it seems like it connects to to some of the stuff you've talked about lately. I think
+
+00:12:09.857 --> 00:12:15.937
+in the talk you gave, like in the long term, everything's a fad. Like big data is kind of
+
+00:12:15.937 --> 00:12:24.018
+like being at a point in time and like serving a purpose for like specific people. I was really
+
+00:12:24.018 --> 00:12:27.937
+curious about this talk, because if I had to break it down, it's like 15 minutes of you
+
+00:12:28.658 --> 00:12:33.458
+talking about the mechanics of gymnastics scoring very complicated and two minutes
+
+00:12:33.458 --> 00:12:37.777
+tying into data. But like to your point about like wanting people to be entertained for 10 minutes,
+
+00:12:37.777 --> 00:12:43.937
+I was like, for the gymnastics, Juicy Goss alone, I feel like totally sold. I mean, the stuff that
+
+00:12:43.937 --> 00:12:48.818
+we do is not that interesting. Yeah. But like, you know, a giant like set of lawsuits over who
+
+00:12:48.818 --> 00:12:53.618
+wins like medals and women's gymnast way more interesting than the ins and outs of sequel.
+
+00:12:53.618 --> 00:12:59.217
+Yeah. Right. Yeah. Do you mind like really quick, just recapping like the just the like little
+
+00:12:59.217 --> 00:13:04.258
+tidbit of Juicy Goss what went down in the Olympics? I think I can do this.
+
+00:13:05.137 --> 00:13:10.818
+Okay. So there's a women's floor exercise final and 20, I don't know, 20, 24. Yeah. Yeah. It's
+
+00:13:10.818 --> 00:13:16.337
+Paris. Women's floor exercise final. A bunch of gymnasts go. Simone Biles is supposed to win.
+
+00:13:16.337 --> 00:13:21.137
+She like messes up a couple of times. She's in second. There's a Brazilian named Rebecca Andrade
+
+00:13:21.137 --> 00:13:26.738
+who's in first. And then there are two Romanians tied for fourth. And the way women's gymnastic
+
+00:13:26.738 --> 00:13:30.257
+scoring works is there's, there's a starting score value, which is basically computed from
+
+00:13:30.257 --> 00:13:34.097
+like the elements that you do. There is an execution score, which is kind of like subjective
+
+00:13:34.097 --> 00:13:39.857
+judging. Was it artistic and that sort of stuff. And then there are deductions, which are the like,
+
+00:13:39.857 --> 00:13:42.417
+you stepped out of bounds. And the things we all yell at people from the couch, you know,
+
+00:13:42.417 --> 00:13:45.058
+it's like that whole, like, oh my God, they took a step on their landing a 10th.
+
+00:13:47.137 --> 00:13:51.857
+After the all but one people, one gymnast had gone, there were these two Romanians tied for
+
+00:13:51.857 --> 00:13:57.458
+fourth. One of them had the tiebreaker because she had a higher execution score, which is the
+
+00:13:57.458 --> 00:14:03.137
+like kind of middle score there. And then the last gymnast to go was an American named,
+
+00:14:06.817 --> 00:14:10.898
+why am I suddenly blanking on her name? Jordan, Jordan Childs, Jordan Childs. Jordan Childs goes,
+
+00:14:10.898 --> 00:14:13.857
+Jordan Childs gets a score that like puts her in fifth behind these two Romanians.
+
+00:14:15.218 --> 00:14:20.257
+Her coach realizes that they calculated her difficulty score wrong. Like they basically
+
+00:14:20.257 --> 00:14:24.577
+added up the elements wrong and had they calculate correctly, she would have come in third. So the
+
+00:14:24.657 --> 00:14:29.137
+coach protests, she ends up getting third. The judges say, yes, you are right. We should have
+
+00:14:29.137 --> 00:14:33.778
+calculated differently. She ends up getting third. After that happens, the woman who was in third and
+
+00:14:33.778 --> 00:14:40.577
+then became in fourth said, actually, she protested too late that you have a minute to like initiate
+
+00:14:40.577 --> 00:14:43.938
+the protest. You can't actually initiate the protest. She said she initiated after a minute
+
+00:14:43.938 --> 00:14:48.018
+and 24 seconds. It goes to some sort of tribunal. The tribunal said it was after a minute and four
+
+00:14:48.018 --> 00:14:52.018
+seconds of like, actually, Jordan Childs does not get that change in score. She goes back to fifth.
+
+00:14:52.097 --> 00:14:56.738
+But then the other Romanian who was in fourth the whole time or fifth or whatever, nobody knew,
+
+00:14:57.857 --> 00:15:01.298
+said that she got a deduction for stepping out of bounds, but she didn't actually step out of
+
+00:15:01.298 --> 00:15:04.738
+bounds. And there's like a video of her not stepping out of bounds. And like she had basically
+
+00:15:04.738 --> 00:15:08.498
+her foot landed where her heel was above out of bounds, but she never touched and you have to
+
+00:15:08.498 --> 00:15:13.377
+touch her to be out of bounds. And so then she protested being like, I should have gotten third
+
+00:15:13.377 --> 00:15:17.137
+because had she not gotten that deduction, she would have actually been above the other Romanian
+
+00:15:17.137 --> 00:15:22.417
+and Jordan Childs is better score. Even if Jordan Childs had her score commuted correctly,
+
+00:15:22.417 --> 00:15:25.697
+she would have been above that. So it became this huge thing. It became always like lawsuits.
+
+00:15:26.577 --> 00:15:31.697
+Ultimately, I think it is still in court. There is like various some Swiss court that does
+
+00:15:31.697 --> 00:15:37.537
+arbitration for this stuff. The initial ruling was basically the first judging was correct because
+
+00:15:37.537 --> 00:15:42.898
+Jordan Childs could not actually change her score. The review of a deduction is not reviewable.
+
+00:15:42.898 --> 00:15:46.977
+There are all these protests and it's been a whole thing. And like the point was, it was like
+
+00:15:46.977 --> 00:15:52.178
+we were fighting over all of these weird, tedious, like they became about, it became sort of a legal
+
+00:15:52.178 --> 00:15:58.577
+battle where it's like, what's the letter of the law, not who's routine. Yeah. Yeah. Like at the
+
+00:15:58.577 --> 00:16:04.738
+end of the day, if people want to know like who did best, we've entered some very detailed, like
+
+00:16:05.938 --> 00:16:11.778
+quantitative hell to figure out like, yeah. And like maybe in an unsatisfying way, you see how we
+
+00:16:11.778 --> 00:16:14.817
+get there, which is like, there was all these, I mean, there was some giant controversy in like
+
+00:16:14.817 --> 00:16:20.577
+2006, I think. I don't remember when this was, maybe 2002, where basically like the judges
+
+00:16:20.577 --> 00:16:23.857
+mess, they did more of the perfect 10 thing. It was just like judges subjectively perfect 10.
+
+00:16:23.857 --> 00:16:27.697
+There was like some mechanicalness to it, but a lot of it was just like, you know, the Russian
+
+00:16:27.697 --> 00:16:31.618
+judge kind of stuff. And so they're like, okay, we have this much more structured thing. There's
+
+00:16:31.618 --> 00:16:35.778
+these giant rule books with tons and tons of elements and stuff like that. But then it becomes
+
+00:16:35.778 --> 00:16:44.018
+this weird, like the whole game is playing that rule book as opposed to like do the best routine.
+
+00:16:44.018 --> 00:16:49.298
+I mean, the best routine becomes gaming the math in some sense. Like there's stuff in like
+
+00:16:49.298 --> 00:16:56.738
+figure skating where you get like bonuses the later you do elements. And so people will try to
+
+00:16:56.738 --> 00:17:01.218
+do harder elements later because they get like a bit, there's like a special 20%, but I don't know
+
+00:17:01.218 --> 00:17:04.097
+what the actual number is. There's all these sorts of things like that where like these,
+
+00:17:05.058 --> 00:17:11.857
+what used to be sort of artistic sports became extremely quantified around these like kind of
+
+00:17:11.857 --> 00:17:16.097
+weird rules and stuff like, yeah, what, how many, how many seconds do you have to protest?
+
+00:17:16.097 --> 00:17:16.498
+Right.
+
+00:17:16.498 --> 00:17:19.938
+Became like what decided the medal. That's the rule, but I don't, okay.
+
+00:17:19.938 --> 00:17:24.657
+Yeah. And I, I find it so interesting because I do feel like I really saw myself in that
+
+00:17:25.458 --> 00:17:31.938
+like tale and the point you made about sort of like, if the CEO hits me up and asked me like,
+
+00:17:32.018 --> 00:17:37.458
+what should I do? And I break out all these formulas when they could go to like chat GPT
+
+00:17:37.458 --> 00:17:45.378
+or something and get like a very quick answer. I don't, I don't know. I'm curious if you could
+
+00:17:45.378 --> 00:17:52.498
+recap that to like this idea that we used to be very, or like being really quantitative and
+
+00:17:52.498 --> 00:17:53.857
+model oriented was.
+
+00:17:54.203 --> 00:17:57.083
+a huge virtue, if I'm understanding correctly,
+
+00:17:57.883 --> 00:18:02.763
+but that now there's this world where we can actually, like, get answers. It's all vibes.
+
+00:18:02.763 --> 00:18:07.643
+Yeah, and that was kind of — it's like, before, and then the gymnastics case, it was vibes.
+
+00:18:07.643 --> 00:18:11.483
+It was, you're an expert, tell me how I did. Okay, so who does the best with vibes? And like,
+
+00:18:11.483 --> 00:18:14.283
+I don't know, this person presumably knows more than we can all dispute it, but it's kind of vibes.
+
+00:18:15.403 --> 00:18:19.723
+To me, the data stuff was — and this is sort of the, everything is a fad — it's better,
+
+00:18:19.723 --> 00:18:24.842
+kind of. But a lot of it is, like, that was the culture. It was the culture of, like,
+
+00:18:24.842 --> 00:18:29.482
+Nate Silver became popular and things like the OkCupid blog, a bunch of people got into this
+
+00:18:29.482 --> 00:18:37.563
+stuff. And our generation basically got into the, like, well, actually, let me show you all the
+
+00:18:37.563 --> 00:18:41.563
+numbers and why you're — and that became, like, a thing, a signifier of how smart you are and,
+
+00:18:41.563 --> 00:18:42.923
+like, how successful — all this stuff.
+
+00:18:43.310 --> 00:18:49.470
+And I think we have very much — there has been a lot of pushback to that, somewhat, in some places anyway.
+
+00:18:49.470 --> 00:18:52.590
+Things like this gymnastic stuff happens when it gets so quantified, where it's just like,
+
+00:18:52.590 --> 00:18:55.230
+my God, what are we doing? It's been a year. We still don't know who won this thing.
+
+00:18:55.230 --> 00:19:01.390
+These routines are 90 seconds long. And there hasn't really been an alternative,
+
+00:19:01.390 --> 00:19:05.709
+but now, like, AI kind of is an alternative. You can just be like, what's the vibe?
+
+00:19:06.430 --> 00:19:10.750
+You can give it — don't go and analyze a thousand support tickets. Give a thousand support tickets
+
+00:19:11.150 --> 00:19:15.709
+to ChatGPT and send me, like, what's the vibe? And if I can do that and get an answer in five seconds,
+
+00:19:15.709 --> 00:19:19.790
+and I can do that as much as I want, like, I'm not going to go ask an analyst to give me some
+
+00:19:19.790 --> 00:19:23.310
+giant report of a bunch of, like, numbers that don't align. And they're like, well,
+
+00:19:23.310 --> 00:19:26.349
+did you think about this way or this way? But it depends on how you count what a user means.
+
+00:19:26.349 --> 00:19:29.470
+Like, what's the vibe? Yeah. And I feel like we're about to cut
+
+00:19:29.470 --> 00:19:33.550
+Wes loose on this here, because I feel like Wes has a lot of opinions. But if I can just put
+
+00:19:34.189 --> 00:19:38.110
+a thread through it, I feel like it's so interesting to hear you describe, like,
+
+00:19:38.110 --> 00:19:43.630
+the Nate Silver, OkCupid blog era, which you mentioned, were kind of, like, inspirations for
+
+00:19:43.630 --> 00:19:51.070
+the original mode blog posts. And then the shift into today of more vibes, which is — I feel like
+
+00:19:51.070 --> 00:19:58.029
+a lot of the topics we hear right now, like, on your subsec about, like, AI and people vibing out,
+
+00:19:58.029 --> 00:20:04.190
+I know, like, Wes, you came up in a recent post that's very vibe code related.
+
+00:20:04.830 --> 00:20:09.150
+Yeah, there's a lot of — there's definitely a lot of topics there. I mean, I think it is
+
+00:20:09.150 --> 00:20:13.550
+interesting. You know, I think all three of us have spent a lot of our careers basically focused
+
+00:20:13.550 --> 00:20:20.029
+on building tools and environments to make it easier for people to do things with data. And
+
+00:20:20.029 --> 00:20:24.669
+that might be, like, writing SQL queries and computing things and looking at the answers or
+
+00:20:24.669 --> 00:20:30.269
+making plots. Or in the case of Pandas, it was like, I just want to be able to read CSV files
+
+00:20:30.269 --> 00:20:35.070
+or get a little bit of data out of the database and, like, clean it up and wrangle it and get the
+
+00:20:35.070 --> 00:20:40.349
+answer. And surprisingly, in 2007, when I started working, I was shocked at how difficult it was to
+
+00:20:40.909 --> 00:20:47.390
+undertake, like, those basic data questions. But yeah, I mean, now we're in this, you know,
+
+00:20:47.390 --> 00:20:52.430
+now we're in this weird era where, like, the whole concept of, like, usability of data tools and
+
+00:20:52.989 --> 00:20:58.909
+the environments in which we ask those questions is being completely turned on its head. And so,
+
+00:20:58.909 --> 00:21:05.150
+like, I find myself, you know, for probably the first time in my career, like, essentially
+
+00:21:05.709 --> 00:21:12.670
+not writing code, like, just looking at code and, you know, pressing return more or less. And so,
+
+00:21:12.670 --> 00:21:16.510
+you know, the way that we work and, like, the shape of our tools and how we ask questions,
+
+00:21:16.510 --> 00:21:22.030
+get answers and make decisions is certainly, you know, hasn't completely changed yet, but it's,
+
+00:21:22.030 --> 00:21:25.790
+like, on its way to changing. And so I don't think we have a clear picture yet of what that's,
+
+00:21:25.790 --> 00:21:29.310
+you know, what that's going to look like. And there's a broader, to me, like, kind of
+
+00:21:29.310 --> 00:21:37.390
+cultural thing in all of that, which is in 2014, 2012, 2010, 2014, whenever, like,
+
+00:21:37.390 --> 00:21:43.950
+data was kind of a status thing. It was big tech startups had big data teams and, like, not, like,
+
+00:21:43.950 --> 00:21:49.230
+capital B big data, but they had data teams, lots of people on them. And they were, like, look at
+
+00:21:49.230 --> 00:21:52.030
+that one of the things they would sort of show off is how, like, smart they are about making
+
+00:21:52.030 --> 00:21:54.829
+decisions because they're, like, being so data driven and all these things they do.
+
+00:21:54.829 --> 00:21:58.749
+And, like, you go to a VC meet, like, you go to a VC pitch or you, like, go to a board meeting,
+
+00:21:58.749 --> 00:22:02.189
+they want to see all the numbers. And, like, that was kind of how you represented that you were,
+
+00:22:02.189 --> 00:22:07.230
+like, with it is you did these sorts of things. Now, to your point, not just in sort of, like,
+
+00:22:07.230 --> 00:22:12.989
+vibe coding type of stuff, but if you talk to companies, like some of the sort of leading AI
+
+00:22:12.989 --> 00:22:16.989
+companies, not necessarily like the anthropics in everybody's eyes, but things like companies
+
+00:22:16.989 --> 00:22:20.749
+like Cursor, those sorts of that cohort of things that, like, the big companies with not a ton of
+
+00:22:20.749 --> 00:22:27.629
+people, data is not a big part of what they do. It's very vibey. Like, Cursor famously has said,
+
+00:22:27.629 --> 00:22:33.390
+like, the way that they basically test their agent harness stuff is mostly vibes. They're
+
+00:22:33.390 --> 00:22:38.749
+not really, like, an evals driven thing. And I think that broadly is happening with, like,
+
+00:22:38.749 --> 00:22:42.109
+taste in Silicon Valley is a big thing. It's like, oh, we don't need someone to be, like,
+
+00:22:42.109 --> 00:22:45.629
+you know, tweaking the numbers based on an A-B test that has this, like, half a percent lift.
+
+00:22:45.629 --> 00:22:49.950
+It's like, what's good taste? And so I think, like, status has become a lot less about how
+
+00:22:49.950 --> 00:22:56.269
+well do you understand the numbers and more of just, like, are you, what's the guy's name?
+
+00:22:56.269 --> 00:23:00.589
+Rick Rubin. That's, yeah. Like, Rick Rubin became this weird, like, that's who we all want to be,
+
+00:23:01.390 --> 00:23:06.589
+not Nate Silver. Yeah. And I think that, like, culturally becomes a go. We don't want to do
+
+00:23:06.589 --> 00:23:09.790
+the data stuff. We want to have, like, somebody who's, like, who's the artist that can tell us,
+
+00:23:09.790 --> 00:23:13.629
+can just, like, conjure the great ideas in their head. Yeah. Maybe that works, maybe it doesn't.
+
+00:23:13.629 --> 00:23:16.670
+I'm not saying it's necessarily better, but I think that's at least, like, the ascendant
+
+00:23:16.670 --> 00:23:21.149
+cultural trend. Yeah. It's so funny you mentioned Rick Rubin. I mean, maybe this came from one of
+
+00:23:21.149 --> 00:23:25.790
+your posts, but I was just thinking about that, like, where I think he starts an interview with,
+
+00:23:25.790 --> 00:23:31.469
+like, a brief, like, minute of meditating with the interviewer. And I'm like, sure,
+
+00:23:32.110 --> 00:23:36.110
+that's what, yeah. And then he is like, well, I don't really like, I just feel it out, like,
+
+00:23:36.110 --> 00:23:41.710
+the music and, but it's, yeah, it's hard to deny the, like, impact. And if you had done that in
+
+00:23:41.710 --> 00:23:47.309
+2012, everyone would have been like, oh, it's like a hippo thing. It's like, oh, your intuition's
+
+00:23:47.309 --> 00:23:51.950
+totally wrong. You've got to, like, watch where the users go and look at, look at, like, what's
+
+00:23:51.950 --> 00:23:55.149
+actually are they doing? Don't tell me what you think they're doing. And now it's like, if you're
+
+00:23:55.149 --> 00:23:58.189
+Rick Rubin, you sit and you have a minute of meditation and you're just saying, like, I just
+
+00:23:58.189 --> 00:24:03.390
+intuit it. People are like, oh, that's the guy. Yeah. Yeah. Yeah. Yeah. Which again, I don't know,
+
+00:24:03.390 --> 00:24:08.189
+maybe it's better, maybe it's worse, but it's at least the thing that we, like, that's who we want,
+
+00:24:08.189 --> 00:24:13.390
+I suppose. Yeah. Yeah. I'm here for it. I, as a data person, you shouldn't be here for it.
+
+00:24:13.390 --> 00:24:18.270
+What are we doing? Yeah. Yeah. Yeah. I'm so curious. I don't, Wes, do you have any burning,
+
+00:24:19.550 --> 00:24:23.629
+do you have any burning AI questions? Cause I, I feel like there's a million things.
+
+00:24:23.629 --> 00:24:28.429
+I mean, it's, I, I have a lot, right. And it's not, not simply because I've been, I've been,
+
+00:24:28.429 --> 00:24:32.510
+um, I, I don't like to describe what I'm doing as vibe coding. Like, I feel like vibe coding has
+
+00:24:32.510 --> 00:24:36.589
+almost become this like pejorative term, like vibe coding means like, I don't care about the output.
+
+00:24:36.589 --> 00:24:41.230
+Like if it seems like it works, it works. Like, you know, like I, I still care about like,
+
+00:24:41.869 --> 00:24:47.309
+you know, code quality and like how fast my test suite runs, like how fast the code runs, like
+
+00:24:47.309 --> 00:24:51.869
+the longterm sustainability, like growth of the code base. Like, I think that a lot of,
+
+00:24:51.869 --> 00:24:56.349
+a lot of like vibe coded software is gonna, gonna reach some kind of a breaking point. If there's
+
+00:24:56.349 --> 00:25:02.749
+not like a reinvestment in like architectural quality and like, you know, essentially design
+
+00:25:02.749 --> 00:25:07.390
+patterns. So in a sense, like design patterns have become more important than ever. Like,
+
+00:25:07.390 --> 00:25:11.469
+uh, right now it's like an army of agents, uh, building, you know, these giant, you know,
+
+00:25:11.469 --> 00:25:17.950
+hairballs of code bases and, uh, and, and they're, you know, riddled with bugs and, um, you know,
+
+00:25:18.749 --> 00:25:24.670
+how we reckon with that and how we manage that, um, time will, time will tell. But I think the,
+
+00:25:24.670 --> 00:25:30.830
+the, you know, the, the big thing is like, it's both like the, one of the most exciting times
+
+00:25:30.909 --> 00:25:36.510
+in, in my life in terms of technology. I think that the closest analogy I can think might be
+
+00:25:36.510 --> 00:25:41.710
+like the beginning of the internet, like 1995, like I was 10 years old in 1995. And so I remember
+
+00:25:41.710 --> 00:25:46.990
+like how exciting it was to get my hands on Netscape Navigator and start using the internet.
+
+00:25:46.990 --> 00:25:51.390
+Uh, and I, you know, I was too young to do anything meaningful in that era. It was certainly,
+
+00:25:51.390 --> 00:25:56.189
+you know, didn't, I didn't program, like I wasn't going to go off and like start a company. I was
+
+00:25:56.189 --> 00:25:59.790
+interested in like video games and I did GoldenEye speed running on the early internet in the late
+
+00:25:59.790 --> 00:26:06.670
+nineties, you know? Um, but, but now it's like 30 years later, it's like everyone is, it's like
+
+00:26:06.670 --> 00:26:11.710
+this collective, like fixation on like this thing. Right. And everyone's trying to figure out like,
+
+00:26:11.710 --> 00:26:16.189
+how do we get the most out of this thing right now? Either like, how do we start companies?
+
+00:26:16.189 --> 00:26:21.790
+Like how do we, we become rich and like be the first, like be the best, like deliver the tools,
+
+00:26:21.790 --> 00:26:25.550
+deliver the, the interfaces, deliver the environments, deliver the solutions to make
+
+00:26:25.550 --> 00:26:30.909
+this new, like fundamentally interesting and like powerful technology work well for, for people.
+
+00:26:31.469 --> 00:26:36.270
+And so what, it's both exciting and fun and I'm having a lot of fun, but there's also like this
+
+00:26:36.270 --> 00:26:42.029
+weird kind of like joyless grind that's happening where like a big part of the tech industry is
+
+00:26:42.029 --> 00:26:46.909
+like working harder and longer than they ever have before. And like, essentially like a lot
+
+00:26:46.909 --> 00:26:51.710
+of people are not having any fun. And that to me is like weird. And maybe it's because there's so
+
+00:26:51.710 --> 00:26:57.869
+much money sloshing around in the ecosystem. There's so much money to be made evidently from,
+
+00:26:57.869 --> 00:27:03.149
+from this. And so there's a lot of, you know, young 20 somethings who were like, yeah, this is
+
+00:27:03.149 --> 00:27:09.149
+my opportunity to like, you know, work 120 hours a week and have, you know, 15 cloud code sessions
+
+00:27:09.149 --> 00:27:13.390
+going all the time. And then maybe I can become a billionaire if I keep that up for as long as
+
+00:27:13.390 --> 00:27:20.109
+possible. So I think there will be some kind of like, you know, collective kind of community burnout
+
+00:27:20.109 --> 00:27:25.629
+that happens at some point, but it is very exciting. And I, you know, definitely I'm like
+
+00:27:25.629 --> 00:27:29.309
+on board with this new way of working. Like I think there's no going back and I don't want to
+
+00:27:29.309 --> 00:27:33.869
+go back, but how to actually make it work, like how to build software, like how to do analytics,
+
+00:27:33.869 --> 00:27:42.189
+how to do data science. Who knows? Like it's, it's, I'm, I'm, I'm questioning, I'm questioning
+
+00:27:42.189 --> 00:27:46.109
+everything, like kind of rethinking everything. So I don't know, just kind of interested in like
+
+00:27:46.109 --> 00:27:50.429
+what's been your experience and how you've like gotten to know this new technology and
+
+00:27:50.429 --> 00:27:57.070
+like incorporating it into your, your world. I, so one, Goldeneye doesn't hold up like you
+
+00:27:57.070 --> 00:28:01.390
+want it to. Like today? No, it really does not hold up. Is it the square?
+
+00:28:01.816 --> 00:28:05.496
+It just, it doesn't look good. It's like, kind of clunky.
+
+00:28:05.496 --> 00:28:10.696
+I mean, it's still like, it's still charming. Like, I still, it has a special place in my heart.
+
+00:28:11.896 --> 00:28:18.136
+But yeah, like, I got one of those, like, the analog 3D, it's like an FPGA clone of an N64,
+
+00:28:18.136 --> 00:28:21.416
+and like, plugged in Goldeneye, and like, I played for a little bit, and I was like,
+
+00:28:22.776 --> 00:28:24.375
+it had its time and its place, you know?
+
+00:28:24.375 --> 00:28:27.576
+Like, you want it to be like, oh my god, this is gonna be, and you're like, ah,
+
+00:28:28.056 --> 00:28:28.696
+not so great.
+
+00:28:30.056 --> 00:28:33.336
+Okay, so the answer to your question, I guess I would say a couple things.
+
+00:28:34.056 --> 00:28:38.056
+On like, using the things and what happens, the analogy I've used with this before is like,
+
+00:28:38.615 --> 00:28:44.136
+it feels a little bit like when Google came out, that, when Google first came out, I don't know,
+
+00:28:44.136 --> 00:28:47.896
+I was in like, middle school, high school, something like that, or whatever, and people
+
+00:28:47.896 --> 00:28:50.696
+were like, oh my, this is the new thing, you gotta learn how to use it, you gotta learn all the
+
+00:28:50.696 --> 00:28:54.295
+tricks, you gotta learn all like, the search, search booleans, you gotta learn like, query
+
+00:28:54.295 --> 00:28:58.056
+languages for Google, and how to like, exclude sites, and don't exclude this, include these
+
+00:28:58.056 --> 00:28:59.016
+terms, don't use them, it's like, okay.
+
+00:28:59.976 --> 00:29:02.696
+And then obviously, like, 10 years later, nobody knows how to do that, like, you just get a feel
+
+00:29:02.696 --> 00:29:05.895
+for Google, you get a feel for the thing, people who are, grow up with it, like, understand how
+
+00:29:05.895 --> 00:29:08.935
+to, you wanna search for something there, people can find anything, and it's not because they're
+
+00:29:08.935 --> 00:29:11.895
+using any sort of fancy search parameters, it's just like, you kinda get a feel for the machine.
+
+00:29:13.895 --> 00:29:16.935
+Broadly, I think that's what'll happen with all of this, is like, there's a whole bunch of like,
+
+00:29:16.935 --> 00:29:21.175
+the internet grifter type of, here's how to get the most out of your five clawed codes,
+
+00:29:21.175 --> 00:29:25.575
+and blah, blah, blah, and it's like, hey, this'll all kinda come together, and best things will
+
+00:29:25.575 --> 00:29:26.935
+emerge, and you'll just get a feel for it.
+
+00:29:27.816 --> 00:29:31.336
+So I think there is a lot of like, stuff around that, that can be kinda, and like, what emerges
+
+00:29:31.336 --> 00:29:34.136
+from it, I don't know, somebody will figure out some crazy thing, and they'll release a product,
+
+00:29:34.136 --> 00:29:37.736
+and like, Clawed Code is an example of this, but like, all of a sudden, kinda came from nowhere,
+
+00:29:37.736 --> 00:29:42.056
+not really, but it went from being like, this kinda side thing, to like, oh, this is the only
+
+00:29:42.056 --> 00:29:44.136
+thing anybody ever talks about.
+
+00:29:44.136 --> 00:29:50.215
+To your point, though, about like, the like, Silicon Valley burnout stuff, this is a half
+
+00:29:50.215 --> 00:29:53.175
+written post that we'll see if I can actually make this analogy work now.
+
+00:29:55.976 --> 00:29:59.336
+Earlier this year, there was a guy, he was an engineer, Steve Yaggy, wrote a post called
+
+00:29:59.336 --> 00:30:02.136
+Gastown, which was like, very viral when it came out.
+
+00:30:02.136 --> 00:30:06.935
+Basically, he was like, how do I turn my Clawed Codes into the most insane thing you could
+
+00:30:06.935 --> 00:30:07.736
+possibly imagine?
+
+00:30:08.295 --> 00:30:13.096
+And it's like, there's one, like, mayor thing, I don't know.
+
+00:30:13.096 --> 00:30:14.935
+Gastown is a reference to Mad Max, right?
+
+00:30:14.935 --> 00:30:16.616
+I think so, I think so.
+
+00:30:16.616 --> 00:30:18.456
+Where your orchestras are like a convoy.
+
+00:30:18.536 --> 00:30:22.456
+Gastown is like, yeah, it's like a city in Mad Max universe, yeah.
+
+00:30:22.456 --> 00:30:26.616
+But it's like, there's like, a king, and then the king has all these other, like, bots that
+
+00:30:26.616 --> 00:30:29.656
+do things, and there's, it's agents all the way down.
+
+00:30:29.656 --> 00:30:31.176
+There's like, four or five layers to it.
+
+00:30:32.055 --> 00:30:37.256
+And he basically says like, this thing burns enormous amounts of money, for a lot of noise.
+
+00:30:37.256 --> 00:30:40.695
+Basically, the point is like, a thousand things do something, and one gets picked up, and
+
+00:30:40.695 --> 00:30:44.055
+that's, you know, you try it a thousand times, and most of them are trash, and a few are
+
+00:30:44.055 --> 00:30:47.016
+good ideas, and one of them, only one can actually get chosen, because we're only implementing
+
+00:30:47.016 --> 00:30:48.055
+one thing.
+
+00:30:48.055 --> 00:30:51.335
+And the imagery he uses, because it's this Mad Max thing, imagery he uses for it is like,
+
+00:30:51.896 --> 00:30:54.935
+it's like, men in tar pits.
+
+00:30:54.935 --> 00:30:58.055
+It is not like, a lot of like, the future of technology is like, some, that's like,
+
+00:30:58.055 --> 00:30:59.736
+the paradise of the floating cars and stuff.
+
+00:30:59.736 --> 00:31:01.495
+And this is just like, nah, we're all in tar pits.
+
+00:31:02.536 --> 00:31:05.495
+And there's a part of that that feels like, that's actually a little bit of what the world
+
+00:31:05.495 --> 00:31:11.816
+is right now, is, like, this actually is all kind of a, we're all like, just in these tar
+
+00:31:11.816 --> 00:31:17.736
+pits, non-stop, to where, to your point, yeah, there's a thousand companies in San Francisco
+
+00:31:17.736 --> 00:31:21.335
+right now, two of them are going to work out, because like, only two can.
+
+00:31:21.976 --> 00:31:24.775
+You can't have a thousand billion dollar, like, it's not going to happen.
+
+00:31:26.376 --> 00:31:30.055
+And so there's going to be a whole bunch of people who are like these agents, the point
+
+00:31:30.055 --> 00:31:31.575
+of their work is to be thrown away.
+
+00:31:31.575 --> 00:31:32.456
+Oh, wow.
+
+00:31:32.456 --> 00:31:36.456
+Like, everybody's figuring out how to build stuff, and most of those things can't work,
+
+00:31:36.456 --> 00:31:38.055
+because they're all building the same thing, and one's going to win.
+
+00:31:38.695 --> 00:31:43.016
+And I think, like, we haven't really reckoned with that, like, not as a, it's like, okay,
+
+00:31:43.016 --> 00:31:45.896
+it'll be fine, a bunch of people try a bunch of stuff and it won't work out, but it feels
+
+00:31:45.896 --> 00:31:49.256
+like, if you go to SF, there is this sense of, like, oh, my God, we're all, like, at
+
+00:31:49.256 --> 00:31:52.775
+the beginning of the internet, and we're all going to be enormously rich and famous, and
+
+00:31:52.775 --> 00:31:57.896
+it's like, ultimately, that's kind of like a status game, and there's only so many people
+
+00:31:57.896 --> 00:31:59.016
+at the top of that pyramid.
+
+00:31:59.016 --> 00:32:04.055
+Like, status is a zero-something, and in some sense, like, business success is a zero-something.
+
+00:32:04.055 --> 00:32:06.935
+There's only that much money people are going to spend, it's not like everybody can sell,
+
+00:32:07.896 --> 00:32:13.335
+you can't sell a thousand $10 million contracts to Coca-Cola, you can sell, like, two.
+
+00:32:14.135 --> 00:32:18.615
+And so, I don't know, it feels like there's a, and one way to look at it is, like, oh,
+
+00:32:18.615 --> 00:32:21.816
+my God, this is, like, so much potential and creation and possibility, and I guess that's
+
+00:32:21.816 --> 00:32:22.615
+kind of right.
+
+00:32:22.615 --> 00:32:27.976
+Another way to look at it is, like, oh, this is sort of a new, a certain salt mine that
+
+00:32:27.976 --> 00:32:33.096
+feels sort of fun, but ultimately, I think a lot of it is going to be, like, just industrial
+
+00:32:33.096 --> 00:32:33.335
+waste.
+
+00:32:33.335 --> 00:32:37.416
+Yeah, I mean, like, my optimistic take, and like, I am, you know, ultimately, you know,
+
+00:32:37.416 --> 00:32:41.015
+even though there's a lot of, like, questions about the, you know, the financial kind of
+
+00:32:41.015 --> 00:32:44.696
+private credit bubble, like, the infrastructure bubble, debt infrastructure bubble, and its
+
+00:32:44.696 --> 00:32:50.215
+effect on the economy, like, the over-concentration of the, you know, US economy in AI, essentially,
+
+00:32:50.215 --> 00:32:53.576
+like, the S&P 500, like, NASDAQ has essentially become an AI play.
+
+00:32:53.576 --> 00:32:56.935
+If you're in the US stock market, essentially, you're long AI, whether you want to, want
+
+00:32:56.935 --> 00:33:01.576
+to be or not, you know, your index funds, your 401k and all that.
+
+00:33:02.376 --> 00:33:07.495
+But I am also, on the course, the technology, I am an optimist, and, you know, what I've
+
+00:33:07.495 --> 00:33:12.296
+been telling people is that initially, there was fears of, like, AI is going to replace
+
+00:33:12.296 --> 00:33:15.495
+software engineers, and we're going to build the same amount of software, it's just going
+
+00:33:15.495 --> 00:33:16.856
+to be built by AI.
+
+00:33:16.856 --> 00:33:21.656
+But actually, no, we're going to build 10 to 100 times as much software.
+
+00:33:21.656 --> 00:33:25.976
+And yes, it's going to be built by AI, but there's still going to be a lot of professional,
+
+00:33:25.976 --> 00:33:27.656
+professional software engineers.
+
+00:33:27.656 --> 00:33:32.536
+But to your point, if we build 10 to 100 times as much software, who's going to buy it?
+
+00:33:32.536 --> 00:33:38.136
+And like, how, essentially, how much money is there going to be to, to buy, to buy software?
+
+00:33:38.775 --> 00:33:43.735
+And one of the memes that's been going around Silicon Valley lately is this, this concept
+
+00:33:43.735 --> 00:33:49.416
+of, like, software as a service is dead, which I think is a little bit, a little bit hyperbolic,
+
+00:33:49.416 --> 00:33:53.816
+because, like, some software as a service products are hard to build.
+
+00:33:54.775 --> 00:33:59.495
+Some turns out are, like, not, like, there's a lot of to do list apps, like, I'd say probably
+
+00:33:59.495 --> 00:34:01.096
+to do list apps are in trouble.
+
+00:34:01.816 --> 00:34:05.096
+Especially, you know, people can build their own, you know, I've built my own to do list
+
+00:34:05.096 --> 00:34:06.615
+app with cloud code, you know, why not?
+
+00:34:07.976 --> 00:34:12.296
+But I think certain classes of software will become very difficult to, you know, very difficult
+
+00:34:12.296 --> 00:34:16.455
+to monetize as they're, like, you know, free open source versions, or you can, like, roll
+
+00:34:16.455 --> 00:34:20.455
+your, you know, you know, pretty soon, like, I think right now, it's you still need to
+
+00:34:20.455 --> 00:34:23.976
+be a pretty good software engineer to get good output out of, out of cloud code.
+
+00:34:23.976 --> 00:34:27.096
+But over time, like, you may not need to be able to.
+
+00:34:27.096 --> 00:34:31.256
+And so maybe a year from now, or two years from now, you'll be able to pull up your phone
+
+00:34:31.256 --> 00:34:35.256
+and voice interface and say, make me a new to do list app that has these characteristics
+
+00:34:35.256 --> 00:34:39.735
+and come back a day or two later, and the agents will have built your, your iOS or Android
+
+00:34:39.735 --> 00:34:42.536
+app, and it will be installed on your installed on your phone.
+
+00:34:43.656 --> 00:34:49.416
+But I think, like, nobody really knows, like, what that, like, compression of the software
+
+00:34:49.416 --> 00:34:55.015
+industry looks like, like, so much more software fitting into effectively the same amount of
+
+00:34:55.015 --> 00:34:55.656
+space.
+
+00:34:55.656 --> 00:35:00.615
+It's like, you know, populations only growing so fast, like, yeah, maybe it will increase
+
+00:35:00.615 --> 00:35:07.416
+GDP, like US GDP, like world GDP, but not by 10 to 100 times, not even by a little bit.
+
+00:35:07.416 --> 00:35:11.335
+And yeah, and even if it does, like, ultimately, most people want to be rich, because they
+
+00:35:11.335 --> 00:35:14.536
+want to be richer than their neighbor, not because they care about how much money is
+
+00:35:14.536 --> 00:35:15.335
+in their actual bank.
+
+00:35:15.335 --> 00:35:17.495
+Like, there's a lot of this is just status to me.
+
+00:35:17.495 --> 00:35:21.656
+But I think, to me, the easiest analogy for it is just like, content creation, basically,
+
+00:35:22.136 --> 00:35:25.416
+that sure, it used to be to make a movie, you got to go to Hollywood, and it's got to
+
+00:35:25.416 --> 00:35:26.615
+pay a bunch of people do whatever.
+
+00:35:26.615 --> 00:35:28.055
+Now, anybody can do it.
+
+00:35:28.055 --> 00:35:31.175
+There's a lot more people making movies, there's a lot more movies, we only have so much time,
+
+00:35:31.175 --> 00:35:34.296
+we've given a lot more time to staring at TikTok than we did when we had to go to movie
+
+00:35:34.296 --> 00:35:34.935
+theaters, whatever.
+
+00:35:35.656 --> 00:35:40.856
+But like, it's not like everybody now is making there's a whole bunch of people who are, like,
+
+00:35:41.416 --> 00:35:47.576
+on the cusp of sanity, trying to become TikTok influencers, who that's obviously a very viable
+
+00:35:47.576 --> 00:35:47.816
+career.
+
+00:35:47.816 --> 00:35:49.015
+And for some people, it's been great.
+
+00:35:49.015 --> 00:35:52.376
+But like, there's a lot of people who are like, kind of on the fringe of that.
+
+00:35:52.376 --> 00:35:54.376
+And it, it seems kind of bad.
+
+00:35:54.376 --> 00:35:55.976
+Like, it seems very difficult if you're there.
+
+00:35:55.976 --> 00:35:59.256
+And there's a lot of a lot of stuff that's that edge of like, yeah, you've got enough
+
+00:35:59.256 --> 00:36:00.935
+to maybe make a thing, but like, not really.
+
+00:36:00.935 --> 00:36:03.416
+And like, that feels like closer to what the software stuff will be.
+
+00:36:03.416 --> 00:36:03.656
+Yeah.
+
+00:36:03.656 --> 00:36:05.656
+Could you say more about like, people on the edge?
+
+00:36:05.656 --> 00:36:09.495
+Like, what, what type of people like, what are you thinking of?
+
+00:36:10.376 --> 00:36:17.416
+Like, if when we started Mode, there was a starting a software company was like, a serious
+
+00:36:17.416 --> 00:36:20.455
+endeavor, not serious in the sense that like, we knew what we were doing.
+
+00:36:20.455 --> 00:36:21.895
+But like, you had to go out and raise money.
+
+00:36:21.895 --> 00:36:25.735
+You had to spend a bunch of time building a thing that from the day we started the company
+
+00:36:25.735 --> 00:36:29.576
+to the day we like, first put out the first product that anybody outside of it ever saw
+
+00:36:29.576 --> 00:36:30.615
+was close to a year.
+
+00:36:31.256 --> 00:36:34.215
+Like, and that was seen as being reasonably quick.
+
+00:36:34.215 --> 00:36:39.096
+And we like, made a product that was pretty simple for us to build anything that had any
+
+00:36:39.096 --> 00:36:41.015
+kind of like, meaningful feature set.
+
+00:36:41.015 --> 00:36:44.616
+It was going to take several years and take millions of dollars of like, spending on engineers.
+
+00:36:45.255 --> 00:36:52.215
+Um, it was very hard to get something that was like, sellable at all to market without
+
+00:36:52.215 --> 00:36:53.416
+spending a bunch of money, a bunch of time.
+
+00:36:54.215 --> 00:36:57.815
+And that didn't mean everybody who did it there, therefore it was like, uh, uh, like.
+
+00:36:58.339 --> 00:37:01.299
+real professional, but it just meant that there weren't that many people doing it,
+
+00:37:01.299 --> 00:37:04.019
+and if you did, you spent a lot of time thinking about it, and it was just like,
+
+00:37:04.019 --> 00:37:09.139
+this was a lot of work, and you kind of tried your best. And I think the same was true for,
+
+00:37:09.139 --> 00:37:12.899
+like, content before. Like, you want to write a book? Great, you write a book. It used to be,
+
+00:37:12.899 --> 00:37:15.459
+you got to sit down and write a book. It's gonna take you a long time. You may be a bad book,
+
+00:37:15.459 --> 00:37:18.978
+you may be a bad author, but it takes a long time. Even if you're gonna write some bad beach read,
+
+00:37:18.978 --> 00:37:24.738
+you got to write every word, and that, like, takes some time. And now you can write a book in 10
+
+00:37:24.738 --> 00:37:30.819
+minutes. You can create shippable software in two days. That doesn't mean, like, oh my god,
+
+00:37:31.459 --> 00:37:33.378
+the bar is either just that much higher.
+
+00:37:34.536 --> 00:37:36.616
+But there's also, to your point, like, we can't read every...
+
+00:37:36.616 --> 00:37:38.696
+If everybody writes a book in 10 minutes, we can't read that many books.
+
+00:37:38.696 --> 00:37:39.576
+Those books aren't going to get read.
+
+00:37:39.576 --> 00:37:42.136
+Like, it's just not possible to consume that much content,
+
+00:37:42.136 --> 00:37:44.536
+or read that many books, or use that much software.
+
+00:37:44.536 --> 00:37:47.016
+And because you can create a thing that you could have created
+
+00:37:47.016 --> 00:37:49.896
+10 years ago in two days, it would have taken you two years before.
+
+00:37:51.016 --> 00:37:51.656
+So what?
+
+00:37:52.215 --> 00:37:54.856
+Like, the market isn't growing at the same rate.
+
+00:37:54.856 --> 00:37:55.736
+It may be growing a lot.
+
+00:37:55.736 --> 00:37:56.535
+It may be doubling.
+
+00:37:56.535 --> 00:37:56.936
+I don't know.
+
+00:37:56.936 --> 00:38:00.295
+But when you can create 10 to 100 times as much, you know...
+
+00:38:00.295 --> 00:38:01.576
+What's the market for video?
+
+00:38:01.576 --> 00:38:03.416
+It's way more than it was 10 years ago.
+
+00:38:04.616 --> 00:38:07.495
+But there's probably a thousand times more video
+
+00:38:07.495 --> 00:38:09.736
+that people are creating now than they did 10 years ago.
+
+00:38:10.296 --> 00:38:12.695
+And so, like, there's a whole lot of people.
+
+00:38:12.695 --> 00:38:14.855
+The people on the edge to me is, like, a whole lot of people
+
+00:38:15.416 --> 00:38:17.096
+who try to make that a career.
+
+00:38:17.736 --> 00:38:20.136
+But, like, they're making stuff that seems pretty good.
+
+00:38:20.136 --> 00:38:22.456
+It looked like it should be of, like, professional...
+
+00:38:22.456 --> 00:38:23.896
+It's like, it is good enough.
+
+00:38:23.896 --> 00:38:25.656
+But when there's that much, how do you...
+
+00:38:25.656 --> 00:38:27.256
+A lot of it just doesn't catch, you know?
+
+00:38:28.375 --> 00:38:29.736
+The market is extremely saturated.
+
+00:38:29.736 --> 00:38:30.616
+I think software will be like that.
+
+00:38:31.335 --> 00:38:32.215
+It's a funny issue.
+
+00:38:32.215 --> 00:38:34.296
+Like, I feel like authors...
+
+00:38:35.175 --> 00:38:37.096
+It's interesting because, yeah, if a person spends a year
+
+00:38:37.096 --> 00:38:40.455
+of their life on a book, I feel like we're...
+
+00:38:41.016 --> 00:38:42.775
+I mean, they're going to die one day.
+
+00:38:42.775 --> 00:38:43.976
+Like, we're all going to die one day.
+
+00:38:43.976 --> 00:38:46.215
+And I think for a person to spend a year of their life
+
+00:38:46.215 --> 00:38:49.336
+on a book makes me think, like, oh, that's kind of remarkable
+
+00:38:49.336 --> 00:38:52.936
+that a person would dedicate, like, a big chunk of time
+
+00:38:52.936 --> 00:38:53.656
+to this thing.
+
+00:38:53.656 --> 00:38:56.135
+Like, I feel like it makes me want to talk to the person,
+
+00:38:56.135 --> 00:38:59.815
+like, understand more about what pulled them into it.
+
+00:38:59.815 --> 00:39:02.855
+But I could see, if you spend, like, an hour,
+
+00:39:03.495 --> 00:39:05.736
+like, vibe coding a book, there's something
+
+00:39:05.736 --> 00:39:07.896
+much less compelling about that.
+
+00:39:07.896 --> 00:39:09.656
+Like, it's...
+
+00:39:09.656 --> 00:39:11.095
+And maybe it's...
+
+00:39:11.095 --> 00:39:11.336
+I don't know.
+
+00:39:11.336 --> 00:39:12.376
+Like, maybe it's a good book.
+
+00:39:12.376 --> 00:39:15.576
+But also, presumably, the other part of this to me is
+
+00:39:15.576 --> 00:39:19.016
+if you spent an hour making a book, writing a book
+
+00:39:19.016 --> 00:39:22.296
+and making a book, somebody else will spend two years.
+
+00:39:23.095 --> 00:39:24.135
+And if you're picking up a book to read,
+
+00:39:24.135 --> 00:39:24.936
+which one are you going to read?
+
+00:39:24.936 --> 00:39:27.016
+Like, they have the same tools you do.
+
+00:39:27.016 --> 00:39:28.296
+If I'm going to build software in two days,
+
+00:39:28.296 --> 00:39:29.736
+you're going to build the same thing in two years.
+
+00:39:30.215 --> 00:39:31.016
+Probably a lot better.
+
+00:39:31.016 --> 00:39:33.095
+Like, it'd be weird if it wasn't.
+
+00:39:33.095 --> 00:39:34.296
+And if we get to the point where it's not,
+
+00:39:34.296 --> 00:39:35.016
+we get to the point where, like,
+
+00:39:35.016 --> 00:39:36.296
+hey, I can make something in two days
+
+00:39:36.296 --> 00:39:38.535
+that I can't make a better version of in two years,
+
+00:39:38.535 --> 00:39:40.296
+I think, like, then God knows what...
+
+00:39:40.296 --> 00:39:41.576
+Like, that's a weird world.
+
+00:39:41.576 --> 00:39:43.576
+It's, like, hard to see around that corner.
+
+00:39:43.576 --> 00:39:46.376
+But if it's, like, the stuff that you've built,
+
+00:39:46.376 --> 00:39:48.376
+if you spend two years on it, it's going to get way better
+
+00:39:48.376 --> 00:39:50.055
+than any version that somebody built
+
+00:39:50.055 --> 00:39:51.096
+a similar thing in two days.
+
+00:39:51.096 --> 00:39:51.495
+Yeah, yeah.
+
+00:39:51.495 --> 00:39:53.335
+I mean, I think now, like, if you use...
+
+00:39:53.335 --> 00:39:55.736
+If you do hardcore agentic engineering
+
+00:39:55.736 --> 00:39:59.176
+and build, like, spend a year working on one project now,
+
+00:40:00.536 --> 00:40:02.296
+certainly it's going to be way better
+
+00:40:02.296 --> 00:40:04.135
+than somebody who just, you know,
+
+00:40:04.135 --> 00:40:06.695
+tries to vibe code a replacement in a weekend.
+
+00:40:06.695 --> 00:40:09.975
+Or, you know, the same year that you spent pre-AI,
+
+00:40:09.975 --> 00:40:12.215
+obviously, like, you would make a great deal more progress.
+
+00:40:12.215 --> 00:40:14.615
+You know, it might have taken you five years or 10 years
+
+00:40:14.615 --> 00:40:16.135
+to do the same amount of work in the past.
+
+00:40:16.135 --> 00:40:18.775
+But I think, like, I think what's interesting right now
+
+00:40:18.775 --> 00:40:21.656
+is this feeling of, like, you know, in the past,
+
+00:40:22.215 --> 00:40:24.456
+you had to be very deliberative
+
+00:40:24.456 --> 00:40:26.456
+about where, as a software engineer,
+
+00:40:26.456 --> 00:40:28.376
+where you would choose to spend your time.
+
+00:40:28.376 --> 00:40:30.296
+Like, what projects do you build?
+
+00:40:30.296 --> 00:40:32.055
+And so for me, as somebody who, like,
+
+00:40:32.055 --> 00:40:33.415
+I really like building software.
+
+00:40:34.536 --> 00:40:37.736
+I, you know, up till now, like, I really enjoyed writing code.
+
+00:40:37.736 --> 00:40:40.456
+But now I'm, like, actively enjoying not writing code.
+
+00:40:40.456 --> 00:40:42.135
+And, which is weird.
+
+00:40:42.135 --> 00:40:44.055
+But at the same time, like, you know,
+
+00:40:44.055 --> 00:40:47.096
+I realized at some point that I had a whole mental backlog
+
+00:40:47.096 --> 00:40:49.975
+of projects that I thought of building
+
+00:40:49.975 --> 00:40:52.536
+over the last 20 years that I just...
+
+00:40:52.536 --> 00:40:55.176
+I would always have the same conversation in my head.
+
+00:40:55.176 --> 00:40:57.335
+Wouldn't it be nice if I had the time to do that?
+
+00:40:58.135 --> 00:41:01.096
+But I can't because my time is valuable.
+
+00:41:01.096 --> 00:41:02.376
+I need to get paid for my time.
+
+00:41:02.376 --> 00:41:03.975
+I need to pay, you know, my rent.
+
+00:41:04.615 --> 00:41:05.576
+You know, I've got a, you know,
+
+00:41:05.576 --> 00:41:06.855
+I've got a plan for the future.
+
+00:41:06.855 --> 00:41:07.896
+I want to be able to retire.
+
+00:41:07.896 --> 00:41:10.775
+And so I would choose to spend time on software projects
+
+00:41:10.775 --> 00:41:13.016
+that serve my professional goals.
+
+00:41:13.016 --> 00:41:15.016
+And that we're working towards, like,
+
+00:41:15.016 --> 00:41:16.456
+building something that I could, you know,
+
+00:41:16.456 --> 00:41:18.775
+release out into the open source ecosystem.
+
+00:41:18.775 --> 00:41:21.096
+Something that would have value and impact for other people.
+
+00:41:21.816 --> 00:41:23.736
+And so now all of a sudden, you know,
+
+00:41:23.736 --> 00:41:25.816
+I've got that mental backlog of all these, like,
+
+00:41:25.816 --> 00:41:29.975
+orphaned project ideas that I just never had the time
+
+00:41:29.975 --> 00:41:32.215
+or the, you know, inclination to work on.
+
+00:41:33.016 --> 00:41:34.695
+Because I have a life outside of work.
+
+00:41:34.695 --> 00:41:36.695
+And like, I do like, you know,
+
+00:41:36.695 --> 00:41:39.255
+being able to close the laptop and, you know,
+
+00:41:39.255 --> 00:41:40.536
+cook or, you know, you know,
+
+00:41:40.536 --> 00:41:41.896
+go on a vacation and things like that.
+
+00:41:41.896 --> 00:41:43.816
+Do you like being able to close the laptop now?
+
+00:41:44.615 --> 00:41:47.415
+No, and that's, it's becoming a bit of a problem, you know,
+
+00:41:47.415 --> 00:41:49.736
+because now when I close the laptop, I feel guilty.
+
+00:41:49.736 --> 00:41:51.016
+I'm like, the computer,
+
+00:41:51.016 --> 00:41:53.016
+the computer could be doing things right now.
+
+00:41:53.496 --> 00:41:56.456
+And so that definitely, that definitely is happening.
+
+00:41:56.456 --> 00:42:00.135
+But it is like an exhilarating feeling,
+
+00:42:00.135 --> 00:42:02.695
+the ability that now, like, I'm beginning to revisit
+
+00:42:02.695 --> 00:42:04.616
+all of those old ideas and say,
+
+00:42:04.616 --> 00:42:07.655
+especially because like, I can have like a terminal,
+
+00:42:07.655 --> 00:42:09.415
+like a terminal tab that's like,
+
+00:42:09.415 --> 00:42:10.935
+just working on that side project.
+
+00:42:10.935 --> 00:42:12.616
+I thought of that eight years ago.
+
+00:42:12.616 --> 00:42:15.095
+And now like, I can build the thing that I always wanted.
+
+00:42:15.095 --> 00:42:17.655
+And it doesn't, it does require me to like,
+
+00:42:17.655 --> 00:42:19.815
+nudge it along a little bit every day and say,
+
+00:42:19.815 --> 00:42:20.535
+that's not right.
+
+00:42:20.535 --> 00:42:21.975
+And like, oh, I've got a few more,
+
+00:42:21.975 --> 00:42:23.415
+every day I have a few more ideas
+
+00:42:23.415 --> 00:42:26.695
+and I nudge along the agent and I keep grinding on it.
+
+00:42:26.695 --> 00:42:28.216
+And, you know, there's a few things that,
+
+00:42:29.016 --> 00:42:31.095
+you know, I'll continue to like release things.
+
+00:42:31.095 --> 00:42:32.216
+You know, some things are only for me,
+
+00:42:32.216 --> 00:42:34.375
+some things all open source, but it's nice.
+
+00:42:34.375 --> 00:42:35.496
+Like sitting there watching, you know,
+
+00:42:35.496 --> 00:42:37.975
+watching Netflix at home and just nudging along
+
+00:42:37.975 --> 00:42:39.896
+my little agents working on my, you know,
+
+00:42:39.896 --> 00:42:42.056
+personal side projects, like clearing out the backlog
+
+00:42:42.056 --> 00:42:43.975
+of stuff that I, you know, things that I dreamed about
+
+00:42:43.975 --> 00:42:45.496
+and just never, you know,
+
+00:42:45.496 --> 00:42:47.415
+never would have gotten built without AI.
+
+00:42:47.415 --> 00:42:49.176
+And that's, I'm having fun doing that.
+
+00:42:49.736 --> 00:42:51.415
+That makes me think of a kind of interesting thing,
+
+00:42:51.415 --> 00:42:54.695
+which is how long does that feeling last?
+
+00:42:54.695 --> 00:42:56.855
+So, or how far can it go?
+
+00:42:56.855 --> 00:42:59.576
+So say, you saw this happen with like chat GPT
+
+00:42:59.576 --> 00:43:00.375
+when it first came out,
+
+00:43:00.935 --> 00:43:03.736
+where people would ask it these sort of dumb questions
+
+00:43:03.736 --> 00:43:09.736
+of like, rewrite this email in the style of whatever,
+
+00:43:09.736 --> 00:43:11.655
+you know, like, and it had this sort of like,
+
+00:43:11.655 --> 00:43:13.415
+this was like this fun little gimmick that it can do.
+
+00:43:14.776 --> 00:43:17.736
+And at some point it was like, okay,
+
+00:43:17.736 --> 00:43:18.535
+I know what it's going to do.
+
+00:43:18.535 --> 00:43:19.415
+It's going to produce the thing.
+
+00:43:19.415 --> 00:43:21.896
+It's not, the artifact isn't that fun.
+
+00:43:22.616 --> 00:43:24.776
+It was sort of like the process of doing it that was fun
+
+00:43:24.776 --> 00:43:25.736
+and the artifact itself.
+
+00:43:25.736 --> 00:43:26.776
+I'm like, whatever.
+
+00:43:26.776 --> 00:43:27.975
+And to your point, if you have all these things,
+
+00:43:27.975 --> 00:43:29.415
+like churning away in your backlog,
+
+00:43:29.415 --> 00:43:33.016
+your project backlog, your idea backlog, basically.
+
+00:43:33.016 --> 00:43:34.456
+It'll be cleared out eventually.
+
+00:43:34.456 --> 00:43:36.535
+But it's partly that, but it's also like,
+
+00:43:36.535 --> 00:43:40.456
+if you just said, let me give you a two paragraph spec
+
+00:43:40.456 --> 00:43:41.255
+of the thing I want.
+
+00:43:41.255 --> 00:43:42.616
+You push one button and it's done.
+
+00:43:43.576 --> 00:43:44.616
+Do you think that's fun?
+
+00:43:45.336 --> 00:43:49.336
+Like, is it fun if it can really do the whole thing
+
+00:43:49.415 --> 00:43:52.456
+autonomously where like RoboRev was done in one,
+
+00:43:52.456 --> 00:43:54.375
+and if you can one shot RoboRev,
+
+00:43:54.375 --> 00:43:55.415
+would you have fun building it?
+
+00:43:56.616 --> 00:43:57.576
+I don't think so.
+
+00:43:57.576 --> 00:43:58.216
+Yeah.
+
+00:43:58.216 --> 00:44:00.616
+I think that, I think that the part of the fun,
+
+00:44:00.616 --> 00:44:02.375
+like part of the fun is the process
+
+00:44:02.375 --> 00:44:04.616
+and like seeing the, like seeing the thing,
+
+00:44:04.616 --> 00:44:06.616
+seeing the thing take shape, you know,
+
+00:44:06.616 --> 00:44:08.616
+kind of that feeling of like, you know,
+
+00:44:08.616 --> 00:44:09.896
+I'm not an artist, but you know,
+
+00:44:09.896 --> 00:44:12.616
+I imagine like what it might've seemed like to,
+
+00:44:12.616 --> 00:44:15.336
+you know, Leonardo da Vinci to like be chiseling,
+
+00:44:15.336 --> 00:44:17.815
+you know, chiseling David, like out of the block of,
+
+00:44:17.815 --> 00:44:18.935
+out of the block of marble.
+
+00:44:18.935 --> 00:44:22.296
+And, and a little bit like the, the agentic,
+
+00:44:22.296 --> 00:44:25.016
+agentic coding right now, you know,
+
+00:44:25.016 --> 00:44:27.016
+maybe that's a little bit of a grandiose analogy,
+
+00:44:27.016 --> 00:44:29.736
+but, but it does, it does feel like that a little bit
+
+00:44:29.736 --> 00:44:32.456
+where you can, you know, your feedback,
+
+00:44:32.456 --> 00:44:34.296
+like the feedback that I'm giving the agent,
+
+00:44:34.296 --> 00:44:35.815
+I can see the project,
+
+00:44:35.815 --> 00:44:37.415
+I can see the project taking shape.
+
+00:44:37.415 --> 00:44:39.336
+Like, you know, you, you can see that it's like,
+
+00:44:40.375 --> 00:44:43.415
+you know, it's the agent, agent's behavior out of the box.
+
+00:44:43.415 --> 00:44:45.255
+It gets most things wrong.
+
+00:44:45.255 --> 00:44:46.935
+And so you have to go through and like, you know,
+
+00:44:46.935 --> 00:44:48.216
+find all the things that I got wrong
+
+00:44:48.216 --> 00:44:49.815
+and get them and get them right.
+
+00:44:49.815 --> 00:44:51.496
+And then refine and refine and refine.
+
+00:44:51.496 --> 00:44:53.095
+And so it takes, you know,
+
+00:44:53.095 --> 00:44:55.496
+hundreds or thousands of iterations with the agent,
+
+00:44:55.496 --> 00:44:57.655
+you know, to make a thing that, that, you know,
+
+00:44:57.655 --> 00:44:59.736
+essentially meets, you know, meets my standards,
+
+00:44:59.736 --> 00:45:00.375
+which, you know, and I,
+
+00:45:00.375 --> 00:45:02.056
+and I have high standards for, for tools.
+
+00:45:02.056 --> 00:45:03.655
+And so, you know, maybe for other people
+
+00:45:03.655 --> 00:45:04.535
+it'd be different and like,
+
+00:45:04.535 --> 00:45:06.616
+maybe their one-shot, their one-shot tool,
+
+00:45:07.736 --> 00:45:09.095
+you know, would be, their,
+
+00:45:09.095 --> 00:45:11.736
+their one-shot tool would be like totally fine for them.
+
+00:45:11.736 --> 00:45:13.496
+You know, if it's like a piece of throwaway code,
+
+00:45:13.496 --> 00:45:15.095
+like it serves a one-time,
+
+00:45:15.095 --> 00:45:17.016
+a one-time use or like limited time use.
+
+00:45:17.016 --> 00:45:19.896
+But if it's a tool that you're going to be using for years,
+
+00:45:19.896 --> 00:45:22.456
+like I, the way I'm approaching it is like,
+
+00:45:22.456 --> 00:45:24.135
+I'm building things that I want to be using
+
+00:45:24.135 --> 00:45:25.095
+five years from now.
+
+00:45:25.095 --> 00:45:26.535
+And so I might as well, you know,
+
+00:45:26.535 --> 00:45:28.456
+put in the effort to do it the, you know,
+
+00:45:29.255 --> 00:45:31.896
+do it the right way and to make it, make it good.
+
+00:45:31.896 --> 00:45:33.975
+You know, but I don't know, it's fun.
+
+00:45:33.975 --> 00:45:36.135
+Like, I think the feeling won't last forever.
+
+00:45:36.135 --> 00:45:38.935
+And maybe a year from now, six months from now,
+
+00:45:39.896 --> 00:45:41.576
+it'll just feel like work again.
+
+00:45:41.576 --> 00:45:44.375
+And, you know, at six o'clock or seven o'clock,
+
+00:45:44.375 --> 00:45:46.456
+I'll be happy to close the laptop and say,
+
+00:45:46.456 --> 00:45:47.655
+you know, the day is done.
+
+00:45:47.655 --> 00:45:48.375
+Enough is enough.
+
+00:45:48.375 --> 00:45:49.975
+You know, it will, the agents will be there
+
+00:45:49.975 --> 00:45:50.616
+tomorrow morning.
+
+00:45:50.616 --> 00:45:51.415
+Yeah.
+
+00:45:51.415 --> 00:45:55.016
+It's, it's such an interesting point to like,
+
+00:45:55.016 --> 00:45:57.176
+the question of like, do you like closing your laptop?
+
+00:45:57.176 --> 00:45:58.296
+Like, are you having fun?
+
+00:45:59.255 --> 00:46:01.016
+Would you have fun if you could like
+
+00:46:01.016 --> 00:46:02.375
+snap it into existence?
+
+00:46:02.935 --> 00:46:05.735
+It feels like questions of like,
+
+00:46:06.456 --> 00:46:07.815
+what do engineers enjoy?
+
+00:46:08.695 --> 00:46:11.495
+What is like a person who might contract an engineer
+
+00:46:11.495 --> 00:46:13.255
+to like build something they want,
+
+00:46:13.896 --> 00:46:14.396
+enjoy?
+
+00:46:14.935 --> 00:46:17.896
+Like, who enjoys kind of like being in the process
+
+00:46:17.896 --> 00:46:21.175
+and maybe seeing the process sped up or automated?
+
+00:46:21.815 --> 00:46:24.216
+And who kind of just wants it done?
+
+00:46:24.935 --> 00:46:27.576
+Like, I guess like tools like RoboRev
+
+00:46:27.576 --> 00:46:29.016
+that you're talking about, that's very like.
+
+00:46:29.016 --> 00:46:30.695
+I guess I should explain what that is.
+
+00:46:30.695 --> 00:46:31.016
+Yeah.
+
+00:46:31.016 --> 00:46:33.815
+Or like a tool for reviewing commits,
+
+00:46:33.815 --> 00:46:35.656
+like RoboRev that kind of augments
+
+00:46:35.656 --> 00:46:38.135
+like the development process with AI.
+
+00:46:38.135 --> 00:46:41.576
+It's funny because it is kind of like an engineer's tool.
+
+00:46:41.576 --> 00:46:43.096
+Like it's something they enjoy, I think.
+
+00:46:43.175 --> 00:46:45.016
+Having something like speed up the process.
+
+00:46:45.735 --> 00:46:47.416
+But there's this whole other group of people
+
+00:46:47.416 --> 00:46:49.495
+who probably do, I guess,
+
+00:46:49.495 --> 00:46:51.495
+want to snap things into existence.
+
+00:46:53.495 --> 00:46:53.735
+Yeah.
+
+00:46:53.735 --> 00:46:55.016
+But even something like that,
+
+00:46:55.016 --> 00:46:58.456
+I mean, you built the thing, you can tell us.
+
+00:46:58.456 --> 00:47:01.976
+But even if you could snap your fingers
+
+00:47:01.976 --> 00:47:04.935
+and have the problem that that tool solves solved,
+
+00:47:05.495 --> 00:47:07.656
+I'm not sure that gives you the same satisfaction either.
+
+00:47:08.143 --> 00:47:10.783
+Like, there is something about building a thing and using the thing, and like —
+
+00:47:10.783 --> 00:47:11.903
+And it's like, it's my thing.
+
+00:47:11.903 --> 00:47:15.023
+Yeah, it's like, look at it work, and I see the spinning wheels,
+
+00:47:15.023 --> 00:47:16.863
+and I see it come back with stuff, and I — it's like,
+
+00:47:16.863 --> 00:47:19.343
+there is an enjoyment in using it at all.
+
+00:47:19.903 --> 00:47:23.183
+And I think that, like, we're not — it's not all just, like,
+
+00:47:23.183 --> 00:47:27.743
+how do I maximize some utility of this thing does my particular job.
+
+00:47:27.743 --> 00:47:30.862
+Some of it, maybe, it's like, okay, you have a button that fills out your tax forms.
+
+00:47:30.862 --> 00:47:32.063
+Okay, that may be a different thing.
+
+00:47:32.063 --> 00:47:32.782
+Joy achieved.
+
+00:47:32.782 --> 00:47:34.622
+There's a very different, to me, set of things.
+
+00:47:34.622 --> 00:47:37.183
+It's like, I just do not want to ever see this again,
+
+00:47:37.183 --> 00:47:41.503
+versus I built this partly because it's, like, a thing I like to use.
+
+00:47:41.503 --> 00:47:42.942
+A lot of people, like, do woodworking.
+
+00:47:42.942 --> 00:47:45.183
+They're not like, snap my fingers and have the thing exist.
+
+00:47:45.183 --> 00:47:46.863
+It's like, I want to do the thing.
+
+00:47:46.863 --> 00:47:47.262
+Yeah.
+
+00:47:47.262 --> 00:47:48.543
+And I think there's still some of that here.
+
+00:47:48.543 --> 00:47:51.183
+Yeah, I mean, yeah, I think, like, the — you know, just, yeah,
+
+00:47:51.183 --> 00:47:53.023
+for people listening, like, what are they talking about?
+
+00:47:53.023 --> 00:47:56.303
+Like, the thing I started building — still started building recently
+
+00:47:56.303 --> 00:48:00.143
+as part of some of the, like, agentic development side projects.
+
+00:48:00.143 --> 00:48:01.343
+Like, I found myself —
+
+00:48:01.343 --> 00:48:03.742
+And just — I think people might have seen, too,
+
+00:48:03.742 --> 00:48:07.343
+because we've talked about it on a couple episodes.
+
+00:48:07.343 --> 00:48:12.703
+Like, so I think some people might be familiar, but maybe, like, a quick —
+
+00:48:12.703 --> 00:48:15.743
+Well, yeah, we'll — I can't even remember.
+
+00:48:15.743 --> 00:48:19.103
+I mean, the software is so new, like, it's hard to even know.
+
+00:48:19.103 --> 00:48:22.942
+But, you know, I essentially, like many people, I started running —
+
+00:48:22.942 --> 00:48:24.942
+I started running multiple Cloud Code sessions,
+
+00:48:24.942 --> 00:48:29.743
+and then I found that most of the work that Cloud Code was doing was full of bugs.
+
+00:48:29.743 --> 00:48:32.542
+And so I started running separate, additional,
+
+00:48:32.542 --> 00:48:35.983
+either Cloud Code or Codex from OpenAI sessions,
+
+00:48:35.983 --> 00:48:40.622
+whose entire purpose was to review the work of the other Cloud Code sessions.
+
+00:48:40.622 --> 00:48:44.542
+And so I would have three Cloud Code sessions and then three reviewers,
+
+00:48:44.542 --> 00:48:48.542
+and all they were doing was review this commit, review this commit, review this commit.
+
+00:48:48.542 --> 00:48:53.023
+And so, like, Cloud Code would return control to me, would commit its work,
+
+00:48:53.023 --> 00:48:54.542
+and then I would say, here's the commit hash,
+
+00:48:54.542 --> 00:48:56.862
+and I would give that to the reviewer, the reviewer session.
+
+00:48:57.423 --> 00:49:00.383
+And then, you know, this went on for a period of time,
+
+00:49:00.383 --> 00:49:05.343
+and I was like, I'm losing time because I have to manually, like,
+
+00:49:05.343 --> 00:49:07.423
+take the commit hash and, like, give it to the reviewer,
+
+00:49:07.423 --> 00:49:08.862
+and that's time that's wasted.
+
+00:49:09.902 --> 00:49:11.822
+Basically, the whole thing just didn't seem very efficient.
+
+00:49:11.822 --> 00:49:17.343
+And so I said to myself, well, you know, this whole process can be automated.
+
+00:49:17.343 --> 00:49:21.983
+And so, yeah, so the project RoboRev that we mentioned is basically like,
+
+00:49:21.983 --> 00:49:25.343
+you know, it automatically triggers a code review
+
+00:49:25.343 --> 00:49:27.983
+whenever the agents return control to you,
+
+00:49:27.983 --> 00:49:32.863
+like, whenever they commit and return, get commit and return control.
+
+00:49:32.863 --> 00:49:34.542
+And I found that to be really liberating.
+
+00:49:34.542 --> 00:49:38.703
+Like, I didn't have to run those extra, you know, codecs or Cloud Code sessions anymore.
+
+00:49:39.662 --> 00:49:43.423
+And if I have parallel, like, multiple Cloud Code sessions,
+
+00:49:43.423 --> 00:49:46.943
+whenever I return to the session from another side project
+
+00:49:46.943 --> 00:49:51.022
+or, you know, another, you know, get work tree or whatever in the same project,
+
+00:49:51.022 --> 00:49:53.343
+I have not only the agent has finished what it was doing,
+
+00:49:53.343 --> 00:49:58.063
+but then also the associated code review that was done asynchronously
+
+00:49:58.063 --> 00:50:00.063
+while I was working on something else.
+
+00:50:00.063 --> 00:50:02.303
+And so if I, you know, forget what I was doing,
+
+00:50:02.303 --> 00:50:04.622
+or if I'm not sure what to do next, like, it's just easy to say,
+
+00:50:04.622 --> 00:50:09.902
+hey, you know, Cloud fix these bugs that were discovered in the work that you just did.
+
+00:50:10.783 --> 00:50:11.503
+But you're right.
+
+00:50:11.503 --> 00:50:15.742
+Like, I think part of the fun of it was, you know, making a tool,
+
+00:50:15.742 --> 00:50:19.262
+seeing, you know, building the tool yourself, seeing the tool work.
+
+00:50:19.343 --> 00:50:26.303
+And I think, you know, maybe a side, you know, corollary of that now is that
+
+00:50:26.303 --> 00:50:30.462
+a lot of people are going to prefer to use tools of their own making.
+
+00:50:30.462 --> 00:50:34.622
+And I find that whenever I show new AI tools,
+
+00:50:34.622 --> 00:50:36.462
+or like new tools that I've created to other people,
+
+00:50:37.022 --> 00:50:38.382
+usually the response is something like,
+
+00:50:38.382 --> 00:50:41.902
+I'm exhausted with how many tools I'm being shown
+
+00:50:41.902 --> 00:50:45.022
+and like how many new tools I'm seeing on the internet.
+
+00:50:45.022 --> 00:50:48.303
+And like, I have no, you know, the only tool I can manage right now
+
+00:50:48.303 --> 00:50:52.703
+is like a single agent session, or maybe like a couple of agent sessions.
+
+00:50:52.703 --> 00:50:56.223
+And any other tools beyond that is just, is almost exhausting.
+
+00:50:56.863 --> 00:51:02.223
+And I've also felt like that exhaustion of like the head spinning feeling of like
+
+00:51:02.223 --> 00:51:06.223
+10 new AI tools and systems and solutions coming out seemingly,
+
+00:51:06.223 --> 00:51:08.223
+you know, seemingly every day that, you know,
+
+00:51:08.223 --> 00:51:11.662
+influencers are really excited about on social media and on LinkedIn
+
+00:51:11.662 --> 00:51:14.063
+and on YouTube videos and things like that.
+
+00:51:14.063 --> 00:51:16.303
+And so, you know, for the longest time, like I was,
+
+00:51:16.303 --> 00:51:20.462
+I was tuning out a lot of what was going on in LLM world.
+
+00:51:21.343 --> 00:51:24.382
+And the only thing that really pulled me in were these CLI coding agents.
+
+00:51:24.382 --> 00:51:28.463
+I think prior to that, I was like, you know, not, not impressed, to be honest.
+
+00:51:29.183 --> 00:51:32.222
+Yeah. But I think that's like the, that sort of reaction,
+
+00:51:32.222 --> 00:51:35.342
+being shown 10 new tools and you have things like that.
+
+00:51:35.342 --> 00:51:37.583
+We've all sort of played around with this stuff is,
+
+00:51:38.143 --> 00:51:40.143
+that to me is like the content thing where it'd be like,
+
+00:51:40.942 --> 00:51:44.623
+if iPhones and like iPhone video editing had just come out,
+
+00:51:44.623 --> 00:51:46.062
+it's like, look at my video.
+
+00:51:46.062 --> 00:51:48.542
+And it'd be like, oh my God, this, yes, it's very good.
+
+00:51:48.542 --> 00:51:50.782
+It's as good as any video I've seen 10 years ago.
+
+00:51:50.782 --> 00:51:52.382
+But like, I can't look at this much video.
+
+00:51:52.382 --> 00:51:53.743
+Like I'm, I got to tune it out.
+
+00:51:53.743 --> 00:51:54.542
+And I think that, I don't know,
+
+00:51:54.542 --> 00:51:57.183
+there's this kind of feverish pace to the whole thing
+
+00:51:57.822 --> 00:52:00.782
+where all these people make things that seem really good,
+
+00:52:00.782 --> 00:52:03.262
+but it's like, I can't, I can't keep up.
+
+00:52:03.262 --> 00:52:08.303
+Yeah, Ben, I know we've, we've been down the AI rabbit hole for quite a while.
+
+00:52:08.303 --> 00:52:11.983
+One, okay, maybe one thing I'm very curious about is
+
+00:52:12.623 --> 00:52:14.463
+when I, before doing this,
+
+00:52:14.463 --> 00:52:16.782
+when I asked you what you were most excited about,
+
+00:52:16.782 --> 00:52:18.463
+you said joining a boy band.
+
+00:52:19.102 --> 00:52:22.703
+And I wonder if you could maybe tell us more about that,
+
+00:52:22.703 --> 00:52:23.662
+your boy band dreams.
+
+00:52:24.863 --> 00:52:26.863
+I mean, that does seem like a fun gig.
+
+00:52:28.062 --> 00:52:29.342
+Okay, basically.
+
+00:52:29.342 --> 00:52:30.382
+Yeah, no, sorry, please.
+
+00:52:32.782 --> 00:52:34.382
+It's like a model of collaboration.
+
+00:52:35.822 --> 00:52:36.623
+So, okay, so you like-
+
+00:52:36.623 --> 00:52:38.062
+It's your gas town, isn't it?
+
+00:52:38.942 --> 00:52:42.382
+I, you know, gas town's probably not a bad boy band name,
+
+00:52:42.382 --> 00:52:43.262
+to be entirely honest.
+
+00:52:45.102 --> 00:52:50.703
+That you can, if you like ever interview an exec and being like,
+
+00:52:50.703 --> 00:52:51.983
+especially an exec from Salesforce,
+
+00:52:51.983 --> 00:52:53.743
+this is apparently famously a thing that Salesforce did.
+
+00:52:55.023 --> 00:52:57.262
+You ask them like, what are they good at and stuff like that?
+
+00:52:57.822 --> 00:52:59.502
+They would say stuff like, they're just,
+
+00:52:59.502 --> 00:53:02.542
+they're incredibly collaborative, just the most collaborative.
+
+00:53:02.542 --> 00:53:05.262
+And it's just like, I'm just so good at working with people, great.
+
+00:53:05.262 --> 00:53:06.703
+And I feel like one of the things we all say like,
+
+00:53:06.703 --> 00:53:07.822
+oh, I'm pretty, I'm collaborative.
+
+00:53:07.822 --> 00:53:08.942
+I'm like, you know, whatever.
+
+00:53:08.942 --> 00:53:11.983
+I'm like not, I don't really want to work with that many people.
+
+00:53:11.983 --> 00:53:13.822
+Like, I don't want to, it's like a lot.
+
+00:53:15.262 --> 00:53:19.423
+And you want to work with some people, but like not an army of people.
+
+00:53:19.423 --> 00:53:21.903
+I don't want to work with the whole gas town army.
+
+00:53:22.542 --> 00:53:25.822
+And I think it's more fun to work with like a small group of people
+
+00:53:25.822 --> 00:53:28.703
+who's like all committed to a project and like wants to do the thing.
+
+00:53:28.703 --> 00:53:33.262
+And it's basically a model of collaboration, like a boy band,
+
+00:53:33.262 --> 00:53:35.262
+where it's like, there's a handful of us.
+
+00:53:35.262 --> 00:53:36.863
+We all have our fun little personalities.
+
+00:53:36.863 --> 00:53:37.983
+We do our own things.
+
+00:53:37.983 --> 00:53:39.423
+You could do your own thing if you wanted to,
+
+00:53:39.423 --> 00:53:41.183
+but you kind of like being a part of this thing.
+
+00:53:41.183 --> 00:53:43.102
+Maybe sometimes you kind of do a little bit of your own thing,
+
+00:53:43.102 --> 00:53:46.782
+but like ultimately we all have to have to do the same song and dance.
+
+00:53:48.143 --> 00:53:50.942
+But you can maintain some amount of like independence in what you are.
+
+00:53:50.942 --> 00:53:57.102
+And it's not like each person in the boy band is overseeing enormous departments.
+
+00:53:57.102 --> 00:53:59.502
+Their job isn't managing a ton of people.
+
+00:53:59.502 --> 00:54:01.423
+The job is like, no, I make the thing.
+
+00:54:02.222 --> 00:54:09.822
+Um, historically to me, there's always been like one of the downsides of startups
+
+00:54:09.822 --> 00:54:12.623
+is in some ways you get punished if you're successful
+
+00:54:12.623 --> 00:54:14.463
+because you have to go hire a bunch of people.
+
+00:54:14.463 --> 00:54:18.623
+And like you become the, oh, I have to manage tons of people
+
+00:54:18.623 --> 00:54:20.062
+and the things that go along with that.
+
+00:54:20.062 --> 00:54:22.062
+And sometimes there's things about that that are fun and you like,
+
+00:54:22.062 --> 00:54:25.502
+but like a lot of it is just like administrative.
+
+00:54:26.143 --> 00:54:29.903
+Administrative is to sort of downplays it too much,
+
+00:54:29.903 --> 00:54:32.623
+but it's just like organizational work.
+
+00:54:32.623 --> 00:54:34.463
+It's like, how do you make sure everything is aligned?
+
+00:54:34.463 --> 00:54:36.542
+And how do you make sure this department doesn't send to this department?
+
+00:54:36.542 --> 00:54:37.502
+What happens when they disagree?
+
+00:54:37.502 --> 00:54:39.983
+And how do you make sure like stuff set up such that these people
+
+00:54:39.983 --> 00:54:41.023
+can communicate with these people?
+
+00:54:41.023 --> 00:54:42.382
+And how do you keep everything on the rails?
+
+00:54:43.102 --> 00:54:45.102
+And I don't know, I don't particularly enjoy that work.
+
+00:54:45.102 --> 00:54:48.062
+Um, but that's been, that's what you have to do.
+
+00:54:48.062 --> 00:54:50.303
+Like you build a company, like the goal is to get to the point
+
+00:54:50.303 --> 00:54:51.102
+where you have to do that work.
+
+00:54:51.102 --> 00:54:52.303
+Otherwise, what have you done?
+
+00:54:52.303 --> 00:54:55.903
+Uh, and I think like that may not be the case now
+
+00:54:55.903 --> 00:54:58.782
+that, that you can do a lot more with fewer people.
+
+00:54:58.782 --> 00:55:00.222
+You can keep it relatively small.
+
+00:55:00.222 --> 00:55:02.463
+You can have it be like, no, this is just a handful of people
+
+00:55:02.463 --> 00:55:04.303
+who are working on an exciting thing.
+
+00:55:04.303 --> 00:55:08.463
+Uh, and you can make maybe not an enormous business,
+
+00:55:08.463 --> 00:55:10.942
+maybe not, you know, the next trillion dollar thing,
+
+00:55:10.942 --> 00:55:13.342
+but you can make something that is a functional,
+
+00:55:13.983 --> 00:55:16.062
+profitable, successful business.
+
+00:55:16.703 --> 00:55:18.863
+And all sort of reasonable definitions of those words
+
+00:55:19.583 --> 00:55:20.863
+with a relatively small group of people.
+
+00:55:21.662 --> 00:55:22.942
+At least that is my hypothesis.
+
+00:55:22.942 --> 00:55:23.502
+Yeah.
+
+00:55:23.502 --> 00:55:26.143
+And not, not to stretch the like analogy too far,
+
+00:55:26.143 --> 00:55:30.623
+but do you know, and you're like dream data work
+
+00:55:30.623 --> 00:55:33.502
+or, or like just building boy band scenario.
+
+00:55:33.502 --> 00:55:34.542
+Like what role are you?
+
+00:55:34.542 --> 00:55:36.062
+Are you the like bad boy?
+
+00:55:36.062 --> 00:55:37.262
+Are you the father figure?
+
+00:55:37.262 --> 00:55:39.583
+Like which, is there a father figure of boy band?
+
+00:55:39.583 --> 00:55:42.542
+I, well, not, I mean, maybe not in the modern boy band.
+
+00:55:42.542 --> 00:55:43.902
+I feel like in the OG boy band,
+
+00:55:43.902 --> 00:55:46.542
+there was always kind of like a responsible party,
+
+00:55:46.542 --> 00:55:49.662
+responsible, the one like driving them home after.
+
+00:55:49.662 --> 00:55:52.063
+I think I would be like more of the moody guy in the back.
+
+00:55:53.263 --> 00:55:54.623
+Like you don't know that much about.
+
+00:55:54.623 --> 00:55:54.863
+Yeah.
+
+00:55:54.863 --> 00:55:55.902
+It's like, what's his backstory?
+
+00:55:55.902 --> 00:55:57.022
+It turns out it's like nothing.
+
+00:55:57.022 --> 00:55:59.102
+There's nothing interesting there, but you got like.
+
+00:55:59.102 --> 00:56:01.423
+You're doing like a lot of skulking around.
+
+00:56:01.423 --> 00:56:01.823
+Yeah.
+
+00:56:01.823 --> 00:56:02.063
+Yeah.
+
+00:56:02.063 --> 00:56:02.462
+Yeah.
+
+00:56:02.462 --> 00:56:04.063
+And every once in a while, like you emerge
+
+00:56:04.063 --> 00:56:06.222
+and you have your, your like verse and stuff.
+
+00:56:06.222 --> 00:56:08.383
+And people are like, oh my God, he never told me that.
+
+00:56:08.383 --> 00:56:09.342
+I would be more than that.
+
+00:56:09.342 --> 00:56:09.662
+Yeah.
+
+00:56:09.662 --> 00:56:11.183
+I'm not trying to be the guy in the front.
+
+00:56:11.183 --> 00:56:11.743
+No, that's fair.
+
+00:56:12.943 --> 00:56:13.342
+It is.
+
+00:56:13.342 --> 00:56:15.022
+I mean, it is interesting too that, yeah.
+
+00:56:15.022 --> 00:56:18.943
+Like people aren't, when a boy band succeeds,
+
+00:56:18.943 --> 00:56:20.702
+it's not like people are say like,
+
+00:56:20.702 --> 00:56:23.102
+we need to add 200 people to this stage.
+
+00:56:23.743 --> 00:56:25.102
+Then there are some K-pop bands.
+
+00:56:25.102 --> 00:56:25.263
+Yeah.
+
+00:56:25.263 --> 00:56:25.503
+Right.
+
+00:56:26.702 --> 00:56:27.342
+But yeah, but right.
+
+00:56:27.342 --> 00:56:28.303
+Like it's not a.
+
+00:56:29.445 --> 00:56:31.605
+It's not like it's you got to scale the whole thing up
+
+00:56:32.125 --> 00:56:36.685
+And I don't know. I think that seems we're fun. Yes. Are you I mean, are you forming any boy bands right now?
+
+00:56:36.685 --> 00:56:41.405
+Like what's what do you got cooking? It's just kind of like a medical. I think he's maybe like a metaphorical boy band. Yeah
+
+00:56:42.045 --> 00:56:46.084
+There's some ideas the metaphorical boy beds. I you know if I could like
+
+00:56:46.725 --> 00:56:53.004
+Snap my fingers. I know kung-fu like matrixy one skill. It would definitely be like boy band skills
+
+00:56:53.045 --> 00:56:57.685
+Yeah, like being a being a pop star seems like a really good time. I mean, that's true
+
+00:56:57.685 --> 00:57:02.845
+Yeah, like if if you get the chance, I think you should take it like 100%. Yeah
+
+00:57:02.845 --> 00:57:09.645
+Oh, I would but I don't hold your breath or I was thinking maybe other projects. Are you working on projects right now and
+
+00:57:10.845 --> 00:57:16.285
+Have you succeeded in kind of like keeping the essence of a boy band in them? Yeah, cuz it's just me
+
+00:57:16.805 --> 00:57:18.805
+It's not really a boy
+
+00:57:21.084 --> 00:57:26.765
+Yeah, I mean I like playing around some stuff I that it's similar to Wes except I would say with with less success
+
+00:57:27.525 --> 00:57:29.724
+You have a bunch of ideas you want to play with them
+
+00:57:29.724 --> 00:57:35.324
+there are things that you think are like interesting to experiment with a lot of them are less like here is a very
+
+00:57:36.284 --> 00:57:38.684
+precise problem I have but more of like
+
+00:57:40.004 --> 00:57:44.044
+This is a rough way of working or doing a thing that I feel like I could
+
+00:57:44.125 --> 00:57:46.525
+There feel like there's got to be a way to sort of solve this problem
+
+00:57:47.765 --> 00:57:53.004
+To your point earlier about like there's a creative process you'd like so I periodically yell at the Internet
+
+00:57:53.644 --> 00:57:56.485
+There are parts of that process I really like there are parts of that are kind of a grind
+
+00:57:56.485 --> 00:58:01.765
+I'm not sure how much of that you can like AI away and like there's a there's a delicacy there too of like I
+
+00:58:01.765 --> 00:58:06.245
+Don't want to like that is not push button get blog post is not a thing that I want to do
+
+00:58:06.404 --> 00:58:08.404
+however, there are a lot of parts of that
+
+00:58:09.044 --> 00:58:13.205
+Drafting process that you're just like this is this is painful
+
+00:58:13.964 --> 00:58:16.485
+And it's like I don't know there are things you can do to help help
+
+00:58:17.565 --> 00:58:21.125
+Unstick you with those things or stuff like that where it's like the things that I do
+
+00:58:21.125 --> 00:58:23.125
+I want to try to like find ways around. Yeah
+
+00:58:23.644 --> 00:58:25.404
+Just so we'll see so it's stuff like that
+
+00:58:25.404 --> 00:58:30.565
+just see it a little more concrete like see what you like doing stuff like like Wes are you saying like
+
+00:58:31.485 --> 00:58:34.705
+using like clod code or when writing and maybe like
+
+00:58:35.845 --> 00:58:41.965
+getting like assistance like what kind of stuff are you cooking on so I I
+
+00:58:43.805 --> 00:58:49.724
+Basically use AI to write stuff in one way which is as a thesaurus
+
+00:58:50.364 --> 00:58:53.245
+It's a pretty good thesaurus because you can be like here's the word
+
+00:58:53.724 --> 00:58:58.124
+But make it more X like you can kind of guide it a little bit
+
+00:58:58.124 --> 00:59:03.165
+And so like obviously that is not you're not getting a whole lot done there like it's it's useful sometimes
+
+00:59:03.284 --> 00:59:06.765
+But like that's basically the only way that I found it being useful the thing it writes
+
+00:59:06.965 --> 00:59:12.284
+Do not want to ever say a single word that it ever writes like certainly you try periodically but go try this and it's like
+
+00:59:12.284 --> 00:59:14.284
+Oh my god, I cannot
+
+00:59:14.765 --> 00:59:21.204
+But there are there are processes and right there's like points in the process of writing these posts when
+
+00:59:21.724 --> 00:59:26.004
+There is something akin to a thesaurus. That is like a broader set of problems. You have a bunch of like
+
+00:59:26.685 --> 00:59:31.124
+Basically loose ideas in a doc and you're kind of like I don't really see how to weave these things together
+
+00:59:31.124 --> 00:59:33.204
+I don't really know what the narrative here is
+
+00:59:33.204 --> 00:59:37.685
+I kind of like this sentence that I wrote here and I like this idea and I think it needs to work here
+
+00:59:37.685 --> 00:59:38.605
+But like my god, it's a mess
+
+00:59:38.605 --> 00:59:42.445
+I mean, it's like that is that is the stressful point of writing these things because you're like
+
+00:59:42.965 --> 00:59:45.525
+You're not just kind of refining paragraphs
+
+00:59:45.924 --> 00:59:48.124
+You're having to be like does this fit together at all?
+
+00:59:48.124 --> 00:59:51.204
+Like do I have puzzle pieces that can make a thing that look like anything?
+
+00:59:52.724 --> 00:59:54.724
+And there's that I think that
+
+00:59:54.924 --> 01:00:00.605
+There are ways you can attempt to to mimic sort of the creative process that helps solve that for me
+
+01:00:01.405 --> 01:00:03.405
+That is again very much not
+
+01:00:03.924 --> 01:00:08.284
+Write that paragraph because it does a terrible job of that and like people have written a lot of stuff about this
+
+01:00:08.284 --> 01:00:11.265
+I cannot beat certain patterns out of it
+
+01:00:13.124 --> 01:00:17.084
+But I do think it can help be like here are some ideas for ways to arrange things
+
+01:00:17.844 --> 01:00:20.405
+most of them aren't any good, but there is like
+
+01:00:21.004 --> 01:00:24.844
+Some inspiration that you could be like, oh, that's kind of an interesting thought like let's play with that some
+
+01:00:25.084 --> 01:00:28.204
+That is basically the equivalent of having a conversation with someone about it
+
+01:00:28.204 --> 01:00:32.724
+Like like a lot of these posts ends up getting written because you have these loose ideas and you sit down you talk to somebody
+
+01:00:32.924 --> 01:00:36.765
+And you're like, oh I didn't think about connecting in that they not they don't tell you to do it
+
+01:00:36.765 --> 01:00:40.325
+it's just like they say something that triggers a thing in your head that like
+
+01:00:41.004 --> 01:00:45.645
+It connects two ideas in ways you haven't seen and so it's like can you can you use it in that way?
+
+01:00:45.645 --> 01:00:48.744
+The the analogy I have a friend who's used with this is like if you play the game
+
+01:00:49.265 --> 01:00:52.684
+Code names. Yeah with it. Yes. Are you go?
+
+01:00:52.684 --> 01:00:59.124
+so it's like basically you get random words that you have to find associations between and it's that process where interesting things come up because
+
+01:00:59.124 --> 01:01:04.765
+It's not like here's a word find three related words that are very similar to it. It's like here are two very disjoint ideas
+
+01:01:05.804 --> 01:01:08.045
+Forcing yourself to be like how might these be connected?
+
+01:01:08.045 --> 01:01:10.085
+There's something kind of interesting that comes out of that
+
+01:01:10.085 --> 01:01:14.765
+and so I think it's like that is a process that right now you has to sort of happens a repetitious or
+
+01:01:15.284 --> 01:01:21.244
+serendipitously because you have to walk around the world and do that and I think there are ways you could like again use it as a
+
+01:01:22.645 --> 01:01:26.365
+Conversation partner of sorts that isn't just like chat GPT. I think it needs to be more guided than that
+
+01:01:26.365 --> 01:01:29.765
+But it's like basically can you can you use it to to?
+
+01:01:30.485 --> 01:01:35.485
+Find those like serendipitous stuff faster. Yeah. Yeah, it's so so interesting of like
+
+01:01:36.485 --> 01:01:40.085
+Hearing you talk about it sounds like you're kind of like browsing the space of like
+
+01:01:40.765 --> 01:01:45.265
+Possible connections just to see kind of like what's out there. And is there like
+
+01:01:46.085 --> 01:01:50.325
+Anything useful, but it's pretty broad like storyboarding and like yeah
+
+01:01:50.325 --> 01:01:53.844
+So like this is a bit of a weird example, but but there was a like there was a thing
+
+01:01:53.844 --> 01:01:57.404
+I wrote a while back. I don't know a month or so ago that was about
+
+01:02:00.205 --> 01:02:03.885
+It was about like some degree like the addictiveness of AI stuff
+
+01:02:03.885 --> 01:02:08.524
+It wasn't just like oh my god, like chat GPT psychosis or whatever, but it was kind of about
+
+01:02:09.804 --> 01:02:13.284
+How this feels like a certain kind of like we are creating our own realities in
+
+01:02:13.365 --> 01:02:16.684
+Certain ways and stuff like that and you see that kind of extending in other places
+
+01:02:16.684 --> 01:02:19.885
+I don't remember what the exact sort of like news hook was on that, but there was something like that
+
+01:02:20.524 --> 01:02:21.645
+a
+
+01:02:21.645 --> 01:02:24.365
+couple eyes before I went to a Lord concert and
+
+01:02:26.045 --> 01:02:28.445
+There's a couple songs that like you're sitting there was in a Lord concert
+
+01:02:28.445 --> 01:02:31.724
+They're like, oh that's kind of an interesting thing to it. You're like watching all of these like
+
+01:02:32.244 --> 01:02:33.284
+Teenagers
+
+01:02:33.284 --> 01:02:37.964
+totally dissociate from the concert so they can take pictures for like Instagram and not pay attention to the concert and
+
+01:02:38.124 --> 01:02:44.425
+Then Lord has a song or an album called pure heroin where heroin spelled like here like female hero, but it's also like
+
+01:02:45.165 --> 01:02:47.645
+AI is kind of hair pure heroin that way like
+
+01:02:48.564 --> 01:02:49.844
+that
+
+01:02:49.844 --> 01:02:51.645
+connection
+
+01:02:51.645 --> 01:02:55.605
+Seeing that actually ends up driving a lot of the narrative of the like you can't
+
+01:02:56.124 --> 01:02:59.684
+It's not like I have this exact article. I write. Oh, I can tack on this analogy
+
+01:02:59.684 --> 01:03:04.605
+It's like I have all these loose ideas and then you see that and you're like, oh, there's actually an interesting thread
+
+01:03:04.605 --> 01:03:09.445
+this this is the thread that can tie it together, but you need to like be sitting at that concert to see the thing happen
+
+01:03:09.445 --> 01:03:11.165
+to do it and so
+
+01:03:11.165 --> 01:03:16.284
+It requires kind of these like random collisions that then one of the random collisions is like, oh
+
+01:03:16.284 --> 01:03:20.105
+that's where the interesting connections are and I think that for me anyway is where a lot of like
+
+01:03:21.765 --> 01:03:25.724
+Attempted creativity comes from and so it's it's can you can you
+
+01:03:26.724 --> 01:03:32.045
+Speed up that can you like force that process a little bit more and like I think like again code names
+
+01:03:32.045 --> 01:03:37.244
+does exact doing exactly that you become very very creative playing that game because what else are you gonna do and I think like
+
+01:03:37.244 --> 01:03:41.684
+There may be ways to be like help me run more threads through this to see what happens
+
+01:03:41.684 --> 01:03:43.765
+It's like it's not gonna write anything, but it will help you see
+
+01:03:44.284 --> 01:03:50.684
+More interesting things potential. Yeah, it's really interesting that it's like it sounds like like it's not a rhyming dictionary. It's not a thesaurus
+
+01:03:51.205 --> 01:03:53.205
+It's like a little more
+
+01:03:53.605 --> 01:03:55.964
+Granular than that, but it's still not
+
+01:03:57.205 --> 01:04:01.325
+Writing the thing, you know, it's just a different way of like exploring the
+
+01:04:02.524 --> 01:04:04.605
+Associations or like paths. Yeah
+
+01:04:05.284 --> 01:04:10.205
+part of it to me is because so people have asked about these block tests before and a lot of them do have these like
+
+01:04:10.205 --> 01:04:12.964
+There's why is Lord the sort of hook for all this thing?
+
+01:04:12.964 --> 01:04:15.284
+yeah, and it's like how did you how did you come up with that and
+
+01:04:16.045 --> 01:04:19.284
+The answer is you cheat. The answer is you didn't come up with that
+
+01:04:19.684 --> 01:04:24.765
+You came up with one association with Lord and then you read some Lord lyrics and you found four others that felt kind of attached
+
+01:04:24.765 --> 01:04:26.605
+And then you hook other ideas on to them
+
+01:04:26.605 --> 01:04:31.165
+And so it looks like oh my god, you you had all these ideas and you found like Lord is the thing that perfectly
+
+01:04:31.165 --> 01:04:32.885
+Weave through it. It's like no I didn't do that
+
+01:04:32.885 --> 01:04:38.404
+I started with a Lord song and then like figure out ways to sort of tack on things that feel associated and it creates like
+
+01:04:38.404 --> 01:04:42.325
+A much more tighter sense of connection than you kind of should
+
+01:04:43.124 --> 01:04:47.124
+Because it seems like you found this analogy that map so well when in reality you've just like
+
+01:04:47.564 --> 01:04:53.004
+Stuck ideas on to the analogy to make the analogy where the analogy was a starting thing and the ideas were glued on to that
+
+01:04:53.004 --> 01:04:55.004
+and so it's that kind of thing or like
+
+01:04:55.564 --> 01:04:58.165
+The to me the process for writing this stuff is not
+
+01:04:58.885 --> 01:05:00.684
+What are the ideas?
+
+01:05:00.684 --> 01:05:04.845
+Stick on the Lord analogy. It's like the Lord analogy is actually the thing that drives it
+
+01:05:05.445 --> 01:05:06.484
+that
+
+01:05:06.484 --> 01:05:08.484
+forcing you to describe
+
+01:05:10.164 --> 01:05:13.405
+Everything through this analogy I think forces you to like
+
+01:05:13.845 --> 01:05:15.885
+Come up with more creative ways to say it
+
+01:05:16.285 --> 01:05:21.885
+Whereas if you're not doing that you end up just writing kind of a boring outline and then like sticking on sort of weird forced
+
+01:05:22.484 --> 01:05:24.484
+like half
+
+01:05:24.504 --> 01:05:25.864
+Connected Jokes
+
+01:05:25.864 --> 01:05:27.784
+Yeah, yeah, so...
+
+01:05:28.163 --> 01:05:38.403
+It's so interesting to hear the process and finding the associations. I'm so curious about,
+
+01:05:39.043 --> 01:05:45.843
+do you have literary influences? Are there people you love to read that have influenced your style,
+
+01:05:45.843 --> 01:05:49.123
+or how did you kind of secure your inspiration?
+
+01:05:49.123 --> 01:05:54.722
+The two things, this is, I mean, Matt Levine's stuff is great. And I think Matt Levine,
+
+01:05:54.722 --> 01:05:58.243
+she has a style that is, one, you—
+
+01:05:59.367 --> 01:06:02.167
+It's very much a thing that you can't emulate because, like,
+
+01:06:02.167 --> 01:06:05.207
+one, everybody knows, like, I'm going to try to write — like, everybody sort of knows that,
+
+01:06:05.207 --> 01:06:08.407
+and you can't, like, do that anyway. But it's also, like, very hard, and he's very good at it,
+
+01:06:08.407 --> 01:06:11.367
+and I think that's what's up. But the thing I really do appreciate about him is,
+
+01:06:12.807 --> 01:06:16.007
+his thing is, like, kind of about nothing. Like, there is a — what's the point of this? I don't
+
+01:06:16.007 --> 01:06:18.407
+know. Like, there's a bunch of interesting things in the world to look at, and I like to look at
+
+01:06:18.407 --> 01:06:23.047
+them. And so I do think that — I very much read his stuff because I find it enjoyable,
+
+01:06:23.767 --> 01:06:29.366
+um, that — no shade to Ben Thompson. Ben Thompson obviously is very popular.
+
+01:06:31.207 --> 01:06:36.727
+To me, Ben Thompson — Ben Thompson writes about a subject that I should care a ton about,
+
+01:06:36.727 --> 01:06:40.887
+and I find his posts hard to get through. Like, this is a thing that I read because I think he
+
+01:06:40.887 --> 01:06:48.967
+has, like, very good ideas, but it's sort of like, this is fascinating, the structure of it is,
+
+01:06:48.967 --> 01:06:52.247
+and the ideas he has are, but, like, I don't particularly enjoy reading it.
+
+01:06:54.006 --> 01:06:57.767
+Matt Levine makes me care about stuff I should not care about. Like, I'm just interested in it
+
+01:06:57.767 --> 01:07:00.887
+because it's, like, he tells a good story with it. I don't care about any of the topics at all. It's
+
+01:07:00.887 --> 01:07:03.686
+like, yeah, the private credit bubble. How much do I care about the private — I don't know,
+
+01:07:03.686 --> 01:07:07.847
+not really. But, like, when he tells a fun story, it's fun. And I appreciate that, that style,
+
+01:07:07.847 --> 01:07:12.167
+I think. The other thing, and actually this is where a lot of this originally came from, was
+
+01:07:12.727 --> 01:07:20.087
+there was a guy — I don't remember his name. He is in chemistry. He's a chemist.
+
+01:07:20.646 --> 01:07:26.087
+Uh, he won a Nobel Prize in chemistry. He made buckyballs. There's some, like —
+
+01:07:27.366 --> 01:07:28.646
+Mr. Fuller, maybe?
+
+01:07:31.047 --> 01:07:36.646
+There's some sort of, like, compound that is, like, this, like, giant hexagonal thing.
+
+01:07:37.447 --> 01:07:40.727
+He won a Nobel Prize for it, and it was like, this is amazing, and it turns out to be, like,
+
+01:07:40.727 --> 01:07:46.566
+completely useless. It was just, like, a very stable ball. I don't know. Clearly did not stick.
+
+01:07:47.207 --> 01:07:51.047
+But when I was in college, I, like, went to some thing that he gave this talk. It was,
+
+01:07:51.047 --> 01:07:54.087
+like, a lunch thing that he gave a talk at. It was, like, whatever. It's kind of the background.
+
+01:07:54.646 --> 01:08:00.167
+But he gave the talk in this style where it was probably a 20-minute talk, and he had, like,
+
+01:08:00.167 --> 01:08:07.366
+300 slides. And it's — you just, like, can't look away because it's just, like, slide, slide,
+
+01:08:07.366 --> 01:08:11.926
+slide, slide, slide. And part of it — each slide is, like, there's this sub-narrative to it where
+
+01:08:11.926 --> 01:08:15.206
+he's giving a talk that basically you don't really need the slides for exactly. They're not, like,
+
+01:08:15.206 --> 01:08:18.727
+and now we've got a slide six, and here's the bullets, and here's the diagram. But it's, like,
+
+01:08:18.727 --> 01:08:21.447
+he will say something, and it'll be, like, an image that sort of is related to it.
+
+01:08:22.087 --> 01:08:25.447
+And it ends up creating kind of, like, these sort of two stories, where there's a story behind it
+
+01:08:25.447 --> 01:08:27.926
+that's, like, the entertainment and, like, the thing he's saying, but you kind of, like,
+
+01:08:27.926 --> 01:08:33.047
+it keeps you really attached. And I started giving talk — like, I really like that style for talks,
+
+01:08:33.047 --> 01:08:36.406
+and so that's, like, kind of the style I gave for talks. And the thing that creates is, like,
+
+01:08:37.846 --> 01:08:42.247
+there's a certain pace to it that I, like — it requires you to kind of weave a bunch of stuff
+
+01:08:42.247 --> 01:08:47.846
+into it, because you can't just be, like, AI, picture of AI. You can't — computer picture.
+
+01:08:47.846 --> 01:08:52.887
+You have to come up with, like, little vignettes that follow along throughout the course of it.
+
+01:08:54.167 --> 01:08:58.646
+I think this is much more entertaining. And so, like, a lot of the blog style actually was more
+
+01:08:58.646 --> 01:09:02.807
+of, like, how does that look on paper? I'm not sure it delivers on that, but, like, that's where
+
+01:09:04.006 --> 01:09:08.486
+there's, like, footnotes and stuff that are sort of, like, the whole thing is a little bit of,
+
+01:09:08.486 --> 01:09:11.047
+like, there's a sub-narrative to it that's, like, me entertaining myself.
+
+01:09:12.727 --> 01:09:14.807
+Because, again, it's about sequel, and, like, my God.
+
+01:09:14.807 --> 01:09:18.247
+Yeah, I mean, it is interesting. It's, like, all the elements of, like,
+
+01:09:19.366 --> 01:09:25.366
+a lot of, like, stream of thought and collage and association, but it is crazy that it all, like,
+
+01:09:26.167 --> 01:09:31.206
+comes back to data. I feel like it's, like, really — not to butter you up too hard,
+
+01:09:31.206 --> 01:09:32.406
+but it's interesting to read.
+
+01:09:32.406 --> 01:09:35.447
+It, to some degree, comes back. Like, I'm not going to — you know,
+
+01:09:35.447 --> 01:09:37.206
+sometimes they don't really tie together.
+
+01:09:37.206 --> 01:09:40.247
+Are you saying there's no promises? You might, like, at some point,
+
+01:09:40.247 --> 01:09:41.687
+drift off data and go full?
+
+01:09:42.807 --> 01:09:46.727
+Well, yeah. Like, broadly, yeah. And I would say I, like, at this point,
+
+01:09:46.727 --> 01:09:51.846
+mostly have. Like, there are still things there, but, like, I don't — it's not a lot about
+
+01:09:52.486 --> 01:09:54.087
+ETL tools these days.
+
+01:09:54.087 --> 01:09:54.566
+Yeah.
+
+01:09:54.566 --> 01:09:55.126
+Yeah, yeah, yeah.
+
+01:09:56.566 --> 01:10:01.687
+I mean, on the subject of, like, you know, like, small — like, small teams and small companies,
+
+01:10:01.687 --> 01:10:07.047
+like, I feel like examples of companies that have remained small and yet been really successful,
+
+01:10:07.047 --> 01:10:08.486
+like, there just aren't that many.
+
+01:10:08.486 --> 01:10:13.126
+I think, like, Craigslist is always the canonical example of a company that, you know,
+
+01:10:13.126 --> 01:10:19.047
+still has the same, you know, very bland, you know, utilitarian website that it had,
+
+01:10:19.047 --> 01:10:20.406
+you know, 20 or 30 years ago.
+
+01:10:20.406 --> 01:10:22.327
+I don't know when it started. No, over 20 years ago.
+
+01:10:23.207 --> 01:10:27.207
+And yet they have tons of revenue and, like, some really — some really small team.
+
+01:10:27.767 --> 01:10:32.887
+And, you know, me as a software developer, like, I always found myself torn between,
+
+01:10:32.887 --> 01:10:37.447
+like, the desire to, like, build open-source software and, like, make the world a better
+
+01:10:37.447 --> 01:10:41.207
+place through, like, building tools and giving them away for free on the internet,
+
+01:10:41.207 --> 01:10:45.207
+with the downside that it's hard to do that in a sustainable way, like, to get people — very
+
+01:10:45.207 --> 01:10:49.607
+hard to get people to pay you to do that for a long period of time. It's hard to be able to hire
+
+01:10:49.607 --> 01:10:54.086
+people because people need salaries and they need health insurance and all those things.
+
+01:10:54.086 --> 01:10:57.927
+And on the other end, you know, the other — you know, and you have entrepreneurship and
+
+01:10:58.806 --> 01:11:03.207
+starting, you know, starting companies and then invariably, you know, with the way the world works,
+
+01:11:03.207 --> 01:11:07.126
+like, you get nudged into the, like, you know, the venture capital and the raising money.
+
+01:11:07.126 --> 01:11:10.406
+And that has a lot of strings attached. There's a lot of expectations that,
+
+01:11:10.406 --> 01:11:13.846
+you know, everyone has in terms of, like, how fast you're going to grow and how many people
+
+01:11:13.846 --> 01:11:18.647
+you're going to hire. And then, you know, that gets really complicated, as you know.
+
+01:11:19.607 --> 01:11:24.647
+And so I think one optimistic, you know, hope that I have is that, you know,
+
+01:11:24.647 --> 01:11:30.167
+there might be some, like, new model of, you know, people that build software in the world
+
+01:11:30.167 --> 01:11:33.846
+and can do — you know, build new things or, like, create things that have impact
+
+01:11:33.846 --> 01:11:38.727
+that's like neither of those things and yet, like, can be fun and sustainable,
+
+01:11:38.727 --> 01:11:41.526
+like, kind of the best of both worlds. And I don't know what that looks like,
+
+01:11:41.526 --> 01:11:46.806
+but something I'm really interested in. I mean, like, my answer to that is it's a —
+
+01:11:46.806 --> 01:11:53.367
+it looks like a business. It's a small business. Like, it's only in software where — and this
+
+01:11:53.367 --> 01:11:56.487
+made sense, again, kind of the economics of, like, building software. There's a ton of upfront
+
+01:11:56.487 --> 01:12:01.447
+cost and stuff. But only in software, like, we're going to start a thing that's going to be 10
+
+01:12:01.447 --> 01:12:06.246
+people and we're going to try to make more money than we spent. That's the goal. And, like, you
+
+01:12:06.246 --> 01:12:11.447
+start a restaurant, duh. Like, yes, that's the goal. But in software, it's like, that's a
+
+01:12:11.447 --> 01:12:14.246
+ridiculous goal. Like, how are you going to grow? How are you going to —
+
+01:12:14.246 --> 01:12:18.566
+It's kind of famously parodied in Silicon Valley. It's like revenue. No, no, you want to be pre-revenue.
+
+01:12:18.566 --> 01:12:22.566
+Yeah, exactly. It's like, there's very much a model for, like, a handful of people working
+
+01:12:22.566 --> 01:12:25.927
+on a fun thing forever that you can be sustainable. It's like, that's a business.
+
+01:12:26.966 --> 01:12:32.327
+But start — again, I think it is — it's not just, like, the VC ecosystem. It's like,
+
+01:12:32.327 --> 01:12:35.607
+the economics of software have not been able to support that. You do have to
+
+01:12:35.607 --> 01:12:41.286
+spend $5 million before you can sell anything. You're in a lot of debt. And, like, that doesn't
+
+01:12:41.286 --> 01:12:45.767
+quite work. And so — but now you don't have to be. Like, you can get to the point where you can
+
+01:12:45.767 --> 01:12:51.047
+probably make — you can be probably making money after a year of one person working on a thing.
+
+01:12:51.686 --> 01:12:55.607
+And, like, all right, that's — yeah, that's just a business. And I don't know, it seems like
+
+01:12:55.607 --> 01:12:59.927
+if building stuff is fun and a business you can run forever isn't bad, then, like,
+
+01:13:00.566 --> 01:13:03.767
+not a bad gig. Maybe. No, I don't know. Maybe it doesn't work, and maybe software is too, like,
+
+01:13:04.406 --> 01:13:08.647
+winner-take-all, and so you have to get super huge. But I don't know. I'm, like, not that cynical
+
+01:13:08.647 --> 01:13:13.207
+about that, I think. I think it's like, how many people do you really need to really love a thing
+
+01:13:13.207 --> 01:13:16.246
+to make it sustainable for a handful of people? Not that many. Yeah, it does seem like there's a
+
+01:13:16.246 --> 01:13:23.686
+big space for, like, a small useful thing that, like, people are willing to pay monthly for or
+
+01:13:23.686 --> 01:13:29.846
+something. Yeah, and it does — this isn't quite right, because there's certainly a lot of things
+
+01:13:29.846 --> 01:13:36.327
+that are just, like, pure productivity tools, but it starts to feel a little bit more art-oriented
+
+01:13:36.327 --> 01:13:40.406
+or, like, content-oriented. It's almost like Substack, but, like, Substack for, you know,
+
+01:13:40.406 --> 01:13:45.047
+somebody's, like, vibe-coded software. Yeah, like, there was — one of the things I've noticed is
+
+01:13:45.047 --> 01:13:50.727
+people seem to have replaced — in a lot of ways, decks have gotten replaced with, like,
+
+01:13:51.367 --> 01:13:54.727
+Vercell apps, because you can kind of do it in the same amount of time. You're like,
+
+01:13:54.727 --> 01:13:58.887
+oh, you want to give a demo of something? I just made a thing. Like, you get random pitches from
+
+01:13:58.887 --> 01:14:02.327
+people about, like, check out this thing or whatever. I have gotten a lot of those that
+
+01:14:02.327 --> 01:14:07.526
+are links to Vercell apps now, because it's about — it used to be, like, here's a PDF of some slides
+
+01:14:07.526 --> 01:14:11.447
+or whatever, and now it's like, why would I do that? I can make a little clicky app thing. And
+
+01:14:11.447 --> 01:14:16.246
+so, I don't know, that feels more like it's just — software is just content at that point,
+
+01:14:16.246 --> 01:14:20.887
+as opposed to, like, a tool for anything. It's just like, I just have a much more flexible canvas
+
+01:14:20.887 --> 01:14:24.647
+to make a thing I want to make. It's interesting that you have a deck being replaced with a
+
+01:14:24.647 --> 01:14:30.487
+Vercell app, which is like, like, deck plus plus, just a little bit more, like,
+
+01:14:30.487 --> 01:14:37.687
+interactivity, that the bar is just way lower. Yeah, and it's not that different than — what's
+
+01:14:37.687 --> 01:14:40.727
+the simplest version for me to explain something? It's a bunch of text. Okay, what's the slightly
+
+01:14:40.727 --> 01:14:45.127
+more complicated version? A Word doc with text, with, like, some bullets and some nice formatting.
+
+01:14:45.127 --> 01:14:49.047
+What's, like, a very flexible version? Like, a deck, because it's just a — it's a bunch of
+
+01:14:49.047 --> 01:14:52.406
+static canvases that I can literally draw anything I want on. What's an even more complicated
+
+01:14:52.406 --> 01:14:58.406
+version? A deck that I can click on. That's kind of a website? Like, okay, it's not that different.
+
+01:14:58.406 --> 01:15:04.646
+Yeah, and are you looking at decks? Like, what's your — what's bringing decks past your eyes?
+
+01:15:05.286 --> 01:15:10.167
+I mean, so people periodically reach out because of the blog stuff. You'll complain about something,
+
+01:15:10.167 --> 01:15:13.766
+and I'll be like, well, actually, here's my version. They're like, would love your take on —
+
+01:15:13.766 --> 01:15:19.446
+Yeah. Which, I mean, as a slight aside, one thing that does sort of — is a bit of a character of
+
+01:15:19.446 --> 01:15:22.567
+that is because I complain about a lot of stuff, people mostly will send things and be like,
+
+01:15:23.030 --> 01:15:25.190
+Give me your worst opinion on this.
+
+01:15:25.830 --> 01:15:29.270
+And so it's kind of asking for a lot of like, what do you hate about it?
+
+01:15:30.870 --> 01:15:31.830
+Which some things are very good.
+
+01:15:31.830 --> 01:15:33.590
+Yeah, how do you like, how's that job?
+
+01:15:34.807 --> 01:15:37.687
+Do you like doing the job of, uh, you hate this?
+
+01:15:37.687 --> 01:15:38.967
+Like, what do you hate about this?
+
+01:15:38.967 --> 01:15:39.927
+Job is a real stretch.
+
+01:15:39.927 --> 01:15:40.427
+Yeah.
+
+01:15:41.847 --> 01:15:46.247
+I don't, I mean, I don't, I'm not, like, I hate everything that you do.
+
+01:15:48.247 --> 01:15:56.167
+That said, I do think there is a relatively useful hole in, like, VCs in that, where
+
+01:15:56.887 --> 01:16:02.407
+if you go pitch Sequoia and they don't like it, they will tell you, like,
+
+01:16:03.366 --> 01:16:04.167
+it's too early.
+
+01:16:04.167 --> 01:16:05.526
+Nobody was pounding on the table.
+
+01:16:05.526 --> 01:16:06.247
+We really like it.
+
+01:16:06.247 --> 01:16:07.607
+We'd love to see it next round.
+
+01:16:07.607 --> 01:16:08.647
+Like, we're just not there.
+
+01:16:08.647 --> 01:16:10.407
+We just couldn't, we just couldn't quite get there.
+
+01:16:10.407 --> 01:16:11.447
+Market wasn't quite big enough.
+
+01:16:11.447 --> 01:16:13.366
+We had questions about competitors.
+
+01:16:13.366 --> 01:16:14.567
+Like, they will tell you nothing.
+
+01:16:15.366 --> 01:16:17.447
+And the reason they tell you nothing is because they have no incentive to tell you anything
+
+01:16:17.447 --> 01:16:17.767
+other than that.
+
+01:16:17.767 --> 01:16:21.287
+Like, why would they tell you something that's gonna, why would they tell you what they really
+
+01:16:21.287 --> 01:16:25.206
+think, which is probably, like, I hated the way that founder dressed.
+
+01:16:25.206 --> 01:16:30.486
+Like, they reject you, one, I mean, Sequoia, not just Sequoia, like every VC, you get rejected
+
+01:16:30.486 --> 01:16:31.767
+probably for emotional reasons.
+
+01:16:31.767 --> 01:16:35.047
+You get probably rejected because, like, literally two minutes into the pitch, they don't take
+
+01:16:35.047 --> 01:16:38.087
+you seriously and they're tuned out and they're off looking at something else.
+
+01:16:39.687 --> 01:16:42.887
+Maybe they reject you for, like, real material reasons and, like, they really evaluated it
+
+01:16:42.887 --> 01:16:43.367
+and didn't like it.
+
+01:16:43.367 --> 01:16:46.166
+But, like, they're not gonna give you that memo of the thing they said.
+
+01:16:46.166 --> 01:16:48.647
+And it's, like, they want you to like them so you come back next time.
+
+01:16:48.647 --> 01:16:51.287
+If you do are successful, they want to, like, maintain optionality of that deal.
+
+01:16:52.007 --> 01:16:55.526
+And it's very frustrating when you're pitching because you just don't get anything honest.
+
+01:16:55.526 --> 01:16:59.846
+You get a lot of, like, kind of soft, ah, it's just not for us yet.
+
+01:16:59.846 --> 01:17:02.647
+We'd like to see a little bit more, a little more meat on the bone.
+
+01:17:02.647 --> 01:17:03.446
+And you're, like, okay.
+
+01:17:05.206 --> 01:17:08.806
+But I think, so I think, like, there is a little bit of a, this is a, like, I am not
+
+01:17:08.806 --> 01:17:12.007
+a VC, nor do I give feedback that people should listen to.
+
+01:17:12.007 --> 01:17:16.007
+But I would appreciate a VC where you walk into it and it's a little bit of, like, the
+
+01:17:16.007 --> 01:17:20.086
+Simon Cowell of VCs where you're, like, they're gonna hate it.
+
+01:17:20.086 --> 01:17:22.727
+I'm not gonna be offended when they hate it because I know they hate it.
+
+01:17:22.727 --> 01:17:25.446
+And if they like it, Simon Cowell liked my song.
+
+01:17:25.446 --> 01:17:26.086
+Like, oh my God.
+
+01:17:26.727 --> 01:17:31.846
+I would pitch that VC because I, like, the worst that happens is the thing I expect to
+
+01:17:31.846 --> 01:17:32.086
+happen.
+
+01:17:33.206 --> 01:17:33.927
+And there's a million others.
+
+01:17:33.927 --> 01:17:35.367
+I'll just go pitch them for the actual money.
+
+01:17:35.367 --> 01:17:36.486
+And so, like, I don't know.
+
+01:17:39.126 --> 01:17:41.927
+The VCs have, like, sort of weird, those are, like, value systems like this.
+
+01:17:41.927 --> 01:17:43.367
+But, like, there's some weird incentives there.
+
+01:17:43.367 --> 01:17:49.927
+And so I do think, like, yeah, what you really think is nice to hear in an uncomfortable
+
+01:17:49.927 --> 01:17:50.567
+way sometimes.
+
+01:17:50.567 --> 01:17:55.447
+But again, if Simon Cowell tells you you're bad, you're not gonna be, like, I must suck.
+
+01:17:55.447 --> 01:17:57.846
+You're gonna be, like, that's his job.
+
+01:17:57.846 --> 01:17:58.567
+That's what he does.
+
+01:17:58.567 --> 01:17:59.206
+That's his shtick.
+
+01:17:59.766 --> 01:18:00.486
+Yeah.
+
+01:18:00.486 --> 01:18:01.206
+Yeah, that's fair.
+
+01:18:02.326 --> 01:18:02.567
+I don't know.
+
+01:18:02.567 --> 01:18:03.686
+You've pitched a lot of VCs.
+
+01:18:03.686 --> 01:18:04.167
+Maybe you have.
+
+01:18:04.887 --> 01:18:09.126
+No, I largely agree with what you're saying.
+
+01:18:09.126 --> 01:18:16.647
+I mean, it's, especially in Silicon Valley, it's rare to hear, like, honest feedback.
+
+01:18:16.647 --> 01:18:21.927
+Like, and I've known, you know, I've known VCs and have been in pitches where I've received,
+
+01:18:21.927 --> 01:18:23.287
+like, honest feedback.
+
+01:18:23.287 --> 01:18:24.647
+Like, this is not good.
+
+01:18:24.647 --> 01:18:25.686
+You shouldn't be doing this.
+
+01:18:25.686 --> 01:18:27.046
+You should be doing something else.
+
+01:18:27.046 --> 01:18:30.007
+Like, the way that you're approaching this problem is wrong.
+
+01:18:30.007 --> 01:18:33.527
+And it is refreshing to get those, like, to get those takes.
+
+01:18:33.527 --> 01:18:38.887
+But, you know, but usually, like, I think professional, you know, venture investors
+
+01:18:38.887 --> 01:18:42.807
+are looking at so many pitches and talking to so many founders that generally, like,
+
+01:18:42.807 --> 01:18:43.927
+they're just pattern matching.
+
+01:18:43.927 --> 01:18:48.807
+Like, they don't have, you know, the time or energy to, especially at the early stage,
+
+01:18:48.807 --> 01:18:50.406
+like, to think super hard about things.
+
+01:18:50.406 --> 01:18:54.966
+And so it's basically like, you know, have I seen any, you know, similar companies in
+
+01:18:54.966 --> 01:18:57.287
+the past that have done this successfully?
+
+01:18:57.287 --> 01:19:01.126
+Like, does this, the way that this product is being sold, like, does that make sense?
+
+01:19:01.126 --> 01:19:03.287
+Like, are they selling to the right people?
+
+01:19:03.287 --> 01:19:06.727
+Like, does the tech, does the team seem credible?
+
+01:19:07.287 --> 01:19:11.606
+Surprisingly often, like, you look at the backgrounds of the, you know, the founders
+
+01:19:11.606 --> 01:19:15.846
+of a company and, you know, it's like, they can't build this.
+
+01:19:15.927 --> 01:19:20.326
+Like, are they, you know, if there's going to be a successful product, it shouldn't be,
+
+01:19:20.326 --> 01:19:21.287
+it shouldn't be this team.
+
+01:19:21.287 --> 01:19:24.647
+And that's often, you know, in many cases, that's just the right answer.
+
+01:19:24.647 --> 01:19:29.846
+And it isn't always the most, unfortunately, very frustratingly, it's not the most competent
+
+01:19:29.846 --> 01:19:33.206
+and qualified founders that, you know, succeed in the space.
+
+01:19:33.206 --> 01:19:37.367
+And I know that, you know, often, you know, it's the founders who were like, had the right
+
+01:19:37.367 --> 01:19:40.727
+background, were at the right place at the right time, and yet still, you know, came
+
+01:19:40.727 --> 01:19:44.727
+in second or came in, you know, fifth, who ended up, you know, very frustrated and bitter.
+
+01:19:45.686 --> 01:19:49.206
+But so that's just kind of how the cookie crumbles, unfortunately.
+
+01:19:50.167 --> 01:19:56.086
+But yeah, it's a lot of, you know, it's a lot of pattern matching, because ultimately,
+
+01:19:56.086 --> 01:20:01.126
+yeah, like, in investing, you want to maintain relationships, not burn bridges.
+
+01:20:01.126 --> 01:20:04.966
+You don't want somebody to come away from interaction being offended or being like,
+
+01:20:04.966 --> 01:20:06.406
+you know, that guy was a jerk.
+
+01:20:06.406 --> 01:20:08.646
+You know, he was honest, but he was a jerk, you know?
+
+01:20:09.526 --> 01:20:10.487
+And you should never be a jerk.
+
+01:20:10.487 --> 01:20:11.366
+Like, I'm never a jerk.
+
+01:20:11.366 --> 01:20:11.926
+So yeah.
+
+01:20:11.926 --> 01:20:16.806
+And to me, like, yeah, I think a lot of times VCs aren't, don't give totally truthful feedback,
+
+01:20:16.806 --> 01:20:18.086
+because they're trying to be nice.
+
+01:20:18.086 --> 01:20:21.447
+And a lot of times the answer is like, you're not the horse I want to bet on.
+
+01:20:21.447 --> 01:20:25.366
+And like, I don't know, what use is telling somebody that, you know, like, so yeah.
+
+01:20:26.246 --> 01:20:32.167
+But as a result of that, I think you also just get like, kind of very sort of soft answers.
+
+01:20:33.526 --> 01:20:36.806
+It's nice, though, that you're, well, I don't know if you want more of these,
+
+01:20:36.806 --> 01:20:43.526
+but that you're giving people kind of, no, I don't want to say radical candor.
+
+01:20:43.526 --> 01:20:46.246
+You're giving people like, candid feedback, right?
+
+01:20:46.806 --> 01:20:50.167
+Yeah, I mean, I'm certainly not trying to like, maintain some sort of set of deal flow
+
+01:20:50.167 --> 01:20:51.047
+around that sort of stuff.
+
+01:20:52.086 --> 01:20:53.767
+But also, I don't know, that's like, kind of what I would want.
+
+01:20:53.767 --> 01:20:55.686
+And if you're nice about it, it's fine.
+
+01:20:56.246 --> 01:20:57.767
+And maybe, I mean, I don't know, I try to be.
+
+01:20:58.406 --> 01:20:59.767
+Yeah, yeah.
+
+01:20:59.767 --> 01:21:00.246
+Yeah, I don't know.
+
+01:21:00.246 --> 01:21:02.167
+And I was like, I don't know, for me, that's like, that stuff's interesting.
+
+01:21:02.167 --> 01:21:04.007
+It's interesting to see what other people are working on and stuff, so.
+
+01:21:04.007 --> 01:21:04.507
+Yeah.
+
+01:21:05.287 --> 01:21:07.926
+Anything you're excited for this year?
+
+01:21:07.926 --> 01:21:11.366
+Or what are you most excited for this year, would you say?
+
+01:21:11.366 --> 01:21:13.846
+I mean, it's, I don't know, there's a bunch of stuff.
+
+01:21:14.727 --> 01:21:17.686
+The way all this stuff changes things is like, exciting and a very,
+
+01:21:18.966 --> 01:21:22.406
+I don't know, do I, maybe we could just have like, a down year.
+
+01:21:23.207 --> 01:21:25.846
+Maybe we could just, just stop for a bit.
+
+01:21:25.846 --> 01:21:26.327
+Right.
+
+01:21:26.327 --> 01:21:26.827
+Like.
+
+01:21:27.366 --> 01:21:29.126
+It's like, all gas, no brakes.
+
+01:21:29.126 --> 01:21:30.567
+We need like, a moment to catch up.
+
+01:21:31.126 --> 01:21:33.287
+Can we just all, so I don't know.
+
+01:21:33.526 --> 01:21:36.646
+Like, I am sure there are things that will come out that will be,
+
+01:21:37.366 --> 01:21:38.727
+you like and are fun and stuff like that.
+
+01:21:38.727 --> 01:21:42.806
+And I think, I think Cloud Code is a good example to me of what that has been,
+
+01:21:42.806 --> 01:21:45.047
+where you use it and you're like, this is pretty fun.
+
+01:21:45.047 --> 01:21:46.007
+I can do a lot of stuff.
+
+01:21:46.007 --> 01:21:46.567
+This is cool.
+
+01:21:47.366 --> 01:21:50.327
+And yet, there's also half of you that's like, I am so behind.
+
+01:21:50.887 --> 01:21:53.366
+This is like, what do I need to be doing stuff all the time?
+
+01:21:53.366 --> 01:21:54.406
+And like, am I keeping up?
+
+01:21:54.406 --> 01:21:56.007
+Or like, everybody else is doing the same thing.
+
+01:21:56.007 --> 01:21:59.366
+Or like, all of the, all of the ideas I had, are they all like, going to be built a hundred
+
+01:21:59.366 --> 01:21:59.846
+times over?
+
+01:21:59.846 --> 01:22:06.246
+Like, when things are moving that fast, it is both exciting, but also sort of terrifying.
+
+01:22:06.246 --> 01:22:11.846
+And so I think like, there will inevitably be more moments like that to me, where
+
+01:22:12.646 --> 01:22:17.686
+something happens and it's just like, there is an opportunity, but there is also,
+
+01:22:18.406 --> 01:22:22.327
+I don't know, so many opportunities that you will miss because stuff is moving so fast.
+
+01:22:22.327 --> 01:22:27.526
+So it's exciting, but like, somewhat existentially stressful.
+
+01:22:27.526 --> 01:22:27.767
+Yeah.
+
+01:22:27.767 --> 01:22:32.327
+I mean, existential has come up a couple of times.
+
+01:22:32.327 --> 01:22:37.526
+Like, as people mentioned, like feelings of uncertainty, which is so interesting.
+
+01:22:38.406 --> 01:22:38.567
+Yeah.
+
+01:22:38.567 --> 01:22:43.846
+To think about, especially in like your response of like, it's a really exciting technology.
+
+01:22:43.846 --> 01:22:47.366
+And there is this like, maybe like slight existential.
+
+01:22:47.366 --> 01:22:52.007
+I mean, I spent a lot of the last, I spent honestly, very honestly, I spent a lot of
+
+01:22:52.007 --> 01:22:59.767
+2025 in a state of like, essentially existential dread about like, what it means to be a software
+
+01:22:59.767 --> 01:23:01.126
+engineer, you know, after.
+
+01:23:01.846 --> 01:23:04.086
+And, you know, like Ben and I are like, we're a little different.
+
+01:23:04.086 --> 01:23:08.086
+And like, I'm more of like, you know, like writing C++ code, writing Python code.
+
+01:23:08.086 --> 01:23:08.487
+Like, you know.
+
+01:23:08.487 --> 01:23:09.767
+Wes is an engineer, I'm not.
+
+01:23:09.767 --> 01:23:10.887
+Yeah, Ben's not an engineer.
+
+01:23:10.887 --> 01:23:11.047
+Yeah.
+
+01:23:11.926 --> 01:23:12.487
+You can say it.
+
+01:23:12.487 --> 01:23:12.727
+Yeah.
+
+01:23:13.686 --> 01:23:21.126
+But, you know, but I feel like the, you know, the rapid pace in AI development was for me,
+
+01:23:21.126 --> 01:23:26.327
+like disruptive to my core identity as a person who has spent a lot of time becoming
+
+01:23:26.887 --> 01:23:30.167
+good at software engineering and getting really good at writing code.
+
+01:23:30.167 --> 01:23:35.526
+And so this feeling of like, you know, taking like essentially yanking the keyboard, you know,
+
+01:23:35.526 --> 01:23:37.607
+the proverbial keyboard out of my hands.
+
+01:23:37.607 --> 01:23:41.126
+And it's like, you don't need to write code anymore.
+
+01:23:41.126 --> 01:23:45.287
+And so there's this feeling of like, well, you know, what am I for?
+
+01:23:45.287 --> 01:23:47.607
+Like, what's, you know, what's my purpose here?
+
+01:23:47.607 --> 01:23:50.246
+Like, where can I add value?
+
+01:23:50.246 --> 01:23:53.447
+And I think that at some point, I don't know.
+
+01:23:54.246 --> 01:24:00.567
+You know, at some point it clicked and I regained my agency and started having the,
+
+01:24:00.567 --> 01:24:05.366
+you know, as Peter Steinberger puts it, you know, I can just do things, you know.
+
+01:24:06.647 --> 01:24:13.207
+So I'm a little bit more embracing this mentality of like, just doing things again.
+
+01:24:14.087 --> 01:24:18.327
+And not worrying too much about whether, you know, other people are doing more
+
+01:24:18.327 --> 01:24:21.447
+or other people are, you know, working smarter.
+
+01:24:21.447 --> 01:24:26.246
+And just focusing on like, you know, am I building things that are useful,
+
+01:24:26.246 --> 01:24:27.447
+things that people care about?
+
+01:24:27.447 --> 01:24:29.686
+Maybe they're only things that I care about, and maybe that's okay.
+
+01:24:30.887 --> 01:24:36.007
+But it's definitely like that existential dread, I think, has been, you know,
+
+01:24:36.007 --> 01:24:38.567
+present in a lot of the industry.
+
+01:24:38.567 --> 01:24:42.166
+Like, I don't know if there was any one thing that caused me to break out of it.
+
+01:24:42.166 --> 01:24:45.046
+But, you know, I remember there were like weeks where I was just like, you know,
+
+01:24:45.606 --> 01:24:50.486
+I'd sit down and like start writing code in Emacs or in, you know, VS Code.
+
+01:24:50.486 --> 01:24:53.767
+And I'm like, I feel, you know, I feel so ineffective, you know.
+
+01:24:54.967 --> 01:24:56.967
+And so I've, you know, I've gotten over that, I guess.
+
+01:24:56.967 --> 01:25:00.166
+And maybe that's just like a morning, just this morning process for like,
+
+01:25:00.166 --> 01:25:03.126
+the old world that feels like it's now gone.
+
+01:25:03.126 --> 01:25:05.527
+But I don't know if you felt that way at all.
+
+01:25:05.527 --> 01:25:06.806
+Yeah, yeah.
+
+01:25:06.806 --> 01:25:08.567
+And I think the thing...
+
+01:25:08.857 --> 01:25:11.897
+The just doing things I think is a useful reminder sometimes where
+
+01:25:13.817 --> 01:25:19.657
+there is another sort of a lot of the stuff I do is again this kind of blog stuff so sort of a lot
+
+01:25:19.657 --> 01:25:24.297
+of things tie back to that to me. The process of writing these things or putting together
+
+01:25:24.297 --> 01:25:27.897
+presentations or anything like that that isn't just sort of like I'm going to methodically
+
+01:25:27.897 --> 01:25:32.537
+plod through something but there is there is some like discovery in a sense to it.
+
+01:25:32.537 --> 01:25:37.017
+You spend a lot of time wasting your time like there is a lot of work that goes into it that
+
+01:25:37.017 --> 01:25:41.656
+you're just like that was bad and you got to throw it away and like that's part of the it
+
+01:25:41.656 --> 01:25:45.897
+has to happen you can't skip that like you can't skip some of that process and so I think like
+
+01:25:46.616 --> 01:25:53.656
+the just doing things it's not to me I could go oh everything is happening so much everybody is
+
+01:25:53.656 --> 01:25:57.417
+going to create the new iPhone app is going to make a zillion dollars I have to go create a
+
+01:25:57.417 --> 01:26:00.296
+new iPhone I can just create an iPhone app and I'll make a zillion dollars it's not really that
+
+01:26:00.296 --> 01:26:05.976
+it's like that doing the thing is the process how you figure out what to do what the actual
+
+01:26:05.976 --> 01:26:10.857
+thing to do is it's that you can't you're trying a bunch of stuff maybe some of them will work
+
+01:26:10.857 --> 01:26:14.377
+maybe they won't but the point is whatever you find that does work that's the way to find something
+
+01:26:14.377 --> 01:26:18.296
+that does work is by doing what you're doing and I kind of view it as that as like are any of these
+
+01:26:18.296 --> 01:26:24.457
+ideas I'm going to play with any good probably not but either in two years I'll look back and
+
+01:26:24.457 --> 01:26:28.857
+be like I may come up with a bunch of terrible ideas but I tried something oh well or you'll
+
+01:26:28.857 --> 01:26:33.817
+look back and you'll be like yeah it took seven failed things to find the eighth that was any good
+
+01:26:34.777 --> 01:26:40.936
+so all you really can do is just do the first one and see what happens the one part of that
+
+01:26:40.936 --> 01:26:45.097
+though that I think as relates like startups that is particularly important this is true with like
+
+01:26:45.097 --> 01:26:51.177
+any kind of creative stuff is you have to be willing to move on and I think that's one of
+
+01:26:51.177 --> 01:26:54.457
+the things other things about like you don't have to raise a bunch of money that is helpful
+
+01:26:54.457 --> 01:26:59.976
+is you don't have to necessarily go out and like I've spent six months researching a problem I
+
+01:26:59.976 --> 01:27:03.417
+raised a bunch of people to solve this exact thing we're going to hire a team to people who want to
+
+01:27:03.576 --> 01:27:08.296
+work on this thing now suddenly we have 18 months of time we've spent on a company to solve a
+
+01:27:08.296 --> 01:27:11.976
+problem we've sort of like half pivoted a couple times because this is the idea we have and we
+
+01:27:11.976 --> 01:27:16.377
+built the tech around it and like you can't get away from that you have like this anchor that
+
+01:27:16.377 --> 01:27:21.497
+you've attached yourself to and so in a sense you couldn't just do that you could just do one thing
+
+01:27:22.057 --> 01:27:25.497
+but you couldn't do like a bunch of stuff to figure out what's interesting and so or what
+
+01:27:25.497 --> 01:27:30.057
+might work and now you can kind of can't you can you can have five projects working at once
+
+01:27:30.057 --> 01:27:34.217
+and like maybe you realize one is like a great utility you want to use and one's like actually
+
+01:27:34.217 --> 01:27:37.176
+a thing that people want to buy and one's a thing that people want to buy but you hate it so you
+
+01:27:37.176 --> 01:27:40.857
+don't want to do it maybe you realize eight of them are all terrible and throw away things but
+
+01:27:40.857 --> 01:27:44.217
+in the course of that you found these other things you're interested in like you can do a lot more
+
+01:27:44.217 --> 01:27:48.937
+of that and I think that's like my optimistic view of how you find your way through this is more of
+
+01:27:48.937 --> 01:27:52.376
+that which is like yeah you can just do stuff and then the way you'll figure out what's actually
+
+01:27:52.376 --> 01:27:56.536
+exciting is by doing that yeah it's super interesting to hear I mean maybe to tie back to
+
+01:27:57.497 --> 01:28:03.256
+like your way earlier point like in the long term everything's a fad and this idea of more
+
+01:28:03.896 --> 01:28:11.417
+like vibe oriented Feldman I hate to use the word vibe so much but I think it's a really
+
+01:28:11.417 --> 01:28:15.176
+interesting point that like people today if someone it sounds like if someone's like worried
+
+01:28:15.176 --> 01:28:21.577
+about like what do I do now it's like they you're like you it's okay like you can do six or seven
+
+01:28:21.736 --> 01:28:26.536
+things now really easily and explore what's out there never thought of this analogy before but
+
+01:28:26.536 --> 01:28:30.937
+it's like I went to a liberal arts school a lot of people show up at liberal arts schools don't
+
+01:28:30.937 --> 01:28:35.657
+know what they're going to major and the way you figure out is you take classes you try a bunch of
+
+01:28:35.657 --> 01:28:39.497
+stuff and you're like that was really interesting I want to keep doing that it wasn't an engineering
+
+01:28:39.497 --> 01:28:43.896
+school or like a lot of schools we have to declare a major up front and if you go to one of those
+
+01:28:43.896 --> 01:28:49.096
+schools where it's like I got a cheer and like I think European universities might be like this
+
+01:28:49.096 --> 01:28:53.736
+we're like they're basically trade schools like up from like you want to be a nurse you start out
+
+01:28:53.736 --> 01:28:59.497
+of you're like locked in you go from high school to nursing college or I don't know how it works
+
+01:28:59.497 --> 01:29:03.657
+I'll take it yeah uni I don't know what anybody is but the point is like you have to make that
+
+01:29:03.657 --> 01:29:07.096
+choice up front and there you can't you can again you can just do with it you can do whatever you
+
+01:29:07.096 --> 01:29:12.217
+want but you can just do a thing whereas if you go to some liberal arts school you can like
+
+01:29:12.937 --> 01:29:16.137
+do what yeah you can do a lot of things don't worry when you show up don't worry about you
+
+01:29:16.137 --> 01:29:20.456
+want to major and try it and you'll have a lot better sense in a year when you take 10 classes
+
+01:29:20.456 --> 01:29:24.536
+and I think it's kind of like that it's like just try it I don't know you how did how could you
+
+01:29:24.536 --> 01:29:29.737
+possibly know until you try it yeah try a bunch yeah I think it's probably super helpful advice
+
+01:29:29.737 --> 01:29:35.496
+today for people yeah thinking about the future and like the pace of technology and AI and like
+
+01:29:35.496 --> 01:29:41.256
+wondering what to do that they can just try things I mean do you reflect it like much like thinking
+
+01:29:41.256 --> 01:29:47.577
+about the like analytics work that you used to do like a lot more of in the past like you know
+
+01:29:47.577 --> 01:29:52.536
+thinking about like you know kind of the like the data analytics team at Yammer and like you know
+
+01:29:52.536 --> 01:29:58.697
+early you know kind of the BI dashboarding you know world of the you know the 2010s with with
+
+01:29:58.697 --> 01:30:04.776
+mode like you know if you you were in a business and had to solve those problems like you know
+
+01:30:04.776 --> 01:30:07.897
+what do you think that you know what do you think it looks like now like does that space like is
+
+01:30:07.897 --> 01:30:13.177
+that still something that interests you to work on like or um yeah it's it's kind of a big
+
+01:30:13.177 --> 01:30:17.816
+question mark like kind of the the fate of like that that whole segment of the the industry like
+
+01:30:17.816 --> 01:30:23.096
+even the whole concept of business intelligence is a little bit you know on you know unclear right
+
+01:30:23.096 --> 01:30:26.617
+like everyone wants to make their own you know everyone wants to make their own custom dashboards
+
+01:30:26.617 --> 01:30:31.017
+now it's like why why should you be forced to use somebody else's you know dashboard builder
+
+01:30:31.017 --> 01:30:36.376
+you know interface um but um it's kind of you know funny to think about like remaking
+
+01:30:36.376 --> 01:30:40.297
+like these these you know fields that used to be well defined with a set of tools that you would
+
+01:30:40.297 --> 01:30:45.897
+use and an established set of practices being you know not totally thrown out the window but
+
+01:30:45.897 --> 01:30:51.816
+you know maybe a little bit maybe on their way to i don't know yeah i mean i don't i don't have no
+
+01:30:51.816 --> 01:30:55.816
+idea uh do i want to work on that stuff again not really there is still a couple things i'm like
+
+01:30:55.816 --> 01:31:03.256
+would be kind of nice if this particular thing existed um my my guess is if i had to say where
+
+01:31:03.256 --> 01:31:09.177
+it goes is traditional bi looks very different and like we kind of get rid of it partly because
+
+01:31:09.177 --> 01:31:13.976
+it never really worked in the first place like people have bi tools they have a bunch of dashboards
+
+01:31:13.976 --> 01:31:18.137
+they're mostly little apps for like salespeople to like look at their list of leads and how stuff is
+
+01:31:18.137 --> 01:31:23.496
+going and they're they're they're not the idea of these things being like i go here to find i drag
+
+01:31:23.496 --> 01:31:29.017
+and drop my way to insight is like not really a thing that happens um and they become very focused
+
+01:31:29.017 --> 01:31:32.536
+on like the presentation of it because i need to looks like all the styles and whatever and i kind
+
+01:31:32.536 --> 01:31:37.177
+of think that does become we figure out a way that that becomes more people get really accustomed
+
+01:31:37.177 --> 01:31:42.056
+to chat body stuff and i don't know that that necessarily means the tip back to the sort of
+
+01:31:42.056 --> 01:31:46.776
+gymnastics point conversation from earlier i don't know that becomes a chat bot that writes equal
+
+01:31:46.776 --> 01:31:53.096
+queries for you though in some ways i think it becomes more of like we just bypass sequel queries
+
+01:31:53.096 --> 01:31:56.216
+all together again if i want to understand what my customers are talking about i could drag and
+
+01:31:56.216 --> 01:32:00.376
+drop my way to doing a bunch of analysis on top of like some structured data set of support tickets
+
+01:32:00.376 --> 01:32:04.617
+or i could just be like tell me the vibe of the support tickets i'll probably just do the other
+
+01:32:04.617 --> 01:32:09.256
+one and never bother with the like analytical stuff first the other way to kind of talk about
+
+01:32:09.256 --> 01:32:15.577
+this is like we have done data work because it's the only way we've ever been to look at things at
+
+01:32:15.577 --> 01:32:21.337
+scale if you have a million support tickets how do you look at that you can't do it but with math
+
+01:32:21.337 --> 01:32:24.936
+like math works really well at any sort of scale you can add you can average a billion numbers just
+
+01:32:24.936 --> 01:32:31.017
+as easy as you can average 10 how do you average a billion conversations you don't like there's no
+
+01:32:31.017 --> 01:32:34.776
+way to you have researchers read some of them and summarize them manually and they're like
+
+01:32:34.776 --> 01:32:41.496
+we have a thing that can kind of very approximately do math on text and so the point of numbers was
+
+01:32:41.496 --> 01:32:45.976
+to do math on we quantified stuff so we could do math on it but if you do math on stuff that's
+
+01:32:45.976 --> 01:32:53.737
+not quantified do you do that much math like maybe not um so i think that stuff kind of
+
+01:32:53.737 --> 01:32:59.496
+there's a i think there's a real existential thing there i to the stuff that like posit does
+
+01:33:00.457 --> 01:33:05.177
+does feel like there's a place more for nice tools for people that are continuing to work
+
+01:33:05.177 --> 01:33:10.776
+with like when i open a csv how do i open a csv in a really like useful way there's a bunch of
+
+01:33:10.776 --> 01:33:14.536
+things that sort of like excel or it's pandas or it's posit in a way but like posit doesn't
+
+01:33:14.536 --> 01:33:18.857
+it's like designed for a much richer experience in that there's a bunch of stuff like that that's
+
+01:33:18.857 --> 01:33:25.177
+like there's still people who want to look at data and manipulate it and there still isn't really
+
+01:33:25.177 --> 01:33:30.056
+a tool that does the ones that start in that space which i think like mode tried to be like a nice
+
+01:33:30.056 --> 01:33:35.017
+workbench for that sort of thing get dragged in the bi world and there's a lot of startups that
+
+01:33:35.017 --> 01:33:41.816
+have like started as these like nice data oriented utilities that then end up being a bi tool and so
+
+01:33:41.816 --> 01:33:45.017
+i think there could actually be something that comes out of like this is actually a thing that's
+
+01:33:45.017 --> 01:33:50.616
+just like a really good way to view and manipulate like csvs yeah essentially i mean even just just
+
+01:33:50.616 --> 01:33:55.256
+in the last you know just in the last two years like i've worked on exactly that inside inside
+
+01:33:55.256 --> 01:34:01.337
+positron which is uh it's a you know posits vs code vs code fork and the use case was like i have
+
+01:34:01.337 --> 01:34:05.977
+csv and parquet files in my workspace i've got python code i've got our code i want to be able
+
+01:34:05.977 --> 01:34:10.376
+to just click on the csv file and see see what's in it and see some summary statistics like i've
+
+01:34:10.376 --> 01:34:14.856
+got some parquet files like i want to be able to just click on them too and and be able to look
+
+01:34:14.856 --> 01:34:19.496
+at what's in them and i shouldn't have to write a bunch of code to analyze it like why not just
+
+01:34:19.496 --> 01:34:24.537
+open the file look what's in look what's inside and turns out that that's surprisingly not only
+
+01:34:24.537 --> 01:34:29.736
+useful for humans it's useful for agents too and so like i think there's a every
+
+01:34:30.051 --> 01:34:36.531
+B.I. startup, I think, like, underestimated the value of, I can just send you a file.
+
+01:34:36.850 --> 01:34:39.650
+There's like, Excel files is this anti-pattern of like,
+
+01:34:39.650 --> 01:34:42.450
+why don't send it? It's in the cloud. It should be a web or whatever.
+
+01:34:42.450 --> 01:34:46.210
+But it's like actually a whole lot of people. It's like really nice to be able to email you a file
+
+01:34:46.210 --> 01:34:49.810
+that is the data itself. It's like static version of the data.
+
+01:34:49.810 --> 01:34:53.090
+It is like the manipulation on top of it. It is chart. It is the whole thing in a box.
+
+01:34:53.090 --> 01:34:57.329
+Whereas like the, oh, it's a BI tool. It's a textual database that runs queries and all
+
+01:34:57.329 --> 01:35:02.130
+this stuff. It's like, yeah, I get why that's useful. But like so much data work is just files.
+
+01:35:03.090 --> 01:35:08.850
+It's interesting to hear you talk about the like vibe aspect of it, that there's these like big
+
+01:35:09.489 --> 01:35:14.770
+sources of data that we used to have to quantify because we couldn't put eyes on them that now
+
+01:35:14.770 --> 01:35:21.090
+could be maybe fed in to like an LLM to get a useful gist out of. But there's also these small
+
+01:35:21.090 --> 01:35:27.170
+things like emailed files that we've also kind of overlooked or even just cracking like a CSV open
+
+01:35:27.809 --> 01:35:32.690
+that we've kind of like overlooked at times. They're just like really simple glimpses at
+
+01:35:32.690 --> 01:35:37.570
+things that people want to do. It sounds like. Yeah. And I mean, I think the other version of
+
+01:35:37.570 --> 01:35:41.249
+this to me is we've spent, I don't know, whenever we started all this data stuff,
+
+01:35:42.050 --> 01:35:48.529
+we've spent 20 years, probably more figuring out ways to collect it because we had a thing to do
+
+01:35:48.529 --> 01:35:52.850
+with it. They're like, let's collect web events on every single click you've ever had on the
+
+01:35:52.850 --> 01:35:59.410
+internet. Why? Because we have something useful to do with it. And so there's an enormous industry
+
+01:35:59.410 --> 01:36:03.329
+of like data collection, largely structured because like we have something that can be
+
+01:36:03.329 --> 01:36:06.850
+stuffed into something. And like, was that thing useful? I don't know. But like theoretically,
+
+01:36:06.850 --> 01:36:11.170
+yeah. We didn't actually bother to collect a lot of other stuff because like, what are you going
+
+01:36:11.170 --> 01:36:16.529
+to do with it? Like to me, an easy example of this is, it seems like a thing that could one day
+
+01:36:16.529 --> 01:36:21.090
+exist. But like you go on a website, you have a button that like some intercom type of thing
+
+01:36:21.090 --> 01:36:24.929
+pops up and you're like, would you like a $5 Starbucks gift card to yell at this website for
+
+01:36:24.929 --> 01:36:28.770
+30 seconds? I'm sure there's lots of reasons why that doesn't exist. But like, why would you ever
+
+01:36:28.770 --> 01:36:34.130
+pay $5 for a 30-second audio clip of feedback? What am I going to do with a thousand of those
+
+01:36:34.130 --> 01:36:39.010
+things? But if you have today, if you have a thousand 30-second audio clips of people telling
+
+01:36:39.010 --> 01:36:43.730
+you feedback, would you pay $5,000 for that? Like absolutely you would. Because you have something
+
+01:36:43.730 --> 01:36:47.010
+to do with it. Before it'd be like, oh, it's going to not cost $5,000, it's going to cost me
+
+01:36:47.650 --> 01:36:50.850
+$25,000 because I'm going to have to have someone read them and there's going to be a user researcher
+
+01:36:51.169 --> 01:36:53.570
+goes through them and parses them and makes a bunch of stuff and it's a huge process and I
+
+01:36:53.570 --> 01:36:57.650
+really trust it. Now, like that data is useful. And so I think there's a lot of places like that
+
+01:36:57.650 --> 01:37:02.369
+where we've never, we've started to do it with things that are like sucking in emails and Slack
+
+01:37:02.369 --> 01:37:08.930
+conversations and whatever. But like that feels very early in what data would we collect now that
+
+01:37:08.930 --> 01:37:16.850
+we actually can kind of make use of unstructured stuff. Like it's like a little bit black mirrory
+
+01:37:16.850 --> 01:37:21.809
+where like other examples of things like there's a whole bunch of conversations that happen every
+
+01:37:21.809 --> 01:37:27.729
+day at a Starbucks counter between the barista and the customer. That's really useful if you
+
+01:37:27.729 --> 01:37:32.210
+were Starbucks to figure out what you could do better. Is it collected? No. Why? Because what
+
+01:37:32.210 --> 01:37:35.729
+in the world are you going to do with that? But now what are you going to do with it? A lot.
+
+01:37:35.729 --> 01:37:38.609
+And like, do you want people to collect that? I don't know. We very much got comfortable with
+
+01:37:38.609 --> 01:37:42.369
+people tracking every single thing you do on the internet. We probably end up getting comfortable
+
+01:37:42.369 --> 01:37:45.089
+with that because someone figured out how to do something with it. But we have, we have like a
+
+01:37:45.089 --> 01:37:49.410
+thing we can, we can actually do with it. And so I think those sorts of sources start to emerge
+
+01:37:49.410 --> 01:37:54.050
+because it's like, oh, this isn't just a bunch of audiophiles that's like sit somewhere hypothetically.
+
+01:37:54.050 --> 01:37:58.449
+It's like, no, they get fed into a real thing. Yeah. Yeah. It's so interesting. Like I, fingers
+
+01:37:58.449 --> 01:38:03.249
+crossed that I get to yell at a website in the next like two years. It is, it is scary. Like the
+
+01:38:03.249 --> 01:38:08.369
+Starbucks thing where sometimes these things start to feed back into themselves. Like if the Starbucks
+
+01:38:08.369 --> 01:38:15.969
+worker and me are in a panopticon and we know it like that, I feel like sometimes our interactions
+
+01:38:15.969 --> 01:38:21.809
+change because we know. Yeah. But, but like, it doesn't, do you, do you use websites differently
+
+01:38:21.809 --> 01:38:25.570
+because you know what you're clicking on is like, like you may be at first like, oh, I'm going to
+
+01:38:25.570 --> 01:38:29.010
+like, I'm going to mess up the, this is fun. And then when you do it for like two times, you're
+
+01:38:29.010 --> 01:38:35.729
+like, you get used to it. Who do I, who am I like? I am one of a million visitors to the ESPN.com
+
+01:38:35.729 --> 01:38:41.249
+every day. I'm not going to fine on the things I want to click on. Yeah. We've been, we've had a
+
+01:38:41.249 --> 01:38:48.850
+sweet long jam sesh. Yeah. Ben, appreciate you coming on. I feel like honestly, like I think
+
+01:38:48.850 --> 01:38:55.010
+the advice to people who are wondering like what to do is so helpful to explore things. I feel like
+
+01:38:55.890 --> 01:39:03.489
+we've heard so many interesting things from like in the longterm, everything's a fad to takes on AI
+
+01:39:03.489 --> 01:39:10.369
+to also like writing practice. So I, I feel like there's so much to chew on and just really
+
+01:39:10.369 --> 01:39:17.249
+appreciate you coming on and chant with us. Yeah, for sure. Glad, glad y'all could have me. And yeah,
+
+01:39:17.249 --> 01:39:23.170
+do, do things include, don't take my advice. A lot of that is like, don't listen to random
+
+01:39:23.170 --> 01:39:27.890
+people like me tell you anything to do. Oh, it's legit. Yeah. Yeah. Thanks for coming. Yeah, for sure.
+
+01:39:27.890 --> 01:39:28.469
+Thanks, Amin.

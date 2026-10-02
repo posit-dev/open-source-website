@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 1124
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243388+00:00'
+  last_updated: '2026-09-18T13:58:18.222010+00:00'
   like_count: 16
   playlist: ''
   software:
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/dM_UKXZqQAI/maxresdefault.jpg
   title: Kelly O'Briant | Configuration management tools for the R admin | RStudio (2019)
   url: https://www.youtube.com/watch?v=dM_UKXZqQAI
-  view_count: 1152
+  view_count: 1153
 ---
 image: thumbnail.jpg
 

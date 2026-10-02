@@ -11,7 +11,6 @@ topics:
   - Community
 software: []
 languages: []
-nohero: false
 hidesubscription: false
 ---
 

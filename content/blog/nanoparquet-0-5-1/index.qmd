@@ -27,7 +27,6 @@ photo:
   url: https://pixabay.com/photos/chocolate-box-square-brown-white-7892542
   author: ykaiavu
 source: tidyverse
-nohero: false
 hidesubscription: false
 ---
 

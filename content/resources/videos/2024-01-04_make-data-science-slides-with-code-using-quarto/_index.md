@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - rstudio
 - data science
@@ -63,11 +63,11 @@ external:  # updated automatically, do not edit
   duration: 55
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.973774+00:00'
-  like_count: 205
+  last_updated: '2026-09-18T13:58:11.685411+00:00'
+  like_count: 212
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - rstudio
   - data science
@@ -116,7 +116,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2FieaERARDI/maxresdefault.jpg
   title: Make data science slides with code using Quarto
   url: https://www.youtube.com/watch?v=2FieaERARDI
-  view_count: 4808
+  view_count: 5262
 ---
 image: thumbnail.jpg
 

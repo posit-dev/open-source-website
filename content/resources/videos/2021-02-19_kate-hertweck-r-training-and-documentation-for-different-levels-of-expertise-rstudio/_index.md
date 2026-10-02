@@ -92,7 +92,7 @@ external:  # updated automatically, do not edit
   duration: 1348
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:34.417482+00:00'
+  last_updated: '2026-09-18T13:58:17.359720+00:00'
   like_count: 0
   playlist: ''
   software:
@@ -146,7 +146,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/wGrKbsagVtg/maxresdefault.jpg
   title: Kate Hertweck | R training and documentation for different levels of expertise | RStudio
   url: https://www.youtube.com/watch?v=wGrKbsagVtg
-  view_count: 194
+  view_count: 198
 ---
 image: thumbnail.jpg
 

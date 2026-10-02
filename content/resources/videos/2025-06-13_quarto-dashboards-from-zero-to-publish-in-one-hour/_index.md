@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - rstats
 - rconsortium
@@ -22,20 +22,20 @@ external:  # updated automatically, do not edit
   duration: 3602
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.183708+00:00'
-  like_count: 20
+  last_updated: '2026-09-18T13:58:20.752422+00:00'
+  like_count: 21
   people:
   - Mine Çetinkaya-Rundel
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   tags:
   - rstats
   - rconsortium
   thumbnail: https://i.ytimg.com/vi/NoOU_nzeAGk/maxresdefault.jpg
   title: 'Quarto Dashboards: from zero to publish in one hour'
   url: https://www.youtube.com/watch?v=NoOU_nzeAGk
-  view_count: 746
+  view_count: 963
 ---
 image: thumbnail.jpg
 

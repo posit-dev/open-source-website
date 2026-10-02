@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3425
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.006933+00:00'
-  like_count: 13
+  last_updated: '2026-09-18T13:58:09.332319+00:00'
+  like_count: 12
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/bUw9w92U1UM/maxresdefault.jpg
   title: From Ecology PhD to Global Marketing at HP | John Stanton-Geddes | Data Science Hangout
   url: https://www.youtube.com/watch?v=bUw9w92U1UM
-  view_count: 410
+  view_count: 413
 ---
 image: thumbnail.jpg
 

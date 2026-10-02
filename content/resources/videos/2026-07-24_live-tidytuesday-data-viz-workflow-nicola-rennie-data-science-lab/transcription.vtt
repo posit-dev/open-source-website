@@ -1,0 +1,1321 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:13.600
+I am so excited to introduce our featured lab manager for today, Nicola Rennie. Nicola,
+
+00:00:13.600 --> 00:00:15.840
+would you like to say hello and introduce yourself?
+
+00:00:15.840 --> 00:00:23.000
+I can. Hello, I'm Nicola. I do a lot of data viz stuff. I've been using R for about 10
+
+00:00:23.000 --> 00:00:29.000
+years, and I'm very excited to be doing some TidyTuesday visualizations live today.
+
+00:00:29.400 --> 00:00:35.959
+Yes, I'm so excited. Okay, well, this is the place where we share screens and do stuff. So,
+
+00:00:35.959 --> 00:00:41.560
+Nicola, I'm going to say, take it away. And while you are sharing your screen, I will prime
+
+00:00:41.560 --> 00:00:47.320
+everybody by saying Nicola is going to show us her process of how she works through a TidyTuesday
+
+00:00:47.320 --> 00:00:51.799
+visualization. But we only have an hour here. And really, we only have like, what, 50 minutes,
+
+00:00:51.799 --> 00:00:56.360
+and we're going to be asking questions. So quite obviously, she can't go through her entire process,
+
+00:00:56.360 --> 00:01:00.279
+but she is going to be sharing some of the ways that she thinks, some of the tools she's developed
+
+00:01:00.279 --> 00:01:05.480
+over the years. She'll talk about how long she's been doing this, how long she spends on stuff like
+
+00:01:05.480 --> 00:01:12.360
+this. So get your question asking, typing fingers ready. All right, take it away, Nicola.
+
+00:01:12.919 --> 00:01:20.199
+Awesome. Thank you. So yeah, if you don't know what TidyTuesday is already, it's a super awesome
+
+00:01:20.919 --> 00:01:27.559
+sort of resource. So basically, a new dataset is released every week, every Tuesday. Although
+
+00:01:27.559 --> 00:01:32.919
+sometimes it's a Sunday, sometimes it's a Monday, you never know. And the idea is that you make
+
+00:01:32.919 --> 00:01:39.320
+something with it and share it and share your code with other people. I started doing TidyTuesday.
+
+00:01:39.320 --> 00:01:45.400
+It was my COVID lockdown 2021 project. Other people took up baking or cycling or whatever.
+
+00:01:45.480 --> 00:01:52.839
+For some reason, I got into TidyTuesday. So there's a GitHub repo. And if you scroll down
+
+00:01:52.839 --> 00:02:01.400
+in the GitHub repo, you can see all the datasets from each week. So this week, the dataset is on
+
+00:02:01.400 --> 00:02:06.760
+Twin Cities. So if you go into the readme for a specific week, you get a little bit of information
+
+00:02:06.760 --> 00:02:13.800
+about what the data is about, where it's from. You get some instructions for how to load it into
+
+00:02:14.360 --> 00:02:21.080
+R, Python, Julia, and their CSV files, if you really want those. And there's some really nice
+
+00:02:21.080 --> 00:02:25.559
+data dictionaries that explain what all the variable names mean. And those are really,
+
+00:02:25.559 --> 00:02:36.279
+really helpful. So this week's data is all about Twin Cities, so links between different cities
+
+00:02:36.279 --> 00:02:41.880
+around the world. So there's actually two datasets this week. So one of them is all about the actual
+
+00:02:41.960 --> 00:02:47.559
+cities. So you've got an ID, the name of the city, coordinates of where it is, what country it's in,
+
+00:02:47.559 --> 00:02:53.080
+and continent. And then the second dataset is the actual links between them. So it's just
+
+00:02:54.279 --> 00:03:01.880
+two columns and start and end point of the links. So I'm going to jump over to R
+
+00:03:02.679 --> 00:03:08.279
+and see if we can start making some things. Awesome. And I asked everybody if they can both
+
+00:03:08.279 --> 00:03:13.639
+see your screen and hear you clearly. And everybody so far has given me a thumbs up.
+
+00:03:15.240 --> 00:03:20.839
+Everybody, if there is a point in time when you need things to be zoomed in a little bit more
+
+00:03:20.839 --> 00:03:24.919
+on Nicola's screen, please let us know. Thank you for the thumbs up and zoom. All right, great.
+
+00:03:24.919 --> 00:03:32.440
+Nice. All right. So I have all of my tidy Tuesday visualizations from the last five years
+
+00:03:32.440 --> 00:03:38.279
+all live in one GitHub repo, which is fairly nicely structured.
+
+00:03:41.160 --> 00:03:47.240
+One of the things that I started making to try and help save myself some time was some template
+
+00:03:47.240 --> 00:03:52.600
+files. Because when you're doing, whether it's visualizations or analysis or whatever it is,
+
+00:03:53.320 --> 00:03:57.960
+you end up doing the same thing or very similar things week after week. And I didn't want to just
+
+00:03:57.960 --> 00:04:03.000
+keep typing out the same things every week. So I made myself a little R package, which has some
+
+00:04:03.000 --> 00:04:11.320
+templates in it. So if I go to that R package and do templates, you can see I've got a couple here.
+
+00:04:11.320 --> 00:04:17.239
+So I have this use tidy Tuesday template. And what I just need to put in here is the date.
+
+00:04:17.799 --> 00:04:26.279
+So it's today's date, which is 2026, 5th, and it's the 12th. So if I run that, that creates
+
+00:04:26.279 --> 00:04:33.320
+a whole bunch of files for me. It creates an R script and a readme file. So if I open these up,
+
+00:04:34.760 --> 00:04:41.480
+you can see it's in here. So it creates this folder here and it makes a readme file,
+
+00:04:41.480 --> 00:04:51.000
+which I will open as well. Okay. So it just has some space for a title and loads in the chart
+
+00:04:51.000 --> 00:04:56.760
+that we will make hopefully in this hour. And then this is the R script that it generates.
+
+00:04:58.119 --> 00:05:02.920
+So I'll talk you through this a little bit first, but we'll kind of go into more depth
+
+00:05:03.559 --> 00:05:10.839
+as we go through. So we load all the packages to start off with, basically the entire tidyverse.
+
+00:05:11.559 --> 00:05:18.040
+I also use the show text package for text. I love the show text package because you can load
+
+00:05:18.600 --> 00:05:22.839
+like Google fonts, which means you never have to worry about trying to install fonts on your
+
+00:05:22.839 --> 00:05:28.760
+own laptop or try to give other people instructions for loading fonts on their laptop. Also got a
+
+00:05:28.760 --> 00:05:36.760
+couple of packages for doing some fancy text. So like some bold highlighting or like color text.
+
+00:05:36.760 --> 00:05:45.320
+We've got glue for sticking together variables and text. And we've got the ggview package,
+
+00:05:45.320 --> 00:05:51.320
+which is super useful for previewing your plots at the same size and resolution that you want to
+
+00:05:51.320 --> 00:05:56.200
+save them at. So if you've ever done that thing where you're like spending ages tinkering with
+
+00:05:56.200 --> 00:06:01.799
+your plot and like making it look really pretty and perfect, and then you use ggsave and it just
+
+00:06:01.799 --> 00:06:07.959
+like, it's a complete mess and it looks nothing like the preview you had in RStudio, ggview is
+
+00:06:07.959 --> 00:06:14.679
+really good for that and I'll show you how it works. So the other sections in this
+
+00:06:14.679 --> 00:06:21.480
+template are basically like to load in the data and the templates files are put in the correct
+
+00:06:21.480 --> 00:06:29.799
+date and stuff. This is loading some fonts from the show text package. I've got some defaults
+
+00:06:29.799 --> 00:06:34.519
+in there so that if I'm like having a busy day and I don't have time to pick out fancy fonts, I've got
+
+00:06:34.519 --> 00:06:41.000
+something that I know looks all right. I've got some default colors. Again, if I'm busy then I'll
+
+00:06:41.000 --> 00:06:47.480
+use those. I've got some sort of like setup because every time I'm making a chart it's like almost
+
+00:06:47.480 --> 00:06:53.239
+always got title, subtitle, caption and all of that. So just like prep those variables ahead of time.
+
+00:06:54.679 --> 00:07:00.600
+And then I've got kind of like a theme that's set up and it's all kind of written out rather than
+
+00:07:00.600 --> 00:07:07.079
+being like in a personalized theme function so that it's easier to edit one bit of it for a
+
+00:07:07.079 --> 00:07:14.040
+particular chart. And then I've got some code at the bottom to save it in the correct place so I
+
+00:07:14.040 --> 00:07:20.839
+never need to worry about figuring out where I'm supposed to be saving stuff. Hey Nicola, I
+
+00:07:20.839 --> 00:07:27.799
+have a question because we are on fonts right now on the screen. Rory has a question that resonates
+
+00:07:27.799 --> 00:07:34.279
+with me too which is do show text and system fonts do different things? He says because fonts
+
+00:07:34.279 --> 00:07:39.480
+and ggplot scare me and honestly same. I stay away from anything that's not standard because I'm scared.
+
+00:07:39.480 --> 00:07:45.559
+I'm like this isn't gonna work. So they can do the same thing but they can also do
+
+00:07:45.559 --> 00:07:51.720
+different things. So system fonts is really good for finding fonts that you have installed
+
+00:07:51.720 --> 00:07:58.040
+on your computer. That works great if you are just making it yourself but if you're
+
+00:07:58.040 --> 00:08:03.000
+collaborating with other people and one of you is on Windows and one of you is on
+
+00:08:03.000 --> 00:08:08.519
+Linux and you're trying to use some Microsoft font, then you have to give instructions
+
+00:08:08.519 --> 00:08:14.040
+for how you install fonts. Whereas this sort of font at Google, I mean as long as you have
+
+00:08:14.040 --> 00:08:19.239
+an internet connection it just sort of downloads it from Google so you don't have to worry about
+
+00:08:19.239 --> 00:08:23.559
+whether you have that font, whether your collaborator has that font. It just kind of loads
+
+00:08:23.559 --> 00:08:29.799
+it in for you. You can load local fonts with show text as well if you do have something
+
+00:08:30.440 --> 00:08:35.080
+special or different that you want to use. It's kind of incentivizing to stick with Google
+
+00:08:35.080 --> 00:08:40.280
+fonts though because then you kind of can't get it wrong, right? Yeah, the only time I've like
+
+00:08:40.280 --> 00:08:44.520
+it's not worked is when I've been on a train and there's been like no wi-fi and your script
+
+00:08:44.520 --> 00:08:48.760
+doesn't run because you can't connect to the internet. But that's like a weird, it's a very
+
+00:08:48.760 --> 00:08:57.159
+niche problem I think. Yes, all right, awesome, thank you. Nice, but yeah fonts in R are super
+
+00:08:57.159 --> 00:09:04.840
+like tricky and weird. So the only thing I'm going to grab from the R for Data Science tidyTD
+
+00:09:04.840 --> 00:09:11.799
+repo is this little bit of code here to kind of load in the specific data sets. So if I just run
+
+00:09:11.799 --> 00:09:21.400
+all of this, it's kind of like when you run tidyTD, the RTT load, it's like downloading those
+
+00:09:21.400 --> 00:09:28.280
+CSV files from GitHub. And then now I have two data sets. I have one called cities, right? So
+
+00:09:28.280 --> 00:09:33.880
+it's got that like unique ID, the name of the city, coordinates, country and country code,
+
+00:09:33.880 --> 00:09:40.440
+and continent. And links looks a little bit confusing but it's just the ID for different
+
+00:09:40.440 --> 00:09:46.119
+countries and source and target just says that there's a link between those two countries. So
+
+00:09:46.119 --> 00:09:53.400
+I'm also just gonna run this in the background and then kind of start to think about what on earth
+
+00:09:53.400 --> 00:10:02.280
+I'm gonna plot with this data. It is a really nice data set, like it's not super big like in
+
+00:10:02.280 --> 00:10:07.320
+terms of number of rows or columns but there's so many things I kind of want to look at with this
+
+00:10:07.320 --> 00:10:15.320
+data. So one of the things I would quite like to look at is whether you can connect every country
+
+00:10:15.320 --> 00:10:24.760
+in the world through like one giant loop of like these twin cities. Other things you could look at
+
+00:10:24.760 --> 00:10:29.400
+is like which country is the most connected. So you could do some sort of like global map
+
+00:10:29.400 --> 00:10:35.479
+in color based on how connected they are. What I kind of want to look at is how
+
+00:10:36.840 --> 00:10:43.080
+like connected the world is to each other in terms of how close things are. So like is a city
+
+00:10:43.080 --> 00:10:50.280
+in Europe more likely to be connected to other cities in Europe? So what I'm gonna, my brain's
+
+00:10:50.280 --> 00:10:56.520
+sort of thinking in terms of chart type is something maybe like a Sankey diagram or a chord diagram.
+
+00:10:57.479 --> 00:11:03.719
+But then you kind of have to choose what level you do it at. If you do that at the country level
+
+00:11:03.719 --> 00:11:08.119
+it's just, I think it's just going to look like a big pile of spaghetti because there's too many
+
+00:11:08.119 --> 00:11:13.159
+countries and there's just going to be lots and lots of lines. At the same time I think if you
+
+00:11:13.159 --> 00:11:17.640
+do it a continent level there's like, that might work. There's like, I think there's six in the
+
+00:11:17.640 --> 00:11:28.039
+data set. So that will probably work okay. I think what I'm going to do though is pick one city
+
+00:11:29.000 --> 00:11:34.840
+and then sort of look at how connected that is. Okay so I'm gonna have a little look first of all
+
+00:11:34.840 --> 00:11:46.200
+at what like list of cities we have. So actually if I just look at the data set. So you can use
+
+00:11:46.200 --> 00:11:53.479
+the view function in R and then just kind of like sort them and have a little look. I think like
+
+00:11:53.479 --> 00:12:01.239
+when I'm doing tidy Tuesday quite a lot I quite often pick like cities or countries that I know
+
+00:12:01.239 --> 00:12:05.400
+like are some way connected to me personally because then you find out like interesting
+
+00:12:05.400 --> 00:12:12.679
+things about like where you live or that kind of thing. So I want to see if I start with cities
+
+00:12:13.320 --> 00:12:24.280
+and then filter the country code to be GB. So we'll have a look at what's in the UK and then
+
+00:12:26.679 --> 00:12:31.159
+I quite often pipe that into view at the end. So you get this nice kind of human readable look
+
+00:12:32.039 --> 00:12:38.119
+and then I can browse through all the cities in the UK that we might focus on. I'm going to
+
+00:12:38.119 --> 00:12:45.559
+go Edinburgh because that's where I live. So purely self-serving. So
+
+00:12:50.840 --> 00:12:55.000
+that's giving me one row of the data and the thing that I'm really interested in then
+
+00:12:55.000 --> 00:13:05.320
+is going to be this ID column. So I'm just gonna grab that. Okay I think what I'm also
+
+00:13:05.320 --> 00:13:09.479
+thinking at the moment is this is something that I would quite like to parameterise.
+
+00:13:11.000 --> 00:13:15.000
+So the idea is that you can type in whatever city you want and at the end you will get the plot for
+
+00:13:15.559 --> 00:13:24.520
+your chosen city. I like that. Thinking ahead. Yes I'm trying to think ahead. It's one of these
+
+00:13:24.520 --> 00:13:29.799
+things with like a really big data set when you pick like one tiny little aspect of it
+
+00:13:30.760 --> 00:13:36.440
+the chances of someone else picking that really same specific aspect is probably quite small.
+
+00:13:38.119 --> 00:13:42.280
+We have at least one other person who sees their hometown,
+
+00:13:42.280 --> 00:13:47.960
+Shirakawa. Satoshi says I see my hometown. Did anybody else see theirs? I did not see mine yet.
+
+00:13:50.760 --> 00:13:56.679
+All right so I've got my ID. So what I need to do now is go into this links data set
+
+00:13:56.679 --> 00:14:03.080
+and pick out like all the links that relate to this city ID. This one's a little bit weird
+
+00:14:03.080 --> 00:14:09.479
+because the the order of the source and the target doesn't matter at all. So I need to filter it when
+
+00:14:10.520 --> 00:14:22.039
+either the source is equal to the city ID or when the target is equal to the city ID.
+
+00:14:22.599 --> 00:14:29.080
+Yeah that didn't work. That's because I said or not and. There you go. All right so I've got 11
+
+00:14:29.080 --> 00:14:34.359
+links and you can see that like some of them are in the first column and some of them are in the
+
+00:14:34.359 --> 00:14:40.280
+second column and that's um it's like a little bit annoying. So I'm actually going to grab them.
+
+00:14:41.239 --> 00:14:53.640
+So I want to get the ID. Let's do if else. So if the source ID is equal to my city ID
+
+00:14:54.359 --> 00:15:01.239
+then what I actually want is the other one and then vice versa. Okay so now yeah now this column
+
+00:15:02.200 --> 00:15:06.599
+is all of the like IDs of the other cities that it's linked with
+
+00:15:09.159 --> 00:15:15.320
+and that's the only thing I actually want. I use select all the time to like tidy up because I
+
+00:15:15.880 --> 00:15:21.400
+really hate having extra columns um that I'm not interested in kind of hanging around in my data.
+
+00:15:21.559 --> 00:15:33.960
+Purely personal choice. But now I can join this with the city's data by the ID right and that's
+
+00:15:34.520 --> 00:15:41.719
+my sort of like I guess tidy final data set. So I have 11 cities that are all linked to
+
+00:15:42.359 --> 00:15:49.000
+my Chubbledon city editor and I've got one city that's not linked to my Chubbledon city
+
+00:15:49.880 --> 00:15:52.760
+editor and I've got like all the information on them.
+
+00:15:55.640 --> 00:16:04.440
+So I always save this as like plot data. It's not the most imaginative name but I do it every time.
+
+00:16:06.039 --> 00:16:09.640
+I'm going to skip over the text pictures now because quite often it's kind of like
+
+00:16:10.440 --> 00:16:14.679
+I actually write it at the end once you figure out what your plot is of and what you want to say.
+
+00:16:15.000 --> 00:16:17.799
+So now I need to think a little bit about how I want to visualise this.
+
+00:16:20.919 --> 00:16:26.840
+We have some votes for 3D bar charts jokingly in the discord.
+
+00:16:26.840 --> 00:16:27.719
+No, no, no, no.
+
+00:16:27.719 --> 00:16:28.280
+Don't listen.
+
+00:16:31.400 --> 00:16:38.520
+I think what I really want to hear is like a sunburst diagram. So like in the middle you're
+
+00:16:38.520 --> 00:16:42.679
+going to have that chosen city and then you will have all the cities it's connected to
+
+00:16:42.679 --> 00:16:46.200
+then all of the countries they're in and then all of the continents they're in.
+
+00:16:46.200 --> 00:16:53.239
+I'm kind of thinking if you colour by continent then you can see like quite clearly
+
+00:16:54.280 --> 00:16:58.840
+like which continent is going to dominate and whether that's the same as the continent that
+
+00:16:58.840 --> 00:17:06.359
+your chosen city is in. So sunburst diagrams are like
+
+00:17:06.359 --> 00:17:12.839
+kind of like I guess like a circular tree map and or kind of like stacked doughnut charts.
+
+00:17:15.319 --> 00:17:16.439
+So there are different ways to make them.
+
+00:17:17.479 --> 00:17:22.920
+So one of the things I quite often do at this point is if I'm thinking about a chart that
+
+00:17:23.959 --> 00:17:29.719
+I know I've made before I quite often like go and look at the code for that chart and just
+
+00:17:29.719 --> 00:17:34.680
+like copy and paste it and then edit it rather than just copy and paste it and then edit it.
+
+00:17:35.000 --> 00:17:38.839
+And then edit it rather than trying to write it from scratch every time.
+
+00:17:40.599 --> 00:17:44.839
+So I have a little shiny app that grabs all of my Tidy Tuesday plots from
+
+00:17:44.839 --> 00:17:51.880
+that repository and you can kind of search by package. You can also search by name which I
+
+00:17:51.880 --> 00:17:57.880
+appreciate is not the most useful. But I remember doing a sunburst chart on Australian Frogs
+
+00:17:58.680 --> 00:18:01.400
+for previous Tidy Tuesday. Good memory.
+
+00:18:03.479 --> 00:18:10.280
+So this is what sunburst chart is and I have links to the code. So when I click on this it
+
+00:18:10.280 --> 00:18:16.920
+just opens and then I get the code. Oh my gosh the benefits of good documentation for your own stuff.
+
+00:18:17.479 --> 00:18:23.400
+You have to learn the hard way I think. I still curse 2021 me for their terrible file naming
+
+00:18:23.400 --> 00:18:33.160
+system. But yeah so this I can see like how did I make it the last time and the last time I made
+
+00:18:33.160 --> 00:18:41.719
+it in a really weird way. Okay I know why I did this. Sometimes it takes a while for me to remember
+
+00:18:41.719 --> 00:18:47.880
+why I did certain things. So normally if I was making a sunburst diagram I would probably use
+
+00:18:47.880 --> 00:18:56.839
+the ggforce package which has like geom arc bar. Yeah. But I wanted to make it interactive so it
+
+00:18:56.839 --> 00:19:02.439
+had these little tooltips and that doesn't work with the giraffe package. So I think I remade
+
+00:19:03.400 --> 00:19:08.920
+instead of arcs I made them all as polygons. I'm sorry I think you mean the ggiraffe package. Yes.
+
+00:19:10.680 --> 00:19:17.160
+I never know. I never know. It's totally giraffe. It says it in the documentation.
+
+00:19:17.160 --> 00:19:23.880
+But I will never not call it ggiraffe. Yeah I called it ggiraffe for like years and then
+
+00:19:23.880 --> 00:19:28.599
+Kara Thompson showed me the hex sticker and it was a picture of a giraffe and we were both kind of like
+
+00:19:28.599 --> 00:19:39.160
+oh that makes sense. It is 100% giraffe. Okay we can move on. So this one was a little while
+
+00:19:39.160 --> 00:19:48.119
+ago and I think it was before a newer version of ggplot2 came out. So I think previously if
+
+00:19:48.119 --> 00:19:55.079
+you wanted to make like pie charts or donut charts in ggplot2 you could make like a bar chart and
+
+00:19:55.079 --> 00:20:03.719
+then use a chord polar which kind of like pushes it into a circle. The problem with that is that
+
+00:20:03.719 --> 00:20:08.119
+like putting annotations and stuff on it is a nightmare because their coordinate system is
+
+00:20:08.119 --> 00:20:16.040
+just goes crazy and you don't know where any points actually are. But the newer versions of
+
+00:20:16.040 --> 00:20:25.959
+ggplot2 have like a chord radial which I think is basically just fixes that issue. So I'm gonna
+
+00:20:25.959 --> 00:20:36.119
+attempt that. So what do I want? First of all I need to figure out for every given- so I'm gonna
+
+00:20:36.119 --> 00:20:45.079
+have three layers on my radial chart, my sunburst chart. I'm gonna have like cities, countries and
+
+00:20:45.079 --> 00:20:56.439
+then continents. So I need to take my bot data and then group it by one of the regions. So let's just
+
+00:20:56.439 --> 00:21:05.640
+start with city which is actually in the data city is down as name but I know I'm gonna keep
+
+00:21:06.599 --> 00:21:15.719
+typing city if I mean city. So I'm gonna rename that. So group by city. Rename it. Yes. I'm all
+
+00:21:15.719 --> 00:21:19.959
+about renaming something. I'll spend more time fixing my own typos than it will just fixing it.
+
+00:21:20.599 --> 00:21:27.160
+So I want to count up the number of each city which okay there should just be one.
+
+00:21:30.199 --> 00:21:34.439
+So I then did that and then I need to keep
+
+00:21:35.959 --> 00:21:41.640
+the city the number and because I want to color by continent I need to keep that in the data.
+
+00:21:41.800 --> 00:21:50.199
+So this is what I need. Now I want to do the same code for country and continent so I'm gonna stick
+
+00:21:50.199 --> 00:21:59.800
+this as a function to save me wrangling lots of little data sets. So it's gonna be a function of
+
+00:22:00.359 --> 00:22:14.119
+region. All right. Grab that in there. We might have crashed your Shiny app.
+
+00:22:15.479 --> 00:22:20.119
+They give it the hug of death Nicola. So the Shiny app it will take a while to load
+
+00:22:20.920 --> 00:22:24.839
+because it's actually it's deployed with WebR so you're not crashing my Shiny app you're
+
+00:22:24.839 --> 00:22:30.680
+crashing your own browser. Good. Okay. That's good news actually. So it's posted in your own
+
+00:22:30.680 --> 00:22:35.239
+browser. Give it a second and let it load. It does take a little while just because it's like
+
+00:22:35.239 --> 00:22:38.520
+WebR and it's kind of loading a bunch of packages in the background. Yeah.
+
+00:22:41.239 --> 00:22:51.800
+Okay. So yeah I've got this little function here which takes like a region level so that will take
+
+00:22:51.800 --> 00:22:57.079
+city country or continent as an input and it will return me a data set that looks a little
+
+00:22:57.079 --> 00:23:02.680
+bit like this. You may or may not have seen this like weird curly bracket notation before.
+
+00:23:04.760 --> 00:23:11.560
+It's like a weird sort of tidy eval thing that lets you put variable names in without
+
+00:23:11.560 --> 00:23:18.760
+quotation marks essentially. Yeah I call it a double hug. Yes. So if I do something like
+
+00:23:18.760 --> 00:23:24.439
+region data of country I get that right. So I still have the country the number and if I do
+
+00:23:24.439 --> 00:23:33.880
+continent I think it's gonna give me some duplicates. So let's stick distinct in there.
+
+00:23:33.880 --> 00:23:39.959
+I don't want to count them all twice. Okay. So that's a nice quick way of getting my data sets.
+
+00:23:40.280 --> 00:23:46.040
+So start actually making a chart. So I love that you have just chord radial
+
+00:23:46.040 --> 00:23:49.800
+floating down. Yeah just waiting. I'm like I will need that in a moment. Don't delete it.
+
+00:23:49.800 --> 00:23:55.160
+You'll have to type it again. Okay. So I want to do geom call. So my data is going to be
+
+00:23:56.119 --> 00:24:01.719
+this region data. I'm going to start with city
+
+00:24:02.280 --> 00:24:16.040
+and then mapping is going to be a little bit weird. So I think your x variables I want to be
+
+00:24:17.319 --> 00:24:28.439
+n and y I want to be like one and then fill is equal to continent.
+
+00:24:28.599 --> 00:24:36.599
+I think it's not going to do what I want. Okay. That sort of looks correct.
+
+00:24:37.719 --> 00:24:45.160
+And then if I add chord radial. Okay. It's got a weird gap here which I don't want.
+
+00:24:46.199 --> 00:24:51.400
+I always use like expand equals false in like most of my charts because I don't I don't like the
+
+00:24:51.400 --> 00:24:56.199
+weird extra space. So this. Okay. This is kind of made a pie chart. That's
+
+00:24:56.520 --> 00:25:02.439
+we can't. We made a pie chart by accident. Accidentally made some pie charts. Okay.
+
+00:25:02.439 --> 00:25:10.520
+But this this should go away. So if I switch y to 2 that should stack another one on top of it.
+
+00:25:11.719 --> 00:25:15.800
+And I should have region data is equal to country. Okay. This is looking better.
+
+00:25:17.319 --> 00:25:25.959
+And then if I do one more this is going to be like continent and is move that up to three.
+
+00:25:27.160 --> 00:25:35.800
+Okay. I think the actually three. Okay. That starting to look better.
+
+00:25:36.439 --> 00:25:41.479
+I like this. Now we're getting closer to like a dartboard. Oh but you know what I saw we had a
+
+00:25:41.479 --> 00:25:46.839
+question that might benefit us to do well before we get too far away from your d player query.
+
+00:25:48.040 --> 00:25:53.479
+And it was from Nathan saying can you say why you used mutate rather than summarize.
+
+00:25:54.119 --> 00:26:00.040
+Yes. Because I want to keep continent in there. So if I normally only wanted to
+
+00:26:02.439 --> 00:26:06.119
+like when you summarize it will get rid of everything that you haven't kind of grouped by.
+
+00:26:06.119 --> 00:26:10.040
+But yeah I'm using mutate because I want to I want to color by continent. So it needs to
+
+00:26:10.040 --> 00:26:16.040
+stick around. So that's the only reason I'm kind of using mutate there. Excellent. Thank you.
+
+00:26:16.599 --> 00:26:24.439
+All right. Okay. So I want to get rid of this pie chart thing in the middle.
+
+00:26:25.640 --> 00:26:31.800
+So I want to do here is if I filter the city's data to get the city
+
+00:26:33.880 --> 00:26:42.280
+chosen city. So and then the X value is going to be all of them. So it's within number of rows.
+
+00:26:43.239 --> 00:26:47.479
+Right. Yes. Yes I did. I equals equals.
+
+00:26:49.800 --> 00:26:55.880
+There we go. The most commonly made mistake for me in R. Absolutely. Did you mean double.
+
+00:26:55.880 --> 00:27:01.800
+Did you mean. Yeah. Yes I did. Thank you. All right. That sort of looks.
+
+00:27:03.000 --> 00:27:06.839
+What I mean like is a rough idea. One thing that's a little bit weird is that you can't see
+
+00:27:07.319 --> 00:27:13.800
+like the different cities because there's no outlines. So I'm gonna if I say color
+
+00:27:14.680 --> 00:27:22.040
+is equal to my text color. Does this help. Yeah. So that and I'm just going to copy and paste that
+
+00:27:22.040 --> 00:27:28.920
+in here. So now it's a little bit easier to see that like you have your one city that you picked
+
+00:27:28.920 --> 00:27:34.599
+you have your one city that you picked in the middle. There's like three four seven cities
+
+00:27:35.880 --> 00:27:41.319
+in seven countries that are all in Europe which means we now get to do the fun part which is
+
+00:27:41.319 --> 00:27:47.000
+like making it look pretty. Yeah. I think it's it's great to see that you still have all of the
+
+00:27:47.000 --> 00:27:51.880
+like random bits that are around right. Like you haven't like theme voided anything. You're just
+
+00:27:51.880 --> 00:27:55.479
+like leave them there. It's fine. We're going to we're going to get there. Yeah. I quite often
+
+00:27:55.719 --> 00:28:01.160
+like theme void is great for making kind of charts like this in maps but quite often I leave it to
+
+00:28:01.160 --> 00:28:06.119
+the very end because it can really help with like positioning annotations and things if you can be
+
+00:28:06.119 --> 00:28:11.160
+like I want to go there and you can see what those coordinates are. And if you are working with a
+
+00:28:11.160 --> 00:28:17.160
+grid I made the mistake one time in a very big project of just sort of theme voiding from the
+
+00:28:17.160 --> 00:28:23.719
+beginning and not showing my my indexes basically on the side and I couldn't figure out why my plot
+
+00:28:23.719 --> 00:28:29.239
+was upside down and it's just because I didn't have the visual cue of going oh because my numbers
+
+00:28:29.239 --> 00:28:34.920
+are backwards. Yeah. Yeah. Don't do that to yourself. Yeah. Don't do that. Keep anything
+
+00:28:34.920 --> 00:28:41.800
+that might be helpful until the end. So this I guess this all sometimes feels a little bit like
+
+00:28:41.800 --> 00:28:47.479
+cheating when you use a template so you can just stick a plus on the end and then fire in all of
+
+00:28:47.479 --> 00:28:54.680
+the sort of template like theme stuff that I had. So I tend to just run it and see what it looks like.
+
+00:28:57.479 --> 00:29:03.640
+One thing that you might notice one I guess the text is like slightly different size and also
+
+00:29:03.640 --> 00:29:10.680
+it's opened in this viewer tab and that's because it has this plus canvas thing on the end and that's
+
+00:29:10.680 --> 00:29:19.160
+from ggview. So here you can say I want it to be like 7 by 5 dpi is 300 which matches with ggsave
+
+00:29:20.359 --> 00:29:27.319
+and set the background color of like the whole area which means that when like if you use ggsave
+
+00:29:27.319 --> 00:29:33.560
+to save this that is what it will look like. It shows you exactly as it will be and it's like a
+
+00:29:33.560 --> 00:29:39.319
+quite nice way to play around with some different sizes. So I think actually for this chart I
+
+00:29:39.319 --> 00:29:45.079
+probably want it to be portrait. If I put some text above it and get rid of that legend.
+
+00:29:47.479 --> 00:29:53.000
+I'm gonna do that just now. Legend.position equals none.
+
+00:29:55.560 --> 00:30:02.439
+Okay yeah all right. I am gonna switch this to theme void to get rid of all of the
+
+00:30:03.000 --> 00:30:07.239
+stuff I don't want and I'm gonna add an annotation
+
+00:30:09.319 --> 00:30:14.119
+to put like the name of the chosen city right in the middle.
+
+00:30:15.400 --> 00:30:22.680
+Middle of our dartboard. Yeah. Okay so or wait chosen city we parameterized.
+
+00:30:23.239 --> 00:30:26.439
+Yes we did. I'm using we generously here.
+
+00:30:27.400 --> 00:30:40.040
+So it's gonna be label equals chosen city and it's gonna be text and add that on at the end.
+
+00:30:42.119 --> 00:30:49.560
+All right okay so it's not super in the middle but it's that's all right. Okay what else do I
+
+00:30:49.560 --> 00:30:55.400
+want to do? So one thing I want to do is I want to get rid of the little white gaps between them.
+
+00:30:56.439 --> 00:31:07.800
+A little bit annoying. So in ggplot2 the width of columns is 0.9 not one. So let's get rid of that
+
+00:31:10.119 --> 00:31:16.199
+and then I'm going to colors. I don't like the ggplot2 default colors.
+
+00:31:16.520 --> 00:31:19.479
+Oh sorry Hadley.
+
+00:31:20.439 --> 00:31:31.000
+Yeah I'm gonna let's use something else. I quite often use our carto color because
+
+00:31:31.000 --> 00:31:36.199
+they have this kind of like nice combination of like being accessible and being quite good colors
+
+00:31:36.199 --> 00:31:46.119
+but also looking quite nice. So I use them quite a lot and I'm going to define a color palette
+
+00:31:48.040 --> 00:31:54.520
+from there. The other thing I want to do is like map continents to colors kind of ahead of time
+
+00:31:54.520 --> 00:31:58.439
+because you can see there's only four in this chart but there's actually six values.
+
+00:31:58.439 --> 00:32:04.599
+So if you were to choose a different city then the colors might switch order which is not great.
+
+00:32:04.599 --> 00:32:12.520
+So you would kind of recycle right? Yeah or like you would like I think they go alphabetically so
+
+00:32:12.520 --> 00:32:19.319
+oh if you they might just shift around which is a little bit weird. So
+
+00:32:19.400 --> 00:32:29.079
+I need one color for every unique value in the continent.
+
+00:32:30.520 --> 00:32:40.040
+Okay name so continents this color palette is gonna be our carto color
+
+00:32:41.319 --> 00:32:46.920
+carto palette n is going to be the length of continents
+
+00:32:49.959 --> 00:32:59.160
+and okay if I just go here you have to give the names of the palette you want.
+
+00:32:59.719 --> 00:33:13.079
+It's going to be from here.
+
+00:33:03.049 --> 00:33:23.049
+dplyr, ggplot2, Shiny, systemfonts
+
+00:33:20.718 --> 00:33:27.118
+so it will use the same combination of color and content regardless of which order they appear in
+
+00:33:29.118 --> 00:33:39.998
+so if I do in here like scale fill manual values equals my color palette
+
+00:33:44.718 --> 00:33:46.718
+all right I get that okay
+
+00:33:46.718 --> 00:33:57.598
+what I quite often do with kind of like instead of a legend is I use like color text in the legend
+
+00:33:57.598 --> 00:34:03.278
+so you'd have like a nice sentence that writes out all the different continent names that are
+
+00:34:03.278 --> 00:34:12.078
+and the color that applies in the chart so to do that you can use I think you can use marquee
+
+00:34:12.078 --> 00:34:18.478
+but I've been kind of using ggtext for so long that that is kind of my default so the way you
+
+00:34:18.478 --> 00:34:26.558
+do that is with like writing spans so you put like the name inside the spans and then style it
+
+00:34:28.877 --> 00:34:32.877
+because I want to map over everything
+
+00:34:35.517 --> 00:34:40.958
+I'm going to use per so I have this like list of continents and this kind of like list of color
+
+00:34:40.958 --> 00:34:50.558
+palettes and basically for every element in color palette I want to create like some html text
+
+00:34:52.157 --> 00:34:56.318
+with the name of the color and the name of the continent
+
+00:34:56.318 --> 00:35:12.877
+so I can use glue to do that and I take my spans from here so inside the span you have style
+
+00:35:13.837 --> 00:35:21.998
+is equal to so the color is going to be the color palette
+
+00:35:22.558 --> 00:35:29.118
+dot x so that's going to put in like when you map over it the first time that will give you the first
+
+00:35:29.118 --> 00:35:38.157
+element in the color palette and then in here I want to get the name of the color palette
+
+00:35:38.157 --> 00:35:40.157
+and get that first one again
+
+00:35:41.118 --> 00:35:47.038
+this is something that I would have to templatize for myself like I would have to like yeah put it
+
+00:35:47.038 --> 00:35:51.598
+somewhere so I could remember how to do it I have a lot of little snippets of like spans
+
+00:35:52.478 --> 00:36:01.758
+oh yeah for for my own sanity so this gives you like this factor so you have this span and you're
+
+00:36:02.637 --> 00:36:08.478
+like okay asia but in this color so what I want to do is take that and like construct a sentence
+
+00:36:08.478 --> 00:36:14.077
+with it I mean you can write out the sentence and pull those values in but you can also use
+
+00:36:14.958 --> 00:36:22.238
+like string flatten from string r so you can say like between each element put a comma so
+
+00:36:22.238 --> 00:36:28.637
+the sentence is going to be like asia comma north america comma asia and then you can put a comma
+
+00:36:29.038 --> 00:36:34.478
+like asia comma north america comma and so on and then but you can change the last one
+
+00:36:35.598 --> 00:36:42.637
+which is like a really nice feature for writing sentences so that creates this it looks horrendous
+
+00:36:42.637 --> 00:36:46.318
+which is why you use things like parse so you don't have to type all this out yourself
+
+00:36:46.877 --> 00:36:52.398
+um but you get like oceana and south america um and then
+
+00:36:53.277 --> 00:36:55.277
+if I
+
+00:36:57.277 --> 00:36:59.277
+stick a
+
+00:37:01.758 --> 00:37:11.357
+little stuff on the end uh it's not gonna like that okay um so this is my subtitle text
+
+00:37:12.478 --> 00:37:17.997
+so that's gonna be my subtitle colors and then subtitle can be
+
+00:37:18.958 --> 00:37:26.157
+something like um like twinned cities in
+
+00:37:28.558 --> 00:37:35.437
+my long list and then full stop okay so my subtitle
+
+00:37:37.037 --> 00:37:47.438
+yeah that looks all right and then I can stick that in to subtitle with labs so subtitle
+
+00:37:48.398 --> 00:37:58.718
+equals st and okay you can't see all of them they're a little bit pale so I will probably
+
+00:37:58.718 --> 00:38:05.597
+want to fix that um but you get this kind of like nice kind of I guess automated colored text
+
+00:38:05.597 --> 00:38:10.558
+in yeah it says the right thing at least and the right colors it does yeah um and the reason that
+
+00:38:10.558 --> 00:38:17.998
+works is because in inside the theme I have plot dot subtitle equals element text box simple
+
+00:38:18.958 --> 00:38:26.637
+which is from gg text and it basically says apply any html formatting or markdown formatting
+
+00:38:26.637 --> 00:38:35.517
+to the text if you just have like element text um you'll just like get the sort of garbled um
+
+00:38:36.317 --> 00:38:45.438
+html what I think might help is if I put those names in bold text just for some of those lighter
+
+00:38:45.438 --> 00:38:52.958
+colors right so you can use like it's something that I think is a little bit weird to combine
+
+00:38:53.517 --> 00:39:00.558
+markdown formatting with html in the one line um but it works so I will um so you can stick uh
+
+00:39:01.517 --> 00:39:05.998
+the the names in bold text and in markdown and it just makes it a little bit easier to read
+
+00:39:06.878 --> 00:39:14.637
+um and then you can go ahead and sort of start adding things uh like titles and captions um
+
+00:39:14.637 --> 00:39:22.878
+and whatnot um the other thing I want to do is move this down a little bit so in annotate um
+
+00:39:22.878 --> 00:39:30.077
+you have like h just and v just to move up and down um I can never remember which way around
+
+00:39:30.158 --> 00:39:38.317
+they are this is where you type it and figure it out actually I love teaching h just and v just
+
+00:39:38.317 --> 00:39:46.558
+but whenever I'm in some sort of like other coordinate system who knows yeah um so we just
+
+00:39:46.558 --> 00:39:52.797
+moved it down a little bit so if I go a little bit further okay um it is supposed to be between
+
+00:39:52.797 --> 00:39:59.357
+like um zero one but putting values outside of that does work um so putting to two does
+
+00:39:59.357 --> 00:40:04.558
+shift it down a bit um and I think that's that is the benefit of chord radial is that like
+
+00:40:05.357 --> 00:40:10.958
+moving stuff up and down actually moves it up and down if you use chord polar moving it
+
+00:40:10.958 --> 00:40:18.158
+up and down like sends it like left and right diagonal yeah which is really confusing um
+
+00:40:19.037 --> 00:40:26.797
+so we kind of got this chart here um I think what I uh what I would what I kind of want to do this
+
+00:40:26.797 --> 00:40:40.398
+is because it's it's not super kind of explanatory would we make it um interactive um so the nice
+
+00:40:40.477 --> 00:40:46.477
+thing so if we put like the let's say we put the city interactive
+
+00:40:48.317 --> 00:40:56.878
+so switch geom call to geom call interactive and let's say the tooltip is just the city
+
+00:40:59.517 --> 00:41:01.998
+initially it's not going to do anything because with
+
+00:41:01.998 --> 00:41:08.158
+with the giraffe package slash functions you have to put it in
+
+00:41:10.077 --> 00:41:15.438
+uh here and does this work
+
+00:41:22.238 --> 00:41:25.118
+that's not weird okay
+
+00:41:25.118 --> 00:41:36.238
+okay that's not working for some reason okay let's ignore that for a second um
+
+00:41:37.597 --> 00:41:41.197
+what else do I want to do with this okay so the other thing I wanted to check was like does this
+
+00:41:41.917 --> 00:41:50.158
+actually work in terms of being parameterized so if I switch it to like a different city and just
+
+00:41:50.158 --> 00:42:04.238
+rerun all of my codes does this work and like it does like you can see that it's the colors are
+
+00:42:04.238 --> 00:42:08.717
+still like the right way around they're still in the same kind of order nothing's changing but
+
+00:42:08.717 --> 00:42:14.717
+you're getting this updated chart um which is quite nice so yeah I think like we are starting
+
+00:42:14.717 --> 00:42:20.477
+to run out of time a little bit so I will yeah but look how far you've come in I know less than
+
+00:42:20.477 --> 00:42:27.277
+an hour this is amazing um the last couple of things I'll show you is like um I guess like
+
+00:42:27.277 --> 00:42:38.318
+using like title um so title I might just do something like twinned cities like around the world
+
+00:42:39.277 --> 00:42:43.998
+um and again I've kind of like pre-populated that plot.title thing
+
+00:42:44.558 --> 00:42:51.118
+um so it actually uses a different font and like makes it bigger um one of the nice things about
+
+00:42:51.118 --> 00:42:58.157
+this is like relative sizing um so the idea with using size equals rel is that
+
+00:42:59.758 --> 00:43:06.477
+it's saying that the title is 1.5 times the base size which means that if you want to resize your
+
+00:43:06.477 --> 00:43:10.797
+chart you don't have to go through and like change the font size of every single element
+
+00:43:11.438 --> 00:43:19.037
+um so I think this is like quite small um and my base size and my uh theme is 12 so if I made it a
+
+00:43:19.037 --> 00:43:25.758
+little bit bigger okay like everything kind of scales up which is quite nice um so I did that
+
+00:43:26.477 --> 00:43:39.758
+and the other thing I do have is um some functions um so these both I have two functions
+
+00:43:39.758 --> 00:43:44.797
+here one is like social caption and one is source caption which I appreciate are badly named because
+
+00:43:44.797 --> 00:43:50.878
+they do quite different things um so these are both currently in a personal R package but what
+
+00:43:50.878 --> 00:44:00.238
+these do is basically um sort of define the text I usually use in the source um so if I run this
+
+00:44:01.037 --> 00:44:07.678
+what it does is similar to that kind of um trick we did with the color text as it creates
+
+00:44:08.238 --> 00:44:15.917
+all of this um like horrendous looking html code um to stick some icons and like
+
+00:44:16.638 --> 00:44:24.878
+attribution in it and then this um is where I would put like combine the
+
+00:44:25.837 --> 00:44:30.878
+attribution for the source of data with the attribution for the chart and the source of the
+
+00:44:30.878 --> 00:44:44.078
+data is um is from wiki data I think yes okay um so let's put that in there
+
+00:44:47.438 --> 00:44:54.878
+and then if I do in here uh caption equals cap
+
+00:44:55.678 --> 00:45:03.037
+okay it adds like this at the bottom automatically for me um so I don't have to kind of think about
+
+00:45:03.037 --> 00:45:09.678
+that every week I sort of figure that that problem out once um and then never do it again
+
+00:45:10.318 --> 00:45:16.797
+you're so smart only solving your own problems once yeah I try to solve them every week
+
+00:45:17.678 --> 00:45:23.037
+um yeah um I probably did make this a little bit less tall because I've got one of the things is
+
+00:45:23.037 --> 00:45:30.078
+when you're using um like chord radial is it sort of like does this fixed aspect ratio of the plot
+
+00:45:30.078 --> 00:45:36.477
+area to make it square so you end up with this like weird white space um but you can kind of
+
+00:45:36.477 --> 00:45:46.717
+play around with that actually like 6.5 is probably nice um so yeah I think that's it
+
+00:45:46.797 --> 00:45:53.678
+yeah and that looks kind of okay and you can like adjust the margins um a little bit yeah
+
+00:45:53.678 --> 00:45:57.917
+I was just thinking I usually use chord fixed chord underscore fixed but I think that that's
+
+00:45:57.917 --> 00:46:06.078
+only for cartesian yeah so you can you can do the same sort of thing if you're making something that's
+
+00:46:06.078 --> 00:46:12.397
+square yeah um then yeah core fixed is is really useful it's really nice for like heat maps when
+
+00:46:12.397 --> 00:46:17.998
+you're trying to make yeah not as helpful with this situation but we did have a canvas question
+
+00:46:17.998 --> 00:46:23.678
+if we want to I know we only have like nine minutes left but let's pop it in here Dan Daniel
+
+00:46:23.678 --> 00:46:29.597
+Chen asked um so you can save a plot with the canvas call and it doesn't mess up the ggplot object
+
+00:46:31.198 --> 00:46:38.878
+yes you can um that's a very good question um so one I guess there's two ways of thinking about
+
+00:46:38.878 --> 00:46:47.277
+this is one you can you can either like get rid of your kind of canvas call and like it looks
+
+00:46:47.277 --> 00:46:54.957
+horrible but then you can do gg save as normal and it will look nice um the quicker way of doing
+
+00:46:54.957 --> 00:47:02.238
+it is actually the um the ggview package package has has two functions one is canvas the other one
+
+00:47:02.238 --> 00:47:11.118
+is save ggplot um save underscore ggplot so I this is what actually converted me to being like a
+
+00:47:11.118 --> 00:47:18.477
+forward assignment um operator um I appreciate that um so I usually have this commented out at
+
+00:47:18.477 --> 00:47:25.917
+the end of my templates um but this sort of says like assign that to the object p and then you can
+
+00:47:26.397 --> 00:47:34.318
+save underscore ggplot at the object p and that will save it um in the right place um and it's
+
+00:47:34.318 --> 00:47:39.277
+quite easy to just comment that little bit out if you decide to make some other tweaks to it
+
+00:47:39.277 --> 00:47:45.277
+um but I can show you what that looks like oh my gosh look at all the nice little like social
+
+00:47:45.277 --> 00:47:51.597
+icons down there this is yeah adorable so I did there is a blog post I wrote on like how to make
+
+00:47:51.597 --> 00:47:59.438
+your own and I think someone um converted that into an r package and I uh I cannot remember the
+
+00:47:59.438 --> 00:48:06.797
+name of it but it's something like gg like gg annotate or like caption I will look it up and
+
+00:48:06.797 --> 00:48:13.597
+I will find it um but okay we'll put it in the discord yeah once we find it like when you run um
+
+00:48:14.157 --> 00:48:21.597
+save ggplot like that's that's what you get um so it looks you know identical to this version here
+
+00:48:21.597 --> 00:48:26.878
+this which is why I use it what you're getting yeah know what you're getting you don't spend
+
+00:48:26.878 --> 00:48:33.917
+80s like styling it and making it pretty and then have to like do it all again when you decide what
+
+00:48:33.917 --> 00:48:39.837
+size your chart is um so that's kind of like a really nice thing with that but yeah so I think
+
+00:48:39.917 --> 00:48:46.238
+yeah so I think like that's we've done like what like 15 minutes and that's kind of where we are
+
+00:48:46.238 --> 00:48:51.758
+I think amazing look how far the like helpful tools and you know I hit this problem once I'm
+
+00:48:51.758 --> 00:48:57.037
+gonna solve it once and have it solved for me and in the future look how far that can get you
+
+00:48:57.037 --> 00:49:02.797
+that's amazing yeah so like it really saves time doing those like repetitive tasks that you do
+
+00:49:03.678 --> 00:49:09.357
+over and over like you just save so much time if you don't have to kind of keep doing them um well
+
+00:49:09.357 --> 00:49:17.357
+we have continually been mind blown in the in the discord over here um it's been amazing
+
+00:49:18.638 --> 00:49:25.277
+one of the um let me see one of the things I wanted to point out is I said oh it took me this
+
+00:49:25.277 --> 00:49:33.438
+long to realize that Nicola is like um in our brand was Nicola Reni brand oh yeah and then
+
+00:49:33.438 --> 00:49:42.397
+someone mentioned that it's also why cow plot is called that because c-o-w was clause o wilk
+
+00:49:43.037 --> 00:49:50.878
+oh nice blew my mind what a what a great piece of lore um thank you so much for for sharing
+
+00:49:50.878 --> 00:49:57.837
+everything and all of your wisdom you have some groupies here if people would like to
+
+00:49:57.837 --> 00:50:02.638
+keep up with you and see your posts what is the best way for them to do that
+
+00:50:03.438 --> 00:50:11.597
+um I'm on blue sky and pink tin and mastodon or my website which has been there all of the
+
+00:50:11.597 --> 00:50:16.318
+other things yes and like if you see the strip at the bottom of her her plot there you can see
+
+00:50:16.318 --> 00:50:23.037
+all of the places to find her there you go there you go all of these places there you go and you
+
+00:50:23.037 --> 00:50:28.238
+I happen to know submitted this teddy tuesday data you regularly curate so thank you so much
+
+00:50:28.238 --> 00:50:33.998
+for the the kind of like service that you do to our community and helping curate thank you I
+
+00:50:33.998 --> 00:50:38.077
+won't fully take credit for this week's curation it was actually a colleague of mine that I worked
+
+00:50:38.077 --> 00:50:43.677
+with curated the data I just did the pr but the easy way at the end yeah the important part of
+
+00:50:43.677 --> 00:50:50.398
+getting it across the finish line everybody I would really love to encourage you to curate a
+
+00:50:50.398 --> 00:50:58.717
+data set we have an entire episode that we did with john harman of tidy tuesday and if you are
+
+00:50:58.717 --> 00:51:03.278
+curious about how to put data together how to curate it and submit it I really really highly
+
+00:51:03.278 --> 00:51:07.437
+encourage you to do that it's such a fun process and then your data gets to be used by people all
+
+00:51:07.437 --> 00:51:13.518
+over the globe as they are learning and practicing their database um which is a really really cool
+
+00:51:13.518 --> 00:51:18.798
+feeling I have submitted once and I got to see people make plots and I was just like mind blown
+
+00:51:18.798 --> 00:51:23.278
+other than that Nicola thank you so much for joining us this was super fun I hope you had a
+
+00:51:23.278 --> 00:51:28.717
+good time you're welcome I had a great time awesome everybody big round of applause for
+
+00:51:28.717 --> 00:51:33.918
+Nicola big round of applause for Nick who joined us as our special co-host today Isabella we really
+
+00:51:33.918 --> 00:51:39.437
+really miss you we hope you're having a wonderful time at PyCon and we'll see you all um on Thursday
+
+00:51:39.437 --> 00:51:44.638
+for coming to the data science hangout or next Tuesday at the lab bye everybody I'll see you on
+
+00:51:44.638 --> 00:51:56.477
+discord

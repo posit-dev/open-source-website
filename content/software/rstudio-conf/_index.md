@@ -8,6 +8,7 @@ languages:
 people:
 - Isabella Velásquez
 - Mine Çetinkaya-Rundel
+- Jonathan McPherson
 - Max Kuhn
 - Winston Chang
 - Joe Cheng
@@ -15,6 +16,7 @@ people:
 - Julia Silge
 - Kristin Bott
 - Lionel Henry
+- Kevin Ushey
 - Karan Gathani
 - Jenny Bryan
 - Hadley Wickham
@@ -49,6 +51,7 @@ external:  # updated automatically, do not edit
   people:
   - Isabella Velásquez
   - Mine Çetinkaya-Rundel
+  - Jonathan McPherson
   - Max Kuhn
   - Winston Chang
   - Joe Cheng
@@ -56,6 +59,7 @@ external:  # updated automatically, do not edit
   - Julia Silge
   - Kristin Bott
   - Lionel Henry
+  - Kevin Ushey
   - Karan Gathani
   - Jenny Bryan
   - Hadley Wickham

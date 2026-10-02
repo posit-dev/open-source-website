@@ -19,7 +19,6 @@ resources:
 tags:
   -
 source: tidyverse
-nohero: false
 hidesubscription: false
 ---
 

@@ -1,0 +1,13 @@
+model,release_date,source
+Gemini Pro 2.5,2025-03-25,initial preview release; GA was 2025-06-17 (not in models.yaml)
+GPT-5,2025-08-07,release announcement (not in models.yaml)
+Claude Sonnet 4.5,2025-09-29,skaltman/model-eval models.yaml
+Gemini 3 Pro,2025-11-18,skaltman/model-eval models.yaml
+GPT-5.2,2025-12-11,release announcement (not in models.yaml)
+Claude Opus 4.6,2026-02-05,skaltman/model-eval models.yaml
+Gemma4 26B A4B,2026-03-31,ai.google.dev/gemma/docs/releases
+Claude Opus 4.7,2026-04-16,skaltman/model-eval models.yaml
+GPT-5.5,2026-04-23,skaltman/model-eval models.yaml
+Gemini 3.5 Flash,2026-05-19,skaltman/model-eval models.yaml
+Claude Opus 4.8,2026-05-28,release announcement (not in models.yaml)
+Claude Fable 5,2026-06-09,release announcement (not in models.yaml)

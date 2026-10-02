@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   forks: 16
   languages:
   - R
-  last_updated: '2026-05-20T08:05:56.227180+00:00'
+  last_updated: '2026-09-18T14:28:37.247132+00:00'
   latest_release: '2024-05-15T15:53:45+00:00'
   license: NOASSERTION
   people:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Jeroen Janssens
   repo: r-lib/cachem
-  stars: 64
+  stars: 65
   title: cachem
   website: https://cachem.r-lib.org
 ---

@@ -7,6 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
+- sparklyr
 - webinars
 tags:
 - Rstudio
@@ -26,11 +27,12 @@ external:  # updated automatically, do not edit
   duration: 2800
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.830075+00:00'
+  last_updated: '2026-09-18T13:58:19.005662+00:00'
   like_count: 0
   playlist: ''
   software:
   - rstudio
+  - sparklyr
   - webinars
   tags:
   - Rstudio
@@ -42,7 +44,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/NW5OPTKSkGY/maxresdefault.jpg
   title: Understanding Sparklyr Deployment Modes | RStudio Webinar - 2017
   url: https://www.youtube.com/watch?v=NW5OPTKSkGY
-  view_count: 1079
+  view_count: 1080
 ---
 image: thumbnail.jpg
 

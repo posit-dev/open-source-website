@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3564
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.567199+00:00'
-  like_count: 9
+  last_updated: '2026-09-18T13:58:10.945447+00:00'
+  like_count: 8
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/y3QyZt9bCAA/maxresdefault.jpg
   title: Warren Hearnes @ OptiML AI | Data Science Hangout
   url: https://www.youtube.com/watch?v=y3QyZt9bCAA
-  view_count: 424
+  view_count: 426
 ---
 image: thumbnail.jpg
 

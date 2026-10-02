@@ -7,7 +7,7 @@ From data visualization to web applications, we’re building tools that make Py
 
 At Posit, we’re committed to advancing Python as a powerful language for data science and technical communication. Our tools are built from the ground up to respect Pythonic idioms and integrate with core libraries like Ibis, polars, scikit-learn, and matplotlib.
 
-{{< button url="/software/?lang=Python&filters=show" text="Browse all Python packages" icon="boxicons--hexagon-filled" >}}
+{{< button url="/software/?languages=Python" text="Browse all Python packages" icon="boxicons--hexagon-filled" >}}
 {{< button url="/resources" text="Explore learning resources" icon="boxicons--file-filled" >}}
 
 ## Featured Python projects

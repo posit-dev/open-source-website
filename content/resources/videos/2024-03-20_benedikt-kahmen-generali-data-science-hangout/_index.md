@@ -62,14 +62,14 @@ external:  # updated automatically, do not edit
   duration: 3444
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.973481+00:00'
+  last_updated: '2026-09-18T13:58:11.311806+00:00'
   like_count: 5
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/v_sjHFa3UJ4/maxresdefault.jpg
   title: Benedikt Kahmen @ Generali | Data Science Hangout
   url: https://www.youtube.com/watch?v=v_sjHFa3UJ4
-  view_count: 460
+  view_count: 461
 ---
 image: thumbnail.jpg
 

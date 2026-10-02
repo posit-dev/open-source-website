@@ -198,7 +198,7 @@ external:  # updated automatically, do not edit
   duration: 3099
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:32.954864+00:00'
+  last_updated: '2026-09-18T13:58:15.367046+00:00'
   like_count: 16
   people:
   - Hadley Wickham
@@ -213,7 +213,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Ino-SzgNHR4/maxresdefault.jpg
   title: Posit Meetup | Jake Riley, Children's Hospital of Philadelphia | Translating Facts to Insights
   url: https://www.youtube.com/watch?v=Ino-SzgNHR4
-  view_count: 731
+  view_count: 733
 ---
 image: thumbnail.jpg
 

@@ -46,7 +46,7 @@ resource_type: video
 resources: []
 software:
 - fs
-- Quarto
+- quarto
 tags: []
 title: Wes McKinney @ Posit | Data Science Hangout
 
@@ -98,17 +98,17 @@ external:  # updated automatically, do not edit
   duration: 3608
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.973622+00:00'
-  like_count: 34
+  last_updated: '2026-09-18T13:58:11.312299+00:00'
+  like_count: 33
   playlist: ''
   software:
   - fs
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/LSGgGzc3lPw/maxresdefault.jpg
   title: Wes McKinney @ Posit | Data Science Hangout
   url: https://www.youtube.com/watch?v=LSGgGzc3lPw
-  view_count: 1596
+  view_count: 1600
 ---
 image: thumbnail.jpg
 

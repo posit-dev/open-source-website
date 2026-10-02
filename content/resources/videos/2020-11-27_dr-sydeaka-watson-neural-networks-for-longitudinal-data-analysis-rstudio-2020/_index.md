@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   duration: 1320
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.962153+00:00'
-  like_count: 71
+  last_updated: '2026-09-18T13:58:17.861136+00:00'
+  like_count: 72
   playlist: ''
   software:
   - rstudio
@@ -122,7 +122,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/-XCLkzKvr4c/hqdefault.jpg
   title: Dr. Sydeaka Watson | Neural Networks for Longitudinal Data Analysis | RStudio (2020)
   url: https://www.youtube.com/watch?v=-XCLkzKvr4c
-  view_count: 1713
+  view_count: 1734
 ---
 image: thumbnail.jpg
 

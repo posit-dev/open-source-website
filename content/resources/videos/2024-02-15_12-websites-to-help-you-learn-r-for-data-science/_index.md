@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 30
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.973598+00:00'
+  last_updated: '2026-09-18T13:58:11.312244+00:00'
   like_count: 128
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/nWgEBAQicPc/maxresdefault.jpg
   title: 12 websites to help you learn R for Data Science🙌
   url: https://www.youtube.com/watch?v=nWgEBAQicPc
-  view_count: 1689
+  view_count: 1718
 ---
 image: thumbnail.jpg
 

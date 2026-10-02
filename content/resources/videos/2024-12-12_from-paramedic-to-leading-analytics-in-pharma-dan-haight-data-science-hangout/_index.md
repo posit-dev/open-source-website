@@ -58,7 +58,7 @@ resource_type: video
 resources: []
 software:
 - shiny-assistant
-- Shiny
+- shiny-r
 tags: []
 title: From paramedic to leading analytics in pharma | Dan Haight | Data Science Hangout
 
@@ -122,17 +122,17 @@ external:  # updated automatically, do not edit
   duration: 3472
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:28.318299+00:00'
+  last_updated: '2026-09-18T13:58:09.332857+00:00'
   like_count: 5
   playlist: ''
   software:
   - shiny-assistant
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/9_dmsendWeU/maxresdefault.jpg
   title: From paramedic to leading analytics in pharma | Dan Haight | Data Science Hangout
   url: https://www.youtube.com/watch?v=9_dmsendWeU
-  view_count: 322
+  view_count: 327
 ---
 image: thumbnail.jpg
 

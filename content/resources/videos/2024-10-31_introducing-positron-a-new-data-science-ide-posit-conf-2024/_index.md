@@ -6,12 +6,13 @@ people:
 - Davis Vaughan
 - Isabel Zimmerman
 - Jenny Bryan
+- Jonathan McPherson
 - Julia Silge
 - Lionel Henry
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags: []
 title: Introducing Positron, a new data science IDE - posit conf 2024
@@ -25,23 +26,24 @@ external:  # updated automatically, do not edit
   duration: 4678
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.914427+00:00'
-  like_count: 398
+  last_updated: '2026-09-18T13:58:10.630947+00:00'
+  like_count: 410
   people:
   - Davis Vaughan
   - Isabel Zimmerman
   - Jenny Bryan
+  - Jonathan McPherson
   - Julia Silge
   - Lionel Henry
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/8uRcB34Hhsw/maxresdefault.jpg
   title: Introducing Positron, a new data science IDE - posit conf 2024
   url: https://www.youtube.com/watch?v=8uRcB34Hhsw
-  view_count: 28487
+  view_count: 29650
 ---
 image: thumbnail.jpg
 

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1194
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.606762+00:00'
+  last_updated: '2026-09-18T13:58:12.093086+00:00'
   like_count: 5
   playlist: ''
   tags:
@@ -117,7 +117,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ywuzUVSvQ6o/maxresdefault.jpg
   title: 'Serenity Now, Productivity Later: Focus Your Project Stack with The Gonzalez Matrix - posit::conf'
   url: https://www.youtube.com/watch?v=ywuzUVSvQ6o
-  view_count: 213
+  view_count: 214
 ---
 image: thumbnail.jpg
 

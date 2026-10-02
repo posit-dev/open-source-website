@@ -1,0 +1,13 @@
+{{- /*
+  atom/authors.html — Emit <vr:people> elements from a page's "people"
+  taxonomy terms, each containing the relative path of the person's page.
+  This path equals that person's <id> in the people feed, acting as a
+  foreign key linking items to people.
+
+  Input (dict):
+    "page" — the Page object
+*/ -}}
+{{- $page := .page -}}
+{{- range $page.GetTerms "people" -}}
+      <vr:people>{{ .RelPermalink | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}</vr:people>
+{{ end -}}

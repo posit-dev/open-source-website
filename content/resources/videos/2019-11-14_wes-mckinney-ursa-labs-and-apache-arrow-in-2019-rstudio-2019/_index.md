@@ -61,7 +61,7 @@ external:  # updated automatically, do not edit
   duration: 691
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243430+00:00'
+  last_updated: '2026-09-18T13:58:18.222101+00:00'
   like_count: 18
   playlist: ''
   software:
@@ -112,7 +112,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/f45F36fPg6I/maxresdefault.jpg
   title: Wes McKinney | Ursa Labs and Apache Arrow in 2019 | RStudio (2019)
   url: https://www.youtube.com/watch?v=f45F36fPg6I
-  view_count: 1003
+  view_count: 1005
 ---
 image: thumbnail.jpg
 

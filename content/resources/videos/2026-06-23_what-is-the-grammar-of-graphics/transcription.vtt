@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.320
+Have you ever heard of the Grammar of Graphics?, it's a powerful layer-based framework for
+
+00:00:04.320 --> 00:00:10.560
+building data visualizations. First introduced by Leland Wilkinson in 2001, the idea is that
+
+00:00:10.560 --> 00:00:16.040
+any statistical plot can be broken down into a distinct hierarchy of elements. It was famously
+
+00:00:16.040 --> 00:00:22.200
+popularized in R via ggplot2, allowing you to build highly customized, elegant graphs
+
+00:00:22.200 --> 00:00:28.080
+by stacking code layers, defaults layers, scale, coordinates, and facets. ggplot2 also
+
+00:00:28.080 --> 00:00:33.480
+has a huge ecosystem of packages that can help you create the graph of your dreams.
+
+00:00:33.480 --> 00:00:38.320
+You can use the same framework across other languages, like PlotName for Python, ggsql
+
+00:00:38.320 --> 00:00:43.279
+for SQL, and gribouille for Types. What's your go-to plotting library? Let us know in
+
+00:00:43.279 --> 00:00:43.919
+the comments.
+

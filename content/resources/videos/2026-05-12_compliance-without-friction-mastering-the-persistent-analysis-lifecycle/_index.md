@@ -21,7 +21,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - rstudio
 - data science
@@ -71,7 +71,7 @@ title: 'Compliance Without Friction: Mastering the Persistent Analysis Lifecycle
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
-  comment_count: 0
+  comment_count: 3
   date: '2026-05-12T14:08:22Z'
   definition: hd
   description: 'Explore how Positron, Positron Assistant, and Databot (AI) help data scientists quickly analyze, document and refactor legacy code, then deploy the revised app in a click to Posit Connect. With reproducibility via Package Manager and governance via granular access controls, Posit delivers a rapid, traceable deployment cycle that closes the loop with stakeholders, elegantly and efficiently.
@@ -93,11 +93,11 @@ external:  # updated automatically, do not edit
   duration: 2419
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:26.043803+00:00'
-  like_count: 14
+  last_updated: '2026-09-18T13:58:06.853486+00:00'
+  like_count: 23
   playlist: ''
   software:
-  - Positron
+  - positron
   tags:
   - rstudio
   - data science
@@ -146,6 +146,6 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/YdeL4jHjhhg/maxresdefault.jpg
   title: 'Compliance Without Friction: Mastering the Persistent Analysis Lifecycle'
   url: https://www.youtube.com/watch?v=YdeL4jHjhhg
-  view_count: 636
+  view_count: 1024
 ---
 

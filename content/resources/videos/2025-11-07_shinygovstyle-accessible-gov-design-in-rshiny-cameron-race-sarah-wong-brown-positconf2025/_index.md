@@ -14,7 +14,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - posit::conf(2025)
 - rstats
@@ -43,11 +43,11 @@ external:  # updated automatically, do not edit
   duration: 1157
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.254443+00:00'
-  like_count: 2
+  last_updated: '2026-09-18T13:58:08.098990+00:00'
+  like_count: 3
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - posit::conf(2025)
   - rstats
@@ -57,7 +57,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/33doZkPSUqY/maxresdefault.jpg
   title: shinyGovStyle- accessible gov design in RShiny (Cameron Race & Sarah Wong-Brown) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=33doZkPSUqY
-  view_count: 153
+  view_count: 197
 ---
 image: thumbnail.jpg
 

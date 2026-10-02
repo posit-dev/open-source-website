@@ -28,7 +28,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - shinyapps
 tags: []
 title: Open Source Environmental Monitoring with Shiny! | Wayne Jones, Shell
@@ -63,18 +63,18 @@ external:  # updated automatically, do not edit
   duration: 3670
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:32.607744+00:00'
+  last_updated: '2026-09-18T13:58:14.441313+00:00'
   like_count: 44
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyapps
   tags: []
   thumbnail: https://i.ytimg.com/vi/OTucXosqzLQ/maxresdefault.jpg
   title: Open Source Environmental Monitoring with Shiny! | Wayne Jones, Shell
   url: https://www.youtube.com/watch?v=OTucXosqzLQ
-  view_count: 2189
+  view_count: 2228
 ---
 image: thumbnail.jpg
 

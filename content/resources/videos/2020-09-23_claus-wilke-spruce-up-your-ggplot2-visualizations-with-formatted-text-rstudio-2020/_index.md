@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
   duration: 1248
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.962506+00:00'
-  like_count: 253
+  last_updated: '2026-09-18T13:58:18.221722+00:00'
+  like_count: 251
   playlist: ''
   software:
   - ggplot2
@@ -124,7 +124,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/6VTs7UaMyaw/hqdefault.jpg
   title: Claus Wilke | Spruce up your ggplot2 visualizations with formatted text | RStudio (2020)
   url: https://www.youtube.com/watch?v=6VTs7UaMyaw
-  view_count: 4958
+  view_count: 4983
 ---
 image: thumbnail.jpg
 

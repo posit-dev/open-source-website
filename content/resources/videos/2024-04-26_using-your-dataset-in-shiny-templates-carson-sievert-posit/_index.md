@@ -8,7 +8,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -65,14 +65,14 @@ external:  # updated automatically, do not edit
   duration: 436
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.567235+00:00'
-  like_count: 79
+  last_updated: '2026-09-18T13:58:10.945489+00:00'
+  like_count: 78
   people:
   - Carson Sievert
   - Shiny Team
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -121,7 +121,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ou-09NHcH5w/maxresdefault.jpg
   title: Using your dataset in Shiny Templates | Carson Sievert | Posit
   url: https://www.youtube.com/watch?v=ou-09NHcH5w
-  view_count: 6991
+  view_count: 7175
 ---
 image: thumbnail.jpg
 

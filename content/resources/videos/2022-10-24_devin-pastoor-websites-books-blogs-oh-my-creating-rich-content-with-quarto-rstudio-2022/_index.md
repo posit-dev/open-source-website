@@ -13,7 +13,7 @@ software:
 - blogdown
 - bookdown
 - hugodown
-- Quarto
+- quarto
 - rstudio
 tags: []
 title: Devin Pastoor | Websites & Books & Blogs, oh my! Creating Rich Content with Quarto | RStudio (2022)
@@ -30,8 +30,8 @@ external:  # updated automatically, do not edit
   duration: 1253
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.320958+00:00'
-  like_count: 96
+  last_updated: '2026-09-18T13:58:14.440654+00:00'
+  like_count: 95
   people:
   - RStudio Team
   playlist: ''
@@ -39,13 +39,13 @@ external:  # updated automatically, do not edit
   - blogdown
   - bookdown
   - hugodown
-  - Quarto
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/A9QRN4cpsDY/maxresdefault.jpg
   title: Devin Pastoor | Websites & Books & Blogs, oh my! Creating Rich Content with Quarto | RStudio (2022)
   url: https://www.youtube.com/watch?v=A9QRN4cpsDY
-  view_count: 3860
+  view_count: 3882
 ---
 image: thumbnail.jpg
 

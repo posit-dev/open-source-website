@@ -1,0 +1,51 @@
+{{- /* atom/entry-resource.html — one <entry> for a resource (cheatsheet, video,
+  tutorial, webinar). vr:type = resource; the specific kind is vr:resource_type. */ -}}
+{{- $page := .page -}}
+{{- $ext := $page.Params.external | default dict -}}
+  <entry>
+    {{- $path := $page.RelPermalink | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}
+    <id>{{ $path }}</id>
+    <title>{{ $page.Title }}</title>
+    <link rel="alternate" href="{{ $page.Permalink }}"/>
+    {{- with $page.Params.date }}
+    <published>{{ (time .).Format "2006-01-02T15:04:05Z07:00" | safeHTML }}</published>
+    {{- end }}
+    <updated>{{ partial "atom/updated.html" (dict "page" $page) | safeHTML }}</updated>
+    {{- with $page.Params.description }}
+    <summary>{{ . | strings.TrimSpace }}</summary>
+    {{- end }}
+    {{ partial "atom/authors.html" (dict "page" $page) -}}
+    <vr:type>resource</vr:type>
+    {{- with $page.Params.resource_type }}
+    <vr:resource_type>{{ . }}</vr:resource_type>
+    {{- end }}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "software" "element" "software" "mode" "href") -}}
+    {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "languages" "mode" "term") -}}
+    {{- if $page.Params.download_url }}
+    {{- with $page.Resources.GetMatch $page.Params.download_url }}
+    <vr:download_url>{{ .Permalink }}</vr:download_url>
+    {{- end }}
+    {{- end }}
+    {{- if eq ($page.Params.resource_type | default "") "video" }}
+    {{- with $ext.url }}
+    <vr:video_url>{{ . }}</vr:video_url>
+    {{- end }}
+    {{- with $ext.duration }}
+    <vr:duration>{{ . }}</vr:duration>
+    {{- end }}
+    {{- with $ext.view_count }}
+    <vr:view_count>{{ . }}</vr:view_count>
+    {{- end }}
+    {{- with $ext.like_count }}
+    <vr:like_count>{{ . }}</vr:like_count>
+    {{- end }}
+    {{- with $ext.comment_count }}
+    <vr:comment_count>{{ . }}</vr:comment_count>
+    {{- end }}
+    {{- with $ext.channel }}
+    <vr:channel>{{ . }}</vr:channel>
+    {{- end }}
+    {{- end }}
+    {{ partial "atom/image.html" (dict "page" $page) -}}
+    {{ partial "atom/body.html" (dict "page" $page) -}}
+  </entry>

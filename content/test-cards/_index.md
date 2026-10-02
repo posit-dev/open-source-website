@@ -1,6 +1,7 @@
 ---
 title: "Posit Conf 2025"
 layout: single
+draft: true
 ---
 
 ## Production
@@ -24,7 +25,7 @@ layout: single
 {{< insert-items cols=3 >}}
 - blog/anscombes-quartet
 - people/jeroen-janssens
-- blog/tidyverse/air
+- blog/ported/tidyverse/air
 {{< /insert-items >}}
 
 ## Grids
@@ -34,7 +35,7 @@ layout: single
 - people/greg-swinehart
 - software/ggplot2
 - events/pydata-boston-2025
-- blog/tidyverse/air
+- blog/ported/tidyverse/air
 {{< /insert-items >}}
 
 ### 3 Columns
@@ -63,7 +64,7 @@ layout: single
 {{< insert-items cols=3 hide-badge=true >}}
 - people/hadley-wickham
 - software/ggplot2
-- blog/tidyverse/air
+- blog/ported/tidyverse/air
 {{< /insert-items >}}
 
 ### 5 Columns

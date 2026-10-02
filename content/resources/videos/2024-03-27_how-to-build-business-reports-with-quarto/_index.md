@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - cli
-- Quarto
+- quarto
 - rstudio
 tags: []
 title: How to build business reports with Quarto
@@ -22,20 +22,20 @@ external:  # updated automatically, do not edit
   duration: 1818
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.973428+00:00'
-  like_count: 192
+  last_updated: '2026-09-18T13:58:11.311692+00:00'
+  like_count: 196
   people:
   - Christophe Dervieux
   playlist: ''
   software:
   - cli
-  - Quarto
+  - quarto
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/Hl9TvhlzfV4/maxresdefault.jpg
   title: How to build business reports with Quarto
   url: https://www.youtube.com/watch?v=Hl9TvhlzfV4
-  view_count: 8293
+  view_count: 8476
 ---
 image: thumbnail.jpg
 

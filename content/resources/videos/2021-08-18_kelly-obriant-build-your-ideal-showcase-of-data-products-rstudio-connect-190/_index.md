@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 3387
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:33.697646+00:00'
+  last_updated: '2026-09-18T13:58:16.154430+00:00'
   like_count: 34
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/GBNzhIkObyE/maxresdefault.jpg
   title: Kelly O'Briant | Build Your Ideal Showcase of Data Products | RStudio Connect 1.9.0
   url: https://www.youtube.com/watch?v=GBNzhIkObyE
-  view_count: 2035
+  view_count: 2040
 ---
 image: thumbnail.jpg
 

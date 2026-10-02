@@ -1,0 +1,41 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.520
+Is your data science project structure just a bunch of files in a folder?
+
+00:00:03.520 --> 00:00:05.360
+Let's fix that in 30 seconds.
+
+00:00:05.360 --> 00:00:07.520
+First, separate your data from your code.
+
+00:00:07.520 --> 00:00:12.280
+Use a raw folder for untouched datasets and a process folder for clean datasets.
+
+00:00:12.280 --> 00:00:16.160
+Here we have our Cordo documents for analysis and creating a report.
+
+00:00:16.160 --> 00:00:20.000
+Here we also have a shell script, which processes individual reports.
+
+00:00:20.000 --> 00:00:24.400
+And we wrap it all up in a solid readme that explains what the project actually does.
+
+00:00:24.400 --> 00:00:29.559
+You can do things like add a models folder, a source folder for reusable functions, requirements.txt
+
+00:00:29.559 --> 00:00:30.680
+file.
+
+00:00:30.680 --> 00:00:34.919
+Cookie Cutter Data Science offers a lot of great guidance on structuring your data science
+
+00:00:34.919 --> 00:00:35.919
+projects.
+
+00:00:35.919 --> 00:00:38.040
+How do you improve your data science project structure?
+
+00:00:38.040 --> 00:00:39.279
+Let us know in the comments below.
+

@@ -21,7 +21,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: Rachael Dempsey |  Everything I learned about community building, I learned growing up in a bar
 
@@ -49,16 +49,16 @@ external:  # updated automatically, do not edit
   duration: 1175
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:32.607700+00:00'
+  last_updated: '2026-09-18T13:58:14.441247+00:00'
   like_count: 25
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/s0ZU4FDstfY/maxresdefault.jpg
   title: Rachael Dempsey |  Everything I learned about community building, I learned growing up in a bar
   url: https://www.youtube.com/watch?v=s0ZU4FDstfY
-  view_count: 785
+  view_count: 798
 ---
 image: thumbnail.jpg
 

@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -65,11 +65,11 @@ external:  # updated automatically, do not edit
   duration: 1179
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.287197+00:00'
+  last_updated: '2026-09-18T13:58:12.092903+00:00'
   like_count: 14
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/CoAsWA9_X2Y/maxresdefault.jpg
   title: Building a Flexible, Scaleable Self-Serve Reporting System with Shiny - posit::conf(2023)
   url: https://www.youtube.com/watch?v=CoAsWA9_X2Y
-  view_count: 662
+  view_count: 678
 ---
 image: thumbnail.jpg
 

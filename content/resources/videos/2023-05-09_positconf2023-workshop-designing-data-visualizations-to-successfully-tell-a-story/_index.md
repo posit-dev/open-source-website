@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   duration: 108
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.335986+00:00'
+  last_updated: '2026-09-18T13:58:13.378787+00:00'
   like_count: 4
   playlist: ''
   tags:
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/Il9HY5W5Eso/maxresdefault.jpg
   title: 'posit::conf(2023) Workshop: Designing Data Visualizations to Successfully Tell a Story'
   url: https://www.youtube.com/watch?v=Il9HY5W5Eso
-  view_count: 645
+  view_count: 647
 ---
 image: thumbnail.jpg
 

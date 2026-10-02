@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - downlit
-- Quarto
+- quarto
 - revealjs
 - rstudio
 tags: []
@@ -23,21 +23,21 @@ external:  # updated automatically, do not edit
   duration: 6328
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:32.607822+00:00'
-  like_count: 525
+  last_updated: '2026-09-18T13:58:14.441429+00:00'
+  like_count: 534
   people:
   - Emil Hvitfeldt
   playlist: ''
   software:
   - downlit
-  - Quarto
+  - quarto
   - revealjs
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/hbf7Ai3jnxY/maxresdefault.jpg
   title: Beautiful reports and presentations with Quarto | Led by Tom Mock, RStudio
   url: https://www.youtube.com/watch?v=hbf7Ai3jnxY
-  view_count: 31010
+  view_count: 31547
 ---
 image: thumbnail.jpg
 

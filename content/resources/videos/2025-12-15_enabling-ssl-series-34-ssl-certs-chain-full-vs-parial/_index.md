@@ -36,14 +36,14 @@ external:  # updated automatically, do not edit
   duration: 156
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:26.434610+00:00'
+  last_updated: '2026-09-18T13:58:07.250559+00:00'
   like_count: 2
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/5-BERokMxYg/maxresdefault.jpg
   title: 'Enabling SSL SERIES 3/4: SSL Certs Chain Full vs Parial'
   url: https://www.youtube.com/watch?v=5-BERokMxYg
-  view_count: 92
+  view_count: 128
 ---
 image: thumbnail.jpg
 

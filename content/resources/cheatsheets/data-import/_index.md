@@ -3,7 +3,7 @@ title: Importing data with the tidyverse
 image: page-1.png
 resource_type: cheatsheet
 date: '2026-02-25'
-description: Learn about readr, readxl, and haven.
+description: Learn about readr, readxl, haven, and googlesheets4.
 download_url: data-import.pdf
 people:
 - Hadley Wickham
@@ -15,6 +15,7 @@ software:
 - readr
 - readxl
 - haven
+- googlesheets4
 languages:
 - R
 translations:

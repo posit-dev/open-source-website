@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: How to standardize access & ensure consistent data in data products with FastAPI & Posit Team
 
@@ -19,16 +19,16 @@ external:  # updated automatically, do not edit
   duration: 1279
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:31.335317+00:00'
+  last_updated: '2026-09-18T13:58:12.905917+00:00'
   like_count: 32
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/1uxAHbLh_rM/maxresdefault.jpg
   title: How to standardize access & ensure consistent data in data products with FastAPI & Posit Team
   url: https://www.youtube.com/watch?v=1uxAHbLh_rM
-  view_count: 1598
+  view_count: 1634
 ---
 image: thumbnail.jpg
 

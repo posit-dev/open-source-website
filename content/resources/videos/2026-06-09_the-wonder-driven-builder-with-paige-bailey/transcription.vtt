@@ -1,0 +1,1828 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.560
+Welcome to the test set. Here we talk with some of the brightest thinkers and tinkerers
+
+00:00:06.560 --> 00:00:11.480
+in statistical analysis, scientific computing, and machine learning. Digging into what makes
+
+00:00:11.480 --> 00:00:16.760
+them tick, plus the insights, experiments, and OMG moments that shape the field.
+
+00:00:16.760 --> 00:00:21.799
+On this episode, we sit down with Paige Bailey, DevRel Engineering Lead at Google ThemeLine.
+
+00:00:21.799 --> 00:00:26.200
+She started out coding text-based games from Byte Magazine onto her Apple II computer,
+
+00:00:26.200 --> 00:00:31.719
+which is a real throwback. Her website mentions she makes weird things digitally in IRL, like
+
+00:00:31.719 --> 00:00:37.959
+a bot that emails her, roasting her taste in music, or solar-powered, silent-film birdhouses
+
+00:00:37.959 --> 00:00:43.160
+as street art in San Francisco. She runs us through her background in geophysics, where
+
+00:00:43.160 --> 00:00:47.759
+she was introduced to Python and open source early. She discusses how she weaves a variety
+
+00:00:47.759 --> 00:00:53.680
+of Google APIs and services together to make things fun, weird, and educational.
+
+00:00:53.680 --> 00:00:57.840
+And I left feeling like my use of AI could be so much weirder, so I'm so excited for
+
+00:00:57.840 --> 00:00:59.680
+people to listen to this interview.
+
+00:00:59.680 --> 00:01:04.440
+Paige Bailey, welcome to the test set.
+
+00:01:04.440 --> 00:01:06.120
+Awesome. Thank you for having me.
+
+00:01:06.120 --> 00:01:10.599
+Yeah. So we were here in San Francisco, and you mentioned you took a Waymo in, which seems
+
+00:01:10.599 --> 00:01:11.599
+very relevant.
+
+00:01:11.599 --> 00:01:13.040
+I did. It is very on-brand, yes.
+
+00:01:13.040 --> 00:01:19.080
+I love that. Just by way of introduction, so you're a Developer Relations Engineering
+
+00:01:19.080 --> 00:01:20.879
+Lead at Google DeepMind?
+
+00:01:20.879 --> 00:01:21.879
+Correct.
+
+00:01:22.080 --> 00:01:27.639
+I've had an incredible career of doing a lot of things, which I really want to get to.
+
+00:01:27.639 --> 00:01:34.239
+Because I always forget, I want to make sure to say, I'm Michael Chao, the host. And I'm
+
+00:01:34.239 --> 00:01:40.400
+joined by Hadley Wickham, Chief Scientist at Posit, and Isabel Zimmerman, credible Posit
+
+00:01:40.400 --> 00:01:50.360
+software engineer. And we're so happy to have you on here in beautiful San Francisco.
+
+00:01:50.360 --> 00:01:55.760
+I know we talked a little bit before you came on, and I thought maybe you could just
+
+00:01:55.760 --> 00:02:01.000
+catch us up on your career, starting with your love of text adventures.
+
+00:02:01.000 --> 00:02:02.000
+Oh, yes.
+
+00:02:02.000 --> 00:02:03.000
+Maybe we could go there and-
+
+00:02:03.000 --> 00:02:10.880
+Absolutely. So I got my first computer. We rescued it from being thrown away around the
+
+00:02:10.880 --> 00:02:16.199
+time that I was eight or nine years old. It was an Apple II. And there weren't a ton of
+
+00:02:16.199 --> 00:02:21.160
+games that were available for the Apple II at the time, certainly not ones that you could
+
+00:02:21.160 --> 00:02:25.919
+like go to GameStop and purchase. So I was beholden to all of the games that came with
+
+00:02:25.919 --> 00:02:30.559
+this computer that just missed getting thrown away. And also a whole bunch of books that
+
+00:02:30.559 --> 00:02:35.600
+talked about how you might build your own software programs. And old magazines like
+
+00:02:35.600 --> 00:02:42.399
+Copies of Byte, which had additional games that you could type in. So my first programs
+
+00:02:42.399 --> 00:02:46.759
+were all text adventures, kind of like either transcribing choose-your-own-adventure books
+
+00:02:46.759 --> 00:02:55.800
+or like building my own. And that just sort of made computers feel like a fun thing. And
+
+00:02:55.800 --> 00:03:04.119
+loved open source as well, like can pretty much give my entire career to open source.
+
+00:03:04.119 --> 00:03:05.119
+Yeah.
+
+00:03:05.119 --> 00:03:06.119
+Yeah.
+
+00:03:06.119 --> 00:03:07.600
+Do you remember that era of computing, Michael?
+
+00:03:07.600 --> 00:03:13.839
+I do. I do remember it. And we had like a printer where the paper, you know, is one
+
+00:03:13.839 --> 00:03:14.839
+big...
+
+00:03:14.839 --> 00:03:16.960
+Yeah, yeah. With the perforated edges.
+
+00:03:16.960 --> 00:03:17.960
+Yeah.
+
+00:03:17.960 --> 00:03:19.039
+And you have to rip it off.
+
+00:03:19.039 --> 00:03:20.039
+Yeah.
+
+00:03:20.039 --> 00:03:21.039
+Yeah.
+
+00:03:21.039 --> 00:03:22.839
+It's rough, you know, as a child, I feel like.
+
+00:03:22.839 --> 00:03:26.320
+And it had such a cool tone to like the...
+
+00:03:26.320 --> 00:03:27.320
+Yeah.
+
+00:03:27.320 --> 00:03:28.320
+Yeah.
+
+00:03:28.320 --> 00:03:30.559
+Like when it was working, it was like humming a tune.
+
+00:03:30.559 --> 00:03:31.559
+Yeah.
+
+00:03:31.559 --> 00:03:32.559
+Yeah.
+
+00:03:32.559 --> 00:03:33.559
+Exactly.
+
+00:03:33.559 --> 00:03:35.720
+Isabelle, I assume you never got a magazine where you like typed in.
+
+00:03:35.839 --> 00:03:40.279
+I did not. I think my first intro to computer games was like Bug Dumb, anything from Pangea
+
+00:03:40.279 --> 00:03:43.880
+software I spent time in, as well as Myst.
+
+00:03:43.880 --> 00:03:44.880
+Myst.
+
+00:03:44.880 --> 00:03:45.880
+I love Myst.
+
+00:03:45.880 --> 00:03:46.880
+There was a...
+
+00:03:46.880 --> 00:03:47.880
+Yeah.
+
+00:03:47.880 --> 00:03:50.600
+Like number one game, like my brother and I would sit around for hours and go through
+
+00:03:50.600 --> 00:03:52.240
+all the puzzles. It was amazing.
+
+00:03:52.240 --> 00:03:56.479
+Myst, Riven, Exile, like definitely, definitely all known and loved.
+
+00:03:56.479 --> 00:03:57.479
+Yeah.
+
+00:03:57.479 --> 00:03:59.839
+All your games came on CDs then or...
+
+00:03:59.839 --> 00:04:00.839
+Yeah.
+
+00:04:00.839 --> 00:04:01.839
+Yeah.
+
+00:04:01.839 --> 00:04:02.839
+All CDs.
+
+00:04:02.960 --> 00:04:03.960
+Yeah.
+
+00:04:03.960 --> 00:04:07.759
+And I remember Riven and Exile had like four CDs that you had to like put in and order.
+
+00:04:07.759 --> 00:04:08.759
+Yeah.
+
+00:04:08.759 --> 00:04:09.759
+Yeah.
+
+00:04:09.759 --> 00:04:10.759
+As you explored the islands.
+
+00:04:10.759 --> 00:04:11.759
+Yeah.
+
+00:04:11.759 --> 00:04:12.759
+For real.
+
+00:04:12.759 --> 00:04:15.199
+I'm ashamed to admit, I never got past what seems like the very beginning of Myst.
+
+00:04:15.199 --> 00:04:20.640
+I just traveled around pulling levers and I never knew where the levers went to or what
+
+00:04:20.640 --> 00:04:21.640
+was happening.
+
+00:04:21.640 --> 00:04:25.799
+So I feel like you two really tapped into some other dimension of Myst that I totally
+
+00:04:25.799 --> 00:04:26.799
+missed.
+
+00:04:26.799 --> 00:04:31.440
+Collecting the pages and like learning the lore of Siris and Achenar.
+
+00:04:31.480 --> 00:04:35.079
+It was like, I feel like it was my first intro to plot twists and I was like, this is mind
+
+00:04:35.079 --> 00:04:36.079
+blowing.
+
+00:04:36.079 --> 00:04:37.079
+Okay.
+
+00:04:37.079 --> 00:04:39.880
+I didn't realize you could experience a game like this and have such an emotional reaction
+
+00:04:39.880 --> 00:04:40.880
+to all of it.
+
+00:04:40.880 --> 00:04:41.880
+Exactly.
+
+00:04:41.880 --> 00:04:44.799
+And that you could kind of choose your own adventure when it came to the ending too.
+
+00:04:44.799 --> 00:04:50.040
+So you could like pick one of the brothers or you could pick Atrus, I think that was
+
+00:04:50.040 --> 00:04:52.440
+his name or something.
+
+00:04:52.440 --> 00:04:54.320
+But it was, but it was awesome.
+
+00:04:54.320 --> 00:04:55.480
+Like strong recommend.
+
+00:04:55.480 --> 00:04:56.480
+Like it holds up.
+
+00:04:56.480 --> 00:04:57.480
+I want to go back.
+
+00:04:57.480 --> 00:04:58.480
+Yeah.
+
+00:04:58.480 --> 00:04:59.480
+Yeah.
+
+00:04:59.480 --> 00:05:00.480
+I think I'm ready.
+
+00:05:00.519 --> 00:05:03.920
+I'm ready to tackle Myst in the way it was meant to be played.
+
+00:05:03.920 --> 00:05:04.920
+Cool.
+
+00:05:04.920 --> 00:05:05.920
+Cool.
+
+00:05:05.920 --> 00:05:06.920
+Or now if you get stuck, you can go on the internet.
+
+00:05:06.920 --> 00:05:07.920
+And check.
+
+00:05:07.920 --> 00:05:11.519
+Or just get cloud code to like play the game for you.
+
+00:05:11.519 --> 00:05:12.519
+Yeah.
+
+00:05:12.519 --> 00:05:13.519
+Yeah.
+
+00:05:13.519 --> 00:05:14.519
+Yeah.
+
+00:05:14.519 --> 00:05:15.519
+Yeah.
+
+00:05:15.519 --> 00:05:16.519
+I'm really curious.
+
+00:05:16.519 --> 00:05:17.519
+When did you, how did you get involved with computer programming?
+
+00:05:17.519 --> 00:05:18.519
+Yeah.
+
+00:05:18.519 --> 00:05:21.760
+Well, so, so creating text adventures, that was kind of the first thing.
+
+00:05:21.760 --> 00:05:29.040
+And then also when I went to, I went to Rice University in Houston.
+
+00:05:29.040 --> 00:05:36.920
+And there was a class called CAM 210, which a friend was taking, taught by kind of this
+
+00:05:36.920 --> 00:05:41.399
+majestic bearded human named Steve Cox.
+
+00:05:41.399 --> 00:05:46.600
+I'm not sure if you encountered him Hadley, but he was like wonderful, wonderful human.
+
+00:05:46.600 --> 00:05:50.440
+Usually taught CAM 210 using MATLAB.
+
+00:05:50.440 --> 00:05:53.559
+But for whatever reason, like this semester was teaching it using Python.
+
+00:05:53.559 --> 00:05:59.160
+Like Python plus a lot of the numeric and scientific computing packages that were kind
+
+00:05:59.160 --> 00:06:01.480
+of earlier days at the time.
+
+00:06:01.480 --> 00:06:06.079
+And I remember like hanging out with my friend who was going through a lot of the, a lot
+
+00:06:06.079 --> 00:06:11.119
+of the tutorials and like trying to bang their head against the wall to start using Python
+
+00:06:11.119 --> 00:06:15.040
+and got really enchanted by this idea that people would build things and then like release
+
+00:06:15.040 --> 00:06:17.359
+them out into the world for zero dollars.
+
+00:06:17.359 --> 00:06:18.359
+Oh, cool.
+
+00:06:18.359 --> 00:06:19.359
+Yeah.
+
+00:06:19.359 --> 00:06:25.640
+So I was, I would say like started programming, just text adventures, making mods to like
+
+00:06:25.640 --> 00:06:27.600
+Grand Theft Auto.
+
+00:06:27.600 --> 00:06:30.799
+Not really like thinking anything of it when I was younger.
+
+00:06:30.799 --> 00:06:35.399
+And then I got to school and like Python was kind of the first thing that, that helped
+
+00:06:35.399 --> 00:06:36.760
+me understand open source.
+
+00:06:36.760 --> 00:06:37.760
+Yeah.
+
+00:06:37.760 --> 00:06:38.760
+Cool.
+
+00:06:38.760 --> 00:06:41.079
+And were you, would you say you're doing a lot of sort of data science work out of school
+
+00:06:41.079 --> 00:06:42.720
+or what kind of?
+
+00:06:42.720 --> 00:06:46.079
+So, so it's really, it's really fascinating.
+
+00:06:46.079 --> 00:06:51.160
+I feel like there was this period of time where a lot of people were doing data sciency
+
+00:06:51.160 --> 00:06:54.760
+style things, but the word did, like the term did not exist.
+
+00:06:54.760 --> 00:07:03.040
+So, so for open source, my background, I was doing kind of geophysics, specifically planetary
+
+00:07:03.040 --> 00:07:04.279
+sciences research.
+
+00:07:04.279 --> 00:07:09.640
+So I interned at the Laboratory for Atmospheric and Space Physics and Southwest Research Institute
+
+00:07:09.640 --> 00:07:15.160
+in San Antonio and was doing a lot of work to understand lunar ultraviolet.
+
+00:07:15.239 --> 00:07:19.399
+So there were these spacecraft that had a whole bunch of data that would get pulled
+
+00:07:19.399 --> 00:07:25.720
+down to help understand lunar albedo or some of the other, some of the other things like
+
+00:07:25.720 --> 00:07:29.480
+metrics that the spacecraft were capturing.
+
+00:07:29.480 --> 00:07:34.200
+And the expectation was that you would analyze them using something called IDL, which was
+
+00:07:34.200 --> 00:07:39.920
+more painful than MATLAB and, but I had, I had like Python existed.
+
+00:07:39.920 --> 00:07:42.079
+And so that was, that was a little bit easier.
+
+00:07:42.079 --> 00:07:47.880
+And so, so I ended up, if I needed to visualize data or kind of understand it, instead of
+
+00:07:47.880 --> 00:07:52.279
+like trying to bang my head against the wall and understand IDL, apologies to anybody who
+
+00:07:52.279 --> 00:07:58.160
+might've been working on IDL, I just used Python and started working on it like that.
+
+00:07:58.160 --> 00:08:02.760
+And we, yeah, and we were also really fortunate in Texas in the sense that like just down
+
+00:08:02.760 --> 00:08:06.600
+the way in Austin, there were a whole bunch of people that were also like nerds into open
+
+00:08:06.600 --> 00:08:10.000
+source libraries for scientific computing.
+
+00:08:10.000 --> 00:08:16.839
+So like the Unthought Canopy dudes and you know, the Anaconda team now, though they had
+
+00:08:16.839 --> 00:08:22.320
+previously had another name, I think Continuum Analytics or something similar.
+
+00:08:22.320 --> 00:08:26.399
+So, so I feel like I really lucked into it, honestly.
+
+00:08:26.399 --> 00:08:30.959
+It's kind of hard to imagine now, but at the time it was such a crazy idea to like, that
+
+00:08:30.959 --> 00:08:37.880
+you might use like free software to do serious work instead of paying like money for it.
+
+00:08:37.880 --> 00:08:41.000
+Like now it just seems like it is kind of like weird, right?
+
+00:08:41.000 --> 00:08:44.880
+We're just using all this free stuff that people make from out of the goodness of their
+
+00:08:44.880 --> 00:08:46.440
+hearts and give to the world.
+
+00:08:46.440 --> 00:08:47.440
+100%.
+
+00:08:47.440 --> 00:08:51.520
+Especially in the oil and gas, like in the geophysics, oil and gas industry world.
+
+00:08:51.520 --> 00:08:54.239
+Because so much of that software is proprietary.
+
+00:08:54.239 --> 00:09:02.599
+Like even today, like there, there's something called Petrel, the one of the software applications
+
+00:09:02.599 --> 00:09:04.880
+for understanding subsurface data.
+
+00:09:04.880 --> 00:09:08.799
+And I think it's like $100,000 a seat per year or something.
+
+00:09:08.799 --> 00:09:12.000
+So like, like crazy, crazy amounts.
+
+00:09:12.000 --> 00:09:15.679
+But most of the things that you do on Petrel, if not all, you could easily do with just
+
+00:09:15.679 --> 00:09:17.479
+like Python and open source libraries.
+
+00:09:18.528 --> 00:09:25.008
+Yeah, so it does feel like a really — it feels so strange to even think about it right now,
+
+00:09:25.008 --> 00:09:30.528
+of how different everything was back then. It was also the situation where
+
+00:09:31.328 --> 00:09:35.408
+I remember going to my professors and being like, hey, I really like programming. I think
+
+00:09:35.408 --> 00:09:40.048
+this is really cool. We should totally have libraries for doing earth sciences-related
+
+00:09:40.048 --> 00:09:44.848
+things. And my professors being like, no, that's not real science. Why are you wasting your time?
+
+00:09:45.408 --> 00:09:51.167
+Nobody needs — if you're writing libraries, that's not actually contributing to your career.
+
+00:09:51.167 --> 00:09:52.527
+It's actually a waste of time.
+
+00:09:52.527 --> 00:09:56.367
+Yeah, but tooling versus doing the actual research.
+
+00:09:57.487 --> 00:10:04.288
+And now it's — if you're not writing code or using code to analyze data,
+
+00:10:04.288 --> 00:10:05.408
+you're probably not doing research.
+
+00:10:05.408 --> 00:10:06.207
+What are you doing?
+
+00:10:07.408 --> 00:10:11.728
+I'm really curious. You were somebody who has been in the AI space before it was cool,
+
+00:10:11.728 --> 00:10:16.527
+and I'm putting that in air quotes. How did you make that jump from, you know, I'm doing
+
+00:10:18.207 --> 00:10:23.328
+geo stuff to now I'm doing AI, I'm doing deep learning, working on things like tensorflow?
+
+00:10:23.328 --> 00:10:30.767
+Yeah, so geophysics — geophysics is like — I always feel like we are the
+
+00:10:32.608 --> 00:10:39.568
+sort of the more stay-at-home type kind of earth scientists, right? We're the ones that
+
+00:10:39.568 --> 00:10:44.928
+care about computers and that are trying to find more efficient ways to analyze data.
+
+00:10:45.648 --> 00:10:52.928
+And the geophysics world actually adopted GPUs before most everybody else, for things like
+
+00:10:52.928 --> 00:10:58.688
+velocity modeling, like fluid dynamics simulations, like all sorts of stuff, even before the gaming
+
+00:10:58.688 --> 00:11:08.288
+industry kind of like caught on to GPUs. And so I was doing that a lot for some of the geophysics
+
+00:11:08.288 --> 00:11:13.648
+work, just like trying to bang my head against CUDA. And when tensorflow was first released,
+
+00:11:13.648 --> 00:11:22.048
+I don't think most people remember, but it was CPU only. So you were doing analysis across
+
+00:11:22.048 --> 00:11:29.888
+large numbers of CPUs, not really thinking about GPUs until later on. And so that was something
+
+00:11:29.888 --> 00:11:35.327
+that I could do that was helpful of just kind of like, hey, you're thinking about accelerators now.
+
+00:11:35.327 --> 00:11:44.368
+I know CUDA. I can help with that. And it's a useful way to kind of collaborate with the team,
+
+00:11:44.368 --> 00:11:49.487
+I think. If somebody releases an open source library and you contribute to it or you build
+
+00:11:49.487 --> 00:11:53.728
+something with it and talk about it, then they get a flavor of what it would be like to work
+
+00:11:53.728 --> 00:11:59.808
+with you as a person. There's such a strong pipeline of people from like physical sciences
+
+00:11:59.808 --> 00:12:05.247
+like that too. It feels like AI. There's the whole conference about ex-astronomers, now data
+
+00:12:05.247 --> 00:12:10.928
+scientists. It's so surprising to see how all this comes together. Yeah, linear algebra. And
+
+00:12:10.928 --> 00:12:19.648
+like also, you know, JAX has the same spec as NumPy. And a lot of the libraries have the
+
+00:12:19.648 --> 00:12:27.327
+same like general flavor of scientific computing libraries. So like SciPy for scientific computing
+
+00:12:27.327 --> 00:12:36.368
+processes. So I think there's definitely a lot of love between the kind of physics and
+
+00:12:36.368 --> 00:12:43.808
+mathematics world and the JAX world. Also, like all of the JAX machine learning frameworks authors
+
+00:12:43.808 --> 00:12:51.008
+came from mostly like mathematics backgrounds, which is quite cool. Yeah, it's interesting. It
+
+00:12:51.008 --> 00:12:57.808
+seems like you've done a lot of both like development and product management and DevRel
+
+00:12:57.808 --> 00:13:03.648
+engineering. Yep. When did you know this was kind of the work that you really wanted to be doing?
+
+00:13:03.648 --> 00:13:11.568
+How did this work come together? Yeah, I think I, again, just like I feel so stupidly lucky,
+
+00:13:11.568 --> 00:13:17.487
+like in the sense that I've just always done whatever I thought would be useful and interesting.
+
+00:13:18.047 --> 00:13:24.528
+And now we're in this really happy place where a long time ago, people would kind of artificially
+
+00:13:24.528 --> 00:13:28.687
+put people into buckets of like, oh, you're an engineer, you're a product human, you're,
+
+00:13:29.648 --> 00:13:34.208
+you know, a design human, you're like these other things. And you could only wear this one hat,
+
+00:13:34.208 --> 00:13:39.328
+which is really frustrating if you like doing a whole bunch of stuff. And now we're in this place
+
+00:13:39.328 --> 00:13:46.847
+where it's just like, oh, you want to do data visualization and you want to do like you want
+
+00:13:46.847 --> 00:13:52.448
+to understand large scale datasets and you also want to be able to build tools in order to do all
+
+00:13:52.448 --> 00:13:58.527
+of the above, like go for it. Like that's you can you can be this auteur of anything you want to
+
+00:13:58.527 --> 00:14:06.448
+you want to enable. So so I didn't have like any sort of design other than like I'm going to work
+
+00:14:06.448 --> 00:14:12.288
+on things that I feel will be important and useful and interesting. And when I was a product person,
+
+00:14:13.247 --> 00:14:19.407
+I was exclusively a product person on developer tools or models. So like highly technical,
+
+00:14:19.407 --> 00:14:25.488
+like lower level sort of sort of thing. So I was still writing code every day.
+
+00:14:25.488 --> 00:14:26.687
+Yeah. Yeah.
+
+00:14:26.687 --> 00:14:31.407
+It does really feel like like Cloud Code and similar tools like such a win for people who
+
+00:14:31.407 --> 00:14:33.807
+have just got like weird interests in lots of places.
+
+00:14:33.807 --> 00:14:38.927
+Exactly. Like it's and and like suddenly all of these things that were like 70 percent
+
+00:14:38.927 --> 00:14:43.328
+finished on your GitHub, like you can like actually get out into the world. It's there's
+
+00:14:43.328 --> 00:14:47.888
+never been a better time to be a curious human who wants to like create things.
+
+00:14:47.888 --> 00:14:52.527
+Yeah. Yeah. Like I made an iPhone app like it's just a little timer for talks, but just like
+
+00:14:52.527 --> 00:14:57.328
+something that would be my head for years. And like that's like a weekend project now. It's like
+
+00:14:57.328 --> 00:14:58.208
+it's really cool.
+
+00:14:58.208 --> 00:15:05.008
+Exactly. I don't have it in my backpack right now, but there's one of my side projects is
+
+00:15:05.888 --> 00:15:12.687
+there's something called a cheap yellow display. It's called a CYD ESP32. And it's like this
+
+00:15:12.687 --> 00:15:20.608
+little tiny board with just a visualization screen on top. And to update it, you have to
+
+00:15:20.608 --> 00:15:26.048
+like rewrite the firmware. So it's not as flexible as something like a Raspberry Pi with the screen.
+
+00:15:27.647 --> 00:15:33.087
+But I would have never been able to do anything with it. And now I'm using those to power
+
+00:15:34.048 --> 00:15:39.407
+these silent film birdhouses. So it's like you have a birdhouse, you put the little screen on
+
+00:15:39.407 --> 00:15:42.687
+the inside, people look through the little hole and you can watch the silent film.
+
+00:15:42.687 --> 00:15:43.247
+Oh, my gosh.
+
+00:15:43.247 --> 00:15:43.568
+Yeah.
+
+00:15:43.568 --> 00:15:45.087
+Wait, that's incredible.
+
+00:15:45.087 --> 00:15:49.087
+It's I'm putting them. So I'm putting them around San Francisco as art installations.
+
+00:15:49.087 --> 00:15:49.568
+Yeah.
+
+00:15:49.568 --> 00:15:51.967
+Like next to the tiny like borrowing libraries.
+
+00:15:51.967 --> 00:15:52.927
+Yeah. Oh, my gosh.
+
+00:15:52.927 --> 00:15:58.048
+But you can you can have like site specific films for each location.
+
+00:15:58.048 --> 00:16:01.328
+And then like there's just ever like a little battery and then that lasts for ages.
+
+00:16:01.328 --> 00:16:07.407
+Yeah. And there are also there are also like super like low energy requirements. So even if
+
+00:16:07.407 --> 00:16:11.967
+you had kind of like a solar panel on top of the birdhouse, like that would be enough to power it
+
+00:16:11.967 --> 00:16:13.488
+for for quite a bit of time.
+
+00:16:13.488 --> 00:16:16.367
+Yeah, that's really cool. I feel like this really gets into
+
+00:16:17.168 --> 00:16:24.208
+an area that Isabel and me to some small degree spent probably too much time around too deep down,
+
+00:16:24.208 --> 00:16:29.087
+which was every web domain you own for a side project.
+
+00:16:29.087 --> 00:16:29.407
+Yes.
+
+00:16:29.407 --> 00:16:32.527
+And the sheer scale of
+
+00:16:32.527 --> 00:16:33.328
+Funs!
+
+00:16:33.328 --> 00:16:36.288
+It's honestly incredible.
+
+00:16:37.568 --> 00:16:41.407
+Like your website is just such a beautiful, curious, joyful experience.
+
+00:16:42.847 --> 00:16:47.647
+And like just the amount of fun side projects and whimsy that you're bringing to all of these
+
+00:16:47.647 --> 00:16:52.208
+like really hardcore tools. I'm really curious, like, what are you working on? What tools are
+
+00:16:52.208 --> 00:16:57.008
+you building, whether they're the funkiest things like silent birdhouses or what are you
+
+00:16:57.008 --> 00:16:58.048
+excited about right now?
+
+00:16:58.048 --> 00:17:05.647
+Oh, man. So so I also love all of my all of my side projects. Like they're they're super fun
+
+00:17:05.647 --> 00:17:10.847
+to build. Like I get a lot of joy out of them, but they're also kind of like sneaky ulterior
+
+00:17:10.847 --> 00:17:15.328
+motive is stress testing some of the features that we have coming out for the Gemini APIs in our
+
+00:17:15.328 --> 00:17:15.888
+models.
+
+00:17:15.888 --> 00:17:17.807
+You like hid vegetables in them.
+
+00:17:17.807 --> 00:17:23.967
+Well, it's well, so so as an example, we released something just recently, our second
+
+00:17:23.967 --> 00:17:30.448
+iteration of the multimodal embeddings model, which is allows you to embed in the same space
+
+00:17:30.448 --> 00:17:37.888
+video, audio, images, text and code. So you can like pull together audio, video, like you could
+
+00:17:37.888 --> 00:17:44.367
+you could type in like Alan Kay and then see like every time Alan Kay utters words in a video,
+
+00:17:45.247 --> 00:17:49.807
+but also like every time he appears in a video, anytime he appears in a photograph, etc.
+
+00:17:50.528 --> 00:17:56.448
+And it's it's just really, really cool to see that. So that's powering folklore.dev, which was
+
+00:17:56.448 --> 00:18:03.568
+pulling a lot of the the oral histories from the Computer History Museum into kind of like a
+
+00:18:03.568 --> 00:18:08.687
+contextual space. So you got to see the transcript. You got to see interesting anecdotes
+
+00:18:08.687 --> 00:18:15.487
+extracted. But you also got it grounded and kind of like, well, when they say this computer and
+
+00:18:15.487 --> 00:18:20.047
+they were able to do this on this computer, like what kind of compute power does it have?
+
+00:18:20.927 --> 00:18:26.528
+How does that compare to your mobile device? Like what would it cost in today's dollars?
+
+00:18:26.528 --> 00:18:31.568
+Those sorts of things. And it's the same with the stacks.dev, which was pulling in all of the
+
+00:18:31.568 --> 00:18:38.848
+Byte and Omni magazines and more on the way to kind of extract out insights using the Gemini
+
+00:18:38.848 --> 00:18:44.047
+models, whether it's like telephone numbers or addresses or whatever it is, and then also putting
+
+00:18:44.047 --> 00:18:49.568
+the covers and the articles in a similar embedding space. So if somebody like wrote in to complain
+
+00:18:49.568 --> 00:18:56.047
+about their experience using a Commodore 64, like what other articles are similar in vibes to that?
+
+00:18:56.315 --> 00:19:05.315
+And I also thought it was quite cool in the sense that, like, pulling in, you know, 40 years or so of those magazines
+
+00:19:05.315 --> 00:19:12.315
+and then mapping out the different, you know, places that people were sending letters from or, like, the stores and those sorts of things
+
+00:19:12.315 --> 00:19:22.315
+When you visualize them on a map, you can start seeing, like, oh my god, like, in Houston there were these pockets of people who all cared about this thing
+
+00:19:22.315 --> 00:19:30.315
+And in, you know, like Sunnyvale or in Cupertino, there were, like, five people within a six-block radius that cared about this thing
+
+00:19:30.315 --> 00:19:38.315
+And you can start realizing that, like, you know, geographic location might have impacted or influenced some of the creations of these products
+
+00:19:38.315 --> 00:19:44.315
+But all of that's, like, locked away otherwise, and now it's not, which is kind of amazing
+
+00:19:44.315 --> 00:19:56.315
+It's interesting to hear, it sounds like, too, you working on models and working so closely with a lot of these tools, like, gives you the opportunity to see, like, this is coming out
+
+00:19:56.315 --> 00:20:01.315
+What new kind of, like, interesting thing can happen? Like, what can it unlock?
+
+00:20:01.315 --> 00:20:17.315
+Yeah, and also the cost changes, too. So, like, the Gemini 3.1 flashlight model, which came out just recently, ended up kind of, like, it's like a 90% reduction in the costs associated
+
+00:20:17.315 --> 00:20:27.315
+So significantly more powerful than, like, you know, Gemini 2.0 Pro or 2.5 Pro, but at a fraction of the cost and much faster
+
+00:20:27.315 --> 00:20:33.315
+And it's the same with the batch API, like, you can get a 50% reduction in costs just by using the batch API
+
+00:20:33.315 --> 00:20:47.315
+So the cost of maintaining all of these websites over time has actually gone down, even though, like, more features have been added and they've gotten much cooler just because the model prices are also going down pretty exponentially
+
+00:20:47.315 --> 00:20:56.315
+Are you willing to tell us, like, how much does it cost to run one of those nowadays? Is it, you know, hundreds of dollars to have this all be running on your website?
+
+00:20:56.315 --> 00:21:03.315
+Yeah, so I deploy everything via Cloud Run, which is pretty low cost
+
+00:21:03.315 --> 00:21:19.315
+And in sum, I think for all of the things that you see on webpage.dev, now that I've replatted to use Gemini 3.1 flashlight and Nano Banana 2 instead of Nano Banana Pro for the number of ones that use Nano Banana 2
+
+00:21:19.315 --> 00:21:27.315
+I think the most expensive service is the embeddings, but it's still been less than, like, $200 to maintain everything over the course of a year
+
+00:21:27.315 --> 00:21:33.315
+Wow. For as many prolific projects that are on there, I am shocked. That's impressive
+
+00:21:33.315 --> 00:21:41.315
+It's super, super cool. And, like, there are also a lot of open models that are becoming frontier quality
+
+00:21:41.315 --> 00:21:46.315
+So I think the cost is only going to go down more over time
+
+00:21:46.315 --> 00:21:57.315
+Yeah. It's really interesting to see, too, the, like, all the projects, your kind of, like, pace of putting out, like, really interesting projects and sharing out
+
+00:21:57.315 --> 00:22:04.315
+It seems like the turnaround sometimes is just immediate that you might deploy a project in hours. Is that?
+
+00:22:04.315 --> 00:22:10.315
+This is true. Like, the latest one, I haven't added it to my website yet, though this is a good incentive to
+
+00:22:10.315 --> 00:22:20.315
+It's a traffic cam guesser. So it pulls in all of the live traffic feeds from around the United States for at least, like, a half dozen cities so far
+
+00:22:20.315 --> 00:22:27.315
+And then, like, removes using Nano Banana 2 any street signs or identifying sites
+
+00:22:27.315 --> 00:22:31.315
+And then you have to guess which neighborhood the traffic cam is from
+
+00:22:31.315 --> 00:22:38.315
+And then, like, it gives you kind of geoguessr-style hints of, like, here's what you should have seen to help guide your choice
+
+00:22:38.315 --> 00:22:44.315
+And you can also use, like, OAuth to log in and kind of track progress, too
+
+00:22:44.315 --> 00:22:55.315
+My favorite one, though, is the Wikipedia Racer, which is, like, I am just, I am enchanted by depths of Wikipedia and Wikipedia rabbit-holing
+
+00:22:55.315 --> 00:23:00.315
+And so having something that will just create Wikipedia rabbit holes for me is pretty magical
+
+00:23:00.315 --> 00:23:04.315
+Yeah, I love that. I think I went on there, too, and there's, like, levels of difficulty as well
+
+00:23:04.315 --> 00:23:05.315
+Oh, yeah, yeah, yeah
+
+00:23:06.315 --> 00:23:15.315
+It's not point A to B. There's actually, you can customize your Wikirace journey. Is that how many CCs your Wikiracer has?
+
+00:23:15.315 --> 00:23:18.315
+Exactly. Yep. And then also you can commission your own adventures
+
+00:23:18.315 --> 00:23:28.315
+So if you want something that's, like, related to Kanye or, like, related to, like, meditative Gregorian chants or whatever it is
+
+00:23:28.315 --> 00:23:35.315
+Like, it will create a Wikipedia race for you specifically for that
+
+00:23:35.315 --> 00:23:42.315
+And then it will also show you over time as more people try it, like, what their score is and how their paths diverge from yours
+
+00:23:42.315 --> 00:23:43.315
+Oh, wow
+
+00:23:43.315 --> 00:23:44.315
+Yeah
+
+00:23:44.315 --> 00:23:55.315
+Do you think you've always been into this, like, speed run, will it bring joy, like, beautiful form of tinkering?
+
+00:23:55.315 --> 00:24:05.315
+Do you think, like, when you were a kid, someone could have guessed this person's going to speed run apps?
+
+00:24:05.315 --> 00:24:11.315
+Oh, gosh, no. I grew up in, like, the tiniest little farm town in Texas
+
+00:24:11.315 --> 00:24:19.315
+So, like, 1,300 people, 15 miles away from the nearest grocery store sort of situation
+
+00:24:19.315 --> 00:24:24.315
+And also in university, like, I don't think any of my professors would have guessed it
+
+00:24:24.315 --> 00:24:31.315
+Though they probably would have said something to the effect of, like, oh, Paige cares about computers too much
+
+00:24:31.315 --> 00:24:33.315
+Like, she's going to be a bad physicist
+
+00:24:33.315 --> 00:24:42.315
+So I think the world has changed kind of recently to appreciate people who are whole humans
+
+00:24:42.315 --> 00:24:49.315
+Who care about not just, like, one thing, but, like, lots of things and who are capable of seeing connections between lots of things
+
+00:24:49.315 --> 00:24:56.315
+So a couple of favorite anecdotes, like, Claude Shannon came up with information theory because he took a philosophy class
+
+00:24:56.315 --> 00:25:05.315
+Like, there are other scientific breakthroughs that have been inspired by things that are completely outside of the sciences that are in the arts
+
+00:25:06.315 --> 00:25:14.315
+And then also, like, as an example, Ted Nelson introduced Alan Kay and his wife
+
+00:25:14.315 --> 00:25:21.315
+Because Alan Kay's wife, Bonnie, was trying to write the screenplay for Tron
+
+00:25:21.315 --> 00:25:26.315
+And she ended up basing, like, one of the characters in Tron on Alan Kay
+
+00:25:26.315 --> 00:25:35.315
+And that was the first screenplay to ever be typed and printed off on a computer because it was using the Alto at Xerox PARC
+
+00:25:35.315 --> 00:25:40.315
+So it's, like, one of the most beloved, like, entertainment things
+
+00:25:40.315 --> 00:25:47.315
+Tron, like, was only possible because of this interplay between, like, tech plus computers
+
+00:25:47.315 --> 00:25:55.315
+And last one, Larry Tuzler got inspired by zines for the copy and paste feature for Max, right?
+
+00:25:56.315 --> 00:26:03.315
+So, because he was, like, making zines, like, cutting out things and, like, pasting them together and, like, that inspired copy paste
+
+00:26:03.315 --> 00:26:08.315
+So I feel like, you know, the magic happens in these margins
+
+00:26:08.315 --> 00:26:13.315
+And, like, people had historically kind of been pushed into these silos
+
+00:26:13.315 --> 00:26:20.315
+And now we're getting to the place where we're bringing back people into appreciating whatever they think they're interested in
+
+00:26:20.315 --> 00:26:27.315
+Sort of, like, interesting when you think about, like, the kind of Victorian, like, polymaths who, like, did all of these different fields
+
+00:26:27.315 --> 00:26:30.315
+It kind of feels like we're heading back in that direction a little bit more
+
+00:26:30.315 --> 00:26:34.315
+And also we're, you know, like, just doing what enchanted them, too
+
+00:26:34.315 --> 00:26:40.315
+Because they would, like, play an instrument or they would, like, go hang out with their friend who was, like, doing art in the park
+
+00:26:40.315 --> 00:26:44.315
+And, like, it's, you know, those things are important
+
+00:26:44.315 --> 00:26:49.315
+Like, we should all be whole humans, not just, like, feel like we need to over-index on one strength
+
+00:26:49.315 --> 00:26:51.315
+How do you choose what to try?
+
+00:26:51.315 --> 00:26:55.315
+Like, how do you choose, like, ooh, I'm going to stitch A to B
+
+00:26:55.315 --> 00:26:57.315
+I'm going to try this tool today
+
+00:26:57.315 --> 00:26:59.315
+How are you figuring it out?
+
+00:26:59.315 --> 00:27:04.315
+And, like, how many, like, of the things you try, like, how many do you think are successes and, like, failures?
+
+00:27:04.315 --> 00:27:15.315
+So some of them, like, a lot of the time the thing that actually gets published is not the thing that I originally wanted to do
+
+00:27:15.315 --> 00:27:25.315
+It's, like, and, like, I find that there's some sort of constraint in the tool or constraint in, you know, the API that I'm trying to call
+
+00:27:25.315 --> 00:27:29.315
+That means that I have to pursue an alternate path
+
+00:27:29.315 --> 00:27:46.315
+So as an example, one thing that I had been working on was, like, I also have a whole collection of just, like, emails that get sent to me every morning
+
+00:27:46.315 --> 00:27:52.315
+One of which is pulling a new painting from the Art Institute of Chicago
+
+00:27:52.315 --> 00:27:55.315
+Or, like, a new art piece from the Art Institute of Chicago
+
+00:27:55.315 --> 00:28:01.315
+Describing it like a rough-and-tumble Chicagoan in a cool way
+
+00:28:01.315 --> 00:28:08.315
+And then also, like, peppering in, like, really interesting insights about the city or the author that you wouldn't expect
+
+00:28:08.315 --> 00:28:11.315
+Which is using the Google search grounding feature
+
+00:28:11.315 --> 00:28:14.315
+And then formatting it nicely
+
+00:28:14.315 --> 00:28:23.315
+But the reason that that happened was because the Art Institute of Chicago was one of the only ones that had an API that you could call
+
+00:28:23.315 --> 00:28:28.315
+That did not require a kind of, like, username password
+
+00:28:28.315 --> 00:28:31.315
+And I didn't want to store that in plain text
+
+00:28:31.315 --> 00:28:41.315
+So, like, that entire experiment was only possible because you could sort of ping the API and get that response back
+
+00:28:41.315 --> 00:28:46.315
+Like, originally I had been like, oh, well, I should pull from a whole bunch of different museums and just do this generic thing
+
+00:28:47.716 --> 00:28:50.916
+and then this gave it a little bit more of a flavor and personality.
+
+00:28:52.196 --> 00:28:55.956
+I think that's kind of one of the things I think I've learned from like making images
+
+00:28:55.956 --> 00:29:00.196
+with Nanobanana2 is sometimes you've just got to like roll with it. Like you can't,
+
+00:29:00.196 --> 00:29:05.076
+that initial idea you had, you can't hold on it too hard because it's just too frustrating to get
+
+00:29:05.076 --> 00:29:11.555
+to and just too good to be open to like what the model brings you, what randomness brings you today.
+
+00:29:12.516 --> 00:29:20.276
+It feels one of the things that's been most enchanting about AI as a person who, you know,
+
+00:29:20.276 --> 00:29:24.675
+computer programmers historically have very much wanted to control everything. Like,
+
+00:29:24.675 --> 00:29:29.076
+I must control everything. Like I must deterministically know the input and
+
+00:29:29.076 --> 00:29:35.236
+deterministically know the output. And now it's like, it's definitely not that. It's kind of like,
+
+00:29:35.796 --> 00:29:40.116
+all right, you can set the constraints or like you can attempt to set some constraints,
+
+00:29:40.116 --> 00:29:45.875
+but like what you're going to get is like real different. And so you either need to be able to
+
+00:29:46.596 --> 00:29:52.115
+kind of do that in an artistic way that appreciates, you know, randomness and serendipity,
+
+00:29:53.076 --> 00:29:56.996
+or you're going to get real frustrated and not want to be a computer programmer anymore.
+
+00:29:58.276 --> 00:30:02.115
+That does make me wonder like if statisticians are kind of like have a bit of a heads up there
+
+00:30:02.115 --> 00:30:06.835
+because you're so used to the idea of like randomness. Like I always like found this
+
+00:30:06.835 --> 00:30:12.115
+idea of like, you know, like sort of quantum physics. And it feels to like many people,
+
+00:30:12.115 --> 00:30:19.316
+I think that if the foundations of the universe are probabilistic, that's just like horrible.
+
+00:30:19.875 --> 00:30:24.276
+To me, that just like, I'm just like, of course it's that way. That totally makes sense to me.
+
+00:30:24.276 --> 00:30:27.155
+Like why does it, why does it need to be deterministic?
+
+00:30:27.155 --> 00:30:33.475
+Exactly. And I think it also is a lot more inspiring in the sense that, you know,
+
+00:30:33.475 --> 00:30:39.956
+the real world is messy. And if you see something that's unexpected, then it might
+
+00:30:39.956 --> 00:30:44.276
+inspire you to go a completely different way or to see something in a way that you wouldn't
+
+00:30:44.276 --> 00:30:51.956
+have imagined necessarily. And it's also just a lot more fun. Like, I feel like one of the
+
+00:30:51.956 --> 00:30:56.835
+biggest challenges right now is that, you know, universities have kind of over-indexed on problem
+
+00:30:56.835 --> 00:31:02.595
+sets. And now like if you have a problem set, like good luck finding a person that's actually
+
+00:31:02.595 --> 00:31:06.115
+going to do the problem set as opposed to just like paste it into whatever their favorite chat
+
+00:31:06.115 --> 00:31:12.516
+bot is and get a response back. And so they're not quite learning anything unless you kind of
+
+00:31:12.516 --> 00:31:16.675
+set up the constraints for the assignment to be like, all right, well, today you have a whole
+
+00:31:16.675 --> 00:31:21.876
+bunch of different hardware. You're going to, you build it and then explain whatever physical
+
+00:31:21.876 --> 00:31:27.395
+processes are required and throughout the building phase. And if you're trying to connect something
+
+00:31:28.115 --> 00:31:32.035
+and it doesn't work, you have to explain why it didn't work and the physics behind that.
+
+00:31:32.035 --> 00:31:39.076
+Like that's a much cooler assignment as opposed to just like, hey, you know, what is the velocity
+
+00:31:39.076 --> 00:31:45.395
+of A versus B? Yeah. When I like think about teaching like data science today, it's like,
+
+00:31:45.395 --> 00:31:49.636
+you know, the cost of creating a shiny app or a little interactive applet to explore something
+
+00:31:49.636 --> 00:31:53.716
+is now like zero. Like you should be doing that all the time. Like we don't need to ask these
+
+00:31:53.716 --> 00:31:59.156
+like deterministic, is this right or not questions. We can be like, hey, create a tool to explore this
+
+00:31:59.156 --> 00:32:03.955
+and then tell us what you found. Yeah. Or create your own dataset. Like figure out some, like
+
+00:32:03.955 --> 00:32:08.516
+figure out a really gnarly question that you want to answer and then find a way to automate the
+
+00:32:08.516 --> 00:32:13.555
+creation of a dataset that will help you answer the question. Yeah. I actually had a really like,
+
+00:32:13.555 --> 00:32:20.115
+I had a use, like I tried this with, like I only realized like I flew to California like last week
+
+00:32:20.115 --> 00:32:26.115
+when the lines at Houston's airports were getting really, really long. And like only at that moment,
+
+00:32:26.115 --> 00:32:31.796
+I was like, oh, I need to be scraping the wait times and like recording them in a parquet file
+
+00:32:31.796 --> 00:32:36.996
+on GitHub. And so I like, I did like a little bit on the website to kind of find, and I was like,
+
+00:32:36.996 --> 00:32:41.475
+oh, there's actually a JSON endpoint I can call that gives me nicely formatted JSON.
+
+00:32:41.475 --> 00:32:46.835
+But I was like, oh, maybe like maybe there's like a historical API hidden here as well. And I was
+
+00:32:46.835 --> 00:32:51.395
+like, hey, Cloud Code, like, can you just like try this out? And it came up with like 15 different
+
+00:32:51.395 --> 00:32:56.675
+like plausible looking URLs and tried them all out. Like none of them did actually yield the
+
+00:32:56.675 --> 00:33:01.395
+historical data. Like one of them looked really promising. Like it was like the API slash date,
+
+00:33:01.395 --> 00:33:06.676
+but then it just returned the same day. But just that, that kind of like exploration you can do now,
+
+00:33:06.676 --> 00:33:10.755
+like you don't have to know a ton about API. You need to know what an API is a bit about how it
+
+00:33:10.755 --> 00:33:16.836
+works, but that ability to just like iterate, create datasets that matter to you, collect them
+
+00:33:16.836 --> 00:33:20.595
+and store them. I think it's really, it's really cool. Yeah. And if they matter to you, they
+
+00:33:20.595 --> 00:33:25.636
+probably matter to somebody else too. In which case, like suddenly the world is filled with a lot
+
+00:33:25.636 --> 00:33:32.116
+of, a lot of more datasets that can be used or expanded. I mean, my plan is to have like a very,
+
+00:33:32.116 --> 00:33:38.995
+like a hyper specific, like IAH, like wait time. So you can be like, this is what it's looking
+
+00:33:38.995 --> 00:33:43.715
+like today. And then like historical context, like Tuesdays look like this. And you call it
+
+00:33:43.715 --> 00:33:51.556
+Houston. We have a problem. I feel like there's a real critical role here.
+
+00:33:55.236 --> 00:33:59.556
+So we heard a lot about your projects and we learned that your projects actually
+
+00:34:00.595 --> 00:34:05.875
+involve a lot of important things that are coming out. Like you've hidden your vegetables in them
+
+00:34:05.875 --> 00:34:12.516
+and we just didn't know we were eating them. I'm curious how it ties into being a developer
+
+00:34:12.516 --> 00:34:18.995
+relations engineering lead at DeepMind. Are these all connected somehow?
+
+00:34:18.995 --> 00:34:24.676
+Oh, a little bit. Yep. So most of the, most of the models that I'm using are DeepMind specific
+
+00:34:24.676 --> 00:34:31.396
+models. So, so they would be like the different flavors of Gemini that we have, mostly not pro,
+
+00:34:31.396 --> 00:34:38.676
+mostly flash and flashlight and, and some of the others, the nano banana models, VO for video
+
+00:34:38.676 --> 00:34:44.595
+generation. We also have an open model family called Gemma, which we also exposed via the API.
+
+00:34:44.595 --> 00:34:49.796
+So you can either download it and use it yourself, or you can kind of use it via our API for $0,
+
+00:34:49.796 --> 00:34:56.116
+which is quite cool. And then also there are some tinier versions of the Gemini models that are
+
+00:34:56.116 --> 00:35:01.155
+small enough to fit on mobile devices. So we've embedded one within the Chrome browser, we've
+
+00:35:01.155 --> 00:35:06.356
+embedded them into pixel devices, and you can kind of use the onboard intelligence without
+
+00:35:06.356 --> 00:35:12.595
+Wi-Fi connection for, for $0. And that's, that's getting better by the day as well.
+
+00:35:13.315 --> 00:35:19.636
+But, but so those are kind of the, the models that we support. I also mentioned JAX, like the
+
+00:35:19.636 --> 00:35:24.435
+machine learning framework and all of the affiliate libraries. And then we also have some labs
+
+00:35:24.435 --> 00:35:30.035
+experiments, as well as a tool called antigravity, that's kind of like an IDE for, for experimenting
+
+00:35:30.116 --> 00:35:38.275
+with these things. The, but all of that is kind of the, the products that we would expect
+
+00:35:38.275 --> 00:35:43.956
+developers and increasingly like people who are developer adjacent to use to build things. And
+
+00:35:43.956 --> 00:35:50.195
+I'm, I'm actually really, really excited about getting information workers to be able to create
+
+00:35:50.195 --> 00:35:56.356
+and to use these tools. So not just, not just people who are coming from engineering backgrounds
+
+00:35:56.356 --> 00:36:00.595
+or who, who understands software engineering, but like all of the people outside of that world.
+
+00:36:01.475 --> 00:36:04.595
+What's, you said information workers? Yep.
+
+00:36:04.595 --> 00:36:08.836
+What's a information worker? Yeah, so it's just me being a barbarian.
+
+00:36:08.836 --> 00:36:14.595
+No, no, no, no, no, no. Excellent question. So, so like information workers, I feel like it's,
+
+00:36:14.595 --> 00:36:19.796
+it's such a nebulous term that could apply to, to pretty much anybody, but like people who,
+
+00:36:20.516 --> 00:36:28.516
+you know, are data analysts or people who might be like working, working in the sciences or sciences
+
+00:36:29.155 --> 00:36:36.275
+to like take in primarily CSVs and like do, do interesting analyses on them. Like one of the
+
+00:36:36.275 --> 00:36:42.356
+first things that I used TensorFlow for back when it came out a long, long time ago was one of the,
+
+00:36:42.356 --> 00:36:47.396
+the projects that they released with it was being able to classify five different kinds of flowers,
+
+00:36:47.396 --> 00:36:52.595
+but you could also just like have five different kinds of things that you wanted to classify and,
+
+00:36:52.595 --> 00:37:01.236
+and do, do that classification process pretty simply. Just kind of like a move between the
+
+00:37:01.236 --> 00:37:07.076
+five different kinds of flowers to five different kinds of other things. And so in the earth sciences
+
+00:37:07.636 --> 00:37:11.236
+as well as in the biological sciences, but there, there were a lot of grad students,
+
+00:37:12.116 --> 00:37:17.796
+self-included, who were having to hand classify like different kinds of features
+
+00:37:18.755 --> 00:37:24.835
+in reefs or different kinds of you know, shapes of things on Petri dishes or whatever it is.
+
+00:37:25.876 --> 00:37:30.436
+And instead of having, you know, a grad student spend a month like going through and doing that,
+
+00:37:30.436 --> 00:37:37.475
+like you could do it really easily just with the most basic classification task. And so,
+
+00:37:37.475 --> 00:37:42.595
+so like all of these people who are working in the sciences there are tons and tons of those
+
+00:37:42.595 --> 00:37:50.035
+kinds of use cases that are ripe for automation, that tools exist that would like save time and
+
+00:37:50.035 --> 00:37:56.116
+energy and accelerate the scientific process that nobody just knows about. So, so like now that the
+
+00:37:56.116 --> 00:38:02.436
+models are good enough to do this kind of work, like just blazing a path for people who are experts
+
+00:38:02.916 --> 00:38:07.475
+to like automate away the parts that are frustrating and like focus on the parts that
+
+00:38:07.475 --> 00:38:12.676
+are fun. I think like inside businesses too, there's like a lot of people whose jobs.
+
+00:38:12.833 --> 00:38:21.673
+like center around Excel spreadsheets and like painstakingly carefully copying bits from one sheet to another sheet and making sure they line up or like
+
+00:38:22.273 --> 00:38:28.153
+Getting information out of a JIRA ticket and putting it on a spreadsheet and I've got a PDF and extracting three bits
+
+00:38:28.513 --> 00:38:34.273
+There's all this stuff that's just like really like no one enjoys doing this like it's often like it's high stakes
+
+00:38:34.792 --> 00:38:40.093
+Like, you know, it's really easy to make a mistake. It's like no one enjoys doing that and there's just so much
+
+00:38:40.573 --> 00:38:45.773
+potential. Yeah, and it also is like very hard on the human body too because if
+
+00:38:45.773 --> 00:38:50.773
+you're like copying and pasting things like a lot of people use mice for that
+
+00:38:50.773 --> 00:38:55.773
+in which case like the the potential for RSI is like the repetitive stress
+
+00:38:55.773 --> 00:39:01.333
+injuries are really high and so so like anything that can take away like the
+
+00:39:01.333 --> 00:39:07.733
+parts of work that are boring and like not fun I think is a is a great use for
+
+00:39:07.733 --> 00:39:12.692
+these models yeah yeah it's an interesting yeah it's so helpful to
+
+00:39:12.692 --> 00:39:18.372
+hear like the different people or like the all the different tasks where people
+
+00:39:18.372 --> 00:39:22.253
+need this and that for something sometimes where it's like it sounds like
+
+00:39:22.253 --> 00:39:26.773
+you're saying also like it's got to be right but it's also a little bit mundane
+
+00:39:26.773 --> 00:39:30.813
+yeah these tools can really lift well and stuff like if like we had to do it
+
+00:39:30.813 --> 00:39:34.293
+like we could write a program to do it and like really easily but if you don't
+
+00:39:34.293 --> 00:39:37.573
+know how to program you're just completely locked out of this
+
+00:39:37.573 --> 00:39:41.372
+automation and I think there's still like a lot of questions to answer about
+
+00:39:41.372 --> 00:39:44.733
+how do we make sure they can do this for like slightly and reliably and put
+
+00:39:44.733 --> 00:39:49.812
+checks in places but it's yeah it's really exciting just a lot of human
+
+00:39:49.812 --> 00:39:54.693
+misery that we can hopefully eliminate I'm really curious like as somebody who
+
+00:39:54.693 --> 00:39:59.452
+builds and uses and like combines all of these tools how you decide to like what
+
+00:39:59.452 --> 00:40:03.573
+tools you're using and how they're like how to continue growing and learning and
+
+00:40:03.573 --> 00:40:08.092
+staying current especially being in a world where things change on the day on
+
+00:40:08.092 --> 00:40:11.852
+the hour like how are you making decisions about where to go with the
+
+00:40:11.852 --> 00:40:17.293
+tools that you're using all of these all of these models that get released there
+
+00:40:17.293 --> 00:40:24.812
+they're basically like supercharged engines right and so like one of the
+
+00:40:24.812 --> 00:40:32.733
+one of the things that can be a little bit disheartening to hear sometimes is
+
+00:40:32.733 --> 00:40:38.253
+that people want one model to kind of be the one model that they use whereas I
+
+00:40:38.253 --> 00:40:44.452
+think that what we see is that you it's it's a much more effective path to like
+
+00:40:44.452 --> 00:40:48.813
+pick a model based on what it's really really good at or what you need like it
+
+00:40:48.813 --> 00:40:55.132
+like if you need a model that has really low latency and that is really really
+
+00:40:55.132 --> 00:41:00.972
+cost-effective and that can get the job done for a given subset of tasks like
+
+00:41:01.013 --> 00:41:05.692
+pick that don't reach for like the highest end model every single time and
+
+00:41:05.692 --> 00:41:09.893
+I find like so for the Gemini models they're really good at analyzing video
+
+00:41:10.653 --> 00:41:15.533
+PDFs with images embedded in them audio like translating between different
+
+00:41:15.533 --> 00:41:21.212
+languages like doing real time interactions those sorts of things and I
+
+00:41:21.212 --> 00:41:26.412
+find that the anthropic models are exceptionally good at kind of writing in
+
+00:41:26.412 --> 00:41:30.533
+a way that feels like I'm talking to a friend and also writing code.
+
+00:41:30.972 --> 00:41:36.093
+And so so if I couple together like Gemini's ability to understand video to
+
+00:41:36.093 --> 00:41:40.533
+generate images to understand PDFs with like images embedded and then also
+
+00:41:40.533 --> 00:41:45.533
+anthropic stability to like write code and then to maybe like plan out what the
+
+00:41:45.533 --> 00:41:52.252
+work should look like then that's a really magical experience whereas the if
+
+00:41:52.252 --> 00:41:55.373
+you were trying to use one model to do all of those things like you would just
+
+00:41:55.412 --> 00:42:02.252
+not have a satisfying a satisfying journey but that's but it's not I guess
+
+00:42:02.252 --> 00:42:08.132
+answering which is just like it is a 24 7 sort of situation of like constantly
+
+00:42:08.533 --> 00:42:12.132
+trying out new things and seeing what works for you and what works for the
+
+00:42:12.132 --> 00:42:13.653
+different tasks that you care about.
+
+00:42:13.852 --> 00:42:19.013
+It feels exhausting sometimes right like I've never really felt like FOMO in my
+
+00:42:19.013 --> 00:42:24.252
+career but now it feels like sometimes it's almost like paralyzing like I can't
+
+00:42:24.252 --> 00:42:28.412
+be like if I'm working I'm like oh my God maybe there's a new model that just
+
+00:42:28.412 --> 00:42:31.772
+came out that would like do my work for me or like you know do what I'm doing
+
+00:42:31.772 --> 00:42:32.573
+now better.
+
+00:42:33.052 --> 00:42:35.212
+It is like it's an exhausting time to be.
+
+00:42:35.252 --> 00:42:37.212
+This is the AI psychosis.
+
+00:42:37.453 --> 00:42:43.612
+Yeah it's it is definitely like and the cost of writing software is going to
+
+00:42:43.612 --> 00:42:44.252
+zero.
+
+00:42:45.492 --> 00:42:48.412
+But that means that taste is more important than ever right.
+
+00:42:48.453 --> 00:42:54.173
+Like so the ability to the ability to create things that feel still human and
+
+00:42:54.173 --> 00:42:59.293
+special and serendipitous like like one of the one of the things that I loved
+
+00:42:59.293 --> 00:43:04.453
+most about you know like reading Byte magazine or like whatever whatever else
+
+00:43:05.613 --> 00:43:12.053
+is that I would sometimes find a thing that was something I absolutely needed at
+
+00:43:12.053 --> 00:43:14.932
+the time but I would have never known to go look for it myself.
+
+00:43:16.092 --> 00:43:23.532
+And now I feel like with with AI kind of driving you know the content that you see
+
+00:43:23.532 --> 00:43:28.733
+on social platforms or like the code that gets generated in a specific style or
+
+00:43:28.733 --> 00:43:37.013
+format or tone and that kind of like again is forcing people into silos or like one
+
+00:43:37.013 --> 00:43:43.053
+way of viewing the world when the thing that that's really magical is like helping
+
+00:43:43.053 --> 00:43:46.692
+people understand that the world is bigger to see it in a different way.
+
+00:43:46.932 --> 00:43:53.453
+And so so like that I try to view the models as just tools and then like part of my
+
+00:43:53.453 --> 00:43:58.652
+job is figuring out how to take their outputs and to craft them in a way that would
+
+00:43:58.652 --> 00:44:00.733
+resonate with with people.
+
+00:44:01.053 --> 00:44:04.773
+That really speaks to me as like somebody who has developed open source and telling
+
+00:44:04.773 --> 00:44:08.532
+people all the time like there's no language for and you understand like you know it's
+
+00:44:08.532 --> 00:44:12.293
+not R versus Python it's the right tool for the job and hearing you say you know that
+
+00:44:12.293 --> 00:44:16.613
+applies to models as well and just trying to deconstruct that in my mind like this is
+
+00:44:16.613 --> 00:44:20.333
+the model I should be using for coding this is the model I should be using for helping
+
+00:44:20.333 --> 00:44:23.532
+me with docs or something like that feels very empowering.
+
+00:44:24.372 --> 00:44:25.773
+And we have these muscles already.
+
+00:44:26.013 --> 00:44:26.453
+Exactly.
+
+00:44:26.493 --> 00:44:28.652
+And it changes it changes monthly.
+
+00:44:28.692 --> 00:44:36.412
+So like the ability to if not weekly right like the ability to just kind of try things
+
+00:44:37.173 --> 00:44:44.293
+out and to to accept that things will change and then like again statisticians have the
+
+00:44:44.293 --> 00:44:48.733
+edge like and people who have worked with data have the edge because we all understand
+
+00:44:48.733 --> 00:44:49.532
+data drift.
+
+00:44:50.372 --> 00:44:56.252
+So so it's it's just never been a more exciting time to work in this space.
+
+00:44:56.252 --> 00:44:59.972
+But also I I absolutely agree it is kind of exhausting.
+
+00:45:00.372 --> 00:45:00.972
+Yeah.
+
+00:45:01.333 --> 00:45:02.333
+Yeah it's so interesting.
+
+00:45:02.333 --> 00:45:06.293
+I know we're getting long and you have to hop a flight to L.A.
+
+00:45:06.333 --> 00:45:07.252
+for a hackathon.
+
+00:45:07.252 --> 00:45:08.613
+Heck yeah, it's going to be awesome.
+
+00:45:08.613 --> 00:45:14.773
+Yeah it's the it's a generative media hackathon so it'll be like a VEO but also NanoBanana
+
+00:45:15.613 --> 00:45:21.293
+and also hopefully like the Lyria API as well so like people can create music.
+
+00:45:21.293 --> 00:45:22.053
+Oh nice.
+
+00:45:22.252 --> 00:45:26.652
+I also don't doubt that on the flight there's a high chance you push some kind of app.
+
+00:45:28.053 --> 00:45:31.213
+Just the time you're in the air I fully believe that's possible.
+
+00:45:31.213 --> 00:45:37.812
+Well the I do still need for the the webcam like the the traffic cam guesser I still need
+
+00:45:37.812 --> 00:45:42.773
+to add it to my main Web site but I also want to I also want to add more Street View data
+
+00:45:42.773 --> 00:45:43.532
+and more cities.
+
+00:45:43.692 --> 00:45:46.053
+Oh so maybe like Houston is next on the list.
+
+00:45:46.092 --> 00:45:48.972
+There's not enough Texas representation so maybe that's.
+
+00:45:48.972 --> 00:45:50.173
+Yeah I love that.
+
+00:45:50.692 --> 00:45:54.893
+I know we learned one really fun fact that we chatted about a lot too which was that
+
+00:45:55.493 --> 00:45:58.972
+you have an app that roasts your last song choice.
+
+00:45:59.493 --> 00:46:06.692
+Oh yeah on Last.FM so like the last so Last.FM I am also like a super super fan of like I
+
+00:46:06.692 --> 00:46:12.733
+have a Scrabble history that is like a decade deep or or like a so so like if you look at
+
+00:46:12.733 --> 00:46:18.252
+pages listening choices like from from the last decade plus like there's definitely been
+
+00:46:18.252 --> 00:46:26.652
+an evolution but the but it will tell me like based on what I've just listened to what my
+
+00:46:26.852 --> 00:46:34.092
+what my estimated age is and then also like how pretentious am I or like how basic based
+
+00:46:34.092 --> 00:46:35.013
+on those choices.
+
+00:46:35.053 --> 00:46:35.372
+Yeah.
+
+00:46:35.652 --> 00:46:40.013
+Could you if you had to pitch humanity on why they should get roasted on their last
+
+00:46:40.013 --> 00:46:42.812
+song choice how would you do that.
+
+00:46:43.893 --> 00:46:50.852
+Well so so we all take ourselves way too seriously like we and and in all honesty like if
+
+00:46:50.852 --> 00:46:54.333
+you if you're listening to the same thing over and over again or reading the same thing
+
+00:46:54.333 --> 00:47:00.092
+over and over again or using the same model over and over again like the part of the joy
+
+00:47:00.092 --> 00:47:04.812
+of being a human is is like learning from new perspectives.
+
+00:47:04.932 --> 00:47:10.412
+So like if you if you get roasted like it's a good incentive to kind of laugh at yourself a
+
+00:47:10.412 --> 00:47:12.532
+little bit and then maybe experiment with something new.
+
+00:47:12.773 --> 00:47:13.172
+Yeah.
+
+00:47:13.252 --> 00:47:14.692
+That's a great takeaway message.
+
+00:47:16.132 --> 00:47:22.853
+I can't think you know I'm so inspired by your yeah your just ability to like code and mix
+
+00:47:22.853 --> 00:47:26.893
+things and just find serendipitous combinations.
+
+00:47:26.932 --> 00:47:34.213
+So can't thank you enough for for coming on and I'm so excited for the next one or a dozen
+
+00:47:34.213 --> 00:47:36.372
+things you you do.
+
+00:47:36.573 --> 00:47:37.093
+Thank you.
+
+00:47:37.132 --> 00:47:38.372
+Thank you so much for having me.
+
+00:47:38.413 --> 00:47:43.732
+And I really feel like you know there's never been a more more interesting time to care
+
+00:47:43.732 --> 00:47:48.172
+about data and to care about the way in which information is communicated.
+
+00:47:48.453 --> 00:47:48.893
+Yeah.
+
+00:47:49.093 --> 00:47:49.252
+Yeah.
+
+00:47:49.292 --> 00:47:49.853
+Hundred percent.
+
+00:47:50.292 --> 00:47:50.612
+Awesome.
+
+00:47:50.732 --> 00:47:51.172
+Thanks.
+
+00:47:51.533 --> 00:47:51.893
+Excellent.
+
+00:47:52.093 --> 00:47:53.013
+Thank you so much.
+
+00:47:55.333 --> 00:48:00.213
+The Test Set is a production of PositPBC, an open source and enterprise tooling data science
+
+00:48:00.213 --> 00:48:01.252
+software company.
+
+00:48:01.773 --> 00:48:05.372
+This episode was produced in collaboration with creative studio Adji.
+
+00:48:06.013 --> 00:48:11.533
+For more episodes visit the test set.co or find us on your favorite podcast platform.

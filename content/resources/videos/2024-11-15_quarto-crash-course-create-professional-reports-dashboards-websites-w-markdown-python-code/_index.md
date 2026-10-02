@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - cli
-- Quarto
+- quarto
 - revealjs
 tags:
 - rstudio
@@ -65,12 +65,12 @@ external:  # updated automatically, do not edit
   duration: 5785
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.318444+00:00'
-  like_count: 581
+  last_updated: '2026-09-18T13:58:09.670190+00:00'
+  like_count: 649
   playlist: ''
   software:
   - cli
-  - Quarto
+  - quarto
   - revealjs
   tags:
   - rstudio
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/_VKxTPWDhA4/maxresdefault.jpg
   title: Quarto Crash Course | Create Professional Reports, Dashboards & Websites w/ Markdown & Python Code!
   url: https://www.youtube.com/watch?v=_VKxTPWDhA4
-  view_count: 24691
+  view_count: 29707
 ---
 image: thumbnail.jpg
 

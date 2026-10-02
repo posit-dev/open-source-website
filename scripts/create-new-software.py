@@ -47,10 +47,25 @@ def get_software_name(repo_data: dict) -> str | None:
     return name.lower() if name else None
 
 
+def scan_existing_github_fields(software_dir: Path) -> set[str]:
+    """Scan all existing _index.md files and return the set of github: values."""
+    github_repos = set()
+    for index_file in software_dir.glob("*/_index.md"):
+        try:
+            for line in index_file.read_text(encoding="utf-8").splitlines():
+                if line.startswith("github:"):
+                    github_repos.add(line.split(":", 1)[1].strip())
+                    break
+        except Exception:
+            continue
+    return github_repos
+
+
 def create_software_directory(
     software_dir: Path,
     repo_name: str,
     github_repo: str,
+    existing_github_repos: set[str],
     dry_run: bool
 ) -> tuple[bool, str]:
     """
@@ -63,6 +78,9 @@ def create_software_directory(
 
     if target_dir.exists():
         return False, "already exists"
+
+    if github_repo in existing_github_repos:
+        return False, "already exists (different directory name)"
 
     if dry_run:
         return True, "would create (dry-run)"
@@ -127,6 +145,10 @@ def main() -> None:
     # Load repository data
     repos_list = load_github_repos(repos_file)
 
+    # Scan existing github: fields to detect duplicates with different directory names
+    existing_github_repos = scan_existing_github_fields(software_dir)
+    console.print(f"[dim]Existing github refs: {len(existing_github_repos)}[/]\n")
+
     # Process repositories
     created_count = 0
     skipped_count = 0
@@ -170,7 +192,8 @@ def main() -> None:
                 software_dir,
                 software_name,
                 github_repo,
-                args.dry_run
+                existing_github_repos,
+                args.dry_run,
             )
 
             if created:

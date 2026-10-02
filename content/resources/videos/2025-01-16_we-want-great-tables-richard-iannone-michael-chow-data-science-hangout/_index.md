@@ -8,7 +8,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 - gt
 tags: []
 title: We want GREAT tables! | Richard Iannone & Michael Chow | Data Science Hangout
@@ -22,20 +22,20 @@ external:  # updated automatically, do not edit
   duration: 3397
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.318067+00:00'
+  last_updated: '2026-09-18T13:58:09.332618+00:00'
   like_count: 27
   people:
   - Michael Chow
   - Rich Iannone
   playlist: ''
   software:
-  - Great Tables
+  - great-tables
   - gt
   tags: []
   thumbnail: https://i.ytimg.com/vi/SVZ1ZbtATzU/maxresdefault.jpg
   title: We want GREAT tables! | Richard Iannone & Michael Chow | Data Science Hangout
   url: https://www.youtube.com/watch?v=SVZ1ZbtATzU
-  view_count: 1223
+  view_count: 1233
 ---
 image: thumbnail.jpg
 

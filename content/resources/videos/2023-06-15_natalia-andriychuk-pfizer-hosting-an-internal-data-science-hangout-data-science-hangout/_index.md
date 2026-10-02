@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Natalia Andriychuk @ Pfizer | Hosting an *internal* data science hangout | Data Science Hangout
 
@@ -19,16 +19,16 @@ external:  # updated automatically, do not edit
   duration: 3609
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:31.335473+00:00'
+  last_updated: '2026-09-18T13:58:12.906203+00:00'
   like_count: 21
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/XpNwVWvRlQA/maxresdefault.jpg
   title: Natalia Andriychuk @ Pfizer | Hosting an *internal* data science hangout | Data Science Hangout
   url: https://www.youtube.com/watch?v=XpNwVWvRlQA
-  view_count: 665
+  view_count: 668
 ---
 image: thumbnail.jpg
 

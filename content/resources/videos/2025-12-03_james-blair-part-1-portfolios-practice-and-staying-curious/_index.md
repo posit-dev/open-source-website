@@ -20,7 +20,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: 'James Blair: Part 1 — Portfolios, practice, and staying curious'
 
@@ -47,16 +47,16 @@ external:  # updated automatically, do not edit
   duration: 1858
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:26.434808+00:00'
-  like_count: 11
+  last_updated: '2026-09-18T13:58:07.658641+00:00'
+  like_count: 12
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/paShnmg9N1U/maxresdefault.jpg
   title: 'James Blair: Part 1 — Portfolios, practice, and staying curious'
   url: https://www.youtube.com/watch?v=paShnmg9N1U
-  view_count: 295
+  view_count: 313
 ---
 image: thumbnail.jpg
 

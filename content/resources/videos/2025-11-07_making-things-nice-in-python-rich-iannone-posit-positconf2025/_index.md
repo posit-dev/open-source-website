@@ -19,7 +19,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 - pointblank
 tags:
 - posit::conf(2025)
@@ -54,13 +54,13 @@ external:  # updated automatically, do not edit
   duration: 1005
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868515+00:00'
-  like_count: 13
+  last_updated: '2026-09-18T13:58:08.098647+00:00'
+  like_count: 17
   people:
   - Rich Iannone
   playlist: ''
   software:
-  - Great Tables
+  - great-tables
   - pointblank
   tags:
   - posit::conf(2025)
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/J6e2BKjHyPg/maxresdefault.jpg
   title: Making Things Nice in Python (Rich Iannone, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=J6e2BKjHyPg
-  view_count: 504
+  view_count: 632
 ---
 image: thumbnail.jpg
 

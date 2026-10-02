@@ -1,0 +1,1600 @@
+WEBVTT
+
+00:00:00.800 --> 00:00:11.040
+I am so excited to introduce our lab manager for today, Garrick Aden-Buie.
+
+00:00:11.040 --> 00:00:13.120
+Garrick, would you introduce yourself for us?
+
+00:00:15.440 --> 00:00:23.040
+Yeah, hello. Hi, my name is Garrick. I work at Posit on the Shiny team. I've been on the Shiny
+
+00:00:23.040 --> 00:00:33.360
+team for a little while, for probably three and a half years now, I think.
+
+00:00:35.439 --> 00:00:41.279
+Raise your hand if you love and appreciate Shiny. I do. I wore the wrong shirt today.
+
+00:00:41.279 --> 00:00:44.720
+I was wearing my Shiny shirt just yesterday, and I could have shown everybody.
+
+00:00:44.720 --> 00:00:46.639
+I have a Shiny shirt too.
+
+00:00:46.639 --> 00:00:48.400
+I know, we have bad timing.
+
+00:00:48.560 --> 00:00:49.119
+All right, Garrick.
+
+00:00:50.639 --> 00:00:58.799
+Well, today, Garrick is going to be talking to us about agent skills, and maybe their
+
+00:00:58.799 --> 00:01:04.160
+difference between skills and tools, which is something that I have not understood completely.
+
+00:01:05.519 --> 00:01:11.120
+We will be going over things like, what is a skill? What does it look like? If other people
+
+00:01:11.120 --> 00:01:16.000
+have made skills that are useful, where can I find them? How do I know if it's a good one?
+
+00:01:16.639 --> 00:01:23.760
+When do I need a skill? What does creating a skill from scratch look like?
+
+00:01:25.279 --> 00:01:32.320
+Okay, Garrick, I say it is time. Go ahead and share your screen, and let's take it away.
+
+00:01:35.680 --> 00:01:37.199
+We already have a question from Noor.
+
+00:01:39.760 --> 00:01:45.519
+Noor says, are skills solely for Cloud Code, or are they applicable in all contexts?
+
+00:01:46.480 --> 00:01:51.040
+I think we are going to get there, but Garrick is going to be using Cloud today.
+
+00:01:52.559 --> 00:01:57.599
+Yeah, I'll actually do a little bit of a couple different things, I think, to set this up.
+
+00:01:59.919 --> 00:02:05.839
+But first, let me just make sure. So, I'm going to be using Positron, and I'm going to
+
+00:02:07.279 --> 00:02:14.720
+tell it to... So, I'm going to use Positron, and, yeah, first, let's see if everyone can
+
+00:02:14.720 --> 00:02:20.880
+see the screen okay, if you can. I think I can. I think it could be just slightly bigger,
+
+00:02:20.880 --> 00:02:25.839
+especially for the fact that we are recording this on YouTube, and our YouTube viewers have
+
+00:02:25.839 --> 00:02:32.639
+told us that the screen text is slightly too small. But Noor, to answer your question,
+
+00:02:33.679 --> 00:02:42.960
+skills are not solely for Cloud, I believe, right? That is right. In fact, they're actually
+
+00:02:43.199 --> 00:02:51.199
+technically called agent skills. So, more broadly, they can be used with basically
+
+00:02:52.880 --> 00:02:59.440
+any coding assistant that supports the idea of skills, the spec for skills. So,
+
+00:03:00.960 --> 00:03:05.279
+at this point, most coding assistants will support skills in some form or another,
+
+00:03:06.000 --> 00:03:15.360
+which includes Cloud Code or Posit Assistant or Codex or, yeah, or Copilot. They all end up
+
+00:03:16.880 --> 00:03:28.000
+supporting skills. So, I thought I would start with a pretty basic example to kind of just
+
+00:03:28.000 --> 00:03:35.279
+explore where skills fit into, like, the general space of how you talk with a model.
+
+00:03:37.039 --> 00:03:42.000
+And so, to do this, I was thinking I could use something pretty low level, where we don't have
+
+00:03:44.080 --> 00:03:48.479
+any coding assistant in the way. We don't have any... Sometimes the coding assistant, we also
+
+00:03:48.479 --> 00:03:55.279
+call that, like, an agent harness, which is really just, like, the software or the sort of programming
+
+00:03:55.279 --> 00:04:00.960
+that we set up around interacting with a large language model. And so, I thought maybe it would
+
+00:04:00.960 --> 00:04:05.679
+be interesting to just kind of, like, take all of that away and just do, like, the most basic
+
+00:04:05.679 --> 00:04:10.240
+things that you can do when you're interacting with large language models. And then we'll build
+
+00:04:10.240 --> 00:04:16.399
+up until we kind of see what a skill looks like, right? So, to do this, I'm going to use Elmer,
+
+00:04:16.399 --> 00:04:22.959
+which is the R package for interacting with the APIs for large language models. And
+
+00:04:23.920 --> 00:04:28.959
+if you've ever used Elmer before or haven't seen it before, it basically gives you these nice
+
+00:04:28.959 --> 00:04:38.079
+little functions, like chat clod or chat anthropic, where you can connect directly to an AI provider,
+
+00:04:38.079 --> 00:04:46.480
+right? So, I'm going to use Anthropic's clod SONNET 4.6 model. And basically, to start a chat,
+
+00:04:47.440 --> 00:04:52.959
+I just run this chat clod function. You can actually just, like, you don't even need to
+
+00:04:52.959 --> 00:04:58.160
+give it a model. Elmer has pretty decent defaults, but here I wanted the latest clod SONNET model,
+
+00:04:58.959 --> 00:05:04.399
+right? And then what is really neat about this is that you can run this live console function,
+
+00:05:04.399 --> 00:05:11.679
+and you can actually have, like, a little conversation in your chat. And maybe I can,
+
+00:05:11.679 --> 00:05:18.640
+like, ask, you know, what are agent skills? So, this message is going to go, this is me as a user
+
+00:05:18.640 --> 00:05:23.760
+sending a prompt to the model. And then we're going to see the answer coming back from the
+
+00:05:23.760 --> 00:05:30.399
+model. And it writes out a bunch of text. I'll skim really quickly. It tells me that agent skills
+
+00:05:30.399 --> 00:05:37.760
+are capabilities or tools that an AI agent can use to perform tasks, right? Okay. So, this was,
+
+00:05:37.760 --> 00:05:42.079
+like, you know, a question that I was asking. Sometimes the things that you're going to give
+
+00:05:42.079 --> 00:05:49.119
+to the model can be more, like, in the form of instructions. Like, this text that it gave me,
+
+00:05:49.119 --> 00:05:55.760
+this is too many words. And it doesn't fit in my screen. I want something a little bit more
+
+00:05:57.760 --> 00:06:03.440
+concise. So, I'm going to tell it, respond to terse like smart caveman, all technical substance
+
+00:06:04.160 --> 00:06:14.880
+no fluff, tell me what are agent skills. And I'll send that. And we're going to get a very
+
+00:06:14.880 --> 00:06:20.079
+different answer this time. This one fits on the whole screen. You can see, also, there are no
+
+00:06:20.079 --> 00:06:27.519
+emojis anymore. So, we just get agent skills equals agent tools. Skills let agent do things,
+
+00:06:27.519 --> 00:06:34.640
+not just talk. So, part of what I have said here is instructions to the model that the model is
+
+00:06:34.640 --> 00:06:41.519
+going to follow in this conversation. And I said, you know, I put these kind of magic words in here.
+
+00:06:41.519 --> 00:06:47.359
+And then I got, you know, an answer that is a bit more, you know, that follows my instructions.
+
+00:06:47.359 --> 00:06:53.119
+It's terse. And it contains no filler. And I could ask, you know, follow up questions.
+
+00:06:53.119 --> 00:07:01.519
+How do I make a skill? Something like this. It can ask a follow up question. It's going to keep
+
+00:07:01.519 --> 00:07:11.679
+kind of following my instructions, right? Okay. So, it gets a little annoying to do,
+
+00:07:11.679 --> 00:07:19.600
+to like type these things out. Let me see. I'm realizing I want to do this slightly differently.
+
+00:07:20.160 --> 00:07:27.279
+I'm going to move this out of the way. So, it gets a little annoying to type these things out,
+
+00:07:27.279 --> 00:07:32.160
+especially instructions like this, where I'm like, just, you know, for this chat,
+
+00:07:33.359 --> 00:07:38.160
+I don't want to like I want to be able to open up a chat and have it just start with, like,
+
+00:07:38.160 --> 00:07:44.320
+it knows that in these conversations, it should respond terse like a smart caveman, right?
+
+00:07:44.959 --> 00:07:52.799
+And this introduces the idea of a system prompt. So, you know, I can pick the model that I want
+
+00:07:53.920 --> 00:08:00.160
+with Elmer. But I can also give it the I can give it these instructions
+
+00:08:02.559 --> 00:08:12.720
+to respond like a caveman. Why did it jump? I need to exit my live demo. Okay. So,
+
+00:08:12.720 --> 00:08:21.920
+I can give it those instructions. And if I look at this object, you'll see now I have
+
+00:08:21.920 --> 00:08:27.760
+what's called a system prompt. So, the system prompt is basically like a user message or
+
+00:08:27.760 --> 00:08:31.920
+actually people tend to call it the developer message, which makes a lot of sense. It's a
+
+00:08:31.920 --> 00:08:38.080
+message from the developer, the kind of person, like, behind the chat bot. And it's kind of like
+
+00:08:38.080 --> 00:08:46.159
+strong instructions about how the model should behave inside this conversation.
+
+00:08:46.880 --> 00:08:51.760
+And it's sort of like baseline rules for how the conversation should go. So, if I've moved
+
+00:08:51.760 --> 00:08:56.960
+that instruction into the system prompt, you know, now I can kind of do the same thing. I
+
+00:08:56.960 --> 00:09:02.479
+can have my conversation. I can ask, like, I don't need to, like, remind it to be a caveman anymore.
+
+00:09:02.479 --> 00:09:10.960
+I can just say what are agent skills. And it will now answer me in this short terse form. Right?
+
+00:09:14.080 --> 00:09:17.840
+So, this kind of works. Yeah. We're getting, like, this nice agent reads tasks,
+
+00:09:17.840 --> 00:09:24.880
+picks skill, passes brands. You get this nice terse kind of thing. Okay. So,
+
+00:09:26.400 --> 00:09:31.599
+these kind of like you have as a user, you don't often have that much access to the system prompt.
+
+00:09:31.599 --> 00:09:37.760
+But if you're programming a chat bot, you have the chance to introduce these instructions in
+
+00:09:37.760 --> 00:09:46.080
+your system prompt. And for a while, these were kind of like the two main ways that you could
+
+00:09:46.080 --> 00:09:51.760
+that you would give instructions to a model. Right? But there are definitely problems with
+
+00:09:51.760 --> 00:09:57.760
+putting something like this, you know, instructions like this into the system prompt. In particular,
+
+00:09:57.760 --> 00:10:05.280
+like, maybe not every conversation needs to be in caveman voice. Right? Maybe I want to,
+
+00:10:05.280 --> 00:10:11.039
+you know, have moments where I have a normal conversation. And then at some point, I want to,
+
+00:10:11.039 --> 00:10:18.880
+like, turn on caveman mode. And I kind of want that to happen sort of dynamically. Right?
+
+00:10:20.320 --> 00:10:26.719
+So, this is that's kind of the problem that skills are trying to solve is how do we get
+
+00:10:26.719 --> 00:10:33.599
+these sorts of instructions to the model in a way that can be dynamic. It doesn't have to be,
+
+00:10:33.599 --> 00:10:39.599
+like, pre-programmed into the conversation. But when you're ready for it, it's there for you to
+
+00:10:39.599 --> 00:10:47.919
+use. So, how it actually works, it kind of builds well, actually, let's go let's go look at what a
+
+00:10:47.919 --> 00:10:57.119
+skill looks like. And this caveman idea comes from an actual skill called the caveman skill.
+
+00:10:58.000 --> 00:11:05.919
+And so, there's this repo. I'll make this bigger. Make it really big. And there's a repo. Julius
+
+00:11:05.919 --> 00:11:13.919
+Brussey caveman. Right? And in there, there's a skills folder. And under the skills folder,
+
+00:11:14.320 --> 00:11:18.400
+it turns out there's actually, like, in this repo, there's a couple skills. But we'll look
+
+00:11:18.400 --> 00:11:23.440
+at the caveman skill first. So, this is generally how people organize skills. There's usually a
+
+00:11:23.440 --> 00:11:30.640
+folder called skills. Then the name of the folder is the name of the skill. And then inside of the
+
+00:11:30.640 --> 00:11:38.799
+folder, there's a skill.md file. And it's basically just a markdown file that contains instructions
+
+00:11:38.799 --> 00:11:46.000
+for the model that can be loaded dynamically when the model is ready to bring in the prompt.
+
+00:11:48.400 --> 00:11:55.119
+So, a couple key pieces of this skill, right? Here's this, you know, sentence that I was using.
+
+00:11:55.119 --> 00:12:01.840
+You can see that this is, like, now part of the skill. And then there's, like, a whole section.
+
+00:12:01.840 --> 00:12:05.200
+Actually, we'll look at it as code so you can see what the markdown itself looks like. So,
+
+00:12:05.200 --> 00:12:13.440
+this is what the file would look like, right? Note skills caveman was the name of the skill.
+
+00:12:13.440 --> 00:12:19.760
+And then there's this YAML block at the top of the markdown file. If you've used, you know,
+
+00:12:19.760 --> 00:12:25.200
+Quarto or R markdown, it's similar to that where there's a YAML block of metadata at the top of
+
+00:12:25.200 --> 00:12:34.080
+the file. And one sort of quirk of skills is that this name has to match the directory. So, that's
+
+00:12:34.080 --> 00:12:40.719
+one thing you have to set up to begin with. But you give your skill a name. And then you also
+
+00:12:40.719 --> 00:12:48.320
+give it a description. And the description is, it turns out, is a pretty important part of the
+
+00:12:48.320 --> 00:12:54.880
+skill. Because it is not here just to remind you what your skill is about. It's actually here as
+
+00:12:54.880 --> 00:13:01.840
+instructions it's, like, a short snippet of instructions that the model will see that tell it
+
+00:13:02.400 --> 00:13:10.159
+what is inside this skill. So, the model will, like, the way that skills generally work is, like,
+
+00:13:10.159 --> 00:13:15.280
+the coding assistant will let the model know that it has some skills. It'll let it know what the
+
+00:13:15.280 --> 00:13:21.119
+names of the skills are. And it'll show it, like, these couple of lines of text to say,
+
+00:13:21.919 --> 00:13:27.280
+like, give it a hint about whether when or how it should be using this skill.
+
+00:13:27.919 --> 00:13:34.559
+And in the course of the conversation, you know, you'll end up saying something that sort of
+
+00:13:34.559 --> 00:13:39.200
+matches, you know, the user will say something that matches what is in this description. And
+
+00:13:39.200 --> 00:13:42.880
+then the model will go, hey, actually, you know what? I've got a skill for this. And it'll load
+
+00:13:42.880 --> 00:13:50.159
+that skill directly. So, you can see this description does a really good job of explaining
+
+00:13:50.159 --> 00:13:55.599
+exactly when the model should use this skill. So, it says explicitly use when the user says
+
+00:13:55.599 --> 00:14:03.599
+caveman mode or talk like a caveman or use caveman. In which case it should, the model is
+
+00:14:03.599 --> 00:14:08.159
+being told essentially you should bring in this skill and follow the rest of the instructions.
+
+00:14:14.000 --> 00:14:15.840
+Any questions at this point?
+
+00:14:15.840 --> 00:14:21.760
+STEPHANIE Yes. I was just going to say, can I interrupt you? Okay. We have two questions.
+
+00:14:22.320 --> 00:14:27.599
+One, I'm not sure if we have the answer to. I don't know the answer. Nathan Jeffrey had asked,
+
+00:14:28.400 --> 00:14:35.200
+if I have access to Positron Assistant using GitHub Copilot, does that mean that I can use Elmer,
+
+00:14:35.200 --> 00:14:38.239
+like, without an API key? I don't know the answer to this.
+
+00:14:38.239 --> 00:14:41.840
+BRIAN KARDELL With without an API key,
+
+00:14:41.840 --> 00:14:46.320
+I don't know either. You probably need an API key. That is
+
+00:14:46.320 --> 00:14:47.679
+STEPHANIE I think that's the answer.
+
+00:14:48.239 --> 00:14:54.080
+Yeah, when you're using Elmer, there's an API key behind all of these somewhere. But you can
+
+00:14:54.080 --> 00:15:05.200
+definitely, like, chat GitHub. There is a chat GitHub. And I think that this works just because
+
+00:15:05.200 --> 00:15:13.599
+it knows what, like, it knows I have a GitHub token, you know, in my environment that I use for
+
+00:15:14.559 --> 00:15:19.840
+interacting with GitHub's APIs or installing packages. At one point, I set up a GitHub token,
+
+00:15:20.400 --> 00:15:28.559
+and it'll pick it up and give you access to GitHub's models, which may or may not overlap
+
+00:15:28.559 --> 00:15:36.320
+with GitHub Copilot or the specific subscription service that you have. It's all very difficult to
+
+00:15:36.320 --> 00:15:41.919
+figure out exactly. But there's a good chance that yes is the answer.
+
+00:15:42.640 --> 00:15:48.960
+Okay, great. And then we had one from Alexandra that says, can the instructions be more than just
+
+00:15:48.960 --> 00:15:55.200
+strings? Are there other types of sources like JSON or CSV that can be used to learn other skills?
+
+00:15:56.719 --> 00:16:01.119
+And if we're going to get there, then we'll get there. But I think it's a good question.
+
+00:16:01.119 --> 00:16:04.799
+BRIAN KARDELL Yes-ish, right? So, we'll get into, like,
+
+00:16:04.799 --> 00:16:12.080
+a little bit more of the structure of the sort of detail. Like, you can have more than just
+
+00:16:13.280 --> 00:16:21.359
+one skill markdown file. And there's a concept in skills of progressive disclosure,
+
+00:16:22.159 --> 00:16:26.719
+which is actually something that we've seen already in talking about this description.
+
+00:16:26.719 --> 00:16:35.039
+So, skills are designed to be, like, designed to be set up so that you're kind of, you're not,
+
+00:16:35.039 --> 00:16:41.039
+like, throwing everything at the model all at once, right? So, the system prompt idea is, like,
+
+00:16:41.039 --> 00:16:43.840
+we're going to fill the system prompt with everything that the model is going to need
+
+00:16:43.840 --> 00:16:49.280
+to know for this entire conversation. And often what happens is it turns out that the model,
+
+00:16:49.280 --> 00:16:53.919
+like, you'll put instructions into the system prompt that are completely irrelevant to actual
+
+00:16:53.919 --> 00:16:59.039
+conversations that users are having. And it creates problems because sometimes those
+
+00:16:59.039 --> 00:17:04.479
+instructions may distract the model from paying attention to what the user is saying or may cause
+
+00:17:04.479 --> 00:17:08.880
+the model to go off and do something that the user doesn't want them to do. But you've had
+
+00:17:08.880 --> 00:17:14.959
+instructions in the system prompt that kind of, you know, we're telling the model to do something
+
+00:17:14.959 --> 00:17:22.560
+that happens to be at odds with what the user was actually wanting to do, right? And so, skills are
+
+00:17:22.560 --> 00:17:29.359
+set up to have this progressive disclosure property where, you know, we start by showing
+
+00:17:29.359 --> 00:17:36.000
+the model just this little bit. This is supposed to be, like, 100 tokens. Like, say, like, 100
+
+00:17:36.000 --> 00:17:40.800
+words, two sentences, one paragraph, roughly, right? And the model will see just this. And if
+
+00:17:40.800 --> 00:17:46.319
+it decides that this skill is relevant and loads the rest of the skill, it will load just the rest
+
+00:17:46.319 --> 00:17:52.400
+of the file. And the file usually has, you know, basic instructions and some things that are
+
+00:17:52.400 --> 00:18:00.319
+relevant to, you know, here there's a, you know, here there's, like, really limited this is a
+
+00:18:00.319 --> 00:18:05.280
+pretty small skill in the sense that, you know, mostly just says, like, you know, stop using
+
+00:18:05.280 --> 00:18:11.040
+filler words and pleasantries and just and also articles, you know, and it gives it a quick
+
+00:18:11.040 --> 00:18:17.920
+pattern for how to reply. But it also includes, you know, some other follow-ups, like, drop the
+
+00:18:17.920 --> 00:18:23.520
+caveman act if you're about to do something destructive. Go ahead and explain it clearly
+
+00:18:23.520 --> 00:18:28.160
+to the user instead of pretending to be a caveman. That's a good idea, right? So, there's some
+
+00:18:28.160 --> 00:18:35.839
+instructions here. But also, then, this skill file can then point to other files that are sort of
+
+00:18:35.839 --> 00:18:43.280
+adjacent to the skill. And the model will, you know, be able to load those as needed as you
+
+00:18:46.319 --> 00:18:51.199
+yeah, load those as needed as it sort of tries to tackle the task at hand.
+
+00:18:52.800 --> 00:18:57.680
+All right. So, if we want our agent to talk like a caveman, this is great.
+
+00:18:57.680 --> 00:19:00.800
+What are the examples in which you use skills?
+
+00:19:01.760 --> 00:19:09.040
+Right. So, I use skills in lots of different ways.
+
+00:19:19.359 --> 00:19:22.959
+Hang on. I'm trying to connect where I was going to go to where that is.
+
+00:19:24.160 --> 00:19:27.760
+I just, like, record scratched Garrick's brain, everybody.
+
+00:19:28.160 --> 00:19:33.839
+Right. Do we want, I mean, okay. Yeah. I mean, I use skills in lots of ways. So,
+
+00:19:34.880 --> 00:19:38.800
+I guess we can show you this, which is a collection of skills that are probably
+
+00:19:39.359 --> 00:19:45.920
+a lot more useful to you than the caveman skill. But this is a little repo that I
+
+00:19:46.560 --> 00:19:51.199
+started putting together when skills came out and have been encouraging people to contribute to
+
+00:19:52.160 --> 00:20:00.239
+inside of Posit. And it's a place where I basically store skills that I've created
+
+00:20:00.239 --> 00:20:07.520
+that I find useful in, you know, more or less everyday work. And I have organized
+
+00:20:07.520 --> 00:20:11.520
+we've organized it by, like, subfolders. So, there's whole groups of things.
+
+00:20:13.359 --> 00:20:17.599
+And I'll go into the let's go into the shiny skill because I know that there are
+
+00:20:18.239 --> 00:20:23.119
+some interesting skills in here. So, there's a grouping of shiny skills, right? And then
+
+00:20:23.119 --> 00:20:32.000
+there's this shiny BS Lib skill. And if I open up this skill, the idea with this skill, if I show
+
+00:20:32.000 --> 00:20:38.319
+you the code, right, is it's a shiny BS Lib is the name of the skill. And then the goal is to help
+
+00:20:38.319 --> 00:20:46.800
+you build modern shiny dashboards and applications using BS Lib. So, if I go back to the preview,
+
+00:20:47.439 --> 00:20:52.400
+you can see basically when you're the idea is that this skill should kick in whenever you're
+
+00:20:52.400 --> 00:20:57.119
+building new shiny apps or you're trying to modernize a legacy shiny app or you're working
+
+00:20:57.119 --> 00:21:04.079
+with some new features of BS Lib, like page layouts or grid systems or cards or, you know,
+
+00:21:04.079 --> 00:21:07.920
+those kinds of things. So, if you're if you're having a conversation if you have this skill
+
+00:21:08.560 --> 00:21:13.199
+available to your coding assistant and you're also having a conversation about building shiny
+
+00:21:13.199 --> 00:21:20.239
+dashboards and things, then this skill should kick in and it would basically, you know,
+
+00:21:21.040 --> 00:21:28.319
+help you help your coding agent forget about some of the things that it knows about writing
+
+00:21:28.319 --> 00:21:34.239
+shiny apps that only use the shiny library and will bring in the extra stuff that the model
+
+00:21:34.239 --> 00:21:42.719
+needs to know or be reinforced about acting on to write shiny apps with BS Lib instead.
+
+00:21:43.839 --> 00:21:51.520
+And then inside of this shiny BS Lib folder, you can see I have a references
+
+00:21:52.800 --> 00:21:58.160
+section. I'm going to see if I can just open that directly. So, I have another subfolder next to
+
+00:21:58.160 --> 00:22:04.719
+that called references. And inside of references, there are a whole bunch of different areas,
+
+00:22:04.719 --> 00:22:11.280
+right? So, there's things like there's a section on accordions and cards and grid layouts. And
+
+00:22:11.359 --> 00:22:18.880
+so, you can think of like if you're building a shiny app with shiny and BS Lib, maybe so,
+
+00:22:18.880 --> 00:22:25.520
+the skill itself is like here's the most relevant information for anybody who is doing this thing.
+
+00:22:25.520 --> 00:22:32.160
+Anybody who is using shiny and BS Lib together. And then the references folder is full of smaller
+
+00:22:33.119 --> 00:22:39.599
+sort of standalone pieces that are then relevant that the model might go read if it needs to,
+
+00:22:39.599 --> 00:22:46.079
+you know, like you're working with filling layouts, right? Filling layouts are notoriously
+
+00:22:46.079 --> 00:22:53.520
+tricky. And maybe you're working with a filling layout in your shiny app. And so, then this
+
+00:22:53.520 --> 00:23:01.599
+file is basically going to explain how filling layouts work to the model. So, basically it's
+
+00:23:01.599 --> 00:23:08.719
+going to just like load, you know, can load this information on the fly and all of a sudden just
+
+00:23:08.719 --> 00:23:14.719
+know everything that there is to know about shiny BS Lib and filling layouts.
+
+00:23:16.079 --> 00:23:16.959
+Which reminds me.
+
+00:23:16.959 --> 00:23:23.599
+STEPHANIE So, this is in contrast to just freewheeling an LLM and being like, hey,
+
+00:23:23.599 --> 00:23:28.079
+I'm building a shiny app. I want to have this filling layout. And then expecting it to go
+
+00:23:28.800 --> 00:23:33.040
+read the documentation, hope that it reads the right stuff, hope that it figures it out and do
+
+00:23:33.040 --> 00:23:38.319
+it right, right? And then often that doesn't work, spoiler, right? Like it'll come back and it'll do
+
+00:23:38.319 --> 00:23:41.680
+something janky and you're really frustrated. You're like having to do this again. Using a
+
+00:23:41.680 --> 00:23:46.800
+skill is like putting a skill pack into a robot, right? Where you're like, hey, learn how to make
+
+00:23:46.800 --> 00:23:51.839
+this for me real quick. And I'm not going to have to explain any of it to you and then go do it and
+
+00:23:51.839 --> 00:23:54.800
+have a way higher likelihood of doing it correctly, right?
+
+00:23:54.800 --> 00:23:58.719
+MATT Yes. Yes, exactly. Yeah. And I think,
+
+00:23:59.520 --> 00:24:07.439
+and it reminded us of the I Know Kung Fu scene from, what is the name of this movie? I forgot.
+
+00:24:08.160 --> 00:24:08.880
+STEPHANIE The Matrix.
+
+00:24:08.880 --> 00:24:14.000
+MATT The Matrix. Yeah. Right. So it's a little bit like that. Like you just plug your model in
+
+00:24:14.000 --> 00:24:22.719
+and say like, hey, you know Kung Fu now. Or it's also like, there's the general advice about writing
+
+00:24:22.719 --> 00:24:28.160
+functions where people will say, you know, if you've written the same code three times, or,
+
+00:24:28.160 --> 00:24:32.560
+you know, you copy and paste it the same code two times and you go to do it a third time,
+
+00:24:32.560 --> 00:24:37.760
+you know, maybe that is the time to make a function. And I think a really similar thing
+
+00:24:37.760 --> 00:24:45.439
+applies to skills where if you find yourself saying the same thing to a model repeatedly,
+
+00:24:45.439 --> 00:24:51.119
+like you're having a conversation with Claude, for example, and you are like, you find yourself like
+
+00:24:51.119 --> 00:24:56.959
+typing out the same phrase repeatedly. Or like telling it like, I want you to do it this way.
+
+00:24:56.959 --> 00:25:00.400
+And then you have to like, you know, maybe give like a whole paragraph. And you know,
+
+00:25:00.400 --> 00:25:06.160
+if you notice yourself doing that, then that is a great moment to stop and make a skill.
+
+00:25:06.160 --> 00:25:11.520
+STEPHANIE Fantastic. Okay, we have some questions. If you're open for a little break,
+
+00:25:11.520 --> 00:25:15.839
+we're at the 30 minute mark. So I think this is a good stop, because we've got about four
+
+00:25:15.839 --> 00:25:20.959
+questions that we could get through. One is from Russ that says, hey, GitHub has the like top 10
+
+00:25:20.959 --> 00:25:28.239
+repos and trending repositories. Is there anything like that with agents skills so that we can look
+
+00:25:28.239 --> 00:25:33.280
+up the top trending or used skills so that we know what's already out there? Isabella did link
+
+00:25:33.280 --> 00:25:36.640
+some stuff. Wondering what you use to keep up with the latest?
+
+00:25:36.640 --> 00:25:41.359
+ISABELLA Yeah, that's a great question. And I'm really excited to share this website with you.
+
+00:25:41.359 --> 00:25:51.280
+It's skills.sh. This is by this is by the company Vercel. They also have a little command line
+
+00:25:51.280 --> 00:26:02.000
+utility. If you have NPM installed, you can use NPX skills to add, add any of these skills to
+
+00:26:02.000 --> 00:26:07.920
+your coding agents. I really like the utility. But then also what happens is that they sort of,
+
+00:26:07.920 --> 00:26:14.160
+you know, keep track of who's using which skills. And then you have a big they have this big sort of,
+
+00:26:14.160 --> 00:26:19.680
+I mean, this is this is actually like, exactly what that person was asking about where this is
+
+00:26:19.680 --> 00:26:25.839
+like the these are the top skills used of all time. But you can see the top one is just find
+
+00:26:25.839 --> 00:26:34.079
+skills. Finding skills. Yeah. I think some of the top ones end up being because they're loaded in
+
+00:26:34.079 --> 00:26:42.719
+common. What's the word? They're loaded in common coding agents. But yeah, so you can from here,
+
+00:26:42.719 --> 00:26:48.319
+you can look through things. And like, I can probably find the caveman skill. There's actually
+
+00:26:48.319 --> 00:26:56.800
+a bunch of caveman things. For example, or we were just looking at shiny, you can find our
+
+00:26:57.439 --> 00:27:06.000
+skills here. Yes, limb. Let's see tidy verse probably shows up. So if you're ever in a
+
+00:27:06.000 --> 00:27:11.839
+position where you're like, you know, I wonder if a skill exists for this thing already,
+
+00:27:12.479 --> 00:27:19.760
+you can come here and search for it. Let me show you. I'll go to the shiny. Yes, limb one. Because
+
+00:27:19.760 --> 00:27:28.880
+once Okay, there we go. So once you open it, you can actually, you know, read through the skill
+
+00:27:28.880 --> 00:27:35.520
+here in the website. At the very top, they'll give you the command that you can paste into a terminal
+
+00:27:35.520 --> 00:27:43.040
+to run to add the skill to your coding agent. Or and then there's also like a direct link to the
+
+00:27:43.040 --> 00:27:48.400
+repo. They added this recently to the security audits, which I think are useful to look at.
+
+00:27:49.760 --> 00:27:56.479
+And it's worth mentioning that when you are that it is worth auditing a skill before you bring it
+
+00:27:56.479 --> 00:28:01.920
+in to your Yeah, tell me in the discord literally just asked, should we really trust these random
+
+00:28:01.920 --> 00:28:06.239
+skills? Somebody had also said like, Hey, I'd actually don't recommend installing that fine
+
+00:28:06.239 --> 00:28:13.760
+dash skills one because it comes with a bunch of telemetry. So do your research still right? Like
+
+00:28:13.760 --> 00:28:18.719
+verify that what you are adding to your computer is good. Thank you, Russ for that question. And
+
+00:28:18.719 --> 00:28:27.760
+then we had one from Santiago asked in the zoom q&a Santiago discord, we miss you. What tool do
+
+00:28:27.760 --> 00:28:34.560
+you use to download slash manage or sync skills from various sources? He says that he is using
+
+00:28:34.560 --> 00:28:40.400
+impact skills from Brazil. But curious to hear what everybody else is using. Is impacts what you
+
+00:28:40.400 --> 00:28:48.719
+use, Garrick? Yeah, so I use NPX. Mostly. One of the things I like about NPX is, let's actually
+
+00:28:48.719 --> 00:28:57.760
+like, let's try it. Where did I? We'll put it this thing over here. So I'll make this bigger,
+
+00:28:57.760 --> 00:29:08.400
+we'll hide the console CD into demo. And so you do NPX skills, add, and then you give the repo.
+
+00:29:09.439 --> 00:29:17.119
+And when you run this, it will tell you which skills are in that repo. And then you can pick
+
+00:29:17.119 --> 00:29:22.880
+them. I could say like, you know, I want this skill. And maybe I want to, you know, yes,
+
+00:29:22.880 --> 00:29:27.199
+I want it in cloud code. And you pick a couple options, like I'm going to put it here in this
+
+00:29:27.199 --> 00:29:35.040
+project. And I just say yes to everything else. Also, like this will show you the security risk
+
+00:29:35.040 --> 00:29:41.520
+assessment as well. So it's, you'll actually see that in the, in the output. And what it has done
+
+00:29:41.520 --> 00:29:50.160
+is it has if I can find this folder, it has added the skill source to dot agents slash skills.
+
+00:29:52.079 --> 00:29:59.520
+In it wasn't clear in here, but in when I for this question, which agents you want to install to,
+
+00:30:00.400 --> 00:30:05.359
+I have picked cloud and pi before. So it remembered that and it installed
+
+00:30:06.079 --> 00:30:14.160
+sim links to cloud skills and to pi skills. And so that they would be available for those coding
+
+00:30:14.160 --> 00:30:20.079
+agents. And then the last thing it does is it adds this file, hide the console, adds this file,
+
+00:30:20.079 --> 00:30:26.719
+which keeps track of where I got this skill from, which this is pretty useful in general.
+
+00:30:27.040 --> 00:30:35.920
+So the other way that I like to install skills is using a package that I work on called btw.
+
+00:30:37.359 --> 00:30:45.599
+So if you load btw, there is also a function btw skill, and you can install skills from GitHub,
+
+00:30:45.599 --> 00:30:51.760
+or you can install skills from packages. So if you are developing our packages,
+
+00:30:52.319 --> 00:31:00.160
+and my recommendation is to store, let's see if this is actually in here. So to store the
+
+00:31:01.520 --> 00:31:10.160
+to store skills in the inst skills directory. And then the btw package will, like has,
+
+00:31:11.199 --> 00:31:15.760
+will basically like see that and you can install the skill from the package directly,
+
+00:31:15.760 --> 00:31:20.880
+which means then make it available to other coding agents outside of Elmer and btw.
+
+00:31:21.520 --> 00:31:27.839
+Or there's also a way that btw can give you an Elmer client that can see skills and use skills.
+
+00:31:28.560 --> 00:31:35.920
+And, and it will automatically detect skills and you're attached to our packages. So like,
+
+00:31:35.920 --> 00:31:41.359
+if you've loaded a package that also has a skill, then the btw client will will
+
+00:31:41.359 --> 00:31:47.280
+automatically load that for you. Awesome. Okay, let's see. We can slide in a few more questions
+
+00:31:47.280 --> 00:31:54.239
+here. James had said that caveman skill had a boundaries section in it. Is that standard for
+
+00:31:54.239 --> 00:32:01.040
+the skills.md file? And what practical implications does that have? Had a boundary.
+
+00:32:02.719 --> 00:32:08.000
+It might have had like a boundaries. There you are at the very end.
+
+00:32:08.146 --> 00:32:22.706
+The funnest part about skills is that inside of the Markdown file, anything goes.
+
+00:32:20.930 --> 00:32:27.330
+Okay. So, the funnest part about skills is that inside of the markdown file, anything goes.
+
+00:32:27.330 --> 00:32:35.810
+Like, right at anything. This is just a thing that they added here. I think it makes sense.
+
+00:32:35.810 --> 00:32:43.489
+This is relevant to, like, if you're using this skill, that's pretty relevant. Like, don't...
+
+00:32:43.489 --> 00:32:48.930
+The idea here is, like, it's telling the model, like, there's certain cases where you don't
+
+00:32:48.930 --> 00:32:55.810
+want to be extremely terse. And it is better to actually make sure everyone knows what you're
+
+00:32:55.810 --> 00:32:57.569
+talking about.
+
+00:32:57.569 --> 00:33:01.410
+Yes. I think caveman talk would get pretty annoying in certain situations.
+
+00:33:03.490 --> 00:33:10.450
+Morgana asked, are skills almost a way to give agents info about topics in a lesser version of
+
+00:33:10.450 --> 00:33:17.490
+having a vector store or a document repo for the model to refer to? So it's like a master class
+
+00:33:17.490 --> 00:33:20.930
+version of the info? Maybe a more succinct version?
+
+00:33:22.209 --> 00:33:23.010
+Yeah. I think...
+
+00:33:25.250 --> 00:33:32.529
+Okay. So, when would you use RAG? Which is what they're talking about. RAG is Retrieval
+
+00:33:32.529 --> 00:33:36.930
+Augmented Generation. And it's the idea that, like... So, this is very similar in the sense that
+
+00:33:36.930 --> 00:33:43.010
+both... In both cases, retrieval augmented generation and skills are both, like, we're
+
+00:33:43.010 --> 00:33:46.370
+going to need to get some useful information in front of the model. We're going to load it
+
+00:33:46.370 --> 00:33:51.970
+dynamically because we don't know when exactly it's supposed to be used. But RAG is more about
+
+00:33:51.970 --> 00:33:57.410
+having a giant pile of documents that may or may not be relevant. And you don't at any given point
+
+00:33:57.410 --> 00:34:03.809
+know which one is going to be relevant to any conversation. Skills are a lot better when you
+
+00:34:03.809 --> 00:34:11.730
+enter an area where there's a very clear reason that you would want to have the skill be loaded
+
+00:34:11.730 --> 00:34:21.970
+in the first place. So, you know, if we go back to the Shiny example, the skill here is, like,
+
+00:34:21.970 --> 00:34:28.370
+when you're building Shiny apps that use BSLib, then we know, like, once we know that, we now
+
+00:34:28.370 --> 00:34:35.569
+know everything in here is more or less relevant. And this is, like, we'd want this to come in.
+
+00:34:35.569 --> 00:34:41.969
+Right? Or the other way that this is really useful is when you have a specific workflow
+
+00:34:41.969 --> 00:34:45.810
+that you want to go through. When you want to guide the model through doing something very
+
+00:34:45.810 --> 00:34:55.730
+specific. And I have another example of that in here. Where did I... Or do I have...
+
+00:34:56.290 --> 00:35:08.209
+Thoughts? No. It moved around. Okay. So, yeah. There it is. So, PRCreate. So, this is a skill
+
+00:35:08.209 --> 00:35:18.609
+that I made at one point for that kind of, like, follows how I like pull requests. So,
+
+00:35:18.609 --> 00:35:22.129
+if I'm working with a coding assistant and I've made some changes and I'm at the point where I'm
+
+00:35:22.129 --> 00:35:28.129
+like, okay, this is ready to be made into a pull request, this then covers more or less the
+
+00:35:29.250 --> 00:35:34.609
+workflow that I would use. And specifically with Cloud Code. So, this, you know, you can...
+
+00:35:35.969 --> 00:35:41.329
+Skills can be used with lots of different coding assistants. But in this case, I've mentioned
+
+00:35:41.329 --> 00:35:47.010
+specific tools that I know Cloud Code has that other coding agents don't necessarily have. So,
+
+00:35:47.010 --> 00:35:51.969
+I designed this skill around guiding Cloud through a very specific workflow. And you can
+
+00:35:51.969 --> 00:35:58.849
+see that inside of these instructions, it's very prescriptive. It's like, here's what you're going
+
+00:35:58.849 --> 00:36:04.370
+to do. Here's the process. Step one, you're going to look at the current state and you're going to
+
+00:36:04.370 --> 00:36:10.450
+figure out, like, you know, where our base branch is. You know, there's stuff in here, like, maybe
+
+00:36:10.450 --> 00:36:14.530
+you're going to want to, like, you're going to need to either create a branch or you'll have to
+
+00:36:15.170 --> 00:36:19.329
+stage and commit the changes. Or maybe you're going to need to, you know, get the branch up
+
+00:36:19.329 --> 00:36:25.250
+to speed with the latest version of main, things like that. And then getting through specifically,
+
+00:36:25.250 --> 00:36:30.290
+like, this is how I want you to draft the PR title and body, right? So, this is much more
+
+00:36:30.290 --> 00:36:34.849
+prescriptive. It's very, like, you're entering an area of, like, we're going to do this task
+
+00:36:34.849 --> 00:36:41.729
+together. And I, you know, by the time you've, like, scanned this whole thing, you're like,
+
+00:36:41.729 --> 00:36:49.250
+I would not want to guide the model through all of these pieces, you know, step by step. I really,
+
+00:36:49.250 --> 00:36:53.250
+like, I know how I want this process to go from the outside and I just want the model to pick up
+
+00:36:55.009 --> 00:37:03.329
+the pattern that I have established and follow it for me. And so, that's how I ended up using this
+
+00:37:03.810 --> 00:37:11.489
+this skill a lot. It just sort of, you know, now Claude and I follow a repeatable pattern when I'm
+
+00:37:11.489 --> 00:37:20.209
+submitting a PR. And it's really nice. I liked Notabeko in Discord saying it's like making
+
+00:37:20.209 --> 00:37:27.009
+sentient functions. It is exactly like that. That is such a good analogy. I really, really like that.
+
+00:37:27.009 --> 00:37:31.889
+That's a perfect description. Okay. So, there are more questions, but we have 20 minutes left.
+
+00:37:31.889 --> 00:37:39.489
+And you were going to help us see what building a skill from scratch looks like. And so, if we're
+
+00:37:39.489 --> 00:37:44.609
+going to fit that in, I say we go for it. We will need to do that now. Yeah. Let's do it. And we will
+
+00:37:44.609 --> 00:37:49.090
+still hold some space, maybe like five minutes at the end, and we'll get in as many questions
+
+00:37:49.090 --> 00:37:56.530
+as we can, or we will answer them in Discord. Yeah. So, I was working, demo, where did I put you?
+
+00:37:56.609 --> 00:38:03.650
+Demo, where did I put you? Report. So, I have, this should be everything. So, I have this report
+
+00:38:03.650 --> 00:38:10.930
+that I was working on using this week's Tidy Tuesday data. And actually, so, I actually worked
+
+00:38:10.930 --> 00:38:17.090
+on this together with Opus and Posit Assistant. And we went through a bunch of stuff. I made this
+
+00:38:17.090 --> 00:38:20.690
+whole report looking at the data. I'm just going to scroll down. You're going to see there's some
+
+00:38:20.690 --> 00:38:29.009
+plots. There's another plot. But my favorite plot is the last one, which, this one, which
+
+00:38:29.009 --> 00:38:37.729
+explores the tariffs that we apply, that the U.S. government applies to cheeses. And apparently,
+
+00:38:39.009 --> 00:38:46.289
+we apply higher tariffs to cheese that we think is fancier. So, my favorite part was Swiss with
+
+00:38:46.289 --> 00:38:51.810
+holes. Swiss cheese with holes gets a higher tariff than Swiss cheese without holes, which is
+
+00:38:51.810 --> 00:38:59.729
+higher than cheddar cheese, for example. Okay. So, we made this whole thing. If I can find the
+
+00:38:59.729 --> 00:39:07.570
+code somewhere in here, it'll be something like here's our official cheese ranking, right? If I
+
+00:39:07.570 --> 00:39:14.609
+opened this up and looked at it in a browser, I would realize that this plot does not have alt text.
+
+00:39:14.609 --> 00:39:25.970
+So, alt text is basically a description for people who, like, either can't see the plot
+
+00:39:25.970 --> 00:39:32.850
+because of their system or a visual disability. And the idea is that it describes, you know,
+
+00:39:32.850 --> 00:39:38.049
+what is happening in this image. So, it would be nice to have something. And the way that you can
+
+00:39:38.049 --> 00:39:46.449
+do it is here to do, like, fig. So, in Quarto, you do the fig alt. And you can see now that,
+
+00:39:46.449 --> 00:39:52.690
+actually, Copilot is going to give me a pattern here. Bar chart showing U.S. tariff rates for
+
+00:39:52.690 --> 00:39:59.729
+different types of cheese with annotations. This is probably this is, like, a very literal, like,
+
+00:39:59.729 --> 00:40:04.769
+what happened is the completion model read this code and was, like, I think I get what's going on
+
+00:40:05.329 --> 00:40:12.769
+and just gave me a basic answer, right? But there are some really good processes to follow.
+
+00:40:15.169 --> 00:40:24.530
+In particular, this there's an article on Medium, I forget the author's name at the moment, but it's
+
+00:40:24.530 --> 00:40:30.370
+in this in the readme for this repo, who kind of went through, like, here's a really good pattern
+
+00:40:30.370 --> 00:40:35.970
+that you can follow. So, you know, chart type of type data where reason for including chart.
+
+00:40:35.970 --> 00:40:42.209
+And make sure you include a link to the data source somewhere in the text. So, I have already
+
+00:40:42.209 --> 00:40:49.889
+kind of gone through and picked out I need to see this. So, I picked out some good resources
+
+00:40:49.889 --> 00:40:58.210
+on creating alt text. Amy Sasal is the author of that Medium article, by the way.
+
+00:40:59.169 --> 00:41:06.609
+And what I'm going to do is I'm basically going to open up a terminal. And I'm going to actually
+
+00:41:06.609 --> 00:41:13.409
+move this over so we have it side by side. This is my favorite part of Positron, by the way,
+
+00:41:13.409 --> 00:41:18.210
+that you can just, like, grab things and move them around and put them next to each other.
+
+00:41:19.089 --> 00:41:29.570
+And I'm going to launch Claude. We're going to use Sonnet 4.6. And I'm going to invoke a skill.
+
+00:41:29.570 --> 00:41:33.969
+So, this is the other way that you can invoke skills is with the slash command. You can see
+
+00:41:33.969 --> 00:41:38.849
+here's my PR create skill. Because Claude knows that I like this skill and use it a lot. So,
+
+00:41:39.489 --> 00:41:44.930
+in Claude code, skills show up as slash commands. You just type slash and then you can type the
+
+00:41:44.930 --> 00:41:51.250
+name of the skill. Or the other way that skills kind of get loaded is when you, like, when you
+
+00:41:51.250 --> 00:41:56.370
+say words that sort of match what was in the description. And then it'll show up. Either one
+
+00:41:56.370 --> 00:42:05.489
+can work. But I like the slash command because then I know when I'm getting the skill that I
+
+00:42:05.489 --> 00:42:11.729
+want. So, I'm going to actually use the skill creator skill to create a skill. And you can
+
+00:42:11.729 --> 00:42:15.969
+invoke the skill. The other cool part is you just, like, you can say more words, too. So, like,
+
+00:42:15.969 --> 00:42:26.690
+let's create a skill for hang on. I'm going to just do it this way. See if this works.
+
+00:42:27.649 --> 00:42:32.130
+Let's create a skill for writing alt text for data visualizations.
+
+00:42:34.370 --> 00:42:35.089
+That did not.
+
+00:42:35.089 --> 00:42:38.049
+Oh, what did you just do? Were you dictating?
+
+00:42:39.010 --> 00:42:40.609
+I was dictating because that's
+
+00:42:42.690 --> 00:42:45.969
+nope. Okay. Hang on. All right. I'm going to just type it out. It should have worked,
+
+00:42:45.969 --> 00:42:48.210
+but it didn't because Zoom is probably in the way.
+
+00:42:48.210 --> 00:42:50.770
+Because Zoom. I know. It ruins everything.
+
+00:42:54.690 --> 00:43:02.289
+I did a two-week trial, everybody, of the whisper flow that Joey Marshall showed us on his
+
+00:43:02.289 --> 00:43:06.529
+data science lab. And I really liked it. There were some instances in which it would, like,
+
+00:43:06.529 --> 00:43:09.729
+take over when I didn't want it to or I would accidentally click it and I would end up
+
+00:43:10.930 --> 00:43:18.450
+dictating dead air for, like, 15 minutes. But it was pretty cool. We're having a fight in the
+
+00:43:18.450 --> 00:43:24.930
+chat right now about cheese. We got really sidetracked by the cheese. So, everybody pay
+
+00:43:24.930 --> 00:43:28.690
+attention. We're making a skill because we only have 13 minutes to make this skill.
+
+00:43:29.649 --> 00:43:37.250
+Yeah. Okay. So, I said, yeah, make me a skill. And I gave it these websites and asked it to
+
+00:43:37.250 --> 00:43:44.529
+distill the references into concrete advice. And I this is a pattern that I like to follow
+
+00:43:44.529 --> 00:43:50.770
+when I'm making a skill is basically, like, go open a bunch of tabs, go browse around,
+
+00:43:50.770 --> 00:43:57.250
+find good resources. Like, either that could be, you know, package documentation, things that you
+
+00:43:58.210 --> 00:44:03.969
+have written already, things that other people have written, people whose advice you, you know,
+
+00:44:03.969 --> 00:44:09.010
+admire and appreciate. Things like that. Like, if you do a little bit of work in advance to
+
+00:44:09.010 --> 00:44:15.810
+sort of bring in some, like, good resources and materials for the skill, it generally goes a whole
+
+00:44:15.810 --> 00:44:23.169
+lot better. Right? So, so, Claude went out and read those websites and said, now I have everything I
+
+00:44:23.250 --> 00:44:29.330
+need. Let's write this skill. And I'm going to say, yeah, it wants to it wants to make the dot
+
+00:44:29.330 --> 00:44:34.130
+Claude skill and is going to call it alt text database. And I'm going to say, yeah, go ahead,
+
+00:44:34.130 --> 00:44:41.489
+you can have access to skills. Feel free. And so, now it's probably going to do a bit more reading.
+
+00:44:42.130 --> 00:44:46.370
+Basically, the skill creator skill is just going to walk it through all the things that it needs
+
+00:44:46.370 --> 00:44:52.930
+to do from here. Often, if you have done the hard work of putting together some good context,
+
+00:44:53.649 --> 00:45:00.210
+you're, that's kind of the extent of what you need to do. For now, at least.
+
+00:45:00.930 --> 00:45:04.450
+Okay. So, while Claude is incubating, maybe we can get another question in.
+
+00:45:04.450 --> 00:45:05.089
+Yeah.
+
+00:45:05.089 --> 00:45:10.609
+Because Connor asked a great one. I love this. How do LLMs deal with conflicts between skills,
+
+00:45:10.609 --> 00:45:15.810
+like the D player select and mass select conflict, but with LLM skills?
+
+00:45:15.810 --> 00:45:23.729
+I mean, so, that's the nice part about it being, like, sentient functions is that they,
+
+00:45:23.729 --> 00:45:30.210
+you know, the model figures it out to a certain extent. Also, like, you likely won't have
+
+00:45:31.250 --> 00:45:37.089
+two skills loaded at the same time. So, usually with this, with the skill, it'll be, like,
+
+00:45:37.089 --> 00:45:41.890
+like I said, the model has a general sense of what each skill is. But then it actually has to go
+
+00:45:42.450 --> 00:45:47.810
+to, like, actually, like, get the contents of the skill and bring it in. It has to, like,
+
+00:45:48.370 --> 00:45:52.609
+it has to take an action to do that. It has to go read the file. And that doesn't happen
+
+00:45:52.609 --> 00:45:57.089
+automatically. So, it's very rare that you end up in a situation where, like, you have
+
+00:45:57.649 --> 00:46:03.169
+competing skills active at the same time. In fact, the hardest part about a skill is that
+
+00:46:03.169 --> 00:46:05.729
+they don't always turn on when you want them to turn on.
+
+00:46:06.289 --> 00:46:11.089
+I was going to say, Noor had asked a sort of, like, question that goes along with that,
+
+00:46:11.089 --> 00:46:15.649
+which was, like, well, are you stuck using all skills for each session? Or can you, like,
+
+00:46:15.649 --> 00:46:20.930
+subset which skills you're using for that session? Part of the answer to that, I think,
+
+00:46:20.930 --> 00:46:26.450
+is that that's why we give them descriptions, right? So that it's not initially just reading
+
+00:46:27.089 --> 00:46:31.409
+every skill that you have. It's only reading that description part.
+
+00:46:32.849 --> 00:46:38.609
+Right. Yeah, exactly. So, you, with skills, there is no real way for you to, like,
+
+00:46:38.609 --> 00:46:43.089
+go in and toggle. Usually, there isn't any way for you to, like, toggle skills on or off.
+
+00:46:44.210 --> 00:46:49.489
+Your only real choice is whether or not you install it for globally on your computer. So,
+
+00:46:49.489 --> 00:46:55.729
+like, for any session with Claude, or if you install it just for the project that you're
+
+00:46:55.729 --> 00:47:01.570
+working on. And beyond that, you know, there's not a lot of, there aren't a lot of levers to
+
+00:47:01.570 --> 00:47:07.010
+pull about when, you know, which skill is attached or not, or, like, available.
+
+00:47:07.330 --> 00:47:10.690
+Okay. I think that answers Nathan's question. Yes.
+
+00:47:10.690 --> 00:47:13.969
+Which was, is the default to download them on a per project level?
+
+00:47:15.649 --> 00:47:23.890
+Yeah, I think it's a little bit of both. I usually opt for doing skills locally
+
+00:47:23.890 --> 00:47:28.690
+first. And then if I realize that I use them so much that I need them, that they're, like,
+
+00:47:28.690 --> 00:47:33.890
+useful to be global, then I move them and start using them globally.
+
+00:47:34.370 --> 00:47:38.770
+Okay. What is the difference between that, those two options? Like, could you
+
+00:47:38.770 --> 00:47:44.529
+demonstrate that for us really quickly? Sure. So this, so Claude just made me a skill,
+
+00:47:44.529 --> 00:47:51.969
+and it put it in dot Claude skills, right? And so I'm in this project. And if I go in here to dot
+
+00:47:51.969 --> 00:47:58.370
+inside of my project, I have dot Claude skills. And here's my alt text data viz skill, right?
+
+00:47:59.330 --> 00:48:03.010
+Which we can come back to, but it made me a skill. We have a skill now. This is awesome.
+
+00:48:04.849 --> 00:48:11.729
+Yeah, you did the skill. So the other option is to install it into my home directory there in my
+
+00:48:11.729 --> 00:48:19.330
+home directory, there is also dot Claude slash skills. And, and there, you know that those,
+
+00:48:20.370 --> 00:48:26.130
+those skills are then available everywhere, right? So, you know, I was talking about the PR
+
+00:48:26.130 --> 00:48:31.409
+create skill, which is not here in my project, but it is available to me because
+
+00:48:32.289 --> 00:48:38.690
+it's a skill that I have installed globally. So any coding session that I do will have PR create,
+
+00:48:39.250 --> 00:48:44.130
+any coding session with Claude code will have PR create. And meanwhile, like this alt text
+
+00:48:44.130 --> 00:48:52.289
+data viz thing will only be here in this project. Okay. I interrupted you in the middle of a thought
+
+00:48:52.930 --> 00:48:55.089
+when I asked you that question. Do you remember what you were going to say?
+
+00:48:55.250 --> 00:49:02.049
+No, but that's all right. So I have, I have my alt text data viz skill now. And, you know,
+
+00:49:02.049 --> 00:49:07.729
+I, from here, I would, I mean, okay, here's what's nice is it actually did, you know, see that it
+
+00:49:07.729 --> 00:49:14.370
+found this from the, from the picture, right? That was the pattern that we were wanting it to have.
+
+00:49:15.810 --> 00:49:21.649
+I, we're not going to read this and like go through it in great detail or anything like that.
+
+00:49:21.729 --> 00:49:25.730
+In great detail or anything like that. But I would recommend if you were making your own skill,
+
+00:49:25.730 --> 00:49:31.649
+don't just take the output from Claude at this point. I mean, I can say that this skill is
+
+00:49:31.649 --> 00:49:36.049
+definitely better because I give it three really good articles than it would be if I just asked
+
+00:49:36.049 --> 00:49:40.850
+Claude to make up a skill without any references. Right. So we're already starting off on a good
+
+00:49:40.850 --> 00:49:45.570
+foot, but but if you're making your own skill, this is the point where I would stop read this.
+
+00:49:47.169 --> 00:49:50.769
+Like actually I would read it, but line by line. Oh, do you want to see something else? That's
+
+00:49:50.769 --> 00:50:02.930
+cool. That I really like. Absolutely. We do. So I have other questions coming. I'm just gonna let
+
+00:50:02.930 --> 00:50:06.210
+you guys know if we don't get to them in the last seven minutes, we will answer them on discord.
+
+00:50:06.210 --> 00:50:17.330
+Don't worry. Yeah. So that was Claude skills, alt text database skills at D that's nevermind.
+
+00:50:18.210 --> 00:50:21.330
+What were you typing? It was enigmatic.
+
+00:50:22.369 --> 00:50:24.690
+Claude's like, did I spell something wrong?
+
+00:50:31.570 --> 00:50:37.970
+Maybe this one. There's a, I have this, it's like a skill slash plugin that lets me
+
+00:50:38.369 --> 00:50:47.409
+review files. So I could like see, it looks a little bit like this. Find some of this. So it
+
+00:50:47.409 --> 00:50:53.730
+like gives you the file from like you start from Claude code. It's called planetator. And then you
+
+00:50:53.730 --> 00:51:00.850
+can, where's my skill? This is the one, right? Then you can highlight parts and add comments and say,
+
+00:51:00.930 --> 00:51:10.610
+add comments and say, like, this looks great. Thanks for writing it. You know, or you can,
+
+00:51:10.610 --> 00:51:15.970
+you know, give it instructions on specific lines too. I think like if I click here, yeah,
+
+00:51:15.970 --> 00:51:21.730
+I could give it inline feedback. And when I'm done, then you can click approve or close and
+
+00:51:21.730 --> 00:51:28.369
+you send that inline feedback back to the model and the model will respond to you directly. So
+
+00:51:28.450 --> 00:51:34.369
+if you're interacting with like a markdown file, unlike doing it over here in the editor,
+
+00:51:35.169 --> 00:51:42.289
+that little interface is pretty nice for letting you give inline, like very specific feedback in
+
+00:51:42.289 --> 00:51:46.450
+line. But okay. Super cool. Victor, thanks for sharing that in the chat.
+
+00:51:48.049 --> 00:51:54.610
+Okay. So now you'll notice I don't have the skill yet because I need to like exit this session
+
+00:51:55.330 --> 00:52:00.850
+and start a new one. And now I have the alt text dataviz skill and I can say,
+
+00:52:02.129 --> 00:52:11.169
+add appropriate alt text to the plots in, and I'm going to use at, so I get the right,
+
+00:52:11.169 --> 00:52:15.169
+so the app is going to say, like, here's the file, like, here's a file that I want you to use.
+
+00:52:15.169 --> 00:52:19.409
+And I think I put it in reports. I can pick the QMD from here.
+
+00:52:20.210 --> 00:52:23.730
+We must have moved directories while we were doing that, which is probably why
+
+00:52:25.409 --> 00:52:32.129
+that command wasn't working before. But so I've invoked the skill. I invoked it directly rather
+
+00:52:32.129 --> 00:52:37.570
+than I could have just said, write some alt text for me, and it probably would have also turned on.
+
+00:52:39.730 --> 00:52:45.970
+But this also will work for me as well. And it's, you can see it's going through
+
+00:52:46.930 --> 00:53:00.210
+and adding these, the appropriate chunk options to include useful alt text.
+
+00:53:01.409 --> 00:53:07.169
+And again, I would not recommend just taking this, but it is a really good starting point
+
+00:53:08.610 --> 00:53:14.049
+for you to make it easier to, you know, to like write these and have them be, you know,
+
+00:53:14.049 --> 00:53:18.930
+part of your reports. I agree. They're great, a great starting place. Look at them,
+
+00:53:18.930 --> 00:53:23.009
+look at the plot, verify it, but then they often cut down on time and make it way more likely that
+
+00:53:23.009 --> 00:53:26.210
+you actually add alt text, which is very important for accessibility. Exactly.
+
+00:53:26.769 --> 00:53:32.289
+Okay. We have three more minutes. Can we like rapid fire, get in some questions and answers?
+
+00:53:32.289 --> 00:53:39.970
+Okay. We had from Zoom a question that said, I use the Posit skills and I install it from
+
+00:53:39.970 --> 00:53:46.129
+cloud code plugin marketplace and provide the Posit skills, get URL. Is this the same thing
+
+00:53:46.129 --> 00:53:51.730
+with installing with NPX? Does it do the same thing? It's very similar. Cloud has its own
+
+00:53:51.730 --> 00:53:57.889
+plugin system. What they're talking about is, and it's mentioned in the repo of the Posit skills
+
+00:53:57.889 --> 00:54:03.090
+repo, but you do like something like plugin install or add or something. And you said,
+
+00:54:03.090 --> 00:54:08.210
+like, I have it set up so that in the skills repo, there are like groups of skills and you
+
+00:54:08.210 --> 00:54:12.450
+can install them as cloud code plugins, which makes it easier to manage if you're just using
+
+00:54:12.450 --> 00:54:19.169
+cloud code. I move around a little bit between coding assistants. So I prefer installing
+
+00:54:19.169 --> 00:54:24.769
+individual skills and I also really like having a lock file. So I don't, I'm not a huge fan of
+
+00:54:24.769 --> 00:54:31.730
+cloud codes plugin system, but, but they both work. We tried to make it easy so that you could
+
+00:54:31.730 --> 00:54:36.610
+get like some skills, but not all the skills at once. All right. I also wanted to point out,
+
+00:54:36.610 --> 00:54:41.730
+David Onder had said in the chat that he actually keeps his skills in folders that
+
+00:54:41.730 --> 00:54:48.289
+are named by group names and tells the AI to use skills by group, which I think is pretty useful
+
+00:54:48.289 --> 00:54:54.450
+if you're thinking about organizing. We also had Nathan Jeffrey ask a question along those lines,
+
+00:54:54.450 --> 00:55:01.649
+which is what distinguishes the .cloud folder from a .agents folder? It's just convention.
+
+00:55:01.649 --> 00:55:06.610
+For different agents, we'll use different folders. .agents is the most sort of
+
+00:55:07.330 --> 00:55:15.169
+coding assistant agnostic one. And then cloud uses, cloud code uses .cloud and there are a
+
+00:55:15.169 --> 00:55:22.610
+bunch of different ones. Like some, some coding agents will follow the .agents and some will not,
+
+00:55:22.610 --> 00:55:29.409
+or some use their own conventions. Yeah. It's the wild west out here. All right. And then I think
+
+00:55:29.409 --> 00:55:35.330
+our last one is from Zoom and it says, is it the community practice to let an LLM write the skill
+
+00:55:35.330 --> 00:55:43.889
+with resources fed as opposed to writing it by hand? Yes and no. I think it depends a bit on
+
+00:55:43.889 --> 00:55:50.129
+what you want to do. Like, and it depends on, you know, your task and everything. I think that it
+
+00:55:50.129 --> 00:55:55.730
+is, I think that the vast majority of skills that you will find online have been written by cloud
+
+00:55:55.730 --> 00:56:00.049
+code or, you know, by a coding agent in the first place. I think so too. I see that a lot.
+
+00:56:00.850 --> 00:56:06.369
+Yeah. And on the other hand, like things that are, you know, you can still do it by hand and
+
+00:56:06.369 --> 00:56:12.289
+have bespoke skills that are very important to you. And it's a useful experience, but,
+
+00:56:12.289 --> 00:56:16.850
+but overall I do recommend, I think the most important part is to think about what sources
+
+00:56:16.850 --> 00:56:24.210
+you're putting in front of the model. And you also like, I did not do this, but usually I spend
+
+00:56:24.210 --> 00:56:29.090
+quite a bit of time guiding the model in terms of how to structure the information. So I don't
+
+00:56:29.090 --> 00:56:33.810
+usually just take what it gives me in terms of what it thinks it should be. You know, I work on
+
+00:56:33.810 --> 00:56:41.810
+structuring the information in a way that will likely be better organized in the end as a result
+
+00:56:41.810 --> 00:56:47.970
+of my participation. And then you read it and then you make it, you know, fix it up until it's what
+
+00:56:47.970 --> 00:56:52.850
+you want it to be. All right, Garrett, this is so great. We are at the top of the hour, but if it's
+
+00:56:52.850 --> 00:57:00.450
+really quick, get it in there. We'll get it in the YouTube recording. It is super quick, which is also, if you see someone else's skill that you think is like, this is great, but it's not quite what I want,
+
+00:57:00.450 --> 00:57:05.009
+remix the skill. Bring it in, change it up, remix it, make it your own.
+
+00:57:06.289 --> 00:57:12.930
+Awesome. Thank you so much, Garrett. I learned a ton. I see, oh, hey, Donnie. Donnie's here.
+
+00:57:12.930 --> 00:57:17.970
+Everybody's clapping in Zoom. You're getting tons of thank yous in the Discord. I will say thank you
+
+00:57:18.049 --> 00:57:24.690
+too. This was amazing. We will have this up on YouTube, and I really hope that you had a good
+
+00:57:24.690 --> 00:57:27.490
+time too, Garrett. I had a blast. Thank you so much.

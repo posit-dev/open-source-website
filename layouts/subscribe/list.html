@@ -62,5 +62,35 @@
     </ul>
   </section>
   {{ end }}
+
+  {{/* Most tag pages don't emit RSS; list only terms whose _index.md opts in via `outputs` */}}
+  {{ $rssTags := slice }}
+  {{ range $name, $pages := site.Taxonomies.tags }}
+    {{- $term := site.GetPage (printf "/tags/%s" ($name | urlize)) -}}
+    {{- if and $term ($term.OutputFormats.Get "rss") -}}
+      {{- $count := 0 -}}
+      {{- range $pages -}}
+        {{- if and (eq .Page.Section "blog") (ge (len .Page.Plain) 300) -}}
+          {{- $count = add $count 1 -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if gt $count 0 -}}
+        {{- $rssTags = $rssTags | append (dict "term" $term "count" $count) -}}
+      {{- end -}}
+    {{- end -}}
+  {{ end }}
+  {{ with $rssTags }}
+  <section class="mb-10">
+    {{ partial "heading.html" (dict "level" 2 "text" "By Tag" "class" "text-2xl font-semibold text-gray-800 mb-4") }}
+    <ul class="list-disc list-inside space-y-2 text-lg">
+      {{- range . }}
+      <li>
+        <a href="{{ .term.RelPermalink }}index.xml" class="text-blue-600 hover:underline">{{ .term.Title }}</a>
+        <span class="text-gray-500 text-sm">({{ .count }})</span>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+  {{ end }}
 </div>
 {{ end }}

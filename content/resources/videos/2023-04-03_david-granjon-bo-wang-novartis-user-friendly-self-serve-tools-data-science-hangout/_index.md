@@ -8,7 +8,7 @@ resources: []
 software:
 - connectapi
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: David Granjon & Bo Wang @ Novartis | User-friendly, self-serve tools | Data Science Hangout
 
@@ -21,18 +21,18 @@ external:  # updated automatically, do not edit
   duration: 3522
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:31.652199+00:00'
+  last_updated: '2026-09-18T13:58:13.379755+00:00'
   like_count: 13
   playlist: ''
   software:
   - connectapi
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/JwrEB9cqNqg/maxresdefault.jpg
   title: David Granjon & Bo Wang @ Novartis | User-friendly, self-serve tools | Data Science Hangout
   url: https://www.youtube.com/watch?v=JwrEB9cqNqg
-  view_count: 1208
+  view_count: 1228
 ---
 image: thumbnail.jpg
 

@@ -64,7 +64,7 @@ external:  # updated automatically, do not edit
   duration: 1281
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243472+00:00'
+  last_updated: '2026-09-18T13:58:18.222202+00:00'
   like_count: 24
   people:
   - Jeroen Ooms
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/fQx_zvjIT4Q/maxresdefault.jpg
   title: Jeroen Ooms | A preview of Rtools 4.0 | RStudio (2019)
   url: https://www.youtube.com/watch?v=fQx_zvjIT4Q
-  view_count: 2438
+  view_count: 2452
 ---
 image: thumbnail.jpg
 

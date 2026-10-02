@@ -34,11 +34,11 @@ Shallow clones of all legacy blog repos are in `/_external-sources/` (ignored by
 
 For posts with a `.qmd` source (Quarto, Shiny, Great Tables, etc.):
 
-1. Copy the `.qmd` and any assets (images, data files) from `_external-sources/` into the new post folder under `content/blog/`.
+1. Copy the `.qmd` and any assets (images, data files) from `_external-sources/` into the new post folder under `content/blog/ported/<source>/`.
 2. **Commit the copied files before editing.** This makes it easy to audit changes and see exactly what was modified from the original source.
 3. Edit the frontmatter **in the `.qmd`**: replace `author` with `people`, and add `source`, `ported_from`, `port_status`, `software`, `languages`, `topics`. `source` should always match `ported_from` — it powers the `blog/q/` collection pages for each legacy blog. Move any original `categories` values into `tags` (then remove `categories`). If the folder name contains a date prefix (e.g. `2026-04-06-april-newsletter`), add a `slug` without the date (e.g. `slug: april-newsletter`) to avoid the date appearing twice in the permalink.
 4. Fix links in the `.qmd`:
-   - Internal blog cross-links: `/docs/blog/posts/<slug>/` → `/blog/quarto/<slug>/`
+   - Internal blog cross-links: use the permalink form `/blog/YYYY-MM-DD_<slug>/` (see `_authoring-guide.md`). Don't use content-directory paths like `/blog/ported/<source>/<post>/` — those break if posts are reorganized.
    - Quarto docs links: `/docs/...something.qmd` → `https://quarto.org/docs/...something.html` (note: `.qmd` → `.html`, not just prefixing the domain — fragment URLs like `.qmd#anchor` need manual attention as regex replacements can miss them)
 5. Run `quarto render index.qmd` from the post folder to generate `index.md`.
 6. Commit both `index.qmd` and `index.md`.
@@ -47,21 +47,23 @@ Don't write the `.md` by hand — always render from the `.qmd` so the two stay 
 
 ## Folder structure
 
-Posts are organized by source blog:
+Ported posts live under `content/blog/ported/`, organized by source blog:
 
 ```
 content/blog/
-├── tidyverse/       # tidyverse.org posts
-│   ├── 2017/
-│   ├── 2018/
+├── ported/
+│   ├── tidyverse/       # tidyverse.org posts
+│   │   ├── 2017/
+│   │   ├── 2018/
+│   │   └── ...
+│   ├── education/       # education.rstudio.com posts
+│   │   ├── 2019-09-24-welcome/
+│   │   └── ...
 │   └── ...
-├── education/       # education.rstudio.com posts
-│   ├── 2019-09-24-welcome/
-│   └── ...
-└── ...              # other posts (not ported)
+└── ...                  # top-level: new posts only
 ```
 
-This preserves original folder structures and makes it easy to track porting progress.
+This preserves the original folder structures of each source blog and keeps new posts separate from ported content. URLs are unaffected — the blog permalink template uses `date` + `slug`/`basename`, not the section path.
 
 ## Cross-blog links
 
@@ -129,11 +131,11 @@ These exist but need implementation:
 
 | Post | Issue |
 |------|-------|
-| quarto/2024-07-02-beautiful-tables-in-typst | Complex freeze structure, needs manual porting |
-| education/2019-09-24-welcome | Very blog-specific ("Welcome to education.rstudio.com") |
-| education/2019-08-26-learner-personas | Was draft in source |
-| ai/2018-07-17-activity-detection | Blank on legacy blog, marked as draft |
-| ai/2017-09-06-keras-for-r | Broken external image (keras.rstudio.com) |
+| ported/quarto/2024-07-02-beautiful-tables-in-typst | Complex freeze structure, needs manual porting |
+| ported/education/2019-09-24-welcome | Very blog-specific ("Welcome to education.rstudio.com") |
+| ported/education/2019-08-26-learner-personas | Was draft in source |
+| ported/ai/2018-07-17-activity-detection | Blank on legacy blog, marked as draft |
+| ported/ai/2017-09-06-keras-for-r | Broken external image (keras.rstudio.com) |
 
 ## Archived porting scripts
 

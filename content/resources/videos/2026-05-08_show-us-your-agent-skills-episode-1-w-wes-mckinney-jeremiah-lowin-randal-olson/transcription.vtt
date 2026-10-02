@@ -1,0 +1,4342 @@
+WEBVTT
+
+00:00:00.320 --> 00:00:02.320
+Show
+
+00:00:02.480 --> 00:00:04.480
+Show us your
+
+00:00:05.440 --> 00:00:07.440
+Agent skills
+
+00:00:08.040 --> 00:00:13.440
+What are people at the top of the game building with AI agents, and how are they doing it?
+
+00:00:13.440 --> 00:00:17.360
+Are they Claude maxing with eight terminals open at once or
+
+00:00:18.160 --> 00:00:22.240
+adversarially testing opus 4.7 generated code with codex
+
+00:00:22.480 --> 00:00:28.320
+Do they define suites and swarms of sub agents or use agents markdown and agent skills?
+
+00:00:28.639 --> 00:00:31.200
+We are on a mission to find out
+
+00:00:31.760 --> 00:00:35.840
+First on the roster are Wes McKinney the creator of pandas
+
+00:00:36.439 --> 00:00:43.279
+Jeremiah Lowin from prefect and Hilary Mason of hidden door along with a few more surprise guests
+
+00:00:43.799 --> 00:00:49.560
+Join us to find out what all these token maxes are doing think excel world
+
+00:00:50.080 --> 00:00:54.880
+Championships meets Eurovision see you all in the first episode
+
+00:00:59.119 --> 00:01:00.959
+All right
+
+00:01:00.959 --> 00:01:08.000
+Welcome everybody to our very first episode of show us your agent skills. So excited to be here today with a
+
+00:01:08.559 --> 00:01:16.040
+Lot of old friends and familiar faces Thomas Vicky Randy Olson Jeremiah Lowin and Wes McKinney. What is up everybody?
+
+00:01:16.879 --> 00:01:18.879
+Hello everybody
+
+00:01:20.199 --> 00:01:22.199
+Hello, thanks for having
+
+00:01:22.959 --> 00:01:24.480
+Thanks for sharing
+
+00:01:24.480 --> 00:01:30.720
+That video of your workflow that we could put in the trailer as well. It's really great to see you in 90s 8-bit
+
+00:01:31.239 --> 00:01:34.639
+side-scrolling glory, of course, yeah, I
+
+00:01:35.160 --> 00:01:39.440
+Was a surprise, but I I enjoyed it. I showed it to quite a few people
+
+00:01:39.680 --> 00:01:43.120
+So I even changed my github avatar. So thank you
+
+00:01:44.199 --> 00:01:47.480
+Fantastic. All right. I'd love to welcome everyone. We've already got 30 people
+
+00:01:48.239 --> 00:01:51.480
+Watching so thank you so much for joining everyone for our first episode
+
+00:01:51.480 --> 00:01:56.680
+The the real motivation was here is where all agent maxing at 3 a.m
+
+00:01:56.919 --> 00:02:04.199
+Just surrounded by glowing lights that it feels like, you know, we're alone in Times Square at 3 a.m
+
+00:02:04.919 --> 00:02:08.919
+Building and we want to we want to share what everyone's working on and what everyone's
+
+00:02:09.679 --> 00:02:17.360
+Doing and not always, you know, the hottest shiniest workflows, but things that are really impactful for everyone to that end
+
+00:02:17.679 --> 00:02:19.360
+Feel free to ask questions in the chat
+
+00:02:19.360 --> 00:02:24.919
+We're doing in discord so that we can continue the conversation afterwards YouTube live chats are ephemeral
+
+00:02:24.919 --> 00:02:27.100
+But agents are forever as we know
+
+00:02:27.679 --> 00:02:31.720
+So, please join the discord to show us your agent skills channel. Also
+
+00:02:32.520 --> 00:02:34.880
+Please like and subscribe if you like this type of stuff
+
+00:02:35.440 --> 00:02:38.759
+And leave a comment if you do if you don't like it, don't leave a comment
+
+00:02:38.759 --> 00:02:44.399
+It's really easy to not do that. You would think check out our luma calendar and our substack as well
+
+00:02:44.880 --> 00:02:50.919
+And we've linked to a github repository in the description where we're going to start putting stuff from the live stream
+
+00:02:50.919 --> 00:02:52.919
+So, please start that share it with friends
+
+00:02:53.360 --> 00:02:58.919
+and Thomas and I one of the reasons we we started working on this is we're building an
+
+00:02:59.360 --> 00:03:02.039
+agentic data science course and started sharing stuff with each other and
+
+00:03:02.720 --> 00:03:07.399
+Wanted to share those things more publicly and the link to that is in the YouTube description as well
+
+00:03:07.399 --> 00:03:11.600
+So without further ado, I would love just to
+
+00:03:11.960 --> 00:03:13.960
+To jump in
+
+00:03:14.160 --> 00:03:19.240
+Maybe first I'll do a brief introduction for everyone and then we'll
+
+00:03:19.839 --> 00:03:22.160
+Get into it. Oh, yeah, please say hi in discord
+
+00:03:22.160 --> 00:03:25.600
+Let us know who you are and what you're up to and what you're interested in such things is
+
+00:03:27.039 --> 00:03:32.839
+Where's McKinney a man who perhaps needs no introduction at all is an entrepreneur and software developer
+
+00:03:33.360 --> 00:03:36.100
+focusing on many things including analytical computing
+
+00:03:36.919 --> 00:03:38.399
+famously
+
+00:03:38.399 --> 00:03:43.240
+Wrote a bunch of the beginnings of pandas surrounded by rats in the East Village
+
+00:03:43.960 --> 00:03:47.839
+Small apartment there mistake me if I'm correct if I'm incorrect
+
+00:03:48.360 --> 00:03:55.279
+Correct me if I'm mistaken his greatest work yet, though is spicy takes org, which we're going to look at today. We have
+
+00:03:55.800 --> 00:03:57.320
+Jeremiah the
+
+00:03:57.320 --> 00:04:00.399
+Lowent the founder and CEO of prefect where they've been building
+
+00:04:00.880 --> 00:04:07.679
+Since the before times as well some of those popular tools for managing managing data and AI workflows, and I still have my
+
+00:04:08.279 --> 00:04:13.559
+Prefect rubber. I actually have to prefect rubber duckies that Jeremiah sent me during the pandemic
+
+00:04:17.559 --> 00:04:21.200
+Jeremiah is also a strategic advisor to Spotify positive some OSV
+
+00:04:21.880 --> 00:04:23.320
+global ambassador of
+
+00:04:23.320 --> 00:04:26.959
+Compass coffee among other things and we have the one the only
+
+00:04:27.399 --> 00:04:34.119
+Randy Olson co-founder and CTO of good eye labs pointing frontier AI models at lots of like solving a lot of
+
+00:04:34.880 --> 00:04:36.880
+business problems today
+
+00:04:37.000 --> 00:04:44.119
+Longtime AI ML researcher been building AI, you know for 15 to 20 years first one of the first podcast
+
+00:04:44.119 --> 00:04:46.559
+I ever did was with you about teapot back in the day
+
+00:04:47.000 --> 00:04:53.600
+But Randy is a date of his legend and longtime moderator of the subreddit on data visualization
+
+00:04:54.119 --> 00:04:55.799
+as well
+
+00:04:55.799 --> 00:04:57.119
+so
+
+00:04:57.119 --> 00:05:02.600
+Without further ado, that's definitely enough out of me. I wonder where's if we just want to jump in
+
+00:05:03.600 --> 00:05:05.079
+Sure and
+
+00:05:05.079 --> 00:05:12.040
+I do we have a little thing we want to do which is ask everyone three questions before before we dive in and the questions
+
+00:05:12.040 --> 00:05:15.519
+Are what do you love most about working with agents?
+
+00:05:17.760 --> 00:05:19.040
+I
+
+00:05:19.040 --> 00:05:21.200
+Guess not having to write code anymore. I
+
+00:05:21.720 --> 00:05:26.920
+Didn't like I'm somebody I've loved I love writing code and I wrote, you know
+
+00:05:26.920 --> 00:05:30.679
+An enormous amount of code over the last 20 20 plus years
+
+00:05:31.480 --> 00:05:34.920
+But I didn't expect that like not writing code would be such, you know
+
+00:05:34.920 --> 00:05:41.279
+Such a relief and I think mainly like I think what's nice is that it relieved me from it has relieved me from like the
+
+00:05:41.279 --> 00:05:47.320
+things that I didn't like about software engineering like a lot of the boilerplate and like TDM that's involved with like
+
+00:05:47.440 --> 00:05:49.679
+building and delivering software projects
+
+00:05:50.600 --> 00:05:54.559
+Beautiful. I can relate to that a lot. I'm actually someone who's never
+
+00:05:55.119 --> 00:05:56.320
+enjoyed
+
+00:05:56.320 --> 00:05:58.320
+writing code so much
+
+00:05:58.559 --> 00:06:00.119
+especially
+
+00:06:01.119 --> 00:06:03.119
+I
+
+00:06:03.559 --> 00:06:07.279
+Mean it caused me to have like a little bit of like a personal identity crisis last year
+
+00:06:07.279 --> 00:06:12.440
+But I was probably a lot of people but it's all good. Now. I'm good. So just last year
+
+00:06:12.440 --> 00:06:13.760
+I was gonna say far out
+
+00:06:13.760 --> 00:06:20.000
+I was kind of tuned out of I was kind of tuned out of LLMs for for like all of 2023 and 2020 24
+
+00:06:20.000 --> 00:06:21.880
+I was just like F this and
+
+00:06:21.880 --> 00:06:27.839
+Yeah, so that explains that explains why you have this resurgence now, you're making up for lost time. Yes
+
+00:06:30.119 --> 00:06:34.519
+Like they weren't solving a they weren't solving they weren't like they weren't that good. Yeah, they weren't that good
+
+00:06:37.000 --> 00:06:39.480
+What do you find most frustrating about working with
+
+00:06:44.480 --> 00:06:47.480
+They they don't they don't listen like they lie
+
+00:06:48.839 --> 00:06:51.920
+You know, they they make the same mistakes over and over again
+
+00:06:52.519 --> 00:06:57.079
+You know, yeah, just the ignoring instructions and and the occasional stupidity
+
+00:06:57.079 --> 00:07:04.399
+which I I think is sometimes the result of like, you know, there's lots of conspiracies about the AI labs quantizing and
+
+00:07:05.200 --> 00:07:07.279
+Doing things to try to you know
+
+00:07:07.279 --> 00:07:12.160
+Get more capacity out of their existing GPU clusters and in in the process of dumbed down, you know
+
+00:07:12.160 --> 00:07:14.640
+the models and so you never know like
+
+00:07:15.799 --> 00:07:20.320
+Each day you wake up and you you fire up cloud codes like what what kind of cloud am I gonna get today?
+
+00:07:20.320 --> 00:07:25.200
+Is it gonna be smart cloud or dumb cloud and a lot of days? It's dumb cloud and that's that's pretty annoying
+
+00:07:25.760 --> 00:07:27.760
+without a doubt and diamonds like
+
+00:07:28.320 --> 00:07:33.679
+Sometimes I'm trying to do something simple and it will bamboozle or discombobulate for seven to eight minutes then come out with with
+
+00:07:34.239 --> 00:07:41.359
+Nonsense third and final question for now if all AI agent conversations somehow got leaked to the public
+
+00:07:41.600 --> 00:07:45.359
+What would you be most concerned about your conversations becoming public?
+
+00:07:45.880 --> 00:07:47.880
+I
+
+00:07:47.880 --> 00:07:49.040
+Mean
+
+00:07:49.040 --> 00:07:54.440
+Mostly, I mean mostly like, you know, the like private personal projects
+
+00:07:55.119 --> 00:08:01.440
+You know that I work on like becoming public not that there's anything like not that there's anything like so crazy
+
+00:08:01.440 --> 00:08:07.119
+but just more of like it would expose a lot of private details of like, you know, my personal life and
+
+00:08:07.679 --> 00:08:11.200
+You know projects that I built for myself that are like, you know
+
+00:08:11.359 --> 00:08:13.920
+Projects that I built for myself that are like, you know
+
+00:08:13.920 --> 00:08:19.320
+Just contain a lot of like non-public information about you know, things that I don't publish on the internet
+
+00:08:19.320 --> 00:08:23.119
+Basically, nothing bad, but just like stuff that I wouldn't want published on the internet
+
+00:08:24.079 --> 00:08:27.839
+Well, you may be one of the only people who has nothing bad bad in there
+
+00:08:28.119 --> 00:08:33.159
+Yeah, your questions must be were less embarrassing than what I put into a when I told Thomas
+
+00:08:33.159 --> 00:08:35.919
+I was like we should ask this question. Well, yeah, I guess
+
+00:08:36.479 --> 00:08:40.679
+Yeah, I think having having all of my cloud that AI or my chat GPT sessions
+
+00:08:41.239 --> 00:08:44.599
+Public, you know that that's like, you know, that's another matter since like, yeah
+
+00:08:44.599 --> 00:08:50.719
+We I guess people people people ask everything about that, you know health issues and you know, all kinds of things
+
+00:08:50.719 --> 00:08:53.320
+I'll just delete my LinkedIn. Yeah, exactly
+
+00:08:53.320 --> 00:08:58.479
+I thought that's why you've moved to New Zealand Thomas is to get off the grid for the upcoming
+
+00:08:59.479 --> 00:09:01.119
+agentic leak
+
+00:09:01.119 --> 00:09:08.840
+That's right exactly that uncle Elon as was alerted me to his new name and uncle Peter Thiel are about to perform
+
+00:09:09.159 --> 00:09:13.640
+Enough out of me where's well, you know, I mean, you know Claude is now running on grok data center
+
+00:09:13.640 --> 00:09:19.919
+So, you know, maybe maybe maybe coming sooner. So just well he he who controls the flops controls
+
+00:09:20.799 --> 00:09:27.520
+Etc. But yeah, there's a not-so-distant future in which like we're all like just paid in flops by agents, too
+
+00:09:27.520 --> 00:09:31.320
+And we'll probably be like paid in like shit flops half the time
+
+00:09:31.520 --> 00:09:36.400
+So we'll see what you know, the the oncoming currencies are. Yeah. All right
+
+00:09:36.400 --> 00:09:39.960
+So yeah, you want me to you want me to take it away here? I can kind of yeah
+
+00:09:40.919 --> 00:09:42.359
+reveal
+
+00:09:42.359 --> 00:09:44.640
+Reveal my reveal my stack
+
+00:09:45.747 --> 00:09:50.547
+Well, first of all, I've been building a lot of stuff with AI the last six months or so,
+
+00:09:51.587 --> 00:09:57.267
+probably generated on the order of a million lines of code across like a dozen projects or so.
+
+00:09:57.700 --> 00:09:59.640
+It's a lot of, it's been a lot of work.
+
+00:09:59.920 --> 00:10:01.360
+It's been some serious projects.
+
+00:10:01.360 --> 00:10:05.040
+Like, let me, let me share my screen here, which is like a little more fun here.
+
+00:10:05.080 --> 00:10:09.960
+I think I'm not showing anything super, super weird on my screen.
+
+00:10:10.800 --> 00:10:15.760
+So, um, yeah, as, as, uh, Hugo mentioned, like one of my fun things that I made
+
+00:10:15.760 --> 00:10:20.640
+is this website called spicy takes.org, which I recommend to everyone, um,
+
+00:10:20.680 --> 00:10:24.800
+trying to solve the problem that like, people don't have time to read blog
+
+00:10:24.800 --> 00:10:28.560
+posts anymore, and I actually really like reading blog posts.
+
+00:10:28.560 --> 00:10:29.239
+And so I.
+
+00:10:29.533 --> 00:10:35.253
+I made a system using AI, of course, to summarize and pull the spiciest
+
+00:10:35.253 --> 00:10:40.853
+quotes out of 11,773 blog posts across 34 different blogs from
+
+00:10:40.853 --> 00:10:42.333
+people that I follow online.
+
+00:10:42.733 --> 00:10:48.333
+And so you can go here and read Martin Fowler's, you know, takes on this
+
+00:10:48.373 --> 00:10:51.092
+mythical man month just published this week.
+
+00:10:51.092 --> 00:10:52.172
+Not very spicy.
+
+00:10:52.172 --> 00:10:57.213
+John Gruber, Armin Ronecker increasingly has been quite, quite spicy.
+
+00:10:57.533 --> 00:11:02.252
+If we look at like Joe Rice, why token maxing is for fools, a rant on fake
+
+00:11:02.252 --> 00:11:02.932
+productivity.
+
+00:11:02.932 --> 00:11:05.932
+So lots of fun stuff to check out there.
+
+00:11:06.293 --> 00:11:10.892
+Speaking of which I am quite the token maxer myself.
+
+00:11:11.252 --> 00:11:14.493
+I, this is like one token maxing leaderboard.
+
+00:11:14.493 --> 00:11:18.572
+And so in the last seven days, like I've averaged something like, I don't know.
+
+00:11:19.052 --> 00:11:23.613
+I see if I can do math like 1.3, 1.4 billion tokens per day.
+
+00:11:23.613 --> 00:11:25.732
+So I'm, I'm burning quite a lot of tokens.
+
+00:11:25.732 --> 00:11:30.212
+So I wanted to explain a little bit of my setup and how exactly I'm doing that and
+
+00:11:30.212 --> 00:11:33.293
+maybe try to do some stuff in the terminal if we have time.
+
+00:11:33.293 --> 00:11:38.093
+But I like this, I'm working on a talk for that I'm giving next week in San
+
+00:11:38.093 --> 00:11:39.373
+Francisco at AI council.
+
+00:11:39.373 --> 00:11:41.132
+So I'll give a little bit of a preview of that.
+
+00:11:41.132 --> 00:11:47.453
+But Jesse Vincent, who created the very popular superpowers skills framework has
+
+00:11:47.453 --> 00:11:51.132
+this quote, which he gave me permission to use, which is the difference between vibe
+
+00:11:51.132 --> 00:11:55.892
+coding and agentic engineering is planning architecture and caring about the output.
+
+00:11:56.413 --> 00:12:03.093
+And so essentially I've been building systems to do agentic engineering and not just
+
+00:12:03.093 --> 00:12:03.733
+vibe coding.
+
+00:12:03.733 --> 00:12:07.812
+I think when I started out, it was just like, okay, I'm going to open cloud code in the
+
+00:12:07.812 --> 00:12:10.132
+terminal and type prompts and see what happens.
+
+00:12:10.613 --> 00:12:14.852
+And at a certain point you're like, wait, okay, this is not creating things that are
+
+00:12:14.852 --> 00:12:15.212
+good.
+
+00:12:15.212 --> 00:12:19.132
+Like I can look at the, I can look at the output, I can run the code, I can see if it
+
+00:12:19.132 --> 00:12:23.572
+makes sense, but like, how do we, how do we manage all of this at scale?
+
+00:12:23.852 --> 00:12:28.132
+Like if you, if you work on six projects in parallel, like how do you keep, keep the
+
+00:12:28.132 --> 00:12:32.252
+train, you know, from, uh, you know, crashing into the side of a mountain or whatever the
+
+00:12:32.252 --> 00:12:34.212
+right, right metaphor is.
+
+00:12:34.333 --> 00:12:41.453
+Um, but you know, my modern productivity stack, my agentic productivity stack, um,
+
+00:12:41.492 --> 00:12:46.013
+basically centers around the superpower skills framework, which is created by, created
+
+00:12:46.013 --> 00:12:46.772
+by Jesse.
+
+00:12:47.132 --> 00:12:51.253
+And then over the last six months, like I've been building a series of.
+
+00:12:52.371 --> 00:12:57.011
+agentic engineering projects, which solve like peripheral problems that are
+
+00:12:57.011 --> 00:13:02.731
+associated with developing lots of projects in parallel and wanting to be
+
+00:13:02.731 --> 00:13:07.451
+able to have observability of what all the agents are doing, as well as quality
+
+00:13:07.451 --> 00:13:09.491
+assurance on the work that they're producing.
+
+00:13:09.971 --> 00:13:14.331
+And then to be able to like manage the development pipeline, essentially,
+
+00:13:14.331 --> 00:13:18.210
+like how do you observe the software factory that you're, you're producing.
+
+00:13:18.331 --> 00:13:21.370
+And then, you know, more recently I've even gotten into like more project
+
+00:13:21.691 --> 00:13:24.610
+like granular project management and issue tracking after being, you know,
+
+00:13:24.610 --> 00:13:30.011
+burned by beads and having beads destroy some of my, my Git repositories very
+
+00:13:30.011 --> 00:13:31.651
+annoyingly, I hear that it's gotten better.
+
+00:13:31.651 --> 00:13:34.811
+Like when, now that it's on dolt, like it's gotten a lot, it's gotten a lot
+
+00:13:34.811 --> 00:13:35.290
+better.
+
+00:13:35.371 --> 00:13:43.331
+But, but yeah, it's so I'll kind of give you a brief, you know, view of, of those
+
+00:13:43.331 --> 00:13:43.851
+things.
+
+00:13:43.851 --> 00:13:47.731
+And so a lot of this stuff runs in the, you know, runs in the terminal, like I'm
+
+00:13:47.731 --> 00:13:53.250
+going to launch a clod and I got to do something.
+
+00:13:53.250 --> 00:13:55.250
+Can you just zoom in a bit to the terminal?
+
+00:13:56.931 --> 00:13:57.651
+Yeah.
+
+00:13:57.851 --> 00:13:59.531
+Give me a, give me a minute here.
+
+00:14:04.050 --> 00:14:07.090
+It's got to sort out the 12, 12 terminals there.
+
+00:14:07.730 --> 00:14:09.251
+Yeah, I do.
+
+00:14:09.891 --> 00:14:10.450
+Relatable.
+
+00:14:13.130 --> 00:14:16.851
+I've never been able to figure out those like multi terminals in one.
+
+00:14:16.851 --> 00:14:20.730
+I always just do tabs and I term and that's like, that feels relatively the
+
+00:14:20.730 --> 00:14:21.291
+same for me.
+
+00:14:21.370 --> 00:14:25.651
+At some point I became very comfortable with the, with the like split, I guess
+
+00:14:25.651 --> 00:14:27.971
+split vertically and that's all I can handle.
+
+00:14:28.251 --> 00:14:31.370
+And then it's, I know when I run out of vertical paints, I, then it's a new tab.
+
+00:14:31.891 --> 00:14:32.251
+Yeah.
+
+00:14:32.291 --> 00:14:35.491
+The whole horizontal, I can't, my brain doesn't handle it.
+
+00:14:38.851 --> 00:14:39.251
+All right.
+
+00:14:39.330 --> 00:14:41.931
+Let me, I'm trying to, all right.
+
+00:14:42.690 --> 00:14:44.330
+Get back to share my screen.
+
+00:14:44.330 --> 00:14:49.730
+I'm trying to make the, I'm trying to make the terminals a little bigger here.
+
+00:14:50.370 --> 00:14:58.450
+Maybe I'll get, have like fewer terminals here since, okay.
+
+00:14:58.971 --> 00:15:02.291
+So I'll make this bigger here.
+
+00:15:02.690 --> 00:15:03.011
+All right.
+
+00:15:08.530 --> 00:15:10.931
+See, I'm not very good at, not very good at ghosty.
+
+00:15:11.170 --> 00:15:12.571
+All right.
+
+00:15:13.571 --> 00:15:14.651
+We're telescoping.
+
+00:15:15.811 --> 00:15:16.211
+All right.
+
+00:15:16.451 --> 00:15:21.170
+So, so very briefly, I don't have, you know, great time to go into all these
+
+00:15:21.170 --> 00:15:28.530
+things, but so I built a system called RoboRev, which is a daemon that runs in
+
+00:15:28.530 --> 00:15:32.050
+the background that reviews all of the code that your agents generate.
+
+00:15:32.091 --> 00:15:37.970
+And so like I created this, show me your agent skills repository here.
+
+00:15:38.530 --> 00:15:45.731
+I run RoboRev in it to add post commit hooks to to this repository.
+
+00:15:45.731 --> 00:15:49.371
+And so now like whenever the agents commit and I asked my agents to commit
+
+00:15:49.371 --> 00:15:51.890
+every turn, like that's a hard rule that's in all of my, you know,
+
+00:15:51.890 --> 00:15:53.770
+cloud.md or agents.md.
+
+00:15:53.811 --> 00:16:02.451
+Like I use both I use both codecs and, and cloud to do to do, to do development.
+
+00:16:02.451 --> 00:16:07.610
+Although I built this little macOS widget, which shows my work over the last 30 days.
+
+00:16:07.610 --> 00:16:12.970
+And you can see I'm about like three quarters cloud code and one quarter codecs.
+
+00:16:12.970 --> 00:16:17.050
+And if I were paying, you know, API rates I'd be paying about, you know,
+
+00:16:17.050 --> 00:16:19.811
+$21,000 a month tokens.
+
+00:16:19.811 --> 00:16:23.931
+I do pay less than that on account of subsidized tokens from the lab.
+
+00:16:23.931 --> 00:16:26.690
+So thank you very much, Sam Altman, Dario Amadai.
+
+00:16:27.250 --> 00:16:34.170
+So RoboRev is it's a, it's a terminal UI.
+
+00:16:34.250 --> 00:16:40.211
+And so basically, you know, whenever, you know, we, you know, create,
+
+00:16:40.211 --> 00:16:44.731
+and if we create a readme and commit it in this repository, I'll do that.
+
+00:16:44.731 --> 00:16:48.130
+So we can see it, see it commit and see what, see what happens.
+
+00:16:48.130 --> 00:16:50.731
+But the idea is that agents generate code.
+
+00:16:50.731 --> 00:16:54.851
+It gets committed when the turn is over, or while the superpowers plan is
+
+00:16:54.851 --> 00:16:57.651
+implementing, you might have lots of commits and those go to get all reviewed
+
+00:16:57.651 --> 00:16:58.371
+in the background.
+
+00:16:58.970 --> 00:17:03.690
+And then you can ask, you know, the agents while they're implementing or while
+
+00:17:03.690 --> 00:17:08.811
+they're executing to, you know, while they're implementing to periodically
+
+00:17:08.811 --> 00:17:12.010
+invoke the RoboRev fix skill, which picks up the code reviews that have been
+
+00:17:12.010 --> 00:17:19.411
+running asynchronously in the background, fixes them, and it, it fixes them and
+
+00:17:19.411 --> 00:17:22.811
+then apply, and then the skill applies the, applies the fixes.
+
+00:17:23.251 --> 00:17:27.610
+And the idea of the system is that it's a, it's a, you can see here, there's a
+
+00:17:27.610 --> 00:17:30.531
+commit that was generated by, by the agent.
+
+00:17:30.610 --> 00:17:32.330
+It was a minimal readme placeholder.
+
+00:17:32.330 --> 00:17:35.450
+So there's really nothing, you know, nothing to, to review.
+
+00:17:35.811 --> 00:17:41.211
+But, you know, I can close that review and then that's hidden from the RoboRev queue.
+
+00:17:41.251 --> 00:17:46.570
+So if I hit H to unhide the closed reviews, H hides the, the closed reviews.
+
+00:17:46.931 --> 00:17:49.971
+And so, you know, we could ask the agent while we're, you know, kind of looking
+
+00:17:49.971 --> 00:17:55.131
+at this to do something trivial, like, Hey, I want to make, to make a simple
+
+00:17:55.131 --> 00:18:06.450
+dashboard showing, um, frequency of recent spicy takes on the spicy, spicy
+
+00:18:06.450 --> 00:18:14.730
+takes to org repository, just stand up something simple, commit frequently,
+
+00:18:17.050 --> 00:18:20.411
+use standard tools, make no mistakes.
+
+00:18:20.730 --> 00:18:22.010
+Yeah, of course.
+
+00:18:22.010 --> 00:18:22.371
+Don't lie.
+
+00:18:22.730 --> 00:18:23.131
+Right.
+
+00:18:23.211 --> 00:18:23.691
+Don't lie.
+
+00:18:23.730 --> 00:18:24.170
+Exactly.
+
+00:18:24.290 --> 00:18:24.570
+Yeah.
+
+00:18:24.931 --> 00:18:29.491
+One quick question with last time we spoke, you mentioned, I think you were
+
+00:18:30.971 --> 00:18:38.971
+writing a lot of code with Opus, I think probably then 4.5 and getting GPT 5.2 or
+
+00:18:38.971 --> 00:18:40.531
+whatever it was to do the reviews.
+
+00:18:40.570 --> 00:18:42.531
+Is that, is that still your main?
+
+00:18:43.010 --> 00:18:43.371
+Yeah.
+
+00:18:43.371 --> 00:18:46.330
+So, so here like the, you see codex to the review.
+
+00:18:46.330 --> 00:18:50.211
+So if we look at the review prompt, you can see that it's an, it's using codex
+
+00:18:50.211 --> 00:18:56.211
+with codex exec, uh, GPT 5.5 model reasoning X high with this prompt, like
+
+00:18:56.211 --> 00:19:00.010
+you're a code reviewer, here's like the review prompt and it inlines the code
+
+00:19:00.010 --> 00:19:00.531
+change.
+
+00:19:01.050 --> 00:19:05.651
+And I found that the codex is like the strongest code reviewer, um, out there,
+
+00:19:05.651 --> 00:19:06.931
+at least GPT 5.5.
+
+00:19:06.931 --> 00:19:10.371
+The model specifically is the strongest code reviewer out there.
+
+00:19:10.651 --> 00:19:16.651
+Um, and, um, so basically I'll let this, we'll let this grind.
+
+00:19:17.251 --> 00:19:23.131
+Um, and anyway, so RoboRev is nice because you had this ledger of code review
+
+00:19:23.131 --> 00:19:27.131
+feedback that, um, that you need to, you need to address.
+
+00:19:27.170 --> 00:19:32.491
+And so you have to explicitly like close reviews or when you invoke the, if, if
+
+00:19:32.491 --> 00:19:37.890
+you, sure, if you invoke the RoboRef fix skill, it will look in the ledger, pick
+
+00:19:37.890 --> 00:19:40.570
+up all the open reviews, fix them, and then commit the fixes.
+
+00:19:40.971 --> 00:19:42.531
+Um, sure.
+
+00:19:42.570 --> 00:19:42.931
+Okay.
+
+00:19:43.850 --> 00:19:49.890
+And, um, so the next project in my stack, uh, that I created is called AgentsView.
+
+00:19:49.890 --> 00:19:55.330
+So basically it's a fancy agent session database that provides full tech search,
+
+00:19:55.371 --> 00:19:57.770
+um, analytics on all your agent sessions.
+
+00:19:57.770 --> 00:20:01.811
+So you can find stuff in previous sessions as well as get like information
+
+00:20:01.811 --> 00:20:04.850
+about your information about your token use.
+
+00:20:04.931 --> 00:20:09.211
+Um, I'm not going to pull up my AgentsView because it has, it has data
+
+00:20:09.211 --> 00:20:12.450
+from a number of projects that I don't want to show on the live stream.
+
+00:20:12.811 --> 00:20:15.531
+Um, but it is, it is super useful.
+
+00:20:15.811 --> 00:20:21.651
+And, um, if you, yeah, so if you look at, uh, you know, look at the website,
+
+00:20:21.651 --> 00:20:23.010
+it supports a ton of agents.
+
+00:20:23.010 --> 00:20:24.531
+It's got like a nice web application.
+
+00:20:24.531 --> 00:20:26.131
+It's got a desktop application.
+
+00:20:26.531 --> 00:20:31.290
+So you can see here, we're seeing the, uh, superpowers, um,
+
+00:20:32.610 --> 00:20:34.491
+superpowers, uh, spec interview.
+
+00:20:34.531 --> 00:20:38.371
+And so like a lot of my processes, like I work on four or five projects during the
+
+00:20:38.371 --> 00:20:42.170
+day, I'll run parallel spec interviews with superpowers.
+
+00:20:42.170 --> 00:20:45.730
+And so I'll be bouncing, you know, in different, different terminals, which
+
+00:20:45.730 --> 00:20:47.770
+are all on my, you know, large monitor.
+
+00:20:48.170 --> 00:20:51.531
+Um, I'll just participate in these spec interviews, build, build the
+
+00:20:51.531 --> 00:20:54.450
+implementation spec with superpowers and that Senate implementing.
+
+00:20:54.850 --> 00:20:59.211
+And then once it's done implementing, um, I will invoke the RoboRef fix to
+
+00:20:59.251 --> 00:21:03.091
+address like all of the code quality problems that have accumulated for very
+
+00:21:03.091 --> 00:21:03.931
+large plans.
+
+00:21:03.931 --> 00:21:09.450
+I'll have, I'll ask, um, the, uh, superpowers, uh, implementation skill
+
+00:21:09.450 --> 00:21:14.010
+called sub-agent driven development to invoke the RoboRef fixed skill, like
+
+00:21:14.010 --> 00:21:18.371
+every five tasks so that it will pause and then address code review feedback
+
+00:21:18.371 --> 00:21:20.491
+that is piled up while it's implementing.
+
+00:21:20.491 --> 00:21:25.970
+And I I've implemented superpower specs that run like 45 tasks and might take
+
+00:21:25.970 --> 00:21:29.331
+like, I had one that ran for 14 hours without stopping.
+
+00:21:29.811 --> 00:21:33.730
+Um, and so that's, you know, you can imagine like 14 hours of code generation.
+
+00:21:33.730 --> 00:21:37.331
+That's a lot of like code to review and code that code review
+
+00:21:37.331 --> 00:21:39.530
+issues that, that, that pile up.
+
+00:21:40.331 --> 00:21:45.811
+Um, so I will say sure and go back here.
+
+00:21:45.891 --> 00:21:47.650
+Um, so definitely check this out.
+
+00:21:48.011 --> 00:21:51.371
+Uh, another project that we're building, which is a little bit newer and I
+
+00:21:51.371 --> 00:21:54.410
+haven't been advertising that much is like, it's called middleman.
+
+00:21:54.410 --> 00:21:59.210
+It's basically a fancy local GitHub dashboard because let's face it, like
+
+00:21:59.210 --> 00:22:04.970
+GitHub is dying and slow and painful to use, and it's also difficult to get a
+
+00:22:04.970 --> 00:22:08.571
+single pane of glass across all of your projects.
+
+00:22:08.571 --> 00:22:14.850
+And so this has, so middleman has a threaded activity view, which if you've
+
+00:22:14.850 --> 00:22:19.011
+ever been a maintainer on open source projects, it's just a godsend to be able
+
+00:22:19.011 --> 00:22:23.210
+at a glance, see like all the activity, the pushes, the review, you know,
+
+00:22:23.210 --> 00:22:26.730
+comments, the commits that are happening on different pull requests without
+
+00:22:26.730 --> 00:22:29.410
+having to like go to visit the pull request on GitHub.
+
+00:22:30.011 --> 00:22:33.571
+And you can see that I've set up RoboRev as a CI reviewer on a lot of these pull
+
+00:22:33.571 --> 00:22:34.290
+requests.
+
+00:22:34.650 --> 00:22:39.251
+And so you can see, you know, contributor working on this project force push.
+
+00:22:39.251 --> 00:22:43.931
+Here's a RoboRev review, force push, another review, and you can even take
+
+00:22:43.931 --> 00:22:46.811
+these reviews and then fold them right back into your agent session.
+
+00:22:47.170 --> 00:22:52.011
+Um, and so you can see here, this, uh, superpowers has written a spec for this
+
+00:22:52.011 --> 00:22:55.331
+spicy takes dashboard design, and I'm asking it to go ahead and write the plan.
+
+00:22:55.331 --> 00:22:56.371
+So we'll see it in action.
+
+00:22:56.771 --> 00:23:00.210
+And while it's been working down here, you can see that, that RoboRev has been
+
+00:23:00.210 --> 00:23:04.491
+dutifully, uh, reviewing the code that's being generated by the agent, which right
+
+00:23:04.491 --> 00:23:07.610
+now is just specs, but it does provide feedback on the specs.
+
+00:23:09.331 --> 00:23:15.491
+Um, and so in here, you know, you can actually, you can directly, um, you can
+
+00:23:15.491 --> 00:23:17.090
+directly merge pull requests.
+
+00:23:17.090 --> 00:23:20.571
+So here's a pull request that I created a little bit time ago.
+
+00:23:20.811 --> 00:23:21.891
+I don't even have to go to GitHub.
+
+00:23:21.891 --> 00:23:24.771
+I can just, I can just merge it from here, no problem.
+
+00:23:24.771 --> 00:23:26.771
+And that disappears from my activity feed.
+
+00:23:26.850 --> 00:23:30.090
+So, uh, to be able to like do development and not have to go to
+
+00:23:30.090 --> 00:23:33.131
+GitHub and deal with their like flaky masses is pretty great.
+
+00:23:33.610 --> 00:23:38.650
+Um, also the fact that like people get has always been kind of tough in a little
+
+00:23:38.650 --> 00:23:42.771
+ways, and the fact that it is something agents are really good at for the most
+
+00:23:42.771 --> 00:23:46.131
+part, you got to be careful with a few things, but like 95% of the patterns
+
+00:23:46.131 --> 00:23:48.931
+you'll need agents can do, and you don't need to worry too much about it.
+
+00:23:49.290 --> 00:23:49.771
+Yeah.
+
+00:23:49.850 --> 00:23:53.891
+I mean, and we've, you know, in here, like we've implemented a diff viewer and,
+
+00:23:53.891 --> 00:23:57.290
+uh, you know, we've got like a repository dashboard, which shows like,
+
+00:23:57.331 --> 00:24:01.610
+you know, statistics about different projects that we're working on.
+
+00:24:01.650 --> 00:24:05.451
+You can browse like all the pull requests, you know, for different
+
+00:24:05.451 --> 00:24:07.730
+projects, clicking around is instantly.
+
+00:24:08.251 --> 00:24:11.290
+One thing that's kind of nice is that the activity is shown in
+
+00:24:11.290 --> 00:24:12.891
+reverse chronological order.
+
+00:24:12.891 --> 00:24:17.090
+Like the new activity is at the top of the pull request, which, you know, it
+
+00:24:17.090 --> 00:24:21.011
+seems kind of obvious to me that like, I think, uh, the joke is that, you know,
+
+00:24:21.011 --> 00:24:22.850
+GitHub is in leagues with a big scroll.
+
+00:24:22.850 --> 00:24:26.691
+Like they just really want you to have to scroll to the bottom of a pull request
+
+00:24:26.691 --> 00:24:29.290
+with like a hundred comments, you know, every time you click around GitHub.
+
+00:24:29.290 --> 00:24:33.050
+So we put the, we put the recent activity at the top so you could see
+
+00:24:33.050 --> 00:24:36.571
+what's going on, uh, at a glance without having to scroll a bunch.
+
+00:24:37.050 --> 00:24:43.530
+Um, another project I've been using, I built recently, um, as I got frustrated
+
+00:24:43.530 --> 00:24:45.290
+with beads and with GitHub issues.
+
+00:24:45.290 --> 00:24:50.451
+And so I wanted a local, uh, issue tracker for, uh, for my project.
+
+00:24:50.451 --> 00:24:56.650
+So, you know, here I can run Kata in it and this project, and then, um, I have a
+
+00:24:56.650 --> 00:25:02.530
+terminal issue tracker, um, for, for, uh, for this show me your agent skills
+
+00:25:02.530 --> 00:25:05.131
+repository, there's no issues in here right now.
+
+00:25:05.491 --> 00:25:11.011
+Um, but I can ask the agent to, you know, read, read, uh, Kata, Kata quick
+
+00:25:11.011 --> 00:25:16.011
+start, which explains, um, how to use, how to use Kata and how to create issues.
+
+00:25:16.131 --> 00:25:19.730
+So you can kind of think of it as like a local replacement for, for beads.
+
+00:25:19.730 --> 00:25:24.410
+That's like a lot, a lot simpler and like not, you know, it doesn't create a lot of
+
+00:25:24.410 --> 00:25:30.730
+complexity, um, you know, for, um, you know, using your, having your agents keep
+
+00:25:30.730 --> 00:25:34.170
+track of things in a, in a, in a local issue tracker, um,
+
+00:25:34.353 --> 00:25:43.153
+I do also use a terminal workspace manager called Superset, which, you know, it's a third-party tool, it creates Git work trees, they're...
+
+00:25:43.997 --> 00:25:45.597
+I've got superset over here.
+
+00:25:46.397 --> 00:25:49.797
+It, you know, basically, you know, for all my projects,
+
+00:25:50.197 --> 00:25:52.497
+I can flip between different get work trees,
+
+00:25:52.497 --> 00:25:54.197
+different projects that I'm working on.
+
+00:25:54.497 --> 00:25:56.897
+So every get work tree has a stack of terminals.
+
+00:25:56.897 --> 00:25:59.797
+And so typically my typical stack is I have
+
+00:26:00.097 --> 00:26:03.697
+Cloud Code and or Codex and Robo Rev
+
+00:26:03.897 --> 00:26:06.697
+basically running on in every get work tree.
+
+00:26:06.697 --> 00:26:09.597
+And so I can flip back and forth and say, okay,
+
+00:26:09.597 --> 00:26:10.797
+what still needs to be done here?
+
+00:26:10.797 --> 00:26:13.897
+Like, okay, there's two failing issues
+
+00:26:14.797 --> 00:26:17.197
+that need to be addressed in this work tree.
+
+00:26:17.597 --> 00:26:20.097
+And so, you know, basically up here,
+
+00:26:20.097 --> 00:26:21.697
+like I can invoke the fixed skill
+
+00:26:21.996 --> 00:26:25.197
+and have those issues fixed.
+
+00:26:25.597 --> 00:26:26.996
+So we'll check in.
+
+00:26:28.796 --> 00:26:30.897
+Still writing the plan.
+
+00:26:31.697 --> 00:26:34.296
+One of the, you know, the pros and cons of superpowers
+
+00:26:34.296 --> 00:26:36.397
+is it generates amazing software,
+
+00:26:36.397 --> 00:26:38.597
+but it also takes a long time to generate
+
+00:26:38.597 --> 00:26:41.197
+very detailed implementation plans.
+
+00:26:41.197 --> 00:26:43.796
+And I think the idea is that it doesn't really trust
+
+00:26:44.697 --> 00:26:46.496
+leaving that much up to the,
+
+00:26:46.897 --> 00:26:49.097
+up to the agent in terms of making decisions
+
+00:26:49.697 --> 00:26:51.197
+about what, how to implement things.
+
+00:26:51.197 --> 00:26:53.697
+So it tries to figure all that out up front
+
+00:26:53.697 --> 00:26:55.896
+and review it before handing things off
+
+00:26:55.896 --> 00:26:59.997
+to a bunch of sub-agents to implement different stages
+
+00:27:01.597 --> 00:27:02.597
+of the project.
+
+00:27:02.597 --> 00:27:03.997
+I've got a quick question.
+
+00:27:04.097 --> 00:27:05.997
+I mean, one thing you said you loved about agents
+
+00:27:05.997 --> 00:27:08.296
+is you don't, you don't really have to write code anymore.
+
+00:27:08.396 --> 00:27:10.597
+How much code do you read?
+
+00:27:10.697 --> 00:27:12.697
+And how much do you think you'll be reading in five years?
+
+00:27:15.197 --> 00:27:17.597
+I almost don't read code now.
+
+00:27:17.597 --> 00:27:20.997
+I, I, essentially my approach with,
+
+00:27:21.197 --> 00:27:22.997
+my approach with RoboRev is like,
+
+00:27:23.197 --> 00:27:24.896
+I, it's like my code reader.
+
+00:27:24.896 --> 00:27:28.997
+So like the mantra is like RoboRev reads every line of code
+
+00:27:29.097 --> 00:27:32.896
+that reads every line of code that, that is generated.
+
+00:27:32.997 --> 00:27:35.197
+And so, and it gets read multiple times.
+
+00:27:35.597 --> 00:27:39.197
+And so like whenever I push up a pull request,
+
+00:27:39.497 --> 00:27:41.097
+the branch gets re-reviewed.
+
+00:27:41.097 --> 00:27:43.296
+And so by the time I'm merging a pull request
+
+00:27:43.597 --> 00:27:46.296
+into, into, into a repository,
+
+00:27:46.497 --> 00:27:48.396
+like the code has all been read by agents
+
+00:27:48.396 --> 00:27:50.197
+like four or five times, like minimum.
+
+00:27:51.396 --> 00:27:53.797
+And so like I look at the code in terms of like
+
+00:27:54.197 --> 00:27:56.896
+structural detail, like does it look right?
+
+00:27:56.896 --> 00:27:58.096
+Like is it too complex?
+
+00:27:58.096 --> 00:27:59.396
+Does it need to be simplified?
+
+00:27:59.396 --> 00:28:02.096
+Like does it have scope creep that's inappropriate?
+
+00:28:02.297 --> 00:28:03.997
+Like I ask all those types of questions
+
+00:28:03.997 --> 00:28:07.297
+and often will like pose those questions to the agent.
+
+00:28:08.197 --> 00:28:10.197
+But I'm pretty, I'm pretty in the loop.
+
+00:28:10.197 --> 00:28:11.697
+Like I'm very engaged and like,
+
+00:28:11.896 --> 00:28:13.096
+like what does the software do?
+
+00:28:13.096 --> 00:28:14.297
+Like is it doing the right thing?
+
+00:28:14.297 --> 00:28:15.396
+Is it doing too much?
+
+00:28:15.896 --> 00:28:17.197
+Does it need to be paired back?
+
+00:28:17.197 --> 00:28:18.096
+Like is it, you know,
+
+00:28:18.096 --> 00:28:19.797
+because sometimes the agents will go off the rails
+
+00:28:19.797 --> 00:28:22.197
+and build something that's completely inappropriate.
+
+00:28:22.396 --> 00:28:25.396
+And so then, you know, you have to, you have to nuke that.
+
+00:28:26.396 --> 00:28:31.596
+But, but yeah, I, you know, most of my,
+
+00:28:31.596 --> 00:28:35.096
+most of my process is I'll, you know, while this,
+
+00:28:35.797 --> 00:28:38.197
+let me go back to my screen share.
+
+00:28:38.697 --> 00:28:40.697
+And so I just wanted to show kind of
+
+00:28:40.697 --> 00:28:41.896
+what superpowers looks like.
+
+00:28:41.896 --> 00:28:46.997
+I'm gonna set it to work with sub-agent driven execution.
+
+00:28:48.497 --> 00:28:51.697
+You know, this, this implementation might take a good another,
+
+00:28:53.396 --> 00:28:56.396
+you know, another, another 20 or 30 minutes.
+
+00:28:56.396 --> 00:28:57.497
+I guess I can stay on the,
+
+00:28:57.997 --> 00:29:02.297
+stay on the call or, or, or I have to,
+
+00:29:02.297 --> 00:29:03.297
+I have to move locations.
+
+00:29:03.297 --> 00:29:05.396
+And so I'll drop back in on the, on the call.
+
+00:29:05.396 --> 00:29:06.697
+And maybe I can show off the,
+
+00:29:06.997 --> 00:29:08.697
+the dashboard a little later in the call,
+
+00:29:08.697 --> 00:29:11.197
+but it'll take a good, you know,
+
+00:29:11.197 --> 00:29:14.197
+my guess 20 or 30 minutes to implement this execution plan.
+
+00:29:15.297 --> 00:29:18.197
+But, you know, all the while, you know,
+
+00:29:18.197 --> 00:29:20.697
+all the while down here, you know,
+
+00:29:20.697 --> 00:29:22.197
+RoboRev is reviewing the code.
+
+00:29:22.197 --> 00:29:25.197
+And so I think that it isn't perfect,
+
+00:29:25.197 --> 00:29:26.797
+but it does, it does catch.
+
+00:29:27.297 --> 00:29:30.997
+You can see there's like seven tasks in this plan.
+
+00:29:31.497 --> 00:29:35.596
+And so it does, it does catch quite a lot of,
+
+00:29:35.697 --> 00:29:37.697
+quite a lot of like the most serious issues
+
+00:29:37.697 --> 00:29:40.797
+and certainly from like a, like a code correctness standpoint
+
+00:29:40.797 --> 00:29:42.797
+and like, you know, feeling sleeping,
+
+00:29:42.797 --> 00:29:43.997
+sleeping well at night.
+
+00:29:44.896 --> 00:29:45.896
+I'm shipping a lot of code,
+
+00:29:45.896 --> 00:29:48.396
+like a million lines of code in six months is a lot of code,
+
+00:29:48.396 --> 00:29:51.596
+but I've been burning a tremendous amount of tokens
+
+00:29:51.596 --> 00:29:53.997
+to make sure that it's reviewed very thoroughly.
+
+00:29:54.997 --> 00:29:57.297
+And, you know, so far so good.
+
+00:29:57.596 --> 00:29:59.596
+I'm thinking about ideas for like
+
+00:29:59.596 --> 00:30:02.496
+how I could turn this into more of an automated software factory
+
+00:30:02.496 --> 00:30:03.797
+and like build even more software.
+
+00:30:03.797 --> 00:30:06.596
+But the trouble is that I'm bandwidth limited
+
+00:30:06.596 --> 00:30:09.496
+in terms of like my ability to make decisions throughout the day.
+
+00:30:09.496 --> 00:30:12.697
+And so I feel like I'm already in all these spec interviews,
+
+00:30:13.596 --> 00:30:17.297
+like I'm already, you know, at my decision making bandwidth,
+
+00:30:17.297 --> 00:30:18.996
+like I can't make any more decisions.
+
+00:30:19.797 --> 00:30:21.096
+It's like, don't ask me another question.
+
+00:30:21.096 --> 00:30:22.797
+I can't make another decision today.
+
+00:30:23.096 --> 00:30:24.596
+So, yeah.
+
+00:30:24.797 --> 00:30:26.297
+So a question with that is, I mean,
+
+00:30:26.297 --> 00:30:29.797
+we are seeing decision making or judgment
+
+00:30:29.797 --> 00:30:32.096
+being transformed into intelligence
+
+00:30:32.096 --> 00:30:35.096
+at a pretty interesting pace, I think.
+
+00:30:35.096 --> 00:30:36.596
+So one, it's a silly example,
+
+00:30:36.596 --> 00:30:40.197
+but I think it's telling auto mode on Claude code
+
+00:30:40.197 --> 00:30:42.297
+where it will now, you can put in auto mode,
+
+00:30:42.297 --> 00:30:43.096
+for those who don't know,
+
+00:30:43.096 --> 00:30:47.197
+where it will like accept certain right things.
+
+00:30:47.197 --> 00:30:49.297
+It won't accept like delete things,
+
+00:30:49.297 --> 00:30:52.096
+RM, RF, what, these types of things, right?
+
+00:30:52.096 --> 00:30:53.697
+And remember, we used to have to sit there,
+
+00:30:53.697 --> 00:30:54.996
+maybe some of us still do and be like,
+
+00:30:54.996 --> 00:30:56.596
+accept, accept, accept,
+
+00:30:56.596 --> 00:31:00.197
+or do the YOLO mode where you might get everything deleted.
+
+00:31:00.197 --> 00:31:02.697
+So this is something that previously was judgment
+
+00:31:02.697 --> 00:31:03.496
+and we had to make decisions.
+
+00:31:03.496 --> 00:31:05.897
+And now it's, because we have training data,
+
+00:31:05.897 --> 00:31:07.996
+these types of things, it's incorporated into intelligence.
+
+00:31:07.996 --> 00:31:10.297
+So I'm wondering how we can supercharge this process.
+
+00:31:10.297 --> 00:31:11.596
+I mean, myself, like I'm just,
+
+00:31:11.596 --> 00:31:13.096
+I'm just YOLO mode all the time.
+
+00:31:13.096 --> 00:31:14.297
+And so like, I'm just, you know,
+
+00:31:14.297 --> 00:31:16.797
+I basically, my approach is like backup,
+
+00:31:16.797 --> 00:31:18.897
+like try not to store too much sensitive data
+
+00:31:18.897 --> 00:31:20.797
+in my home directory, like that,
+
+00:31:20.797 --> 00:31:21.797
+you know, that kind of stuff.
+
+00:31:21.797 --> 00:31:24.096
+But, you know, the trouble is like, you know,
+
+00:31:24.096 --> 00:31:26.297
+SSH keys and like, you know, it's,
+
+00:31:26.297 --> 00:31:28.496
+it's we're all just like, you know,
+
+00:31:28.496 --> 00:31:30.496
+walking honeypots with our agent sessions.
+
+00:31:30.496 --> 00:31:33.897
+So I think it's, it's sort of this like balance
+
+00:31:33.897 --> 00:31:35.697
+between like, do you want to be productive
+
+00:31:35.697 --> 00:31:37.996
+or do you, do you want to be safe?
+
+00:31:37.996 --> 00:31:39.897
+And like, I think right now, like,
+
+00:31:39.897 --> 00:31:42.197
+I think to be maximally productive with agents
+
+00:31:42.197 --> 00:31:44.596
+requires you to be like a little bit unsafe.
+
+00:31:44.596 --> 00:31:47.197
+And at some point we'll figure out a way to make the,
+
+00:31:47.197 --> 00:31:49.897
+like make the sandboxing work in a way that's like,
+
+00:31:49.897 --> 00:31:51.297
+you know, ergonomic.
+
+00:31:51.397 --> 00:31:53.496
+And I think it's, it's still like,
+
+00:31:53.496 --> 00:31:55.797
+the number of agents sandboxing projects out there
+
+00:31:55.797 --> 00:31:57.797
+is pretty, it's, it's pretty intense.
+
+00:31:57.797 --> 00:32:02.797
+And so, yeah, it's, it's going to take a,
+
+00:32:03.297 --> 00:32:05.297
+you know, take some time to figure that out.
+
+00:32:05.297 --> 00:32:07.697
+And in the meantime, I'm just kind of, you know,
+
+00:32:07.697 --> 00:32:09.797
+praying to the, praying to the token gods
+
+00:32:09.797 --> 00:32:11.596
+to like be, be kind to me,
+
+00:32:11.596 --> 00:32:13.996
+like let, let me not be prompt injected.
+
+00:32:14.996 --> 00:32:16.397
+And, you know, that, that being said,
+
+00:32:16.397 --> 00:32:18.596
+like supply chain attacks are also a big problem.
+
+00:32:18.596 --> 00:32:23.496
+And so, you know, yeah, it's just, it's, it's, it's a,
+
+00:32:23.496 --> 00:32:25.797
+and I think as the agents get more sophisticated
+
+00:32:25.797 --> 00:32:28.197
+in the, in the nature of like the security attacks
+
+00:32:28.197 --> 00:32:30.797
+get more sophisticated, that's like even more of a problem.
+
+00:32:30.797 --> 00:32:33.297
+But anyway, so I will, I will see,
+
+00:32:33.297 --> 00:32:35.996
+I will yield, yield, yield the floor to the,
+
+00:32:35.996 --> 00:32:37.496
+to the next, to the next guest,
+
+00:32:37.496 --> 00:32:40.297
+but I appreciate you all listening and yeah,
+
+00:32:40.297 --> 00:32:42.996
+I look forward to seeing you all in the token mines.
+
+00:32:42.996 --> 00:32:45.096
+All praise be unto the token gods.
+
+00:32:45.096 --> 00:32:46.596
+We need a token god totem.
+
+00:32:46.596 --> 00:32:48.297
+Before you leave, I know you'll pop back in a bit
+
+00:32:48.297 --> 00:32:50.297
+and you've got family dinner, but I do,
+
+00:32:50.297 --> 00:32:51.797
+we did create...
+
+00:32:51.797 --> 00:32:55.797
+Agents, skills, show?
+
+00:32:55.797 --> 00:32:59.697
+But that isn't my technology, man.
+
+00:33:01.596 --> 00:33:03.297
+Well, okay.
+
+00:33:03.297 --> 00:33:04.397
+Let's try that again.
+
+00:33:05.297 --> 00:33:09.096
+We did create another little video using CDAS.
+
+00:33:09.096 --> 00:33:25.897
+So pretty good summary of what we just saw.
+
+00:33:25.897 --> 00:33:26.496
+Exactly.
+
+00:33:26.496 --> 00:33:28.397
+Thank you for coming out of the token mines
+
+00:33:28.397 --> 00:33:31.496
+and bringing your, your AI lasers to the streets
+
+00:33:31.496 --> 00:33:35.596
+to help us battle all the agentic systems
+
+00:33:35.596 --> 00:33:37.397
+we're working with as well.
+
+00:33:37.397 --> 00:33:39.596
+And do feel free to pop back and show us.
+
+00:33:39.596 --> 00:33:40.996
+Of course, of course I will.
+
+00:33:40.996 --> 00:33:43.096
+Yeah, but appreciate you, man.
+
+00:33:43.096 --> 00:33:46.797
+And lots of people in the chat saying loved it and thank you.
+
+00:33:46.797 --> 00:33:50.096
+And so now we're going to have Jeremiah,
+
+00:33:50.096 --> 00:33:52.697
+who Thomas will introduce again in a second.
+
+00:33:52.697 --> 00:33:55.197
+I will just remind everyone, if you've just joined,
+
+00:33:55.197 --> 00:33:56.996
+come and chat with us in Discord
+
+00:33:56.996 --> 00:33:58.496
+so we can continue the conversation afterwards.
+
+00:33:58.496 --> 00:34:00.197
+Links in the description.
+
+00:34:00.197 --> 00:34:02.397
+Share with a friend, hit like and subscribe,
+
+00:34:02.397 --> 00:34:05.197
+all of those things.
+
+00:34:05.197 --> 00:34:07.197
+But before we introduce Jeremiah,
+
+00:34:07.197 --> 00:34:26.796
+I think the best introduction for Jeremiah is to...
+
+00:34:26.796 --> 00:34:27.897
+Yeah, I love that.
+
+00:34:27.897 --> 00:34:28.996
+Yeah, that's from the practice session
+
+00:34:28.996 --> 00:34:29.996
+we had with Jeremiah the other day.
+
+00:34:29.996 --> 00:34:31.897
+So that's what we're looking forward to.
+
+00:34:31.897 --> 00:34:34.496
+That was actual footage of the session.
+
+00:34:34.496 --> 00:34:36.097
+Exactly.
+
+00:34:36.097 --> 00:34:37.597
+I'm hoping these are real video games
+
+00:34:37.597 --> 00:34:39.097
+that we can play after this, right?
+
+00:34:39.097 --> 00:34:41.897
+Yeah, they better be.
+
+00:34:41.897 --> 00:34:43.697
+It's funny that you mentioned that.
+
+00:34:43.697 --> 00:34:45.496
+We'll get back to that later,
+
+00:34:45.496 --> 00:34:49.496
+but it's not actually out of the question.
+
+00:34:49.496 --> 00:34:50.397
+Okay.
+
+00:34:50.397 --> 00:34:51.897
+Yeah.
+
+00:34:51.897 --> 00:34:55.197
+Well, very excited to welcome Jeremiah.
+
+00:34:55.197 --> 00:34:57.097
+I think we met like over 10 years ago
+
+00:34:57.097 --> 00:35:01.097
+at an amazing startup called Quantopian in Boston.
+
+00:35:01.097 --> 00:35:04.496
+And already back then, I remember we talked about
+
+00:35:04.496 --> 00:35:10.097
+the sorry state of data pipelining and orchestration.
+
+00:35:10.097 --> 00:35:11.996
+And then, of course, you went ahead
+
+00:35:11.996 --> 00:35:14.097
+and actually fixed it with Prefect
+
+00:35:14.097 --> 00:35:16.597
+and built like an amazing company around that.
+
+00:35:16.597 --> 00:35:18.597
+And now also with FastMCP,
+
+00:35:18.597 --> 00:35:22.996
+I think just made MCP usable for the first time.
+
+00:35:22.996 --> 00:35:26.197
+And Verizon, which I'm very excited about.
+
+00:35:26.197 --> 00:35:27.397
+So yeah, welcome to the show.
+
+00:35:27.397 --> 00:35:28.897
+Very excited to have you.
+
+00:35:28.897 --> 00:35:29.697
+Thank you, Thomas.
+
+00:35:29.697 --> 00:35:31.996
+So good to be here.
+
+00:35:31.996 --> 00:35:36.697
+And yeah, so we have our usual questions
+
+00:35:36.697 --> 00:35:37.796
+that we start out with.
+
+00:35:37.796 --> 00:35:40.697
+What do you love most about working with AI agents?
+
+00:35:40.697 --> 00:35:42.597
+You know, I thought about this, right?
+
+00:35:42.597 --> 00:35:45.197
+Because it feels too obvious to be like the productivity gains.
+
+00:35:45.197 --> 00:35:47.097
+And I think Wes has already covered
+
+00:35:47.097 --> 00:35:49.697
+a more interesting second answer.
+
+00:35:49.697 --> 00:35:53.897
+For me, what it is, is I use it as like a second brain.
+
+00:35:53.897 --> 00:35:57.097
+And so I have big expectations about the information
+
+00:35:57.097 --> 00:35:59.897
+that I put in at a moment coming back out later.
+
+00:35:59.996 --> 00:36:02.697
+And so this is one of the reasons
+
+00:36:02.697 --> 00:36:06.496
+that I use an open call, for example,
+
+00:36:06.496 --> 00:36:09.597
+so that I can go muck around with its memory
+
+00:36:09.597 --> 00:36:11.496
+in a way that works for me.
+
+00:36:11.496 --> 00:36:13.496
+I don't know if my way would work for anyone else.
+
+00:36:13.496 --> 00:36:14.496
+I think that's kind of a theme
+
+00:36:14.496 --> 00:36:15.697
+of what I want to talk about today.
+
+00:36:15.697 --> 00:36:18.296
+It's sort of like custom software,
+
+00:36:18.296 --> 00:36:20.296
+just-in-time software, something like that.
+
+00:36:20.296 --> 00:36:22.996
+But I use it, and I prefer to use it
+
+00:36:22.996 --> 00:36:27.296
+because while I'll go into Claude or ChatGPT
+
+00:36:27.296 --> 00:36:30.197
+as a very convenient and especially sometimes mobile
+
+00:36:30.197 --> 00:36:32.496
+like way to answer a question
+
+00:36:32.496 --> 00:36:34.197
+or way to investigate something.
+
+00:36:34.449 --> 00:36:40.689
+Most of the real things I want to know about or work on, I have trickled information in
+
+00:36:40.689 --> 00:36:46.809
+over weeks or months and, you know, I have this idea and I want to spill it in.
+
+00:36:46.809 --> 00:36:51.289
+And so I sort of started prepping for this like years ago.
+
+00:36:51.289 --> 00:36:57.248
+I started recording my meetings, which I think many of us do now, but the thing that I do
+
+00:36:57.248 --> 00:37:01.809
+that I think folks are still surprised by, but it's very important to me, is I record
+
+00:37:01.809 --> 00:37:08.449
+a voice memo almost every morning of what I'm thinking about, what I want to do.
+
+00:37:08.449 --> 00:37:12.208
+You know, if I'm driving to my office and dropping off kids at school, I got like 30
+
+00:37:12.208 --> 00:37:13.289
+minutes in the car.
+
+00:37:13.289 --> 00:37:16.048
+And so I kind of tee up my day.
+
+00:37:16.048 --> 00:37:19.649
+When I'm working from home, it's a much shorter voice memo, but I kind of tee up my day and
+
+00:37:19.649 --> 00:37:20.649
+I put that in.
+
+00:37:20.649 --> 00:37:25.248
+And that's sort of, in a previous era of LLMs, I'd be like, that's my system prompt for the
+
+00:37:25.248 --> 00:37:26.248
+day.
+
+00:37:26.248 --> 00:37:27.329
+And it kind of affects everything.
+
+00:37:27.329 --> 00:37:31.649
+Now with more modern memory systems, it's sort of this update on like what I've accomplished
+
+00:37:31.649 --> 00:37:33.888
+that might be out of sight for my agents.
+
+00:37:33.888 --> 00:37:40.008
+And that's been a huge unlock for me and it's been a really valuable habit to fall into
+
+00:37:40.008 --> 00:37:46.328
+because I'd love to tell you that like, ah, this meeting, I put it in and now I know everything.
+
+00:37:46.328 --> 00:37:48.889
+But the truth is, it'll be like I'm walking down the street and I'm like, oh, here's an
+
+00:37:48.889 --> 00:37:49.889
+idea.
+
+00:37:49.889 --> 00:37:50.889
+Oh, we should name it that.
+
+00:37:50.889 --> 00:37:51.889
+Oh, we should do this.
+
+00:37:51.889 --> 00:37:56.489
+And that can go in, if not in the moment, it can go into sort of this, I prefer to do
+
+00:37:56.489 --> 00:37:58.968
+in the morning, maybe I would do it in the evening.
+
+00:37:58.968 --> 00:38:00.328
+And now I've like teed up my agents.
+
+00:38:00.328 --> 00:38:01.968
+And so that's huge.
+
+00:38:01.968 --> 00:38:05.809
+That's what I really love is just pouring information in and then working to get it
+
+00:38:05.809 --> 00:38:06.809
+out.
+
+00:38:06.809 --> 00:38:10.489
+And that's sent me on down all kinds of rabbit holes around like memory systems and knowledge
+
+00:38:10.489 --> 00:38:13.728
+and retrieval and all this other nonsense that I don't know if we'll have time to get
+
+00:38:13.728 --> 00:38:14.728
+into.
+
+00:38:14.728 --> 00:38:16.728
+But there's a long answer for you.
+
+00:38:16.728 --> 00:38:17.728
+Yeah.
+
+00:38:17.728 --> 00:38:22.728
+And I completely agree, like having the context and then the ability to pull all these different
+
+00:38:22.728 --> 00:38:24.728
+threads together is a superpower.
+
+00:38:24.728 --> 00:38:30.209
+I remember when GP Pulse came out, which like gave you like a morning brief about like
+
+00:38:30.209 --> 00:38:32.169
+all the different things and just like did all that research.
+
+00:38:32.169 --> 00:38:34.728
+And I thought that was like a really interesting idea.
+
+00:38:35.299 --> 00:38:40.899
+On that note, I do just want to out mean the way OpenClaw does this, right? It's a cron job
+
+00:38:40.899 --> 00:38:45.539
+and using generative AI and the types of workflows we've had previously,
+
+00:38:45.539 --> 00:38:51.139
+like it's incredibly powerful. As I always half joke, there's a reason Dr. Dre called his album
+
+00:38:51.139 --> 00:38:57.219
+The Chronic and it's cron jobs. Please, next question. I'm sorry and I'm not sorry.
+
+00:38:57.778 --> 00:39:05.139
+So then obviously, we all are fans of AI, but we all know the frustrations of it all too well.
+
+00:39:05.139 --> 00:39:10.419
+So what have been your pet peeves? I have a particular one that I think goes beyond the
+
+00:39:10.419 --> 00:39:15.698
+mainstream hatred of the things that it does, which we'll get into in a moment when we talk
+
+00:39:15.698 --> 00:39:24.099
+about my workflow and stuff. But when you maintain open source software, but when you build software
+
+00:39:25.059 --> 00:39:30.419
+software that's a framework in particular, how you take modifications into that software and
+
+00:39:30.419 --> 00:39:34.658
+contributions to that software, in my opinion, very different than how you take contributions
+
+00:39:34.658 --> 00:39:39.539
+into like an application or something that does a thing, right? Framework is for building
+
+00:39:39.539 --> 00:39:46.499
+applications and then we have applications. And the way agents review code, for whatever reason,
+
+00:39:47.139 --> 00:39:52.179
+seems to have a bias that the PR should be accepted. And if only you change these things,
+
+00:39:52.258 --> 00:39:56.739
+it will be accepted. And this is the wrong approach for a framework. Framework should
+
+00:39:56.739 --> 00:40:03.539
+not be modified unless whatever's coming in is so overwhelmingly useful to an overwhelming majority
+
+00:40:03.539 --> 00:40:10.099
+of users that the framework should take it on. And so I live this with Prefect. I'm living it
+
+00:40:10.099 --> 00:40:16.338
+now even more with FastMCP, which is a great framework, but people are doing a lot of things
+
+00:40:16.338 --> 00:40:19.938
+with it. And frankly, they're doing a lot of really cool things with it that don't belong
+
+00:40:19.938 --> 00:40:23.938
+in the framework itself. And so we get a lot of PRs, which are like, oh, it should do this
+
+00:40:23.938 --> 00:40:27.859
+thing that is useful to me. And I agree it is useful. It is cool, but I don't want it to go
+
+00:40:27.859 --> 00:40:33.938
+in the framework. And so this has been a real problem with deploying agents to review the code
+
+00:40:33.938 --> 00:40:41.139
+is this thing will come in and the codes for fantastic, but what it does is not something
+
+00:40:41.139 --> 00:40:45.379
+that belongs in the larger framework. And the agent will be like, if you just do these two
+
+00:40:45.379 --> 00:40:50.898
+things, I will accept this. And I'm like, no, this is rejected on its face. And I wrote a blog
+
+00:40:50.898 --> 00:40:57.618
+post about this that somehow climbed the hacker news ladder and had a surprisingly positive
+
+00:40:57.618 --> 00:41:02.499
+reception where I think it was called an open source, an open, I should have called it up for
+
+00:41:02.499 --> 00:41:08.258
+this talk. I'll get it up for when we share, but it's called an open source maintainer's guide to
+
+00:41:08.258 --> 00:41:14.419
+saying no. And it was like, this is hard enough when code was expensive to write. And so the
+
+00:41:14.419 --> 00:41:19.939
+act of writing and contributing code was sort of the admission ticket to interacting with a
+
+00:41:19.939 --> 00:41:24.419
+maintainer. Now that code is so cheap and it's just kind of getting lobbed over, there's this
+
+00:41:24.419 --> 00:41:29.779
+real imbalance as a maintainer, which you feel and you don't want to take out on the contributors
+
+00:41:29.779 --> 00:41:36.019
+just to be clear. But how do you say no to something that is technically good, but not
+
+00:41:36.019 --> 00:41:40.019
+aligned with the purpose of your framework? So agents turn out to be really bad at that.
+
+00:41:40.019 --> 00:41:45.538
+And that's become, that drives me nuts. That's a great post and I'll just link to it in the
+
+00:41:45.538 --> 00:41:50.499
+Discord. And everyone should check out Jeremiah's everything on his blog called Mostly Harmless,
+
+00:41:50.499 --> 00:41:54.419
+Truly Artificial Intelligence. I did message Jeremiah earlier that probably should change
+
+00:41:54.419 --> 00:41:59.698
+the name these days to Mostly Harness. I meant to do it just for you, Hugo, before this,
+
+00:41:59.698 --> 00:42:09.219
+but I ran out of time. I quite like this movement towards saying don't send PRs anymore,
+
+00:42:09.219 --> 00:42:16.898
+send issues. Because code gets stale so fast, right? Yeah. Thomas, I don't know if you want to
+
+00:42:16.898 --> 00:42:21.139
+give me my last question, but I will cue that up, Randy, because I wanted to talk about that,
+
+00:42:21.139 --> 00:42:25.779
+actually. Oh yeah, let's just jump right in. No, the last question is the best one.
+
+00:42:27.939 --> 00:42:34.019
+All right, well, then we got to ask. It's the worst answer I have. If your agent skills got
+
+00:42:34.019 --> 00:42:39.859
+leaked, what would you be most concerned about? I mean, it's the same second brain that I love
+
+00:42:39.859 --> 00:42:45.299
+so much. It's all there, right? All my deepest and darkest fears and how I hate spiders and all
+
+00:42:45.299 --> 00:42:48.978
+that is probably in the brain of this thing. And I don't want folks to know about that.
+
+00:42:49.939 --> 00:42:56.018
+So that's, I mean, I think it speaks to how prevalent these things are right now,
+
+00:42:56.018 --> 00:43:01.138
+that I almost think that's the most boring question. Because it's everything. It's worse
+
+00:43:01.138 --> 00:43:11.458
+than my internet history, right? Yeah, exactly. Let me... While you're bringing that up, I'll ask
+
+00:43:11.458 --> 00:43:16.178
+you a follow up. As you hate spiders, you know, in Australia, we have a lot of poisonous spiders.
+
+00:43:16.979 --> 00:43:20.578
+Thomas is in New Zealand where they have a lot of spiders, none of which are poisonous.
+
+00:43:22.018 --> 00:43:28.099
+I don't know which I prefer. Yeah. Yeah. Size of spiders is one of the reasons that as much as I
+
+00:43:28.099 --> 00:43:33.779
+want to come visit you, I have never. I want anything to do with spiders. We'll get you here one day.
+
+00:43:34.418 --> 00:43:38.338
+Yeah, please don't. Prank me any other way and I might actually die on the spot.
+
+00:43:41.298 --> 00:43:45.539
+Here we... Okay. So I'm bringing up my screen. Here we are in the FastMCP repo. And Randy,
+
+00:43:45.539 --> 00:43:50.738
+because you asked about it, I want to give a lot of credit for this to Bill Easton, who is
+
+00:43:51.539 --> 00:43:54.979
+one of the maintainers of FastMCP, who wrote a blog post, which is literally like
+
+00:43:55.939 --> 00:44:00.018
+shut down PRs. We do not accept PRs. And we didn't go quite that far,
+
+00:44:01.059 --> 00:44:07.219
+but I think we wrote this contributing doc a couple of months ago. And this is kind of the
+
+00:44:07.219 --> 00:44:15.138
+headline. The best contribution is a great issue. And Bill and I did a FastMCP maintainers podcast
+
+00:44:15.138 --> 00:44:19.219
+about a month ago, and we were talking about this. And he was like, provokingly, he was like,
+
+00:44:19.219 --> 00:44:26.099
+how dare you say your agent is better than my agent at actually doing this? Why is it that
+
+00:44:26.099 --> 00:44:31.298
+my cloud implements the MRE and the issue better than your cloud opening the PR? And I think that's
+
+00:44:31.298 --> 00:44:36.418
+where some of what you guys want to talk about on this show that's clearly nakedly just about
+
+00:44:36.418 --> 00:44:42.178
+stealing people's agent skills, but we're cool with that. That's okay. Why is it? What skills
+
+00:44:42.178 --> 00:44:47.138
+have I put in? What biases have I put into it? And I think the funny thing is not that much,
+
+00:44:47.779 --> 00:44:52.499
+but just enough that it's stylistically aligned in a way that's going to make it easy to maintain
+
+00:44:52.499 --> 00:44:58.738
+the code later. And I think folks forget about the importance of the maintenance of this stuff.
+
+00:45:00.898 --> 00:45:07.379
+So let me see, where should I take you? There's a lot of skills that I use
+
+00:45:08.898 --> 00:45:12.819
+in particular to work on FastMCP, where I'm the core maintainer,
+
+00:45:13.138 --> 00:45:18.418
+which are hard to show. So let's talk through that. My workflow here is extremely agent-driven,
+
+00:45:18.418 --> 00:45:22.898
+but as I said, I don't like how the agents actually interact with a lot of the contributions
+
+00:45:22.898 --> 00:45:32.178
+and stuff. So my workflow is surprisingly manual on FastMCP. I will spin up agents to both write
+
+00:45:32.178 --> 00:45:37.779
+my code and review others' code, but ultimately I will step in and I will look at it and I will
+
+00:45:37.779 --> 00:45:40.659
+work on it. And it's probably a lot slower than it would be otherwise, but I
+
+00:45:41.618 --> 00:45:46.259
+keep wishing for an agent that won't make this sentence true, but the code is a lot better off,
+
+00:45:46.259 --> 00:45:51.059
+the code base is a lot better off as a result. And as a sole maintainer who does not yet trust
+
+00:45:51.059 --> 00:45:56.819
+an army of agents to do this, I kind of need that. I kind of rely on that. And this is one of those
+
+00:45:56.819 --> 00:46:02.578
+just like affirmative, you should see the things that the agents have tried to sneak into this
+
+00:46:02.578 --> 00:46:07.858
+code base. So that's a real trade-off. And one of the skills that I value most, because I operate
+
+00:46:07.858 --> 00:46:14.099
+massively in parallel in this hybrid agent-human workflow, is I wrote this explain skill that I
+
+00:46:14.099 --> 00:46:17.939
+think I made public at some point, but if I didn't, we'll do it under the banner of this
+
+00:46:18.979 --> 00:46:23.699
+podcast. And there's nothing grand about this skill. This is not like the superpowers collection
+
+00:46:23.699 --> 00:46:28.819
+that Wes was talking about a moment ago. This is a minor, stupid, natural language prompt for the
+
+00:46:28.819 --> 00:46:35.539
+agent. And as far as I can tell, it's like, I don't know, agent-driven, but it's not like
+
+00:46:35.539 --> 00:46:40.338
+a skill. It's like, I don't know, 80 lines long, but as far as I can tell, there's only one sentence
+
+00:46:40.338 --> 00:46:44.659
+that actually matters in it. And it's been in every version of the skill. And it says,
+
+00:46:44.659 --> 00:46:49.379
+talk to me like you're explaining this to your colleague who knows about your project,
+
+00:46:49.379 --> 00:46:55.939
+but wants to understand what you just did. And that sentence changes the tenor, because I'm
+
+00:46:55.939 --> 00:47:00.819
+running 10 different agents on 10 different things over 10 different timeframes, and I'm cracking
+
+00:47:00.819 --> 00:47:05.379
+over my laptop with a coffee, and I'm like, what's this one? And if I just ask, what are we
+
+00:47:05.379 --> 00:47:09.139
+doing here? It'll be like, oh, well, we renamed this variable on this line to do this. And that's
+
+00:47:09.139 --> 00:47:13.618
+no good. And if I step back and I'm like, well, what does this code do? I'll get an explanation
+
+00:47:13.618 --> 00:47:18.019
+of the code, but not the change we're making. And so this skill, with that key sentence in it,
+
+00:47:18.738 --> 00:47:24.019
+ends up giving me the right mental model of not just grounding in the broad, but what are
+
+00:47:24.019 --> 00:47:30.259
+we up to here in a necessarily technical, but not overly verbose way. And so this skill has
+
+00:47:31.218 --> 00:47:33.618
+has become my workhorse. I reference this skill.
+
+00:47:33.618 --> 00:47:39.218
+Jeremiah, just making sure you are meaning to show the fast MCP GitHub screen.
+
+00:47:39.218 --> 00:47:43.538
+Yes. I was just trying to load up the skill. Sorry. I know I'm talking about something else,
+
+00:47:43.538 --> 00:47:48.658
+but I was trying to call it up here. Maybe I can, while I'm talking, I'm trying to get it up.
+
+00:47:49.618 --> 00:47:53.858
+Here it is. Will this show? No, it won't, because I'm showing a window. Okay.
+
+00:47:54.899 --> 00:47:58.579
+Forget it. It's too complicated to show a screen. I'll share it later.
+
+00:47:59.538 --> 00:48:03.618
+But this has become my workhorse. It is referenced in every other skill I have. It's like,
+
+00:48:03.618 --> 00:48:07.459
+use your explain skill to do this. Use your explain skill to post a reply. Use your explain
+
+00:48:07.459 --> 00:48:13.379
+skill to do this. So I think of all the skills I have, it's the one that I probably couldn't do
+
+00:48:13.379 --> 00:48:18.819
+without. The second most common one I use is... I wonder if I can just change what I'm sharing.
+
+00:48:18.819 --> 00:48:23.059
+Hang on one sec. I thought I was sharing my whole screen, but apparently...
+
+00:48:23.618 --> 00:48:27.618
+And while you're changing that, I suppose, I mean, a lot of people are insiders here,
+
+00:48:27.618 --> 00:48:37.538
+but a lot of early agentic users or people who do a bunch still ask me, when do I use skills and
+
+00:48:37.538 --> 00:48:44.579
+when do I use MCP servers and that type of stuff? And I often like to think of MCP as when you want
+
+00:48:44.579 --> 00:48:51.538
+to solve distribution problems, essentially, and serve data or certain types of tools to
+
+00:48:52.339 --> 00:48:55.059
+other people. But as someone who works so deeply with both these things,
+
+00:48:55.059 --> 00:48:59.778
+I'd be interested in your thoughts. Yeah. So skills are awesome ways to give,
+
+00:48:59.778 --> 00:49:07.139
+to steer behavior. They go in to the agent's brain in the exact same way that a message from you does.
+
+00:49:07.139 --> 00:49:14.259
+And so they're phenomenal ways to steer behavior. MCPs are great ways to distribute business logic
+
+00:49:14.259 --> 00:49:20.899
+from a central place. And so obviously, this leads into the MCP versus CLI style debate.
+
+00:49:22.259 --> 00:49:28.339
+Which I think is stupid, if you're an individual, use whichever one you prefer.
+
+00:49:28.339 --> 00:49:32.658
+And non-starter, if you're an enterprise, we're not installing a bunch of CLIs on people's machines.
+
+00:49:32.658 --> 00:49:36.019
+We never have. We never will. It's a nightmare. We're going to distribute the business logic
+
+00:49:36.019 --> 00:49:43.699
+centrally. So I find that debate to be kind of uninteresting. And I think the popularity of it,
+
+00:49:43.699 --> 00:49:47.139
+or the prevalence of it, speaks to this interesting problem in MCP land, where
+
+00:49:48.019 --> 00:49:51.139
+most people think of MCP as a way for companies to reach their customers.
+
+00:49:52.579 --> 00:49:57.538
+It's for reaching out to third parties and fanning out. And I will tell you that overwhelmingly,
+
+00:49:57.538 --> 00:50:03.059
+the use case for MCP is distributing internal business logic to internal teams in enterprises.
+
+00:50:03.059 --> 00:50:08.579
+And so you have this real representation where the MCP versus CLI debate to most users of MCP
+
+00:50:08.579 --> 00:50:15.459
+is insane. It's just, we don't talk that way. But for the average person who knows what MCP is,
+
+00:50:15.459 --> 00:50:19.059
+and probably uses it in their IDE, in their open call, or something like that,
+
+00:50:19.059 --> 00:50:22.819
+the representative use case is actually using something like the GitHub MCP server,
+
+00:50:22.819 --> 00:50:26.899
+where it is a third party relationship. And this debate over CLI actually makes a lot of sense when
+
+00:50:26.899 --> 00:50:32.738
+you're one user deciding how you want to access that. So that's my soapbox. I'll put it back now.
+
+00:50:33.538 --> 00:50:38.339
+I love it. And can you talk us through your skill now? This is the first time in this session
+
+00:50:38.339 --> 00:50:44.339
+we're looking at an agent skill. And some people may not have even seen agent skills like this.
+
+00:50:44.339 --> 00:50:49.218
+So maybe you can talk us through the markdown and the idea of progressive disclosure and what
+
+00:50:49.218 --> 00:50:52.579
+happens when an agent looks at this. Let's do a little anatomy of a skill,
+
+00:50:52.579 --> 00:50:55.858
+and then I'm going to leave some intentional mystery. So Randy has a lot of interesting
+
+00:50:55.858 --> 00:51:00.098
+things to talk about. Or Randy, just jump in. We'll do this together. Whatever you want to do here.
+
+00:51:02.259 --> 00:51:09.139
+Skills are shockingly simple for how effective they are. They have two front matter. A name,
+
+00:51:09.139 --> 00:51:13.379
+that's really important. That's how you invoke it. And a description. And the description is
+
+00:51:13.379 --> 00:51:18.658
+going to always be seen by the agent. The rest of it, and this is I think the genius thing about
+
+00:51:18.658 --> 00:51:24.259
+skills, why they're not just canned prompts. Everything down here is only seen by the agent
+
+00:51:25.778 --> 00:51:28.259
+if and when it decides to invoke the skill.
+
+00:51:28.429 --> 00:51:34.749
+So your description actually really matters and that's why a lot of skills you'll see this very clear
+
+00:51:34.949 --> 00:51:41.469
+Instruction of when to use this because there is a tool call in a sense to load the skill and see all the rest of it
+
+00:51:42.709 --> 00:51:45.969
+but that progressive disclosure as you just said a moment ago you is the
+
+00:51:47.629 --> 00:51:51.789
+Magic of skills so you can have tons and tons of skills that are all shown as these little tiny
+
+00:51:51.869 --> 00:51:53.869
+Descriptions and then the agents like I need this skill
+
+00:51:54.789 --> 00:51:59.289
+The downside if you will is that while a skill can tell an agent what to do
+
+00:52:00.388 --> 00:52:06.068
+And in fact more complicated skills zips can include scripts and other like actual business logic
+
+00:52:06.149 --> 00:52:11.429
+So that there is a way to do that, but fundamentally the skill is natural language instruction
+
+00:52:12.669 --> 00:52:17.469
+Masquerading as a work the way I like to talk is like it's a polite note to your agent and usually it does what the
+
+00:52:17.469 --> 00:52:18.469
+skill says
+
+00:52:18.469 --> 00:52:22.149
+And they've gotten a lot better as well, right like even six months ago
+
+00:52:22.589 --> 00:52:24.469
+They like
+
+00:52:24.469 --> 00:52:29.188
+skill agents and LLNs have gotten a lot better at interpreting descriptions than
+
+00:52:29.548 --> 00:52:33.429
+They were even when you know I had our our moment last October
+
+00:52:33.469 --> 00:52:35.429
+It's true, and and yet
+
+00:52:35.429 --> 00:52:42.708
+I think a lot of times I have to say use your explain skill even when I say like explain this to me
+
+00:52:42.909 --> 00:52:44.909
+It's not perfect
+
+00:52:45.668 --> 00:52:48.909
+Maybe that should have been slash commands a lot as well for that
+
+00:52:49.429 --> 00:52:54.348
+I'll do it and on and something else really lovely here with skills
+
+00:52:54.348 --> 00:53:01.149
+I think you mentioned like you don't just throw everything in context and we're told we have like a million token context windows effective
+
+00:53:01.749 --> 00:53:03.149
+Context windows are far smaller
+
+00:53:03.149 --> 00:53:07.829
+so we still need to be mindful of our own we need to context engineer constantly as
+
+00:53:08.388 --> 00:53:13.589
+Developers and users of AI agents and as you mentioned you can put anything there
+
+00:53:13.589 --> 00:53:16.429
+I like you can even you know say if you need to do this
+
+00:53:16.948 --> 00:53:23.109
+Use this MCP server or also involve the human in the loop ask ask the user, you know
+
+00:53:23.789 --> 00:53:29.149
+Etc. Exactly. I I also love that you've included what not to do. So maybe you can talk us through. Yeah
+
+00:53:30.229 --> 00:53:36.949
+Yeah, I mean this skill you can probably tell by reading it the skill itself at this point is MCP authored
+
+00:53:37.949 --> 00:53:39.949
+It's MCP offered my god. It's late
+
+00:53:40.468 --> 00:53:45.429
+LLM authored it has all the little telltale negative contrast and all of that
+
+00:53:45.429 --> 00:53:50.869
+But it is I like to think of skills as living documents, which is one of the reasons that that it's nice
+
+00:53:50.869 --> 00:53:54.029
+That they're on your machine, but there's also kind of makes distribution hard. So
+
+00:53:55.029 --> 00:53:59.268
+My skills and this I opened some folder here. I don't even know what it is where I have, you know
+
+00:53:59.268 --> 00:54:02.188
+20 odd skills in it. Most of these skills are
+
+00:54:03.988 --> 00:54:08.468
+Changing as I I'm like, oh this didn't work. I think I have one here called github reply
+
+00:54:08.468 --> 00:54:10.468
+Which is intended to try to make it
+
+00:54:11.108 --> 00:54:17.268
+Respond in the way I like use my voice in a reply, which isn't because I'm trying to be
+
+00:54:17.908 --> 00:54:22.548
+Like these are a little like annoying things like don't say great work followed by a rejection. That's confusing
+
+00:54:22.708 --> 00:54:25.828
+This is like it's not because I'm trying to masquerade it as me
+
+00:54:25.828 --> 00:54:31.589
+I'm usually pretty obvious if I'm using LM to draft the reply is because I think there's a right way to treat people
+
+00:54:31.589 --> 00:54:35.828
+And the LM doesn't do it and this goes into that thing. I said before about how it does stuff
+
+00:54:36.789 --> 00:54:38.789
+Say no close the PR
+
+00:54:39.988 --> 00:54:41.988
+No, we have to politely say no
+
+00:54:42.708 --> 00:54:44.708
+this is like probably my
+
+00:54:45.268 --> 00:54:47.268
+the first skill I ever wrote
+
+00:54:47.828 --> 00:54:49.988
+And the one I use the most
+
+00:54:50.789 --> 00:54:53.669
+And gets me in more trouble, but I'm always like ship this
+
+00:54:54.468 --> 00:54:55.669
+and
+
+00:54:55.669 --> 00:54:59.988
+It's as you can see I say a lot here. It means open a PR. It does not mean merge the code
+
+00:55:00.309 --> 00:55:03.828
+That's bad. It's bad. It's bad. It's bad. It's bad. It's bad
+
+00:55:03.828 --> 00:55:08.708
+Does not mean merge the code that's bitten me a lot. Most elements think ship it means like merge it
+
+00:55:08.789 --> 00:55:10.229
+That's not how I use it
+
+00:55:10.229 --> 00:55:13.029
+Sorry for confusing a lot of folks this work tree stuff's probably
+
+00:55:13.509 --> 00:55:16.389
+Hold over from when these things didn't know about that. You can see from the arguments here
+
+00:55:16.389 --> 00:55:19.908
+This started as a as a slash command, but I
+
+00:55:20.628 --> 00:55:24.869
+Why does this skill exist? It's not a useful skill. I haven't even read this skill in like a year
+
+00:55:24.949 --> 00:55:27.589
+Probably it seems like a really stupid skill actually
+
+00:55:27.669 --> 00:55:31.749
+But the reason it exists is because I want to write the words ship it and have the right outcome happen
+
+00:55:31.988 --> 00:55:33.988
+And this skill is my bridge
+
+00:55:34.068 --> 00:55:39.348
+To ensuring that and like that's how we use skills. Um, here's a skill for creating skills. I don't think I wrote this
+
+00:55:40.068 --> 00:55:43.108
+Actually, I think I cobbled this together from a lot of things I found online
+
+00:55:43.669 --> 00:55:44.788
+um
+
+00:55:44.788 --> 00:55:49.268
+So this is how we make living documents. And so this skill is how to write an effective skill
+
+00:55:51.189 --> 00:55:56.629
+I'm curious. I mean, there's a lot of things coming together, right one is um, github just uh
+
+00:55:57.029 --> 00:56:03.749
+Being too easy to have huge prs, right that then you need to review or decline to um
+
+00:56:04.388 --> 00:56:05.589
+as well as
+
+00:56:05.589 --> 00:56:08.149
+Having your own preferences right of how you want things done
+
+00:56:08.228 --> 00:56:11.508
+And I think it was peter steinberger who said that like in github repos
+
+00:56:11.508 --> 00:56:16.309
+You would like to have not even a feature to like submit any prs but only prompts, right?
+
+00:56:16.388 --> 00:56:22.149
+So and then like those prompts are easier to review and those kick off like uh code generation
+
+00:56:22.149 --> 00:56:26.948
+Once you're happy with a prompt that actually then use your machinery and that creates the code that you
+
+00:56:27.508 --> 00:56:31.268
+Have and uses your custom skills. You think that would be a good model?
+
+00:56:33.029 --> 00:56:39.268
+Yeah, I I mean i'm i'm into i'm into personal software basically in the most true sense right and so
+
+00:56:40.069 --> 00:56:41.749
+um
+
+00:56:41.749 --> 00:56:47.189
+In a funny way, I think that's also resulting in very personal decisions of how you achieve that software
+
+00:56:47.189 --> 00:56:49.189
+So you have your harness you've open cloud
+
+00:56:49.508 --> 00:56:57.108
+Pie whatever you clawed whatever you want to use as your like base substrate and then the way people pile on functionality features customize it
+
+00:56:57.429 --> 00:56:59.429
+skills
+
+00:57:00.469 --> 00:57:06.629
+Is deeply personal and so you look at things like um claw hub, which is the skills repository for open claw
+
+00:57:07.589 --> 00:57:09.589
+huge power law in popularity
+
+00:57:10.228 --> 00:57:12.869
+In those skills, so a lot of people are using a small number of those skills
+
+00:57:12.948 --> 00:57:16.069
+If you go look at them, like I ask my open call all the time like you want this skill
+
+00:57:16.069 --> 00:57:17.668
+It's like no, this is garbage
+
+00:57:17.668 --> 00:57:19.828
+I I already know that it doesn't affect my behavior
+
+00:57:20.388 --> 00:57:23.929
+So I think there's a lot of work to do and how people acquire these customizations
+
+00:57:24.708 --> 00:57:26.069
+But we'll see
+
+00:57:26.069 --> 00:57:29.589
+Let me um, let me blitz through two things and then i'm going to yield
+
+00:57:30.948 --> 00:57:35.429
+Some of my time these are two things that have been exciting to me in terms this this one i'm calling up because it's more
+
+00:57:35.429 --> 00:57:37.429
+in randy's uh world
+
+00:57:37.909 --> 00:57:40.708
+Uh, I I desperately wanted to create mcp apps
+
+00:57:41.909 --> 00:57:43.268
+in python
+
+00:57:43.268 --> 00:57:47.828
+And that meant I needed a python front-end framework that didn't require a back-end
+
+00:57:48.788 --> 00:57:53.508
+Uh, which almost every one of them assumes is a very specific back-end, which we don't get here. We have an mcp server
+
+00:57:53.988 --> 00:57:55.828
+and so
+
+00:57:55.828 --> 00:58:00.788
+This started as like a mini project inside fast mcp and now has become its own thing as of a couple weeks ago
+
+00:58:01.349 --> 00:58:05.589
+But what was cool is because of the same insight that mcp has this product market fit in enterprises
+
+00:58:05.589 --> 00:58:11.909
+It means mcp apps also have product market fit as data dashboards and distributing information internally
+
+00:58:11.988 --> 00:58:15.429
+and so we wrote this this is a python dsl that generates these
+
+00:58:16.228 --> 00:58:17.988
+these
+
+00:58:17.988 --> 00:58:24.069
+Generative interactive uis. This is sort of our our hero here and it's all python and it looks pretty bizarre
+
+00:58:24.629 --> 00:58:29.189
+But this and like generative uis has become my new sort of spelunk
+
+00:58:29.828 --> 00:58:31.988
+More than a side project not quite a career
+
+00:58:32.548 --> 00:58:33.349
+um
+
+00:58:33.349 --> 00:58:39.749
+All for the goal of building like interactive dashboards that can stream from an agent's brain and don't have to be hand-coded
+
+00:58:39.828 --> 00:58:41.828
+So that's been super fun
+
+00:58:41.988 --> 00:58:42.788
+um
+
+00:58:42.788 --> 00:58:47.108
+And very open invitation here to come to come play and contribute and then this is
+
+00:58:47.909 --> 00:58:52.548
+Well, can I just say i'm really excited about prefab too because I really think that like that is the future of where things
+
+00:58:52.629 --> 00:58:56.788
+Are heading we're starting to see like clod pop-up interfaces right in the chat
+
+00:58:56.948 --> 00:59:00.708
+You know and like even when it's developing things and it's scoping you can start
+
+00:59:01.029 --> 00:59:04.309
+Putting a prototype right there like enabling that through mcp is
+
+00:59:04.869 --> 00:59:11.909
+It's it's super cool my my team uses this for slides sometimes I think we even turned it into a theme and then someone um
+
+00:59:12.469 --> 00:59:14.469
+Oh, I have to I have to find it here
+
+00:59:14.708 --> 00:59:16.708
+uh
+
+00:59:18.708 --> 00:59:22.629
+Hang on one second, let me find this here it is
+
+00:59:25.268 --> 00:59:28.388
+And while jeremiah's bring that up I will say this is something we'll chat more a bit more
+
+00:59:29.189 --> 00:59:34.069
+With you randy, but something we're kind of talking around is why we should be building
+
+00:59:34.629 --> 00:59:40.388
+For agents as well as humans and everything we build for a browser should be headless as well
+
+00:59:41.589 --> 00:59:45.508
+so andres who who works over at uh dbt labs, um
+
+00:59:45.988 --> 00:59:52.228
+Published like a dashboards like overview I guess and included prefab in it and styled his prefab
+
+00:59:52.228 --> 00:59:54.548
+This is one he made which I should have just brought up his website
+
+00:59:54.548 --> 00:59:58.629
+But I I couldn't find the link at the moment. So I brought up my linkedin post about it that I just made
+
+00:59:58.948 --> 00:59:59.828
+um
+
+00:59:59.828 --> 01:00:02.949
+One is this like myspace theme and then the other was a windows
+
+01:00:03.429 --> 01:00:06.389
+Theme and I just like love this and this is just like base prefab underneath
+
+01:00:06.389 --> 01:00:07.189
+so I want to
+
+01:00:07.189 --> 01:00:10.949
+Talk to andres literally I saw this three hours ago as you can see and I just want to talk to him make these like
+
+01:00:11.028 --> 01:00:15.189
+Default themes in prefab. So that's been super fun on the like agentic
+
+01:00:15.749 --> 01:00:17.749
+uh space and then
+
+01:00:18.228 --> 01:00:23.028
+On the theme of custom software. This is another experiment of mine. This started a few months ago where
+
+01:00:23.668 --> 01:00:25.988
+I wanted custom like slide software
+
+01:00:26.528 --> 01:00:27.908
+um
+
+01:00:27.908 --> 01:00:33.028
+Mostly because the way I give a talk like the speaker notes. I want them a different way
+
+01:00:33.588 --> 01:00:40.389
+And so this I actually this is very live. This uh came off the agent presses last night. I haven't fully used it
+
+01:00:40.389 --> 01:00:41.829
+So we're not going to fully use it yet
+
+01:00:41.829 --> 01:00:47.348
+This is the latest version of a piece of software that I call cardboard which is for laying out my conference talks
+
+01:00:47.829 --> 01:00:49.829
+as cards like on a board
+
+01:00:50.069 --> 01:00:53.189
+And follows a vocabulary that i've developed
+
+01:00:54.148 --> 01:00:58.949
+Purely for me like no one else should use it where I think of my talks as having acts and beats
+
+01:00:59.348 --> 01:01:01.269
+And then within those beats
+
+01:01:01.269 --> 01:01:05.588
+We have slides and so this this is the top of the cardboard where I lay out
+
+01:01:06.228 --> 01:01:07.189
+um
+
+01:01:07.189 --> 01:01:09.588
+These are the the five acts and then these are the beats
+
+01:01:10.629 --> 01:01:12.869
+Oh, there's six acts I guess this was a keynote
+
+01:01:12.869 --> 01:01:18.629
+I gave at the pie conference and then if we scroll down we get the actual slides which here are just mocks
+
+01:01:19.269 --> 01:01:25.028
+But i'm working on the actual speaker notes, which for me always have this blue gray yellow and and pink
+
+01:01:25.108 --> 01:01:30.548
+Which we don't need to go into format. And so this is like my custom slide software and then this turns into
+
+01:01:31.429 --> 01:01:32.788
+the deck
+
+01:01:32.788 --> 01:01:34.069
+which
+
+01:01:34.069 --> 01:01:39.829
+The images are broken, but if we bring up the speaker notes for it, they all carry over in that same like blue gray
+
+01:01:42.389 --> 01:01:48.309
+Like style and so apologies that I guess my images are broken in this one that I wrote but this is um
+
+01:01:49.028 --> 01:01:50.069
+um
+
+01:01:50.069 --> 01:01:55.429
+This has been really fun to have like a piece of software. That's exactly makes talks the way I want them
+
+01:01:56.148 --> 01:01:58.389
+the way I like to give them and
+
+01:02:00.309 --> 01:02:05.028
+And I don't think anyone else would use it maybe they would I don't know maybe open call if folks would use this we'll open
+
+01:02:05.028 --> 01:02:06.309
+it up, but like
+
+01:02:06.309 --> 01:02:10.548
+This has been great. And most importantly, this is not an interactive ui. This is read-only
+
+01:02:10.788 --> 01:02:18.389
+I'm, i'm clicking on this stuff jumps down. That's the one interaction it has I interact with this entirely over an api or an mcp server
+
+01:02:18.869 --> 01:02:21.588
+Talking to it from any agent. I want that can connect to it
+
+01:02:22.148 --> 01:02:27.829
+Um, so exclusively this is like recording a mini voice memo putting into an agent seeing the changes here reacting
+
+01:02:28.309 --> 01:02:31.348
+In voice and I can't edit this if I wanted to
+
+01:02:32.069 --> 01:02:33.028
+um
+
+01:02:33.028 --> 01:02:35.028
+And the brain behind this is open claw
+
+01:02:36.389 --> 01:02:41.028
+This one I this one I principally work with with my open claw because that way I can like work on a talk
+
+01:02:41.829 --> 01:02:45.509
+You know, I can there's a talk i'm giving in three weeks for pi data london so I can like
+
+01:02:46.148 --> 01:02:48.788
+Feed in something tonight close it. Don't worry about it
+
+01:02:48.949 --> 01:02:53.269
+Talk to the agent about a thousand other things and then I can come back and we can actually pick right up because of the memory
+
+01:02:53.668 --> 01:02:58.869
+Substrate there. So I I typically use my open call for stuff like this, which is really distributed over time
+
+01:02:59.668 --> 01:03:01.668
+That's actually my main use of my open call
+
+01:03:03.189 --> 01:03:07.189
+And is that the only one you use or do you mix between open code and
+
+01:03:08.629 --> 01:03:13.189
+I code I use open claw as my main personal
+
+01:03:13.829 --> 01:03:15.829
+Um interface
+
+01:03:16.788 --> 01:03:23.509
+Because of how i've customized its memory when i'm working on code. I use claude desktop and codex codex desktop
+
+01:03:24.228 --> 01:03:29.588
+Um, which I migrated to from the cli's mostly because of how much better it is at managing parallel sessions
+
+01:03:30.468 --> 01:03:36.148
+um, and so those are my two and I you know, I probably have my own heuristic about which is better for what that I
+
+01:03:37.269 --> 01:03:39.269
+That I assign work to um
+
+01:03:39.829 --> 01:03:42.148
+So those are for my let's work on a thing
+
+01:03:42.228 --> 01:03:47.908
+It's memory bounded and I use an open claw as my memory absorber for more asynchronous work
+
+01:03:50.069 --> 01:03:52.069
+And that is
+
+01:03:52.148 --> 01:03:54.148
+some of my agent skills
+
+01:03:54.309 --> 01:04:00.869
+Very cool and just feedback on cardboard. It looks super useful. So I definitely would be up for for using it
+
+01:04:01.749 --> 01:04:03.749
+All right, maybe folks want to see it. We'll uh
+
+01:04:04.629 --> 01:04:06.629
+We'll get it out
+
+01:04:07.189 --> 01:04:09.528
+Amazing thank you so much that that was really insightful
+
+01:04:10.309 --> 01:04:14.009
+Uh, so I think then uh, we can move on to the next contestant
+
+01:04:14.548 --> 01:04:21.108
+Yeah, so thank you. Once again, jeremiah for coming and showing us your agent skills plus plus it's amazing to see everything
+
+01:04:21.246 --> 01:04:28.246
+We should talk more about the future of ephemeral software, just-in-time software.
+
+01:04:28.246 --> 01:04:40.246
+I think the ability for everyone to generate things that are helpful to them and their communities, we've just got the tip of the iceberg here.
+
+01:04:40.246 --> 01:04:45.246
+As one Australian politician said to another one back in the day, you're all tip and no iceberg.
+
+01:04:45.246 --> 01:04:51.246
+Now, I'm not saying that to anyone here, but it's the types of things that happen in the political landscape here.
+
+01:04:51.246 --> 01:04:55.246
+I am so excited for Randy Olson to show us what we're up to.
+
+01:04:55.246 --> 01:05:02.246
+I do want to just quickly show everyone what Randy does.
+
+01:05:02.246 --> 01:05:09.246
+There's a spider. Watch out, Jeremiah.
+
+01:05:09.246 --> 01:05:12.246
+Yeah!
+
+01:05:12.246 --> 01:05:14.246
+These are amazing.
+
+01:05:14.246 --> 01:05:22.246
+Thanks for sending that through, Randy. I know how busy you are. I really appreciate you taking the time from Washington State to send that through.
+
+01:05:22.246 --> 01:05:28.246
+Look, there are so many ways to introduce Randy.
+
+01:05:28.246 --> 01:05:39.246
+One of our first conversations, one of the first podcasts I did nearly a decade ago was about automated machine learning and all the wonderful work you're doing on TPOT.
+
+01:05:39.246 --> 01:05:46.246
+I actually remember I asked you if you want builders to take away one thing from this conversation, what would you want that to be?
+
+01:05:46.246 --> 01:05:52.246
+You said, just stop doing basic grid search. There are so many other interesting things to do.
+
+01:05:52.246 --> 01:05:57.246
+Yet, look where we still are. LLM is still doing grid search.
+
+01:05:57.246 --> 01:06:05.246
+But a lot of the other things that I've loved about your work are all the amazing things I've learned from you about data visualization,
+
+01:06:06.246 --> 01:06:10.246
+all the amazing things I've learned from you about the world through data visualization.
+
+01:06:10.246 --> 01:06:15.246
+You've been moderating the subreddit for a long time on data viz.
+
+01:06:15.246 --> 01:06:23.246
+But also your work at GoodEye, everything you're thinking about with respect to evals and all the work you've done over the past couple of years,
+
+01:06:23.246 --> 01:06:33.246
+helping non-technical people build with AI and even building basic retrieval systems for executives and that type of stuff.
+
+01:06:33.246 --> 01:06:45.246
+So before, and we'll be talking about, one thing you'll show us today is teaching agents to produce beautiful and grounded data visualizations,
+
+01:06:45.246 --> 01:06:49.246
+which they are not good at, right? So you've built loops to do this.
+
+01:06:49.246 --> 01:06:54.246
+And it's an evolving set of skills, which we'll get into soon.
+
+01:06:54.246 --> 01:07:00.246
+So our three questions, what do you love the most about working with AI agents?
+
+01:07:00.246 --> 01:07:07.246
+I mean, I agree with what everyone has said so far, which is like, of course, the productivity gains are huge.
+
+01:07:07.246 --> 01:07:12.246
+You know, like I am just I'm a builder at heart. I love building things.
+
+01:07:12.246 --> 01:07:15.246
+I have so many ideas and I've always been limited by capacity in the past.
+
+01:07:15.246 --> 01:07:18.246
+And now it's just fire up a new chat, fire up a new tab. Boom.
+
+01:07:18.246 --> 01:07:23.246
+You can build that in an hour and it's just so easy. And then also treating as a thought partner.
+
+01:07:23.246 --> 01:07:28.246
+So like I also have like a growing memory base where I throw in ideas and track everything.
+
+01:07:28.246 --> 01:07:37.246
+That's so invaluable, especially because like most LLMs, even nowadays, still tend to be sycophantic and they'll just agree with you.
+
+01:07:37.246 --> 01:07:49.246
+And when I load an AI agent with my, what I call a digital twin, it knows I actually want someone who's not necessarily harsh, but won't just agree with me, but will push back.
+
+01:07:49.246 --> 01:07:54.246
+You know, like I want a thought partner. And you can induce that, you know, by prompting LLMs.
+
+01:07:55.246 --> 01:08:05.246
+But I think another really interesting thing that I really like about them is like how you can be kind of, I'm getting cut off here, working while being like outside touching grass.
+
+01:08:05.246 --> 01:08:09.246
+That's also been really nice. You know, some days I'm better at that than others.
+
+01:08:09.246 --> 01:08:17.246
+But because you can, you know, like Wes was showing us earlier, I think we all use the superpowers flow to do development.
+
+01:08:17.246 --> 01:08:21.246
+It's kind of slow, but, you know, you can have four tabs running in the background and be like, you know what?
+
+01:08:21.246 --> 01:08:25.246
+It's beautiful out. It's time to go for a walk. And you're still getting stuff done.
+
+01:08:25.246 --> 01:08:29.246
+You can even check in remotely while you're off on a walk or you're spending time with family and so on.
+
+01:08:29.246 --> 01:08:41.246
+So I think I have really appreciated that. It actually gives you, because I am, I'll self-admit, I'm a workaholic and I'm also a hyper-focused person.
+
+01:08:41.246 --> 01:08:47.246
+I can spend 12 hours straight just hacking away at code. It's great to be able to step away.
+
+01:08:48.246 --> 01:08:58.246
+Without a doubt. And I do, I totally agree with being able to do it while I go for walks on the beach and jump in the water, come out, check what's up.
+
+01:08:58.246 --> 01:09:03.246
+I do think it can mean my time away isn't always time away.
+
+01:09:03.246 --> 01:09:10.246
+But I also am interested in the future of being able to chat with these things better so I don't need to look at my phone all the time.
+
+01:09:10.246 --> 01:09:21.246
+Not trying to get too future music, but like some Java style, I also don't want to be a glass hole, but some Java style augmented reality stuff could be super interesting.
+
+01:09:21.246 --> 01:09:25.246
+Also, the ability of us, I was chatting with Vincent Varmadam about this last week.
+
+01:09:25.246 --> 01:09:31.246
+I've been to Amsterdam quite a lot recently and walking along the canals with him, talking about building stuff.
+
+01:09:31.246 --> 01:09:36.246
+Just imagine having an AI assistant there that would build stuff that we're talking about in real time.
+
+01:09:36.246 --> 01:09:42.246
+That may seem futuristic to some people, but I actually don't think it's necessarily that far off.
+
+01:09:42.246 --> 01:09:49.246
+Yeah, I think that's feasible nowadays. You just invite a meeting recorder, listen, and then send it off to an AI agent, right? Go build.
+
+01:09:49.246 --> 01:09:53.246
+Totally. Well, yeah, the thing is that they don't necessarily...
+
+01:09:53.246 --> 01:09:57.246
+Specificity is so important now, like do this, don't do this, do that, don't do that.
+
+01:09:57.246 --> 01:10:00.246
+But having skills around that can be super useful.
+
+01:10:00.246 --> 01:10:04.246
+Second question, what do you find most frustrating about working with agents?
+
+01:10:05.246 --> 01:10:13.246
+Gosh, I think it is the natural tendency for them to be extremely agreeable.
+
+01:10:13.246 --> 01:10:19.246
+Like we were talking earlier about how the default assumption is, oh yeah, we're going to merge this PR, right?
+
+01:10:19.246 --> 01:10:25.246
+Default assumption is, yes, we're going to do something. Yes, we're going to give in to this demand or whatever.
+
+01:10:26.246 --> 01:10:35.246
+I think it's like they're too agreeable by default and you really have to fight them to get them to not be agreeable.
+
+01:10:35.246 --> 01:10:39.246
+I've written about this a little bit, like there are ways you can prompt them.
+
+01:10:39.246 --> 01:10:45.246
+You can take advantage of their agreeableness to be disagreeable or be constructive.
+
+01:10:45.246 --> 01:10:50.246
+But yeah, it's really frustrating. I think that's getting better over time.
+
+01:10:50.246 --> 01:10:54.246
+I think the post-training is starting to focus more on combating it.
+
+01:10:54.246 --> 01:10:59.246
+But yeah, that is a very ongoing frustrating thing for me.
+
+01:10:59.246 --> 01:11:06.246
+Totally. And if all agent conversation somehow got leaked, what would you be most concerned about yours becoming public?
+
+01:11:06.246 --> 01:11:11.246
+Gosh, I mean, of course, all the personal detail stuff, I put a lot in there too.
+
+01:11:12.246 --> 01:11:21.246
+Maybe it's just how, maybe some of the tics that I have when I'm interacting with AI agents.
+
+01:11:21.246 --> 01:11:24.246
+I always find myself typing the same things.
+
+01:11:24.246 --> 01:11:32.246
+It's like one of my most typed phrases is probably like, be concise and unambiguous.
+
+01:11:32.246 --> 01:11:36.246
+I'm like typing that over and over and over again. I should just turn that into a skill.
+
+01:11:37.246 --> 01:11:43.246
+So probably funny little quirks like that, that I have developed while interacting with LLMs.
+
+01:11:43.246 --> 01:11:47.246
+That would be a pretty funny thing to see.
+
+01:11:47.246 --> 01:11:52.246
+Super cool. And I feel it's unfair to ask that question without answering it myself.
+
+01:11:52.246 --> 01:12:01.246
+So I will just say, I think the thing I'd be most concerned about is some of the words I use when I lose it.
+
+01:12:01.246 --> 01:12:11.246
+Like when I'm being definitely engineering for too long at the end of a long session and I'm dumb, it's dumb.
+
+01:12:11.246 --> 01:12:16.246
+And I'm just hoping that we can wrap up soon and it does something really dumb.
+
+01:12:16.246 --> 01:12:21.246
+And some of the words which would get me banned from YouTube are saying live now.
+
+01:12:21.246 --> 01:12:29.246
+And words that are acceptable in Australia, but definitely wouldn't be over there.
+
+01:12:30.246 --> 01:12:36.246
+Without further ado, let's jump into all the amazing visualization stuff you're up to.
+
+01:12:36.246 --> 01:12:43.246
+Yeah, first I thought I'd share. So of course I have this visualization skill workflow that I want to show.
+
+01:12:43.246 --> 01:12:49.246
+But since we were talking about skills in general, and there might be some folks who are just very new to skills.
+
+01:12:49.246 --> 01:12:51.246
+I mean skills are frankly a pretty new concept.
+
+01:12:51.246 --> 01:12:56.246
+I figured maybe I'll hopefully screen share successfully here on my screen.
+
+01:12:56.246 --> 01:13:04.246
+And maybe the entire screen. And I'll just like show. Is this showing up okay?
+
+01:13:04.246 --> 01:13:07.246
+Is it plenty large enough?
+
+01:13:07.246 --> 01:13:11.246
+It's showing up. And if you could maybe zoom in.
+
+01:13:11.246 --> 01:13:16.246
+Zoom in even more. Okay. How about now? A couple more.
+
+01:13:16.246 --> 01:13:19.246
+It's not zooming in for us. It might be...
+
+01:13:20.246 --> 01:13:23.246
+Oh no. Is it showing up?
+
+01:13:23.246 --> 01:13:30.246
+Maybe it's just doing very small zooms. I think it got a little bit bigger.
+
+01:13:30.246 --> 01:13:32.246
+Yeah, that's awesome.
+
+01:13:32.246 --> 01:13:34.246
+Yeah. Okay, good.
+
+01:13:34.246 --> 01:13:38.246
+Okay, so now things are going to be really, really jankified in there.
+
+01:13:38.246 --> 01:13:42.246
+Now I did pull this up on a terminal.
+
+01:13:42.246 --> 01:13:45.246
+But this is still a skill.
+
+01:13:45.246 --> 01:13:49.246
+And I think you kind of got the lay of the land.
+
+01:13:49.246 --> 01:13:55.246
+So this is the actual skill, which we can also make available after this as well.
+
+01:13:55.246 --> 01:14:01.246
+But basically you have your basic front matter that is used for progressive disclosure.
+
+01:14:01.246 --> 01:14:07.246
+And then here's some things that I think about when I'm working with skills.
+
+01:14:07.246 --> 01:14:11.246
+And actually, first off, at a high level, with AI agents in general,
+
+01:14:11.246 --> 01:14:16.246
+is you can open up your cloud, whatever AI agent tool you're using.
+
+01:14:16.246 --> 01:14:21.246
+I highly recommend connecting as many data sources as you can to it.
+
+01:14:21.246 --> 01:14:27.246
+Simply because the more information you give to your AI agent,
+
+01:14:27.246 --> 01:14:32.246
+whether that's through MCPs, CLIs, whatever,
+
+01:14:32.246 --> 01:14:35.246
+the more it's going to be able to do on your behalf.
+
+01:14:35.246 --> 01:14:37.246
+And so if you don't have it connected to anything,
+
+01:14:37.246 --> 01:14:42.246
+and you really restrict it down to just one folder or just one code base,
+
+01:14:42.246 --> 01:14:44.246
+it can do a lot.
+
+01:14:44.246 --> 01:14:48.246
+But if we're talking about it can read your code base,
+
+01:14:48.246 --> 01:14:50.246
+it can check all the changes you made today
+
+01:14:50.246 --> 01:14:53.246
+and then write a report automatically onto Slack.
+
+01:14:53.246 --> 01:14:56.246
+So I have a ton of cron jobs that do things like that,
+
+01:14:56.246 --> 01:15:00.246
+that automatically send off reports to colleagues,
+
+01:15:00.246 --> 01:15:02.246
+of course getting their permission,
+
+01:15:02.246 --> 01:15:04.246
+that I'm going to send an AI thing their way.
+
+01:15:04.246 --> 01:15:07.246
+So connecting everything through MCP and CLI, of course,
+
+01:15:07.246 --> 01:15:13.246
+with permissions that your IT admin is okay with.
+
+01:15:13.246 --> 01:15:16.246
+If you're the IT admin, then you're what you're okay with.
+
+01:15:16.246 --> 01:15:17.246
+It's a huge one.
+
+01:15:17.246 --> 01:15:19.246
+I would say another one that's really useful,
+
+01:15:19.246 --> 01:15:21.246
+and not all of these are going to be in this skill is,
+
+01:15:21.246 --> 01:15:23.246
+actually I guess so, I guess it is,
+
+01:15:23.246 --> 01:15:27.246
+is I highly recommend in every skill, if you need to do anything,
+
+01:15:27.246 --> 01:15:30.246
+make sure that you have a phase at the start of the skill
+
+01:15:30.246 --> 01:15:33.246
+that your environment is actually set up.
+
+01:15:33.246 --> 01:15:35.246
+So in this case here, in this skill,
+
+01:15:35.246 --> 01:15:38.246
+it's going to be using some unsurprising libraries,
+
+01:15:38.246 --> 01:15:42.246
+and hey, some familiar libraries.
+
+01:15:42.246 --> 01:15:45.246
+And so it needs to install those first and make sure.
+
+01:15:45.246 --> 01:15:48.246
+So I highly recommend you have the skill set up the environment,
+
+01:15:48.246 --> 01:15:51.246
+because otherwise if you just tell it, hey, go do this thing,
+
+01:15:51.246 --> 01:15:54.246
+and it's trying to write Python code,
+
+01:15:54.246 --> 01:15:59.246
+it's going to crash and have to figure it out on the fly.
+
+01:15:59.246 --> 01:16:00.246
+So if you can tell your skill ahead of time,
+
+01:16:00.246 --> 01:16:02.246
+like, hey, make sure everything's set up.
+
+01:16:02.462 --> 01:16:07.502
+then that is a great start to make sure for a smooth skill. Another thing I highly recommend,
+
+01:16:07.502 --> 01:16:14.782
+which is not in this skill, but it's done in many many well-designed skills, is to design your skill
+
+01:16:14.782 --> 01:16:19.422
+as actually like a thin driver. So you want to make, like this is the idea of progressive
+
+01:16:19.422 --> 01:16:25.181
+disclosure, right? So instead of having, this skill is actually very very long, relatively very long,
+
+01:16:25.181 --> 01:16:31.261
+has lots of stuff in it, every single one of these phases could be its own like reference
+
+01:16:31.261 --> 01:16:36.142
+markdown file, right? So then if you're having your skill do something, let's say half of what's
+
+01:16:36.142 --> 01:16:39.901
+in the skill is not relevant to what you're doing right now, it doesn't have to load that into
+
+01:16:39.901 --> 01:16:44.542
+context. It can just, if I would just want to jump straight to phase four, it can just load the phase
+
+01:16:44.542 --> 01:16:49.581
+four thing, load that into its context, and not waste the context on all the phase one through
+
+01:16:49.581 --> 01:16:57.261
+three. If you ask like Opus to do that, it'll do that by default usually nowadays, and that's a
+
+01:16:57.261 --> 01:17:05.982
+really good skill design as well. I would also say design your skill to be super unambiguous.
+
+01:17:06.355 --> 01:17:12.195
+like this one here is actually relatively unambiguous it's like very specific you know
+
+01:17:12.195 --> 01:17:17.715
+at this step do this at this step do that it actually tells like exact commands to run and
+
+01:17:17.715 --> 01:17:24.595
+how it actually provides exact code snippets to run right to when it's checking things the more
+
+01:17:24.595 --> 01:17:28.994
+specific you can be in your skill the more repeatable it is in the future that helps a lot
+
+01:17:29.555 --> 01:17:35.475
+as well because like when it comes down to it a skill plus an llm is kind of a program right and
+
+01:17:35.475 --> 01:17:41.554
+so like llms are good at handling stuff that's that's a bit it's a little bit ambiguous whereas
+
+01:17:41.554 --> 01:17:46.034
+the other things you know like if you need an environment set up you can just tell it run these
+
+01:17:46.034 --> 01:17:52.435
+commands um and then you've got it in code in here right but providing it deterministic scripts
+
+01:17:52.435 --> 01:17:59.394
+to run at certain points as well so we have degrees of agency there and autonomy 100% yeah
+
+01:17:59.394 --> 01:18:04.115
+i mean i think if i were to decompose the skill into a local file all this code would be separate
+
+01:18:04.115 --> 01:18:08.675
+like a separate python file right i just put it all put it all in one file so it's relatively easy
+
+01:18:08.675 --> 01:18:15.634
+to see here um and then i think the last thing i'll comment about this is um always like at the
+
+01:18:15.634 --> 01:18:21.155
+end of your skills or even just have your own skill do like a reflect and improve loop because
+
+01:18:21.155 --> 01:18:25.954
+you really should i completely agree with with jeremy here like should treat your skills as a
+
+01:18:25.954 --> 01:18:30.195
+living artifact they're not like a one and done thing there's something that you need to improve
+
+01:18:30.195 --> 01:18:35.475
+over time and so when you run through on a new use case you're probably like all the time with
+
+01:18:35.475 --> 01:18:40.994
+data visualizations i'm having to correct how it does things right how it how it visualizes data
+
+01:18:40.994 --> 01:18:47.394
+how it thinks about data how it makes a good data visualization um and so if you have if you
+
+01:18:47.394 --> 01:18:52.354
+explicitly put in your skill you can like phase seven here whatever say reflect and improve how
+
+01:18:52.354 --> 01:18:56.835
+did this run go how can we improve the skill to make it better then it just becomes a part of your
+
+01:18:56.835 --> 01:19:01.795
+loop right every single run you're learning something new and putting it into the skill
+
+01:19:01.795 --> 01:19:07.795
+and it's compounding and i think that is like a super super powerful thing about about skills in
+
+01:19:07.795 --> 01:19:13.235
+particular is that compounding nature to them um so i don't know if we wanted to chat about any of
+
+01:19:13.235 --> 01:19:19.635
+that but that was like my my uh throwing a bunch of ideas out there around like how i think about
+
+01:19:19.635 --> 01:19:25.635
+skills and um i think a lot of best practices around skills so many wonderful tips and best
+
+01:19:25.635 --> 01:19:30.355
+practices i something did come to mind that's tangentially related there were a couple of
+
+01:19:30.355 --> 01:19:36.754
+questions that i plan on getting to later around harnesses uh in the discord chat and what made me
+
+01:19:36.754 --> 01:19:42.195
+think of it is the idea of like a skill being something that's continuously updated and
+
+01:19:42.195 --> 01:19:46.355
+iterated on and something i'm trying to help people understand and convince people of is
+
+01:19:46.355 --> 01:19:52.275
+a heart and a harness isn't something that a lab ships and you use right um and for those who
+
+01:19:52.275 --> 01:19:57.475
+haven't heard this term think of the llm as the brain and the harnesses all the things that do
+
+01:19:57.475 --> 01:20:03.954
+stuff from the brain so tools that it uses whether it's um you know write to a file or execute
+
+01:20:03.954 --> 01:20:09.555
+something or connect to an mcp server or you use this skill now what happens though is that
+
+01:20:10.995 --> 01:20:15.794
+when you write a skill or connect to a different mcp server essentially they become part of your
+
+01:20:16.115 --> 01:20:22.754
+so the idea of iterating constantly on a skill is part of the kind of the mental model of
+
+01:20:22.754 --> 01:20:28.115
+continually building and rebuilding uh your harness and i'm interested in if this is how you
+
+01:20:28.115 --> 01:20:34.835
+will think about that yeah i i totally agree i mean it's like the the model unless you're
+
+01:20:34.835 --> 01:20:39.635
+hardcore and using like you know open source models running your own local models the model's
+
+01:20:39.635 --> 01:20:44.514
+fixed right you can kind of choose between a few frontier models whatever there's not much you can
+
+01:20:44.514 --> 01:20:51.954
+do with that even the harness unless you're uh you know also hardcore and making your own harness
+
+01:20:51.954 --> 01:20:56.195
+or using a local harness that's kind of fixed too right and the harness kind of like helps
+
+01:20:56.195 --> 01:21:03.314
+orchestrate things like you know use sandboxes or access the mcp or when to hit the model when to
+
+01:21:03.314 --> 01:21:08.915
+think etc when to take an action whereas the skills are really the thing that can evolve with you
+
+01:21:08.915 --> 01:21:15.314
+and they can they can kind of like guide the harness plus the model and everything around it
+
+01:21:15.314 --> 01:21:19.715
+towards what you actually want it to do right you know and i i think that's that's the the
+
+01:21:19.715 --> 01:21:25.315
+amazing thing about skills and they're just text files that's great totally and the models have
+
+01:21:25.315 --> 01:21:32.674
+got i mean we had that moment right with 4.5 and then um you know the that week where the three
+
+01:21:32.674 --> 01:21:37.474
+labs all released the models right that put us in what simon willison calls the inflection point and
+
+01:21:37.555 --> 01:21:43.634
+yes where they i think they sucked up the harnesses that we were all building they did
+
+01:21:43.634 --> 01:21:48.595
+like whatever it was like reinforcement learning via verifiable rewards or whatever on all the
+
+01:21:48.595 --> 01:21:57.155
+traces um and meant that we don't didn't need those extreme kind of all the tool calls we're using and
+
+01:21:57.155 --> 01:22:02.835
+that type of stuff and at that point the amount you can get away with a bash tool and a search tool
+
+01:22:02.835 --> 01:22:08.194
+and a bunch of skills you know bob's your uncle as we say now and i'll link to a post by amp which
+
+01:22:08.194 --> 01:22:13.954
+is a really interesting uh coding agent and product um where they wrote you know harnesses
+
+01:22:13.954 --> 01:22:18.035
+are dead and it's it's provocative but the basic idea is that models are getting so good that
+
+01:22:18.035 --> 01:22:25.875
+harnesses are better when uh extremely minimal now i i think i agree i agree with that too especially
+
+01:22:25.875 --> 01:22:30.275
+it's just like it still makes sense to keep building harnesses and keep building skills
+
+01:22:30.275 --> 01:22:34.995
+on top of harnesses but the great part about that is like that actually can just become training data
+
+01:22:34.995 --> 01:22:40.275
+for the frontier model and then just like you said out of you know just straight out of the
+
+01:22:40.275 --> 01:22:45.794
+model it becomes able to make beautiful charts hey i would love it if they if they trained on
+
+01:22:45.794 --> 01:22:52.354
+my skill i know we don't need this skill anymore um hugo did you want me to just jump in really
+
+01:22:52.354 --> 01:22:57.634
+quick i know we're i would i would love to and look we can we can go a bit over each
+
+01:22:58.595 --> 01:23:03.875
+each guess we've gone five minutes over so if we take that cumulatively we can go for another 24
+
+01:23:03.875 --> 01:23:10.995
+hours or something i think actually perfect let's do it let's let's token max um cool so um for
+
+01:23:10.995 --> 01:23:17.634
+those who are unfamiliar or it's just been ages and you and you forgot about me and all the very
+
+01:23:17.634 --> 01:23:24.354
+important data visualization work i've done so back in the early 2010s i was especially i was
+
+01:23:24.354 --> 01:23:28.435
+in grad school so i was looking for any excuse to do anything other than work on my phd
+
+01:23:29.234 --> 01:23:32.035
+hopefully my advisor is not not listening although i think he knows
+
+01:23:34.354 --> 01:23:39.394
+so i was working on data visualizations like crazy and like i mentioned i'm a builder i'm a very
+
+01:23:39.394 --> 01:23:43.715
+curious person and so i'd always like go and find a data set try to find an interesting question and
+
+01:23:43.715 --> 01:23:49.315
+make a blog post about it right so i worked on very very insightful things right like what are
+
+01:23:49.315 --> 01:23:54.514
+the deadliest films of all time by on-screen death counts there's a cool forum where people
+
+01:23:54.514 --> 01:24:00.755
+actually watch movies and count every single death i solved things like where's waldo or wally you
+
+01:24:00.755 --> 01:24:06.275
+know or in other parts of the world where you know if you remember you try to find waldo in the books
+
+01:24:06.275 --> 01:24:10.514
+there and then i use machine learning to try to find out oh where is he biased towards being and
+
+01:24:10.514 --> 01:24:17.474
+then optimize the path i optimized road trips and so you know this was like another data visualization
+
+01:24:17.474 --> 01:24:23.794
+machine learning problem worked on really really important like spurious extrapolations like
+
+01:24:24.435 --> 01:24:30.275
+the frequency of the use of the word novel in academic research papers if we extrapolate that
+
+01:24:30.275 --> 01:24:38.435
+all 100 of research papers by 2130 will use the word novel and then there was a short period i
+
+01:24:38.435 --> 01:24:42.435
+guess it's dead on on twitter or something but there's a short period where we were all at least
+
+01:24:42.435 --> 01:24:47.954
+i was obsessed with marble racing you know data visualization on that and so like i what i was
+
+01:24:47.954 --> 01:24:52.674
+always trying to do was to find something interesting or sometimes something silly
+
+01:24:52.674 --> 01:24:59.234
+and get and like make through data visualization make machine learning make ai or even just make
+
+01:24:59.234 --> 01:25:05.555
+data topics more accessible to get them into you know visualizing data analyzing data and so on
+
+01:25:06.275 --> 01:25:12.755
+and i did this for a long time and eventually i realized oh hey like ai agents can do this so
+
+01:25:12.755 --> 01:25:18.595
+when i when i first went and tried to have an ai agent you know just like hey ai agent make
+
+01:25:18.595 --> 01:25:24.595
+beautiful data visualization make no mistakes what popped out was honestly like unimpressive
+
+01:25:24.595 --> 01:25:31.394
+and then that's when i realized oh i have to like encode still what makes for a good data visualization
+
+01:25:31.394 --> 01:25:36.194
+at least in my opinion and of course having done this a long time i'm highly opinionated on what
+
+01:25:36.194 --> 01:25:45.315
+makes a good data visualization um if you're familiar with edward tufte he has a giant in
+
+01:25:45.315 --> 01:25:49.395
+the field of data visualization he's very opinionated on what makes a good data visualization
+
+01:25:49.395 --> 01:25:55.154
+no chart junk has to be a clear story clear annotations you know like straightforward use
+
+01:25:55.154 --> 01:26:01.234
+of color so on and so forth and i said what if i encoded that principle into an ai agent
+
+01:26:01.875 --> 01:26:06.034
+and so that's essentially what what i've done in this posting series and you see i've done a whole
+
+01:26:06.034 --> 01:26:13.154
+bunch of them where essentially the idea of what i built and i'll jump back to the skill over here
+
+01:26:13.154 --> 01:26:19.474
+is you take you start with an idea and then the ai agent goes and researches the web to try to like
+
+01:26:19.474 --> 01:26:27.794
+find data and other stories and everything else that supports um that touches on that and then
+
+01:26:27.794 --> 01:26:35.474
+it tries to create a valid data visualization and tell a valid data story from that right so if we
+
+01:26:35.474 --> 01:26:42.435
+jump over here to this tab maybe this text is a little too small um but this is essentially a
+
+01:26:42.435 --> 01:26:48.515
+prompt into cloud code and of course i always recommend still using you know the the frontier
+
+01:26:48.515 --> 01:26:53.875
+models i'll say like you know run that template this is a tool that i use to pull it and i can
+
+01:26:53.875 --> 01:26:57.955
+if we have time i can talk about that and then execute this workflow to visualize the history of
+
+01:26:57.955 --> 01:27:03.075
+marriage and divorce in the usa i decided to run this ahead of time because this does take a while
+
+01:27:04.195 --> 01:27:12.995
+but if you run that it loads the workflow which is just this prompt over here right and then it
+
+01:27:12.995 --> 01:27:19.474
+immediately starts it sets up the environment it does the data set discovery and so i've biased it
+
+01:27:19.474 --> 01:27:25.794
+towards certain sources you know the cdc like government and educational institution um
+
+01:27:26.515 --> 01:27:31.875
+institutions for more reliable data rather than just some like random data set that a rando posted
+
+01:27:31.875 --> 01:27:37.955
+out there and you see it researches a whole bunch and so it looks looks looks um you know it finds
+
+01:27:37.955 --> 01:27:44.834
+marriage rates between this period oh i need to find divorce rates and it researches um it looked
+
+01:27:44.834 --> 01:27:52.435
+at a whole bunch of things it looks at pdfs um it looks at uh various web pages and so on and then
+
+01:27:52.435 --> 01:27:57.075
+i'm just going to keep scrolling here because it's a whole bunch of research that it does and then
+
+01:27:57.075 --> 01:28:03.075
+finally it pulls it together into a single data set so this is already pretty cool right like it
+
+01:28:03.075 --> 01:28:09.555
+took an idea researched the web and then turned it into a data set that we can of course go back and
+
+01:28:09.555 --> 01:28:15.075
+look at the sources and and actually just went and found that data this is amazing because i've
+
+01:28:15.075 --> 01:28:19.875
+i've done this chart before i've done this work it literally took me an entire weekend of scraping
+
+01:28:19.875 --> 01:28:26.755
+through pdfs this data is not cleanly organized out there and it just did it i think this part
+
+01:28:26.755 --> 01:28:33.555
+took maybe five or ten minutes right and then the next stage in it is it creates several variants
+
+01:28:33.555 --> 01:28:39.395
+to try out different chart types so it'll do like line charts it'll do small multiples
+
+01:28:39.395 --> 01:28:44.834
+it'll do an area chart and then it'll look at them and using the data visualization criteria
+
+01:28:44.834 --> 01:28:52.755
+i give it it'll say um you know which one it thinks is better um and this one this time it chose
+
+01:28:53.315 --> 01:28:59.555
+small multiples i like that one better um i actually ended up overriding it but um essentially
+
+01:29:00.115 --> 01:29:03.955
+it starts with that prototype because the first thing you want to do when you're visualizing data
+
+01:29:03.955 --> 01:29:07.555
+or when you're yeah when you're visualizing data is you just want to look at it right like
+
+01:29:07.555 --> 01:29:11.714
+how does this actually look what is the distribution etc this is essentially what it's
+
+01:29:11.714 --> 01:29:16.115
+doing right it's looking at it it's getting a sense of what what stories can actually tell
+
+01:29:16.115 --> 01:29:21.555
+what forms of visualization are actually useful and so on um and then it picks one and it moves
+
+01:29:21.555 --> 01:29:27.474
+forward with that the next step is then it start it runs a what i call a verifier loop this is
+
+01:29:27.474 --> 01:29:32.594
+another thing i didn't mention but what another thing i've learned with skills is you don't want
+
+01:29:32.594 --> 01:29:36.914
+to just tell it what to do you also want to tell it how to check it so that's why there was all
+
+01:29:36.914 --> 01:29:42.674
+that code in that skill that code is used to verify certain things about data visualization
+
+01:29:42.674 --> 01:29:44.515
+so it's like a good dpi
+
+01:29:44.661 --> 01:29:51.861
+I also use LLM as a Judge, or evals, that encode certain Tuftean principles to actually
+
+01:29:51.861 --> 01:29:57.201
+look directly at the image, and then say pass or fail, and if it fails, to give it feedback
+
+01:29:57.201 --> 01:30:01.021
+on how to improve the data visualization, because you can't programmatically assess
+
+01:30:01.021 --> 01:30:03.581
+images, right?
+
+01:30:03.581 --> 01:30:07.861
+And it basically loops over and over, I think this time this was an easy one, so it just
+
+01:30:07.861 --> 01:30:12.921
+like passed pretty quickly, but it'll loop on this, and keep fixing and keep fixing,
+
+01:30:12.921 --> 01:30:15.641
+and these are basically guardrails on the skill, right?
+
+01:30:15.641 --> 01:30:22.800
+Because what I've told it to do, is it opened up this massive realm of possibility, and
+
+01:30:22.800 --> 01:30:28.681
+this scopes it back down to say like, hey, I want to chart with this style, with these
+
+01:30:28.681 --> 01:30:32.641
+qualities and so on, and then that zoomed it in to that.
+
+01:30:32.641 --> 01:30:37.361
+So that is essentially a quick run-through of the skill, now of course we've been staring
+
+01:30:37.361 --> 01:30:41.920
+at terminals and whatnot for a while, and this is supposed to be about data visualization,
+
+01:30:41.920 --> 01:30:46.521
+so what I ended up doing was, I looked at the variants, and I said, I actually prefer
+
+01:30:46.521 --> 01:30:56.201
+the dual-line variant, let's open it, and let's just do like an open, open the, I think
+
+01:30:56.201 --> 01:31:06.481
+I have a tab over here, here we go, open chart.png, and can everyone see that okay, is the box
+
+01:31:06.481 --> 01:31:10.521
+on the bottom right blocking anything, or is that not sharing?
+
+01:31:11.521 --> 01:31:15.120
+It is showing it, but it's fine, nonetheless, it's perfect.
+
+01:31:15.120 --> 01:31:22.481
+Okay, so, and so this is the resulting data visualization, and so this one is pretty decent,
+
+01:31:22.481 --> 01:31:26.000
+I would say, it's pretty okay, it's like, well, for one, it got that data, it shows
+
+01:31:26.000 --> 01:31:33.561
+an interesting story, it calls out interesting aspects, you know, like these are well-known
+
+01:31:33.561 --> 01:31:37.321
+stories in the marriage and divorce rates over time in the US, like post-World War
+
+01:31:37.321 --> 01:31:42.961
+II peak, and how it's been going down over time, and it tells, you know, puts a little
+
+01:31:42.961 --> 01:31:49.080
+minimalist annotation here, and so on, but like other things that are heavily enforced
+
+01:31:49.080 --> 01:31:56.360
+is like very minimal background details, no chart junk, labeled axes, making sure that
+
+01:31:56.360 --> 01:32:01.961
+it's, you know, using just the ranges that it needs, making sure that everything is clear,
+
+01:32:01.961 --> 01:32:07.161
+and that it's telling a clear story, which is this part here, right on the chart to make
+
+01:32:07.161 --> 01:32:08.720
+it basically like a shareable thing.
+
+01:32:08.720 --> 01:32:13.840
+And I just want to be very clear, this is a result of this agent running the skill and
+
+01:32:13.840 --> 01:32:15.321
+no human intervention yet.
+
+01:32:15.321 --> 01:32:19.200
+Exactly, yeah, there is zero, there is zero, well, and in this case, there is...
+
+01:32:19.200 --> 01:32:20.200
+Verification loop.
+
+01:32:20.200 --> 01:32:26.401
+Exactly, on the verification loop, this was completely out of the AI agent itself, and
+
+01:32:26.401 --> 01:32:27.401
+if we go back...
+
+01:32:27.401 --> 01:32:33.000
+Well, can we just go to the chart that you just showed, because I do, I think it's amazing,
+
+01:32:33.000 --> 01:32:37.640
+I do want to say, this is something you and I have discussed before in DMs, but, so the
+
+01:32:37.640 --> 01:32:42.161
+actual image, it's incredible that you've been able to encode all of this in a skill,
+
+01:32:42.161 --> 01:32:46.200
+so we can still see the terminal, if we could see the image.
+
+01:32:46.200 --> 01:32:48.200
+Oh, you want to open the image.
+
+01:32:48.200 --> 01:32:53.241
+Yeah, because what I can see, there's one thing that I'd change, and it's the final
+
+01:32:53.241 --> 01:32:59.000
+frontier of, you know, making sure data viz looks cool, what is it?
+
+01:32:59.000 --> 01:33:01.321
+It's this freaking overlap.
+
+01:33:01.640 --> 01:33:03.360
+It's so annoying, isn't it?
+
+01:33:03.360 --> 01:33:05.720
+It's so annoying!
+
+01:33:05.720 --> 01:33:09.321
+This is a problem in like all kinds of image-related things.
+
+01:33:09.321 --> 01:33:12.881
+If anyone solves this consistently, you're a billionaire.
+
+01:33:12.881 --> 01:33:17.920
+I don't know why, AI models, everything is so bad at detecting when like an annotation
+
+01:33:17.920 --> 01:33:20.521
+is over a line.
+
+01:33:20.521 --> 01:33:25.961
+So this is the final frontier of human in the loop, is this is basically what I do.
+
+01:33:25.961 --> 01:33:29.840
+By the way, I run this skill every single morning, and that's how I make that post series,
+
+01:33:29.840 --> 01:33:35.121
+and most of what I do is like, oh, no, I'd like that post, or I'd like that image more.
+
+01:33:35.121 --> 01:33:41.241
+Oh, hey, an annotation's overlapping, otherwise, looks good, post it.
+
+01:33:41.241 --> 01:33:45.360
+Maybe that would be another embarrassing thing if all my chats got out, is like, you assume
+
+01:33:45.360 --> 01:33:51.521
+I'm typing genius stuff into my prompts, but actually I'm like, hmm, looks good, let's
+
+01:33:51.521 --> 01:33:52.521
+proceed.
+
+01:33:52.521 --> 01:33:58.640
+So, Randy, would you also mind if I just quickly shared my screen, because I ran this skill
+
+01:33:58.640 --> 01:34:03.801
+the other day when you sent it to me, and I think it works so wonderfully for me.
+
+01:34:03.801 --> 01:34:10.081
+I just wanted to, and I've shared this with you, but I wanted to run everyone else through
+
+01:34:10.081 --> 01:34:13.440
+it very briefly, I hope.
+
+01:34:13.440 --> 01:34:17.280
+This will share the entire window.
+
+01:34:17.280 --> 01:34:20.881
+Can you see secretariat data, and now, yes, okay, good.
+
+01:34:20.881 --> 01:34:27.481
+So I, first of all, this was the result, which we'll talk about in a second.
+
+01:34:27.481 --> 01:34:33.481
+The idea I got, so, remember Randy said, all you need to do is put in an idea, and
+
+01:34:33.481 --> 01:34:39.400
+so I put in no horses broken secretariat, 1973, Kentucky Derby record.
+
+01:34:39.400 --> 01:34:40.400
+That was the idea.
+
+01:34:40.400 --> 01:34:46.481
+Now, where did I get that idea, and I've linked to this in Discord, but from Randy's blog,
+
+01:34:46.481 --> 01:34:51.361
+so it was, the other day it was the top one, but he does it daily, so it was this one here.
+
+01:34:51.361 --> 01:34:56.240
+So I put in that idea, and you can see the setup it did, and I'm sorry, just to step
+
+01:34:56.240 --> 01:35:01.161
+it back a bit, this is a log I wrote, and I often get my agents to write brief logs,
+
+01:35:01.161 --> 01:35:05.481
+I've got a skill, which is write log, make it human readable, don't make it too, make
+
+01:35:05.481 --> 01:35:09.840
+it concise yet comprehensive, yada, yada, yada, so I can quickly see everything that
+
+01:35:09.840 --> 01:35:10.840
+happened.
+
+01:35:10.840 --> 01:35:12.400
+Found the data now.
+
+01:35:12.400 --> 01:35:16.041
+It found a Randall Olson CSV.
+
+01:35:16.041 --> 01:35:20.801
+What it also did, so then it did three parallel variants, et cetera, verify a loop.
+
+01:35:20.801 --> 01:35:26.161
+Now, it put notes for the human reader, the Randall Olson coincidence, classic LLM style
+
+01:35:26.161 --> 01:35:30.801
+language there, but the very first search for the data set surfaced a blog post called
+
+01:35:30.801 --> 01:35:37.801
+no horses broken secretariat, 1973 record, and found Randy's, and then it said his post
+
+01:35:37.801 --> 01:35:42.801
+used the same source, I'm considering downloading it, but I'm going to use Wikipedia instead,
+
+01:35:42.801 --> 01:35:49.321
+and I found that really interesting, and so what we'll see also is that, once again, pretty
+
+01:35:49.321 --> 01:35:55.321
+good, not quite as, well, not quite as nice as Randy's, and a bit of overlap here.
+
+01:35:55.321 --> 01:36:03.520
+The one other thing I'll mention is Randy's generator evaluator loop is something that,
+
+01:36:03.520 --> 01:36:08.960
+you know, when Anthropic originally wrote their building effective AI agents blog post,
+
+01:36:08.960 --> 01:36:13.400
+they recognized this as a really important workflow, one of five workflows, and I'll
+
+01:36:13.400 --> 01:36:17.520
+link to this in Discord as well, but it's really great to, you know, see this in the
+
+01:36:17.520 --> 01:36:21.720
+wild, because this is something that's incredibly important, so I just wanted to share a few
+
+01:36:21.720 --> 01:36:25.840
+of those things and show how easy it was for me to use your skill.
+
+01:36:25.840 --> 01:36:33.560
+I do have a question, Randy, which is we talked with Wes briefly earlier about encoding, turning
+
+01:36:33.560 --> 01:36:40.720
+judgment into intelligence, and you've done something amazing here, well, many amazing
+
+01:36:40.720 --> 01:36:45.000
+things, but one thing here is that you've taken things which normally we'd need to be
+
+01:36:45.000 --> 01:36:50.321
+applying judgment in the loop and encoded them in a skill, you've got the verification
+
+01:36:50.321 --> 01:36:60.000
+loop, but how many things can we do that with, and how do you approach encoding judgment
+
+01:36:60.000 --> 01:37:01.000
+in intelligence?
+
+01:37:01.000 --> 01:37:05.000
+Oh, gosh, how many things can we put in there?
+
+01:37:05.000 --> 01:37:10.000
+I mean, I think I'm trying to push the boundary of that every day.
+
+01:37:10.000 --> 01:37:12.000
+Well, how do you go about it?
+
+01:37:12.000 --> 01:37:20.000
+Yeah, I think I really approach it like a data scientist, which is, I think, a fun part.
+
+01:37:20.000 --> 01:37:24.000
+We're all data scientists to some degree here.
+
+01:37:24.000 --> 01:37:31.000
+And so I think about it as, you know, let's just try it first, right?
+
+01:37:31.000 --> 01:37:36.000
+Like, let's just, like, literally the whole, like, Tufti test idea, where I created an
+
+01:37:36.000 --> 01:37:41.000
+eval for a Tufti test, was I was like, okay, I know the principles, let's, like, put that
+
+01:37:41.000 --> 01:37:45.000
+into an LLM that can look at an image and apply it, right?
+
+01:37:45.000 --> 01:37:47.000
+And just see, just see if it works.
+
+01:37:47.000 --> 01:37:48.000
+And then I just keep tuning it from there, right?
+
+01:37:48.000 --> 01:37:49.000
+I try more examples.
+
+01:37:49.000 --> 01:37:52.000
+I have this data visualization, I have that data visualization.
+
+01:37:52.000 --> 01:37:57.000
+I build a full set of data visualizations, ones that I know are good, ones that I know
+
+01:37:57.000 --> 01:38:04.000
+are bad, and I just keep tweaking it until, you know, like, essentially treating the eval
+
+01:38:04.000 --> 01:38:07.000
+itself as sort of like a living document, you know?
+
+01:38:08.000 --> 01:38:09.000
+Like, try things out.
+
+01:38:09.000 --> 01:38:11.000
+This worked well, this didn't work well.
+
+01:38:11.000 --> 01:38:16.000
+Oh, let's encode that, you know, and let's keep building that into this eval.
+
+01:38:16.000 --> 01:38:22.001
+And now I have, you know, a thing, not just a skill, but like an eval, I guess I'll just
+
+01:38:22.001 --> 01:38:28.001
+call it, or a verifier that is hyper-focused on judging that one thing, you know, and saying
+
+01:38:28.001 --> 01:38:32.001
+like, yes, no, this is good, and here's why.
+
+01:38:32.001 --> 01:38:41.001
+So that's how I approach a lot of that, you know, as like, it's all down to data experimentation
+
+01:38:41.001 --> 01:38:44.001
+and continuously improving things, you know?
+
+01:38:44.001 --> 01:38:50.001
+Like, accepting that it's never going to be amazing at first, but if you have that compounding
+
+01:38:50.001 --> 01:38:53.001
+loop, then it's going to get better over time.
+
+01:38:53.001 --> 01:38:56.001
+Yeah, evaluation and verification.
+
+01:38:56.001 --> 01:38:57.001
+We'll wrap up in a few minutes.
+
+01:38:57.001 --> 01:39:01.001
+I don't know if Wes is going to join again to show us what happened with his runs, but
+
+01:39:01.001 --> 01:39:08.001
+I am interested in people's general thoughts around when we do build evaluators and verifiers,
+
+01:39:08.001 --> 01:39:16.001
+the ability of agents to game them as well, and how vigilant we need to be.
+
+01:39:16.001 --> 01:39:19.001
+Do you have any opinions about that, Jeremy?
+
+01:39:19.001 --> 01:39:25.001
+I was like, quite, quite vigilant.
+
+01:39:25.001 --> 01:39:28.001
+I mean, it depends on your objective and your risk tolerance, right?
+
+01:39:29.001 --> 01:39:37.001
+Some years ago, we were working on an agent framework called Marvin, which to this day
+
+01:39:37.001 --> 01:39:41.001
+I still think is the greatest way to work with agents, but didn't quite catch on, and
+
+01:39:41.001 --> 01:39:44.001
+therefore, I don't, you know, it is what it is.
+
+01:39:44.001 --> 01:39:50.001
+We had a lot of LLM as judge situations in there, especially because we didn't know
+
+01:39:50.001 --> 01:39:57.001
+how to unit test our own, like, we didn't know, evals wasn't a thing, and so we reached
+
+01:39:57.001 --> 01:40:01.001
+for the thing we did know, which is we have a magic talking computer, now let's ask it
+
+01:40:01.001 --> 01:40:03.001
+if it did a good job.
+
+01:40:03.001 --> 01:40:10.001
+And I think the thing that I took away from that is that to the extent that LLMs have
+
+01:40:10.001 --> 01:40:14.001
+a little wiggle room in what they return to you, when you're trying to nail down something
+
+01:40:14.001 --> 01:40:19.001
+and it's kind of subjective and it's like, needs to be run very frequently, that variation
+
+01:40:19.001 --> 01:40:25.001
+really plays out in a way that you don't notice in a one-off conversation.
+
+01:40:25.001 --> 01:40:31.001
+Like, it sort of forces you to watch what happens over 10,000 runs of the same thing.
+
+01:40:31.001 --> 01:40:35.001
+Now, today we call that, like, an evals suite, and there's a science around it, and we
+
+01:40:35.001 --> 01:40:37.001
+understand it better.
+
+01:40:37.001 --> 01:40:40.001
+Randy could talk a lot more about this than I can, honestly.
+
+01:40:40.001 --> 01:40:42.001
+He's the expert.
+
+01:40:42.001 --> 01:40:45.001
+But back in those early days, I just got this very healthy respect for that variation
+
+01:40:45.001 --> 01:40:51.001
+really is there, you just don't really notice it in any one instance, and maybe just
+
+01:40:52.001 --> 01:40:56.001
+not suspect of that loop, because it's, I mean, Randy just showed us how valuable it
+
+01:40:56.001 --> 01:41:00.001
+can be for honing, it's like hill climbing to an outcome, so it's really useful.
+
+01:41:00.001 --> 01:41:05.001
+I think you just have to, like, temper it for the precision you require in your outcome,
+
+01:41:05.001 --> 01:41:11.001
+I guess, like any good model.
+
+01:41:11.001 --> 01:41:18.001
+Yeah, I mean, I also think about it, like, it's so dependent on the context.
+
+01:41:18.001 --> 01:41:23.001
+Like, if it is, you know, like, it's a guardrail, and something absolutely cannot happen, then
+
+01:41:23.001 --> 01:41:28.001
+you're probably going to want to try to find something more deterministic.
+
+01:41:28.001 --> 01:41:35.001
+But I think even still, if, like, an eval is, you know, flips or is wrong, whatever,
+
+01:41:35.001 --> 01:41:41.001
+80% of the time, like, it's still directionally valuable, you know, like, it's like, the
+
+01:41:41.001 --> 01:41:48.001
+Tufti test, I've not measured it, but I have seen sometimes it judges things wrong.
+
+01:41:48.001 --> 01:41:53.001
+But still, on the whole, it's really valuable to have in the loop, because it catches,
+
+01:41:53.001 --> 01:41:58.001
+especially a lot of the obvious stuff. And that's one less time that I have to spend
+
+01:41:58.001 --> 01:42:03.001
+my thought tokens, I'd much rather spend Claude's thought tokens, you know, doing something
+
+01:42:03.001 --> 01:42:07.001
+like that, especially if we think about doing this at a really massive scale.
+
+01:42:08.001 --> 01:42:14.001
+Yeah, absolutely. And the other point, I think, which we're talking around, is evals are things
+
+01:42:14.001 --> 01:42:20.001
+that aren't static, like skills, like Johannes, there's something that you constantly iterate
+
+01:42:20.001 --> 01:42:26.001
+on, and perhaps more at the start, and then build trust with them, and so on, as with
+
+01:42:26.001 --> 01:42:31.001
+any of these products. And we're actually, in a few weeks, Hamil Hussain is going to
+
+01:42:31.001 --> 01:42:37.001
+join us to take us through his AI eval skills, which is going to be super fun.
+
+01:42:37.934 --> 01:42:43.294
+Thank you so much for joining. Please do check out the Luma calendar, which I'll link to in discord. It's in the YouTube description
+
+01:42:44.174 --> 01:42:47.434
+For our upcoming events. We've got one next week
+
+01:42:47.694 --> 01:42:54.274
+Which Hilary Mason is going to show us some of her skills from hidden door Eric Maher who leads research data science in
+
+01:42:54.694 --> 01:42:56.134
+Moderna therapeutics
+
+01:42:56.134 --> 01:42:59.614
+Brian Bischoff and Tomasz Tungurz from Theory Ventures as well
+
+01:42:59.614 --> 01:43:03.294
+And then we're going to Europe for our Eurovision special with a bunch of interesting people
+
+01:43:03.813 --> 01:43:05.813
+But definitely sign up for those
+
+01:43:05.934 --> 01:43:11.414
+Do check out the agentic data science course that Tomasz and I and some of our wonderful colleagues
+
+01:43:12.294 --> 01:43:15.053
+Teaching. Thank you all for joining
+
+01:43:15.174 --> 01:43:23.134
+But most of all, thank you to our wonderful guests for coming and sharing your agent skills with us
+
+01:43:24.213 --> 01:43:26.213
+It's a pleasure. Thanks for having us
+
+01:43:26.654 --> 01:43:30.733
+Such a pleasure. And if you wouldn't mind just around on the call for a couple of minutes
+
+01:43:31.573 --> 01:43:37.614
+That'd be great. Thank you all for joining. Once again, if you enjoyed it, share it with a friend hit like and subscribe and
+
+01:43:38.254 --> 01:43:42.453
+As dr. Dre said once again. See you in the next episode

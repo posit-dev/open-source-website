@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
   duration: 18
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.006455+00:00'
-  like_count: 3
+  last_updated: '2026-09-18T13:58:08.949101+00:00'
+  like_count: 2
   playlist: ''
   tags:
   - rstudio
@@ -113,7 +113,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/LTZN7Y1teUY/maxresdefault.jpg
   title: Monthly Workflow Demos now on Zoom Sessions | Recordings still shared below
   url: https://www.youtube.com/watch?v=LTZN7Y1teUY
-  view_count: 1080
+  view_count: 1082
 ---
 image: thumbnail.jpg
 

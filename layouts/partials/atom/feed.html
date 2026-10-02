@@ -1,0 +1,48 @@
+{{- /*
+  atom/feed.html — Render a complete Atom feed <feed> wrapper around a
+  pre-sorted slice of pages, delegating each entry to a named section partial.
+
+  Input (dict):
+    "ctx"   — the section/taxonomy Page (used for feed id, title, self link)
+    "pages" — pre-sorted slice of pages to emit as entries
+    "title" — human-readable feed title
+    "entry" — name of the per-entry partial, e.g. "atom/entry-blog.html"
+*/ -}}
+{{- $ctx := .ctx -}}
+{{- $pages := .pages -}}
+{{- $title := .title -}}
+{{- $entry := .entry -}}
+{{- /* Feed <updated> = newest timestamp across the context and all entries, so
+  pollers watching <feed><updated> never miss a changed entry. Consider each
+  page's .Lastmod and any external.last_updated (software), matching the value
+  the entry templates emit. */ -}}
+{{- $latest := $ctx.Lastmod -}}
+{{- range $pages -}}
+  {{- if gt .Lastmod.Unix $latest.Unix }}{{ $latest = .Lastmod }}{{ end -}}
+  {{- with (.Params.external | default dict).last_updated -}}
+    {{- $ext := time . -}}
+    {{- if gt $ext.Unix $latest.Unix }}{{ $latest = $ext }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:vr="https://opensource.posit.co/ns/content">
+  <title>{{ $title }}</title>
+  {{- $feedPath := $ctx.RelPermalink | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}
+  <id>{{ $feedPath }}</id>
+  <link rel="alternate" href="{{ $ctx.Permalink }}"/>
+  {{- with $ctx.OutputFormats.Get "AtomContent" }}
+  <link rel="self" href="{{ .Permalink }}"/>
+  {{- end }}
+  <updated>{{ partial "atom/updated.html" (dict "time" $latest) | safeHTML }}</updated>
+  {{- /* Feed-level author. Atom requires an author at entry, source, or feed
+    scope; entries without their own <author> (people, software, resources)
+    inherit this one, while blog and event entries override it per item. */ -}}
+  <author>
+    <name>{{ site.Title }}</name>
+    <uri>/</uri>
+  </author>
+  <generator uri="https://gohugo.io">Hugo</generator>
+  {{- range $pages }}
+  {{ partial $entry (dict "page" .) }}
+  {{- end }}
+</feed>

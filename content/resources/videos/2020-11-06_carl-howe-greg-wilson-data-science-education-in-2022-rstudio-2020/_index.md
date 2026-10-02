@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   duration: 1182
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:34.962324+00:00'
-  like_count: 54
+  last_updated: '2026-09-18T13:58:17.861393+00:00'
+  like_count: 53
   playlist: ''
   software:
   - rstudio
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/8peiyXIrvjY/hqdefault.jpg
   title: Carl Howe & Greg Wilson | Data Science Education in 2022 | RStudio (2020)
   url: https://www.youtube.com/watch?v=8peiyXIrvjY
-  view_count: 1308
+  view_count: 1309
 ---
 image: thumbnail.jpg
 

@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 5749
   has_captions: false
   language: en-US
-  last_updated: '2026-05-19T10:15:36.520558+00:00'
-  like_count: 912
+  last_updated: '2026-09-18T13:58:21.308784+00:00'
+  like_count: 911
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   tags: []
   thumbnail: https://i.ytimg.com/vi/OLTgI6DAQ_A/maxresdefault.jpg
   title: '🐙 Lunch & Learn: Let''s Build An AI Assistant With GPT-4o (w/ Joe & Winston of @Posit)'
   url: https://www.youtube.com/watch?v=OLTgI6DAQ_A
-  view_count: 30277
+  view_count: 30314
 ---
 image: thumbnail.jpg
 

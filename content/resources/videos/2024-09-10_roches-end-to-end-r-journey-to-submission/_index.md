@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3575
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:29.246647+00:00'
-  like_count: 151
+  last_updated: '2026-09-18T13:58:10.631513+00:00'
+  like_count: 150
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/BlJNILSoZlM/maxresdefault.jpg
   title: Roche's End-to-End R Journey to Submission
   url: https://www.youtube.com/watch?v=BlJNILSoZlM
-  view_count: 5040
+  view_count: 5196
 ---
 image: thumbnail.jpg
 

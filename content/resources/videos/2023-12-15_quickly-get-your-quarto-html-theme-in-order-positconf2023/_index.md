@@ -7,8 +7,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -67,14 +67,14 @@ external:  # updated automatically, do not edit
   duration: 339
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.286742+00:00'
+  last_updated: '2026-09-18T13:58:11.685688+00:00'
   like_count: 75
   people:
   - Greg Swinehart
   playlist: ''
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -125,7 +125,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/i2mdxfvm_VY/maxresdefault.jpg
   title: Quickly get your Quarto HTML theme in order - posit::conf(2023)
   url: https://www.youtube.com/watch?v=i2mdxfvm_VY
-  view_count: 3145
+  view_count: 3209
 ---
 image: thumbnail.jpg
 

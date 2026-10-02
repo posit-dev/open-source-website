@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   duration: 1225
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:35.243621+00:00'
-  like_count: 143
+  last_updated: '2026-09-18T13:58:18.222554+00:00'
+  like_count: 142
   people:
   - Jenny Bryan
   playlist: ''
@@ -119,7 +119,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/2BXPLnLMTYo/maxresdefault.jpg
   title: Jenny Bryan | Lazy evaluation | RStudio (2019)
   url: https://www.youtube.com/watch?v=2BXPLnLMTYo
-  view_count: 5062
+  view_count: 5080
 ---
 image: thumbnail.jpg
 

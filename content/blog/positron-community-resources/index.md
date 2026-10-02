@@ -15,7 +15,6 @@ software:
   - positron
 languages: []
 tags: []
-nohero: false
 hidesubscription: false
 ---
 

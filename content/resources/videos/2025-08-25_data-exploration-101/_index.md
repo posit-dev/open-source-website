@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags:
 - rstudio
@@ -64,11 +64,11 @@ external:  # updated automatically, do not edit
   duration: 56
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:27.604987+00:00'
+  last_updated: '2026-09-18T13:58:08.948775+00:00'
   like_count: 48
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags:
   - rstudio
@@ -118,7 +118,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/EA1Q_VufmiQ/maxresdefault.jpg
   title: Data Exploration 101
   url: https://www.youtube.com/watch?v=EA1Q_VufmiQ
-  view_count: 2594
+  view_count: 2637
 ---
 image: thumbnail.jpg
 

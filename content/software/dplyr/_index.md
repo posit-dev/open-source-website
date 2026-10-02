@@ -10,6 +10,7 @@ people:
 - Hadley Wickham
 - Lionel Henry
 - Davis Vaughan
+- Kevin Ushey
 - Mine Çetinkaya-Rundel
 - Jenny Bryan
 - Christophe Dervieux
@@ -36,16 +37,17 @@ exclude:
 external:  # updated automatically, do not edit
   description: 'dplyr: A grammar of data manipulation'
   first_commit: '2012-10-28T13:39:17+00:00'
-  forks: 2131
+  forks: 2114
   languages:
   - R
-  last_updated: '2026-05-20T08:05:43.967702+00:00'
+  last_updated: '2026-09-18T14:20:07.103337+00:00'
   latest_release: '2026-04-03T14:05:01+00:00'
   license: NOASSERTION
   people:
   - Hadley Wickham
   - Lionel Henry
   - Davis Vaughan
+  - Kevin Ushey
   - Mine Çetinkaya-Rundel
   - Jenny Bryan
   - Christophe Dervieux
@@ -61,7 +63,7 @@ external:  # updated automatically, do not edit
   - Joe Cheng
   readme_image: man/figures/logo.png
   repo: tidyverse/dplyr
-  stars: 5025
+  stars: 5067
   title: dplyr
   website: https://dplyr.tidyverse.org/
 ---
@@ -69,3 +71,19 @@ external:  # updated automatically, do not edit
 dplyr is an R package that provides a grammar of data manipulation with a consistent set of verbs for common data tasks: filtering rows, selecting columns, creating new variables, sorting data, and computing summaries. These operations work naturally with grouping to perform calculations by category.
 
 The package handles multiple computational backends beyond standard data frames, translating your code to work efficiently with databases (via SQL), large in-memory datasets (via data.table or DuckDB), cloud storage (via Apache Arrow), and distributed systems (via Apache Spark). This backend flexibility lets you use the same dplyr syntax whether your data fits in memory or requires specialized storage systems. The package integrates with other tidyverse tools for end-to-end data analysis workflows.
+
+## Try it
+
+{{< webr packages="dplyr" >}}
+library(dplyr)
+
+starwars |>
+  filter(!is.na(homeworld)) |>
+  mutate(bmi = mass / (height / 100)^2) |>
+  group_by(homeworld) |>
+  summarise(
+    n = n(),
+    avg_bmi = round(mean(bmi, na.rm = TRUE), 1)
+  ) |>
+  arrange(desc(n))
+{{< /webr >}}

@@ -6,6 +6,8 @@ image: logo.svg
 languages:
 - R
 latest_release: '2024-02-18T17:50:05+00:00'
+people:
+- Jeroen Janssens
 title: roxygen2md
 topics:
 - Best Practices
@@ -15,11 +17,13 @@ website: https://roxygen2md.r-lib.org/
 external:  # updated automatically, do not edit
   description: Convert elements of roxygen documentation to markdown
   first_commit: '2016-11-24T14:25:44+00:00'
-  forks: 10
+  forks: 11
   languages:
   - R
-  last_updated: '2026-05-20T08:05:55.616405+00:00'
+  last_updated: '2026-09-18T14:27:24.142555+00:00'
   latest_release: '2024-02-18T17:50:05+00:00'
+  people:
+  - Jeroen Janssens
   repo: r-lib/roxygen2md
   stars: 69
   title: roxygen2md

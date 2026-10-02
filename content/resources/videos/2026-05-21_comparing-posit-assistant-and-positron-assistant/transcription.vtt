@@ -1,0 +1,616 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:08.000
+Sarah and I are once again here to compare Posit Assistant to a different agent.
+
+00:00:08.000 --> 00:00:14.000
+A few weeks ago, we recorded this video comparing Posit Assistant to Cloud Code,
+
+00:00:14.000 --> 00:00:20.000
+and today we're going to be comparing Posit Assistant to Positron Assistant.
+
+00:00:20.000 --> 00:00:25.000
+If you're feeling confused already, that's sort of why we're here.
+
+00:00:25.000 --> 00:00:34.000
+Posit Assistant and Positron Assistant are two different agents with two different lineages that just happen to have very similar names.
+
+00:00:34.000 --> 00:00:42.000
+But we know this has caused some confusion, so we figured we'd get together and talk about how they're similar and how they're different.
+
+00:00:42.000 --> 00:00:55.000
+To kick off that conversation, I wanted to start with just trying to very clearly talk through the history of Posit Assistant, Positron Assistant, and DataBot.
+
+00:00:55.000 --> 00:01:05.000
+Last year, inside of our Positron IDE, we introduced two agents pretty close to each other in the timeline.
+
+00:01:05.000 --> 00:01:14.000
+One of them is called DataBot, and DataBot is an AI agent for exploratory data analysis.
+
+00:01:14.000 --> 00:01:28.000
+Positron Assistant is also only available in Positron, and Positron Assistant is sort of like a general coding agent, but was also aware of what was happening in your IDE.
+
+00:01:28.000 --> 00:01:38.000
+At the time, both of those releases were targeting Positron. In our studio, there was not much to say.
+
+00:01:38.000 --> 00:01:50.000
+There were a few open-source packages out there that provided some AI assistance inside of the IDE, but really we were focused on features for Positron only.
+
+00:01:51.000 --> 00:02:03.000
+This year, we introduced a new agent called Posit Assistant, and for whatever reason, we made the decision to name it very similarly to one of those two agents.
+
+00:02:04.000 --> 00:02:20.000
+Posit Assistant supersedes both DataBot and Positron Assistant, and sort of merges those two agents along with a bunch of learnings that we've had through working on those two agents and using others.
+
+00:02:21.000 --> 00:02:35.000
+Posit Assistant, in this somewhat scrappy diagram, is shown inside of both Positron and RStudio because Posit Assistant is available in both of those IDEs.
+
+00:02:35.000 --> 00:02:46.000
+So while Positron Assistant and DataBot were only available in Positron, Posit Assistant is available in both Positron and RStudio.
+
+00:02:47.000 --> 00:02:51.000
+Sarah, have I mixed up Positron Assistant and Posit Assistant yet?
+
+00:02:51.000 --> 00:03:00.000
+No, I think that was all right. There are so many Posit words, and people internally will mix things up.
+
+00:03:01.000 --> 00:03:22.000
+Hopefully, I think it should improve going forward when we've solidified Posit Assistant, and then there's just Posit, Posit Assistant, Posit AI, which is still three Posits, but it's better, and Positron.
+
+00:03:23.000 --> 00:03:34.000
+Sarah has sort of seen what's coming next, which is that in these slides, I'm going to show DataBot and Positron Assistant going away.
+
+00:03:34.000 --> 00:03:49.000
+I have this listed as 2027, but at some point in the next year, those two tools will be superseded by Posit Assistant, and so it will just be that agent that's available in both IDEs.
+
+00:03:50.000 --> 00:04:11.000
+Another thing that she foreshadowed that is sort of confusing is that if you take away an apostrophe and an S, you have yet another name for a thing that is related to this space, which is Posit AI.
+
+00:04:12.000 --> 00:04:35.000
+Posit AI is a $20 a month subscription that gives you access to both Posit Assistant and NextEdit suggestions, so if you want to use Posit Assistant in RStudio, right now you need to use the Posit AI provider, which is offered through that subscription.
+
+00:04:35.000 --> 00:04:45.000
+And then in Positron, since we had allowed folks to bring their own keys to a bunch of different providers with Positron Assistant, we decided to continue supporting that in Positron.
+
+00:04:45.000 --> 00:04:54.000
+So through a subscription to Posit AI, you have access to Posit Assistant in RStudio.
+
+00:04:54.000 --> 00:05:01.000
+You can also use Posit AI with Posit Assistant in Positron, but you can bring other providers as well.
+
+00:05:02.000 --> 00:05:08.000
+Okay, the rest of this video, I'm going to be doing a little bit more demos, but it will come to you in two parts.
+
+00:05:08.000 --> 00:05:19.000
+In the first part, I'm going to try to convince you that they're very similar to each other, both Positron Assistant and Posit Assistant, so they have a lot of things in common.
+
+00:05:19.000 --> 00:05:25.000
+And then in the second half of the video, I'm going to show a bunch of ways that they're a little bit different from each other.
+
+00:05:26.000 --> 00:05:35.000
+Okay, so I think with this slide, we're now up to like five distinct fonts in this deck or something like that.
+
+00:05:35.000 --> 00:05:42.000
+I just want to call out some of the ways that Positron Assistant and Posit Assistant are pretty similar to each other.
+
+00:05:42.000 --> 00:05:49.000
+The first one is that they both support MCP or the Model Context Protocol.
+
+00:05:49.000 --> 00:06:00.000
+So the Model Context Protocol allows you to connect the agent to outside data sources, and both Positron Assistant and Posit Assistant support the full spec.
+
+00:06:03.000 --> 00:06:07.000
+Positron Assistant and Posit Assistant are both very customizable.
+
+00:06:07.000 --> 00:06:17.000
+So in Positron Assistant, you can use instructions, which are just text files with instructions that you want the agent to follow.
+
+00:06:18.000 --> 00:06:21.000
+There's also this concept of chat participants.
+
+00:06:21.000 --> 00:06:27.000
+Posit Assistant focuses on two open specifications.
+
+00:06:27.000 --> 00:06:41.000
+One of them is skills, which are portable MD files or scripts that the agent can choose to load in at any point to acquire some skill or learn about some more context.
+
+00:06:41.000 --> 00:06:52.000
+And then agents.md is similar to instructions files with GitHub Copilot or Claude.md with Claude or so on and so forth.
+
+00:06:52.000 --> 00:06:56.000
+Just plain text files that describe the behavior you want to see from the agent.
+
+00:06:58.000 --> 00:07:04.000
+Both Positron Assistant and Posit Assistant have a pretty rich permissions system.
+
+00:07:05.000 --> 00:07:15.000
+The only difference between Posit Assistant and Positron Assistant is that within a given tool, Posit Assistant allows you to vary the permissions.
+
+00:07:15.000 --> 00:07:30.000
+So for example, in the Bash tool, if the agent wants to git commit, I can allow that, but also require it to ask me to do something like git push.
+
+00:07:31.000 --> 00:07:40.000
+In Positron Assistant, the permissions would have to apply to the whole tool that is using git, which would be the Bash tool.
+
+00:07:40.000 --> 00:07:44.000
+And then finally, both of them support skills.
+
+00:07:44.000 --> 00:07:50.000
+So Positron Assistant will be getting this from upstream in VS Code pretty soon.
+
+00:07:51.000 --> 00:08:05.000
+In Posit Assistant, skills are built in, and we've shipped 10 or so built-in skills with the tool, in addition to allowing users to bring custom skills.
+
+00:08:06.000 --> 00:08:17.000
+So to help make the case that these agents are pretty similar to each other, I wanted to do a sort of bread and butter data analysis task, which is making a plot of some data.
+
+00:08:17.000 --> 00:08:31.000
+So I'm inside of Positron right now. I have possibly the silliest pane layout there ever could be, with Positron Assistant on the left-hand side, Posit Assistant in the middle, and then my console in plots on the right.
+
+00:08:32.000 --> 00:08:36.000
+So I'm going to ask Positron Assistant if it can make a plot with some data.
+
+00:08:37.000 --> 00:08:43.000
+This data is called forested. It's inside of an R package called forested.
+
+00:08:43.000 --> 00:08:51.000
+So the Positron Assistant will take a look at that data and then make a plot with it.
+
+00:08:52.000 --> 00:08:59.000
+It seemed like it didn't quite get the factor levels right on the first try, but then it was able to make a plot just fine.
+
+00:09:00.000 --> 00:09:06.000
+Once the agent finishes, it takes a look at the plot and then tells me what it sees in a couple sentences.
+
+00:09:08.000 --> 00:09:14.000
+I'll go ahead and clear this, and I would expect that we'll see a pretty similar thing from Posit Assistant.
+
+00:09:14.000 --> 00:09:18.000
+So I'll provide it the same prompt and we'll see what it does.
+
+00:09:19.000 --> 00:09:24.000
+Okay, so first it's taking a look at the forested data set.
+
+00:09:25.000 --> 00:09:31.000
+And after thinking a little bit, it's going to go ahead and make what I think is going to be a super similar plot.
+
+00:09:33.000 --> 00:09:38.000
+Okay, so it's made a plot of the longitude and latitude inside of this data.
+
+00:09:38.000 --> 00:09:44.000
+It realizes that it's looking at Washington state, and it describes the plot in a couple sentences.
+
+00:09:45.000 --> 00:09:50.000
+One thing you might notice here is that it's provided a few suggestions at the end.
+
+00:09:50.000 --> 00:09:57.000
+So this is where Positron Assistant sort of melds with the DataBot experience.
+
+00:09:57.000 --> 00:10:04.000
+DataBot users might recognize those suggestions at the end of data analysis questions,
+
+00:10:04.000 --> 00:10:08.000
+where the model will sort of try to anticipate where to go next.
+
+00:10:09.000 --> 00:10:16.000
+And if we were doing this analysis not for the purposes of the demo, Posit Assistant can go in the sidebar.
+
+00:10:17.000 --> 00:10:22.000
+So you just have it there because then you can have Positron Assistant and Posit Assistant side by side, right?
+
+00:10:23.000 --> 00:10:28.000
+Yeah, that's right. So in normal usage, I would probably keep Posit Assistant over here,
+
+00:10:28.000 --> 00:10:35.000
+so that it's on the sidebar in the same way that Positron Assistant was, but you can sort of keep it wherever you wish.
+
+00:10:36.000 --> 00:10:45.000
+Okay, so for the most part, folks will experience Positron Assistant and Posit Assistant as pretty similar tools.
+
+00:10:45.000 --> 00:10:49.000
+But I wanted to call out a few ways where they diverge.
+
+00:10:51.000 --> 00:10:55.000
+The first one is the way that the agent interacts with tools.
+
+00:10:55.000 --> 00:11:01.000
+So tools allow the models to, for example, execute code or read package documentation,
+
+00:11:02.000 --> 00:11:06.000
+fetch resources from the web, so on and so forth.
+
+00:11:06.000 --> 00:11:13.000
+Inside of Positron Assistant, the agent does support tools and it's able to retrieve information.
+
+00:11:13.000 --> 00:11:19.000
+But that information goes away once the agent has had the chance to react to it.
+
+00:11:19.000 --> 00:11:25.000
+And we've seen in our work on Posit Assistant that the agent behaves a bit more stably
+
+00:11:25.000 --> 00:11:31.000
+when the conversation history is sort of append only, like the agent reacts to something,
+
+00:11:31.000 --> 00:11:36.000
+and then in future turns, it's able to see what it was that it was reacting to.
+
+00:11:37.000 --> 00:11:46.000
+So this behavior of not persisting tool results in the conversation is just inherited from upstream in VS Code Copilot.
+
+00:11:46.000 --> 00:11:55.000
+But in Posit Assistant, this is our own stack, and we've decided to persist those tool call results inside of the history.
+
+00:11:56.000 --> 00:12:02.000
+There's also a few tools inside of Posit Assistant that Positron Assistant doesn't have.
+
+00:12:03.000 --> 00:12:07.000
+Those are web search, sub-agent orchestration, and mode switching.
+
+00:12:07.000 --> 00:12:14.000
+So I figured I might make use of a couple of these unique features to show something that is possible in Posit Assistant,
+
+00:12:14.000 --> 00:12:17.000
+which is not possible in Positron Assistant.
+
+00:12:19.000 --> 00:12:23.000
+And that will be the agent customizing itself.
+
+00:12:24.000 --> 00:12:31.000
+So like I said, both Posit Assistant and Positron Assistant are able to support MCP.
+
+00:12:31.000 --> 00:12:37.000
+And I thought I could quickly demo Posit Assistant adding an MCP server to itself.
+
+00:12:38.000 --> 00:12:42.000
+So if I ask Posit Assistant, how do I add an MCP server?
+
+00:12:43.000 --> 00:12:46.000
+The agent will choose to load a skill.
+
+00:12:47.000 --> 00:12:52.000
+This skill is called self-knowledge, and it sort of teaches Posit Assistant about itself.
+
+00:12:52.000 --> 00:12:59.000
+This is one of like 10 or so skills that Posit Assistant has available to it.
+
+00:13:00.000 --> 00:13:07.000
+So it will read that skill file, and then it looks like it's asked to read a reference inside of that skill.
+
+00:13:07.000 --> 00:13:09.000
+So I'll go ahead and approve that.
+
+00:13:10.000 --> 00:13:16.000
+And with that, the agent is able to learn how to configure itself.
+
+00:13:18.000 --> 00:13:21.000
+Okay, and then at the end of this response, it's provided me a link.
+
+00:13:22.000 --> 00:13:25.000
+We can share that in the description, but that is a real one.
+
+00:13:25.000 --> 00:13:29.000
+Those live inside of the skill file itself.
+
+00:13:32.000 --> 00:13:37.000
+Before I go any further, this next step is going to require the agent to do a bunch of stuff.
+
+00:13:37.000 --> 00:13:42.000
+And rather than clicking allow for each of those, I'm going to use something called YOLO mode,
+
+00:13:42.000 --> 00:13:50.000
+which allows the agent to just work autonomously without me approving each of the tool calls.
+
+00:13:51.000 --> 00:13:59.000
+The next thing I'll do is provide some instructions to carry out a pretty difficult task with some vague instructions.
+
+00:14:00.000 --> 00:14:06.000
+I will ask, could you add the docs tools from the BTW-MCP server to this project?
+
+00:14:07.000 --> 00:14:09.000
+So this one's sort of tricky.
+
+00:14:10.000 --> 00:14:13.000
+It's not clear from the question itself what BTW is.
+
+00:14:13.000 --> 00:14:18.000
+This is actually a package from my colleague, Garrick, and I.
+
+00:14:18.000 --> 00:14:23.000
+That allows, among other things, tools to read our package documentation.
+
+00:14:25.000 --> 00:14:31.000
+So one of the unique capabilities of Posit Assistant is that it can use web search.
+
+00:14:31.000 --> 00:14:40.000
+So as you can see, it searched for the BTW-MCP server docs tools along with some other bits in the query.
+
+00:14:40.000 --> 00:14:46.000
+It found the information it needed, and then it was able to configure itself.
+
+00:14:46.000 --> 00:14:50.000
+So with that knowledge of how its own settings work,
+
+00:14:50.000 --> 00:14:55.000
+it was able to write its own JSON file and configure this server.
+
+00:14:55.000 --> 00:15:01.000
+So from now on, Posit Assistant will have these native tools to read our package documentation
+
+00:15:01.000 --> 00:15:04.000
+rather than the ones that it uses typically.
+
+00:15:06.000 --> 00:15:10.000
+And that'll be across sessions and across projects, right?
+
+00:15:11.000 --> 00:15:12.000
+Yeah, that's right.
+
+00:15:12.000 --> 00:15:16.000
+So in this setting, I asked it to write just for this project.
+
+00:15:16.000 --> 00:15:21.000
+So it wrote to, we can see here, dot Posit AI inside of my project.
+
+00:15:21.000 --> 00:15:27.000
+So this will kick in any time I start a new conversation inside of this project.
+
+00:15:27.000 --> 00:15:32.000
+We could have also asked it to apply it for the whole user space.
+
+00:15:32.000 --> 00:15:38.000
+And in that case, it would have written to tilde slash dot Posit AI.
+
+00:15:38.000 --> 00:15:41.000
+Tilde slash dot Posit AI.
+
+00:15:42.000 --> 00:15:43.000
+Cool.
+
+00:15:44.000 --> 00:15:51.000
+So at a high level, Posit Assistant used a few capabilities here that are sort of unique.
+
+00:15:51.000 --> 00:15:55.000
+It has its own self-knowledge skills, so it knows how to configure itself
+
+00:15:55.000 --> 00:15:58.000
+and what its UI looks like and things like that.
+
+00:15:58.000 --> 00:16:03.000
+It can use web search to find information online.
+
+00:16:04.000 --> 00:16:09.000
+It customized itself and then it used skills to do so.
+
+00:16:09.000 --> 00:16:14.000
+So for now, Posit Assistant has skills while Positron Assistant doesn't,
+
+00:16:14.000 --> 00:16:17.000
+but Positron Assistant will gain skills pretty soon.
+
+00:16:19.000 --> 00:16:26.000
+I'll call out two more features of Posit Assistant that aren't available in Positron Assistant.
+
+00:16:26.000 --> 00:16:29.000
+The first one is sandboxing.
+
+00:16:29.000 --> 00:16:37.000
+So in Linux, macOS, and Windows, there's a sandbox mode inside of Posit Assistant
+
+00:16:37.000 --> 00:16:41.000
+which shuts off access to the network.
+
+00:16:41.000 --> 00:16:45.000
+It disallows writing outside of the workspace.
+
+00:16:46.000 --> 00:16:52.000
+Okay, Sarah, I'm glad you asked whether these settings would apply across projects.
+
+00:16:52.000 --> 00:16:59.000
+One way we can sort of demo the sandbox is to try to get the agent to write outside of the file space
+
+00:16:59.000 --> 00:17:05.000
+by making this MCP server apply across projects.
+
+00:17:05.000 --> 00:17:10.000
+So in order to do that, it would need to write to somewhere in the user's file space
+
+00:17:10.000 --> 00:17:16.000
+other than the active project, but the sandbox will disallow the agent from doing that.
+
+00:17:16.000 --> 00:17:22.000
+So I can say, could you enable that across projects?
+
+00:17:23.000 --> 00:17:28.000
+So in order to do that, it would need to write to the root of the file system,
+
+00:17:28.000 --> 00:17:34.000
+but we can see that the agent is denied from writing that file
+
+00:17:34.000 --> 00:17:39.000
+because the operation is not permitted due to the sandbox.
+
+00:17:39.000 --> 00:17:45.000
+So in order to actually execute that code, the agent has to go through this special route
+
+00:17:45.000 --> 00:17:52.000
+where it provides a reason why that action is dangerous in order to bypass the sandbox.
+
+00:17:52.000 --> 00:17:55.000
+And so our usual YOLO mode isn't kicking in.
+
+00:17:55.000 --> 00:18:01.000
+Instead, the agent has to ask us if it wants to write outside of the usual.
+
+00:18:02.000 --> 00:18:05.000
+But it can read outside of the directory in sandbox mode.
+
+00:18:06.000 --> 00:18:11.000
+That's correct. Yeah, it can read outside of the directory other than sensitive files.
+
+00:18:12.000 --> 00:18:15.000
+Like a .env file or something.
+
+00:18:15.000 --> 00:18:19.000
+That's right. Yeah, like a .env file or secrets or something like that.
+
+00:18:21.000 --> 00:18:26.000
+The last thing I'll say about the difference between Positron Assistant and Posit Assistant
+
+00:18:26.000 --> 00:18:28.000
+is the cost considerations.
+
+00:18:28.000 --> 00:18:37.000
+So there's a bunch of different ways that the conversation management differs between these two systems.
+
+00:18:37.000 --> 00:18:40.000
+So this isn't really an apples-to-apples comparison,
+
+00:18:40.000 --> 00:18:46.000
+but I will just say we've spent a lot of time in Posit Assistant focused on cache efficiency.
+
+00:18:46.000 --> 00:18:50.000
+When agents have really good cache efficiency,
+
+00:18:50.000 --> 00:18:56.000
+it means that most of the conversation is a cache hit rather than a cache miss.
+
+00:18:56.000 --> 00:19:00.000
+And cache hits are usually, depending on the provider,
+
+00:19:00.000 --> 00:19:05.000
+priced at something like a tenth of the cost of cache misses.
+
+00:19:05.000 --> 00:19:10.000
+And so we've seen that Posit Assistant's cache efficiency is super strong.
+
+00:19:10.000 --> 00:19:16.000
+And there are some situations where Positron Assistant will miss the cache
+
+00:19:16.000 --> 00:19:18.000
+in places where Posit Assistant wouldn't.
+
+00:19:19.000 --> 00:19:24.000
+The last difference that I was hoping we could cover before we wrap this video up
+
+00:19:24.000 --> 00:19:28.000
+is a bit squishier and harder to demonstrate directly.
+
+00:19:28.000 --> 00:19:33.000
+But we've spent a good bit of time on the feel of Posit Assistant
+
+00:19:33.000 --> 00:19:35.000
+and how we've prompted it.
+
+00:19:35.000 --> 00:19:37.000
+So Sarah and I have worked quite a bit on this.
+
+00:19:37.000 --> 00:19:39.000
+I was wondering if you could take this one on.
+
+00:19:40.000 --> 00:19:46.000
+I think the main thing that you might notice about Posit Assistant
+
+00:19:46.000 --> 00:19:50.000
+is that because it combines, or in some way that combines,
+
+00:19:50.000 --> 00:19:53.000
+data bot abilities and Positron Assistant abilities,
+
+00:19:53.000 --> 00:19:57.000
+it has these two modes that it can be in,
+
+00:19:57.000 --> 00:20:02.000
+where one is it's doing data analysis much in the same way that data bot does.
+
+00:20:03.000 --> 00:20:07.000
+And in that mode where it's doing data analysis,
+
+00:20:07.000 --> 00:20:10.000
+that might be EDA, making visualizations, something like that.
+
+00:20:10.000 --> 00:20:16.000
+It knows that, or it's assuming that your goal is to understand the data.
+
+00:20:17.211 --> 00:20:22.411
+And so it does things a little bit differently than if it were just trying to get a task done.
+
+00:20:22.411 --> 00:20:26.251
+So it's supposed to only do a couple tool calls at a time. So it's only going to run little bits
+
+00:20:26.251 --> 00:20:32.091
+of code at a time before presenting you with the results of that code, a summary, and then
+
+00:20:32.731 --> 00:20:39.051
+giving you suggestions like we saw earlier. So it has this one mode, it does, you know,
+
+00:20:39.051 --> 00:20:44.091
+it's supposed to do three or fewer tool calls, regroup, give you suggestions. But then it has
+
+00:20:44.091 --> 00:20:48.251
+another mode where if it thinks you just want to get a task done, like you're refactoring,
+
+00:20:48.891 --> 00:20:52.970
+you know, all the code in your R package or something, and your goal is to complete the
+
+00:20:52.970 --> 00:20:58.411
+task, it's going to be more agentic, do more tool calls, get more stuff done, and interact
+
+00:20:58.411 --> 00:21:04.010
+with you a little bit differently. So Posit Assistant can do both of those things. I think
+
+00:21:04.010 --> 00:21:08.650
+in the past, like Positron Assistant sort of interacted one way and Data Bot interacted
+
+00:21:08.650 --> 00:21:17.051
+another. So Posit Assistant combines the two. And I think the other thing, I don't really know
+
+00:21:17.051 --> 00:21:23.131
+what it's like exactly for Positron Assistant, but for Posit Assistant, we've spent some time
+
+00:21:23.131 --> 00:21:30.811
+with the prompting so that it behaves in ways like we want it to produce statistically sound
+
+00:21:30.811 --> 00:21:38.811
+analyses. It has some prompting about, you know, robust statistical analyses. And for things like
+
+00:21:38.811 --> 00:21:45.290
+modeling, there's some information about best practices for predictive modeling, like data
+
+00:21:45.290 --> 00:21:49.930
+splitting, not immediately fitting on the test set, all of that. And then it also has a specific
+
+00:21:49.930 --> 00:21:58.091
+predictive modeling skill. And then I think also, just in general, we've instructed Posit Assistant
+
+00:21:58.731 --> 00:22:06.010
+to not do things like be overly flattering to your ideas, like avoid things like, oh, great analysis,
+
+00:22:06.010 --> 00:22:12.491
+or like great idea, and to, in general, be more straightforward. I'm not saying necessarily
+
+00:22:12.491 --> 00:22:17.131
+that Positron Assistant is like that, but Posit Assistant is definitely not supposed to, you know,
+
+00:22:17.131 --> 00:22:24.491
+be overly flattering, or do things like use a bunch of emojis, or like a bunch of bullets.
+
+00:22:24.570 --> 00:22:28.970
+It has a more straightforward, or at least it's supposed to have a more straightforward
+
+00:22:28.970 --> 00:22:35.051
+way of communicating with the user. Yeah. Anything you want to add to that?
+
+00:22:35.610 --> 00:22:40.810
+No, I think that's well said. I hope that those changes make the agent, you know, especially
+
+00:22:40.810 --> 00:22:46.651
+pleasant to interact with. We've really tried to iterate on it to the point where
+
+00:22:47.450 --> 00:22:52.011
+it's sort of a humble and measured collaborator. So hopefully that comes through to folks.
+
+00:22:55.211 --> 00:22:59.051
+With that, that is Positron Assistant versus Posit Assistant.
+
+00:22:59.051 --> 00:23:03.291
+Sarah, I appreciate you joining me for this one. Yeah, definitely.

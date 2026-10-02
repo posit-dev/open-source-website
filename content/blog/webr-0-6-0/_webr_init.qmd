@@ -1,0 +1,48 @@
+```{=html}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+<style>
+  .webr-run-button {
+    background-color: #F7F7F7;
+    border: 1px solid #EEE;
+    padding: 0.1em 0.5em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+  .webr-run-button:hover {
+    background-color: #EEE;
+  }
+  .webr-run-button:active {
+    background-color: #DDD;
+  }
+  .webr-run-button:disabled {
+    background-color: #DDD;
+    cursor: not-allowed;
+    transform: none;
+  }
+  .webr-code-output pre {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/r/r.js"></script>
+<script type="module">
+  import { WebR } from 'https://webr.r-wasm.org/latest/webr.mjs';
+  globalThis.webRIndex = 0;
+  globalThis.webREditorCode = [];
+  globalThis.webR = new WebR();
+  globalThis.webRPlotWidth = 640;
+  globalThis.webRPlotHeight = 400;
+  await globalThis.webR.init();
+  await webR.evalRVoid("webr::shim_install()");
+  await webR.evalRVoid("webr::global_prompt_install()", { withHandlers: false });
+  globalThis.webRCodeShelter = await new globalThis.webR.Shelter();
+  document.querySelectorAll(".webr-run-button").forEach((btn) => {
+    btn.innerText = 'Run code';
+    btn.disabled = false;
+  });
+</script>
+```

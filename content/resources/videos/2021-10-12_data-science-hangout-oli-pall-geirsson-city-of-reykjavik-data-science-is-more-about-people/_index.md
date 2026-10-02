@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   duration: 4992
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:33.697452+00:00'
+  last_updated: '2026-09-18T13:58:16.154257+00:00'
   like_count: 14
   playlist: ''
   software:
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/aIDg-9Ox5vo/maxresdefault.jpg
   title: Data Science Hangout | Óli Páll Geirsson, City of Reykjavik | Data Science is More About People
   url: https://www.youtube.com/watch?v=aIDg-9Ox5vo
-  view_count: 667
+  view_count: 668
 ---
 image: thumbnail.jpg
 

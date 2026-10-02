@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 3577
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:31.652263+00:00'
+  last_updated: '2026-09-18T13:58:13.379871+00:00'
   like_count: 13
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/gDiwpa6gFPA/maxresdefault.jpg
   title: Data Science Hangout | Namrata Shetty-Anderson, UPS Store | Professional development for data teams
   url: https://www.youtube.com/watch?v=gDiwpa6gFPA
-  view_count: 651
+  view_count: 659
 ---
 image: thumbnail.jpg
 

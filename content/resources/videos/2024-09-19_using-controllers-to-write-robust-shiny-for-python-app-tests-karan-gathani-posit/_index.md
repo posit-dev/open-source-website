@@ -14,8 +14,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -79,14 +79,14 @@ external:  # updated automatically, do not edit
   duration: 659
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:29.246570+00:00'
+  last_updated: '2026-09-18T13:58:10.631394+00:00'
   like_count: 11
   people:
   - Karan Gathani
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -135,7 +135,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/ecVPjqsVSkU/maxresdefault.jpg
   title: Using controllers to write robust Shiny for Python app tests | Karan Gathani | Posit
   url: https://www.youtube.com/watch?v=ecVPjqsVSkU
-  view_count: 628
+  view_count: 632
 ---
 image: thumbnail.jpg
 

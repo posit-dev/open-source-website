@@ -49,7 +49,7 @@ external:  # updated automatically, do not edit
   duration: 3640
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:32.022896+00:00'
+  last_updated: '2026-09-18T13:58:13.768520+00:00'
   like_count: 25
   playlist: ''
   software:
@@ -58,7 +58,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/KT6UKh15_68/maxresdefault.jpg
   title: Data Science Hangout | Melissa Perry, Peloton | Design Thinking with Data
   url: https://www.youtube.com/watch?v=KT6UKh15_68
-  view_count: 1098
+  view_count: 1102
 ---
 image: thumbnail.jpg
 

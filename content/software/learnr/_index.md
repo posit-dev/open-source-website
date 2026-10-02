@@ -10,10 +10,12 @@ people:
 - JJ Allaire
 - Garrick Aden-Buie
 - Barret Schloerke
+- Kevin Ushey
 - Carson Sievert
 - Winston Chang
 - Joe Cheng
 - Mine Çetinkaya-Rundel
+- Gary Ritchie
 - Christophe Dervieux
 title: learnr
 topics:
@@ -35,10 +37,12 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   - Garrick Aden-Buie
   - Barret Schloerke
+  - Kevin Ushey
   - Carson Sievert
   - Winston Chang
   - Joe Cheng
   - Mine Çetinkaya-Rundel
+  - Gary Ritchie
   - Christophe Dervieux
   readme_image: man/figures/logo.png
   repo: rstudio/learnr

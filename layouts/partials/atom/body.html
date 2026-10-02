@@ -1,0 +1,14 @@
+{{- /*
+  atom/body.html — Emit the page's raw Markdown body (frontmatter stripped) as
+  the standard Atom <content> element, CDATA-wrapped so Markdown/HTML content
+  does not break the XML. type="text/markdown" tells consumers the payload is
+  Markdown rather than plain text or HTML. The "]]>" sequence is split to avoid
+  prematurely closing the CDATA section.
+
+  Input (dict):
+    "page" — the Page object
+*/ -}}
+{{- $page := .page -}}
+{{- $raw := $page.RawContent -}}
+{{- $raw = replace $raw "]]>" "]]]]><![CDATA[>" -}}
+      <content type="text/markdown">{{ printf "<![CDATA[%s]]>" $raw | safeHTML }}</content>

@@ -1,5 +1,6 @@
 {{ $format := .format | default "card" }}
 {{ $height := .height | default "" }}
+{{ $nohero := .nohero | default false }}
 
 {{/* ============================================================
      RESOLVE PAGE
@@ -20,7 +21,8 @@
   {{ end }}
   {{ $page = site.GetPage $slug }}
   {{ if not $page }}
-    {{ errorf "item partial: page not found for slug '%s' (resolved to '%s')" .item $slug }}
+    {{ warnf "item partial: page not found for slug '%s' (resolved to '%s')" .item $slug }}
+    {{ return }}
   {{ end }}
 {{ end }}
 
@@ -52,7 +54,7 @@
 
 {{ $card_settings := index site.Data.items $card_type }}
 {{ if not $card_settings }}
-  {{ errorf "item partial: no card_settings in data/items.yaml for card_type '%s' (slug: '%s')" $card_type $slug }}
+  {{ warnf "item partial: no card_settings in data/items.yaml for card_type '%s' (slug: '%s')" $card_type $slug }}
 {{ end }}
 
 {{/* Auto-hide badge when item type matches the current page's section */}}
@@ -107,7 +109,7 @@
 {{ $people := "" }}
 {{ $people_link := eq $format "hero" }}
 {{ if $card_settings.people_show }}
-  {{ $people = partial "block/author.html" (dict "page" $page "link" $people_link) }}
+  {{ $people = partial "block/author.html" (dict "page" $page "link" $people_link "author_class" $card_settings.author_class) }}
 {{ end }}
 
 {{/* ============================================================
@@ -141,6 +143,9 @@
 {{ $img_result := partial "get-image.html" (dict "page" $page "fallback" $use_fallback) }}
 {{ $image := $img_result.image }}
 {{ $image_alt := $img_result.alt }}
+{{ $bg_color := $img_result.color | default $page.Params.color }}
+{{ $software_images := $img_result.software_images }}
+{{ $has_multiple_software := gt (len $software_images) 1 }}
 
 {{/* ============================================================
      STARS (software only)
@@ -297,7 +302,7 @@
       {{ partial "dev-size-label.html" (dict "class" "top-2 left-2") }}
 
     {{/* -- Image — always visible, fixed height, 16:9 aspect -- */}}
-    <div class="h-full @max-nip:w-full @nip:aspect-square @grande:aspect-[4/3] @venti:aspect-[16/9] flex-shrink-0 flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
+    <div class="h-full @max-nip:w-full @nip:aspect-square @grande:aspect-[4/3] @venti:aspect-[16/9] flex-shrink-0 flex items-center justify-center overflow-hidden rounded-md"{{ with $bg_color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
         {{ partial "responsive_image_container.html" (dict
           "image" $image
@@ -386,7 +391,7 @@
       {{ partial "dev-size-label.html" (dict "class" "top-2 right-2" "sizes" "compact") }}
 
   {{/* Image */}}
-  <div class="h-full w-full flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
+  <div class="h-full w-full flex items-center justify-center overflow-hidden rounded-md"{{ with $bg_color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
     {{ if $image }}
       {{ partial "responsive_image_container.html" (dict
         "image" $image
@@ -450,23 +455,34 @@
      ============================================================ */}}
 {{ $hero_layout := $card_settings.hero_layout | default "banner" }}
 {{ $hero_image_show := $card_settings.hero_image_show | default true }}
+{{/* Allow page-level override of hero_image_show */}}
+{{ if isset $page.Params "hero_image_show" }}
+  {{ $hero_image_show = $page.Params.hero_image_show }}
+{{ end }}
 
 <div id="{{ $item_id }}" class="@container flex flex-col relative rounded-xl overflow-hidden {{ $card_settings.card_class }} {{ $card_settings.hero_class }}">
 
       {{ partial "dev-size-label.html" (dict "class" "top-2 left-2") }}
 
   {{ if eq $hero_layout "banner" }}
-  {{/* ---- BANNER: full-width image, content below ---- */}}
-  {{ if and $image $hero_image_show }}
+  {{/* ---- BANNER: full-width media (video or image), content below ---- */}}
+  {{ $hero_media := partial "get-hero-media.html" $page }}
+  {{ if and $hero_media.media $hero_image_show (not $nohero) }}
   <div class="w-full {{ with $card_settings.hero_image_container_class }}{{ . }}{{ else }}h-40 @grande:h-64 @venti:h-80 @trenta:h-96{{ end }}">
-    {{ partial "responsive_image_container.html" (dict
-      "image" $image
-      "alt" $image_alt
-      "class" "mx-auto h-full w-full object-cover"
-      "short"  640
-      "tall"   960
-      "grande" 1280
-    ) }}
+    {{ if eq $hero_media.type "video" }}
+      <video class="mx-auto h-full w-full object-cover" autoplay muted playsinline preload="auto">
+        <source src="{{ $hero_media.media.RelPermalink }}" type="{{ $hero_media.media.MediaType }}">
+      </video>
+    {{ else }}
+      {{ partial "responsive_image_container.html" (dict
+        "image" $hero_media.media
+        "alt" $hero_media.alt
+        "class" "mx-auto h-full w-full object-cover"
+        "short"  640
+        "tall"   960
+        "grande" 1280
+      ) }}
+    {{ end }}
   </div>
   {{ end }}
 
@@ -504,9 +520,25 @@
         {{ end }}
       </div>
       {{ if $is_blog }}
-        {{/* Blog posts: show topics next to date */}}
+        {{/* Blog posts: show topics, software, languages next to date */}}
         {{ with $hero_topics }}
         {{ if $date }}<span class="text-sm font-mono font-medium text-gray-600">|</span>{{ end }}
+        <div class="flex flex-wrap gap-1">
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+        {{ with $hero_software }}
+        {{ if or $date $hero_topics }}<span class="text-sm font-mono font-medium text-gray-600">|</span>{{ end }}
+        <div class="flex flex-wrap gap-1">
+          {{ range . }}
+          <a href="{{ .url }}" class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+        {{ with $hero_languages }}
+        {{ if or $date $hero_topics $hero_software }}<span class="text-sm font-mono font-medium text-gray-600">|</span>{{ end }}
         <div class="flex flex-wrap gap-1">
           {{ range . }}
           <a href="{{ .url }}" class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
@@ -567,8 +599,8 @@
     {{ end }}
     {{ end }}
 
-    {{/* Software, topics, tags - skip for blogs (shown at bottom of post) and cheatsheets (software shown above title) */}}
-    {{ if and (not $is_blog) (ne $card_type "cheatsheets") }}
+    {{/* Software, topics, tags - skip for blogs (shown at bottom of post), cheatsheets (software shown above title), and events (software shown as cards below) */}}
+    {{ if and (not $is_blog) (not $is_event) (ne $card_type "cheatsheets") }}
     {{ with $hero_software }}
     <div class="flex items-start gap-2 text-base mt-4">
       <span class="icon-[boxicons--hexagon-filled] w-5 h-5 flex-none text-gray-400 mt-0.5"></span>
@@ -639,8 +671,8 @@
     {{ end }}
 
     {{/* -- Image area (same structure as card) -- */}}
-    {{ if $hero_image_show }}
-    <div class="w-full md:w-1/3 aspect-square flex items-center justify-center overflow-hidden"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
+    {{ if and $hero_image_show (not $nohero) }}
+    <div class="w-full md:w-1/3 aspect-square flex items-center justify-center overflow-hidden"{{ with $bg_color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
         {{ partial "responsive_image_fixed.html" (dict
           "image" $image
@@ -804,8 +836,28 @@
       {{ end }}
 
     {{/* -- Image ------------------------------------------------ */}}
-    <div class="w-full @venti:w-1/2 aspect-[40/21] flex-shrink-0 flex items-center justify-center overflow-hidden rounded-xl"{{ with $page.Params.color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
-      {{ if $image }}
+    {{/* self-center at @venti: in the row layout, default align-items:stretch would
+         give the box a definite height (the text column's) and cancel aspect-ratio;
+         centering keeps the aspect box and vertically centers it against the text */}}
+    <div class="w-full @venti:w-1/2 @venti:self-center aspect-[40/21] flex-shrink-0 flex items-center justify-center overflow-hidden rounded-xl"{{ with $bg_color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
+      {{ if $has_multiple_software }}
+        {{/* Multiple software hexes - overlapping layout */}}
+        <div class="relative w-full h-full flex items-center justify-center">
+          {{ range $idx, $sw := $software_images }}
+            {{ $offsetPercent := mul $idx 20 }}
+            <div class="absolute h-[80%] aspect-square" style="left: calc(50% - {{ div (mul (sub (len $software_images) 1) 20) 2 }}% + {{ $offsetPercent }}%); transform: translateX(-50%); z-index: {{ $idx }};">
+              {{ partial "responsive_image_container.html" (dict
+                "image" $sw.image
+                "alt" $sw.alt
+                "class" (printf "mx-auto h-full %s" $card_settings.image_class)
+                "short"  160
+                "tall"   320
+                "grande" 640
+              ) }}
+            </div>
+          {{ end }}
+        </div>
+      {{ else if $image }}
         {{ partial "responsive_image_container.html" (dict
           "image" $image
           "alt" $image_alt
@@ -823,7 +875,7 @@
     </div>
 
     {{/* -- Content ----------------------------- */}}
-    <div class="hidden gap-y-2 @nip:flex @venti:w-1/2 flex-auto flex-col p-3 @venti:pl-5 text-gray-700">
+    <div class="hidden gap-y-2 @nip:flex @venti:w-1/2 flex-auto flex-col p-3 @venti:pl-5 text-gray-700 mt-2">
 
       {{/* Topic above title for blog posts */}}
       {{ if $is_blog }}
@@ -840,54 +892,45 @@
         {{ end }}
       {{ end }}
 
+      {{/* Metadata row - all inline with separators */}}
+      {{ if or $location $date $duration $views $stars }}
+      <div class="hidden @short:flex flex-wrap gap-x-2 items-center {{ $card_settings.metadata_class }}">
+        {{ with $date }}
+          <span>{{ . }}</span>
+          {{ if or $location $duration $views $stars }}<span>|</span>{{ end }}
+        {{ end }}
+        {{ with $location }}
+          <span>{{ . }}</span>
+          {{ if or $duration $views $stars }}<span>|</span>{{ end }}
+        {{ end }}
+        {{ with $duration }}
+          <span>{{ . }}</span>
+          {{ if or $views $stars }}<span>|</span>{{ end }}
+        {{ end }}
+        {{ with $views }}
+          <span>{{ . }}</span>
+          {{ if $stars }}<span>|</span>{{ end }}
+        {{ end }}
+        {{ with $stars }}
+          <div class="flex gap-1 items-center">
+            <span class="icon-[boxicons--star-filled]"></span>
+            <span>{{ . }}</span>
+          </div>
+        {{ end }}
+      </div>
+      {{ end }}
+
       {{ with $title }}
-      <h3 class="m-0! font-semibold text-sm @grande:text-lg @venti:text-3xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
+      <h3 class="m-0! mt-3 font-semibold text-sm @grande:text-lg @venti:text-xl @trenta:text-2xl line-clamp-2 {{ $card_settings.title_class }}">{{ . | safeHTML }}</h3>
       {{ end }}
 
       {{ with $description }}
-        <p class="m-0! text-xs @short:text-sm @grande:text-md @venti:text-lg line-clamp-2 short@line-clamp-3 {{ $card_settings.description_class }}">{{ . | safeHTML }}</p>
+        <p class="m-0! text-xs @short:text-sm @grande:text-md @venti:text-md @trenta:text-lg line-clamp-2 short@line-clamp-3 {{ $card_settings.description_class }}">{{ . | safeHTML }}</p>
       {{ end }}
 
       {{ with $people }}
         <div class="text-sm @grande:text-md">
           {{ . }}
-        </div>
-      {{ end }}
-
-
-      {{ with $location }}
-        <div class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center">
-          <span class="icon-[boxicons--map-filled]"></span>
-          <div>{{ . }}</div>
-        </div>
-      {{ end }}
-
-      {{ with $date }}
-        <div class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center">
-          <span class="icon-[boxicons--calendar-filled]"></span>
-          <div>{{ . }}</div>
-        </div>
-      {{ end }}
-
-
-      {{ with $duration }}
-        <div class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center">
-          <span class="icon-[boxicons--clock-4-filled]"></span>
-          <div>{{ . }}</div>
-        </div>
-      {{ end }}
-
-      {{ with $views }}
-        <div class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center">
-          <span class="icon-[boxicons--eye-filled]"></span>
-          <div>{{ . }}</div>
-        </div>
-      {{ end }}
-
-      {{ with $stars }}
-        <div class="hidden @short:flex text-sm @grande:text-md font-semibold gap-2 items-center">
-          <span class="icon-[boxicons--star-filled]"></span>
-          <div>{{ . }}</div>
         </div>
       {{ end }}
 

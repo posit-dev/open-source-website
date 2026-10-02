@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -65,11 +65,11 @@ external:  # updated automatically, do not edit
   duration: 234
   has_captions: true
   language: en-US
-  last_updated: '2026-05-19T10:15:30.286916+00:00'
+  last_updated: '2026-09-18T13:58:11.685867+00:00'
   like_count: 32
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/U2mPB-b-6y4/maxresdefault.jpg
   title: Speeding Up Plots in R/Shiny - posit::conf(2023)
   url: https://www.youtube.com/watch?v=U2mPB-b-6y4
-  view_count: 1293
+  view_count: 1301
 ---
 image: thumbnail.jpg
 

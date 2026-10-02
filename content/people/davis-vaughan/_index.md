@@ -4,13 +4,13 @@ image: "davis.jpeg"
 role: "Principal Software Engineer"
 affiliation: "Posit, PBC"
 social:
-  bluesky: ""
+  bluesky: "davisvaughan.bsky.social"
   github: "DavisVaughan"
-  linkedin: ""
+  linkedin: "davis-vaughan"
   mastodon: ""
-  orcid: ""
-  website: ""
+  orcid: "0000-0003-4777-038X"
+  website: "https://blog.davisvaughan.com/"
   youtube: ""
 ---
 
-Davis is a Senior Software Engineer at Posit where he works on improving Positron and the tidyverse. He's worked on core R packages like dplyr, tidyr, and vctrs, and more recently has helped build out the R infrastructure that powers Positron. This includes Ark, the Jupyter kernel that powers R code execution and language smarts, and [Air]({{< ref "/software/air" >}}), the R code formatter.
+Hi! I'm Davis, a Principal Software Engineer at Posit working on improving the [tidyverse]({{<ref "software/tidyverse" >}}). I work on R packages like [dplyr]({{<ref "software/dplyr" >}}), [tidyr]({{<ref "software/tidyr" >}}), and [vctrs]({{<ref "software/vctrs" >}}), and on the tools that power the R experience in [Positron]({{<ref "software/positron" >}}), such as [Air]({{< ref "/software/air" >}}) (the R code formatter) and [Ark]({{< ref "/software/ark" >}}) (the Jupyter kernel for R).

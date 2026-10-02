@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 'Richie Moluno - JSquarto: Bridging JavaScript Documentation with Quarto''s Power'
 
@@ -37,16 +37,16 @@ external:  # updated automatically, do not edit
   duration: 329
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.652481+00:00'
+  last_updated: '2026-09-18T13:58:10.192170+00:00'
   like_count: 3
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/CySpBKJD5vY/maxresdefault.jpg
   title: 'Richie Moluno - JSquarto: Bridging JavaScript Documentation with Quarto''s Power'
   url: https://www.youtube.com/watch?v=CySpBKJD5vY
-  view_count: 259
+  view_count: 260
 ---
 image: thumbnail.jpg
 

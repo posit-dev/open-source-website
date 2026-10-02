@@ -34,7 +34,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags:
 - rstudio
@@ -120,11 +120,11 @@ external:  # updated automatically, do not edit
   duration: 688
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.006423+00:00'
+  last_updated: '2026-09-18T13:58:08.949066+00:00'
   like_count: 3
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags:
   - rstudio
@@ -174,7 +174,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/f3C4-meKD1o/maxresdefault.jpg
   title: 'Next-gen data science: a conversation with the Ravit Show and Eric Pité'
   url: https://www.youtube.com/watch?v=f3C4-meKD1o
-  view_count: 330
+  view_count: 341
 ---
 image: thumbnail.jpg
 

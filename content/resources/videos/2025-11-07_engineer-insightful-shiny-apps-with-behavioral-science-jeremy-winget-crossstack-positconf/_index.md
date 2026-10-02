@@ -20,7 +20,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - posit::conf(2025)
 - rstats
@@ -55,11 +55,11 @@ external:  # updated automatically, do not edit
   duration: 1190
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.254540+00:00'
-  like_count: 4
+  last_updated: '2026-09-18T13:58:08.099094+00:00'
+  like_count: 5
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - posit::conf(2025)
   - rstats
@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/QvMnUZLQ-oo/maxresdefault.jpg
   title: Engineer Insightful Shiny Apps with Behavioral Science (Jeremy Winget, CrossStack) | posit::conf
   url: https://www.youtube.com/watch?v=QvMnUZLQ-oo
-  view_count: 124
+  view_count: 137
 ---
 image: thumbnail.jpg
 

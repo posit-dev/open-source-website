@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: Open source R packages on GitHub often take advantage of continuous integration services to automatically check their packages for errors. This is very useful to catch things quickly, as well and increasing confidence for proposed changes, as the Pull Requests can be checked before they are merged. Travis-CI and Appveyor are the most popular current methods. However newer services, Azure Pipelines and GitHub Actions, show promise for being more powerful and simpler to configure and debug. I will discuss these services and demonstrate some of their capabilities and how to configure them for your own use in packages and reports.
   duration: 1258
   has_captions: false
-  language: en
-  last_updated: '2026-05-19T10:15:34.962515+00:00'
+  language: ''
+  last_updated: '2026-09-18T13:58:18.221748+00:00'
   like_count: 27
   playlist: ''
   software:
@@ -120,7 +120,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WWDMZNW5CnU/hqdefault.jpg
   title: Jim Hester | Azure Pipelines and GitHub Actions | RStudio (2020)
   url: https://www.youtube.com/watch?v=WWDMZNW5CnU
-  view_count: 1000
+  view_count: 1001
 ---
 image: thumbnail.jpg
 

@@ -28,8 +28,8 @@ resource_type: video
 resources: []
 software:
 - brand-yml
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags:
 - posit::conf(2025)
 - rstats
@@ -70,15 +70,15 @@ external:  # updated automatically, do not edit
   duration: 1195
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:27.254462+00:00'
-  like_count: 19
+  last_updated: '2026-09-18T13:58:08.099011+00:00'
+  like_count: 20
   people:
   - Garrick Aden-Buie
   playlist: ''
   software:
   - brand-yml
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags:
   - posit::conf(2025)
   - rstats
@@ -88,7 +88,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/DPaoNM8Ux04/maxresdefault.jpg
   title: 'Theming Made Easy: Introducing brand.yml (Garrick Aden-Buie, Posit) | posit::conf(2025)'
   url: https://www.youtube.com/watch?v=DPaoNM8Ux04
-  view_count: 462
+  view_count: 541
 ---
 image: thumbnail.jpg
 

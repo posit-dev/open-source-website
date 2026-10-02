@@ -18,14 +18,14 @@ external:  # updated automatically, do not edit
   duration: 51
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:28.007051+00:00'
-  like_count: 43
+  last_updated: '2026-09-18T13:58:09.332458+00:00'
+  like_count: 44
   playlist: ''
   tags: []
   thumbnail: https://i.ytimg.com/vi/Tg1xgHKfDGc/maxresdefault.jpg
   title: 'Build a football dashboard with Python #pythonprogramming #pythonprojects #dataanalysis #datascience'
   url: https://www.youtube.com/watch?v=Tg1xgHKfDGc
-  view_count: 1517
+  view_count: 1559
 ---
 image: thumbnail.jpg
 

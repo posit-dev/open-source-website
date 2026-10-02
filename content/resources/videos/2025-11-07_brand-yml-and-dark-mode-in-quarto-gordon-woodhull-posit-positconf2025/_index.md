@@ -18,7 +18,7 @@ resource_type: video
 resources: []
 software:
 - brand-yml
-- Quarto
+- quarto
 tags:
 - posit::conf(2025)
 - rstats
@@ -50,14 +50,14 @@ external:  # updated automatically, do not edit
   duration: 240
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:26.868122+00:00'
-  like_count: 12
+  last_updated: '2026-09-18T13:58:07.659296+00:00'
+  like_count: 13
   people:
   - Gordon Woodhull
   playlist: ''
   software:
   - brand-yml
-  - Quarto
+  - quarto
   tags:
   - posit::conf(2025)
   - rstats
@@ -68,7 +68,7 @@ external:  # updated automatically, do not edit
   thumbnail: https://i.ytimg.com/vi/WNwsgS-klMA/maxresdefault.jpg
   title: Brand YML and Dark Mode in Quarto (Gordon Woodhull, Posit) | posit::conf(2025)
   url: https://www.youtube.com/watch?v=WNwsgS-klMA
-  view_count: 399
+  view_count: 453
 ---
 image: thumbnail.jpg
 

@@ -1,0 +1,3265 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:12.320
+I am joined today by our lab manager Hadley Wickham. Hadley, would you introduce yourself?
+
+00:00:13.440 --> 00:00:18.639
+Hi everyone, I'm Hadley. I make R packages and do R stuff.
+
+00:00:19.840 --> 00:00:24.959
+Hadley makes R packages and does R stuff, and today Hadley is going to be talking about
+
+00:00:25.600 --> 00:00:34.080
+the combination of data dictionaries, Claude, parquet files, in order to help us make our
+
+00:00:34.080 --> 00:00:41.360
+data sensible to not only human beings, but also to machines. Hadley, will you give us a little
+
+00:00:41.360 --> 00:00:44.720
+rundown and then feel free to share your screen and jump right in.
+
+00:00:45.919 --> 00:00:47.520
+I am going to share my screen.
+
+00:00:48.320 --> 00:00:53.919
+And we will all help Hadley know whether or not it's too small. So hop in the Discord and
+
+00:00:53.919 --> 00:00:57.680
+let us know if something is too tiny to see.
+
+00:00:59.360 --> 00:01:03.200
+Okay, and I made a couple of very short notes before we get into it,
+
+00:01:03.200 --> 00:01:05.120
+just to remind me what we're talking about.
+
+00:01:06.639 --> 00:01:14.480
+And basically, since the last data lab that I came on,
+
+00:01:15.760 --> 00:01:21.199
+I kind of realized if you're going to be using AI agents to help you do data analysis,
+
+00:01:21.199 --> 00:01:25.919
+you need to write down what you know about the data,
+
+00:01:25.919 --> 00:01:30.400
+so that AI agents can be as helpful as possible.
+
+00:01:33.199 --> 00:01:36.400
+Of course, in some sense, like you should always have been doing this,
+
+00:01:36.400 --> 00:01:41.120
+because your human colleagues also benefit from this information.
+
+00:01:41.120 --> 00:01:46.959
+But for some reason, some unfortunate quirk of human psychology,
+
+00:01:46.959 --> 00:01:52.800
+it seems to be much more motivating to write this stuff down for non-humans than for humans.
+
+00:01:53.599 --> 00:01:57.199
+So I've been thinking about this idea of data dictionaries.
+
+00:01:57.199 --> 00:02:03.919
+Certainly not a new idea, but I'm going to show you a little spec,
+
+00:02:03.919 --> 00:02:07.279
+pretty lightweight spec, for data dictionaries that I've been working on,
+
+00:02:07.279 --> 00:02:14.639
+and a workflow that I find super compelling, where you have three files, a data cleaning script,
+
+00:02:14.639 --> 00:02:18.559
+a data dictionary, and your final cleaned data.
+
+00:02:18.559 --> 00:02:22.880
+And you mostly edit them using Claude code.
+
+00:02:22.880 --> 00:02:26.559
+And I think this combination just feels really, really cool to me.
+
+00:02:26.559 --> 00:02:30.639
+And I should say, fast get, because that is super important.
+
+00:02:32.000 --> 00:02:35.679
+And I'm going to be showing you these tools today in Positron,
+
+00:02:36.559 --> 00:02:42.479
+with Claude code, and with a Claude code tool called MCP REPL,
+
+00:02:43.440 --> 00:02:46.800
+which Isabella will hopefully drop a link in the chat.
+
+00:02:47.440 --> 00:02:52.639
+So MCP REPL is an open source tool developed by my colleague Tomasz.
+
+00:02:52.639 --> 00:03:02.800
+It basically allows any AI tool to run a persistent R or Python session,
+
+00:03:02.800 --> 00:03:06.160
+so it can run data analysis code for you.
+
+00:03:06.559 --> 00:03:11.360
+You can also do this using RStudio, and Posit AI, Posit Assistant,
+
+00:03:11.360 --> 00:03:14.559
+or Positron, and Posit AI, and Posit Assistant, and other tools,
+
+00:03:15.759 --> 00:03:17.520
+and get very similar results.
+
+00:03:18.160 --> 00:03:21.520
+I am just playing around with this one at the moment,
+
+00:03:21.520 --> 00:03:25.839
+so do not read anything particular into my use of tools.
+
+00:03:25.839 --> 00:03:29.279
+This is just one of my experiments, trying different tools,
+
+00:03:29.279 --> 00:03:34.880
+and seeing how they feel, and how they should inform the design of my work.
+
+00:03:35.839 --> 00:03:39.520
+And how they should inform the design of future tools.
+
+00:03:40.160 --> 00:03:42.720
+Okay, really quickly, since you mentioned MCP,
+
+00:03:42.720 --> 00:03:44.160
+can you talk a little bit about what that is?
+
+00:03:44.160 --> 00:03:45.440
+Noor had asked in the chat.
+
+00:03:46.320 --> 00:03:50.240
+MCP, I can't remember what it stands for.
+
+00:03:50.240 --> 00:03:52.720
+Even if I did, it's a useless acronym,
+
+00:03:52.720 --> 00:03:55.119
+because it doesn't really explain what it does.
+
+00:03:55.119 --> 00:03:56.960
+It's Model Context Protocol.
+
+00:03:57.520 --> 00:04:04.639
+Yeah, it's basically a way of giving AI agents access to new tools to do things.
+
+00:04:05.039 --> 00:04:08.160
+I don't know, MCP servers can kind of do anything.
+
+00:04:08.160 --> 00:04:12.000
+So in this case, we're going to be using them to run R code.
+
+00:04:12.000 --> 00:04:19.279
+So this is just kind of a general extension or plugin system for AI coding tools.
+
+00:04:19.279 --> 00:04:23.119
+And we're using this MCP REPL, which works for R and Python.
+
+00:04:24.000 --> 00:04:25.760
+And we're going to see that shortly.
+
+00:04:27.359 --> 00:04:29.760
+And what I'm going to be doing is,
+
+00:04:29.760 --> 00:04:32.559
+I'm going to be working with this dataset called Elevators,
+
+00:04:33.519 --> 00:04:36.160
+that my colleague, Emil, gave to me,
+
+00:04:36.160 --> 00:04:38.239
+because he really likes it, because it's a fun dataset.
+
+00:04:38.799 --> 00:04:41.760
+We're going to start with a CSV file,
+
+00:04:41.760 --> 00:04:46.239
+with basically no knowledge about what's going on in this file.
+
+00:04:46.239 --> 00:04:49.279
+And kind of over the course of the next hour or so,
+
+00:04:49.279 --> 00:04:52.160
+sort of build up some knowledge and write all that down.
+
+00:04:52.160 --> 00:04:55.040
+And hopefully come up with a cleaner dataset at the end of it.
+
+00:04:56.880 --> 00:05:00.079
+And so I'm going to kick this off by asking Claude,
+
+00:05:00.160 --> 00:05:06.880
+write me a plain R script to read Elevators and CSV,
+
+00:05:07.679 --> 00:05:10.160
+and save a parquet file.
+
+00:05:12.720 --> 00:05:15.920
+So if you don't know what a parquet file is,
+
+00:05:15.920 --> 00:05:17.600
+you should learn about them,
+
+00:05:17.600 --> 00:05:21.279
+because they are basically like a CSV file,
+
+00:05:21.279 --> 00:05:24.399
+but basically better in every single possible way.
+
+00:05:24.399 --> 00:05:25.920
+They're smaller, they're faster.
+
+00:05:26.880 --> 00:05:30.239
+You don't have to worry about different types and different missing values.
+
+00:05:30.239 --> 00:05:34.239
+You can read them into every single programming language you can imagine.
+
+00:05:36.160 --> 00:05:40.880
+So I've done that, and Claude is doing something.
+
+00:05:41.679 --> 00:05:46.160
+Okay, and it's come out with this clean.r script.
+
+00:05:47.279 --> 00:05:48.399
+Wow, it's really...
+
+00:05:52.480 --> 00:05:55.679
+Wow, okay, it's really gone all out there.
+
+00:05:56.720 --> 00:05:58.799
+It's done a bunch of stuff that I didn't want,
+
+00:05:58.799 --> 00:06:02.480
+and I didn't do 30 minutes ago when I tried this out.
+
+00:06:02.480 --> 00:06:05.920
+So I'm going to tell it, hey, ramp it back.
+
+00:06:12.399 --> 00:06:15.040
+So I want us to start just as simply as possible.
+
+00:06:15.040 --> 00:06:17.040
+Yeah, okay, that is what I am looking for.
+
+00:06:18.720 --> 00:06:21.600
+Why has it chosen to skip that first line?
+
+00:06:22.720 --> 00:06:25.279
+I do not know, and I'm just going to delete that.
+
+00:06:25.279 --> 00:06:31.200
+Okay, so I can run that code, and now I get a parquet file.
+
+00:06:31.200 --> 00:06:34.000
+Positron has a built-in parquet file viewer,
+
+00:06:34.000 --> 00:06:36.079
+which makes it easier to explore.
+
+00:06:36.880 --> 00:06:41.279
+Okay, so you probably could have written this code faster
+
+00:06:41.279 --> 00:06:43.359
+by yourself than with ThoughtCode,
+
+00:06:43.359 --> 00:06:46.160
+especially given that it gave us a bunch of crap we didn't want.
+
+00:06:46.720 --> 00:06:49.920
+But that is life working with AI.
+
+00:06:50.480 --> 00:06:53.279
+So what we're going to do next is we're going to describe
+
+00:06:53.279 --> 00:06:55.200
+this data set in a data dictionary.
+
+00:06:56.160 --> 00:07:00.079
+And I think we'll just kind of dive into that.
+
+00:07:00.079 --> 00:07:07.519
+I'm going to tell Claude to go read this.
+
+00:07:08.160 --> 00:07:10.160
+Oops, read that.
+
+00:07:12.399 --> 00:07:16.480
+And while I show you what I just told Claude to read,
+
+00:07:18.399 --> 00:07:19.839
+which is this spec.
+
+00:07:19.839 --> 00:07:23.600
+So data dictionary, or the data dictionary format
+
+00:07:23.600 --> 00:07:25.679
+that I've come up with, is just a YAML file.
+
+00:07:25.679 --> 00:07:27.839
+And we'll kind of see it very shortly.
+
+00:07:27.839 --> 00:07:31.119
+It's easier to understand with a concrete example.
+
+00:07:31.119 --> 00:07:33.760
+But it's basically going to describe all your tables,
+
+00:07:34.320 --> 00:07:36.640
+the fields inside those tables,
+
+00:07:36.640 --> 00:07:39.040
+relationships between those tables,
+
+00:07:39.040 --> 00:07:42.000
+and then any kind of domain-specific terminology
+
+00:07:42.000 --> 00:07:43.359
+that you might want.
+
+00:07:43.359 --> 00:07:44.559
+So let's see.
+
+00:07:44.559 --> 00:07:46.079
+It's Reddit.
+
+00:07:47.040 --> 00:07:47.519
+OK.
+
+00:07:47.519 --> 00:07:59.040
+And please make me a spec using what you know
+
+00:07:59.040 --> 00:08:01.040
+as our MOC elevators.
+
+00:08:02.399 --> 00:08:06.160
+And certainly, Claude knows a lot more about elevators
+
+00:08:06.160 --> 00:08:07.040
+than I do.
+
+00:08:07.040 --> 00:08:11.440
+So hopefully, it'll at least guess
+
+00:08:11.519 --> 00:08:16.559
+at what some of these possibly cryptic variable names
+
+00:08:16.559 --> 00:08:17.119
+actually do.
+
+00:08:17.119 --> 00:08:17.519
+Well, OK.
+
+00:08:17.519 --> 00:08:19.359
+I think I can figure out what house number is
+
+00:08:19.359 --> 00:08:20.160
+and street name.
+
+00:08:20.959 --> 00:08:24.000
+But what's device type and last parent's date,
+
+00:08:24.000 --> 00:08:25.040
+et cetera, et cetera.
+
+00:08:26.640 --> 00:08:30.000
+So it's going to write a little bit of R code.
+
+00:08:30.000 --> 00:08:33.599
+I guess I can press Control-R-O and see what's happening.
+
+00:08:33.599 --> 00:08:36.320
+This is one of the downsides of using this approach,
+
+00:08:36.320 --> 00:08:38.159
+rather than using Posit Assistant,
+
+00:08:38.159 --> 00:08:41.200
+is it's just going to slap it all together.
+
+00:08:42.400 --> 00:08:47.359
+And it's very hard for me to see what it's doing.
+
+00:08:47.359 --> 00:08:47.859
+OK.
+
+00:08:48.799 --> 00:08:49.200
+Wow.
+
+00:08:49.200 --> 00:08:51.200
+It's really hard to read this without new lines.
+
+00:08:51.200 --> 00:08:53.520
+But it's basically looking at the variables
+
+00:08:53.520 --> 00:08:55.520
+and just tabulating them.
+
+00:08:56.799 --> 00:08:59.919
+So we'll give it a few seconds there.
+
+00:08:59.919 --> 00:09:03.599
+And if there's any questions, now would be a great time.
+
+00:09:03.599 --> 00:09:04.239
+Yeah.
+
+00:09:04.239 --> 00:09:07.440
+While it's cooking, Nitobacco asked,
+
+00:09:07.440 --> 00:09:10.239
+are there any cases where the CSV format is actually
+
+00:09:10.239 --> 00:09:11.599
+a better choice than Parquet?
+
+00:09:11.599 --> 00:09:14.799
+Or are we just defaulting to Parquet is better all the time?
+
+00:09:14.799 --> 00:09:19.919
+I think, though, the two related downsides of Parquet files
+
+00:09:19.919 --> 00:09:22.960
+is that they are not text files.
+
+00:09:22.960 --> 00:09:25.440
+So that means you can't just open them in a text file
+
+00:09:25.440 --> 00:09:27.200
+and easily look and see what's going on.
+
+00:09:28.799 --> 00:09:31.280
+That means you can't easily see them on GitHub.
+
+00:09:31.280 --> 00:09:33.520
+And you can't easily look at diffs.
+
+00:09:33.520 --> 00:09:38.880
+But by and large, looking at large files in this way anyway
+
+00:09:38.880 --> 00:09:40.080
+is not so great.
+
+00:09:40.640 --> 00:09:43.440
+I think that's a relatively minor downside.
+
+00:09:44.559 --> 00:09:46.080
+But Positron has a Parquet viewer,
+
+00:09:46.080 --> 00:09:48.400
+which makes it a lot easier.
+
+00:09:49.200 --> 00:09:50.159
+Exactly.
+
+00:09:50.159 --> 00:09:53.280
+We also had a question about your pipes
+
+00:09:53.280 --> 00:09:54.479
+being rendered as triangles.
+
+00:09:54.479 --> 00:09:56.400
+So I told him in the chat, it's because Hadley's
+
+00:09:56.400 --> 00:09:57.840
+using a font with ligatures.
+
+00:09:57.840 --> 00:09:59.440
+But I figured I'd ask you what font you use.
+
+00:10:03.200 --> 00:10:03.919
+Is it Fira?
+
+00:10:04.479 --> 00:10:06.080
+I feel like everyone loves Fira.
+
+00:10:06.080 --> 00:10:08.400
+But then every time I assume that, it's not.
+
+00:10:08.400 --> 00:10:10.080
+Monospace Neon.
+
+00:10:11.520 --> 00:10:16.479
+This is a font that GitHub made.
+
+00:10:18.159 --> 00:10:20.559
+And I guess I have selected a bunch of ligatures.
+
+00:10:20.559 --> 00:10:22.559
+I have no recollection of doing that.
+
+00:10:22.559 --> 00:10:26.719
+But I'll ask Hadley to clearly set that up.
+
+00:10:27.599 --> 00:10:29.200
+OK, so here's my data dictionary.
+
+00:10:30.320 --> 00:10:31.039
+OK, what's in it?
+
+00:10:31.039 --> 00:10:33.280
+Every elevator, escalator, dumbwaiter,
+
+00:10:33.280 --> 00:10:35.280
+and related conveyance device.
+
+00:10:35.280 --> 00:10:36.400
+One Roper device.
+
+00:10:39.119 --> 00:10:42.960
+OK, what fields?
+
+00:10:42.960 --> 00:10:44.239
+DV device number.
+
+00:10:46.080 --> 00:10:48.559
+DOB device identifier.
+
+00:10:48.559 --> 00:10:50.239
+I've got some information.
+
+00:10:50.239 --> 00:10:52.080
+So I should say, yes, like this.
+
+00:10:52.080 --> 00:10:57.440
+So this data set has one table called elevators.
+
+00:10:58.080 --> 00:11:00.400
+That table has a bunch of columns.
+
+00:11:00.400 --> 00:11:03.520
+Each column has a name and a type.
+
+00:11:03.520 --> 00:11:04.719
+This is a string.
+
+00:11:04.719 --> 00:11:06.960
+We've got some information about constraints.
+
+00:11:06.960 --> 00:11:10.719
+Maybe it's a primary key, or it can never contain missing values.
+
+00:11:10.719 --> 00:11:13.840
+A description, and then some examples.
+
+00:11:14.400 --> 00:11:17.359
+So the data dictionary includes examples,
+
+00:11:17.359 --> 00:11:19.200
+because that's super useful for humans.
+
+00:11:19.200 --> 00:11:23.119
+And it's super duper useful for LLMs as well.
+
+00:11:25.039 --> 00:11:27.039
+OK, and we've got device status.
+
+00:11:27.039 --> 00:11:29.200
+This is an enum, or like a factor.
+
+00:11:30.000 --> 00:11:32.080
+It has these five possible values,
+
+00:11:32.080 --> 00:11:34.000
+which mean these five possible things.
+
+00:11:34.559 --> 00:11:37.919
+So I'm not going to go through all of the variables in detail,
+
+00:11:37.919 --> 00:11:40.400
+but you can kind of see, like, this is a great place
+
+00:11:41.919 --> 00:11:44.880
+to record what you learn about the data set.
+
+00:11:45.840 --> 00:11:48.960
+And what I'm going to do now,
+
+00:11:48.960 --> 00:11:51.760
+because I want to see how this changes over time,
+
+00:11:51.760 --> 00:11:53.520
+I'm going to just turn Git on,
+
+00:11:53.520 --> 00:11:55.679
+and I'm just going to say, first, select.
+
+00:11:58.640 --> 00:12:00.400
+Because I lied earlier,
+
+00:12:00.400 --> 00:12:03.520
+and we do actually have a little bit of context
+
+00:12:03.599 --> 00:12:04.640
+about this data set.
+
+00:12:04.640 --> 00:12:08.159
+And there's this readme file that comes with the original data set
+
+00:12:08.159 --> 00:12:10.799
+that points out a few things.
+
+00:12:10.799 --> 00:12:16.400
+So, like, zip code is frequently listed as a nine-digit zip plus four.
+
+00:12:17.119 --> 00:12:22.640
+So what I want to do now is take that,
+
+00:12:22.640 --> 00:12:27.840
+tell Claude there's some extra context,
+
+00:12:28.479 --> 00:12:30.159
+and update.
+
+00:12:35.760 --> 00:12:40.080
+And again, I'm going to try and use an LLM like I do normally,
+
+00:12:40.080 --> 00:12:43.599
+which is, I just kind of press my fingers on the keys
+
+00:12:43.599 --> 00:12:46.320
+in approximately the correct order,
+
+00:12:46.320 --> 00:12:49.679
+and hope that the LLM just figures it out.
+
+00:12:49.679 --> 00:12:54.159
+So I'm going to try not to worry about spelling mistakes,
+
+00:12:54.159 --> 00:12:55.280
+even though I'm presenting to you,
+
+00:12:55.359 --> 00:12:57.840
+because that's not what I do when I'm working by myself.
+
+00:12:59.679 --> 00:13:01.760
+So again, we'll let that cook for a little bit.
+
+00:13:01.760 --> 00:13:03.359
+If you've got any more questions.
+
+00:13:03.359 --> 00:13:06.719
+We did have one question about Parquet files,
+
+00:13:06.719 --> 00:13:08.000
+and just so everybody knows,
+
+00:13:08.000 --> 00:13:11.919
+we are having a whole episode on Parquet files in June with Nick Crane,
+
+00:13:11.919 --> 00:13:13.599
+so we can deep dive then.
+
+00:13:14.239 --> 00:13:15.520
+But the question was,
+
+00:13:15.520 --> 00:13:20.479
+are there any examples of applications that output Parquet files
+
+00:13:20.479 --> 00:13:23.520
+or scientific instrumentation that outputs to Parquet?
+
+00:13:23.760 --> 00:13:25.599
+Not that I know of.
+
+00:13:25.599 --> 00:13:26.640
+It's been a little,
+
+00:13:26.640 --> 00:13:32.000
+this Parquet files are mostly used by kind of big data engineering tools.
+
+00:13:32.559 --> 00:13:35.599
+They power like Snowflake and Databricks.
+
+00:13:36.799 --> 00:13:38.159
+You can use them with DuckDB.
+
+00:13:38.799 --> 00:13:41.359
+Less common in science, I think,
+
+00:13:41.359 --> 00:13:43.520
+and in open source data science,
+
+00:13:43.520 --> 00:13:48.080
+but these files are like really, really good.
+
+00:13:48.080 --> 00:13:49.520
+It's super duper fast.
+
+00:13:50.479 --> 00:13:51.919
+They compress really well.
+
+00:13:52.640 --> 00:13:57.440
+And so I strongly advise you learning that using them,
+
+00:13:57.440 --> 00:13:59.520
+particularly if you're doing any data cleaning.
+
+00:13:59.520 --> 00:14:02.799
+I think it's a really good idea to study if the result is Parquet.
+
+00:14:03.520 --> 00:14:04.159
+Okay, cool.
+
+00:14:04.159 --> 00:14:05.760
+And then Satyarishi had asked,
+
+00:14:06.479 --> 00:14:10.080
+what is a good way to store data dictionaries along with datasets?
+
+00:14:10.080 --> 00:14:12.880
+And I think that the answer is probably what we're doing right now.
+
+00:14:12.880 --> 00:14:13.599
+Exactly.
+
+00:14:13.599 --> 00:14:19.119
+So again, I think you should be putting these in a plain text format.
+
+00:14:19.119 --> 00:14:21.440
+You can use my data dictionary, not YAML format.
+
+00:14:22.559 --> 00:14:27.919
+I'm kind of, I'm reasonably confident this is a useful format
+
+00:14:28.479 --> 00:14:30.960
+and I'm going to keep working on it and make some more tools
+
+00:14:30.960 --> 00:14:33.359
+so you can easily turn this into a beautiful website,
+
+00:14:33.359 --> 00:14:35.599
+validate your data based on the spec,
+
+00:14:35.599 --> 00:14:36.640
+all that sort of stuff,
+
+00:14:36.640 --> 00:14:38.880
+but currently just kind of learning about it
+
+00:14:38.880 --> 00:14:40.799
+and trying it out and seeing what's happening.
+
+00:14:41.520 --> 00:14:41.840
+Okay.
+
+00:14:41.840 --> 00:14:45.200
+And we have a question from Nathan also that says,
+
+00:14:45.200 --> 00:14:50.000
+is this particular data dict.yaml format specification
+
+00:14:50.000 --> 00:14:52.640
+useful for projects with only one table of data?
+
+00:14:53.280 --> 00:14:53.840
+Yes.
+
+00:14:53.840 --> 00:14:55.280
+And this indeed is one,
+
+00:14:56.000 --> 00:14:58.320
+this project only has one table of data
+
+00:14:58.320 --> 00:15:01.520
+and I think we'll see hopefully as we go along that it is useful.
+
+00:15:02.640 --> 00:15:03.200
+I think so.
+
+00:15:03.919 --> 00:15:07.440
+So now we're just going to take a look at the diff of the data dict.yaml
+
+00:15:07.440 --> 00:15:09.119
+and see what information it has.
+
+00:15:09.760 --> 00:15:11.679
+Okay, we've got a point in time snapshot,
+
+00:15:11.679 --> 00:15:12.640
+not a live feed.
+
+00:15:12.640 --> 00:15:14.000
+Well, that's kind of obvious.
+
+00:15:16.320 --> 00:15:18.320
+So seven, so this is interesting.
+
+00:15:18.320 --> 00:15:22.400
+Seven test rows carry the literal street name dummy record
+
+00:15:22.400 --> 00:15:24.159
+and should be filtered out for analysis.
+
+00:15:24.159 --> 00:15:25.840
+So that's going to be something like,
+
+00:15:25.840 --> 00:15:28.880
+like, let's fix that shortly.
+
+00:15:29.520 --> 00:15:33.520
+So now we've at least got all of this information from that readme
+
+00:15:33.520 --> 00:15:35.679
+and now we've encoded it in the same place.
+
+00:15:37.280 --> 00:15:40.080
+And so I'm not going to, again, I'm just going to skim this.
+
+00:15:41.200 --> 00:15:42.799
+We've got some information like,
+
+00:15:42.799 --> 00:15:45.359
+okay, this variable is really inconsistent.
+
+00:15:45.359 --> 00:15:48.000
+You know, be careful when you're using this.
+
+00:15:48.080 --> 00:15:51.760
+All of this is like super useful information
+
+00:15:51.760 --> 00:15:53.840
+if you're going to be analyzing this data set.
+
+00:15:54.719 --> 00:15:56.239
+What else have we got down the bottom?
+
+00:15:56.880 --> 00:15:58.640
+Okay, approximate longitude.
+
+00:15:58.640 --> 00:15:59.359
+It's here, it's here.
+
+00:15:59.359 --> 00:16:03.840
+Okay, so I'm going to say update data dict.
+
+00:16:08.880 --> 00:16:12.000
+Okay, so now what I want to do next
+
+00:16:12.640 --> 00:16:15.520
+is start like diving into this data dictionary
+
+00:16:15.520 --> 00:16:17.280
+and fixing some of those issues.
+
+00:16:18.000 --> 00:16:24.479
+So I'm going to say, okay, remove the dummy records.
+
+00:16:26.320 --> 00:16:29.520
+Updating clean data dict.
+
+00:16:34.239 --> 00:16:35.679
+So we're just going to now iterate,
+
+00:16:35.679 --> 00:16:38.960
+like, let's make this data cleaner.
+
+00:16:38.960 --> 00:16:41.599
+So I'm going to ask QWORD to update those three things.
+
+00:16:41.599 --> 00:16:44.559
+It's going to update my data cleaning script.
+
+00:16:44.559 --> 00:16:47.919
+It's going to put the results in the data dictionary.
+
+00:16:47.919 --> 00:16:49.760
+And then it's going to run my R code
+
+00:16:49.760 --> 00:16:52.239
+to create an updated parquet file.
+
+00:16:52.239 --> 00:16:55.919
+And then we'll look at that in the source code
+
+00:16:57.359 --> 00:16:59.359
+and see what it's done.
+
+00:17:00.080 --> 00:17:04.640
+So it has added a line to strip out all of the street names.
+
+00:17:05.359 --> 00:17:11.520
+And then, okay, it's updated there.
+
+00:17:11.520 --> 00:17:13.119
+I'm just going to delete this.
+
+00:17:14.000 --> 00:17:15.520
+I don't think that's that important.
+
+00:17:17.760 --> 00:17:20.239
+It's removed the seven test rows.
+
+00:17:21.119 --> 00:17:24.800
+It's removed that later in the data dictionary as well.
+
+00:17:25.920 --> 00:17:30.959
+Okay, so now I can check that and remove that many rows.
+
+00:17:30.959 --> 00:17:33.280
+And so I think, like, one of the things that's really nice
+
+00:17:33.280 --> 00:17:35.439
+about having these three files in concert
+
+00:17:36.000 --> 00:17:38.319
+is it's pretty easy for me to check
+
+00:17:38.319 --> 00:17:40.079
+that QWORD's done the right thing, right?
+
+00:17:40.079 --> 00:17:41.199
+Because I can just go in here,
+
+00:17:41.199 --> 00:17:42.880
+check that QWORD's done the right thing, right?
+
+00:17:42.880 --> 00:17:45.280
+Because I'm seeing it's updated my cleaning script
+
+00:17:45.280 --> 00:17:46.959
+and it's updated the data dictionary.
+
+00:17:49.199 --> 00:17:51.040
+Becca had a question along that line,
+
+00:17:51.040 --> 00:17:53.119
+which was, is cloud also going to decide
+
+00:17:53.119 --> 00:17:54.560
+when it's a good time to make a commit?
+
+00:17:56.160 --> 00:17:58.880
+Uh, actually, well, let's try that out next time.
+
+00:17:58.880 --> 00:18:00.640
+Because we can, you can do that.
+
+00:18:00.640 --> 00:18:02.479
+I don't always do that.
+
+00:18:02.479 --> 00:18:05.280
+But yes, you can also tell it to commit.
+
+00:18:05.280 --> 00:18:12.800
+So let's go back to that address and street name.
+
+00:18:12.800 --> 00:18:16.400
+Because I just noticed this white space is not normalized
+
+00:18:16.400 --> 00:18:19.199
+and may contain multiple internal spaces.
+
+00:18:19.199 --> 00:18:25.040
+So, okay, let's say normalize a white space and street.
+
+00:18:27.439 --> 00:18:29.280
+I like the typo in normalize
+
+00:18:29.280 --> 00:18:31.439
+because it's very much what I would be doing.
+
+00:18:32.400 --> 00:18:33.520
+Cloud figures it out, man.
+
+00:18:34.239 --> 00:18:35.520
+The other thing that's nice is, like,
+
+00:18:35.520 --> 00:18:38.000
+I don't ever, like, I didn't hold down the shift key
+
+00:18:38.000 --> 00:18:40.719
+to type street underscore name.
+
+00:18:40.719 --> 00:18:41.219
+Right.
+
+00:18:41.760 --> 00:18:44.160
+So, okay.
+
+00:18:44.160 --> 00:18:45.839
+So again, what's it done?
+
+00:18:46.880 --> 00:18:48.560
+It's updated my cleaning script.
+
+00:18:50.000 --> 00:18:54.160
+It's using gsub to remove multiple sequences spaces
+
+00:18:54.160 --> 00:18:55.119
+with a single space.
+
+00:18:55.119 --> 00:18:58.239
+And it's trimming the white space on either end.
+
+00:18:58.239 --> 00:18:59.839
+It updates the dictionary.
+
+00:19:00.880 --> 00:19:02.560
+I'm just going to, I don't really care.
+
+00:19:03.760 --> 00:19:05.920
+I'm just going to delete that comment.
+
+00:19:05.920 --> 00:19:07.920
+Because I don't think you need to record
+
+00:19:07.920 --> 00:19:10.319
+that sort of information in the data dictionary
+
+00:19:10.319 --> 00:19:12.400
+when it's recorded in your clean.r.
+
+00:19:14.400 --> 00:19:15.280
+We've done that.
+
+00:19:16.000 --> 00:19:18.560
+And now I can say commit it.
+
+00:19:20.400 --> 00:19:24.079
+And we'll see what core does.
+
+00:19:25.520 --> 00:19:28.479
+It's going to look at the current git status.
+
+00:19:28.479 --> 00:19:31.119
+It's going to look at the git log.
+
+00:19:31.119 --> 00:19:32.640
+I'm not sure why it's doing this.
+
+00:19:33.680 --> 00:19:35.839
+I'm just going to say, what did I go?
+
+00:19:35.839 --> 00:19:36.560
+What did it do?
+
+00:19:36.560 --> 00:19:38.719
+Add normalized street name white space.
+
+00:19:38.719 --> 00:19:39.280
+Okay.
+
+00:19:39.280 --> 00:19:39.839
+Sounds good.
+
+00:19:41.439 --> 00:19:42.239
+So much trust.
+
+00:19:43.839 --> 00:19:44.800
+We have a couple of questions.
+
+00:19:44.800 --> 00:19:47.520
+Do we want to fit some in right now while it's cooking?
+
+00:19:47.520 --> 00:19:48.020
+Yeah.
+
+00:19:49.040 --> 00:19:49.439
+Okay.
+
+00:19:49.439 --> 00:19:52.319
+So Brian had asked, if we see somebody scrolls way up,
+
+00:19:52.319 --> 00:19:52.800
+they'll see.
+
+00:19:53.439 --> 00:19:55.920
+Brian said, is there a way that the YAML format
+
+00:19:55.920 --> 00:19:58.239
+data dictionary could be used as an input?
+
+00:19:58.800 --> 00:20:01.199
+For example, recode underscore values,
+
+00:20:01.199 --> 00:20:02.880
+which is the new dplyr function.
+
+00:20:04.319 --> 00:20:08.479
+Yes, probably not with recode values literally,
+
+00:20:08.479 --> 00:20:11.439
+but I think there's various things that you can't,
+
+00:20:11.439 --> 00:20:15.359
+that parquet files don't store very well.
+
+00:20:15.359 --> 00:20:17.760
+One of those things in particular is labels.
+
+00:20:18.959 --> 00:20:22.239
+Statisticians and data scientists love labeled values.
+
+00:20:23.520 --> 00:20:26.160
+Parquet files have no way to kind of add
+
+00:20:26.160 --> 00:20:29.119
+additional nice long labels to short information.
+
+00:20:29.119 --> 00:20:30.959
+So I'm imagining at some point,
+
+00:20:31.920 --> 00:20:34.400
+there will be an R package to accompany this file
+
+00:20:34.400 --> 00:20:37.040
+that will read that, read in your parquet file,
+
+00:20:37.040 --> 00:20:39.359
+read in the data dictionary and apply the labels.
+
+00:20:40.479 --> 00:20:40.979
+Awesome.
+
+00:20:42.640 --> 00:20:44.000
+So what else should we do?
+
+00:20:48.160 --> 00:20:49.359
+Let's just kind of look through.
+
+00:20:54.160 --> 00:20:57.280
+And right now, just to point out that we're working
+
+00:20:57.280 --> 00:21:01.680
+in a working tree of our data.data.dict.yaml.
+
+00:21:01.680 --> 00:21:02.880
+It's so hard for me to say.
+
+00:21:04.560 --> 00:21:06.880
+We are hoping to have an episode on working trees.
+
+00:21:07.680 --> 00:21:09.119
+Hopefully in June, maybe.
+
+00:21:09.680 --> 00:21:12.079
+Isabella and I have not pinned down a date yet,
+
+00:21:12.719 --> 00:21:15.520
+but we hope to be able to give you a whole episode
+
+00:21:15.520 --> 00:21:16.479
+on working trees soon.
+
+00:21:17.839 --> 00:21:19.839
+Especially because that's the way that Cloud works
+
+00:21:19.839 --> 00:21:20.479
+all the time.
+
+00:21:20.479 --> 00:21:22.319
+And I have found myself lately being like, gosh,
+
+00:21:22.319 --> 00:21:24.000
+I wish I knew more about working trees
+
+00:21:24.000 --> 00:21:26.160
+since I am now working in them kind of all the time.
+
+00:21:28.160 --> 00:21:28.640
+OK.
+
+00:21:28.640 --> 00:21:32.400
+Now I'm going to make a slightly dubious decision.
+
+00:21:32.400 --> 00:21:34.880
+And I'm going to say, like, looking at the zip code,
+
+00:21:35.520 --> 00:21:37.680
+like, frequently stored, I'm just going to say,
+
+00:21:37.680 --> 00:21:40.959
+like, let's just make this all five-digit zip codes.
+
+00:21:41.920 --> 00:21:43.280
+Well, no, actually, I don't like that.
+
+00:21:43.280 --> 00:21:47.199
+Like, let's get rid of, I mean, it says treat
+
+00:21:47.199 --> 00:21:49.520
+non-five-digit values as dirty.
+
+00:21:50.239 --> 00:21:54.000
+And it also says frequently stored as a nine-digit zip.
+
+00:21:54.000 --> 00:21:55.280
+OK, let's just tell me.
+
+00:21:55.839 --> 00:21:59.359
+Tell me about the sizes of zip code.
+
+00:22:02.319 --> 00:22:05.119
+I mean, sizes are a bit underspecified.
+
+00:22:05.119 --> 00:22:05.760
+So we'll see.
+
+00:22:06.319 --> 00:22:09.040
+So it's going to, like, read that parquet file in R.
+
+00:22:09.040 --> 00:22:11.680
+It's going to, like, presumably do table
+
+00:22:11.680 --> 00:22:12.959
+on the number of characters.
+
+00:22:14.560 --> 00:22:17.119
+And then it's going to tell me about that.
+
+00:22:17.119 --> 00:22:19.439
+And that's going to kind of, OK.
+
+00:22:26.000 --> 00:22:32.160
+So there are most, so 82% of them are nine digits.
+
+00:22:32.160 --> 00:22:33.359
+So let's not, let's.
+
+00:22:34.800 --> 00:22:36.800
+Is it storing it as a number?
+
+00:22:38.400 --> 00:22:38.719
+Yeah, which is also.
+
+00:22:38.719 --> 00:22:40.319
+Jenna and I agree.
+
+00:22:40.319 --> 00:22:41.680
+They should be strings.
+
+00:22:41.680 --> 00:22:44.000
+You're not going to do any math on a zip code.
+
+00:22:44.000 --> 00:22:44.479
+Yes.
+
+00:22:44.479 --> 00:22:46.000
+OK, so let's do that.
+
+00:22:46.000 --> 00:22:48.319
+OK, so make it a string.
+
+00:22:49.040 --> 00:22:56.560
+And replace zero with and with proper missing values.
+
+00:23:01.119 --> 00:23:02.239
+So again, you're going to imagine
+
+00:23:02.239 --> 00:23:04.479
+it's going to update that clean.R.
+
+00:23:04.479 --> 00:23:06.880
+It's going to update my data dictionary.
+
+00:23:06.880 --> 00:23:09.599
+And it's going to update the parquet file.
+
+00:23:09.599 --> 00:23:11.439
+And again, I just love this process
+
+00:23:11.439 --> 00:23:12.959
+because it makes it so clear, like,
+
+00:23:12.959 --> 00:23:14.719
+what's happening in every step.
+
+00:23:14.719 --> 00:23:16.959
+And then you can go back in your git history
+
+00:23:16.959 --> 00:23:19.439
+and see exactly what you've done.
+
+00:23:19.439 --> 00:23:21.280
+OK, so let's change it to a string.
+
+00:23:22.479 --> 00:23:24.800
+Usually a nine digit.
+
+00:23:27.839 --> 00:23:28.800
+Seven percent.
+
+00:23:28.800 --> 00:23:30.319
+I'm not going to say clean.
+
+00:23:31.760 --> 00:23:37.119
+I'm going to say 80% are nine digits of plus four.
+
+00:23:40.160 --> 00:23:42.079
+And again, I don't care about that.
+
+00:23:44.000 --> 00:23:46.560
+And we've got a few nice example values.
+
+00:23:47.359 --> 00:23:49.040
+I'll look at my clean.R.
+
+00:23:51.119 --> 00:23:53.599
+OK, convert it to character.
+
+00:23:53.599 --> 00:23:54.800
+OK, that looks good.
+
+00:23:57.439 --> 00:23:58.719
+And now I'm going to tell it to commit it.
+
+00:24:00.719 --> 00:24:02.719
+All right, do we have time for some questions?
+
+00:24:03.680 --> 00:24:04.000
+Sure.
+
+00:24:04.959 --> 00:24:09.599
+Andreas asked, does MPC REPL work on a Windows machine?
+
+00:24:09.599 --> 00:24:14.160
+And can one use other AI LLM, for example, chat GPT with it?
+
+00:24:14.719 --> 00:24:18.319
+Yes, it does work on Windows and Linux.
+
+00:24:18.319 --> 00:24:22.319
+And I should say one of the things that I didn't say
+
+00:24:22.319 --> 00:24:24.880
+about MCP REPL that is really important
+
+00:24:24.880 --> 00:24:27.839
+is that it runs all of your code in a sandbox.
+
+00:24:27.839 --> 00:24:32.800
+And so inside that sandbox, it can't connect
+
+00:24:32.800 --> 00:24:34.239
+to anything over the network.
+
+00:24:34.239 --> 00:24:36.000
+And it can't look at any files
+
+00:24:36.000 --> 00:24:38.239
+outside of the current working directory.
+
+00:24:38.239 --> 00:24:40.880
+So that's one of the advantages of MCP REPL
+
+00:24:40.880 --> 00:24:43.439
+is it allows you to run arbitrary RLM
+
+00:24:43.439 --> 00:24:47.439
+and arbitrary R code in a way that's pretty safe.
+
+00:24:47.439 --> 00:24:50.800
+And it's using this operating system level sandboxes.
+
+00:24:50.800 --> 00:24:54.239
+So there's no way for bad R code to get out
+
+00:24:54.239 --> 00:24:56.000
+and do naughty things.
+
+00:24:56.000 --> 00:24:59.920
+So this gives you, typically, an LLM
+
+00:24:59.920 --> 00:25:03.680
+is not just going to randomly generate really malicious code.
+
+00:25:03.680 --> 00:25:07.359
+But this just gives you this nice layer of protection,
+
+00:25:07.359 --> 00:25:09.439
+ensuring that it can't do anything
+
+00:25:09.439 --> 00:25:11.520
+outside of the directory you're actively working in.
+
+00:25:13.439 --> 00:25:16.000
+Awesome.
+
+00:25:16.000 --> 00:25:16.479
+OK.
+
+00:25:16.479 --> 00:25:18.319
+So and this is just another thing
+
+00:25:18.319 --> 00:25:25.280
+I know that I've looked at in here is stored.
+
+00:25:25.280 --> 00:25:29.599
+And how we parse, I don't think we, actually,
+
+00:25:29.599 --> 00:25:31.359
+let's look at the parquet file.
+
+00:25:35.439 --> 00:25:39.680
+Let's look at last.
+
+00:25:39.680 --> 00:25:41.680
+What's this?
+
+00:25:41.920 --> 00:25:42.959
+It's a little wider.
+
+00:25:45.839 --> 00:25:52.160
+Well, like last insp date is currently stored as a number.
+
+00:25:52.160 --> 00:25:54.239
+That's not good.
+
+00:25:54.239 --> 00:25:59.280
+db last per insp date is a string.
+
+00:25:59.280 --> 00:26:00.959
+That's also not good.
+
+00:26:00.959 --> 00:26:06.800
+And db approval date is also a string.
+
+00:26:06.800 --> 00:26:09.599
+OK, so let's fix that.
+
+00:26:09.599 --> 00:26:14.719
+Make sure you parse all the date columns as dates.
+
+00:26:21.439 --> 00:26:24.880
+So this is a good example where the data dictionary is actually
+
+00:26:24.880 --> 00:26:25.439
+wrong.
+
+00:26:25.439 --> 00:26:27.280
+It says it's a date, but it's not actually
+
+00:26:27.280 --> 00:26:29.439
+recorded as a date in the file.
+
+00:26:29.439 --> 00:26:30.800
+This is typical, right?
+
+00:26:30.800 --> 00:26:32.319
+An LLM is not perfect.
+
+00:26:32.319 --> 00:26:34.000
+It's going to make mistakes.
+
+00:26:34.000 --> 00:26:38.239
+The goal is to create a process by which, over time,
+
+00:26:38.239 --> 00:26:40.800
+you discover those mistakes and fix them.
+
+00:26:40.800 --> 00:26:42.239
+And the whole thing gets better.
+
+00:26:42.239 --> 00:26:44.319
+And you can see exactly what's going on.
+
+00:26:46.800 --> 00:26:51.199
+So now, again, we look at our git diff.
+
+00:26:52.000 --> 00:26:55.119
+And git is such an important piece of this
+
+00:26:55.119 --> 00:26:58.560
+because I can see exactly what the LLM has done at each point.
+
+00:27:00.640 --> 00:27:01.760
+It's used a for loop.
+
+00:27:01.760 --> 00:27:04.319
+Certainly, we can, I don't know if this is the way I would
+
+00:27:04.319 --> 00:27:05.040
+have written this code.
+
+00:27:05.040 --> 00:27:09.119
+But it's taking a very low-level base R approach here.
+
+00:27:11.359 --> 00:27:14.160
+But I kind of don't really care because I
+
+00:27:14.160 --> 00:27:15.280
+didn't have to write that code.
+
+00:27:15.839 --> 00:27:19.040
+All right, well, while we're watching McCulloch
+
+00:27:19.040 --> 00:27:21.199
+really quickly, Jenna Jordan had asked,
+
+00:27:21.199 --> 00:27:23.199
+do you see a meaningful distinction between data
+
+00:27:23.199 --> 00:27:24.400
+dicts and data contracts?
+
+00:27:27.119 --> 00:27:30.880
+That is a very good question.
+
+00:27:31.520 --> 00:27:35.599
+I had initially thought of data dictionaries
+
+00:27:35.599 --> 00:27:39.199
+and data validation or data contracts
+
+00:27:39.199 --> 00:27:41.680
+as being very distinct.
+
+00:27:42.319 --> 00:27:44.959
+But as I have worked on this, I think
+
+00:27:44.959 --> 00:27:49.199
+they are actually very closely related.
+
+00:27:49.760 --> 00:27:54.319
+And one of my next steps is to start building out a tool.
+
+00:27:54.319 --> 00:27:56.560
+So you can take a data dictionary
+
+00:27:56.560 --> 00:28:02.880
+and compare it to a data file and discover
+
+00:28:02.880 --> 00:28:04.959
+if there are any inconsistencies.
+
+00:28:04.959 --> 00:28:07.280
+So I think that the data dictionary does actually
+
+00:28:07.280 --> 00:28:09.280
+end up specifying a lot of information
+
+00:28:09.280 --> 00:28:11.119
+that you want in a contract.
+
+00:28:11.119 --> 00:28:14.239
+And so while here I'm focusing on the cleaning,
+
+00:28:14.239 --> 00:28:17.119
+I think you could also have written down a day
+
+00:28:17.119 --> 00:28:19.439
+or come up with a data dictionary some other way.
+
+00:28:19.439 --> 00:28:23.760
+And now you're using it to check that the data that you
+
+00:28:23.760 --> 00:28:24.959
+get is good.
+
+00:28:25.920 --> 00:28:29.359
+So let's just quickly look at this
+
+00:28:29.359 --> 00:28:30.640
+and we'll come back to that idea.
+
+00:28:30.640 --> 00:28:32.800
+Because one thing I think we should record,
+
+00:28:32.800 --> 00:28:35.359
+one thing we want to record in this data
+
+00:28:35.359 --> 00:28:37.520
+is for dates and numbers.
+
+00:28:37.520 --> 00:28:39.280
+We should have the range here so we
+
+00:28:39.280 --> 00:28:42.560
+can at a glance see what are the valid values.
+
+00:28:43.199 --> 00:28:45.040
+So let's just see what we have done.
+
+00:28:46.000 --> 00:28:48.959
+Again, looking at Git, OK, we saw that.
+
+00:28:49.599 --> 00:28:51.199
+It's dropping that.
+
+00:28:51.199 --> 00:28:52.959
+No longer integers.
+
+00:28:53.920 --> 00:28:58.079
+So OK, getting easier to understand.
+
+00:28:58.079 --> 00:29:04.079
+OK, and we'll just say, words, dates, to your base.
+
+00:29:05.280 --> 00:29:07.839
+Again, here I'm like, I think it's faster for me.
+
+00:29:08.880 --> 00:29:10.239
+I don't know, maybe not.
+
+00:29:10.239 --> 00:29:12.560
+Maybe my commit messages aren't as good.
+
+00:29:12.560 --> 00:29:15.839
+But it's certainly faster to type that
+
+00:29:15.839 --> 00:29:17.599
+than to ask what to do it.
+
+00:29:17.599 --> 00:29:20.160
+So let's just go back to it and just ask it.
+
+00:29:20.560 --> 00:29:25.520
+I'm going to ask it to add ranges to all American date
+
+00:29:25.520 --> 00:29:26.079
+columns.
+
+00:29:30.239 --> 00:29:33.599
+And while that happens, we can do another question.
+
+00:29:33.599 --> 00:29:34.640
+We've got one queued up.
+
+00:29:35.280 --> 00:29:36.719
+We have plenty.
+
+00:29:36.719 --> 00:29:39.199
+Darren had asked, I'm curious how
+
+00:29:39.199 --> 00:29:41.920
+Hadley views his approach to data dictionaries
+
+00:29:41.920 --> 00:29:43.599
+and the development of point blank.
+
+00:29:46.239 --> 00:29:47.920
+Yeah, that's an interesting question.
+
+00:29:48.000 --> 00:29:52.239
+Closely, as data dictionaries, as I kind of
+
+00:29:52.239 --> 00:29:54.959
+realize they do more validation, I'm like, oh, yeah, OK.
+
+00:29:54.959 --> 00:29:58.160
+I need to think about what this means with respect
+
+00:29:58.160 --> 00:29:58.880
+to point blank.
+
+00:29:58.880 --> 00:30:01.760
+Like, obviously, there's a lot in this data dictionary
+
+00:30:02.319 --> 00:30:04.959
+that point blank does not concern itself with.
+
+00:30:04.959 --> 00:30:07.280
+Point blank does not help you describe
+
+00:30:07.280 --> 00:30:10.160
+what the variables mean or give you examples to look at.
+
+00:30:10.959 --> 00:30:14.160
+But if we start thinking about this as a validation framework,
+
+00:30:14.160 --> 00:30:16.479
+obviously, there's going to be a lot of things
+
+00:30:16.479 --> 00:30:19.119
+obviously, there's going to be a lot of overlap.
+
+00:30:20.560 --> 00:30:24.160
+And I need to think about that and think about how
+
+00:30:24.160 --> 00:30:25.280
+this is going to work.
+
+00:30:25.280 --> 00:30:27.439
+Because I also want to make sure this data dictionary,
+
+00:30:27.439 --> 00:30:32.880
+like as you may have seen with various recent work at Posit,
+
+00:30:32.880 --> 00:30:35.760
+we're trying to help all data scientists,
+
+00:30:35.760 --> 00:30:39.040
+not just data scientists who use R.
+
+00:30:39.040 --> 00:30:41.439
+How do we help data scientists who use Python?
+
+00:30:41.439 --> 00:30:44.000
+How do we help data scientists use SQL?
+
+00:30:44.000 --> 00:30:47.520
+And so if I turn this into a data validation tool,
+
+00:30:47.520 --> 00:30:50.560
+I don't want it to just work with R and Python.
+
+00:30:50.560 --> 00:30:53.760
+I want it to work if you've got a parquet file
+
+00:30:53.760 --> 00:30:56.079
+in a data dictionary, we should be able to line them up
+
+00:30:56.079 --> 00:30:57.040
+and check them.
+
+00:30:57.920 --> 00:31:02.400
+So that maybe means redoing a bunch of the work
+
+00:31:02.400 --> 00:31:03.599
+and point blank.
+
+00:31:03.599 --> 00:31:06.319
+Maybe it means reusing point blank in some way.
+
+00:31:06.319 --> 00:31:08.319
+I don't yet know the answer to that.
+
+00:31:09.439 --> 00:31:10.400
+That's what I was thinking.
+
+00:31:10.400 --> 00:31:14.880
+Maybe pointing point blank towards the datadict.yaml
+
+00:31:14.880 --> 00:31:18.000
+and saying, hey, you use this as your source of truth.
+
+00:31:18.640 --> 00:31:21.040
+I don't know enough about point blank for that to make sense,
+
+00:31:21.040 --> 00:31:22.319
+but that's all right.
+
+00:31:22.319 --> 00:31:24.239
+All right, fantastic questions from everybody.
+
+00:31:24.239 --> 00:31:29.599
+And if we could do one more while we're in this datadict
+
+00:31:29.599 --> 00:31:32.800
+area, Colin had asked, datadict.yaml looks a lot
+
+00:31:34.239 --> 00:31:35.760
+like a JSON schema.
+
+00:31:35.760 --> 00:31:38.880
+So can a datadict be converted to a JSON schema
+
+00:31:38.880 --> 00:31:41.680
+for validation and ability to leverage that tool suite
+
+00:31:41.680 --> 00:31:42.959
+very much in the same zone?
+
+00:31:43.839 --> 00:31:47.599
+Yeah, I mean, that would be one way to approach validating it.
+
+00:31:47.599 --> 00:31:52.160
+Again, I think I would rather do something custom
+
+00:31:52.160 --> 00:31:54.319
+that works directly with this YAML.
+
+00:31:54.319 --> 00:31:57.760
+There are various ways of doing YAML specifications.
+
+00:31:58.479 --> 00:32:01.199
+And the reason I chose YAML here rather than JSON
+
+00:32:01.199 --> 00:32:03.760
+is that this is something that I imagine humans
+
+00:32:03.760 --> 00:32:05.199
+are going to be editing as well.
+
+00:32:05.760 --> 00:32:10.079
+And this is much easier.
+
+00:32:10.079 --> 00:32:14.560
+YAML is much easier to edit compared to JSON.
+
+00:32:14.560 --> 00:32:17.920
+Yes, so much easier.
+
+00:32:18.800 --> 00:32:20.160
+All right, let's keep going.
+
+00:32:20.160 --> 00:32:23.040
+We are 34 minutes in, so we have plenty of time.
+
+00:32:23.920 --> 00:32:25.920
+OK, so we've recorded a few ranges now.
+
+00:32:25.920 --> 00:32:27.359
+I think this is kind of useful.
+
+00:32:27.359 --> 00:32:33.040
+I'll record language and data dictionary.
+
+00:32:33.920 --> 00:32:38.400
+And this brings up, I keep committing
+
+00:32:38.400 --> 00:32:42.560
+and then my diff goes away, placeholder.
+
+00:32:43.199 --> 00:32:46.959
+OK, we've got a bunch of different placeholders
+
+00:32:46.959 --> 00:32:48.079
+in different columns.
+
+00:32:48.800 --> 00:32:53.760
+So let's eliminate all the placeholder values
+
+00:32:54.560 --> 00:32:59.119
+and use proper missing values instead.
+
+00:32:59.119 --> 00:33:02.000
+It's a very, very common exercise
+
+00:33:02.000 --> 00:33:04.319
+when you are converting data collected
+
+00:33:04.319 --> 00:33:07.760
+by non-data scientists who don't really
+
+00:33:07.760 --> 00:33:09.199
+have this idea of a missing value.
+
+00:33:09.199 --> 00:33:11.920
+They often use placeholder or sentinel values.
+
+00:33:11.920 --> 00:33:14.800
+Like, let's fix that and use proper missing values.
+
+00:33:14.800 --> 00:33:18.640
+So if we do counts or means, we get the correct thing
+
+00:33:18.640 --> 00:33:20.880
+without having to constantly remember,
+
+00:33:20.880 --> 00:33:24.400
+oh, in column seven, a missing value
+
+00:33:24.400 --> 00:33:26.560
+is actually recorded as a zero.
+
+00:33:26.560 --> 00:33:28.319
+So make sure you remember all the zeros
+
+00:33:28.319 --> 00:33:29.280
+before you compute a mean.
+
+00:33:32.479 --> 00:33:35.280
+So again, that data, you see that data dictionary
+
+00:33:35.280 --> 00:33:36.239
+kind of updating.
+
+00:33:37.040 --> 00:33:39.920
+Let's see what it's done.
+
+00:33:39.920 --> 00:33:40.880
+Look, so listen to this.
+
+00:33:40.880 --> 00:33:41.680
+This is beautiful.
+
+00:33:41.680 --> 00:33:44.160
+We've got at least three different,
+
+00:33:44.160 --> 00:33:47.280
+oh, OK, we have zero, 10,000, star, star,
+
+00:33:47.280 --> 00:33:50.640
+dash, dash, dash, dash, zero, all used
+
+00:33:50.640 --> 00:33:53.359
+to represent missing values in various places.
+
+00:33:56.719 --> 00:34:02.239
+I feel like that's a really excellent use of Claude.
+
+00:34:03.280 --> 00:34:07.040
+Tell me what all these disparate missing values are
+
+00:34:07.040 --> 00:34:09.040
+in all these different variables.
+
+00:34:10.800 --> 00:34:12.320
+Yeah, and fix it for me.
+
+00:34:13.280 --> 00:34:17.360
+Yeah, I remember that's one of the hardest things
+
+00:34:17.360 --> 00:34:20.959
+when I first started in data was I'd read my own data file
+
+00:34:20.959 --> 00:34:22.719
+in and I couldn't get anywhere because
+
+00:34:22.719 --> 00:34:25.840
+of all of the different and completely
+
+00:34:25.840 --> 00:34:27.360
+unique missing values that were used
+
+00:34:27.360 --> 00:34:28.399
+for all these different things.
+
+00:34:30.639 --> 00:34:32.239
+And this just makes it so fast.
+
+00:34:32.239 --> 00:34:34.879
+You don't need to have all of the code
+
+00:34:34.879 --> 00:34:36.399
+to do this at the top of your head.
+
+00:34:37.439 --> 00:34:40.000
+Claude can generate it, and then you
+
+00:34:40.000 --> 00:34:42.560
+can still super, super important
+
+00:34:42.560 --> 00:34:44.159
+that you're reading this code.
+
+00:34:44.344 --> 00:34:47.064
+you can, you know, still super, super important
+
+00:34:47.064 --> 00:34:48.984
+that you're reading this code
+
+00:34:48.984 --> 00:34:52.344
+because like you wanna check that it's doing the right thing
+
+00:34:52.344 --> 00:34:53.904
+but much, much faster
+
+00:34:53.904 --> 00:34:56.064
+because you have to type all of that out by hand.
+
+00:34:56.064 --> 00:35:00.924
+Those ligature left assignment arrows are so cute.
+
+00:35:00.924 --> 00:35:04.944
+Okay, we have time for one more question from Nathan
+
+00:35:04.944 --> 00:35:06.344
+and it says, so in this case,
+
+00:35:06.344 --> 00:35:08.744
+the parquet file is checked into Git.
+
+00:35:08.744 --> 00:35:11.264
+Is that more advisable when working with LLMs?
+
+00:35:11.264 --> 00:35:14.424
+Like normally I've heard to avoid checking data into Git.
+
+00:35:15.704 --> 00:35:18.864
+It's really more about the size of the data, I think.
+
+00:35:18.864 --> 00:35:22.303
+Like if you can commit the data into Git,
+
+00:35:22.303 --> 00:35:25.103
+it just makes the rest of your life like so much easier
+
+00:35:25.103 --> 00:35:26.864
+because that data is now versioned
+
+00:35:26.864 --> 00:35:28.504
+along with all of your code.
+
+00:35:30.344 --> 00:35:33.544
+And this data happens to be public, non-private,
+
+00:35:33.544 --> 00:35:34.824
+non-sensitive too.
+
+00:35:34.824 --> 00:35:36.744
+So that's an aspect of this.
+
+00:35:36.744 --> 00:35:39.103
+Right, so I think like that, if you can't,
+
+00:35:39.344 --> 00:35:42.143
+I think my advice is if you can commit it to Git,
+
+00:35:42.143 --> 00:35:43.263
+you should commit it to Git
+
+00:35:43.263 --> 00:35:45.224
+because it's gonna make everything,
+
+00:35:45.224 --> 00:35:46.704
+it's gonna make it easier to see
+
+00:35:46.704 --> 00:35:48.844
+like how the data has changed over time.
+
+00:35:48.844 --> 00:35:50.623
+You can roll back to previous versions,
+
+00:35:50.623 --> 00:35:53.704
+all of those really nice features of using Git.
+
+00:35:53.704 --> 00:35:55.424
+Lots of cases where you can't use Git,
+
+00:35:55.424 --> 00:35:57.844
+you can't put the data into Git, it's too big,
+
+00:35:57.844 --> 00:36:00.863
+it's confidential, lots of reasons.
+
+00:36:00.863 --> 00:36:03.223
+This workflow still works there.
+
+00:36:03.223 --> 00:36:05.384
+You'll still have that clean.csv,
+
+00:36:05.384 --> 00:36:06.943
+you'll still have that data dictionary,
+
+00:36:06.943 --> 00:36:09.384
+just don't wind up the parquet file checked in.
+
+00:36:10.983 --> 00:36:11.824
+Awesome.
+
+00:36:15.664 --> 00:36:16.504
+Okay.
+
+00:36:19.824 --> 00:36:21.504
+We have some comments in the chat too
+
+00:36:21.504 --> 00:36:24.403
+from people talking about their considerations
+
+00:36:24.403 --> 00:36:25.784
+for checking data into Git.
+
+00:36:25.784 --> 00:36:28.583
+So thank you everybody who's adding your expertise here.
+
+00:36:30.483 --> 00:36:32.664
+Connor had also asked a great question,
+
+00:36:32.664 --> 00:36:36.024
+which is can you show off a diff of a parquet file
+
+00:36:36.104 --> 00:36:37.363
+and what that looks like?
+
+00:36:38.863 --> 00:36:39.763
+Yes.
+
+00:36:43.064 --> 00:36:43.903
+Uh-oh.
+
+00:36:44.943 --> 00:36:46.183
+So this is the downs,
+
+00:36:46.183 --> 00:36:48.664
+this is one of those downsides of parquet files
+
+00:36:48.664 --> 00:36:51.004
+I mentioned how you can't easily diff them.
+
+00:36:52.664 --> 00:36:56.183
+I guess I've never clicked this before, but let's.
+
+00:36:57.424 --> 00:36:59.064
+You have the open anyway button?
+
+00:36:59.064 --> 00:36:59.903
+Hmm. Yeah.
+
+00:37:00.903 --> 00:37:01.743
+Wow.
+
+00:37:03.743 --> 00:37:04.823
+Okay, yeah, oops.
+
+00:37:04.823 --> 00:37:06.263
+Whoa.
+
+00:37:06.263 --> 00:37:09.023
+Yeah, so that's not gonna be useful.
+
+00:37:09.023 --> 00:37:11.344
+Definitely not, not visually.
+
+00:37:11.344 --> 00:37:13.144
+Feels like something that,
+
+00:37:13.144 --> 00:37:15.704
+like that is something that we could fix
+
+00:37:15.704 --> 00:37:17.804
+or the Positron team could fix.
+
+00:37:18.983 --> 00:37:22.383
+Like maybe I should at least drop a message
+
+00:37:22.383 --> 00:37:23.543
+in our Slack channel and be like,
+
+00:37:23.543 --> 00:37:25.543
+hey, have we thought about this?
+
+00:37:25.543 --> 00:37:26.784
+It would be pretty slick.
+
+00:37:29.584 --> 00:37:30.903
+Okay.
+
+00:37:30.903 --> 00:37:33.784
+Do you want any more questions or you want to?
+
+00:37:33.784 --> 00:37:37.064
+No, I think that we are good on questions.
+
+00:37:37.064 --> 00:37:40.584
+I think that that was the last one for right now.
+
+00:37:40.584 --> 00:37:41.903
+Somebody can remind me in the chat
+
+00:37:41.903 --> 00:37:43.944
+if I have somehow skipped over your question.
+
+00:37:43.944 --> 00:37:44.784
+I'm so sorry.
+
+00:37:46.204 --> 00:37:49.504
+Okay, so this is interesting.
+
+00:37:49.504 --> 00:37:53.623
+We've got a classic weird-ass scroll problem.
+
+00:37:55.543 --> 00:37:56.383
+Okay.
+
+00:37:58.944 --> 00:38:01.103
+I just asked it, what could I do?
+
+00:38:01.103 --> 00:38:03.784
+Generate like this, convert this to numeric.
+
+00:38:08.944 --> 00:38:13.424
+We could fix the obviously wrong geocodes
+
+00:38:13.424 --> 00:38:15.263
+with some of the Pennsylvania.
+
+00:38:17.823 --> 00:38:19.064
+This is kind of interesting.
+
+00:38:19.064 --> 00:38:23.144
+Like this is a thing where I'd be like, okay, yeah.
+
+00:38:23.144 --> 00:38:25.704
+Like, yes, we could use a latitude and longitude
+
+00:38:25.704 --> 00:38:27.823
+bounding box to zoom in on New York City.
+
+00:38:27.823 --> 00:38:30.103
+I would have zero clue what those are.
+
+00:38:30.103 --> 00:38:33.383
+I would have relatively little.
+
+00:38:33.383 --> 00:38:35.504
+I don't know whether you should trust this or not,
+
+00:38:35.504 --> 00:38:39.664
+but we could look at that.
+
+00:38:42.263 --> 00:38:43.263
+Actually, let's do that one.
+
+00:38:43.263 --> 00:38:48.263
+Like let's look at the non-NYC zip code
+
+00:38:48.743 --> 00:38:53.743
+start by writing the map dot R.
+
+00:38:56.103 --> 00:38:58.064
+And I'm just going to do that.
+
+00:38:58.944 --> 00:39:03.023
+What I'm hoping it will do is create a plot
+
+00:39:03.023 --> 00:39:07.664
+of all of the latitudes and longitudes,
+
+00:39:07.664 --> 00:39:10.463
+just because I've given it enough context
+
+00:39:10.463 --> 00:39:12.303
+to say that I want a map and the file name.
+
+00:39:12.303 --> 00:39:17.264
+And we'll see what that does.
+
+00:39:24.664 --> 00:39:27.264
+Okay, it's doing some, oh, interesting.
+
+00:39:27.264 --> 00:39:32.264
+So it's decided to look at New York City zip code prefixes.
+
+00:39:33.903 --> 00:39:35.903
+That's interesting.
+
+00:39:35.903 --> 00:39:37.824
+And then it's going to,
+
+00:39:39.264 --> 00:39:41.944
+so it's actually sort of interesting.
+
+00:39:44.863 --> 00:39:47.143
+Like it has actually run that code and looked at the plot,
+
+00:39:47.143 --> 00:39:48.423
+but we can't see the plot.
+
+00:39:48.423 --> 00:39:52.303
+So I'm just going to source this in RStudio
+
+00:39:52.303 --> 00:39:56.984
+and then Positron, sorry, and look at that.
+
+00:39:57.863 --> 00:39:59.344
+And that is like pretty obvious
+
+00:39:59.344 --> 00:40:01.984
+that something is wrong with those,
+
+00:40:01.984 --> 00:40:05.344
+like there's some ones that are way outside.
+
+00:40:05.344 --> 00:40:10.344
+So yeah, drop the points that are obviously out of range.
+
+00:40:20.423 --> 00:40:22.664
+Again, if you're doing this for a real analysis,
+
+00:40:22.664 --> 00:40:25.023
+you'd want to be thinking a little bit more.
+
+00:40:25.064 --> 00:40:28.743
+Okay, and it's updated my map.r, which is fine.
+
+00:40:28.743 --> 00:40:30.623
+Let's just move around that.
+
+00:40:34.344 --> 00:40:37.303
+Okay, that looks more like New York City.
+
+00:40:39.023 --> 00:40:42.023
+I think, at least for my not terribly amazing knowledge
+
+00:40:42.023 --> 00:40:42.863
+of New York City,
+
+00:40:44.504 --> 00:40:47.143
+it's now I want it to like,
+
+00:40:48.784 --> 00:40:51.224
+no, let's update.
+
+00:40:52.224 --> 00:40:54.064
+And that, I don't know.
+
+00:40:56.903 --> 00:41:00.303
+Just so you know, if you're not looking in the chat Hadley,
+
+00:41:00.303 --> 00:41:03.504
+we currently have a vote going on
+
+00:41:03.504 --> 00:41:06.384
+on how much this vibe session is going to cost,
+
+00:41:06.384 --> 00:41:08.824
+but we have no idea if you're going to be able to tell us
+
+00:41:08.824 --> 00:41:11.984
+at the end what the token cost is.
+
+00:41:13.944 --> 00:41:15.504
+Ask, let's see.
+
+00:41:17.743 --> 00:41:20.303
+All right, slash cost for everybody who is,
+
+00:41:21.264 --> 00:41:24.183
+paying attention to what Hadley is typing into Cloud here.
+
+00:41:30.303 --> 00:41:34.023
+And it looks like while we are seasoning on that slash cost,
+
+00:41:34.023 --> 00:41:37.183
+we do have a question that I think I missed.
+
+00:41:37.183 --> 00:41:39.743
+Andreas brought it to light for me.
+
+00:41:39.743 --> 00:41:42.703
+Let's see, the question was,
+
+00:41:42.703 --> 00:41:45.463
+oh, I just scrolled away from it, Andreas.
+
+00:41:45.463 --> 00:41:47.863
+Thank you for helping me get there.
+
+00:41:47.863 --> 00:41:50.703
+Jeff said, I'm curious to know how much this hour
+
+00:41:50.703 --> 00:41:52.504
+of using Cloud Code will cost.
+
+00:41:52.504 --> 00:41:53.423
+Can we get an update at the end?
+
+00:41:53.423 --> 00:41:55.064
+Oh, the same question that we were just on.
+
+00:41:55.064 --> 00:41:55.903
+Okay, great.
+
+00:41:57.423 --> 00:41:58.863
+Yeah, we'll get back.
+
+00:41:58.863 --> 00:41:59.984
+Yes, we did it.
+
+00:42:02.784 --> 00:42:03.623
+Well, that's dumb.
+
+00:42:03.623 --> 00:42:04.703
+I cannot tell you that
+
+00:42:04.703 --> 00:42:07.344
+because I'm using my Cloud Code subscription.
+
+00:42:08.183 --> 00:42:11.623
+Aha, well, David had also asked an easier one,
+
+00:42:11.623 --> 00:42:13.344
+which model is Hadley using?
+
+00:42:16.583 --> 00:42:17.743
+Slash model.
+
+00:42:18.743 --> 00:42:21.064
+The recommended to Opus 4.7.
+
+00:42:22.504 --> 00:42:26.104
+With its 1 million contacts window.
+
+00:42:26.104 --> 00:42:27.984
+And I will say, like, I,
+
+00:42:32.064 --> 00:42:33.984
+I'm trying to think how to put this,
+
+00:42:33.984 --> 00:42:37.623
+like, I guess I don't care about money.
+
+00:42:39.143 --> 00:42:40.944
+Like, I get, like, whatever.
+
+00:42:40.944 --> 00:42:43.183
+Like, if it saves me a minute or two
+
+00:42:43.183 --> 00:42:46.264
+and it costs me $5, like, I don't care.
+
+00:42:46.504 --> 00:42:50.384
+I am not a cost-conscious consumer of LLMs.
+
+00:42:50.384 --> 00:42:53.463
+And I 100% accept that it's coming
+
+00:42:53.463 --> 00:42:56.303
+from a place of privilege.
+
+00:42:56.303 --> 00:42:58.504
+But I do think for, like, what we're doing here,
+
+00:42:58.504 --> 00:43:01.504
+I suspect, like, that there are cheaper models
+
+00:43:01.504 --> 00:43:03.583
+that would do almost as well
+
+00:43:03.583 --> 00:43:06.583
+and bring, substantially bring the cost down.
+
+00:43:07.664 --> 00:43:11.264
+But that, I don't care about that
+
+00:43:11.264 --> 00:43:14.583
+because I have little money.
+
+00:43:14.664 --> 00:43:16.624
+I have little time and a lot of money,
+
+00:43:16.624 --> 00:43:19.344
+so I optimize for that.
+
+00:43:20.544 --> 00:43:22.383
+We will forgive you.
+
+00:43:22.383 --> 00:43:26.823
+So let's just, let's, oops, close that plot down
+
+00:43:26.823 --> 00:43:29.104
+to see what we've done.
+
+00:43:29.104 --> 00:43:32.624
+I think we all want Hadley to use whatever he has to use
+
+00:43:32.624 --> 00:43:35.383
+to develop all of the cool things that we get to use.
+
+00:43:35.383 --> 00:43:37.304
+Slightly different use case.
+
+00:43:38.184 --> 00:43:39.424
+Russ says thumbs up.
+
+00:43:40.544 --> 00:43:42.463
+And then Connor had asked a question in the chat
+
+00:43:42.463 --> 00:43:43.424
+that I didn't understand.
+
+00:43:43.424 --> 00:43:45.784
+What CRS is it using to determine
+
+00:43:45.784 --> 00:43:49.063
+what coordinates are inside New York?
+
+00:43:49.063 --> 00:43:50.903
+Connor, what is, what is CRS?
+
+00:43:50.903 --> 00:43:52.823
+Coordinate reference system.
+
+00:43:52.823 --> 00:43:54.304
+Coordinate reference system.
+
+00:43:54.304 --> 00:43:55.143
+I don't know.
+
+00:43:55.143 --> 00:43:57.184
+I don't care, but I trust that plot.
+
+00:43:57.184 --> 00:43:59.943
+So again, if you're doing a real analysis,
+
+00:43:59.943 --> 00:44:01.304
+you would want to figure that out.
+
+00:44:01.304 --> 00:44:05.463
+But I'm guessing that Claude has enough knowledge
+
+00:44:05.463 --> 00:44:07.383
+to know the location of New York City
+
+00:44:07.383 --> 00:44:09.104
+and based on what I saw on that map,
+
+00:44:09.104 --> 00:44:11.383
+but that's pretty good.
+
+00:44:11.383 --> 00:44:13.224
+I will show you one other thing I saw
+
+00:44:14.023 --> 00:44:15.263
+because it's kind of related.
+
+00:44:17.143 --> 00:44:20.703
+When you update map.r to add a map
+
+00:44:20.703 --> 00:44:24.263
+of elevators around Central Park.
+
+00:44:26.784 --> 00:44:28.063
+Because this was kind of interesting
+
+00:44:28.063 --> 00:44:29.544
+and I spent a little bit of time
+
+00:44:29.544 --> 00:44:31.583
+looking at this previously.
+
+00:44:31.583 --> 00:44:33.864
+And again, this is something that like,
+
+00:44:33.864 --> 00:44:37.424
+this would be so tedious to do by hand
+
+00:44:37.424 --> 00:44:40.583
+and I will see how well Claude actually does here,
+
+00:44:40.583 --> 00:44:43.984
+but like it probably knows the approximate latitude
+
+00:44:43.984 --> 00:44:45.784
+and longitude of Central Park
+
+00:44:45.784 --> 00:44:50.784
+and it can figure that out and update this code.
+
+00:44:56.544 --> 00:44:59.503
+I'm definitely showing my lack of knowledge
+
+00:44:59.503 --> 00:45:01.304
+for spatial analysis here.
+
+00:45:01.304 --> 00:45:03.063
+So thank you for everybody who's adding context
+
+00:45:03.063 --> 00:45:04.703
+about CRS in the chat.
+
+00:45:05.744 --> 00:45:07.744
+I have no idea why I decided
+
+00:45:07.744 --> 00:45:09.544
+to put a dark green rectangle there.
+
+00:45:09.544 --> 00:45:11.823
+That seems pretty pointless,
+
+00:45:11.823 --> 00:45:14.784
+but this, yeah, I did this earlier
+
+00:45:14.784 --> 00:45:17.583
+and this is kind of interesting, right?
+
+00:45:17.583 --> 00:45:22.063
+Like, so what's this elevator
+
+00:45:22.063 --> 00:45:24.544
+like right in the middle of Central Park?
+
+00:45:25.903 --> 00:45:27.023
+So let's ask.
+
+00:45:27.023 --> 00:45:32.023
+What's, when you pull out the rows for the elevators
+
+00:45:35.344 --> 00:45:37.943
+that are inside of Central Park?
+
+00:45:40.544 --> 00:45:43.823
+Let's see, you can park.
+
+00:45:43.823 --> 00:45:44.664
+Oh yeah.
+
+00:45:46.063 --> 00:45:48.703
+The bounding box is clearly totally wrong
+
+00:45:48.703 --> 00:45:50.224
+because it's square.
+
+00:45:50.224 --> 00:45:52.143
+So Claude just messed that up.
+
+00:45:53.943 --> 00:45:56.224
+Elevators inside the buildings, inside the park,
+
+00:45:56.224 --> 00:45:58.544
+the Met, the Delacorte, the Boathouse,
+
+00:45:58.544 --> 00:45:59.664
+the Tavern on the Green,
+
+00:45:59.664 --> 00:46:03.304
+like I'm skeptical about this.
+
+00:46:03.304 --> 00:46:05.143
+I'm pretty sure that's the Met there.
+
+00:46:05.143 --> 00:46:07.864
+That's the Metropolitan Museum of Art.
+
+00:46:07.864 --> 00:46:08.823
+I'm sure that has elevators,
+
+00:46:08.823 --> 00:46:11.463
+but this one like right in the middle.
+
+00:46:11.463 --> 00:46:14.344
+Oh, and now we're in, now we've gone into cool.
+
+00:46:15.544 --> 00:46:16.383
+Uh-oh.
+
+00:46:16.383 --> 00:46:17.224
+What is that?
+
+00:46:17.224 --> 00:46:18.544
+Cool gibberish mode.
+
+00:46:19.703 --> 00:46:21.984
+We are summoning the ancients now.
+
+00:46:23.703 --> 00:46:25.063
+Connor, thank you in the chat
+
+00:46:25.063 --> 00:46:26.544
+for giving us some more context.
+
+00:46:26.544 --> 00:46:29.744
+CRS is how we know how to plot coordinates on the earth,
+
+00:46:29.744 --> 00:46:32.383
+adjusting for the fact that the earth is not flat.
+
+00:46:33.463 --> 00:46:35.463
+Okay, we had a question,
+
+00:46:36.304 --> 00:46:39.263
+which I will scroll up to from Nelly that says,
+
+00:46:39.263 --> 00:46:40.823
+is there a way to quantify
+
+00:46:40.823 --> 00:46:43.263
+environmental and electrical costs?
+
+00:46:43.263 --> 00:46:46.023
+Like not ones that affect one's personal finances,
+
+00:46:46.023 --> 00:46:48.583
+but still have an effect on the world?
+
+00:46:48.583 --> 00:46:51.583
+That is a very hard question, I think.
+
+00:46:51.583 --> 00:46:52.424
+Yes.
+
+00:46:54.263 --> 00:46:59.263
+Yes, that is, yeah, I think it is important
+
+00:46:59.463 --> 00:47:04.463
+to be worried about the environmental aspects of LLMs.
+
+00:47:05.823 --> 00:47:10.823
+I, yeah, like for me,
+
+00:47:11.104 --> 00:47:14.544
+like for my usage of LLMs personally,
+
+00:47:14.544 --> 00:47:19.544
+I am reasonably certain that they are a pretty small
+
+00:47:21.503 --> 00:47:25.943
+proportion of my overall impact on the environment.
+
+00:47:27.104 --> 00:47:28.664
+And so what that means is like,
+
+00:47:28.664 --> 00:47:31.703
+if I want to do good for the environment,
+
+00:47:31.703 --> 00:47:35.583
+then the place to start is not to decrease my LLM usage,
+
+00:47:35.583 --> 00:47:40.583
+it's to like fly less, or, you know, we have a solar,
+
+00:47:40.784 --> 00:47:43.143
+we have electric cars and a solar powered roof.
+
+00:47:43.143 --> 00:47:45.463
+So those are the things like, you know,
+
+00:47:45.463 --> 00:47:47.823
+I really believe in climate change
+
+00:47:47.823 --> 00:47:49.583
+and we should all be doing things
+
+00:47:49.583 --> 00:47:52.184
+to try and make the environment better individually.
+
+00:47:53.184 --> 00:47:54.463
+And so if you want to do that,
+
+00:47:54.463 --> 00:47:56.304
+I think the way to do that is not to decrease
+
+00:47:56.304 --> 00:47:59.583
+your LLM usage, but to look for other things.
+
+00:47:59.583 --> 00:48:01.864
+But then at like obviously a societal level,
+
+00:48:01.864 --> 00:48:06.864
+like individually, it might not be a big use,
+
+00:48:08.304 --> 00:48:12.583
+but across millions of people,
+
+00:48:12.583 --> 00:48:14.224
+it adds up to be a big impact.
+
+00:48:14.224 --> 00:48:15.784
+And now I'm like out here,
+
+00:48:15.784 --> 00:48:18.864
+like writing tools to make LLMs easier to use,
+
+00:48:18.864 --> 00:48:23.664
+like how do I kind of square that
+
+00:48:23.664 --> 00:48:25.903
+with caring about the environment?
+
+00:48:26.784 --> 00:48:28.903
+I think that Nellie has a good point,
+
+00:48:28.903 --> 00:48:29.943
+which I think about a lot.
+
+00:48:29.943 --> 00:48:32.383
+Nellie says, there's certainly a difference
+
+00:48:32.383 --> 00:48:35.823
+between people making AI slop videos on mass
+
+00:48:35.823 --> 00:48:38.463
+and people making code to do research.
+
+00:48:39.744 --> 00:48:42.544
+And I think about that a lot with like the number
+
+00:48:42.544 --> 00:48:44.903
+of extremely wealthy people
+
+00:48:44.903 --> 00:48:47.104
+who are flying private jets places
+
+00:48:47.104 --> 00:48:49.784
+that they don't really need to be flying private jets places
+
+00:48:49.784 --> 00:48:52.664
+kind of back and forth all over the place.
+
+00:48:52.664 --> 00:48:55.383
+And if it helps, I am offsetting all of our carbon footprints
+
+00:48:55.903 --> 00:48:57.224
+by never leaving my house.
+
+00:48:57.224 --> 00:48:59.984
+Okay, we have cooked.
+
+00:48:59.984 --> 00:49:04.943
+And I think that Claude has completed something,
+
+00:49:04.943 --> 00:49:05.903
+but I'm not sure.
+
+00:49:09.784 --> 00:49:12.544
+Yeah, I think, oh, it says no elevators
+
+00:49:12.544 --> 00:49:14.703
+are generally located inside Central Park.
+
+00:49:15.544 --> 00:49:16.744
+That's what Noor was asking.
+
+00:49:16.744 --> 00:49:18.943
+Is this supposed to be Central Park?
+
+00:49:18.943 --> 00:49:21.104
+Yes, I think so.
+
+00:49:21.104 --> 00:49:24.864
+And so it's fair, I think, yeah, I mean, this is now,
+
+00:49:25.344 --> 00:49:28.784
+I'm like, how could I specify that that is that one point
+
+00:49:28.784 --> 00:49:30.664
+I really care about?
+
+00:49:30.664 --> 00:49:32.984
+And I don't.
+
+00:49:38.943 --> 00:49:41.744
+Because Central Park is definitely
+
+00:49:41.744 --> 00:49:44.184
+a big rectangle on the map.
+
+00:49:44.184 --> 00:49:45.503
+Yes.
+
+00:49:45.503 --> 00:49:47.023
+We know that.
+
+00:49:47.023 --> 00:49:50.624
+Skimming this, it is not located at this point.
+
+00:49:50.984 --> 00:49:53.184
+I mean.
+
+00:49:55.943 --> 00:49:57.823
+Like this is the this is the type of case
+
+00:49:57.823 --> 00:50:00.503
+where you just want to be like, oh, let me select that point.
+
+00:50:03.583 --> 00:50:07.344
+And I don't know how to do that, so we will just.
+
+00:50:09.344 --> 00:50:11.463
+OK, actually, maybe what if I just did.
+
+00:50:13.583 --> 00:50:14.864
+Give.
+
+00:50:16.583 --> 00:50:18.624
+And Jared saying we need Gigi Plotly.
+
+00:50:19.624 --> 00:50:21.544
+Yeah, what is this?
+
+00:50:22.784 --> 00:50:26.463
+Five closest elevators with centroid.
+
+00:50:30.583 --> 00:50:33.784
+Colin says, can we remake the map with an interactive library?
+
+00:50:35.104 --> 00:50:36.943
+We could. I'm not going to.
+
+00:50:36.943 --> 00:50:40.424
+This is a bit of a well, we'll see how far are we diverging
+
+00:50:40.424 --> 00:50:44.344
+from our main diverging a little bit from data dictionaries, but.
+
+00:50:45.143 --> 00:50:47.184
+OK, so.
+
+00:50:47.184 --> 00:50:51.104
+Interesting, so now we could pull out this device, but that's.
+
+00:50:52.104 --> 00:50:54.104
+That's the minute.
+
+00:50:57.263 --> 00:51:00.744
+I don't know, that's a mystery that that is like a mystery that.
+
+00:51:02.104 --> 00:51:03.624
+We should.
+
+00:51:05.224 --> 00:51:08.263
+It is also it's possible that this is like, again,
+
+00:51:08.263 --> 00:51:10.903
+these are escalators and dumbwaiters, so maybe.
+
+00:51:10.903 --> 00:51:12.903
+There's a restaurant there with.
+
+00:51:12.903 --> 00:51:19.463
+Oh, you know, Jared says if the coordinates are 40.7 by negative 73.9,
+
+00:51:19.463 --> 00:51:21.784
+it could be the NYPD Central Park Precinct.
+
+00:51:23.224 --> 00:51:28.344
+Interesting. And looking at it on the on the just eyeballing the coordinates,
+
+00:51:28.344 --> 00:51:30.143
+that could be it.
+
+00:51:30.143 --> 00:51:34.184
+Let's just try one more thing, let's see if I can get on a leaflet map.
+
+00:51:35.224 --> 00:51:38.344
+I'm basically worried about doing anything with the map.
+
+00:51:38.424 --> 00:51:42.344
+I'm basically worried about doing these interactive things because it's like
+
+00:51:42.344 --> 00:51:44.664
+maybe thousands of points there and maybe they'll.
+
+00:51:48.344 --> 00:51:52.583
+We have a few people who are native NYC folks in the chat
+
+00:51:52.583 --> 00:51:54.264
+that are helping us out a little bit here.
+
+00:51:57.063 --> 00:52:01.384
+OK, this is where it's geocoded it to and it is a freight elevator
+
+00:52:01.463 --> 00:52:04.183
+and the address is 1000 Fifth Avenue.
+
+00:52:04.744 --> 00:52:08.823
+So I think that is a geocoding mistake.
+
+00:52:10.024 --> 00:52:15.543
+I do not believe there is an elevator in the Great Lawn or somewhere near it.
+
+00:52:16.744 --> 00:52:21.144
+I guess it could be the New York Central Park Precinct, but given that the address.
+
+00:52:22.183 --> 00:52:27.543
+Let's just pull this out and now we could now like now it's just too.
+
+00:52:28.504 --> 00:52:32.504
+Yeah, Dan says that point is in the middle of the Great Lawn or a reservoir.
+
+00:52:33.703 --> 00:52:39.384
+I'm also seeing how this is the downside of using an AI for everything.
+
+00:52:39.384 --> 00:52:41.783
+I don't even know what the name of that variable is.
+
+00:52:41.783 --> 00:52:43.463
+So let's go to my data dictionary.
+
+00:52:46.984 --> 00:52:50.504
+Look at so many elevator conspiracies in the chat now.
+
+00:52:50.984 --> 00:52:56.984
+What?
+
+00:53:04.823 --> 00:53:05.384
+Oh.
+
+00:53:09.224 --> 00:53:10.344
+OK, here we go.
+
+00:53:11.543 --> 00:53:12.583
+Oh, I don't know.
+
+00:53:12.583 --> 00:53:14.583
+Did you just have to tell it which filter to use?
+
+00:53:15.864 --> 00:53:16.423
+I should have.
+
+00:53:16.423 --> 00:53:16.923
+OK.
+
+00:53:17.803 --> 00:53:23.323
+So we can see, yeah, 1000 Fifth Avenue, it's a freight elevator.
+
+00:53:24.764 --> 00:53:27.963
+I don't know if there's anything else there that really tells us anything,
+
+00:53:27.963 --> 00:53:31.963
+but I'm just going to say that is a bad geocoding.
+
+00:53:34.443 --> 00:53:39.803
+Although that does make me see there's a weird dot dot dot 27.
+
+00:53:39.803 --> 00:53:46.524
+I don't know.
+
+00:53:46.524 --> 00:53:47.724
+OK, let's just say.
+
+00:53:56.764 --> 00:53:57.963
+So clearly there's a column.
+
+00:53:57.963 --> 00:54:01.724
+It's interesting there's a column in the data frame that's not in the data dictionary.
+
+00:54:03.563 --> 00:54:07.484
+And again, this is where you really want like a tool to be double checking them
+
+00:54:07.484 --> 00:54:09.884
+so that the LLM is less likely to make mistakes,
+
+00:54:09.884 --> 00:54:13.563
+because you've got that as the data and the data dictionary all aligned.
+
+00:54:16.203 --> 00:54:19.724
+Like it was never documented.
+
+00:54:24.524 --> 00:54:30.124
+This is where we have to jump in with our last question that is unanswered,
+
+00:54:30.124 --> 00:54:31.724
+which is Marco's asking,
+
+00:54:31.724 --> 00:54:35.484
+how do you know this is actually faster or more productive than just writing the code?
+
+00:54:37.803 --> 00:54:41.404
+Like the back and forth seems like it's a lot.
+
+00:54:42.683 --> 00:54:43.803
+Yeah, yeah.
+
+00:54:43.803 --> 00:54:45.083
+I think that's a good question.
+
+00:54:45.083 --> 00:54:50.443
+And like, or like, is it faster or is it just does it take the same amount of time,
+
+00:54:50.443 --> 00:54:51.644
+but it's just different work?
+
+00:54:54.524 --> 00:54:55.244
+I don't know.
+
+00:54:55.244 --> 00:55:01.644
+I kind of feel like I could have probably written this code fairly quickly.
+
+00:55:01.644 --> 00:55:03.163
+Like this is legit.
+
+00:55:03.163 --> 00:55:04.764
+This is legitimate time saving.
+
+00:55:04.764 --> 00:55:07.323
+Like I would have to go and do some research to find that out.
+
+00:55:08.203 --> 00:55:12.604
+But yeah, I don't know.
+
+00:55:12.604 --> 00:55:15.163
+Like I think if I was less familiar with R code,
+
+00:55:15.163 --> 00:55:17.404
+this would have taken me longer to write.
+
+00:55:17.404 --> 00:55:20.524
+But as long as you can kind of read R code and interpret it,
+
+00:55:20.524 --> 00:55:22.844
+and you can be fairly, you know,
+
+00:55:22.844 --> 00:55:26.683
+I think you don't need a particularly sophisticated understanding of R code
+
+00:55:26.683 --> 00:55:30.203
+to be able to read this and verify that it's doing what you wanted.
+
+00:55:30.203 --> 00:55:34.124
+So I think like on the whole, like this is much faster.
+
+00:55:34.124 --> 00:55:36.683
+It's also been much slower,
+
+00:55:36.683 --> 00:55:40.524
+because I'm explaining everything I'm doing to you all and answering questions.
+
+00:55:41.644 --> 00:55:42.764
+Like I do think it's fast.
+
+00:55:42.764 --> 00:55:44.604
+I think it's like 10 times faster.
+
+00:55:44.604 --> 00:55:46.683
+It's not faster than everything.
+
+00:55:46.683 --> 00:55:51.083
+But you also don't, like you don't have to use it when it's slower.
+
+00:55:51.083 --> 00:55:53.004
+Like you can still do all of this by hand.
+
+00:55:53.004 --> 00:55:54.844
+I think it's still a useful workflow.
+
+00:55:55.963 --> 00:55:59.563
+But that whole idea of keeping these three files in sync,
+
+00:55:59.563 --> 00:56:03.803
+I think is really powerful and really useful.
+
+00:56:03.803 --> 00:56:08.203
+And I, you know, if you have more feedback about this,
+
+00:56:08.203 --> 00:56:10.283
+I'd like love to hear about it,
+
+00:56:10.283 --> 00:56:13.963
+because this is something that I am going to be working on more
+
+00:56:13.963 --> 00:56:16.443
+and over the coming weeks and months.
+
+00:56:16.443 --> 00:56:17.004
+Yeah.
+
+00:56:17.004 --> 00:56:19.323
+Well, I will say Rachel and I have been talking about
+
+00:56:19.323 --> 00:56:22.524
+having a data science hangout all about these,
+
+00:56:22.524 --> 00:56:29.563
+like existential AI questions with some posit AI brains.
+
+00:56:29.563 --> 00:56:31.004
+And so look forward to that.
+
+00:56:31.004 --> 00:56:32.283
+I think in the future,
+
+00:56:32.283 --> 00:56:34.683
+be a great space to have these kind of conversations
+
+00:56:34.683 --> 00:56:36.124
+and talk about this stuff out loud.
+
+00:56:36.923 --> 00:56:38.283
+And then also as an update,
+
+00:56:39.083 --> 00:56:44.443
+Dan Chen put a link in the chat to a Gizmodo article
+
+00:56:44.443 --> 00:56:47.644
+about an artificial cave beneath Central Park,
+
+00:56:47.644 --> 00:56:50.364
+and that maybe that is a maintenance elevator.
+
+00:56:52.683 --> 00:56:54.844
+The conspiracy continues.
+
+00:57:01.083 --> 00:57:03.404
+Because during inside the article,
+
+00:57:03.404 --> 00:57:05.083
+elevator is mentioned three times.
+
+00:57:06.203 --> 00:57:09.244
+Like there is definitely somebody riding an elevator
+
+00:57:09.244 --> 00:57:10.203
+beneath Central Park.
+
+00:57:11.963 --> 00:57:13.884
+I guess the other thing we could do actually
+
+00:57:13.884 --> 00:57:16.443
+is if we go back to that code.
+
+00:57:17.963 --> 00:57:21.803
+So you thought you were coming to learn about data dictionaries.
+
+00:57:21.803 --> 00:57:25.163
+Actually, we have one minute left till the top of the hour,
+
+00:57:25.163 --> 00:57:27.484
+and we are solving a conspiracy theory
+
+00:57:27.484 --> 00:57:30.283
+about the elevator in the middle of Central Park.
+
+00:57:31.323 --> 00:57:34.764
+Yeah, this is the official elevator data
+
+00:57:34.764 --> 00:57:35.724
+where this came from.
+
+00:57:35.724 --> 00:57:40.524
+Yeah, like no real information.
+
+00:57:40.524 --> 00:57:43.724
+I'm assuming 1005th Avenue is, yeah.
+
+00:57:44.604 --> 00:57:45.083
+The Met.
+
+00:57:47.884 --> 00:57:48.283
+All right.
+
+00:57:48.283 --> 00:57:49.563
+Well, I have to end us.
+
+00:57:49.563 --> 00:57:51.484
+I have to stop us from what we're doing,
+
+00:57:51.484 --> 00:57:53.563
+and we have to move on.
+
+00:57:53.563 --> 00:57:57.004
+But I really, really hope that today was useful for everybody,
+
+00:57:57.004 --> 00:58:00.124
+that you learned a lot about this sort of collaborative,
+
+00:58:00.844 --> 00:58:03.163
+work process that I think for Hadley
+
+00:58:03.163 --> 00:58:06.364
+is still like a work in process a little bit of refining.
+
+00:58:07.323 --> 00:58:09.004
+And we would love to hear the ways
+
+00:58:09.004 --> 00:58:10.604
+that you are doing all of this stuff
+
+00:58:10.604 --> 00:58:12.283
+and the way that you're implementing.
+
+00:58:12.283 --> 00:58:13.404
+Actually, that is not the Met.
+
+00:58:13.404 --> 00:58:15.803
+That's the New Zealand Museum of Natural History.
+
+00:58:17.484 --> 00:58:19.163
+Which is probably where my cousin is right now.
+
+00:58:19.163 --> 00:58:21.404
+She's a volunteer at the American Museum
+
+00:58:21.404 --> 00:58:23.724
+of Natural History, waving to my cousin.
+
+00:58:23.724 --> 00:58:25.484
+All right, everybody, this was fantastic.
+
+00:58:25.484 --> 00:58:26.524
+I had a great time.
+
+00:58:26.524 --> 00:58:27.484
+I hope that you did too.
+
+00:58:27.484 --> 00:58:29.884
+We got every single question answered.
+
+00:58:30.764 --> 00:58:32.683
+All right, everybody, say goodbye.
+
+00:58:32.683 --> 00:58:33.163
+Bye, everyone.
+
+00:58:33.163 --> 00:58:33.563
+Thank you.
+
+00:58:33.563 --> 00:58:34.124
+Thanks.

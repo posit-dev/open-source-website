@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 'Andrew Bray - Closeread: bringing Scrollytelling to Quarto'
 
@@ -19,16 +19,16 @@ external:  # updated automatically, do not edit
   duration: 1264
   has_captions: true
   language: en
-  last_updated: '2026-05-19T10:15:28.914332+00:00'
-  like_count: 185
+  last_updated: '2026-09-18T13:58:10.630731+00:00'
+  like_count: 189
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/KqLxy66B3lQ/maxresdefault.jpg
   title: 'Andrew Bray - Closeread: bringing Scrollytelling to Quarto'
   url: https://www.youtube.com/watch?v=KqLxy66B3lQ
-  view_count: 4797
+  view_count: 5069
 ---
 image: thumbnail.jpg
 

@@ -18,7 +18,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rmarkdown
 - rstudio
 tags: []
@@ -45,18 +45,18 @@ external:  # updated automatically, do not edit
   duration: 1228
   has_captions: false
   language: en
-  last_updated: '2026-05-19T10:15:36.764582+00:00'
-  like_count: 52
+  last_updated: '2026-09-18T13:58:21.309385+00:00'
+  like_count: 53
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   - rmarkdown
   - rstudio
   tags: []
   thumbnail: https://i.ytimg.com/vi/9oUR3LbXPxg/maxresdefault.jpg
   title: Daniel Chen - Moving to Quarto from RMarkdown and Python Jupyter Notebooks
   url: https://www.youtube.com/watch?v=9oUR3LbXPxg
-  view_count: 3222
+  view_count: 3269
 ---
 image: thumbnail.jpg
 

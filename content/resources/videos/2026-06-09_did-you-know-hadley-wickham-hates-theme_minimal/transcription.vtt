@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.520
+If you create a ggplot without specifying any unique aesthetics or a theme, you'll notice the
+
+00:00:05.520 --> 00:00:10.960
+package still makes some choices for you. Ever wonder what those choices are? Because each geom
+
+00:00:10.960 --> 00:00:15.040
+has a different set of default aesthetics, and you might be surprised to find out that they're
+
+00:00:15.040 --> 00:00:19.360
+almost all based on the source code for a specific theme that you haven't even applied.
+
+00:00:19.920 --> 00:00:25.920
+Theme underscore gray. Theme gray is the default in ggplot, even if you don't select it. And its
+
+00:00:25.920 --> 00:00:30.559
+source code holds all the secrets to why your geoms look the way they do by default, like why
+
+00:00:30.559 --> 00:00:35.759
+geom point defaults to shape 19, that little filled-in circle. Of course, if you do specify
+
+00:00:35.759 --> 00:00:39.599
+your theme, you change some of those defaults, so now they're based on your specified theme.
+
+00:00:40.240 --> 00:00:45.360
+So, have you checked out the ggplot source code lately? And what's your favorite ggplot theme?
+
