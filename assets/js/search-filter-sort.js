@@ -702,16 +702,16 @@
           if (hasImages) {
             const imgWrap = document.createElement('div');
             imgWrap.className = 'flex flex-row flex-shrink-0';
-            entry.authors.forEach((a, i) => {
-              if (a.image) {
-                const img = document.createElement('img');
-                img.src = a.image;
-                img.alt = a.name;
-                img.className = 'my-0 w-6 h-6 rounded-full object-cover ring-2 ring-white' + (i > 0 ? ' -ml-2' : '');
-                img.style.zIndex = 10 - i;
-                img.loading = 'lazy';
-                imgWrap.appendChild(img);
-              }
+            // Overlap by the number of images shown so far (people without a
+            // photo are skipped), so the first image is never offset
+            entry.authors.filter(a => a.image).forEach((a, i) => {
+              const img = document.createElement('img');
+              img.src = a.image;
+              img.alt = a.name;
+              img.className = 'my-0 w-6 h-6 rounded-full object-cover ring-2 ring-white' + (i > 0 ? ' -ml-2' : '');
+              img.style.zIndex = 10 - i;
+              img.loading = 'lazy';
+              imgWrap.appendChild(img);
             });
             wrapper.appendChild(imgWrap);
           }
