@@ -436,7 +436,17 @@ translations:
 
 The overview page has a **By** filter (Posit / Community) that defaults to Posit.
 
-Source files (`*.key`, `*.pptx`, `*.ai`, plus LaTeX/SVG sources under `source/`) live next to the PDF. Keynote, PowerPoint, and Illustrator files are stored with Git LFS (`git lfs install` once). The build doesn't need them: Hugo ignores them and the site doesn't link to them, so they're only available in this repository.
+Source files (`*.key`, `*.pptx`, `*.ai`, plus LaTeX/SVG sources under `source/`) live next to the PDF. The build doesn't need them: Hugo ignores them and the site doesn't link to them, so they're only available in this repository.
+
+Keynote, PowerPoint, and Illustrator files (~800 MB) are stored with [Git LFS](https://git-lfs.com/). To keep clones small, `.lfsconfig` excludes them from downloads, so after cloning (or pulling) they're small pointer files. To work on a cheat sheet's source, install Git LFS (`git lfs install` once) and download only what you need. `--exclude=""` is required to override the exclusion in `.lfsconfig`:
+
+```bash
+# One cheat sheet
+git lfs pull --include="content/resources/cheatsheets/tidyr/*" --exclude=""
+
+# All cheat sheet source files
+git lfs pull --include="content/resources/cheatsheets/**" --exclude=""
+```
 
 Scripts:
 
