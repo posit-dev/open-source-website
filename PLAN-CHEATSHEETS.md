@@ -67,7 +67,7 @@ The working to-do list, updated with each implementation commit on `migrate-chea
 - [x] **T1.** Plan updated with R1–R3 and the LFS build note
 - [x] **T2.** Git LFS: `.gitattributes`, `ignoreFiles` for source files, `cheatsheetSourceBaseURL` param, `polars-cheatsheet.ai` moved to LFS, contributor note
 - [x] **T3.** `by` field + "By" filter: `by: posit` on existing sheets, item index, `filters.yaml`, JS defaults/URL/reset/badge, no-flash CSS
-- [ ] **T4.** Detail page: extended translations (label, edition · date, translators), `source_files` buttons
+- [x] **T4.** Detail page: extended translations (label, edition · date, translators), `source_files` buttons
 - [ ] **T5.** Tooling: `compress-cheatsheet-pdf.py`, `validate-cheatsheets.py`, migration script + manifest
 - [ ] **T6.** Phase 2: refresh, compress, and complete the 30 existing sheets (PDFs, thumbnails, sources, translations, people, markdown)
 - [ ] **T7.** Phase 3: `renv`, `tidyeval`, `caret`
