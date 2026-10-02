@@ -525,7 +525,7 @@ Every row is old-site only, not started, and not marked deprecated.
 | estimatr | estimatr | estimatr | Graeme Blair, Jasper Cooper, Alexander Coppock, Macartan Humphreys, Luke Sonnet | P | — | — | R | — |
 | eurostat | eurostat | Access Eurostat data with eurostat | Przemysław Biecek, Markus Kainu | P | — | — | R | — |
 | gganimate | gganimate | gganimate | Karl Hailperin | P | — | — | R | — |
-| git-github | git-github | Git & GitHub | Mouna Belaid | P | pptx | es vi | — | — |
+| git-github | git-github | Git & GitHub | Mouna Belaid | P | pptx | es vi | R | — |
 | golem | golem | golem | — (ThinkR, org) | — | — | — | R | — |
 | gtsummary | gtsummary | gtsummary | Esther Drill | P | pptx | vi | R | — |
 | gwasrapidd | gwasrapidd | GWAS Catalog access with gwasrapidd | Ramiro Magno | P | — | — | R | — |
