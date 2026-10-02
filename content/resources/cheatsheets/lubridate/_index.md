@@ -4,8 +4,17 @@ image: page-1.png
 resource_type: cheatsheet
 by: posit
 date: '2026-02-25'
-description: Quick reference guide for dates and times with lubridate.
+description: Parse, manipulate, and perform arithmetic on dates, times, and date-time objects in R using lubridate.
 download_url: lubridate.pdf
+people:
+- Garrett Grolemund
+- Mine Çetinkaya-Rundel
+- Andy Teucher
+- Averi Perny
+- Curtis Kephart
+- Mara Averick
+- Wouter Overmeire
+- David Díaz Rodríguez
 thumbnails:
 - page-1.png
 - page-2.png
@@ -13,10 +22,761 @@ software:
 - lubridate
 languages:
 - R
+source_files:
+- file: lubridate.key
+  format: Keynote
+- file: lubridate.pptx
+  format: PowerPoint
 translations:
-- Portuguese: lubridate_pt_br.pdf
-- Russian: lubridate_ru.pdf
-- Spanish: lubridate_es.pdf
-- Ukrainian: lubridate_uk.pdf
-- Vietnamese: lubridate_vi.pdf
+- language: Portuguese (Brazil)
+  lang: pt-BR
+  file: lubridate_pt_br.pdf
+  edition: lubridate 1.7.10
+  updated: 2021-07
+  people:
+  - Eric Scopinho
+  source: lubridate_pt_br.pptx
+- language: Russian
+  lang: ru
+  file: lubridate_ru.pdf
+  edition: lubridate 1.6.0
+  updated: 2017-12
+  source: lubridate_ru.key
+- language: Spanish
+  lang: es
+  file: lubridate_es.pdf
+  edition: lubridate 1.9.3
+  updated: 2024-05
+  people:
+  - Yanina Bellini Saibene
+  - David Díaz Rodríguez
+  source: lubridate_es.pptx
+- language: Ukrainian
+  lang: uk
+  file: lubridate_uk.pdf
+  edition: lubridate 1.6.0
+  updated: 2017-12
+  source: lubridate_uk.key
+- language: Vietnamese
+  lang: vi
+  file: lubridate_vi.pdf
+  edition: lubridate 1.6.0
+  updated: 2017-12
+  people:
+  - Anh Hoang Duc
 ---
+
+## Date-times
+
+```r
+library(lubridate)
+```
+
+A **date-time** is a point on the timeline, stored as the number of seconds since 1970-01-01 00:00:00 UTC
+
+```r
+dt <- as_datetime(1511870400)
+```
+
+A **date** is a day stored as the number of days since 1970-01-01
+
+```r
+d <- as_date(17498)
+```
+
+An hms is a **time** stored as the number of seconds since 00:00:00
+
+```r
+t <- hms::as_hms(85)
+```
+
+### Parse Date-Times
+
+Convert strings or numbers to date-times
+
+1.  Identify the order of the year (**y**), month (**m**), day (**d**), hour (**h**), minute (**m**) and second (**s**) elements in your data.
+
+2.  Use the function below whose name replicates the order.
+    Each accepts a `tz` argument to set the time zone, e.g. `ymd(x, tz = "UTC")`.
+
+-   `ymd_hms()`, `ymd_hm()`, `ymd_h()`
+
+    
+    ```r
+    ymd_hms("2017-11-28T14:02:00")
+    ```
+
+-   `ydm_hms()`, `ydm_hm()`, `ydm_h()`
+
+    
+    ```r
+    ydm_hms("2017-22-12 10:00:00")
+    ```
+
+-   `mdy_hms()`, `mdy_hm()`, `mdy_h()`
+
+    
+    ```r
+    mdy_hms("11/28/2017 1:02:03")
+    ```
+
+-   `dmy_hms()`, `dmy_hm()`, `dmy_h()`
+
+    
+    ```r
+    dmy_hms("1 Jan 2017 23:59:59")
+    ```
+
+-   `ymd()`, `ydm()`
+
+    
+    ```r
+    ymd(20170131)
+    ```
+
+-   `mdy()`, `myd()`
+
+    
+    ```r
+    mdy("July 4th, 2000")
+    ```
+
+-   `dmy()`, `dym()`
+
+    
+    ```r
+    dmy("4th of July '99")
+    ```
+
+-   `yq()`: Q for quarter.
+
+    
+    ```r
+    yq("2001: Q3")
+    ```
+
+-   `my()`, `ym()`
+
+    
+    ```r
+    my("07-2020")
+    ```
+
+-   `hms::hms()`: Also `lubridate::hms()`, `hm()`, and `ms()`, which return periods\*.
+
+    
+    ```r
+    hms::hms(seconds = 0, minutes = 1, hours = 2)
+    ```
+
+-   `date_decimal(decimal, tz = "UTC")`
+
+    
+    ```r
+    date_decimal(2017.5)
+    ```
+
+-   `now(tzone = "")`: Current time in tz (defaults to system tz).
+
+    
+    ```r
+    now()
+    ```
+
+-   `today(tzone = "")`: Current date in a tz (defaults to system tz).
+
+    
+    ```r
+    today()
+    ```
+
+-   `fast_strptime()`: Faster strptime.
+
+    
+    ```r
+    fast_strptime("9/1/01", "%y/%m/%d")
+    ```
+
+-   `parse_date_time()`: Easier strptime.
+
+    
+    ```r
+    parse_date_time("09-01-01", "ymd")
+    ```
+
+### Get and Set Components
+
+Use an accessor function to get a component.
+
+```r
+d
+```
+
+```
+[1] "2017-11-28"
+```
+
+```r
+day(d)
+```
+
+```
+[1] 28
+```
+
+Assign into an accessor function to change a component in place.
+
+```r
+day(d) <- 1
+d
+```
+
+```
+[1] "2017-11-01"
+```
+
+```r
+dt <- as_datetime("2018-01-31 11:59:59")
+```
+
+-   `date(x)`: Date component.
+
+    
+    ```r
+    date(dt)
+    ```
+
+-   `year(x)`: Year.
+
+    
+    ```r
+    year(dt)
+    ```
+
+-   `isoyear(x)`: The ISO 8601 year.
+
+-   `epiyear(x)`: Epidemiological year.
+
+-   `month(x, label, abbr)`: Month.
+
+    
+    ```r
+    month(dt)
+    ```
+
+-   `day(x)`: Day of the month.
+
+    
+    ```r
+    day(dt)
+    ```
+
+-   `wday(x, label, abbr)`: Day of week.
+
+-   `qday(x)`: Day of quarter.
+
+-   `hour(x)`: Hour.
+
+    
+    ```r
+    hour(dt)
+    ```
+
+-   `minute(x)`: Minutes.
+
+    
+    ```r
+    minute(dt)
+    ```
+
+-   `second(x)`: Seconds.
+
+    
+    ```r
+    second(dt)
+    ```
+
+-   `tz(x)`: Time zone.
+
+    
+    ```r
+    tz(dt)
+    ```
+
+-   `week(x)`: Week of the year.
+
+    
+    ```r
+    week(dt)
+    ```
+
+-   `isoweek()`: ISO 8601 week.
+
+-   `epiweek()`: Epidemiological week.
+
+-   `quarter(x)`: Quarter.
+
+    
+    ```r
+    quarter(dt)
+    ```
+
+-   `semester(x, with_year = FALSE)`: Semester.
+
+    
+    ```r
+    semester(dt)
+    ```
+
+-   `am(x)`: Is it in the am?
+
+    
+    ```r
+    am(dt)
+    ```
+
+-   `pm(x)`: Is it in the pm?
+
+    
+    ```r
+    pm(dt)
+    ```
+
+-   `dst(x)`: Is it daylight savings?
+
+    
+    ```r
+    dst(dt)
+    ```
+
+-   `leap_year(x)`: Is it a leap year?
+
+    
+    ```r
+    leap_year(dt)
+    ```
+
+-   `update(object, ..., simple = FALSE)`
+
+    
+    ```r
+    update(dt, mday = 2, hour = 1)
+    ```
+
+## Round Date-times
+
+-   `floor_date(x, unit = "second")`: Round down to nearest unit.
+
+    
+    ```r
+    floor_date(dt, unit = "month")
+    ```
+
+-   `round_date(x, unit = "second")`: Round to nearest unit.
+
+    
+    ```r
+    round_date(dt, unit = "month")
+    ```
+
+-   `ceiling_date(x, unit = "second")`: Round up to the nearest unit.
+
+    
+    ```r
+    ceiling_date(dt, unit = "month")
+    ```
+
+Valid units are second, minute, hour, day, week, month, bimonth, quarter, season, halfyear and year.
+
+-   `rollback(dates, roll_to_first = FALSE, preserve_hms = TRUE)`: Roll back to last day of previous month.
+    Also `rollforward()`.
+
+    
+    ```r
+    rollback(dt)
+    ```
+
+## Stamp Date-times
+
+`stamp()`: Derive a template from an example string and return a new function that will apply the template to date-times.
+Also `stamp_date()` and `stamp_time()`.
+
+1.  Derive a template, create a function
+
+    
+    ```r
+    sf <- stamp("Created Sunday, Jan 17, 1999 3:34")
+    ```
+
+2.  Apply the template to dates
+
+    
+    ```r
+    sf(ymd("2010-04-05"))
+    ```
+    
+    
+    ```
+    [1] "Created Monday, Apr 05, 2010 00:00"
+    ```
+    
+    
+
+**Tip: use a date with day \> 12**
+
+## Time Zones
+
+R recognizes \~600 time zones.
+Each encodes the time zone, Daylight Savings Time, and historical calendar variations for an area.
+R assigns *one* time zone per vector.
+
+Use the `UTC` time zone to avoid Daylight Savings.
+
+-   `OlsonNames()`: Returns a list of valid time zone names.
+
+    
+    ```r
+    OlsonNames()
+    ```
+
+-   `Sys.timezone()`: Gets current time zone.
+
+-   `with_tz(time, tzone = "")`: Get the **same date-time** in a new time zone (a new clock time).
+    Also `local_time(dt, tz, units)`.
+    For example, 4:00 Pacific becomes 5:00 Mountain, or 6:00 Central, or 7:00 Eastern.
+
+    
+    ```r
+    with_tz(dt, "US/Pacific")
+    ```
+
+-   `force_tz(time, tzone = "")`: Get the **same clock time** in a new time zone (a new date-time).
+    Also `force_tzs()`.
+    For example, 7:00 Pacific becomes 7:00 Mountain, or 7:00 Central, or 7:00 Eastern.
+
+    
+    ```r
+    force_tz(dt, "US/Pacific")
+    ```
+
+## Math with Date-times
+
+Lubridate provides three classes of timespans to facilitate math with dates and date-times.
+
+Math with date-times relies on the **timeline**, which behaves inconsistently.
+Consider how the timeline behaves during:
+
+-   A normal day:
+
+```r
+nor <- ymd_hms("2018-01-01 01:30:00", tz = "US/Eastern")
+```
+
+-   The start of daylight savings (spring forward):
+
+```r
+gap <- ymd_hms("2018-03-11 01:30:00", tz = "US/Eastern")
+```
+
+-   The end of daylight savings (fall back):
+
+```r
+lap <- ymd_hms("2018-11-04 00:30:00", tz = "US/Eastern")
+```
+
+-   Leap years and leap seconds:
+
+```r
+leap <- ymd("2019-03-01")
+```
+
+**Periods** track changes in clock times, which ignore time line irregularities.
+
+```r
+nor + minutes(90)
+gap + minutes(90)
+lap + minutes(90)
+leap + years(1)
+```
+
+**Durations** track the passage of physical time, which deviates from clock time when irregularities occur.
+
+```r
+nor + dminutes(90)
+gap + dminutes(90)
+lap + dminutes(90)
+leap + dyears(1)
+```
+
+**Intervals** represent specific intervals of the timeline, bounded by start and end date-times.
+
+```r
+interval(nor, nor + minutes(90))
+interval(gap, gap + minutes(90))
+interval(lap, lap + minutes(90))
+interval(leap, leap + years(1))
+```
+
+Not all years are 365 days due to **leap days**.
+Not all minutes are 60 seconds due to **leap seconds**.
+It is possible to create an imaginary date by adding **months**, e.g.
+February 31st.
+
+```r
+jan31 <- ymd(20180131)
+jan31 + months(1)
+```
+
+```
+[1] NA
+```
+
+`%m+%` and `%m-%` will roll imaginary dates to the last day of the previous month.
+
+```r
+jan31 %m+% months(1)
+```
+
+```
+[1] "2018-02-28"
+```
+
+`add_with_rollback(e1, e2, roll_to_first = TRUE)` will roll imaginary dates to the first day of the new month.
+
+```r
+add_with_rollback(jan31, months(1), roll_to_first = TRUE)
+```
+
+```
+[1] "2018-03-01"
+```
+
+### Periods
+
+Add or subtract periods to model events that happen at specific clock times, like the NYSE opening bell.
+
+Make a period with the name of a time unit **pluralized**, e.g.
+
+```r
+p <- months(3) + days(12)
+
+# Shows the number of months, number of days, etc.
+p
+```
+
+```
+[1] "3m 12d 0H 0M 0S"
+```
+
+-   `years(x = 1)`: x years.
+
+-   `months(x = 1)`: x months.
+
+-   `weeks(x = 1)`: x weeks.
+
+-   `days(x = 1)`: x days.
+
+-   `hours(x = 1)`: x hours.
+
+-   `minutes(x = 1)`: x minutes.
+
+-   `seconds(x = 1)`: x seconds.
+
+-   `milliseconds(x = 1)`: x milliseconds.
+
+-   `microseconds(x = 1)`: x microseconds.
+
+-   `nanoseconds(x = 1)`: x nanoseconds.
+
+-   `picoseconds(x = 1)`: x picoseconds.
+
+-   `period(num = NULL, units = "second", ...)`: An automation friendly period constructor.
+
+    
+    ```r
+    period(5, unit = "years")
+    ```
+
+-   `as.period(x, unit)`: Coerce a timespan to a period, optionally in the specified units.
+    Also `is.period()`.
+
+    
+    ```r
+    as.period(p)
+    ```
+
+-   `period_to_seconds(x)`: Convert a period to the "standard" number of seconds implied by the period.
+    Also `seconds_to_period()`.
+
+    
+    ```r
+    period_to_seconds(p)
+    ```
+
+### Durations
+
+Add or subtract durations to model physical processes, like battery life.
+Durations are stored as seconds, the only time unit with a consistent length.
+**Difftimes** are a class of durations found in base R.
+
+Make a duration with the name of a period prefixed with a *d*, e.g.
+
+```r
+dd <- ddays(14)
+
+# Shows the exact length in seconds, and the equivalent in common units
+dd
+```
+
+```
+[1] "1209600s (~2 weeks)"
+```
+
+-   `dyears(x = 1)`: 31536000x seconds.
+
+-   `dmonths(x = 1)`: 2629800x seconds.
+
+-   `dweeks(x = 1)`: 604800x seconds.
+
+-   `ddays(x = 1)`: 86400x seconds.
+
+-   `dhours(x = 1)`: 3600x seconds.
+
+-   `dminutes(x = 1)`: 60x seconds.
+
+-   `dseconds(x = 1)`: x seconds.
+
+-   `dmilliseconds(x = 1)`: x \* 10^-3^ seconds.
+
+-   `dmicroseconds(x = 1)`: x \* 10^-6^ seconds.
+
+-   `dnanoseconds(x = 1)`: x \* 10^-9^ seconds.
+
+-   `dpicoseconds(x = 1)`: x \* 10^-12^ seconds.
+
+-   `duration(num = NULL, units = "second", ...)`: An automation friendly duration constructor.
+
+    
+    ```r
+    duration(5, unit = "years")
+    ```
+
+-   `as.duration(x, ...)`: Coerce a timespan to a duration.
+    Also `is.duration()`, `is.difftime()`.
+
+    
+    ```r
+    as.duration(p)
+    ```
+
+-   `make_difftime(x)`: Make diffime with the specified number of units.
+
+    
+    ```r
+    make_difftime(99999)
+    ```
+
+### Intervals
+
+Divide an interval by a duration to determine its physical length, divide by an interval by a period to determine its implied length in clock time.
+
+Make an interval with `interval()` or `%--%`, e.g.
+
+```r
+i <- interval(ymd("2017-01-01"), d)
+i
+```
+
+```
+[1] 2017-01-01 UTC--2017-11-01 UTC
+```
+
+```r
+# Shows the exact length in seconds, and the equivalent in common units
+j <- d %--% ymd("2017-12-31")
+j
+```
+
+```
+[1] 2017-11-01 UTC--2017-12-31 UTC
+```
+
+-   `a %within% b`: Does interval or dte0time `a` fall within interval `b`?
+
+    
+    ```r
+    now() %within% i
+    ```
+
+-   `int_start(int)`: Access/set the start date-time of an interval.
+    Also `int_end()`.
+
+    
+    ```r
+    int_start(i) <- now()
+    int_start(i)
+    ```
+
+-   `int_aligns(int1, int2)`: Do two intervals share a boundary?
+    Also `int_overlaps()`.
+
+    
+    ```r
+    int_aligns(i, j)
+    ```
+
+-   `int_diff(times)`: Make the intervals that occur between the date-times in a vector.
+
+    
+    ```r
+    v <- c(dt, dt + 100, dt + 1000)
+    int_diff(v)
+    ```
+
+-   `int_flip(int)`: Reverse the direction of an interval.
+    Also `int_standardize()`.
+
+    
+    ```r
+    int_flip(i)
+    ```
+
+-   `int_length(int)`: Length in seconds.
+
+    
+    ```r
+    int_length(i)
+    ```
+
+-   `int_shift(int, by)`: Shifts an interval up or down the timeline by a timespan.
+
+    
+    ```r
+    int_shift(i, days(-1))
+    ```
+
+-   `as.interval(x, start, ...)`: Coerce a timespan to an interval with the start date-time.
+    Also `is.interval()`.
+
+    
+    ```r
+    as.interval(days(-1), start = now())
+    ```
+
+------------------------------------------------------------------------
+
+CC BY SA Posit Software, PBC • [info\@posit.co](mailto:info@posit.co) • [posit.co](https://posit.co)
+
+Learn more at [lubridate.tidyverse.org](https://lubridate.tidyverse.org).
+
+Updated: 2026-08.
+
+```r
+packageVersion("lubridate")
+```
+
+```
+[1] '1.9.5'
+```
+
+------------------------------------------------------------------------

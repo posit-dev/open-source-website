@@ -3,9 +3,16 @@ title: rmarkdown
 image: page-1.png
 resource_type: cheatsheet
 by: posit
-date: '2026-02-25'
-description: Quick reference guide for rmarkdown.
+date: '2026-08-01'
+description: Produce dynamic reports, presentations, and dashboards by weaving R code and Markdown text together in .Rmd files rendered to HTML, PDF, or Word.
 download_url: rmarkdown.pdf
+people:
+- Mine Çetinkaya-Rundel
+- Averi Perny
+- Garrett Grolemund
+- Andy Teucher
+- Curtis Kephart
+- David Díaz Rodríguez
 thumbnails:
 - page-1.png
 - page-2.png
@@ -13,13 +20,952 @@ software:
 - rmarkdown
 languages:
 - R
+source_files:
+- file: rmarkdown.key
+  format: Keynote
+- file: rmarkdown.pptx
+  format: PowerPoint
 translations:
-- Dutch: rmarkdown_nl.pdf
-- German: rmarkdown_de.pdf
-- Italian: rmarkdown_it.pdf
-- Japanese: rmarkdown_ja.pdf
-- Korean: rmarkdown_ko.pdf
-- Spanish: rmarkdown_es.pdf
-- Turkish: rmarkdown_tr.pdf
-- Vietnamese: rmarkdown_vi.pdf
+- language: Dutch
+  lang: nl
+  file: rmarkdown_nl.pdf
+  edition: rmarkdown 0.2.50
+  updated: 2014-08
+- language: German
+  lang: de
+  file: rmarkdown_de.pdf
+  updated: 2016-02
+  people:
+  - Lucia Gjeltema
+- language: Italian
+  lang: it
+  file: rmarkdown_it.pdf
+  updated: 2016-02
+  people:
+  - Angelo Salatino
+- language: Japanese
+  lang: ja
+  file: rmarkdown_ja.pdf
+  edition: rmarkdown 1.6
+  updated: 2016-02
+  people:
+  - Masato Takahashi
+- language: Korean
+  lang: ko
+  file: rmarkdown_ko.pdf
+  added: 2018-05
+  people:
+  - Kwangchun Lee
+- language: Spanish
+  lang: es
+  file: rmarkdown_es.pdf
+  edition: rmarkdown 2.27
+  updated: 2024-05
+  people:
+  - Jesica Formoso
+  - David Díaz Rodríguez
+  source: rmarkdown_es.pptx
+- language: Turkish
+  lang: tr
+  file: rmarkdown_tr.pdf
+  edition: rmarkdown 1.6
+  updated: 2016-02
+  people:
+  - Metin Yazici
+- language: Vietnamese
+  lang: vi
+  file: rmarkdown_vi.pdf
+  added: 2018-05
 ---
+
+## What is rmarkdown?
+
+-   **.Rmd files:** Develop your code and ideas side-by-side in a single document. Run code as individual chunks or as an entire document.
+-   **Dynamic Documents:** Knit together plots, tables, and results with narrative text. Render to a variety of formats like HTML, PDF, MS Word, or MS PowerPoint.
+-   **Reproducible Research:** Upload, link to, or attach your report to share. Anyone can read or run your code to reproduce your work.
+
+## Workflow
+
+1.  Open a **new .Rmd file** in the RStudio IDE by going to *File \> New File \> R Markdown*.
+
+2.  **Embed code** in chunks.
+    Run code by line, by chunk, or all at once.
+
+3.  **Write text** and add tables, figures, images, and citations.
+    Format with Markdown syntax or the RStudio Visual Markdown Editor.
+
+4.  **Set output format(s) and options** in the YAML header.
+    Customize themes or add parameters to execute or add interactivity with Shiny.
+
+5.  **Save and render** the whole document.
+    Knit periodically to preview your work as you write.
+
+6.  **Share your work!**
+
+### Source Editor
+
+![](images/source-editor.png)
+
+<details>
+<summary>Expand to read about the features in the Source Editor</summary>
+
+### Features within the Source Editor
+
+1.  New File
+2.  Embed Code
+3.  Write Text
+4.  Set Output Format(s) and Options
+5.  Save and Render
+6.  Share
+
+-   Set preview location
+-   Insert code chunk
+-   Go to code chunk
+-   Run code chunk(s)
+-   Show outline
+-   Modify chunk options
+-   Run all previous chunks
+-   Run current chunk
+-   Switch to visual editor
+
+</details>
+
+### Visual Editor
+
+![](images/rmd-visual-editor.png)
+
+<details>
+<summary>Expand to read about the features in the Visual Editor</summary>
+
+### Features within the Visual Editor
+
+-   Insert citations
+-   Style options
+-   Add/edit attributes
+-   Switch to source editor
+
+</details>
+
+### Rendered Output
+
+![](images/rendered-output.png)
+
+<details>
+<summary>Expand to read about the features in the Rendered Output Window</summary>
+
+### Features within the Rendered Output Window
+
+-   File path to output document
+-   Find in document
+-   Publish to rpubs.com, shinyapps.io, Posit Connect
+-   Reload document
+
+</details>
+
+## Embed Code With knitr
+
+### Code Chunks
+
+Surround code chunks with ```` ```{r} ```` and ```` ``` ```` or use the Insert Code Chunk button.
+Add a chunk label and/or chunk options inside the curly braces after `r`.
+
+````text
+```{r chunk-label, include = FALSE}
+```
+````
+
+### Set Global Options
+
+Set options for the entire document in the first chunk.
+
+````text
+```{r include = FALSE}
+knitr::opts_chunk$set(message = FALSE)
+```
+````
+
+### Inline Code
+
+Insert `` `r <code>` `` into text sections.
+Code is evaluated at render and results appear as text.
+
+The markdown text
+
+```
+Built with `r getRversion()` 
+```
+
+will render as "Built with 4.5.1" in the output file.
+
+### Chunk Options
+
+| Option                   | Default     | Effects                                                                                                      |
+|--------------------------|-------------|--------------------------------------------------------------------------------------------------------------|
+| `echo`                   | `TRUE`      | display code in output document                                                                              |
+| `error`                  | `FALSE`     | TRUE (display error messages in doc), FALSE (stop render when error occurs)                                  |
+| `eval`                   | `TRUE`      | run code in chunk                                                                                            |
+| `include`                | `TRUE`      | include chunk in doc after running                                                                           |
+| `message`                | `TRUE`      | display code messages in document                                                                            |
+| `warning`                | `TRUE`      | display code warnings in document                                                                            |
+| `results`                | `"markup"`  | `"asis"` (pass through results), `"hide"` (don't display results), `"hold"` (put all results below all code) |
+| `fig.align`              | `"default"` | `"left"`, `"right"`, or `"center"`                                                                           |
+| `fig.alt`                | `NULL`      | alt text for a figure                                                                                        |
+| `fig.cap`                | `NULL`      | figure caption as a character string                                                                         |
+| `fig.path`               | `"figure/"` | prefix for generating file paths                                                                             |
+| `fig.width & fig.height` | `7`         | plot dimensions in inches                                                                                    |
+| `out.width`              |             | rescales output width, e.g. `"75%"`, `"300px"`                                                               |
+| `collapse`               | `FALSE`     | collapse all sources & output into a single block                                                            |
+| `comment`                | `"##"`      | prefix for each line of results                                                                              |
+| `child`                  | `NULL`      | file(s) to knit and then include                                                                             |
+| `purl`                   | `TRUE`      | include or exclude a code chunk when extracting source code with `knitr::purl()`                             |
+
+: Table of chunk options. The first column is the option name, the second column is the option's default value, the third column describes what the option does.
+
+See more options and defaults by running `str(knitr::opts_chunk$get())`.
+
+## Insert Citations
+
+Create citations from a bibliography file, a Zotero library, or from DOI references.
+
+### Build Your Bibliography
+
+-   Add BibTex or CSL bibliographies to the YAML header.
+
+    ```yaml
+    ---
+    title: "My Document"
+    bibliography: references.bib
+    link-citations: TRUE
+    ---
+    ```
+
+-   If Zotero is installed locally, your main library will automatically be available.
+
+-   Add citations by DOI by searching "from DOI" in the **Insert Citation** dialog.
+
+### Insert Citations
+
+-   Access the **Insert Citations** dialog in the Visual Editor by clicking the **\@** symbol in the toolbar or by clicking **Insert \> Citation.**
+-   Add citations with markdown syntax by typing `[@cite]` or `@cite`.
+
+## Insert Tables
+
+Output data frames as tables using `kable(data, caption)`.
+
+````text
+```{r}
+data <- faithful[1:4,]
+knitr::kable(data, caption = "Tables with kable")
+```
+````
+
+Other table packages include **flextable**, **gt**, and **kableExtra**.
+
+## Write With Markdown
+
+The syntax on the left renders as the output on the right.
+
+<table>
+<caption>Table of markdown syntax and rendered examples. The syntax in the first column renders to the output in the second column.</caption>
+<tr>
+<td>
+
+# Markdown Syntax
+
+```
+Plain text.
+```
+
+</td>
+<td>
+
+# Rendered Output
+
+Plain text.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+End a line with two spaces to
+start a new paragraph.
+```
+
+</td>
+<td>
+
+End a line with two spaces to
+
+start a new paragraph.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+Also end a line with a backslash\
+to make a new line.
+```
+
+</td>
+<td>
+
+Also end a line with a backslash
+
+to make a new line.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+*italics* and **bold**
+```
+
+</td>
+<td>
+
+*italics* and **bold**
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+superscript^2^/subscript~2~
+```
+
+</td>
+<td>
+
+superscript^2^ /subscript~2~
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+~~strike through~~
+```
+
+</td>
+<td>
+
+~~strike through~~
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+escaped: \* \_ \\
+```
+
+</td>
+<td>
+
+escaped: \* \_ \\
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+en dash: --, em dash: ---
+```
+
+</td>
+<td>
+
+en dash: --, em dash: ---
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+# Header 1
+```
+
+</td>
+<td>
+
+# Header 1
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+## Header 2
+```
+
+</td>
+<td>
+
+## Header 2
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+...
+```
+
+</td>
+<td>
+
+...
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+###### Header 6
+```
+
+</td>
+<td>
+
+###### Header 6
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+- unordered list
+- item 2
+    - item 2a (indent 1 tab)
+    - item 2b
+```
+
+</td>
+<td>
+
+-   unordered list
+
+-   item 2
+
+    -   item 2a (indent 1 tab)
+
+    -   item 2b
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+1. ordered list
+2. item 2
+  - item 2a (indent 1 tab)
+  - item 2b
+```
+
+</td>
+<td>
+
+1.  ordered list
+
+2.  item 2
+
+    -   item 2a
+
+    -   item 2b
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+<link url>
+```
+
+</td>
+<td>
+
+<https://posit.co/>
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+[This is a link.](link url)
+```
+
+</td>
+<td>
+
+[This is a link.](https://posit.co/)
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+[This is another link.][id].
+
+At the end of the document:
+[id]: link url
+```
+
+</td>
+<td>
+
+[This is another link.](https://posit.co/)
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+![Caption](image.png)
+
+or
+
+![Caption](id2)
+
+At the end of the document include:
+[id2]: image.png
+```
+
+</td>
+<td>
+
+![R Markdown logo](images/rmarkdown-logo.png)
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+`verbatim code`
+```
+
+</td>
+<td>
+
+`verbatim code`
+
+</td>
+</tr>
+<tr>
+<td>
+
+````
+```
+multiple lines
+of verbatim code
+```
+````
+
+</td>
+<td>
+
+```
+multiple lines
+of verbatim code
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+> block quotes
+```
+
+</td>
+<td>
+
+> block quotes
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+equation: $e^{i \pi} + 1 = 0$
+```
+
+</td>
+<td>
+
+equation: $e^{i \pi} + 1 = 0$
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+equation block:
+$$E = mc^{2}$$
+```
+
+</td>
+<td>
+
+equation block:
+
+$$
+E = mc^{2}
+$$
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+horizontal rule:
+---
+```
+
+</td>
+<td>
+
+horizontal rule:
+
+------------------------------------------------------------------------
+
+</td>
+</tr>
+<tr>
+<td>
+
+```
+|Right|Left|Default|Center|
+|----:|:---|-------|:----:|
+|12   |12  |12     |12    |
+|123  |123 |123    |123   |
+|1    |1   |1      |1     |
+
+Table: Caption text, example rendered table
+```
+
+</td>
+<td>
+
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|    12 | 12   | 12      |   12   |
+|   123 | 123  | 123     |  123   |
+|     1 | 1    | 1       |   1    |
+
+: Caption text, example rendered table.
+
+</td>
+</tr>
+<tr>
+<td>
+
+HTML Tabsets
+
+```
+## Results {.tabset}
+### Plots
+text
+
+### Tables
+more text
+```
+
+</td>
+<td>
+
+## Results
+
+## Plots
+
+text
+
+## Tables
+
+more text
+
+</td>
+</tr>
+</table>
+
+<!-- Page 2 -->
+
+## Set Output Formats and Their Options in YAML
+
+Use the document's YAML header to set an **output format** and customize it with **output options**.
+Indent format 2 characters, indent options 4 characters.
+
+```yaml
+---
+title: "My Document"
+author: "Author Name"
+output:
+  html_document: 
+    toc: true
+    toc-location: left
+---
+```
+
+### Output Format Table
+
+| Output Format             | Creates                      |
+|---------------------------|------------------------------|
+| `html_document`           | .html                        |
+| `pdf_document`[^1]        | .pdf                         |
+| `word_document`           | Microsoft Word (.docx)       |
+| `powerpoint_presentation` | Microsoft PowerPoint (.pptx) |
+| `odt_document`            | OpenDocument Text            |
+| `rtf_document`            | Rich Text Format             |
+| `md_document`             | Markdown                     |
+| `github_document`         | Markdown for Github          |
+| `ioslides_presentation`   | ioslides HTML slides         |
+| `slidy_presentation`      | Slidy HTML slides            |
+| `beamer_presentation`[^2] | Beamer slides                |
+
+: Table of output formats. The output format in the first column creates the file type in the second column.
+
+[^1]: PDFs and Beamer slides require LaTeX, use `tinytex::install_tinytex()`.
+
+[^2]: PDFs and Beamer slides require LaTeX, use `tinytex::install_tinytex()`.
+
+Also see **flexdashboard**, **bookdown**, **distill**, and **blogdown**.
+
+### Output Options Table
+
+| Important Options    | Description                                                                            | HTML | PDF | MS Word | MS PPT |
+|----------------------|----------------------------------------------------------------------------------------|------|-----|---------|--------|
+| anchor_sections      | Show section anchors on mouse hover (TRUE or FALSE)                                    | X    |     |         |        |
+| citation_package     | The LaTeX package to process citations ("default", "natbib", biblatex")                |      |     |         |        |
+| code_download        | Give readers an option to download the .Rmd source code (TRUE or FALSE)                | X    |     |         |        |
+| code_folding         | Let readers toggle the display of R code ("none", "hide", or "show")                   | X    |     |         |        |
+| css                  | CSS or SCSS file to use to style the document (e.g. "style.css")                       | X    |     |         |        |
+| dev                  | Graphics device to use for figure output (e.g. "png", "pdf")                           | X    | X   |         |        |
+| df_print             | Method for printing data frames ("default", "kable", "tibble", "paged")                | X    | X   | X       | X      |
+| fig_caption          | Should figures be rendered with captions (TRUE or FALSE)                               | X    | X   | X       | X      |
+| highlight            | Syntax highlighting ("tango", "pygments", "kate", "zenburn", "textmate", "arrow", "rstudio", or a custom ".theme" file) | X    | X   | X       |        |
+| includes             | File of content to place in doc ("in_header", "before_body", "after_body")             | X    | X   |         |        |
+| keep_md              | Keep the Markdown .md file generated by knitting (TRUE or FALSE)                       | X    | X   | X       | X      |
+| keep_tex             | Keep the intermediate TEX file used to convert to PDF (TRUE or FALSE)                  |      | X   |         |        |
+| latex_engine         | LaTeX engine for producing PDF output ("pdflatex", "xelatex", or "lualatex")           |      | X   |         |        |
+| math_method          | Engine for rendering math in HTML ("mathjax", "katex", "r-katex", "mathml", "webtex")  | X    |     |         |        |
+| reference_docx/\_doc | docx/pptx file containing styles to copy in the output (e.g. "file.docx", "file.pptx") |      |     | X       | X      |
+| theme                | Theme options (see Bootswatch and Custom Themes below)                                 | X    |     |         |        |
+| toc                  | Add a table of contents at start of document (TRUE or FALSE)                           | X    | X   | X       | X      |
+| toc_depth            | The lowest level of headings to add to table of contents (e.g. 2, 3)                   | X    | X   | X       | X      |
+| toc_float            | Float the table of contents to the left of the main document content (TRUE or FALSE)   | X    |     |         |        |
+
+: Table of output options. The first column is the option name, the second column is the description and possible values, and then remaining columns show what file types each option can be applied to.
+
+Use `?<output_format>` to see all of a format's options, e.g. `?html_document`
+
+## More Header Options
+
+### Parameters
+
+Parameterize your documents to reuse with new inputs (e.g. data, values, etc.).
+
+1.  **Add parameters** in the header as sub-values of `params`.
+
+    ```yaml
+    ---
+    params:
+      state: "hawaii"
+    ---
+    ```
+
+2.  **Call parameters** in code using `params$name`.
+
+    
+    ````text
+    ```{r}
+    data <- df[,params$state]
+    summary(data)
+    ```
+    ````
+
+3.  **Set parameters** with Knit with Parameters or the params argument of `render()`.
+
+### Reusable Templates
+
+1.  **Create a new package** with an inst/rmarkdown/templates directory.
+
+2.  **Add a folder** containing **template.yaml** (below) and **skeleton.Rmd** (template contents).
+
+    ```yaml
+    ---
+    name: "My Template"
+    ---
+    ```
+
+3.  **Install** the package to access template by going to **File \> New R Markdown \> From Template**.
+
+### Bootswatch Themes
+
+Customize HTML documents with Bootswatch themes from the **bslib** package using the theme output option.
+Use `bslib::bootswatch_themes()` to list available themes.
+
+```yaml
+---
+title: "My Document"
+author: "Author Name"
+output:
+  html_document:
+    theme:
+      bootswatch: solar
+---
+```
+
+### Custom Themes
+
+Customize individual HTML elements using bslib variables.
+Use `?bs_theme` to see more variables.
+
+```yaml
+---
+output:
+  html_document:
+    theme:
+      bg: "#121212"
+      fg: "#E4E4E4"
+      base_font:
+        google: "Prompt"
+---
+```
+
+More on **bslib** at <https://pkgs.rstudio.com/bslib/>.
+
+### Styling With CSS and SCSS
+
+Add CSS and SCSS to your documents by adding a path to a file with the **css** option in the YAML header.
+
+```yaml
+---
+title: "My Document"
+author: "Author Name"
+output:
+  html_document:
+    css: "style.css"
+---
+```
+
+Apply CSS styling by writing HTML tags directly or:
+
+-   Use markdown to apply style attributes inline.
+
+    -   Bracketed Span\
+        `A green word.` will render as "A green word."
+
+    -   Fenced Div
+
+        ```
+        :::{.my-color}
+        All of these words
+        are green
+        :::
+        ```
+
+        will render as
+
+        All of these words
+
+        are green.
+
+-   Use the Visual Editor.
+    Go to **Format \> Div/Span** and add CSS styling directly with Edit Attributes.
+
+### Interactivity
+
+Turn your report into an interactive Shiny document in 4 steps:
+
+1.  Add `runtime: shiny` to the YAML header.
+
+    ```yaml
+    ---
+    output: html_document
+    runtime: shiny
+    ---
+    ```
+
+2.  Call Shiny input functions to embed input objects.
+
+3.  Call Shiny output functions to embed reactive output.
+
+    
+    ````text
+    ```{r echo = FALSE}
+    numericInput("n", "How many cars?", 5)
+    
+    renderTable({
+      head(cars, input$n)
+    })
+    ```
+    ````
+
+4.  Render with `rmarkdown::run()` or click **Run Document** in RStudio IDE.
+
+Also see Shiny Prerendered for better performance.
+<https://rmarkdown.rstudio.com/authoring_shiny_prerendered>.
+
+Embed a complete Shiny app into your document with `shiny::shinyAppDir()`.
+More at <https://bookdown.org/yihui/rmarkdown/shiny-embedded.html>.
+
+## Render
+
+When you render a document, rmarkdown:
+
+1.  Runs the code and embeds results and text into an .md file with knitr.
+2.  Converts the .md file into the output format with Pandoc.
+
+**Save,** then **Knit** to preview the document output.
+The resulting HTML/PDF/MS Word/etc.
+document will be created and saved in the same directory as the .Rmd file.
+
+Use `rmarkdown::render()` to render/knit in the R console.
+See `?render` for available options.
+
+## Share
+
+**Publish on Posit Connect** to share R Markdown documents securely, schedule automatic updates, and interact with parameters in real-time.
+<https://posit.co/products/enterprise/connect/>.
+
+------------------------------------------------------------------------
+
+CC BY SA Posit Software, PBC • [info\@posit.co](mailto:info@posit.co) • [posit.co](https://posit.co)
+
+Learn more at [rmarkdown.rstudio.com](https://rmarkdown.rstudio.com/).
+
+Updated: 2026-10.
+
+```r
+packageVersion("rmarkdown")
+```
+
+```
+[1] '2.29'
+```
+
+------------------------------------------------------------------------

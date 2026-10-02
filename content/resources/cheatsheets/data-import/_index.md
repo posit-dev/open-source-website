@@ -3,12 +3,17 @@ title: Importing data with the tidyverse
 image: page-1.png
 resource_type: cheatsheet
 by: posit
-date: '2026-02-25'
+date: '2026-08-01'
 description: Learn about readr, readxl, haven, and googlesheets4.
 download_url: data-import.pdf
 people:
-- Hadley Wickham
+- Garrett Grolemund
 - Mine Çetinkaya-Rundel
+- Averi Perny
+- Andy Teucher
+- Curtis Kephart
+- Hadley Wickham
+- David Díaz Rodríguez
 thumbnails:
 - page-1.png
 - page-2.png
@@ -19,15 +24,73 @@ software:
 - googlesheets4
 languages:
 - R
+source_files:
+- file: data-import.key
+  format: Keynote
+- file: data-import.pptx
+  format: PowerPoint
 translations:
-- Bengali: data-import_bn.pdf
-- Persian: data-import_fa.pdf
-- Portuguese: data-import_pt_br.pdf
-- Russian: data-import_ru.pdf
-- Spanish: data-import_es.pdf
-- Turkish: data-import_tr.pdf
-- Ukrainian: data-import_uk.pdf
-- Uzbek: data-import_uz.pdf
+- language: Bengali
+  lang: bn
+  file: data-import_bn.pdf
+  added: 2021-09
+  people:
+  - Saif Kabir Asif
+  source: data-import_bn.pptx
+- language: Greek
+  lang: el
+  file: data-import_el.pdf
+  edition: readr 2.0.0, readxl 1.3.1, googlesheets4 1.0.0
+  updated: 2021-08
+  people:
+  - Nikolaos Koupidis
+- language: Persian
+  lang: fa
+  file: data-import_fa.pdf
+  edition: readr 1.1.0, tibble 1.2.12, tidyr 0.6.0
+  updated: 2019-08
+  people:
+  - Vahid Faraji Jobehdar
+  - Reza Mazloomi
+- language: Portuguese (Brazil)
+  lang: pt-BR
+  file: data-import_pt_br.pdf
+  edition: readr 2.0.0, readxl 1.3.1, googlesheets4 1.0.0
+  updated: 2021-08
+  people:
+  - Eric Scopinho
+  source: data-import_pt_br.pptx
+- language: Russian
+  lang: ru
+  file: data-import_ru.pdf
+  edition: readr 1.1.0, tibble 1.2.12, tidyr 0.6.0
+  updated: 2017-01
+  source: data-import_ru.key
+- language: Spanish
+  lang: es
+  file: data-import_es.pdf
+  edition: readxl 1.4.3, googlesheets4 1.1.1
+  updated: 2024-05
+  people:
+  - David Díaz Rodríguez
+  source: data-import_es.pptx
+- language: Turkish
+  lang: tr
+  file: data-import_tr.pdf
+  edition: readr 1.1.0, tibble 1.2.12, tidyr 0.6.0
+  updated: 2017-01
+  people:
+  - Metin Yazici
+- language: Ukrainian
+  lang: uk
+  file: data-import_uk.pdf
+  edition: readr 1.1.0, tibble 1.2.12, tidyr 0.6.0
+  updated: 2017-01
+  source: data-import_uk.key
+- language: Uzbek
+  lang: uz
+  file: data-import_uz.pdf
+  added: 2017-08
 ---
 
 One of the first steps of a project is to import outside data into R.
@@ -55,7 +118,6 @@ For importing other types of data try one of the following packages:
 ## Read Tabular Data with readr
 
 ```r
-#| include: false
 library(readr)
 ```
 
@@ -86,8 +148,6 @@ read_*(
         ```
 
         ```r
-        #| label: write-file-txt
-        #| echo: false
 
         write_file("A|B|C\n1|2|3\n4|5|NA", file = "file.txt")
         ```
@@ -102,8 +162,6 @@ read_*(
     -   To make `file.txt`, run:
 
         ```r
-        #| ref.label: write-file-txt
-        #| eval: false
         ```
 
 -   Read a comma delimited file with period decimal marks: `read_csv()`.
@@ -117,8 +175,6 @@ read_*(
         ```
 
         ```r
-        #| label: write-file-csv
-        #| echo: false
 
         write_file("A,B,C\n1,2,3\n4,5,NA", file = "file.csv")
         ```
@@ -132,8 +188,6 @@ read_*(
     -   To make `file.csv`, run:
 
         ```r
-        #| ref.label: write-file-csv
-        #| eval: false
         ```
 
 -   Read semicolon delimited files with comma decimal marks: `read_csv2()`.
@@ -147,8 +201,6 @@ read_*(
         ```
 
         ```r
-        #| label: write-file-csv2
-        #| echo: false
 
         write_file("A;B;C\n1,5;2;3\n4,5;5;NA", file = "file2.csv")
         ```
@@ -162,8 +214,6 @@ read_*(
     -   To make `file2.csv`, run:
 
         ```r
-        #| ref.label: write-file-csv2
-        #| eval: false
         ```
 
 -   Read a tab delimited file: `read_tsv()` or `read_table()`.
@@ -179,8 +229,6 @@ read_*(
         ```
 
         ```r
-        #| label: write-file-tsv
-        #| echo: false
 
         write_file("A\tB\tC\n1\t2\t3\n4\t5\tNA\n", file = "file.tsv")
         ```
@@ -194,8 +242,6 @@ read_*(
     -   To make `tsv`, run:
 
         ```r
-        #| ref.label: write-file-tsv
-        #| eval: false
         ```
 
 ### Useful read arguments
@@ -228,7 +274,6 @@ write_file("A,B,C\n7,8,9\nNA,11,12", file = "file3.csv")
 -   No header: `col_names = FALSE`
 
     ```r
-    #| message: false
 
     read_csv("file.csv", col_names = FALSE)
     ```
@@ -236,7 +281,6 @@ write_file("A,B,C\n7,8,9\nNA,11,12", file = "file3.csv")
 -   Provide header: `col_names = c("x", "y", "z")`
 
     ```r
-    #| message: false
 
     read_csv("file.csv", col_names = c("x", "y", "z"))
     ```
@@ -244,7 +288,6 @@ write_file("A,B,C\n7,8,9\nNA,11,12", file = "file3.csv")
 -   Skip lines:
 
     ```r
-    #| message: false
 
     read_csv("file.csv", skip = 1)
     ```
@@ -252,7 +295,6 @@ write_file("A,B,C\n7,8,9\nNA,11,12", file = "file3.csv")
 -   Read a subset of lines:
 
     ```r
-    #| message: false
 
     read_csv("file.csv", n_max = 1)
     ```
@@ -260,7 +302,6 @@ write_file("A,B,C\n7,8,9\nNA,11,12", file = "file3.csv")
 -   Read values as missing:
 
     ```r
-    #| message: false
 
     read_csv("file.csv", na = c("1"))
     ```
@@ -268,7 +309,6 @@ write_file("A,B,C\n7,8,9\nNA,11,12", file = "file3.csv")
 -   Specify decimal marks:
 
     ```r
-    #| message: false
 
     read_delim("file2.csv", locale = locale(decimal_mark = ","))
     ```
@@ -276,7 +316,6 @@ write_file("A,B,C\n7,8,9\nNA,11,12", file = "file3.csv")
 -   Read multiple files into a single table:
 
     ```r
-    #| message: false
 
     read_csv(c("file.csv", "file3.csv"), id = "origin_file")
     ```
@@ -304,7 +343,6 @@ By default readr will generate a column spec when a file is read and output a su
 `spec(df)`: Extract the full column specification for the given imported data frame.
 
 ```r
-#| eval: false
 
 spec(df)
 # cols(
@@ -356,7 +394,6 @@ Each column type has a function and corresponding string abbreviation.
 -   Set a default type:
 
     ```r
-    #| eval: false
 
     read_csv(
       file, 
@@ -367,7 +404,6 @@ Each column type has a function and corresponding string abbreviation.
 -   Use column type or string abbreviation:
 
     ```r
-    #| eval: false
 
     read_csv(
       file, 
@@ -378,7 +414,6 @@ Each column type has a function and corresponding string abbreviation.
 -   Use a single string of abbreviations:
 
     ```r
-    #| eval: false
 
     # col types: skip, guess, integer, logical, character
     read_csv(
@@ -396,7 +431,6 @@ See [Useful read arguments] for more read arguments.
 Also `read_xls()` and `read_xlsx()`.
 
 ```r
-#| eval: false
 
 read_excel(path, sheet = NULL, range = NULL)
 ```
@@ -414,7 +448,6 @@ read_excel(path, sheet = NULL, range = NULL)
 -   It will look like the following when imported:
 
     ```r
-    #| echo: false
 
     write_file("x1,x2,x3,x4,x5\nx, ,z,8, \ny,7, ,9,10", file = "excel.csv")
     read_csv("excel.csv", show_col_types = FALSE)
@@ -440,7 +473,6 @@ read_excel(path, sheet = NULL, range = NULL)
     3.  Use `purrr::map()` and `purrr::list_rbind()` to read multiple files into one data frame.
 
         ```r
-        #| eval: false
 
         path <- "your_file_path.xlsx"
         path |> 
@@ -460,7 +492,6 @@ read_excel(path, sheet = NULL, range = NULL)
     Increase with the `guess_max` argument.
 
     ```r
-    #| eval: false
 
     read_excel(path, guess_max = Inf)
     ```
@@ -468,7 +499,6 @@ read_excel(path, sheet = NULL, range = NULL)
 -   Set all columns to same type, e.g. character:
 
     ```r
-    #| eval: false
 
     read_excel(path, col_types = "text")
     ```
@@ -476,7 +506,6 @@ read_excel(path, sheet = NULL, range = NULL)
 -   Set each column individually:
 
     ```r
-    #| eval: false
 
     read_excel(
       path,
@@ -521,7 +550,6 @@ Read a sheet from a URL, a Sheet ID, or a dribble samefrom the googledrive packa
 See [Useful read arguments] for more read arguments.
 
 ```r
-#| eval: false
 
 read_sheet(ss, sheet = NULL, range = NULL)
 ```
@@ -541,7 +569,6 @@ Same as `range_read()`.
 -   It will look like the following when imported:
 
     ```r
-    #| echo: false
 
     write_file("x1,x2,x3,x4,x5\nx, ,z,8, \ny,7, ,9,10", file = "googlesheet.csv")
     read_csv("googlesheet.csv", show_col_types = FALSE)
@@ -579,7 +606,6 @@ Use the `col_types` argument of `read_sheet()`**/**`range_read()` to set the col
     Increase with `guess_max`.
 
     ```r
-    #| eval: false
 
     read_sheet(path, guess_max = Inf)
     ```
@@ -587,7 +613,6 @@ Use the `col_types` argument of `read_sheet()`**/**`range_read()` to set the col
 -   Set all columns to same type, e.g. character:
 
     ```r
-    #| eval: false
 
     read_sheet(path, col_types = "c")
     ```
@@ -595,7 +620,6 @@ Use the `col_types` argument of `read_sheet()`**/**`range_read()` to set the col
 -   Set each column individually:
 
     ```r
-    #| eval: false
 
     # col types: skip, guess, integer, logical, character
     read_sheets(ss, col_types = "_?ilc")
@@ -638,7 +662,6 @@ Use the `col_types` argument of `read_sheet()`**/**`range_read()` to set the col
 Use the **range** argument of **readxl::read_excel()** or **googlesheets4::read_sheet()** to read a subset of cells from a sheet.
 
 ```r
-#| eval: false
 
 read_excel(path, range = "Sheet1!B1:D2")
 read_sheet(ss, range = "B1:D2")

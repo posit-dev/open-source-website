@@ -30,6 +30,7 @@ import argparse
 import json
 import re
 import shutil
+import textwrap
 import subprocess
 import sys
 from datetime import date
@@ -165,10 +166,81 @@ def link_implicit_headings(text: str) -> str:
                    for i, p in enumerate(parts))
 
 
+GRID_BORDER_RE = re.compile(r"^(\s*)\+[-=:+]+\+\s*$")
+
+
+def grid_table_to_html(lines: list[str], indent: str, caption: str) -> list[str]:
+    """Convert a Pandoc grid table to an HTML table with markdown cell content."""
+    border = lines[0][len(indent):].rstrip()
+    cuts = [i for i, ch in enumerate(border) if ch == "+"]
+    rows: list[tuple[bool, list[str]]] = []  # (is_header, cells)
+    current: list[str] = []
+    header_done = False
+    for line in lines[1:]:
+        body = line[len(indent):].rstrip()
+        if GRID_BORDER_RE.match(line):
+            if current:
+                cells = []
+                for a, b in zip(cuts, cuts[1:]):
+                    cell = "\n".join(r[a + 1:b].rstrip() for r in current)
+                    cells.append(textwrap.dedent(cell).strip("\n"))
+                is_header = "=" in body and not header_done
+                header_done = header_done or is_header
+                if any(cells):
+                    rows.append((is_header, cells))
+            current = []
+        else:
+            current.append(body.ljust(cuts[-1] + 1))
+    out = ["<table>"]
+    if caption:
+        out.append(f"<caption>{caption}</caption>")
+    for is_header, cells in rows:
+        tag = "th" if is_header else "td"
+        out.append("<tr>")
+        for cell in cells:
+            out += [f"<{tag}>", "", cell, "", f"</{tag}>"] if cell else [f"<{tag}></{tag}>"]
+        out.append("</tr>")
+    out.append("</table>")
+    return [indent + l if l else "" for l in out]
+
+
+def convert_grid_tables(md: str) -> str:
+    lines = md.split("\n")
+    out: list[str] = []
+    fence = None
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        m = FENCE_RE.match(line)
+        if m and (fence is None or line.strip().startswith(fence)):
+            fence = None if fence else m.group(2)
+        mb = GRID_BORDER_RE.match(line)
+        if fence is None and mb and i + 1 < len(lines) and lines[i + 1].lstrip().startswith("|"):
+            indent = mb.group(1)
+            j = i + 1
+            while j < len(lines) and lines[j].lstrip()[:1] in ("|", "+"):
+                j += 1
+            table = lines[i:j]
+            k = j
+            while k < len(lines) and not lines[k].strip():
+                k += 1
+            caption = ""
+            if k < len(lines) and lines[k].lstrip().startswith(": "):
+                caption = lines[k].strip()[2:]
+                j = k + 1
+            out += grid_table_to_html(table, indent, caption)
+            i = j
+            continue
+        out.append(line)
+        i += 1
+    return "\n".join(out)
+
+
 def port_freeze_markdown(md: str) -> tuple[str, set[str]]:
     """Convert Quarto's knitted markdown into Hugo-flavored markdown."""
     if md.startswith("---"):
         md = md.split("---", 2)[2]
+    md = convert_grid_tables(md)
     lines = md.split("\n")
     out: list[str] = []
     images: set[str] = set()
@@ -265,6 +337,8 @@ def port_freeze_markdown(md: str) -> tuple[str, set[str]]:
     text = link_implicit_headings("\n".join(out))
     text = escape_shortcodes(text)
     text = re.sub(r"\n{3,}", "\n\n", text).strip() + "\n"
+    # Only copy images the ported text still references
+    images = set(re.findall(r"\]\((images/[^)\s]+)\)", text)) | set(re.findall(r'src="(images/[^"]+)"', text))
     return text, images
 
 
