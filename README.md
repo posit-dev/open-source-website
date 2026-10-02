@@ -407,6 +407,58 @@ uv run scripts/validate-blog-posts.py --no-date-check
 
 If your agent supports Agent Skills, the `check-post` skill runs validation interactively and can offer fixes.
 
+### Cheat Sheets
+
+Each cheat sheet is a directory under `content/resources/cheatsheets/<slug>/` with an `_index.md`, the PDF, page thumbnails (`page-N.png`), translation PDFs, and source files:
+
+```yaml
+---
+title: Data tidying with tidyr
+image: page-1.png
+resource_type: cheatsheet
+by: posit                 # or community (a missing `by` counts as community)
+date: '2026-08-01'
+description: Reshape data to tidy format with tidyr ...
+download_url: tidyr.pdf
+people: [Mine Çetinkaya-Rundel, ...]   # authors only
+thumbnails: [page-1.png, page-2.png]
+software: [tidyr]         # existing content/software/ slugs
+languages: [R]
+source_files:
+- file: tidyr.key
+  format: Keynote
+translations:
+- language: Spanish
+  lang: es
+  file: tidyr_es.pdf
+  edition: tidyr 1.3.1, tibble 3.2.1
+  updated: 2024-05        # or `added:` when the PDF has no date
+  people: [David Díaz Rodríguez]   # translators, shown on the cheat sheet page only
+  source: tidyr_es.pptx
+---
+```
+
+The overview page has a **By** filter (Posit / Community) that defaults to Posit.
+
+Source files (`*.key`, `*.pptx`, `*.ai`) are stored with Git LFS (`git lfs install` once). The build doesn't need them: Hugo ignores them and the "Source" buttons link to them on GitHub.
+
+Scripts:
+
+```bash
+# Compress PDFs without losing accessibility tags
+scripts/compress-cheatsheet-pdf.py content/resources/cheatsheets/tidyr/*.pdf
+
+# Regenerate page thumbnails
+scripts/create-cheatsheet-thumbnails.py --pdf content/resources/cheatsheets/tidyr/tidyr.pdf
+
+# Check all cheat sheets (missing files, labels, software slugs, LFS, tags)
+scripts/validate-cheatsheets.py
+
+# Re-sync cheat sheets from a local clone of rstudio/cheatsheets,
+# using the per-sheet data in scripts/cheatsheet-migration.yaml
+scripts/migrate-cheatsheet.py --old-repo ~/repos/rstudio/cheatsheets tidyr
+```
+
 ### Adding Team Members
 
 Create a new person profile:

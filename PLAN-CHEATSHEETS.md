@@ -2,7 +2,7 @@
 
 Migrate every cheat sheet from the old site (<https://rstudio.github.io/cheatsheets/>, source: <https://github.com/rstudio/cheatsheets>) to `content/resources/cheatsheets/` on this site. That covers Posit sheets, community sheets, and translations. It also adds a "By" (Posit / Community) filter to the overview page.
 
-This document covers inventory and planning only. No cheat sheet or site code has been changed yet.
+This started as an inventory and plan; it has since been implemented on the `migrate-cheatsheets` branch (see [Implementation progress](#implementation-progress)).
 
 - Old repo snapshot inspected: `rstudio/cheatsheets@1e5e2bd` (2026-08-27, "Merge pull request #622 from rstudio/ml-yardsstick").
 - New site snapshot: `main@e73b895e6`.
@@ -72,7 +72,22 @@ The working to-do list, updated with each implementation commit on `migrate-chea
 - [x] **T6.** Phase 2: refresh, compress, and complete the 30 existing sheets (PDFs, thumbnails, sources, translations, people, markdown)
 - [x] **T7.** Phase 3: `renv`, `tidyeval`, `caret`
 - [x] **T8.** Phase 4: 65 community sheets (bundles, PDFs, thumbnails, sources, translations, summaries)
-- [ ] **T9.** Wrap-up: overview copy, contributor docs, validation, Hugo build check, final plan update
+- [x] **T9.** Wrap-up: overview copy, contributor docs, validation, Hugo build check, final plan update
+
+**Done.** All 98 cheat sheets (33 Posit, 65 community) and 115 translations are in `content/resources/cheatsheets/`, and `scripts/validate-cheatsheets.py --old-repo …` reports no problems. One manual step remains: re-exporting a tagged Polars PDF from Illustrator (Phase 2 table).
+
+Notes from the implementation:
+
+- **Ported bodies come from Quarto's freeze cache** (`_freeze/html/<slug>/execute-results/html.json`), not from the `.qmd` files. The cache has the knitted markdown, so R output is included and hidden chunks are already removed.
+  - The cache was stale for `plumber`, `purrr`, `rmarkdown` and `sparklyr`, so those four were re-rendered with Quarto in the scratch clone first.
+  - The converter handles cells, callouts (collapsible ones become `<details>`), grid tables (→ HTML tables), implicit heading links, Quarto shortcodes (escaped for Hugo), raw HTML, linked long descriptions, and image `fig-alt` text.
+- **PDFs** were compressed with `compress-cheatsheet-pdf.py`; tags are preserved, and the result is kept only when it's smaller and passes the checks. This also replaced the untagged Ghostscript copy of `ml-tidymodels` (16.8 MB original → 1.0 MB, tagged).
+- **Card images:** software logos are used only for Posit cheat sheets. Community cards show their own first page, so they don't look like they're about or by a Posit package.
+- **Manifest edits:** `scripts/cheatsheet-migration.yaml` is now the source of truth for re-syncs. Two edits made during migration:
+  - `git-github` got `languages: [R]` (it's about Git and GitHub in RStudio).
+  - The two Spanish originals got `updated: 2018-06` from their "Actualizado: 6/18" footers.
+- **`scripts/import-cheatsheets.py`** (the original HTML scraper) is superseded by `scripts/migrate-cheatsheet.py`, but was left in place.
+- **Git LFS:** 143 source files (≈ 773 MB) are in LFS. Pushing the branch uploads them to GitHub's LFS storage.
 
 ---
 
@@ -321,15 +336,15 @@ Each phase can ship on its own. After Phase 1, the work is per cheat sheet and i
 
 ### Phase 1: Site groundwork and tooling
 
-- [ ] 1.1 Add `by: posit` to all 30 existing cheat sheets.
-- [ ] 1.2 `partials/item-index-entry.html`: emit `by` for cheat sheets.
-- [ ] 1.3 `data/filters.yaml`: add the `by` filter with `default: [Posit]`.
-- [ ] 1.4 `search-filter-sort.js`: support default selections (defaults, URL round-trip including explicit empty, reset, `_hasActiveFilters`, badge "1", aria).
-- [ ] 1.5 `resource-type.html`/`item.html`: add `data-by` and the hide-while-initializing rule.
-- [ ] 1.6 `term.html`: render extended translation entries (label, edition · date, translators on the cheat sheet page only), keeping the legacy form.
-- [ ] 1.7 `term.html`: render `source_files` buttons.
-- [ ] 1.8 Git LFS: add `.gitattributes`, the `ignoreFiles` entry, the `cheatsheetSourceBaseURL` param, and a contributor note. Move `polars-cheatsheet.ai` to LFS.
-- [ ] 1.9 `scripts/validate-cheatsheets.py` (uv). It checks:
+- [x] 1.1 Add `by: posit` to all 30 existing cheat sheets.
+- [x] 1.2 `partials/item-index-entry.html`: emit `by` for cheat sheets.
+- [x] 1.3 `data/filters.yaml`: add the `by` filter with `default: [Posit]`.
+- [x] 1.4 `search-filter-sort.js`: support default selections (defaults, URL round-trip including explicit empty, reset, `_hasActiveFilters`, badge "1", aria).
+- [x] 1.5 `resource-type.html`/`item.html`: add `data-by` and the hide-while-initializing rule.
+- [x] 1.6 `term.html`: render extended translation entries (label, edition · date, translators on the cheat sheet page only), keeping the legacy form.
+- [x] 1.7 `term.html`: render `source_files` buttons.
+- [x] 1.8 Git LFS: add `.gitattributes`, the `ignoreFiles` entry, the `cheatsheetSourceBaseURL` param, and a contributor note. Move `polars-cheatsheet.ai` to LFS.
+- [x] 1.9 `scripts/validate-cheatsheets.py` (uv). It checks:
   - the `by` value
   - that referenced files exist (`download_url`, `thumbnails`, `translations[].file`/`source`, `source_files`)
   - unique translation labels
@@ -337,8 +352,8 @@ Each phase can ship on its own. After Phase 1, the work is per cheat sheet and i
   - `software` values exist in `content/software/`
   - `.key`/`.pptx`/`.ai` files are LFS pointers in git
   - PDFs that were tagged in the old repo are still tagged
-- [ ] 1.10 `scripts/compress-cheatsheet-pdf.py` (D9), including JPEG handling.
-- [ ] 1.11 A migration script (extend `scripts/import-cheatsheets.py` or add `migrate-cheatsheet.py`) that works from a local clone of `rstudio/cheatsheets`. For one slug it:
+- [x] 1.10 `scripts/compress-cheatsheet-pdf.py` (D9), including JPEG handling.
+- [x] 1.11 A migration script (extend `scripts/import-cheatsheets.py` or add `migrate-cheatsheet.py`) that works from a local clone of `rstudio/cheatsheets`. For one slug it:
   1. copies the English PDF, translations and sources
   2. compresses the PDFs
   3. writes or merges front matter (`by`, `people`, `translations` with `edition`/`updated`/`people`, `source_files`, `software`)
@@ -352,7 +367,7 @@ Each phase can ship on its own. After Phase 1, the work is per cheat sheet and i
   - **`image:` isn't set.** The migration script must set `image: page-1.png` itself, unless a logo is used.
   - **English PDF only.** Translations get no thumbnails, which is fine with the current template.
   - **Dependencies.** Needs poppler (`pdftoppm`); output is 150 dpi resized to 600 px wide, matching the existing 600 × 463 thumbnails.
-- [ ] 1.12 Run `yarn build-tailwind` if new classes are added. Check the overview page:
+- [x] 1.12 Run `yarn build-tailwind` if new classes are added. Check the overview page:
   - Posit-only by default, with badge "1"
   - turning on Community shows all
   - deselecting both shows all
@@ -374,36 +389,36 @@ For each sheet:
 
 | Slug | PDF | Markdown | Sources | Translation fixes |
 |---|---|---|---|---|
-| data-import | [ ] refresh | ✓ (clean `#|`) | [ ] key, pptx | [ ] add `el`; [ ] 5 sources |
-| data-transformation | [ ] refresh | ✓ | [ ] key, pptx | [ ] 7 sources |
-| data-visualization | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 2 sources |
-| factors | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 2 sources |
-| great-tables | [ ] refresh | [ ] summary | [ ] key | — |
-| gt | [ ] refresh | [ ] summary | [ ] key | [ ] **remove `gtsummary_vi.pdf`** (moves to `gtsummary`) |
-| keras | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 3 sources |
-| lubridate | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 4 sources |
-| ml-create-models | [ ] compress (same file) | ✓ | [ ] key | — |
-| ml-measure-performance | [ ] compress (same file) | ✓ | [ ] key | — |
-| ml-preprocessing-data | [ ] compress (same file) | ✓ | [ ] key | — |
-| ml-tidymodels | [ ] **replace the untagged Ghostscript copy** with the compressed original | ✓ | [ ] key (38 MB) | — |
-| nlp-with-llms | [ ] refresh | [ ] port | [ ] key | — |
-| package-development | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 1 source |
-| plotnine | [ ] compress (same file) | [ ] port | [ ] ai | — |
-| plumber | [ ] refresh | [ ] port | [ ] key, pptx | [ ] **add `es`** + source |
-| polars | [ ] re-export a tagged PDF from `polars-cheatsheet.ai` (needs Illustrator), then compress with the new script | ✓ | [ ] move `.ai` to LFS | — |
-| posit-team | [ ] refresh | [ ] port | [ ] pptx | — |
-| positron | [ ] refresh | [ ] summary | [ ] key | — |
-| purrr | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 6 sources |
-| quarto | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 1 source |
-| reticulate | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 1 source |
-| rmarkdown | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 1 source |
-| rstudio-ide | [ ] refresh | [ ] port | [ ] key (70 MB), pptx (68 MB) | [ ] 2 sources |
-| shiny | [ ] compress (same file) | [ ] port | [ ] key, pptx | [ ] **remove `shiny-python_es.pdf`**; [ ] 2 sources |
-| shiny-python | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 1 source |
-| shinychat | [ ] refresh | [ ] summary | [ ] key | — |
-| sparklyr | [ ] refresh | [ ] port | [ ] pptx + Google Slides link | [ ] 4 sources; [ ] distinct `zh_cn`/`zh_tw` labels |
-| strings | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 3 sources |
-| tidyr | [ ] refresh | [ ] port | [ ] key, pptx | [ ] **add `es`**; [ ] 3 sources |
+| data-import | [x] refresh | ✓ (clean `#|`) | [x] key, pptx | [x] add `el`; [x] 5 sources |
+| data-transformation | [x] refresh | ✓ | [x] key, pptx | [x] 7 sources |
+| data-visualization | [x] refresh | [x] port | [x] key, pptx | [x] 2 sources |
+| factors | [x] refresh | [x] port | [x] key, pptx | [x] 2 sources |
+| great-tables | [x] refresh | [x] summary | [x] key | — |
+| gt | [x] refresh | [x] summary | [x] key | [x] **remove `gtsummary_vi.pdf`** (moves to `gtsummary`) |
+| keras | [x] refresh | [x] port | [x] key, pptx | [x] 3 sources |
+| lubridate | [x] refresh | [x] port | [x] key, pptx | [x] 4 sources |
+| ml-create-models | [x] compress (same file) | ✓ | [x] key | — |
+| ml-measure-performance | [x] compress (same file) | ✓ | [x] key | — |
+| ml-preprocessing-data | [x] compress (same file) | ✓ | [x] key | — |
+| ml-tidymodels | [x] **replace the untagged Ghostscript copy** with the compressed original | ✓ | [x] key (38 MB) | — |
+| nlp-with-llms | [x] refresh | [x] port | [x] key | — |
+| package-development | [x] refresh | [x] port | [x] key, pptx | [x] 1 source |
+| plotnine | [x] compress (same file) | [x] port | [x] ai | — |
+| plumber | [x] refresh | [x] port | [x] key, pptx | [x] **add `es`** + source |
+| polars | [ ] **manual:** re-export a tagged PDF from `polars-cheatsheet.ai` (needs Illustrator), then compress with the new script | ✓ | [x] move `.ai` to LFS | — |
+| posit-team | [x] refresh | [x] port | [x] pptx | — |
+| positron | [x] refresh | [x] summary | [x] key | — |
+| purrr | [x] refresh | [x] port | [x] key, pptx | [x] 6 sources |
+| quarto | [x] refresh | [x] port | [x] key, pptx | [x] 1 source |
+| reticulate | [x] refresh | [x] port | [x] key, pptx | [x] 1 source |
+| rmarkdown | [x] refresh | [x] port | [x] key, pptx | [x] 1 source |
+| rstudio-ide | [x] refresh | [x] port | [x] key (70 MB), pptx (68 MB) | [x] 2 sources |
+| shiny | [x] compress (same file) | [x] port | [x] key, pptx | [x] **remove `shiny-python_es.pdf`**; [x] 2 sources |
+| shiny-python | [x] refresh | [x] port | [x] key, pptx | [x] 1 source |
+| shinychat | [x] refresh | [x] summary | [x] key | — |
+| sparklyr | [x] refresh | [x] port | [x] pptx + Google Slides link | [x] 4 sources; [x] distinct `zh_cn`/`zh_tw` labels |
+| strings | [x] refresh | [x] port | [x] key, pptx | [x] 3 sources |
+| tidyr | [x] refresh | [x] port | [x] key, pptx | [x] **add `es`**; [x] 3 sources |
 
 Also fill front matter gaps:
 
@@ -413,9 +428,9 @@ Also fill front matter gaps:
 
 ### Phase 3: Migrate the remaining Posit cheat sheets
 
-- [ ] `renv`: markdown from `html/renv.qmd`, `keynotes/renv.key`, `software: [renv]`, `languages: [R]`.
-- [ ] `tidyeval`: summary (D8); key + pptx; `software: [rlang]`; `languages: [R]`; 1 translation (es).
-- [ ] `caret`: summary; key + pptx; no `software` slug exists; `languages: [R]`; 5 translations (es, fr, ko, pt, tr).
+- [x] `renv`: markdown from `html/renv.qmd`, `keynotes/renv.key`, `software: [renv]`, `languages: [R]`.
+- [x] `tidyeval`: summary (D8); key + pptx; `software: [rlang]`; `languages: [R]`; 1 translation (es).
+- [x] `caret`: summary; key + pptx; no `software` slug exists; `languages: [R]`; 5 translations (es, fr, ko, pt, tr).
 
 ### Phase 4: Migrate community cheat sheets
 
@@ -429,16 +444,16 @@ For each sheet (Appendix B):
 
 Batches of about 10 per PR:
 
-- [ ] 4a. With translations: `base-r` (9), `metrica` (3), `data-table` (2), `git-github` (2), `regular-expressions` (2), `syntax` (2), `gtsummary` (1, moved from `gt`), `quanteda` (1), `survminer` (1), `torch` (1)
-- [ ] 4b. With sources: `admiral`, `arrow`, `dromics`, `h2o`, `imputets`, `jfa`, `labelled`, `overviewr`, `profile-optimise-python`, `r-best-practice`, `sas-r`, `sas-vs-r-in-pharma`, `squeakr`, `srvyr`, `stata2r`, `time-series`, `vivainsights-r`, `vivainsights-py`, `quincunx` (svg), `sf` (svg), `collapse` (Rnw), `rgee` (Google Slides)
-- [ ] 4c. PDF only: `bayesplot`, `bcea`, `cartography`, `declaredesign`, `distr6`, `estimatr`, `eurostat`, `gganimate`, `golem`, `gwasrapidd`, `how-big-is-your-graph`, `leaflet`, `machine-learning-modelling-in-r`, `mapsf`, `mlr`, `mosaic`, `nardl`, `nimble`, `oscr`, `packagefinder`, `parallel-computation`, `randomizr`, `rphylopic`, `samplingstrata`, `sjmisc`, `slackr`, `teachr`, `tsbox`, `vegan`, `vtree`, `xplain`
-- [ ] 4d. Spanish originals (if R2 confirms): `introduccion-a-r`, `estadistica-descriptiva-con-r`
+- [x] 4a. With translations: `base-r` (9), `metrica` (3), `data-table` (2), `git-github` (2), `regular-expressions` (2), `syntax` (2), `gtsummary` (1, moved from `gt`), `quanteda` (1), `survminer` (1), `torch` (1)
+- [x] 4b. With sources: `admiral`, `arrow`, `dromics`, `h2o`, `imputets`, `jfa`, `labelled`, `overviewr`, `profile-optimise-python`, `r-best-practice`, `sas-r`, `sas-vs-r-in-pharma`, `squeakr`, `srvyr`, `stata2r`, `time-series`, `vivainsights-r`, `vivainsights-py`, `quincunx` (svg), `sf` (svg), `collapse` (Rnw), `rgee` (Google Slides)
+- [x] 4c. PDF only: `bayesplot`, `bcea`, `cartography`, `declaredesign`, `distr6`, `estimatr`, `eurostat`, `gganimate`, `golem`, `gwasrapidd`, `how-big-is-your-graph`, `leaflet`, `machine-learning-modelling-in-r`, `mapsf`, `mlr`, `mosaic`, `nardl`, `nimble`, `oscr`, `packagefinder`, `parallel-computation`, `randomizr`, `rphylopic`, `samplingstrata`, `sjmisc`, `slackr`, `teachr`, `tsbox`, `vegan`, `vtree`, `xplain`
+- [x] 4d. Spanish originals (if R2 confirms): `introduccion-a-r`, `estadistica-descriptiva-con-r`
 
 ### Phase 5: Wrap-up
 
-- [ ] Re-sync against the latest old-repo commit before it's archived (D14): pick up new PDF updates or translations.
-- [ ] Replace the "being migrated" callout with the By-filter/contribute copy.
-- [ ] Run `scripts/validate-cheatsheets.py` and the link check (`scripts/lychee-errors.py`) over `/resources/cheatsheets/`.
+- [x] Re-sync against the latest old-repo commit before it's archived (D14): pick up new PDF updates or translations.
+- [x] Replace the "being migrated" callout with the By-filter/contribute copy.
+- [x] Run `scripts/validate-cheatsheets.py` and the link check (`scripts/lychee-errors.py`) over `/resources/cheatsheets/`.
 
 ---
 
