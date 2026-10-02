@@ -9,6 +9,15 @@
   content="{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}"
 />
 <meta name="robots" content="noodp" />
+{{- /* Pages default to self-canonical; canonical_url in frontmatter defers to
+     another site's copy (e.g. posit.co/blog). Paginated lists (blog, tags,
+     topics) are skipped: there .Permalink is always page 1, which would tell
+     search engines to ignore pages 2+. Calling .Paginator here isn't an option,
+     since it would lock in the paginator before the list templates call
+     .Paginate. Update this list if another section starts paginating. */ -}}
+{{- if or .IsPage (not (in (slice "blog" "tags" "topics") .Type)) }}
+<link rel="canonical" href="{{ or .Params.canonical_url .Permalink }}" />
+{{- end }}
 {{- if $.Site.Params.pwa.enabled }}<link rel="manifest" href="/manifest.json" />{{ end -}}
 
 {{- /* Custom Open Graph and Twitter images for blog posts */ -}}
