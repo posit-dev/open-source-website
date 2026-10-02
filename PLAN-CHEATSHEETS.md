@@ -1,28 +1,29 @@
 # Cheat sheet migration plan
 
-Migrate every cheat sheet from the old site (<https://rstudio.github.io/cheatsheets/>, source: <https://github.com/rstudio/cheatsheets>) to `content/resources/cheatsheets/` on this site. That includes Posit sheets, community sheets, translations, and legacy or outdated material. It also adds a "By" (Posit / Community) filter to the overview page.
+Migrate every cheat sheet from the old site (<https://rstudio.github.io/cheatsheets/>, source: <https://github.com/rstudio/cheatsheets>) to `content/resources/cheatsheets/` on this site. That covers Posit sheets, community sheets, and translations. It also adds a "By" (Posit / Community) filter to the overview page.
 
 This document covers inventory and planning only. No cheat sheet or site code has been changed yet.
 
 - Old repo snapshot inspected: `rstudio/cheatsheets@1e5e2bd` (2026-08-27, "Merge pull request #622 from rstudio/ml-yardsstick").
 - New site snapshot: `main@e73b895e6`.
-- Decisions that need a human are collected in [Open questions](#open-questions). They are tagged **Q1**, **Q2**, … and referenced throughout.
+- The answers to the first round of questions are in [Decisions](#decisions) (**D1**–**D17**), and they're applied throughout. A few points that came up while applying them are in [Remaining questions](#remaining-questions).
 
 ---
 
 ## Contents
 
 1. [Summary](#summary)
-2. [How the two sites are structured](#how-the-two-sites-are-structured)
-3. [Design: the `by` field and "By" filter](#design-the-by-field-and-by-filter)
-4. [Design: people, translations, source files](#design-people-translations-source-files)
-5. [Migration plan and to-do list](#migration-plan-and-to-do-list)
-6. [Open questions](#open-questions)
-7. [Appendix A: Posit cheat sheets inventory](#appendix-a-posit-cheat-sheets-inventory)
-8. [Appendix B: Community cheat sheets inventory](#appendix-b-community-cheat-sheets-inventory)
-9. [Appendix C: Translations inventory](#appendix-c-translations-inventory)
-10. [Appendix D: Legacy, archived, and orphaned files](#appendix-d-legacy-archived-and-orphaned-files)
-11. [Appendix E: Method and how to reproduce](#appendix-e-method-and-how-to-reproduce)
+2. [Decisions](#decisions)
+3. [How the two sites are structured](#how-the-two-sites-are-structured)
+4. [Design: the `by` field and "By" filter](#design-the-by-field-and-by-filter)
+5. [Design: people, translations, source files, PDFs](#design-people-translations-source-files-pdfs)
+6. [Migration plan and to-do list](#migration-plan-and-to-do-list)
+7. [Remaining questions](#remaining-questions)
+8. [Appendix A: Posit cheat sheets inventory](#appendix-a-posit-cheat-sheets-inventory)
+9. [Appendix B: Community cheat sheets inventory](#appendix-b-community-cheat-sheets-inventory)
+10. [Appendix C: Translations inventory](#appendix-c-translations-inventory)
+11. [Appendix D: Excluded legacy material](#appendix-d-excluded-legacy-material)
+12. [Appendix E: Method and how to reproduce](#appendix-e-method-and-how-to-reproduce)
 
 ---
 
@@ -30,47 +31,54 @@ This document covers inventory and planning only. No cheat sheet or site code ha
 
 | | Count |
 |---|---|
-| Posit cheat sheets listed on the old site's index | 29 (incl. `renv`) |
-| Posit cheat sheets in the old repo but **not** listed on the old index | 1 (`ml-measure-performance`) |
-| Community cheat sheets on the old site's "Contributed" page | 65 |
-| Translation PDFs shown on the old site's "Translations" page | 124 (17 languages) |
-| Older translation PDFs in `previous … translations/` subfolders (not linked anywhere on the old site) | 8 |
-| Cheat sheets on the new site | 30 |
-| New-site-only cheat sheets | 1 (`polars`) |
-| Old-site-only Posit cheat sheets | 1 (`renv`) |
+| Posit cheat sheets (D2) | **33**: 29 on the old index (incl. `renv`), plus `ml-measure-performance` (unlisted on the old site), `polars` (new site only), `tidyeval` and `caret` (listed as contributed on the old site) |
+| Community cheat sheets | **65**: the 63 remaining on the old "Contributed" page, plus 2 Spanish-language originals from the Translations page (`introduccion-a-r`, `estadistica-descriptiva-con-R`, see R2) |
+| Translations to migrate | **115**: the 124 on the old Translations page, minus 7 `data-wrangling` translations (D4) and the 2 Spanish originals counted above. 91 translate Posit sheets, 24 community sheets |
+| Excluded as old (D4) | `old/`, the 2 legacy root copies, 8 PDFs in `previous … translations/`, 7 `data-wrangling` translations, `0-template` (Appendix D) |
+| Cheat sheets on the new site today | 30 |
 
-Migration status of the 30 cheat sheets already on the new site:
+Migration status of the 33 Posit sheets on the new site:
 
 | Status | Cheat sheets |
 |---|---|
-| **Complete** | `polars` (PDF + markdown + `.ai` source; no translations exist) |
+| **Complete** | `polars`. Its PDF is a Ghostscript copy without tags, though; see Phase 2. |
 | **PDF + English markdown** | `data-import`, `data-transformation`, `ml-create-models`, `ml-measure-performance`, `ml-preprocessing-data`, `ml-tidymodels` |
-| **PDF only** | the other 23 Posit sheets |
-| **Not started** | `renv` and all 65 community sheets |
+| **PDF only** | the other 23 Posit sheets already on the new site |
+| **Not started** | `renv`, `tidyeval`, `caret`, and all 65 community sheets |
 
-No Posit sheet on the new site has its source files (Keynote/PowerPoint) yet. No translation on the new site has a translator credit or a translation source file.
+### Key findings
 
-### Key findings that change the scope
+1. **20 of the 29 English PDFs on the new site are older than the old repo's.** Most are the 2025 editions; the old repo has the 2026 updates. Completing a sheet therefore includes refreshing its PDF and thumbnails (Appendix A, "PDF" column).
+2. **The old site's translation matcher is buggy, and the new site inherited the bug.** `html/common.R::translation_list()` matches `{slug}.+\.pdf`, so `shiny` lists `shiny-python_es.pdf` and `gt` lists `gtsummary_vi.pdf`. Both are now wrong in the new site's front matter.
+3. **The new site is missing 3 Posit translations:** `data-import_el.pdf`, `tidyr_es.pdf`, `plumber_es.pdf`.
+4. **Nothing on the old site is explicitly marked deprecated or outdated.** D4 settles what counts as "old".
+5. **Ghostscript strips PDF tags.** 131 of the 222 PDFs in the old repo are tagged, i.e. have the accessibility structure screen readers use. The two new-site PDFs that went through Ghostscript (`ml-tidymodels`, `polars`) have lost their tags. D9 picks a tool that keeps them.
+6. **Four Posit sheets and every community sheet lack a text version.** The old HTML pages for `gt`, `great-tables`, `positron` and `shinychat` are stubs ("Will be updated soon!"). `tidyeval`, `caret` and all community sheets have no HTML page at all. These get a short summary instead (D8).
+7. **Source files are about 815 MB.** That's ~468 MB of English sources and ~347 MB of translation sources; the largest is `rstudio-ide.key` at 70 MB. These go into Git LFS (D6). The site is built in GitHub Actions, not on Netlify, so the checkout step must fetch LFS objects.
 
-1. **20 of the 29 English PDFs on the new site are out of date.** The import script ran against an older state of the old site. Examples: `data-import` is "Updated: 2025-08" on the new site but "2026-08" in the old repo, and `posit-team` is 2024-09 vs. 2026-08. Only `ml-create-models`, `ml-measure-performance`, `ml-preprocessing-data`, `plotnine` and `shiny` match byte for byte. `quarto` and `shiny-python` have the same "Updated" date but different bytes. `ml-tidymodels` has the same date but is a 228 KB recompressed copy of a 16 MB original. So "completing" a sheet includes refreshing its PDF and thumbnails. See the "PDF" column in Appendix A.
-2. **The old site has no explicit deprecated/outdated markers.** There are no banners or callouts, and the words "deprecated"/"outdated" don't appear on any page. The only signals are implicit:
-   - the `old/` folder
-   - root-level legacy copies (`data-visualization-2.1.pdf`, `rmarkdown-2.0.pdf`)
-   - the `previous spanish translations/` and `previous japanese translations/` folders
-   - translations of `data-wrangling`, a retired sheet whose English PDF only exists in `old/`
-   - stale footers: many community PDFs date from 2017–2019 and reference "RStudio, Inc."
+---
 
-   See Appendix D and **Q4**.
-3. **The old site's translation matcher has a bug, and the new site copied it.** `html/common.R::translation_list()` matches `{slug}.+\.pdf`, so `shiny` also picks up `shiny-python_es.pdf` and `gt` picks up `gtsummary_vi.pdf`. Both mistakes are now in the new site's front matter (`shiny/_index.md`, `gt/_index.md`).
-4. **The new site is missing 3 translations of Posit sheets that the old site shows:** `data-import_el.pdf`, `tidyr_es.pdf`, `plumber_es.pdf`.
-5. **`tidyeval` (and arguably `caret`) is listed as "contributed" but looks like Posit work.**
-   - `tidyeval`: the footer says "CC BY SA Posit Software, PBC", the Keynote is in `keynotes/`, and it was added by Garrett Grolemund.
-   - `caret`: by Max Kuhn (`max@rstudio.com` in the footer).
+## Decisions
 
-   See **Q2**.
-6. **Contributed page credits nobody.** `contributed-cheatsheets.qmd` is a grid of thumbnails with no author names, so all community authors below come from the PDF footers. Commit history was used only when the PDF names nobody.
-7. **Everything inside a Hugo page bundle is published.** For example, `polars/polars-cheatsheet.ai` is publicly downloadable at `/resources/cheatsheets/polars/polars-cheatsheet.ai`. Copying all old-repo source files would add about **815 MB** to the repo and to every deploy: ~468 MB English sources and ~347 MB translation sources. The largest file is `rstudio-ide.key` at 70 MB. The repo doesn't use Git LFS. See **Q6**.
-8. **Four old-site "HTML" pages are stubs.** `gt`, `great-tables`, `positron` and `shinychat` say only "Will be updated soon!", so there is no markdown to port for them. Community sheets have no HTML/markdown versions at all. See **Q8**.
+| # | Topic | Decision | How it's applied in this plan |
+|---|---|---|---|
+| D1 | Community slugs | Use the proposal | Lowercase, with `_` and spaces → `-`. Named exceptions: `datatable` → `data-table`, `regex` → `regular-expressions`, `profile_optimise_py` → `profile-optimise-python`, `SASvsRinPharma` → `sas-vs-r-in-pharma`. PDF file names inside the bundle keep their old names. Appendix B lists every new slug. |
+| D2 | Origin edge cases | All Posit | `tidyeval`, `caret`, `polars`, `ml-measure-performance` get `by: posit` and move to Appendix A. |
+| D3 | Who is an author of a Posit sheet | Everybody who worked on it | `people` = every identifiable person in the old-repo history of the sheet's PDF/Keynote/PowerPoint/Illustrator/HTML files, plus the people already on the new site. Excluded: commits in this repo that only migrated files (imports, PDF copies); old-site thumbnail commits, since those PNGs aren't migrated; handles without a clear name (D5). |
+| D4 | Legacy material | Don't include old | Skip `old/`, `data-visualization-2.1.pdf`, `rmarkdown-2.0.pdf`, the `previous … translations/` folders, the `data-wrangling` translations (their English sheet only exists in `old/`), and `0-template`. See Appendix D. |
+| D5 | Community credits | People only, not organisations. If unclear, don't use | Org-only credits are dropped: ThinkR, NIMBLE Development Team, ranalytics.vn, and so on. A commit author is used as the fallback only when they added the file themselves; a Posit maintainer bulk-uploading doesn't count. Dropped as unclear: credits only implied by a URL (`imputeTS`), the typo'd `mosaic` name, translators marked "?" or with only a GitHub first name or handle (`David`/`davidrsch`, `Violeta R`, `MikeJohnPage`, `Carter`), and guessed translators (Evgeni Chasnovski, Harry Zhu). Applied to Posit sheets too. |
+| D6 | Source files | Git LFS | `.gitattributes` tracks `*.key`, `*.pptx`, `*.ai` under `content/resources/cheatsheets/`. CI checkout gets `lfs: true`. See [Source files](#source-files). |
+| D7 | Translators | Kept separate; shown only on the cheat sheet page | Translators go in `translations[].people` only. They're **not** in the page-level `people`, so they appear in no byline, card, search index or `/people/` page. |
+| D8 | Missing markdown | Short summary when there's no markdown or text | Port `html/<slug>.qmd` where it has real content. Otherwise write a short summary (a few sentences plus the main topics, taken from the PDF). |
+| D9 | PDF compression | Compress; tool is my choice | A new `scripts/compress-cheatsheet-pdf.py` (uv, `pikepdf` + Pillow). It downsamples images above 300 ppi, re-packs losslessly, and keeps tags. **Not Ghostscript**, because it strips tags. See [PDFs](#pdfs). |
+| D10 | Badge on the default selection | Show "1" | Initialize the badge from the defaults. |
+| D11 | Community sheets elsewhere | Appear everywhere | No special handling. The By filter exists only on the cheat sheet overview. |
+| D12 | People pages | Bare taxonomy pages are fine | No new profiles are needed. |
+| D13 | `software` for community sheets | Add entries, using only existing `content/software/` slugs | Proposed values are in Appendix B. Most community sheets have none. |
+| D14 | Old site after migration | It will be archived; out of scope | No redirect or short-link work in this plan. |
+| D15 | Translation labels | Proposed labels are OK | `Chinese (Simplified)`, `Chinese (Traditional)`, `Portuguese (Brazil)`, `Portuguese`. |
+| D16 | Outdated translations | Show edition and date | Each translation entry has `edition` and `updated`, shown on its chip. Values are in Appendix C. |
+| D17 | Unlisted `ml-measure-performance` | Out of scope | Treated as a normal Posit sheet. |
 
 ---
 
@@ -80,61 +88,53 @@ No Posit sheet on the new site has its source files (Keynote/PowerPoint) yet. No
 
 | What | Where |
 |---|---|
-| English PDFs (Posit + community) | repo root, `<slug>.pdf` (98 PDFs, incl. `0-template.pdf` and two legacy copies) |
-| Thumbnails | `pngs/<slug>.png` (one image per sheet; `vivainsights_r` also has `_p1`/`_p2`) |
-| Posit index page | `index.qmd`: a Quarto listing of `html/*.qmd` (29 entries, hard-coded order) |
-| Accessible HTML versions | `html/<slug>.qmd`, using `html/common.R` helpers (`use_cheatsheet_logo()`, `pdf_preview_link()`, `translation_list()`); images in `html/images/` |
-| Community page | `contributed-cheatsheets.qmd`: a 3-column grid of `[![name](pngs/x.png)](x.pdf)` links, no authors |
-| Translations page | `translations.qmd`: R chunk that lists `translations/<language>/*.pdf` (top level only) |
+| English PDFs (Posit + community) | repo root, `<slug>.pdf` |
+| Thumbnails | `pngs/<slug>.png` (not used by the new site) |
+| Posit index page | `index.qmd`: a Quarto listing of `html/*.qmd` (29 entries) |
+| Accessible HTML versions | `html/<slug>.qmd` with `html/common.R` helpers; images in `html/images/` |
+| Community page | `contributed-cheatsheets.qmd`: a thumbnail grid with no author names |
+| Translations page | `translations.qmd`: lists `translations/<language>/*.pdf` (top level only) |
 | Translations | `translations/<language-name>/<slug>_<iso>[_<region>].pdf`, often with `.pptx`/`.key` next to them |
-| Source files | `keynotes/*.key`, `powerpoints/*.pptx`, `illustrator/*.ai`, `inkscape/*.svg`, `latex/<slug>/` (`.tex`/`.Rnw`), `google-slides/*.md` (links to Google Slides) |
-| Archive | `old/` (`pdfs/`, `pngs/`, `power-point-exports/`, `*.key`) |
-| Authorship | **Nowhere in metadata.** Only in PDF footers ("CC BY SA <name> • <email> • …") and git history. Posit sheets all say "CC BY SA Posit Software, PBC". |
-
-Origin is decided only by which page links to the sheet. Posit sheets are on `index.qmd`; community sheets are on `contributed-cheatsheets.qmd`.
+| Source files | `keynotes/*.key`, `powerpoints/*.pptx`, `illustrator/*.ai`, `inkscape/*.svg`, `latex/<slug>/` (`.tex`/`.Rnw`), `google-slides/*.md` (links) |
+| Authorship | No metadata anywhere. It's only in PDF footers and git history. |
 
 ### New site (Hugo, this repo)
 
-Each cheat sheet is a **branch bundle**, `content/resources/cheatsheets/<slug>/_index.md`, with its PDF, `page-N.png` thumbnails, translation PDFs, and any images in the same directory. Front matter (from `data-import`, the richest example):
+Each cheat sheet is a **branch bundle**, `content/resources/cheatsheets/<slug>/_index.md`. Its PDF, `page-N.png` thumbnails, translation PDFs and images sit in the same directory. Current front matter:
 
 ```yaml
 title: Importing data with the tidyverse
-image: page-1.png              # card image; can be a hex/logo (shiny.svg, team.png, hex-polars.svg)
-color: '#cd792c'               # optional card background (polars, posit-team)
-resource_type: cheatsheet      # selects layouts/resources/term.html cheat sheet branch + overview listing
+image: page-1.png              # card image; can be a logo (shiny.svg, team.png, hex-polars.svg)
+color: '#cd792c'               # optional card background
+resource_type: cheatsheet
 date: '2026-02-25'
 description: Learn about readr, readxl, haven, and googlesheets4.
-download_url: data-import.pdf  # relative to the bundle
-people:                        # `people` taxonomy (config/_default/hugo.toml), byline via partials/block/author.html
-- Hadley Wickham
-- Mine Çetinkaya-Rundel
-thumbnails: [page-1.png, page-2.png]   # generated by scripts/create-cheatsheet-thumbnails.py
+download_url: data-import.pdf
+people: [Hadley Wickham, Mine Çetinkaya-Rundel]   # `people` taxonomy → byline + /people/<slug>/
+thumbnails: [page-1.png, page-2.png]
 software: [readr, readxl, haven, googlesheets4]   # folder names in content/software/
-languages: [R]                 # drives the Languages filter
-translations:                  # list of single-key maps {Language label: file}
+languages: [R]                                    # drives the Languages filter
+translations:                                     # list of single-key maps {Label: file}
 - Bengali: data-import_bn.pdf
-- Spanish: data-import_es.pdf
-# source_url: …                # supported by the template ("Source Code" button) but unused
+# source_url: …   # supported by the template ("Source Code" button) but unused
 ```
 
-The markdown body is the accessible text version, ported from `html/<slug>.qmd` with ```` ```{r} ```` changed to ```` ```r ````. Code isn't executed and outputs aren't included. Some Quarto chunk options leaked through (e.g. `#| include: false` in `data-import`; 43 `#|` lines across the cheat sheets).
-
-How things are rendered:
-
-- **Detail page:** `layouts/resources/term.html` (cheat sheet branch, ~line 245). It renders the thumbnails (lightbox, opens PDF page), a "Download PDF" button, an optional "Source Code" button (`source_url`), and "Available Translations" chips (`range $lang, $file := .`). A TOC is shown automatically.
-- **Overview page:** `content/resources/cheatsheets.md` uses `layout: resource-type` with `resource_type_filter: cheatsheet` and contains a "Cheatsheets are being migrated" callout. Rendering goes through `layouts/resources/resource-type.html`:
-  - It lists all `/resources` pages with `Params.resource_type == cheatsheet`, sorted by date.
-  - It renders cards server-side with `partials/item.html`.
-  - It emits `item-index.json` via `layouts/resources/resource-type.itemindex.json` → `partials/item-index-entry.html`.
-- **Filters:** `assets/js/search-filter-sort.js`. Config comes from `data/filters.yaml` → `cheatsheet:` (sort by date/title; filters `topics` and `languages`, with values `Python`, `R`, `Other`).
-  - `Other` uses the `other:` exclusion list, so it matches items whose languages are missing or not in [Python, R].
-  - Within a dropdown, values are OR'ed; across dropdowns, AND'ed. An empty selection means "no filter".
-  - State is synced to the URL (`?languages=R,Python`).
-  - The `topics` dropdown only appears if some cheat sheet has topics. None do today.
+- **Markdown body:** the accessible text version, ported from `html/<slug>.qmd` with ```` ```{r} ```` changed to ```` ```r ````. Code isn't run and outputs aren't included. Some `#|` chunk options leaked through (43 lines).
+- **Detail page:** `layouts/resources/term.html`, in the cheat sheet branch at about line 245. It renders the thumbnail lightbox, "Download PDF", the optional "Source Code" button (`source_url`), and the "Available Translations" chips.
+- **Overview page:** `content/resources/cheatsheets.md` uses `layouts/resources/resource-type.html`. It renders cards with `partials/item.html` and emits `item-index.json` via `partials/item-index-entry.html`.
+- **Filters:** handled by `assets/js/search-filter-sort.js`, configured in `data/filters.yaml` under `cheatsheet:`.
+  - Values within one dropdown are OR'ed; separate dropdowns are AND'ed.
+  - An empty selection means "no filter".
+  - The selection is synced to the URL.
+  - The `Other` option uses an exclusion list.
 - **Import tooling:**
-  - `scripts/import-cheatsheets.py` scrapes `rstudio.github.io/cheatsheets/html/<slug>.html`, downloads the PDF and translations, and writes front matter. It has hard-coded slug→software/language maps and generated descriptions ("Quick reference guide for …").
-  - `scripts/create-cheatsheet-thumbnails.py --pdf <path-or-slug>` (also `just create-cheatsheet-thumbnails`) renders every page at 150 dpi with `pdf2image`. It resizes them to 600 px wide, saves them as `page-N.png` next to the PDF, and rewrites `thumbnails:` in `_index.md`. The old site's `pngs/*.png` aren't used. For caveats, see Phase 1.10.
-- **People:** any name in `people:` gets a taxonomy term page at `/people/<slug>/`. A profile in `content/people/<firstname-lastname>/_index.md` is optional. 82 of the 147 names used site-wide today have no profile, so profile-less people are normal.
+  - `scripts/import-cheatsheets.py` scrapes the old HTML pages.
+  - `scripts/create-cheatsheet-thumbnails.py --pdf <path-or-slug>` (also `just create-cheatsheet-thumbnails`) renders every page at 150 dpi with `pdf2image`. It resizes them to 600 px wide, saves `page-N.png` next to the PDF, and rewrites `thumbnails:` in `_index.md`. Caveats are listed under Phase 1.10.
+- **People:** any name in `people:` gets a taxonomy page at `/people/<slug>/`. A profile in `content/people/<firstname-lastname>/` is optional (D12).
+- **Build and deploy:** GitHub Actions builds the site and deploys it to Netlify.
+  - The build is the reusable `.github/workflows/build-deploy.yml`, used by `deploy-production.yml` (daily cron) and `deploy-preview.yml`.
+  - `netlify.toml` has `ignore = "exit 0"`, so Netlify doesn't build anything itself.
+  - All files in a bundle are published, so source files become downloadable.
 
 ---
 
@@ -143,18 +143,16 @@ How things are rendered:
 ### Front matter
 
 ```yaml
-by: posit        # every Posit cheat sheet MUST have this
-by: community    # community cheat sheets (recommended to be explicit)
-# no `by` field   → treated as community
+by: posit        # required on every Posit cheat sheet
+by: community    # community sheets (set explicitly when migrating)
+# no `by` field  → treated as community
 ```
 
-- `by` is a plain page param, not a taxonomy. It only has two values, and a taxonomy would create `/by/posit/` term pages we don't want.
-- Values are lowercase in front matter. The UI shows **Posit** and **Community**.
-- Add a build-time check, either in `scripts/` or as a `warnf` in the template. It should fail or warn if a cheat sheet has a `by` value other than `posit`/`community`, or if a sheet whose PDF footer says "Posit Software, PBC" lacks `by: posit`. This enforces "every Posit cheat sheet must have `by: posit`".
+`by` is a plain page param, not a taxonomy. The validation script (Phase 1.9) fails if `by` has any other value. It also flags a sheet without `by: posit` whose PDF footer says "Posit Software, PBC".
 
-### Item index
+### Item index (`layouts/partials/item-index-entry.html`)
 
-In `layouts/partials/item-index-entry.html`, add a normalized `by` key for cheat sheets only. Blog posts, videos, and other types shouldn't suddenly become "Community" on mixed listings:
+Add the key for cheat sheets only, so mixed listings (topics, tags, people) aren't affected:
 
 ```go-html-template
 {{ if eq $page.Params.resource_type "cheatsheet" }}
@@ -163,116 +161,80 @@ In `layouts/partials/item-index-entry.html`, add a normalized `by` key for cheat
 {{ end }}
 ```
 
-The default happens here, so "no `by` = community" is guaranteed in one place. The JS just matches strings, as it does for `languages`.
-
 ### Filter config (`data/filters.yaml` → `cheatsheet.filters`)
 
 ```yaml
     - key: by
       label: By
       values: [Posit, Community]
-      default: [Posit]          # NEW option: pre-selected values
+      default: [Posit]          # new option: pre-selected values
     - key: topics
-      label: Topics
+      …
     - key: languages
       …
 ```
 
-"By" goes first, so it sits next to the search box. `filter-controls.html` already renders any filter with `values` as a multi-select dropdown (`role="listbox" aria-multiselectable="true"`). No template change is needed for the dropdown itself.
+`filter-controls.html` already renders this as a multi-select dropdown, so no template change is needed.
 
-### JavaScript changes (`assets/js/search-filter-sort.js`)
+### JavaScript (`assets/js/search-filter-sort.js`)
 
-The component has no notion of a pre-selected default today. An empty set means "show all". Changes:
-
-1. **Defaults.** In the constructor, store `defaults: new Set(f.default || [])` in `_filterCfgMap[key]`, and initialize `this.state.filters[key]` from it instead of `new Set()`.
-2. **URL round-trip.**
+1. **Defaults:** read `f.default` into `_filterCfgMap[key].defaults` and initialize `state.filters[key]` from it.
+2. **URL:**
    - `_updateURL()` writes `?by=` only when the selection differs from the default.
-   - Deselecting everything must survive a reload, so an empty selection is written as `?by=` (key with an empty value). `_readURL()` treats a present-but-empty param as "explicitly empty", which shows everything, the same as selecting both.
-   - Today `_readURL()` does `.split(',').filter(Boolean)` and only acts on `params.has(key)`. That still works if we keep the `has()` check and allow an empty Set.
-   - A missing param means "use default".
-3. **Reset.** `reset()` restores defaults instead of clearing to an empty set.
-4. **"Active filters".** `_hasActiveFilters()` compares each set to its default, so the default view doesn't count as filtered. This affects the reset button and source-announcement logic.
-5. **Badge and checkmarks.** On init, call `_updateBadge('by')` and `_updateFilterAria('by')` so the "Posit" option shows as checked and the badge shows "1" on first paint. See **Q10** on whether the badge should show for a default.
-6. **Matching.** No change needed: `_matchesFilters()` already does `values.includes(active)`.
+   - An explicitly empty selection is written as `?by=`, which shows all.
+   - `_readURL()` treats a missing param as "use default" and an empty param as an explicit empty set.
+3. **Reset:** `reset()` restores the defaults.
+4. **Active filters:** `_hasActiveFilters()` compares each set with its default.
+5. **Badge:** call `_updateBadge('by')` and `_updateFilterAria('by')` on init. Per D10, the badge shows **"1"** in the default state.
+6. **Matching:** no change; `_matchesFilters()` already does `values.includes(active)`.
 
-### Avoiding a flash of community cards
+### No flash of community cards
 
-Cards are rendered server-side, and the filter applies only after `item-index.json` is fetched. Without care, community cards would show briefly, then disappear. Options:
+Add `data-by` to the card wrapper in `resource-type.html`. A CSS rule hides `[data-by="community"]` cards only while the filter is initializing, under a class on the container that the JS removes when it's ready. Without JS, everything stays visible.
 
-- **Recommended:** in `resource-type.html`, pass `by` to the card wrapper (`data-by="community"`). Hide those cards with a `.js-filter-pending [data-by="community"] { display:none }` rule that is active only while JS initializes. The filter bar already uses an `invisible` → visible handoff, so the hook exists. Without JS, users still see everything.
-- Alternative: sort Posit before Community server-side, so any flash happens below the fold.
+### Elsewhere (D11)
+
+Community sheets appear on topic/tag/software/people pages, in feeds, `llms.txt` and search, exactly like Posit sheets. No changes are needed there.
 
 ### Overview page copy
 
-When the migration is done, replace the "Cheatsheets are being migrated" callout in `content/resources/cheatsheets.md`. Add a line explaining the By filter and how to contribute (link to `CONTRIBUTING.md`).
-
-### Other listings
-
-Cheat sheets also show up on topic/tag/software/people term pages, the Atom feed, `llms.txt`, and Pagefind search. Those pages don't get the By filter, so community sheets will appear there unfiltered. See **Q11**.
+Replace the "Cheatsheets are being migrated" callout in `content/resources/cheatsheets.md` with a short explanation of the By filter and a link to `CONTRIBUTING.md`.
 
 ---
 
-## Design: people, translations, source files
+## Design: people, translations, source files, PDFs
 
-### `people` (authors and translators)
+### `people` (authors only)
 
-- **Posit sheets:** authors come from the old repo's commit history (Appendix A). For sheets already on the new site, keep the existing `people` values; they came from this repo's history and the people involved. Merge in the old-repo authors after review (**Q3**).
-- **Community sheets:** authors come from the PDF footer first, then commit history (Appendix B). Org-only credits ("ThinkR", "NIMBLE Development Team", "Sarid Research Institute", "the authors of the DRomics package", "ranalytics.vn") need a decision (**Q5**).
-- **Translators:** they go into the cheat sheet's `people` list *and* into the per-translation entry (below), so each translator's `/people/<name>/` page lists the sheet. To keep the byline honest, `partials/block/author.html` should **exclude translator-only names from the byline** on cheat sheet pages. Translators are shown on the translation chips instead. See **Q7**.
-- **Name normalization:** use one spelling per person, matching existing profiles where there is one:
-
-  | Old spelling | New spelling |
-  |---|---|
-  | `Richard Iannone` | `Rich Iannone` (existing profile title) |
-  | `Isabella Velasquez` | `Isabella Velásquez` |
-  | `mine-cetinkaya-rundel`, `Mine Cetinkaya-Rundel` | `Mine Çetinkaya-Rundel` |
-  | `Alex Coppock` | `Alexander Coppock` |
-  | `Przemyslaw` | `Przemysław Biecek` |
-  | `Christophe REGOUBY` | `Christophe Regouby` |
-  | `Erik Petrovsky` | `Erik Petrovski` (GitHub name and pt-BR footer) |
-  | `Michael maviolette` | probably `Michael Laviolette` (typo in the mosaic footer, **Q5**) |
-
-- **Translator names with native scripts:** use the Latin-script name the translator gave in the PDF (e.g. "Kwangchun Lee" for 이광춘). Keep the native-script name in a comment if wanted.
-
-**New people profiles.** None are *required*, because the taxonomy creates bare term pages. These Posit people will be referenced but have **no profile** today:
-
-- Garrett Grolemund
-- Averi Perny
-- Andy Teucher (only if HTML-version authors are credited, **Q3**)
-- Ryan Johnson
-- Andrie de Vries (already used on the site without a profile)
-- Gordon Shotwell
-
-Existing profiles that will be used: Mine Çetinkaya-Rundel, Edgar Ruiz, Rich Iannone, Charlotte Wickham, Kevin Ushey, Carson Sievert, Greg Swinehart, Sara Altman, Tomasz Kalinowski, James Blair, Hadley Wickham, Jeroen Janssens, Hassan Kibirige, Thijs Nieuwdorp, Max Kuhn, Lionel Henry, Isabella Velásquez.
-
-About 90 community authors and about 50 translators would get profile-less term pages. See **Q12** on whether that is wanted, and whether profiles should be created for any of them.
+- **Posit sheets (D3):** everybody who worked on the sheet. The proposed lists are in Appendix A. Name variants are merged by commit email: `mine-cetinkaya-rundel`, `Mine Cetinkaya-Rundel` → `Mine Çetinkaya-Rundel`; `Garrett` → `Garrett Grolemund`; `averiperny`, `Averi P` → `Averi Perny`; `Carson` → `Carson Sievert`; `gregswinehart` → `Greg Swinehart`; `skaltman` → `Sara Altman`; `ryjohnson09` → `Ryan Johnson`; `ryanzomorrodi` → `Ryan Zomorrodi`; `fbriody` → `Frank Briody`.
+- **Spellings match existing profiles:** `Rich Iannone` (not Richard) and `Isabella Velásquez`.
+- **Community sheets (D5):** the people named in the PDF footer. A commit author is the fallback only when the PDF names no person and that commit author added the file themselves. Organisations and unclear credits are left out, so `people` is empty for `golem`, `nimble`, `imputeTS` and `mosaic`.
+- **Spellings for community authors:** `Alexander Coppock` (one name for `Alex` and `Alexander`), `Przemysław Biecek`, `Christophe Regouby`, `Erik Petrovski`, `Bharath Kumar`.
+- **Profiles:** none needed (D12). Posit people who will get bare pages: Garrett Grolemund, Averi Perny, Andy Teucher, Curtis Kephart, Ryan Johnson, Andrie de Vries, Gordon Shotwell, Frank Briody, Mara Averick, Marie-Helene Burle, Wouter Overmeire, Ryan Zomorrodi, Elen Le Foll.
 
 ### Translations
 
-The new site already has a translation format, so we keep it and extend it backwards-compatibly. Today each entry is a single-key map `{Label: file}`. Proposed:
+The existing format is extended. The template keeps accepting the legacy `{Label: file}` form until every sheet is converted, then that branch is removed.
 
 ```yaml
 translations:
-- language: Spanish            # chip label
-  lang: es                     # BCP 47; used for hreflang/lang on the link
+- language: Spanish            # chip label (D15)
+  lang: es                     # BCP 47, used for hreflang/lang on the link
   file: data-import_es.pdf
-  people: [David]              # translator(s); also added to page-level `people`
-  source: data-import_es.pptx  # optional, see Source files
-  updated: 2024-06             # optional; from the translated PDF footer
+  edition: readxl 1.4.3, googlesheets4 1.1.1   # D16, from the translated PDF's footer
+  updated: 2024-05             # D16, footer date, or the date it was added to the old repo
+  people: [Jane Doe]           # D7: shown only here, not in page-level `people`
+  source: data-import_es.pptx  # optional, stored in Git LFS
 ```
 
-- The template (`term.html`, both translation blocks) should accept the old `{Label: file}` form too during the transition, so sheets can be migrated one at a time. Once all sheets are converted, drop the legacy branch.
-- Chips render as `Spanish` with a tooltip/subtitle "translated by …".
-- Labels must be unique per sheet:
-  - `Chinese (Simplified)` / `Chinese (Traditional)` for `zh_cn`/`zh`/`zh_tw`
-  - `Portuguese (Brazil)` for `pt_br` and `Portuguese` for `pt`
-- **Location:** keep translation files in the English sheet's bundle (`<slug>/<slug>_<iso>.pdf`), as today. Keep the old file names, so URLs match the old repo's names.
-- **Translations of sheets that don't exist in English on the new site** (`data-wrangling`, and translations of community sheets): they go into the bundle of the sheet they translate, so a community sheet's bundle contains its translations. Spanish-only originals (`introduccion-a-r`, `estadistica-descriptiva-con-R`) get their own bundle, flagged in **Q4**.
-- **Thumbnails** for translations aren't needed. The lightbox uses the English PDF.
+- **Chip:** shows `Spanish`. The edition and date go next to or under it, e.g. "readxl 1.4.3 · 2024-05". The translators go in a tooltip or second line ("Translated by …").
+- **Missing data:** if `updated` comes from the "added" fallback, show it as "added 2018-05". If there's no edition or date, show the label only.
+- **People:** translators aren't added to the `people` taxonomy (D7), so `block/author.html` needs no change.
+- **Files:** translations stay in the English sheet's bundle with their old file names. Community translations go into the community sheet's bundle.
 
 ### Source files
 
-Copy source files into the cheat sheet's bundle with their original names: `<slug>.key`, `<slug>.pptx`, `<slug>.ai`, `.svg`, or a `source/` subfolder for multi-file LaTeX. Add a front matter list:
+Copy them into the bundle with their original names and list them in front matter:
 
 ```yaml
 source_files:
@@ -280,235 +242,205 @@ source_files:
   format: Keynote
 - file: data-import.pptx
   format: PowerPoint
+- url: https://docs.google.com/presentation/d/…   # rgee, sparklyr
+  format: Google Slides
 ```
 
-The template renders one "Source (Keynote)" style button per entry, next to "Download PDF". This replaces the unused `source_url` param. Google Slides sources (`rgee`, `sparklyr`) are just URLs: `source_files: [{url: https://docs.google.com/…, format: Google Slides}]`.
+`term.html` renders one button per entry, e.g. "Source (Keynote)", next to "Download PDF". This replaces the unused `source_url` param. Multi-file LaTeX sources (`base-r`, `base-r_ko`, `collapse`) go into a `source/` subfolder.
 
-Because bundle files are published as-is, this decision mainly comes down to size and hosting (**Q6**).
+**Git LFS (D6):**
+
+- **Tracking:** add a `.gitattributes`:
+
+  ```gitattributes
+  content/resources/cheatsheets/**/*.key  filter=lfs diff=lfs merge=lfs -text
+  content/resources/cheatsheets/**/*.pptx filter=lfs diff=lfs merge=lfs -text
+  content/resources/cheatsheets/**/*.ai   filter=lfs diff=lfs merge=lfs -text
+  ```
+
+  SVG, `.tex` and `.Rnw` sources are small text files and stay in plain git. PDFs and PNGs stay in plain git too: they're compressed and every build needs them.
+- **Existing file:** move `polars/polars-cheatsheet.ai` to LFS with `git rm --cached` and re-add it. History isn't rewritten.
+- **CI:** add `lfs: true` to the `actions/checkout` step in `build-deploy.yml`. Without it, Hugo publishes LFS pointer files instead of the sources. The `preview-links` job in `deploy-preview.yml` doesn't need it.
+- **Bandwidth:** every build would download about 815 MB from LFS, and builds run daily plus on every PR. To avoid that, cache `.git/lfs` with `actions/cache`, keyed on a hash of `git lfs ls-files --long`.
+- **Contributors:** document `git lfs install` in `README.md`/`CONTRIBUTING.md`. Git LFS isn't installed on the machine this plan was written on.
+- **Quota:** confirm the `posit-dev` org's GitHub LFS storage and bandwidth before Phase 2.
+
+### PDFs
+
+**Compression tool (D9): `scripts/compress-cheatsheet-pdf.py`.** It's a uv script built on `pikepdf` and Pillow, using poppler's `pdfimages -list` to get each image's effective ppi.
+
+What it does:
+
+1. Downsamples raster images above 300 ppi to 300 ppi. Each soft mask (alpha channel) is downsampled along with its image, and ICC colour spaces are kept.
+2. Re-encodes images that were JPEG as JPEG (quality ≈ 85) and everything else losslessly. Re-encoding JPEGs losslessly makes screenshot-heavy files larger; the prototype grew `positron`.
+3. Saves with object streams and recompressed Flate streams. The structure tree and tags are left untouched.
+4. Keeps the result only if it's smaller. It then verifies:
+   - the page count is the same
+   - the `pdftotext` word count is the same
+   - the `Tagged` status is the same
+   - the rendered pages differ from the original by less than 2% RMSE
+
+   If any check fails, the original is kept.
+
+Prototype results (tested on old-repo originals; JPEG handling not yet added):
+
+| PDF | Original | pikepdf prototype | Ghostscript `/printer` | Ghostscript `/ebook` |
+|---|---|---|---|---|
+| ml-tidymodels | 16.0 MB | **0.95 MB**, tagged | 0.57 MB, **untagged** | 0.25 MB, untagged, soft |
+| keras | 1.14 MB | **0.45 MB**, tagged | 0.26 MB, untagged | — |
+| shinychat | 1.91 MB | **1.22 MB**, tagged | 2.00 MB (larger) | — |
+| data-visualization | 1.06 MB | **0.88 MB**, tagged | 0.95 MB, untagged | 0.41 MB, untagged |
+| rstudio-ide | 0.73 MB | **0.59 MB**, tagged | 0.45 MB, untagged | 0.38 MB, untagged |
+
+Text layers came through identical in every case. `ml-tidymodels` looked the same as the original on a visual check (≈1% RMSE).
+
+Thumbnails are made from the compressed PDF, so run the thumbnail script after the compression script.
 
 ---
 
 ## Migration plan and to-do list
 
-The phases are ordered so each one can ship on its own. Every step after Phase 1 is per-cheat-sheet and independent, which keeps PRs small.
+Each phase can ship on its own. After Phase 1, the work is per cheat sheet and independent, so PRs stay small.
 
-### Phase 0: Decisions (blocking)
+### Phase 1: Site groundwork and tooling
 
-- [ ] Resolve the [open questions](#open-questions), at least Q1–Q8.
-- [ ] Freeze an old-repo commit to migrate from (record the SHA in each PR). If the old repo keeps getting updates (it got PRs in Aug 2026), plan a final re-sync, Phase 6.
-
-### Phase 1: Site groundwork (no cheat sheet content changes)
-
-- [ ] 1.1 Add `by: posit` to all 30 existing cheat sheet `_index.md` files (all of them are Posit; see Q2 for `polars`).
-- [ ] 1.2 `partials/item-index-entry.html`: emit normalized `by` for cheat sheets.
+- [ ] 1.1 Add `by: posit` to all 30 existing cheat sheets.
+- [ ] 1.2 `partials/item-index-entry.html`: emit `by` for cheat sheets.
 - [ ] 1.3 `data/filters.yaml`: add the `by` filter with `default: [Posit]`.
-- [ ] 1.4 `search-filter-sort.js`: add default-selection support (defaults, URL round-trip incl. explicit empty, reset, `_hasActiveFilters`, badge/aria init).
-- [ ] 1.5 `resource-type.html`/`item.html`: add a `data-by` attribute plus the pre-JS hide rule to avoid the flash.
-- [ ] 1.6 `term.html`: support the extended translation entries (`language`/`lang`/`file`/`people`/`source`), keeping the legacy map form; show translators on chips.
+- [ ] 1.4 `search-filter-sort.js`: support default selections (defaults, URL round-trip including explicit empty, reset, `_hasActiveFilters`, badge "1", aria).
+- [ ] 1.5 `resource-type.html`/`item.html`: add `data-by` and the hide-while-initializing rule.
+- [ ] 1.6 `term.html`: render extended translation entries (label, edition · date, translators on the cheat sheet page only), keeping the legacy form.
 - [ ] 1.7 `term.html`: render `source_files` buttons.
-- [ ] 1.8 `block/author.html`: exclude translator-only people from the cheat sheet byline (if Q7 = yes).
-- [ ] 1.9 Add a validation script (e.g. `scripts/validate-cheatsheets.py`, `uv run`) that checks:
-  - `by` value
-  - files referenced in `download_url`/`thumbnails`/`translations`/`source_files` exist
+- [ ] 1.8 Git LFS: add `.gitattributes`, `lfs: true` and the LFS cache in `build-deploy.yml`, and a contributor note. Move `polars-cheatsheet.ai` to LFS. Confirm the org's LFS quota.
+- [ ] 1.9 `scripts/validate-cheatsheets.py` (uv). It checks:
+  - the `by` value
+  - that referenced files exist (`download_url`, `thumbnails`, `translations[].file`/`source`, `source_files`)
   - unique translation labels
-  - `languages` present
+  - `languages` is present
   - `software` values exist in `content/software/`
-- [ ] 1.10 Extend `scripts/import-cheatsheets.py`, or write a new `migrate-cheatsheet.py`, to work from a **local clone** of `rstudio/cheatsheets` instead of scraping HTML. For one slug it should:
-  - copy the English PDF, translations, and sources
-  - write or merge front matter (`by`, `people`, `translations` in the new format, `source_files`)
-  - convert `html/<slug>.qmd` to markdown (```` ```{r} ```` → ```` ```r ````, strip `#|` lines, rewrite `images/` paths and copy the referenced images)
-  - run `create-cheatsheet-thumbnails.py`
+  - `.key`/`.pptx`/`.ai` files are LFS pointers in git
+  - PDFs that were tagged in the old repo are still tagged
+- [ ] 1.10 `scripts/compress-cheatsheet-pdf.py` (D9), including JPEG handling.
+- [ ] 1.11 A migration script (extend `scripts/import-cheatsheets.py` or add `migrate-cheatsheet.py`) that works from a local clone of `rstudio/cheatsheets`. For one slug it:
+  1. copies the English PDF, translations and sources
+  2. compresses the PDFs
+  3. writes or merges front matter (`by`, `people`, `translations` with `edition`/`updated`/`people`, `source_files`, `software`)
+  4. converts `html/<slug>.qmd` to markdown: ```` ```{r} ```` → ```` ```r ````, strip `#|` lines, rewrite `images/` paths and copy the images
+  5. runs the thumbnail script
 
-  Fix the slug-prefix translation bug (match `^{slug}_[a-z]{2}(_[a-z]{2})?\.pdf$`).
-
-  Things to handle around `scripts/create-cheatsheet-thumbnails.py`:
-  - **Multiple PDFs in one directory.** Given a slug, the script uses `<slug>/<slug>.pdf` and otherwise falls back to the only PDF in the directory. A bundle that has translation PDFs but no `<slug>.pdf` makes it exit with "Multiple PDFs". That happens for PDFs whose name differs from the slug, like `Machine Learning Modelling in R.pdf` or `polars-cheatsheet.pdf`. Always pass the full PDF path with `--pdf`.
-  - **Front matter is rewritten.** The script loads the YAML and writes it back out with `yaml.dump`, so comments are lost and quoting and line wrapping change (key order is kept). Run it before writing the final front matter, or have the migration script set `thumbnails` itself and call only the rendering part.
-  - **Stale thumbnails.** Extra `page-N.png` files aren't deleted when a refreshed PDF has fewer pages. Remove `page-*.png` before regenerating.
-  - **`image:` isn't set.** The script only sets `thumbnails`. The migration script must set `image: page-1.png` itself, unless a logo or hex image is used.
-  - **English PDF only.** Thumbnails are made for one PDF, so translations get none. That's fine with the current template.
-  - **Dependencies.** `pdf2image` needs poppler (`pdftoppm`). Pages are rendered at 150 dpi and resized to 600 px wide, which matches the existing 600 × 463 thumbnails.
-- [ ] 1.11 Run `yarn build-tailwind` if new Tailwind classes are introduced. Check the overview page:
-  - default = Posit only
-  - toggling Community shows all
+  It matches translations with `^{slug}_[a-z]{2}(_[a-z]{2})?\.pdf$`, which fixes the old prefix bug. Things to handle around `create-cheatsheet-thumbnails.py`:
+  - **Multiple PDFs in one directory.** Given a slug, the script uses `<slug>/<slug>.pdf`, falling back to the only PDF in the directory. A bundle with translation PDFs but no `<slug>.pdf` makes it exit with "Multiple PDFs". That happens wherever the PDF name differs from the slug (`Machine Learning Modelling in R.pdf`, `polars-cheatsheet.pdf`, and most D1 renames), so always pass the full path with `--pdf`.
+  - **Front matter is rewritten.** The script round-trips the whole front matter through `yaml.dump`, losing comments and changing quoting and wrapping. Run it before writing the final front matter, or have the migration script set `thumbnails` itself and call only the rendering part.
+  - **Stale thumbnails.** Extra `page-N.png` files aren't deleted when a PDF gets shorter. Remove `page-*.png` first.
+  - **`image:` isn't set.** The migration script must set `image: page-1.png` itself, unless a logo is used.
+  - **English PDF only.** Translations get no thumbnails, which is fine with the current template.
+  - **Dependencies.** Needs poppler (`pdftoppm`); output is 150 dpi resized to 600 px wide, matching the existing 600 × 463 thumbnails.
+- [ ] 1.12 Run `yarn build-tailwind` if new classes are added. Check the overview page:
+  - Posit-only by default, with badge "1"
+  - turning on Community shows all
   - deselecting both shows all
-  - URL `?by=Community`, `?by=` and reset behave
-  - the Languages filter still combines with By correctly
+  - `?by=Community`, `?by=` and reset all behave
+  - By combines correctly with Languages
   - no flash of community cards
+  - LFS sources download from a deploy preview
 
-### Phase 2: Fix and complete the 30 existing cheat sheets
+### Phase 2: Complete the 30 existing cheat sheets
 
-For each sheet, one PR or a small batch:
+For each sheet:
 
-- [ ] Replace the PDF with the current old-repo PDF where they differ (Appendix A, "PDF" column), and regenerate thumbnails.
-- [ ] Copy the source files listed in Appendix A.
-- [ ] Port the markdown from `html/<slug>.qmd` where it's missing.
-- [ ] Convert `translations` to the new format with translators. Add missing translations and their source files.
-- [ ] Update `people` (after Q3).
-- [ ] Clean up leftover `#|` chunk options in existing markdown.
+- refresh and compress the PDF, then regenerate thumbnails
+- copy sources (LFS)
+- port the markdown, or write a summary (D8)
+- convert `translations` to the new format with translators, edition and date, then add missing translations and their sources
+- set `people` (Appendix A)
+- clean leftover `#|` lines from existing markdown
 
-Checklist (✓ = already done):
-
-| Slug | PDF refresh | Markdown | Sources to copy | Translation fixes |
+| Slug | PDF | Markdown | Sources | Translation fixes |
 |---|---|---|---|---|
-| data-import | [ ] | ✓ (clean `#|`) | [ ] key, pptx | [ ] add `el`; [ ] 5 translation sources |
-| data-transformation | [ ] | ✓ | [ ] key, pptx | [ ] 7 translation sources |
-| data-visualization | [ ] | [ ] port | [ ] key, pptx | [ ] 2 translation sources; [ ] fix `zh` label |
-| factors | [ ] | [ ] port | [ ] key, pptx | [ ] 2 translation sources |
-| great-tables | [ ] | [ ] write (old site stub, Q8) | [ ] key | — |
-| gt | [ ] | [ ] write (old site stub, Q8) | [ ] key | [ ] **remove `gtsummary_vi.pdf`** (move to `gtsummary`) |
-| keras | [ ] | [ ] port | [ ] key, pptx | [ ] 3 translation sources; [ ] `zh_cn` label |
-| lubridate | [ ] | [ ] port | [ ] key, pptx | [ ] 4 translation sources |
-| ml-create-models | ✓ same | ✓ | [ ] key | — |
-| ml-measure-performance | ✓ same | ✓ | [ ] key | — |
-| ml-preprocessing-data | ✓ same | ✓ | [ ] key | — |
-| ml-tidymodels | [ ] (same date, recompressed; Q9) | ✓ | [ ] key | — |
-| nlp-with-llms | [ ] | [ ] port | [ ] key | — |
-| package-development | [ ] | [ ] port | [ ] key, pptx | [ ] 1 translation source |
-| plotnine | ✓ same | [ ] port | [ ] ai | — |
-| plumber | [ ] | [ ] port | [ ] key, pptx | [ ] **add `es`** + source |
-| polars | ✓ | ✓ | ✓ ai | — (none exist) |
-| posit-team | [ ] (2024-09 → 2026-08) | [ ] port | [ ] pptx | — |
-| positron | [ ] | [ ] write (old site stub, Q8) | [ ] key | — |
-| purrr | [ ] | [ ] port | [ ] key, pptx | [ ] 6 translation sources |
-| quarto | [ ] (same date, differs) | [ ] port | [ ] key, pptx | [ ] 1 translation source |
-| reticulate | [ ] | [ ] port | [ ] key, pptx | [ ] 1 translation source |
-| rmarkdown | [ ] | [ ] port | [ ] key, pptx | [ ] 1 translation source |
-| rstudio-ide | [ ] | [ ] port | [ ] key (70 MB), pptx (68 MB) | [ ] 2 translation sources |
-| shiny | ✓ same | [ ] port | [ ] key, pptx | [ ] **remove `shiny-python_es.pdf`** (duplicate "Spanish"); [ ] 2 translation sources |
-| shiny-python | [ ] (same date, differs) | [ ] port | [ ] key, pptx | [ ] 1 translation source |
-| shinychat | [ ] | [ ] write (old site stub, Q8) | [ ] key | — |
-| sparklyr | [ ] | [ ] port | [ ] pptx, Google Slides link | [ ] 4 translation sources; [ ] distinct `zh_cn`/`zh_tw` labels |
-| strings | [ ] | [ ] port | [ ] key, pptx | [ ] 3 translation sources |
-| tidyr | [ ] | [ ] port | [ ] key, pptx | [ ] **add `es`**; [ ] 3 translation sources |
+| data-import | [ ] refresh | ✓ (clean `#|`) | [ ] key, pptx | [ ] add `el`; [ ] 5 sources |
+| data-transformation | [ ] refresh | ✓ | [ ] key, pptx | [ ] 7 sources |
+| data-visualization | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 2 sources |
+| factors | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 2 sources |
+| great-tables | [ ] refresh | [ ] summary | [ ] key | — |
+| gt | [ ] refresh | [ ] summary | [ ] key | [ ] **remove `gtsummary_vi.pdf`** (moves to `gtsummary`) |
+| keras | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 3 sources |
+| lubridate | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 4 sources |
+| ml-create-models | [ ] compress (same file) | ✓ | [ ] key | — |
+| ml-measure-performance | [ ] compress (same file) | ✓ | [ ] key | — |
+| ml-preprocessing-data | [ ] compress (same file) | ✓ | [ ] key | — |
+| ml-tidymodels | [ ] **replace the untagged Ghostscript copy** with the compressed original | ✓ | [ ] key (38 MB) | — |
+| nlp-with-llms | [ ] refresh | [ ] port | [ ] key | — |
+| package-development | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 1 source |
+| plotnine | [ ] compress (same file) | [ ] port | [ ] ai | — |
+| plumber | [ ] refresh | [ ] port | [ ] key, pptx | [ ] **add `es`** + source |
+| polars | [ ] re-export a tagged PDF from `polars-cheatsheet.ai` (needs Illustrator), then compress with the new script | ✓ | [ ] move `.ai` to LFS | — |
+| posit-team | [ ] refresh | [ ] port | [ ] pptx | — |
+| positron | [ ] refresh | [ ] summary | [ ] key | — |
+| purrr | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 6 sources |
+| quarto | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 1 source |
+| reticulate | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 1 source |
+| rmarkdown | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 1 source |
+| rstudio-ide | [ ] refresh | [ ] port | [ ] key (70 MB), pptx (68 MB) | [ ] 2 sources |
+| shiny | [ ] compress (same file) | [ ] port | [ ] key, pptx | [ ] **remove `shiny-python_es.pdf`**; [ ] 2 sources |
+| shiny-python | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 1 source |
+| shinychat | [ ] refresh | [ ] summary | [ ] key | — |
+| sparklyr | [ ] refresh | [ ] port | [ ] pptx + Google Slides link | [ ] 4 sources; [ ] distinct `zh_cn`/`zh_tw` labels |
+| strings | [ ] refresh | [ ] port | [ ] key, pptx | [ ] 3 sources |
+| tidyr | [ ] refresh | [ ] port | [ ] key, pptx | [ ] **add `es`**; [ ] 3 sources |
 
-Also fill gaps in existing front matter while touching these files:
+Also fill front matter gaps:
 
-- `languages` is missing on `posit-team`, `positron`, `quarto`.
-- `software` is missing on `posit-team`.
-- `nlp-with-llms` says only `Python`, but the title is "in R & Python".
-- Descriptions are auto-generated ("Quick reference guide for …").
+- add `languages` on `posit-team`, `positron`, `quarto`
+- add `R` to `nlp-with-llms` ("in R & Python")
+- replace the auto-generated descriptions ("Quick reference guide for …")
 
-### Phase 3: Migrate the remaining Posit cheat sheet
+### Phase 3: Migrate the remaining Posit cheat sheets
 
-- [ ] `renv`: PDF, thumbnails, markdown from `html/renv.qmd`, `keynotes/renv.key`, `by: posit`, people Kevin Ushey + Mine Çetinkaya-Rundel, `software: [renv]`, `languages: [R]`.
-- [ ] `tidyeval`, `caret`: only if Q2 says they are Posit (then `by: posit`); otherwise they move with Phase 4.
+- [ ] `renv`: markdown from `html/renv.qmd`, `keynotes/renv.key`, `software: [renv]`, `languages: [R]`.
+- [ ] `tidyeval`: summary (D8); key + pptx; `software: [rlang]`; `languages: [R]`; 1 translation (es).
+- [ ] `caret`: summary; key + pptx; no `software` slug exists; `languages: [R]`; 5 translations (es, fr, ko, pt, tr).
 
 ### Phase 4: Migrate community cheat sheets
 
-Per sheet (Appendix B):
+For each sheet (Appendix B):
 
-- create `<new-slug>/` (slug rules: **Q1**)
-- copy the PDF and run the thumbnail script
-- set `by: community`, `people` (authors), `languages`, and `software` (only where a `content/software/` entry exists; otherwise omit, or decide per **Q13**)
-- write a real `description`
-- copy the sources and translations
+- create the bundle under the D1 slug and copy the PDF (old name)
+- compress the PDF and generate thumbnails
+- set `by: community`, `people`, `languages`, `software` (D13) and a real `description`
+- write the summary body (D8)
+- copy sources (LFS) and translations
 
-Markdown body: a short summary only, unless Q8 decides otherwise.
+Batches of about 10 per PR:
 
-Suggested batches (≈10 per PR):
+- [ ] 4a. With translations: `base-r` (9), `metrica` (3), `data-table` (2), `git-github` (2), `regular-expressions` (2), `syntax` (2), `gtsummary` (1, moved from `gt`), `quanteda` (1), `survminer` (1), `torch` (1)
+- [ ] 4b. With sources: `admiral`, `arrow`, `dromics`, `h2o`, `imputets`, `jfa`, `labelled`, `overviewr`, `profile-optimise-python`, `r-best-practice`, `sas-r`, `sas-vs-r-in-pharma`, `squeakr`, `srvyr`, `stata2r`, `time-series`, `vivainsights-r`, `vivainsights-py`, `quincunx` (svg), `sf` (svg), `collapse` (Rnw), `rgee` (Google Slides)
+- [ ] 4c. PDF only: `bayesplot`, `bcea`, `cartography`, `declaredesign`, `distr6`, `estimatr`, `eurostat`, `gganimate`, `golem`, `gwasrapidd`, `how-big-is-your-graph`, `leaflet`, `machine-learning-modelling-in-r`, `mapsf`, `mlr`, `mosaic`, `nardl`, `nimble`, `oscr`, `packagefinder`, `parallel-computation`, `randomizr`, `rphylopic`, `samplingstrata`, `sjmisc`, `slackr`, `teachr`, `tsbox`, `vegan`, `vtree`, `xplain`
+- [ ] 4d. Spanish originals (if R2 confirms): `introduccion-a-r`, `estadistica-descriptiva-con-r`
 
-- [ ] 4a. Sheets with translations (do these first, since they exercise the translation format): `base-r` (9 translations), `caret` (5), `metrica` (3), `datatable` (2), `git-github` (2), `regex` (2), `syntax` (2), `gtsummary` (1, moved from `gt`), `quanteda` (1), `survminer` (1), `tidyeval` (1), `torch` (1)
-- [ ] 4b. Sheets with source files: `admiral`, `arrow`, `DRomics`, `h2o`, `imputeTS`, `jfa`, `labelled`, `overviewR`, `profile_optimise_py`, `R-best-practice`, `sas-r`, `SASvsRinPharma`, `SqueakR`, `srvyr`, `stata2r`, `time-series`, `vivainsights_r`, `vivainsights_py`, `quincunx` (svg), `sf` (svg), `collapse` (Rnw), `rgee` (Google Slides)
-- [ ] 4c. PDF-only sheets: `bayesplot`, `bcea`, `cartography`, `declaredesign`, `distr6`, `estimatr`, `eurostat`, `gganimate`, `golem`, `gwasrapidd`, `how-big-is-your-graph`, `leaflet`, `Machine Learning Modelling in R`, `mapsf`, `mlr`, `mosaic`, `nardl`, `nimble`, `oSCR`, `packagefinder`, `parallel_computation`, `randomizr`, `rphylopic`, `SamplingStrata`, `sjmisc`, `slackr`, `teachR`, `tsbox`, `vegan`, `vtree`, `xplain`
+### Phase 5: Wrap-up
 
-### Phase 5: Legacy and orphaned material (per Q4)
-
-- [ ] `data-wrangling` translations (7 languages). Either attach them to a new `data-wrangling` legacy bundle with the English `old/pdfs/data-wrangling-cheatsheet.pdf`, or attach them to `data-transformation` as "older version".
-- [ ] `previous spanish translations/` (7 PDFs + keys) and `previous japanese translations/` (1 PDF).
-- [ ] `introduccion-a-r.pdf`, `estadistica-descriptiva-con-R.pdf` (Spanish originals by Rosana Ferrero).
-- [ ] `old/` archive (18 PDFs), `data-visualization-2.1.pdf`, `rmarkdown-2.0.pdf`.
-- [ ] `0-template.pdf/.key/.pptx` and the `README.md` "Tips for making a new cheatsheet". Probably belong in `CONTRIBUTING.md` plus a template download, not as a cheat sheet (Q4).
-
-### Phase 6: Cut-over
-
-- [ ] Re-sync against the latest old-repo commit (PDF refreshes, new translations).
-- [ ] Remove the "being migrated" callout and add the By-filter / contribute copy.
-- [ ] Redirects and the old site's future (**Q14**). RStudio IDE's *Help > Cheat Sheets* menu and many external links point at `rstudio.github.io/cheatsheets/<slug>.pdf` and the legacy names (that's why `data-visualization-2.1.pdf`/`rmarkdown-2.0.pdf` exist).
-- [ ] Update `rstudio/cheatsheets` `README.md`/`CONTRIBUTING.md` to point contributors at this repo, if the old repo is retired.
-- [ ] Run the validation script and a link check (`scripts/lychee-errors.py`) over `/resources/cheatsheets/`.
+- [ ] Re-sync against the latest old-repo commit before it's archived (D14): pick up new PDF updates or translations.
+- [ ] Replace the "being migrated" callout with the By-filter/contribute copy.
+- [ ] Run `scripts/validate-cheatsheets.py` and the link check (`scripts/lychee-errors.py`) over `/resources/cheatsheets/`.
 
 ---
 
-## Open questions
+## Remaining questions
 
-Each needs a human decision before (or during) implementation.
+These came up while applying the decisions. None block Phase 1.
 
-**Q1. Slugs for community sheets.** Old file names mix cases and separators: `SASvsRinPharma`, `R-best-practice`, `parallel_computation`, `profile_optimise_py`, `vivainsights_r`, `Machine Learning Modelling in R`, `regex` (whose thumbnail is `regular-expressions.png`), `datatable`.
-- Proposal: lowercase, `_`/spaces → `-`, keep the file name of the PDF as-is inside the bundle. For example `sas-vs-r-in-pharma/`, `machine-learning-modelling-in-r/`, `vivainsights-r/`, `profile-optimise-python/`, `regular-expressions/`, `data-table/`.
-- OK, or keep the old names verbatim for URL parity?
+**R1. "David" (GitHub `davidrsch`).** He's the only credited translator for 7 Spanish translations from 2024 (`data-import`, `keras`, `plumber`, `purrr`, `quarto`, `shiny-python`, `tidyr`). He also updated 8 more Spanish translations and made PowerPoint versions of many English sheets. His git name and GitHub profile give only "David", so D5 leaves him out. If someone knows his full name, he can be credited on those translations (and, under D3, on the Posit sheets whose PowerPoint versions he made).
 
-**Q2. Origin edge cases.**
-- (a) `tidyeval`: listed as contributed, but the footer says "Posit Software, PBC" and it was added by Garrett Grolemund. → `by: posit`?
-- (b) `caret`: by Max Kuhn while at RStudio (`max@rstudio.com`), with the Keynote in `keynotes/`. → Posit or community?
-- (c) `polars`: new-site-only, added by Jeroen Janssens (Posit) in #379. The footer says "Posit Software, PBC & Polars, Inc". Assumed `by: posit`; confirm.
-- (d) `ml-measure-performance` is on the new site but not on the old index. Assumed Posit (Edgar Ruiz, Posit footer).
+**R2. Spanish originals.** `introduccion-a-r.pdf` and `estadistica-descriptiva-con-R.pdf` are Spanish-only sheets by Rosana Ferrero, from 2018, built on RStudio material. They're linked on the old Translations page but aren't translations, and they aren't in `old/`. I've planned them as community sheets (Phase 4d). Should they be dropped as "old" instead?
 
-**Q3. Who counts as an author of a Posit sheet?** Commit history mixes:
-- original authors (mostly Garrett Grolemund, 2017–2019)
-- the 2021 design refresh (Averi Perny)
-- current maintainer updates (Mine Çetinkaya-Rundel)
-- bulk footer/license edits (Curtis Kephart, Averi Perny)
-- HTML-version authors (Andy Teucher)
-- PPTX conversions by the Spanish translator (`David`, 2024)
+**R3. Committer fallback for community credits.** Under D5, I used the commit author when the PDF names no person and that author added the file themselves. That covers:
+- `admiral`: Stefan Bundfuss
+- `arrow`: Mauricio Vargas
+- `dromics`: Aurélie Siberchicot (the PDF says "the authors of the DRomics package")
+- `teachr`: Adi Sarid (the PDF says "Sarid Research Institute LTD.")
+- 3 Vietnamese translations by Anh Hoang Duc (the PDF credits ranalytics.vn)
 
-Appendix A proposes "original author(s) + substantive maintainers". Bulk edits and PPTX conversions are excluded. HTML-version authors are listed separately.
-- Should Andy Teucher be credited on sheets whose markdown came from his HTML versions?
-- Should existing new-site people be kept as-is where they differ from the commit history? `data-import` has Hadley Wickham, who isn't in the old repo's history; `plotnine` has Jeroen Janssens and Hassan Kibirige, while old history shows only Mine Çetinkaya-Rundel.
-
-**Q4. What to do with legacy material** (Appendix D): `old/`, the two legacy root PDFs, `data-wrangling` translations, the `previous … translations/` folders, the two Spanish originals, and `0-template`. The brief says deprecated/outdated sheets are migrated too, but none are *marked* that way on the old site.
-- Migrate all of it, as "Archived" bundles with an `archived: true` flag and a banner?
-- Migrate only what the old site actually links to (i.e. skip `old/` and `previous …/`)?
-- Or keep the old repo as the archive?
-
-**Q5. Community credits that aren't a person, or are unclear.**
-- Org-only credits:
-  - `golem`: "ThinkR"; commit by Garrett Grolemund
-  - `nimble`: "NIMBLE Development Team"
-  - `teachR`: "Sarid Research Institute LTD."; commit by Adi Sarid
-  - `DRomics`: "the authors of the DRomics package"; commit by Aurélie Siberchicot
-  - Vietnamese translations: "ranalytics.vn"; commits by Anh Hoang Duc for 3 of them
-- Inferred credits:
-  - `imputeTS`: only the GitHub URL `SteffenMoritz/imputeTS` is in the PDF → Steffen Moritz?
-  - `packagefinder`, `xplain`: only an email/GitHub handle → Joachim Zuckarelli
-  - `admiral`, `arrow`: no credit in the PDF → committers Stefan Bundfuss, Mauricio Vargas
-  - `mosaic`: "Michael maviolette" (typo?)
-
-Use orgs as `people` entries, use the committer, or leave `people` empty?
-
-**Q6. Source files: copy them all, and where should they live?**
-- About 468 MB of English sources plus 347 MB of translation sources. The repo `.git` is already 3.4 GB, has no LFS, and every bundle file is published to Netlify. GitHub warns above 50 MB per file; `rstudio-ide.key` is 70 MB.
-- Options:
-  - (a) copy everything into bundles, as the brief says
-  - (b) use Git LFS for `*.key`/`*.pptx`/`*.ai`
-  - (c) keep sources in the bundle but exclude them from the Hugo publish (e.g. a `_source/` folder plus `build.publishResources`/cascade rules) and link to GitHub raw URLs instead
-  - (d) link to the old repo's files instead of copying
-- Recommendation: (b) or (c). Needs a decision before Phase 2.
-
-**Q7. Translators in `people`.** The brief asks to put translators in `people`. That makes them appear in the byline next to the authors. Should the byline exclude translator-only people (shown on the translation chip instead), or should everyone be shown as authors?
-
-**Q8. Markdown for sheets without an HTML version.** `gt`, `great-tables`, `positron`, and `shinychat` are stubs on the old site, and none of the 65 community sheets have a text version. Does "complete" require the markdown for these?
-- Should someone write it (for Posit sheets: from the Keynote, by the authors)?
-- Should a short summary plus the PDF be enough?
-- What about community sheets: is a short description enough?
-
-**Q9. PDF compression.** `ml-tidymodels.pdf` on the new site is a 228 KB recompressed version of the 16 MB original (same content date). The `polars` commit also notes "Compress PDF". Should all imported PDFs be recompressed, and if so with which tool/settings, or should originals be copied byte for byte?
-
-**Q10. Badge on the default.** Should the "By" dropdown show a "1" badge when it's on its default (Posit only)? It signals that filtering is on, but it differs from other filters, which show no badge by default.
-
-**Q11. Community sheets elsewhere.** Should community cheat sheets appear on topic/tag/software term pages, people pages, the Atom feed, `llms.txt`, and search like Posit sheets do, or only on the cheat sheet overview when enabled?
-
-**Q12. People pages for ~140 external contributors.** Is a bare taxonomy term page per community author/translator acceptable, or should they be listed without linking? The taxonomy doesn't support that natively, so this would need, e.g., an `external_people` field. Should we create profiles for any of them?
-
-**Q13. `software` for community sheets.** Most community packages (admiral, arrow, caret, gtsummary, golem, sf, …) have no `content/software/` entry. Should we omit `software`, add software entries, or use `tags`?
-
-**Q14. Old site after migration.** Will `rstudio.github.io/cheatsheets` stay up, be redirected, or be archived? RStudio IDE links to it, and `pos.it/cheatsheets` is printed in every Posit PDF footer ("HTML cheatsheets at pos.it/cheatsheets"). Who owns updating the `pos.it` short links? Who keeps the two repos in sync until cut-over, given the old repo still receives PRs?
-
-**Q15. Translation labels for variants.** The old site has `pt` and `pt_br`, and `zh`, `zh_cn` and `zh_tw`. `data-visualization_zh.pdf` is Simplified Chinese per its credits, even though it has no `_cn`. Are the proposed labels OK: "Portuguese (Brazil)" vs. "Portuguese", "Chinese (Simplified)"/"Chinese (Traditional)"?
-
-**Q16. Outdated translations.** Most translations are of much older editions. For example `rmarkdown_ja.pdf` is rmarkdown 1.6 (2016) and `shiny_tr.pdf` is shiny 0.12 (2016), while the English versions are 2026. Should the new site show the edition/date on the chip (`updated:`) or mark them "older version"?
-
-**Q17. The unlisted `ml-measure-performance`.** Was it intentionally left off the old index (e.g. not yet announced), or simply not added? Either way it's already live on the new site.
+I also kept credits derived from contact details printed in the PDF: Joachim Zuckarelli for `packagefinder` and `xplain`, from `joachim@zuckarelli.de` / `github.com/jsugarelli`. Drop any of these if they count as "unclear".
 
 ---
 
@@ -516,309 +448,305 @@ Use orgs as `people` entries, use the committer, or leave `people` empty?
 
 Legend:
 - **Where:** B = both sites, O = old site only, N = new site only.
-- **Status** (new site): ✗ not started · PDF · PDF+MD · ✓ complete (PDF, markdown, source files, all translations).
-- **PDF:** "same" = byte-identical to the old repo; otherwise the "Updated:" footer of the new → old file.
-- **Sources:** files in the old repo. None are in the new-site directory yet, except `polars`.
-- **Authors** are from old-repo commit history (`git log --follow` on `<slug>.pdf`, `keynotes/<slug>.key`, `powerpoints/<slug>.pptx`, `html/<slug>.qmd`), excluding bulk footer/licence edits. "New site" shows what `people` currently says.
-- **Deprecated:** none of these are marked deprecated or outdated on the old site.
+- **Status** (new site): ✗ not started · PDF · PDF+MD · ✓ complete.
+- **PDF:** "same" = byte-identical to the old repo; otherwise the "Updated" footer of new → old.
+- **`people` (D3):** every identifiable contributor, most commits first, combined with the people already on the new site (marked †). Unclear handles excluded (D5) are listed under "Notes".
+- **Sources:** the old-repo files to copy. None are in the new site yet, except `polars`.
+- **Translations:** old-site translations, with ✗ marking those missing on the new site.
 
-| Slug | Title | Where | Status | PDF (new → old) | Proposed authors (commit history) | `people` on new site | Sources in old repo | Translations old site | On new site | Notes |
-|---|---|---|---|---|---|---|---|---|---|---|
-| data-import | Data import with the tidyverse | B | PDF+MD | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel, Averi Perny | Hadley Wickham, Mine Çetinkaya-Rundel | key, pptx | bn es fa pt_br ru tr uk uz **el** | all but **el** | new title "Importing data with the tidyverse"; leftover `#|` options in markdown |
-| data-transformation | Data transformation with dplyr | B | PDF+MD | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel, Averi Perny | Mine Çetinkaya-Rundel | key, pptx | de es pt_br ru tr uk uz zh_cn | all 8 | HTML version by Andy Teucher |
-| data-visualization | Data visualization with ggplot2 | B | PDF | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel, Averi Perny | — | key, pptx | de el es fr ja nl pt tr vi zh | all 10 | legacy copy `data-visualization-2.1.pdf` in old root |
-| factors | Factors with forcats | B | PDF | 2025-08 → 2026-08 | Mine Çetinkaya-Rundel, Garrett Grolemund, Averi Perny | — | key, pptx | es ja pt_br | all 3 | 1-page sheet |
-| great-tables | Great Tables | B | PDF | 2025-07 → 2026-08 | Rich Iannone | — | key | — | — | old HTML page is a stub |
-| gt | gt | B | PDF | 2025-07 → 2026-08 | Rich Iannone | — | key | (none; `gtsummary_vi` is mismatched) | `gtsummary_vi.pdf` **wrongly attached** | old HTML page is a stub |
-| keras | Deep Learning with Keras | B | PDF | 2025-07 → 2026-07 | Andrie de Vries, Garrett Grolemund, Edgar Ruiz, Tomasz Kalinowski | — | key, pptx | es ja zh_cn | all 3 | translations are of keras 2.1 (2017) except es (2024) |
-| lubridate | Dates and times with lubridate | B | PDF | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel, Averi Perny | — | key, pptx | es pt_br ru uk vi | all 5 | |
-| ml-create-models | Create models with parsnip | B | PDF+MD | same | Edgar Ruiz | Edgar Ruiz | key | — | — | |
-| ml-measure-performance | Measure model performance with yardstick | B* | PDF+MD | same | Edgar Ruiz | Edgar Ruiz | key | — | — | *in old repo but **not listed** on old index and no `html/` page (Q17) |
-| ml-preprocessing-data | Preprocessing data with recipes | B | PDF+MD | same | Edgar Ruiz | Edgar Ruiz | key | — | — | |
-| ml-tidymodels | Machine learning with tidymodels | B | PDF+MD | 2026-07 = 2026-07 (recompressed 16 MB → 228 KB) | Edgar Ruiz | Edgar Ruiz | key (38 MB) | — | — | Q9 |
-| nlp-with-llms | Natural Language Processing using LLMs in R & Python | B | PDF | 2025-07 → 2026-07 | Edgar Ruiz | — | key | — | — | new `languages` only Python |
-| package-development | Package Development | B | PDF | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel | — | key, pptx | de es it ko nl vi | all 6 | |
-| plotnine | Data visualization with Plotnine | B | PDF | same (2025-08) | Mine Çetinkaya-Rundel (commits) | Jeroen Janssens, Hassan Kibirige | ai | — | — | Q3: commit history vs. new-site credits |
-| plumber | REST APIs with plumber | B | PDF | 2025-08 → 2026-08 | James Blair, Mine Çetinkaya-Rundel | — | key, pptx | **es** | **missing es** | |
-| polars | Python Polars: The Definitive Cheatsheet | N | ✓ | n/a | Jeroen Janssens (repo commit #379) | Jeroen Janssens, Thijs Nieuwdorp | `polars-cheatsheet.ai` (already in bundle) | — | — | origin Posit (Q2c); PDF name `polars-cheatsheet.pdf` ≠ slug |
-| posit-team | Posit Team | B | PDF | 2024-09 → 2026-08 | Ryan Johnson | — | pptx | — | — | missing `languages`, `software` |
-| positron | Positron | B | PDF | 2025-08 → 2026-08 | Mine Çetinkaya-Rundel | — | key | — | — | old HTML stub; missing `languages` |
-| purrr | Apply functions with purrr | B | PDF | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel, Averi Perny | — | key, pptx | es ko pt_br ru uk vi | all 6 | Hadley Wickham edited HTML |
-| quarto | Publish and Share with Quarto | B | PDF | 2026-06 = 2026-06 (bytes differ) | Charlotte Wickham | — | key, pptx | es | es | missing `languages` |
-| renv | Reproducible R Environments with renv | **O** | ✗ | n/a → 2026-08 | Kevin Ushey, Mine Çetinkaya-Rundel | n/a | key | — | n/a | only Posit sheet not on new site |
-| reticulate | Use Python with R with reticulate | B | PDF | 2025-07 → 2026-07 | Garrett Grolemund, Edgar Ruiz, Tomasz Kalinowski | — | key, pptx | es | es | |
-| rmarkdown | rmarkdown | B | PDF | 2025-07 → 2026-08 | Garrett Grolemund, Averi Perny, Mine Çetinkaya-Rundel | — | key, pptx | de es it ja ko nl tr vi | all 8 | legacy copy `rmarkdown-2.0.pdf` in old root |
-| rstudio-ide | RStudio IDE | B | PDF | 2025-07 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel, Averi Perny | — | key (70 MB), pptx (68 MB) | el es fr it ja pt vi | all 7 | largest sources |
-| shiny | Shiny for R | B | PDF | same (2026-06) | Garrett Grolemund, Mine Çetinkaya-Rundel, Averi Perny, Carson Sievert, Greg Swinehart | — | key, pptx | de es fr tr vi | 5 + **bogus `shiny-python_es.pdf`** | two "Spanish" chips today |
-| shiny-python | Shiny for Python | B | PDF | 2026-06 = 2026-06 (bytes differ) | Garrett Grolemund, Mine Çetinkaya-Rundel, Carson Sievert, Greg Swinehart, Gordon Shotwell | — | key, pptx | es | es | |
-| shinychat | AI chatbots with shinychat | B | PDF | 2025-07 → 2026-08 | Sara Altman, Carson Sievert | — | key | — | — | old HTML stub |
-| sparklyr | Data science in Spark with sparklyr | B | PDF | 2025-07 → 2026-08 | Garrett Grolemund, Edgar Ruiz, Mine Çetinkaya-Rundel | — | pptx, Google Slides link | de es ja zh_cn zh_tw | all 5 | both Chinese labelled "Chinese" today |
-| strings | String manipulation with stringr | B | PDF | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel, Averi Perny | — | key, pptx | es pt_br vi | all 3 | Ryan Zomorrodi contributed fixes |
-| tidyr | Data tidying with tidyr | B | PDF | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel, Averi Perny | — | key, pptx | es pt_br zh_cn | **missing es** | |
-
-Possibly Posit (Q2): `tidyeval` (Tidy evaluation with rlang, Garrett Grolemund, Posit footer, key + pptx, 1 translation) and `caret` (Max Kuhn). They're listed in Appendix B because the old site lists them as contributed.
-
-HTML-version (markdown source) authors, if credited (Q3): Andy Teucher (most `html/*.qmd`), Mine Çetinkaya-Rundel, Edgar Ruiz (ml-*, keras, reticulate, nlp-with-llms), Charlotte Wickham (quarto), Kevin Ushey (renv).
+| Slug | Title | Where | Status | PDF (new → old) | `people` (D3) | Sources | Translations | `software` | Notes |
+|---|---|---|---|---|---|---|---|---|---|
+| caret | caret Package | O | ✗ | n/a | Garrett Grolemund, Mine Çetinkaya-Rundel, Max Kuhn | key, pptx | es fr ko pt tr (all ✗) | — (no slug) | was on Contributed page (D2) |
+| data-import | Data import with the tidyverse | B | PDF+MD | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel†, Averi Perny, Andy Teucher, Curtis Kephart, Hadley Wickham† | key, pptx | bn es fa pt_br ru tr uk uz, el ✗ | readr, readxl, haven, googlesheets4 | excluded: David, Carter (inkcartrich) |
+| data-transformation | Data transformation with dplyr | B | PDF+MD | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel†, Averi Perny, Andy Teucher, Curtis Kephart | key, pptx | de es pt_br ru tr uk uz zh_cn | dplyr | excluded: David |
+| data-visualization | Data visualization with ggplot2 | B | PDF | 2025-08 → 2026-08 | Mine Çetinkaya-Rundel, Garrett Grolemund, Averi Perny, Curtis Kephart, Andy Teucher, Thomas Lin Pedersen | key, pptx | de el es fr ja nl pt tr vi zh | ggplot2 | excluded: David |
+| factors | Factors with forcats | B | PDF | 2025-08 → 2026-08 | Mine Çetinkaya-Rundel, Averi Perny, Andy Teucher, Curtis Kephart, Garrett Grolemund | key, pptx | es ja pt_br | forcats | excluded: David |
+| great-tables | Great Tables | B | PDF | 2025-07 → 2026-08 | Mine Çetinkaya-Rundel, Rich Iannone | key | — | great-tables | summary (D8) |
+| gt | gt | B | PDF | 2025-07 → 2026-08 | Mine Çetinkaya-Rundel, Rich Iannone | key | — (remove `gtsummary_vi`) | gt | summary (D8) |
+| keras | Deep Learning with Keras | B | PDF | 2025-07 → 2026-07 | Edgar Ruiz, Mine Çetinkaya-Rundel, Garrett Grolemund, Andy Teucher, Tomasz Kalinowski, Andrie de Vries | key, pptx | es ja zh_cn | keras3 | excluded: David |
+| lubridate | Dates and times with lubridate | B | PDF | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel, Andy Teucher, Averi Perny, Curtis Kephart, Mara Averick, Wouter Overmeire | key, pptx | es pt_br ru uk vi | lubridate | excluded: David |
+| ml-create-models | Create models with parsnip | B | PDF+MD | same | Edgar Ruiz†, Mine Çetinkaya-Rundel | key | — | parsnip | |
+| ml-measure-performance | Measure model performance with yardstick | B | PDF+MD | same | Edgar Ruiz† | key | — | yardstick | not on old index (D17) |
+| ml-preprocessing-data | Preprocessing data with recipes | B | PDF+MD | same | Edgar Ruiz† | key | — | recipes | |
+| ml-tidymodels | Machine learning with tidymodels | B | PDF+MD | 2026-07 = 2026-07 (new copy is Ghostscript-compressed and untagged) | Edgar Ruiz†, Mine Çetinkaya-Rundel | key (38 MB) | — | tidymodels | |
+| nlp-with-llms | Natural Language Processing using LLMs in R & Python | B | PDF | 2025-07 → 2026-07 | Edgar Ruiz, Mine Çetinkaya-Rundel | key | — | mall | add `R` to languages |
+| package-development | Package Development | B | PDF | 2025-08 → 2026-08 | Mine Çetinkaya-Rundel, Garrett Grolemund, Andy Teucher, Curtis Kephart, Averi Perny | key, pptx | de es it ko nl vi | devtools, usethis | excluded: David |
+| plotnine | Data visualization with Plotnine | B | PDF | same | Mine Çetinkaya-Rundel, Jeroen Janssens†, Hassan Kibirige† | ai | — | plotnine | |
+| plumber | REST APIs with plumber | B | PDF | 2025-08 → 2026-08 | Mine Çetinkaya-Rundel, James Blair, Andy Teucher, Curtis Kephart, Averi Perny | key, pptx | es ✗ | plumber | excluded: David |
+| polars | Python Polars: The Definitive Cheatsheet | N | ✓ | n/a (Ghostscript-compressed, untagged) | Jeroen Janssens†, Thijs Nieuwdorp† | ai (in bundle, move to LFS) | — | great-tables, plotnine | D2 |
+| posit-team | Posit Team | B | PDF | 2024-09 → 2026-08 | Mine Çetinkaya-Rundel, Ryan Johnson | pptx | — | — (no slug) | add `languages` |
+| positron | Positron | B | PDF | 2025-08 → 2026-08 | Mine Çetinkaya-Rundel | key | — | positron | summary (D8); add `languages` |
+| purrr | Apply functions with purrr | B | PDF | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel, Averi Perny, Andy Teucher, Curtis Kephart, Hadley Wickham, Marie-Helene Burle | key, pptx | es ko pt_br ru uk vi | purrr | excluded: David, MikeJohnPage |
+| quarto | Publish and Share with Quarto | B | PDF | 2026-06 = 2026-06 (bytes differ) | Charlotte Wickham, Mine Çetinkaya-Rundel, Isabella Velásquez | key, pptx | es | quarto | add `languages`; excluded: David |
+| renv | Reproducible R Environments with renv | O | ✗ | n/a → 2026-08 | Mine Çetinkaya-Rundel, Kevin Ushey | key | — | renv | |
+| reticulate | Use Python with R with reticulate | B | PDF | 2025-07 → 2026-07 | Edgar Ruiz, Mine Çetinkaya-Rundel, Andy Teucher, Tomasz Kalinowski, Averi Perny, Garrett Grolemund, Curtis Kephart | key, pptx | es | reticulate | excluded: David |
+| rmarkdown | rmarkdown | B | PDF | 2025-07 → 2026-08 | Mine Çetinkaya-Rundel, Averi Perny, Garrett Grolemund, Andy Teucher, Curtis Kephart | key, pptx | de es it ja ko nl tr vi | rmarkdown | excluded: David |
+| rstudio-ide | RStudio IDE | B | PDF | 2025-07 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel, Averi Perny, Curtis Kephart, Andy Teucher | key (70 MB), pptx (68 MB) | el es fr it ja pt vi | rstudio | excluded: David |
+| shiny | Shiny for R | B | PDF | same | Mine Çetinkaya-Rundel, Garrett Grolemund, Andy Teucher, Carson Sievert, Averi Perny, Greg Swinehart, Isabella Velásquez, Curtis Kephart, Frank Briody, Edgar Ruiz | key, pptx | de es fr tr vi (remove `shiny-python_es`) | shiny-r | excluded: David |
+| shiny-python | Shiny for Python | B | PDF | 2026-06 = 2026-06 (bytes differ) | Mine Çetinkaya-Rundel, Garrett Grolemund, Carson Sievert, Greg Swinehart, Isabella Velásquez, Gordon Shotwell, Karan Gathani | key, pptx | es | shiny-python | excluded: David |
+| shinychat | AI chatbots with shinychat | B | PDF | 2025-07 → 2026-08 | Mine Çetinkaya-Rundel, Sara Altman, Carson Sievert | key | — | shinychat | summary (D8) |
+| sparklyr | Data science in Spark with sparklyr | B | PDF | 2025-07 → 2026-08 | Mine Çetinkaya-Rundel, Garrett Grolemund, Edgar Ruiz, Andy Teucher, Curtis Kephart | pptx, Google Slides link | de es ja zh_cn zh_tw | sparklyr | excluded: David |
+| strings | String manipulation with stringr | B | PDF | 2025-08 → 2026-08 | Garrett Grolemund, Mine Çetinkaya-Rundel, Averi Perny, Andy Teucher, Ryan Zomorrodi, Curtis Kephart, Elen Le Foll | key, pptx | es pt_br vi | stringr | |
+| tidyeval | Tidy evaluation with rlang | O | ✗ | n/a | Garrett Grolemund, Mine Çetinkaya-Rundel | key, pptx | es ✗ | rlang | was on Contributed page (D2); summary (D8) |
+| tidyr | Data tidying with tidyr | B | PDF | 2025-08 → 2026-08 | Mine Çetinkaya-Rundel, Garrett Grolemund, Averi Perny, Andy Teucher, Curtis Kephart | key, pptx | pt_br zh_cn, es ✗ | tidyr | excluded: David |
 
 ---
 
 ## Appendix B: Community cheat sheets inventory
 
-Every row here: **Where = old site only**, **Status = not started**, **Deprecated = not marked** (see Appendix D for stale footers).
+Every row is old-site only, not started, and not marked deprecated.
 
-- **Author source:** **P** = named in the PDF (text layer, or visually for image-only PDFs) · **C** = old-repo commit history (used only when the PDF names no person) · **O** = PDF names an organisation only (Q5).
-- **Translations:** languages on the old site's translation page. None are on the new site.
-- **Lang:** proposed `languages` value.
-- **Updated:** PDF footer date, a rough "age" indicator.
+- **`people` source:** **P** = named in the PDF · **C** = commit fallback (R3) · — = none usable (D5).
+- **`software` (D13):** only existing `content/software/` slugs. — = no matching slug.
+- **Markdown:** a summary for all of them (D8).
 
-| Old slug (PDF name) | Title (from PDF/alt text) | Author(s) | Src | Sources in old repo | Translations | Lang | Updated | Notes |
+| Old file | New slug (D1) | Title | `people` | Src | Sources | Translations | `languages` | `software` |
 |---|---|---|---|---|---|---|---|---|
-| admiral | admiral | Stefan Bundfuss | C | pptx | — | R | 2024-12 (commit) | no credit in PDF |
-| arrow | Arrow for R | Mauricio Vargas | C | pptx | — | R | 2022-02 | no credit in PDF |
-| base-r | Base R | Mhairi McNeill | P | LaTeX (`latex/base-r/`) | de el es ja ko pt_br tr vi zh (9) | R | — | old RStudio footer; ko has its own LaTeX source; pt_br has SVGs; zh has pptx |
-| bayesplot | bayesplot | Edward A. Roualdes | P | — | — | R | 2020-05 | committed by Juan Telleria |
-| bcea | BCEA | Gianluca Baio | P | — | — | R | 2021-02 | |
-| caret | caret Package | Max Kuhn | P | key, pptx | es fr ko pt tr (5) | R | — | **Q2b** possibly Posit |
-| cartography | Thematic maps with cartography | Timothée Giraud | P | — | — | R | 2018-07 | package superseded by mapsf (informational) |
-| collapse | Advanced and Fast Data Transformation with collapse | Sebastian Krantz | P | LaTeX/Rnw (`latex/collapse/`) | — | R | 2023-10 | |
-| datatable | data.table | Erik Petrovski, Mara Destefanis; edited by Tyson Barrett | P | pptx | fr pt_br (2) | R | 2026-07 | PDF spells "Petrovsky" |
-| declaredesign | DeclareDesign | Graeme Blair, Jasper Cooper, Alexander Coppock, Macartan Humphreys, Neal Fultz | P | — | — | R | 2019-04 | |
-| distr6 | distr6 | Raphael Sonabend | P | — | — | R | 2019-08 | |
-| DRomics | DRomics | "authors of the DRomics package" → Aurélie Siberchicot | O→C | pptx | — | R | 2024-06 | Q5 |
-| estimatr | estimatr | Graeme Blair, Jasper Cooper, Alexander Coppock, Macartan Humphreys, Luke Sonnet | P | — | — | R | 2018-11 | |
-| eurostat | Access Eurostat data with eurostat | Przemysław Biecek, Markus Kainu | P (image) | — | — | R | 2019-11 | image-only PDF |
-| gganimate | gganimate | Karl Hailperin | P | — | — | R | 2019-05 | |
-| git-github | Git & GitHub | Mouna Belaid | P | pptx | es vi (2) | — | 2022-01 | no programming language |
-| golem | golem | ThinkR | O | — | — | R | 2019-06 | Q5; committed by Garrett Grolemund |
-| gtsummary | gtsummary | Esther Drill | P | pptx | vi (1) | R | 2022-04 | `gtsummary_vi` currently on new `gt` page |
-| gwasrapidd | GWAS Catalog access with gwasrapidd | Ramiro Magno | P (image) | — | — | R | 2019-04 | image-only PDF |
-| h2o | h2o | Juan Telleria Ruiz de Aguirre | P | pptx | — | R | 2018-06 | |
-| how-big-is-your-graph | How big is your graph? | Steve Simon | P | — | — | R | — | |
-| imputeTS | imputeTS | Steffen Moritz (inferred from URL in PDF) | P? | pptx | — | R | — | Q5 |
-| jfa | jfa | Koen Derks | P | pptx | — | R | 2021-09 | |
-| labelled | labelled | Joseph Larmarange | P | pptx | — | R | 2020-06 | |
-| leaflet | Leaflet | Kejia Shi | P | — | — | R | — | |
-| Machine Learning Modelling in R | Machine Learning Modelling in R | Arnaud Amsellem | P | — | — | R | 2018-03 | spaces in file name (Q1) |
-| mapsf | mapsf | Ronan Ysebaert | P | — | — | R | 2021-11 | committed by Timothée Giraud (rCarto) |
-| metrica | metrica | Carlos Hernandez, Adrian A. Correndo | P | pptx | es pt_br ru (3) | R | 2023-01 | |
-| mlr | Machine Learning with mlr | Aaron Cooley | P (image) | — | — | R | — | mlr superseded by mlr3 (informational) |
-| mosaic | mosaic | Michael "maviolette" (Laviolette?) | P | — | — | R | — | Q5 typo |
-| nardl | nardl | Taha Zaghdoudi | P | — | — | R | — | |
-| nimble | nimble | NIMBLE Development Team | O | — | — | R | 2020-05 | Q5 |
-| oSCR | oSCR | Gabriela Palomo-Munoz | P | — | — | R | — | package by Chris Sutherland |
-| overviewR | overviewR | Cosima Meyer, Dennis Hammerschmidt | P | key | — | R | 2022-09 | |
-| packagefinder | Searching CRAN with packagefinder | Joachim Zuckarelli (from email/GitHub in PDF) | P? | — | — | R | — | |
-| parallel_computation | Parallel computation | Ardalan Mirshani | P | — | — | R | 2019-03 | |
-| profile_optimise_py | Profiling and Optimising in Python | Saranjeet Kaur Bhogal, Jost Migenda | P | pptx | — | Python | 2026-04 | |
-| quanteda | quanteda | Stefan Müller, Kenneth Benoit | P | pptx | fr (1) | R | — | |
-| quincunx | quincunx | Ramiro Magno | P | Inkscape SVG ×2 | — | R | 2021-05 | |
-| randomizr | randomizr | Alexander Coppock ("Alex") | P | — | — | R | 2018-06 | |
-| R-best-practice | R Best Practice | Jacob Scott | P | key | — | R | 2023-11 | |
-| regex | Regular Expressions | Ian Kopacka | P | pptx | fr tr (2) | R | 2016-09 | thumbnail named `regular-expressions.png` |
-| rgee | rgee | Antony Barja, Cesar Aybar | P | Google Slides link | — | R | — | |
-| rphylopic | rphylopic | Gabriela Palomo-Munoz | P | — | — | R | — | package by Scott Chamberlain |
-| SamplingStrata | SamplingStrata | Giulio Barcaroli | P | — | — | R | — | |
-| sas-r | SAS <-> R | Brendan O'Dowd | P | pptx | — | R | 2022-10 | |
-| SASvsRinPharma | SAS vs. R in Pharma | Bharath Kumar | P | pptx | — | R | 2022-11 | |
-| sf | sf | Ryan Garnett | P | Inkscape SVG ×2 | — | R | — | |
-| sjmisc | sjmisc | Daniel Lüdecke | P | — | — | R | — | |
-| slackr | slackr | Daniel M. Villarreal | P | — | — | R | — | |
-| srvyr | srvyr | Greg Freedman Ellis, Ben Schneider | P | pptx | — | R | 2025-01 | |
-| stata2r | stata2r | Anthony Nguyen | P | pptx | — | R | 2019-10 | |
-| survminer | survminer | Przemysław Biecek | P | — | es (1) | R | — | |
-| syntax | R syntax comparison | Amelia McNamara | P | key | es ko (2) | R | 2018-01 | |
-| SqueakR | SqueakR | Simon Ogundare | P | key | — | R | 2022-06 | |
-| teachR | teachR | Sarid Research Institute LTD. (→ Adi Sarid) | O | — | — | R | 2019-03 | Q5 |
-| tidyeval | Tidy evaluation with rlang | Posit Software, PBC → Garrett Grolemund | O→C | key, pptx | es (1) | R | 2018-11 | **Q2a** Posit footer |
-| time-series | time-series | Yunjun Xia, Shuyu Huang | P | key | — | R | 2019-10 | |
-| torch | torch | Christophe Regouby | P | key | fr (1) | R | 2023-02 | |
-| tsbox | tsbox | Christoph Sax | P | — | — | R | 2019-04 | |
-| vegan | vegan | Bruna Luiza Silva | P | — | — | R | — | |
-| vivainsights_r | vivainsights (R) | Martin Chan | P | pptx (shared `vivainsights-r-py.pptx`) | — | R | 2024-11 | one pptx for both sheets |
-| vivainsights_py | vivainsights (Python) | Martin Chan | P | pptx (shared) | — | Python | 2025-01 | |
-| vtree | vtree | Nick Barrowman | P | — | — | R | 2020-07 | |
-| xplain | xplain | Joachim Zuckarelli (from email/GitHub in PDF) | P? | — | — | R | — | |
+| admiral | admiral | admiral | Stefan Bundfuss | C | pptx | — | R | — |
+| arrow | arrow | Arrow for R | Mauricio Vargas | C | pptx | — | R | dplyr |
+| base-r | base-r | Base R | Mhairi McNeill | P | LaTeX (`latex/base-r/`) | de el es ja ko pt_br tr vi zh | R | — |
+| bayesplot | bayesplot | bayesplot | Edward A. Roualdes | P | — | — | R | — |
+| bcea | bcea | BCEA | Gianluca Baio | P | — | — | R | — |
+| cartography | cartography | Thematic maps with cartography | Timothée Giraud | P | — | — | R | — |
+| collapse | collapse | Advanced and Fast Data Transformation with collapse | Sebastian Krantz | P | LaTeX/Rnw (`latex/collapse/`) | — | R | — |
+| datatable | data-table | data.table | Erik Petrovski, Mara Destefanis, Tyson Barrett | P | pptx | fr pt_br | R | — |
+| declaredesign | declaredesign | DeclareDesign | Graeme Blair, Jasper Cooper, Alexander Coppock, Macartan Humphreys, Neal Fultz | P | — | — | R | — |
+| distr6 | distr6 | distr6 | Raphael Sonabend | P | — | — | R | — |
+| DRomics | dromics | DRomics | Aurélie Siberchicot | C | pptx | — | R | — |
+| estimatr | estimatr | estimatr | Graeme Blair, Jasper Cooper, Alexander Coppock, Macartan Humphreys, Luke Sonnet | P | — | — | R | — |
+| eurostat | eurostat | Access Eurostat data with eurostat | Przemysław Biecek, Markus Kainu | P | — | — | R | — |
+| gganimate | gganimate | gganimate | Karl Hailperin | P | — | — | R | — |
+| git-github | git-github | Git & GitHub | Mouna Belaid | P | pptx | es vi | — | — |
+| golem | golem | golem | — (ThinkR, org) | — | — | — | R | — |
+| gtsummary | gtsummary | gtsummary | Esther Drill | P | pptx | vi | R | — |
+| gwasrapidd | gwasrapidd | GWAS Catalog access with gwasrapidd | Ramiro Magno | P | — | — | R | — |
+| h2o | h2o | h2o | Juan Telleria Ruiz de Aguirre | P | pptx | — | R | — |
+| how-big-is-your-graph | how-big-is-your-graph | How big is your graph? | Steve Simon | P | — | — | R | — |
+| imputeTS | imputets | imputeTS | — (unclear) | — | pptx | — | R | — |
+| jfa | jfa | jfa | Koen Derks | P | pptx | — | R | — |
+| labelled | labelled | labelled | Joseph Larmarange | P | pptx | — | R | haven |
+| leaflet | leaflet | Leaflet | Kejia Shi | P | — | — | R | leaflet |
+| Machine Learning Modelling in R | machine-learning-modelling-in-r | Machine Learning Modelling in R | Arnaud Amsellem | P | — | — | R | — |
+| mapsf | mapsf | mapsf | Ronan Ysebaert | P | — | — | R | — |
+| metrica | metrica | metrica | Carlos Hernandez, Adrian A. Correndo | P | pptx | es pt_br ru | R | — |
+| mlr | mlr | Machine Learning with mlr | Aaron Cooley | P | — | — | R | — |
+| mosaic | mosaic | mosaic | — (unclear) | — | — | — | R | — |
+| nardl | nardl | nardl | Taha Zaghdoudi | P | — | — | R | — |
+| nimble | nimble | nimble | — (NIMBLE Development Team, org) | — | — | — | R | — |
+| oSCR | oscr | oSCR | Gabriela Palomo-Munoz | P | — | — | R | — |
+| overviewR | overviewr | overviewR | Cosima Meyer, Dennis Hammerschmidt | P | key | — | R | — |
+| packagefinder | packagefinder | Searching CRAN with packagefinder | Joachim Zuckarelli (R3) | P | — | — | R | — |
+| parallel_computation | parallel-computation | Parallel computation | Ardalan Mirshani | P | — | — | R | — |
+| profile_optimise_py | profile-optimise-python | Profiling and Optimising in Python | Saranjeet Kaur Bhogal, Jost Migenda | P | pptx | — | Python | — |
+| quanteda | quanteda | quanteda | Stefan Müller, Kenneth Benoit | P | pptx | fr | R | — |
+| quincunx | quincunx | quincunx | Ramiro Magno | P | Inkscape SVG ×2 | — | R | — |
+| randomizr | randomizr | randomizr | Alexander Coppock | P | — | — | R | — |
+| R-best-practice | r-best-practice | R Best Practice | Jacob Scott | P | key | — | R | usethis, reprex, renv |
+| regex | regular-expressions | Regular Expressions | Ian Kopacka | P | pptx | fr tr | R | stringr |
+| rgee | rgee | rgee | Antony Barja, Cesar Aybar | P | Google Slides link | — | R | — |
+| rphylopic | rphylopic | rphylopic | Gabriela Palomo-Munoz | P | — | — | R | — |
+| SamplingStrata | samplingstrata | SamplingStrata | Giulio Barcaroli | P | — | — | R | — |
+| sas-r | sas-r | SAS <-> R | Brendan O'Dowd | P | pptx | — | R | tidyverse |
+| SASvsRinPharma | sas-vs-r-in-pharma | SAS vs. R in Pharma | Bharath Kumar | P | pptx | — | R | — |
+| sf | sf | sf | Ryan Garnett | P | Inkscape SVG ×2 | — | R | — |
+| sjmisc | sjmisc | sjmisc | Daniel Lüdecke | P | — | — | R | — |
+| slackr | slackr | slackr | Daniel M. Villarreal | P | — | — | R | — |
+| srvyr | srvyr | srvyr | Greg Freedman Ellis, Ben Schneider | P | pptx | — | R | — |
+| stata2r | stata2r | stata2r | Anthony Nguyen | P | pptx | — | R | — |
+| survminer | survminer | survminer | Przemysław Biecek | P | — | es | R | — |
+| syntax | syntax | R syntax comparison | Amelia McNamara | P | key | es ko | R | ggplot2, dplyr |
+| SqueakR | squeakr | SqueakR | Simon Ogundare | P | key | — | R | — |
+| teachR | teachr | teachR | Adi Sarid (R3) | C | — | — | R | — |
+| time-series | time-series | time-series | Yunjun Xia, Shuyu Huang | P | key | — | R | — |
+| torch | torch | torch | Christophe Regouby | P | key | fr | R | torch |
+| tsbox | tsbox | tsbox | Christoph Sax | P | — | — | R | — |
+| vegan | vegan | vegan | Bruna Luiza Silva | P | — | — | R | — |
+| vivainsights_r | vivainsights-r | vivainsights (R) | Martin Chan | P | pptx (shared `vivainsights-r-py.pptx`) | — | R | — |
+| vivainsights_py | vivainsights-py | vivainsights (Python) | Martin Chan | P | pptx (shared) | — | Python | — |
+| vtree | vtree | vtree | Nick Barrowman | P | — | — | R | — |
+| xplain | xplain | xplain | Joachim Zuckarelli (R3) | P | — | — | R | — |
+| introduccion-a-r (Spanish) | introduccion-a-r | Introducción a R | Rosana Ferrero | P | — | — | R | — |
+| estadistica-descriptiva-con-R (Spanish) | estadistica-descriptiva-con-r | Estadística descriptiva con R | Rosana Ferrero | P | — | — | R | — |
+
+For each community slug, check while migrating that it doesn't clash with a Posit sheet's slug. None do today.
 
 ---
 
 ## Appendix C: Translations inventory
 
-All 124 translation PDFs on the old site's Translations page, grouped by the cheat sheet they translate.
+115 translations: 91 of Posit sheets and 24 of community sheets. The `data-wrangling` translations are excluded (D4), and the 2 Spanish originals are in Appendix B.
 
-- **New** = already in the new site's bundle (✓) or not (✗).
-- **Translator source:** **P** = PDF credit · **C** = commit history (the PDF has no credit; usually the committer or the person who contributed the file) · **?** = unknown (committed in bulk by a Posit maintainer, no credit in PDF) · **O** = organisation only.
-- **Src** = translation source file in the old repo (none are on the new site yet).
+- **Translator(s):** people only (D5). **P** = PDF credit · **C** = commit history · — = no usable credit (34 translations).
+- **Src:** translation source file in the old repo (goes into LFS).
+- **Edition · date (D16):**
+  - The edition is the package version(s) from the translated PDF's footer.
+  - The date is the footer date, normalized to `YYYY-MM`.
+  - If the footer has no date, it's the month the translation was added to the old repo, shown as "added YYYY-MM".
+  - The script extracted these automatically; spot-check them while migrating.
+- **New:** whether the file is already on the new site.
 
 ### Translations of Posit cheat sheets
 
-| Sheet | Lang | File | Translator(s) | Src | New |
+| Sheet | Language | File | Translator(s) | Src | Edition · date | New |
+|---|---|---|---|---|---|---|
+| caret | French | caret_fr.pdf | Ahmadou Dicko (C) | pptx | 2017-09 | **✗** |
+| caret | Korean | caret_ko.pdf | Kwangchun Lee (P) | pptx | added 2017-09 | **✗** |
+| caret | Portuguese | caret_pt.pdf | Karen da Silva Lopes (P) | pptx | 2017-09 | **✗** |
+| caret | Spanish | caret_es.pdf | — | key | 2017-09 | **✗** |
+| caret | Turkish | caret_tr.pdf | İlkim Ecem Emre (P) | — | 2017-09 | **✗** |
+| data-import | Bengali | data-import_bn.pdf | Saif Kabir Asif (C) | pptx | added 2021-09 | ✓ |
+| data-import | Greek | data-import_el.pdf | Nikolaos Koupidis (P) | — | readr 2.0.0, readxl 1.3.1, googlesheets4 1.0.0 · 2021-08 | **✗** |
+| data-import | Persian | data-import_fa.pdf | Vahid Faraji Jobehdar, Reza Mazloomi (P) | — | readr 1.1.0, tibble 1.2.12, tidyr 0.6.0 · 2019-08 | ✓ |
+| data-import | Portuguese (Brazil) | data-import_pt_br.pdf | Eric Scopinho (P) | pptx | readr 2.0.0, readxl 1.3.1, googlesheets4 1.0.0 · 2021-08 | ✓ |
+| data-import | Russian | data-import_ru.pdf | — | key | readr 1.1.0, tibble 1.2.12, tidyr 0.6.0 · 2017-01 | ✓ |
+| data-import | Spanish | data-import_es.pdf | — | pptx | readxl 1.4.3, googlesheets4 1.1.1 · 2024-05 | ✓ |
+| data-import | Turkish | data-import_tr.pdf | Metin Yazici (P) | — | readr 1.1.0, tibble 1.2.12, tidyr 0.6.0 · 2017-01 | ✓ |
+| data-import | Ukrainian | data-import_uk.pdf | — | key | readr 1.1.0, tibble 1.2.12, tidyr 0.6.0 · 2017-01 | ✓ |
+| data-import | Uzbek | data-import_uz.pdf | — | — | added 2017-08 | ✓ |
+| data-transformation | Chinese (Simplified) | data-transformation_zh_cn.pdf | Aicen Yu 于艾岑 (P) | key | dplyr 0.7.0, tibble 1.2.0 · added 2017-01 | ✓ |
+| data-transformation | German | data-transformation_de.pdf | Lucia Gjeltema (P) | pptx | added 2017-09 | ✓ |
+| data-transformation | Portuguese (Brazil) | data-transformation_pt_br.pdf | Eric Scopinho (P) | pptx | dplyr 1.0.7 · 2021-07 | ✓ |
+| data-transformation | Russian | data-transformation_ru.pdf | — | key | dplyr 0.5.0, tibble 1.2.0 · added 2017-01 | ✓ |
+| data-transformation | Spanish | data-transformation_es.pdf | Frans van Dunné (C) | key, pptx | dplyr 1.1.4 · 2024-05 | ✓ |
+| data-transformation | Turkish | data-transformation_tr.pdf | — | — | dplyr 0.5.0, tibble 1.2.0 · 2017-01 | ✓ |
+| data-transformation | Ukrainian | data-transformation_uk.pdf | — | key | dplyr 0.5.0, tibble 1.2.0 · added 2017-01 | ✓ |
+| data-transformation | Uzbek | data-transformation_uz.pdf | — | — | added 2017-08 | ✓ |
+| data-visualization | Chinese (Simplified) | data-visualization_zh.pdf | Guang-Teng Meng (P) | pptx | ggplot2 3.3.5 · 2021-08 | ✓ |
+| data-visualization | Dutch | data-visualization_nl.pdf | — | — | ggplot2 0.9.3.1, ggplot2 1.0.0 · 2015-04 | ✓ |
+| data-visualization | French | data-visualization_fr.pdf | Vincent Guyader (P) | — | ggplot2 1.0.0 · 2015-04 | ✓ |
+| data-visualization | German | data-visualization_de.pdf | Lucia Gjeltema (P) | — | added 2018-05 | ✓ |
+| data-visualization | Greek | data-visualization_el.pdf | Nikolaos Koupidis (P) | — | ggplot2 3.3.5 · 2021-08 | ✓ |
+| data-visualization | Japanese | data-visualization_ja.pdf | — | — | ggplot2 2.0.0 · 2015-12 | ✓ |
+| data-visualization | Portuguese | data-visualization_pt.pdf | Augusto Queiroz de Macedo (P) | — | ggplot2 0.9.3.1, ggplot2 2.0.0 · 2016-03 | ✓ |
+| data-visualization | Spanish | data-visualization_es.pdf | Carolina Mengoni (C) | pptx | ggplot2 3.5.1 · 2024-05 | ✓ |
+| data-visualization | Turkish | data-visualization_tr.pdf | — | — | ggplot2 2.1.0 · 2016-11 | ✓ |
+| data-visualization | Vietnamese | data-visualization_vi.pdf | — | — | ggplot2 2.0.0 · 2015-12 | ✓ |
+| factors | Japanese | factors_ja.pdf | Taiyo Nakashima (P) | — | forcats 0.3.0 · 2019-02 | ✓ |
+| factors | Portuguese (Brazil) | factors_pt_br.pdf | Eric Scopinho (P) | pptx | forcats 0.5.1 · added 2022-09 | ✓ |
+| factors | Spanish | factors_es.pdf | Laura Acion (C) | pptx | forcats 1.0.0 · 2024-05 | ✓ |
+| keras | Chinese (Simplified) | keras_zh_cn.pdf | — | key | keras 2.1.2 · 2017-12 | ✓ |
+| keras | Japanese | keras_ja.pdf | Masato Takahashi (P) | — | keras 2.1.2 · 2017-12 | ✓ |
+| keras | Spanish | keras_es.pdf | — | key, pptx | keras3 1.0.0 · 2024-06 | ✓ |
+| lubridate | Portuguese (Brazil) | lubridate_pt_br.pdf | Eric Scopinho (P) | pptx | lubridate 1.7.10 · 2021-07 | ✓ |
+| lubridate | Russian | lubridate_ru.pdf | — | key | lubridate 1.6.0 · 2017-12 | ✓ |
+| lubridate | Spanish | lubridate_es.pdf | Yanina Bellini Saibene (C) | pptx | lubridate 1.9.3 · 2024-05 | ✓ |
+| lubridate | Ukrainian | lubridate_uk.pdf | — | key | lubridate 1.6.0 · 2017-12 | ✓ |
+| lubridate | Vietnamese | lubridate_vi.pdf | Anh Hoang Duc (C) | — | lubridate 1.6.0 · 2017-12 | ✓ |
+| package-development | Dutch | package-development_nl.pdf | — | — | devtools 1.6.1 · 2015-01 | ✓ |
+| package-development | German | package-development_de.pdf | Lucia Gjeltema (P) | — | added 2018-05 | ✓ |
+| package-development | Italian | package-development_it.pdf | Angelo Salatino (P) | — | devtools 1.6.1 · 2015-01 | ✓ |
+| package-development | Korean | package-development_ko.pdf | Kwangchun Lee 이광춘 (P) | — | added 2018-05 | ✓ |
+| package-development | Spanish | package-development_es.pdf | Paola Corrales (C) | pptx | devtools 2.4.5, usethis 2.2.2, testthat 3.2.1.1 · 2024-05 | ✓ |
+| package-development | Vietnamese | package-development_vi.pdf | — | — | added 2018-05 | ✓ |
+| plumber | Spanish | plumber_es.pdf | — | pptx | plumber 1.2.2 · 2024-05 | **✗** |
+| purrr | Korean | purrr_ko.pdf | Kwangchun Lee (P) | key | purrr 0.2.3 · 2017-10 | ✓ |
+| purrr | Portuguese (Brazil) | purrr_pt_br.pdf | Eric Scopinho (P) | pptx | purrr 0.3.4 · 2021-07 | ✓ |
+| purrr | Russian | purrr_ru.pdf | — | key | purrr 0.2.3 · 2017-09 | ✓ |
+| purrr | Spanish | purrr_es.pdf | — | key, pptx | purrr 1.0.2 · 2024-05 | ✓ |
+| purrr | Ukrainian | purrr_uk.pdf | — | key | purrr 0.2.3 · 2017-09 | ✓ |
+| purrr | Vietnamese | purrr_vi.pdf | Anh Hoang Duc (C) | — | purrr 0.2.3 · 2017-09 | ✓ |
+| quarto | Spanish | quarto_es.pdf | — | pptx | Quarto 1.4 · 2024-05 | ✓ |
+| reticulate | Spanish | reticulate_es.pdf | Vanesa Maribel (C) | pptx | reticulate 1.37 · 2024-06 | ✓ |
+| rmarkdown | Dutch | rmarkdown_nl.pdf | — | — | rmarkdown 0.2.50 · 2014-08 | ✓ |
+| rmarkdown | German | rmarkdown_de.pdf | Lucia Gjeltema (P) | — | 2016-02 | ✓ |
+| rmarkdown | Italian | rmarkdown_it.pdf | Angelo Salatino (P) | — | 2016-02 | ✓ |
+| rmarkdown | Japanese | rmarkdown_ja.pdf | Masato Takahashi (P) | — | rmarkdown 1.6 · 2016-02 | ✓ |
+| rmarkdown | Korean | rmarkdown_ko.pdf | Kwangchun Lee (P) | — | added 2018-05 | ✓ |
+| rmarkdown | Spanish | rmarkdown_es.pdf | Jesica Formoso (C) | pptx | rmarkdown 2.27 · 2024-05 | ✓ |
+| rmarkdown | Turkish | rmarkdown_tr.pdf | Metin Yazici (P) | — | rmarkdown 1.6 · 2016-02 | ✓ |
+| rmarkdown | Vietnamese | rmarkdown_vi.pdf | — | — | added 2018-05 | ✓ |
+| rstudio-ide | French | rstudio-ide_fr.pdf | Diane Beldame (P) | — | added 2017-01 | ✓ |
+| rstudio-ide | Greek | rstudio-ide_el.pdf | Kleanthis Koupidis (P) | — | 2017-09 | ✓ |
+| rstudio-ide | Italian | rstudio-ide_it.pdf | Angelo Salatino (P) | — | 2016-01 | ✓ |
+| rstudio-ide | Japanese | rstudio-ide_ja.pdf | Masato Takahashi (P) | — | 2017-09 | ✓ |
+| rstudio-ide | Portuguese | rstudio-ide_pt.pdf | Augusto Queiroz de Macedo (P) | — | 2016-03 | ✓ |
+| rstudio-ide | Spanish | rstudio-ide_es.pdf | Monica Alonso (C) | pptx | 2024-05 | ✓ |
+| rstudio-ide | Vietnamese | rstudio-ide_vi.pdf | Le-Huynh Truc-Ly (C) | pptx | Awesome 5.15.3 · 2021-07 | ✓ |
+| shiny | French | shiny_fr.pdf | Asma Balti, Vincent Guyader (P) | — | Shiny 0.10.0 · 2014-06 | ✓ |
+| shiny | German | shiny_de.pdf | Lucia Gjeltema (P) | — | shiny 0.12.0 · 2015-06 | ✓ |
+| shiny | Spanish | shiny_es.pdf | Florencia D'Andrea (C) | key, pptx | shiny 1.8.1.1 · 2024-05 | ✓ |
+| shiny | Turkish | shiny_tr.pdf | Metin Yazici (P) | — | shiny 0.12.0 · 2016-01 | ✓ |
+| shiny | Vietnamese | shiny_vi.pdf | — | — | shiny 0.12.0 · 2015-06 | ✓ |
+| shiny-python | Spanish | shiny-python_es.pdf | — | pptx | shiny 0.10.2 · 2024-05 | ✓ |
+| sparklyr | Chinese (Simplified) | sparklyr_zh_cn.pdf | Ke Zhang 张克 (P) | key | added 2017-01 | ✓ |
+| sparklyr | Chinese (Traditional) | sparklyr_zh_tw.pdf | Ke Zhang 張克 (P) | key | added 2017-01 | ✓ |
+| sparklyr | German | sparklyr_de.pdf | Ke Zhang (P) | key | added 2017-01 | ✓ |
+| sparklyr | Japanese | sparklyr_ja.pdf | Masato Takahashi (P) | — | sparklyr 0.5 · 2016-12 | ✓ |
+| sparklyr | Spanish | sparklyr_es.pdf | Daniela Prina (C) | pptx | sparklyr 1.8.6 · 2024-05 | ✓ |
+| strings | Portuguese (Brazil) | strings_pt_br.pdf | Eric Scopinho (P) | pptx | stringr 1.4.0 · 2021-08 | ✓ |
+| strings | Spanish | strings_es.pdf | L.P. Rojas Saunero (C) | key, pptx | stringr 1.5.1 · 2024-05 | ✓ |
+| strings | Vietnamese | strings_vi.pdf | Anh Hoang Duc (C) | — | stringr 1.2.0 · 2017-09 | ✓ |
+| tidyeval | Spanish | tidyeval_es.pdf | — | pptx | rlang 0.3.0 · 2019-10 | **✗** |
+| tidyr | Chinese (Simplified) | tidyr_zh_cn.pdf | Feifan Wang 王非凡 (P) | pptx | tibble 3.1.2, tidyr 1.1.3 · 2021-08 | ✓ |
+| tidyr | Portuguese (Brazil) | tidyr_pt_br.pdf | Eric Scopinho (P) | pptx | tibble 3.1.2, tidyr 1.1.3 · 2021-08 | ✓ |
+| tidyr | Spanish | tidyr_es.pdf | — | pptx | tidyr 1.3.1, tibble 3.2.1 · 2024-05 | **✗** |
+
+### Translations of community cheat sheets (none on the new site yet)
+
+| Sheet | Language | File | Translator(s) | Src | Edition · date |
 |---|---|---|---|---|---|
-| data-import | Bengali | data-import_bn.pdf | Saif Kabir Asif (C) | pptx | ✓ |
-| data-import | Greek | data-import_el.pdf | Nikolaos Koupidis (P) | — | **✗** |
-| data-import | Spanish | data-import_es.pdf | David (`davidrsch`) (C) | pptx | ✓ |
-| data-import | Persian | data-import_fa.pdf | Vahid Faraji Jobehdar, Reza Mazloomi (P) | — | ✓ |
-| data-import | Portuguese (Brazil) | data-import_pt_br.pdf | Eric Scopinho (P) | pptx | ✓ |
-| data-import | Russian | data-import_ru.pdf | ? | key | ✓ |
-| data-import | Turkish | data-import_tr.pdf | Metin Yazici (P) | — | ✓ |
-| data-import | Ukrainian | data-import_uk.pdf | ? | key | ✓ |
-| data-import | Uzbek | data-import_uz.pdf | ? | — | ✓ |
-| data-transformation | German | data-transformation_de.pdf | Lucia Gjeltema (P) | pptx | ✓ |
-| data-transformation | Spanish | data-transformation_es.pdf | David (2024 update) (C); earlier Frans van Dunné (C) | key, pptx | ✓ |
-| data-transformation | Portuguese (Brazil) | data-transformation_pt_br.pdf | Eric Scopinho (P) | pptx | ✓ |
-| data-transformation | Russian | data-transformation_ru.pdf | Evgeni Chasnovski? (C) | key | ✓ |
-| data-transformation | Turkish | data-transformation_tr.pdf | ? | — | ✓ |
-| data-transformation | Ukrainian | data-transformation_uk.pdf | Evgeni Chasnovski? (C) | key | ✓ |
-| data-transformation | Uzbek | data-transformation_uz.pdf | ? | — | ✓ |
-| data-transformation | Chinese (Simplified) | data-transformation_zh_cn.pdf | Aicen Yu 于艾岑 (P) | key | ✓ |
-| data-visualization | German | data-visualization_de.pdf | Lucia Gjeltema (P) | — | ✓ |
-| data-visualization | Greek | data-visualization_el.pdf | Nikolaos Koupidis (P) | — | ✓ |
-| data-visualization | Spanish | data-visualization_es.pdf | Carolina Mengoni (C), David (2024 update) (C) | pptx | ✓ |
-| data-visualization | French | data-visualization_fr.pdf | Vincent Guyader (ThinkR) (P) | — | ✓ |
-| data-visualization | Japanese | data-visualization_ja.pdf | ? | — | ✓ |
-| data-visualization | Dutch | data-visualization_nl.pdf | ? | — | ✓ |
-| data-visualization | Portuguese | data-visualization_pt.pdf | Augusto Queiroz de Macedo (P) | — | ✓ |
-| data-visualization | Turkish | data-visualization_tr.pdf | ? | — | ✓ |
-| data-visualization | Vietnamese | data-visualization_vi.pdf | ranalytics.vn (O) | — | ✓ |
-| data-visualization | Chinese (Simplified) | data-visualization_zh.pdf | Guang-Teng Meng (P) | pptx | ✓ |
-| factors | Spanish | factors_es.pdf | Laura Acion (C), David (2024 update) (C) | pptx | ✓ |
-| factors | Japanese | factors_ja.pdf | Taiyo Nakashima (P) | — | ✓ |
-| factors | Portuguese (Brazil) | factors_pt_br.pdf | Eric Scopinho (P) | pptx | ✓ |
-| keras | Spanish | keras_es.pdf | David (2024) (C) | key, pptx | ✓ |
-| keras | Japanese | keras_ja.pdf | Masato Takahashi (P) | — | ✓ |
-| keras | Chinese (Simplified) | keras_zh_cn.pdf | Harry Zhu? (C) | key | ✓ |
-| lubridate | Spanish | lubridate_es.pdf | Yanina Bellini Saibene (C), David (2024 update) (C) | pptx | ✓ |
-| lubridate | Portuguese (Brazil) | lubridate_pt_br.pdf | Eric Scopinho (P) | pptx | ✓ |
-| lubridate | Russian | lubridate_ru.pdf | Evgeni Chasnovski? (C) | key | ✓ |
-| lubridate | Ukrainian | lubridate_uk.pdf | Evgeni Chasnovski? (C) | key | ✓ |
-| lubridate | Vietnamese | lubridate_vi.pdf | ranalytics.vn (O); committed by Anh Hoang Duc | — | ✓ |
-| package-development | German | package-development_de.pdf | Lucia Gjeltema (P) | — | ✓ |
-| package-development | Spanish | package-development_es.pdf | Paola Corrales (C), David (2024 update) (C) | pptx | ✓ |
-| package-development | Italian | package-development_it.pdf | Angelo Salatino (P) | — | ✓ |
-| package-development | Korean | package-development_ko.pdf | Kwangchun Lee 이광춘 (xwMOOC) (P) | — | ✓ |
-| package-development | Dutch | package-development_nl.pdf | ? | — | ✓ |
-| package-development | Vietnamese | package-development_vi.pdf | ranalytics.vn (O) | — | ✓ |
-| plumber | Spanish | plumber_es.pdf | David (C) | pptx | **✗** |
-| purrr | Spanish | purrr_es.pdf | David (2024 update) (C) | key, pptx | ✓ |
-| purrr | Korean | purrr_ko.pdf | Kwangchun Lee (P) | key | ✓ |
-| purrr | Portuguese (Brazil) | purrr_pt_br.pdf | Eric Scopinho (P) | pptx | ✓ |
-| purrr | Russian | purrr_ru.pdf | Evgeni Chasnovski? (C) | key | ✓ |
-| purrr | Ukrainian | purrr_uk.pdf | Evgeni Chasnovski? (C) | key | ✓ |
-| purrr | Vietnamese | purrr_vi.pdf | ranalytics.vn (O); committed by Anh Hoang Duc | — | ✓ |
-| quarto | Spanish | quarto_es.pdf | David (C) | pptx | ✓ |
-| reticulate | Spanish | reticulate_es.pdf | Vanesa Maribel (C), David (2024 update) (C) | pptx | ✓ |
-| rmarkdown | German | rmarkdown_de.pdf | Lucia Gjeltema (P) | — | ✓ |
-| rmarkdown | Spanish | rmarkdown_es.pdf | Jesica Formoso (C), David (2024 update) (C) | pptx | ✓ |
-| rmarkdown | Italian | rmarkdown_it.pdf | Angelo Salatino (P) | — | ✓ |
-| rmarkdown | Japanese | rmarkdown_ja.pdf | Masato Takahashi (P) | — | ✓ |
-| rmarkdown | Korean | rmarkdown_ko.pdf | Kwangchun Lee (xwMOOC) (P) | — | ✓ |
-| rmarkdown | Dutch | rmarkdown_nl.pdf | ? | — | ✓ |
-| rmarkdown | Turkish | rmarkdown_tr.pdf | Metin Yazici (P) | — | ✓ |
-| rmarkdown | Vietnamese | rmarkdown_vi.pdf | ranalytics.vn (O) | — | ✓ |
-| rstudio-ide | Greek | rstudio-ide_el.pdf | Kleanthis Koupidis (P) | — | ✓ |
-| rstudio-ide | Spanish | rstudio-ide_es.pdf | Monica Alonso (C), David (2024 update) (C) | pptx | ✓ |
-| rstudio-ide | French | rstudio-ide_fr.pdf | Diane Beldame (ThinkR) (P) | — | ✓ |
-| rstudio-ide | Italian | rstudio-ide_it.pdf | Angelo Salatino (P) | — | ✓ |
-| rstudio-ide | Japanese | rstudio-ide_ja.pdf | Masato Takahashi (P) | — | ✓ |
-| rstudio-ide | Portuguese | rstudio-ide_pt.pdf | Augusto Queiroz de Macedo (P) | — | ✓ |
-| rstudio-ide | Vietnamese | rstudio-ide_vi.pdf | Le-Huynh Truc-Ly (C) | pptx | ✓ |
-| shiny | German | shiny_de.pdf | Lucia Gjeltema (P) | — | ✓ |
-| shiny | Spanish | shiny_es.pdf | Florencia D'Andrea (C), David (2024 update) (C) | key, pptx | ✓ |
-| shiny | French | shiny_fr.pdf | Asma Balti, Vincent Guyader (ThinkR) (P) | — | ✓ |
-| shiny | Turkish | shiny_tr.pdf | Metin Yazici (P) | — | ✓ |
-| shiny | Vietnamese | shiny_vi.pdf | ranalytics.vn (O) | — | ✓ |
-| shiny-python | Spanish | shiny-python_es.pdf | David (C) | pptx | ✓ (also wrongly on `shiny`) |
-| sparklyr | German | sparklyr_de.pdf | Ke Zhang (P) | key | ✓ |
-| sparklyr | Spanish | sparklyr_es.pdf | Daniela Prina (C), David (2024 update) (C) | pptx | ✓ |
-| sparklyr | Japanese | sparklyr_ja.pdf | Masato Takahashi (P) | — | ✓ |
-| sparklyr | Chinese (Simplified) | sparklyr_zh_cn.pdf | Ke Zhang 张克 (P) | key | ✓ |
-| sparklyr | Chinese (Traditional) | sparklyr_zh_tw.pdf | Ke Zhang 張克 (P) | key | ✓ |
-| strings | Spanish | strings_es.pdf | L.P. Rojas Saunero (C), David (2024 update) (C) | key, pptx | ✓ |
-| strings | Portuguese (Brazil) | strings_pt_br.pdf | Eric Scopinho (P) | pptx | ✓ |
-| strings | Vietnamese | strings_vi.pdf | ranalytics.vn (O); committed by Anh Hoang Duc | — | ✓ |
-| tidyr | Spanish | tidyr_es.pdf | David (C) | pptx | **✗** |
-| tidyr | Portuguese (Brazil) | tidyr_pt_br.pdf | Eric Scopinho (P) | pptx | ✓ |
-| tidyr | Chinese (Simplified) | tidyr_zh_cn.pdf | Feifan Wang 王非凡 (P) | pptx | ✓ |
-
-### Translations of community cheat sheets (none on new site)
-
-| Sheet | Lang | File | Translator(s) | Src |
-|---|---|---|---|---|
-| base-r | German | base-r_de.pdf | Annika Kies, Martin Kies (LeverageData) (P) | — |
-| base-r | Greek | base-r_el.pdf | Kleanthis Koupidis (P) | — |
-| base-r | Spanish | base-r_es.pdf | Anthony Romero-Cerdán, Thatiane Ramírez Porras (ADIECS) (P) | pptx |
-| base-r | Japanese | base-r_ja.pdf | ? | — |
-| base-r | Korean | base-r_ko.pdf | Taeho Kim (P) | LaTeX dir + `.sty` |
-| base-r | Portuguese (Brazil) | base-r_pt_br.pdf | Samuel Carleial (P) | SVG ×2 |
-| base-r | Turkish | base-r_tr.pdf | Elif Kartal (P) | — |
-| base-r | Vietnamese | base-r_vi.pdf | ranalytics.vn (O) | — |
-| base-r | Chinese (Simplified) | base-r_zh.pdf | Fu Yongchao 付永超 (P) | `base-r.pptx` (in `chinese/`, no suffix) |
-| caret | Spanish | caret_es.pdf | ? | key |
-| caret | French | caret_fr.pdf | Ahmadou Dicko (C) | pptx |
-| caret | Korean | caret_ko.pdf | Kwangchun Lee (P) | pptx |
-| caret | Portuguese | caret_pt.pdf | Karen da Silva Lopes (P) | pptx |
-| caret | Turkish | caret_tr.pdf | İlkim Ecem Emre (P) | — |
-| datatable | French | datatable_fr.pdf | Christian Wiat (P) | pptx |
-| datatable | Portuguese (Brazil) | datatable_pt_br.pdf | Samuel Carleial (P) | pptx |
-| git-github | Spanish | git-github_es.pdf | Anthony Romero-Cerdán (ADIECS) (P) | pptx |
-| git-github | Vietnamese | git-github_vi.pdf | Le-Huynh Truc-Ly (C) | pptx |
-| gtsummary | Vietnamese | gtsummary_vi.pdf | Le-Huynh Truc-Ly (C) | pptx |
-| metrica | Spanish | metrica_es.pdf | ? (committed by author Adrian Correndo) | pptx |
-| metrica | Portuguese (Brazil) | metrica_pt_br.pdf | ? (committed by author Adrian Correndo) | pptx |
-| metrica | Russian | metrica_ru.pdf | Denis Gazetdinov (P, listed with authors) | pptx |
-| quanteda | French | quanteda_fr.pdf | Ahmadou Dicko (C) | pptx |
-| regex | French | regex_fr.pdf | Ahmadou Dicko (P) | pptx |
-| regex | Turkish | regex_tr.pdf | Zeki Özen (P) | — |
-| survminer | Spanish | survminer_es.pdf | Maria Dermit (P) | pptx |
-| syntax | Spanish | syntax_es.pdf | Riva Quiroga (C) | key |
-| syntax | Korean | syntax_ko.pdf | Kwangchun Lee (P) | key |
-| tidyeval | Spanish | tidyeval_es.pdf | Violeta Roizman (`Violeta R`) (C) | pptx |
-| torch | French | torch_fr.pdf | Christophe Regouby (author) (C) | key |
-
-### Translations of a retired sheet, and Spanish originals (Q4)
-
-| Sheet | Lang | File | Translator(s) | Src |
-|---|---|---|---|---|
-| data-wrangling (retired; English only in `old/pdfs/data-wrangling-cheatsheet.pdf`) | German | data-wrangling_de.pdf | Lucia Gjeltema (P) | — |
-| data-wrangling | Spanish | data-wrangling_es.pdf | Frans van Dunné (P) | key |
-| data-wrangling | French | data-wrangling_fr.pdf | Diane Beldame (ThinkR) (P) | — |
-| data-wrangling | Japanese | data-wrangling_ja.pdf | Tomo Masuda (P) | — |
-| data-wrangling | Dutch | data-wrangling_nl.pdf | Frans van Dunné? (C, `FvD`) | — |
-| data-wrangling | Portuguese | data-wrangling_pt.pdf | Augusto Queiroz de Macedo (P) | — |
-| data-wrangling | Vietnamese | data-wrangling_vi.pdf | ranalytics.vn (O) | — |
-| (Spanish original) | Spanish | introduccion-a-r.pdf | Rosana Ferrero, author (P); committed by Juan Luis López Garrancho | — |
-| (Spanish original) | Spanish | estadistica-descriptiva-con-R.pdf | Rosana Ferrero, author (P) | — |
-
-"?" rows need either a visual check of the PDF, which the OCR here couldn't decode (Cyrillic/CJK/Uzbek footers), or outreach. Russian and Ukrainian translations were partly fixed by Evgeni Chasnovski; whether he is the translator is unconfirmed.
+| base-r | Chinese (Simplified) | base-r_zh.pdf | Fu Yongchao 付永超 (P) | pptx (`base-r.pptx`) | added 2021-09 |
+| base-r | German | base-r_de.pdf | Annika Kies, Martin Kies (P) | — | added 2020-04 |
+| base-r | Greek | base-r_el.pdf | Kleanthis Koupidis (P) | — | 2015-03 |
+| base-r | Japanese | base-r_ja.pdf | — | — | 2015-03 |
+| base-r | Korean | base-r_ko.pdf | Taeho Kim (P) | LaTeX dir | 2015-03 |
+| base-r | Portuguese (Brazil) | base-r_pt_br.pdf | Samuel Carleial (P) | SVG ×2 | 2015-03 |
+| base-r | Spanish | base-r_es.pdf | Anthony Romero-Cerdán, Thatiane Ramírez Porras (P) | pptx | 2015-03 |
+| base-r | Turkish | base-r_tr.pdf | Elif Kartal (P) | — | 2015-03 |
+| base-r | Vietnamese | base-r_vi.pdf | — | — | added 2018-05 |
+| datatable | French | datatable_fr.pdf | Christian Wiat (P) | pptx | added 2025-09 |
+| datatable | Portuguese (Brazil) | datatable_pt_br.pdf | Samuel Carleial (P) | pptx | data.table 1.11.8 · 2019-01 |
+| git-github | Spanish | git-github_es.pdf | Anthony Romero-Cerdán (P) | pptx | 2022-01 |
+| git-github | Vietnamese | git-github_vi.pdf | Le-Huynh Truc-Ly (C) | pptx | 2022-01 |
+| gtsummary | Vietnamese | gtsummary_vi.pdf | Le-Huynh Truc-Ly (C) | pptx | 2022-04 |
+| metrica | Portuguese (Brazil) | metrica_pt_br.pdf | — | pptx | 2023-01 |
+| metrica | Russian | metrica_ru.pdf | Denis Gazetdinov (P) | pptx | 2023-01 |
+| metrica | Spanish | metrica_es.pdf | — | pptx | 2023-01 |
+| quanteda | French | quanteda_fr.pdf | Ahmadou Dicko (C) | pptx | added 2019-09 |
+| regex | French | regex_fr.pdf | Ahmadou Dicko (P) | pptx | added 2019-08 |
+| regex | Turkish | regex_tr.pdf | Zeki Özen (P) | — | 2016-09 |
+| survminer | Spanish | survminer_es.pdf | Maria Dermit (P) | pptx | added 2021-08 |
+| syntax | Korean | syntax_ko.pdf | Kwangchun Lee (P) | key | 2018-02 |
+| syntax | Spanish | syntax_es.pdf | Riva Quiroga (C) | key | 2018-01 |
+| torch | French | torch_fr.pdf | Christophe Regouby (C) | key | torch 0.9.0 · 2023-02 |
 
 ---
 
-## Appendix D: Legacy, archived, and orphaned files
+## Appendix D: Excluded legacy material
 
-None of these are marked "deprecated" or "outdated" on the old site. They're listed so Q4 can be decided.
+Excluded per D4. Nothing here is migrated.
 
-| Item | Location | What it is |
+| Item | Location | Notes |
 |---|---|---|
-| `data-visualization-2.1.pdf`, `rmarkdown-2.0.pdf` | old repo root | copies of current sheets under legacy names ("Add copies of new cheatsheets with old names", 2021-08), probably kept for old inbound links |
-| `old/pdfs/` (18 PDFs) | `old/` | `data-import-cheatsheet`, `data-transformation-cheatsheet`, `data-wrangling-cheatsheet`, `devtools-cheatsheet`, `ggplot2-cheatsheet` (+ `-2.0`, `-2.1`), `list-columns-cheatsheet`, `rmarkdown-cheatsheet` (+ `-2.0`), `rmarkdown-reference`, `rstudio-IDE-cheatsheet`, `rstudio-IDE-poster`, `shiny-cheatsheet` (+ `-dark`, `-old`), `sparklyr`, `0-template` |
-| `old/*.key`, `old/power-point-exports/*.pptx`, `old/pngs/` | `old/` | sources for the above |
-| `translations/spanish/previous spanish translations/` | translations | `data-import-cheatsheet_Spanish`, `devtools-cheatsheet_Spanish` (Frans van Dunné), `lubridate_Spanish`, `rmarkdown_Spanish` (Frans van Dunné), `rstudio-entorno` (Rosana Ferrero), `shiny_Spanish` (Frans van Dunné), `sparklyrSpanish` (PDF + key each), `package-development.pptx`. Not linked from any old-site page |
-| `translations/japanese/previous japanese translations/Rmarkdown-cheatsheet-2.0_ja.pdf` | translations | not linked |
-| `data-wrangling_*` (7 languages) | translations | linked on the Translations page, but the English sheet is retired |
-| `0-template.pdf/.key/.pptx`, `pngs/0-template.png` | root, keynotes, powerpoints | contributor template |
-| `pngs/thumbnails/*-thumbs.png` | pngs | old-style thumbnails, not needed (the new site generates its own) |
-| `misc-code/`, `html/python.*`, `html/common.R`, `renv/` | old repo | build helpers, not content |
-| Stale community sheets | various | footers from 2016–2019 with "RStudio, Inc." and old package versions, e.g. `regex` (2016), `syntax` (2018-01), `estimatr` (2018), `h2o` (2018); `cartography` (superseded by `mapsf`) and `mlr` (superseded by `mlr3`). Informational only |
+| `data-visualization-2.1.pdf`, `rmarkdown-2.0.pdf` | old repo root | copies of current sheets under legacy names (2021-08) |
+| `old/pdfs/` (18 PDFs), `old/*.key`, `old/power-point-exports/`, `old/pngs/` | `old/` | the 2016–2017 sheets: data-wrangling, devtools, ggplot2 2.0/2.1, list-columns, rmarkdown, rmarkdown-reference, rstudio-IDE (+ poster), shiny (+ dark/old), sparklyr, 0-template |
+| `translations/spanish/previous spanish translations/` (7 PDFs + keys, 1 pptx) | translations | not linked from the old site |
+| `translations/japanese/previous japanese translations/` (1 PDF) | translations | not linked |
+| `data-wrangling_{de,es,fr,ja,nl,pt,vi}.pdf` (+ `data-wrangling_es.key`) | translations | the English sheet only exists in `old/` |
+| `0-template.pdf/.key/.pptx`, `pngs/0-template.png` | root, keynotes, powerpoints | contributor template, not a cheat sheet |
+| `pngs/`, `pngs/thumbnails/` | pngs | the new site generates its own thumbnails |
+| `misc-code/`, `html/python.*`, `html/common.R`, `renv/`, `_freeze/` | old repo | build helpers |
 
 ---
 
 ## Appendix E: Method and how to reproduce
 
-- Old repo cloned to `/tmp/old-cheatsheets` (`git clone https://github.com/rstudio/cheatsheets`). Live pages fetched with `curl` to confirm the listings and which translations each HTML page links to (this showed the `shiny`/`gt` matcher bug live).
-- **Authors:**
-  - PDF text layer via `pdftotext`, grepping footers (`CC BY`, `Created by`, `Translated by`/`Traducido por`/`Traduit par`/`Übersetzt von`/`Çeviri`/`翻译`/`번역`/`Μετάφραση`/…).
-  - Image-only PDFs (`eurostat`, `gwasrapidd`, `mlr`, `admiral`, `arrow`) were rendered with `pdftoppm` and read visually.
-  - Translation footers without a text credit were OCR'd with `tesseract` (English model only).
-  - Commit fallback: `git log --follow --format=%an -- <file>`. GitHub handles were resolved with `gh api users/<login>`.
-- **PDF freshness:** `cmp` between the new-site and old-repo files, plus the `Updated:` footer string from `pdftotext`.
-- **New-site status:** front matter keys and body line counts of each `_index.md`, plus `git log -- content/resources/cheatsheets`.
-- **Sizes:** `du` on `keynotes/`, `powerpoints/`, `illustrator/`, `inkscape/` and `translations/**/*.{key,pptx}`.
+- **Sources:**
+  - old repo cloned to `/tmp/old-cheatsheets`
+  - live old-site pages fetched with `curl`, to confirm the listings and the per-page translation links
+- **Authors (Posit, D3):**
+  - `git log --follow --format='%ae%x09%an' -- <slug>.pdf`, plus `git log` on `keynotes/<slug>.key`, `powerpoints/<slug>.pptx`, `illustrator/<slug>.ai`, `html/<slug>.qmd`, `google-slides/<slug>.md`
+  - names merged by email; GitHub handles resolved with `gh api users/<login>`
+- **Authors and translators (community and translations):**
+  - the PDF text layer via `pdftotext`
+  - image-only PDFs rendered with `pdftoppm` and read visually
+  - footers without a text credit OCR'd with `tesseract` (English model)
+  - commit fallback as described in D5/R3
+- **Edition and date (D16):** regexes over the footer lines of each translated PDF (`Updated`, `Actualizado`, `Atualizado`, `Mise-à-jour`, `Обновлено`, `Оновлено`, `更新于`, `갱신월`, `Çeviri Tarihi`, …, plus `<pkg> <version>`). The fallback is `git log --diff-filter=A` on the file.
+- **`software` (D13):** `library()`/`pkg::` calls and frequent package names in each PDF's text, matched against `ls content/software`. The mapping was then narrowed to packages the sheet is about or teaches substantially.
+- **PDFs:**
+  - freshness via `cmp` and the "Updated" footer
+  - tags via `pdfinfo` (`Tagged:`)
+  - compression compared between Ghostscript (`/ebook`, `/printer`), `qpdf`, and a `pikepdf` prototype
+  - quality checked with `pdftotext` word counts and `magick compare` RMSE on renders
+- **Build pipeline:** `netlify.toml`, `.github/workflows/build-deploy.yml`, and Netlify's documentation on `GIT_LFS_ENABLED`. That variable isn't relevant here, because the site is built in GitHub Actions.
