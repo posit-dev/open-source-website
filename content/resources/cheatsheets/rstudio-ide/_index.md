@@ -2,6 +2,7 @@
 title: RStudio IDE
 image: page-1.png
 resource_type: cheatsheet
+by: posit
 date: '2026-02-25'
 description: Quick reference guide for rstudio ide.
 download_url: rstudio-ide.pdf

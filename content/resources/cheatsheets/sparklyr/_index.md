@@ -2,6 +2,7 @@
 title: Data science in Spark with sparklyr
 image: page-1.png
 resource_type: cheatsheet
+by: posit
 date: '2026-02-25'
 description: Quick reference guide for data science in spark with sparklyr.
 download_url: sparklyr.pdf

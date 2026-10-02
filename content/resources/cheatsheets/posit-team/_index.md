@@ -3,6 +3,7 @@ title: Posit Team
 image: team.png
 color: "#dddddd"
 resource_type: cheatsheet
+by: posit
 date: '2026-02-25'
 description: Quick reference guide for posit team.
 download_url: posit-team.pdf

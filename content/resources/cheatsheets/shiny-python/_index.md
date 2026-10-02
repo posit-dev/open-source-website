@@ -2,6 +2,7 @@
 title: Shiny for Python
 image: shiny.svg
 resource_type: cheatsheet
+by: posit
 date: '2026-02-25'
 description: Quick reference guide for shiny for python.
 download_url: shiny-python.pdf

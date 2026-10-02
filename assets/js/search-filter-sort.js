@@ -341,19 +341,16 @@
         filters: {},
       };
 
-      if (this.config.filters) {
-        this.config.filters.forEach(f => {
-          this.state.filters[f.key] = new Set();
-        });
-      }
-
       this._filterCfgMap = {};
       if (this.config.filters) {
         this.config.filters.forEach(f => {
           this._filterCfgMap[f.key] = {
             aliases: f.aliases || {},
             otherExcludes: f.other ? new Set(f.other) : null,
+            // Values selected when no URL param overrides them (e.g. By: Posit)
+            defaults: new Set(f.default || []),
           };
+          this.state.filters[f.key] = new Set(f.default || []);
         });
       }
 
@@ -378,6 +375,8 @@
       this._observeSticky();
       this._bindControls();
       this._applyFilters();
+      // Drop the pre-JS rule that hid items excluded by default filters
+      document.querySelectorAll('[data-filter-pending-style]').forEach(el => el.remove());
       this._setupInfiniteScroll();
       this._interactive = true;
     }
@@ -403,10 +402,25 @@
       }
     }
 
+    _defaultsFor(key) {
+      const cfg = this._filterCfgMap[key];
+      return cfg ? cfg.defaults : new Set();
+    }
+
+    _isDefaultFilter(key) {
+      const set = this.state.filters[key];
+      const defaults = this._defaultsFor(key);
+      if (set.size !== defaults.size) return false;
+      for (const v of set) {
+        if (!defaults.has(v)) return false;
+      }
+      return true;
+    }
+
     _hasActiveFilters() {
       if (this.state.search) return true;
-      for (const set of Object.values(this.state.filters)) {
-        if (set.size > 0) return true;
+      for (const key of Object.keys(this.state.filters)) {
+        if (!this._isDefaultFilter(key)) return true;
       }
       if (this.state.sort.key && this._defaultSortCfg && this.state.sort.key !== this._defaultSortCfg.key) return true;
       return false;
@@ -442,7 +456,33 @@
       let hasActive = false;
 
       for (const [key, set] of Object.entries(this.state.filters)) {
-        if (set.size === 0) continue;
+        // Default selections (e.g. By: Posit) don't get a pill
+        if (this._isDefaultFilter(key)) continue;
+        if (set.size === 0) {
+          // A filter with defaults that was cleared shows everything; give it
+          // a pill that restores the defaults (and keeps "Clear" reachable)
+          hasActive = true;
+          const cfg = (this.config.filters || []).find(f => f.key === key) || {};
+          const label = `${cfg.label || key}: all`;
+          const pill = document.createElement('button');
+          pill.className = 'pill-filter';
+          pill.setAttribute('aria-label', `Remove ${label} filter`);
+          pill.innerHTML = `
+            <span>${label}</span>
+            <span class="icon-[boxicons--x] w-4 h-4" aria-hidden="true"></span>
+          `;
+          pill.addEventListener('click', () => {
+            this.state.filters[key] = new Set(this._defaultsFor(key));
+            this._syncFilterOptions(key);
+            this._updateBadge(key);
+            this._updateFilterAria(key);
+            this._renderActivePills();
+            this._applyFilters();
+            this._announce(`${label} filter removed`);
+          });
+          container.appendChild(pill);
+          continue;
+        }
         hasActive = true;
 
         for (const value of set) {
@@ -455,6 +495,7 @@
           `;
           pill.addEventListener('click', () => {
             this.state.filters[key].delete(value);
+            this._syncFilterOptions(key);
             this._updateBadge(key);
             this._updateFilterAria(key);
             this._renderActivePills();
@@ -940,9 +981,6 @@
         const group = btn.dataset.filterGroup;
         const value = btn.dataset.filterValue;
         const check = btn.querySelector('[data-filter-check]');
-        if (this.state.filters[group] && this.state.filters[group].has(value)) {
-          if (check) check.classList.remove('opacity-0');
-        }
         btn.addEventListener('click', () => {
           const set = this.state.filters[group];
           if (!set) return;
@@ -964,9 +1002,11 @@
         });
       });
 
-      // Set initial badge counts
+      // Set initial checkmarks, badge counts, and labels (incl. defaults)
       for (const key of Object.keys(this.state.filters)) {
+        this._syncFilterOptions(key);
         this._updateBadge(key);
+        this._updateFilterAria(key);
       }
 
       if (this.controlsEl) {
@@ -1141,6 +1181,17 @@
       }
     }
 
+    _syncFilterOptions(group) {
+      if (!this.controlsEl) return;
+      const set = this.state.filters[group];
+      this.controlsEl.querySelectorAll('[data-filter-group="' + group + '"]').forEach(btn => {
+        const selected = !!set && set.has(btn.dataset.filterValue);
+        const check = btn.querySelector('[data-filter-check]');
+        if (check) check.classList.toggle('opacity-0', !selected);
+        btn.setAttribute('aria-selected', selected ? 'true' : 'false');
+      });
+    }
+
     _updateBadge(group) {
       if (!this.controlsEl) return;
       const badge = this.controlsEl.querySelector('[data-filter-badge="' + group + '"]');
@@ -1244,7 +1295,9 @@
       }
 
       for (const [key, set] of Object.entries(this.state.filters)) {
-        if (set.size > 0) {
+        // Only write filters that differ from their default; an explicitly
+        // empty selection of a filter with defaults is written as `key=`
+        if (!this._isDefaultFilter(key)) {
           params.set(key, Array.from(set).join(','));
         }
       }
@@ -1292,7 +1345,7 @@
         this.state.sort.direction = this._defaultSortCfg.direction || 'asc';
       }
       for (const key of Object.keys(this.state.filters)) {
-        this.state.filters[key] = new Set();
+        this.state.filters[key] = new Set(this._defaultsFor(key));
       }
 
       if (this.controlsEl) {
@@ -1310,12 +1363,11 @@
           if (sortLabel) sortLabel.textContent = this._defaultSortCfg.label || this._defaultSortCfg.key;
         }
 
-        this.controlsEl.querySelectorAll('[data-filter-check]').forEach(check => {
-          check.classList.add('opacity-0');
-        });
-        this.controlsEl.querySelectorAll('[data-filter-badge]').forEach(badge => {
-          badge.classList.add('hidden');
-        });
+        for (const key of Object.keys(this.state.filters)) {
+          this._syncFilterOptions(key);
+          this._updateBadge(key);
+          this._updateFilterAria(key);
+        }
       }
 
       this._applyFilters();

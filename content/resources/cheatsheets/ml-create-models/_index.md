@@ -2,6 +2,7 @@
 title: Create models with parsnip
 image: page-1.png
 resource_type: cheatsheet
+by: posit
 date: '2026-04-09'
 description: Quick reference guide for create models with parsnip.
 download_url: ml-create-models.pdf

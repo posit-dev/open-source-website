@@ -3,6 +3,7 @@ title: 'Python Polars: The Definitive Cheatsheet'
 image: hex-polars.svg
 color: '#cd792c'
 resource_type: cheatsheet
+by: posit
 date: '2026-08-10'
 description: Quick reference guide for transforming, analyzing, and visualizing data
   with Python Polars.

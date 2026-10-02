@@ -2,6 +2,7 @@
 title: Dates and times with lubridate
 image: page-1.png
 resource_type: cheatsheet
+by: posit
 date: '2026-02-25'
 description: Quick reference guide for dates and times with lubridate.
 download_url: lubridate.pdf

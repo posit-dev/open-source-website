@@ -2,6 +2,7 @@
 title: Machine learning with tidymodels
 image: page-1.png
 resource_type: cheatsheet
+by: posit
 date: '2026-08-03'
 description: A map of the tidymodels packages, grouped by where each one fits in the
   machine learning workflow.

@@ -2,6 +2,7 @@
 title: gt
 image: page-1.png
 resource_type: cheatsheet
+by: posit
 date: '2026-02-25'
 description: Quick reference guide for gt.
 download_url: gt.pdf

@@ -2,6 +2,7 @@
 title: Shiny for R
 image: shiny.svg
 resource_type: cheatsheet
+by: posit
 date: '2026-02-25'
 description: Quick reference guide for shiny for r.
 download_url: shiny.pdf
