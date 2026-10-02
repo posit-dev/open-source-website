@@ -706,7 +706,7 @@ sheets:
     - Rosana Ferrero
     languages:
     - R
-    updated: 2017-01
+    updated: 2018-06
     body: summary
     summary: |
       This cheat sheet is in Spanish. It covers descriptive statistics and exploratory visualization
@@ -1119,7 +1119,7 @@ sheets:
     - Rosana Ferrero
     languages:
     - R
-    updated: 2017-01
+    updated: 2018-06
     body: summary
     summary: |
       This cheat sheet is in Spanish. It covers the fundamental building blocks of R for beginners:

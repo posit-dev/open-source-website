@@ -71,7 +71,7 @@ The working to-do list, updated with each implementation commit on `migrate-chea
 - [x] **T5.** Tooling: `compress-cheatsheet-pdf.py`, `validate-cheatsheets.py`, migration script + manifest
 - [x] **T6.** Phase 2: refresh, compress, and complete the 30 existing sheets (PDFs, thumbnails, sources, translations, people, markdown)
 - [x] **T7.** Phase 3: `renv`, `tidyeval`, `caret`
-- [ ] **T8.** Phase 4: 65 community sheets (bundles, PDFs, thumbnails, sources, translations, summaries)
+- [x] **T8.** Phase 4: 65 community sheets (bundles, PDFs, thumbnails, sources, translations, summaries)
 - [ ] **T9.** Wrap-up: overview copy, contributor docs, validation, Hugo build check, final plan update
 
 ---
