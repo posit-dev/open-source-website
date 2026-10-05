@@ -37,7 +37,7 @@ We were thrilled to launch the inaugural Posit Impact Awards to celebrate storie
 
 A huge congratulations to all our winners, and a heartfelt thank you for the incredible work you do (and for sharing it with us)!
 
-* Read more about the Impact Award winners in the [2026 Posit Impact Awards](https://posit.co/blog/2026-posit-impact-awards) blog post.
+* Explore their stories in the [2026 Posit Impact Awards](https://posit.co/blog/2026-posit-impact-awards) blog post and join us at the [Data Science Hangout](https://posit.co/data-science-hangout) to hear from other Impact Award winners and nominees featured in the next few weeks.
 
 ![Graphic presenting the 2026 Posit Impact Awards winners: Paulo Villarroel (Mission-Critical), Chendi Liao (Transformation), Claudio T. Rebelo (Scale & Reach), Skyler Elmstrom (Resilient Impact), Jon Harmon (Community Builder), Christian Martinez (Open Source), and Amanda Perez & Romina Mir (ROI & Efficiency).](images/impact-awards.jpeg)
 
@@ -48,7 +48,7 @@ A huge congratulations to all our winners, and a heartfelt thank you for the inc
 [commons](https://posit-dev.github.io/commons/) 0.1.0 introduces a new framework for building trustworthy self-service data analysis agents in R and Python. The package implements a three-tier trust labeling system that transparently indicates whether agents invoke trusted code directly, write new code justified by vetted context, or provide untrusted answers. Built on Posit’s LLM stack ([ellmer](https://ellmer.tidyverse.org/), [chatlas](https://posit-dev.github.io/chatlas/), [shinychat](https://posit-dev.github.io/shinychat/)), commons enables teams to convert existing analytical code into AI agent capabilities while maintaining transparency about code sources.
 
 * Learn more about [commons 0.1.0](https://opensource.posit.co/blog/2026-09-15_commons-0-1-0/).
-* Watch Simon Couch and Sara Altman's keynote, "Correct, reproducible, and transparent data agents", on the event portal.
+* Join Sara & Simon's virtual webinar on October 28th to learn more about commons. [Register here](https://events.zoom.us/ev/Ajss5j9VeRMe0zw-AtFKf7AUAsthzYhaYjYPeEIu1uYAQe1K0ud1~Agb_hSt1UGxd9fUyIDC32e6jAdEtbl7G_AaLZUYhRvyZR5cGpY5Kp_A0-w?mkt_tok=NzA5LU5YTi03MDYAAAGhT3GTQTQ5s7LDxqZGUAE1zALOLmEDysbAsOyvVdJ9P72DB_IRwtWRTED6kyJA-j-YKF7WxCTY_ZlZ4rTkiyY).
 
 ### Quarto Hub
 
@@ -75,13 +75,13 @@ Beyond all the exciting conf news, September was packed with major product updat
 
 ####  ggsql 0.5.0: Readers, Writers, and Beta status
 
-ggsql 0.5.0 reaches beta status with major improvements to database connectivity and rendering capabilities. The release introduces hybrid-reader mode for read-only connections with cache support, replaces the Vega-Lite renderer with a custom writer supporting PNG, JPEG, SVG, and PDF output, and adds rich text support through extended markdown. New features include caption support, minor breaks on scales, and true variable line aesthetics with gradients.
+ggsql is an R package that implements a grammar of graphics for SQL, enabling ggplot2-style data visualization directly from database queries. ggsql 0.5.0 reaches beta status with major improvements to database connectivity and rendering capabilities. The release introduces hybrid-reader mode for read-only connections with cache support, replaces the Vega-Lite renderer with a custom writer supporting PNG, JPEG, SVG, and PDF output, and adds rich text support through extended markdown. New features include caption support, minor breaks on scales, and true variable line aesthetics with gradients.
 
 * Read more in the [ggsql 0.5.0: Readers, Writers, and Beta status](https://opensource.posit.co/blog/2026-09-24_ggsql_0_5_0/) blog post.
 
 #### orbital 0.7.0
 
-orbital 0.7.0 and tidypredict 1.2.0 massively expand in-database prediction capabilities for tidymodels workflows. The release adds 27 new model/engine combinations including discriminant analysis, naive Bayes, neural networks, SVMs, partial least squares, and ensemble methods. tidypredict now functions as a developer toolkit with new generics for programmatic use, and improved error messaging guides users when probability predictions aren’t available.
+orbital enables the running predictions of tidymodels workflows inside databases. orbital 0.7.0 and tidypredict 1.2.0 massively expand in-database prediction capabilities for tidymodels workflows. The release adds 27 new model/engine combinations including discriminant analysis, naive Bayes, neural networks, SVMs, partial least squares, and ensemble methods. tidypredict now functions as a developer toolkit with new generics for programmatic use, and improved error messaging guides users when probability predictions aren’t available.
 
 * Read more in the [orbital 0.7.0](https://opensource.posit.co/blog/2026-09-09_orbital-0-7-0/) blog post.
 
@@ -89,13 +89,13 @@ orbital 0.7.0 and tidypredict 1.2.0 massively expand in-database prediction capa
 
 #### ellmer 0.5.0
 
-ellmer 0.5.0 brings major improvements for working with large language models in R. New file handling functions reduce token costs by efficiently managing documents. The release adds citation tracking from web search tools, token counting for cost prediction, and streaming structured output support. Developer features include `tool_context()` for accessing request metadata and new lifecycle hooks for building agents.
+ellmer makes it easy to use large language models (LLM) from R. ellmer 0.5.0 brings major improvements for working with large language models in R. New file handling functions reduce token costs by efficiently managing documents. The release adds citation tracking from web search tools, token counting for cost prediction, and streaming structured output support. Developer features include `tool_context()` for accessing request metadata and new lifecycle hooks for building agents.
 
 * Read more in the [ellmer 0.5.0](https://opensource.posit.co/blog/2026-09-14_ellmer-0-5-0/) blog post.
 
 #### vitals 0.4.0
 
-vitals 0.4.0 brings significant performance improvements and new agent comparison capabilities for LLM evaluation in R. The release includes claude_code() and codex() helpers for benchmarking custom ellmer-built agents against leading coding agents, plus vitals_log_read() for loading log files back into resumable Chat objects. Log files are now ~4x smaller and the log viewer is substantially faster.
+vitals is a framework for large language model evaluation in R. vitals 0.4.0 brings significant performance improvements and new agent comparison capabilities for LLM evaluation in R. The release includes claude_code() and codex() helpers for benchmarking custom ellmer-built agents against leading coding agents, plus vitals_log_read() for loading log files back into resumable Chat objects. Log files are now ~4x smaller and the log viewer is substantially faster.
 
 * Read more in the [vitals 0.4.0](https://opensource.posit.co/blog/2026-09-03_vitals-0-4-0/) blog post.
 
@@ -117,13 +117,13 @@ Shiny for Python 1.8 introduces in-memory server testing without browsers, enabl
 
 #### Multiple tables, saved conversations, and take-home dashboards: querychat R 0.4.0 and Python 0.9.0
 
-querychat R 0.4.0 and Python 0.9.0 introduce multiple table support with automatic joins, persistent conversation history across sessions, and the `/handoff` command for exporting chats as downloadable Quarto dashboards, Shiny apps, or marimo notebooks. The release builds on shinychat’s full-page layout with editable messages and file attachments, adds YAML-based data dictionaries for context, and integrates with pins boards for chatting with pinned data.
+querychat facilitates safe and reliable natural language exploration of tabular data, powered by SQL and large language models (LLMs). querychat R 0.4.0 and Python 0.9.0 introduce multiple table support with automatic joins, persistent conversation history across sessions, and the `/handoff` command for exporting chats as downloadable Quarto dashboards, Shiny apps, or marimo notebooks. The release builds on shinychat’s full-page layout with editable messages and file attachments, adds YAML-based data dictionaries for context, and integrates with pins boards for chatting with pinned data.
 
 * Read more in the [Multiple tables, saved conversations, and take-home dashboards: querychat R 0.4.0 and Python 0.9.0](https://opensource.posit.co/blog/2026-09-29_querychat-tables-handoff/) blog post.
 
 #### Complete chat applications in shinychat: R 0.5.0 and Python 0.7.1
 
-shinychat R 0.5.0 and Python 0.7.1 deliver complete chat application capabilities with conversation history, message editing and branching, greetings, file attachments, and slash commands. The new `page_chat()` layout provides full-window interfaces with integrated navigation, tool displays, citations, and artifact previews. Features include persistent conversation storage, search and organization tools, streaming responses with thinking panels, and toolbars for contextual actions.
+shinychat provides a Shiny toolkit for building generative AI applications like chatbots and streaming content. shinychat R 0.5.0 and Python 0.7.1 deliver complete chat application capabilities with conversation history, message editing and branching, greetings, file attachments, and slash commands. The new `page_chat()` layout provides full-window interfaces with integrated navigation, tool displays, citations, and artifact previews. Features include persistent conversation storage, search and organization tools, streaming responses with thinking panels, and toolbars for contextual actions.
 
 * Read more in the [Complete chat applications in shinychat: R 0.5.0 and Python 0.7.1](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/) blog post.
 
