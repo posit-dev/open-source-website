@@ -24,7 +24,6 @@ languages:
   - TypeScript
   - JavaScript
 tags:
-  - Shiny
   - Bioinformatics
   - Genomics
 ---
