@@ -3,6 +3,10 @@ title: "Genomes, Prompts, and Shiny: What I Built During My Summer at Posit"
 date: 2026-10-07
 people:
   - Samuel Bharti
+  - Shiny Team
+  - Barret Schloerke
+  - Carson Sievert
+  - Joe Cheng
 description: >
   10 open-source applications and 5 packages for computational biology, built
   over a summer on the Shiny team, and the reusable layer that grew underneath them.
@@ -17,6 +21,13 @@ topics:
 software:
   - shiny-r
   - shinyreact
+  - ellmer
+  - shinychat
+  - biobouncer
+  - biohttp
+  - bioclients
+  - plotomics
+  - biocohort
 source: shiny
 languages:
   - R
@@ -66,7 +77,7 @@ What I like most is that the assistant lives inside the app. It can use tools ov
 
 The Tahoe app solved one type of scaling problem: accessing and understanding a dataset that is much larger than the application itself. One layer later, the same issue came back, with the **visualization itself** as the bottleneck.
 
-[**plotomics**](https://github.com/samuelbharti/plotomics) and [**Plotomics Live**](https://posit-plotomics-live.share.connect.posit.cloud/) ([source](https://github.com/samuelbharti/plotomics-live)) came out of that bottleneck.
+[**plotomics**](/software/plotomics/) and [**Plotomics Live**](https://posit-plotomics-live.share.connect.posit.cloud/) ([source](https://github.com/samuelbharti/plotomics-live)) came out of that bottleneck.
 
 plotomics is a visualization library for computational biology with a shared TypeScript rendering core and wrappers for R and Python. Its 17 components cover embeddings, heatmaps, volcano plots, networks, oncoplots, genomic views, spatial data, survival analysis, and other common biological visualizations. Of those, 15 ship in R, Python, and JavaScript; the two genome browsers are JavaScript and Python only.
 
@@ -108,7 +119,7 @@ Five packages grew out of problems that kept appearing across the applications.
 
 ### biobouncer
 
-[**biobouncer**](https://github.com/samuelbharti/biobouncer) handles biological identifier validation. Gene symbols change. Ontology identifiers have different namespaces. Variants can be syntactically valid but biologically meaningless. Public databases each have their own identifier conventions.
+[**biobouncer**](/software/biobouncer/) handles biological identifier validation. Gene symbols change. Ontology identifiers have different namespaces. Variants can be syntactically valid but biologically meaningless. Public databases each have their own identifier conventions.
 
 biobouncer provides a common layer for validating these inputs using pattern checks, cached resources, remote validation, and existence checks. It also has implementations across R, Python, and TypeScript backed by the same conformance data.
 
@@ -116,13 +127,13 @@ If the same identifier moves through an R pipeline, a Python analysis, and a web
 
 ### biohttp
 
-[**biohttp**](https://github.com/samuelbharti/biohttp) handles the repetitive infrastructure around external APIs. Retries, throttling, caching, batching, timeouts, circuit breaking, and structured errors should not need to be rebuilt in every scientific application.
+[**biohttp**](/software/biohttp/) handles the repetitive infrastructure around external APIs. Retries, throttling, caching, batching, timeouts, circuit breaking, and structured errors should not need to be rebuilt in every scientific application.
 
 It also makes an important distinction between a service successfully returning no biological result and the service itself failing. That sounds small until an application depends on several external databases at once.
 
 ### bioclients
 
-[**bioclients**](https://github.com/samuelbharti/bioclients) sits on top of that transport layer and provides R clients for 29 biological services. Ensembl, UniProt, gnomAD, Open Targets, ClinVar, AlphaFold, and the rest each get a client that understands the structure and meaning of what they return.
+[**bioclients**](/software/bioclients/) sits on top of that transport layer and provides R clients for 29 biological services. Ensembl, UniProt, gnomAD, Open Targets, ClinVar, AlphaFold, and the rest each get a client that understands the structure and meaning of what they return.
 
 Network requests and response parsing are separated so parsers can be tested against stored responses without requiring a live API.
 
@@ -139,7 +150,7 @@ The separation is intentional:
 
 Before APIs and visualization even matter, most omics projects have another problem: keeping the study organized. Subjects, samples, assays, species, and the manual corrections made along the way often end up spread across spreadsheets and scripts.
 
-[**biocohort**](https://github.com/samuelbharti/biocohort) provides a validated study representation for keeping those relationships together. The same manifest can describe multiple assay types and organisms, generate pipeline sample sheets, and preserve corrections that would otherwise disappear inside preprocessing code.
+[**biocohort**](/software/biocohort/) provides a validated study representation for keeping those relationships together. The same manifest can describe multiple assay types and organisms, generate pipeline sample sheets, and preserve corrections that would otherwise disappear inside preprocessing code.
 
 This one is particularly close to my own research because these small bookkeeping problems become very expensive once a project grows.
 
@@ -183,7 +194,7 @@ I built several more focused applications around common genomics workflows.
 
 These five are deliberately narrower than the applications above. An analysis can end in a tool: a thin Shiny layer turns a computational result into something the researcher who understands the biology can actually explore.
 
-![Five application screenshots in a labelled grid: Recount Explorer, DE Explorer, Signature Scoring, Drug Perturbation, and Genome Explorer. Each shows a populated dashboard, in order a study catalogue, a PCA with threshold controls, a pathway activity contrast, a connectivity leaderboard, and a genome browser above a variant table.](focused-apps.png "Five smaller applications, each wrapped around one common genomics workflow.")
+[![Five application screenshots in a labelled grid: Recount Explorer, DE Explorer, Signature Scoring, Drug Perturbation, and Genome Explorer. Each shows a populated dashboard, in order a study catalogue, a PCA with threshold controls, a pathway activity contrast, a connectivity leaderboard, and a genome browser above a variant table.](focused-apps.png "Five smaller applications, each wrapped around one common genomics workflow.")](https://posit-shiny-showcase-bioinformatics.share.connect.posit.cloud/)
 
 ## Working in open source
 
