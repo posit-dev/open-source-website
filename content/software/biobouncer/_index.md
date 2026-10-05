@@ -12,7 +12,7 @@ latest_release: '2026-09-04T18:58:14+00:00'
 people:
 - Samuel Bharti
 title: biobouncer
-website: http://www.samuelbharti.com/biobouncer/
+website: https://www.samuelbharti.com/biobouncer/
 
 include:
   languages:
@@ -35,5 +35,5 @@ external:  # updated automatically, do not edit
   repo: samuelbharti/biobouncer
   stars: 4
   title: biobouncer
-  website: http://www.samuelbharti.com/biobouncer/
+  website: https://www.samuelbharti.com/biobouncer/
 ---

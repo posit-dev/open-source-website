@@ -11,7 +11,7 @@ latest_release: '2026-08-03T09:17:51+00:00'
 people:
 - Samuel Bharti
 title: bioclients
-website: http://www.samuelbharti.com/bioclients/
+website: https://www.samuelbharti.com/bioclients/
 
 external:  # updated automatically, do not edit
   description: Look up genes, variants and proteins from R. One consistent way to
@@ -30,5 +30,5 @@ external:  # updated automatically, do not edit
   repo: samuelbharti/bioclients
   stars: 2
   title: bioclients
-  website: http://www.samuelbharti.com/bioclients/
+  website: https://www.samuelbharti.com/bioclients/
 ---

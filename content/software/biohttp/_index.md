@@ -9,7 +9,7 @@ latest_release: '2026-09-07T05:57:58+00:00'
 people:
 - Samuel Bharti
 title: biohttp
-website: http://www.samuelbharti.com/biohttp/
+website: https://www.samuelbharti.com/biohttp/
 
 external:  # updated automatically, do not edit
   description: HTTP layer for R clients of biological and other web services.
@@ -26,5 +26,5 @@ external:  # updated automatically, do not edit
   repo: samuelbharti/biohttp
   stars: 2
   title: biohttp
-  website: http://www.samuelbharti.com/biohttp/
+  website: https://www.samuelbharti.com/biohttp/
 ---
