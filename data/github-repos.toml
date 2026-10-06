@@ -27470,3 +27470,45 @@ contributors = [
 ]
 readme_image = "logo/shiny-react.png"
 last_updated = "2026-09-29T19:45:28.550123+00:00"
+
+[[repos]]
+repo = "RConsortium/S7"
+name = "S7"
+description = "S7: a new OO system for R"
+website = "https://rconsortium.github.io/S7"
+stars = 494
+forks = 52
+license = "NOASSERTION"
+contributors = [
+    "hadley",
+    "t-kalinowski",
+    "jimhester",
+    "lawremi",
+    "mmaechler",
+    "wlandau",
+    "AlbertRapp",
+    "ColinFay",
+    "jamieRowen",
+    "jonthegeek",
+    "krlmlr",
+    "jtlandis",
+    "jjjermiah",
+    "dgkf",
+    "laresbernardo",
+    "eitsupi",
+    "dmurdoch",
+    "11rchitwood",
+    "ramiromagno",
+    "mattheaphy",
+    "mcol",
+    "lgatto",
+    "jeroen",
+    "jameslairdsmith",
+    "Bisaloo",
+    "gvelasq",
+    "espinielli",
+    "DavisVaughan",
+    "bbolker",
+]
+last_updated = "2026-10-06T15:02:53.467073+00:00"
+language = "R"
