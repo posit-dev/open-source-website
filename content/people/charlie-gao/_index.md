@@ -16,10 +16,10 @@ software:
   - mori
   - shiny-r
   - purrr
+  - quarto
   - promises
   - mcptools
   - later
-  - watcher
 ---
 
 Charlie Gao is an open source software engineer at Posit building asynchronous and parallel tooling in C, R and Python for data science, scientific computing, and technical communication across Tidyverse, Shiny and Quarto.
