@@ -1,0 +1,71 @@
+---
+title: "rig 0.11.0 part one: manage R installations"
+date: 2026-10-06
+people:
+  - Gábor Csárdi
+description: >
+  rig 0.11.0: with lots of new functionalities: user mode R installations,
+  R package and project management and much more. This first post is about
+  R installations and the new _user mode_.
+image: ""
+image-alt: ""
+source: tidyverse
+topics:
+  - MLOps and Admin
+  - Best Practices
+software:
+  - rig
+languages:
+  - R
+tags:
+  - R installation
+  - package management
+hidesubscription: false
+# Uncomment to credit a stock photo:
+# photo:
+#   url: https://unsplash.com/photos/...
+#   author: Photographer Name
+---
+
+<!--
+TODO:
+- [ ] Add image (1920×1080 PNG or JPG) and image-alt
+- [ ] Trim topics, software, and languages to only what applies
+- [ ] Open a PR against main for a Netlify preview
+-->
+
+We are thrilled to announce rig 0.11.0, with lots of new functionalities:
+user mode R installations, R package and project management and much more.
+This is the first of three blog posts about the new rig release. This post
+is about managing R installations and the new user mode. The second post
+will show how rig can help with managing R packages, and the third
+will focus on project management.
+
+## New Web Site
+
+rig has a new web site at <https://rig.r-lib.org>! See this web site for
+installation instructions, including the new user mode install; reference
+documentation (also in `rig help`!), guides about larger topics and
+tutorials to get started.
+
+## User Mode R Installations
+
+rig can now install and manage R installations as a regular user, without
+requiring administrative privileges. rig calls this _user mode_. In user
+mode, R installations are installed in the user's home directory rather
+than system-wide. System-wide installations are still the default currently,
+and they are called _admin mode_.
+
+### Switching to user mode
+
+**TL;DR**: call `rig system user-mode` to switch a previous setup from
+admin mode to user mode.
+
+### macOS
+
+### Windows
+
+### Linux
+
+## Other improvements
+
