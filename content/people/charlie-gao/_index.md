@@ -13,8 +13,12 @@ social:
   youtube: ""
 software:
   - later
+  - mcptools
   - mirai
   - mori
+  - promises
+  - purrr
+  - shiny-r
   - watcher
 ---
 
