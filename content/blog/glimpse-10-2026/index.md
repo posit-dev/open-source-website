@@ -52,7 +52,7 @@ A huge congratulations to all our winners, and a heartfelt thank you for the inc
 
 ### Quarto Hub
 
-Quarto Hub is a new open-source and hosted platform from Posit. In Quarto Hub, you can create, edit, comment on, and publish your [Quarto projects](https://quarto.org/) (single documents, presentations, websites) collaboratively and in real time.
+Quarto Hub is a new hosted platform from Posit. In Quarto Hub, you can create, edit, comment on, and publish your [Quarto projects](https://quarto.org/) (single documents, presentations, websites) collaboratively and in real time.
 
 * Watch Carlos Scheidegger's talk, "Quarto Hub: Collaboratively edit, create, and share documents", on the event portal.
 
