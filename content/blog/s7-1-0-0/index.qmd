@@ -7,8 +7,8 @@ people:
 description: >
   S7 1.0.0 brings faster construction, lower memory use, S4 inheritance,
   and new tools for exploring and maintaining object-oriented R code.
-image: dovetail-joint.png
-image-alt: Light and dark wooden boards connected by a dovetail joint in sunlight.
+image: stone-arch.png
+image-alt: A small stone arch with a golden keystone on a sunlit table.
 topics:
   - Best Practices
 software:
