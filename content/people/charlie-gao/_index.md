@@ -15,9 +15,9 @@ software:
   - mirai
   - mori
   - nanonext
+  - quarto
   - shiny-r
   - purrr
-  - quarto
   - promises
   - mcptools
 ---
