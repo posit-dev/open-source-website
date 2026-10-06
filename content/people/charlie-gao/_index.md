@@ -12,13 +12,13 @@ social:
   website: "https://shikokuchuo.net"
   youtube: ""
 software:
-  - later
-  - mcptools
   - mirai
   - mori
-  - promises
-  - purrr
   - shiny-r
+  - purrr
+  - promises
+  - mcptools
+  - later
   - watcher
 ---
 
