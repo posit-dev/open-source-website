@@ -1,15 +1,15 @@
 ---
-title: "rig 0.11.0 part one: R installations"
-date: 2026-10-07
+title: 'rig 0.11.0 part one: R installations'
+date: 2026-10-07T00:00:00.000Z
 people:
   - Gábor Csárdi
 description: >
-  rig 0.11.0: with lots of new features. This is the first post
-  out of three, about the new user mode and related topics.
-image: "featured.jpg"
+  rig 0.11.0: with lots of new features. This is the first post out of three,
+  about the new user mode and related topics.
+image: featured.jpg
 image-alt: >
-  Black and white photo of a fleet of small sailboats racing on open sea,
-  with one boat, sail number 3102, in front and hills in the background.
+  Black and white photo of a fleet of small sailboats racing on open sea, with
+  one boat, sail number 3102, in front and hills in the background.
 source: tidyverse
 topics:
   - MLOps and Admin
@@ -27,13 +27,13 @@ photo:
   author: Christian Palau
 ---
 
+
 <!--
 TODO:
 - [x] Add image (1920×1080 PNG or JPG) and image-alt
 - [x] Trim topics, software, and languages to only what applies
 - [x] Open a PR against main for a Netlify preview
 -->
-
 <style>
 .prose pre {
   font-size: 0.65em;
@@ -44,8 +44,7 @@ We are thrilled to announce rig 0.11.0 (and 0.10.0), with lots of new
 functionalities: user mode R installations, R package and project management
 and much more. This is the first of three blog posts about the new rig
 release. This post is about managing R installations and the new user mode.
-The second post will show how rig can help with [managing R packages](
-  https://rig.r-lib.org/pkg-guide.html), and the third will focus on
+The second post will show how rig can help with [managing R packages](https://rig.r-lib.org/pkg-guide.html), and the third will focus on
 [project management](https://rig.r-lib.org/proj-guide.html).
 
 [Full changelog on the rig web site](https://rig.r-lib.org/news.html).
@@ -57,24 +56,27 @@ installation instructions, including the new user mode install; reference
 documentation (also in `rig help`!), guides about larger topics and
 tutorials to get started.
 
-[![The home page of the new rig web site, with a sidebar listing tutorials, guides and reference pages, and a quick start section.](rig-website.png)](https://rig.r-lib.org)
+<figure>
+<a href="https://rig.r-lib.org"><img src="rig-website.png" /></a>
+<figcaption>The home page of the new rig web site, with a sidebar listing tutorials, guides and reference pages, and a quick start section.</figcaption>
+</figure>
 
 ## User Mode R Installations
 
 rig can now install and manage R installations as a regular user, without
-requiring administrative privileges. rig calls this _user mode_. In user
+requiring administrative privileges. rig calls this *user mode*. In user
 mode, R installations are installed in the user's home directory rather
 than system-wide. System-wide installations are still the default currently,
-and they are called _admin mode_.
+and they are called *admin mode*.
 
 Advantages of using user mode:
 - **No admin**: no need for administrative privileges.
 - **All Linux**: works on all glibc (from glibc 2.34) and musl (from musl
-  1.2) based Linux systems.
+1.2) based Linux systems.
 - **Multiple patch versions**: on macOS you can install multiple patch
-  versions side by side.
+versions side by side.
 - **Convenience**: no need to use `sudo` or an admin account to install and
-  manage R.
+manage R.
 
 User mode is quite new, though. It is much less tested than admin mode,
 and you may encounter bugs or unexpected behavior more frequently. On Linux,
@@ -85,18 +87,19 @@ User mode (admin mode as well, actually) is slightly different on each
 operating system. Here is a table about where rig stores its files on each
 OS in both modes.
 
-| Platform | Mode  | R install root                    | Binary directory (`R`, `Rscript`, `R-*`) |
-|----------|-------|-----------------------------------|------------------------------------------|
-| macOS    | admin | `/Library/Frameworks/R.framework` | `/usr/local/bin`                         |
-| macOS    | user  | `~/.local/share/rig/r`            | `~/.local/bin`                           |
-| Linux    | admin | `/opt/R`                          | `/usr/local/bin`                         |
-| Linux    | user  | `~/.local/share/rig/r`            | `~/.local/bin`                           |
-| Windows  | admin | `C:\Program Files\R`              | `C:\Program Files\R\bin`                 |
-| Windows  | user  | `%APPDATA%\rig\data\r`            | `%USERPROFILE%\.local\bin`               |
+| Platform | Mode | R install root | Binary directory (`R`, `Rscript`, `R-*`) |
+|---------|------|--------------------------|-------------------------------|
+| macOS | admin | `/Library/Frameworks/R.framework` | `/usr/local/bin` |
+| macOS | user | `~/.local/share/rig/r` | `~/.local/bin` |
+| Linux | admin | `/opt/R` | `/usr/local/bin` |
+| Linux | user | `~/.local/share/rig/r` | `~/.local/bin` |
+| Windows | admin | `C:\Program Files\R` | `C:\Program Files\R\bin` |
+| Windows | user | `%APPDATA%\rig\data\r` | `%USERPROFILE%\.local\bin` |
 
 You can call the new `rig system dirs` command to see where rig stores its
 various files:
-```text
+
+``` text
 ❯ rig system dirs
 Mode                  user
 Architecture          arm64
@@ -111,7 +114,8 @@ Project library root  (in-project, .rvenv/lib)
 ```
 
 The same in admin mode:
-```text
+
+``` text
 ❯ rig system dirs --admin
 Mode                  admin
 Architecture          arm64
@@ -131,7 +135,7 @@ On arm64 macOS rig can install both arm64 and x86_64 builds of R. The latter
 ones need Rosetta to run. User mode has a different, simpler naming scheme
 than admin mode on macOS, matching Linux and Windows:
 
-```text
+``` text
 ❯ rig ls
 * name          version    aliases
 ------------------------------------------
@@ -153,11 +157,11 @@ than admin mode on macOS, matching Linux and Windows:
   next-x86_64   (R 4.6.1)
 ```
 
-* The native (arm64) builds are named simply with the version number.
-* R-devel is simply named `devel` and the next version of R (R-patched,
+- The native (arm64) builds are named simply with the version number.
+- R-devel is simply named `devel` and the next version of R (R-patched,
   R-alpha, etc.) is named `next`.
-* The x86_64 builds are suffixed with `-x86_64`.
-* You can use the `release` alias for the most recent version of R and
+- The x86_64 builds are suffixed with `-x86_64`.
+- You can use the `release` alias for the most recent version of R and
   the `oldrel` alias for the previous minor release branch. E.g. the
   `R-release` quick link starts the latest version of R.
 
@@ -171,7 +175,7 @@ The names of the R installations are the same as for admin mode. rig now
 supports installing x86_64 and aarch64 R builds on aarch64 Windows, and
 similarly to macOS, the non-native builds get a `-x86_64` suffix:
 
-```text
+``` text
 PS C:\Users\Gabor Csardi> rig ls
 * name          version    aliases
 ------------------------------------------
@@ -188,7 +192,7 @@ mode they are installed into the user's roaming profile directory, and rig
 configures R and Rtools to work together correctly. On aarch64 Windows,
 you can install both x86_64 and aarch64 versions of Rtools.
 
-```text
+``` text
 PS C:\Users\Gabor Csardi> rig rtools ls
 name  version  full-version   arch     path
 ------------------------------------------------------
@@ -199,18 +203,16 @@ name  version  full-version   arch     path
 
 ### Linux
 
-On Linux rig installs a [portable (manylinux) R build](
-  https://github.com/rstudio/r-builds#portable-builds-experimental) in user
+On Linux rig installs a [portable (manylinux) R build](https://github.com/rstudio/r-builds#portable-builds-experimental) in user
 mode. These builds are self-contained, generic glibc (or musl) builds of R.
 These builds are intended to work on a wide range of Linux distributions.
 However, they are not as battle-tested as the builds rig uses in admin mode.
 
-On glibc systems rig also configures the [manylinux repository](
-  https://posit.co/blog/introducing-portable-linux-r-binary-packages)
+On glibc systems rig also configures the [manylinux repository](https://posit.co/blog/introducing-portable-linux-r-binary-packages)
 for CRAN, that pairs very well with the portable R builds. These packages
 are self-contained and compatible with most glibc-based Linux distributions:
 
-```r
+``` r
 > getOption("repos")
                                                          P3M-manylinux
 "https://packagemanager.posit.co/cran/__linux__/manylinux_2_28/latest"
@@ -238,8 +240,7 @@ Call `rig system user-mode` to switch a previous setup from admin mode to
 user mode. This will reinstall your current R installations in user mode,
 and remove the admin mode installation. (But see its options to adjust this!)
 
-See more about the migration at the [rig homepage](
-  https://rig.r-lib.org/tutorial-migrate.html).
+See more about the migration at the [rig homepage](https://rig.r-lib.org/tutorial-migrate.html).
 
 ## Portable Linux
 
@@ -247,7 +248,8 @@ Above you have seen how rig installs portable manylinux builds in user mode.
 It is also possible to install them in admin mode. This can be useful for
 Linux systems that rig does not have native builds for. To install a
 portable Linux build use `--platform portable`:
-```sh
+
+``` sh
 rig add --platform portable 4.6
 ```
 
@@ -277,9 +279,11 @@ time.
 
 You can now add custom repositories to your rig configuration using
 `rig repos add <name> <url>`. For example:
-```sh
+
+``` sh
 rig repos add myrepo https://myrepo.example.com
 ```
+
 You can then turn these (and also the built-in) repositories on or off
 using `rig repos enable` and `rig repos disable`.
 
@@ -288,7 +292,8 @@ using `rig repos enable` and `rig repos disable`.
 The output of `rig repos available` is now more informative and easier to
 read. Type `rig repos available <reponame>` to get more information about a
 repository.
-```text
+
+``` text
 ❯ rig repos available
 8 repositories
 
@@ -307,7 +312,7 @@ Use `rig repos available <name>` to see a repository's URLs.
 `depends`: a default only on some platforms, architectures or R versions.
 ```
 
-```text
+``` text
 ❯ rig repos available r-universe/cran
 r-universe/cran (1 URL)
 R-universe CRAN mirror
@@ -325,7 +330,8 @@ Archs        aarch64
 ### Repository status
 
 Use `rig repos status` to check the status of all enabled repositories.
-```text
+
+``` text
 ❯ rig repos status
 6 repositories of R 4.6.1, index bin/macosx/sonoma-arm64/contrib/4.6
 
@@ -343,10 +349,17 @@ BioCbooks       120 ms   source only   source, win, mac   2026-08-01 16:25   htt
 `source only`: this repository has no index for this platform and R version.
 ```
 
-::: {.callout-note}
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Note</span>
+</div>
+<div class="callout-body">
+
 rig does not manage repositories in Positron and RStudio sessions. Use
 the built-in Positron and RStudio tools instead.
-:::
+
+</div>
+</div>
 
 ## Other improvements
 
@@ -387,72 +400,69 @@ uninstall it manually.
 ## Your feedback is welcome!
 
 We would love to hear your thoughts, suggestions, and any issues you
-encounter while using rig. Please use the [issue tracker](
-  https://github.com/r-lib/rig/issues) for bug reports and feature
-requests, and the [discussion forum](
-  https://github.com/r-lib/rig/discussions) or [Posit community](
-  https://forum.posit.co/) for general questions and discussions.
+encounter while using rig. Please use the [issue tracker](https://github.com/r-lib/rig/issues) for bug reports and feature
+requests, and the [discussion forum](https://github.com/r-lib/rig/discussions) or [Posit community](https://forum.posit.co/) for general questions and discussions.
 
 ## Acknowledgments
 
 Huge thanks to everyone who contributed to rig 0.10.0 and 0.11.0:
-[&#x0040;achubaty](https://github.com/achubaty),
-[&#x0040;AdaemmerP](https://github.com/AdaemmerP),
-[&#x0040;AdrienLeGuillou](https://github.com/AdrienLeGuillou),
-[&#x0040;Adrilihan](https://github.com/Adrilihan),
-[&#x0040;Andryas](https://github.com/Andryas),
-[&#x0040;bashirhamidi](https://github.com/bashirhamidi),
-[&#x0040;benyamins](https://github.com/benyamins),
-[&#x0040;biocyberman](https://github.com/biocyberman),
-[&#x0040;Bisaloo](https://github.com/Bisaloo),
-[&#x0040;cderv](https://github.com/cderv),
-[&#x0040;CGMossa](https://github.com/CGMossa),
-[&#x0040;danielloader](https://github.com/danielloader),
-[&#x0040;dkczk](https://github.com/dkczk),
-[&#x0040;eitsupi](https://github.com/eitsupi),
-[&#x0040;elendil95](https://github.com/elendil95),
-[&#x0040;eliocamp](https://github.com/eliocamp),
-[&#x0040;EllaKaye](https://github.com/EllaKaye),
-[&#x0040;etiennebacher](https://github.com/etiennebacher),
-[&#x0040;frosforever](https://github.com/frosforever),
-[&#x0040;gdevenyi](https://github.com/gdevenyi),
-[&#x0040;ggrothendieck](https://github.com/ggrothendieck),
-[&#x0040;grantmcdermott](https://github.com/grantmcdermott),
-[&#x0040;gvelasq](https://github.com/gvelasq),
-[&#x0040;hadley](https://github.com/hadley),
-[&#x0040;jabenninghoff](https://github.com/jabenninghoff),
-[&#x0040;jameslairdsmith](https://github.com/jameslairdsmith),
-[&#x0040;jennybc](https://github.com/jennybc),
-[&#x0040;jeroen](https://github.com/jeroen),
-[&#x0040;jfin4](https://github.com/jfin4),
-[&#x0040;John15321](https://github.com/John15321),
-[&#x0040;jonbry](https://github.com/jonbry),
-[&#x0040;JosiahParry](https://github.com/JosiahParry),
-[&#x0040;kalenkovich](https://github.com/kalenkovich),
-[&#x0040;kenahoo](https://github.com/kenahoo),
-[&#x0040;kieran-mace](https://github.com/kieran-mace),
-[&#x0040;klmr](https://github.com/klmr),
-[&#x0040;krlmlr](https://github.com/krlmlr),
-[&#x0040;lotum-david-j](https://github.com/lotum-david-j),
-[&#x0040;malcolmbarrett](https://github.com/malcolmbarrett),
-[&#x0040;mcanouil](https://github.com/mcanouil),
-[&#x0040;mhurtado13](https://github.com/mhurtado13),
-[&#x0040;MilesMcBain](https://github.com/MilesMcBain),
-[&#x0040;mitsuki5284](https://github.com/mitsuki5284),
-[&#x0040;mns-nordicals](https://github.com/mns-nordicals),
-[&#x0040;morphatic](https://github.com/morphatic),
-[&#x0040;Nerwosolek](https://github.com/Nerwosolek),
-[&#x0040;noamross](https://github.com/noamross),
-[&#x0040;paluigi](https://github.com/paluigi),
-[&#x0040;robjhyndman](https://github.com/robjhyndman),
-[&#x0040;rumichaska](https://github.com/rumichaska),
-[&#x0040;SaintRod](https://github.com/SaintRod),
-[&#x0040;sammieephung](https://github.com/sammieephung),
-[&#x0040;sda030](https://github.com/sda030),
-[&#x0040;ShixiangWang](https://github.com/ShixiangWang),
-[&#x0040;t-kalinowski](https://github.com/t-kalinowski),
-[&#x0040;tylermorganwall](https://github.com/tylermorganwall),
-[&#x0040;venpopov](https://github.com/venpopov),
-[&#x0040;vikasrawal](https://github.com/vikasrawal),
-[&#x0040;wzbillings](https://github.com/wzbillings), and
-[&#x0040;zivankaraman](https://github.com/zivankaraman).
+[@achubaty](https://github.com/achubaty),
+[@AdaemmerP](https://github.com/AdaemmerP),
+[@AdrienLeGuillou](https://github.com/AdrienLeGuillou),
+[@Adrilihan](https://github.com/Adrilihan),
+[@Andryas](https://github.com/Andryas),
+[@bashirhamidi](https://github.com/bashirhamidi),
+[@benyamins](https://github.com/benyamins),
+[@biocyberman](https://github.com/biocyberman),
+[@Bisaloo](https://github.com/Bisaloo),
+[@cderv](https://github.com/cderv),
+[@CGMossa](https://github.com/CGMossa),
+[@danielloader](https://github.com/danielloader),
+[@dkczk](https://github.com/dkczk),
+[@eitsupi](https://github.com/eitsupi),
+[@elendil95](https://github.com/elendil95),
+[@eliocamp](https://github.com/eliocamp),
+[@EllaKaye](https://github.com/EllaKaye),
+[@etiennebacher](https://github.com/etiennebacher),
+[@frosforever](https://github.com/frosforever),
+[@gdevenyi](https://github.com/gdevenyi),
+[@ggrothendieck](https://github.com/ggrothendieck),
+[@grantmcdermott](https://github.com/grantmcdermott),
+[@gvelasq](https://github.com/gvelasq),
+[@hadley](https://github.com/hadley),
+[@jabenninghoff](https://github.com/jabenninghoff),
+[@jameslairdsmith](https://github.com/jameslairdsmith),
+[@jennybc](https://github.com/jennybc),
+[@jeroen](https://github.com/jeroen),
+[@jfin4](https://github.com/jfin4),
+[@John15321](https://github.com/John15321),
+[@jonbry](https://github.com/jonbry),
+[@JosiahParry](https://github.com/JosiahParry),
+[@kalenkovich](https://github.com/kalenkovich),
+[@kenahoo](https://github.com/kenahoo),
+[@kieran-mace](https://github.com/kieran-mace),
+[@klmr](https://github.com/klmr),
+[@krlmlr](https://github.com/krlmlr),
+[@lotum-david-j](https://github.com/lotum-david-j),
+[@malcolmbarrett](https://github.com/malcolmbarrett),
+[@mcanouil](https://github.com/mcanouil),
+[@mhurtado13](https://github.com/mhurtado13),
+[@MilesMcBain](https://github.com/MilesMcBain),
+[@mitsuki5284](https://github.com/mitsuki5284),
+[@mns-nordicals](https://github.com/mns-nordicals),
+[@morphatic](https://github.com/morphatic),
+[@Nerwosolek](https://github.com/Nerwosolek),
+[@noamross](https://github.com/noamross),
+[@paluigi](https://github.com/paluigi),
+[@robjhyndman](https://github.com/robjhyndman),
+[@rumichaska](https://github.com/rumichaska),
+[@SaintRod](https://github.com/SaintRod),
+[@sammieephung](https://github.com/sammieephung),
+[@sda030](https://github.com/sda030),
+[@ShixiangWang](https://github.com/ShixiangWang),
+[@t-kalinowski](https://github.com/t-kalinowski),
+[@tylermorganwall](https://github.com/tylermorganwall),
+[@venpopov](https://github.com/venpopov),
+[@vikasrawal](https://github.com/vikasrawal),
+[@wzbillings](https://github.com/wzbillings), and
+[@zivankaraman](https://github.com/zivankaraman).
