@@ -73,7 +73,7 @@ Another feature of the app is the built-in chat assistant. It can help researche
 
 What I like most is that the assistant lives inside the app. It can use tools over the data and help operate the workflow. To me, that is a much more interesting direction for AI in scientific software.
 
-![Tahoe Explorer with the assistant panel open on the left. Asked to build a breast cancer subset, it reports setting the cell lines to HS-578T and BT-474, covering an estimated 3,094,027 cells and 1,344 samples. The Subset builder on the right shows those same counts as summary tiles.](tahoe-explorer.png "The assistant setting filters in the Subset builder, then reporting what the selection actually covers.")
+[![An animation of Tahoe Explorer. On the Overview tab, the tiles show 100.6M cells, 50 cell lines and 379 drugs, and clicking the Breast bar in the cell lines by organ chart filters the table to HS-578T and BT-474. The Coverage tab shows a heatmap of the cells profiled for each drug and cell line. On the Subset builder tab, the assistant panel opens and is asked to build a breast cancer subset. It replies that it selected Organ: Breast in the Subset builder, names BT-474 and HS-578T, estimates 3,094,027 cells across 1,344 samples, and writes R and Python code to pull them, while the tiles change to 3.1M cells and 2 cell lines.](tahoe-explorer.gif "A quick tour of the Overview and Coverage tabs, then the assistant setting a filter in the Subset builder and reporting what the selection covers.")](https://posit-tahoe-explorer.share.connect.posit.cloud/)
 
 The Tahoe app solved one type of scaling problem: accessing and understanding a dataset that is much larger than the application itself. One layer later, the same issue came back, with the **visualization itself** as the bottleneck.
 
@@ -93,7 +93,7 @@ One page, for example, interactively renders more than half a million real singl
 
 Plotomics Live is where I worked out what Shiny can look like when R remains the analytical engine and the browser does more of the work it is good at.
 
-![The Visium spatial transcriptomics page in Plotomics Live. A toggle switches between Shiny React and ggplot2 (classic). Eleven color-coded clusters of capture spots are drawn over the tissue section they came from, above a footer reading 3,798 capture spots, 11 clusters, 72 genes in panel.](plotomics-live.png "One of the 26 pages. The toggle at the top left swaps the React component for the ggplot2 image, over the same server-side computation.")
+[![An animation of Plotomics Live. On the Visium spatial transcriptomics page, capture spots in eleven color-coded clusters sit over a breast cancer tissue section, above a footer reading 3,798 capture spots, 11 clusters, 72 genes in panel. The spot opacity slider fades the spots to show the H&E-stained tissue underneath, then brings them back. The coloring switches to ERBB2 expression, and the engine toggle swaps the Shiny React component for the ggplot2 (classic) image. The animation then moves to the Protein structure page, where the AlphaFold model of TP53, colored by pLDDT confidence, turns.](plotomics-live.gif "Two of the 26 pages. The engine toggle swaps the React component for the ggplot2 image, over the same server-side computation.")](https://posit-plotomics-live.share.connect.posit.cloud/)
 
 ## Connecting biological information that lives everywhere
 
