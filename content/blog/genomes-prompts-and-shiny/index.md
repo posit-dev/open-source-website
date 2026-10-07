@@ -176,7 +176,7 @@ Both apps rest on the design principle I came away from the summer caring about 
 
 **AI can help interpret scientific evidence without needing to be the source of the evidence.**
 
-![GeneScout showing 32 candidates ranked across 12 sources for NF1-associated cancer. A table lists genes by composite score with a grade and a caveat count, and a panel on the right breaks the score for EGFR down by source: Open Targets association, Europe PMC mentions, PubTator3 mentions, ClinVar pathogenic variants, DGIdb drug interactions, and gnomAD constraint.](genescout.png "Every number in the breakdown traces back to a public source. Curate with AI and Analyze with specialists are separate, optional steps.")
+[![An animation of GeneScout. The setup page holds four example gene lists and the study context NF1-associated cancer (MPNST). After Rank genes, the review shows 32 candidates ranked across 12 sources, with EGFR first. Selecting NF1 switches the panel on the right to its composite score of 0.55 and its breakdown by source, from Open Targets association to STRING connectivity. Opening its grounded evidence lists 38 cited items, starting with an Open Targets association with neurofibromatosis type 1.](genescout.gif "Every number in the breakdown traces back to a public source. Curate with AI and Analyze with specialists are separate, optional steps.")](https://posit-genescout.share.connect.posit.cloud/)
 
 ## Turning analyses into tools researchers can actually explore
 

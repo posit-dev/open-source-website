@@ -8,6 +8,8 @@ GIF with ffmpeg. Raw recordings go to a temporary folder and are deleted.
 - plotomics-live.gif: the Visium page fades its spots to show the tissue,
   recolours by gene expression and swaps in the ggplot2 image, then the
   protein structure page turns the TP53 model.
+- genescout.gif: the four-list NF1 example is ranked across 12 sources, then
+  selecting a gene changes the score breakdown and opens its grounded evidence.
 
 tahoe-explorer.gif uses an AI provider and needs GEMINI_API_KEY in the
 environment. The key goes into the masked key field before the kept part of
@@ -16,7 +18,7 @@ forget it at the end.
 
 Usage (requires ffmpeg on PATH):
 
-    uv run --with playwright python capture.py                   # both
+    uv run --with playwright python capture.py                   # all of them
     uv run --with playwright python capture.py plotomics-live    # one of them
 
 First run only:
@@ -252,6 +254,14 @@ def back_to_question(clip, chat, quiet_since):
     clip.page.wait_for_timeout(3_500)
 
 
+def close_notices(page):
+    """Close any Shiny notifications so they do not cover the page."""
+    for button in page.locator(".shiny-notification-close").all():
+        if button.is_visible():
+            button.click()
+    page.wait_for_timeout(300)
+
+
 def ease(page, steps, action, pause=40):
     """Run `action(t)` for t from 0 to 1 with an ease-in-out curve."""
     for i in range(steps + 1):
@@ -464,6 +474,48 @@ def plotomics_live(clip):
     clip.mark_end()
 
 
+def genescout(clip):
+    page = clip.page
+    page.goto(
+        "https://posit-genescout.share.connect.posit.cloud/",
+        wait_until="domcontentloaded",
+        timeout=TIMEOUT,
+    )
+    load = page.get_by_role("button", name="Load 4-source example")
+    load.wait_for(timeout=TIMEOUT)
+    page.wait_for_timeout(2_000)
+    load.click()
+    page.wait_for_timeout(2_500)
+    close_notices(page)
+    # Warnings (such as genes that could not be resolved) would cover the score
+    # breakdown; the progress notice while ranking stays visible.
+    page.add_style_tag(
+        content=".shiny-notification-warning { display: none !important; }"
+    )
+    page.evaluate("window.scrollTo(0, 0)")
+    page.wait_for_timeout(1_000)
+
+    clip.mark_start()
+    page.wait_for_timeout(2_200)  # four example gene lists and the MPNST context
+    # A plain click would scroll down to the button first.
+    page.get_by_role("button", name="Rank genes").dispatch_event("click")
+    ranking = clip.now()
+    page.get_by_text("candidates ranked", exact=False).first.wait_for(timeout=300_000)
+    clip.fast_forward(ranking + 1.2, clip.now() - 0.4, factor=24.0)
+    page.wait_for_timeout(3_000)
+
+    # Pick NF1 by name: its row moves when the ranking changes.
+    rows = page.locator("table").first.locator("tbody tr")
+    rows.filter(has=page.get_by_text("NF1", exact=True)).first.click()
+    page.wait_for_timeout(2_400)
+    evidence = page.locator("details.gs-evidence > summary").first
+    evidence.click()  # open the gene's grounded evidence
+    page.wait_for_timeout(600)
+    evidence.evaluate("e => e.scrollIntoView({block: 'center', behavior: 'smooth'})")
+    page.wait_for_timeout(3_500)
+    clip.mark_end()
+
+
 # Viewports are tall enough that nothing the scene shows is cut off; crops drop
 # empty margins.
 SCENES = {
@@ -473,6 +525,11 @@ SCENES = {
         "viewport": {"width": 1600, "height": 1100},
         "crop": (150, 40, 1300, 1040),
         "fps": 15,
+    },
+    "genescout": {
+        "scene": genescout,
+        "viewport": {"width": 1600, "height": 1000},
+        "crop": (200, 60, 1200, 940),
     },
 }
 
