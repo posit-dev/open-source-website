@@ -6,7 +6,6 @@ people: []
 resource_type: video
 resources: []
 software:
-- commons
 - readr
 - reprex
 - rstudio
@@ -35,7 +34,6 @@ external:  # updated automatically, do not edit
   like_count: 0
   playlist: ''
   software:
-  - commons
   - readr
   - reprex
   - rstudio

@@ -117,7 +117,6 @@ people: []
 resource_type: video
 resources: []
 software:
-- commons
 - plumber
 - plumber2
 - positron
@@ -249,7 +248,6 @@ external:  # updated automatically, do not edit
   like_count: 17
   playlist: ''
   software:
-  - commons
   - plumber
   - plumber2
   - positron

@@ -101,7 +101,6 @@ people:
 resource_type: video
 resources: []
 software:
-- commons
 tags: []
 title: Data Science in Pediatric Cancer Research | Hubert Hickman | Data Science Hangout
 
@@ -214,7 +213,6 @@ external:  # updated automatically, do not edit
   - Neal Richardson
   playlist: ''
   software:
-  - commons
   tags: []
   thumbnail: https://i.ytimg.com/vi/8M25lB7rSIU/maxresdefault.jpg
   title: Data Science in Pediatric Cancer Research | Hubert Hickman | Data Science Hangout
