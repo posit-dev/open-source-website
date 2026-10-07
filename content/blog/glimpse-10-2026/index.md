@@ -62,8 +62,8 @@ Quarto Hub is a new hosted platform from Posit. In Quarto Hub, you can create, e
 
 Posit has taken over maintenance over two R packages that provide comprehensive tools to work and collaborate within Snowflake’s data platform and ML ecosystem:
 
-* skiLift: a DBI-compliant Snowflake connector written in R, that authenticates and communicates via the Snowflake SQL API (REST).
-* skiPatrol: an R interface to Snowflake's ML platform: model registry, feature store, experiments, model monitoring, and container services.
+* [skiLift](https://github.com/posit-dev/skiLift/): a DBI-compliant Snowflake connector written in R, that authenticates and communicates via the Snowflake SQL API (REST).
+* [skiPatrol](https://github.com/posit-dev/skiPatrol[/): an R interface to Snowflake's ML platform: model registry, feature store, experiments, model monitoring, and container services.
 
 Learn more in the [R, meet Snowflake: Introducing Posit’s skiLift and skiPatrol Packages](https://posit.co/blog/r-meet-snowflake-introducing-posits-skilift-and-skipatrol-packages) blog post.
 
@@ -75,13 +75,13 @@ Beyond all the exciting conf news, September was packed with major product updat
 
 ####  ggsql 0.5.0: Readers, Writers, and Beta status
 
-ggsql is an R package that implements a grammar of graphics for SQL, enabling ggplot2-style data visualization directly from database queries. ggsql 0.5.0 reaches beta status with major improvements to database connectivity and rendering capabilities. The release introduces hybrid-reader mode for read-only connections with cache support, replaces the Vega-Lite renderer with a custom writer supporting PNG, JPEG, SVG, and PDF output, and adds rich text support through extended markdown. New features include caption support, minor breaks on scales, and true variable line aesthetics with gradients.
+[ggsql](https://ggsql.org/) is a tool that implements a grammar of graphics for SQL, enabling ggplot2-style data visualization directly from database queries. ggsql 0.5.0 reaches beta status with major improvements to database connectivity and rendering capabilities. The release introduces hybrid-reader mode for read-only connections with cache support, replaces the Vega-Lite renderer with a custom writer supporting PNG, JPEG, SVG, and PDF output, and adds rich text support through extended markdown. New features include caption support, minor breaks on scales, and true variable line aesthetics with gradients.
 
 * Read more in the [ggsql 0.5.0: Readers, Writers, and Beta status](https://opensource.posit.co/blog/2026-09-24_ggsql_0_5_0/) blog post.
 
 #### orbital 0.7.0
 
-orbital enables the running predictions of tidymodels workflows inside databases. orbital 0.7.0 and tidypredict 1.2.0 massively expand in-database prediction capabilities for tidymodels workflows. The release adds 27 new model/engine combinations including discriminant analysis, naive Bayes, neural networks, SVMs, partial least squares, and ensemble methods. tidypredict now functions as a developer toolkit with new generics for programmatic use, and improved error messaging guides users when probability predictions aren’t available.
+[orbital](https://orbital.tidymodels.org/) enables the running predictions of tidymodels workflows inside databases. orbital 0.7.0 and tidypredict 1.2.0 massively expand in-database prediction capabilities for tidymodels workflows. The release adds 27 new model/engine combinations including discriminant analysis, naive Bayes, neural networks, SVMs, partial least squares, and ensemble methods. tidypredict now functions as a developer toolkit with new generics for programmatic use, and improved error messaging guides users when probability predictions aren’t available.
 
 * Read more in the [orbital 0.7.0](https://opensource.posit.co/blog/2026-09-09_orbital-0-7-0/) blog post.
 
@@ -89,13 +89,13 @@ orbital enables the running predictions of tidymodels workflows inside databases
 
 #### ellmer 0.5.0
 
-ellmer makes it easy to use large language models (LLM) from R. ellmer 0.5.0 brings major improvements for working with large language models in R. New file handling functions reduce token costs by efficiently managing documents. The release adds citation tracking from web search tools, token counting for cost prediction, and streaming structured output support. Developer features include `tool_context()` for accessing request metadata and new lifecycle hooks for building agents.
+[ellmer](https://ellmer.tidyverse.org/) makes it easy to use large language models (LLM) from R. ellmer 0.5.0 brings major improvements for working with large language models in R. New file handling functions reduce token costs by efficiently managing documents. The release adds citation tracking from web search tools, token counting for cost prediction, and streaming structured output support. Developer features include `tool_context()` for accessing request metadata and new lifecycle hooks for building agents.
 
 * Read more in the [ellmer 0.5.0](https://opensource.posit.co/blog/2026-09-14_ellmer-0-5-0/) blog post.
 
 #### vitals 0.4.0
 
-vitals is a framework for large language model evaluation in R. vitals 0.4.0 brings significant performance improvements and new agent comparison capabilities for LLM evaluation in R. The release includes claude_code() and codex() helpers for benchmarking custom ellmer-built agents against leading coding agents, plus vitals_log_read() for loading log files back into resumable Chat objects. Log files are now ~4x smaller and the log viewer is substantially faster.
+[vitals](https://vitals.tidyverse.org/) is a framework for large language model evaluation in R. vitals 0.4.0 brings significant performance improvements and new agent comparison capabilities for LLM evaluation in R. The release includes claude_code() and codex() helpers for benchmarking custom ellmer-built agents against leading coding agents, plus vitals_log_read() for loading log files back into resumable Chat objects. Log files are now ~4x smaller and the log viewer is substantially faster.
 
 * Read more in the [vitals 0.4.0](https://opensource.posit.co/blog/2026-09-03_vitals-0-4-0/) blog post.
 
@@ -105,25 +105,25 @@ Check out all the major work done by the Shiny team in September!
 
 #### Introducing shinyreact: React UI backed by a Shiny server
 
-shinyreact enables developers to build Shiny applications with React-based UIs while keeping Shiny’s reactive computation on the server. The package provides two primary React hooks for client-server communication, gives access to the entire npm ecosystem of React components, and includes AI Agent Skills for building and converting apps.
+[shinyreact](https://posit-dev.github.io/shinyreact/) enables developers to build Shiny applications with React-based UIs while keeping Shiny’s reactive computation on the server. The package provides two primary React hooks for client-server communication, gives access to the entire npm ecosystem of React components, and includes AI Agent Skills for building and converting apps.
 
 * Read more in the [Introducing shinyreact: React UI backed by a Shiny server ](https://opensource.posit.co/blog/2026-09-30_introducing-shinyreact/) blog post.
 
 #### Shiny for Python 1.8
 
-Shiny for Python 1.8 introduces in-memory server testing without browsers, enabling developers to test reactive logic with pytest using a mock connection. The release adds `ui.page_html()` for using complete HTML documents from bundlers like Vite, and `session.allow_reconnect()` to maintain live sessions after dropped websocket connections. Additional improvements include deprecation of `ui.output_text_verbatim()` in favor of clearer naming, reactive value destruction fixes, and multiple bug fixes for downloads, navsets, and data frames.
+[Shiny for Python](https://shiny.posit.co/py/) 1.8 introduces in-memory server testing without browsers, enabling developers to test reactive logic with pytest using a mock connection. The release adds `ui.page_html()` for using complete HTML documents from bundlers like Vite, and `session.allow_reconnect()` to maintain live sessions after dropped websocket connections. Additional improvements include deprecation of `ui.output_text_verbatim()` in favor of clearer naming, reactive value destruction fixes, and multiple bug fixes for downloads, navsets, and data frames.
 
 * Read more in the [Shiny for Python 1.8](https://opensource.posit.co/blog/2026-09-22_shiny-python-1-8/) blog post.
 
 #### Multiple tables, saved conversations, and take-home dashboards: querychat R 0.4.0 and Python 0.9.0
 
-querychat facilitates safe and reliable natural language exploration of tabular data, powered by SQL and large language models (LLMs). querychat R 0.4.0 and Python 0.9.0 introduce multiple table support with automatic joins, persistent conversation history across sessions, and the `/handoff` command for exporting chats as downloadable Quarto dashboards, Shiny apps, or marimo notebooks. The release builds on shinychat’s full-page layout with editable messages and file attachments, adds YAML-based data dictionaries for context, and integrates with pins boards for chatting with pinned data.
+[querychat](https://posit-dev.github.io/querychat/) facilitates safe and reliable natural language exploration of tabular data, powered by SQL and large language models (LLMs). querychat R 0.4.0 and Python 0.9.0 introduce multiple table support with automatic joins, persistent conversation history across sessions, and the `/handoff` command for exporting chats as downloadable Quarto dashboards, Shiny apps, or marimo notebooks. The release builds on shinychat’s full-page layout with editable messages and file attachments, adds YAML-based data dictionaries for context, and integrates with pins boards for chatting with pinned data.
 
 * Read more in the [Multiple tables, saved conversations, and take-home dashboards: querychat R 0.4.0 and Python 0.9.0](https://opensource.posit.co/blog/2026-09-29_querychat-tables-handoff/) blog post.
 
 #### Complete chat applications in shinychat: R 0.5.0 and Python 0.7.1
 
-shinychat provides a Shiny toolkit for building generative AI applications like chatbots and streaming content. shinychat R 0.5.0 and Python 0.7.1 deliver complete chat application capabilities with conversation history, message editing and branching, greetings, file attachments, and slash commands. The new `page_chat()` layout provides full-window interfaces with integrated navigation, tool displays, citations, and artifact previews. Features include persistent conversation storage, search and organization tools, streaming responses with thinking panels, and toolbars for contextual actions.
+[shinychat](https://posit-dev.github.io/shinychat/) provides a Shiny toolkit for building generative AI applications like chatbots and streaming content. shinychat R 0.5.0 and Python 0.7.1 deliver complete chat application capabilities with conversation history, message editing and branching, greetings, file attachments, and slash commands. The new `page_chat()` layout provides full-window interfaces with integrated navigation, tool displays, citations, and artifact previews. Features include persistent conversation storage, search and organization tools, streaming responses with thinking panels, and toolbars for contextual actions.
 
 * Read more in the [Complete chat applications in shinychat: R 0.5.0 and Python 0.7.1](https://opensource.posit.co/blog/2026-09-15_shinychat-r-0.5.0-python-0.7.1/) blog post.
 
