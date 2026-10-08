@@ -39,7 +39,7 @@ tags:
   - Genomics
 ---
 
-I spent this summer as a software engineering intern on the Shiny team at Posit. In three short months, I built **10 open-source applications and 5 supporting packages** for computational biology, across R, Python, TypeScript, and JavaScript. Some are tools researchers can use directly. Others sit underneath those applications and solve recurring infrastructure problems.
+My name is Samuel Bharti and I am a PhD candidate at the University of Alabama at Birmingham, working on rare diseases and cancers, particularly focusing on Neurofibromatosis Type 1 and the cancers associated with it. I spent this summer as a software engineering intern on the Shiny team at Posit. In three short months, I built **10 open-source applications and 5 supporting packages** for computational biology, across R, Python, TypeScript, and JavaScript. Some are tools researchers can use directly. Others sit underneath those applications and solve recurring infrastructure problems.
 
 I came into the internship as a computational biologist. In my PhD research, I work with single-cell sequencing, genomics, and multi-omics data, and with the public databases and identifiers that come with them.
 
