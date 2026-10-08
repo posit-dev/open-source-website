@@ -13,16 +13,13 @@ image-alt: >
   circles above the words “Correct and convenient.”
 topics:
   - Artificial Intelligence
-  - Best Practices
 software:
   - commons
-  - positron
 languages:
   - R
   - Python
 tags:
   - ai-newsletter
-source: ai
 nohero: false
 hidesubscription: false
 execute:
