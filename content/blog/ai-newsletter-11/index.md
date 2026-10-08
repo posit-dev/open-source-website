@@ -5,7 +5,7 @@ date: 2026-10-09T00:00:00.000Z
 people:
   - Sara Altman
   - Simon Couch
-description: >
+description: |
   An annotated walkthrough of our posit::conf(2026) keynote.
 image: images/hero.png
 image-alt: >
