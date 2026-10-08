@@ -1,6 +1,6 @@
 ---
 title: "Genomes, Prompts, and Shiny: What I Built During My Summer at Posit"
-date: 2026-10-07
+date: 2026-10-08
 people:
   - Samuel Bharti
   - Shiny Team
