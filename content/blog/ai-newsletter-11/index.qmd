@@ -1,5 +1,5 @@
 ---
-title: "AI Newsletter: Correct, transparent, and reproducible data agents"
+title: "Correct, transparent, and reproducible data agents"
 slug: ai-newsletter
 date: 2026-10-09
 people:
