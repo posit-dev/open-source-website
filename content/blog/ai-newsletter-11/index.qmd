@@ -223,7 +223,7 @@ ways to explore data.
 
 ### The models got better
 
-I also wanted to spend some time on what had changed since August 2025, when
+I also wanted to spend some time on what has changed since August 2025, when
 we released that warning-label image. One major thing happened: The models got
 better.
 
