@@ -117,7 +117,12 @@ Variant interpretation is a good example. If I am reviewing a variant, I may wan
 
 A researcher can start from a gene, a variant, or both, and the app combines clinical significance, population frequency, prediction scores, gene constraint, protein domains and 3D protein structure.
 
-![Variant Reviewer showing BRAF V600E. Cards for gene, variant, protein, ClinVar clinical significance, and gnomAD population frequency sit side by side, an assistant panel is open on the right, and a ClinVar variant landscape plot runs along the bottom with protein domains marked below the axis.](variant-reviewer.png "One gene, one variant, one page. Each card is a different public service, fetched in parallel.")
+<div class="not-prose">
+<figure>
+<a href="https://posit-variant-reviewer.share.connect.posit.cloud/" target="_blank" rel="noopener"><img class="h-auto max-w-full rounded-lg" src="variant-reviewer.gif" alt="An animation of Variant Reviewer. Loading the BRAF V600E example fills the gene and variant boxes, and Review fills the cards: BRAF on the gene card, chr7:g.140753336A&gt;T and p.Val600Glu on the variant card, UniProt P15056 at position 600 on the protein card, and conflicting classifications of pathogenicity on the ClinVar card. The assistant on the right is then asked what ClinVar and gnomAD say about this variant, and answers with the ClinVar classification and its conditions and a gnomAD exome frequency of 2 in 1,460,618 alleles." title="One gene, one variant, one page. Each card is a different public service." loading="lazy"></a>
+<figcaption class="text-sm text-center text-gray-500">One gene, one variant, one page. Each card is a different public service.</figcaption>
+</figure>
+</div>
 
 But building Variant Reviewer surfaced another problem. Every external biological service behaves differently: its own identifiers, its own failure modes, its own rate limits. One might return a clean "not found" response while another throws an error. And one slow or unavailable service should not break the entire application.
 

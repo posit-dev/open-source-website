@@ -8,13 +8,17 @@ GIF with ffmpeg. Raw recordings go to a temporary folder and are deleted.
 - plotomics-live.gif: the Visium page fades its spots to show the tissue,
   recolours by gene expression and swaps in the ggplot2 image, then the
   protein structure page turns the TP53 model.
+- variant-reviewer.gif: the BRAF V600E example loads, the cards fill in as each
+  public service answers, and the assistant is asked what ClinVar and gnomAD
+  say about the variant.
 - genescout.gif: the four-list NF1 example is ranked across 12 sources, then
   selecting a gene changes the score breakdown and opens its grounded evidence.
 
-tahoe-explorer.gif uses an AI provider and needs GEMINI_API_KEY in the
-environment. The key goes into the masked key field before the kept part of
-the recording starts, so it never appears in the GIF, and the app is told to
-forget it at the end.
+tahoe-explorer.gif and variant-reviewer.gif use an AI provider and need
+GEMINI_API_KEY in the environment. The key goes into the masked key field
+before the kept part of the recording starts, so it never appears in the GIF.
+Tahoe Explorer is told to forget it at the end; Variant Reviewer holds it only
+for the browser session, which ends when the browser closes.
 
 Usage (requires ffmpeg on PATH):
 
@@ -46,7 +50,7 @@ VIEWPORT = {"width": 1600, "height": 900}
 
 
 class Retake(Exception):
-    """The take is not usable (for example the assistant changed nothing); record it again."""
+    """The take is not usable (for example the reply has raw LaTeX); record it again."""
 
 
 class Clip:
@@ -474,6 +478,63 @@ def plotomics_live(clip):
     clip.mark_end()
 
 
+def variant_reviewer(clip):
+    key = gemini_key("variant-reviewer")
+    page = clip.page
+    page.goto(
+        "https://posit-variant-reviewer.share.connect.posit.cloud/",
+        wait_until="domcontentloaded",
+        timeout=TIMEOUT,
+    )
+    page.get_by_role("button", name="Review").wait_for(timeout=TIMEOUT)
+    page.wait_for_timeout(2_000)
+
+    # Connect before the kept part starts, so the key is never on screen in the GIF.
+    page.get_by_role("button", name="Model & key").first.click()
+    page.wait_for_timeout(1_500)
+    field = masked(page, "#chat-api_key", "variant-reviewer")
+    field.fill(key)
+    page.get_by_role("button", name="Connect").first.click()
+    page.get_by_text("Connected:", exact=False).first.wait_for(timeout=60_000)
+    page.locator(".offcanvas.show .btn-close").first.click()
+    page.wait_for_timeout(1_500)
+    if field.is_visible():
+        raise SystemExit("variant-reviewer: key panel still open, refusing to record")
+
+    try:
+        clip.mark_start()
+        page.wait_for_timeout(1_200)
+        page.get_by_role("link", name="Load an example").first.click()
+        page.wait_for_timeout(1_200)
+        page.get_by_role("button", name="Review").first.click()
+        for text in ("Significance:", "Exome AF:", "Known variants at this residue"):
+            page.get_by_text(text, exact=False).first.wait_for(timeout=TIMEOUT)
+        page.wait_for_timeout(2_000)
+
+        # Ask about the cards themselves, so the answer stays with the data.
+        chat = page.locator("#chat-chat")
+        box = chat.locator("textarea").first
+        box.click()
+        box.type("What do ClinVar and gnomAD say about this variant?", delay=12)
+        page.wait_for_timeout(400)
+        box.press("Enter")
+        sent = clip.now()
+        chat.locator(USER).last.wait_for(timeout=30_000)
+        wait_for_reply(clip, chat, len(chat.inner_text()), "variant-reviewer")
+        clip.fast_forward(sent + 0.6, clip.now() - 0.3, factor=8.0)
+        last_change = settle(page)
+        if failed(chat):
+            raise SystemExit("variant-reviewer: the assistant returned an error")
+        reply = chat.inner_text()
+        if "$" in reply or "\\" in reply:
+            raise Retake("the reply has raw LaTeX in it")
+        clip.mark_end(at=last_change - clip.started + 3.0)
+    finally:
+        # This app has no Forget key button. The key lives only in this
+        # browser's app session, which ends when the browser closes.
+        pass
+
+
 def genescout(clip):
     page = clip.page
     page.goto(
@@ -526,6 +587,10 @@ SCENES = {
         "crop": (150, 40, 1300, 1040),
         "fps": 15,
     },
+    "variant-reviewer": {
+        "scene": variant_reviewer,
+        "viewport": {"width": 1440, "height": 1040},
+    },
     "genescout": {
         "scene": genescout,
         "viewport": {"width": 1600, "height": 1000},
@@ -534,7 +599,7 @@ SCENES = {
 }
 
 
-NEEDS_KEY = {"tahoe-explorer"}
+NEEDS_KEY = {"tahoe-explorer", "variant-reviewer"}
 
 
 def main():
