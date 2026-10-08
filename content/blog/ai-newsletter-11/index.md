@@ -1,16 +1,17 @@
 ---
-title: "AI Newsletter: Correct, transparent, and reproducible data agents"
+title: 'AI Newsletter: Correct, transparent, and reproducible data agents'
 slug: ai-newsletter
-date: 2026-10-09
+date: 2026-10-09T00:00:00.000Z
 people:
   - Sara Altman
   - Simon Couch
 description: >
-  An annotated walkthrough of our posit::conf(2026) keynote on correct, transparent, and reproducible data analysis with agents.
-image: "images/hero.png"
+  An annotated walkthrough of our posit::conf(2026) keynote on correct,
+  transparent, and reproducible data analysis with agents.
+image: images/hero.png
 image-alt: >
-  Framed slide on a blue gradient background showing overlapping blue and
-  orange circles above the words “Correct and convenient.”
+  Framed slide on a blue gradient background showing overlapping blue and orange
+  circles above the words “Correct and convenient.”
 topics:
   - Artificial Intelligence
   - Best Practices
@@ -29,16 +30,21 @@ execute:
   eval: false
 ---
 
-::: {.callout-tip}
-## **Subscribe to the AI Newsletter!**
+
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title"><strong>Subscribe to the AI Newsletter!</strong></span>
+</div>
+<div class="callout-body">
 
 The AI newsletter is published as an RSS feed. Follow it in your favorite reader:
 
 <a href="/tags/ai-newsletter/index.xml" target="_blank" rel="noopener noreferrer" class="btn-shortcode inline-flex mb-5 mr-5 items-center px-4 py-3 text-sm leading-5 gap-2 rounded-lg bg-blue-400 !text-white font-semibold align-middle hover:bg-blue-500 transition no-underline">Subscribe via RSS</a>
 
 **Want the newsletter as an email?** Paste the feed URL, <https://opensource.posit.co/tags/ai-newsletter/index.xml>, into a free RSS-to-email service such as [Blogtrottr](https://blogtrottr.com/), [Feedrabbit](https://feedrabbit.com/), or [Follow.it](https://follow.it/), and each new issue will arrive in your inbox.
-:::
 
+</div>
+</div>
 <style>
 .blog-toc-content ul ul {
   display: none;
@@ -69,7 +75,7 @@ analysis agents that are correct, transparent, and reproducible. This newsletter
 is an annotated walkthrough of what we said. You can also [click through the
 full slide deck](https://pos.it/keynote).
 
-## Correctness vs. convenience
+## Correctness vs. convenience
 
 **(Simon)**
 
@@ -81,7 +87,7 @@ The agent looked around the workspace, found a table that seemed relevant,
 wrote a SQL query against it, and returned a polished chart. Daily visits, it
 said, were down 64% over the last 90 days.
 
-![](images/slides/vp-site-traffic-reminder.png){.column-page fig-alt="A chat interface shows the question “how is traffic trending for our site?” The agent answers that daily visits are down 64 percent and displays a sharply declining line chart."}
+<img src="images/slides/vp-site-traffic-reminder.png" class="column-page" data-fig-alt="A chat interface shows the question “how is traffic trending for our site?” The agent answers that daily visits are down 64 percent and displays a sharply declining line chart." />
 
 The variation looks a little tight, and the bend is a little sharp. Is there
 any possible reason we might see that bend other than a genuine change in site
@@ -106,18 +112,18 @@ for the analysis is long gone.
 The coding agent offers to recreate the chart. It looks around the workspace,
 finds a table, and runs some SQL. The number was going up the whole time.
 
-![](images/slides/site-traffic-recreated.png){.column-page fig-alt="A chat interface cannot find the earlier conversation or its files. After recreating the analysis with a different warehouse table, it reports that daily visits increased 22 percent and shows an upward-trending chart."}
+<img src="images/slides/site-traffic-recreated.png" class="column-page" data-fig-alt="A chat interface cannot find the earlier conversation or its files. After recreating the analysis with a different warehouse table, it reports that daily visits increased 22 percent and shows an upward-trending chart." />
 
 This is a fictional story, but the pattern is not. We have seen it internally
 at Posit and at many of the organizations we work with. It is becoming normal
-to _vibe-analyze_ data: ask an agent a question, receive a plausible answer,
+to *vibe-analyze* data: ask an agent a question, receive a plausible answer,
 and move on without understanding how it was produced.
 
 ### The tension between correctness and convenience is not new
 
 Posit CTO Joe Cheng summarized the current moment this way:
 
-![](images/slides/convenience-versus-correctness.png){.column-page fig-alt="A cream-colored slide displays the quotation “In the battle between convenience and correctness, convenience is winning,” attributed to Joe Cheng, Posit CTO."}
+<img src="images/slides/convenience-versus-correctness.png" class="column-page" data-fig-alt="A cream-colored slide displays the quotation “In the battle between convenience and correctness, convenience is winning,” attributed to Joe Cheng, Posit CTO." />
 
 AI has broadened the group of people who can convincingly do data analysis, but
 many may have no idea what data scientists go through to produce a trustworthy
@@ -129,7 +135,7 @@ arithmetic error had contributed £5.2 million to a £14 million forecasting
 mistake](https://www.accountingweb.co.uk/business/management-accounting/convivialitys-spreadsheet-hell-sinks-the-business).
 When that "innocent spreadsheeting mistake" came to light, the business sank.
 
-![](images/slides/conviviality-spreadsheet-error.png){.column-page fig-alt="A news article about Conviviality reporting a spreadsheet arithmetic error that contributed 5.2 million pounds to a 14 million pound forecasting error."}
+<img src="images/slides/conviviality-spreadsheet-error.png" class="column-page" data-fig-alt="A news article about Conviviality reporting a spreadsheet arithmetic error that contributed 5.2 million pounds to a 14 million pound forecasting error." />
 
 Or Joe could have said it 20 years ago, when [a sign error in closed-source
 protein-modeling
@@ -140,22 +146,22 @@ after another lab found a protein structure that was nearly a mirror image of
 one that the first lab had published did the first lab audit its source code.
 They found a negative sign where it did not belong and retracted five papers.
 
-![](images/slides/protein-modeling-software-error.png){.column-page fig-alt="A Science article titled 'Error prompts retractions' describing a sign error in protein-modeling software."}
+<img src="images/slides/protein-modeling-software-error.png" class="column-page" data-fig-alt="A Science article titled &#39;Error prompts retractions&#39; describing a sign error in protein-modeling software." />
 
 There were threats to correctness in data analysis long before AI. Posit's
 stance has never been that people must sacrifice convenience for correctness.
 While preparing the talk, I found this quote in a blog post old enough to
 refer to itself as a "weblog":
 
-![](images/slides/trustworthy-and-intuitive.png){.column-page fig-alt="A cream-colored slide quotes JJ Allaire: “Our goal is to develop a powerful tool that supports trustworthy, high quality analysis. At the same time, we want RStudio to be as straightforward and intuitive as possible.”"}
+<img src="images/slides/trustworthy-and-intuitive.png" class="column-page" data-fig-alt="A cream-colored slide quotes JJ Allaire: “Our goal is to develop a powerful tool that supports trustworthy, high quality analysis. At the same time, we want RStudio to be as straightforward and intuitive as possible.”" />
 
 JJ was saying that a tool could be both correct and convenient. By
-_convenient_, we do not mean 7-Eleven. We mean straightforward and intuitive.
+*convenient*, we do not mean 7-Eleven. We mean straightforward and intuitive.
 
 Can we take the same stance toward AI? Is it possible to make data analysis
 agents that are both correct and convenient for end users?
 
-![](images/slides/correct-and-convenient.png){.column-page fig-alt="Two overlapping circles, one blue and one orange, form a Venn diagram above the words 'Correct and convenient.'"}
+<img src="images/slides/correct-and-convenient.png" class="column-page" data-fig-alt="Two overlapping circles, one blue and one orange, form a Venn diagram above the words &#39;Correct and convenient.&#39;" />
 
 ## Why build AI tools at all?
 
@@ -172,7 +178,7 @@ release post was one of the first things I worked on after joining the AI team,
 and it gave me the chance to do something I think I am particularly good at:
 be pessimistic.
 
-![](images/slides/databot-flotation-device.png){.column-page fig-alt="A split slide dated August 2025 shows an illustration of the Databot mascot wearing a bright orange flotation device."}
+<img src="images/slides/databot-flotation-device.png" class="column-page" data-fig-alt="A split slide dated August 2025 shows an illustration of the Databot mascot wearing a bright orange flotation device." />
 
 We were all really excited about Databot. It felt like flying through your
 data, gathering insights faster than you thought would ever be possible. It was
@@ -184,7 +190,7 @@ If you were at posit::conf(2025), you might remember Joe Cheng describing it as
 both the most exciting and the most dangerous software he had worked on in his
 30-year career.
 
-![](images/slides/exciting-and-dangerous.png){.column-page fig-alt="A quotation from Joe Cheng says that Databot is both the most exciting software and the most dangerous software he has worked on in his 30-year career."}
+<img src="images/slides/exciting-and-dangerous.png" class="column-page" data-fig-alt="A quotation from Joe Cheng says that Databot is both the most exciting software and the most dangerous software he has worked on in his 30-year career." />
 
 That raises a fair question, one we contemplate ourselves on a weekly basis:
 If AI causes all this chaos and makes all these mistakes, why are we doing
@@ -205,14 +211,13 @@ But even as an undergraduate who knew some statistics and a little R, I often
 felt like I was looking at an ocean from above. The dataset was right in front of
 me, and I knew there was so much going on, but I just couldn't see it.
 
-![](images/slides/mission-ocean.png){.column-page fig-alt="An aerial photograph shows pale blue ocean water meeting a sandy shoreline, with a small dark shape visible below the surface."}
-
+<img src="images/slides/mission-ocean.png" class="column-page" data-fig-alt="An aerial photograph shows pale blue ocean water meeting a sandy shoreline, with a small dark shape visible below the surface." />
 
 As a graduate student, I learned the tidyverse and more about data science. As
 I got better at using those tools, I finally felt like I had what I needed to
 ask and answer questions about my data.
 
-![](images/slides/below-the-surface.png){.column-page fig-alt="A split slide pairs the words 'The right tools let us see below the surface' with a photograph of rays swimming underwater."}
+<img src="images/slides/below-the-surface.png" class="column-page" data-fig-alt="A split slide pairs the words &#39;The right tools let us see below the surface&#39; with a photograph of rays swimming underwater." />
 
 The right tools let us see below the surface. They enable that curiosity.
 
@@ -222,7 +227,7 @@ maybe most importantly, how we can turn them into tools that open new worlds of
 analysis. For us, AI is a continuation of work we have always done: finding new
 ways to explore data.
 
-![](images/slides/ai-as-continuation.png){.column-page fig-alt="A cream-colored slide reads, 'AI is a continuation of our work to find new ways to explore data,' with 'continuation' and 'new ways to explore data' highlighted."}
+<img src="images/slides/ai-as-continuation.png" class="column-page" data-fig-alt="A cream-colored slide reads, &#39;AI is a continuation of our work to find new ways to explore data,&#39; with &#39;continuation&#39; and &#39;new ways to explore data&#39; highlighted." />
 
 ### The models got better
 
@@ -234,7 +239,7 @@ About a year before the keynote, we ran an experiment to understand how well
 models interpret plots. We showed them plots based on a transformed diamonds
 dataset and asked them to describe what they saw.
 
-![](images/slides/bluffbench-counterintuitive-plot.png){.column-page fig-alt="A scatterplot shows diamond price decreasing as carat increases. An overlaid model response incorrectly says there is a strong positive relationship, followed by the question of whether models can interpret plots that contradict their expectations."}
+<img src="images/slides/bluffbench-counterintuitive-plot.png" class="column-page" data-fig-alt="A scatterplot shows diamond price decreasing as carat increases. An overlaid model response incorrectly says there is a strong positive relationship, followed by the question of whether models can interpret plots that contradict their expectations." />
 
 The models gave answers like, "There is a strong positive relationship between
 carat and price." That sounds plausible until you look at the plot, which shows
@@ -245,7 +250,7 @@ We wanted to know whether the models could see what was in front of them and
 interpret plots that contradicted their expectations. A year ago, the answer
 was largely no.
 
-![](images/slides/bluffbench-november-2025.png){.column-page fig-alt="A horizontal stacked bar chart titled “Models often report what they expect to see, not what’s plotted.” GPT-5, Gemini Pro 2.5, and Claude Sonnet 4.5 are mostly marked incorrect."}
+<img src="images/slides/bluffbench-november-2025.png" class="column-page" data-fig-alt="A horizontal stacked bar chart titled “Models often report what they expect to see, not what’s plotted.” GPT-5, Gemini Pro 2.5, and Claude Sonnet 4.5 are mostly marked incorrect." />
 
 In November 2025, even the best models of the time were abysmal at this task.
 They said what they expected to see instead of paying attention to what was
@@ -255,7 +260,7 @@ We tried all sorts of interventions to improve the
 [bluffbench](https://posit-dev.github.io/bluffbench/) scores, and absolutely
 nothing worked. Then we waited six months.
 
-![](images/slides/bluffbench-september-2026.png){.column-page fig-alt="A horizontal stacked bar chart titled “Models got better at interpreting counterintuitive plots.” Recent thinking models have much larger correct segments than models evaluated in 2025."}
+<img src="images/slides/bluffbench-september-2026.png" class="column-page" data-fig-alt="A horizontal stacked bar chart titled “Models got better at interpreting counterintuitive plots.” Recent thinking models have much larger correct segments than models evaluated in 2025." />
 
 Around May 2026, the major AI companies started releasing models that suddenly
 did very well at the task. By September, the numbers had jumped dramatically:
@@ -270,14 +275,14 @@ data-quality issues in visualizations? In
 [bluffbench2](https://github.com/posit-dev/bluffbench2), we again showed them
 plots and asked what they saw.
 
-![](images/slides/bluffbench2-data-artifact.png){.column-page fig-alt="A scatterplot of sleep hours against stress score has an overall negative trend. Within the cloud, a suspicious subset of points falls exactly along a straight line."}
+<img src="images/slides/bluffbench2-data-artifact.png" class="column-page" data-fig-alt="A scatterplot of sleep hours against stress score has an overall negative trend. Within the cloud, a suspicious subset of points falls exactly along a straight line." />
 
 If you look carefully, there is a suspiciously straight line through the cloud
 of points. It looks too straight. If we really cared about this data, that is
 something we would investigate: Did something weird happen when the data was
 created? We wanted to know whether models would do the same.
 
-![](images/slides/bluffbench2-results.png){.column-page fig-alt="A horizontal bar chart titled “Frontier models still struggle to notice subtle data quality issues.” Every evaluated model scores below 50 percent."}
+<img src="images/slides/bluffbench2-results.png" class="column-page" data-fig-alt="A horizontal bar chart titled “Frontier models still struggle to notice subtle data quality issues.” Every evaluated model scores below 50 percent." />
 
 It turns out they don't really. Even the leading models were not very good at
 this task. They still struggled to notice subtle data-quality issues.
@@ -286,7 +291,7 @@ But there's another problem. Data analysis is not just you, plus a good model,
 plus your data. It also depends on context that is not necessarily in your CSV
 file, warehouse table, or JSON file.
 
-![](images/slides/context-outside-the-data.png){.column-page fig-alt="A cream-colored slide reads, 'Data analysis depends on context that is not in the data,' with the word 'context' highlighted."}
+<img src="images/slides/context-outside-the-data.png" class="column-page" data-fig-alt="A cream-colored slide reads, &#39;Data analysis depends on context that is not in the data,&#39; with the word &#39;context&#39; highlighted." />
 
 All data is constructed. It all has context. That context
 might live in a data dictionary, a Markdown file, or a semantic view. Maybe it
@@ -312,14 +317,14 @@ redirects as needed. That feeds back into the agent. This feels really appealing
 good at, the person does what they are good at, and the person keeps everything
 from going off the rails.
 
-![](images/slides/human-in-the-loop.png){.column-page fig-alt="A diagram presents a common division of labor in which an AI system produces work and a human verifies or supervises it."}
+<img src="images/slides/human-in-the-loop.png" class="column-page" data-fig-alt="A diagram presents a common division of labor in which an AI system produces work and a human verifies or supervises it." />
 
 It is tempting to apply this pattern everywhere. Any time the agent might make
 a mistake, we have a person there to clean it up and make sure nothing bad
-happens. We call this relatively simplistic view the _slap a human on it_
+happens. We call this relatively simplistic view the *slap a human on it*
 approach.
 
-![](images/slides/slap-a-human-on-it.png){.column-page fig-alt="A cream-colored slide shows a roll of black repair tape, used as a metaphor for attaching a human reviewer to an AI system without designing the interaction."}
+<img src="images/slides/slap-a-human-on-it.png" class="column-page" data-fig-alt="A cream-colored slide shows a roll of black repair tape, used as a metaphor for attaching a human reviewer to an AI system without designing the interaction." />
 
 In this approach, you don't really think very much about what the person will actually do. How will
 they apply their expertise? What is the purpose of their involvement? How will
@@ -331,19 +336,19 @@ Databot and LLMs were not at a point where users could abdicate responsibility.
 They needed all of their data skills to catch errors, interpret results in
 context, and avoid being misled by confident but incorrect claims.
 
-![](images/slides/user-responsibility.png){.column-page fig-alt="A quotation over a beach image says that people cannot abdicate responsibility or suspend skepticism when working with LLMs and that their expertise helps them catch errors and avoid confident but incorrect claims."}
+<img src="images/slides/user-responsibility.png" class="column-page" data-fig-alt="A quotation over a beach image says that people cannot abdicate responsibility or suspend skepticism when working with LLMs and that their expertise helps them catch errors and avoid confident but incorrect claims." />
 
 All of that is still true. We stand by it. It is also optimistic in a way. We
 would love to always avoid being misled by confident but incorrect claims. But
-we never said _how_ this was supposed to happen. We assumed that if an expert
+we never said *how* this was supposed to happen. We assumed that if an expert
 was there, they would catch the mistakes.
 
-Adding a person does not guarantee a better result. Human–AI combinations do
+Adding a person does not guarantee a better result. Human--AI combinations do
 not reliably outperform the better of the human or AI working
 alone. Adding a person does not
 automatically make everything better.
 
-![](images/slides/human-ai-evidence.png){.column-page fig-alt="A slide reads, 'Adding a human does not guarantee a better result,' followed by points about human-AI performance, approval fatigue, trust, timing, cognitive load, social cues, and information design."}
+<img src="images/slides/human-ai-evidence.png" class="column-page" data-fig-alt="A slide reads, &#39;Adding a human does not guarantee a better result,&#39; followed by points about human-AI performance, approval fatigue, trust, timing, cognitive load, social cues, and information design." />
 
 People also get tired of approving requests, and then they stop reading them.
 Think about the last time your coding agent showed you a command to approve.
@@ -357,7 +362,7 @@ decision you make. Even if you are an expert who makes the right decision
 outside an interaction with an agent, adding the agent might change that
 decision.
 
-![](images/slides/people-are-not-fixed.png){.column-page fig-alt="A cream-colored slide reads, 'People are not fixed safety components,' with the final phrase highlighted."}
+<img src="images/slides/people-are-not-fixed.png" class="column-page" data-fig-alt="A cream-colored slide reads, &#39;People are not fixed safety components,&#39; with the final phrase highlighted." />
 
 So how do we design the entire system to produce correct work? How do we build
 trust and correctness into the agent itself, and design interactions with
@@ -365,21 +370,21 @@ users that actually support their expertise?
 
 That maps onto two principles we returned to throughout the talk:
 
-1. Help the agent be correct.
-2. Make it less bad when the agent is wrong.
+1.  Help the agent be correct.
+2.  Make it less bad when the agent is wrong.
 
-![](images/slides/agent-correctness-goals.png){.column-page fig-alt="A cream-colored slide reads, 'Help the agent be correct' and 'Make it less bad when the agent is wrong.'"}
+<img src="images/slides/agent-correctness-goals.png" class="column-page" data-fig-alt="A cream-colored slide reads, &#39;Help the agent be correct&#39; and &#39;Make it less bad when the agent is wrong.&#39;" />
 
 ## Posit Assistant
 
 **(Simon)**
 
-[Posit Assistant](https://pos.it/assistant) is Posit’s coding and data science
+[Posit Assistant](https://pos.it/assistant) is Posit's coding and data science
 agent. It is available in RStudio, Positron, and the terminal. When it is
 running inside an IDE, it works in the same R or Python session you're using.
 You can use whatever model you want from whatever provider you have access to.
 
-![](images/slides/posit-assistant.png){.column-page fig-alt="A blue slide displays the Posit Assistant wordmark and orange circular logo."}
+<img src="images/slides/posit-assistant.png" class="column-page" data-fig-alt="A blue slide displays the Posit Assistant wordmark and orange circular logo." />
 
 For the demo, I returned to one of my first experiences of seeing below the
 surface with data science. In an introductory statistics class, I analyzed
@@ -391,18 +396,23 @@ I asked Posit Assistant to find an R package with Houston flight data and
 retrieve data from the previous year. It found `anyflights`, read its
 documentation, and generated the correct call.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-web-fetch-start.png" aria-label="Posit Assistant searches for an R package that provides data about flights from Houston."><source src="videos/posit-assistant-web-fetch.mp4" type="video/mp4"></video>
+<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-web-fetch-start.png" aria-label="Posit Assistant searches for an R package that provides data about flights from Houston.">
+<source src="videos/posit-assistant-web-fetch.mp4" type="video/mp4">
+</video>
 
+Next, I asked it to grab data from the same time the previous year. The agent read the package documentation and so was able to write the code with the right arguments the first time.
 
-Next, I asked it to grab data from the same time the previous year. The agent read the package documentation and so was able to write the code with the right arguments the first time. 
-
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-docs.png" aria-label="Posit Assistant reads the anyflights package documentation and writes code to retrieve Houston flight data."><source src="videos/posit-assistant-docs.mp4" type="video/mp4"></video>
+<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-docs.png" aria-label="Posit Assistant reads the anyflights package documentation and writes code to retrieve Houston flight data.">
+<source src="videos/posit-assistant-docs.mp4" type="video/mp4">
+</video>
 
 We have seen that many coding agents have a superficial relationship with data quality, and we wondered whether we could do better. Posit
 Assistant proactively recommends cleaning the data and has a dedicated data-cleaning mode. It runs scratch code to look for
 missing values, outliers, and similar issues. Once it finds them, it surfaces questions to the user in an interactive dialog.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-clean-data.png" aria-label="Posit Assistant enters data-cleaning mode, asks the user about missing values and outliers, and records the decisions in a persistent cleaning script."><source src="videos/posit-assistant-clean-data.mp4" type="video/mp4"></video>
+<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-clean-data.png" aria-label="Posit Assistant enters data-cleaning mode, asks the user about missing values and outliers, and records the decisions in a persistent cleaning script.">
+<source src="videos/posit-assistant-clean-data.mp4" type="video/mp4">
+</video>
 
 In the demo, the agent found missing values in a relevant column, then found some flights with departure delays of multiple days. I chose to keep both:
 Those outliers represented what really happened.
@@ -417,13 +427,16 @@ interpret plots. When one carrier appeared unusually delayed, it checked the sam
 and found only 32 flights, suggesting that we should not read too much into the
 pattern.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-carriers.png" aria-label="Posit Assistant plots departure delays by carrier, checks the sample size behind an apparent anomaly, and finds that the carrier has only 32 flights."><source src="videos/posit-assistant-carriers.mp4" type="video/mp4"></video>
+<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-carriers.png" aria-label="Posit Assistant plots departure delays by carrier, checks the sample size behind an apparent anomaly, and finds that the carrier has only 32 flights.">
+<source src="videos/posit-assistant-carriers.mp4" type="video/mp4">
+</video>
 
 Once the analysis was complete, I asked the agent to turn it into a persistent
 Quarto report.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-report.png" aria-label="Posit Assistant uses a specialized skill to turn the flight-delay analysis into a persistent Quarto report."><source src="videos/posit-assistant-report.mp4" type="video/mp4"></video>
-
+<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-report.png" aria-label="Posit Assistant uses a specialized skill to turn the flight-delay analysis into a persistent Quarto report.">
+<source src="videos/posit-assistant-report.mp4" type="video/mp4">
+</video>
 
 I have one more "little zoomy zoom": The entire conversation cost five cents.
 The entire conversation cost five cents.
@@ -438,25 +451,23 @@ token-efficient and can use capable, inexpensive open-weight models such as GLM
 watching the open-weights model space for models on the Pareto frontier:
 capable of data analysis and orders of magnitude cheaper than frontier models.
 
-
 Returning to the two principles, part of helping the agent be correct is, quite
 literally, asking nicely. We say, "Pretty please pay attention to data
 cleanliness. Pretty please be open to uncertainty when carrying out data
 analysis."
 
-![](images/slides/posit-assistant-correctness.png){.column-page fig-alt="A slide says to help the agent be correct by encouraging sound statistics and reproducibility practices, and make errors less bad by using the user's expertise and sharing an R or Python environment."}
+<img src="images/slides/posit-assistant-correctness.png" class="column-page" data-fig-alt="A slide says to help the agent be correct by encouraging sound statistics and reproducibility practices, and make errors less bad by using the user&#39;s expertise and sharing an R or Python environment." />
 
 We also design interactions around the user's expertise: Cleaning mode asks
 about the data-generating process, plots remain visible, and the user shares
 the agent's R or Python session.
-
 
 Posit Assistant assumes that the user is a data scientist, analyst, or someone
 else who writes code and wants to work in an IDE, close to that code. But what
 if the user is not a data scientist? How do we help them get correct answers,
 too?
 
-## Introducing commons
+## commons
 
 **(Sara)**
 
@@ -467,13 +478,13 @@ reach for a tool that gives them an answer.
 
 The problem is that they reached for the wrong tool and it gave them the wrong answer.
 
-![](images/slides/vp-site-traffic-reminder.png){.column-page fig-alt="A chat interface shows the VP asking how traffic is trending for the site. The agent reports that daily visits are down 64 percent and displays a sharply declining line chart."}
+<img src="images/slides/vp-site-traffic-reminder.png" class="column-page" data-fig-alt="A chat interface shows the VP asking how traffic is trending for the site. The agent reports that daily visits are down 64 percent and displays a sharply declining line chart." />
 
 The data team already has vetted, maintained code that computes site traffic
-correctly. We call this _trusted code_. Trusted code might live in a package, Shiny app,
+correctly. We call this *trusted code*. Trusted code might live in a package, Shiny app,
 Quarto document, report, or dashboard.
 
-![](images/slides/trusted-code.png){.column-page fig-alt="A cream-colored slide displays the words 'Trusted code,' with 'Trusted' highlighted in orange."}
+<img src="images/slides/trusted-code.png" class="column-page" data-fig-alt="A cream-colored slide displays the words &#39;Trusted code,&#39; with &#39;Trusted&#39; highlighted in orange." />
 
 Instead of having the model write bespoke code from scratch every time someone
 asks a question, what if it could use that trusted code?
@@ -481,11 +492,11 @@ asks a question, what if it could use that trusted code?
 This is one of the core ideas behind a new open-source package that we're
 excited to share with you all today. It's called commons.
 
-![](images/slides/commons.png){.column-page fig-alt="A blue slide displays the orange commons bird logo and a link to pos.it/commons."}
+<img src="images/slides/commons.png" class="column-page" data-fig-alt="A blue slide displays the orange commons bird logo and a link to pos.it/commons." />
 
 [commons](https://pos.it/commons) helps data scientists build trustworthy data
 agents for their collaborators. It is an open-source R and Python package built
-on the ellmer, chatlas, and shinychat stack. 
+on the ellmer, chatlas, and shinychat stack.
 
 ## Building trustworthy data agents with commons
 
@@ -496,7 +507,9 @@ Here is how the VP's analysis works with a commons agent. When the VP asks,
 search for a trusted calculation. If it finds one that answers the question,
 it invokes that calculation directly.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/commons-trusted-calculation-start.png" aria-label="A commons agent answers a site-traffic question by running a trusted calculation, displaying a chart showing a 22 percent increase, and marking the answer with a green shield."><source src="videos/commons-traffic-trend.mp4" type="video/mp4"></video>
+<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/commons-trusted-calculation-start.png" aria-label="A commons agent answers a site-traffic question by running a trusted calculation, displaying a chart showing a 22 percent increase, and marking the answer with a green shield.">
+<source src="videos/commons-traffic-trend.mp4" type="video/mp4">
+</video>
 
 The calculation returns a plot and a green shield indicating that the answer
 came from a trusted calculation. commons adds that marker deterministically;
@@ -510,29 +523,33 @@ When no trusted calculation exists, the agent can use context authored by the
 data team. commons verifies any citation against that context before displaying
 its blue citation marker.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/commons-cited-answer.png" aria-label="A commons agent charts declining page views, uses trusted context to explain the instrumentation change behind the decline, and displays a blue citation marker."><source src="videos/commons-page-views.mp4" type="video/mp4"></video>
+<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/commons-cited-answer.png" aria-label="A commons agent charts declining page views, uses trusted context to explain the instrumentation change behind the decline, and displays a blue citation marker.">
+<source src="videos/commons-page-views.mp4" type="video/mp4">
+</video>
 
 If there is neither a trusted calculation nor supporting context to cite, the agent
 can write code, but commons displays a yellow warning so the user knows to treat
 the answer cautiously.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/commons-lower-trust-answer.png" aria-label="A commons agent writes custom code to find the day with the most site visits, then marks the answer with a yellow warning because it did not use a trusted calculation or cite trusted context."><source src="videos/commons-most-visits.mp4" type="video/mp4"></video>
+<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/commons-lower-trust-answer.png" aria-label="A commons agent writes custom code to find the day with the most site visits, then marks the answer with a yellow warning because it did not use a trusted calculation or cite trusted context.">
+<source src="videos/commons-most-visits.mp4" type="video/mp4">
+</video>
 
-Here's a diagram of the various ways the agent can come up with answers and how the trust relationships are mapped. 
+Here's a diagram of the various ways the agent can come up with answers and how the trust relationships are mapped.
 
-![](images/slides/commons-trust-flow.png){.column-page fig-alt="A flow diagram shows commons first searching trusted calculations. A found calculation leads to a verified marker. Otherwise the agent searches context and writes SQL, R, or Python, leading to either a citation marker or a lower-trust warning."}
+<img src="images/slides/commons-trust-flow.png" class="column-page" data-fig-alt="A flow diagram shows commons first searching trusted calculations. A found calculation leads to a verified marker. Otherwise the agent searches context and writes SQL, R, or Python, leading to either a citation marker or a lower-trust warning." />
 
 So far, we've been talking about the VP's experience with the commons agent. What is it like to work with
-commons as a data scientist? There are three main loops: build, deploy, and improve. 
+commons as a data scientist? There are three main loops: build, deploy, and improve.
 
-![](images/slides/commons-lifecycle.png){.column-page fig-alt="Three cards describe the commons lifecycle: build by connecting the agent to trusted code, deploy it for colleagues on Connect, and improve it by reviewing behavior and covering common use cases."}
+<img src="images/slides/commons-lifecycle.png" class="column-page" data-fig-alt="Three cards describe the commons lifecycle: build by connecting the agent to trusted code, deploy it for colleagues on Connect, and improve it by reviewing behavior and covering common use cases." />
 
 With data collection enabled, data scientists can review cases where the agent
 had to write its own code. If those cases share a pattern, they can add trusted
 code that moves future responses up the trust ladder, making the agent more
 correct over time.
 
-![](images/slides/commons-correctness.png){.column-page fig-alt="A slide says to help the agent be correct with trusted calculations and context, and make errors less bad by signaling trust and introducing feedback loops."}
+<img src="images/slides/commons-correctness.png" class="column-page" data-fig-alt="A slide says to help the agent be correct with trusted calculations and context, and make errors less bad by signaling trust and introducing feedback loops." />
 
 Returning to our two principles, commons helps the agent be correct by letting
 it directly use trusted code. It makes mistakes less bad by telling the user
@@ -547,36 +564,38 @@ The VP example is business intelligence, but commons is not only for BI or
 vice presidents. It's for any data person who wants to build an agent that
 gives correct answers to their collaborators.
 
-![](images/slides/commons-examples.png){.column-page fig-alt="A table pairs a biostatistician with a physician comparing treatment groups, a UX researcher with a product manager summarizing experiment results, and a policy analyst with a program lead simulating a policy's budget impact."}
+<img src="images/slides/commons-examples.png" class="column-page" data-fig-alt="A table pairs a biostatistician with a physician comparing treatment groups, a UX researcher with a product manager summarizing experiment results, and a policy analyst with a program lead simulating a policy&#39;s budget impact." />
 
 We've made a sample [clinical trials
 agent](https://pos.it/clinical-trials-agent) to highlight this functionality.
 Its data is simulated. The trusted code is a TLG catalog: code written and
 trusted by data people to work on this type of data and produce correct
-answers. You can ask it questions such as, "Plot Kaplan–Meier curves."
+answers. You can ask it questions such as, "Plot Kaplan--Meier curves."
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/clinical-trials-agent-demo.png" aria-label="A clinical trials agent runs a trusted calculation for the safety population and produces a Kaplan–Meier plot of serious adverse-event-free probability."><source src="videos/clinical-trials-agent-demo.mp4" type="video/mp4"></video>
+<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/clinical-trials-agent-demo.png" aria-label="A clinical trials agent runs a trusted calculation for the safety population and produces a Kaplan–Meier plot of serious adverse-event-free probability.">
+<source src="videos/clinical-trials-agent-demo.mp4" type="video/mp4">
+</video>
 
 ## It is still very bad to be wrong
 
 **(Sara)**
 
-![](images/slides/conclusion.png){.column-page fig-alt="A blue slide reads “It’s (still) very bad to be wrong” in large cream-colored text."}
+<img src="images/slides/conclusion.png" class="column-page" data-fig-alt="A blue slide reads “It’s (still) very bad to be wrong” in large cream-colored text." />
 
 It's now so easy to ask any kind of agent a question about your data and get a
-wrong answer that looks completely plausible. 
+wrong answer that looks completely plausible.
 
 The problem is not just that the answer is wrong, and it's also not just that you might be unable to reproduce it or have no
 idea how it arrived at the answer.
 
 These are bad enough, but there's another problem. If we become accustomed to, say, 15% of our numbers
-being wrong, we might lose trust in analysis itself and its ability to tell us things about the world, or become used to numbers just being a bit wrong all the time. 
+being wrong, we might lose trust in analysis itself and its ability to tell us things about the world, or become used to numbers just being a bit wrong all the time.
 
 But correctness matters, especially in particular industries, and Posit has always
 built tools to support correct analysis. We do not think that standard should
 change just because AI is here.
 
-![](images/slides/conclusion-infrastructure.png){.column-page fig-alt="A blue slide reads, 'AI has expanded who can get answers from data. That changes the infrastructure we need for correct, transparent, and reproducible analysis.'"}
+<img src="images/slides/conclusion-infrastructure.png" class="column-page" data-fig-alt="A blue slide reads, &#39;AI has expanded who can get answers from data. That changes the infrastructure we need for correct, transparent, and reproducible analysis.&#39;" />
 
 But AI has expanded who can get answers from data. Now anyone can ask a
 question about their data. That changes how we need to think about the
@@ -594,7 +613,7 @@ commons helps them build it and make it available to others.
 
 ## Looking forward
 
-![](images/slides/canvas.png){.column-page fig-alt="A Canvas application displays a polished data-analysis workspace with an agent conversation, visual results, and interactive controls arranged across a large visual canvas."}
+<img src="images/slides/canvas.png" class="column-page" data-fig-alt="A Canvas application displays a polished data-analysis workspace with an agent conversation, visual results, and interactive controls arranged across a large visual canvas." />
 
 Looking forward, we have been experimenting with something called Canvas.
 
@@ -604,13 +623,13 @@ you need it, but you might not always want to work in an IDE.
 
 This frees up real estate for expansive, new agent-collaboration interfaces.
 Canvas feels a little aggressively agentic to us, in the way Databot felt a
-year ago. 
+year ago.
 
-![](images/slides/thank-you.png){.column-page fig-alt="A green slide says 'Thank you!' above resource cards linking to the keynote slides, commons, and the AI Newsletter."}
+<img src="images/slides/thank-you.png" class="column-page" data-fig-alt="A green slide says &#39;Thank you!&#39; above resource cards linking to the keynote slides, commons, and the AI Newsletter." />
 
 ### Recent past newsletters
 
-- [New releases from ellmer, shinychat, and commons](/blog/2026-09-18_ai-newsletter/)
-- [You probably don't want to fine-tune](/blog/2026-09-04_ai-newsletter/)
+- [New releases from ellmer, shinychat, and commons](../../blog/2026-09-18_ai-newsletter/)
+- [You probably don't want to fine-tune](../../blog/2026-09-04_ai-newsletter/)
 
 <a href="/tags/ai-newsletter/index.xml" target="_blank" rel="noopener noreferrer" class="btn-shortcode inline-flex mb-5 mr-5 items-center px-4 py-3 text-sm leading-5 gap-2 rounded-lg bg-blue-400 !text-white font-semibold align-middle hover:bg-blue-500 transition no-underline">Subscribe via RSS</a>
