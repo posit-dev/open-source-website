@@ -146,8 +146,8 @@ refer to itself as a "weblog":
 
 ![](images/slides/trustworthy-and-intuitive.png){.column-page fig-alt="A cream-colored slide quotes JJ Allaire: “Our goal is to develop a powerful tool that supports trustworthy, high quality analysis. At the same time, we want RStudio to be as straightforward and intuitive as possible.”"}
 
-JJ was saying that a tool could be both correct and convenient. By
-_convenient_, we do not mean 7-Eleven. We mean straightforward and intuitive.
+JJ was saying that a tool could be both correct and convenient. (By
+convenient, we do not mean 7-Eleven. We mean straightforward and intuitive.😜)
 
 Can we take the same stance toward AI? Is it possible to make data analysis
 agents that are both correct and convenient for end users?
