@@ -66,8 +66,7 @@ The AI newsletter is published as an RSS feed. Follow it in your favorite reader
 }
 </style>
 
-At posit::conf(2026), we gave a keynote about what it takes to build data
-analysis agents that are correct, transparent, and reproducible. This is an annotated walkthrough of that talk. You can also see the full slide deck [here](https://pos.it/keynote).
+Last month, we gave a posit::conf(2026) keynote on building correct, transparent, and reproducible data agents. The talk brings together many themes from this newsletter, so this week we're sharing an annotated walkthrough. You can also see the full slide deck [here](https://pos.it/keynote).
 
 ## Correctness vs. convenience
 
