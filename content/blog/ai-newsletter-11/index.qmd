@@ -254,8 +254,8 @@ nothing worked. Then we waited six months.
 
 ![](images/slides/bluffbench-september-2026.png){.column-page fig-alt="A horizontal stacked bar chart titled “Models got better at interpreting counterintuitive plots.” Recent thinking models have much larger correct segments than models evaluated in 2025."}
 
-Around May 2026, the major AI companies started releasing models that suddenly
-did very well at the task. By September, the numbers had jumped dramatically:
+By May 2026, the major AI companies were releasing models that
+were noticeably better at the task. By September, the numbers had jumped dramatically:
 The models could interpret these counterintuitive plots.
 
 The models got better. That does not mean data science is solved.
