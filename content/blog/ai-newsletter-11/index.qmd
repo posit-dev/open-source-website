@@ -480,8 +480,6 @@ excited to share with you all today. It's called commons.
 agents for their collaborators. It is an open-source R and Python package built
 on the ellmer, chatlas, and shinychat stack. 
 
-## Building trustworthy data agents with commons
-
 **(Simon)**
 
 Here is how the VP's analysis works with a commons agent. When the VP asks,
