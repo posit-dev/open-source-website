@@ -387,13 +387,13 @@ I asked Posit Assistant to find an R package with Houston flight data and
 retrieve data from the previous year. It found `anyflights`, read its
 documentation, and generated the correct call.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-web-fetch-start.png" aria-label="Posit Assistant searches for an R package that provides data about flights from Houston.">
+<video class="column-page" loop muted playsinline controls preload="metadata" aria-label="Posit Assistant searches for an R package that provides data about flights from Houston.">
 <source src="videos/posit-assistant-web-fetch.mp4" type="video/mp4">
 </video>
 
 Next, I asked it to grab data from the same time the previous year. The agent read the package documentation and so was able to write the code with the right arguments the first time.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-docs.png" aria-label="Posit Assistant reads the anyflights package documentation and writes code to retrieve Houston flight data.">
+<video class="column-page" loop muted playsinline controls preload="metadata" aria-label="Posit Assistant reads the anyflights package documentation and writes code to retrieve Houston flight data.">
 <source src="videos/posit-assistant-docs.mp4" type="video/mp4">
 </video>
 
@@ -401,7 +401,7 @@ We have seen that many coding agents have a superficial relationship with data q
 Assistant proactively recommends cleaning the data and has a dedicated data-cleaning mode. It runs scratch code to look for
 missing values, outliers, and similar issues. Once it finds them, it surfaces questions to the user in an interactive dialog.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-clean-data.png" aria-label="Posit Assistant enters data-cleaning mode, asks the user about missing values and outliers, and records the decisions in a persistent cleaning script.">
+<video class="column-page" loop muted playsinline controls preload="metadata" aria-label="Posit Assistant enters data-cleaning mode, asks the user about missing values and outliers, and records the decisions in a persistent cleaning script.">
 <source src="videos/posit-assistant-clean-data.mp4" type="video/mp4">
 </video>
 
@@ -418,19 +418,19 @@ interpret plots. When one carrier appeared unusually delayed, it checked the sam
 and found only 32 flights, suggesting that we should not read too much into the
 pattern.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-carriers.png" aria-label="Posit Assistant plots departure delays by carrier, checks the sample size behind an apparent anomaly, and finds that the carrier has only 32 flights.">
+<video class="column-page" loop muted playsinline controls preload="metadata" aria-label="Posit Assistant plots departure delays by carrier, checks the sample size behind an apparent anomaly, and finds that the carrier has only 32 flights.">
 <source src="videos/posit-assistant-carriers.mp4" type="video/mp4">
 </video>
 
 Once the analysis was complete, I asked the agent to turn it into a persistent
 Quarto report.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-report.png" aria-label="Posit Assistant uses a specialized skill to turn the flight-delay analysis into a persistent Quarto report.">
+<video class="column-page" loop muted playsinline controls preload="metadata" aria-label="Posit Assistant uses a specialized skill to turn the flight-delay analysis into a persistent Quarto report.">
 <source src="videos/posit-assistant-report.mp4" type="video/mp4">
 </video>
 
 I have one more "little zoomy zoom": The entire conversation cost five cents.
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-model-cost.png" aria-label="The Posit Assistant conversation displays the selected GLM 5.3 Flash model, token usage, and a total cost of five cents."><source src="videos/posit-assistant-model-cost.mp4" type="video/mp4"></video>
+<video class="column-page" loop muted playsinline controls preload="metadata" aria-label="The Posit Assistant conversation displays the selected GLM 5.3 Flash model, token usage, and a total cost of five cents."><source src="videos/posit-assistant-model-cost.mp4" type="video/mp4"></video>
 
 Part of our mission at Posit is to provide tools to people regardless of their
 economic means.
@@ -497,7 +497,7 @@ Here is how the VP's analysis works with a commons agent. When the VP asks,
 search for a trusted calculation. If it finds one that answers the question,
 it invokes that calculation directly.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/commons-trusted-calculation-start.png" aria-label="A commons agent answers a site-traffic question by running a trusted calculation, displaying a chart showing a 22 percent increase, and marking the answer with a green shield.">
+<video class="column-page" loop muted playsinline controls preload="metadata" aria-label="A commons agent answers a site-traffic question by running a trusted calculation, displaying a chart showing a 22 percent increase, and marking the answer with a green shield.">
 <source src="videos/commons-traffic-trend.mp4" type="video/mp4">
 </video>
 
@@ -513,7 +513,7 @@ When no trusted calculation exists, the agent can use context authored by the
 data team. commons verifies any citation against that context before displaying
 its blue citation marker.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/commons-cited-answer.png" aria-label="A commons agent charts declining page views, uses trusted context to explain the instrumentation change behind the decline, and displays a blue citation marker.">
+<video class="column-page" loop muted playsinline controls preload="metadata" aria-label="A commons agent charts declining page views, uses trusted context to explain the instrumentation change behind the decline, and displays a blue citation marker.">
 <source src="videos/commons-page-views.mp4" type="video/mp4">
 </video>
 
@@ -521,7 +521,7 @@ If there is neither a trusted calculation nor supporting context to cite, the ag
 can write code, but commons displays a yellow warning so the user knows to treat
 the answer cautiously.
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/commons-lower-trust-answer.png" aria-label="A commons agent writes custom code to find the day with the most site visits, then marks the answer with a yellow warning because it did not use a trusted calculation or cite trusted context.">
+<video class="column-page" loop muted playsinline controls preload="metadata" aria-label="A commons agent writes custom code to find the day with the most site visits, then marks the answer with a yellow warning because it did not use a trusted calculation or cite trusted context.">
 <source src="videos/commons-most-visits.mp4" type="video/mp4">
 </video>
 
@@ -562,7 +562,7 @@ Its data is simulated. The trusted code is a TLG catalog: code written and
 trusted by data people to work on this type of data and produce correct
 answers. You can ask it questions such as, "Plot Kaplan--Meier curves."
 
-<video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/clinical-trials-agent-demo.png" aria-label="A clinical trials agent runs a trusted calculation for the safety population and produces a Kaplan–Meier plot of serious adverse-event-free probability.">
+<video class="column-page" loop muted playsinline controls preload="metadata" aria-label="A clinical trials agent runs a trusted calculation for the safety population and produces a Kaplan–Meier plot of serious adverse-event-free probability.">
 <source src="videos/clinical-trials-agent-demo.mp4" type="video/mp4">
 </video>
 
