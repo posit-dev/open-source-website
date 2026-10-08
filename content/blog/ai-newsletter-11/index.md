@@ -262,7 +262,7 @@ The models could interpret these counterintuitive plots.
 
 The models got better. That does not mean data science is solved.
 
-### But they still make mistakes
+### Models still make mistakes
 
 After that experiment, we asked another question: Can models identify
 data-quality issues in visualizations? In
@@ -271,15 +271,14 @@ plots and asked what they saw.
 
 <img src="images/slides/bluffbench2-data-artifact.png" class="column-page" data-fig-alt="A scatterplot of sleep hours against stress score has an overall negative trend. Within the cloud, a suspicious subset of points falls exactly along a straight line." />
 
-If you look carefully, there is a suspiciously straight line through the cloud
-of points. It looks too straight. If we really cared about this data, that is
-something we would investigate: Did something weird happen when the data was
+If you look carefully, there's a suspiciously straight line through the cloud
+of points. If we really cared about this data, that's something to investigate: Did something weird happen when the data was
 created? We wanted to know whether models would do the same.
 
 <img src="images/slides/bluffbench2-results.png" class="column-page" data-fig-alt="A horizontal bar chart titled “Frontier models still struggle to notice subtle data quality issues.” Every evaluated model scores below 50 percent." />
 
 It turns out they don't really. Even the leading models were not very good at
-this task. They still struggled to notice subtle data-quality issues.
+this task. They struggle to notice subtle data-quality issues.
 
 But there's another problem. Data analysis is not just you, plus a good model,
 plus your data. It also depends on context that is not necessarily in your CSV
@@ -296,24 +295,24 @@ That context is not inherently inaccessible to models. We could give it to
 them. But it has to be in the right format, it has to be curated, and it has to
 itself be correct.
 
-The models have gotten better, but data analysis with AI is not solved. The
-question becomes: How do we make AI-involved analysis correct?
+So the models have gotten better, but data analysis with AI is not solved. The
+question then becomes: How do we make AI-involved analysis correct?
 
 ## How do we make AI for data analysis trustworthy?
 
 **(Sara)**
 
-Here is a common thought about AI: It is untrustworthy but useful. To make it
-trustworthy, we will add a person.
+Here's a common thought about AI: It'ss untrustworthy, but useful. To make it
+trustworthy, we need to add in a person.
 
-This seems intuitively appealing. The agent or model does stuff, probably writes a bunch of code. A person then looks at that code and verifies, approves, or
-redirects as needed. That feeds back into the agent. This feels really appealing. The agent does what it is
-good at, the person does what they are good at, and the person keeps everything
+Here's a simple version of what that might look like. The agent or model does stuff, probably writes a bunch of code. A person then looks at that code and verifies, approves, or
+redirects as needed. That feeds back into the agent. This intuitively can feel really appealing. The agent gets to do what it's
+good at, the person does what they're good at, and there's an expert there to everything
 from going off the rails.
 
 <img src="images/slides/human-in-the-loop.png" class="column-page" data-fig-alt="A diagram presents a common division of labor in which an AI system produces work and a human verifies or supervises it." />
 
-It is tempting to apply this pattern everywhere. Any time the agent might make
+And so it's kind of tempting to apply this pattern everywhere. Any time the agent might make
 a mistake, we have a person there to clean it up and make sure nothing bad
 happens. We call this relatively simplistic view the *slap a human on it*
 approach.
@@ -327,20 +326,18 @@ their expertise?
 
 I'm being a bit facetious, but this isn't that far from how we wrote risk mitigation with Databot a year earlier. We said that
 Databot and LLMs were not at a point where users could abdicate responsibility.
-They needed all of their data skills to catch errors, interpret results in
+You still needed of your data skills to catch errors, interpret results in
 context, and avoid being misled by confident but incorrect claims.
 
 <img src="images/slides/user-responsibility.png" class="column-page" data-fig-alt="A quotation over a beach image says that people cannot abdicate responsibility or suspend skepticism when working with LLMs and that their expertise helps them catch errors and avoid confident but incorrect claims." />
 
-All of that is still true. We stand by it. It is also optimistic in a way. We
-would love to always avoid being misled by confident but incorrect claims. But
+And all of that is still true! But
 we never said *how* this was supposed to happen. We assumed that if an expert
 was there, they would catch the mistakes.
 
-Adding a person does not guarantee a better result. Human--AI combinations do
+But just adding a person doesn't really guarantee a better result. Human--AI combinations do
 not reliably outperform the better of the human or AI working
-alone. Adding a person does not
-automatically make everything better.
+alone.
 
 <img src="images/slides/human-ai-evidence.png" class="column-page" data-fig-alt="A slide reads, &#39;Adding a human does not guarantee a better result,&#39; followed by points about human-AI performance, approval fatigue, trust, timing, cognitive load, social cues, and information design." />
 
