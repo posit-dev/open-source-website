@@ -302,12 +302,12 @@ question then becomes: How do we make AI-involved analysis correct?
 
 **(Sara)**
 
-Here's a common thought about AI: It'ss untrustworthy, but useful. To make it
+Here's a common thought about AI: It's untrustworthy, but useful. To make it
 trustworthy, we need to add in a person.
 
 Here's a simple version of what that might look like. The agent or model does stuff, probably writes a bunch of code. A person then looks at that code and verifies, approves, or
 redirects as needed. That feeds back into the agent. This intuitively can feel really appealing. The agent gets to do what it's
-good at, the person does what they're good at, and there's an expert there to everything
+good at, the person does what they're good at, and there's an expert there to keep everything
 from going off the rails.
 
 <img src="images/slides/human-in-the-loop.png" class="column-page" data-fig-alt="A diagram presents a common division of labor in which an AI system produces work and a human verifies or supervises it." />
@@ -326,7 +326,7 @@ their expertise?
 
 I'm being a bit facetious, but this isn't that far from how we wrote risk mitigation with Databot a year earlier. We said that
 Databot and LLMs were not at a point where users could abdicate responsibility.
-You still needed of your data skills to catch errors, interpret results in
+You still needed all of your data skills to catch errors, interpret results in
 context, and avoid being misled by confident but incorrect claims.
 
 <img src="images/slides/user-responsibility.png" class="column-page" data-fig-alt="A quotation over a beach image says that people cannot abdicate responsibility or suspend skepticism when working with LLMs and that their expertise helps them catch errors and avoid confident but incorrect claims." />
@@ -430,7 +430,6 @@ Quarto report.
 </video>
 
 I have one more "little zoomy zoom": The entire conversation cost five cents.
-The entire conversation cost five cents.
 <video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-model-cost.png" aria-label="The Posit Assistant conversation displays the selected GLM 5.3 Flash model, token usage, and a total cost of five cents."><source src="videos/posit-assistant-model-cost.mp4" type="video/mp4"></video>
 
 Part of our mission at Posit is to provide tools to people regardless of their
