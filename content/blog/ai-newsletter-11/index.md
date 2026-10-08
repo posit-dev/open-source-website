@@ -467,7 +467,7 @@ else who writes code and wants to work in an IDE, close to that code. But what
 if the user is not a data scientist? How do we help them get correct answers,
 too?
 
-## commons
+## Introducing commons
 
 **(Sara)**
 
