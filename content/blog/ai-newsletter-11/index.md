@@ -1,5 +1,5 @@
 ---
-title: 'AI Newsletter: Correct, transparent, and reproducible data agents'
+title: Correct, transparent, and reproducible data agents
 slug: ai-newsletter
 date: 2026-10-09T00:00:00.000Z
 people:
@@ -108,7 +108,7 @@ finds a table, and runs some SQL. The number was going up the whole time.
 
 <img src="images/slides/site-traffic-recreated.png" class="column-page" data-fig-alt="A chat interface cannot find the earlier conversation or its files. After recreating the analysis with a different warehouse table, it reports that daily visits increased 22 percent and shows an upward-trending chart." />
 
-This is a fictional story, but the pattern is not. We have seen it internally
+This is a fictional story, but we'e seen situations like this internally
 at Posit and at many of the organizations we work with. It is becoming normal
 to *vibe-analyze* data: ask an agent a question, receive a plausible answer,
 and move on without understanding how it was produced.
@@ -149,8 +149,8 @@ refer to itself as a "weblog":
 
 <img src="images/slides/trustworthy-and-intuitive.png" class="column-page" data-fig-alt="A cream-colored slide quotes JJ Allaire: “Our goal is to develop a powerful tool that supports trustworthy, high quality analysis. At the same time, we want RStudio to be as straightforward and intuitive as possible.”" />
 
-JJ was saying that a tool could be both correct and convenient. By
-*convenient*, we do not mean 7-Eleven. We mean straightforward and intuitive.
+JJ was saying that a tool could be both correct and convenient. (By
+convenient, we do not mean 7-Eleven. We mean straightforward and intuitive.😜)
 
 Can we take the same stance toward AI? Is it possible to make data analysis
 agents that are both correct and convenient for end users?
@@ -225,7 +225,7 @@ ways to explore data.
 
 ### The models got better
 
-I also wanted to spend some time on what had changed since August 2025, when
+I also wanted to spend some time on what has changed since August 2025, when
 we released that warning-label image. One major thing happened: The models got
 better.
 
@@ -256,8 +256,8 @@ nothing worked. Then we waited six months.
 
 <img src="images/slides/bluffbench-september-2026.png" class="column-page" data-fig-alt="A horizontal stacked bar chart titled “Models got better at interpreting counterintuitive plots.” Recent thinking models have much larger correct segments than models evaluated in 2025." />
 
-Around May 2026, the major AI companies started releasing models that suddenly
-did very well at the task. By September, the numbers had jumped dramatically:
+By May 2026, the major AI companies were releasing models that
+were noticeably better at the task. By September, the numbers had jumped dramatically:
 The models could interpret these counterintuitive plots.
 
 The models got better. That does not mean data science is solved.
@@ -487,8 +487,6 @@ excited to share with you all today. It's called commons.
 [commons](https://pos.it/commons) helps data scientists build trustworthy data
 agents for their collaborators. It is an open-source R and Python package built
 on the ellmer, chatlas, and shinychat stack.
-
-## Building trustworthy data agents with commons
 
 **(Simon)**
 
