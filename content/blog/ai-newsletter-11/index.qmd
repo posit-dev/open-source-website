@@ -6,7 +6,7 @@ people:
   - Sara Altman
   - Simon Couch
 description: >
-  An annotated walkthrough of our posit::conf(2026) keynote on correct, transparent, and reproducible data analysis with agents.
+  An annotated walkthrough of our posit::conf(2026) keynote.
 image: "images/hero.png"
 image-alt: >
   Framed slide on a blue gradient background showing overlapping blue and
@@ -65,9 +65,9 @@ The AI newsletter is published as an RSS feed. Follow it in your favorite reader
 </style>
 
 At posit::conf(2026), we gave a keynote about what it takes to build data
-analysis agents that are correct, transparent, and reproducible. This newsletter
-is an annotated walkthrough of what we said. You can also [click through the
-full slide deck](https://pos.it/keynote).
+analysis agents that are correct, transparent, and reproducible. This is an annotated walkthrough of that talk. You can also see the full slide deck [here](https://pos.it/keynote).
+
+
 
 ## Correctness vs. convenience
 
