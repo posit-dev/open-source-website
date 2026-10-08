@@ -389,59 +389,43 @@ flight data to understand whether I could book tickets that were less likely
 to be delayed. I used ggplot2 and dplyr, pushing data frames around and
 visualizing them.
 
-In Positron, with Posit Assistant on the left and a live R session, I asked,
-"Could you help me find an R package to load data on Houston flights?" The
-agent searched a CRAN database for the keyword "flights," found the
-`anyflights` package, and recommended it.
+I asked Posit Assistant to find an R package with Houston flight data and
+retrieve data from the previous year. It found `anyflights`, read its
+documentation, and generated the correct call.
 
 <video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-web-fetch-start.png" aria-label="Posit Assistant searches for an R package that provides data about flights from Houston.">
   <source src="videos/posit-assistant-web-fetch.mp4" type="video/mp4">
   Your browser does not support embedded videos.
 </video>
 
-Next, I asked it to grab data from the same time the previous year. The agent
-read the package documentation using the same commands we would use, such as
-`help()` or `?`. Because it read the documentation first, it wrote the code
-with the right arguments the first time.
+
+Next, I asked it to grab data from the same time the previous year. The agent read the package documentation and so was able to write the code with the right arguments the first time. 
 
 <video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-docs.png" aria-label="Posit Assistant reads the anyflights package documentation and writes code to retrieve Houston flight data.">
   <source src="videos/posit-assistant-docs.mp4" type="video/mp4">
   Your browser does not support embedded videos.
 </video>
 
-The agent ended its response by recommending that we clean the data. We have
-seen that many coding agents have a superficial relationship with data quality,
-and we wondered whether we could do better. So Posit Assistant proactively
-recommends cleaning data.
-
-In its dedicated data-cleaning mode, the agent runs scratch code to look for
-missing values, outliers, and similar issues. Once it finds them, it surfaces
-questions to the user in an interactive dialog.
+We have seen that many coding agents have a superficial relationship with data quality, and we wondered whether we could do better. Posit
+Assistant proactively recommends cleaning the data and has a dedicated data-cleaning mode. It runs scratch code to look for
+missing values, outliers, and similar issues. Once it finds them, it surfaces questions to the user in an interactive dialog.
 
 <video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-clean-data.png" aria-label="Posit Assistant enters data-cleaning mode, asks the user about missing values and outliers, and records the decisions in a persistent cleaning script.">
   <source src="videos/posit-assistant-clean-data.mp4" type="video/mp4">
   Your browser does not support embedded videos.
 </video>
 
-In the demo, the agent found missing values in a relevant column, then found
-some flights with departure delays of multiple days. I chose to keep both:
+In the demo, the agent found missing values in a relevant column, then found some flights with departure delays of multiple days. I chose to keep both:
 Those outliers represented what really happened.
 
 At the end of cleaning mode, the agent wrote a persistent file in the project
 directory to ingest and clean the data. When someone revisits the analysis,
 they can reproduce those steps.
 
-I could see the plots, too. The agent plotted departure delay by carrier
-and showed the visualization inside the chat window. Other coding agents seldom
-show plots inside the conversation. It is nice to be able to see them, but we
+Posit Assistant shows plots inside the conversation. It is nice to be able to see them, but we
 also think it is necessary: Our evaluations show that agents cannot reliably
-interpret plots.
-
-Most carriers were on time most of the time, with a long right tail of highly
-delayed flights. One carrier, B6, appeared to have much longer typical delays.
-My first thought was to check the sample size for that box plot. Posit
-Assistant was curious about the same thing. It found only 32 flights for that
-carrier during the month, so we probably should not read too much into the
+interpret plots. When one carrier appeared unusually delayed, it checked the sample size
+and found only 32 flights, suggesting that we should not read too much into the
 pattern.
 
 <video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-carriers.png" aria-label="Posit Assistant plots departure delays by carrier, checks the sample size behind an apparent anomaly, and finds that the carrier has only 32 flights.">
@@ -449,50 +433,43 @@ pattern.
   Your browser does not support embedded videos.
 </video>
 
-Once the analysis was complete, I asked the agent to make a persistent
-Quarto report. It loaded its Quarto report skill—one of many specialized data
-analysis skills available to it—and wrote the report in the active editor.
+Once the analysis was complete, I asked the agent to turn it into a persistent
+Quarto report.
 
 <video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-report.png" aria-label="Posit Assistant uses a specialized skill to turn the flight-delay analysis into a persistent Quarto report.">
   <source src="videos/posit-assistant-report.mp4" type="video/mp4">
   Your browser does not support embedded videos.
 </video>
 
-At the end of the demo, I had one more "little zoomy zoom": The entire
-conversation cost five cents.
 
-Part of our mission at Posit is to provide tools to people regardless of their
-economic means. AI inference is expensive, so we cannot provide unlimited AI
-inference for free. But we focus quite a bit on making Posit Assistant
-token-efficient.
-
-This conversation could not have cost only five cents without a model like GLM
-5.3 Flash, which cost less than one-thirtieth as much per token as Claude Opus
-5. GLM 5.3 Flash is served as part of Posit AI Pass. We spend a lot of time
-watching the open-weights model space for models on the Pareto frontier:
-capable of data analysis and orders of magnitude cheaper than frontier models.
-
+I have one more "little zoomy zoom": The entire conversation cost five cents.
+The entire conversation cost five cents.
 <video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/posit-assistant-model-cost.png" aria-label="The Posit Assistant conversation displays the selected GLM 5.3 Flash model, token usage, and a total cost of five cents.">
   <source src="videos/posit-assistant-model-cost.mp4" type="video/mp4">
   Your browser does not support embedded videos.
 </video>
+
+Part of our mission at Posit is to provide tools to people regardless of their
+economic means.
+
+Posit Assistant is designed to be
+token-efficient and can use capable, inexpensive open-weight models such as GLM
+5.3 Flash through Posit AI Pass. We spend a lot of time
+watching the open-weights model space for models on the Pareto frontier:
+capable of data analysis and orders of magnitude cheaper than frontier models.
+
 
 Returning to the two principles, part of helping the agent be correct is, quite
 literally, asking nicely. We say, "Pretty please pay attention to data
 cleanliness. Pretty please be open to uncertainty when carrying out data
 analysis."
 
-Then we make it less bad when the agent is wrong by designing modes of
-interaction that make use of the user's expertise. Data-cleaning mode asks
-questions about the data-generating process and involves the user in early
-decisions that affect interpretation. We show plots because bluffbench tells us
-that models cannot always be trusted to interpret them.
-
-We also put you in the same R or Python environment as the agent, so when
-something goes wrong, you can quickly dive into the same session and see eye to
-eye.
-
 ![](images/slides/posit-assistant-correctness.png){.column-page fig-alt="A slide says to help the agent be correct by encouraging sound statistics and reproducibility practices, and make errors less bad by using the user's expertise and sharing an R or Python environment."}
+
+We also design interactions around the user's expertise: Cleaning mode asks
+about the data-generating process, plots remain visible, and the user shares
+the agent's R or Python session.
+
 
 Posit Assistant assumes that the user is a data scientist, analyst, or someone
 else who writes code and wants to work in an IDE, close to that code. But what
@@ -512,13 +489,9 @@ The problem is that they reached for the wrong tool and it gave them the wrong a
 
 ![](images/slides/vp-site-traffic-reminder.png){.column-page fig-alt="A chat interface shows the VP asking how traffic is trending for the site. The agent reports that daily visits are down 64 percent and displays a sharply declining line chart."}
 
-It turns out the data team has code that computes site traffic correctly. They
-use it for weekly reports. The code is vetted and maintained by that team, and
-they rely on it to do their analysis. We call this _trusted code_.
-
-Trusted code might live in Shiny apps, R and Python packages, Quarto documents,
-reports, or dashboards. It is code that a data person trusts to give the right
-answer.
+The data team already has vetted, maintained code that computes site traffic
+correctly. We call this _trusted code_. Trusted code might live in a package, Shiny app,
+Quarto document, report, or dashboard.
 
 ![](images/slides/trusted-code.png){.column-page fig-alt="A cream-colored slide displays the words 'Trusted code,' with 'Trusted' highlighted in orange."}
 
@@ -549,75 +522,43 @@ it invokes that calculation directly.
   Your browser does not support embedded videos.
 </video>
 
-In this case, the calculation returns a plot and the agent briefly summarizes
-it. A small green shield appears at the end of the response. Hovering over it
-reveals, "This answer comes from a trusted calculation."
-
-The green shield is added deterministically because of the path the agent took
-to produce the response. The agent does not know about the green shield.
+The calculation returns a plot and a green shield indicating that the answer
+came from a trusted calculation. commons adds that marker deterministically;
+the agent itself does not control it.
 
 What makes coding agents so convenient is that they are everything tools. They
 will write their own R, Python, or SQL code to answer a question. Trusted
 calculations cannot cover every question, so commons has a fallback path.
 
-If the VP asks, "How about page views? I thought I saw that those were going
-down," the agent searches for a trusted calculation and does not find one.
-Instead, it looks through context authored by the data team, reads the
-documentation, makes the plot, and provides a response.
-
-The agent can cite the context that supports its answer. That citation is
-checked deterministically against the conversation history. If the data team
-really did write it, the citation marker is shown to the user.
+When no trusted calculation exists, the agent can use context authored by the
+data team. commons verifies any citation against that context before displaying
+its blue citation marker.
 
 <video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/commons-cited-answer.png" aria-label="A commons agent charts declining page views, uses trusted context to explain the instrumentation change behind the decline, and displays a blue citation marker.">
   <source src="videos/commons-page-views.mp4" type="video/mp4">
   Your browser does not support embedded videos.
 </video>
 
-There is one more fallback path. The VP might ask, "Which day had the most site
-visits?" There is no trusted calculation for that exact question, and the
-agent cannot find trusted context to support an approach. It writes R, Python,
-or SQL code and provides an answer, just as an ordinary coding agent would.
-
-In this case, commons shows a yellow warning sign. Hovering over it tells the
-VP that the answer was not produced by a trusted calculation and does not cite
-trusted context. The VP knows to take it with a grain of salt.
+If there is neither a trusted calculation nor supporting context, the agent
+can write code—but commons displays a yellow warning so the user knows to treat
+the answer cautiously.
 
 <video class="column-page" loop muted playsinline controls preload="metadata" poster="images/slides/commons-lower-trust-answer.png" aria-label="A commons agent writes custom code to find the day with the most site visits, then marks the answer with a yellow warning because it did not use a trusted calculation or cite trusted context.">
   <source src="videos/commons-most-visits.mp4" type="video/mp4">
   Your browser does not support embedded videos.
 </video>
 
-The agent does not know about the green shield, blue citation mark, or yellow
-warning sign. They are added deterministically based on the path the agent took
-to get its answer.
-
 ![](images/slides/commons-trust-flow.png){.column-page fig-alt="A flow diagram shows commons first searching trusted calculations. A found calculation leads to a verified marker. Otherwise the agent searches context and writes SQL, R, or Python, leading to either a citation marker or a lower-trust warning."}
-
-If the agent directly invokes a trusted calculation, it gets a green shield.
-Otherwise, it tries to justify its approach. Depending on whether it can, it
-gets the blue citation mark or the yellow warning sign.
 
 So far, that describes the VP's experience. What is it like to work with
 commons as a data scientist?
 
 ![](images/slides/commons-lifecycle.png){.column-page fig-alt="Three cards describe the commons lifecycle: build by connecting the agent to trusted code, deploy it for colleagues on Connect, and improve it by reviewing behavior and covering common use cases."}
 
-Working with commons involves three loops:
-
-1. **Build:** Hook the commons agent up to trusted code. This could be R or
-   Python packages, Quarto documents, Shiny apps, metric views in Databricks,
-   or semantic views in Snowflake. commons takes care of the system prompts,
-   tools, and the rest of the agent harness.
-2. **Deploy:** Deploy a commons agent as if it were a Shiny app, because it is
-   a Shiny app. You can deploy it on Posit Connect and handle permissions in
-   the same way as any other Shiny app.
-3. **Improve:** If the data scientist and Connect administrator opt into data
-   collection, conversation histories are securely stored through Connect's
-   native OpenTelemetry integration. The data scientist can investigate cases
-   where the agent had to freehand code. If those cases have a common
-   denominator, the data scientist can write trusted code that moves future
-   responses up the trust ladder. The agent gets more correct over time.
+With data collection enabled, data scientists can review cases where the agent
+had to write its own code. If those cases share a pattern, they can add trusted
+code that moves future responses up the trust ladder, making the agent more
+correct over time.
 
 ![](images/slides/commons-correctness.png){.column-page fig-alt="A slide says to help the agent be correct with trusted calculations and context, and make errors less bad by signaling trust and introducing feedback loops."}
 
@@ -633,12 +574,6 @@ vice presidents. It is for any data person who wants to build an agent that
 gives correct answers to their collaborators.
 
 ![](images/slides/commons-examples.png){.column-page fig-alt="A table pairs a biostatistician with a physician comparing treatment groups, a UX researcher with a product manager summarizing experiment results, and a policy analyst with a program lead simulating a policy's budget impact."}
-
-That might be a biostatistician working with a physician who wants to ask
-questions about a recent trial; a UX researcher working with a product manager
-who has questions about an experiment; or a policy analyst whose program lead
-wants to understand the budget impact of a policy change. These domains often
-require complex R, Python, or SQL analysis.
 
 The talk included a [clinical trials
 agent](https://pos.it/clinical-trials-agent) to highlight this functionality.
