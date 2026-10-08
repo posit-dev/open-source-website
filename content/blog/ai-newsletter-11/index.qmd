@@ -105,7 +105,7 @@ finds a table, and runs some SQL. The number was going up the whole time.
 
 ![](images/slides/site-traffic-recreated.png){.column-page fig-alt="A chat interface cannot find the earlier conversation or its files. After recreating the analysis with a different warehouse table, it reports that daily visits increased 22 percent and shows an upward-trending chart."}
 
-This is a fictional story, but the pattern is not. We have seen it internally
+This is a fictional story, but we'e seen situations like this internally
 at Posit and at many of the organizations we work with. It is becoming normal
 to _vibe-analyze_ data: ask an agent a question, receive a plausible answer,
 and move on without understanding how it was produced.
