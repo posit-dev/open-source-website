@@ -253,7 +253,8 @@
           {{ $pageNum := add $index 1 }}
           <div class="shrink-0">
             <img src="{{ $thumbnail.RelPermalink }}" alt="Page {{ $pageNum }} preview"
-              class="h-48 w-auto rounded-lg border border-gray-300 cursor-pointer"
+              width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"
+              class="h-48 w-auto rounded-lg border border-gray-100 bg-gray-50 cursor-pointer"
               loading="lazy"
               data-gallery-group="cheatsheet-preview"
               data-gallery-src="{{ $thumbnail.RelPermalink }}"
