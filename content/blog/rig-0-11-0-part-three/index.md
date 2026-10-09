@@ -1,6 +1,6 @@
 ---
 title: 'rig 0.11.0 part three: R projects'
-date: 2026-10-12T00:00:00.000Z
+date: 2026-10-15T00:00:00.000Z
 people:
   - Gábor Csárdi
 description: >
@@ -117,7 +117,9 @@ Start with an existing R project with a `DESCRIPTION`
 file and run `rig proj import` to create an `rproj.toml` manifest from it.
 Or start with an renv lock file and call `rig proj renv import`.
 `rig proj import` keeps all fields of `DESCRIPTION`, including various
-types of dependencies.
+types of dependencies. For R packages you can use `rproj.toml` as the
+source of truth for package metadata and dependencies and (re)generate
+`DESCRIPTION` from it as needed, e.g. for CRAN submission.
 
 A third way to create a project is to write an `rproj.toml` manifest manually.
 
@@ -175,10 +177,13 @@ platforms.
 
 ### Sticky lock files
 
-Adding new dependencies to a project does not automatically update the
-locked versions in `rproj.lock`. You need to explicitly run
-`rig proj lock --upgrade` to do that. Run `rig proj lock --upgrade-package`
-to update specific packages only.
+Adding new dependencies to a project runs `rig proj lock`, but it keeps the
+package versions already in `rproj.lock`, unless they conflict with the new
+requirements. This is important to be able to maintain a stable set of
+package versions while still adding new dependencies. To update an already
+existing dependency to a newer version, you need to run
+`rig proj lock --upgrade-package`. Or run `rig proj lock --upgrade` to
+upgrade all packages.
 
 ### Preferring binary packages
 
@@ -266,7 +271,8 @@ a `git pull`, R prints a warning at startup, and `rig proj status` tells
 you what changed. If you start R with `rig run` in the project directory,
 then it automatically runs `rig proj sync` as needed. If you use Positron,
 VS Code, RStudio or another IDE, then R will warn at startup if the virtual
-environment is out of date.
+environment is out of date and suggest that you run `rig proj sync` and
+restart R.
 
 ## Managing dependencies
 
@@ -275,10 +281,17 @@ types of tables. The `[dependencies]` table includes packages that are
 always installed. These are considered as R packages required for
 the project. Packages in `[dependency-groups.<name>]` are groups of
 development dependencies and they are only installed if requested, except
-for the `dev` group which is installed by default. Groups of optional
-dependencies go into `[optional-dependencies.<name>]` tables and are only
-installed if requested. These are dependencies only needed for optional
-features.
+for the `dev` group which is installed by default. For example, the packages
+that are needed for building the pkgdown website can go into a
+`[dependency-groups.website]` table. `dependency-groups` is similar to
+`Config/Needs/<name>` in `DESCRIPTION` files of R packages.
+Dependencies of optional features go into `[optional-dependencies.<name>]`
+tables and are only installed if requested. For example, if your package
+has functions for visualization, but these are not required for the core
+functionality, you may put them in an `[optional-dependencies.viz]` table
+and other packages using yours may opt in to the `viz` feature.
+(The infrastructure for depending on optional features in packages is not
+built yet, and package repositories need to support it as well.)
 
 You can edit the `rproj.toml` manifest manually to add dependencies or
 use `rig proj` commands to do it. `rig proj add` adds packages to
@@ -373,8 +386,8 @@ and creates `DESCRIPTION` from `rproj.toml` (if missing), so `R CMD build`,
 
 Development tools like devtools, usethis and roxygen2 are not dependencies
 of the package, so they should not be in `rproj.toml`. rig has a special
-package library for them, called `tools`, and adds it to the library path
-of every project. Install your tools there once:
+global package library for them, called `tools`, and adds it to the library
+path of every project. Install your tools there once:
 
 ``` text
 ❯ rig pkg install -l tools devtools usethis roxygen2
@@ -397,7 +410,7 @@ locked together with the other dependencies.
 
 Sometimes a project is just a single R script. For these rig supports inline
 dependencies: the script declares the R version and the packages it needs in
-a special comment block:
+a special comment block with a `# /// script` header and a `# ///` footer:
 
 ``` r
 # /// script

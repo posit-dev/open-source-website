@@ -1,6 +1,6 @@
 ---
 title: "rig 0.11.0 part one: R installations"
-date: 2026-10-07
+date: 2026-10-09
 people:
   - Gábor Csárdi
 description: >
@@ -61,11 +61,17 @@ tutorials to get started.
 
 ## User Mode R Installations
 
-rig can now install and manage R installations as a regular user, without
+rig can now install and manage R installations without
 requiring administrative privileges. rig calls this _user mode_. In user
 mode, R installations are installed in the user's home directory rather
 than system-wide. System-wide installations are still the default currently,
 and they are called _admin mode_.
+
+You may have both user mode and admin mode installations on one computer,
+but each rig command runs in either user mode or admin mode. The default is
+admin mode. See below for how to change it. Use `--admin` or `--user` to
+pick the mode for a single command, e.g. `rig ls --admin` always lists
+admin mode installations, and `rig ls --user` always lists user mode ones.
 
 Advantages of using user mode:
 - **No admin**: no need for administrative privileges.
@@ -129,7 +135,8 @@ Project library root  (in-project, .rvenv/lib)
 
 On arm64 macOS rig can install both arm64 and x86_64 builds of R. The latter
 ones need Rosetta to run. User mode has a different, simpler naming scheme
-than admin mode on macOS, matching Linux and Windows:
+than admin mode on macOS, matching Linux and Windows. This is an example
+list of user mode R installations:
 
 ```text
 ❯ rig ls
@@ -229,8 +236,8 @@ rig-default R version is also the default in RStudio on Linux.
 
 Positron does not have a generic default R version like RStudio does, but
 you can choose a default for each workspace. rig (in `rig add`
-and `rig default`) updates your Positron configuration to make sure that
-Positron finds all user-mode R installations.
+and `rig default`) updates your Positron configuration (the current user's
+config file) to make sure that Positron finds all user-mode R installations.
 
 ### Switching to user mode
 

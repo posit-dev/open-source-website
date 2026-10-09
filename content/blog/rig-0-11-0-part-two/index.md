@@ -1,6 +1,6 @@
 ---
 title: 'rig 0.11.0 part two: R packages'
-date: 2026-10-09T00:00:00.000Z
+date: 2026-10-12T00:00:00.000Z
 people:
   - Gábor Csárdi
 description: >
@@ -93,6 +93,11 @@ affyio               1.82.0       4.6.0   aarch64-apple-darwin20     RSPM
 [...]
 ```
 
+`rig pkg` commands use the current default R version (as in `rig default`),
+unless the `-r` or `--r-version` option specifies otherwise. They use the
+default library (as in `rig library default`), unless the `-l` or
+`--library` option specifies otherwise.
+
 `rig pkg doctor` checks the health of your package library, identifying any
 issues with installed packages or their dependencies: missing dependencies,
 dependency conflicts, ABI conflicts, etc. It also tells you how to fix these
@@ -130,7 +135,11 @@ avoids redundant downloads and installations, and performs downloads and
 package builds in parallel. It uses the host OS's file cloning capabilities
 to efficiently copy files when installing packages.
 
-This is how installing a package into an empty library looks like, if the
+If you used the pak R package to install R packages previously, `rig pkg`
+will probably feel familiar, except that you can run it from the command
+line instead of from within R.
+
+This is what installing a package into an empty library looks like, if the
 package files are already cached:
 
 ``` text
@@ -457,7 +466,7 @@ You can also use the `-l` or `--library` option of the `rig pkg` commands to
 change the package library temporarily for one command, without changing the
 default.
 
-If you are using the macOS menu bar app, then you can also manage package
+If you are using the [macOS menu bar app](https://rig.r-lib.org/macos-app.html), then you can also manage package
 libraries through the app's interface.
 
 ## System requirements
@@ -465,18 +474,16 @@ libraries through the app's interface.
 On certain Linux systems rig supports automatic system requirements
 installation. These are currently:
 
-- Ubuntu Linux,
-- RedHat Enterprise Linux and clones,
-- openSUSE Linux and SUSE Linux Enterprise,
-- Debian Linux,
-- Fedora Linux,
-- Alpine Linux.
+- Ubuntu Linux
+- RedHat Enterprise Linux and clones
+- openSUSE Linux and SUSE Linux Enterprise
+- Debian Linux
+- Fedora Linux
+- Alpine Linux
 
 For the automatic system requirements installation to work, rig must run
 as the `root` user or with password-less `sudo` privileges to call the
 system package manager.
-
-### Not needed in user mode
 
 Note that in user mode, rig installs the self-contained manylinux R build,
 which does not require any system-level dependencies and also sets up
