@@ -1,0 +1,483 @@
+---
+title: 'rig 0.11.0 part three: R projects'
+date: 2026-10-15T00:00:00.000Z
+people:
+  - Gábor Csárdi
+description: >
+  rig 0.11.0: with lots of new features. This is the third post out of three,
+  about managing R projects with rig.
+image: featured.jpg
+image-alt: >
+  Black and white photo of a two-masted vintage sailing ship, sail number CAN
+  87, with crew on deck, on calm water near a wooded shore, with small
+  motorboats and buoys around it.
+source: tidyverse
+topics:
+  - MLOps and Admin
+  - Best Practices
+software:
+  - rig
+languages:
+  - R
+tags:
+  - project management
+  - package management
+hidesubscription: false
+photo:
+  url: >-
+    https://www.pexels.com/photo/vintage-sailing-ship-on-calm-waters-in-brittany-36306900/
+  author: Jean-Paul Wettstein
+---
+
+
+<!--
+TODO:
+- [x] Add image (1920×1080 PNG or JPG) and image-alt
+- [x] Trim topics, software, and languages to only what applies
+- [x] Open a PR against main for a Netlify preview
+-->
+<style>
+.prose pre {
+  font-size: 0.65em;
+}
+</style>
+
+We are thrilled to announce rig 0.11.0 (and 0.10.0), with lots of new
+functionalities: user mode R installations, R package and project management
+and much more. This is the third of three blog posts about the new rig
+release. This post is about managing R projects.
+
+The first post covered user mode R installations, the second focused on R
+packages.
+
+[Full changelog on the rig web site](https://rig.r-lib.org/news.html).
+
+## Introduction
+
+The new `rig proj` command lets you manage R projects and virtual
+environments. An R project lets you share and run R code in a standardized
+way. rig's R projects use an `rproj.toml` manifest, which is still
+[under development](https://github.com/tidyverse/tidyups/pull/34).
+
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">Note</span>
+</div>
+<div class="callout-body">
+
+`rig proj` is new and less battle-tested than other parts of rig.
+Please report any issues you find on the [rig GitHub repository](https://github.com/r-lib/rig/issues).
+
+</div>
+</div>
+
+rig's R project implementation largely works the same way as other project
+management tools for Python, Rust, and other languages.
+
+## The project lifecycle
+
+A project lifecycle typically involves
+
+1.  `rig proj init` (or `rig proj import`) to create a new project.
+2.  `rig proj add` (and `rig proj remove`) to manage project dependencies.
+3.  `rig proj lock` to resolve how the project is installed over a range
+    of R versions in a range of platforms.
+4.  `rig proj sync` to install a project according to the lock file.
+5.  `rig run` to execute R code within the context of the project.
+
+## Creating projects
+
+There are three ways to create an R project. One is to create a brand new
+project with `rig proj init`. This creates a minimal `rproj.toml` manifest
+file that you can either edit manually or via `rig proj add`:
+
+``` text
+❯ rig proj init
+✓ Created rproj.toml
+✓ Created .Renviron
+✓ Created .gitignore
+✓ Created .rvenvlib/rvenv
+ℹ Project set up for R 4.6.1. Next: add dependencies to rproj.toml, then
+  run `rig proj lock` and `rig proj sync`.
+```
+
+``` text
+❯ cat rproj.toml
+[project]
+name = "x"
+version = "0.1.0"
+type = "project"
+
+[dependencies]
+R = ">= 4.6"
+```
+
+Another way is to convert an existing project to an `rproj.toml` manifest.
+Start with an existing R project with a `DESCRIPTION`
+file and run `rig proj import` to create an `rproj.toml` manifest from it.
+Or start with an renv lock file and call `rig proj renv import`.
+`rig proj import` keeps all fields of `DESCRIPTION`, including various
+types of dependencies. For R packages you can use `rproj.toml` as the
+source of truth for package metadata and dependencies and (re)generate
+`DESCRIPTION` from it as needed, e.g. for CRAN submission.
+
+A third way to create a project is to write an `rproj.toml` manifest manually.
+
+### Project types
+
+There are two types of R manifests: *projects* and *packages*. In general
+we use *project* as a generic name for both types and consider a *package* as
+a specialized project.
+
+For a package, create the `R/`, `src/`, etc. directories as usual. See below
+for a possible way to use the devtools based development tools for a rig
+project.
+
+For projects rig does not have a suggested way for organizing R and other
+code, documentation and tests. If in doubt, follow the conventions of
+R packages. Use `[[bin]]` to specify executable scripts within the project,
+relative to the project root. You'll be able to run these scripts with
+`rig run`.
+
+## Locking a project
+
+`rig proj lock` reads `rproj.toml` and works out which exact packages
+should be downloaded and installed to satisfy *all* requirements from
+`rproj.toml`. All requirements always include the optional and soft
+dependencies. The result is a lock file called `rproj.lock`. This is also a
+TOML file, typically much bigger than the original `rproj.toml` project
+manifest.
+
+### Universal lock files
+
+The lock can and usually does include packages for multiple platforms.
+The exact set of platforms and R versions to include in the lock file can
+be specified in `rproj.toml` or at the command line. By default rig includes
+the current R release and five platforms: the platform of the current
+machine, macOS arm64, Windows x86_64, generic glibc Linux and `source`
+(four platforms if the current platform coincides with one of the others).
+
+A multi-platform lock file means that it is much easier to plan the
+cross-platform deployment of a project: a team can include all relevant
+platforms and R versions in the lock file and commit a lock file to version
+control.
+
+rig also records system requirements in the lock file, for platforms that
+need them.
+
+### Stable URLs
+
+Universal lock files only really work well if they contain stable URLs for
+binary packages for all platforms and R versions. This is why it is
+important to use P3M (or another Posit Package Manager instance) with
+extended metadata about all older package versions and all their
+corresponding binary builds. With P3M rig is typically able to generate
+lock files with binary packages for the last 3-4 R versions on all common
+platforms.
+
+### Sticky lock files
+
+Adding new dependencies to a project runs `rig proj lock`, but it keeps the
+package versions already in `rproj.lock`, unless they conflict with the new
+requirements. This is important to be able to maintain a stable set of
+package versions while still adding new dependencies. To update an already
+existing dependency to a newer version, you need to run
+`rig proj lock --upgrade-package`. Or run `rig proj lock --upgrade` to
+upgrade all packages.
+
+### Preferring binary packages
+
+By default rig does not choose an older binary package over a newer source
+package. You can change that with the `prefer-binary` setting in `rproj.toml`.
+E.g. `prefer-binary = true` means that rig will choose an older binary
+package over a newer source package, if the older package also satisfies
+the dependency requirements.
+
+### Excluding newer package versions
+
+You can prevent rig from automatically upgrading to newer package versions
+by using the `exclude-newer` setting in `rproj.toml`. For example,
+`exclude-newer = "2026-09-30"` will exclude any package versions that were
+published after the specified date. This works for P3M's CRAN and
+Bioconductor repositories, but not for generic CRAN-like repositories
+which typically do not have release dates.
+
+### Repositories
+
+Projects ignore the global repository settings configured via `rig repos`.
+By default projects use P3M's CRAN and Bioconductor repositories.
+This can be configured with `[[repository]]` entries in `rproj.toml`.
+You can turn off P3M's CRAN and Bioconductor repositories and you can
+also add your own custom repositories.
+
+rig's solver and universal lock files work best with P3M's CRAN and
+Bioconductor metadata, so we strongly recommend using them whenever
+possible.
+
+## Syncing a project
+
+`rig proj sync` installs the packages listed in `rproj.lock` into the
+project library in `.rvenv/lib`, inside the project's virtual environment.
+It locks first if the project manifest has changed since creating the
+lock file.
+
+If the current project is a package (`type = "package"`), then
+`rig proj sync` will also install the package itself into the project
+library.
+
+`rig proj sync` also installs the R version requested in the lock file,
+if it is not already installed. This makes it very easy to deploy a
+project in an empty container or virtual machine: only rig and the lock
+file are needed and rig installs everything required for the project: R,
+system requirements and R packages.
+
+`rig proj sync` installs the hard requirements and the `dev` dependency
+group by default. For a production deployment you can use the `--no-dev`
+option to skip installing development dependencies. Use `--group` and
+`--extra` to install optional dependency groups and extra dependencies.
+
+## Fast and lean libraries
+
+rig clones the package files when installing packages into the project
+library, whenever possible. This means that installation is very fast and
+space-efficient. Having the same package version installed for ten projects
+on the same disk only takes up the space of a single copy.
+
+## The virtual environment
+
+A rig project has two kinds of files. `rig proj init` creates the ones that
+belong in version control: `rproj.toml`, `.Renviron`, `.rvenvlib/rvenv` and
+`.gitignore`. Commit these, together with `rproj.lock`, and a fresh clone of
+the project works after a `rig proj sync`, or right away with `rig run`.
+
+`rig proj sync` creates the rest in the `.rvenv` directory: the project
+library in `.rvenv/lib`, `R` and `Rscript` wrapper scripts in `.rvenv/bin`,
+and some configuration files. `.rvenv` is specific to the machine, it is in
+`.gitignore`, and you can delete it any time, `rig proj sync` creates it
+again.
+
+The `.Renviron` file and the small `rvenv` package in `.rvenvlib` make sure
+that R uses the project library whenever it starts in the project directory:
+from a terminal, or from RStudio, Positron or VS Code. You do not need to
+activate the project explicitly, although `.rvenv/bin` has activation
+scripts for the common shells if you prefer that.
+
+Inside the project R only sees the project library, the `tools` library
+(see below) and the packages that come with R. Packages from your user or
+site library do not leak into the project.
+
+If the project library is out of date compared to `rproj.lock`, e.g. after
+a `git pull`, R prints a warning at startup, and `rig proj status` tells
+you what changed. If you start R with `rig run` in the project directory,
+then it automatically runs `rig proj sync` as needed. If you use Positron,
+VS Code, RStudio or another IDE, then R will warn at startup if the virtual
+environment is out of date and suggest that you run `rig proj sync` and
+restart R.
+
+## Managing dependencies
+
+R package dependencies are specified in the `rproj.toml` manifest under three
+types of tables. The `[dependencies]` table includes packages that are
+always installed. These are considered as R packages required for
+the project. Packages in `[dependency-groups.<name>]` are groups of
+development dependencies and they are only installed if requested, except
+for the `dev` group which is installed by default. For example, the packages
+that are needed for building the pkgdown website can go into a
+`[dependency-groups.website]` table. `dependency-groups` is similar to
+`Config/Needs/<name>` in `DESCRIPTION` files of R packages.
+Dependencies of optional features go into `[optional-dependencies.<name>]`
+tables and are only installed if requested. For example, if your package
+has functions for visualization, but these are not required for the core
+functionality, you may put them in an `[optional-dependencies.viz]` table
+and other packages using yours may opt in to the `viz` feature.
+(The infrastructure for depending on optional features in packages is not
+built yet, and package repositories need to support it as well.)
+
+You can edit the `rproj.toml` manifest manually to add dependencies or
+use `rig proj` commands to do it. `rig proj add` adds packages to
+`rproj.toml`, then updates `rproj.lock` and installs the new packages into
+the project library:
+
+``` text
+❯ rig proj add dplyr cli
+```
+
+``` text
+❯ cat rproj.toml
+[project]
+name = "x"
+version = "0.1.0"
+type = "project"
+
+[dependencies]
+R = ">= 4.6"
+cli = "*"
+dplyr = "*"
+```
+
+Without a version requirement rig adds a package as `"*"`, any version. The
+exact version is recorded in `rproj.lock`, so you only need a version
+requirement if the project really needs a certain version. Version
+requirements use the same syntax as for `rig pkg install`, e.g.
+`'cli@>= 3.6'` or `'dplyr@^1.1.0'`. `rig proj remove` removes packages.
+
+Use `--dev` to add a development dependency, e.g. testthat. These go into
+the `[dependency-groups.dev]` table.
+
+Packages from GitHub, GitLab, git repositories, URLs and local paths use the
+same syntax as `rig pkg install`, see the second post. Bioconductor or
+other packages coming from the configured repositories work the same way as
+CRAN packages. To pin a package to a certain repository, e.g. an R universe,
+use `--with-repos`:
+
+``` text
+❯ rig proj add --with-repos rlib=https://r-lib.r-universe.dev cli
+```
+
+This adds the repository to `rproj.toml` and pins `cli` to it:
+
+``` toml
+[dependencies]
+cli = { version = "*", repository = "rlib" }
+
+[[repository]]
+name = "rlib"
+url = "https://r-lib.r-universe.dev"
+```
+
+If rig cannot resolve the new dependencies, e.g. because of a typo in a
+package name, it restores `rproj.toml`.
+
+## Running a project
+
+`rig run` starts R in the project's environment, from anywhere inside the
+project. It locks and syncs the project first, if needed, so day to day you
+mostly need `rig proj add`, `rig proj remove` and `rig run`.
+
+`rig run script.R` runs a script in the project's environment. Arguments
+after the script name go to the script, and `commandArgs(TRUE)` picks them
+up. Use `--no-project` to run the script without the project.
+
+A project can give names to its scripts, in `[[bin]]` tables of
+`rproj.toml`:
+
+``` toml
+[[bin]]
+name = "report"
+path = "scripts/report.R"
+description = "Build the report"
+```
+
+Then `rig run report --format pdf` runs `scripts/report.R` with the
+`--format pdf` arguments, and `rig run --list` lists all named scripts of
+the project.
+
+You can also run the `.rvenv/bin/R` and `.rvenv/bin/Rscript` wrappers
+directly, or start R from your IDE in the project directory, see the
+virtual environment above.
+
+## Package development with devtools
+
+To develop an R package as a rig project, use `type = "package"` in
+`rproj.toml`, or run `rig proj import` on an existing package.
+`rig proj sync` then installs the package itself into the project library,
+and creates `DESCRIPTION` from `rproj.toml` (if missing), so `R CMD build`,
+`R CMD check` and other tools keep working.
+
+Development tools like devtools, usethis and roxygen2 are not dependencies
+of the package, so they should not be in `rproj.toml`. rig has a special
+global package library for them, called `tools`, and adds it to the library
+path of every project. Install your tools there once:
+
+``` text
+❯ rig pkg install -l tools devtools usethis roxygen2
+```
+
+and then they are available in all projects:
+
+``` text
+❯ rig run
+> devtools::load_all()
+> devtools::document()
+> devtools::test()
+```
+
+Packages that the package's tests and documentation need, e.g. testthat or
+knitr, are different. Add these with `rig proj add --dev`, so they are
+locked together with the other dependencies.
+
+## Inline scripts
+
+Sometimes a project is just a single R script. For these rig supports inline
+dependencies: the script declares the R version and the packages it needs in
+a special comment block with a `# /// script` header and a `# ///` footer:
+
+``` r
+# /// script
+# [dependencies]
+# R = ">= 4.4"
+# cli = "*"
+# dplyr = ">= 1.1"
+# ///
+
+library(dplyr)
+cli::cli_text("Hello from {.pkg cli}!")
+```
+
+Without the leading `#` characters, the block is the same TOML as in
+`rproj.toml`.
+
+`rig run script.R` installs the right R version if needed, installs the
+packages into a separate environment in rig's cache, and then runs the
+script. Your own package libraries do not change. The next run reuses the
+environment, so it starts right away. You can share a single `.R` file, and
+it runs the same way on every machine that has rig.
+
+You can write the block by hand, or let rig manage it:
+
+``` text
+❯ rig proj init --script script.R
+❯ rig proj add --script script.R cli dplyr
+❯ rig proj remove --script script.R dplyr
+```
+
+To pin the exact R and package versions, lock the script:
+
+``` text
+❯ rig proj lock --script script.R
+```
+
+This writes `script.R.lock` next to the script. Keep the two files together,
+and `rig run` will use the versions from the lock file.
+
+On macOS and Linux, start the script with `#!/usr/bin/env -S rig run` and
+make it executable, to run it like any other command. On Windows,
+`rig system script-assoc` lets you run `.R` files from `cmd` and PowerShell.
+See the [scripts guide](https://rig.r-lib.org/scripts.html) for more.
+
+## Caches
+
+rig caches the files it downloads: repository metadata, package files,
+packages it built from source, git repositories of git and GitHub
+dependencies, and the environments of inline scripts. `rig pkg`,
+`rig proj` and `rig run` share the same cache, and so do all projects, so
+rig downloads or builds a package only once. rig refreshes the repository
+metadata once a day by default.
+
+`rig cache info` shows how much space the cache takes, by category, and
+`rig cache clean` deletes it, or only one category of it, with
+`--category`:
+
+``` text
+❯ rig cache info
+❯ rig cache clean --category scripts
+```
+
+Use `--no-cache` to skip the cache for a single command, and
+`rig system dirs --cache` to see where the cache is.
+
+## Your feedback is welcome!
+
+We would love to hear your thoughts, suggestions, and any issues you
+encounter while using rig. Please use the [issue tracker](https://github.com/r-lib/rig/issues) for bug reports and feature
+requests, and the [discussion forum](https://github.com/r-lib/rig/discussions) or [Posit community](https://forum.posit.co/) for general questions and discussions.

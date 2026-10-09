@@ -1,0 +1,481 @@
+---
+title: "rig 0.11.0 part two: R packages"
+date: 2026-10-12
+people:
+  - Gábor Csárdi
+description: >
+  rig 0.11.0: with lots of new features. This is the second post
+  out of three, about managing R packages with rig.
+image: "featured.jpg"
+image-alt: >
+  Black and white photo of sailboats docked at a marina, some under white
+  winter covers, with high-rise buildings and the CN Tower in the background.
+source: tidyverse
+topics:
+  - MLOps and Admin
+  - Best Practices
+software:
+  - rig
+languages:
+  - R
+tags:
+  - package management
+hidesubscription: false
+photo:
+  url: https://www.pexels.com/photo/grayscale-photo-of-docked-yachts-by-the-pier-10529333/
+  author: Shahbaz Zaman
+---
+
+<!--
+TODO:
+- [x] Add image (1920×1080 PNG or JPG) and image-alt
+- [x] Trim topics, software, and languages to only what applies
+- [x] Open a PR against main for a Netlify preview
+-->
+
+<style>
+.prose pre {
+  font-size: 0.65em;
+}
+</style>
+
+We are thrilled to announce rig 0.11.0 (and 0.10.0), with lots of new
+functionalities: user mode R installations, R package and project management
+and much more. This is the second of three blog posts about the new rig
+release. This post is about managing R packages.
+
+The first post covered user mode R installations. The third will focus on
+[project management](https://rig.r-lib.org/proj-guide.html).
+
+[Full changelog on the rig web site](https://rig.r-lib.org/news.html).
+
+## Introduction
+
+The new `rig pkg` command lets you manage R packages: installing,
+removing, and querying package dependencies. It supports CRAN-like
+repositories, packages in git repositories (including on GitHub), URLs
+pointing to package files and packages in local files and directories.
+
+`rig pkg` is aimed at R users and developers who use a single (or a few)
+package libraries. If you prefer to use project-specific libraries, you
+probably want to use `rig proj` instead.
+
+::: {.callout-note}
+`rig pkg` is new and less battle-tested than other parts of rig.
+Please report any issues you find on the [rig GitHub repository](
+  https://github.com/r-lib/rig/issues).
+:::
+
+## Managing installed packages
+
+`rig pkg list` lists installed packages in a library. `rig pkg remove`
+removes a package from a library.
+```text
+❯ rig pkg list
+559 packages (R 4.6.1, main: /Users/gaborcsardi/Library/R/arm64/4.6/library)
+
+Package              Version      Built   Platform                   Source
+----------------------------------------------------------------------------------------------------------------
+abind                1.4-8        4.6.0   -                          RSPM
+ade4                 1.7-24       4.6.0   aarch64-apple-darwin23     CRAN
+adegenet             2.1.11       4.6.0   aarch64-apple-darwin23     CRAN
+AdmixPoly            1.0.1        4.6.0   aarch64-apple-darwin20     RSPM
+affy                 1.90.0       4.6.1   aarch64-apple-darwin23     RSPM
+affyio               1.82.0       4.6.0   aarch64-apple-darwin20     RSPM
+[...]
+```
+
+`rig pkg` commands use the current default R version (as in `rig default`),
+unless the `-r` or `--r-version` option specifies otherwise. They use the
+default library (as in `rig library default`), unless the `-l` or
+`--library` option specifies otherwise.
+
+`rig pkg doctor` checks the health of your package library, identifying any
+issues with installed packages or their dependencies: missing dependencies,
+dependency conflicts, ABI conflicts, etc. It also tells you how to fix these
+issues.
+```text
+❯ rig pkg doctor
+3 problems (1 error, 2 warnings) in 559 packages (R 4.6.1, main: /Users/gaborcsardi/Library/R/arm64/4.6/library)
+
+Package              Version   Severity   Problem   Details
+-------------------------------------------------------------------------------------------------------------
+00LOCK-dress.graph   -         warning    lock      lock directory left behind by an interrupted installation
+dress.graph          -         warning    broken    no DESCRIPTION file
+missoNet             1.5.1     error      missing   Imports ComplexHeatmap, not installed
+
+To fix the errors, run:
+  rig pkg install ComplexHeatmap
+
+To remove the leftover lock directories, if no installation is running, run:
+  rm -rf /Users/gaborcsardi/Library/R/arm64/4.6/library/00LOCK-dress.graph
+
+To remove the broken packages, run:
+  rm -rf /Users/gaborcsardi/Library/R/arm64/4.6/library/dress.graph
+
+✗ Found 1 error in /Users/gaborcsardi/Library/R/arm64/4.6/library
+```
+
+## Installing packages
+
+`rig pkg install` can install R packages from CRAN-like repositories,
+git repositories, GitHub, URLs, and local paths. It uses the default R
+version and the default package library (see below about libraries),
+unless otherwise specified. It caches metadata and package files heavily,
+avoids redundant downloads and installations, and performs downloads and
+package builds in parallel. It uses the host OS's file cloning capabilities
+to efficiently copy files when installing packages.
+
+If you used the pak R package to install R packages previously, `rig pkg`
+will probably feel familiar, except that you can run it from the command
+line instead of from within R.
+
+This is what installing a package into an empty library looks like, if the
+package files are already cached:
+
+```text
+❯ rig pkg install dplyr
+▶ Downloading binary package metadata
+▶ Solving dependencies
+✓ Solved dependencies
+15 of 15 packages to install (R 4.6.1, test: /Users/gaborcsardi/Library/R/arm64/4.6/library/__test)
+Package     Version  Type    Action   Reason
+cli         3.6.6    binary  install  not installed
+dplyr       1.2.1    binary  install  not installed
+generics    0.1.4    binary  install  not installed
+glue        1.8.1    binary  install  not installed
+lifecycle   1.0.5    binary  install  not installed
+magrittr    2.0.5    binary  install  not installed
+pillar      1.11.1   binary  install  not installed
+pkgconfig   2.0.3    binary  install  not installed
+R6          2.6.1    binary  install  not installed
+rlang       1.3.0    binary  install  not installed
+tibble      3.3.1    binary  install  not installed
+tidyselect  1.2.1    binary  install  not installed
+utf8        1.2.6    binary  install  not installed
+vctrs       0.7.3    binary  install  not installed
+withr       3.0.3    binary  install  not installed
+
+▶ Downloading 15 packages
+✓ Cached: cli
+✓ Cached: dplyr
+✓ Cached: generics
+✓ Cached: glue
+✓ Cached: lifecycle
+✓ Cached: magrittr
+✓ Cached: pillar
+✓ Cached: pkgconfig
+✓ Cached: R6
+✓ Cached: rlang
+✓ Cached: tibble
+✓ Cached: tidyselect
+✓ Cached: utf8
+✓ Cached: vctrs
+✓ Cached: withr
+Complete: 0 downloaded, 15 cached [========================================] 15/15 packages
+
+▶ Installing 15 packages.
+Installed R6 2.6.1
+Installed cli 3.6.6
+Installed rlang 1.3.0
+Installed magrittr 2.0.5
+Installed pkgconfig 2.0.3
+Installed glue 1.8.1
+Installed withr 3.0.3
+Installed utf8 1.2.6
+Installed generics 0.1.4
+Installed lifecycle 1.0.5
+Installed vctrs 0.7.3
+Installed tidyselect 1.2.1
+Installed pillar 1.11.1
+Installed tibble 3.3.1
+Installed dplyr 1.2.1
+✓ Installed all 15 packages successfully
+✓ Installed 15 packages (R 4.6.1, test: /Users/gaborcsardi/Library/R/arm64/4.6/library/__test)
+```
+
+### Version constraints
+
+`rig pkg install` supports version constraints for packages. Request a
+specific version of a package with `@==<version>`:
+```text
+❯ rig pkg install ggplot2@==4.0.2
+```
+
+If you are familiar with `~` and `^` version constraints from other languages,
+you can use them with `rig pkg install` as well. E.g. to install the
+latest version of the ggplot2 3.x.y series, you would run:
+```text
+❯ rig pkg install ggplot2@^3.0.0
+```
+
+### Dependency solver
+
+The rig dependency solver makes sure that all package dependencies are
+resolved correctly before installation. If the combination of packages
+cannot be installed on the specified R version or platform, rig will report
+an error and refuse to proceed with the installation. For example:
+
+```text
+❯ rig pkg install -r 4.0.5-x86_64 'testthat@>=3.3.0'
+▶ Downloading binary package metadata
+▶ Solving dependencies
+✗ Cannot resolve dependencies for R 4.0.5 / x86_64-apple-darwin:
+  Because testthat >=3.3.0 depends on R >=4.1.0 and you requested
+  testthat >=3.3.0, the requested packages cannot be installed.
+```
+
+### Packages from git, GitHub, URLs, paths
+
+If you are familiar with pak's syntax for installing packages from
+various non-CRAN sources, you can use the same syntax with rig. E.g. a
+GitHub package is simply `username/repo`. You can use the usual syntax
+for tags, branches, pull requests:
+```text
+❯ rig pkg install r-lib/cli
+❯ rig pkg install r-lib/cli@badcafe
+❯ rig pkg install r-lib/cli@some-branch
+❯ rig pkg install r-lib/cli#41
+```
+
+Prefix packages in git repositories with `git::`. To install a package
+from a URL simply use the full URL. For a local path use a relative path
+starting with `./`, `../` or `~/` or an absolute path:
+```text
+❯ rig pkg install .
+❯ rig pkg install ./mypkg
+❯ rig pkg install ../mypkg
+❯ rig pkg install ~/works/mypkg
+❯ rig pkg install /opt/src/mypkg
+❯ rig pkg install ./mypkg_1.0.0.tar.gz
+```
+
+### Preferring binary packages
+
+rig prefers to install the binary package for a certain package version if
+it is available, instead of building and potentially compiling it from
+source. By default it does not choose an older version over a newer one
+just because a binary is available for the older version. The
+`--prefer-binary` option changes this. Use it if you prefer older binary
+packages over newer source packages:
+```text
+❯ rig pkg install --prefer-binary tidyverse
+```
+
+### Installing dependencies
+
+To install the dependencies of a package, without installing the package
+itself, use `--no-install-project`. This is especially useful to install
+all dependencies of a package tree in the current working directory. The
+second variant also installs soft (development) dependencies:
+```text
+❯ rig pkg install --no-install-project .
+❯ rig pkg install --no-install-project --dev .
+```
+
+## Repositories
+
+`rig pkg` subcommands always use the configured repositories, see the
+`rig repos` command. They also have `--with-repos` and `--without-repos`
+options to include or exclude specific repositories when performing a single
+package operation, without modifying the configured repositories. E.g. to
+query the version of a package on CRAN and P3M you can run:
+```text
+❯ rig pkg info otel --without-repos --with-repos=p3m --versions
+otel — 2 versions (latest 0.2.0)
+
+Version   Published    R          Deps
+-------------------------------------------------------
+0.1.0     2025-07-31   >= 3.6.0      0
+0.2.0     2025-08-29   >= 3.6.0      0   ← latest
+```
+
+```text
+❯ rig pkg info otel --without-repos --with-repos=cran --versions
+otel — 1 version (latest 0.2.0)
+
+Version   Published   R          Deps
+-------------------------------------------------------
+0.2.0     ?           >= 3.6.0      0   ← latest
+```
+
+## Package queries
+
+`rig pkg info` prints information about a package, by default about the
+latest version:
+```text
+❯ rig pkg info tidymodels
+tidymodels 1.5.0 (RSPM)
+Easily Install and Load the 'Tidymodels' Packages
+
+The tidy modeling "verse" is a collection of packages for modeling and
+statistical analysis that share the underlying design philosophy, grammar, and
+data structures of the tidyverse.
+
+Maintainer    Max Kuhn <max@posit.co>
+License       MIT + file LICENSE
+Published     2026-04-23 06:20:02 UTC
+URL           https://tidymodels.tidymodels.org,
+              https://github.com/tidymodels/tidymodels
+BugReports    https://github.com/tidymodels/tidymodels/issues
+Compilation   no
+
+Depends       R (>= 4.1)
+Imports       broom (>= 1.0.12), cli (>= 3.6.6), conflicted (>= 1.2.0), dials
+              (>= 1.4.3), dplyr (>= 1.2.1), ggplot2 (>= 4.0.3), hardhat (>=
+              1.4.3), infer (>= 1.1.0), modeldata (>= 1.5.1), parsnip (>=
+              1.5.0), purrr (>= 1.2.2), recipes (>= 1.3.2), rlang (>= 1.2.0),
+              rsample (>= 1.3.2), rstudioapi (>= 0.18.0), tailor (>= 0.1.0),
+              tidyr (>= 1.3.2), tune (>= 2.1.0), workflows (>= 1.3.0),
+              workflowsets (>= 1.1.1), yardstick (>= 1.4.0)
+Suggests      covr, glue, knitr, rmarkdown, testthat (>= 3.0.0), xml2
+```
+
+`rig pkg info --versions` lists all versions of a package. This only works
+with P3M repositories because it needs extended metadata that plain
+CRAN-like repositories typically do not have:
+```text
+❯ rig pkg info tidymodels --versions
+tidymodels — 17 versions (latest 1.5.0)
+
+Version   Published    R        Deps
+-------------------------------------------------------
+0.0.1     2018-07-27   >= 3.1     18
+0.0.2     2018-11-27   >= 3.1     20
+0.0.3     2019-10-04   >= 3.1     20
+0.1.0     2020-02-16   >= 3.1     22
+0.1.1     2020-07-14   >= 3.1     20
+0.1.2     2020-11-22   >= 3.1     19
+0.1.3     2021-04-19   >= 3.1     20
+0.1.4     2021-10-01   >= 3.1     21
+0.2.0     2022-03-19   >= 3.4     21
+1.0.0     2022-07-13   >= 3.4     21
+1.1.0     2023-05-01   >= 3.4     21
+1.1.1     2023-08-24   >= 3.4     21
+1.2.0     2024-03-25   >= 3.6     21
+1.3.0     2025-02-21   >= 3.6     21
+1.4.0     2025-09-05   >= 4.1     21
+1.4.1     2025-09-08   >= 4.1     21
+1.5.0     2026-04-23   >= 4.1     21   ← latest
+```
+
+`rig pkg deps` prints the dependencies of a package. `rig pkg tree` does
+the same, but as a dependency tree. You can use these commands to query
+non-CRAN-like packages. E.g. the dependency tree of the package in the
+current working directory is
+```text
+❯ rig pkg tree --dev .
+otelsdk 0.2.4.9000 (local: /Users/gaborcsardi/works/otelsdk) — 14 direct, 51 total
+├── otel 0.2.0
+│   └── R (>= 3.6.0) [D]
+└── utils
+[Suggests]
+├── callr 3.8.0
+│   ├── R (>= 3.4) [D]
+│   ├── otel 0.2.0 (>= 0.2.0) (*)
+│   ├── processx 3.9.0 (>= 3.6.1)
+│   │   ├── R (>= 3.4.0) [D]
+│   │   ├── ps 1.9.3 (>= 1.9.3)
+│   │   │   ├── R (>= 3.4) [D]
+│   │   │   └── utils
+│   │   ├── R6 2.6.1
+│   │   │   └── R (>= 3.6) [D]
+│   │   └── utils
+│   ├── R6 2.6.1 (*)
+│   └── utils
+├── cli 3.6.6
+│   ├── R (>= 3.4) [D]
+│   └── utils
+├── curl 8.0.0
+│   └── R (>= 3.0.0) [D]
+[...]
+```
+The `--dev` flag includes development dependencies as well.
+
+`rig pkg search` searches all CRAN packages using R-hub package search
+service:
+```text
+❯ rig pkg search palette --short
+- "palette" ----------------------------------- 177 packages in 0.009 seconds -
+ #     package      version  by                     @ title
+ 1 100 RColorBrewer 1.1-3    Erich Neuwirth        5y ColorBrewer Palettes
+ 2  46 colorspace   2.1-3    Achim Zeileis         3M A Toolbox for Manipula...
+ 3  23 paletteer    1.7.0    Emil Hvitfeldt        9M Comprehensive Collecti...
+ 4  16 ggsci        5.2.0    Nan Xiao              2M Scientific Journal and...
+ 5  13 wesanderson  0.3.7    Karthik Ram           3y A Wes Anderson Palette...
+ 6   8 rcartocolor  2.1.2    Jakub Nowosad         1y 'CARTOColors' Palettes
+ 7   8 pals         1.10     Kevin Wright          2y Color Palettes, Colorm...
+ 8   8 scico        1.5.0    Thomas Lin Pedersen   3y Colour Palettes Based...
+ 9   6 palette      0.0.3    Christopher T. Kenny  1y Color Scheme Helpers
+10   6 MetBrewer    0.2.0    Blake Robert Mills    5y Color Palettes Inspire...
+11   6 palr         0.5.0    Michael D. Sumner     2M Colour Palettes for Data
+12   6 blends       0.1.2    David Hodge           3M Blend Colours and Pale...
+13   6 biscale      1.1.0    Christopher Prener    1y Tools and Palettes for...
+14   5 palettes     0.2.2    Michael McCarthy      1y Methods for Colour Vec...
+15   5 PrettyCols   1.1.0    Nicola Rennie         2y Pretty Colour Palettes
+16   5 gifski       1.32.0-2 Jeroen Ooms           2y Highest Quality GIF En...
+17   5 wacolors     0.3.1    Cory McCartan         5y Colorblind-Friendly Pa...
+18   4 colourpicker 1.3.0    Dean Attali           3y A Colour Picker Tool f...
+19   4 amerika      0.1.1    Philip Waggoner       1y American Politics-Insp...
+20   4 makePalette  0.1.2    Jorge L. C. Musaja    3y Make Palette
+
+Next 20 results: rig pkg search palette --from 21 --short
+```
+
+## Package libraries
+
+rig creates a user-level package library for each R installation by default.
+(See the [rig FAQ](https://rig.r-lib.org/faq.html) why.) This is the package
+library that `rig pkg` commands use by default.
+
+The `rig library` command supports creating other package libraries, still
+stored in the user's home directory. You can refer to them by name and make
+them the default library for `rig pkg` commands with `rig library default`.
+
+For example to create a temporary library and install the Shiny package from
+GitHub into it, including development dependencies, you can run:
+
+```sh
+rig library add test
+rig library default test
+rig pkg install --dev rstudio/shiny
+```
+
+You can also use the `-l` or `--library` option of the `rig pkg` commands to
+change the package library temporarily for one command, without changing the
+default.
+
+If you are using the [macOS menu bar app](
+  https://rig.r-lib.org/macos-app.html), then you can also manage package
+libraries through the app's interface.
+
+## System requirements
+
+On certain Linux systems rig supports automatic system requirements
+installation. These are currently:
+
+* Ubuntu Linux
+* RedHat Enterprise Linux and clones
+* openSUSE Linux and SUSE Linux Enterprise
+* Debian Linux
+* Fedora Linux
+* Alpine Linux
+
+For the automatic system requirements installation to work, rig must run
+as the `root` user or with password-less `sudo` privileges to call the
+system package manager.
+
+Note that in user mode, rig installs the self-contained manylinux R build,
+which does not require any system-level dependencies and also sets up
+Posit's manylinux package repository, which has self-contained binaries for
+most CRAN and Bioconductor packages. So in user mode you typically do not
+need to worry about system-level dependencies.
+
+## Your feedback is welcome!
+
+We would love to hear your thoughts, suggestions, and any issues you
+encounter while using rig. Please use the [issue tracker](
+  https://github.com/r-lib/rig/issues) for bug reports and feature
+requests, and the [discussion forum](
+  https://github.com/r-lib/rig/discussions) or [Posit community](
+  https://forum.posit.co/) for general questions and discussions.
