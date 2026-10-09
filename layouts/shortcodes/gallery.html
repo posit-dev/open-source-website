@@ -61,8 +61,9 @@
           data-gallery-group="{{ $group }}"
           data-gallery-src="{{ $resource.RelPermalink }}"
           data-gallery-caption="{{ $caption }}"
-          {{ with $srcsetWebp }}data-gallery-srcset-webp="{{ . }}"{{ end }}
-          {{ with $srcsetJpeg }}data-gallery-srcset-jpeg="{{ . }}"{{ end }}
+          {{/* Attribute names must not contain "src"/"url"/"uri", or Go templates URL-encode the srcset */}}
+          {{ with $srcsetWebp }}data-gallery-webp="{{ . }}"{{ end }}
+          {{ with $srcsetJpeg }}data-gallery-jpeg="{{ . }}"{{ end }}
           role="button"
           tabindex="0"
           {{ end }}

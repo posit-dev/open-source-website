@@ -10,7 +10,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: 'Kamil Zyla | Introducing Rhino: Shiny application framework for enterprise | RStudio (2022)'
 
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/S1lwLI6BoW8/maxresdefault.jpg
   title: 'Kamil Zyla | Introducing Rhino: Shiny application framework for enterprise | RStudio (2022)'

@@ -9,7 +9,7 @@ resources: []
 software:
 - dplyr
 - r-shinylive
-- Shiny
+- shiny-r
 - shinylive
 tags: []
 title: Connecting Shiny Apps to Databases with Posit Team
@@ -31,7 +31,7 @@ external:  # updated automatically, do not edit
   software:
   - dplyr
   - r-shinylive
-  - Shiny
+  - shiny-r
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/6AGroJb4zPM/maxresdefault.jpg

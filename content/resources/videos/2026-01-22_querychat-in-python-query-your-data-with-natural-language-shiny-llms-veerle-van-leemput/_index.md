@@ -90,8 +90,8 @@ resource_type: video
 resources: []
 software:
 - querychat
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -236,8 +236,8 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - querychat
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   tags:
   - rstudio
   - data science

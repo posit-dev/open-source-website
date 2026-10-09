@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags:
 - databricks
 - data science
@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   like_count: 6
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags:
   - databricks
   - data science

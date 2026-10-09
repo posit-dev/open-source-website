@@ -32,7 +32,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Intermediate Shiny   2-Day-Workshop - rstudio::conf(2019L)
 
@@ -76,7 +76,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/U3ZaNcSkttw/maxresdefault.jpg
   title: Intermediate Shiny   2-Day-Workshop - rstudio::conf(2019L)

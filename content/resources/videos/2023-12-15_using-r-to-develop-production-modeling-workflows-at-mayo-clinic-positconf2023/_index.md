@@ -8,7 +8,7 @@ resources: []
 software:
 - plumber
 - renv
-- Shiny
+- shiny-r
 tags:
 - databricks
 - data science
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   software:
   - plumber
   - renv
-  - Shiny
+  - shiny-r
   tags:
   - databricks
   - data science

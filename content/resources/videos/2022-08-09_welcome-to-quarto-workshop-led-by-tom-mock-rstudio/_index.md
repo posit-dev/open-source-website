@@ -9,7 +9,7 @@ software:
 - cli
 - fs
 - gt
-- Quarto
+- quarto
 - rmarkdown
 - rstudio
 - tidyverse
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   - cli
   - fs
   - gt
-  - Quarto
+  - quarto
   - rmarkdown
   - rstudio
   - tidyverse

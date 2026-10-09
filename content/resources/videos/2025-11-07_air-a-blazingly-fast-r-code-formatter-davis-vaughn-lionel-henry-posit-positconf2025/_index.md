@@ -24,7 +24,7 @@ resource_type: video
 resources: []
 software:
 - air
-- Positron
+- positron
 - rstudio
 tags:
 - posit::conf(2025)
@@ -69,7 +69,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - air
-  - Positron
+  - positron
   - rstudio
   tags:
   - posit::conf(2025)

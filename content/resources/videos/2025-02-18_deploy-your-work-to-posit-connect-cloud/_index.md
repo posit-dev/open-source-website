@@ -30,9 +30,9 @@ resources: []
 software:
 - py-shiny-templates
 - python-tidytuesday
-- Quarto
-- Shiny for Python
-- Shiny
+- quarto
+- shiny-python
+- shiny-r
 tags: []
 title: Deploy your work to Posit Connect Cloud
 
@@ -73,9 +73,9 @@ external:  # updated automatically, do not edit
   software:
   - py-shiny-templates
   - python-tidytuesday
-  - Quarto
-  - Shiny for Python
-  - Shiny
+  - quarto
+  - shiny-python
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/WD693FBfVUk/maxresdefault.jpg
   title: Deploy your work to Posit Connect Cloud

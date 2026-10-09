@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - purrr
 - tidyverse
 - tidyverse.org
@@ -29,7 +29,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   playlist: ''
   software:
-  - Positron
+  - positron
   - purrr
   - tidyverse
   - tidyverse.org

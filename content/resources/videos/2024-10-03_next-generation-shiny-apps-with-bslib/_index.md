@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - bslib
-- Shiny
+- shiny-r
 - shinydashboard
 - shinylive
 tags:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - bslib
-  - Shiny
+  - shiny-r
   - shinydashboard
   - shinylive
   tags:

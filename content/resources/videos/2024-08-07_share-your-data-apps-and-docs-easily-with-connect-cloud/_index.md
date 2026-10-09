@@ -6,8 +6,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags: []
 title: Share your data apps and docs easily with Connect Cloud
 
@@ -24,8 +24,8 @@ external:  # updated automatically, do not edit
   like_count: 39
   playlist: ''
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/HWCPLURWYgY/maxresdefault.jpg
   title: Share your data apps and docs easily with Connect Cloud

@@ -6,8 +6,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Great Tables
-- Quarto
+- great-tables
+- quarto
 tags:
 - rstudio
 - data science
@@ -69,8 +69,8 @@ external:  # updated automatically, do not edit
   like_count: 42
   playlist: ''
   software:
-  - Great Tables
-  - Quarto
+  - great-tables
+  - quarto
   tags:
   - rstudio
   - data science

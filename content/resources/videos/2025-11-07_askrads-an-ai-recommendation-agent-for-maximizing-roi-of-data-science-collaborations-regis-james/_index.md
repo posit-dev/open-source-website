@@ -15,8 +15,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 tags:
 - posit::conf(2025)
 - rstats
@@ -51,8 +51,8 @@ external:  # updated automatically, do not edit
   like_count: 2
   playlist: ''
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   tags:
   - posit::conf(2025)
   - rstats

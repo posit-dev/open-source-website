@@ -82,9 +82,9 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Demonstrating Value as the First Data Scientist | Hansel Palencia | Data Science Hangout
 
@@ -177,9 +177,9 @@ external:  # updated automatically, do not edit
   like_count: 9
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/6Qh5jcXQCUQ/maxresdefault.jpg
   title: Demonstrating Value as the First Data Scientist | Hansel Palencia | Data Science Hangout

@@ -14,8 +14,8 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - shinylive
 tags: []
 title: Winston Chang | Running Shiny without a server | RStudio (2022)
@@ -42,8 +42,8 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - shinylive
   tags: []
   thumbnail: https://i.ytimg.com/vi/kwLu3hxwn5M/maxresdefault.jpg

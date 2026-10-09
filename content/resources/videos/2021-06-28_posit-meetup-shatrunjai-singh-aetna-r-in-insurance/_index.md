@@ -22,7 +22,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Posit Meetup | Shatrunjai Singh, Aetna | R In Insurance
 
@@ -55,7 +55,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/rK2N47r78hc/maxresdefault.jpg
   title: Posit Meetup | Shatrunjai Singh, Aetna | R In Insurance

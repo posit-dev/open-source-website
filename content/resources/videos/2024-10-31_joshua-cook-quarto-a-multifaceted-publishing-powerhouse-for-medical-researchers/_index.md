@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 'Joshua Cook - Quarto: A Multifaceted Publishing Powerhouse for Medical Researchers'
 
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   like_count: 35
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/PITfti4JRiU/maxresdefault.jpg
   title: 'Joshua Cook - Quarto: A Multifaceted Publishing Powerhouse for Medical Researchers'

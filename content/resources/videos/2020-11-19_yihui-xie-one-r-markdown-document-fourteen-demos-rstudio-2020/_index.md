@@ -14,7 +14,7 @@ software:
 - rmarkdown
 - rstudio
 - rticles
-- Shiny
+- shiny-r
 tags:
 - rstudio::conf(2020)
 - Yihui Xie
@@ -85,7 +85,7 @@ external:  # updated automatically, do not edit
   - rmarkdown
   - rstudio
   - rticles
-  - Shiny
+  - shiny-r
   tags:
   - rstudio::conf(2020)
   - Yihui Xie

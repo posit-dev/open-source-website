@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 - rstudio-conf
 tags:
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   - Carlos Scheidegger
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
   - rstudio-conf
   tags:

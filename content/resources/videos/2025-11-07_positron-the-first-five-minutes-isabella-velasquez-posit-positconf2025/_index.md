@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags:
 - posit::conf(2025)
 - rstats
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   - Isabella Velásquez
   playlist: ''
   software:
-  - Positron
+  - positron
   tags:
   - posit::conf(2025)
   - rstats

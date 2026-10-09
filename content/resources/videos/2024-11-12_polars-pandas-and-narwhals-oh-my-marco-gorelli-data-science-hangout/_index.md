@@ -76,7 +76,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 tags: []
 title: Polars, pandas, and Narwhals, oh my! | Marco Gorelli | Data Science Hangout
 
@@ -163,7 +163,7 @@ external:  # updated automatically, do not edit
   like_count: 26
   playlist: ''
   software:
-  - Great Tables
+  - great-tables
   tags: []
   thumbnail: https://i.ytimg.com/vi/lhAc51QtTHk/maxresdefault.jpg
   title: Polars, pandas, and Narwhals, oh my! | Marco Gorelli | Data Science Hangout

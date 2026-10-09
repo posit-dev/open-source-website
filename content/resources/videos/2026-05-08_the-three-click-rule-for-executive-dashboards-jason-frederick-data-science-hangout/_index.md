@@ -91,9 +91,9 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: The Three-Click Rule for Executive Dashboards | Jason Frederick | Data Science Hangout
 
@@ -195,9 +195,9 @@ external:  # updated automatically, do not edit
   like_count: 13
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/EEXnG0WgiQA/maxresdefault.jpg
   title: The Three-Click Rule for Executive Dashboards | Jason Frederick | Data Science Hangout

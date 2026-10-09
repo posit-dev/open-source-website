@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - tidyverse
 tags:
 - rstudio::conf(2020)
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - tidyverse
   tags:
   - rstudio::conf(2020)

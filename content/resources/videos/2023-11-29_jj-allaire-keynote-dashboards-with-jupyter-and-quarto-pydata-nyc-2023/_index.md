@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
 tags:
 - Python
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
+  - quarto
   - rstudio
   tags:
   - Python

@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - downlit
-- Quarto
+- quarto
 - revealjs
 - rstudio
 tags: []
@@ -30,7 +30,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - downlit
-  - Quarto
+  - quarto
   - revealjs
   - rstudio
   tags: []

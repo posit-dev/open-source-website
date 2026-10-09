@@ -10,9 +10,9 @@ people: []
 resource_type: video
 resources: []
 software:
-- DBI
+- dbi
 - dplyr
-- Shiny
+- shiny-r
 tags:
 - RStudio
 - RProgramming
@@ -41,9 +41,9 @@ external:  # updated automatically, do not edit
   like_count: 0
   playlist: ''
   software:
-  - DBI
+  - dbi
   - dplyr
-  - Shiny
+  - shiny-r
   tags:
   - RStudio
   - RProgramming

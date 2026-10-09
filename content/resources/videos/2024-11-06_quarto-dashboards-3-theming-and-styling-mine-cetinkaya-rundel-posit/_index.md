@@ -9,9 +9,9 @@ resources: []
 software:
 - ggplot2
 - leaflet
-- Quarto
+- quarto
 - rstudio
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -76,9 +76,9 @@ external:  # updated automatically, do not edit
   software:
   - ggplot2
   - leaflet
-  - Quarto
+  - quarto
   - rstudio
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science

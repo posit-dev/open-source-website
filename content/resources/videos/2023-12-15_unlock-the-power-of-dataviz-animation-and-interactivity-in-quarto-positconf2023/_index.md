@@ -8,7 +8,7 @@ resources: []
 software:
 - crosstalk
 - devtools
-- Quarto
+- quarto
 tags:
 - databricks
 - data science
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   software:
   - crosstalk
   - devtools
-  - Quarto
+  - quarto
   tags:
   - databricks
   - data science

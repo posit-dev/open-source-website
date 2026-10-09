@@ -9,7 +9,7 @@ software:
 - blastula
 - pointblank
 - rmarkdown
-- Shiny
+- shiny-r
 tags:
 - databricks
 - data science
@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   - blastula
   - pointblank
   - rmarkdown
-  - Shiny
+  - shiny-r
   tags:
   - databricks
   - data science

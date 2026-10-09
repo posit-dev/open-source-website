@@ -20,7 +20,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - posit::conf(2025)
 - rstats
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   like_count: 0
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - posit::conf(2025)
   - rstats

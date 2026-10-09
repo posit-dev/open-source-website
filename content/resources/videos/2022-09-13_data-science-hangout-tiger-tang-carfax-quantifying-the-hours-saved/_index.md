@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Data Science Hangout | Tiger Tang, CARFAX | Quantifying the Hours Saved
 
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/1A84E_GftnM/maxresdefault.jpg
   title: Data Science Hangout | Tiger Tang, CARFAX | Quantifying the Hours Saved

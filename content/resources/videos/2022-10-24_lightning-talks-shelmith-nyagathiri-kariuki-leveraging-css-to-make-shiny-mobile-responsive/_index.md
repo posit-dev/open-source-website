@@ -12,7 +12,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Lightning Talks | Shelmith Nyagathiri Kariuki | Leveraging CSS to Make Shiny Mobile-Responsive
 
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   like_count: 16
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/-JKz7u7NXzU/maxresdefault.jpg
   title: Lightning Talks | Shelmith Nyagathiri Kariuki | Leveraging CSS to Make Shiny Mobile-Responsive

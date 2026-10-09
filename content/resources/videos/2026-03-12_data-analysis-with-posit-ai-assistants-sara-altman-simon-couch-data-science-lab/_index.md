@@ -10,7 +10,7 @@ resources: []
 software:
 - chatlas
 - ellmer
-- Positron
+- positron
 - rstudio
 - tidyverse
 - tidyverse.org
@@ -35,7 +35,7 @@ external:  # updated automatically, do not edit
   software:
   - chatlas
   - ellmer
-  - Positron
+  - positron
   - rstudio
   - tidyverse
   - tidyverse.org

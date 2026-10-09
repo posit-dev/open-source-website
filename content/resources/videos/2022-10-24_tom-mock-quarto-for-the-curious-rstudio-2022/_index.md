@@ -16,7 +16,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rmarkdown
 - rstudio
 tags: []
@@ -46,7 +46,7 @@ external:  # updated automatically, do not edit
   - RStudio Team
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rmarkdown
   - rstudio
   tags: []

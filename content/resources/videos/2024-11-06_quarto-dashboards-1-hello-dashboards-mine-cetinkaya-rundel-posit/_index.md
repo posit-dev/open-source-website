@@ -9,7 +9,7 @@ resources: []
 software:
 - ggplot2
 - leaflet
-- Quarto
+- quarto
 - rstudio
 tags:
 - rstudio
@@ -75,7 +75,7 @@ external:  # updated automatically, do not edit
   software:
   - ggplot2
   - leaflet
-  - Quarto
+  - quarto
   - rstudio
   tags:
   - rstudio

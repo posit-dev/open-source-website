@@ -52,7 +52,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: How to Build a Streamlit App in Positron
 
@@ -115,7 +115,7 @@ external:  # updated automatically, do not edit
   like_count: 87
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/VO2pBeX0g-U/maxresdefault.jpg
   title: How to Build a Streamlit App in Positron

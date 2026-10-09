@@ -50,8 +50,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 - tidymodels
 tags: []
 title: Strategic Budget Optimization through Marketing Mix Modeling (MMM)
@@ -114,8 +114,8 @@ external:  # updated automatically, do not edit
   - Isabella Velásquez
   playlist: ''
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   - tidymodels
   tags: []
   thumbnail: https://i.ytimg.com/vi/7yMwT4likZU/maxresdefault.jpg

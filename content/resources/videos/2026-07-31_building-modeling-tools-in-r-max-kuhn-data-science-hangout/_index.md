@@ -9,9 +9,10 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
+- tabpfn
 - tidymodels
-- TMwR
+- tmwr
 tags: []
 title: Building Modeling Tools in R | Max Kuhn | Data Science Hangout
 
@@ -32,9 +33,10 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   playlist: ''
   software:
-  - Quarto
+  - quarto
+  - tabpfn
   - tidymodels
-  - TMwR
+  - tmwr
   tags: []
   thumbnail: https://i.ytimg.com/vi/IfbCsnvnARk/maxresdefault.jpg
   title: Building Modeling Tools in R | Max Kuhn | Data Science Hangout

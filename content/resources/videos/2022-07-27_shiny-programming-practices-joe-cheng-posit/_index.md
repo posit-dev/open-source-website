@@ -25,8 +25,8 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - shinylive
 tags:
 - rstudio
@@ -111,8 +111,8 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - shinylive
   tags:
   - rstudio

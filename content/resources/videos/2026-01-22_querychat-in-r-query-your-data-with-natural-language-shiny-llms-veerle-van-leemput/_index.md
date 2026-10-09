@@ -6,10 +6,10 @@ people: []
 resource_type: video
 resources: []
 software:
-- DBI
+- dbi
 - ellmer
 - querychat
-- Shiny
+- shiny-r
 tags:
 - rstudio
 - data science
@@ -70,10 +70,10 @@ external:  # updated automatically, do not edit
   like_count: 127
   playlist: ''
   software:
-  - DBI
+  - dbi
   - ellmer
   - querychat
-  - Shiny
+  - shiny-r
   tags:
   - rstudio
   - data science

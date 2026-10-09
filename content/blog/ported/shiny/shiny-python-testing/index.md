@@ -6,6 +6,9 @@ description: >-
   built-in UI testing controllers for various components.
 people:
   - Shiny Team
+  - Karan Gathani
+  - Greg Swinehart
+  - Barret Schloerke
 date: '2024-10-29'
 image: testing-og.jpg
 image-alt: 'The word TESTING with a hand picking up its falling G'

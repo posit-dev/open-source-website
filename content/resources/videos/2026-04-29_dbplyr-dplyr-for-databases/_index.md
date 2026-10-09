@@ -8,7 +8,7 @@ resources: []
 software:
 - dbplyr
 - dplyr
-- Positron
+- positron
 - rstudio
 - tidyverse
 tags:
@@ -73,7 +73,7 @@ external:  # updated automatically, do not edit
   software:
   - dbplyr
   - dplyr
-  - Positron
+  - positron
   - rstudio
   - tidyverse
   tags:

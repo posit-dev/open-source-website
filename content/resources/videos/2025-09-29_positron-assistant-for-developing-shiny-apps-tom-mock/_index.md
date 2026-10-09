@@ -18,9 +18,9 @@ resources: []
 software:
 - chatlas
 - ellmer
-- Positron
+- positron
 - querychat
-- Shiny
+- shiny-r
 - shinychat
 tags: []
 title: Positron Assistant for Developing Shiny Apps - Tom Mock
@@ -50,9 +50,9 @@ external:  # updated automatically, do not edit
   software:
   - chatlas
   - ellmer
-  - Positron
+  - positron
   - querychat
-  - Shiny
+  - shiny-r
   - shinychat
   tags: []
   thumbnail: https://i.ytimg.com/vi/4IU72IExQk8/maxresdefault.jpg

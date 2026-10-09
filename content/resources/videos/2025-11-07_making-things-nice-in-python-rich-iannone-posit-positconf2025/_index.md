@@ -19,7 +19,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Great Tables
+- great-tables
 - pointblank
 tags:
 - posit::conf(2025)
@@ -60,7 +60,7 @@ external:  # updated automatically, do not edit
   - Rich Iannone
   playlist: ''
   software:
-  - Great Tables
+  - great-tables
   - pointblank
   tags:
   - posit::conf(2025)

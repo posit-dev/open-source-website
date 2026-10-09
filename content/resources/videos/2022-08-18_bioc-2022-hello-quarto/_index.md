@@ -8,7 +8,7 @@ resource_type: video
 resources: []
 software:
 - blogdown
-- Quarto
+- quarto
 - rmarkdown
 - rstudio
 tags:
@@ -32,7 +32,7 @@ external:  # updated automatically, do not edit
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - blogdown
-  - Quarto
+  - quarto
   - rmarkdown
   - rstudio
   tags:

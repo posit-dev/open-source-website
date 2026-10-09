@@ -10,7 +10,7 @@ resource_type: video
 resources: []
 software:
 - ggplot2
-- Positron
+- positron
 - rlang
 - rstudio
 - tidyverse
@@ -78,7 +78,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - ggplot2
-  - Positron
+  - positron
   - rlang
   - rstudio
   - tidyverse

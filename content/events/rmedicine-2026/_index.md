@@ -12,7 +12,7 @@ people:
 - François Michonneau
 - Sara Altman
 software:
-- Quarto
+- quarto
 languages:
 - R
 resources:

@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - rstudio
-- Shiny
+- shiny-r
 - shinyuieditor
 tags: []
 title: Data Science Hangout | JD Long, RenaissanceRe | Empathy When Integrating with Other Tools
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - rstudio
-  - Shiny
+  - shiny-r
   - shinyuieditor
   tags: []
   thumbnail: https://i.ytimg.com/vi/nrukV58ZXBg/maxresdefault.jpg

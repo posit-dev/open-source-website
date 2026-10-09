@@ -15,8 +15,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags:
 - posit::conf(2025)
 - rstats
@@ -51,8 +51,8 @@ external:  # updated automatically, do not edit
   like_count: 8
   playlist: ''
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags:
   - posit::conf(2025)
   - rstats

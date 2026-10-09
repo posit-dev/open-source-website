@@ -25,7 +25,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: A quick tour of Positron
 
@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   - Sara Altman
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/4Ir_HX4riHw/maxresdefault.jpg
   title: A quick tour of Positron

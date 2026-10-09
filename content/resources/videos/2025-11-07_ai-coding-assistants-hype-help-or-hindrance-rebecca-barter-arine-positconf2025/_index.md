@@ -21,7 +21,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - rstudio
 tags:
 - posit::conf(2025)
@@ -62,7 +62,7 @@ external:  # updated automatically, do not edit
   like_count: 12
   playlist: ''
   software:
-  - Positron
+  - positron
   - rstudio
   tags:
   - posit::conf(2025)

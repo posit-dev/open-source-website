@@ -37,8 +37,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 tags: []
 title: 'Daniel Chen - Shiny for Python: Building Production-Ready Dashboards in Python | SciPy 2025'
 
@@ -86,8 +86,8 @@ external:  # updated automatically, do not edit
   like_count: 10
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/H4bbMfRlw88/maxresdefault.jpg
   title: 'Daniel Chen - Shiny for Python: Building Production-Ready Dashboards in Python | SciPy 2025'

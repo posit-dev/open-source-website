@@ -18,7 +18,7 @@ resources: []
 software:
 - air
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Ralph Asher | Intro to Monte Carlo Simulation | RStudio
 
@@ -47,7 +47,7 @@ external:  # updated automatically, do not edit
   software:
   - air
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/VMGQ3mVbYXI/hqdefault.jpg
   title: Ralph Asher | Intro to Monte Carlo Simulation | RStudio

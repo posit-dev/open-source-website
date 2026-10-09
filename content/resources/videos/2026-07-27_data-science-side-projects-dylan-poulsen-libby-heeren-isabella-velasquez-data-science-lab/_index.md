@@ -139,10 +139,10 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Data Science Side Projects | Dylan Poulsen, Libby Heeren, Isabella Velasquez | Data Science Lab
 
@@ -293,10 +293,10 @@ external:  # updated automatically, do not edit
   - Isabella Velásquez
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/yXYGhRCSEL4/maxresdefault.jpg
   title: Data Science Side Projects | Dylan Poulsen, Libby Heeren, Isabella Velasquez | Data Science Lab

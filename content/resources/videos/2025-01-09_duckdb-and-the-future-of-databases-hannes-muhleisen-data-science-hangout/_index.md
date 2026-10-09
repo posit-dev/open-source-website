@@ -7,7 +7,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: DuckDB and the future of databases | Hannes Mühleisen | Data Science Hangout
 
@@ -26,7 +26,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/GvgbcWtHgVY/maxresdefault.jpg
   title: DuckDB and the future of databases | Hannes Mühleisen | Data Science Hangout

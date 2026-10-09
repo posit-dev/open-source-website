@@ -114,8 +114,8 @@ software:
 - mori
 - plumber
 - plumber2
-- Positron
-- Shiny
+- positron
+- shiny-r
 tags: []
 title: Async & Parallel R with {mirai} | Charlie Gao | Data Science Lab
 
@@ -241,8 +241,8 @@ external:  # updated automatically, do not edit
   - mori
   - plumber
   - plumber2
-  - Positron
-  - Shiny
+  - positron
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/Vf_jmY1tMWo/maxresdefault.jpg
   title: Async & Parallel R with {mirai} | Charlie Gao | Data Science Lab

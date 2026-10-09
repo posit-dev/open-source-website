@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Shiny
+- shiny-r
 tags: []
 title: Debug your Shiny Apps with VS Code
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 74
   playlist: ''
   software:
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/0E3C1Du8r-k/maxresdefault.jpg
   title: Debug your Shiny Apps with VS Code

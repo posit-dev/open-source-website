@@ -16,7 +16,7 @@ resource_type: video
 resources: []
 software:
 - gt
-- Quarto
+- quarto
 tags:
 - posit::conf(2025)
 - rstats
@@ -52,7 +52,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - gt
-  - Quarto
+  - quarto
   tags:
   - posit::conf(2025)
   - rstats

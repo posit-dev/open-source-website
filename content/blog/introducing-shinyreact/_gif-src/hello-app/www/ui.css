@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: system-ui, sans-serif;
+  color: #1a1a1a;
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 60rem;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.sidebar {
+  flex: 1 1 12rem;
+  align-self: start;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.sidebar label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.sidebar input[type="range"] {
+  width: 100%;
+}
+
+.bins-value {
+  display: block;
+  margin-top: 0.25rem;
+  font-variant-numeric: tabular-nums;
+  color: #666;
+}
+
+.panel {
+  flex: 3 1 24rem;
+}
+
+.panel h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.caption {
+  margin: 0.25rem 0 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.placeholder {
+  display: grid;
+  place-items: center;
+  height: 20rem;
+  border-radius: 8px;
+  background: #f5f5f5;
+  color: #888;
+}
+
+.recalculating {
+  opacity: 0.6;
+  transition: opacity 200ms;
+}

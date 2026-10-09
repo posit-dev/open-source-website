@@ -9,14 +9,13 @@ people:
 resource_type: video
 resources: []
 software:
-- commons
 - ggbot2
 - nanoparquet
-- Positron
-- Quarto
+- positron
+- quarto
 - renv
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: Analyzing a TidyTuesday dataset with Posit Assistant in RStudio | Hadley Wickham | Data Science Lab
 
@@ -37,14 +36,13 @@ external:  # updated automatically, do not edit
   - Simon Couch
   playlist: ''
   software:
-  - commons
   - ggbot2
   - nanoparquet
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - renv
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/N_oT_8xVRXg/maxresdefault.jpg
   title: Analyzing a TidyTuesday dataset with Posit Assistant in RStudio | Hadley Wickham | Data Science Lab

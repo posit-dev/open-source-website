@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 tags: []
 title: Managing data platforms for 600 analysts | Tom Grace | Data Science Hangout
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 2
   playlist: ''
   software:
-  - Positron
+  - positron
   tags: []
   thumbnail: https://i.ytimg.com/vi/-F0m_2o1quw/maxresdefault.jpg
   title: Managing data platforms for 600 analysts | Tom Grace | Data Science Hangout

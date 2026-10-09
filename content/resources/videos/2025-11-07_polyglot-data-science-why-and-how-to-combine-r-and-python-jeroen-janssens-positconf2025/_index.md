@@ -16,8 +16,8 @@ people:
 resource_type: video
 resources: []
 software:
-- Positron
-- Quarto
+- positron
+- quarto
 - reticulate
 tags:
 - posit::conf(2025)
@@ -55,8 +55,8 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   playlist: ''
   software:
-  - Positron
-  - Quarto
+  - positron
+  - quarto
   - reticulate
   tags:
   - posit::conf(2025)

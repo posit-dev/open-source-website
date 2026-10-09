@@ -11,8 +11,17 @@ social:
   orcid: "0000-0002-0750-061X"
   website: "https://shikokuchuo.net"
   youtube: ""
+software:
+  - mirai
+  - mori
+  - nanonext
+  - quarto
+  - shiny-r
+  - purrr
+  - promises
+  - mcptools
 ---
 
-I'm Charlie Gao, a software engineer building open source tooling for data science and technical communication across r-lib, Tidyverse, Shiny and Quarto.
+Charlie Gao is an open source software engineer at Posit building asynchronous and parallel tooling in C, R and Python for data science, scientific computing, and technical communication across Tidyverse, Shiny and Quarto.
 
-I maintain several R packages including mirai, a modern async framework for high-performance parallel and distributed computing. My focus is on low-level R internals, integration with C, C++ and Rust code, communications and asynchronous programming.
+He is the author of mirai, a high-performance framework for async, parallel, and distributed computing in R, and mizu, lock-free shared-memory parallelism for R and Python built on a C core. He is also part of the Quarto core team developing Quarto 2, with a focus on CRDT-based real-time collaboration.

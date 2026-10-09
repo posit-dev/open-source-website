@@ -13,7 +13,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 'Sean Nguyen - Beyond Dashboards: Dynamic Data Storytelling with Python, R, and Quarto Emails'
 
@@ -37,7 +37,7 @@ external:  # updated automatically, do not edit
   like_count: 107
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/fzykFa6c3LI/maxresdefault.jpg
   title: 'Sean Nguyen - Beyond Dashboards: Dynamic Data Storytelling with Python, R, and Quarto Emails'

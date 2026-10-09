@@ -15,7 +15,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 'Alenka Frim & Nic Crane - Mixing R, Python, and Quarto: Crafting the Perfect Open Source Cocktail'
 
@@ -41,7 +41,7 @@ external:  # updated automatically, do not edit
   like_count: 9
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/8174mk6SGcU/maxresdefault.jpg
   title: 'Alenka Frim & Nic Crane - Mixing R, Python, and Quarto: Crafting the Perfect Open Source Cocktail'

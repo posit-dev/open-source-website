@@ -74,6 +74,7 @@ For warnings, distinguish two groups:
 
 - **`date` is in the past** — confirm whether the author wants the post to publish on merge; if not, suggest a future date.
 - **`<name>` looks like a team name** — suggest replacing with the individual contributors.
+  - "Shiny Team" is exempt and is not flagged.
 
 ## Step 5: Offer to fix
 

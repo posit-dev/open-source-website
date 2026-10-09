@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - cli
-- Quarto
+- quarto
 - revealjs
 - rstudio
 - shinylive
@@ -36,7 +36,7 @@ external:  # updated automatically, do not edit
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - cli
-  - Quarto
+  - quarto
   - revealjs
   - rstudio
   - shinylive

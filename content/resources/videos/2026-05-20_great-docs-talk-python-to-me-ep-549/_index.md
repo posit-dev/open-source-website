@@ -9,11 +9,11 @@ resource_type: video
 resources: []
 software:
 - cli
-- Great Docs
-- Great Tables
+- great-docs
+- great-tables
 - gt
 - pkgdown
-- Quarto
+- quarto
 tags: []
 title: Great Docs - Talk Python to Me Ep. 549
 
@@ -34,11 +34,11 @@ external:  # updated automatically, do not edit
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
   - cli
-  - Great Docs
-  - Great Tables
+  - great-docs
+  - great-tables
   - gt
   - pkgdown
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/rj2hY2Bsi30/maxresdefault.jpg
   title: Great Docs - Talk Python to Me Ep. 549

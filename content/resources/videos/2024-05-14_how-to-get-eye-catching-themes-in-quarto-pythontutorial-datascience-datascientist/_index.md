@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags: []
 title: 'How to get eye catching themes in Quarto #pythontutorial #datascience #datascientist'
 
@@ -23,7 +23,7 @@ external:  # updated automatically, do not edit
   like_count: 83
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags: []
   thumbnail: https://i.ytimg.com/vi/EqgAgHnAaJg/maxresdefault.jpg
   title: 'How to get eye catching themes in Quarto #pythontutorial #datascience #datascientist'

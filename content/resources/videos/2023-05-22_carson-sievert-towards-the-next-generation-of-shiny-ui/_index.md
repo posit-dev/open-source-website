@@ -23,8 +23,8 @@ software:
 - htmltools
 - pkgdown
 - rmarkdown
-- Shiny for Python
-- Shiny
+- shiny-python
+- shiny-r
 - thematic
 tags: []
 title: 'Carson Sievert: Towards the next generation of Shiny UI'
@@ -60,8 +60,8 @@ external:  # updated automatically, do not edit
   - htmltools
   - pkgdown
   - rmarkdown
-  - Shiny for Python
-  - Shiny
+  - shiny-python
+  - shiny-r
   - thematic
   tags: []
   thumbnail: https://i.ytimg.com/vi/avZ7TDTRnVo/maxresdefault.jpg

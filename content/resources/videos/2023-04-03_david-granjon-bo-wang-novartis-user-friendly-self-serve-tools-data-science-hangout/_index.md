@@ -8,7 +8,7 @@ resources: []
 software:
 - connectapi
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: David Granjon & Bo Wang @ Novartis | User-friendly, self-serve tools | Data Science Hangout
 
@@ -27,7 +27,7 @@ external:  # updated automatically, do not edit
   software:
   - connectapi
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/JwrEB9cqNqg/maxresdefault.jpg
   title: David Granjon & Bo Wang @ Novartis | User-friendly, self-serve tools | Data Science Hangout

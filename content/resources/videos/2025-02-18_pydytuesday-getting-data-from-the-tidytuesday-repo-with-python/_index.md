@@ -6,7 +6,7 @@ people: []
 resource_type: video
 resources: []
 software:
-- Positron
+- positron
 - python-tidytuesday
 tags: []
 title: PydyTuesday | Getting Data from the TidyTuesday Repo with Python
@@ -24,7 +24,7 @@ external:  # updated automatically, do not edit
   like_count: 50
   playlist: ''
   software:
-  - Positron
+  - positron
   - python-tidytuesday
   tags: []
   thumbnail: https://i.ytimg.com/vi/ol2FrSL5gVU/maxresdefault.jpg

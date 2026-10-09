@@ -8,7 +8,7 @@ resources: []
 software:
 - bslib
 - rstudio
-- Shiny
+- shiny-r
 - thematic
 tags: []
 title: How to bring modern UI to your Shiny apps
@@ -28,7 +28,7 @@ external:  # updated automatically, do not edit
   software:
   - bslib
   - rstudio
-  - Shiny
+  - shiny-r
   - thematic
   tags: []
   thumbnail: https://i.ytimg.com/vi/O6WLERr5bKU/maxresdefault.jpg

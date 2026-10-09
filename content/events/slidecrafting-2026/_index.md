@@ -10,7 +10,7 @@ description: "A 2-hour workshop all about making great slides in Quarto."
 people:
   - Emil Hvitfeldt
 software:
-  - Quarto
+  - quarto
 languages:
 - Python
 - R

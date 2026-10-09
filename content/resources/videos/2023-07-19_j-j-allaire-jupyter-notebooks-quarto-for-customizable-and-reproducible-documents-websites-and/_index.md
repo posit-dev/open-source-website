@@ -9,8 +9,8 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
-- Shiny
+- quarto
+- shiny-r
 tags:
 - JupyterCon2023
 - DataScienceInnovation
@@ -45,8 +45,8 @@ external:  # updated automatically, do not edit
   like_count: 32
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
-  - Quarto
-  - Shiny
+  - quarto
+  - shiny-r
   tags:
   - JupyterCon2023
   - DataScienceInnovation

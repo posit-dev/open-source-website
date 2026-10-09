@@ -6,9 +6,9 @@ people: []
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 - rstudio
-- Shiny
+- shiny-r
 tags: []
 title: How to keep data up-to-date with 6 pins workflows (aka avoid data-final.csv & data-final-final.csv)
 
@@ -25,9 +25,9 @@ external:  # updated automatically, do not edit
   like_count: 33
   playlist: ''
   software:
-  - Quarto
+  - quarto
   - rstudio
-  - Shiny
+  - shiny-r
   tags: []
   thumbnail: https://i.ytimg.com/vi/t8A-ysXinpE/maxresdefault.jpg
   title: How to keep data up-to-date with 6 pins workflows (aka avoid data-final.csv & data-final-final.csv)

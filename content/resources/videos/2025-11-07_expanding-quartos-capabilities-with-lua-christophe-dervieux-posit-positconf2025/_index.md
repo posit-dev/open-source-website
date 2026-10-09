@@ -25,7 +25,7 @@ people:
 resource_type: video
 resources: []
 software:
-- Quarto
+- quarto
 tags:
 - posit::conf(2025)
 - rstats
@@ -71,7 +71,7 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   playlist: ''
   software:
-  - Quarto
+  - quarto
   tags:
   - posit::conf(2025)
   - rstats

@@ -7,7 +7,7 @@ resource_type: video
 resources: []
 software:
 - cheatsheets
-- Positron
+- positron
 - rlang
 - rstudio
 - tidyverse
@@ -72,7 +72,7 @@ external:  # updated automatically, do not edit
   playlist: ''
   software:
   - cheatsheets
-  - Positron
+  - positron
   - rlang
   - rstudio
   - tidyverse

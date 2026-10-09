@@ -9,7 +9,7 @@ resources: []
 software:
 - chromote
 - rstudio
-- Shiny
+- shiny-r
 - shinytest2
 - testthat
 tags:
@@ -78,7 +78,7 @@ external:  # updated automatically, do not edit
   software:
   - chromote
   - rstudio
-  - Shiny
+  - shiny-r
   - shinytest2
   - testthat
   tags:
