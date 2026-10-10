@@ -18,7 +18,7 @@ tags:
 image: thumbnail-wd.jpg
 ported_from: tidyverse
 port_status: raw
-software: ["tidyverse", "tidymodels", "orbital"]
+software: ["tidyverse", "tidymodels", "orbital-r"]
 languages: ["R"]
 ported_categories:
   - package
