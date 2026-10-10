@@ -2,9 +2,17 @@
 title: Data transformation with dplyr
 image: page-1.png
 resource_type: cheatsheet
-date: '2026-02-25'
-description: Quick reference guide for data transformation with dplyr.
+by: posit
+date: '2026-08-01'
+description: Manipulate data frames with dplyr using filter, select, mutate, summarize, join, and group operations in a consistent, pipeable API.
 download_url: data-transformation.pdf
+people:
+- Garrett Grolemund
+- Mine Çetinkaya-Rundel
+- Averi Perny
+- Andy Teucher
+- Curtis Kephart
+- David Díaz Rodríguez
 thumbnails:
 - page-1.png
 - page-2.png
@@ -13,16 +21,53 @@ software:
 languages:
 - R
 translations:
-- Chinese: data-transformation_zh_cn.pdf
-- German: data-transformation_de.pdf
-- Portuguese: data-transformation_pt_br.pdf
-- Russian: data-transformation_ru.pdf
-- Spanish: data-transformation_es.pdf
-- Turkish: data-transformation_tr.pdf
-- Ukrainian: data-transformation_uk.pdf
-- Uzbek: data-transformation_uz.pdf
-people:
-- Mine Çetinkaya-Rundel
+- language: Chinese (Simplified)
+  lang: zh-Hans
+  file: data-transformation_zh_cn.pdf
+  edition: dplyr 0.7.0, tibble 1.2.0
+  added: 2017-01
+  people:
+  - Aicen Yu
+- language: German
+  lang: de
+  file: data-transformation_de.pdf
+  added: 2017-09
+  people:
+  - Lucia Gjeltema
+- language: Portuguese (Brazil)
+  lang: pt-BR
+  file: data-transformation_pt_br.pdf
+  edition: dplyr 1.0.7
+  updated: 2021-07
+  people:
+  - Eric Scopinho
+- language: Russian
+  lang: ru
+  file: data-transformation_ru.pdf
+  edition: dplyr 0.5.0, tibble 1.2.0
+  added: 2017-01
+- language: Spanish
+  lang: es
+  file: data-transformation_es.pdf
+  edition: dplyr 1.1.4
+  updated: 2024-05
+  people:
+  - Frans van Dunné
+  - David Díaz Rodríguez
+- language: Turkish
+  lang: tr
+  file: data-transformation_tr.pdf
+  edition: dplyr 0.5.0, tibble 1.2.0
+  updated: 2017-01
+- language: Ukrainian
+  lang: uk
+  file: data-transformation_uk.pdf
+  edition: dplyr 0.5.0, tibble 1.2.0
+  added: 2017-01
+- language: Uzbek
+  lang: uz
+  file: data-transformation_uz.pdf
+  added: 2017-08
 ---
 
 **dplyr** functions work with pipes and expect **tidy data**.
@@ -37,8 +82,6 @@ library(dplyr)
 ```
 
 ```r
-#| label: other-used-packages
-#| include: false
 
 library(tibble)
 ```
@@ -93,7 +136,6 @@ Summary functions take vectors as input and return one value back (see Summary F
 -   `ungroup(x, ...)`: Returns ungrouped copy of table.
 
     ```r
-    #| include: false
 
     g_mtcars <- mtcars |> group_by(cyl)
     ungroup(g_mtcars)

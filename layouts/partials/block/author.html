@@ -26,14 +26,19 @@
 
   {{- if $hasImages -}}
   <div class="flex flex-row flex-shrink-0">
-    {{- range $index, $person := $people -}}
+    {{- /* Overlap and stack by the number of images shown so far, not the
+           person's position: people without a photo are skipped, and an
+           offset on the first image would push it out of view. */ -}}
+    {{- $shown := 0 -}}
+    {{- range $person := $people -}}
       {{- with .Resources.Get .Params.image -}}
-        <img 
-          src="{{ .RelPermalink }}" 
-          alt="{{ $person.Title }}" 
-          class="my-0! w-6 h-6 rounded-full object-cover ring-2 ring-white {{ if gt $index 0 }}-ml-2{{ end }}"
-          style="z-index: {{ sub 10 $index }};"
+        <img
+          src="{{ .RelPermalink }}"
+          alt="{{ $person.Title }}"
+          class="my-0! w-6 h-6 rounded-full object-cover ring-2 ring-white {{ if gt $shown 0 }}-ml-2{{ end }}"
+          style="z-index: {{ sub 10 $shown }};"
         >
+        {{- $shown = add $shown 1 -}}
       {{- end -}}
     {{- end -}}
   </div>

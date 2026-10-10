@@ -201,6 +201,12 @@
   {{ end }}
 {{ end }}
 
+{{/* Cheatsheet-specific: origin for the "By" filter; no `by` means community */}}
+{{ if eq ($page.Params.resource_type | default "") "cheatsheet" }}
+  {{ $by := cond (eq (lower ($page.Params.by | default "")) "posit") "Posit" "Community" }}
+  {{ $entry = merge $entry (dict "by" $by) }}
+{{ end }}
+
 {{/* Video-specific */}}
 {{ if eq ($page.Params.resource_type | default "") "video" }}
   {{ with $page.Params.external.view_count }}
