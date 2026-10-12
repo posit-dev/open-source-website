@@ -45,7 +45,7 @@ functionalities: user mode R installations, R package and project management
 and much more. This is the second of three blog posts about the new rig
 release. This post is about managing R packages.
 
-The first post covered user mode R installations. The third will focus on
+The [first post](/blog/rig-0-11-0-part-one/) covered user mode R installations. The third will focus on
 [project management](https://rig.r-lib.org/proj-guide.html).
 
 [Full changelog on the rig web site](https://rig.r-lib.org/news.html).

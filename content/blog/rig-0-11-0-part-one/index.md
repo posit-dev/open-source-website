@@ -44,7 +44,7 @@ We are thrilled to announce rig 0.11.0 (and 0.10.0), with lots of new
 functionalities: user mode R installations, R package and project management
 and much more. This is the first of three blog posts about the new rig
 release. This post is about managing R installations and the new user mode.
-The second post will show how rig can help with [managing R packages](https://rig.r-lib.org/pkg-guide.html), and the third will focus on
+The [second post](/blog/rig-0-11-0-part-two/) shows how rig can help with [managing R packages](https://rig.r-lib.org/pkg-guide.html), and the third will focus on
 [project management](https://rig.r-lib.org/proj-guide.html).
 
 [Full changelog on the rig web site](https://rig.r-lib.org/news.html).
