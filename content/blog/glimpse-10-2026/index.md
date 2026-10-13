@@ -16,7 +16,7 @@ languages:
 hidesubscription: false
 ---
 
-Hello, everyone! We’ve officially wrapped up posit::conf(2026), and to everyone who joined us in Houston or online, thank you for making incredible 💙🧡 Between the keynote reveals, lightning talks, and workshops, it was a lot to take in! In this edition, we’ve rounded up all the major news and announcements in one place.
+Hello, everyone! We’ve officially wrapped up posit::conf(2026), and to everyone who joined us in Houston or online, thank you for making it incredible 💙🧡 Between the keynote reveals, lightning talks, and workshops, it was a lot to take in! In this edition, we’ve rounded up all the major news and announcements in one place.
 
 Want to catch up on talks? While we prepare the videos for YouTube, all session recordings are available now on the event portal:
 
@@ -63,7 +63,7 @@ Quarto Hub is a new hosted platform from Posit. In Quarto Hub, you can create, e
 Posit has taken over maintenance over two R packages that provide comprehensive tools to work and collaborate within Snowflake’s data platform and ML ecosystem:
 
 * [skiLift](https://github.com/posit-dev/skiLift/): a DBI-compliant Snowflake connector written in R, that authenticates and communicates via the Snowflake SQL API (REST).
-* [skiPatrol](https://github.com/posit-dev/skiPatrol[/): an R interface to Snowflake's ML platform: model registry, feature store, experiments, model monitoring, and container services.
+* [skiPatrol](https://github.com/posit-dev/skiPatrol/): an R interface to Snowflake's ML platform: model registry, feature store, experiments, model monitoring, and container services.
 
 Learn more in the [R, meet Snowflake: Introducing Posit’s skiLift and skiPatrol Packages](https://posit.co/blog/r-meet-snowflake-introducing-posits-skilift-and-skipatrol-packages) blog post.
 
