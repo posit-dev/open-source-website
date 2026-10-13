@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Self-hosted site fonts (assets/css/main.css), so captures match the
+     website exactly and don't depend on the network. -->
+<style>
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300 800;
+    src: url('../../../../static/fonts/open-sans-latin.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 300 900;
+    src: url('../../../../static/fonts/source-code-pro-latin.woff2') format('woff2');
+  }
+</style>
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 675px; overflow: hidden; }
+  body {
+    font-family: "Open Sans", sans-serif;
+    background:
+      radial-gradient(1100px 700px at 85% -10%, #10406B 0%, rgba(16,64,107,0) 60%),
+      linear-gradient(135deg, #0A2A47 0%, #0D3557 100%);
+    position: relative;
+    color: #fff;
+  }
+
+  /* card border so the image reads as one object on white backgrounds */
+  .frame {
+    position: absolute; inset: 0;
+    border: 3px solid rgba(15, 46, 76, 0.5);
+    pointer-events: none;
+    z-index: 20;
+  }
+
+  /* faint reactive-graph texture */
+  .dots {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.5px);
+    background-size: 34px 34px;
+    mask-image: linear-gradient(to right, rgba(0,0,0,.9), rgba(0,0,0,0) 55%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,.9), rgba(0,0,0,0) 55%);
+  }
+
+  .headline {
+    position: absolute;
+    left: 64px; top: 50%;
+    transform: translateY(-50%);
+    width: 480px;
+    z-index: 3;
+  }
+  .eyebrow {
+    font-family: "Source Code Pro", monospace;
+    font-size: 17px; font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6FC1EE;
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    margin-bottom: 10px;
+    white-space: nowrap;
+  }
+  h1 .ver {
+    font-family: "Source Code Pro", monospace;
+    font-weight: 600;
+    font-size: 1em;
+    color: #6FC1EE;
+  }
+  .tagline {
+    font-size: 30px;
+    font-weight: 600;
+    color: #DCEEFB;
+    margin-bottom: 30px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; width: 440px; }
+  .chip {
+    font-family: "Source Code Pro", monospace;
+    font-size: 18.5px; font-weight: 500;
+    color: #DCEEFB;
+    background: rgba(111,193,238,0.12);
+    border: 1px solid rgba(111,193,238,0.35);
+    border-radius: 8px;
+    padding: 7px 14px;
+  }
+
+  /* ---- trace viewer window ---- */
+  .term {
+    position: absolute;
+    right: 0; top: 76px;
+    width: 625px; height: 599px;
+    background: #0F1B2A;
+    border-radius: 14px 0 0 0;
+    border: 1px solid rgba(111,193,238,0.25);
+    border-right: 0; border-bottom: 0;
+    box-shadow: 0 40px 90px rgba(2, 16, 30, 0.65);
+    overflow: hidden;
+    z-index: 4;
+    font-family: "Source Code Pro", monospace;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .term-bar {
+    height: 44px;
+    background: #16263A;
+    display: flex; align-items: center;
+    padding: 0 16px; gap: 8px;
+    color: #8FA6BD; font-size: 13px;
+  }
+  .term-bar .tab {
+    margin-left: 14px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    background: rgba(111,193,238,0.10);
+    color: #DCEEFB;
+  }
+  .legend {
+    margin-left: auto;
+    display: flex; gap: 14px;
+    color: #8FA6BD; font-size: 13px;
+  }
+  .swatch {
+    display: inline-block; width: 11px; height: 11px;
+    border-radius: 2px; margin-right: 5px; vertical-align: -1px;
+  }
+  svg { display: block; }
+</style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="frame"></div>
+
+  <div class="headline">
+    <div class="eyebrow">New release</div>
+    <h1>Shiny for&nbsp;Python <span class="ver">1.9</span></h1>
+    <div class="tagline">All Together Now</div>
+    <div class="chips">
+      <span class="chip">concurrent async</span>
+      <span class="chip">run_once_when_idle()</span>
+      <span class="chip">&amp; more&hellip;</span>
+    </div>
+  </div>
+
+  <div class="term">
+    <div class="term-bar">
+      <span class="dot" style="background:#F26D5F"></span>
+      <span class="dot" style="background:#F5BE4F"></span>
+      <span class="dot" style="background:#5FC463"></span>
+      <span class="tab">OpenTelemetry spans</span>
+      <span class="legend">
+        <span><span class="swatch" style="background:#3987e5"></span>sales</span>
+        <span><span class="swatch" style="background:#d95926"></span>forecast</span>
+      </span>
+    </div>
+    <svg id="plot" width="625" height="555"></svg>
+  </div>
+
+<script>
+  // Deterministic animation driven by seek(t) so frames can be captured
+  // one at a time. Loop length: LOOP ms. seek(LOOP - 1) is the static poster.
+  //
+  // Three users each start a report with two async outputs ("sales" and
+  // "forecast") that take 2s each. In 1.8 the six output spans run one after
+  // another (a staircase that ends at 12s). In 1.9 they all run from 0 to 2s.
+  // A playhead sweeps both timelines on the same time axis.
+  const LOOP = 5600;
+  const SWEEP_FROM = 500, SWEEP_TO = 4100;   // ms of animation for 0s..12s
+  const END = 12;                            // seconds shown on the axis
+  const USERS = ['Alice', 'Bob', 'Carol'];
+  const COLORS = ['#3987e5', '#d95926'];     // sales, forecast
+  const svg = document.getElementById('plot');
+
+  const clamp01 = (x) => Math.max(0, Math.min(1, x));
+  const phase = (t, from, to) => clamp01((t - from) / (to - from));
+
+  const LEFT = 92, RIGHT = 600, LANE = 56, BAR = 21;
+  const x = (s) => LEFT + (s / END) * (RIGHT - LEFT);
+
+  // [user, output, start, end] in seconds.
+  const before = [], after = [];
+  USERS.forEach((_, u) => [0, 1].forEach((o) => {
+    before.push([u, o, (2 * u + o) * 2, (2 * u + o) * 2 + 2]);
+    after.push([u, o, 0, 2]);
+  }));
+
+  function panel(top, label, spans, now) {
+    const done = Math.max(...spans.map((s) => s[3]));
+    const clock = Math.min(now, done);
+    const finished = now >= done;
+    let out = `<text x="26" y="${top + 18}" font-size="17" font-weight="600"
+      fill="#DCEEFB">${label}</text>
+      <text x="${RIGHT}" y="${top + 18}" font-size="17" font-weight="600"
+      text-anchor="end" fill="${finished ? (done > 2 ? '#FF8A80' : '#7EE787') : '#8FA6BD'}"
+      >${finished ? 'done in ' : ''}${clock.toFixed(1)}s</text>`;
+    const lanesTop = top + 34;
+    USERS.forEach((name, u) => {
+      const y = lanesTop + u * LANE;
+      out += `<text x="26" y="${y + LANE / 2 + 5}" font-size="14"
+        fill="#8FA6BD">${name}</text>
+        <rect x="${LEFT}" y="${y + 3}" width="${RIGHT - LEFT}" height="${LANE - 6}"
+        rx="4" fill="rgba(111,193,238,0.05)"/>`;
+    });
+    for (const [u, o, start, end] of spans) {
+      if (now <= start) continue;
+      const y = lanesTop + u * LANE + 5 + o * (BAR + 2);
+      const w = x(Math.min(now, end)) - x(start);
+      out += `<rect x="${x(start)}" y="${y}" width="${Math.max(2, w)}"
+        height="${BAR}" rx="3" fill="${COLORS[o]}"/>`;
+    }
+    const bottom = lanesTop + USERS.length * LANE;
+    if (now > 0 && now < END) {
+      out += `<line x1="${x(now)}" x2="${x(now)}" y1="${lanesTop}" y2="${bottom}"
+        stroke="#DCEEFB" stroke-width="1.5" opacity="0.7"/>`;
+    }
+    return { out, bottom };
+  }
+
+  function axis(top) {
+    let out = '';
+    for (let s = 0; s <= END; s += 2) {
+      out += `<text x="${x(s)}" y="${top + 16}" font-size="12" text-anchor="middle"
+        fill="#8FA6BD">${s}s</text>`;
+    }
+    return out;
+  }
+
+  window.seek = function (t) {
+    t = t % LOOP;
+    const now = END * phase(t, SWEEP_FROM, SWEEP_TO);
+    const a = panel(34, 'Shiny 1.8', before, now);
+    const b = panel(a.bottom + 44, 'Shiny 1.9', after, now);
+    let grid = '';
+    for (let s = 0; s <= END; s += 2) {
+      grid += `<line x1="${x(s)}" x2="${x(s)}" y1="68" y2="${b.bottom}"
+        stroke="rgba(143,166,189,0.14)" stroke-width="1"/>`;
+    }
+    svg.innerHTML = grid + a.out + b.out + axis(b.bottom + 4);
+  };
+
+  window.seek(0);
+</script>
+</body>
+</html>
