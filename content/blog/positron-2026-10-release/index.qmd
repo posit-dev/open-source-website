@@ -29,14 +29,14 @@ hidesubscription: false
 
 
 ::: {.callout-note}
-[Positron](https://positron.posit.co) is Posit's new, next-generation IDE for data science. Positron is designed to be an extensible, polyglot tool for exploring data and reproducible authoring in Python, R, and more.
+[Positron](https://positron.posit.co/?utm_source=opensource-posit-co&utm_medium=referral&utm_campaign=positron-2026-10-release-blog&utm_content=intro-note) is Posit's new, next-generation IDE for data science. Positron is designed to be an extensible, polyglot tool for exploring data and reproducible authoring in Python, R, and more.
 :::
 
-Welcome back to another edition of our monthly Positron updates! Each month we share highlights from our [latest release](https://positron.posit.co/release-notes) and useful resources. [Last release](/blog/2026-09-09_positron-2026-09-release/) we told you about a redesigned welcome page, a first version of Import Data, new Posit Assistant features, expanded Data Connections, package vulnerability scanning, and a more responsive Console. This milestone brings a new ability for Posit Assistant to drive Positron itself, a built-in MCP server so you can bring your own coding agent, Data Connections on by default, faster language features for Quarto, and smoother interpreter and project setup.
+Welcome back to another edition of our monthly Positron updates! Each month we share highlights from our [latest release](https://positron.posit.co/release-notes?utm_source=opensource-posit-co&utm_medium=referral&utm_campaign=positron-2026-10-release-blog&utm_content=release-notes-link) and useful resources. [Last release](/blog/2026-09-09_positron-2026-09-release/) we told you about a redesigned welcome page, a first version of Import Data, new Posit Assistant features, expanded Data Connections, package vulnerability scanning, and a more responsive Console. This milestone brings a new ability for Posit Assistant to drive Positron itself, a built-in MCP server so you can bring your own coding agent, Data Connections on by default, faster language features for Quarto, and smoother interpreter and project setup.
 
 ## Posit Assistant can drive Positron
 
-[Posit Assistant](https://pos.it/assistant) can now operate Positron itself, not just the R or Python session inside it. You can ask it to run a Shiny app, open a Parquet file in the Data Explorer, set up a Python environment, browse your data connections, or deploy to Posit Connect. Posit Assistant uses the same source of truth as the Positron UI, so it works with your real interpreters, packages, and connections rather than guessing at them.
+[Posit Assistant](https://assistant.posit.co/?utm_source=opensource-posit-co&utm_medium=referral&utm_campaign=positron-2026-10-release-blog&utm_content=assistant-section) can now operate Positron itself, not just the R or Python session inside it. You can ask it to run a Shiny app, open a Parquet file in the Data Explorer, set up a Python environment, browse your data connections, or deploy to Posit Connect. Posit Assistant uses the same source of truth as the Positron UI, so it works with your real interpreters, packages, and connections rather than guessing at them.
 
 ![](assistant-data-explorer.png){fig-align="center" fig-alt="Positron with the Posit Assistant chat beside the Data Explorer, which shows pokemon.xlsx that Posit Assistant opened."}
 
@@ -56,7 +56,7 @@ To try this experimental feature, enable the [`ai.mcp.enabled`](positron://setti
 
 ## Data Connections on by default
 
-[Data Connections](https://positron.posit.co/data-connections) is now the default way to work with databases and data warehouses in Positron. Data Connections connects to databases directly, without needing a Python or R session, and it replaces both the older Connections pane and the Catalog Explorer. If you need the older Connections pane, set [`dataConnections.enabled`](positron://settings/dataConnections.enabled) to `false` and reload the window.
+[Data Connections](https://positron.posit.co/data-connections?utm_source=opensource-posit-co&utm_medium=referral&utm_campaign=positron-2026-10-release-blog&utm_content=data-connections-section) is now the default way to work with databases and data warehouses in Positron. Data Connections connects to databases directly, without needing a Python or R session, and it replaces both the older Connections pane and the Catalog Explorer. If you need the older Connections pane, set [`dataConnections.enabled`](positron://settings/dataConnections.enabled) to `false` and reload the window.
 
 This release also extends what you can connect to and how you sign in. Amazon Redshift connections can sign in with AWS Identity and Access Management (IAM), for both Redshift Serverless and provisioned clusters, using credentials from the standard AWS credential provider chain. On Posit Workbench, Snowflake and Databricks connections can use the session's managed credentials with no credential input at all. Snowflake users get the most new features this month; the Data Connections pane shows Snowflake semantic views with their dimensions, facts, metrics, and relationships, you can browse Snowflake stages as folders and files, and connections in `connections.toml` show up automatically as detected connections.
 
@@ -82,9 +82,9 @@ For more control over interpreters in _both_ Python and R, interpreter path sett
 
 ## What's coming next
 
-- Meet Posit at [Snowflake World Tour NYC](https://posit.co/events/snowflake-world-tour-2026-nyc) on October 15. Stop by our booth, schedule time with a Posit expert, or catch our theater session on AI-powered data science where your data lives, inside Snowflake.
+- Meet Posit at [Snowflake World Tour NYC](https://posit.co/events/snowflake-world-tour-2026-nyc?utm_source=opensource-posit-co&utm_medium=referral&utm_campaign=positron-2026-10-release-blog&utm_term=snowflake&utm_content=events-section) on October 15. Stop by our booth, schedule time with a Posit expert, or catch our theater session on AI-powered data science where your data lives, inside Snowflake.
 - Join us at [Data Outpost](https://opensource.posit.co/events/data-outpost-2026/) on November 4-5 in San Francisco. I'll be speaking on "The SQL Agent Harness We Didn't Mean to Build," about how the SQL tools we built in Positron for people turned out to already be a harness for AI assistants.
 
 ::: {.callout-tip}
-[Download Positron](https://positron.posit.co/download) to try out the new features and improvements in this release!
+[Download Positron](https://positron.posit.co/download?utm_source=opensource-posit-co&utm_medium=referral&utm_campaign=positron-2026-10-release-blog&utm_content=download-cta) to try out the new features and improvements in this release!
 :::
