@@ -34,7 +34,7 @@ hidesubscription: false
 </div>
 <div class="callout-body">
 
-[Positron](https://positron.posit.co) is Posit's new, next-generation IDE for data science. Positron is designed to be an extensible, polyglot tool for exploring data and reproducible authoring in Python, R, and more.
+[Positron](https://positron.posit.co/?utm_source=opensource-posit-co&utm_medium=referral&utm_campaign=positron-2026-10-release-blog&utm_content=intro-note) is Posit's new, next-generation IDE for data science. Positron is designed to be an extensible, polyglot tool for exploring data and reproducible authoring in Python, R, and more.
 
 </div>
 </div>
