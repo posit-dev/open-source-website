@@ -125,9 +125,14 @@ inline = [['$', '$']]
     weight = 1
     parent = 'resources'
   [[menu.main]]
+    name = 'Courses'
+    url = '/resources/courses/'
+    weight = 2
+    parent = 'resources'
+  [[menu.main]]
     name = 'Videos'
     url = '/resources/videos/'
-    weight = 2
+    weight = 3
     parent = 'resources'
   [[menu.main]]
     name = 'Blog'

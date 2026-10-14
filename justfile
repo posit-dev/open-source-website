@@ -78,6 +78,10 @@ update-youtube-videos:
 sync-videos:
     ./scripts/sync-videos.py
 
+# Sync courses and learning paths from Posit Academy (needs SKILLJAR_API_KEY)
+sync-courses *args:
+    ./scripts/sync-courses.py {{args}}
+
 download-youtube-audio *args:
     ./scripts/download-youtube-audio.py {{args}}
 

@@ -34,6 +34,43 @@ cheatsheets:
   tile_class: ""
   title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-xl @trenta:text-2xl text-gray-600"
 
+courses:
+  author_class: "font-medium text-gray-600"
+  badge_hide_path: "/resources/courses/"
+  badge_icon: "boxicons--book-open-filled"
+  badge_text: "course"
+  card_class: ""
+  description_class: "@tall:line-clamp-3 font-medium text-gray-600"
+  hero_class: ""
+  hero_content_class: "py-6"
+  hero_image_container_class: "aspect-[16/9] max-w-[1000px] mx-auto rounded-xl overflow-hidden"
+  hero_layout: "banner"
+  image_class: "w-full object-cover"
+  metadata_class: "text-xs font-medium text-gray-500"
+  people_show: false
+  row_class: ""
+  tile_class: ""
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-xl @trenta:text-2xl text-gray-600"
+
+# Learning paths live in /resources/courses/ but get their own badge
+learning-paths:
+  author_class: "font-medium text-gray-600"
+  badge_hide_path: "/resources/courses/"
+  badge_icon: "boxicons--git-branch"
+  badge_text: "learning path"
+  card_class: ""
+  description_class: "@tall:line-clamp-3 font-medium text-gray-600"
+  hero_class: ""
+  hero_content_class: "py-6"
+  hero_image_container_class: "aspect-[16/9] max-w-[1000px] mx-auto rounded-xl overflow-hidden"
+  hero_layout: "banner"
+  image_class: "w-full object-cover"
+  metadata_class: "text-xs font-medium text-gray-500"
+  people_show: false
+  row_class: ""
+  tile_class: ""
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-xl @trenta:text-2xl text-gray-600"
+
 events:
   author_class: "font-medium text-gray-600"
   badge_hide_path: "/events/"

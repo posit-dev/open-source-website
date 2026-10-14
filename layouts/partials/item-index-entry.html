@@ -32,6 +32,9 @@
   {{ end }}
 {{ end }}
 {{ $typeLabel := "" }}
+{{ if and (eq $itemType "courses") (eq $page.Params.course_type "learning path") }}
+  {{ $itemType = "learning-paths" }}
+{{ end }}
 {{ with index site.Data.items $itemType }}
   {{ $typeLabel = .badge_text }}
 {{ end }}
@@ -139,6 +142,12 @@
   {{ with $page.Params.external.duration }}
     {{ $durationFormatted = partial "format-duration.html" . }}
   {{ end }}
+{{ else if eq ($page.Params.resource_type | default "") "course" }}
+  {{ with $page.Params.courses }}
+    {{ $durationFormatted = printf "%d %s" (len .) (cond (eq (len .) 1) "course" "courses") }}
+  {{ else }}
+    {{ $durationFormatted = $page.Params.duration | default "" }}
+  {{ end }}
 {{ end }}
 
 {{/* Build the entry — only include keys with non-empty values */}}
@@ -211,6 +220,16 @@
   {{ end }}
   {{ with $page.Params.external.duration }}
     {{ $entry = merge $entry (dict "duration" (int .)) }}
+  {{ end }}
+  {{ with $durationFormatted }}
+    {{ $entry = merge $entry (dict "durationFormatted" .) }}
+  {{ end }}
+{{ end }}
+
+{{/* Course-specific */}}
+{{ if eq ($page.Params.resource_type | default "") "course" }}
+  {{ with $page.Params.weight }}
+    {{ $entry = merge $entry (dict "weight" .) }}
   {{ end }}
   {{ with $durationFormatted }}
     {{ $entry = merge $entry (dict "durationFormatted" .) }}

@@ -103,3 +103,5 @@ before:duration-200
 hover:before:bg-[color-mix(in_srgb,theme(colors.blue.100)_75%,white_25%)]
 hover:before:border-blue-200
 before:-z-10
+icon-[boxicons--book-open-filled]
+icon-[boxicons--git-branch]

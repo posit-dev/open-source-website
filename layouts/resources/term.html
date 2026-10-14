@@ -319,6 +319,15 @@
       </div>
       {{ end }}
     {{ end }}
+
+    {{- /* Link to Posit Academy for courses */ -}}
+    {{ if eq .Params.resource_type "course" }}
+      {{ with .Params.academy_url }}
+      <div class="mt-6">
+        {{ partial "button.html" (dict "url" . "text" "View on Posit Academy" "icon" "boxicons--book-open-filled") }}
+      </div>
+      {{ end }}
+    {{ end }}
   </div>
   {{ end }}
 
@@ -398,8 +407,20 @@
         {{ end }}
 
 
-        <!-- Resource Links (skip for cheatsheets - shown at top) -->
-        {{ if and (ne .Params.resource_type "video") (ne .Params.resource_type "cheatsheet") }}
+        {{- /* Courses in a learning path */ -}}
+        {{ if and (eq .Params.resource_type "course") .Params.courses }}
+        <div class="mt-10">
+          {{ partial "heading.html" (dict "level" 2 "text" "Courses in this learning path" "class" "text-2xl font-medium text-gray-800 mb-4") }}
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {{ range .Params.courses }}
+              {{ partial "item.html" (dict "item" (printf "courses/%s" .) "hide-badge" true) }}
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+        <!-- Resource Links (skip for cheatsheets - shown at top - and courses) -->
+        {{ if not (in (slice "video" "cheatsheet" "course") .Params.resource_type) }}
         <div class="flex flex-wrap gap-2 mt-6">
           {{ $resourceUrl := or .Params.video_url .Params.url .Params.external.url }}
           {{ with $resourceUrl }}
