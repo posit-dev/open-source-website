@@ -1,4 +1,4 @@
-# Render from this folder with: d2 --theme 0 --elk-nodeNodeBetweenLayers 45 how-it-works.d2 ../how-it-works.svg
+# Render with: d2 --theme 0 --elk-nodeNodeBetweenLayers 45 how-it-works.d2 how-it-works.svg
 vars: {
   d2-config: {
     layout-engine: elk
@@ -24,6 +24,7 @@ classes: {
   next: {style: {stroke: "#1565C0"; stroke-width: 2; stroke-dash: 4; font-size: 15}}
   seq: {style: {stroke: "#E65100"; stroke-width: 2}}
   note: {shape: text; style: {font-size: 17}}
+  tasks: {label.near: bottom-left; style: {fill: "#F7FCF8"; stroke: "#81C784"; stroke-dash: 3; border-radius: 8; font-size: 15; font-color: "#2E7D32"; bold: true}}
 }
 
 before: "" {
@@ -43,8 +44,9 @@ before: "" {
 
     lock: "One lock for\nthe whole app" {class: lock}
 
-    line: "" {
-      style: {fill: "#FFFBF5"; stroke: "#FFCC80"; border-radius: 10}
+    line: "Global queue" {
+      label.near: bottom-right
+      style: {fill: "#FFFBF5"; stroke: "#FFCC80"; border-radius: 10; font-size: 16; font-color: "#E65100"; bold: true}
       direction: right
       a1: "Alice\nSales" {class: slow}
       a2: "Alice\nForecast" {class: slow}
@@ -79,14 +81,17 @@ after: "" {
       class: row
       direction: down
       who: Alice {class: user}
-      s: Sales {class: run}
-      f: Forecast {class: run}
+      tasks: "Per-session tasks" {
+        class: tasks
+        s: Sales {class: run}
+        f: Forecast {class: run}
+      }
       out: "Send both outputs\ntogether" {class: step}
       nxt: "Apply Alice's\nnext input" {class: step}
-      who -> f {class: flow}
-      who -> s {class: flow}
-      s -> out {class: flow}
-      f -> out {class: flow}
+      who -> tasks.s {class: flow}
+      who -> tasks.f {class: flow}
+      tasks.s -> out {class: flow}
+      tasks.f -> out {class: flow}
       out -> nxt: "then" {class: next}
     }
 
@@ -94,14 +99,17 @@ after: "" {
       class: row
       direction: down
       who: Bob {class: user}
-      s: Sales {class: run}
-      f: Forecast {class: run}
+      tasks: "Per-session tasks" {
+        class: tasks
+        s: Sales {class: run}
+        f: Forecast {class: run}
+      }
       out: "Send both outputs\ntogether" {class: step}
       nxt: "Apply Bob's\nnext input" {class: step}
-      who -> f {class: flow}
-      who -> s {class: flow}
-      s -> out {class: flow}
-      f -> out {class: flow}
+      who -> tasks.s {class: flow}
+      who -> tasks.f {class: flow}
+      tasks.s -> out {class: flow}
+      tasks.f -> out {class: flow}
       out -> nxt: "then" {class: next}
     }
 
@@ -109,14 +117,17 @@ after: "" {
       class: row
       direction: down
       who: Carol {class: user}
-      s: Sales {class: run}
-      f: Forecast {class: run}
+      tasks: "Per-session tasks" {
+        class: tasks
+        s: Sales {class: run}
+        f: Forecast {class: run}
+      }
       out: "Send both outputs\ntogether" {class: step}
       nxt: "Apply Carol's\nnext input" {class: step}
-      who -> f {class: flow}
-      who -> s {class: flow}
-      s -> out {class: flow}
-      f -> out {class: flow}
+      who -> tasks.s {class: flow}
+      who -> tasks.f {class: flow}
+      tasks.s -> out {class: flow}
+      tasks.f -> out {class: flow}
       out -> nxt: "then" {class: next}
     }
 

@@ -1,16 +1,17 @@
 ---
-title: "Shiny for Python 1.9: All Together Now!"
+title: "All Together Now: Concurrent Async in Shiny for Python"
 date: 2026-10-30
 people:
   - Josh Taillon
   - Barret Schloerke
 description: >
-  Shiny for Python v1.9 is now available on PyPI! The headline change is a huge speedup
-  for certain types of operations: slow work in your app -- such as a database query 
-  or an API call -- can now run concurrently and no longer blocks the rest of the 
-  app. Further, when several people use an app at once, individual user's sessions are no longer blocked by slow operations by other users.
+  Shiny for Python 1.9 changes how the reactive system runs async code. The biggest
+  change is that slow work in your app, such as a database query or an API call, no
+  longer waits in line: a session's outputs now run all together, and the people
+  using an app no longer wait for each other. This post shows what changed, and how
+  much faster it is.
 image: "feature.gif"
-image-alt: "Shiny for Python 1.9: All Together Now. A trace viewer compares OpenTelemetry spans for three users who each run two two-second outputs. In Shiny 1.8, the six spans run one after another and finish after 12 seconds. In Shiny 1.9, all six run at the same time and finish after 2 seconds."
+image-alt: "All Together Now: concurrent async in Shiny for Python 1.9. A trace viewer compares OpenTelemetry spans for three users who each run two two-second outputs. In Shiny 1.8, the six spans run one after another and finish after 12 seconds. In Shiny 1.9, all six run at the same time and finish after 2 seconds."
 topics:
   - Interactive Apps
 software:
@@ -18,26 +19,16 @@ software:
 languages:
   - Python
 source: shiny
+math: true
 ---
 
 <!-- TODO before publishing: confirm the version number, the date, the authors, and the PR links. -->
 
-We're happy to announce that [Shiny for Python v1.9](https://pypi.org/project/shiny/) is now on PyPI!
-
-```bash
-# to install:
-pip install -U shiny
-```
-
-This release overhauls the reactive system within Shiny for Python, and now uses a
-concurrency model similar to Shiny for R. The key changes:
+[Shiny for Python 1.9](https://pypi.org/project/shiny/) overhauls how the reactive system runs async code, and now uses a concurrency model similar to Shiny for R. This post explains what changed, and shows how much faster an app gets when it awaits slow work. The key changes:
 
 * [A slow `await` in one session no longer blocks other sessions](#one-slow-user-no-longer-blocks-everyone), so the users of an app no longer wait for each other.
-* [Async outputs in the same session now run concurrently](#async-outputs-run-at-the-same-time), so a page with multiple slow outputs is ready in one second instead of eight.
-* [`reactive.lock()` has been removed](#reactivelock-is-deprecated), and the new [`session.run_once_when_idle()`](#new-sessionrun_once_when_idle) provides a way to change reactive state from a background task.
-* [Other improvements](#other-improvements) <!-- TODO: one-line summary of the other changes in this release -->
-
-Full details are in the [Shiny for Python changelog](https://github.com/posit-dev/py-shiny/blob/main/CHANGELOG.md).
+* [Async outputs in the same session now run concurrently](#async-outputs-run-at-the-same-time), so a page with three slow outputs is ready in one second instead of three.
+* [`reactive.lock()` is deprecated](#reactivelock-is-deprecated), and the new [`session.run_once_when_idle()`](#new-sessionrun_once_when_idle) provides a way to change reactive state from a background task.
 
 
 ## One slow user no longer blocks everyone
@@ -46,23 +37,27 @@ Until now, Shiny for Python processed reactivity behind one lock for the whole p
 
 The recording below shows an example of how the new system improves things drastically. It simulates four people using the same app each in a separate Shiny session. Alice, Bob and Carol each click "Run report" at the same time. A report has two async outputs, "Sales" and "Forecast", and each one takes two seconds to finish query. Dan only watches a chart that the server redraws every 0.2 seconds. The plot at the bottom displays the [OpenTelemetry spans](https://shiny.posit.co/py/docs/opentelemetry.html) for the app to visualize the timeline of server processing.
 
-::: {layout-ncol=2}
-![**Shiny for Python 1.8.** Because of the `reactive.lock()`, the reports run serially and finish after 4.0, 8.0 and 12.0 seconds. Every live chart output stops updating until the last report is done. In the OpenTelemetry timeline, the six output spans form a staircase, one after another.](before.gif){fig-alt="Shiny for Python 1.8: three users click Run report at the same time. Because of the `reactive.lock()`, the reports run serially and finish after 4.0, 8.0 and 12.0 seconds. Every live chart output stops updating until the last report is done. In the timeline, the six output spans form a staircase, one after another."}
+Each user's card shows the status of their two outputs: a hand while the output waits its turn, a spinner while it runs, and a check when it is done. Under the button, the time since the click is split into three parts that add up to the total: how long the report *waited* before its first output started, how long its outputs *computed*, and how long the session was *blocked* afterwards, before its chart could update again.
 
-![**Shiny for Python 1.9.** Because reactive effects are now allowed to run concurrently, all three reports finish after 2 seconds, and Dan's chart keeps updating during the slow operations.](after.gif){fig-alt="Shiny for Python 1.9: three users click Run report at the same time. All three reports finish after 2.0 seconds, and Dan's chart keeps moving. In the OpenTelemetry timeline, all six output spans start and end together."}
-:::
+### Before 1.9
+
+![**Shiny for Python 1.8.** Because of the `reactive.lock()`, the reports run one after another and finish after 4, 8 and 12 seconds. Even within one report, Forecast waits for Sales to finish. Every live chart stops updating until the last report is done. In the OpenTelemetry timeline, the six output spans form a staircase, one after another.](before.gif){fig-alt="Shiny for Python 1.8: three users click Run report at the same time. Alice's report computes for 4 seconds and is then blocked for 8 seconds. Bob waits for 4 seconds, computes for 4, and is blocked for 4. Carol waits for 8 seconds and computes for 4. Dan's chart is blocked for 12 seconds. In the timeline, the six output spans form a staircase, one after another."}
+
+### After 1.9
+
+![**Shiny for Python 1.9.** Because reactive effects are now allowed to run concurrently, both outputs of every report run at the same time, all three reports finish after 2 seconds, and Dan's chart keeps updating during the slow operations.](after.gif){fig-alt="Shiny for Python 1.9: three users click Run report at the same time. Every report waits 0 seconds, computes for 2 seconds, and is blocked for 0 seconds. Dan's chart keeps moving. In the OpenTelemetry timeline, all six output spans start and end together."}
 
 In 1.8, the OpenTelemetry data shows the six output spans forming a staircase. Alice's "Forecast" waits for her own "Sales", and Bob's report can't start until Alice's ends. No session redraws its chart (the green ticks) until the last report is done. In 1.9, all six outputs run at the same time, and Dan's chart never stops updating.
 
 In 1.9, a reactive flush starts each invalidated effect as an asynchronous task and the reactive system doesn't wait for it to finish to continue processing events. While Alice's report awaits its query, the event loop is free to serve Bob, Carol, Dan, and everyone else.
 
-![How a report runs in each version. In 1.8, every user waits for one lock, so the six outputs run one after another. In 1.9, each session starts its outputs at the same time, sends them together, and only then applies that user's next input.](how-it-works.svg){fig-alt="Diagram in two panels. The top panel, Shiny 1.8, shows Alice holding one lock for the whole app while Bob and Carol wait for it. Behind the lock, six outputs run in a single line: Alice's Sales, Alice's Forecast, Bob's Sales, Bob's Forecast, Carol's Sales, and Carol's Forecast. The bottom panel, Shiny 1.9, shows three separate sessions for Alice, Bob and Carol side by side. In each one, the user's click starts Sales and Forecast at the same time, both feed into one step that sends both outputs together, and then the user's next input is applied. A note says that all six outputs run at the same time, and that each session applies its next input only after it sends its outputs, so inputs never change halfway through."}
+![How a report runs in each version. In 1.8, every user waits for one lock, so the six outputs run one after another. In 1.9, each session has its own tasks, which start at the same time. The session sends their outputs together, and only then applies that user's next input.](how-it-works.svg){fig-alt="Diagram in two panels. The top panel, Shiny 1.8, shows Alice holding one lock for the whole app while Bob and Carol wait for it. Behind the lock, in a box labeled Global queue, six outputs run in a single line: Alice's Sales, Alice's Forecast, Bob's Sales, Bob's Forecast, Carol's Sales, and Carol's Forecast. The bottom panel, Shiny 1.9, shows three separate sessions for Alice, Bob and Carol side by side. In each one, the user's click starts Sales and Forecast at the same time, inside a box labeled Per-session tasks, both feed into one step that sends both outputs together, and then the user's next input is applied. A note says that all six outputs run at the same time, and that each session applies its next input only after it sends its outputs, so inputs never change halfway through."}
 
 The more users that click at the same time, the larger the difference:
 
 ![The time until the last user sees a result, when several users click at the same time. Each report has two async outputs that await a two-second query.](sessions.png){fig-alt="Line chart. With Shiny for Python 1.8, the wait for the last user grows by 4 seconds for each user, up to 32 seconds for 8 users. With 1.9, it stays at 2 seconds for any number of users."}
 
-Put in terms of scaling: when *n* users each start *k* async outputs that each wait *t* seconds, the last user in 1.8 waits about *n* × *k* × *t* seconds, because every output runs after the one before it. In 1.9, every user waits about *t* seconds, for any number of users and outputs. The wait goes from $O(n·k)$ to $O(1)$. In the chart, *k* is 2 and *t* is 2 seconds, so for 8 users the wait goes from 32 seconds to 2.
+Put in terms of scaling: when *n* users each start *k* async outputs that each wait *t* seconds, the last user in 1.8 waits about *n* × *k* × *t* seconds, because every output runs after the one before it. In 1.9, every user waits about *t* seconds, for any number of users and outputs. The wait goes from $O(n \cdot k)$ to $O(1)$. In the chart, *k* is 2 and *t* is 2 seconds, so for 8 users the wait goes from 32 seconds to 2.
 
 *Caveat:* this speedup applies when the slow part is waiting on something outside Python that can serve many requests at the same time, such as a database or a web API. Work that keeps Python itself busy will still add up (see [Concurrency needs `await`](#concurrency-needs-await) below).
 
@@ -116,21 +111,41 @@ In 1.8, the outputs are ready one at a time, after 1.0, 2.0 and 3.0 seconds, and
 
 ![The time until every output is rendered, for a page of async outputs that each take one second.](outputs.png){fig-alt="Line chart. With Shiny for Python 1.8, the time grows by one second for each output, up to 12 seconds for 12 outputs. With 1.9, it stays at 1 second for any number of outputs."}
 
-::: {.callout-important #concurrency-needs-await}
-## Concurrency needs `await`
+## Concurrency needs `await` {#concurrency-needs-await}
+
+::: callout-important
+## Blocking code still blocks every session
 
 Shiny runs on a single [`asyncio` event loop](https://docs.python.org/3/howto/a-conceptual-overview-of-asyncio.html#event-loop). Code can only run concurrently while other code awaits. A synchronous call such as `time.sleep()`, a blocking database driver, or a long calculation still stops every session until it returns, in both 1.8 and in 1.9.
+:::
 
-To keep blocking work from stopping the app, use a library that supports async, or run the call in a thread with [`asyncio.to_thread()`](https://docs.python.org/3/library/asyncio-task.html#asyncio.to_thread):
+The recommended way to run slow work is an [extended task](https://shiny.posit.co/py/docs/nonblocking.html). It runs in the background, outside the session's reactive cycle, so the user can keep using the app while it runs. It also gives you the task's status, a way to cancel it, and a button that shows when the task is busy. Inside the task, call an async library, or run a blocking call in a thread with [`asyncio.to_thread()`](https://docs.python.org/3/library/asyncio-task.html#asyncio.to_thread):
+
+```python
+@ui.bind_task_button(button_id="go")
+@reactive.extended_task
+async def run_query(filters):
+    return await asyncio.to_thread(run_slow_query, filters)
+
+
+@reactive.effect
+@reactive.event(input.go)
+def _():
+    run_query(input.filters())
+
+
+@render.data_frame
+def results():
+    return run_query.result()
+```
+
+For lower-level control, you can await `asyncio.to_thread()` directly in an output. This keeps the event loop free, so other sessions keep going, but it doesn't have the extended task's features: there is no status, no way to cancel, and the output is part of the session's cycle, so the session sends its other outputs and applies its next input only after the call returns.
 
 ```python
 @render.data_frame
 async def results():
     return await asyncio.to_thread(run_slow_query, input.filters())
 ```
-
-For work that should run in the background while the user does other things, use [`@reactive.extended_task`](https://shiny.posit.co/py/docs/nonblocking.html).
-:::
 
 
 ## What stays the same
@@ -162,7 +177,7 @@ Most apps won't need any changes, but here are some differences that you might s
 
 ## `reactive.lock()` is deprecated
 
-Shiny itself no longer uses `reactive.lock()`, and it has been functionally removed in 1.9.Any code calling that method will now emit a `ShinyDeprecationWarning` that returns a lock that never blocks. The `reactive.lock()` API will be completely removed in a future version of Shiny for Python.
+Shiny itself no longer uses `reactive.lock()`, and in 1.9 it no longer does anything. Calling it emits a `ShinyDeprecationWarning` and returns a lock that never blocks. The `reactive.lock()` API will be completely removed in a future version of Shiny for Python.
 
 The usual reason to use it was to change reactive state from a background task, followed by a flush. You can now just set the value directly, and Shiny will schedule the flush for you:
 
@@ -205,57 +220,6 @@ The function runs when all of the session's effects have finished and its output
 The demo apps in this post, with the live OpenTelemetry timeline, are in <!-- TODO: link to where the demo source is published -->. Run them with Shiny for Python 1.8 and 1.9 to see the difference on your own machine. To view the spans of your own app, see [Shiny's OpenTelemetry docs](https://shiny.posit.co/py/docs/opentelemetry.html). <!-- TODO: confirm this URL -->
 
 
-## Other improvements
-
-::: callout-warning
-## Draft: fill in from the CHANGELOG at release time
-Pick the changes worth calling out from the [CHANGELOG](https://github.com/posit-dev/py-shiny/blob/main/CHANGELOG.md), and leave the rest to the link in the introduction. Delete any subsection that ends up empty.
-:::
-
-Shiny for Python 1.9 also includes these changes:
-
-### New features
-
-<!-- TODO: new features. Candidates in the CHANGELOG today:
-  * `ui.sidebar()` `role` parameter for ARIA landmark markup (#2526)
--->
-
-* TODO
-
-### Improvements
-
-<!-- TODO: improvements. Candidates in the CHANGELOG today:
-  * `@render.download_button()` and `@render.download_link()` gain an `icon` argument
-  * Navigation links to tab panels set `aria-controls` (#2526)
-  * Express `@output_args()` accepts every argument of the output's UI function (#2539)
--->
-
-* TODO
-
-### Bug fixes
-
-<!-- TODO: bug fixes. Candidates in the CHANGELOG today:
-  * `Progress.set(0)` with a negative `min` (#2518)
-  * `ui.input_date()` `datesdisabled` with a non-default `format` (#2523)
-  * Polars 2.0 `Categorical` and `Enum` columns in data frames (#2529)
-  * A recursive `reactive.calc` returns its own computed value (#2521)
-  * `Jsonifiable` accepts `dict[str, int]` and `list[str]` (#2511)
-  * `near_points()` and `brushed_points()` fixes
--->
-
-* TODO
-
-
 ## In closing
 
-This is one of the largest changes to Shiny for Python's internals since its first release, and it brings Python and R to the same reactive model. If an app behaves differently after you upgrade, please let us know! As always, if you have questions or feedback, [join us on Discord](https://discord.gg/yMGCamUMnS) or open an issue on [posit-dev/py-shiny](https://github.com/posit-dev/py-shiny/issues/new). Happy Shiny-ing!
-
-
-## Acknowledgements
-
-A big thank you to all the folks who helped make this release happen by opening issues and contributing code:
-
-::: callout-warning
-## Draft: generate the contributor list for the release, as in earlier posts
-:::
-<!-- TODO: generate the contributor list for the release, as in earlier posts. -->
+This is one of the largest changes to Shiny for Python's internals since its first release, and it brings Python and R to the same reactive model. The [Shiny for Python 1.9 release post](#) <!-- TODO: link to the 1.9 release post --> covers the rest of the release. If an app behaves differently after you upgrade, please let us know! As always, if you have questions or feedback, [join us on Discord](https://discord.gg/yMGCamUMnS) or open an issue on [posit-dev/py-shiny](https://github.com/posit-dev/py-shiny/issues/new). Happy Shiny-ing!
