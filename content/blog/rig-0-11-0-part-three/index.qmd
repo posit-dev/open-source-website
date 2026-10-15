@@ -46,7 +46,7 @@ functionalities: user mode R installations, R package and project management
 and much more. This is the third of three blog posts about the new rig
 release. This post is about managing R projects.
 
-The first post covered user mode R installations, the second focused on R
+The [first post](/blog/rig-0-11-0-part-one/) covered user mode R installations, the [second](/blog/rig-0-11-0-part-two/) focused on R
 packages.
 
 [Full changelog on the rig web site](https://rig.r-lib.org/news.html).
@@ -316,7 +316,7 @@ Use `--dev` to add a development dependency, e.g. testthat. These go into
 the `[dependency-groups.dev]` table.
 
 Packages from GitHub, GitLab, git repositories, URLs and local paths use the
-same syntax as `rig pkg install`, see the second post. Bioconductor or
+same syntax as `rig pkg install`, see the [second post](/blog/rig-0-11-0-part-two/). Bioconductor or
 other packages coming from the configured repositories work the same way as
 CRAN packages. To pin a package to a certain repository, e.g. an R universe,
 use `--with-repos`:
