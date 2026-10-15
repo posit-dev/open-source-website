@@ -11,7 +11,7 @@ description: >
   using an app no longer wait for each other. This post shows what changed, and how
   much faster it is.
 image: "feature.gif"
-image-alt: "All Together Now: concurrent async in Shiny for Python 1.9. A trace viewer compares OpenTelemetry spans for three users who each run two two-second outputs. In Shiny 1.8, the six spans run one after another and finish after 12 seconds. In Shiny 1.9, all six run at the same time and finish after 2 seconds."
+image-alt: "All Together Now: concurrent async in Shiny for Python 1.9. A trace viewer compares OpenTelemetry spans for three users who each run two two-second outputs. In Shiny 1.8, the six spans run one after another and finish after 12 seconds. In Shiny 1.9, all six run at the same time and finish after 2 seconds. For Halloween, a skeleton in the closet peeks out from behind the top-left corner of the trace viewer, with one bony hand over the top edge and the other on the left side."
 topics:
   - Interactive Apps
 software:
@@ -28,7 +28,7 @@ math: true
 
 * [A slow `await` in one session no longer blocks other sessions](#one-slow-user-no-longer-blocks-everyone), so the users of an app no longer wait for each other.
 * [Async outputs in the same session now run concurrently](#async-outputs-run-at-the-same-time), so a page with three slow outputs is ready in one second instead of three.
-* [`reactive.lock()` is deprecated](#reactivelock-is-deprecated), and the new [`session.run_once_when_idle()`](#new-sessionrun_once_when_idle) provides a way to change reactive state from a background task.
+* [`reactive.lock()` is deprecated](#reactivelock-is-deprecated), and the new [`session.run_once_when_idle()`](#new-run_once_when_idle) provides a way to change reactive state from a background task.
 
 
 ## One slow user no longer blocks everyone
@@ -194,7 +194,7 @@ latest.set(new_value)
 If your code used `reactive.lock()` to keep two pieces of your own code from running at the same time, create your own [`asyncio.Lock`](https://docs.python.org/3/library/asyncio-sync.html#asyncio.Lock) for that.
 
 
-## New: `session.run_once_when_idle()`
+## New: `run_once_when_idle()`
 
 ::: callout-warning
 ## Draft: doc link needs updating
@@ -223,3 +223,143 @@ The demo apps in this post, with the live OpenTelemetry timeline, are in <!-- TO
 ## In closing
 
 This is one of the largest changes to Shiny for Python's internals since its first release, and it brings Python and R to the same reactive model. The [Shiny for Python 1.9 release post](#) <!-- TODO: link to the 1.9 release post --> covers the rest of the release. If an app behaves differently after you upgrade, please let us know! As always, if you have questions or feedback, [join us on Discord](https://discord.gg/yMGCamUMnS) or open an issue on [posit-dev/py-shiny](https://github.com/posit-dev/py-shiny/issues/new). Happy Shiny-ing!
+
+```{=html}
+<!-- Halloween easter egg: when the end of the post scrolls into view, a skeleton
+     rises from the bottom of the screen and waves while bats fly past. It plays
+     once per page view, is skipped for readers who prefer reduced motion, and a
+     click anywhere dismisses it. -->
+<div id="spooky-egg-trigger" aria-hidden="true"></div>
+
+<script>
+(function () {
+  const trigger = document.getElementById("spooky-egg-trigger");
+  if (!trigger || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const BONE = "#EEE9DC";
+  const OUTLINE = "#7D7563";
+  const DURATION = 7000;
+
+  const bones = [
+    "M-2 92 L-50 99", "M2 92 L50 99",
+    "M-50 101 L-60 168", "M-60 170 L-54 232",
+    "M50 101 L80 62",
+  ];
+  for (let i = 0; i < 6; i++) {
+    const y = 104 + i * 15, w = 38 - Math.abs(i - 1.5) * 3;
+    bones.push(`M-4 ${y} C${-w} ${y - 4} ${-w - 2} ${y + 12} -6 ${y + 10}`);
+    bones.push(`M4 ${y} C${w} ${y - 4} ${w + 2} ${y + 12} 6 ${y + 10}`);
+  }
+  const strokes = (paths, width, color) => paths
+    .map((d) => `<path d="${d}" fill="none" stroke="${color}" stroke-width="${width}" stroke-linecap="round"/>`)
+    .join("");
+  let spine = "";
+  for (let y = 76; y < 240; y += 10) {
+    spine += `<rect x="-4.5" y="${y}" width="9" height="7" rx="2.5" fill="${BONE}" stroke="${OUTLINE}"/>`;
+  }
+  const forearm = ["M80 62 L92 8"];
+
+  const skeleton = `
+    <svg class="spooky-skeleton" viewBox="-80 -14 190 282" aria-hidden="true">
+      ${spine}
+      ${strokes(bones, 7.5, OUTLINE)}${strokes(bones, 4.5, BONE)}
+      <g class="spooky-forearm">
+        ${strokes(forearm, 7.5, OUTLINE)}${strokes(forearm, 4.5, BONE)}
+        <circle cx="93" cy="2" r="7" fill="${BONE}" stroke="${OUTLINE}" stroke-width="1.5"/>
+      </g>
+      <circle cx="-54" cy="238" r="7" fill="${BONE}" stroke="${OUTLINE}" stroke-width="1.5"/>
+      <ellipse cx="-17" cy="254" rx="17" ry="12" fill="${BONE}" stroke="${OUTLINE}" stroke-width="1.5"/>
+      <ellipse cx="17" cy="254" rx="17" ry="12" fill="${BONE}" stroke="${OUTLINE}" stroke-width="1.5"/>
+      <circle cx="0" cy="32" r="30" fill="${BONE}" stroke="${OUTLINE}" stroke-width="1.5"/>
+      <rect x="-17" y="50" width="34" height="22" rx="7" fill="${BONE}" stroke="${OUTLINE}" stroke-width="1.5"/>
+      <rect x="-15" y="48" width="30" height="6" fill="${BONE}"/>
+      <ellipse cx="-11" cy="33" rx="8" ry="9" fill="#0B2238"/>
+      <ellipse cx="11" cy="33" rx="8" ry="9" fill="#0B2238"/>
+      <circle cx="-13" cy="31" r="1.8" fill="#6FC1EE"/>
+      <circle cx="9" cy="31" r="1.8" fill="#6FC1EE"/>
+      <path d="M0 43 L-4 51 L4 51 Z" fill="#0B2238"/>
+      <g stroke="#0B2238" stroke-width="1.3">
+        <line x1="-12" x2="12" y1="62" y2="62"/>
+        <line x1="-7" x2="-7" y1="58" y2="66"/>
+        <line x1="0" x2="0" y1="58" y2="66"/>
+        <line x1="7" x2="7" y1="58" y2="66"/>
+      </g>
+    </svg>`;
+  const bat = `
+    <svg viewBox="0 0 40 18" aria-hidden="true"><g class="spooky-wings">
+      <path fill="#2B2B38" d="M20 7 C18 4 16 3 14 4 C10 0 4 0 0 5 C4 5 6 7 7 10 C9 8 12 8 13 11 C15 9 17 10 18 12 L20 15 L22 12 C23 10 25 9 27 11 C28 8 31 8 33 10 C34 7 36 5 40 5 C36 0 30 0 26 4 C24 3 22 4 20 7 Z"/>
+      <circle cx="18.6" cy="8" r="0.9" fill="#FFB300"/><circle cx="21.4" cy="8" r="0.9" fill="#FFB300"/>
+    </g></svg>`;
+
+  const css = `
+    #spooky-egg { position: fixed; inset: 0; pointer-events: none; z-index: 9999; overflow: hidden; }
+    #spooky-egg.leaving { transition: opacity 0.4s; opacity: 0; }
+    .spooky-skeleton {
+      position: absolute; right: 6vw; bottom: -70px; width: clamp(120px, 16vw, 180px);
+      animation: spooky-rise ${DURATION}ms ease-in-out both;
+    }
+    .spooky-forearm { transform-origin: 80px 62px; animation: spooky-wave 0.5s ease-in-out 0.9s 9 alternate; }
+    .spooky-bat { position: absolute; left: 0; width: clamp(34px, 4vw, 52px); animation: spooky-fly linear both; }
+    .spooky-wings { transform-origin: 20px 9px; animation: spooky-flap 0.16s ease-in-out infinite alternate; }
+    .spooky-note {
+      position: absolute; right: calc(6vw + clamp(120px, 16vw, 180px)); bottom: 120px;
+      padding: 0.5em 0.9em; border-radius: 1em; background: #0F1B2A; color: #DCEEFB;
+      font-weight: 600; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      animation: spooky-note ${DURATION}ms ease-in-out both;
+    }
+    @media (max-width: 600px) {
+      .spooky-note { right: 12px; bottom: 130px; max-width: 70vw; }
+    }
+    @keyframes spooky-rise {
+      0% { transform: translateY(105%); } 13% { transform: translateY(0); }
+      86% { transform: translateY(0); } 100% { transform: translateY(105%); }
+    }
+    @keyframes spooky-wave { from { transform: rotate(-18deg); } to { transform: rotate(14deg); } }
+    @keyframes spooky-flap { from { transform: scaleY(1); } to { transform: scaleY(0.35); } }
+    @keyframes spooky-fly {
+      0% { transform: translate(-10vw, 0); } 25% { transform: translate(20vw, -4vh); }
+      50% { transform: translate(50vw, 3vh); } 75% { transform: translate(80vw, -5vh); }
+      100% { transform: translate(112vw, -2vh); }
+    }
+    @keyframes spooky-note {
+      0%, 16% { opacity: 0; transform: scale(0.6); } 22% { opacity: 1; transform: scale(1); }
+      82% { opacity: 1; transform: scale(1); } 90%, 100% { opacity: 0; transform: scale(0.8); }
+    }`;
+
+  function play() {
+    const style = document.createElement("style");
+    style.textContent = css;
+    const egg = document.createElement("div");
+    egg.id = "spooky-egg";
+    egg.setAttribute("aria-hidden", "true");
+    const bats = [[18, 4200, 200], [30, 5000, 700], [10, 3800, 1200]]
+      .map(([top, duration, delay]) =>
+        `<div class="spooky-bat" style="top:${top}vh; animation-duration:${duration}ms; animation-delay:${delay}ms">${bat}</div>`)
+      .join("");
+    egg.innerHTML = skeleton + bats + `<div class="spooky-note">Boo! Happy Halloween from the Shiny team</div>`;
+    document.head.appendChild(style);
+    document.body.appendChild(egg);
+
+    let done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      egg.classList.add("leaving");
+      setTimeout(() => { egg.remove(); style.remove(); }, 400);
+      document.removeEventListener("pointerdown", finish);
+    }
+    document.addEventListener("pointerdown", finish);
+    setTimeout(finish, DURATION);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries.some((entry) => entry.isIntersecting)) {
+      observer.disconnect();
+      play();
+    }
+  });
+  observer.observe(trigger);
+})();
+</script>
+```
