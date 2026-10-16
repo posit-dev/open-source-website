@@ -1,0 +1,32 @@
+---
+title: "Posit Assistant Can Now Drive Positron"
+date: 2026-10-15
+people:
+  - Jonathan McPherson
+description: >
+  Posit Assistant can now take actions in Positron on your behalf: running code, editing files, and navigating the IDE while you stay in control.
+image: ""
+image-alt: ""
+topics:
+  - Artificial Intelligence
+software:
+  - positron
+languages:
+  - R
+  - Python
+source: positron
+hidesubscription: false
+# Uncomment to credit a stock photo:
+# photo:
+#   url: https://unsplash.com/photos/...
+#   author: Photographer Name
+---
+
+<!--
+TODO:
+- [ ] Add image (1920×1080 PNG or JPG) and image-alt
+- [ ] Trim topics, software, and languages to only what applies
+- [ ] Open a PR against main for a Netlify preview
+-->
+
+Post content goes here.
