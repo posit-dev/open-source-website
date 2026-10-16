@@ -5,11 +5,10 @@ people:
   - Josh Taillon
   - Barret Schloerke
 description: >
-  Shiny for Python 1.9 changes how the reactive system runs async code. The
-  biggest change is that slow work in your app, such as a database query or an
-  API call, no longer waits in line: a session's outputs now run all together,
-  and the people using an app no longer wait for each other. This post shows
-  what changed, and how much faster it is.
+  Shiny for Python 1.9 introduces some big changes in how the reactive system
+  runs  async code. The biggest difference is that slow work in your app, such
+  as database queries or API calls, can now run concurrently, and multiple
+  people using an app no longer have to wait for each others' slow operations. 
 image: feature.gif
 image-alt: >-
   All Together Now: concurrent async in Shiny for Python 1.9. A trace viewer
@@ -34,11 +33,19 @@ math: true
 
 [Shiny for Python 1.9](https://pypi.org/project/shiny/) overhauls how the reactive system runs async code, and now uses a concurrency model similar to Shiny for R. This post explains what changed, and shows how much faster an app gets when it awaits slow work. The key changes:
 
-- [A slow `await` in one session no longer blocks other sessions](#one-slow-user-no-longer-blocks-everyone), so the users of an app no longer wait for each other.
-- [Async outputs in the same session now run concurrently](#async-outputs-run-at-the-same-time), so a page with three slow outputs is ready in one second instead of three.
-- [`reactive.lock()` is deprecated](#reactivelock-is-deprecated), and the new [`session.run_once_when_idle()`](#new-run_once_when_idle) provides a way to change reactive state from a background task.
+- [A slow `await` in one session no longer blocks other sessions](#one-slow-user-no-longer-blocks-everyone), so individual users of an app no longer wait for each other.
+- [Async outputs in the same session now run concurrently](#async-outputs-run-at-the-same-time), so a page with multiple slow outputs run in parallel rather than serially.
+- [`reactive.lock()` has been removed](#reactivelock-has-been-removed), and the new [`session.run_once_when_idle()`](#new-run_once_when_idle) provides a way to change reactive state from a background task.
 
-Your app still runs on one thread, on a single `asyncio` event loop, and code that keeps Python busy still blocks every session (see [Concurrency needs `await`](#concurrency-needs-await)). What changed is when sessions take turns. Before 1.9, Shiny took one lock for the whole process while it ran a session's reactive updates, and released it only after every `await` in them had finished. The lock made sure that an input couldn't change while an output that read it was still computing. In 1.9, each session sends its outputs before it applies that user's next input, the same model that Shiny for R uses. Within that rule, the reactive system starts each effect as a task and moves on, so while one session awaits a query, the event loop runs the others.
+These changes only affect `async` code. Your app still runs on one thread with a single `asyncio` event loop, and synchronous
+code still blocks other sessions (see [Concurrency needs `await`](#concurrency-needs-await)). The difference is that an async
+task now waits for slow work without blocking other tasks, in its own session or in others.
+
+Before 1.9, one lock for the whole process serialized all reactive updates. The lock made sure that an input could not
+change while an output that read it was still computing. In 1.9, the lock is gone, and instead each session sends its
+outputs before it applies that user's next input --- the same model as Shiny for R.
+Within that rule, the reactive system starts each effect as its own task and moves on. While one session awaits a query, the
+event loop is free to run other tasks, making the app more responsive for everyone.
 
 ## One slow user no longer blocks everyone
 
@@ -205,7 +212,7 @@ Most apps won't need any changes, but here are some differences that you might s
 - **Messages from `session.on_flushed()` callbacks reach the browser.** A callback that sends a message, for example `ui.update_text()`, now has its message sent to the client ([#1889](https://github.com/posit-dev/py-shiny/issues/1889)).
 - **OpenTelemetry spans follow the session.** There is now one `reactive_update` span for each session's cycle, as in Shiny for R. It has the session's `session.id`, and the session's calc, effect and output spans are its children.
 
-## `reactive.lock()` is deprecated
+## `reactive.lock()` has been removed
 
 Shiny itself no longer uses `reactive.lock()`, and in 1.9 it no longer does anything. Calling it emits a `ShinyDeprecationWarning` and returns a lock that never blocks. The `reactive.lock()` API will be completely removed in a future version of Shiny for Python.
 
