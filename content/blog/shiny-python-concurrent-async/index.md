@@ -38,6 +38,8 @@ math: true
 - [Async outputs in the same session now run concurrently](#async-outputs-run-at-the-same-time), so a page with three slow outputs is ready in one second instead of three.
 - [`reactive.lock()` is deprecated](#reactivelock-is-deprecated), and the new [`session.run_once_when_idle()`](#new-run_once_when_idle) provides a way to change reactive state from a background task.
 
+Your app still runs on one thread, on a single `asyncio` event loop. Shiny 1.9 doesn't use free-threaded Python or worker threads, and code that keeps Python busy still blocks every session (see [Concurrency needs `await`](#concurrency-needs-await)). What changed is when sessions take turns. Before 1.9, Shiny took one lock for the whole process while it ran a session's reactive updates, and released it only after every `await` in them had finished. The lock made sure that an input couldn't change while an output that read it was still computing, so removing it meant giving each session that guarantee on its own. In 1.9, each session sends its outputs before it applies that user's next input, the same model that Shiny for R uses. Within that rule, the reactive system starts each effect as a task and moves on, so while one session awaits a query, the event loop runs the others.
+
 ## One slow user no longer blocks everyone
 
 Until now, Shiny for Python processed reactivity behind one lock for the whole process, `reactive.lock()`. When a user's action invalidated an effect or an output, Shiny took the lock, ran everything that was invalidated, and released the lock only when all of it had finished. This model meant that any other reactive effects were blocked for as long as an operation kept the lock. During that time, no other session in the process (*e.g.*, a separate tab or another user) could update anything, not even an output that had nothing to do with the query.
@@ -259,7 +261,8 @@ The demo apps in this post, with the live OpenTelemetry timeline, are in <!-- TO
 This is one of the largest changes to Shiny for Python's internals since its first release, and it brings Python and R to the same reactive model. The [Shiny for Python 1.9 release post](#) <!-- TODO: link to the 1.9 release post --> covers the rest of the release. If an app behaves differently after you upgrade, please let us know! As always, if you have questions or feedback, [join us on Discord](https://discord.gg/yMGCamUMnS) or open an issue on [posit-dev/py-shiny](https://github.com/posit-dev/py-shiny/issues/new). Happy Shiny-ing!
 
 <!-- Halloween easter egg: when the end of the post scrolls into view, a skeleton
-     rises from the bottom of the screen and waves while bats fly past. It plays
+     rises from the bottom of the screen and waves, jack-o'-lanterns pop up, and bats
+     fly past. It plays
      once per page view, is skipped for readers who prefer reduced motion, and a
      click anywhere dismisses it. -->
 <div id="spooky-egg-trigger" aria-hidden="true"></div>
@@ -324,16 +327,34 @@ This is one of the largest changes to Shiny for Python's internals since its fir
       <path fill="#2B2B38" d="M20 7 C18 4 16 3 14 4 C10 0 4 0 0 5 C4 5 6 7 7 10 C9 8 12 8 13 11 C15 9 17 10 18 12 L20 15 L22 12 C23 10 25 9 27 11 C28 8 31 8 33 10 C34 7 36 5 40 5 C36 0 30 0 26 4 C24 3 22 4 20 7 Z"/>
       <circle cx="18.6" cy="8" r="0.9" fill="#FFB300"/><circle cx="21.4" cy="8" r="0.9" fill="#FFB300"/>
     </g></svg>`;
+  const pumpkin = `
+    <svg viewBox="0 0 60 56" aria-hidden="true">
+      <path d="M28 10 C27 5 29 2 34 1 L35 4 C32 5 31 7 32 10 Z" fill="#5B7F2B" stroke="#33461A" stroke-width="1"/>
+      <ellipse cx="30" cy="33" rx="27" ry="21" fill="#F28C28" stroke="#8A3B0B" stroke-width="1.5"/>
+      <ellipse cx="30" cy="33" rx="16" ry="21" fill="none" stroke="#D9701A" stroke-width="1.3"/>
+      <ellipse cx="30" cy="33" rx="6" ry="21" fill="none" stroke="#D9701A" stroke-width="1.3"/>
+      <g fill="#FFD54F" stroke="#8A3B0B" stroke-width="0.8">
+        <path d="M15 28 L24 28 L19.5 20 Z"/>
+        <path d="M36 28 L45 28 L40.5 20 Z"/>
+        <path d="M28 31 L32 31 L30 35 Z"/>
+        <path d="M13 37 L18 41 L22 37 L26 42 L30 37 L34 42 L38 37 L42 41 L47 37 Q44 49 30 49 Q16 49 13 37 Z"/>
+      </g>
+    </svg>`;
 
   const css = `
     #spooky-egg { position: fixed; inset: 0; pointer-events: none; z-index: 9999; overflow: hidden; }
     #spooky-egg.leaving { transition: opacity 0.4s; opacity: 0; }
+    .spooky-pumpkin svg, .spooky-bat svg { display: block; width: 100%; height: auto; }
     .spooky-skeleton {
       position: absolute; right: 6vw; bottom: -70px; width: clamp(120px, 16vw, 180px);
       animation: spooky-rise ${DURATION}ms ease-in-out both;
     }
     .spooky-forearm { transform-origin: 80px 62px; animation: spooky-wave 0.5s ease-in-out 0.9s 9 alternate; }
-    .spooky-bat { position: absolute; left: 0; width: clamp(34px, 4vw, 52px); animation: spooky-fly linear both; }
+    .spooky-bat { position: absolute; left: 0; width: clamp(64px, 8vw, 104px); animation: spooky-fly linear both; }
+    .spooky-pumpkin {
+      position: absolute; bottom: 4px;
+      animation: spooky-pop cubic-bezier(0.3, 1.4, 0.5, 1) both;
+    }
     .spooky-wings { transform-origin: 20px 9px; animation: spooky-flap 0.16s ease-in-out infinite alternate; }
     .spooky-note {
       position: absolute; right: calc(6vw + clamp(120px, 16vw, 180px)); bottom: 120px;
@@ -347,6 +368,10 @@ This is one of the largest changes to Shiny for Python's internals since its fir
     @keyframes spooky-rise {
       0% { transform: translateY(105%); } 13% { transform: translateY(0); }
       86% { transform: translateY(0); } 100% { transform: translateY(105%); }
+    }
+    @keyframes spooky-pop {
+      0% { transform: translateY(115%); } 12% { transform: translateY(0); }
+      86% { transform: translateY(0); } 100% { transform: translateY(115%); }
     }
     @keyframes spooky-wave { from { transform: rotate(-18deg); } to { transform: rotate(14deg); } }
     @keyframes spooky-flap { from { transform: scaleY(1); } to { transform: scaleY(0.35); } }
@@ -370,7 +395,12 @@ This is one of the largest changes to Shiny for Python's internals since its fir
       .map(([top, duration, delay]) =>
         `<div class="spooky-bat" style="top:${top}vh; animation-duration:${duration}ms; animation-delay:${delay}ms">${bat}</div>`)
       .join("");
-    egg.innerHTML = skeleton + bats + `<div class="spooky-note">Boo! Happy Halloween from the Shiny team</div>`;
+    // [left, width, delay] for each jack-o'-lantern; they all sink at the end.
+    const pumpkins = [[5, 76, 600], [17, 56, 900], [30, 88, 1150], [45, 62, 1400]]
+      .map(([left, width, delay]) =>
+        `<div class="spooky-pumpkin" style="left:${left}vw; width:clamp(${Math.round(width * 0.6)}px, ${width / 12}vw, ${width}px); animation-delay:${delay}ms; animation-duration:${DURATION - delay}ms">${pumpkin}</div>`)
+      .join("");
+    egg.innerHTML = skeleton + pumpkins + bats + `<div class="spooky-note">Boo! Happy Halloween from the Shiny team!</div>`;
     document.head.appendChild(style);
     document.body.appendChild(egg);
 
