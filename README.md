@@ -407,6 +407,64 @@ uv run scripts/validate-blog-posts.py --no-date-check
 
 If your agent supports Agent Skills, the `check-post` skill runs validation interactively and can offer fixes.
 
+### Cheat Sheets
+
+Each cheat sheet is a directory under `content/resources/cheatsheets/<slug>/` with an `_index.md`, the PDF, page thumbnails (`page-N.png`), translation PDFs, and source files:
+
+```yaml
+---
+title: Data tidying with tidyr
+image: page-1.png
+resource_type: cheatsheet
+by: posit                 # or community (a missing `by` counts as community)
+date: '2026-08-01'
+description: Reshape data to tidy format with tidyr ...
+download_url: tidyr.pdf
+people: [Mine Çetinkaya-Rundel, ...]   # authors only
+thumbnails: [page-1.png, page-2.png]
+software: [tidyr]         # existing content/software/ slugs
+languages: [R]
+translations:
+- language: Spanish
+  lang: es
+  file: tidyr_es.pdf
+  edition: tidyr 1.3.1, tibble 3.2.1
+  updated: 2024-05        # or `added:` when the PDF has no date
+  people: [David Díaz Rodríguez]   # translators; edition, date, and translators show in a tooltip
+---
+```
+
+The overview page has a **By** filter (Posit / Community) that defaults to Posit.
+
+Source files (`*.key`, `*.pptx`, `*.ai`, plus LaTeX/SVG sources under `source/`) live next to the PDF. The build doesn't need them: Hugo ignores them and the site doesn't link to them, so they're only available in this repository.
+
+Keynote, PowerPoint, and Illustrator files (~800 MB) are stored with [Git LFS](https://git-lfs.com/). To keep clones small, `.lfsconfig` excludes them from downloads, so after cloning (or pulling) they're small pointer files. To work on a cheat sheet's source, install Git LFS (`git lfs install` once) and download only what you need. `--exclude=""` is required to override the exclusion in `.lfsconfig`:
+
+```bash
+# One cheat sheet
+git lfs pull --include="content/resources/cheatsheets/tidyr/*" --exclude=""
+
+# All cheat sheet source files
+git lfs pull --include="content/resources/cheatsheets/**" --exclude=""
+```
+
+Scripts:
+
+```bash
+# Compress PDFs without losing accessibility tags
+scripts/compress-cheatsheet-pdf.py content/resources/cheatsheets/tidyr/*.pdf
+
+# Regenerate page thumbnails
+scripts/create-cheatsheet-thumbnails.py --pdf content/resources/cheatsheets/tidyr/tidyr.pdf
+
+# Check all cheat sheets (missing files, labels, software slugs, LFS, tags)
+scripts/validate-cheatsheets.py
+
+# Re-sync cheat sheets from a local clone of rstudio/cheatsheets,
+# using the per-sheet data in scripts/cheatsheet-migration.yaml
+scripts/migrate-cheatsheet.py --old-repo ~/repos/rstudio/cheatsheets tidyr
+```
+
 ### Adding Team Members
 
 Create a new person profile:
