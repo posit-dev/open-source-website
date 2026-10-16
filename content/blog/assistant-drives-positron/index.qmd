@@ -1,12 +1,12 @@
 ---
-title: "Posit Assistant Can Now Drive Positron"
-date: 2026-10-15
+title: "A Deeper Positron Integration for Posit Assistant"
+date: 2026-10-21
 people:
   - Jonathan McPherson
 description: >
-  Posit Assistant can now take actions in Positron on your behalf: running code, editing files, and navigating the IDE while you stay in control.
+  Posit Assistant can now tap into Positron's packages, interpreters, consoles, and publishing tools, so its answers and actions match your actual environment.
 image: "assistant-drives-positron.png"
-image-alt: ""
+image-alt: "Posit Assistant operating Positron as though it were a motor vehicle"
 topics:
   - Artificial Intelligence
 software:
@@ -28,7 +28,7 @@ Starting with this month's release (2026.10), Posit Assistant can now interact w
 
 These new features are currently in preview; enable them with the [Assistant: Preview Features](positron://settings/assistant.previewFeatures) setting in Positron.
 
-![](preview-features.png){fig-align="center" fig-alt="The Assitant: Preview Features setting in Positron"}
+![](preview-features.png){fig-align="center" fig-alt="The Assistant: Preview Features setting in Positron, in the enabled state"}
 
 Enabled? Here are some things you can try:
 
@@ -48,7 +48,7 @@ or
 
 ## Interpreters
 
-Positron maintains an inventory of every R and Python installation on your system so that can recommend the best one for a new project, show a list when you ask to open a console, and so on. R and Python environment management and discovery is a  complex topic with dozens of different packaging systems and conventions in play, so this inventory is invaluable.
+Positron maintains an inventory of every R and Python installation on your system so that it can recommend the best one for a new project, show a list when you ask to open a console, and so on. R and Python environment management and discovery is a  complex topic with dozens of different packaging systems and conventions in play, so this inventory is invaluable.
 
 Now Posit Assistant can see that list, too, answer questions about it, and set up new environments for you in Positron.
 
