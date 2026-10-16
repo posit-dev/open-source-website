@@ -1,0 +1,68 @@
+name: Sync Courses
+
+# Syncs courses and learning paths from Posit Academy into
+# content/resources/courses/ and opens (or updates) a pull request with the
+# changes. The "Protect main" ruleset requires a reviewed PR, so changes go
+# live when the PR is merged, which triggers the production deploy.
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # 6 AM UTC, two hours before the nightly production deploy
+  workflow_dispatch:
+
+concurrency:
+  group: sync-courses
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-courses:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Sync courses
+        env:
+          SKILLJAR_API_KEY: ${{ secrets.SKILLJAR_API_KEY }}
+          # Keep log lines unwrapped in the job log and PR description
+          COLUMNS: "200"
+        run: |
+          ./scripts/sync-courses.py 2>&1 | tee sync-courses.log
+
+      - name: Write PR description
+        run: |
+          {
+            echo "Nightly sync of [Posit Academy courses](https://academy.posit.co/page/all-courses) into \`content/resources/courses/\`."
+            echo
+            echo "Review the changes below, then approve and merge to publish them."
+            echo
+            echo "<details open><summary>Sync log</summary>"
+            echo
+            echo '```'
+            grep -v "Skipped" sync-courses.log
+            echo '```'
+            echo
+            echo "</details>"
+            echo
+            echo "To adjust a course, add \`include\`, \`exclude\`, or \`override\` blocks to its \`_index.md\`; see \`scripts/sync-courses.py\`."
+          } > pr-body.md
+          rm sync-courses.log
+
+      - name: Create or update pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/sync-courses
+          delete-branch: true
+          add-paths: content/resources/courses
+          commit-message: Sync courses from Posit Academy
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          title: Sync courses from Posit Academy
+          body-path: pr-body.md
