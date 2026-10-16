@@ -164,6 +164,26 @@
             "userInteractionCount" .)) -}}
     {{- end -}}
 
+  {{- else if and (eq .Data.Singular "resource") (eq .Params.resource_type "course") -}}
+    {{- $ld = dict
+          "@context" "https://schema.org"
+          "@type" "Course"
+          "name" .Title
+          "url" .Permalink
+          "provider" (dict "@type" "Organization" "name" "Posit Academy" "url" "https://academy.posit.co/")
+    -}}
+    {{- with .Params.description -}}
+      {{- $ld = merge $ld (dict "description" (. | plainify)) -}}
+    {{- end -}}
+    {{- with .Params.academy_url -}}
+      {{- $ld = merge $ld (dict "sameAs" (slice .)) -}}
+    {{- end -}}
+    {{- with .Params.image -}}
+      {{- with $.Resources.Get . -}}
+        {{- $ld = merge $ld (dict "image" .Permalink) -}}
+      {{- end -}}
+    {{- end -}}
+
   {{- else if and (eq .Data.Singular "resource") (eq .Params.resource_type "cheatsheet") -}}
     {{- $ld = dict
           "@context" "https://schema.org"

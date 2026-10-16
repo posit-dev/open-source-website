@@ -1,7 +1,8 @@
 {{- $resourceType := .Params.resource_type_filter -}}
 {{- $resources := where (site.GetPage "/resources").Pages "Params.resource_type" $resourceType -}}
 {{- $entries := slice -}}
-{{- range $resources.ByDate.Reverse -}}
+{{- $sorted := cond (eq $resourceType "course") $resources.ByWeight $resources.ByDate.Reverse -}}
+{{- range $sorted -}}
   {{- $entries = $entries | append (partial "item-index-entry.html" (dict "page" .)) -}}
 {{- end -}}
 {{- $entries | jsonify -}}

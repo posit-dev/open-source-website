@@ -157,6 +157,7 @@ tags:
         - event
         - video
         - cheatsheet
+        - course
 
 tutorial:
   search_help: [topic, date]
@@ -172,6 +173,32 @@ tutorial:
       direction: asc
   defaultSort: date
   filters:
+    - key: topics
+      label: Topics
+
+course:
+  search_help: [topic, duration]
+  sort:
+    - key: weight
+      label: Featured
+      type: number
+      direction: asc
+      default: true
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: weight
+  filters:
+    - key: type
+      label: Type
+      values:
+        - course
+        - learning path
     - key: topics
       label: Topics
 

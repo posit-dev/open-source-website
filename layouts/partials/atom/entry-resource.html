@@ -1,5 +1,5 @@
-{{- /* atom/entry-resource.html — one <entry> for a resource (cheatsheet, video,
-  tutorial, webinar). vr:type = resource; the specific kind is vr:resource_type. */ -}}
+{{- /* atom/entry-resource.html — one <entry> for a resource (cheatsheet, course,
+  video, tutorial, webinar). vr:type = resource; the specific kind is vr:resource_type. */ -}}
 {{- $page := .page -}}
 {{- $ext := $page.Params.external | default dict -}}
   <entry>
@@ -44,6 +44,17 @@
     {{- end }}
     {{- with $ext.channel }}
     <vr:channel>{{ . }}</vr:channel>
+    {{- end }}
+    {{- end }}
+    {{- if eq ($page.Params.resource_type | default "") "course" }}
+    {{- with $page.Params.course_type }}
+    <vr:course_type>{{ . }}</vr:course_type>
+    {{- end }}
+    {{- with $page.Params.academy_url }}
+    <vr:academy_url>{{ . }}</vr:academy_url>
+    {{- end }}
+    {{- with $page.Params.duration }}
+    <vr:duration>{{ . }}</vr:duration>
     {{- end }}
     {{- end }}
     {{ partial "atom/image.html" (dict "page" $page) -}}

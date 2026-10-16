@@ -15,8 +15,8 @@
   {{ $slug = $page.Path }}
 {{ else }}
   {{ $slug = .item }}
-  {{/* Shorthand: prefix cheatsheets/ and videos/ with resources/ */}}
-  {{ if or (hasPrefix $slug "cheatsheets/") (hasPrefix $slug "videos/") }}
+  {{/* Shorthand: prefix cheatsheets/, courses/, and videos/ with resources/ */}}
+  {{ if or (hasPrefix $slug "cheatsheets/") (hasPrefix $slug "courses/") (hasPrefix $slug "videos/") }}
     {{ $slug = printf "resources/%s" $slug }}
   {{ end }}
   {{ $page = site.GetPage $slug }}
@@ -55,6 +55,9 @@
 {{ $card_settings := index site.Data.items $card_type }}
 {{ if not $card_settings }}
   {{ warnf "item partial: no card_settings in data/items.yaml for card_type '%s' (slug: '%s')" $card_type $slug }}
+{{ end }}
+{{ if and (eq $card_type "courses") (eq $page.Params.course_type "learning path") }}
+  {{ $card_settings = index site.Data.items "learning-paths" }}
 {{ end }}
 
 {{/* Auto-hide badge when item type matches the current page's section */}}
@@ -158,12 +161,18 @@
 {{ end }}
 
 {{/* ============================================================
-     DURATION (videos only)
+     DURATION (videos and courses; number of courses for learning paths)
      ============================================================ */}}
 {{ $duration := "" }}
 {{ if eq $card_type "videos" }}
   {{ with $page.Params.external.duration }}
     {{ $duration = partial "format-duration.html" . }}
+  {{ end }}
+{{ else if eq $card_type "courses" }}
+  {{ with $page.Params.courses }}
+    {{ $duration = printf "%d %s" (len .) (cond (eq (len .) 1) "course" "courses") }}
+  {{ else }}
+    {{ $duration = $page.Params.duration | default "" }}
   {{ end }}
 {{ end }}
 
@@ -517,6 +526,16 @@
         {{ with $location }}
         {{ if $date }}<span>|</span>{{ end }}
         <span>{{ . }}</span>
+        {{ end }}
+        {{ if eq $card_type "courses" }}
+          {{ if eq $page.Params.course_type "learning path" }}
+          {{ if $date }}<span>|</span>{{ end }}
+          <span>Learning path</span>
+          {{ end }}
+          {{ with $duration }}
+          <span>|</span>
+          <span>{{ . }}</span>
+          {{ end }}
         {{ end }}
       </div>
       {{ if $is_blog }}
