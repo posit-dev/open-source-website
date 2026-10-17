@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   id: iwtztulrk4fw
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/cl6mlkvy7ixu/promo-image.1791515263.svg
   kind: course
-  modified_at: '2026-10-09T03:07:43.806945Z'
+  modified_at: '2026-10-16T17:09:49.890889Z'
   order: 24
   slug: introduction-to-version-control
   title: Introduction to Version Control
