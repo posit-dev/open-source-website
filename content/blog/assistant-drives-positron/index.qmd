@@ -1,5 +1,5 @@
 ---
-title: "A Deeper Positron Integration for Posit Assistant"
+title: "A deeper Positron integration for Posit Assistant"
 date: 2026-10-21
 people:
   - Jonathan McPherson
