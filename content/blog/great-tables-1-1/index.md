@@ -8,7 +8,7 @@ description: >
   HTML output by default.
 people:
   - Rich Iannone
-date: '2026-10-20'
+date: '2026-10-19'
 image: assets/great-tables-v-1-1-0-release.png
 image-alt: The Great Tables wordmark above a smiling table illustration and the text "The v1.0.0 and v1.1.0 releases"
 software:
