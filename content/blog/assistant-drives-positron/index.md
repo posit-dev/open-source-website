@@ -1,6 +1,6 @@
 ---
 title: A Deeper Positron Integration for Posit Assistant
-date: 2026-10-15T00:00:00.000Z
+date: 2026-10-21T00:00:00.000Z
 people:
   - Jonathan McPherson
 description: >
