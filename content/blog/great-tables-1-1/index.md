@@ -51,7 +51,7 @@ Some values have conventions of their own that a general-purpose number
 formatter cannot honor. A quantity like 1.75 hours reads more naturally
 as "1 3/4" in some contexts, a list of items is often labeled A, B, C
 rather than 1, 2, 3, and a chemical formula looks odd without its
-specialized typsetting (e.g., subscripts, brackets, etc.). Version
+specialized typesetting (e.g., subscripts, brackets, etc.). Version
 `1.0.0` adds formatters for each of these cases: `fmt_fraction()`,
 `fmt_index()`, and `fmt_chem()`.
 
