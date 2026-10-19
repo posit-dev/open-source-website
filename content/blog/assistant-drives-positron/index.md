@@ -1,5 +1,5 @@
 ---
-title: A Deeper Positron Integration for Posit Assistant
+title: A deeper Positron integration for Posit Assistant
 date: 2026-10-21T00:00:00.000Z
 people:
   - Jonathan McPherson
@@ -23,7 +23,7 @@ hidesubscription: false
 
 In earlier releases of Positron, Posit Assistant's ability to interact with Positron was mostly limited to the Console and Editor panes. It could run code in Positron, see what that code did, and make changes to your scripts and documents. This alone makes it a powerful data science agent ... but we can do better!
 
-Starting with this month's release (2026.10), Posit Assistant can now interact with nearly the entire Positron surface. This is less about replacing pointing and clicking with prompts (although you can do a bit of that too) and more about revealing things to Assistant that Positron already knows, giving it more and better context for your questions about your data or Positron itself.
+Starting with [this month's release](../../blog/2026-10-13_positron-2026-10-release/) (2026.10), Posit Assistant can now interact with nearly the entire Positron surface. This is less about replacing pointing and clicking with prompts (although you can do a bit of that too) and more about revealing things to Assistant that Positron already knows, giving it more and better context for your questions about your data or Positron itself.
 
 These new features are currently in preview; enable them with the [Assistant: Preview Features](positron://settings/assistant.previewFeatures) setting in Positron.
 
