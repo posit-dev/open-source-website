@@ -39,6 +39,13 @@
   {{ $typeLabel = .badge_text }}
 {{ end }}
 
+{{/* Books with a subtitle show the subtitle instead of the description (see item.html) */}}
+{{ if eq $itemType "books" }}
+  {{ with $page.Params.subtitle }}
+    {{ $description = . | strings.TrimSpace | strings.TrimSuffix "." | truncate 200 "" }}
+  {{ end }}
+{{ end }}
+
 {{/* Section flags */}}
 {{ $is_event := eq $page.Section "events" }}
 {{ $is_blog := eq $page.Section "blog" }}
@@ -93,7 +100,8 @@
 {{ else if or $is_blog $is_resource }}
   {{ with $page.Params.date }}
     {{ $date = time.Format "2006-01-02" . }}
-    {{ $dateFormatted = time.Format "Jan 2, 2006" . }}
+    {{/* Books show only month and year (see item.html) */}}
+    {{ $dateFormatted = time.Format (cond (eq $itemType "books") "January 2006" "Jan 2, 2006") . }}
   {{ end }}
 {{ end }}
 
