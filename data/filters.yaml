@@ -57,6 +57,33 @@ topics:
         - event
         - video
         - cheatsheet
+        - book
+
+book:
+  search_help: [author, topic, language, date]
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: topics
+      label: Topics
+    - key: languages
+      label: Languages
+      values:
+        - Python
+        - R
+        - Other
+      other:
+        - Python
+        - R
 
 cheatsheet:
   search_help: [author, topic, language, date]
@@ -158,6 +185,7 @@ tags:
         - video
         - cheatsheet
         - course
+        - book
 
 tutorial:
   search_help: [topic, date]

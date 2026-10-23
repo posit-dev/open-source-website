@@ -328,6 +328,15 @@
       </div>
       {{ end }}
     {{ end }}
+
+    {{- /* Read online button for books */ -}}
+    {{ if eq .Params.resource_type "book" }}
+      {{ with .Params.read_url }}
+      <div class="mt-6">
+        {{ partial "button.html" (dict "url" . "text" "Read online" "icon" "boxicons--book-open-filled") }}
+      </div>
+      {{ end }}
+    {{ end }}
   </div>
   {{ end }}
 
@@ -419,8 +428,8 @@
         </div>
         {{ end }}
 
-        <!-- Resource Links (skip for cheatsheets - shown at top - and courses) -->
-        {{ if not (in (slice "video" "cheatsheet" "course") .Params.resource_type) }}
+        <!-- Resource Links (skip for cheatsheets - shown at top - and courses and books) -->
+        {{ if not (in (slice "video" "cheatsheet" "course" "book") .Params.resource_type) }}
         <div class="flex flex-wrap gap-2 mt-6">
           {{ $resourceUrl := or .Params.video_url .Params.url .Params.external.url }}
           {{ with $resourceUrl }}

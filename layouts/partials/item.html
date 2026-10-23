@@ -15,8 +15,8 @@
   {{ $slug = $page.Path }}
 {{ else }}
   {{ $slug = .item }}
-  {{/* Shorthand: prefix cheatsheets/, courses/, and videos/ with resources/ */}}
-  {{ if or (hasPrefix $slug "cheatsheets/") (hasPrefix $slug "courses/") (hasPrefix $slug "videos/") }}
+  {{/* Shorthand: prefix books/, cheatsheets/, courses/, and videos/ with resources/ */}}
+  {{ if or (hasPrefix $slug "books/") (hasPrefix $slug "cheatsheets/") (hasPrefix $slug "courses/") (hasPrefix $slug "videos/") }}
     {{ $slug = printf "resources/%s" $slug }}
   {{ end }}
   {{ $page = site.GetPage $slug }}
@@ -85,6 +85,12 @@
 {{ $date := "" }}
 {{ if eq $card_type "events" }}
   {{ $date = partial "block/date_range.html" $page }}
+{{ else if eq $card_type "books" }}
+  {{/* Books store the full release date but show only month and year,
+       because publishers often announce only the month */}}
+  {{ with $page.Params.date }}
+    {{ $date = time.Format "January 2006" . }}
+  {{ end }}
 {{ else if and (ne $card_type "software") (ne $card_type "people") (ne $card_type "cheatsheets") }}
   {{ if $page.Params.date }}
     {{ $date = time.Format "Jan 2, 2006" $page.Params.date }}
@@ -96,6 +102,10 @@
      DESCRIPTION (max 3 lines enforced via CSS line-clamp-3)
      ============================================================ */}}
 {{ $description_field := $card_settings.description_field | default "description" }}
+{{/* Books with a subtitle show the subtitle instead of the description */}}
+{{ if and (eq $card_type "books") $page.Params.subtitle }}
+  {{ $description_field = "subtitle" }}
+{{ end }}
 {{ $description := index $page.Params $description_field | strings.TrimSpace | strings.TrimSuffix "." | replaceRE `[\x{1F600}-\x{1F64F}\x{1F300}-\x{1F5FF}\x{1F680}-\x{1F6FF}\x{2600}-\x{26FF}\x{2700}-\x{27BF}]` "" }}
 {{ $description = $page.RenderString (dict "display" "inline") $description }}
 {{ $description = $description | replaceRE `</p>` "<br><br>" | replaceRE `<p>` "" | strings.TrimSpace }}
@@ -205,16 +215,27 @@
 {{ $hero_topics := slice }}
 {{ $hero_tags := slice }}
 {{ $teams := slice }}
+{{ $edition := "" }}
+{{ $publisher := "" }}
 {{ if eq $format "hero" }}
 
-  {{/* GitHub link — software */}}
+  {{/* GitHub link — software and books */}}
+  {{ $githubLink := slice }}
   {{ with $page.Params.github }}
-    {{ $links = $links | append (dict "icon" "simple-icons--github" "url" (printf "https://github.com/%s" .) "text" .) }}
+    {{ $githubLink = slice (dict "icon" "simple-icons--github" "url" (printf "https://github.com/%s" .) "text" .) }}
   {{ end }}
 
-  {{/* Website link — software and events */}}
+  {{/* Website link — software, events, and books */}}
+  {{ $websiteLink := slice }}
   {{ with $page.Params.website }}
-    {{ $links = $links | append (dict "icon" "boxicons--globe" "url" . "text" (replaceRE `^https?://` "" . | strings.TrimRight "/")) }}
+    {{ $websiteLink = slice (dict "icon" "boxicons--globe" "url" . "text" (replaceRE `^https?://` "" . | strings.TrimRight "/")) }}
+  {{ end }}
+
+  {{/* Books list the website before the GitHub repo; everything else the other way around */}}
+  {{ if eq $card_type "books" }}
+    {{ $links = $links | append $websiteLink | append $githubLink }}
+  {{ else }}
+    {{ $links = $links | append $githubLink | append $websiteLink }}
   {{ end }}
 
   {{/* Social links — people (nested under .Params.social) */}}
@@ -255,6 +276,19 @@
         {{ $stats = $stats | append (dict "icon" "boxicons--file-filled" "value" .) }}
       {{ end }}
     {{ end }}
+  {{ end }}
+
+  {{/* Book details: edition and publisher (shown on the same line as the date) */}}
+  {{ if eq $card_type "books" }}
+    {{ with $page.Params.edition }}
+      {{ $n := int . }}
+      {{ $suffix := "th" }}
+      {{ if not (in (slice 11 12 13) (mod $n 100)) }}
+        {{ $suffix = index (dict "1" "st" "2" "nd" "3" "rd") (string (mod $n 10)) | default "th" }}
+      {{ end }}
+      {{ $edition = printf "%d%s edition" $n $suffix }}
+    {{ end }}
+    {{ $publisher = $page.Params.publisher | default "" }}
   {{ end }}
 
   {{/* Team membership — people */}}
@@ -691,14 +725,14 @@
 
     {{/* -- Image area (same structure as card) -- */}}
     {{ if and $hero_image_show (not $nohero) }}
-    <div class="w-full md:w-1/3 aspect-square flex items-center justify-center overflow-hidden"{{ with $bg_color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
+    <div class="w-full md:w-1/3 aspect-square flex-none flex items-center justify-center overflow-hidden"{{ with $bg_color }} style="background-color: color-mix(in srgb, {{ . }} 25%, white 75%);"{{ end }}>
       {{ if $image }}
         {{ partial "responsive_image_fixed.html" (dict
           "image" $image
           "baseWidth" 342
           "baseHeight" 342
           "alt" $image_alt
-          "class" (printf "mx-auto h-full %s" (cond $is_person "object-cover rounded-xl" $card_settings.image_class))
+          "class" (printf "mx-auto h-full %s" (cond $is_person "object-cover rounded-xl" ($card_settings.hero_image_class | default $card_settings.image_class)))
           "method" (cond $is_person "fill" "fit")
         ) }}
       {{ else if $is_person }}
@@ -712,13 +746,13 @@
 
     {{/* -- Content area -- */}}
     <div class="flex flex-col gap-y-3 grow p-6">
-      {{/* Date and Topic above title */}}
+      {{/* Date and Topic above title (books show their date in the metadata list below) */}}
       <div class="flex flex-row flex-wrap gap-x-4 gap-y-2 items-center">
-        {{ with $date }}
+        {{ if ne $card_type "books" }}{{ with $date }}
         <div class="flex items-center text-sm font-mono text-gray-600">
           <span>{{ . }}</span>
         </div>
-        {{ end }}
+        {{ end }}{{ end }}
         {{ with $hero_categories }}
         <div class="flex flex-wrap gap-2">
           {{ range . }}
@@ -746,10 +780,27 @@
         {{ with $people }}
         <div class="flex items-center text-base">{{ . }}</div>
         {{ end }}
-        {{ with $date }}
-        <div class="hero-meta-lg">
-          <span class="icon-[boxicons--calendar] hero-icon"></span>
-          <span>{{ . }}</span>
+        {{/* Date, followed on the same line by the edition and publisher (books) */}}
+        {{ if or $date $edition $publisher }}
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+          {{ with $date }}
+          <div class="hero-meta-lg">
+            <span class="icon-[boxicons--calendar] hero-icon"></span>
+            <span>{{ . }}</span>
+          </div>
+          {{ end }}
+          {{ with $edition }}
+          <div class="hero-meta-lg">
+            <span class="icon-[boxicons--layers] hero-icon"></span>
+            <span>{{ . }}</span>
+          </div>
+          {{ end }}
+          {{ with $publisher }}
+          <div class="hero-meta-lg">
+            <span class="icon-[boxicons--buildings] hero-icon"></span>
+            <span>{{ . }}</span>
+          </div>
+          {{ end }}
         </div>
         {{ end }}
         {{ with $location }}

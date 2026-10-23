@@ -105,3 +105,4 @@ hover:before:border-blue-200
 before:-z-10
 icon-[boxicons--book-open-filled]
 icon-[boxicons--git-branch]
+icon-[boxicons--book-bookmark-filled]
