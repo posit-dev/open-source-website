@@ -245,7 +245,7 @@ In Posit Assistant, you can see conversation information by clicking the token c
 
 Hover over a bar in the token/cost usage chart to inspect an individual request. 
 
-![Posit Assistant's session-information panel breaks down token usage and estimated costs by token type.](assets/session-info-hud.png){width=636px fig-align="center" fig-alt="Session-information panel with a context meter, token-usage chart, and table separating output, uncached input, cache writes, and cache reads. The table shows 66.2% cache efficiency. Controls below enable cost displays and cache-keepalive pings."}
+![Posit Assistant's session-information panel breaks down token usage and estimated costs by token type.](images/session-info-hud.png){width=636px fig-align="center" fig-alt="Session-information panel with a context meter, token-usage chart, and table separating output, uncached input, cache writes, and cache reads. The table shows 66.2% cache efficiency. Controls below enable cost displays and cache-keepalive pings."}
 
 
 #### Claude Code 

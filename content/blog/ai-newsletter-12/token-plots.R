@@ -1,27 +1,15 @@
-# Plotting helpers for the token caching post. Adapted from the
-# make_plot_data()/plot_tokens() machinery in the agent-context post, restyled
-# after the Session HUD's token usage chart in Posit Assistant.
-
 library(ggplot2)
 
-# Order matters: ggplot stacks the first level on top, so this reads top to
-# bottom like the HUD's bars (output on top, cache read on the bottom). Cache
-# writes are treated as ordinary input tokens in this post.
 token_types <- c("Output", "Input", "Cached input")
 
-# Okabe-Ito colors from the HUD's TOKEN_COLORS; input uses the HUD's cache
-# write orange.
 token_colors <- c(
   "Output" = "#cc79a7",
   "Input" = "#e69f00",
   "Cached input" = "#009e73"
 )
 
-# Illustrative $/MTok prices with the ratios discussed in the post: output is
-# 10x input, and input is 20x cached input.
 token_prices <- c("Output" = 10, "Input" = 1, "Cached input" = 0.05)
 
-# One row per request; any token type not supplied is zero.
 request_tokens <- function(
   request,
   output = 0,
@@ -82,10 +70,6 @@ theme_hud <- function() {
     )
 }
 
-# `y` is "tokens" or "cost". Bars are stacked, one per request, and sit in
-# `n_slots` fixed slots so that charts with fewer requests stay left-aligned
-# and line up with charts that have more. With `x_labels = TRUE`, each bar is
-# labeled by `label` (see request_tokens()).
 plot_requests <- function(
   data,
   y = c("tokens", "cost"),
@@ -113,7 +97,6 @@ plot_requests <- function(
 
   tooltip <- if ("tooltip" %in% names(data)) aes(text = tooltip)
 
-  # Place totals beside the bars, leaving the facet headings unobstructed.
   total <- if (show_total) {
     by <- if ("scenario" %in% names(data)) "scenario" else NULL
     totals <- aggregate(data["cost"], data[by], sum)
