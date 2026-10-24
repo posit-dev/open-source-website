@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   id: 72a8tpdv7qwt
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/ln5g3gm8aijy/promo-image.1791514988.svg
   kind: course
-  modified_at: '2026-10-09T03:03:09.239652Z'
+  modified_at: '2026-10-16T17:11:34.425679Z'
   order: 16
   slug: navigating-the-positron-interface
   software:

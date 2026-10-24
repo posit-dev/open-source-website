@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   id: 2xsw779st3ner
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/33pmt6bd2bg0q/promo-image.1791515198.svg
   kind: course
-  modified_at: '2026-10-09T03:06:39.229326Z'
+  modified_at: '2026-10-16T17:11:50.414410Z'
   order: 15
   slug: package-management-in-r
   software:
