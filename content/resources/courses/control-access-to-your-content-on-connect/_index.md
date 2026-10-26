@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   id: 3q8gw39dxocfa
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/1anfw8kwxauai/promo-image.1791470980.svg
   kind: course
-  modified_at: '2026-10-08T14:49:40.538670Z'
+  modified_at: '2026-10-16T17:05:24.225576Z'
   order: 12
   slug: control-access-to-your-content-on-connect
   title: Control access to your content on Connect
