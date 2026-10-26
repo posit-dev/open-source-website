@@ -15,7 +15,8 @@ languages:
   - R
   - Python
   - SQL
-tags: []
+tags:
+  - glimpse-newsletter
 hidesubscription: false
 ---
 
