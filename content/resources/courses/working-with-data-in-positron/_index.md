@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   id: 1jyveku4avmb9
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/31uwk4rwbio/promo-image.1791514925.svg
   kind: course
-  modified_at: '2026-10-09T03:02:06.126146Z'
+  modified_at: '2026-10-16T17:16:28.067984Z'
   order: 18
   slug: working-with-data-in-positron
   software:

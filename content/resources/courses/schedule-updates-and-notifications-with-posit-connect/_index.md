@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   id: 19qxualiy57b1
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/ffzuc1tgrepf/promo-image.1791470847.svg
   kind: course
-  modified_at: '2026-10-08T14:47:27.831803Z'
+  modified_at: '2026-10-16T17:14:52.437335Z'
   order: 13
   slug: schedule-updates-and-notifications-with-posit-connect
   title: Schedule Updates and Notifications with Posit Connect

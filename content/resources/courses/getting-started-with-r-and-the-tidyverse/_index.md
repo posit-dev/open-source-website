@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   id: uduok588d9ph
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/23s6xegand0ha/promo-image.1791515367.svg
   kind: course
-  modified_at: '2026-10-09T03:09:28.182624Z'
+  modified_at: '2026-10-16T17:07:03.798267Z'
   order: 23
   slug: getting-started-with-r-and-the-tidyverse
   software:
