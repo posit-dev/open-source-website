@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   id: 19m6x6kyjkeix
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/1tj6j2zv53t7d/promo-image.1791515164.svg
   kind: course
-  modified_at: '2026-10-09T03:06:05.365949Z'
+  modified_at: '2026-10-16T17:15:13.617540Z'
   order: 27
   slug: migrating-from-shinyappsio-to-posit-connect-cloud
   software:

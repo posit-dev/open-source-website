@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   id: zmaich0jdxc5
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/2rwh947umf2le/promo-image.1791469226.svg
   kind: course
-  modified_at: '2026-10-08T14:20:27.544636Z'
+  modified_at: '2026-10-16T17:15:55.748848Z'
   order: 3
   slug: what-is-posit-package-manager
   software:
