@@ -1,0 +1,5 @@
+harness,model,score,correct,incorrect,cost
+Posit Assistant,Claude Sonnet 5.5,0.7058823529411765,24,10,12.721534400000001
+Claude Code,Claude Sonnet 5.5,0.5,17,17,13.201394
+Posit Assistant,GPT 6.1 Sol,0.7352941176470589,25,9,14.0476906
+Codex,GPT 6.1 Sol,0.7941176470588235,27,7,15.921724699999999
