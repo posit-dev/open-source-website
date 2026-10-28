@@ -3,6 +3,10 @@ title: Shiny for Python 1.9
 date: 2026-10-29T00:00:00.000Z
 people:
   - Barret Schloerke
+  - Josh Taillon
+  - Carson Sievert
+  - Karan Gathani
+  - Shiny Team
 description: >
   Shiny for Python v1.9 is on PyPI! Async effects and outputs now run
   concurrently, sidebars can be ARIA landmarks, Express download buttons take an
@@ -24,8 +28,6 @@ languages:
 source: shiny
 ---
 
-
-<!-- TODO before publishing: confirm the authors, and that the posit-dev/py-shiny changelog still matches this post. -->
 
 We're pleased to announce that [Shiny for Python v1.9](https://pypi.org/project/shiny/) is now on PyPI!
 
@@ -64,10 +66,10 @@ async def forecast():
 
 In 1.8, this page took four seconds for one user, and eight seconds for the second of two users who clicked at the same time. In 1.9, both outputs finish after two seconds for everyone. Within a session, nothing changes that you can see: input changes still wait until all of the session's effects have finished, and outputs are still sent together.
 
-There's a lot more to say about this, so it has its own post: [All Together Now: Concurrent Async in Shiny for Python](../../blog/2026-10-30_shiny-python-concurrent-async/). It covers how the new model works, why concurrency still needs `await` (synchronous code still blocks every session), and the changes you might notice in an existing app. Two API changes come with it:
+There's a lot more to say about this, so it has its own post: [All Together Now: Concurrent Async in Shiny for Python](../../blog/2026-10-29_shiny-python-concurrent-async/). It covers how the new model works, why concurrency still needs `await` (synchronous code still blocks every session), and the changes you might notice in an existing app. Two API changes come with it:
 
 - `reactive.lock()` is now defunct. It no longer locks anything and emits a `ShinyDeprecationWarning`. Please remove it from your code.
-- The new [`session.run_once_when_idle()`](https://shiny.posit.co/py/api/core/Session.html) runs a function once, after the session's effects have finished and its outputs have been sent. Use it to change reactive state from a background task or a custom timer without changing a value that a running effect is still reading.
+- The new [`session.run_once_when_idle()`](https://shiny.posit.co/py/api/core/Session.html#shiny.Session.run_once_when_idle) runs a function once, after the session's effects have finished and its outputs have been sent. Use it to change reactive state from a background task or a custom timer without changing a value that a running effect is still reading.
 
 ## Breaking changes
 
