@@ -1,6 +1,6 @@
 ---
 title: 'All Together Now: Concurrent Async in Shiny for Python'
-date: 2026-10-30T00:00:00.000Z
+date: 2026-10-29T00:00:00.000Z
 people:
   - Josh Taillon
   - Barret Schloerke
@@ -29,7 +29,7 @@ math: true
 ---
 
 
-<!-- TODO before publishing: confirm the version number, the date, the authors, and the PR links. -->
+<!-- TODO before publishing: confirm the authors and the PR links. -->
 
 [Shiny for Python 1.9](https://pypi.org/project/shiny/) overhauls how the reactive system runs async code, and now uses a concurrency model similar to Shiny for R. This post explains what changed, and shows how much faster an app gets when it awaits slow work. The key changes:
 
@@ -192,17 +192,6 @@ Within one session, Shiny keeps the guarantees that make reactive code easy to r
 
 ## Changes you might notice
 
-<div class="callout callout-warning" role="note" aria-label="Warning">
-<div class="callout-header">
-<span class="callout-title">Draft: review needed</span>
-</div>
-<div class="callout-body">
-
-@schloerke, please review this section before we publish. It may be more detail than is needed, and I'm not 100% certain on the explanations and could use another set of eyes.
-
-</div>
-</div>
-
 Most apps won't need any changes, but here are some differences that you might see:
 
 - **Async effects interleave.** Effects in the same session now run in turns at each `await`, instead of one after another. `priority` sets the order in which effects *start*, not the order in which they finish. If one effect depends on another effect's side effect, use a `reactive.calc` or a `reactive.value` to make the dependency explicit. ([#837](https://github.com/posit-dev/py-shiny/issues/837))
@@ -232,18 +221,9 @@ If your code used `reactive.lock()` to keep two pieces of your own code from run
 
 ## New: `run_once_when_idle()`
 
-<div class="callout callout-warning" role="note" aria-label="Warning">
-<div class="callout-header">
-<span class="callout-title">Draft: doc link needs updating</span>
-</div>
-<div class="callout-body">
+<!-- TODO after the 1.9 docs are published: check that the run_once_when_idle() link below goes to its entry on the Session page. -->
 
-This will need a link to the correct `run_once_when_idle()` docs once those are published.
-
-</div>
-</div>
-
-Sometimes a change should wait until a session's running effects have finished, the same way input changes from the browser do. [`session.run_once_when_idle()`](https://shiny.posit.co/py/api/core/Session.html) runs a function once, at the start of the session's next cycle:
+Sometimes a change should wait until a session's running effects have finished, the same way input changes from the browser do. [`session.run_once_when_idle()`](https://shiny.posit.co/py/api/core/Session.html#shiny.Session.run_once_when_idle) runs a function once, at the start of the session's next cycle:
 
 ``` python
 session.run_once_when_idle(lambda: latest.set(new_value))
@@ -261,11 +241,11 @@ The function runs when all of the session's effects have finished and its output
 </div>
 </div>
 
-The demo apps in this post, with the live OpenTelemetry timeline, are in <!-- TODO: link to where the demo source is published -->. Run them with Shiny for Python 1.8 and 1.9 to see the difference on your own machine. To view the spans of your own app, see [Shiny's OpenTelemetry docs](https://shiny.posit.co/py/docs/opentelemetry.html). <!-- TODO: confirm this URL -->
+The demo apps in this post, with the live OpenTelemetry timeline, are in <!-- TODO: link to where the demo source is published -->. Run them with Shiny for Python 1.8 and 1.9 to see the difference on your own machine. To view the spans of your own app, see [Shiny's OpenTelemetry docs](https://shiny.posit.co/py/docs/opentelemetry.html).
 
 ## In closing
 
-This is one of the largest changes to Shiny for Python's internals since its first release, and it brings Python and R to the same reactive model. The [Shiny for Python 1.9 release post](#) <!-- TODO: link to the 1.9 release post --> covers the rest of the release. If an app behaves differently after you upgrade, please let us know! As always, if you have questions or feedback, [join us on Discord](https://discord.gg/yMGCamUMnS) or open an issue on [posit-dev/py-shiny](https://github.com/posit-dev/py-shiny/issues/new). Happy Shiny-ing!
+This is one of the largest changes to Shiny for Python's internals since its first release, and it brings Python and R to the same reactive model. The [Shiny for Python 1.9 release post](../../blog/2026-10-29_shiny-python-1-9/) covers the rest of the release. If an app behaves differently after you upgrade, please let us know! As always, if you have questions or feedback, [join us on Discord](https://discord.gg/yMGCamUMnS) or open an issue on [posit-dev/py-shiny](https://github.com/posit-dev/py-shiny/issues/new). Happy Shiny-ing!
 
 <!-- Halloween easter egg: once the "In closing" heading scrolls into the top quarter
      of the screen (or the page ends first), a moonlit graveyard rises from the bottom
