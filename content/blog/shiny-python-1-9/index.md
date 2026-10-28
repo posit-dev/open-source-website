@@ -1,6 +1,6 @@
 ---
 title: Shiny for Python 1.9
-date: 2026-10-30T00:00:00.000Z
+date: 2026-10-29T00:00:00.000Z
 people:
   - Barret Schloerke
 description: >
@@ -25,7 +25,7 @@ source: shiny
 ---
 
 
-<!-- TODO before publishing: confirm the version number, the release date, the authors, and that the posit-dev/py-shiny changelog still matches this post. -->
+<!-- TODO before publishing: confirm the authors, and that the posit-dev/py-shiny changelog still matches this post. -->
 
 We're pleased to announce that [Shiny for Python v1.9](https://pypi.org/project/shiny/) is now on PyPI!
 
