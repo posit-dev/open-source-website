@@ -16,6 +16,7 @@ software: []
 languages: []
 tags:
   - ai-newsletter
+  - llm-costs
 source: []
 nohero: false
 hidesubscription: false
