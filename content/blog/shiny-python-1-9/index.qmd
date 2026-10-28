@@ -1,6 +1,6 @@
 ---
 title: "Shiny for Python 1.9"
-date: 2026-10-29
+date: 2026-10-29T00:02:00Z
 people:
   - Barret Schloerke
   - Josh Taillon
@@ -42,7 +42,7 @@ This release has a few breaking changes, so please read [Breaking changes](#brea
 
 The biggest change in 1.9 is under the hood. Until now, one lock for the whole process ran reactive updates one at a time. If an `async` output awaited a two-second database query, every other session in the process waited too, and so did the other outputs in the same session.
 
-In 1.9 the lock is gone. Shiny starts each invalidated effect as its own task, so while one output awaits, the event loop is free to run the others:
+In 1.9 the lock is gone. Shiny starts each invalidated effect as its own task, so while one async output awaits, the event loop is free to run the others:
 
 ``` python
 from shiny.express import render
@@ -107,7 +107,7 @@ A landmark needs a name, so Shiny labels it with the sidebar's `title`. The side
 
 If your sidebar has no title, pass `aria_label=` or `aria_labelledby=` instead. Shiny raises an error if a landmark sidebar has no name at all. `role="complementary"` renders an `<aside>`, the other roles render a `<div>` with that `role`, and the default (`role=None`) renders a plain `<div>`.
 
-Two more accessibility changes come along with this. `ui.page_sidebar()` now places the whole sidebar layout inside the page's `<main>` landmark, and navset links now have `aria-controls` pointing at the tab panel they show. These changes come from bslib for R ([rstudio/bslib#1359](https://github.com/rstudio/bslib/issues/1359) and [rstudio/bslib#1355](https://github.com/rstudio/bslib/issues/1355)).
+Two more accessibility changes come along with this. `ui.page_sidebar()` now places the whole sidebar layout inside the page's `<main>` landmark, and navset links now have `aria-controls` pointing at the tab panel they show. These changes will also be included in the next release of [bslib](https://rstudio.github.io/bslib/) for R.
 
 
 ## Download buttons in Express {#download-buttons-in-express}
@@ -142,7 +142,7 @@ def table():
     return penguins
 ```
 
-![](download-icon.png){fig-alt="A Shiny app titled Penguins shows a green Download CSV button with a download icon, above a table of three penguin species, their islands, and their bill lengths."}
+![](download-icon.png){alt="A Shiny app titled Penguins shows a green Download CSV button with a download icon, above a table of three penguin species, their islands, and their bill lengths."}
 
 This is part of a wider fix. In Express, `@output_args()` now accepts every argument of the output's UI function, with matching types. So `@render.ui` now takes `inline`, `container`, `fill`, `fillable`, and HTML attributes, and `@render.text` takes `container`, instead of raising a `TypeError`. Your type checker now knows about all of these as well.
 

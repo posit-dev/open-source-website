@@ -41,7 +41,7 @@ def serve(app):
         [sys.executable, "-m", "shiny", "run", "--port", str(port), str(HERE / app)]
     )
     url = f"http://127.0.0.1:{port}"
-    for _ in range(50):
+    for _ in range(150):  # up to 30 seconds, for a cold start
         try:
             urllib.request.urlopen(url)
             return proc, url
