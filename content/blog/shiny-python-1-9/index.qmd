@@ -8,7 +8,7 @@ description: >
   concurrently, sidebars can be ARIA landmarks, Express download buttons take an
   icon, and UI updates from background tasks reach the browser right away.
 image: "feature.gif"
-image-alt: "Shiny for Python 1.9: a code editor shows an Express app with two async render functions that each await a two-second call, and a terminal below runs the app and reports that the outputs for Alice and Bob all finished together after 2.0 seconds"
+image-alt: "Shiny for Python 1.9: four app tiles, one per feature. Three users' async progress bars fill together and finish in 2.0 seconds. A focus ring jumps to a sidebar named Filters while a screen reader says Filters, search landmark. A cursor clicks a green Download CSV button with a download icon and penguins.csv appears. A penguins data frame fills in with a badge reading up to 3.5 times faster."
 topics:
   - Interactive Apps
 software:

@@ -23,209 +23,229 @@
   html, body { width: 1200px; height: 675px; overflow: hidden; }
   body {
     font-family: "Open Sans", sans-serif;
+    color: #17324D;
     background:
-      radial-gradient(1100px 700px at 85% -10%, #10406B 0%, rgba(16,64,107,0) 60%),
-      linear-gradient(135deg, #0A2A47 0%, #0D3557 100%);
+      radial-gradient(700px 500px at 0% 100%, #DCEBF7 0%, rgba(220,235,247,0) 70%),
+      radial-gradient(800px 600px at 100% 0%, #FDE9DC 0%, rgba(253,233,220,0) 65%),
+      #F6F8FB;
     position: relative;
-    color: #fff;
   }
+  .mono { font-family: "Source Code Pro", monospace; }
 
-  /* card border so the image reads as one object on white backgrounds */
-  .frame {
-    position: absolute; inset: 0;
-    border: 3px solid rgba(15, 46, 76, 0.5);
-    pointer-events: none;
-    z-index: 20;
-  }
+  /* ---- headline ---- */
+  .headline { position: absolute; left: 64px; top: 0; height: 675px; width: 360px;
+              display: flex; flex-direction: column; justify-content: center; }
+  .eyebrow { font-size: 15px; font-weight: 700; letter-spacing: 0.14em;
+             text-transform: uppercase; color: #447099; margin-bottom: 18px; }
+  h1 { font-size: 50px; font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; }
+  h1 .ver { font-family: "Source Code Pro", monospace; font-weight: 600; color: #447099; }
+  .sub { margin-top: 22px; font-size: 19px; line-height: 1.5; color: #4A6178; }
 
-  /* faint reactive-graph texture */
-  .dots {
-    position: absolute; inset: 0;
-    background-image: radial-gradient(rgba(255,255,255,0.05) 1.5px, transparent 1.5px);
-    background-size: 34px 34px;
-    mask-image: linear-gradient(to right, rgba(0,0,0,.9), rgba(0,0,0,0) 55%);
-    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,.9), rgba(0,0,0,0) 55%);
+  /* ---- tiles ---- */
+  .tile {
+    position: absolute; width: 345px; height: 280px;
+    background: #fff; border-radius: 16px;
+    border: 1px solid #E1E8F0;
+    box-shadow: 0 18px 40px rgba(23, 50, 77, 0.10);
+    padding: 18px 20px; overflow: hidden;
   }
+  .t1 { left: 450px; top: 48px; }
+  .t2 { left: 815px; top: 48px; }
+  .t3 { left: 450px; top: 347px; }
+  .t4 { left: 815px; top: 347px; }
+  .tag { font-family: "Source Code Pro", monospace; font-size: 15px; font-weight: 600;
+         display: inline-block; padding: 3px 10px; border-radius: 6px; }
+  .tag.blue   { background: #E5EFF8; color: #2F5F8A; }
+  .tag.green  { background: #E3F4E8; color: #1E7A3D; }
+  .tag.amber  { background: #FDF0DA; color: #9A5B00; }
+  .tag.purple { background: #EFE8FA; color: #6740A8; }
+  .body { position: absolute; left: 20px; right: 20px; top: 62px; bottom: 18px; }
 
-  .headline {
-    position: absolute;
-    left: 64px; top: 50%;
-    transform: translateY(-50%);
-    width: 480px;
-    z-index: 3;
-  }
-  .eyebrow {
-    font-family: "Source Code Pro", monospace;
-    font-size: 17px; font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #6FC1EE;
-    margin-bottom: 22px;
-  }
-  h1 {
-    font-size: 44px;
-    font-weight: 700;
-    line-height: 1.25;
-    letter-spacing: -0.015em;
-    margin-bottom: 30px;
-    white-space: nowrap;
-  }
-  h1 .ver {
-    font-family: "Source Code Pro", monospace;
-    font-weight: 600;
-    font-size: 1em;
-    color: #6FC1EE;
-  }
-  .chips { display: flex; flex-wrap: wrap; gap: 10px; width: 440px; }
-  .chip {
-    font-family: "Source Code Pro", monospace;
-    font-size: 18.5px; font-weight: 500;
-    color: #DCEEFB;
-    background: rgba(111,193,238,0.12);
-    border: 1px solid rgba(111,193,238,0.35);
-    border-radius: 8px;
-    padding: 7px 14px;
-  }
+  /* tile 1: concurrent async */
+  .lane { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; font-size: 15px; }
+  .lane .who { width: 46px; color: #4A6178; }
+  .track { flex: 1; height: 16px; border-radius: 8px; background: #EEF2F6; overflow: hidden; }
+  .fill { height: 100%; width: 0; border-radius: 8px;
+          background: linear-gradient(90deg, #6FA8DC, #447099); }
+  .check { width: 22px; height: 22px; border-radius: 50%; background: #2E9E5B; color: #fff;
+           font-size: 14px; font-weight: 700; display: grid; place-items: center; opacity: 0; }
+  .clock { position: absolute; left: 0; bottom: 0; font-size: 15px; color: #4A6178; }
+  .clock b { font-family: "Source Code Pro", monospace; color: #17324D; font-size: 22px; }
 
+  /* tile 2: sidebar landmark */
+  .mini { position: absolute; inset: 0 0 46px 0; border: 1px solid #DCE3EB; border-radius: 10px; overflow: hidden; }
+  .mini-head { height: 34px; border-bottom: 1px solid #DCE3EB; padding: 6px 12px; font-weight: 600; font-size: 14px; }
+  .mini-side { position: absolute; left: 0; top: 34px; bottom: 0; width: 112px;
+               border-right: 1px solid #DCE3EB; background: #F9FBFD; padding: 10px; }
+  .mini-side .ttl { font-weight: 700; font-size: 13px; margin-bottom: 8px; }
+  .ph { height: 10px; border-radius: 4px; background: #E3E9F0; margin-bottom: 8px; }
+  .ph.box { height: 20px; background: #fff; border: 1px solid #D3DCE6; }
+  .mini-main { position: absolute; left: 124px; right: 12px; top: 46px; }
+  .ring { position: absolute; border: 3px solid #F2A33A; border-radius: 8px;
+          box-shadow: 0 0 0 4px rgba(242,163,58,0.22); }
+  .say { position: absolute; left: 0; right: 0; bottom: 0; height: 34px; border-radius: 8px;
+         background: #17324D; color: #fff; font-size: 14px; display: flex; align-items: center;
+         gap: 8px; padding: 0 12px; opacity: 0; }
+  .say svg { flex: none; }
 
-  /* ---- terminal / editor window  ---- */
-  .term {
-    position: absolute;
-    right: 0; top: 76px;
-    width: 625px; height: 599px;
-    background: #0F1B2A;
-    border-radius: 14px 0 0 0;
-    border: 1px solid rgba(111,193,238,0.25);
-    border-right: 0; border-bottom: 0;
-    box-shadow: 0 40px 90px rgba(2, 16, 30, 0.65);
-    overflow: hidden;
-    z-index: 4;
-    transform-origin: 50% 50%;
-    font-family: "Source Code Pro", monospace;
-  }
-  .dot { width: 12px; height: 12px; border-radius: 50%; }
-  .term-bar {
-    height: 44px;
-    background: #16263A;
-    display: flex; align-items: center;
-    padding: 0 16px; gap: 8px;
-    color: #8FA6BD; font-size: 13px;
-  }
-  .term-bar .tab {
-    margin-left: 14px;
-    padding: 5px 12px;
-    border-radius: 6px;
-    background: rgba(111,193,238,0.10);
-    color: #DCEEFB;
-  }
-  .editor {
-    padding: 22px 26px 18px;
-    font-size: 15px; line-height: 1.6;
-    color: #DCEEFB;
-    border-bottom: 1px solid rgba(111,193,238,0.16);
-    white-space: pre;
-  }
-  .kw { color: #C792EA; }
-  .fn { color: #82AAFF; }
-  .str { color: #C3E88D; }
-  .num { color: #F78C6C; }
-  .prm { color: #FFCB6B; }
-  .cmt { color: #6B8399; font-style: italic; }
-  .shell {
-    padding: 20px 26px;
-    font-size: 16px; line-height: 1.75;
-    color: #DCEEFB;
-    white-space: pre;
-  }
-  .prompt { color: #6FC1EE; }
-  .line { opacity: 0; }
-  .pass { color: #7EE787; font-weight: 600; }
-  .dim { color: #8FA6BD; }
-  .summary {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 4px 14px;
-    border-radius: 6px;
-    background: rgba(126,231,135,0.14);
-    color: #7EE787; font-weight: 600;
-  }
-  .caret {
-    display: inline-block; width: 9px; height: 18px;
-    background: #DCEEFB; vertical-align: -3px; margin-left: 2px;
-  }
+  /* tile 3: download button */
+  .btn { position: absolute; left: 50%; top: 40px; transform: translateX(-50%);
+         background: #198754; color: #fff; font-size: 18px; font-weight: 600;
+         padding: 12px 22px; border-radius: 8px; display: flex; align-items: center; gap: 10px;
+         white-space: nowrap; box-shadow: 0 6px 14px rgba(25,135,84,0.25); }
+  .cursor { position: absolute; left: 0; top: 0; width: 26px; height: 26px; }
+  .file { position: absolute; left: 50%; top: 122px; margin-left: -110px; width: 220px;
+          display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px;
+          background: #F3FAF5; border: 1px solid #CBE8D5; opacity: 0; }
+  .file .doc { width: 30px; height: 38px; border-radius: 4px; background: #fff; border: 2px solid #2E9E5B;
+               font-family: "Source Code Pro", monospace; font-size: 9px; font-weight: 700; color: #2E9E5B;
+               display: grid; place-items: end center; padding-bottom: 3px; }
+  .file .name { font-family: "Source Code Pro", monospace; font-size: 15px; }
+  .file .size { font-size: 13px; color: #4A6178; }
+
+  /* tile 4: data frame */
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid #E6ECF2; }
+  th { font-weight: 700; background: #F6F8FB; }
+  td.n { font-family: "Source Code Pro", monospace; }
+  tbody tr { opacity: 0; }
+  .badge { position: absolute; right: 0; bottom: 0; background: #6740A8; color: #fff;
+           font-weight: 700; font-size: 17px; padding: 8px 14px; border-radius: 10px;
+           box-shadow: 0 8px 18px rgba(103,64,168,0.3); opacity: 0; }
 </style>
 </head>
 <body>
-  <div class="dots"></div>
-  <div class="frame"></div>
-
   <div class="headline">
     <div class="eyebrow">New release</div>
-    <h1>Shiny for&nbsp;Python <span class="ver">1.9</span></h1>
-    <div class="chips">
-      <span class="chip">concurrent async</span>
-      <span class="chip">sidebar(role=)</span>
-      <span class="chip">download icon=</span>
-      <span class="chip">&amp; more&hellip;</span>
+    <h1>Shiny for Python <span class="ver">1.9</span></h1>
+    <div class="sub">Concurrent async, sidebar landmarks, download icons, faster data frames &amp; more</div>
+  </div>
+
+  <!-- 1. Concurrent async -->
+  <div class="tile t1">
+    <span class="tag blue">concurrent async</span>
+    <div class="body">
+      <div class="lane"><span class="who">alice</span><div class="track"><div class="fill" id="f1"></div></div><span class="check" id="c1">&#10003;</span></div>
+      <div class="lane"><span class="who">bob</span><div class="track"><div class="fill" id="f2"></div></div><span class="check" id="c2">&#10003;</span></div>
+      <div class="lane"><span class="who">carol</span><div class="track"><div class="fill" id="f3"></div></div><span class="check" id="c3">&#10003;</span></div>
+      <div class="clock">all async outputs done in <b id="clock">0.0s</b></div>
     </div>
   </div>
 
-  <div class="term" id="term">
-    <div class="term-bar">
-      <span class="dot" style="background:#F26D5F"></span>
-      <span class="dot" style="background:#F5BE4F"></span>
-      <span class="dot" style="background:#5FC463"></span>
-      <span class="tab">app.py</span>
+  <!-- 2. Sidebar landmark -->
+  <div class="tile t2">
+    <span class="tag amber">sidebar(role="search")</span>
+    <div class="body">
+      <div class="mini">
+        <div class="mini-head">Penguins</div>
+        <div class="mini-side">
+          <div class="ttl">Filters</div>
+          <div class="ph box"></div>
+          <div class="ph" style="width:70%"></div>
+          <div class="ph" style="width:85%"></div>
+          <div class="ph" style="width:60%"></div>
+        </div>
+        <div class="mini-main">
+          <div class="ph" style="width:90%"></div>
+          <div class="ph" style="width:75%"></div>
+          <div class="ph" style="width:82%"></div>
+        </div>
+        <div class="ring" id="ring"></div>
+      </div>
+      <div class="say" id="say">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
+        <span>"Filters, search landmark"</span>
+      </div>
     </div>
-    <div class="editor"><span class="kw">from</span> shiny.express <span class="kw">import</span> render
+  </div>
 
+  <!-- 3. Download button with icon -->
+  <div class="tile t3">
+    <span class="tag green">@render.download_button(icon=)</span>
+    <div class="body">
+      <div class="btn" id="btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4 6.3 10.7l1.4-1.4L11 12.6V3zM4 18h16v3H4z"/></svg>
+        Download CSV
+      </div>
+      <svg class="cursor" id="cursor" viewBox="0 0 24 24"><path d="M4 2l15 11-6.5 1 4 7-3 1.5-4-7L4 20z" fill="#17324D" stroke="#fff" stroke-width="1.5"/></svg>
+      <div class="file" id="file">
+        <div class="doc">CSV</div>
+        <div><div class="name">penguins.csv</div><div class="size">downloaded</div></div>
+      </div>
+    </div>
+  </div>
 
-<span class="fn">@render.text</span>
-<span class="kw">async def</span> <span class="fn">sales</span>():
-    <span class="kw">return await</span> db.query(<span class="str">"sales"</span>)  <span class="cmt"># 2 s</span>
-
-
-<span class="fn">@render.text</span>
-<span class="kw">async def</span> <span class="fn">forecast</span>():
-    <span class="kw">return await</span> api.forecast()   <span class="cmt"># 2 s</span></div>
-    <div class="shell"><span class="prompt">$</span> <span id="cmd"></span><span class="caret" id="caret"></span>
-<span class="line" id="l1">alice  sales     <span class="pass">done</span>  <span class="dim">2.0s</span></span>
-<span class="line" id="l2">alice  forecast  <span class="pass">done</span>  <span class="dim">2.0s</span></span>
-<span class="line" id="l3">bob    sales     <span class="pass">done</span>  <span class="dim">2.0s</span></span>
-<span class="line" id="l4"><span class="summary">all async outputs in 2.0s</span>  <span class="dim">no waiting in line</span></span></div>
+  <!-- 4. Faster data frames -->
+  <div class="tile t4">
+    <span class="tag purple">@render.data_frame</span>
+    <div class="body">
+      <table>
+        <thead><tr><th>species</th><th>island</th><th>bill</th></tr></thead>
+        <tbody>
+          <tr><td>Adelie</td><td>Torgersen</td><td class="n">39.1</td></tr>
+          <tr><td>Chinstrap</td><td>Dream</td><td class="n">46.5</td></tr>
+          <tr><td>Gentoo</td><td>Biscoe</td><td class="n">47.3</td></tr>
+          <tr><td>Adelie</td><td>Dream</td><td class="n">37.8</td></tr>
+        </tbody>
+      </table>
+      <div class="badge" id="badge">up to 3.5&times; faster</div>
+    </div>
   </div>
 
 <script>
   // Deterministic animation driven by seek(t) so frames can be captured
-  // one at a time. Loop length: 4400ms. seek(LOOP - 1) is the static poster.
-  const LOOP = 4400;
-  const CMD = 'shiny run app.py';
-  const cmd = document.getElementById('cmd');
-  const caret = document.getElementById('caret');
-  const lines = ['l1', 'l2', 'l3', 'l4'].map(id => document.getElementById(id));
-  // The three outputs finish together; that's the point of 1.9.
-  const lineAt = [2000, 2000, 2000, 2600];
+  // one at a time. Loop length: 5000ms. seek(LOOP - 100) is the static poster.
+  const LOOP = 5000;
+  const $ = (id) => document.getElementById(id);
 
   const lerp = (a, b, p) => a + (b - a) * p;
   const clamp01 = (x) => Math.max(0, Math.min(1, x));
   const easeInOut = (p) => p < 0.5 ? 4*p*p*p : 1 - Math.pow(-2*p + 2, 3) / 2;
   const phase = (t, from, to) => clamp01((t - from) / (to - from));
+  const pop = (el, p) => {
+    el.style.opacity = p;
+    el.style.transform = `scale(${lerp(0.6, 1, easeInOut(p))})`;
+  };
+
+  // Focus ring rectangles inside .mini: the page header, then the sidebar.
+  const RING_FROM = { x: 2, y: 2, w: 297, h: 30 };
+  const RING_TO = { x: 2, y: 36, w: 110, h: 114 };
 
   window.seek = function (t) {
     t = t % LOOP;
 
-    // Typing the command.
-    const typed = Math.round(CMD.length * phase(t, 600, 1300));
-    cmd.textContent = CMD.slice(0, typed);
-    caret.style.opacity = (t < 1400 && Math.floor(t / 250) % 2 === 0) ? 1 : 0;
+    // 1. All three sessions' outputs fill together, then finish together.
+    const fill = easeInOut(phase(t, 300, 2300));
+    ['f1', 'f2', 'f3'].forEach((id) => { $(id).style.width = `${fill * 100}%`; });
+    ['c1', 'c2', 'c3'].forEach((id) => pop($(id), phase(t, 2300, 2450)));
+    $('clock').textContent = `${(2 * phase(t, 300, 2300)).toFixed(1)}s`;
 
-    // Output lines appear in turn (pop in with a tiny rise).
-    lines.forEach((el, i) => {
-      const p = phase(t, lineAt[i], lineAt[i] + 180);
-      el.style.opacity = p;
-      el.style.display = 'inline-block';
-      el.style.transform = `translateY(${lerp(6, 0, p)}px)`;
+    // 2. Focus ring jumps from the header to the sidebar landmark.
+    const r = easeInOut(phase(t, 1300, 1700));
+    const ring = $('ring');
+    ring.style.left = `${lerp(RING_FROM.x, RING_TO.x, r)}px`;
+    ring.style.top = `${lerp(RING_FROM.y, RING_TO.y, r)}px`;
+    ring.style.width = `${lerp(RING_FROM.w, RING_TO.w, r)}px`;
+    ring.style.height = `${lerp(RING_FROM.h, RING_TO.h, r)}px`;
+    ring.style.opacity = phase(t, 500, 700);
+    const say = phase(t, 1750, 1950);
+    $('say').style.opacity = say;
+    $('say').style.transform = `translateY(${lerp(8, 0, say)}px)`;
+
+    // 3. Cursor glides to the button, clicks, and a file drops out.
+    const c = easeInOut(phase(t, 1000, 1900));
+    $('cursor').style.transform = `translate(${lerp(300, 222, c)}px, ${lerp(190, 70, c)}px)`;
+    const press = phase(t, 1950, 2050) - phase(t, 2050, 2150);
+    $('btn').style.transform = `translateX(-50%) scale(${1 - 0.06 * press})`;
+    const drop = easeInOut(phase(t, 2200, 2600));
+    $('file').style.opacity = drop;
+    $('file').style.transform = `translateY(${lerp(-24, 0, drop)}px)`;
+
+    // 4. Rows stream in quickly, then the speed badge pops.
+    document.querySelectorAll('tbody tr').forEach((row, i) => {
+      row.style.opacity = phase(t, 2500 + i * 90, 2600 + i * 90);
     });
+    pop($('badge'), phase(t, 3100, 3300));
   };
 
   window.seek(0);

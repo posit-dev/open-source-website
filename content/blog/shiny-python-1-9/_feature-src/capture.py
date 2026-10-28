@@ -23,7 +23,7 @@ POST_DIR = HERE.parent
 SRC = (HERE / "feature-anim.html").as_uri()
 
 WIDTH, HEIGHT = 1200, 675  # 16:9
-LOOP_MS = 4400
+LOOP_MS = 5000
 FPS = 10
 N_FRAMES = LOOP_MS * FPS // 1000
 
@@ -47,7 +47,7 @@ with sync_playwright() as p:
     )
     page.goto(SRC)
     await_fonts(page)
-    page.evaluate("seek(4300)")
+    page.evaluate("seek(4900)")
     page.wait_for_timeout(300)
     page.screenshot(path=str(POST_DIR / "feature.png"))
     page.close()
