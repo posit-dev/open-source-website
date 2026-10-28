@@ -7,15 +7,20 @@ people:
   - Simon Couch
 description: |
   Posit Assistant makes better use of your token budget than leading coding agents.
-image: false
+image: hero.png
 image-alt: >-
-  Fill this in!!
+  Bar chart of the total cost to run the bluffbench2 benchmark, by
+  agent and model. With the Claude Sonnet 5.5 model, Posit Assistant
+  costs about $6.80 versus about $8.30 for Claude Code. With the
+  GPT 6.1 Sol model, Posit Assistant costs about $4.40 versus about
+  $6.00 for Codex.
 topics:
   - Artificial Intelligence
 software: []
 languages: []
 tags:
   - ai-newsletter
+  - llm-costs
 source: []
 nohero: false
 hidesubscription: false
@@ -49,6 +54,12 @@ ds_pa_gpt <- deepswe_run("Posit Assistant", "GPT 6.1 Sol")
 ds_claude_code <- deepswe_run("Claude Code", "Claude Sonnet 5.5")
 ds_codex <- deepswe_run("Codex", "GPT 6.1 Sol")
 ```
+
+::: {.callout-note}
+## LLM costs series
+
+This is the second post in our series on LLM costs. In the [previous post](https://opensource.posit.co/blog/2026-10-23_ai-newsletter/), we explained why you (unfortunately) need to care about token caching.
+:::
 
 LLM tokens are expensive, especially if you use coding agents daily. We've heard from users at organizations with tight AI budgets, from academics paying out of pocket, and from many others caught off guard by how fast costs add up. In [last week's post](https://opensource.posit.co/blog/2026-10-23_ai-newsletter/) in our series on LLM costs, we talked about why you (unfortunately) do need to worry about token caching. Now, we have some good news!
 

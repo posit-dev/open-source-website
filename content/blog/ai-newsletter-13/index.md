@@ -8,8 +8,12 @@ people:
 description: >
   Posit Assistant makes better use of your token budget than leading coding
   agents.
-image: false
-image-alt: Fill this in!!
+image: hero.png
+image-alt: >-
+  Bar chart of the total cost to run the bluffbench2 benchmark, by agent and
+  model. With the Claude Sonnet 5.5 model, Posit Assistant costs about $6.80
+  versus about $8.30 for Claude Code. With the GPT 6.1 Sol model, Posit
+  Assistant costs about $4.40 versus about $6.00 for Codex.
 topics:
   - Artificial Intelligence
 software: []
@@ -25,6 +29,17 @@ filters:
 ---
 
 
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">LLM costs series</span>
+</div>
+<div class="callout-body">
+
+This is the second post in our series on LLM costs. In the [previous post](https://opensource.posit.co/blog/2026-10-23_ai-newsletter/), we explained why you (unfortunately) need to care about token caching.
+
+</div>
+</div>
+
 LLM tokens are expensive, especially if you use coding agents daily. We've heard from users at organizations with tight AI budgets, from academics paying out of pocket, and from many others caught off guard by how fast costs add up. In [last week's post](https://opensource.posit.co/blog/2026-10-23_ai-newsletter/) in our series on LLM costs, we talked about why you (unfortunately) do need to worry about token caching. Now, we have some good news!
 
 [Posit Assistant](https://assistant.posit.co/) is designed to make your token budget go further. To see how it compares with other coding agents, we evaluated cost and performance on [bluffbench2](https://posit-dev.github.io/bluffbench2/), a benchmark that measures how well coding agents notice subtle data quality issues while carrying out exploratory data analysis.
@@ -37,20 +52,20 @@ On a set of data science tasks, Posit Assistant was 18% cheaper than Claude Code
 
 We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluffbench2](https://posit-dev.github.io/bluffbench2/), which measures how well coding agents notice subtle data quality issues during exploratory data analysis. Posit Assistant never scores worse on this eval than the other harnesses, and is strictly cheaper:
 
-<div id="vvvidrjufb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vvvidrjufb table {
+<div id="llimzhvabm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#llimzhvabm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-#vvvidrjufb thead, #vvvidrjufb tbody, #vvvidrjufb tfoot, #vvvidrjufb tr, #vvvidrjufb td, #vvvidrjufb th {
+#llimzhvabm thead, #llimzhvabm tbody, #llimzhvabm tfoot, #llimzhvabm tr, #llimzhvabm td, #llimzhvabm th {
   border-style: none;
 }
-#vvvidrjufb p {
+#llimzhvabm p {
   margin: 0;
   padding: 0;
 }
-#vvvidrjufb .gt_table {
+#llimzhvabm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -75,11 +90,11 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-#vvvidrjufb .gt_caption {
+#llimzhvabm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-#vvvidrjufb .gt_title {
+#llimzhvabm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -90,7 +105,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-#vvvidrjufb .gt_subtitle {
+#llimzhvabm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -101,7 +116,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-#vvvidrjufb .gt_heading {
+#llimzhvabm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -112,12 +127,12 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-#vvvidrjufb .gt_bottom_border {
+#llimzhvabm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-#vvvidrjufb .gt_col_headings {
+#llimzhvabm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -131,7 +146,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-#vvvidrjufb .gt_col_heading {
+#llimzhvabm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -150,7 +165,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-right: 5px;
   overflow-x: hidden;
 }
-#vvvidrjufb .gt_column_spanner_outer {
+#llimzhvabm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -161,13 +176,13 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-left: 4px;
   padding-right: 4px;
 }
-#vvvidrjufb .gt_column_spanner_outer:first-child {
+#llimzhvabm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-#vvvidrjufb .gt_column_spanner_outer:last-child {
+#llimzhvabm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-#vvvidrjufb .gt_column_spanner {
+#llimzhvabm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -178,10 +193,10 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   display: inline-block;
   width: 100%;
 }
-#vvvidrjufb .gt_spanner_row {
+#llimzhvabm .gt_spanner_row {
   border-bottom-style: hidden;
 }
-#vvvidrjufb .gt_group_heading {
+#llimzhvabm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -206,7 +221,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   vertical-align: middle;
   text-align: left;
 }
-#vvvidrjufb .gt_empty_group_heading {
+#llimzhvabm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -220,13 +235,13 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-#vvvidrjufb .gt_from_md > :first-child {
+#llimzhvabm .gt_from_md > :first-child {
   margin-top: 0;
 }
-#vvvidrjufb .gt_from_md > :last-child {
+#llimzhvabm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-#vvvidrjufb .gt_row {
+#llimzhvabm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -244,7 +259,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   vertical-align: middle;
   overflow-x: hidden;
 }
-#vvvidrjufb .gt_stub {
+#llimzhvabm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -256,7 +271,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-left: 5px;
   padding-right: 5px;
 }
-#vvvidrjufb .gt_stub_row_group {
+#llimzhvabm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -269,13 +284,13 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-right: 5px;
   vertical-align: top;
 }
-#vvvidrjufb .gt_row_group_first td {
+#llimzhvabm .gt_row_group_first td {
   border-top-width: 2px;
 }
-#vvvidrjufb .gt_row_group_first th {
+#llimzhvabm .gt_row_group_first th {
   border-top-width: 2px;
 }
-#vvvidrjufb .gt_summary_row {
+#llimzhvabm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -284,14 +299,14 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-left: 5px;
   padding-right: 5px;
 }
-#vvvidrjufb .gt_first_summary_row {
+#llimzhvabm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-#vvvidrjufb .gt_first_summary_row.thick {
+#llimzhvabm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-#vvvidrjufb .gt_last_summary_row {
+#llimzhvabm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -300,7 +315,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-#vvvidrjufb .gt_grand_summary_row {
+#llimzhvabm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -309,7 +324,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-left: 5px;
   padding-right: 5px;
 }
-#vvvidrjufb .gt_first_grand_summary_row {
+#llimzhvabm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -318,7 +333,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-#vvvidrjufb .gt_last_grand_summary_row_top {
+#llimzhvabm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -327,10 +342,10 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-#vvvidrjufb .gt_striped {
+#llimzhvabm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-#vvvidrjufb .gt_table_body {
+#llimzhvabm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -338,7 +353,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-#vvvidrjufb .gt_footnotes {
+#llimzhvabm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -351,7 +366,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-#vvvidrjufb .gt_footnote {
+#llimzhvabm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -359,7 +374,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-left: 5px;
   padding-right: 5px;
 }
-#vvvidrjufb .gt_sourcenotes {
+#llimzhvabm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -372,64 +387,64 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-#vvvidrjufb .gt_sourcenote {
+#llimzhvabm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-#vvvidrjufb .gt_left {
+#llimzhvabm .gt_left {
   text-align: left;
 }
-#vvvidrjufb .gt_center {
+#llimzhvabm .gt_center {
   text-align: center;
 }
-#vvvidrjufb .gt_right {
+#llimzhvabm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-#vvvidrjufb .gt_font_normal {
+#llimzhvabm .gt_font_normal {
   font-weight: normal;
 }
-#vvvidrjufb .gt_font_bold {
+#llimzhvabm .gt_font_bold {
   font-weight: bold;
 }
-#vvvidrjufb .gt_font_italic {
+#llimzhvabm .gt_font_italic {
   font-style: italic;
 }
-#vvvidrjufb .gt_super {
+#llimzhvabm .gt_super {
   font-size: 65%;
 }
-#vvvidrjufb .gt_footnote_marks {
+#llimzhvabm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-#vvvidrjufb .gt_asterisk {
+#llimzhvabm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-#vvvidrjufb .gt_indent_1 {
+#llimzhvabm .gt_indent_1 {
   text-indent: 5px;
 }
-#vvvidrjufb .gt_indent_2 {
+#llimzhvabm .gt_indent_2 {
   text-indent: 10px;
 }
-#vvvidrjufb .gt_indent_3 {
+#llimzhvabm .gt_indent_3 {
   text-indent: 15px;
 }
-#vvvidrjufb .gt_indent_4 {
+#llimzhvabm .gt_indent_4 {
   text-indent: 20px;
 }
-#vvvidrjufb .gt_indent_5 {
+#llimzhvabm .gt_indent_5 {
   text-indent: 25px;
 }
-#vvvidrjufb .katex-display {
+#llimzhvabm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
-#vvvidrjufb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#llimzhvabm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -480,20 +495,20 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
 
 We also evaluated the agents on Python software engineering tasks from [DeepSWE 1.1](https://deepswe.datacurve.ai/). DeepSWE is currently one of the industry-standard agentic coding benchmarks. On these tasks, Posit Assistant scored about the same as Claude Code and Codex for about the same price (Posit Assistant was 4% and 12% cheaper, respectively).[^1]
 
-<div id="vdgpidanyw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vdgpidanyw table {
+<div id="ifvnwvgwya" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ifvnwvgwya table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-#vdgpidanyw thead, #vdgpidanyw tbody, #vdgpidanyw tfoot, #vdgpidanyw tr, #vdgpidanyw td, #vdgpidanyw th {
+#ifvnwvgwya thead, #ifvnwvgwya tbody, #ifvnwvgwya tfoot, #ifvnwvgwya tr, #ifvnwvgwya td, #ifvnwvgwya th {
   border-style: none;
 }
-#vdgpidanyw p {
+#ifvnwvgwya p {
   margin: 0;
   padding: 0;
 }
-#vdgpidanyw .gt_table {
+#ifvnwvgwya .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -518,11 +533,11 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-#vdgpidanyw .gt_caption {
+#ifvnwvgwya .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-#vdgpidanyw .gt_title {
+#ifvnwvgwya .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -533,7 +548,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-#vdgpidanyw .gt_subtitle {
+#ifvnwvgwya .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -544,7 +559,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-#vdgpidanyw .gt_heading {
+#ifvnwvgwya .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -555,12 +570,12 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-#vdgpidanyw .gt_bottom_border {
+#ifvnwvgwya .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-#vdgpidanyw .gt_col_headings {
+#ifvnwvgwya .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -574,7 +589,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-#vdgpidanyw .gt_col_heading {
+#ifvnwvgwya .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -593,7 +608,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-right: 5px;
   overflow-x: hidden;
 }
-#vdgpidanyw .gt_column_spanner_outer {
+#ifvnwvgwya .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -604,13 +619,13 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-left: 4px;
   padding-right: 4px;
 }
-#vdgpidanyw .gt_column_spanner_outer:first-child {
+#ifvnwvgwya .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-#vdgpidanyw .gt_column_spanner_outer:last-child {
+#ifvnwvgwya .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-#vdgpidanyw .gt_column_spanner {
+#ifvnwvgwya .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -621,10 +636,10 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   display: inline-block;
   width: 100%;
 }
-#vdgpidanyw .gt_spanner_row {
+#ifvnwvgwya .gt_spanner_row {
   border-bottom-style: hidden;
 }
-#vdgpidanyw .gt_group_heading {
+#ifvnwvgwya .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -649,7 +664,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   vertical-align: middle;
   text-align: left;
 }
-#vdgpidanyw .gt_empty_group_heading {
+#ifvnwvgwya .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -663,13 +678,13 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-#vdgpidanyw .gt_from_md > :first-child {
+#ifvnwvgwya .gt_from_md > :first-child {
   margin-top: 0;
 }
-#vdgpidanyw .gt_from_md > :last-child {
+#ifvnwvgwya .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-#vdgpidanyw .gt_row {
+#ifvnwvgwya .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -687,7 +702,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   vertical-align: middle;
   overflow-x: hidden;
 }
-#vdgpidanyw .gt_stub {
+#ifvnwvgwya .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -699,7 +714,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-left: 5px;
   padding-right: 5px;
 }
-#vdgpidanyw .gt_stub_row_group {
+#ifvnwvgwya .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -712,13 +727,13 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-right: 5px;
   vertical-align: top;
 }
-#vdgpidanyw .gt_row_group_first td {
+#ifvnwvgwya .gt_row_group_first td {
   border-top-width: 2px;
 }
-#vdgpidanyw .gt_row_group_first th {
+#ifvnwvgwya .gt_row_group_first th {
   border-top-width: 2px;
 }
-#vdgpidanyw .gt_summary_row {
+#ifvnwvgwya .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -727,14 +742,14 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-left: 5px;
   padding-right: 5px;
 }
-#vdgpidanyw .gt_first_summary_row {
+#ifvnwvgwya .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-#vdgpidanyw .gt_first_summary_row.thick {
+#ifvnwvgwya .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-#vdgpidanyw .gt_last_summary_row {
+#ifvnwvgwya .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -743,7 +758,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-#vdgpidanyw .gt_grand_summary_row {
+#ifvnwvgwya .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -752,7 +767,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-left: 5px;
   padding-right: 5px;
 }
-#vdgpidanyw .gt_first_grand_summary_row {
+#ifvnwvgwya .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -761,7 +776,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-#vdgpidanyw .gt_last_grand_summary_row_top {
+#ifvnwvgwya .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -770,10 +785,10 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-#vdgpidanyw .gt_striped {
+#ifvnwvgwya .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-#vdgpidanyw .gt_table_body {
+#ifvnwvgwya .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -781,7 +796,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-#vdgpidanyw .gt_footnotes {
+#ifvnwvgwya .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -794,7 +809,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-#vdgpidanyw .gt_footnote {
+#ifvnwvgwya .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -802,7 +817,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-left: 5px;
   padding-right: 5px;
 }
-#vdgpidanyw .gt_sourcenotes {
+#ifvnwvgwya .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -815,64 +830,64 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-#vdgpidanyw .gt_sourcenote {
+#ifvnwvgwya .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-#vdgpidanyw .gt_left {
+#ifvnwvgwya .gt_left {
   text-align: left;
 }
-#vdgpidanyw .gt_center {
+#ifvnwvgwya .gt_center {
   text-align: center;
 }
-#vdgpidanyw .gt_right {
+#ifvnwvgwya .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-#vdgpidanyw .gt_font_normal {
+#ifvnwvgwya .gt_font_normal {
   font-weight: normal;
 }
-#vdgpidanyw .gt_font_bold {
+#ifvnwvgwya .gt_font_bold {
   font-weight: bold;
 }
-#vdgpidanyw .gt_font_italic {
+#ifvnwvgwya .gt_font_italic {
   font-style: italic;
 }
-#vdgpidanyw .gt_super {
+#ifvnwvgwya .gt_super {
   font-size: 65%;
 }
-#vdgpidanyw .gt_footnote_marks {
+#ifvnwvgwya .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-#vdgpidanyw .gt_asterisk {
+#ifvnwvgwya .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-#vdgpidanyw .gt_indent_1 {
+#ifvnwvgwya .gt_indent_1 {
   text-indent: 5px;
 }
-#vdgpidanyw .gt_indent_2 {
+#ifvnwvgwya .gt_indent_2 {
   text-indent: 10px;
 }
-#vdgpidanyw .gt_indent_3 {
+#ifvnwvgwya .gt_indent_3 {
   text-indent: 15px;
 }
-#vdgpidanyw .gt_indent_4 {
+#ifvnwvgwya .gt_indent_4 {
   text-indent: 20px;
 }
-#vdgpidanyw .gt_indent_5 {
+#ifvnwvgwya .gt_indent_5 {
   text-indent: 25px;
 }
-#vdgpidanyw .katex-display {
+#ifvnwvgwya .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
-#vdgpidanyw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ifvnwvgwya div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
