@@ -11,9 +11,9 @@ description: >
 image: hero.png
 image-alt: >-
   Bar chart of the total cost to run the bluffbench2 benchmark, by agent and
-  model. With the Claude Sonnet 5.5 model, Posit Assistant costs about $6.80
-  versus about $8.30 for Claude Code. With the GPT 6.1 Sol model, Posit
-  Assistant costs about $4.40 versus about $6.00 for Codex.
+  model. With the Claude Sonnet 5.5 model, Posit Assistant costs about $6.76
+  versus about $8.24 for Claude Code. With the GPT 6.1 Sol model, Posit
+  Assistant costs about $4.46 versus about $5.92 for Codex.
 topics:
   - Artificial Intelligence
 software: []
@@ -44,7 +44,7 @@ LLM tokens are expensive, especially if you use coding agents daily. We've heard
 
 [Posit Assistant](https://assistant.posit.co/) is designed to make your token budget go further. To see how it compares with other coding agents, we evaluated cost and performance on [bluffbench2](https://posit-dev.github.io/bluffbench2/), a benchmark that measures how well coding agents notice subtle data quality issues while carrying out exploratory data analysis.
 
-On a set of data science tasks, Posit Assistant was 18% cheaper than Claude Code and 25% cheaper than Codex. Posit Assistant and Claude Code performed the tasks similarly well, while transitioning from Codex to Posit Assistant increased scores on the set of tasks 44%. **Posit Assistant is a cost-efficient alternative to leading coding agents.**
+On a set of data science tasks, Posit Assistant was 18% cheaper than Claude Code and 25% cheaper than Codex. Posit Assistant and Claude Code performed the tasks similarly well, while transitioning from Codex to Posit Assistant increased scores on the set of tasks by 44%. **Posit Assistant is a cost-efficient alternative to leading coding agents.**
 
 <img src="index.markdown_strict_files/figure-markdown_strict/bluffbench2-cost-1.png" data-fig-alt="Bar chart of the cost to run bluffbench2. With Claude Sonnet 5.5, Posit Assistant costs about $6.76 and Claude Code about $8.24. With GPT 6.1 Sol, Posit Assistant costs about $4.46 and Codex about $5.92." width="768" />
 
@@ -52,20 +52,20 @@ On a set of data science tasks, Posit Assistant was 18% cheaper than Claude Code
 
 We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluffbench2](https://posit-dev.github.io/bluffbench2/), which measures how well coding agents notice subtle data quality issues during exploratory data analysis. Posit Assistant never scores worse on this eval than the other harnesses, and is strictly cheaper:
 
-<div id="llimzhvabm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#llimzhvabm table {
+<div id="znpmmtdlcf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#znpmmtdlcf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-#llimzhvabm thead, #llimzhvabm tbody, #llimzhvabm tfoot, #llimzhvabm tr, #llimzhvabm td, #llimzhvabm th {
+#znpmmtdlcf thead, #znpmmtdlcf tbody, #znpmmtdlcf tfoot, #znpmmtdlcf tr, #znpmmtdlcf td, #znpmmtdlcf th {
   border-style: none;
 }
-#llimzhvabm p {
+#znpmmtdlcf p {
   margin: 0;
   padding: 0;
 }
-#llimzhvabm .gt_table {
+#znpmmtdlcf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -90,11 +90,11 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-#llimzhvabm .gt_caption {
+#znpmmtdlcf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-#llimzhvabm .gt_title {
+#znpmmtdlcf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -105,7 +105,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-#llimzhvabm .gt_subtitle {
+#znpmmtdlcf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -116,7 +116,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-#llimzhvabm .gt_heading {
+#znpmmtdlcf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -127,12 +127,12 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-#llimzhvabm .gt_bottom_border {
+#znpmmtdlcf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-#llimzhvabm .gt_col_headings {
+#znpmmtdlcf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -146,7 +146,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-#llimzhvabm .gt_col_heading {
+#znpmmtdlcf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -165,7 +165,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-right: 5px;
   overflow-x: hidden;
 }
-#llimzhvabm .gt_column_spanner_outer {
+#znpmmtdlcf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -176,13 +176,13 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-left: 4px;
   padding-right: 4px;
 }
-#llimzhvabm .gt_column_spanner_outer:first-child {
+#znpmmtdlcf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-#llimzhvabm .gt_column_spanner_outer:last-child {
+#znpmmtdlcf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-#llimzhvabm .gt_column_spanner {
+#znpmmtdlcf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -193,10 +193,10 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   display: inline-block;
   width: 100%;
 }
-#llimzhvabm .gt_spanner_row {
+#znpmmtdlcf .gt_spanner_row {
   border-bottom-style: hidden;
 }
-#llimzhvabm .gt_group_heading {
+#znpmmtdlcf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -221,7 +221,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   vertical-align: middle;
   text-align: left;
 }
-#llimzhvabm .gt_empty_group_heading {
+#znpmmtdlcf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -235,13 +235,13 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-#llimzhvabm .gt_from_md > :first-child {
+#znpmmtdlcf .gt_from_md > :first-child {
   margin-top: 0;
 }
-#llimzhvabm .gt_from_md > :last-child {
+#znpmmtdlcf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-#llimzhvabm .gt_row {
+#znpmmtdlcf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -259,7 +259,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   vertical-align: middle;
   overflow-x: hidden;
 }
-#llimzhvabm .gt_stub {
+#znpmmtdlcf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -271,7 +271,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-left: 5px;
   padding-right: 5px;
 }
-#llimzhvabm .gt_stub_row_group {
+#znpmmtdlcf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -284,13 +284,13 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-right: 5px;
   vertical-align: top;
 }
-#llimzhvabm .gt_row_group_first td {
+#znpmmtdlcf .gt_row_group_first td {
   border-top-width: 2px;
 }
-#llimzhvabm .gt_row_group_first th {
+#znpmmtdlcf .gt_row_group_first th {
   border-top-width: 2px;
 }
-#llimzhvabm .gt_summary_row {
+#znpmmtdlcf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -299,14 +299,14 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-left: 5px;
   padding-right: 5px;
 }
-#llimzhvabm .gt_first_summary_row {
+#znpmmtdlcf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-#llimzhvabm .gt_first_summary_row.thick {
+#znpmmtdlcf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-#llimzhvabm .gt_last_summary_row {
+#znpmmtdlcf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -315,7 +315,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-#llimzhvabm .gt_grand_summary_row {
+#znpmmtdlcf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -324,7 +324,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-left: 5px;
   padding-right: 5px;
 }
-#llimzhvabm .gt_first_grand_summary_row {
+#znpmmtdlcf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -333,7 +333,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-#llimzhvabm .gt_last_grand_summary_row_top {
+#znpmmtdlcf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -342,10 +342,10 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-#llimzhvabm .gt_striped {
+#znpmmtdlcf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-#llimzhvabm .gt_table_body {
+#znpmmtdlcf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -353,7 +353,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-#llimzhvabm .gt_footnotes {
+#znpmmtdlcf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -366,7 +366,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-#llimzhvabm .gt_footnote {
+#znpmmtdlcf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -374,7 +374,7 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   padding-left: 5px;
   padding-right: 5px;
 }
-#llimzhvabm .gt_sourcenotes {
+#znpmmtdlcf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -387,64 +387,64 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-#llimzhvabm .gt_sourcenote {
+#znpmmtdlcf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-#llimzhvabm .gt_left {
+#znpmmtdlcf .gt_left {
   text-align: left;
 }
-#llimzhvabm .gt_center {
+#znpmmtdlcf .gt_center {
   text-align: center;
 }
-#llimzhvabm .gt_right {
+#znpmmtdlcf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-#llimzhvabm .gt_font_normal {
+#znpmmtdlcf .gt_font_normal {
   font-weight: normal;
 }
-#llimzhvabm .gt_font_bold {
+#znpmmtdlcf .gt_font_bold {
   font-weight: bold;
 }
-#llimzhvabm .gt_font_italic {
+#znpmmtdlcf .gt_font_italic {
   font-style: italic;
 }
-#llimzhvabm .gt_super {
+#znpmmtdlcf .gt_super {
   font-size: 65%;
 }
-#llimzhvabm .gt_footnote_marks {
+#znpmmtdlcf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-#llimzhvabm .gt_asterisk {
+#znpmmtdlcf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-#llimzhvabm .gt_indent_1 {
+#znpmmtdlcf .gt_indent_1 {
   text-indent: 5px;
 }
-#llimzhvabm .gt_indent_2 {
+#znpmmtdlcf .gt_indent_2 {
   text-indent: 10px;
 }
-#llimzhvabm .gt_indent_3 {
+#znpmmtdlcf .gt_indent_3 {
   text-indent: 15px;
 }
-#llimzhvabm .gt_indent_4 {
+#znpmmtdlcf .gt_indent_4 {
   text-indent: 20px;
 }
-#llimzhvabm .gt_indent_5 {
+#znpmmtdlcf .gt_indent_5 {
   text-indent: 25px;
 }
-#llimzhvabm .katex-display {
+#znpmmtdlcf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
-#llimzhvabm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#znpmmtdlcf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -495,20 +495,20 @@ We evaluated Posit Assistant, Claude Code, and Codex on Posit's benchmark [bluff
 
 We also evaluated the agents on Python software engineering tasks from [DeepSWE 1.1](https://deepswe.datacurve.ai/). DeepSWE is currently one of the industry-standard agentic coding benchmarks. On these tasks, Posit Assistant scored about the same as Claude Code and Codex for about the same price (Posit Assistant was 4% and 12% cheaper, respectively).[^1]
 
-<div id="ifvnwvgwya" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ifvnwvgwya table {
+<div id="qmxbdvfmlp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qmxbdvfmlp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-#ifvnwvgwya thead, #ifvnwvgwya tbody, #ifvnwvgwya tfoot, #ifvnwvgwya tr, #ifvnwvgwya td, #ifvnwvgwya th {
+#qmxbdvfmlp thead, #qmxbdvfmlp tbody, #qmxbdvfmlp tfoot, #qmxbdvfmlp tr, #qmxbdvfmlp td, #qmxbdvfmlp th {
   border-style: none;
 }
-#ifvnwvgwya p {
+#qmxbdvfmlp p {
   margin: 0;
   padding: 0;
 }
-#ifvnwvgwya .gt_table {
+#qmxbdvfmlp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -533,11 +533,11 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-#ifvnwvgwya .gt_caption {
+#qmxbdvfmlp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-#ifvnwvgwya .gt_title {
+#qmxbdvfmlp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -548,7 +548,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-#ifvnwvgwya .gt_subtitle {
+#qmxbdvfmlp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -559,7 +559,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-#ifvnwvgwya .gt_heading {
+#qmxbdvfmlp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -570,12 +570,12 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-#ifvnwvgwya .gt_bottom_border {
+#qmxbdvfmlp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-#ifvnwvgwya .gt_col_headings {
+#qmxbdvfmlp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -589,7 +589,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-#ifvnwvgwya .gt_col_heading {
+#qmxbdvfmlp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -608,7 +608,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-right: 5px;
   overflow-x: hidden;
 }
-#ifvnwvgwya .gt_column_spanner_outer {
+#qmxbdvfmlp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -619,13 +619,13 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-left: 4px;
   padding-right: 4px;
 }
-#ifvnwvgwya .gt_column_spanner_outer:first-child {
+#qmxbdvfmlp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-#ifvnwvgwya .gt_column_spanner_outer:last-child {
+#qmxbdvfmlp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-#ifvnwvgwya .gt_column_spanner {
+#qmxbdvfmlp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -636,10 +636,10 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   display: inline-block;
   width: 100%;
 }
-#ifvnwvgwya .gt_spanner_row {
+#qmxbdvfmlp .gt_spanner_row {
   border-bottom-style: hidden;
 }
-#ifvnwvgwya .gt_group_heading {
+#qmxbdvfmlp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -664,7 +664,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   vertical-align: middle;
   text-align: left;
 }
-#ifvnwvgwya .gt_empty_group_heading {
+#qmxbdvfmlp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -678,13 +678,13 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-#ifvnwvgwya .gt_from_md > :first-child {
+#qmxbdvfmlp .gt_from_md > :first-child {
   margin-top: 0;
 }
-#ifvnwvgwya .gt_from_md > :last-child {
+#qmxbdvfmlp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-#ifvnwvgwya .gt_row {
+#qmxbdvfmlp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -702,7 +702,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   vertical-align: middle;
   overflow-x: hidden;
 }
-#ifvnwvgwya .gt_stub {
+#qmxbdvfmlp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -714,7 +714,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-left: 5px;
   padding-right: 5px;
 }
-#ifvnwvgwya .gt_stub_row_group {
+#qmxbdvfmlp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -727,13 +727,13 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-right: 5px;
   vertical-align: top;
 }
-#ifvnwvgwya .gt_row_group_first td {
+#qmxbdvfmlp .gt_row_group_first td {
   border-top-width: 2px;
 }
-#ifvnwvgwya .gt_row_group_first th {
+#qmxbdvfmlp .gt_row_group_first th {
   border-top-width: 2px;
 }
-#ifvnwvgwya .gt_summary_row {
+#qmxbdvfmlp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -742,14 +742,14 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-left: 5px;
   padding-right: 5px;
 }
-#ifvnwvgwya .gt_first_summary_row {
+#qmxbdvfmlp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-#ifvnwvgwya .gt_first_summary_row.thick {
+#qmxbdvfmlp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-#ifvnwvgwya .gt_last_summary_row {
+#qmxbdvfmlp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -758,7 +758,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-#ifvnwvgwya .gt_grand_summary_row {
+#qmxbdvfmlp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -767,7 +767,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-left: 5px;
   padding-right: 5px;
 }
-#ifvnwvgwya .gt_first_grand_summary_row {
+#qmxbdvfmlp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -776,7 +776,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-#ifvnwvgwya .gt_last_grand_summary_row_top {
+#qmxbdvfmlp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -785,10 +785,10 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-#ifvnwvgwya .gt_striped {
+#qmxbdvfmlp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-#ifvnwvgwya .gt_table_body {
+#qmxbdvfmlp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -796,7 +796,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-#ifvnwvgwya .gt_footnotes {
+#qmxbdvfmlp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -809,7 +809,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-#ifvnwvgwya .gt_footnote {
+#qmxbdvfmlp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -817,7 +817,7 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   padding-left: 5px;
   padding-right: 5px;
 }
-#ifvnwvgwya .gt_sourcenotes {
+#qmxbdvfmlp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -830,64 +830,64 @@ We also evaluated the agents on Python software engineering tasks from [DeepSWE 
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-#ifvnwvgwya .gt_sourcenote {
+#qmxbdvfmlp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-#ifvnwvgwya .gt_left {
+#qmxbdvfmlp .gt_left {
   text-align: left;
 }
-#ifvnwvgwya .gt_center {
+#qmxbdvfmlp .gt_center {
   text-align: center;
 }
-#ifvnwvgwya .gt_right {
+#qmxbdvfmlp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-#ifvnwvgwya .gt_font_normal {
+#qmxbdvfmlp .gt_font_normal {
   font-weight: normal;
 }
-#ifvnwvgwya .gt_font_bold {
+#qmxbdvfmlp .gt_font_bold {
   font-weight: bold;
 }
-#ifvnwvgwya .gt_font_italic {
+#qmxbdvfmlp .gt_font_italic {
   font-style: italic;
 }
-#ifvnwvgwya .gt_super {
+#qmxbdvfmlp .gt_super {
   font-size: 65%;
 }
-#ifvnwvgwya .gt_footnote_marks {
+#qmxbdvfmlp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-#ifvnwvgwya .gt_asterisk {
+#qmxbdvfmlp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-#ifvnwvgwya .gt_indent_1 {
+#qmxbdvfmlp .gt_indent_1 {
   text-indent: 5px;
 }
-#ifvnwvgwya .gt_indent_2 {
+#qmxbdvfmlp .gt_indent_2 {
   text-indent: 10px;
 }
-#ifvnwvgwya .gt_indent_3 {
+#qmxbdvfmlp .gt_indent_3 {
   text-indent: 15px;
 }
-#ifvnwvgwya .gt_indent_4 {
+#qmxbdvfmlp .gt_indent_4 {
   text-indent: 20px;
 }
-#ifvnwvgwya .gt_indent_5 {
+#qmxbdvfmlp .gt_indent_5 {
   text-indent: 25px;
 }
-#ifvnwvgwya .katex-display {
+#qmxbdvfmlp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
-#ifvnwvgwya div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qmxbdvfmlp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -933,13 +933,9 @@ Under the hood, coding agents are powered by large sets of prompts--system promp
 
 A coding agent's **token efficiency is, partly, a matter of providing this guidance as succinctly as possible.** The set of guidance that Posit Assistant provides along with the user's message is the leanest of this set of coding agents:
 
-<img src="index.markdown_strict_files/figure-markdown_strict/token-profile-1.png" data-fig-alt="Bar chart of input tokens for a single &#39;Hi&#39; turn. With Opus 5.5, Posit Assistant sends about 15,200 tokens and Claude Code about 16,300. With GPT 6 Sol, Posit Assistant sends about 8,500 and Codex about 12,000. (The number for Posit Assistant changes depending on the model because different models convert text into tokens in different ways. Claude&#39;s tokenizer uses more tokens for the same text.)" width="768" />
+<img src="index.markdown_strict_files/figure-markdown_strict/token-profile-1.png" data-fig-alt="Bar chart of input tokens for a single &#39;Hi&#39; turn. With Opus 5.5, Posit Assistant sends about 15,200 tokens and Claude Code about 16,400. With GPT 6 Sol, Posit Assistant sends about 8,500 and Codex about 12,000. (The number for Posit Assistant changes depending on the model because different models convert text into tokens in different ways. Claude&#39;s tokenizer uses more tokens for the same text.)" width="768" />
 
 This is with Claude Code v2.1.309, Codex v0.161.0, and Posit Assistant v1.9.1. These findings can be reproduced with the code [here](https://github.com/posit-dev/open-source-website/tree/main/content/blog/ai-newsletter-13/token-profile).
-
-<!--
-To-do: check that the above link actually works.
--->
 
 **Token efficiency is also a matter of how ergonomic the harness is** for the model to work inside of. For example, for Posit Assistant to make a ggplot, it can write something like:
 
@@ -976,7 +972,7 @@ In addition to writing the code to create the ggplot, Claude Code and Codex must
 }
 ```
 
-Writing this boilerplate code again and again---and sometimes making mistakes in writing the boilerplate and having to retry---adds up over the course of a conversation. Configuring the agents with an MCP tool like [`mcp-console`](https://github.com/t-kalinowski/mcp-console), which gives them access to a persistent R session, helps to reduce the amount of boilerplate, but introducing it also increases the amount of tokens in the initial payload.
+Writing this boilerplate code again and again---and sometimes making mistakes in writing the boilerplate and having to retry---adds up over the course of a conversation. Configuring the agents with an MCP tool like [`mcp-console`](https://github.com/t-kalinowski/mcp-console), which gives them access to a persistent R session, helps to reduce the amount of boilerplate, but introducing it also increases the number of tokens in the initial payload.
 
 Another ergonomics consideration is how well the harness prevents the agent from "accidentally" reading too much text. For example, a coding agent might read a text file with a file name that makes it seem relevant to the task at hand. It's possible that that text file is tens of thousands of lines long; the agent probably doesn't need to see all of them in order to complete its task, and might not have anticipated that there would be so many results. The minimum viable coding agent would provide the agent with the full contents of the file. In this situation, however, Posit Assistant would see a smaller subset of the file and a note that it was truncated, requesting that the agent search inside of the file with a more specific query.
 
@@ -984,7 +980,7 @@ A variety of other features also affect Posit Assistant's cost-efficiency. For o
 
 ## Cost-effective AI with Posit Assistant
 
-In the last couple years, coding and other agents have also become important in many data analysis and scientific workflows. But the cost of using these tools can put them out of reach for many people. Part of [our mission at Posit](https://posit.co/about/pbc-report/) is "\[t\]o enhance the production and consumption of knowledge by everyone, regardless of economic means." Making AI more affordable, then, is part of that mission.
+In the last couple of years, coding and other agents have also become important in many data analysis and scientific workflows. But the cost of using these tools can put them out of reach for many people. Part of [our mission at Posit](https://posit.co/about/pbc-report/) is "\[t\]o enhance the production and consumption of knowledge by everyone, regardless of economic means." Making AI more affordable, then, is part of that mission.
 
 Making our flagship coding agent, [Posit Assistant](https://assistant.posit.co/), more cost-efficient is one part of this effort. We'll continue to focus on keeping costs down for our users.
 
@@ -1000,11 +996,11 @@ Posit's [bluffbench2](https://posit-dev.github.io/bluffbench2/) benchmark measur
 
 <img src="index.markdown_strict_files/figure-markdown_strict/bluffbench2-example-1.png" data-fig-alt="Scatterplot of cholesterol against BMI. Most points form a noisy upward-trending cloud, but a subset falls exactly on a straight line through the cloud." width="768" />
 
-In the above plot, a subset of points are suspiciously straight, suggesting that they could be imputed. To receive full credit on the task, the agent must note the artifact like this one in its summary of the plot. The agent can also receive partial credit by noting the artifact in a follow-up turn, in response to the user asking "What do you see?". If the agent never mentions the issue, the agent receives no credit on the task. The score on the evaluation as a whole combines scores across many of these tasks.
+In the above plot, a subset of points are suspiciously straight, suggesting that they could be imputed. To receive full credit on the task, the agent must note an artifact like this one in its summary of the plot. The agent can also receive partial credit by noting the artifact in a follow-up turn, in response to the user asking "What do you see?". If the agent never mentions the issue, the agent receives no credit on the task. The score on the evaluation as a whole combines scores across many of these tasks.
 
 We ran the evaluation against three setups:
 
-- Posit Assistant has a persistent R (or Python) session built into the harness. The agent runs code in a "normal" R session and sees results, plots, documentation, etc similarly to how a human would.
+- Posit Assistant has a persistent R (or Python) session built into the harness. The agent runs code in a "normal" R session and sees results, plots, documentation, etc., similarly to how a human would.
 - Coding agents like Claude Code and Codex do not have a persistent R session built into their harnesses. Instead, they write small scripts using `Rscript` to carry out data analysis. Often, to see plots that they create, agents first save the plots to image files on the computer before reading them. In this way, the agents tend to spend more tokens to do the same data analysis tasks due to writing code to work around these limitations in their harnesses. At the same time, it's reasonable to suspect that these "plain" coding agents might save somewhat on costs since their prompts don't describe this additional tool for data analysis that Posit Assistant has.
 - Coding agents like Claude Code and Codex can also be hooked up to a persistent R session via MCP, using (Posit's own!) Tomasz Kalinowski's `mcp-console`. Adding this additional tool gives those harnesses a more ergonomic interface to R and Python, but also costs slightly more at startup, since additional information about how to use `mcp-console` is included in the prompt.
 
@@ -1016,6 +1012,6 @@ Running DeepSWE 1.1 is quite expensive. Running the full evaluation across multi
 
 We ran the evaluation against Claude Code with Sonnet 5.5 (Medium), Codex with GPT 6.1 Sol (Medium), and Posit Assistant with both models. Switching from Claude Code or Codex to Posit Assistant didn't seem to affect the evaluation score, and the costs to complete the tasks decreased slightly (4% and 12%, respectively), though not substantially enough for us to assert a genuine change. From these scores, we suspect that Posit Assistant is not meaningfully worse for software engineering tasks than Claude Code or Codex. Anecdotally, we use Posit Assistant ourselves when developing Posit Assistant, and do not experience a shift in coding proficiency.
 
-[^1]: These difference aren't statistically distinguishable from noise, as we ran a relatively small subset of the eval, and only repeated it once. DeepSWE 1.1 is expensive.🙂
+[^1]: These differences aren't statistically distinguishable from noise, as we ran a relatively small subset of the eval, and only repeated it once. DeepSWE 1.1 is expensive. 🙂
 
 [^2]: About a week before this post was released, DeepSWE was replaced in the Artificial Analysis coding agent index by another coding agent benchmark.

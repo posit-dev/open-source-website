@@ -11,9 +11,9 @@ image: hero.png
 image-alt: >-
   Bar chart of the total cost to run the bluffbench2 benchmark, by
   agent and model. With the Claude Sonnet 5.5 model, Posit Assistant
-  costs about $6.80 versus about $8.30 for Claude Code. With the
-  GPT 6.1 Sol model, Posit Assistant costs about $4.40 versus about
-  $6.00 for Codex.
+  costs about $6.76 versus about $8.24 for Claude Code. With the
+  GPT 6.1 Sol model, Posit Assistant costs about $4.46 versus about
+  $5.92 for Codex.
 topics:
   - Artificial Intelligence
 software: []
@@ -65,7 +65,7 @@ LLM tokens are expensive, especially if you use coding agents daily. We've heard
 
 [Posit Assistant](https://assistant.posit.co/) is designed to make your token budget go further. To see how it compares with other coding agents, we evaluated cost and performance on [bluffbench2](https://posit-dev.github.io/bluffbench2/), a benchmark that measures how well coding agents notice subtle data quality issues while carrying out exploratory data analysis.
 
-On a set of data science tasks, Posit Assistant was `r pct(1 - pa_claude$cost / claude_code$cost)` cheaper than Claude Code and `r pct(1 - pa_gpt$cost / codex$cost)` cheaper than Codex. Posit Assistant and Claude Code performed the tasks similarly well, while transitioning from Codex to Posit Assistant increased scores on the set of tasks `r pct(pa_gpt$score / codex$score - 1)`. **Posit Assistant is a cost-efficient alternative to leading coding agents.**
+On a set of data science tasks, Posit Assistant was `r pct(1 - pa_claude$cost / claude_code$cost)` cheaper than Claude Code and `r pct(1 - pa_gpt$cost / codex$cost)` cheaper than Codex. Posit Assistant and Claude Code performed the tasks similarly well, while transitioning from Codex to Posit Assistant increased scores on the set of tasks by `r pct(pa_gpt$score / codex$score - 1)`. **Posit Assistant is a cost-efficient alternative to leading coding agents.**
 
 ```{r}
 #| label: bluffbench2-cost
@@ -152,7 +152,7 @@ bluffbench2[c("model", "harness", "score", "cost")] |>
   )
 ```
 
-We also evaluated the agents on Python software engineering tasks from [DeepSWE 1.1](https://deepswe.datacurve.ai/). DeepSWE is currently one of the industry-standard agentic coding benchmarks. On these tasks, Posit Assistant scored about the same as Claude Code and Codex for about the same price (Posit Assistant was `r pct(1 - ds_pa_claude$cost / ds_claude_code$cost)` and `r pct(1 - ds_pa_gpt$cost / ds_codex$cost)` cheaper, respectively).^[These difference aren't statistically distinguishable from noise, as we ran a relatively small subset of the eval, and only repeated it once. DeepSWE 1.1 is expensive.🙂]
+We also evaluated the agents on Python software engineering tasks from [DeepSWE 1.1](https://deepswe.datacurve.ai/). DeepSWE is currently one of the industry-standard agentic coding benchmarks. On these tasks, Posit Assistant scored about the same as Claude Code and Codex for about the same price (Posit Assistant was `r pct(1 - ds_pa_claude$cost / ds_claude_code$cost)` and `r pct(1 - ds_pa_gpt$cost / ds_codex$cost)` cheaper, respectively).^[These differences aren't statistically distinguishable from noise, as we ran a relatively small subset of the eval, and only repeated it once. DeepSWE 1.1 is expensive. 🙂]
 
 ```{r}
 #| label: deepswe-table
@@ -216,7 +216,7 @@ A coding agent's **token efficiency is, partly, a matter of providing this guida
 ```{r}
 #| label: token-profile
 #| echo: false
-#| fig-alt: "Bar chart of input tokens for a single 'Hi' turn. With Opus 5.5, Posit Assistant sends about 15,200 tokens and Claude Code about 16,300. With GPT 6 Sol, Posit Assistant sends about 8,500 and Codex about 12,000. (The number for Posit Assistant changes depending on the model because different models convert text into tokens in different ways. Claude's tokenizer uses more tokens for the same text.)"
+#| fig-alt: "Bar chart of input tokens for a single 'Hi' turn. With Opus 5.5, Posit Assistant sends about 15,200 tokens and Claude Code about 16,400. With GPT 6 Sol, Posit Assistant sends about 8,500 and Codex about 12,000. (The number for Posit Assistant changes depending on the model because different models convert text into tokens in different ways. Claude's tokenizer uses more tokens for the same text.)"
 library(ggplot2)
 
 token_profile <- read.csv("data/token-profile.csv")
@@ -246,9 +246,6 @@ ggplot(token_totals, aes(model, tokens, fill = tool)) +
 
 This is with Claude Code v2.1.309, Codex v0.161.0, and Posit Assistant v1.9.1. These findings can be reproduced with the code [here](https://github.com/posit-dev/open-source-website/tree/main/content/blog/ai-newsletter-13/token-profile).
 
-<!--
-To-do: check that the above link actually works.
--->
 
 **Token efficiency is also a matter of how ergonomic the harness is** for the model to work inside of. For example, for Posit Assistant to make a ggplot, it can write something like:
 
@@ -285,7 +282,7 @@ In addition to writing the code to create the ggplot, Claude Code and Codex must
 }
 ```
 
-Writing this boilerplate code again and again—and sometimes making mistakes in writing the boilerplate and having to retry—adds up over the course of a conversation. Configuring the agents with an MCP tool like [`mcp-console`](https://github.com/t-kalinowski/mcp-console), which gives them access to a persistent R session, helps to reduce the amount of boilerplate, but introducing it also increases the amount of tokens in the initial payload.
+Writing this boilerplate code again and again—and sometimes making mistakes in writing the boilerplate and having to retry—adds up over the course of a conversation. Configuring the agents with an MCP tool like [`mcp-console`](https://github.com/t-kalinowski/mcp-console), which gives them access to a persistent R session, helps to reduce the amount of boilerplate, but introducing it also increases the number of tokens in the initial payload.
 
 Another ergonomics consideration is how well the harness prevents the agent from "accidentally" reading too much text. For example, a coding agent might read a text file with a file name that makes it seem relevant to the task at hand. It's possible that that text file is tens of thousands of lines long; the agent probably doesn't need to see all of them in order to complete its task, and might not have anticipated that there would be so many results. The minimum viable coding agent would provide the agent with the full contents of the file. In this situation, however, Posit Assistant would see a smaller subset of the file and a note that it was truncated, requesting that the agent search inside of the file with a more specific query.
 
@@ -293,7 +290,7 @@ A variety of other features also affect Posit Assistant's cost-efficiency. For o
 
 ## Cost-effective AI with Posit Assistant
 
-In the last couple years, coding and other agents have also become important in many data analysis and scientific workflows. But the cost of using these tools can put them out of reach for many people. Part of [our mission at Posit](https://posit.co/about/pbc-report/) is "[t]o enhance the production and consumption of knowledge by everyone, regardless of economic means." Making AI more affordable, then, is part of that mission.
+In the last couple of years, coding and other agents have also become important in many data analysis and scientific workflows. But the cost of using these tools can put them out of reach for many people. Part of [our mission at Posit](https://posit.co/about/pbc-report/) is "[t]o enhance the production and consumption of knowledge by everyone, regardless of economic means." Making AI more affordable, then, is part of that mission.
 
 Making our flagship coding agent, [Posit Assistant](https://assistant.posit.co/), more cost-efficient is one part of this effort. We'll continue to focus on keeping costs down for our users.
 
@@ -319,11 +316,11 @@ ggplot(labs, aes(bmi, cholesterol)) +
   theme_minimal(base_size = 14)
 ```
 
-In the above plot, a subset of points are suspiciously straight, suggesting that they could be imputed. To receive full credit on the task, the agent must note the artifact like this one in its summary of the plot. The agent can also receive partial credit by noting the artifact in a follow-up turn, in response to the user asking "What do you see?". If the agent never mentions the issue, the agent receives no credit on the task. The score on the evaluation as a whole combines scores across many of these tasks.
+In the above plot, a subset of points are suspiciously straight, suggesting that they could be imputed. To receive full credit on the task, the agent must note an artifact like this one in its summary of the plot. The agent can also receive partial credit by noting the artifact in a follow-up turn, in response to the user asking "What do you see?". If the agent never mentions the issue, the agent receives no credit on the task. The score on the evaluation as a whole combines scores across many of these tasks.
 
 We ran the evaluation against three setups:
 
-* Posit Assistant has a persistent R (or Python) session built into the harness. The agent runs code in a "normal" R session and sees results, plots, documentation, etc similarly to how a human would.
+* Posit Assistant has a persistent R (or Python) session built into the harness. The agent runs code in a "normal" R session and sees results, plots, documentation, etc., similarly to how a human would.
 * Coding agents like Claude Code and Codex do not have a persistent R session built into their harnesses. Instead, they write small scripts using `Rscript` to carry out data analysis. Often, to see plots that they create, agents first save the plots to image files on the computer before reading them. In this way, the agents tend to spend more tokens to do the same data analysis tasks due to writing code to work around these limitations in their harnesses. At the same time, it's reasonable to suspect that these "plain" coding agents might save somewhat on costs since their prompts don't describe this additional tool for data analysis that Posit Assistant has.
 * Coding agents like Claude Code and Codex can also be hooked up to a persistent R session via MCP, using (Posit's own!) Tomasz Kalinowski's `mcp-console`. Adding this additional tool gives those harnesses a more ergonomic interface to R and Python, but also costs slightly more at startup, since additional information about how to use `mcp-console` is included in the prompt.
 
