@@ -1,6 +1,6 @@
 ---
 title: 'All Together Now: Concurrent Async in Shiny for Python'
-date: 2026-10-29T00:01:00.000Z
+date: 2026-10-29T00:03:00.000Z
 people:
   - Josh Taillon
   - Barret Schloerke
