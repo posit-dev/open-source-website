@@ -21,8 +21,6 @@ source: shiny
 math: true
 ---
 
-<!-- TODO before publishing: confirm the authors and the PR links. -->
-
 [Shiny for Python 1.9](https://pypi.org/project/shiny/) overhauls how the reactive system runs async code, and now uses a concurrency model similar to Shiny for R. This post explains what changed, and shows how much faster an app gets when it awaits slow work. The key changes:
 
 * [A slow `await` in one session no longer blocks other sessions](#one-slow-user-no-longer-blocks-everyone), so individual users of an app no longer wait for each other.
@@ -198,8 +196,6 @@ If your code used `reactive.lock()` to keep two pieces of your own code from run
 
 
 ## New: `run_once_when_idle()`
-
-<!-- TODO after the 1.9 docs are published: check that the run_once_when_idle() link below goes to its entry on the Session page. -->
 
 Sometimes a change should wait until a session's running effects have finished, the same way input changes from the browser do. [`session.run_once_when_idle()`](https://shiny.posit.co/py/api/core/Session.html#shiny.Session.run_once_when_idle) runs a function once, at the start of the session's next cycle:
 
