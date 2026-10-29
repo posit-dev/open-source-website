@@ -218,7 +218,7 @@ The function runs when all of the session's effects have finished and its output
 
 To view the spans of your own app, see [Shiny's OpenTelemetry docs](https://shiny.posit.co/py/docs/opentelemetry.html).
 
-The example apps in this post are in the post's [`_examples/` folder](https://github.com/posit-dev/open-source-website/tree/main/content/blog/shiny-python-concurrent-async/_examples). To compare the two versions on your own machine, run `four-users/app.py` with Shiny 1.8, and then with Shiny 1.9.
+The example apps shown in this post are in the [`_examples/` folder](https://github.com/posit-dev/open-source-website/tree/main/content/blog/shiny-python-concurrent-async/_examples). To compare the async changes on your own machine, you can run `four-users/app.py` with Shiny 1.8, and then with Shiny 1.9.
 
 
 ## In closing
