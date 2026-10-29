@@ -214,8 +214,6 @@ The example apps in this post are in the post's [`_examples/` folder](https://gi
 
 ## Acknowledgements
 
-<!-- TODO before publishing: re-run get_contributors.R for posit-dev/py-shiny from v1.8.0, since more issues and PRs will land before the release. -->
-
 A big thank you to all the folks who helped make this release happen by opening issues and contributing code:
 
-[@acrosby](https://github.com/acrosby), [@cpsievert](https://github.com/cpsievert), [@faysou](https://github.com/faysou), [@FBruzzesi](https://github.com/FBruzzesi), [@fricour](https://github.com/fricour), [@jat255](https://github.com/jat255), [@karangattu](https://github.com/karangattu), [@mmporong](https://github.com/mmporong), [@pcbeingused333](https://github.com/pcbeingused333), [@raashish1601](https://github.com/raashish1601), [@Rodrigo-Palma](https://github.com/Rodrigo-Palma), [@schloerke](https://github.com/schloerke), [@taekop](https://github.com/taekop), and [@wolfgang-aura](https://github.com/wolfgang-aura).
+[@cpsievert](https://github.com/cpsievert), [@faysou](https://github.com/faysou), [@FBruzzesi](https://github.com/FBruzzesi), [@fricour](https://github.com/fricour), [@jat255](https://github.com/jat255), [@karangattu](https://github.com/karangattu), [@mmporong](https://github.com/mmporong), [@pcbeingused333](https://github.com/pcbeingused333), [@raashish1601](https://github.com/raashish1601), [@Rodrigo-Palma](https://github.com/Rodrigo-Palma), [@schloerke](https://github.com/schloerke), [@taekop](https://github.com/taekop), and [@wolfgang-aura](https://github.com/wolfgang-aura).

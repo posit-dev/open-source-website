@@ -217,8 +217,6 @@ The example apps in this post are in the post's [`_examples/` folder](https://gi
 
 ## Acknowledgements
 
-<!-- TODO before publishing: re-run get_contributors.R for posit-dev/py-shiny from v1.8.0, since more issues and PRs will land before the release. -->
-
 A big thank you to all the folks who helped make this release happen by opening issues and contributing code:
 
-[&#x0040;acrosby](https://github.com/acrosby), [&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;faysou](https://github.com/faysou), [&#x0040;FBruzzesi](https://github.com/FBruzzesi), [&#x0040;fricour](https://github.com/fricour), [&#x0040;jat255](https://github.com/jat255), [&#x0040;karangattu](https://github.com/karangattu), [&#x0040;mmporong](https://github.com/mmporong), [&#x0040;pcbeingused333](https://github.com/pcbeingused333), [&#x0040;raashish1601](https://github.com/raashish1601), [&#x0040;Rodrigo-Palma](https://github.com/Rodrigo-Palma), [&#x0040;schloerke](https://github.com/schloerke), [&#x0040;taekop](https://github.com/taekop), and [&#x0040;wolfgang-aura](https://github.com/wolfgang-aura).
+[&#x0040;cpsievert](https://github.com/cpsievert), [&#x0040;faysou](https://github.com/faysou), [&#x0040;FBruzzesi](https://github.com/FBruzzesi), [&#x0040;fricour](https://github.com/fricour), [&#x0040;jat255](https://github.com/jat255), [&#x0040;karangattu](https://github.com/karangattu), [&#x0040;mmporong](https://github.com/mmporong), [&#x0040;pcbeingused333](https://github.com/pcbeingused333), [&#x0040;raashish1601](https://github.com/raashish1601), [&#x0040;Rodrigo-Palma](https://github.com/Rodrigo-Palma), [&#x0040;schloerke](https://github.com/schloerke), [&#x0040;taekop](https://github.com/taekop), and [&#x0040;wolfgang-aura](https://github.com/wolfgang-aura).
