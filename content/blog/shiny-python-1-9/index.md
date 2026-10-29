@@ -75,7 +75,7 @@ There's a lot more to say about this, so it has its own post: [All Together Now:
 
 Besides the concurrency changes above, three changes may need an update to your code or tests:
 
-- **Sidebars render a `<div>` by default.** `ui.sidebar()` used to render an `<aside>`, which is a "complementary" landmark. Now it renders a neutral `<div>` unless you set [`role=`](#sidebar-landmarks). If your CSS, JavaScript, or tests select `aside.sidebar`, select `.sidebar` instead, or set `role="complementary"` to keep the `<aside>`.
+- **Sidebars render a `<div>` by default.** `ui.sidebar()` used to render an `<aside>`, which is a ["complementary" landmark](https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/complementary.html). Now it renders a neutral `<div>` unless you set [`role=`](#sidebar-landmarks). If your CSS, JavaScript, or tests select `aside.sidebar`, select `.sidebar` instead, or set `role="complementary"` to keep the `<aside>`.
 - **`near_points(add_dist=True)` names its column `dist_`.** The docs always said `dist_`, but the column was named `dist`, which could collide with a `dist` column in your own data. Code that reads `df["dist"]` from the result must now read `df["dist_"]`.
 - **OpenTelemetry `reactive_update` spans follow each session.** There is now one span per session cycle, from when the session turns busy until all of its effects (including async ones) have finished, and it carries the session's `session.id`. Before, one span covered a whole reactive flush, which could serve several sessions. If you have dashboards or alerts built on these spans, check them after you upgrade. Effects without a session no longer have a `reactive_update` parent.
 
