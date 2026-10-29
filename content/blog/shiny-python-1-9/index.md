@@ -64,7 +64,7 @@ async def forecast():
     return await api.forecast()  # 2 seconds
 ```
 
-In 1.8, this page took four seconds for one user, and eight seconds for the second of two users who clicked at the same time. In 1.9, both outputs finish after two seconds for everyone. Within a session, nothing changes that you can see: input changes still wait until all of the session's effects have finished, and outputs are still sent together.
+In 1.8, this page took four seconds for one user, and eight seconds for the second of two users who clicked at the same time. In 1.9, both outputs finish after two seconds for everyone. The rest of how a session behaves stays the same: input changes still wait until all of the session's effects have finished, and outputs are still sent together.
 
 There's a lot more to say about this, so it has its own post: [All Together Now: Concurrent Async in Shiny for Python](../../blog/2026-10-29_shiny-python-concurrent-async/). It covers how the new model works, why concurrency still needs `await` (synchronous code still blocks every session), and the changes you might notice in an existing app. Two API changes come with it:
 
@@ -147,13 +147,13 @@ def table():
 
 <img src="download-icon.png" alt="A Shiny app titled Penguins shows a green Download CSV button with a download icon, above a table of three penguin species, their islands, and their bill lengths." />
 
-This is part of a wider fix. In Express, `@output_args()` now accepts every argument of the output's UI function, with matching types. So `@render.ui` now takes `inline`, `container`, `fill`, `fillable`, and HTML attributes, and `@render.text` takes `container`, instead of raising a `TypeError`. Your type checker now knows about all of these as well.
+This is part of a wider fix. In Express, `@output_args()` now accepts every argument of the output's UI function. On a `@render.ui` output, it accepts `inline`, `container`, `fill`, `fillable`, and HTML attributes, and on a `@render.text` output it accepts `container`, instead of raising a `TypeError`.
 
 Also, if a download handler sets a reactive value, the outputs and effects that read it now update right away. Before, they waited for the next message from the browser.
 
 ## Updates from background tasks
 
-Sometimes an app starts an `asyncio` task that runs alongside the reactive graph, for example to poll a service or to watch a file. Before 1.9, a `ui.update_*()` call or a custom message from such a task sat in a queue until the user next changed an input. In 1.9, it's sent to the browser right away:
+Sometimes an app starts an `asyncio` task that runs alongside the reactive graph, for example to poll a service or to watch a file. Before 1.9, a `ui.update_*()` call from such a task sat in a queue until the user next changed an input. In 1.9, it's sent to the browser right away:
 
 ``` python
 import asyncio
