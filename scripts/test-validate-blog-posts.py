@@ -388,6 +388,35 @@ class TestCheckSoftware:
         assert len(issues) == 1
         assert issues[0].level == "warning"
 
+    def test_invalid_suggests_other_software(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "my-post")
+        issues = v.check_software(p, {"software": ["polars"]}, ctx)
+        assert len(issues) == 1
+        assert "other_software" in issues[0].message
+
+    def test_missing_with_other_software(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "my-post")
+        assert v.check_software(p, {"other_software": ["Polars"]}, ctx) == []
+
+    def test_other_software_with_page(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "my-post")
+        fm = {"software": ["quarto"], "other_software": ["ggplot2"]}
+        issues = v.check_software(p, fm, ctx)
+        assert len(issues) == 1
+        assert issues[0].level == "warning"
+        assert "under `software` instead" in issues[0].message
+
+    def test_other_software_must_be_list_or_string(self, tmp_path):
+        ctx = make_ctx(tmp_path)
+        p = post_path(tmp_path, "my-post")
+        fm = {"software": ["ggplot2"], "other_software": {"name": "Polars"}}
+        issues = v.check_software(p, fm, ctx)
+        assert len(issues) == 1
+        assert issues[0].level == "error"
+
 
 # --- check_people ---
 

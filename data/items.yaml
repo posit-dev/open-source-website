@@ -16,6 +16,25 @@ blog:
   tile_class: ""
   title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-xl @trenta:text-2xl text-gray-600"
 
+books:
+  author_class: "font-medium text-gray-600"
+  badge_hide_path: "/resources/books/"
+  badge_icon: "boxicons--book-bookmark-filled"
+  badge_text: "book"
+  card_class: ""
+  description_class: "@tall:line-clamp-3 font-medium text-gray-600"
+  hero_class: ""
+  # Optional: image classes for the profile hero; falls back to image_class.
+  # Book pages get a 10% margin left and right of the cover.
+  hero_image_class: "object-contain px-[10%] py-[6%] book-cover"
+  hero_layout: "profile"
+  image_class: "object-contain py-[6%] book-cover"
+  metadata_class: "text-xs font-medium text-gray-500"
+  people_show: true
+  row_class: ""
+  tile_class: ""
+  title_class: "text-sm @tall:text-base @grande:text-lg @venti:text-xl @trenta:text-2xl text-gray-600"
+
 cheatsheets:
   author_class: "font-medium text-gray-600"
   badge_hide_path: "/resources/cheatsheets/"

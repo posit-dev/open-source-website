@@ -34,6 +34,7 @@ Recent posts (see [all posts](https://opensource.posit.co/blog/)):
 
 ## Resources
 
+- [Books](https://opensource.posit.co/resources/books/): Books written by the people behind Posit open-source software, many of them free to read online.
 - [Cheatsheets](https://opensource.posit.co/resources/cheatsheets/): Concise reference guides for popular R and Python packages.
 - [Courses](https://opensource.posit.co/resources/courses/): Courses and learning paths from Posit Academy.
 - [Videos](https://opensource.posit.co/resources/videos/): Talks, tutorials, and community hangouts about Posit open-source software.

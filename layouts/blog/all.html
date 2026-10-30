@@ -211,10 +211,17 @@
             </td>
 
             <!-- Software -->
-            <td class="px-3 py-2" data-value="{{ if .Params.software }}{{ delimit .Params.software ", " }}{{ end }}">
-              {{ with .Params.software }}
+            {{ $allSoftware := union (.Params.other_software | default slice) (.Params.software | default slice) }}
+            <td class="px-3 py-2" data-value="{{ delimit $allSoftware ", " }}">
+              {{ if $allSoftware }}
                 <div class="flex flex-wrap gap-1">
-                  {{ range . }}
+                  {{/* other_software has no page on this site, so it's greyed out */}}
+                  {{ range .Params.other_software }}
+                    <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-gray-700 grayscale">
+                      {{ . }}
+                    </span>
+                  {{ end }}
+                  {{ range .Params.software }}
                     <span class="text-xs px-1.5 py-0.5 rounded bg-green-100 text-gray-700">
                       {{ . }}
                     </span>

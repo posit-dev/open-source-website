@@ -18,6 +18,10 @@
     {{- end }}
     <vr:type>post</vr:type>
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "software" "element" "software" "mode" "href") -}}
+    {{- /* other_software: names without a page on this site, so no URL to link to */ -}}
+    {{- range $page.Params.other_software }}
+    <vr:other_software>{{ . }}</vr:other_software>
+    {{- end }}
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "languages" "mode" "term") -}}
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "topics" "element" "topic" "mode" "term") -}}
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "events" "element" "event" "mode" "href") -}}

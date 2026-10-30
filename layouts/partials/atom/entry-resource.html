@@ -1,5 +1,5 @@
-{{- /* atom/entry-resource.html — one <entry> for a resource (cheatsheet, course,
-  video, tutorial, webinar). vr:type = resource; the specific kind is vr:resource_type. */ -}}
+{{- /* atom/entry-resource.html — one <entry> for a resource (book, cheatsheet,
+  course, video, tutorial, webinar). vr:type = resource; the specific kind is vr:resource_type. */ -}}
 {{- $page := .page -}}
 {{- $ext := $page.Params.external | default dict -}}
   <entry>
@@ -20,6 +20,10 @@
     <vr:resource_type>{{ . }}</vr:resource_type>
     {{- end }}
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "software" "element" "software" "mode" "href") -}}
+    {{- /* other_software: names without a page on this site, so no URL to link to */ -}}
+    {{- range $page.Params.other_software }}
+    <vr:other_software>{{ . }}</vr:other_software>
+    {{- end }}
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "languages" "mode" "term") -}}
     {{- if $page.Params.download_url }}
     {{- with $page.Resources.GetMatch $page.Params.download_url }}
@@ -55,6 +59,32 @@
     {{- end }}
     {{- with $page.Params.duration }}
     <vr:duration>{{ . }}</vr:duration>
+    {{- end }}
+    {{- end }}
+    {{- if eq ($page.Params.resource_type | default "") "book" }}
+    {{- with $page.Params.subtitle }}
+    <vr:subtitle>{{ . }}</vr:subtitle>
+    {{- end }}
+    {{- with $page.Params.edition }}
+    <vr:edition>{{ . }}</vr:edition>
+    {{- end }}
+    {{- with $page.Params.publisher }}
+    <vr:publisher>{{ . }}</vr:publisher>
+    {{- end }}
+    {{- with $page.Params.isbn }}
+    <vr:isbn>{{ . }}</vr:isbn>
+    {{- end }}
+    {{- with $page.Params.pages }}
+    <vr:pages>{{ . }}</vr:pages>
+    {{- end }}
+    {{- with $page.Params.read_url }}
+    <vr:read_url>{{ . }}</vr:read_url>
+    {{- end }}
+    {{- with $page.Params.buy_url }}
+    <vr:buy_url>{{ . }}</vr:buy_url>
+    {{- end }}
+    {{- with $page.Params.github }}
+    <vr:github>{{ . }}</vr:github>
     {{- end }}
     {{- end }}
     {{ partial "atom/image.html" (dict "page" $page) -}}

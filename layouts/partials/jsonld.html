@@ -5,6 +5,7 @@
        software terms  -> SoftwareApplication + SoftwareSourceCode
        event terms     -> Event
        video resources -> VideoObject
+       books           -> Book
        cheatsheets     -> LearningResource
        people terms    -> Person
      Included site-wide from partials/head.html. */ -}}
@@ -164,6 +165,76 @@
             "userInteractionCount" .)) -}}
     {{- end -}}
 
+  {{- else if and (eq .Data.Singular "resource") (eq .Params.resource_type "book") -}}
+    {{- $ld = dict
+          "@context" "https://schema.org"
+          "@type" "Book"
+          "name" .Title
+          "url" .Permalink
+          "inLanguage" "en"
+    -}}
+    {{- with .Params.subtitle -}}
+      {{- $ld = merge $ld (dict "alternativeHeadline" .) -}}
+    {{- end -}}
+    {{- with .Params.description -}}
+      {{- $ld = merge $ld (dict "description" (. | plainify)) -}}
+    {{- end -}}
+    {{- /* Month precision, matching what the site shows */ -}}
+    {{- with .Date -}}
+      {{- $ld = merge $ld (dict "datePublished" (.Format "2006-01")) -}}
+    {{- end -}}
+    {{- with .Params.isbn -}}
+      {{- $ld = merge $ld (dict "isbn" .) -}}
+    {{- end -}}
+    {{- with .Params.pages -}}
+      {{- $ld = merge $ld (dict "numberOfPages" (int .)) -}}
+    {{- end -}}
+    {{- with .Params.edition -}}
+      {{- $ld = merge $ld (dict "bookEdition" (string .)) -}}
+    {{- end -}}
+    {{- with .Params.publisher -}}
+      {{- $ld = merge $ld (dict "publisher" (dict "@type" "Organization" "name" .)) -}}
+    {{- end -}}
+    {{- $authors := slice -}}
+    {{- range .Params.people -}}
+      {{- $authors = $authors | append (dict "@type" "Person" "name" .) -}}
+    {{- end -}}
+    {{- with $authors -}}
+      {{- $ld = merge $ld (dict "author" .) -}}
+    {{- end -}}
+    {{- with .Params.image -}}
+      {{- with $.Resources.Get . -}}
+        {{- $ld = merge $ld (dict "image" .Permalink) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $sameAs := slice -}}
+    {{- range slice .Params.website .Params.buy_url -}}
+      {{- with . -}}
+        {{- if not (in $sameAs .) -}}
+          {{- $sameAs = $sameAs | append . -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with .Params.github -}}
+      {{- $sameAs = $sameAs | append (printf "https://github.com/%s" .) -}}
+    {{- end -}}
+    {{- with $sameAs -}}
+      {{- $ld = merge $ld (dict "sameAs" .) -}}
+    {{- end -}}
+    {{- if .Params.read_url -}}
+      {{- $ld = merge $ld (dict "isAccessibleForFree" true) -}}
+    {{- end -}}
+    {{- $about := slice -}}
+    {{- range .Params.other_software -}}
+      {{- $about = $about | append (dict "@type" "SoftwareApplication" "name" .) -}}
+    {{- end -}}
+    {{- range .GetTerms "software" -}}
+      {{- $about = $about | append (dict "@type" "SoftwareApplication" "name" .LinkTitle "url" .Permalink) -}}
+    {{- end -}}
+    {{- with $about -}}
+      {{- $ld = merge $ld (dict "about" .) -}}
+    {{- end -}}
+
   {{- else if and (eq .Data.Singular "resource") (eq .Params.resource_type "course") -}}
     {{- $ld = dict
           "@context" "https://schema.org"
@@ -210,6 +281,9 @@
       {{- end -}}
     {{- end -}}
     {{- $about := slice -}}
+    {{- range .Params.other_software -}}
+      {{- $about = $about | append (dict "@type" "SoftwareApplication" "name" .) -}}
+    {{- end -}}
     {{- range .Params.software -}}
       {{- $about = $about | append (dict "@type" "SoftwareApplication" "name" .) -}}
     {{- end -}}

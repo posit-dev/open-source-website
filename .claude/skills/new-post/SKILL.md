@@ -35,6 +35,7 @@ From the title and topic, reason about:
 
 - **slug** — only needed if it should differ from the folder name; otherwise the folder name is used automatically
 - **software** — folder names from `content/software/` that the post is about (e.g. `ggplot2`, `quarto`, `great-tables`)
+- **other_software** — optional; display names of software the post is about that has no folder in `content/software/` (e.g. `Polars`, `knitr`). These show as greyed-out, non-clickable pills.
 - **languages** — programming languages featured (R, Python, etc.)
 - **topics** — one or more from the fixed set in `data/topics.yaml`: Machine Learning, Artificial Intelligence, Visualization, Interactive Apps, Publishing, MLOps and Admin, Data Wrangling, Best Practices, Community
 - **source** — set if the post belongs to one of the projects with its own blog listing page, so it appears there (e.g. `source: tidyverse` → `/blog/q/tidyverse/`). Older project blog URLs (e.g. `tidyverse.org/blog/`) redirect to these listing pages, so this is how a new post stays visible to those readers. Valid values: `positron`, `tidyverse`, `ai`, `shiny`, `great_tables`, `plotnine`, `pointblank`, `quarto`. Infer from the inferred `software`/topic (e.g. dplyr/ggplot2 → `tidyverse`, Positron → `positron`); confirm with the user. Omit only if the post genuinely doesn't belong to any of these projects.

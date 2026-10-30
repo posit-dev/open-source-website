@@ -757,6 +757,17 @@ mark[data-pagefind-highlight],
     @apply flex items-center gap-2 text-base text-gray-600;
   }
 
+  /* Subtle 1px outline around book covers. A drop-shadow filter follows the
+     rendered image, so the outline hugs the cover even with object-contain
+     and padding, where a regular border would surround the whole box. */
+  .book-cover {
+    --book-cover-outline: color-mix(in srgb, var(--color-gray-500) 35%, transparent);
+    filter: drop-shadow(1px 0 0 var(--book-cover-outline))
+      drop-shadow(-1px 0 0 var(--book-cover-outline))
+      drop-shadow(0 1px 0 var(--book-cover-outline))
+      drop-shadow(0 -1px 0 var(--book-cover-outline));
+  }
+
   /* Inline metadata item (tile/row) with icon */
   .meta-item {
     @apply flex items-center gap-1 whitespace-nowrap;
