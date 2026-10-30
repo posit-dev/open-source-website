@@ -21,7 +21,7 @@ tags:
 hidesubscription: false
 ---
 
-Quarto 1.11 is coming early to deliver an important security update. You can try it from the [pre-release download page](https://quarto.org/docs/download/prerelease.html), and find the complete changes in the [Release Notes](https://quarto.org/docs/download/changelog/1.11/).
+Quarto 1.11 is coming early to deliver a Deno security update. You can try it from the [pre-release download page](https://quarto.org/docs/download/prerelease.html) and find the complete changes in the [Release Notes](https://quarto.org/docs/download/changelog/1.11/).
 
 Alongside the security update, this release includes accessibility improvements, new capabilities for Typst documents and the Julia engine, and fixes to shared metadata.
 
@@ -29,9 +29,11 @@ Alongside the security update, this release includes accessibility improvements,
 
 Quarto 1.11 bundles Deno 2.9.8, which rejects certificate chains containing the compromised eMudhra and emSign keys. This protects HTTPS requests made by Quarto commands, including publishing, downloading extensions and templates, and installing tools.
 
-We are releasing 1.11 early because this update will not be backported to Quarto 1.10. Changing the certificate store setting does not address the problem. Once 1.11 is released, upgrading is the way to get the fix; see [quarto-dev/quarto-cli#15152](https://github.com/quarto-dev/quarto-cli/issues/15152) for the details.
+We are releasing 1.11 early because this update will not be backported to Quarto 1.10. Changing the certificate store setting does not address the problem. See [quarto-dev/quarto-cli#15152](https://github.com/quarto-dev/quarto-cli/issues/15152) for the details.
 
-This is an accelerated release rather than a broader refresh of the bundled tools: Pandoc 3.10, Typst 0.15.1, Sass 1.101.0, esbuild 0.28.1, and Mermaid 11.12.0 remain at the versions shipped in Quarto 1.10. Deno moves from 2.7.14 to 2.9.8 to deliver the security fix. There are also updates to the Observable JavaScript runtime components and the Julia engine, alongside the Quarto changes described below.
+We released Quarto 1.10.20 on October 30, ahead of our usual monthly patch schedule, to include the remaining backported fixes. It is the final patch release in the 1.10 series. We recommend that all users upgrade to Quarto 1.11 once it is released to receive the Deno security fix.
+
+Deno moves from 2.7.14 to 2.9.8. The other bundled tools keep their Quarto 1.10 versions: Pandoc 3.10, Typst 0.15.1, Sass 1.101.0, esbuild 0.28.1, and Mermaid 11.12.0. This release also updates the Observable JavaScript runtime components and the Julia engine.
 
 The updated Deno has a minimum macOS version of 12 (Monterey).
 
@@ -83,7 +85,7 @@ Learn more at [Lists of Figures and Tables](https://quarto.org/docs/output-forma
 
 ## Julia Engine Improvements
 
-The Julia engine now supports `execute-dir`, exporting an executed notebook with `keep-ipynb: true`, and shared worker processes for notebooks with matching configurations. It also includes fixes for renders that hang on long error stack traces or cells that leave a process running.
+The Julia engine now supports `execute-dir` and exporting an executed notebook with `keep-ipynb: true`. Notebooks with matching configurations can share worker processes. This release also fixes renders that hang on long error stack traces or cells that leave a process running.
 
 The bundled engine uses QuartoNotebookRunner 0.18.5. Changes to document or project metadata now invalidate cached cell output.
 
@@ -95,7 +97,7 @@ Metadata shared through projects, directories, and `metadata-files` now reaches 
 
 Learn more at [Metadata Merging](https://quarto.org/docs/projects/quarto-projects.html#metadata-merging).
 
-Website metadata also receives stricter validation. Misspelled page-level `open-graph` and `twitter-card` options now fail the render with an error instead of being ignored. Put declared preview-image dimensions under `open-graph`; Twitter Cards do not use `image-width` or `image-height`. When a page provides its own image, declare its dimensions in the page's `open-graph` options or shared directory metadata, rather than relying on the site's image dimensions.
+Quarto now validates website metadata more strictly. Misspelled page-level `open-graph` and `twitter-card` options now fail the render with an error instead of being ignored. Put preview-image dimensions under `open-graph`; Twitter Cards do not use `image-width` or `image-height`. When a page provides its own image, declare its dimensions in the page's `open-graph` options or shared directory metadata, rather than relying on the site's image dimensions.
 
 Learn more at [Social Metadata](https://quarto.org/docs/websites/website-tools.html#social-metadata).
 
