@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   id: 1yhxdk9z5uz2g
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/2svubg3gvjqp7/promo-image.1791469241.svg
   kind: course
-  modified_at: '2026-10-08T14:20:41.806936Z'
+  modified_at: '2026-10-28T14:14:51.016208Z'
   order: 2
   slug: what-is-posit-connect
   title: What is Posit Connect?

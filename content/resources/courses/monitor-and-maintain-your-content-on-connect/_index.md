@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   id: vw5c0vs1xrji
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/15giabtxikdbs/promo-image.1791515232.svg
   kind: course
-  modified_at: '2026-10-09T03:07:13.019295Z'
+  modified_at: '2026-10-27T12:21:35.704241Z'
   order: 14
   slug: monitor-and-maintain-your-content-on-connect
   title: Monitor and maintain your content on Connect

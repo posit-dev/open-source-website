@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   id: 3m63iruj1dirs
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/4zep2u0wvrv4/promo-image.1791469555.svg
   kind: course
-  modified_at: '2026-10-08T18:22:39.973387Z'
+  modified_at: '2026-10-27T11:43:34.152646Z'
   order: 30
   slug: migrate-to-positron-from-vs-code
   software:

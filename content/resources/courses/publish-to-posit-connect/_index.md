@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   id: 112r9bsxw49ye
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/1elslsj4kprhe/promo-image.1791470095.svg
   kind: course
-  modified_at: '2026-10-08T14:34:55.348710Z'
+  modified_at: '2026-10-27T14:14:51.456846Z'
   order: 11
   slug: publish-to-posit-connect
   title: Publish to Posit Connect

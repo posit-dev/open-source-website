@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   id: 3i8mqvvs4gdpe
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/367itpln497d9/promo-image.1791515127.svg
   kind: course
-  modified_at: '2026-10-09T03:05:28.042103Z'
+  modified_at: '2026-10-27T11:56:12.540894Z'
   order: 17
   slug: using-r-and-python-inside-the-posit-team-native-app-in-snowflake
   software:

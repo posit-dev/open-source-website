@@ -17,7 +17,7 @@ external:  # updated automatically, do not edit
   id: 1ziy2yxxw6y3j
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/7v0h7muf47w7/promo-image.1791515408.svg
   kind: course
-  modified_at: '2026-10-09T03:10:09.290219Z'
+  modified_at: '2026-10-27T12:05:58.475285Z'
   order: 25
   slug: ai-and-llm-fundamentals
   title: AI and LLM Fundamentals

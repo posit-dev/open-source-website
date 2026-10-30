@@ -1,0 +1,149 @@
+# Render with: d2 --theme 0 --elk-nodeNodeBetweenLayers 45 how-it-works.d2 how-it-works.svg
+vars: {
+  d2-config: {
+    layout-engine: elk
+    pad: 30
+  }
+}
+
+grid-columns: 1
+grid-gap: 48
+
+classes: {
+  panel: {style: {fill: "#FFFFFF"; stroke: "#B0BEC5"; border-radius: 12}}
+  heading: {shape: text; style: {font-size: 28; bold: true}}
+  pair: {style: {fill: transparent; stroke: transparent}}
+  user: {shape: person; width: 60; height: 60; style: {font-size: 18}}
+  lock: {shape: hexagon; width: 170; style: {fill: "#FDECEA"; stroke: "#C62828"; font-size: 17; bold: true}}
+  slow: {width: 110; style: {fill: "#FFF3E0"; stroke: "#E65100"; border-radius: 6; font-size: 16}}
+  run: {width: 110; style: {fill: "#E8F4EA"; stroke: "#2E7D32"; border-radius: 6; font-size: 16}}
+  step: {width: 190; style: {fill: "#E3F2FD"; stroke: "#1565C0"; border-radius: 6; font-size: 16}}
+  row: {style: {fill: "#F5F9FF"; stroke: "#90CAF9"; border-radius: 10; font-size: 18; bold: true}}
+  wait: {style: {stroke: "#C62828"; stroke-width: 2; stroke-dash: 4; font-size: 15; font-color: "#C62828"}}
+  flow: {style: {stroke: "#1565C0"; stroke-width: 2; font-size: 15}}
+  next: {style: {stroke: "#1565C0"; stroke-width: 2; stroke-dash: 4; font-size: 15}}
+  seq: {style: {stroke: "#E65100"; stroke-width: 2}}
+  note: {shape: text; style: {font-size: 17}}
+  tasks: {label.near: bottom-left; style: {fill: "#F7FCF8"; stroke: "#81C784"; stroke-dash: 3; border-radius: 8; font-size: 15; font-color: "#2E7D32"; bold: true}}
+}
+
+before: "" {
+  class: pair
+  grid-columns: 1
+  grid-gap: 14
+
+  title: "Shiny 1.8: everyone takes turns behind one lock" {class: heading}
+
+  panel: "" {
+    class: panel
+    direction: right
+
+    carol: Carol {class: user}
+    bob: Bob {class: user}
+    alice: Alice {class: user}
+
+    lock: "One lock for\nthe whole app" {class: lock}
+
+    line: "Global queue" {
+      label.near: bottom-right
+      style: {fill: "#FFFBF5"; stroke: "#FFCC80"; border-radius: 10; font-size: 16; font-color: "#E65100"; bold: true}
+      direction: right
+      a1: "Alice\nSales" {class: slow}
+      a2: "Alice\nForecast" {class: slow}
+      b1: "Bob\nSales" {class: slow}
+      b2: "Bob\nForecast" {class: slow}
+      c1: "Carol\nSales" {class: slow}
+      c2: "Carol\nForecast" {class: slow}
+      a1 -> a2 -> b1 -> b2 -> c1 -> c2 {class: seq}
+    }
+
+    carol -> lock: "waits" {class: wait}
+    bob -> lock: "waits" {class: wait}
+    alice -> lock: "has the lock" {class: flow}
+    lock -> line.a1 {class: flow}
+  }
+}
+
+after: "" {
+  class: pair
+  grid-columns: 1
+  grid-gap: 14
+
+  title: "Shiny 1.9: each session runs on its own, at the same time" {class: heading}
+
+  panel: "" {
+    class: panel
+    grid-columns: 4
+    horizontal-gap: 49
+
+
+    alice: "Alice's session" {
+      class: row
+      direction: down
+      who: Alice {class: user}
+      tasks: "Per-session tasks" {
+        class: tasks
+        s: Sales {class: run}
+        f: Forecast {class: run}
+      }
+      out: "Send both outputs\ntogether" {class: step}
+      nxt: "Apply Alice's\nnext input" {class: step}
+      who -> tasks.s {class: flow}
+      who -> tasks.f {class: flow}
+      tasks.s -> out {class: flow}
+      tasks.f -> out {class: flow}
+      out -> nxt: "then" {class: next}
+    }
+
+    bob: "Bob's session" {
+      class: row
+      direction: down
+      who: Bob {class: user}
+      tasks: "Per-session tasks" {
+        class: tasks
+        s: Sales {class: run}
+        f: Forecast {class: run}
+      }
+      out: "Send both outputs\ntogether" {class: step}
+      nxt: "Apply Bob's\nnext input" {class: step}
+      who -> tasks.s {class: flow}
+      who -> tasks.f {class: flow}
+      tasks.s -> out {class: flow}
+      tasks.f -> out {class: flow}
+      out -> nxt: "then" {class: next}
+    }
+
+    carol: "Carol's session" {
+      class: row
+      direction: down
+      who: Carol {class: user}
+      tasks: "Per-session tasks" {
+        class: tasks
+        s: Sales {class: run}
+        f: Forecast {class: run}
+      }
+      out: "Send both outputs\ntogether" {class: step}
+      nxt: "Apply Carol's\nnext input" {class: step}
+      who -> tasks.s {class: flow}
+      who -> tasks.f {class: flow}
+      tasks.s -> out {class: flow}
+      tasks.f -> out {class: flow}
+      out -> nxt: "then" {class: next}
+    }
+
+    note: |md
+      **All six async outputs run at the same time.**<br/>
+      While one output waits for its query,<br/>
+      the others keep going, in every session.
+
+      **Each session keeps its own order.**<br/>
+      A session sends its outputs together,<br/>
+      and applies the next input only after<br/>
+      that, so inputs never change halfway<br/>
+      through.
+    | {
+      shape: text
+      style: {font-size: 18}
+    }
+  }
+}

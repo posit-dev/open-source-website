@@ -13,6 +13,8 @@ software:
 languages:
   - R
   - Python
+tags:
+  - glimpse-newsletter
 hidesubscription: false
 ---
 

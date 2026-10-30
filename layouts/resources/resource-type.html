@@ -46,6 +46,31 @@
 
   {{ if $resources }}
 
+  {{/* Hide cards excluded by the default "By" selection until the filter
+       script has run, so they don't flash. Injected by script, so without
+       JS (or with an explicit ?by= in the URL) everything stays visible. */}}
+  {{ $byDefaults := slice }}
+  {{ range $cfg.filters }}{{ if eq .key "by" }}{{ $byDefaults = .default | default slice }}{{ end }}{{ end }}
+  {{ if $byDefaults }}
+    {{ $hiddenIds := slice }}
+    {{ range $resources }}
+      {{ $by := cond (eq (lower (.Params.by | default "")) "posit") "Posit" "Community" }}
+      {{ if not (in $byDefaults $by) }}
+        {{ $hiddenIds = $hiddenIds | append (printf "#%s" (partial "item-id.html" .)) }}
+      {{ end }}
+    {{ end }}
+    {{ with $hiddenIds }}
+    <script>
+      if (!new URLSearchParams(location.search).has('by')) {
+        var s = document.createElement('style');
+        s.setAttribute('data-filter-pending-style', '');
+        s.textContent = {{ delimit . ", " }} + '{display:none!important}';
+        document.head.appendChild(s);
+      }
+    </script>
+    {{ end }}
+  {{ end }}
+
   {{ partial "filter-controls.html" $cfg }}
 
   <div data-item-container data-filter-config='{{ $cfg | jsonify }}'

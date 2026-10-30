@@ -1,0 +1,28 @@
+tag,section,tokens
+pa-opus,system prompt,5342
+pa-opus,tool definitions,7222
+pa-opus,skill listing,1912
+pa-opus,environment context,603
+pa-opus,per-turn reminders,130
+pa-opus,"other (user message, framing)",12
+pa-gpt,system prompt,3573
+pa-gpt,tool definitions,3196
+pa-gpt,skill listing,1184
+pa-gpt,environment context,397
+pa-gpt,per-turn reminders,84
+pa-gpt,"other (user message, framing)",21
+claude,system prompt,2113
+claude,tool definitions,10754
+claude,skill listing,2131
+claude,environment context,399
+claude,deferred tool names,165
+claude,agent type listing,563
+claude,per-turn reminders,210
+claude,billing header,43
+claude,"other (user message, framing)",12
+codex,system prompt,3703
+codex,tool definitions,6771
+codex,skill listing,492
+codex,environment context,183
+codex,"modes, permissions, agents",836
+codex,"other (user message, framing)",12

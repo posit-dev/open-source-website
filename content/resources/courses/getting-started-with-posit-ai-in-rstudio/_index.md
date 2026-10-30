@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   id: 3ins9ii1jn7yd
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/2wemyyeu9v791/promo-image.1791515093.svg
   kind: course
-  modified_at: '2026-10-13T19:19:48.775645Z'
+  modified_at: '2026-10-27T11:47:03.380958Z'
   order: 22
   slug: getting-started-with-posit-ai-in-rstudio
   software:

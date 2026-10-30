@@ -17,7 +17,7 @@ languages:
 
 Established in 2020, R Exchange provides a regional opportunity for open-source data science enthusiasts from a variety of disciplines to connect and learn from each other.
 
-François Michonneau, Solutions Engineer at Posit, will present on "Mapping the AI Landscape: Building and Deploying Data-Centric AI Applications with Posit".
+François Michonneau, Solutions Engineer at Posit, presented on "Mapping the AI Landscape: Building and Deploying Data-Centric AI Applications with Posit".
 
 <details><summary>Read the abstract here.</summary>
 Artificial intelligence is reshaping what we build, how we build it, and how we share the results. In a landscape shifting this rapidly, with new tools and practices coming out every week, staying oriented is not easy. This talk offers a practical map for this new landscape, walking through the end-to-end lifecycle of an AI-native application.

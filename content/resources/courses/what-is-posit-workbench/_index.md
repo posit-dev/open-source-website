@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   id: 3typdde3h5viz
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/2xbp2gy5taw50/promo-image.1791469137.svg
   kind: course
-  modified_at: '2026-10-08T14:18:57.800912Z'
+  modified_at: '2026-10-27T15:06:08.037406Z'
   order: 1
   slug: what-is-posit-workbench
   software:
