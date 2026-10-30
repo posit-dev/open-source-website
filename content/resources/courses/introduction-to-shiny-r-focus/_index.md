@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   id: 1oad2zm14mcl
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/310cbis2zjak7/promo-image.1791470557.svg
   kind: course
-  modified_at: '2026-10-16T17:09:27.170079Z'
+  modified_at: '2026-10-27T14:23:17.610150Z'
   order: 8
   slug: introduction-to-shiny-r-focus
   software:

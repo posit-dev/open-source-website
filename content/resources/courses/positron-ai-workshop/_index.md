@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   id: 1xsg0hqwin60n
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/xlhvjrrf5xgh/promo-image.1791469016.svg
   kind: course
-  modified_at: '2026-10-08T14:16:57.333965Z'
+  modified_at: '2026-10-27T14:42:42.082781Z'
   order: 6
   slug: positron-ai-workshop
   software:

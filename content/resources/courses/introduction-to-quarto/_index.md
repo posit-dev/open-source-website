@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   id: ybyd37stvujj
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/1018b0rdygbxd/promo-image.1792178305.svg
   kind: course
-  modified_at: '2026-10-26T14:55:43.135233Z'
+  modified_at: '2026-10-27T11:48:56.689729Z'
   order: 36
   slug: introduction-to-quarto
   software:

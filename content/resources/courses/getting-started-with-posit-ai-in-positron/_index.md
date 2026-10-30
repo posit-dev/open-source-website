@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   id: 3i3w1amyzoj1y
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/1wldf1g3a6obi/promo-image.1791515046.svg
   kind: course
-  modified_at: '2026-10-16T17:12:31.691334Z'
+  modified_at: '2026-10-26T21:12:01.367813Z'
   order: 26
   slug: getting-started-with-posit-ai-in-positron
   software:

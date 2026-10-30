@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   id: x2kmqd9bm6q2
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/2anuiz1xzzjto/promo-image.1791470583.svg
   kind: course
-  modified_at: '2026-10-16T17:09:09.032602Z'
+  modified_at: '2026-10-27T12:19:14.623314Z'
   order: 9
   slug: introduction-to-shiny-python-focus
   software:

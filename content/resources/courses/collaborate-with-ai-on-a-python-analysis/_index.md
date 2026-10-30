@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   id: 3itn1dkkzo28h
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/1qawfpj4wzj54/promo-image.1791469520.svg
   kind: course
-  modified_at: '2026-10-16T17:03:47.903805Z'
+  modified_at: '2026-10-26T21:16:39.268281Z'
   order: 28
   slug: collaborate-with-ai-on-a-python-analysis
   software:

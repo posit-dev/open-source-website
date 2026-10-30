@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   id: 1o4qitzht29th
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/1jkspjxdw9m14/promo-image.1791470765.svg
   kind: course
-  modified_at: '2026-10-16T17:07:24.066531Z'
+  modified_at: '2026-10-27T14:34:44.370957Z'
   order: 5
   slug: getting-started-with-renv
   software:
