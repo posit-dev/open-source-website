@@ -1,5 +1,8 @@
 {{ define "main" }}
 <div class="flex flex-col w-full relative mt-6 max-w-7xl mx-auto" data-pagefind-ignore>
+  <h1 class="text-4xl font-medium text-gray-500 mb-6">
+    {{ .Title }}
+  </h1>
 
   {{ $paginator := .Paginate .RegularPages.ByDate.Reverse }}
 
