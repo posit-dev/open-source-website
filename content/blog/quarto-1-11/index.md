@@ -4,8 +4,8 @@ date: 2026-10-30T00:00:00.000Z
 people:
   - Christophe Dervieux
 description: >
-  Quarto 1.11 is coming early with a Deno security update, keyboard and screen
-  reader fixes, and improvements to Typst, Julia, and shared metadata.
+  Quarto 1.11 is coming early with a Deno security update, accessibility
+  improvements, and updates to Typst, Julia, and shared metadata.
 image: thumbnail.png
 image-alt: >-
   The Quarto logo and version number 1.11 in white on a steel blue background,
@@ -27,7 +27,7 @@ hidesubscription: false
 
 Quarto 1.11 is coming early to deliver an important security update. You can try it from the [pre-release download page](https://quarto.org/docs/download/prerelease.html), and find the complete changes in the [Release Notes](https://quarto.org/docs/download/changelog/1.11/).
 
-Alongside the security update, this release includes improvements to keyboard and screen reader access, Typst documents, the Julia engine, and shared metadata.
+Alongside the security update, this release includes accessibility improvements, new capabilities for Typst documents and the Julia engine, and fixes to shared metadata.
 
 ## Security Update
 
@@ -35,13 +35,18 @@ Quarto 1.11 bundles Deno 2.9.8, which rejects certificate chains containing the 
 
 We are releasing 1.11 early because this update will not be backported to Quarto 1.10. Changing the certificate store setting does not address the problem. Once 1.11 is released, upgrading is the way to get the fix; see [quarto-dev/quarto-cli#15152](https://github.com/quarto-dev/quarto-cli/issues/15152) for the details.
 
+This is an accelerated release rather than a broader refresh of the bundled tools: Pandoc 3.10, Typst 0.15.1, Sass 1.101.0, esbuild 0.28.1, and Mermaid 11.12.0 remain at the versions shipped in Quarto 1.10. Deno moves from 2.7.14 to 2.9.8 to deliver the security fix. There are also updates to the Observable JavaScript runtime components and the Julia engine, alongside the Quarto changes described below.
+
 The updated Deno has a minimum macOS version of 12 (Monterey).
 
-## Keyboard and Screen Reader Access
+## Accessibility Improvements
 
-Bootstrap-themed HTML documents, websites, books, and dashboards now include a **Skip to main content** link. Keyboard focus uses a consistent, high-contrast ring that remains visible in forced-colors mode, and website sidebar sections can be expanded with the keyboard.
+Quarto 1.11 improves navigation, visible focus, alternative text, and presentations:
 
-Presentations also receive a set of fixes: keyboard focus stays on the current slide in the normal presentation view, tabsets follow the slide's reading order, and the closed slide menu is hidden from screen readers.
+- **Keyboard navigation:** Bootstrap-themed HTML documents, websites, books, and dashboards include a **Skip to main content** link. Website sidebar sections use buttons you can operate with the keyboard, scrollable code blocks and cell output can be focused and scrolled in Safari, and popups for citations, footnotes, cross-references, and code annotations close with Esc.
+- **Visible focus:** A two-color keyboard focus ring improves visibility, including in forced-colors mode and on code tools and sidebar controls. If you customize focus styling, see the new Sass variables in the upgrade notes below.
+- **Page structure:** Websites and books have distinct, localized names for navigation regions, making it easier to find the site navigation, section navigation, breadcrumbs, or table of contents with a screen reader. Links configured to open in a new tab announce that behavior.
+- **Presentations:** Keyboard focus stays on the current slide in the normal presentation view, tabsets follow the slide's reading order, and closed slide menus and unrevealed incremental content stay hidden from screen readers. Touch devices can use pinch-zoom, and the speaker view has named regions and a labeled layout control.
 
 Alternative text is now preserved for Mermaid and Graphviz diagrams in HTML, Revealjs, Word, and Typst output. Word figures also honor `fig-alt`, including figures produced by code, while keeping their visible captions. In this example, `fig-cap` is the caption readers see, while `fig-alt` describes the diagram for readers using assistive technology.
 
@@ -57,6 +62,8 @@ flowchart LR
 ````
 
 Learn more about [figure alternative text](https://quarto.org/docs/authoring/figures.html#alt-text) and [diagrams](https://quarto.org/docs/authoring/diagrams.html). The [HTML Accessibility](https://quarto.org/docs/output-formats/html-accessibility.html) page explains the checks you can run on your own content.
+
+Thank you to [Charlotte Wickham](https://github.com/cwickham) and [JooYoung Seo](https://github.com/jooyoungseo) for their work on these accessibility improvements, and to everyone who reported issues, tested changes, and contributed fixes.
 
 ## Typst Documents
 
@@ -100,13 +107,29 @@ Learn more at [Social Metadata](https://quarto.org/docs/websites/website-tools.h
 
 If you customize HTML themes, the keyboard focus ring now uses `$focus-ring-outer-color`, `$focus-ring-inner-color`, `$focus-ring-outline-width`, and `$focus-ring-outline-offset`. Quarto no longer uses Bootstrap's `$focus-ring-color`, `$focus-ring-box-shadow`, `$btn-focus-width`, or `$btn-focus-box-shadow` for this styling. See [Focus Ring](https://quarto.org/docs/output-formats/html-themes.html#focus-ring) for customization.
 
+## Definition List Syntax
+
+You can now write a definition list using a `.definition-list` div containing nested bullet lists. Each top-level bullet is a term, and the bullets nested underneath it are its definitions:
+
+
+``` markdown { filename="document.qmd" }
+::: {.definition-list}
+- `time`
+  - A timestamp that identifies when the request was initiated.
+  - Type: string
+- `id`
+  - A unique identifier.
+:::
+```
+
+This is the syntax used by Quarto 2, so you can adopt it now in documents you plan to use with both versions. Existing `term` / `: definition` syntax continues to work in Quarto 1.11.
+
+Learn more at [Definition Lists](https://quarto.org/docs/authoring/markdown-basics.html#definition-lists).
+
 ## Other Highlights
 
-- [Definition Lists](https://quarto.org/docs/authoring/markdown-basics.html#definition-lists)---You can use a `.definition-list` div containing nested bullet lists, the syntax used by Quarto 2. Existing definition-list syntax continues to work in Quarto 1.11.
 - [Website Tools](https://quarto.org/docs/websites/website-tools.html#disabling-on-a-page)---A page can now disable Open Graph or Twitter Card metadata with `open-graph: false` or `twitter-card: false`, even when the website enables it.
 - [Google Scholar Metadata](https://quarto.org/docs/authoring/create-citeable-articles.html#google-scholar)---Fixes improve the citation metadata for HTML articles and books, including shared and CSL JSON bibliographies.
-
-Dependency updates include Deno 2.9.8 and the Observable JavaScript runtime's parser, inspector, and inputs. Pandoc 3.10 and Typst 0.15.1 were already bundled with Quarto 1.10.
 
 ## Acknowledgements
 
