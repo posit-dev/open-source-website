@@ -225,6 +225,9 @@
       {{- $ld = merge $ld (dict "isAccessibleForFree" true) -}}
     {{- end -}}
     {{- $about := slice -}}
+    {{- range .Params.other_software -}}
+      {{- $about = $about | append (dict "@type" "SoftwareApplication" "name" .) -}}
+    {{- end -}}
     {{- range .GetTerms "software" -}}
       {{- $about = $about | append (dict "@type" "SoftwareApplication" "name" .LinkTitle "url" .Permalink) -}}
     {{- end -}}

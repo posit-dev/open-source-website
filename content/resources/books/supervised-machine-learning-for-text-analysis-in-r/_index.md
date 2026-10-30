@@ -30,7 +30,7 @@ Text data matters in fields from healthcare to marketing to the digital humaniti
 Emil Hvitfeldt and Julia Silge show how to preprocess text, train supervised models, and evaluate their performance using the tidyverse and tidymodels ecosystem, including the `textrecipes` package for preparing text within a modeling pipeline.
 
 The book is for data scientists and analysts who know the basics of predictive modeling and want to bring unstructured text into their work.
-It builds naturally on *Text Mining with R*, moving from exploring text to making predictions from it, though it also stands on its own.
+It builds naturally on [*Text Mining with R*](/resources/books/text-mining-with-r/), moving from exploring text to making predictions from it, though it also stands on its own.
 Examples include predicting the year of a United States Supreme Court opinion and classifying GitHub issues, and the authors pay attention to how preprocessing choices affect both model metrics and the fairness of results.
 
 The book is organized in three parts, covering:

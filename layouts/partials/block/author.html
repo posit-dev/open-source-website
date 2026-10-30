@@ -12,37 +12,30 @@
 {{- end -}}
 {{- $people := $pg.GetTerms "people" -}}
 {{- if $people -}}
-{{- $hasImages := false -}}
-{{- range $person := $people -}}
-  {{- if $person.Params.image -}}
-    {{- $image := .Resources.Get $person.Params.image -}}
-    {{- if $image -}}
-      {{- $hasImages = true -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
+{{- /* Every person gets an avatar: their photo, or the default avatar when
+       they have no people page or no image */ -}}
+{{- $placeholder := resources.Get "images/person-placeholder.svg" -}}
 
 <div class="mt-2 flex flex-row gap-x-4 items-center">
 
-  {{- if $hasImages -}}
   <div class="flex flex-row flex-shrink-0">
-    {{- /* Overlap and stack by the number of images shown so far, not the
-           person's position: people without a photo are skipped, and an
-           offset on the first image would push it out of view. */ -}}
-    {{- $shown := 0 -}}
-    {{- range $person := $people -}}
-      {{- with .Resources.Get .Params.image -}}
+    {{- range $index, $person := $people -}}
+      {{- $image := $placeholder -}}
+      {{- with $person.Params.image -}}
+        {{- with $person.Resources.Get . -}}
+          {{- $image = . -}}
+        {{- end -}}
+      {{- end -}}
+      {{- with $image -}}
         <img
           src="{{ .RelPermalink }}"
           alt="{{ $person.Title }}"
-          class="my-0! w-6 h-6 rounded-full object-cover ring-2 ring-white {{ if gt $shown 0 }}-ml-2{{ end }}"
-          style="z-index: {{ sub 10 $shown }};"
+          class="my-0! w-6 h-6 rounded-full object-cover ring-2 ring-white {{ if gt $index 0 }}-ml-2{{ end }}"
+          style="z-index: {{ sub 10 $index }};"
         >
-        {{- $shown = add $shown 1 -}}
       {{- end -}}
     {{- end -}}
   </div>
-  {{- end -}}
 
   {{- if $link -}}
     <div class="flex flex-wrap gap-x-1 items-center {{ $author_class }}">

@@ -39,3 +39,5 @@ Topics in the fourth edition include:
 - Summarizing bivariate numerical data and fitting least squares regression lines
 
 The PDF is free to download, including a version designed for screen readers, and low-cost black-and-white and full-color paperbacks are also available.
+
+Find out more about the book and the supplementary resources at [openintro.org/book/ahss](https://openintro.org/book/ahss/).

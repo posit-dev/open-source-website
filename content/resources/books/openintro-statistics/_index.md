@@ -39,3 +39,5 @@ The book covers:
 
 Beyond the text, OpenIntro provides videos, slides, and labs for each chapter, with labs available in R and several other statistical software packages.
 The PDF is free, low-cost paperbacks are available in black and white or color, and the book has been translated into Japanese and Uzbek.
+
+Find out more about the book and the supplementary resources at [openintro.org/book/os](https://openintro.org/book/os/).

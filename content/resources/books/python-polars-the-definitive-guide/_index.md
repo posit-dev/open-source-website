@@ -16,6 +16,8 @@ people:
 website: https://polarsguide.com/
 buy_url: https://www.oreilly.com/library/view/python-polars-the/9781098156077/
 github: jeroenjanssens/python-polars-the-definitive-guide
+other_software:
+- Polars
 software:
 - plotnine
 - great-tables

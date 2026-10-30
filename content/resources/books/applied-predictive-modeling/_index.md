@@ -14,6 +14,8 @@ people:
 - Kjell Johnson
 website: http://appliedpredictivemodeling.com/
 buy_url: https://link.springer.com/book/10.1007/978-1-4614-6849-3
+other_software:
+- caret
 languages:
 - R
 topics:

@@ -131,6 +131,9 @@
      ============================================================ */}}
 {{ $tags := slice }}
 {{ if not $is_blog }}
+  {{ range $page.Params.other_software }}
+    {{ $tags = $tags | append . }}
+  {{ end }}
   {{ range $page.GetTerms "software" }}
     {{ $tags = $tags | append .LinkTitle }}
   {{ end }}
@@ -304,7 +307,12 @@
     {{ end }}
   {{ end }}
 
-  {{/* Taxonomy links */}}
+  {{/* Taxonomy links. Names in other_software have no page on this site, so
+       they come first, without a URL, and render as non-clickable pills. They
+       are not a taxonomy, so Hugo doesn't create pages for them. */}}
+  {{ range $page.Params.other_software }}
+    {{ $hero_software = $hero_software | append (dict "text" . "url" "") }}
+  {{ end }}
   {{ range $page.GetTerms "software" }}
     {{ $hero_software = $hero_software | append (dict "text" .LinkTitle "url" .RelPermalink) }}
   {{ end }}
@@ -537,7 +545,11 @@
       {{ with $hero_software }}
       <div class="flex flex-wrap gap-1">
         {{ range . }}
+        {{ if .url }}
         <a href="{{ .url }}" class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+        {{ else }}
+        <span class="px-2 py-0.5 rounded-md text-xs font-semibold uppercase tracking-wide bg-gray-50 text-gray-400 cursor-default">{{ .text }}</span>
+        {{ end }}
         {{ end }}
       </div>
       {{ end }}
@@ -586,7 +598,11 @@
         {{ if or $date $hero_topics }}<span class="text-sm font-mono font-medium text-gray-600">|</span>{{ end }}
         <div class="flex flex-wrap gap-1">
           {{ range . }}
+          {{ if .url }}
           <a href="{{ .url }}" class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ else }}
+          <span class="px-2 py-0.5 rounded-md text-xs font-semibold uppercase tracking-wide bg-gray-50 text-gray-400 cursor-default">{{ .text }}</span>
+          {{ end }}
           {{ end }}
         </div>
         {{ end }}
@@ -660,7 +676,11 @@
       <div class="flex flex-wrap gap-1">
         <span class="mr-1 text-gray-600">Software:</span>
         {{ range . }}
+        {{ if .url }}
         <a href="{{ .url }}" class="px-2 py-1 rounded-md bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200 transition-colors">{{ .text }}</a>
+        {{ else }}
+        <span class="px-2 py-1 rounded-md text-sm font-semibold uppercase tracking-wide bg-gray-50 text-gray-400 cursor-default">{{ .text }}</span>
+        {{ end }}
         {{ end }}
       </div>
     </div>
@@ -840,7 +860,11 @@
           <div class="flex flex-wrap gap-1">
             <span class="mr-1">Software: </span>
             {{ range . }}
+            {{ if .url }}
             <a href="{{ .url }}" class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+            {{ else }}
+            <span class="px-2 py-0.5 rounded-full text-sm font-semibold uppercase tracking-wide bg-gray-50 text-gray-400 cursor-default">{{ .text }}</span>
+            {{ end }}
             {{ end }}
           </div>
         </div>

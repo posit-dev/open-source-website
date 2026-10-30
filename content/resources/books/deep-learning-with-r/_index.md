@@ -46,3 +46,4 @@ Along the way, you'll practice:
 - Tuning and scaling models
 
 The source code for the book's examples is available on GitHub.
+The [second edition](/resources/books/deep-learning-with-r-2nd-edition/), based on the previous version of Keras, covers partly different material.

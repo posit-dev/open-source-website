@@ -18,8 +18,8 @@ website: https://arrowrbook.com/
 read_url: https://arrowrbook.com/
 buy_url: https://www.routledge.com/Scaling-Up-with-R-and-Apache-Arrow-Bigger-Data-Easier-Workflows/Crane-Keane-Richardson/p/book/9781032660288
 github: arrowrbook/book
-software:
-- dplyr
+other_software:
+- Apache Arrow
 languages:
 - R
 topics:

@@ -12,6 +12,7 @@ isbn: '9783319242750'
 pages: 260
 people:
 - Hadley Wickham
+website: https://ggplot2-book.org/
 buy_url: https://link.springer.com/book/10.1007/978-3-319-24277-4
 software:
 - ggplot2

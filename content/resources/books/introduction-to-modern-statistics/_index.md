@@ -40,3 +40,5 @@ The book is organized into six parts:
 
 Each part closes with an applications chapter that ties the ideas together.
 The book is free to read online, available as a pay-what-you-want PDF, and sold as an affordable paperback.
+
+Find out more about the book and the supplementary resources at [openintro.org/book/ims](https://openintro.org/book/ims/).

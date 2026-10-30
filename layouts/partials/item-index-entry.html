@@ -54,6 +54,10 @@
 
 {{/* Tags — combination of software, categories, tags taxonomies (as arrays) */}}
 {{ $softwareTerms := slice }}
+{{/* other_software: names without a page on this site (see item.html) */}}
+{{ range $page.Params.other_software }}
+  {{ $softwareTerms = $softwareTerms | append . }}
+{{ end }}
 {{ range $page.GetTerms "software" }}
   {{ $softwareTerms = $softwareTerms | append .LinkTitle }}
 {{ end }}
@@ -84,6 +88,12 @@
       {{ else }}
         {{ $authorImage = $imgRes.RelPermalink }}
       {{ end }}
+    {{ end }}
+  {{ end }}
+  {{/* Authors without a people page or photo get the default avatar */}}
+  {{ if not $authorImage }}
+    {{ with resources.Get "images/person-placeholder.svg" }}
+      {{ $authorImage = .RelPermalink }}
     {{ end }}
   {{ end }}
   {{ $authors = $authors | append (dict "name" $person.LinkTitle "image" $authorImage) }}

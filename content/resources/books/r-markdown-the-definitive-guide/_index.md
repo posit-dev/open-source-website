@@ -14,8 +14,8 @@ people:
 - Yihui Xie
 - JJ Allaire
 - Garrett Grolemund
-website: https://bookdown.org/yihui/rmarkdown/
-read_url: https://bookdown.org/yihui/rmarkdown/
+website: https://pkg.yihui.org/rmarkdown-book/
+read_url: https://pkg.yihui.org/rmarkdown-book/
 buy_url: https://www.routledge.com/R-Markdown-The-Definitive-Guide/Xie-Allaire-Grolemund/p/book/9781138359338
 github: rstudio/rmarkdown-book
 software:

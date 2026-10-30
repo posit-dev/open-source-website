@@ -13,10 +13,12 @@ people:
 - Yihui Xie
 - Christophe Dervieux
 - Emily Riederer
-website: https://bookdown.org/yihui/rmarkdown-cookbook/
-read_url: https://bookdown.org/yihui/rmarkdown-cookbook/
+website: https://pkg.yihui.org/rmarkdown-cookbook/
+read_url: https://pkg.yihui.org/rmarkdown-cookbook/
 buy_url: https://www.routledge.com/R-Markdown-Cookbook/Xie-Dervieux-Riederer/p/book/9780367563837
 github: rstudio/rmarkdown-cookbook
+other_software:
+- knitr
 software:
 - rmarkdown
 - bookdown
@@ -32,6 +34,7 @@ Many recipes draw on popular Stack Overflow questions, blog posts, and tutorials
 
 The book is recommended for new and intermediate R Markdown users.
 Newcomers will find quick answers to the problems people run into most often, while regular users will discover lesser-known features, customization options, and new ways to apply the software.
+The book predates Quarto, but many recipes also work in Quarto documents that use the knitr engine.
 
 Topics include how to:
 
