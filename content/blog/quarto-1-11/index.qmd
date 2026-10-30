@@ -4,7 +4,7 @@ date: 2026-10-30
 people:
   - Christophe Dervieux
 description: >
-  Quarto 1.11 is coming early with a Deno security update, accessibility improvements, and updates to Typst, Julia, and shared metadata.
+  Quarto 1.11 delivers a Deno security update and improvements to accessibility, Typst documents, Julia, and shared metadata.
 image: thumbnail.png
 image-alt: "The Quarto logo and version number 1.11 in white on a steel blue background, with a shield and check mark above."
 source: quarto
@@ -21,7 +21,7 @@ tags:
 hidesubscription: false
 ---
 
-Quarto 1.11 is coming early to deliver a Deno security update. You can try it from the [pre-release download page](https://quarto.org/docs/download/prerelease.html) and find the complete changes in the [Release Notes](https://quarto.org/docs/download/changelog/1.11/).
+Quarto 1.11 is out! We released it early to deliver a Deno security update. You can get it from the [download page](https://quarto.org/docs/download/index.html) and find the complete changes in the [Release Notes](https://quarto.org/docs/download/changelog/1.11/).
 
 Alongside the security update, this release includes accessibility improvements, new capabilities for Typst documents and the Julia engine, and fixes to shared metadata.
 
@@ -29,9 +29,9 @@ Alongside the security update, this release includes accessibility improvements,
 
 Quarto 1.11 bundles Deno 2.9.8, which rejects certificate chains containing the compromised eMudhra and emSign keys. This protects HTTPS requests made by Quarto commands, including publishing, downloading extensions and templates, and installing tools.
 
-We are releasing 1.11 early because this update will not be backported to Quarto 1.10. Changing the certificate store setting does not address the problem. See [quarto-dev/quarto-cli#15152](https://github.com/quarto-dev/quarto-cli/issues/15152) for the details.
+We released 1.11 early because this update is not being backported to Quarto 1.10. Changing the certificate store setting does not address the problem. See [quarto-dev/quarto-cli#15152](https://github.com/quarto-dev/quarto-cli/issues/15152) for the details.
 
-We released Quarto 1.10.20 on October 30, ahead of our usual monthly patch schedule, to include the remaining backported fixes. It is the final patch release in the 1.10 series. We recommend that all users upgrade to Quarto 1.11 once it is released to receive the Deno security fix.
+Just before 1.11, we released Quarto 1.10.20 on October 30, ahead of our usual monthly patch schedule, to include the remaining backported fixes. It is the final patch release in the 1.10 series. We recommend that all users upgrade to Quarto 1.11 to receive the Deno security fix.
 
 Deno moves from 2.7.14 to 2.9.8. The other bundled tools keep their Quarto 1.10 versions: Pandoc 3.10, Typst 0.15.1, Sass 1.101.0, esbuild 0.28.1, and Mermaid 11.12.0. This release also updates the Observable JavaScript runtime components and the Julia engine.
 
