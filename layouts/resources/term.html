@@ -89,8 +89,12 @@
           </div>
           {{ end }}
         </div>
-        {{- /* Software pills */ -}}
+        {{- /* Software pills; other_software has no page on this site, so it
+               comes first, without a URL, as non-clickable pills (see item.html) */ -}}
         {{ $hero_software := slice }}
+        {{ range .Params.other_software }}
+          {{ $hero_software = $hero_software | append (dict "text" . "url" "") }}
+        {{ end }}
         {{ range .GetTerms "software" }}
           {{ $hero_software = $hero_software | append (dict "text" .LinkTitle "url" .RelPermalink) }}
         {{ end }}
@@ -98,7 +102,11 @@
         {{ if or $.Params.date $.Params.external.duration $.Params.external.view_count }}<span class="text-sm font-mono font-medium text-gray-600">|</span>{{ end }}
         <div class="flex flex-wrap gap-1">
           {{ range . }}
+          {{ if .url }}
           <a href="{{ .url }}" class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ else }}
+          <span class="px-2 py-0.5 rounded-md text-xs font-semibold uppercase tracking-wide bg-gray-50 text-gray-400 cursor-default">{{ .text }}</span>
+          {{ end }}
           {{ end }}
         </div>
         {{ end }}

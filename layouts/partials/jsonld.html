@@ -281,6 +281,9 @@
       {{- end -}}
     {{- end -}}
     {{- $about := slice -}}
+    {{- range .Params.other_software -}}
+      {{- $about = $about | append (dict "@type" "SoftwareApplication" "name" .) -}}
+    {{- end -}}
     {{- range .Params.software -}}
       {{- $about = $about | append (dict "@type" "SoftwareApplication" "name" .) -}}
     {{- end -}}

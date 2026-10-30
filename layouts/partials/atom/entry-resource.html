@@ -20,6 +20,10 @@
     <vr:resource_type>{{ . }}</vr:resource_type>
     {{- end }}
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "software" "element" "software" "mode" "href") -}}
+    {{- /* other_software: names without a page on this site, so no URL to link to */ -}}
+    {{- range $page.Params.other_software }}
+    <vr:other_software>{{ . }}</vr:other_software>
+    {{- end }}
     {{ partial "atom/linked.html" (dict "page" $page "taxonomy" "languages" "element" "languages" "mode" "term") -}}
     {{- if $page.Params.download_url }}
     {{- with $page.Resources.GetMatch $page.Params.download_url }}
