@@ -13,7 +13,7 @@ photo:
 ported_from: tidyverse
 source: tidyverse
 port_status: in-progress
-software: ["orbital", "tidymodels"]
+software: ["orbital-r", "tidymodels"]
 languages: ["R"]
 topics:
   - MLOps and Admin
