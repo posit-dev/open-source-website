@@ -106,7 +106,10 @@ def validate(directory: Path, old_repo: Path | None, lfs: set[str], tracked: set
 
     for sw in fm.get("software") or []:
         if not (SOFTWARE_DIR / sw).is_dir():
-            errors.append(f"software not found in content/software/: {sw}")
+            errors.append(
+                f"software not found in content/software/: {sw} "
+                f"(if it doesn't have a page on this site, list it under other_software instead)"
+            )
 
     for f in directory.rglob("*"):
         if f.suffix.lower() in LFS_SUFFIXES:

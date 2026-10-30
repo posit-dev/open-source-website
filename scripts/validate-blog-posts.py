@@ -313,12 +313,50 @@ def check_topics(
     return issues
 
 
+def check_other_software(
+    post_path: Path, fm: dict, ctx: ValidationContext
+) -> list[Issue]:
+    """Check `other_software`: software without a page on this site.
+
+    Values are display names (e.g. `Polars`) that render as non-clickable
+    pills. Software that does have a page belongs under `software` instead.
+    """
+    other = fm.get("other_software")
+    if not other:
+        return []
+
+    if isinstance(other, str):
+        other = [other]
+
+    if not isinstance(other, list):
+        return [Issue(post_path, "`other_software` must be a list or string.", "error")]
+
+    issues = []
+    for s in other:
+        if s in ctx.valid_software:
+            issues.append(
+                Issue(
+                    post_path,
+                    f"`{s}` in `other_software` has a page in `content/software/`. "
+                    f"List it under `software` instead.",
+                    "warning",
+                )
+            )
+    return issues
+
+
 def check_software(
     post_path: Path, fm: dict, ctx: ValidationContext
 ) -> list[Issue]:
+    issues = check_other_software(post_path, fm, ctx)
+
     software = fm.get("software")
     if not software:
-        return [
+        # Software without a page on this site goes under `other_software`,
+        # so a post can legitimately have that instead of `software`.
+        if fm.get("other_software"):
+            return issues
+        return issues + [
             Issue(
                 post_path,
                 "`software` is missing. Use folder names from `content/software/`.",
@@ -330,16 +368,18 @@ def check_software(
         software = [software]
 
     if not isinstance(software, list):
-        return [Issue(post_path, "`software` must be a list or string.", "error")]
+        return issues + [
+            Issue(post_path, "`software` must be a list or string.", "error")
+        ]
 
-    issues = []
     sev = severity(fm)
     for s in software:
         if s not in ctx.valid_software:
             issues.append(
                 Issue(
                     post_path,
-                    f"Can't find software `{s}`. No matching folder in `content/software/`.",
+                    f"Can't find software `{s}`. No matching folder in `content/software/`. "
+                    f"If it doesn't have a page on this site, list it under `other_software` instead.",
                     sev,
                 )
             )

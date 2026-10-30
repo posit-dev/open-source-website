@@ -57,7 +57,7 @@ If there are issues, summarize them clearly grouped by severity:
 For each error, explain what's wrong and suggest a concrete fix. For example:
 
 - Missing `topics` → suggest values from `data/topics.yaml` that fit the post content
-- Unknown `software` → check if there's a close match in `content/software/`. If there isn't one, offer to create a new software page using `scripts/create-new-software.py`.
+- Unknown `software` → check if there's a close match in `content/software/`. If there isn't one, suggest moving it to `other_software`, which shows it as a greyed-out, non-clickable pill without creating a page. If the software should get its own page, offer to create one using `scripts/create-new-software.py`.
 - Unknown `people` → check if there's a close match in `content/people/`. If there isn't one, offer to create a new people page.
 - Missing `source` on a ported post → suggest setting it to match `ported_from`
 - `categories` present → replace with `topics`
