@@ -72,6 +72,14 @@ cheatsheet:
       direction: asc
   defaultSort: date
   filters:
+    - key: by
+      label: By
+      values:
+        - Posit
+        - Community
+      # Pre-selected values; deselecting all shows everything
+      default:
+        - Posit
     - key: topics
       label: Topics
     - key: languages
