@@ -20,7 +20,7 @@ external:  # updated automatically, do not edit
   id: 1etyiy3pw3k4c
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/3b1yzuk3hvf0u/promo-image.1791469780.svg
   kind: course
-  modified_at: '2026-10-16T17:06:03.720709Z'
+  modified_at: '2026-10-27T12:07:59.068448Z'
   order: 32
   slug: first-data-analysis-with-r-in-a-quarto-document
   software:

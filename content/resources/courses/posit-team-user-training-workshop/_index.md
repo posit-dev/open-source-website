@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   id: 2ytszb7eghio5
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/2os5kbidfsd99/promo-image.1791468837.svg
   kind: course
-  modified_at: '2026-10-08T14:13:57.803794Z'
+  modified_at: '2026-10-27T14:30:16.916725Z'
   order: 4
   slug: posit-team-user-training-workshop
   software:

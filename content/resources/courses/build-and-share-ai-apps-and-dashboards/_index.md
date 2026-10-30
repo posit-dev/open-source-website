@@ -22,7 +22,7 @@ external:  # updated automatically, do not edit
   id: 3206avgn4lvuv
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/2bq80f60xzj9k/promo-image.1791469074.svg
   kind: course
-  modified_at: '2026-10-08T14:17:54.692495Z'
+  modified_at: '2026-10-27T12:31:17.625395Z'
   order: 10
   slug: build-and-share-ai-apps-and-dashboards
   software:

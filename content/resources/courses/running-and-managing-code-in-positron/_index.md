@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   id: 329xcaknl8f3s
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/2dtmlzaovavq0/promo-image.1791514958.svg
   kind: course
-  modified_at: '2026-10-16T17:14:26.062483Z'
+  modified_at: '2026-10-27T14:19:08.472604Z'
   order: 20
   slug: running-and-managing-code-in-positron
   software:
