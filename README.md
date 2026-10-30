@@ -12,7 +12,7 @@ The site uses a modern static site generation stack combining Hugo for fast site
 
 ## Tech Stack
 
-- **Hugo** (v0.153.2) - Static site generator
+- **Hugo** (v0.158.0) - Static site generator
 - **Quarto** - Renders scientific documents (.qmd and .ipynb files)
 - **Tailwind CSS** (v4.0.17) - Utility-first CSS framework
 - **Pagefind** (v1.4.0) - Static site search indexing
@@ -129,7 +129,7 @@ Custom Hugo taxonomies for organizing content:
 
 - [just](https://github.com/casey/just) - Command runner
 - **Node.js** v20 or higher
-- **Hugo Extended** v0.153.2 or higher
+- **Hugo Extended** v0.158.0 or higher
 - **Quarto** (for rendering .qmd and .ipynb files)
 - **UV** (Python package manager)
 - **Python** 3.8+ (for automation scripts)
@@ -575,11 +575,11 @@ netlify deploy --prod
 
 ### Netlify Configuration
 
+Netlify only hosts the site. GitHub Actions builds it, and the Hugo version is pinned there (`HUGO_VERSION` in `.github/workflows/build-deploy.yml`).
+
 Key settings in `netlify.toml`:
 
-- **Hugo version**: 0.153.2
-- **Node version**: 20
-- **Build command**: Full pipeline (Tailwind + Hugo + Pagefind)
+- **Builds**: skipped (`ignore = "exit 0"`)
 - **Security headers**: X-Frame-Options, X-XSS-Protection, Referrer-Policy
 - **Cache headers**: 1-year cache for static assets
 - **Publish directory**: `public/`
@@ -792,7 +792,7 @@ rm -f .pnp.cjs .pnp.loader.mjs
 yarn install
 
 # Check Hugo version
-hugo version  # Should be v0.153.2 or higher
+hugo version  # Should be v0.158.0 or higher
 
 # Check Node version
 node --version  # Should be v20 or higher
