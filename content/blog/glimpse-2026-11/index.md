@@ -4,9 +4,8 @@ date: 2026-11-04
 people:
   - Isabella Velásquez
 description: >
-  The November 2026 posit::glimpse() newsletter covers Positron 2026.10 and Posit Assistant,
-  rig 0.11.0, Great Tables 1.x, Shiny for Python 1.9, AI updates, new Posit Academy courses
-  and books, and community showcases.
+  The November 2026 posit::glimpse() newsletter covers Positron and Posit Assistant,
+  rig, Great Tables, Shiny for Python, AI updates, and new resources.
 image: "thumbnail.jpg"
 image-alt: "A blue background with a repeating pattern of white line drawings of various data-related icons, such as graphs, code symbols, and animals. Centered on the image is the white text 'posit::glimpse()'."
 topics:
