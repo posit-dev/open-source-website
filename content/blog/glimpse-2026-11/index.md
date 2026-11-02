@@ -77,7 +77,7 @@ The final part introduces `rig proj`, a project manager for R in the style of Py
 
 [Shiny for Python](https://shiny.posit.co/py/) 1.9 removes the process-wide lock on reactive updates, so async effects and outputs now run concurrently within and across sessions. The release also adds `session.run_once_when_idle()`, immediate UI updates from background tasks, accessible sidebar landmarks via `ui.sidebar(role=)`, Express download buttons with icons, and 2–3.5× faster data frame serialization. It includes a few breaking changes, notably that `ui.sidebar()` now renders a `<div>` rather than an `<aside>`.
 
-* Read more in the [Shiny for Python 1.9](https://opensource.posit.co/blog/2026-10-29_shiny-python-1-9/) blog post.
+* Read more in the [Shiny for Python 1.9](https://opensource.posit.co/blog/2026-10-29_shiny-python-1-9/) and [Concurrent Async](https://opensource.posit.co/blog/2026-10-29_shiny-python-concurrent-async/) blog posts.
 
 Looking for a little inspiration for your next app? Take a stroll through the [Shiny in the Public Sector gallery](https://posit-shiny-in-the-public-sector.share.connect.posit.cloud/), which is filled with real-world examples of how teams are using Shiny to share data and serve their communities. It's a great place to spark ideas, and maybe borrow a trick or two!
 
