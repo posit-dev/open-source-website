@@ -36,6 +36,18 @@ The table of contents on the right can help you navigate through all the updates
 
 ## Key product updates and new releases
 
+### Quarto 1.11
+
+[Quarto](https://quarto.org/) 1.11 is out, released early to deliver a Deno security update that protects HTTPS requests made by Quarto commands, including publishing and downloading extensions. Quarto 1.10.20, released just before, is the final patch in the 1.10 series, so all users should upgrade to 1.11. Alongside the security update, this release brings broad accessibility improvements to HTML documents, websites, books, and presentations (skip-to-content links, a more visible keyboard focus ring, and preserved alternative text for diagrams and Word figures), lists of figures and tables for Typst documents, Julia engine improvements, and fixes to shared metadata. You can also adopt the Quarto 2 definition list syntax now, ahead of the next major version.
+
+* Read more in the [Quarto 1.11](https://opensource.posit.co/blog/2026-11-02_quarto-1-11/) blog post.
+
+### Great Tables v1.0.0 and v1.1.0
+
+[Great Tables](https://posit-dev.github.io/great-tables/) reaches 1.x with v1.0.0 and v1.1.0. The stable core API gains new formatters, value-based conditional styling, multi-column stubs, decimal alignment, and diverging, row-wise, and custom `data_color()` scales with APCA-based text contrast. HTML output is now accessible by default.
+
+* Read more in the [Great Tables v1.0.0 and v1.1.0: new formatters, conditional styling, multi-column stubs, and richer color scales](https://opensource.posit.co/blog/2026-10-19_great-tables-1-1/) blog post.
+
 ### Positron
 
 [Positron](https://positron.posit.co/) is a next-generation data science IDE for R and Python. The 2026.10 release brings Posit Assistant that can drive Positron itself, a built-in MCP server for your own coding agents, Data Connections on by default, faster language features for Quarto, and smoother interpreter and project setup. Posit Assistant can now tap into Positron's packages, interpreters, consoles, and publishing tools, so its answers and actions match your actual environment.
@@ -68,12 +80,6 @@ The final part introduces `rig proj`, a project manager for R in the style of Py
 
 * Read more in the [rig 0.11.0 part three: R projects](https://opensource.posit.co/blog/2026-10-15_rig-0-11-0-part-three/) blog post.
 
-### Great Tables v1.0.0 and v1.1.0
-
-[Great Tables](https://posit-dev.github.io/great-tables/) reaches 1.x with v1.0.0 and v1.1.0. The stable core API gains new formatters (`fmt_fraction()`, `fmt_index()`, `fmt_chem()`, `fmt_url()`, and `fmt_email()`), value-based conditional styling with `tab_style_body()`, multi-column stubs, decimal alignment, and diverging, row-wise, and custom `data_color()` scales with APCA-based text contrast. HTML output is now accessible by default.
-
-* Read more in the [Great Tables v1.0.0 and v1.1.0: new formatters, conditional styling, multi-column stubs, and richer color scales](https://opensource.posit.co/blog/2026-10-19_great-tables-1-1/) blog post.
-
 ### Shiny for Python 1.9
 
 [Shiny for Python](https://shiny.posit.co/py/) 1.9 removes the process-wide lock on reactive updates, so async effects and outputs now run concurrently within and across sessions. The release also adds `session.run_once_when_idle()`, immediate UI updates from background tasks, accessible sidebar landmarks via `ui.sidebar(role=)`, Express download buttons with icons, and 2–3.5× faster data frame serialization. It includes a few breaking changes, notably that `ui.sidebar()` now renders a `<div>` rather than an `<aside>`.
@@ -81,12 +87,6 @@ The final part introduces `rig proj`, a project manager for R in the style of Py
 * Read more in the [Shiny for Python 1.9](https://opensource.posit.co/blog/2026-10-29_shiny-python-1-9/) and [Concurrent Async](https://opensource.posit.co/blog/2026-10-29_shiny-python-concurrent-async/) blog posts.
 
 Looking for a little inspiration for your next app? Take a stroll through the [Shiny in the Public Sector gallery](https://posit-shiny-in-the-public-sector.share.connect.posit.cloud/), which is filled with real-world examples of how teams are using Shiny to share data and serve their communities. It's a great place to spark ideas, and maybe borrow a trick or two!
-
-### Quarto 1.11
-
-[Quarto](https://quarto.org/) 1.11 is out, released early to deliver a Deno security update that protects HTTPS requests made by Quarto commands, including publishing and downloading extensions. Quarto 1.10.20, released just before, is the final patch in the 1.10 series, so all users should upgrade to 1.11. Alongside the security update, this release brings broad accessibility improvements to HTML documents, websites, books, and presentations (skip-to-content links, a more visible keyboard focus ring, and preserved alternative text for diagrams and Word figures), lists of figures and tables for Typst documents, Julia engine improvements, and fixes to shared metadata. You can also adopt the Quarto 2 definition list syntax now, ahead of the next major version.
-
-* Read more in the [Quarto 1.11](https://opensource.posit.co/blog/2026-11-02_quarto-1-11/) blog post.
 
 ## AI updates
 
