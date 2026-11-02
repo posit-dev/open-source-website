@@ -46,11 +46,14 @@ The updated Deno requires macOS 12 (Monterey) or later.
 Quarto 1.11 improves navigation, visible focus, alternative text, and presentations:
 
 - **Keyboard navigation:** Bootstrap-themed HTML documents, websites, books, and dashboards include a **Skip to main content** link. Website sidebar sections use buttons you can operate with the keyboard. Scrollable code blocks and cell output can be focused and scrolled in Safari. Popups for citations, footnotes, cross-references, and code annotations close with Esc.
-- **Visible focus:** A two-color keyboard focus ring improves visibility, including in forced-colors mode and on code tools and sidebar controls. If you customize focus styling, see the new Sass variables in the upgrade notes below.
+
+- **Visible focus:** A two-color keyboard focus ring improves visibility, including in forced-colors mode and on code tools and sidebar controls. If you customize focus styling, see the new Sass variables in the [upgrade notes below](#shared-metadata-and-upgrade-notes).
+
 - **Page structure:** Websites and books have distinct, localized names for navigation regions, making it easier to find the site navigation, section navigation, breadcrumbs, or table of contents with a screen reader. Links configured to open in a new tab announce that behavior.
+
 - **Presentations:** Keyboard focus stays on the current slide in the normal presentation view, tabsets follow the slide's reading order, and closed slide menus and unrevealed incremental content stay hidden from screen readers. Touch devices can use pinch-zoom, and the speaker view has named regions and a labeled layout control.
 
-Alternative text is now preserved for Mermaid and Graphviz diagrams in HTML, Revealjs, Word, and Typst output. Word figures also honor `fig-alt`, including figures produced by code, while keeping their visible captions. In this example, `fig-cap` is the caption readers see, while `fig-alt` describes the diagram for readers using assistive technology.
+- **Alternative text for diagrams:** Alternative text is now preserved for Mermaid and Graphviz diagrams in HTML, Revealjs, Word, and Typst output. Word figures also honor `fig-alt`, including figures produced by code, while keeping their visible captions. In this example, `fig-cap` is the caption readers see, while `fig-alt` describes the diagram for readers using assistive technology.
 
 
 ```` markdown { filename="document.qmd" }
@@ -97,18 +100,6 @@ The bundled engine uses QuartoNotebookRunner 0.18.5. Changes to document or proj
 
 Learn more about [using the Julia engine](https://quarto.org/docs/computations/julia.html#using-the-julia-engine).
 
-## Shared Metadata and Upgrade Notes
-
-Metadata shared through projects, directories, and `metadata-files` now reaches Pandoc templates and Lua filters correctly when the document defines the same key. Document values still take precedence for single values, while inherited list entries are retained. If you previously used document-level `keywords` to replace an inherited list, check the combined result after upgrading.
-
-Learn more at [Metadata Merging](https://quarto.org/docs/projects/quarto-projects.html#metadata-merging).
-
-Quarto now validates website metadata more strictly. Misspelled page-level `open-graph` and `twitter-card` options now fail the render with an error instead of being ignored. Put preview-image dimensions under `open-graph`; Twitter Cards do not use `image-width` or `image-height`. When a page provides its own image, declare its dimensions in the page's `open-graph` options or shared directory metadata, rather than relying on the site's image dimensions.
-
-Learn more at [Social Metadata](https://quarto.org/docs/websites/website-tools.html#social-metadata).
-
-If you customize HTML themes, the keyboard focus ring now uses `$focus-ring-outer-color`, `$focus-ring-inner-color`, `$focus-ring-outline-width`, and `$focus-ring-outline-offset`. Quarto no longer uses Bootstrap's `$focus-ring-color`, `$focus-ring-box-shadow`, `$btn-focus-width`, or `$btn-focus-box-shadow` for this styling. See [Focus Ring](https://quarto.org/docs/output-formats/html-themes.html#focus-ring) for customization.
-
 ## Definition List Syntax
 
 You can now write a definition list using a `.definition-list` div containing nested bullet lists. Each top-level bullet is a term, and the bullets nested underneath it are its definitions:
@@ -127,6 +118,16 @@ You can now write a definition list using a `.definition-list` div containing ne
 This is the syntax used by Quarto 2, so you can adopt it now in documents you plan to use with both versions. Existing `term` / `: definition` syntax continues to work in Quarto 1.11.
 
 Learn more at [Definition Lists](https://quarto.org/docs/authoring/markdown-basics.html#definition-lists).
+
+## Shared Metadata and Upgrade Notes
+
+A few changes may affect existing projects, so check these when you upgrade:
+
+- **Shared metadata:** Metadata shared through projects, directories, and `metadata-files` now reaches Pandoc templates and Lua filters correctly when the document defines the same key. Document values still take precedence for single values, while inherited list entries are retained. If you previously used document-level `keywords` to replace an inherited list, check the combined result after upgrading. Learn more at [Metadata Merging](https://quarto.org/docs/projects/quarto-projects.html#metadata-merging).
+
+- **Website metadata validation:** Quarto now validates website metadata more strictly. Misspelled page-level `open-graph` and `twitter-card` options now fail the render with an error instead of being ignored. Put preview-image dimensions under `open-graph`; Twitter Cards do not use `image-width` or `image-height`. When a page provides its own image, declare its dimensions in the page's `open-graph` options or shared directory metadata, rather than relying on the site's image dimensions. Learn more at [Social Metadata](https://quarto.org/docs/websites/website-tools.html#social-metadata).
+
+- **Focus ring variables:** If you customize HTML themes, the keyboard focus ring now uses `$focus-ring-outer-color`, `$focus-ring-inner-color`, `$focus-ring-outline-width`, and `$focus-ring-outline-offset`. Quarto no longer uses Bootstrap's `$focus-ring-color`, `$focus-ring-box-shadow`, `$btn-focus-width`, or `$btn-focus-box-shadow` for this styling. See [Focus Ring](https://quarto.org/docs/output-formats/html-themes.html#focus-ring) for customization.
 
 ## Other Highlights
 
