@@ -93,9 +93,17 @@ Want to see commons in action? Sara and Simon recently walked through a real wor
 
 ## Learning resources
 
-### New Posit Academy courses
+### Recent Data Science Lab episodes
 
-Looking to learn something new? Check out these courses from Posit Academy, now available on our resources page:
+The [Data Science Lab](https://pos.it/dslab) is a fun, chill session where practitioners share their screens and live code through real data science workflows. Missed a live session? Catch up on these recent episodes:
+
+* [How do you validate data in R using Pointblank?](https://youtu.be/rthgRFzx30g) with Rich Iannone
+* [How do you create custom geoms in ggplot2?](https://youtu.be/eYhSbSsBHTs) with Gina Reynolds
+* [How do you create custom Revealjs themes in Quarto?](https://youtu.be/ONAl7iD9h68) with Emil Hvitfeldt
+
+### New free Posit Academy courses
+
+Looking to learn something new? Check out these free courses from Posit Academy, now available on our resources page:
 
 {{< insert-items format="card" hide-badge=true cols=2 >}}
 - resources/courses/introduction-to-quarto
@@ -116,14 +124,6 @@ Our open source website now has a [books page](https://opensource.posit.co/resou
 - resources/books/mastering-shiny
 - resources/books/tidy-modeling-with-r
 {{< /insert-items>}}
-
-### Recent Data Science Lab episodes
-
-The [Data Science Lab](https://pos.it/dslab) is a fun, chill session where practitioners share their screens and live code through real data science workflows. Missed a live session? Catch up on these recent episodes:
-
-* [How do you validate data in R using Pointblank?](https://youtu.be/rthgRFzx30g) with Rich Iannone
-* [How do you create custom geoms in ggplot2?](https://youtu.be/eYhSbSsBHTs) with Gina Reynolds
-* [How do you create custom Revealjs themes in Quarto?](https://youtu.be/ONAl7iD9h68) with Emil Hvitfeldt
 
 ## Showcases from the community
 
