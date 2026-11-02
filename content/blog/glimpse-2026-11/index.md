@@ -119,7 +119,7 @@ Our open source website now has a [books page](https://opensource.posit.co/resou
 
 ### Recent Data Science Lab episodes
 
-Missed a live session? Catch up on these recent episodes:
+The [Data Science Lab](https://pos.it/dslab) is a fun, chill session where practitioners share their screens and live code through real data science workflows. Missed a live session? Catch up on these recent episodes:
 
 * [How do you validate data in R using Pointblank?](https://youtu.be/rthgRFzx30g) with Rich Iannone
 * [How do you create custom geoms in ggplot2?](https://youtu.be/eYhSbSsBHTs) with Gina Reynolds
