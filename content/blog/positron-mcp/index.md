@@ -25,13 +25,13 @@ hidesubscription: false
 ---
 
 
-We're very proud of [Posit Assistant](https://assistant.posit.co), our own agentic harness for data science. It's designed to be easy to use and [cost efficient](blog/2026-10-29_ai-newsletter/), and it is deeply integrated into Positron and RStudio.
+We're very proud of [Posit Assistant](https://assistant.posit.co), our own agentic harness for data science. It's designed to be easy to use and [cost efficient](../../blog/2026-10-29_ai-newsletter/), and it is deeply integrated into Positron and RStudio.
 
 However, in the months since we introduced Posit Assistant, we heard from many of you who prefer to use your own coding agent harness inside Positron. This might be for the familiar interface, or to get access to models and tokens that your company is already paying for (for example, via Claude Enterprise subscriptions) that aren't available in Assistant.
 
 While we obviously think our own harness is pretty great, at Posit our goal is to build open tools that help you avoid vendor lock-in. We want to make Positron the best IDE for doing data work no matter what the rest of your ecosystem looks like, and that means giving third party agents access to the Positron IDE surface, too. We are also exploring ways to bring external agent engines via official SDKs to the model picker, allowing you to run tools like Claude, Copilot, or Codex while retaining Posit Assistant's familiar interface and permissions.
 
-Towards that end, [in the 2026.10 release](/blog/2026-10-13_positron-2026-10-release/) of Positron, we've added an experimental **Positron MCP** (a [Model Context Protocol](https://modelcontextprotocol.io/) server). This MCP exposes tools inside Positron that agents can use to work alongside you in the IDE.
+Towards that end, [in the 2026.10 release](../../blog/2026-10-13_positron-2026-10-release/) of Positron, we've added an experimental **Positron MCP** (a [Model Context Protocol](https://modelcontextprotocol.io/) server). This MCP exposes tools inside Positron that agents can use to work alongside you in the IDE.
 
 To turn it on, enable the new [MCP: Enabled](positron://settings/ai.mcp.enabled) setting:
 
