@@ -25,7 +25,7 @@ hidesubscription: false
 ---
 
 
-Quarto 1.11 is out! We released it early to deliver a Deno security update. You can get it from the [download page](https://quarto.org/docs/download/index.html) and find the complete changes in the [Release Notes](https://quarto.org/docs/download/changelog/1.11/).
+Quarto 1.11 is out! We released it early to deliver a Deno security update. You can get it from the [download page](https://quarto.org/docs/download/index.html) and see the full list of changes in the [release notes](https://quarto.org/docs/download/changelog/1.11/).
 
 Alongside the security update, this release includes accessibility improvements, new capabilities for Typst documents and the Julia engine, and fixes to shared metadata.
 
@@ -39,13 +39,13 @@ Just before 1.11, we released Quarto 1.10.20 on October 30, ahead of our usual m
 
 Deno moves from 2.7.14 to 2.9.8. The other bundled tools keep their Quarto 1.10 versions: Pandoc 3.10, Typst 0.15.1, Sass 1.101.0, esbuild 0.28.1, and Mermaid 11.12.0. This release also updates the Observable JavaScript runtime components and the Julia engine.
 
-The updated Deno has a minimum macOS version of 12 (Monterey).
+The updated Deno requires macOS 12 (Monterey) or later.
 
 ## Accessibility Improvements
 
 Quarto 1.11 improves navigation, visible focus, alternative text, and presentations:
 
-- **Keyboard navigation:** Bootstrap-themed HTML documents, websites, books, and dashboards include a **Skip to main content** link. Website sidebar sections use buttons you can operate with the keyboard, scrollable code blocks and cell output can be focused and scrolled in Safari, and popups for citations, footnotes, cross-references, and code annotations close with Esc.
+- **Keyboard navigation:** Bootstrap-themed HTML documents, websites, books, and dashboards include a **Skip to main content** link. Website sidebar sections use buttons you can operate with the keyboard. Scrollable code blocks and cell output can be focused and scrolled in Safari. Popups for citations, footnotes, cross-references, and code annotations close with Esc.
 - **Visible focus:** A two-color keyboard focus ring improves visibility, including in forced-colors mode and on code tools and sidebar controls. If you customize focus styling, see the new Sass variables in the upgrade notes below.
 - **Page structure:** Websites and books have distinct, localized names for navigation regions, making it easier to find the site navigation, section navigation, breadcrumbs, or table of contents with a screen reader. Links configured to open in a new tab announce that behavior.
 - **Presentations:** Keyboard focus stays on the current slide in the normal presentation view, tabsets follow the slide's reading order, and closed slide menus and unrevealed incremental content stay hidden from screen readers. Touch devices can use pinch-zoom, and the speaker view has named regions and a labeled layout control.
