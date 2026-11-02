@@ -27543,3 +27543,54 @@ contributors = [
 ]
 readme_image = "pkg-r/man/figures/logo.svg"
 last_updated = "2026-10-05T09:25:51.400268+00:00"
+
+[[repos]]
+repo = "shikokuchuo/mizu"
+name = "mizu"
+description = "Async and parallel R at thread speed over shared memory"
+website = "https://shikokuchuo.net/mizu/"
+stars = 23
+forks = 0
+license = "NOASSERTION"
+language = "R"
+releases = 0
+first_commit = "2026-08-21T09:26:17+00:00"
+contributors = [
+    "shikokuchuo",
+]
+readme_image = "man/figures/logo.svg"
+last_updated = "2026-11-02T14:09:48.089169+00:00"
+
+[[repos]]
+repo = "shikokuchuo/pymizu"
+name = "pymizu"
+description = "Async and parallel Python at thread speed over shared memory"
+website = "https://shikokuchuo.net/pymizu/"
+stars = 3
+forks = 0
+license = "MIT"
+language = "Python"
+releases = 0
+first_commit = "2026-08-21T09:24:40+00:00"
+contributors = [
+    "shikokuchuo",
+]
+readme_image = "https://raw.githubusercontent.com/shikokuchuo/pymizu/main/docs/assets/logo.svg"
+last_updated = "2026-11-02T14:24:06.438482+00:00"
+
+[[repos]]
+repo = "shikokuchuo/libmizu"
+name = "libmizu"
+description = "Lock-free shared memory IPC at thread speed in C11"
+website = "https://shikokuchuo.net/libmizu/"
+stars = 5
+forks = 0
+license = "MIT"
+language = "C"
+releases = 0
+first_commit = "2026-08-21T09:24:37+00:00"
+contributors = [
+    "shikokuchuo",
+]
+readme_image = "https://raw.githubusercontent.com/shikokuchuo/libmizu/main/docs/assets/logo.svg"
+last_updated = "2026-11-02T14:09:54.105049+00:00"
