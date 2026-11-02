@@ -1,6 +1,6 @@
 ---
 title: Quarto 1.11
-date: 2026-10-30T00:00:00.000Z
+date: 2026-11-02T00:00:00.000Z
 people:
   - Christophe Dervieux
 description: >
