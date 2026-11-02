@@ -46,7 +46,7 @@ Quarto 1.11 improves navigation, visible focus, alternative text, and presentati
 - **Page structure:** Websites and books have distinct, localized names for navigation regions, making it easier to find the site navigation, section navigation, breadcrumbs, or table of contents with a screen reader. Links configured to open in a new tab announce that behavior.
 - **Presentations:** Keyboard focus stays on the current slide in the normal presentation view, tabsets follow the slide's reading order, and closed slide menus and unrevealed incremental content stay hidden from screen readers. Touch devices can use pinch-zoom, and the speaker view has named regions and a labeled layout control.
 
-* **Alternative text for diagrams:** Alternative text is now preserved for Mermaid and Graphviz diagrams in HTML, Revealjs, Word, and Typst output. Word figures also honor `fig-alt`, including figures produced by code, while keeping their visible captions. In this example, `fig-cap` is the caption readers see, while `fig-alt` describes the diagram for readers using assistive technology.
+Alternative text is now preserved for Mermaid and Graphviz diagrams in HTML, Revealjs, Word, and Typst output. Word figures also honor `fig-alt`, including figures produced by code, while keeping their visible captions. In this example, `fig-cap` is the caption readers see, while `fig-alt` describes the diagram for readers using assistive technology.
 
 ````{.markdown filename="document.qmd"}
 ```{mermaid}
