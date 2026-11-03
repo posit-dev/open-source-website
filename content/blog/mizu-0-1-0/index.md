@@ -327,8 +327,8 @@ A few things to know before you start:
 
 - **The API is experimental.** We may make changes to function names and arguments in response to feedback.
 - **Workers don't see your session.** A task runs in a fresh environment on the worker and sees only the arguments you pass: no globals, loaded packages or imports cross over. In R, a task must load any package it needs or use package-namespaced functions. In Python, a callable must be importable by the worker, or pickled by value with the `cloudpickle` extra.
-- **Not every type crosses between languages.** Vectors, strings, lists and dicts, dates and times, data frames and Arrow data cross between R and Python. Language objects such as formulas and functions do not, and mizu reports an error rather than attempting a conversion. Arrow values survive exactly, but not every schema does: a dictionary returns as a factor, and unsigned integers widen.
-- **Small values are copied.** The zero-copy floor is 256 KB for a flat vector on a channel and 32 KB elsewhere. Below it, a value crosses as one quick copy.
+- **Not every type crosses between languages.** Vectors, strings, lists and dicts, dates and times, data frames and Arrow data cross between R and Python. Language objects such as formulas and functions do not, and mizu reports an error. Arrow data crosses exactly, but a select few types can change along the way: a dictionary-encoded column arrives in R as a factor, and unsigned integers arrive as wider signed types.
+- **Small values are copied.** The zero-copy floor is 256 KB for a single vector on a channel and 32 KB elsewhere. Below it, a value crosses as one quick copy.
 
 ## From mirai to mizu
 
