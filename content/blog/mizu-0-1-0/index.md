@@ -1,5 +1,5 @@
 ---
-title: 'mizu: parallel R and Python at thread speed'
+title: 'mizu: thread-speed parallel R and Python over shared memory'
 date: 2026-11-05T00:00:00.000Z
 people:
   - Charlie Gao
@@ -96,6 +96,9 @@ A task of ten microseconds is worth sending to a worker, and a map over thousand
 A pool is a set of worker processes that divide submitted tasks among themselves.
 `submit` returns a handle immediately, and `collect` waits for the value.
 `map` works the same way, but the function and data cross into shared memory once, and the workers claim ranges of elements from a shared cursor.
+
+Creating the pool takes a short amount of time as each worker is a fresh R or Python process that needs to be started.
+The usual practice is to start a pool once and keep it around, as everything after that one-time cost runs at the speeds shown above.
 
 <div class="panel-tabset" data-tabset-group="language">
 <ul id="tabset-2" class="panel-tabset-tabby">
@@ -311,10 +314,10 @@ The speedup versus sequential is shown below:
 | D: Bootstrap prediction intervals, 400 tasks scoring 250,000 policies | 7.6x | 1.4x |
 
 These workloads were chosen to be deliberately adversarial, each sized to stress data movement rather than compute.
-That is why mirai, already the most performant parallel framework in R, shows such modest speedups here.
-The [benchmark repository](https://github.com/shikokuchuo/tidymodels-parallel-benchmark) contains the code, and my colleagues in the Tidymodels team will follow with a full report.
+That is why mirai, already the most performant parallel framework in R, shows such modest speedups here. Also note that 12 workers deliver at best an 8x speedup even with mizu. This is because there are still sequential parts to the workflow, such as collecting and combining the results, and it's what [Amdahl's law](https://en.wikipedia.org/wiki/Amdahl%27s_law) predicts.
+The [benchmark repository](https://github.com/shikokuchuo/tidymodels-parallel-benchmark) contains the code, and my Tidymodels colleagues will follow up with a full report.
 
-## Where mizu fits, and where it doesn't
+## Know the limits
 
 In R, mizu doesn't replace [mirai](https://mirai.r-lib.org).
 mirai allows distributed computing, harnessing other machines on your network, an HPC cluster or the cloud, where shared memory doesn't reach.
@@ -323,6 +326,7 @@ mizu also interoperates with [mori](https://mori.r-lib.org), which shares indivi
 A few things to know before you start:
 
 - **The API is experimental.** We may make changes to function names and arguments in response to feedback.
+- **Workers don't see your session.** A task runs in a fresh environment on the worker and sees only the arguments you pass: no globals, loaded packages or imports cross over. In R, a task must load any package it needs or use package-namespaced functions. In Python, a callable must be importable by the worker, or pickled by value with the `cloudpickle` extra.
 - **Not every type crosses between languages.** Vectors, strings, lists and dicts, dates and times, data frames and Arrow data cross between R and Python. Language objects such as formulas and functions do not, and mizu reports an error rather than attempting a conversion. Arrow values survive exactly, but not every schema does: a dictionary returns as a factor, and unsigned integers widen.
 - **Small values are copied.** The zero-copy floor is 256 KB for a flat vector on a channel and 32 KB elsewhere. Below it, a value crosses as one quick copy.
 
