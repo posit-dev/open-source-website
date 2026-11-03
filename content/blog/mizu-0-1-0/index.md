@@ -8,13 +8,12 @@ description: >
   to R and Python. A task round trip drops from ~100 µs to < 1 µs, and vectors,
   data frames and Arrow tables cross zero-copy between processes, and between
   the two languages.
-image: featured.png
+image: featured.gif
 image-alt: >
-  The mizu and pymizu logos side by side on a pale blue background: on the left
-  the blue mizu hex sticker bearing the white mizu wordmark, on the right the
-  circular pymizu icon beside the dark pymizu wordmark; both patterned with
-  concentric rings of dashed stitching around red dots, water droplet ripples in
-  sashiko style.
+  Animated loop: the blue mizu hex sticker logo centred on a pale blue
+  background; raindrops strike the surface, spreading concentric dashed ripple
+  rings in the sashiko stitch style, which sweep the image across to the
+  circular pymizu logo and wordmark, then ripple back again.
 topics:
   - Machine Learning
 software:
@@ -35,7 +34,7 @@ Resampling is an expensive part of modelling work.
 Fit the same model hundreds of times over, so you attempt to do them in parallel over a pool of workers.
 However the speedup you get is usually much less than you'd hoped for.
 
-The reason lies in how a process pool distributes and coordinates work, in R and Python alike: each task is serialized, copied through a socket and deserialized on the other side, and each result comes back the same way.
+The reason lies in how a process pool distributes and coordinates work: each task is serialized, copied through a socket and deserialized on the other side, and each result comes back the same way.
 When tasks are small, this overhead can exceed the computation itself, and when the data is large, every worker holding a copy exhausts memory.
 
 Shared memory avoids both costs.
@@ -375,9 +374,9 @@ You can find yours too.
 We encourage you to experiment with mizu.
 It's early days, so expect rough edges: bug reports are the most valuable contribution you can make right now, and the more feedback we receive, the sooner we can reach a stable API.
 
-- libmizu: [repo](https://github.com/shikokuchuo/libmizu) · [docs](https://shikokuchuo.net/libmizu/)
-- mizu: [repo](https://github.com/shikokuchuo/mizu) · [docs](https://shikokuchuo.net/mizu/)
-- pymizu: [repo](https://github.com/shikokuchuo/pymizu) · [docs](https://shikokuchuo.net/pymizu/)
+- libmizu: [repo](https://github.com/shikokuchuo/libmizu)
+- mizu: [repo](https://github.com/shikokuchuo/mizu)
+- pymizu: [repo](https://github.com/shikokuchuo/pymizu)
 
 We'll be working on plugging mizu into the ecosystem: Tidymodels and other Tidyverse packages, Shiny in both R and Python, and other places we've probably not yet contemplated.
 If you have ideas of where you'd like to see this technology, open a discussion at the mizu or pymizu repo. We'd love to hear from you!
