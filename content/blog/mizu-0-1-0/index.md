@@ -321,13 +321,14 @@ The [benchmark repository](https://github.com/shikokuchuo/tidymodels-parallel-be
 
 In R, mizu doesn't replace [mirai](https://mirai.r-lib.org).
 mirai allows distributed computing, harnessing other machines on your network, an HPC cluster or the cloud, where shared memory doesn't reach.
+If you're coming from mirai, the API will feel a little different: mizu was designed to be as symmetrical as possible between R and Python, so that it's easy to reach over in either direction, and that symmetry posed a constraint on the design.
 mizu also interoperates with [mori](https://mori.r-lib.org), which shares individual R objects: a mori shared object crosses a mizu channel or pool zero-copy.
 
 A few things to know before you start:
 
 - **The API is experimental.** We may make changes to function names and arguments in response to feedback.
 - **Workers don't see your session.** A task runs in a fresh environment on the worker and sees only the arguments you pass: no globals, loaded packages or imports cross over. In R, a task must load any package it needs or use package-namespaced functions. In Python, a callable must be importable by the worker, or pickled by value with the `cloudpickle` extra.
-- **Not every type crosses between languages.** Vectors, strings, lists and dicts, dates and times, data frames and Arrow data cross between R and Python. Language objects such as formulas and functions do not, and mizu reports an error. Arrow data crosses exactly, but a select few types can change along the way: a dictionary-encoded column arrives in R as a factor, and unsigned integers arrive as wider signed types.
+- **Not every type crosses between languages.** Vectors, strings, lists and dicts, dates and times, data frames and Arrow data cross between R and Python. Language objects such as formulas and functions do not, and mizu reports an error. Arrow data crosses exactly, but a few select types can change along the way: a dictionary-encoded column arrives in R as a factor, and unsigned integers arrive as wider signed types.
 - **Small values are copied.** The zero-copy floor is 256 KB for a single vector on a channel and 32 KB elsewhere. Below it, a value crosses as one quick copy.
 
 ## From mirai to mizu
