@@ -286,7 +286,7 @@ The speedup versus sequential is shown below:
 
 These workloads were chosen to be deliberately adversarial, each sized to stress data movement rather than compute.
 That is why mirai, already the most performant parallel framework in R, shows such modest speedups here. Also note that 12 workers deliver at best an 8x speedup even with mizu. This is because there are still sequential parts to the workflow, such as collecting and combining the results, and it's what [Amdahl's law](https://en.wikipedia.org/wiki/Amdahl%27s_law) predicts.
-The [benchmark repository](https://github.com/shikokuchuo/tidymodels-parallel-benchmark) contains the code, and my Tidymodels colleagues will follow up with a full report.
+The [benchmark repository](https://github.com/posit-dev/tidymodels-parallel-benchmark) contains the code, and my Tidymodels colleagues will follow up with a full report.
 
 ## Know the limits
 
