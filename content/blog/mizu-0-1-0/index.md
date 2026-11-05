@@ -1,0 +1,390 @@
+---
+title: 'mizu: thread-speed parallel R and Python over shared memory'
+date: 2026-11-05T00:00:00.000Z
+people:
+  - Charlie Gao
+description: >
+  libmizu, mizu and pymizu bring async and parallel computing over shared memory
+  to R and Python. A task round trip drops from ~100 µs to < 1 µs, and vectors,
+  data frames and Arrow tables cross zero-copy between processes, and between
+  the two languages.
+image: featured.gif
+image-alt: >
+  Animated loop: the blue mizu hex sticker logo centred on a pale blue
+  background; raindrops strike the surface, spreading concentric dashed ripple
+  rings in the sashiko stitch style, which sweep the image across to the
+  circular pymizu logo and wordmark, then ripple back again.
+topics:
+  - Machine Learning
+software:
+  - mizu
+  - pymizu
+  - libmizu
+languages:
+  - R
+  - Python
+tags:
+  - Parallelism
+  - Async
+hidesubscription: false
+---
+
+
+Resampling is an expensive part of modelling work.
+Fit the same model hundreds of times over, so you attempt to do them in parallel over a pool of workers.
+However the speedup you get is usually much less than you'd hoped for.
+
+The reason lies in how a process pool distributes and coordinates work: each task is serialized, copied through a socket and deserialized on the other side, and each result comes back the same way.
+When tasks are small, this overhead can exceed the computation itself, and when the data is large, every worker holding a copy exhausts memory.
+
+Shared memory avoids both costs.
+A task is written once into memory that both processes can see, and the worker reads it without copying.
+
+We're introducing libmizu, a C library for lock-free shared memory IPC, and mizu and pymizu, the R and Python bindings to it.
+Together they provide fast async and parallel computing on a single machine, and zero-copy data exchange between R and Python processes.
+
+- [libmizu](https://github.com/shikokuchuo/libmizu), the C core
+- [mizu](https://github.com/shikokuchuo/mizu), the R package built on it, now on CRAN
+- [pymizu](https://github.com/shikokuchuo/pymizu), the Python package on the same core, now on PyPI
+
+The two bindings share one wire format, so R and Python processes can talk to each other directly.
+Common data structures such as vectors, matrices, data frames and Arrow tables are shared between the two languages as zero-copy views.
+
+The name 'mizu' is Japanese for water: data flows between processes and takes the shape of whichever language receives it.
+
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-1-1">R</a></li>
+<li><a href="#tabset-1-2">Python</a></li>
+</ul>
+<div id="tabset-1-1">
+
+``` r
+install.packages("mizu")
+```
+
+Requires R 4.3 or later.
+
+</div>
+<div id="tabset-1-2">
+
+``` bash
+pip install pymizu
+```
+
+Requires Python 3.10 or later.
+Add `pymizu[numpy]` for zero-copy array views, and `pymizu[cloudpickle]` to submit lambdas and closures as tasks.
+The extension compiles the vendored C core, so there is no system library to install.
+
+</div>
+</div>
+
+For the C library, clone the repository and run `make`; see the README for further details.
+All three are at the *experimental* lifecycle stage.
+
+## From 100 µs to under 1 µs
+
+A task round trip is the time to submit a trivial task to a pool and collect its result: the host publishes the task, a worker runs it, the result is published, and the host collects it.
+On an Apple M4 Pro, this round trip takes 0.8 µs in R and 0.7 µs in Python, and 0.4 µs in the C core.
+The same round trip over sockets, in mirai for R or `ProcessPoolExecutor` for Python, takes around 100 µs.
+
+This gain of two orders of magnitude represents a generational leap, allowing you to divide work as finely as you would with threads.
+A task of ten microseconds is worth sending to a worker, and a map over thousands of such tasks completes in milliseconds.
+
+## Meet the pool
+
+A pool is a set of worker processes that divide submitted tasks among themselves.
+`submit` returns a handle immediately, and `collect` waits for the value.
+`map` works the same way, but the function and data cross into shared memory once, and the workers claim ranges of elements from a shared cursor.
+
+Creating the pool takes a short amount of time as each worker is a fresh R or Python process that needs to be started.
+The usual practice is to start a pool once and keep it around, as everything after that one-time cost runs at the speeds shown above.
+
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-2" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-2-1">R</a></li>
+<li><a href="#tabset-2-2">Python</a></li>
+</ul>
+<div id="tabset-2-1">
+
+``` r
+library(mizu)
+
+p <- mizu_pool(n_workers = 4L)
+
+t <- mizu_submit(p, sum(x) + y, x = 1:10, y = 100)
+mizu_collect(t)
+#> [1] 155
+
+m <- mizu_map(p, c(1, 4, 9, 16, 25), sqrt, .template = numeric(1))
+mizu_collect(m)
+#> [1] 1 2 3 4 5
+
+mizu_pool_stop(p)
+```
+
+</div>
+<div id="tabset-2-2">
+
+``` python
+import math
+import pymizu
+
+with pymizu.Pool.create(4) as pool:
+    task = pool.submit(sum, range(1, 11), 100)
+    print(task.collect(timeout=5))
+    #> 155
+
+    m = pool.map(math.sqrt, [1, 4, 9, 16, 25])
+    print(m.collect())
+    #> [1.0, 2.0, 3.0, 4.0, 5.0]
+```
+
+`PoolExecutor` adapts a pool to the `concurrent.futures.Executor` interface, so code written against `ProcessPoolExecutor` drops in, and `wait`, `as_completed` and `asyncio.wrap_future` work unchanged.
+
+</div>
+</div>
+
+### R in, polars out
+
+The workers in a pool don't have to be the same language as the host.
+Here an R session passes its built-in `mtcars` data frame to Python workers, which summarize it with polars.
+The data frame crosses as an Arrow-backed `pymizu.Frame`, and the polars result comes back as a data frame whose columns are zero-copy ALTREP views into the same polars frame.
+
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-3" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-3-1">R</a></li>
+<li><a href="#tabset-3-2">Python</a></li>
+</ul>
+<div id="tabset-3-1">
+
+``` r
+p <- mizu_pool(n_workers = 4L, launcher = mizu_py_launcher())
+
+t <- mizu_submit_call(
+  p,
+  mizu_call(
+    .source = r"(import polars as pl
+pl.DataFrame(x).group_by('cyl').agg(pl.col('mpg').mean()).sort('cyl'))",
+    x = mtcars
+  )
+)
+mizu_collect(t)
+#>   cyl      mpg
+#> 1   4 26.66364
+#> 2   6 19.74286
+#> 3   8 15.10000
+
+mizu_pool_stop(p)
+```
+
+</div>
+<div id="tabset-3-2">
+
+The reverse direction: a Python host drives R workers and reads the result into polars.
+
+``` python
+import polars as pl
+import pymizu
+
+with pymizu.Pool.create(4, launcher=pymizu.r_launcher()) as pool:
+    task = pool.submit(
+        pymizu.call(source="aggregate(mpg ~ cyl, data = mtcars, FUN = mean)")
+    )
+    print(pl.DataFrame(task.collect()))
+    #> shape: (3, 2)
+    #> ┌─────┬───────────┐
+    #> │ cyl ┆ mpg       │
+    #> │ --- ┆ ---       │
+    #> │ f64 ┆ f64       │
+    #> ╞═════╪═══════════╡
+    #> │ 4.0 ┆ 26.663636 │
+    #> │ 6.0 ┆ 19.742857 │
+    #> │ 8.0 ┆ 15.1      │
+    #> └─────┴───────────┘
+```
+
+</div>
+</div>
+
+Notice that you did not need to perform any marshalling or conversion step on either side.
+A numeric vector arrives in Python as a NumPy array, and a data frame as a `pymizu.Frame`, which `pl.from_arrow()` or `pa.table()` takes directly.
+A NumPy array, or a polars, pyarrow or pandas frame, arrives in R as a vector or data frame.
+Arrow tables and record batches cross the same way in both directions, and `mizu_as_arrow()` reads a received frame as Arrow in R.
+
+Above a small size floor where it's faster to send the object directly, none of these crossings copies the data: both sides read the same shared pages.
+
+### Maps within maps
+
+A worker has access to its own pool, so a mapped function can itself map over the same workers, without deadlock. This is much more convenient than the workarounds we had to find in the past, such as tiered pool specifications.
+Here the numbers 1 to 100,000 are split into four parts, and each part is split again across the pool to sum its square roots:
+
+<div class="panel-tabset" data-tabset-group="language">
+<ul id="tabset-4" class="panel-tabset-tabby">
+<li><a data-tabby-default href="#tabset-4-1">R</a></li>
+<li><a href="#tabset-4-2">Python</a></li>
+</ul>
+<div id="tabset-4-1">
+
+``` r
+parts <- split(as.numeric(1:100000), rep(1:4, each = 25000))
+
+m <- mizu_map(p, parts, \(part) {
+  nested <- mizu_map(mizu_current_pool(), part, sqrt, .template = numeric(1))
+  sum(mizu_collect(nested))
+}, .template = numeric(1))
+mizu_collect(m)
+#>       1       2       3       4
+#> 2635310 4818361 6239529 7388808
+```
+
+</div>
+<div id="tabset-4-2">
+
+``` python
+import math
+import pymizu
+
+parts = [range(1, 25001), range(25001, 50001), range(50001, 75001), range(75001, 100001)]
+
+def part_total(part):
+    nested = pymizu.current_pool().map(math.sqrt, part)
+    return sum(nested.collect())
+
+with pymizu.Pool.create(4) as pool:
+    m = pool.map(part_total, parts)
+    print([round(v) for v in m.collect()])
+    #> [2635310, 4818361, 6239529, 7388808]
+```
+
+A function defined in your own script, like `part_total()`, needs the `pymizu[cloudpickle]` extra, which pickles it by value.
+Importable references such as `math.sqrt` pickle by reference, so the standard pickle suffices.
+
+</div>
+</div>
+
+### Async, without the polling
+
+mizu provides event-driven async, with results feeding into an event loop without polling. For the highest efficiency, a burst of results produces only a single wake-up.
+
+In R, a task or map handle is a promise: `then(task, fn)` resolves as soon as it completes.
+mizu plugs into `later` and `promises` pipelines and is ready for Shiny.
+In Python, you `await` a task or a map inside asyncio, and channels support `async for`.
+
+## Down to the `memcpy` floor
+
+Architecturally, mizu is quite different from mirai.
+Socket-based frameworks pay for every message multiple times: serialize, copy through the kernel, deserialize.
+mizu writes each payload once into shared memory in an efficient format.
+
+Large vectors and data frames are mapped and arrive as ALTREP views in R, or as NumPy arrays and Arrow-backed frames in Python.
+Workers claim tasks straight off lock-free queues, without requiring something like a task dispatcher in the middle.
+Waiting stays out of the kernel entirely on the hot path, with a worker parking itself only when there is nothing to do.
+
+By all measures, we're close to the `memcpy` floor, the physical limit at which bytes can move through memory.
+
+### Overhead, measured
+
+The below is measured using 4 workers on an Apple M4 Pro.
+The R figures are compared against mirai, and the Python figures against the standard library's `ProcessPoolExecutor`:
+
+| Benchmark | mizu | mirai | pymizu | ProcessPoolExecutor |
+|---------------|---------------|---------------|---------------|---------------|
+| Trivial task round trip | 0.8 µs | 100.5 µs | 0.7 µs | 94.2 µs |
+| Pipelined throughput, 1 worker | 833,000 tasks/s | 9,700 tasks/s | 2,390,000 tasks/s | 18,500 tasks/s |
+| Parallel map of 2,000 small tasks, 4 workers | 5.0 ms | 218 ms | 4.3 ms | 129 ms |
+
+The benchmark scripts are in each repository and you can run them yourself.
+
+## Yes, microseconds matter
+
+You may be wondering: going from 100 µs to 1 µs, these are tiny numbers, does it really matter?
+
+The answer is unequivocally yes, and I have verified it with colleagues from the Tidymodels team.
+The important thing to realise is that we're not dealing with each microbenchmark in isolation. In an actual workflow, many of these factors --- transport costs, serialization costs, coordination costs --- will compound and can sometimes reinforce each other if not optimally designed.
+
+We ran four common modelling workloads on 12 workers of a 14-core Apple Silicon Mac, against a sequential baseline: bootstrap metrics, resampled model fits, permutation importance and bootstrap prediction intervals.
+Each backend returned results identical to the sequential run.
+The speedup versus sequential is shown below:
+
+| Workload | mizu | mirai |
+|------------------------|------------------------|------------------------|
+| A: Bootstrap metrics, 5,000 tasks of ~3 ms | 6.7x | 1.8x |
+| B: Resampled model fits, 250 tasks of ~45 ms | 7.9x | 4.0x |
+| C: Permutation importance, 240 tasks of ~85 ms | 8.1x | 6.4x |
+| D: Bootstrap prediction intervals, 400 tasks scoring 250,000 policies | 7.6x | 1.4x |
+
+These workloads were chosen to be deliberately adversarial, each sized to stress data movement rather than compute.
+That is why mirai, already the most performant parallel framework in R, shows such modest speedups here. Also note that 12 workers deliver at best an 8x speedup even with mizu. This is because there are still sequential parts to the workflow, such as collecting and combining the results, and it's what [Amdahl's law](https://en.wikipedia.org/wiki/Amdahl%27s_law) predicts.
+The [benchmark repository](https://github.com/posit-dev/tidymodels-parallel-benchmark) contains the code, and my Tidymodels colleagues will follow up with a comprehensive report.
+
+## Know the limits
+
+A few things to know before you start:
+
+- The API is experimental. We may make changes to function names and arguments in response to feedback.
+- Workers don't see your session. A task runs in a fresh environment on the worker and sees only the arguments you pass: no globals, loaded packages or imports cross over. In R, a task must load any package it needs or use package-namespaced functions. In Python, a callable must be importable by the worker, or pickled by value with the `cloudpickle` extra.
+- Not every type crosses between languages. Vectors, strings, lists and dicts, dates and times, data frames and Arrow data cross between R and Python. Language objects such as formulas and functions do not, and mizu reports an error. Arrow data crosses exactly, but a few select types can change along the way: a dictionary-encoded column arrives in R as a factor, and unsigned integers arrive as wider signed types.
+- Small values are copied. The zero-copy floor is 256 KB for a single vector on a channel and 32 KB elsewhere. Below it, a value crosses as one quick copy.
+
+For R specifically:
+
+- mizu doesn't replace [mirai](https://mirai.r-lib.org).
+  mirai allows distributed computing, harnessing other machines on your network, an HPC cluster or the cloud, where shared memory doesn't reach.
+  If you're coming from mirai, the API will feel a little different: mizu was designed to be close to symmetrical between R and Python, so that it's easy to reach over in either direction, and this is the constraint we've worked with.
+- mizu also interoperates with [mori](https://mori.r-lib.org), which shares individual R objects: a mori shared object crosses a mizu channel or pool zero-copy.
+
+## From mirai to mizu
+
+If you're wondering how we arrived at mizu, please allow me a brief account.
+
+First, I discovered the data science and, in particular, the R community during the pandemic.
+The problem I picked up in 2022 was the gap between R's scientific reach and its computing story: the ecosystem of packages had grown much faster than the machinery for running them in parallel.
+R needed to play catch-up.
+
+[mirai](https://mirai.r-lib.org), my first major package (Japanese for 'future'), gave R true async capabilities: a task queue for scheduling over parallel or distributed workers and a thread pool for concurrent completions, with the communications layer moved off the main R thread.
+It built on the work of others in our community.
+Luke Tierney's parallel package gave us parallel computation with statistically valid pseudo-random numbers.
+Henrik Bengtsson's future package popularised the concept of futures, or task handles, in R.
+Garrett D'Amore wrote NNG, the C messaging library that mirai runs on.
+Working with Will Landau, Joe Cheng and Hadley Wickham brought mirai into targets, Shiny and purrr.
+
+[mori](https://mori.r-lib.org), released this April, came at the same problem from a memory rather than a communications perspective.
+Instead of copying an object to every worker, write it once into shared memory and send a reference.
+
+That left a seed of an idea: if the objects live in shared memory, why not the instructions too?
+
+From NNG GitHub discussions, I'd seen people ask about shared memory as a way into the sub-10 µs messaging range, usually the preserve of high-frequency trading.
+I researched this topic for a full three months before starting to write any code.
+The sub-10 µs target fell early on, but my engineering curiosity led me to keep going until we'd breached 1 µs.
+
+Now R is no longer playing catch-up.
+I'm excited to share these same capabilities with the Python community.
+For this reason, mizu is first and foremost a C library, with R and Python as equal bindings.
+More may follow.
+
+## Look outwards
+
+If you read the commit history, you'll see that mizu was written with AI assistance.
+Less visible is the three months of planning and research and design that came before any code was written. The implementation took another three months of deliberate engineering.
+
+I'm fortunate to work at a centre of open source software.
+Without the shared discourse with this incredible and diverse group of people, mizu would not have been possible.
+It may not even have been an idea.
+I'm especially grateful to Carlos Scheidegger, Andrew Holz and Hadley Wickham for their support and encouragement along the way.
+
+As agents make it possible for one developer to do a great deal alone, I'd encourage you to look outwards, to your fellow engineers, researchers and scientists.
+I found my community in a pandemic lockdown.
+You can find yours too.
+
+## Dive in
+
+We welcome you to experiment with mizu.
+It's early days, so expect rough edges: bug reports are the most valuable contribution you can make right now, and the more feedback we receive, the sooner we can reach a stable API.
+
+- [libmizu](https://github.com/shikokuchuo/libmizu)
+- [mizu](https://github.com/shikokuchuo/mizu)
+- [pymizu](https://github.com/shikokuchuo/pymizu)
+
+We'll be working on plugging mizu into the ecosystem: Tidymodels and other Tidyverse packages, Shiny in both R and Python, and other places we've probably not yet contemplated.
+If you have ideas of where you'd like to see this technology, open a discussion at the mizu or pymizu repo. We'd love to hear from you!
