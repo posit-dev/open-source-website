@@ -42,7 +42,7 @@ jobs:
         run: echo "version=${HUGO_VERSION}" >> "$GITHUB_OUTPUT"
 
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           ref: ${{ inputs.ref || github.sha }}
           # Full history so Hugo's enableGitInfo can derive each page's

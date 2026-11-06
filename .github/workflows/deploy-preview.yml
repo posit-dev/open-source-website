@@ -88,7 +88,7 @@ jobs:
       changed: ${{ steps.detect-content.outputs.changed }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           ref: ${{ format('refs/pull/{0}/merge', github.event.pull_request.number || github.event.issue.number) }}
           fetch-depth: 2
@@ -120,7 +120,7 @@ jobs:
       HUGO_VERSION: ${{ needs.build-and-deploy.outputs.hugo-version }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           ref: ${{ format('refs/pull/{0}/merge', github.event.pull_request.number || github.event.issue.number) }}
 
