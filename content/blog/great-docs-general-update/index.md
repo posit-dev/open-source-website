@@ -54,14 +54,14 @@ dispatch ([multimethod](https://coady.github.io/multimethod)), Bayesian
 visualization ([tidydraws](https://drbenvincent.github.io/tidydraws/)),
 web templating
 ([fastapi-chameleon](https://mkennedy.codes/docs/fastapi-chameleon/)),
-and genomic data infrastructure (the [German Human Genome-Phenome
-Archive](https://data.ghga.de)). The practical consequence of this
-growth is that any change to Great Docs now reaches a lot of people at
-once. A regression that breaks a build, or a new default that alters the
-appearance of a site, is no longer a private inconvenience. That
-awareness runs through much of what follows, and it's why a fair share
-of the recent work has gone into making the tool more predictable rather
-than simply larger.
+and comparative genomics
+([OrthoEvolution](https://datasnakes.github.io/OrthoEvolution/)). The
+practical consequence of this growth is that any change to Great Docs
+now reaches a lot of people at once. A regression that breaks a build,
+or a new default that alters the appearance of a site, is no longer a
+private inconvenience. That awareness runs through much of what follows,
+and it's why a fair share of the recent work has gone into making the
+tool more predictable rather than simply larger.
 
 ## Documenting More Than Python APIs
 
