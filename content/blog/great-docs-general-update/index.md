@@ -139,7 +139,7 @@ alternate images for dark mode:
 
 The enlarged view includes a small toolbar for zooming, copying,
 downloading, and linking directly to the image. The same release added a
-`{{< compare >}}` shortcode that places two images under a draggable
+`{{</* compare */>}}` shortcode that places two images under a draggable
 slider. This is useful for showing a before and after state (a chart
 under two themes, say, or a table before and after styling).
 
@@ -154,7 +154,7 @@ watch the dependent cells recompute in the browser. An iframe mode goes
 further and makes the code itself editable.
 
 ```markdown
-{{< marimo file="notebooks/reactive-intro.py" >}}
+{{</* marimo file="notebooks/reactive-intro.py" */>}}
 ```
 
 <p style="text-align: center;"><img src="assets/marimo-island.png" alt="A marimo notebook embedded in island mode: dragging the sliders updates the summary text and the bar chart."></p>
