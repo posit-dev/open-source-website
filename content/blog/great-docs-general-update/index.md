@@ -57,11 +57,9 @@ web templating
 and comparative genomics
 ([OrthoEvolution](https://datasnakes.github.io/OrthoEvolution/)). The
 practical consequence of this growth is that any change to Great Docs
-now reaches a lot of people at once. A regression that breaks a build,
-or a new default that alters the appearance of a site, is no longer a
-private inconvenience. That awareness runs through much of what follows,
-and it's why a fair share of the recent work has gone into making the
-tool more predictable rather than simply larger.
+now reaches a lot of people at once. That's a responsibility we take
+seriously, and it's why a fair share of the recent work has gone into
+making the tool more predictable as it grows.
 
 ## Documenting More Than Python APIs
 
@@ -107,14 +105,14 @@ the interaction with some packages now happens through agents.
 
 <p style="text-align: center;"><img src="assets/mcp-reference.png" alt="The MCP Reference index page, summarizing the tools, prompts, and resources a server exposes."></p>
 
-There are smaller additions in the same spirit. Projects can now publish
+There are more additions in the same spirit. Projects can now publish
 multiple agent skills rather than a single one. A Package Info page
 (added in `v0.15.0`) lists a package's dependencies and metadata, and a
 License page (`v0.13.1`) presents the license with its SPDX identifier.
 Type aliases declared with the PEP 695 `type` statement are documented
-properly as of `v0.17.0`. None of these is large on its own, but
-together they mean that a reader arriving at a Great Docs site can find
-most of what they need to know about a package without leaving it.
+properly as of `v0.17.0`. Together they make a Great Docs site a
+complete home for a package, where readers can find nearly everything
+they need to know about it in one place.
 
 <p style="text-align: center;"><img src="assets/package-info.png" alt="The Package Info page, listing a package's metadata and its dependencies."></p>
 
@@ -159,7 +157,7 @@ further and makes the code itself editable.
 
 <p style="text-align: center;"><img src="assets/marimo-island.png" alt="A marimo notebook embedded in island mode: dragging the sliders updates the summary text and the bar chart."></p>
 
-Several smaller features round out this category. Collapsible details
+Several more features round out this category. Collapsible details
 blocks and mock code cells (which display code as if it had been
 executed, without running it) arrived in `v0.11.0`. Code includes, added
 in `v0.16.0`, let a page pull its examples from real source files so
@@ -254,28 +252,24 @@ rather than compete with it. VHS has shown how much people value
 recordings that can be scripted and run in CI. What no existing tool
 really provides is the layer of editing and presentation that sits on
 top of a recording, and that layer is where Termshow aims to be useful.
-For now, Termshow is installed as part of Great Docs, which limits its
-reach. Making it easier to use on its own is one of the things we're
-considering next.
+Termshow is currently installed as part of Great Docs, and making it
+just as easy to use on its own is one of the things we're excited to
+work on next.
 
 ## Speed as a Focus
 
 If there is one theme that will shape the next several releases, it is
-speed. Until recently, builds for large packages could be slow enough to
-be a real obstacle. Our approach has been to measure first (the
-`great-docs timings` command reports how long each page took) and then
-remove the overhead that Great Docs itself was adding. That has meant
-caching package introspection so it happens only once per build, writing
-sidebars in a form that Quarto can process without slowing down as the
-page count grows, rendering long reference sidebars once and sharing
-them across pages, turning on Quarto's freeze mechanism by default, and
-running independent work (Markdown companion pages, versioned builds,
-link checks) in parallel. Several of these changes began as bug reports
-from maintainers of large packages, and some were contributed directly
-by Yasyf Mohamedali and Andy Thomas. With that overhead largely gone,
-most of a build's time is now spent in `quarto render`, which renders
-pages one after another in a single process. The next release tackles
-this directly with parallel rendering:
+speed. We want builds to feel quick no matter how large a package gets.
+Our approach has been to measure first (the `great-docs timings` command
+reports how long each page took) and then make each step of a build
+leaner. That has meant doing expensive work once per build and reusing
+the results, building sidebars more efficiently, turning on Quarto's
+freeze mechanism by default, and running independent tasks in parallel.
+Many of these changes started with reports and contributions from people
+documenting large packages. With those steps streamlined, most of a
+build's time is now spent in `quarto render`, which renders pages one
+after another in a single process. The next release tackles this
+directly with parallel rendering:
 
 ```bash
 great-docs build --jobs auto
@@ -332,13 +326,13 @@ reliably than before.
 Taken together, the work of the past six months points in a consistent
 direction. The features have widened what Great Docs can document and
 what can appear on a page. Termshow has grown from a playback widget
-into a small toolkit for terminal demonstrations that stay correct over
-time. The speed work has made builds noticeably quicker, with more to
-come, and the refactoring is giving the project a structure that can be
-tested thoroughly and changed with confidence. With over a hundred
-projects now depending on Great Docs, that last point may be the most
-important, because it's what lets the project keep growing while staying
-something people can rely on.
+into a toolkit for terminal demonstrations that stay correct over time.
+The speed work has made builds noticeably quicker, with more to come,
+and the refactoring is giving the project a structure that can be tested
+thoroughly and changed with confidence. With over a hundred projects now
+depending on Great Docs, that last point may be the most important,
+because it's what lets the project keep growing while staying something
+people can rely on.
 
 Much of what is described here is already released, and the rest (Typer
 support, D2 diagrams, the wide layout, `check-examples`, parallel
