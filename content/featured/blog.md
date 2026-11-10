@@ -6,4 +6,4 @@ build:
 
 ## Featured
 
-{{< insert-item item="blog/positron-2026-10-release" hide-badge="true" >}}
+{{< insert-item item="blog/mizu-0-1-0" hide-badge="true" >}}
