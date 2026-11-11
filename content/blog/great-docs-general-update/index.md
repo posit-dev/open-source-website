@@ -229,7 +229,7 @@ Because the steps are written down, they can be run again. The
 `termshow check` command reruns them, compares the screen at each marker
 with the committed recording, and exits with an error if the output has
 changed. Only the text is compared, so a slower machine or a different
-color theme doesn't count as drift. You can also give patterns for text
+color theme doesn't count as drift. You can also ignore patterns for text
 that legitimately changes on every run (version numbers, dates,
 temporary paths). Running this in CI turns a demo into something closer
 to a test, and once the changes have been reviewed, an `--update` flag
