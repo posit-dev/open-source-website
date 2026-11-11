@@ -34,7 +34,7 @@ There are now well over a hundred public documentation sites built with Great Do
 
 ## Documenting More Than Python APIs
 
-Great Docs began as a tool for documenting the public API of a Python package, and that remains its center of gravity. But a package's interface is often wider than its importable objects. Many packages ship a command-line tool, some expose an MCP server for use by AI agents, and an increasing number publish skill files that describe how an agent should use them. Over the past several releases, Great Docs has learned to document each of these.
+Great Docs began as a tool for documenting the public API of a Python package, and that remains its center of gravity. But a package's interface often goes beyond its importable objects. Many packages ship a command-line tool, some expose an MCP server for use by AI agents, and an increasing number publish skill files that describe how an agent should use them. Over the past several releases, Great Docs has learned to document each of these.
 
 Command-line documentation was the first to arrive. In `v0.11.0`, Great Docs gained the ability to find a [Click](https://click.palletsprojects.com/) command group and generate a reference page for each subcommand, with the usage line, options, arguments, and an extended description drawn from the docstring. Turning it on takes a single setting:
 

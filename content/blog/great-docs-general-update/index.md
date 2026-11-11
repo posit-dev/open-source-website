@@ -65,8 +65,8 @@ making the tool more predictable as it grows.
 
 Great Docs began as a tool for documenting the public API of a Python
 package, and that remains its center of gravity. But a package's
-interface is often wider than its importable objects. Many packages ship
-a command-line tool, some expose an MCP server for use by AI agents, and
+interface often goes beyond its importable objects. Many packages ship a
+command-line tool, some expose an MCP server for use by AI agents, and
 an increasing number publish skill files that describe how an agent
 should use them. Over the past several releases, Great Docs has learned
 to document each of these.
@@ -229,8 +229,8 @@ Because the steps are written down, they can be run again. The
 `termshow check` command reruns them, compares the screen at each marker
 with the committed recording, and exits with an error if the output has
 changed. Only the text is compared, so a slower machine or a different
-color theme doesn't count as drift. You can also ignore patterns for text
-that legitimately changes on every run (version numbers, dates,
+color theme doesn't count as drift. You can also ignore patterns for
+text that legitimately changes on every run (version numbers, dates,
 temporary paths). Running this in CI turns a demo into something closer
 to a test, and once the changes have been reviewed, an `--update` flag
 records the drifted demos again.
