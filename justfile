@@ -70,27 +70,51 @@ extract-software-colors:
 create-hex-logos:
     ./scripts/create-hex-logos.py
 
-# Update videos
-update-youtube-videos:
-    ./scripts/update-youtube-videos.py
+# Fetch video metadata from YouTube into data/videos.toml (pass --refresh-stats to update view counts)
+update-youtube-videos *args:
+    ./scripts/update-youtube-videos.py "$@"
 
 # Sync video entries from data/videos.toml into content
-sync-videos:
-    ./scripts/sync-videos.py
+sync-videos *args:
+    ./scripts/sync-videos.py "$@"
 
 # Sync courses and learning paths from Posit Academy (needs SKILLJAR_API_KEY)
 sync-courses *args:
     ./scripts/sync-courses.py {{args}}
 
-download-youtube-audio *args:
-    ./scripts/download-youtube-audio.py {{args}}
-
-transcribe:
-    ./scripts/transcribe.py
+# Download audio and transcribe new videos with Whisper (needs OPENAI_API_KEY)
+transcribe *args:
+    ./scripts/transcribe.py "$@"
 
 # Format VTT transcriptions into HTML using the Anthropic API
 format-transcriptions *args:
-    ./scripts/format-transcriptions.py {{args}}
+    ./scripts/format-transcriptions.py "$@"
+
+# Run the whole video pipeline locally (fallback for the nightly workflow), e.g. `just update-videos 5 chrome`
+update-videos limit="15" browser="":
+    #!/usr/bin/env bash
+    set -euo pipefail
+    # Exit code 2 means some videos failed; keep going and fix them later.
+    step() {
+        "$@" && return 0
+        status=$?
+        if [ "$status" -eq 2 ]; then
+            echo "⚠ $1 finished with errors (exit code 2); continuing" >&2
+            return 0
+        fi
+        echo "✗ $1 failed (exit code $status); stopping" >&2
+        exit "$status"
+    }
+    cookies=()
+    if [ -n "{{ browser }}" ]; then cookies=(--cookies-from-browser "{{ browser }}"); fi
+    step ./scripts/update-youtube-videos.py
+    step ./scripts/sync-videos.py
+    step ./scripts/transcribe.py --limit "{{ limit }}" ${cookies[@]+"${cookies[@]}"}
+    step ./scripts/format-transcriptions.py --limit "{{ limit }}"
+
+# Run the tests of the Python scripts (extra arguments go to pytest)
+test *args:
+    ./scripts/run-tests.sh "$@"
 
 quarto-preview:
     uv run quarto preview
