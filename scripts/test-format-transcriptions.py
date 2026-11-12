@@ -95,6 +95,11 @@ class TestCoverage:
         cues = [(0.0, 1.0, "R & Python, it's GREAT")]
         assert f.coverage(cues, '<p><a data-t="0">r &amp; python, it&#x27;s great</a></p>') == 1.0
 
+    def test_repeated_cues_count_once(self):
+        cues = [(0.0, 1.0, "Rishabh Sharma Vemuri & Abiye Berhanu")] * 9 + [(9.0, 10.0, "And now the talk.")]
+        html = '<p><a data-t="0">Rishabh Sharma Vemuri &amp; Abiye Berhanu</a> <a data-t="9">And now the talk.</a></p>'
+        assert f.coverage(cues, html) == 1.0
+
     def test_multiplicity(self):
         cues = [(0.0, 1.0, "the the the the")]
         assert f.coverage(cues, '<p><a data-t="0">the the</a></p>') == 0.5
@@ -304,6 +309,15 @@ class TestInjectLinks:
         out = f.inject_links(html, {}, self.software)
         assert '<a href="/software/shiny-python/">Shiny for Python</a>' in out
         assert '"/software/shiny/"' not in out
+
+    def test_no_link_inside_an_inserted_link(self):
+        # A heading is plain text: "Shiny" must not match inside the URL of
+        # the "Shiny for Python" link inserted just before.
+        html = "<h3>Building the Shiny for Python app</h3>"
+        software = {"Shiny for Python": "/software/shiny-python/", "Shiny": "/software/shiny-r/"}
+        assert f.inject_links(html, {}, software) == (
+            '<h3>Building the <a href="/software/shiny-python/">Shiny for Python</a> app</h3>'
+        )
 
     def test_people_are_case_sensitive(self):
         html = '<p><a data-t="0">hadley wickham and Hadley Wickham</a></p>'

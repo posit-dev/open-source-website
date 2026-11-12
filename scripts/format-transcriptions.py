@@ -343,8 +343,20 @@ def html_to_text(html: str, *, drop_blockquotes: bool = True) -> str:
 
 
 def coverage(cues: list[videolib.Cue], html: str) -> float:
-    """Share of the spoken words (with multiplicity) found in the HTML prose."""
-    spoken = word_counts(" ".join(text for _, _, text in cues))
+    """Share of the spoken words (with multiplicity) found in the HTML prose.
+
+    A cue whose text repeats an earlier cue counts once: Whisper sometimes
+    loops on a line (one VTT has a speaker's name nine times), and the model
+    rightly leaves the copies out.
+    """
+    seen: set[str] = set()
+    unique = []
+    for _, _, text in cues:
+        key = " ".join(_norm_words(text))
+        if key not in seen:
+            seen.add(key)
+            unique.append(text)
+    spoken = word_counts(" ".join(unique))
     total = sum(spoken.values())
     if not total:
         return 1.0
@@ -615,6 +627,10 @@ def build_entity_dicts(repo_root: Path) -> tuple[dict[str, str], dict[str, str]]
 
 
 def _inject_into_text(text: str, entities: list[tuple[str, str, bool]], linked: set[str]) -> str:
+    # Insert placeholders first and the links at the end, so a later, shorter
+    # name can't match inside an inserted link: "Shiny" in the URL of
+    # "Shiny for Python" once produced <a href="/software/<a href=...>...">.
+    links: list[str] = []
     for name, url, is_software in entities:
         if name in linked:
             continue
@@ -622,14 +638,13 @@ def _inject_into_text(text: str, entities: list[tuple[str, str, bool]], linked: 
         pattern = r"\b" + re.escape(name) + r"\b"
         if re.search(pattern, text, flags=flags):
             linked.add(name)
-            text = re.sub(
-                pattern,
-                lambda m, u=url: f'<a href="{u}">{m.group(0)}</a>',
-                text,
-                count=1,
-                flags=flags,
-            )
-    return text
+
+            def placeholder(m: re.Match, u: str = url) -> str:
+                links.append(f'<a href="{u}">{m.group(0)}</a>')
+                return f"\ue000{len(links) - 1}\ue001"
+
+            text = re.sub(pattern, placeholder, text, count=1, flags=flags)
+    return re.sub("\ue000(\\d+)\ue001", lambda m: links[int(m.group(1))], text)
 
 
 def _inject_into_anchor(
