@@ -1,0 +1,41 @@
+name: Test Scripts
+
+# Runs the tests of the Python scripts (scripts/test-*.py) when they change.
+
+on:
+  pull_request:
+    paths:
+      - "scripts/**"
+      - ".github/workflows/test-scripts.yml"
+      - "justfile"
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/test-scripts.yml"
+      - "justfile"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+
+      - name: Install ffmpeg
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            sudo apt-get update -q
+            sudo apt-get install -y -q --no-install-recommends ffmpeg
+          fi
+
+      - name: Run tests
+        run: ./scripts/run-tests.sh -ra

@@ -4,7 +4,7 @@
 # Extra arguments are passed on to pytest, e.g. `./scripts/run-tests.sh -q -x`.
 
 set -uo pipefail
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")/.." || exit 1
 
 failed=()
 for test_file in scripts/test-*.py; do

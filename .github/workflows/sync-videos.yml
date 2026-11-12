@@ -1,0 +1,240 @@
+name: Sync Videos
+
+# Syncs Posit's YouTube videos into content/resources/videos/ and opens (or
+# updates) a pull request with the changes, like sync-courses.yml:
+#
+#   1. update-youtube-videos.py  YouTube metadata -> data/videos.toml
+#                                (view counts are only refreshed on Mondays)
+#   2. sync-videos.py            data/videos.toml -> video pages, thumbnails
+#   3. transcribe.py             new videos -> transcription.vtt (yt-dlp, Whisper)
+#   4. format-transcriptions.py  transcription.vtt -> transcription.txt (Claude)
+#
+# YouTube may block audio downloads from GitHub's runners. Steps 3 and 4 never
+# fail the job; the PR description lists every video that still needs a
+# transcript, with the command to make one locally (`just update-videos`).
+# Logs and machine-readable run summaries of every step are attached to the
+# workflow run as an artifact.
+
+on:
+  schedule:
+    - cron: "0 5 * * *" # 5 AM UTC: before sync-courses (6 AM) and the nightly production deploy (8 AM)
+  workflow_dispatch:
+    inputs:
+      refresh_stats:
+        description: Refresh the view, like, and comment counts of all videos
+        type: boolean
+        default: false
+      skip_transcription:
+        description: Skip transcribing and formatting
+        type: boolean
+        default: false
+      limit:
+        description: Maximum number of videos to transcribe and format
+        type: number
+        default: 15
+      dry_run:
+        description: Don't open a pull request; attach the diff to the run instead
+        type: boolean
+        default: false
+  # TEMPORARY: dry runs on the pull request that adds this workflow, because a
+  # new workflow can't be dispatched before it's on main. Remove before merging.
+  pull_request:
+    paths:
+      - .github/workflows/sync-videos.yml
+      - .github/scripts/restore-pending-videos.sh
+      - scripts/videolib.py
+      - scripts/update-youtube-videos.py
+      - scripts/sync-videos.py
+      - scripts/transcribe.py
+      - scripts/format-transcriptions.py
+      - scripts/video-sync-report.py
+
+concurrency:
+  group: sync-videos-${{ github.event_name == 'pull_request' && github.head_ref || 'main' }}
+  cancel-in-progress: false
+
+# Pushing the branch and opening the PR use the app token below, not
+# GITHUB_TOKEN, so that deploy-preview.yml runs on the sync PRs.
+permissions:
+  contents: read
+
+jobs:
+  sync-videos:
+    # Pull requests from forks don't get secrets.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      # Only scheduled runs and manual runs on main open a pull request.
+      DRY_RUN: ${{ github.event_name == 'pull_request' || inputs.dry_run == true || github.ref != 'refs/heads/main' }}
+      LIMIT: ${{ github.event_name == 'pull_request' && 2 || inputs.limit || 15 }}
+      SKIP_TRANSCRIPTION: ${{ inputs.skip_transcription == true }}
+      REFRESH_STATS_INPUT: ${{ inputs.refresh_stats == true }}
+      TRANSCRIPT_MODEL: claude-sonnet-4-6
+      # Keep log lines unwrapped in the job log
+      COLUMNS: "200"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # restore-pending-videos.sh diffs against the merge base
+
+      - name: Prepare
+        id: prepare
+        shell: bash
+        run: |
+          sync_dir="$RUNNER_TEMP/video-sync"
+          mkdir -p "$sync_dir/logs" "$sync_dir/summaries"
+          echo "SYNC_DIR=$sync_dir" >> "$GITHUB_ENV"
+
+          if [ "$REFRESH_STATS_INPUT" = "true" ] || [ "$(date -u +%u)" = "1" ]; then
+            refresh_stats=true
+          else
+            refresh_stats=false
+          fi
+          echo "refresh_stats=$refresh_stats" >> "$GITHUB_OUTPUT"
+
+          if [ "$SKIP_TRANSCRIPTION" = "true" ]; then
+            echo "expect=update-youtube-videos,sync-videos" >> "$GITHUB_OUTPUT"
+          else
+            echo "expect=update-youtube-videos,sync-videos,transcribe,format-transcriptions" >> "$GITHUB_OUTPUT"
+          fi
+          echo "event=$GITHUB_EVENT_NAME ref=$GITHUB_REF dry_run=$DRY_RUN limit=$LIMIT"
+          echo "skip_transcription=$SKIP_TRANSCRIPTION refresh_stats=$refresh_stats model=$TRANSCRIPT_MODEL"
+
+      - name: Restore files from the open sync pull request
+        shell: bash
+        run: ./.github/scripts/restore-pending-videos.sh automation/sync-videos main 2>&1 | tee "$SYNC_DIR/logs/0-restore-pending-videos.log"
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+
+      - name: Setup Deno (JavaScript runtime for yt-dlp)
+        if: env.SKIP_TRANSCRIPTION != 'true'
+        uses: denoland/setup-deno@22d081ff2d3a40755e97629de92e3bcbfa7cf2ed # v2.0.5
+
+      - name: Install ffmpeg
+        if: env.SKIP_TRANSCRIPTION != 'true'
+        shell: bash
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            sudo apt-get update -q
+            sudo apt-get install -y -q --no-install-recommends ffmpeg
+          fi
+          ffmpeg -version | head -1
+          deno --version | head -1
+
+      - name: 1. Update YouTube metadata
+        id: update
+        shell: bash
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          REFRESH_STATS: ${{ steps.prepare.outputs.refresh_stats }}
+        run: |
+          set +e
+          args=()
+          if [ "$REFRESH_STATS" = "true" ]; then args+=(--refresh-stats); fi
+          ./scripts/update-youtube-videos.py "${args[@]}" \
+            --summary-json "$SYNC_DIR/summaries/1-update-youtube-videos.json" \
+            2>&1 | tee "$SYNC_DIR/logs/1-update-youtube-videos.log"
+          status=${PIPESTATUS[0]}
+          echo "exit_code=$status" >> "$GITHUB_OUTPUT"
+          # Exit code 2 (a source failed) is partial success: keep going.
+          [ "$status" -eq 0 ] || [ "$status" -eq 2 ]
+
+      - name: 2. Sync video pages
+        id: sync
+        shell: bash
+        run: |
+          set +e
+          ./scripts/sync-videos.py \
+            --summary-json "$SYNC_DIR/summaries/2-sync-videos.json" \
+            2>&1 | tee "$SYNC_DIR/logs/2-sync-videos.log"
+          status=${PIPESTATUS[0]}
+          echo "exit_code=$status" >> "$GITHUB_OUTPUT"
+          [ "$status" -eq 0 ] || [ "$status" -eq 2 ]
+
+      - name: 3. Transcribe new videos
+        id: transcribe
+        if: env.SKIP_TRANSCRIPTION != 'true'
+        shell: bash
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          set +e
+          ./scripts/transcribe.py --limit "$LIMIT" --jobs 3 \
+            --summary-json "$SYNC_DIR/summaries/3-transcribe.json" \
+            2>&1 | tee "$SYNC_DIR/logs/3-transcribe.log"
+          status=${PIPESTATUS[0]}
+          echo "exit_code=$status" >> "$GITHUB_OUTPUT"
+          # Never fail the job here: failures are listed in the PR description.
+          if [ "$status" -ne 0 ]; then echo "::warning title=Transcription::transcribe.py exited with $status"; fi
+
+      - name: 4. Format transcriptions
+        id: format
+        if: env.SKIP_TRANSCRIPTION != 'true'
+        shell: bash
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set +e
+          ./scripts/format-transcriptions.py --limit "$LIMIT" \
+            --summary-json "$SYNC_DIR/summaries/4-format-transcriptions.json" \
+            2>&1 | tee "$SYNC_DIR/logs/4-format-transcriptions.log"
+          status=${PIPESTATUS[0]}
+          echo "exit_code=$status" >> "$GITHUB_OUTPUT"
+          if [ "$status" -ne 0 ]; then echo "::warning title=Formatting::format-transcriptions.py exited with $status"; fi
+
+      - name: Write report
+        if: always()
+        shell: bash
+        env:
+          EXPECT: ${{ steps.prepare.outputs.expect }}
+        run: |
+          ./scripts/video-sync-report.py "$SYNC_DIR/summaries" \
+            --expect "$EXPECT" --output "$SYNC_DIR/pr-body.md" --annotations
+          cat "$SYNC_DIR/pr-body.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save the diff (dry run)
+        if: always() && env.DRY_RUN == 'true'
+        shell: bash
+        run: |
+          git add --intent-to-add -- data/videos.toml content
+          git diff --stat -- data/videos.toml content > "$SYNC_DIR/diff-stat.txt"
+          git diff -- data/videos.toml content > "$SYNC_DIR/diff.patch"
+          echo "Dry run: no pull request. $(tail -1 "$SYNC_DIR/diff-stat.txt")"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "**Dry run:** no pull request was opened. Changes: $(tail -1 "$SYNC_DIR/diff-stat.txt")" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload logs and run summaries
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: video-sync-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/video-sync
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Generate app token
+        if: env.DRY_RUN != 'true'
+        id: app-token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ secrets.POSIT_OPEN_SOURCE_WEBSITE_SYNC_CLIENT_ID }}
+          private-key: ${{ secrets.POSIT_OPEN_SOURCE_WEBSITE_SYNC_PEM }}
+
+      - name: Create or update pull request
+        if: env.DRY_RUN != 'true'
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          sign-commits: true
+          branch: automation/sync-videos
+          delete-branch: true
+          # All of content/: renamed videos also update links in other pages.
+          add-paths: |
+            data/videos.toml
+            content
+          commit-message: Sync videos from YouTube
+          title: Sync videos from YouTube
+          body-path: ${{ runner.temp }}/video-sync/pr-body.md
