@@ -39,21 +39,9 @@ on:
         description: Don't open a pull request; attach the diff to the run instead
         type: boolean
         default: false
-  # TEMPORARY: dry runs on the pull request that adds this workflow, because a
-  # new workflow can't be dispatched before it's on main. Remove before merging.
-  pull_request:
-    paths:
-      - .github/workflows/sync-videos.yml
-      - .github/scripts/restore-pending-videos.sh
-      - scripts/videolib.py
-      - scripts/update-youtube-videos.py
-      - scripts/sync-videos.py
-      - scripts/transcribe.py
-      - scripts/format-transcriptions.py
-      - scripts/video-sync-report.py
 
 concurrency:
-  group: sync-videos-${{ github.event_name == 'pull_request' && github.head_ref || 'main' }}
+  group: sync-videos
   cancel-in-progress: false
 
 # Pushing the branch and opening the PR use the app token below, not
@@ -63,14 +51,12 @@ permissions:
 
 jobs:
   sync-videos:
-    # Pull requests from forks don't get secrets.
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
       # Only scheduled runs and manual runs on main open a pull request.
-      DRY_RUN: ${{ github.event_name == 'pull_request' || inputs.dry_run == true || github.ref != 'refs/heads/main' }}
-      LIMIT: ${{ github.event_name == 'pull_request' && 2 || inputs.limit || 15 }}
+      DRY_RUN: ${{ inputs.dry_run == true || github.ref != 'refs/heads/main' }}
+      LIMIT: ${{ inputs.limit || 15 }}
       TRANSCRIBE: ${{ inputs.transcribe == true }}
       REFRESH_STATS_INPUT: ${{ inputs.refresh_stats == true }}
       TRANSCRIPT_MODEL: claude-sonnet-4-6
