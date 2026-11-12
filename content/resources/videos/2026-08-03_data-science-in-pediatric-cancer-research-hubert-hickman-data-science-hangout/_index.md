@@ -100,7 +100,7 @@ people:
 - Neal Richardson
 resource_type: video
 resources: []
-software:
+software: []
 tags: []
 title: Data Science in Pediatric Cancer Research | Hubert Hickman | Data Science Hangout
 
@@ -212,7 +212,6 @@ external:  # updated automatically, do not edit
   - Julia Silge
   - Neal Richardson
   playlist: ''
-  software:
   tags: []
   thumbnail: https://i.ytimg.com/vi/8M25lB7rSIU/maxresdefault.jpg
   title: Data Science in Pediatric Cancer Research | Hubert Hickman | Data Science Hangout

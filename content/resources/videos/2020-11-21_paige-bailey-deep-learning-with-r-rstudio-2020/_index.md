@@ -27,8 +27,8 @@ external:  # updated automatically, do not edit
     Paige Bailey is the product manager for TensorFlow core as well as Swift for TensorFlow. Prior to her role as a PM in Google''s Research and Machine Intelligence org, Paige was developer advocate for TensorFlow core; a senior software engineer and machine learning engineer in the office of the Microsoft Azure CTO; and a data scientist at Chevron. Her academic research was focused on lunar ultraviolet, at the Laboratory for Atmospheric and Space Physics (LASP) in Boulder, CO, as well as Southwest Research Institute (SwRI) in San Antonio, TX.'
   duration: 1407
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:17.861193+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 103
   playlist: ''
   software:

@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: The ggplot2 package is widely acknowledged as a powerful, dynamic, and easy-to-learn graphics framework when used in an interactive environment.
   duration: 1350
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:17.360132+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 335
   playlist: ''
   software:

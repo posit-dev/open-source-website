@@ -61,8 +61,8 @@ external:  # updated automatically, do not edit
     We host these Workflow Demos the last Wednesday of every month, and you can add them to your calendar with this link: https://www.addevent.com/event/Eg16505674'
   duration: 1904
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:10.631062+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 77
   playlist: ''
   software:

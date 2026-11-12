@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: Why does a psychological scientist learn a programming language? While motivations are many and varied the two most prominent are data analysis and data collection. The R programming language is well placed to address the first need, but there are fewer options for programming behavioural experiments within the R ecosystem. The simplest experimental designs can be recast as surveys, for which there are many options, but studies in cognitive psychology, psychophysics or developmental psychology typically require more flexibility. In this talk I outline the design principles behind xprmntr, an R package that provides wrappers to the a javascript library (jsPsych) for constructing web based psychology experiments and uses the plumber package to call server side R code as needed. In doing so, I discuss limitations to the current implementation and what a "grammar of experiments" might look like.
   duration: 1336
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:17.860852+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 72
   playlist: ''
   software:

@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: "Nick Strayer | January 31, 2020\r\nOften a machine learning research project starts with brainstorming, continues to one-off scripts while an idea forms, and finally, a package is written to disseminate the product. In this talk, I will share my experience rethinking this process by spreading the package writing across the whole process. While there are cognitive overheads involved with setting up a package framework, I will argue that these overheads can serve as a scaffolding for not only good code but robust research practices. The result of this experiment is the SBMR package: a native R package written to fit and investigate the results of Bipartite Stochastic Block Models that forms the backbone of my PhD dissertation. By going over the ups and downs of this process, I hope to leave the audience with inspiration for moving the package writing process closer to the start of their projects and melding research and code more closely to improve both."
   duration: 1441
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:18.221933+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 76
   people:
   - Nick Strayer

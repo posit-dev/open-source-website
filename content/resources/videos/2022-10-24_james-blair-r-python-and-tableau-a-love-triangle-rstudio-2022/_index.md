@@ -5,7 +5,8 @@ description: 'Users often want access to more advanced analytic capabilities in 
 
   Session: Business intelligence'
 image: thumbnail.jpg
-people: []
+people:
+- James Blair
 resource_type: video
 resources: []
 software:
@@ -27,6 +28,8 @@ external:  # updated automatically, do not edit
   language: en
   last_updated: '2026-09-18T13:58:14.088170+00:00'
   like_count: 15
+  people:
+  - James Blair
   playlist: ''
   software:
   - rstudio

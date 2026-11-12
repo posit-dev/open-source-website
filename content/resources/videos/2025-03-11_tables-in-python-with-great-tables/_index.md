@@ -72,8 +72,8 @@ external:  # updated automatically, do not edit
     Workshop recorded as part of the 2024 R/Pharma Workshop Series'
   duration: 6045
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:19.321183+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 9
   people:
   - Michael Chow

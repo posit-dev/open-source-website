@@ -76,8 +76,8 @@ external:  # updated automatically, do not edit
     RStudio Enterprise Community Meetup for future events: https://www.meetup.com/RStudio-Enterprise-Community-Meetup'
   duration: 3184
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:16.539499+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 86
   playlist: ''
   software:

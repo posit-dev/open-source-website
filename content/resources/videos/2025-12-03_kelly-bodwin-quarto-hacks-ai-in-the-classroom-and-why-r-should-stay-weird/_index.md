@@ -50,8 +50,8 @@ external:  # updated automatically, do not edit
     • Why remarkable, welcoming communities matter more than perfect code'
   duration: 3244
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:07.250703+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 29
   playlist: ''
   software:

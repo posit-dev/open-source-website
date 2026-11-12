@@ -130,7 +130,7 @@ Be sure to catch the presentations featured below, including Teun van den Brand'
 Additionally, we have some fantastic recordings from the [Data Science Lab](https://pos.it/dslab). Watch the Lab Managers share their expertise while live coding:
 
 {{< insert-items format="card" hide-badge=true >}}
-- resources/videos/2026-07-24_live-tidytuesday-data-viz-workflow-nicola-rennie-data-science-lab/
+- resources/videos/2026-07-24_how-to-make-a-data-visualization-in-r-a-live-tidytuesday-workflow/
 - resources/videos/2026-07-23_mind-blowing-quarto-slide-extensions-emil-hvitfeldt-data-science-lab/
 {{< /insert-items>}}
 

@@ -48,8 +48,8 @@ external:  # updated automatically, do not edit
     * shinychat documentation: https://posit-dev.github.io/shinychat/'
   duration: 5872
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:19.320813+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 12
   people:
   - Sara Altman

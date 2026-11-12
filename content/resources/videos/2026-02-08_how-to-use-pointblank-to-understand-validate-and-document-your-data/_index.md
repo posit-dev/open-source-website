@@ -42,8 +42,8 @@ external:  # updated automatically, do not edit
     * pointblank documentation: https://rstudio.github.io/pointblank/'
   duration: 6826
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:19.320866+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 5
   people:
   - Rich Iannone

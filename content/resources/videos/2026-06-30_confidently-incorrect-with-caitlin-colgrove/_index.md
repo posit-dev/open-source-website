@@ -49,8 +49,8 @@ external:  # updated automatically, do not edit
     • Soulsborne games as couple''s therapy, aka, the Elden Ring co-op report'
   duration: 3750
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:06.407155+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 14
   playlist: ''
   tags: []

@@ -98,8 +98,8 @@ external:  # updated automatically, do not edit
     4. Great extension pack for Positron from Garrick: https://github.com/gadenbuie/positron-plus-1-e'
   duration: 1848
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:08.448467+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 148
   playlist: ''
   software:

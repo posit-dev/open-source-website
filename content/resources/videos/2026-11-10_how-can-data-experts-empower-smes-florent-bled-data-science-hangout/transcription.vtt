@@ -1,0 +1,3061 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.600
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.600 --> 00:00:21.959
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:21.959 --> 00:00:27.200
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.200 --> 00:00:30.639
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.639 --> 00:00:35.560
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.560 --> 00:00:39.840
+Can't wait to see you there. I'm super excited to introduce our featured
+
+00:00:39.840 --> 00:00:44.200
+leader today. He has tons of fun. We're going to have a great conversation. I'd like to
+
+00:00:44.200 --> 00:00:49.720
+introduce Florent Bled, biostatistician at the Florida Fish and Wildlife Conservation
+
+00:00:49.720 --> 00:00:56.360
+Commission, which is a very long phrase, but you can just say FWC. Florent, it's so nice
+
+00:00:56.360 --> 00:01:00.799
+to have you here. Could you introduce yourself, tell us a little bit about what you do and
+
+00:01:00.799 --> 00:01:02.360
+stuff you like to do for fun?
+
+00:01:02.360 --> 00:01:12.839
+Hey, yes. Well, thanks for having me. As you mentioned, I'm a biostatistician here at FWC.
+
+00:01:12.839 --> 00:01:20.279
+So we do a lot of things here. Our job is to basically protect resources, like for our
+
+00:01:20.279 --> 00:01:25.459
+resources, so for us to be able to use an Android right now and for generations to come.
+
+00:01:25.459 --> 00:01:35.300
+So that covers a lot, a lot of things. We handle both on the water and regular wildlife.
+
+00:01:35.300 --> 00:01:40.540
+So that's a lot of work. More specifically, what I do is basically provide support to
+
+00:01:40.540 --> 00:01:47.339
+other scientists and help them with sampling design and data analysis and getting you some
+
+00:01:47.580 --> 00:01:56.059
+graphs, data visualization, all of these kinds of things. What I like to do for fun, I am a huge
+
+00:01:56.059 --> 00:02:04.779
+scuba diver. We like scuba diving. That's going to be the big one. Also like art, woodworking.
+
+00:02:04.779 --> 00:02:12.179
+I like drawing, painting, origami. And because it's the season, like pumpkin carving right now.
+
+00:02:12.179 --> 00:02:13.220
+This is what we're doing right now.
+
+00:02:14.100 --> 00:02:19.779
+Pumpkin carving. If anybody has carved their pumpkin already, we have not. We usually do it
+
+00:02:19.779 --> 00:02:24.339
+the day of or like the morning of Halloween. Please put your pumpkins in the chat and share
+
+00:02:24.339 --> 00:02:30.740
+them in the Discord too, because I really want to see them. I have so much love for pumpkin carving
+
+00:02:30.740 --> 00:02:35.619
+and I'm not going to get to do a full pumpkin this year. So share with me. And also I know that
+
+00:02:35.619 --> 00:02:42.339
+we have other divers in the chat here. I see Arsenis saying, yes, diving rules. We know Arsenis
+
+00:02:42.339 --> 00:02:48.580
+is a diver. James, are you a diver as well? I know that there are lots of others. I wanted you to
+
+00:02:48.580 --> 00:02:54.020
+tell just a little bit about where you learned to scuba dive, because not only is it a cool story,
+
+00:02:55.139 --> 00:02:59.059
+you were in South Africa, but you were also doing two postdocs at the same time.
+
+00:02:59.699 --> 00:03:00.199
+Yes.
+
+00:03:01.619 --> 00:03:03.460
+Which is wild. Everybody.
+
+00:03:04.419 --> 00:03:12.339
+Yeah, that was a lot of work and not a lot of sleep. That was back before family life,
+
+00:03:12.339 --> 00:03:20.020
+I want to say, before I had kids. I was at that time working with USGS here in the US,
+
+00:03:20.020 --> 00:03:24.580
+and somebody contacted my advisor at the time and said, hey, we need somebody to help personalize
+
+00:03:24.580 --> 00:03:31.539
+some bird data. Do you have anybody that would be interested? And my advisor came to me and asked me,
+
+00:03:31.699 --> 00:03:36.580
+hey, do you want to go there to work on that project while still working on what you're doing
+
+00:03:36.580 --> 00:03:46.419
+right now? So, for a little while, I went to South Africa twice to work on the South African
+
+00:03:46.419 --> 00:03:52.500
+bird data project. It's a citizen science project. It's fantastic. Lots of work. It's
+
+00:03:52.500 --> 00:03:58.979
+great and really interesting for its own merit. But when I was over there, well,
+
+00:03:59.940 --> 00:04:07.860
+I basically was walking, sleeping really little, walking as much as I could during the first four
+
+00:04:07.860 --> 00:04:15.059
+days of the week and just cramming as much. And then I would just spend the rest of the week
+
+00:04:15.059 --> 00:04:22.660
+pretty much in the water, getting my dive master. So, it's a beautiful place over there. Great
+
+00:04:22.660 --> 00:04:30.420
+dives. We have the chance to just dive with sharks on a weekly basis, seals, dolphins,
+
+00:04:30.420 --> 00:04:36.179
+all the cool stuff. Amazing. And that speaks a little bit to
+
+00:04:37.059 --> 00:04:42.500
+your background because you mentioned you were working with birds. And I know that you sort of
+
+00:04:42.500 --> 00:04:47.859
+started in the ornithology space, right? Could you talk just a little bit about your education
+
+00:04:47.940 --> 00:04:54.339
+and your interest in that? Yes. So, it's one of those things where
+
+00:04:55.380 --> 00:05:01.220
+as a kid, you're asked, what job do you want to do when you grow up? And the first one I can
+
+00:05:01.859 --> 00:05:07.859
+remember was ornithologist. I don't even know I knew that word back at that time, but that's
+
+00:05:07.859 --> 00:05:19.220
+what I wanted to do. And over the years, you know, goals change. But I'm always interested
+
+00:05:19.220 --> 00:05:29.619
+into something wildlife-related. Throughout my life experience, I had the chance to meet great
+
+00:05:29.619 --> 00:05:35.140
+teachers that introduced me to a lot of other things. I've always loved math too. So, kind of
+
+00:05:35.140 --> 00:05:40.339
+trying to find this point of contact between those two worlds. And I had the chance to have
+
+00:05:40.339 --> 00:05:44.660
+a great teacher back in France that introduced me to all at the same time as I was going through
+
+00:05:44.660 --> 00:05:50.899
+all of this. So, for me, that was kind of like the perfect combination of everything I like to do. I
+
+00:05:50.899 --> 00:05:55.779
+like to tinker. I like wildlife. I like being in nature. I like science, asking questions.
+
+00:05:56.660 --> 00:06:01.859
+And just using math to explore all this, we're trying to understand how things work
+
+00:06:02.260 --> 00:06:10.739
+at a fundamental level. So, I had the chance to do a Ph.D. that was focusing on what we call
+
+00:06:10.739 --> 00:06:16.739
+phyto occupancies, trying to figure out where things are and how you can account for whether
+
+00:06:16.739 --> 00:06:23.220
+you see them or not when they're there. And I was working, like, one of my projects was here
+
+00:06:23.220 --> 00:06:30.420
+in the U.S. with the invasive species, the Eurasian coral dove. I was also working on
+
+00:06:31.059 --> 00:06:36.100
+black-legged kittiwakes back in France. So, a lot of fun. And after that, I came
+
+00:06:36.100 --> 00:06:42.019
+in the U.S. to keep working on, like, more specifically on the breeding bird survey with CSGS.
+
+00:06:43.459 --> 00:06:46.179
+And after that, I worked with, I had the chance to work with, like,
+
+00:06:46.739 --> 00:06:53.859
+looking for bigger species. I worked on carnivore ecology. So, I worked with, you know,
+
+00:06:53.859 --> 00:07:05.380
+kajak bears, lions, lynx, bobcats, all of those fun species. And then, like, you know,
+
+00:07:05.380 --> 00:07:10.019
+one thing led to another. I met people here at FWC, and now I'm working on pretty much
+
+00:07:10.019 --> 00:07:14.820
+every single thing that has scales, feathers, hair, all of that jazz.
+
+00:07:15.700 --> 00:07:19.700
+No longer just kittiwakes. No longer just birds. I put a couple in the chat so people could see.
+
+00:07:20.260 --> 00:07:26.100
+I think I put a red-legged kittiwake baby and then a black-legged kittiwake. I don't know as
+
+00:07:26.100 --> 00:07:33.220
+much about kittiwakes as Florent does. Amazing. Thank you so much for the background. I absolutely
+
+00:07:34.500 --> 00:07:39.619
+could not be happier talking to so many people who are doing lots of animal tracking lately.
+
+00:07:39.619 --> 00:07:45.220
+Like, we had Dwight Berry on who was, he started in ecology and was doing bear tracking. This has
+
+00:07:45.299 --> 00:07:49.619
+been so much fun to talk about. It gives me an excuse to, like, Google animals during the
+
+00:07:49.619 --> 00:07:58.820
+Hangout, which is amazing. So, I wanted to also dive in with Christy's question. She hasn't asked
+
+00:07:58.820 --> 00:08:02.739
+her, so I'm going to ask it. Because it's the same thing that I asked you the first time I met you.
+
+00:08:02.739 --> 00:08:09.700
+What is the image behind you that's so beautiful? This one? Yep. That's a mistake.
+
+00:08:10.420 --> 00:08:15.940
+That's basically just that. One day, I was exploring some data. More specifically,
+
+00:08:15.940 --> 00:08:26.420
+that's the chlorophyll level here in Tampa Bay. And I was just trying to do a map, you know,
+
+00:08:26.420 --> 00:08:35.780
+just X, Y, or, like, let launch and have kind of my sun level on the Z axis. And
+
+00:08:36.340 --> 00:08:41.539
+I was coding really fast and I ended up putting my Z against my X axis. And so,
+
+00:08:41.539 --> 00:08:46.419
+basically, what you see is, like, the chlorophyll level up and down and just, like, looking at it
+
+00:08:46.419 --> 00:08:52.179
+from the side. Only in base R because I like to do a lot of, like, you know, exploration. Really
+
+00:08:52.179 --> 00:09:00.179
+just simply, like, in base R before diving into, like, cooler plots with CG plot. And yeah,
+
+00:09:01.059 --> 00:09:07.219
+that just came out and I just, man, I kind of really, really like it. And I just try to
+
+00:09:07.219 --> 00:09:12.179
+polish it a little bit so we have something really, really clean. And, yeah, just I think
+
+00:09:12.179 --> 00:09:17.780
+that makes a nice background. Like, if you want to see, like, over here in front of me, what I can
+
+00:09:17.780 --> 00:09:23.539
+see is my kids' picture. Drawings for my kids. It's a lot more beautiful than what I can do.
+
+00:09:24.659 --> 00:09:29.619
+But for the background, this is pretty nice. It's gorgeous. We all love it. I think we'd all
+
+00:09:29.619 --> 00:09:35.780
+like a print. Okay. Well, I have another question for you from Natasha who has an asterisk in her
+
+00:09:35.780 --> 00:09:41.539
+question. So, I will ask it. And it's going to help us understand a little bit more about what
+
+00:09:41.539 --> 00:09:46.979
+data work looks like for you. She asks, what does a typical day or week look like for you?
+
+00:09:46.979 --> 00:09:51.940
+What areas do you split your time between, like, programming or meetings, maybe planning,
+
+00:09:52.739 --> 00:10:01.859
+maybe collaborating? So, there's no, like, typical week. It's not really, like,
+
+00:10:02.500 --> 00:10:06.340
+oh, on Monday I'm going to work on this. On Tuesday I'm going to work on that. It's a lot of
+
+00:10:08.340 --> 00:10:14.340
+answering help. So, we need to have scientists that are going to come to us and say, I have this
+
+00:10:14.340 --> 00:10:21.059
+data set. I'm trying to figure out what I can tell about my data in there. And so, we need to start
+
+00:10:21.059 --> 00:10:27.460
+with meetings, just figure out what are the needs, what are the questions. Whenever possible,
+
+00:10:27.460 --> 00:10:34.419
+we try to get involved in every project from the start. Because if we can provide help from the
+
+00:10:34.419 --> 00:10:42.500
+moment of, like, data collection, we can usually be a lot more successful than, you know, coming
+
+00:10:42.500 --> 00:10:49.059
+at the end and say, hey, I have this data. What can I do with it? So, depending on the needs of
+
+00:10:49.059 --> 00:10:54.419
+the people, we need to just meet and establish, okay, what are your questions about the data
+
+00:10:54.419 --> 00:11:01.299
+that you have? What can we work? Like, what can we do with that? So, that can be, like, part of the
+
+00:11:01.299 --> 00:11:06.900
+job. Or the part is just developing our own Shiny apps or quality so we can help people. So, a lot
+
+00:11:06.900 --> 00:11:12.580
+of programming there. So, a lot of fun, basically, creating, like, creating toys that, you know,
+
+00:11:13.059 --> 00:11:20.179
+I like having, hey, I have a Shiny app. I did that. So, some programming to do. So, programming
+
+00:11:20.979 --> 00:11:29.460
+stats, help, meetings here and there, depending on the needs. But it always changes. We do have,
+
+00:11:29.460 --> 00:11:34.900
+like, during the week, during the year where people come back from the field, usually at this
+
+00:11:34.900 --> 00:11:40.099
+time of the year, and that's when they have their data. So, we usually have a huge workload coming
+
+00:11:40.099 --> 00:11:45.859
+in at this time of the year. And by the time we get back to managing to take care of everything,
+
+00:11:45.859 --> 00:11:47.940
+people are back in the field and collecting more data.
+
+00:11:49.700 --> 00:11:54.739
+Nice. So, you are a sort of a consultant internally, maybe a little bit, where you're
+
+00:11:54.739 --> 00:11:59.780
+helping lots of different people accomplish different things. I like this. I would love
+
+00:11:59.780 --> 00:12:03.539
+to be a problem solver and just be, like, let's go fix everything for everybody else.
+
+00:12:03.539 --> 00:12:07.940
+It sounds like you're also enabling the subject matter experts and the scientists with the
+
+00:12:07.940 --> 00:12:15.299
+technology, like Shiny apps. Are most of your Shiny apps internal? Or do you have any of the
+
+00:12:15.299 --> 00:12:20.820
+dashboards that are public for people? So, yeah. That's one of the things I love
+
+00:12:20.820 --> 00:12:25.859
+about my job. I have the chance to work on a bunch of different projects with people that
+
+00:12:25.859 --> 00:12:31.140
+are really smart and experts in their field. So, that's giving me a chance to interact with
+
+00:12:31.140 --> 00:12:34.979
+people that are passionate about what they're doing and, like, know so, so, so much. And I
+
+00:12:34.979 --> 00:12:43.780
+get to learn from everyone. So, that's great. And that's something I want to say that is unique
+
+00:12:44.500 --> 00:12:51.140
+in our team. It's, like, really, like, having this team dedicated just to help people with
+
+00:12:51.140 --> 00:12:58.020
+just data needs in this specific context. Rather than letting people figure out what they're
+
+00:12:58.020 --> 00:13:06.820
+supposed to do. But for, like, what we keep in mind is, like, the person that are important is,
+
+00:13:06.820 --> 00:13:12.419
+like, the subject matter experts. So, trying to just figure out what our thing is. And so,
+
+00:13:12.419 --> 00:13:19.059
+we can just, like, work with that and match that. That means one of the tools that we offer to
+
+00:13:19.059 --> 00:13:26.900
+people, like, things to connect is making them easy. Making it easy for them to share
+
+00:13:27.859 --> 00:13:32.659
+their knowledge with management, with the public at large, with stakeholders.
+
+00:13:34.739 --> 00:13:40.500
+We have some people that are good coders. We have people that don't know R at all. In that case,
+
+00:13:40.500 --> 00:13:46.099
+that's where, like, you know, some of us are going to come in and develop the apps for them.
+
+00:13:46.099 --> 00:13:49.219
+A lot of what we do is going to be internally, at least at this point.
+
+00:13:50.260 --> 00:13:55.380
+We have a couple of apps that are going to be either, like, in the works to be available
+
+00:13:55.380 --> 00:13:59.700
+publicly or, like, have been published or in the process of being published publicly.
+
+00:13:59.700 --> 00:14:05.619
+That's going to be things to, like, figuring out, like, what's happening on our lakes in
+
+00:14:05.619 --> 00:14:09.940
+terms of management instruments. What kind of fish species we have in there. That's going to
+
+00:14:10.020 --> 00:14:18.020
+be information about imperiled wading bird colonies. So, people can gather that information
+
+00:14:18.020 --> 00:14:24.179
+and figure out, hey, like, what kind of wildlife do I have, like, around me? What's the status of
+
+00:14:24.179 --> 00:14:27.700
+those populations and what can I do to help with some of that?
+
+00:14:29.940 --> 00:14:34.340
+Amazing. I put in the chat, I'm wondering if anybody else has a job that's kind of like this.
+
+00:14:34.820 --> 00:14:41.780
+Problem solving, internal consulting, enablement, stuff like that. Because I know that we've had a
+
+00:14:41.780 --> 00:14:46.820
+couple people on recently who had a little bit of this in their role. And we have someone coming up
+
+00:14:48.179 --> 00:14:54.659
+at GenMab. We're going to be joined by Sud, who is even more on the enablement side and is in,
+
+00:14:54.659 --> 00:15:00.500
+sort of, like, an admin type of role. And I'd like to talk with more people like that.
+
+00:15:00.500 --> 00:15:08.020
+Chime in and let me know. Jonathan in the chat is talking about the rough world series.
+
+00:15:08.020 --> 00:15:11.140
+Y'all, I'm out of the sports game. What's going on with the world series?
+
+00:15:13.700 --> 00:15:15.219
+I heard something about Milwaukee.
+
+00:15:17.940 --> 00:15:24.500
+So, that was actually happening right here. Just like a few hundred yards away from where I am
+
+00:15:24.500 --> 00:15:32.419
+right now. We just lost. You just lost. The Brewers and the Rays, right? Am I wrong?
+
+00:15:32.419 --> 00:15:33.780
+Yes. Somebody let me know. Okay.
+
+00:15:34.340 --> 00:15:40.020
+That's correct. And it was a hard talk with my kid this morning saying, I'm really,
+
+00:15:40.020 --> 00:15:43.140
+really sorry to tell you that we have lost the world series.
+
+00:15:44.419 --> 00:15:49.059
+Yeah. Kristen says, reframe. The Brewers just won for the first time in 40 plus years.
+
+00:15:49.059 --> 00:15:53.140
+That's the story that I was looking at because we have friends in Milwaukee who are just so
+
+00:15:53.140 --> 00:15:58.500
+over the moon excited. Carl Grealis says, brew crew. Okay. We'll get back to data science,
+
+00:15:58.500 --> 00:16:03.219
+but if anybody wants to talk about data for the world series, let me know in the
+
+00:16:04.099 --> 00:16:09.219
+Discord so we can all talk about it. All right. I have a question from Rachel.
+
+00:16:09.219 --> 00:16:11.460
+Rachel, would you like to ask your question live?
+
+00:16:12.099 --> 00:16:18.419
+Sure. So, Florent, I remember when we were talking, maybe this was a few months ago, but
+
+00:16:18.979 --> 00:16:26.340
+you were telling me this fun example with data from gators, I believe, or is it crocodiles or
+
+00:16:26.340 --> 00:16:27.700
+gators? American crocodile.
+
+00:16:27.700 --> 00:16:33.460
+Okay. I got it wrong too. I thought that would be a really fun one to share with everybody.
+
+00:16:34.659 --> 00:16:42.820
+Yeah. So, we have a place in the US where you can find both American crocodiles and alligators.
+
+00:16:43.140 --> 00:16:52.419
+One of the important jobs that our agency has is to handle human-wildlife conflicts.
+
+00:16:54.020 --> 00:16:59.460
+We are all animal lovers here. We all care deeply about our animal resources, and also,
+
+00:16:59.460 --> 00:17:04.579
+we deeply care about people because that's why we do what we do.
+
+00:17:04.900 --> 00:17:12.819
+That's why we do what we do. So, on occasion, we can have conflicts between
+
+00:17:14.260 --> 00:17:22.339
+gators or crocodiles that are going to become used to human population and are going to become
+
+00:17:22.339 --> 00:17:28.819
+problem animals. One of our preferred solutions, whenever possible, is to basically take those
+
+00:17:28.819 --> 00:17:36.180
+animals and relocate them within a more natural setting so they don't bother human populations
+
+00:17:36.180 --> 00:17:42.420
+anymore. So, that specific study was kind of like a test study to figure out, hey,
+
+00:17:42.420 --> 00:17:48.739
+is that actually a good solution for us to do that? And we are trying to figure out,
+
+00:17:48.739 --> 00:17:53.459
+depending on how far away we relocate them, how effective are those techniques?
+
+00:17:54.260 --> 00:18:01.540
+So, it turns out that those animals are incredibly good at finding their way back,
+
+00:18:01.540 --> 00:18:10.339
+a lot better than I am. We would move them by, you know, a couple dozen miles, and they would
+
+00:18:10.339 --> 00:18:18.500
+make it back to like 14-ish miles, and they would make it back after just a little bit of time
+
+00:18:18.739 --> 00:18:23.859
+trying to figure out where they are, turning around, and they would just find the location
+
+00:18:23.859 --> 00:18:30.339
+they were in and zoom right back in where they were from. And that was up to almost 100 miles,
+
+00:18:30.339 --> 00:18:36.660
+where it would take them a little bit longer, but we did have some individuals making it back
+
+00:18:36.660 --> 00:18:44.099
+after a couple of months from more than 100 miles away. So, it is a valuable tool, because
+
+00:18:44.900 --> 00:18:49.219
+if you pass a certain distance, it can become difficult for the animals to get back, and they
+
+00:18:49.219 --> 00:18:53.859
+just have to settle where they are. But it was also important for us to figure out, you know,
+
+00:18:53.859 --> 00:18:58.099
+like, is it a stressful situation for the animals? Because we want to avoid stress as much as
+
+00:18:58.099 --> 00:19:03.619
+possible. But, yeah, it was pretty quick, you think, to see, like, we could use GPS data to
+
+00:19:03.619 --> 00:19:07.939
+kind of track movements, so it was just like a movement analysis, and figure out, you could see,
+
+00:19:07.939 --> 00:19:12.739
+like, literally see the animals going, I don't know what I'm doing, I don't, oh, where am I?
+
+00:19:13.140 --> 00:19:19.140
+Oh, I do know. Bring back on. And, yeah, that was a really interesting project.
+
+00:19:20.979 --> 00:19:26.099
+That's amazing. I'm glad that you were worried about the stress level, because I was worried
+
+00:19:26.099 --> 00:19:29.699
+about the stress level the whole time you were talking. I was like, oh, poor crocodiles,
+
+00:19:29.699 --> 00:19:35.780
+they're going to be stressed out. Imagine just, like, getting too used to humans, and then getting
+
+00:19:35.780 --> 00:19:40.420
+a little too friendly with them, which happens with bears, too, all the time, right, up in the
+
+00:19:40.420 --> 00:19:46.819
+woods. And, you know, and then somebody just taking you and relocating you 15 miles away.
+
+00:19:48.339 --> 00:19:52.500
+Okay, well, I'm glad that someone's looking out for the crocodiles. Oh, we have so many
+
+00:19:52.500 --> 00:19:57.939
+questions inside it. Let's get to another one. Noor, I saw you had a great question,
+
+00:19:57.939 --> 00:20:02.020
+and it has risen to the top here. Would you like to ask that live? I'll put it in the chat as well.
+
+00:20:02.020 --> 00:20:12.260
+Bonjour. Bonjour. That's the extent, because I forgot the rest of my French. Anyway,
+
+00:20:14.420 --> 00:20:18.420
+you're in the public sector, particularly in the field of, sort of, like, ecology,
+
+00:20:18.420 --> 00:20:23.060
+wildlife, and so forth. What are challenges that are unique to working as a data scientist
+
+00:20:23.699 --> 00:20:29.780
+in the public sector versus other domains? What are the pros, cons? And if you have experience
+
+00:20:29.780 --> 00:20:36.420
+working in other domains, what makes you stick in the public sector? Oh, good question. Thank you,
+
+00:20:36.420 --> 00:20:46.339
+Noor. Thank you, Noor. Well, that's really important to me, because I like helping people.
+
+00:20:46.339 --> 00:20:54.660
+That's one of my favorite things to do. And before that, I was in the academic field.
+
+00:20:55.380 --> 00:21:01.859
+Now, we mentioned doing a couple of postdocs. I wanted to be able to make a difference.
+
+00:21:02.660 --> 00:21:08.819
+I wanted to be able to help people. I wanted to just have things. I love, I still love,
+
+00:21:08.819 --> 00:21:13.300
+you know, just pure research and figuring out, like, understanding, just improve understanding.
+
+00:21:13.939 --> 00:21:17.459
+But also, we enjoy being able to take that understanding and do something with it.
+
+00:21:18.420 --> 00:21:25.859
+I, my job here is to kind of, like, help with this connection between ecologists and management
+
+00:21:26.579 --> 00:21:32.180
+and stats. I'm not as good in ecology as a pure statistician. I'm not as good in stats as a pure,
+
+00:21:32.180 --> 00:21:36.500
+sorry, I'm not as good in ecology as a pure ecologist, and I'm not as good as, in stats,
+
+00:21:36.500 --> 00:21:42.660
+as a pure statistician. But I'm a lot better in stats as an ecologist and a lot better in ecology
+
+00:21:42.739 --> 00:21:49.380
+as a pure statistician. So, I'm able to make this bridge. And coming here as a public sector also
+
+00:21:49.380 --> 00:21:55.699
+helped me make that connection with management and hopefully, like, one level removed with the
+
+00:21:55.699 --> 00:22:02.099
+general public. It does come with some difficulties in the sense that, yeah, we deal with
+
+00:22:03.140 --> 00:22:12.339
+potentially sensitive topics, and what we do has consequences. And that's really important.
+
+00:22:12.339 --> 00:22:18.819
+But in my position, what we try to do at our agency is to provide the right information
+
+00:22:19.780 --> 00:22:25.780
+in the right format at the right time. So, basically, use the most novel, most strongly,
+
+00:22:25.780 --> 00:22:30.500
+like, the strongest possible science so we can better inform our decisions.
+
+00:22:31.380 --> 00:22:38.500
+And then somebody's going to, somebody that has a bigger picture of, like, of the situation than I
+
+00:22:38.500 --> 00:22:45.219
+do can come and just, okay, look at this is what my stakeholders and the public want. This is the
+
+00:22:45.219 --> 00:22:49.780
+current status of appropriation. So, it can be, like, fisheries when we have to figure out, like,
+
+00:22:49.780 --> 00:22:55.140
+can we fish this species at this time of year? How much can we get? That can be related to just
+
+00:22:55.140 --> 00:23:01.380
+general population management, species, dealing with deer, like, white-tailed deer, or turkey,
+
+00:23:01.459 --> 00:23:12.180
+these kind of things. So, based on my experience, I think that it can be more challenging to get,
+
+00:23:12.180 --> 00:23:18.739
+to collect data, because there's so much of it. We can't, you know, we're trying to just deal with
+
+00:23:18.739 --> 00:23:24.099
+the whole ecosystem in Florida, and we're not, you know, disconnected from the rest of the U.S.
+
+00:23:24.660 --> 00:23:31.619
+So, it's kind of, like, interagency discussions that are happening on a daily basis, trying to
+
+00:23:31.619 --> 00:23:40.020
+find, like, stakeholders that are willing to talk with us. Sometimes when I go out with, you know,
+
+00:23:40.020 --> 00:23:46.339
+my work outfit, people are going to see the badge and be like, oh, I have my fishing license with
+
+00:23:46.339 --> 00:23:53.619
+me. That's great for you. That's not what I do, but we appreciate the support. So,
+
+00:23:54.420 --> 00:24:00.739
+we do have some great interaction with the public most of the time, and it's always kind of a
+
+00:24:03.219 --> 00:24:07.619
+great chance for us to be able to share what we do with everyone. Especially, like,
+
+00:24:07.619 --> 00:24:14.500
+for us here at, you know, Research Institute, where we can bring people in, we have these
+
+00:24:14.500 --> 00:24:20.339
+great events. If you are, like, in the area, every year we have this thing called Marine Quest,
+
+00:24:21.060 --> 00:24:26.819
+which is we open our doors for the public to come. We have two days where, like, students can
+
+00:24:26.819 --> 00:24:31.380
+come from schools, and one day we're, like, we open our doors to everyone, and our scientists
+
+00:24:31.380 --> 00:24:37.219
+get to share our work, and basically say, hey, you live in Florida, or you don't have to live
+
+00:24:37.219 --> 00:24:40.500
+in Florida to come and visit, but you live in Florida, this is what we do for you.
+
+00:24:42.739 --> 00:24:48.020
+So, what are the challenges of working in the public sector? I think one important thing is,
+
+00:24:48.979 --> 00:24:56.099
+like, what are the great aspects of it? And one of it is you get to work with people and make a
+
+00:24:56.099 --> 00:25:02.500
+difference for others at a very large scale. I know, like, you know, data science community,
+
+00:25:02.500 --> 00:25:07.140
+and especially here, like, with Vanguard, everybody's interested in that. Like, all of us
+
+00:25:07.140 --> 00:25:14.099
+are just interested in what can we do with data, with our data, to make a difference.
+
+00:25:14.819 --> 00:25:20.260
+And we have great people that have been, like, it was a couple of weeks ago, we have people that
+
+00:25:20.260 --> 00:25:26.979
+work in hospital settings. That's a great way of making a difference, you know, just using your
+
+00:25:26.979 --> 00:25:33.380
+knowledge to be able to help people. And this, working with the public sector, is just another
+
+00:25:33.380 --> 00:25:42.500
+approach to it. I put the link to Marine Quest in the chat, so everybody can look at it. I think
+
+00:25:42.500 --> 00:25:48.020
+it's a very cool thing to do. I don't know if anybody else does anything like this, but there
+
+00:25:48.020 --> 00:25:53.140
+is a school days portion where school age kids can come in, and then there's a Saturday where
+
+00:25:53.140 --> 00:25:58.500
+it's open to everyone. I know that some of our folks here are local to Florida. So, if you've
+
+00:25:58.500 --> 00:26:05.619
+never done Marine Quest, maybe go visit Florent and see what's going on. Open invitation to the
+
+00:26:05.619 --> 00:26:10.099
+next time that happens. Okay, we have so many questions in Slido. We better get to some
+
+00:26:10.099 --> 00:26:18.979
+questions. We're about the halfway mark, and I saw somebody asked about what types of data you
+
+00:26:18.979 --> 00:26:23.060
+use, and I think that that would be a fantastic context building question. Let me go find that
+
+00:26:23.060 --> 00:26:30.260
+in the Slido. It was right here. Oh, here it is. It was an anonymous question, and it says,
+
+00:26:30.260 --> 00:26:35.939
+what kinds of data do you use in your work, like remote sensing data, satellite imagery,
+
+00:26:35.939 --> 00:26:41.699
+input from biologists in the field, citizen scientists, collected information, et cetera,
+
+00:26:41.699 --> 00:26:45.859
+and how do you manage all of that? I'm curious about sources and workflows. What a great question,
+
+00:26:45.859 --> 00:26:52.979
+anonymous asker. So, I love that question because that's really at the core of what we do here in
+
+00:26:54.099 --> 00:27:00.020
+our group. So, the group I work with is called the Center for Biostatistics and Modeling.
+
+00:27:00.500 --> 00:27:09.859
+In our group, we have two teams. We travel to biostatisticians where we take care of the
+
+00:27:09.859 --> 00:27:18.099
+analysis, and we can travel ecological data specialists that are going to be the first
+
+00:27:18.099 --> 00:27:23.459
+step that people should go to to handle their data. As you mentioned in your question,
+
+00:27:24.420 --> 00:27:29.540
+we do have a really wide array of different types of data. We're going to have remote sensing,
+
+00:27:29.540 --> 00:27:34.339
+satellites. We're going to have a lot of GPS data. We're going to have mortality, survival,
+
+00:27:35.140 --> 00:27:44.260
+records. We're going to have hunting data. We're going to have fisheries data, both independent
+
+00:27:44.260 --> 00:27:51.140
+and dependent, where we're going to go out there and count the number of fish that we can detect,
+
+00:27:51.699 --> 00:28:00.260
+or talk with fisheries folks and figure out the size of the catch that they're going to get.
+
+00:28:00.819 --> 00:28:10.819
+We're going to have DNA data. We're going to have simple chemical data. We're going to have
+
+00:28:10.819 --> 00:28:18.260
+measurements of profile levels. That's one of the things that is super interesting with the job
+
+00:28:18.260 --> 00:28:26.020
+here. Every project that we work is different. I'm in no way a specialist on all of those,
+
+00:28:27.300 --> 00:28:35.140
+but we are always passionate about learning. Usually, what happens is we just try to figure
+
+00:28:35.140 --> 00:28:38.500
+out what kind of data are needed to answer a specific question. It's always important.
+
+00:28:39.459 --> 00:28:44.660
+I cannot advocate enough to just start with your question. What are you trying to figure out?
+
+00:28:44.739 --> 00:28:49.140
+What are your objectives? How can you test for that to answer those questions?
+
+00:28:50.260 --> 00:28:57.219
+Then, the data that you need, if you want to use those specific tests. If you want to have those
+
+00:28:57.219 --> 00:29:04.739
+data, how are you going to just collect them? We try to just match the needs for every project.
+
+00:29:05.780 --> 00:29:09.540
+I don't have an easy answer of, hey, this is exactly the kind of data that we use.
+
+00:29:10.180 --> 00:29:17.219
+It is really product-specific. It's a wide area of data. We have a lot of special GIS data,
+
+00:29:18.500 --> 00:29:28.819
+as well as everything I mentioned earlier. In terms of workflow, once we have this
+
+00:29:30.339 --> 00:29:35.459
+pipeline set up of, that's your question, that's the kind of data that you need to collect,
+
+00:29:36.099 --> 00:29:42.660
+we then need to kind of format that and store that in a safe and secure way that we can then
+
+00:29:42.660 --> 00:29:48.739
+access easily and take care of. It is a large teamwork, lots of teamwork there.
+
+00:29:50.099 --> 00:29:53.219
+The hard question to answer when it sounds like, yeah, every single project,
+
+00:29:53.219 --> 00:29:59.140
+you're going to have a different type of data. Kristen Bot in the chat said,
+
+00:29:59.780 --> 00:30:05.540
+the juggle is real about this sort of problem with data sources, which makes me laugh so much.
+
+00:30:06.819 --> 00:30:10.979
+She says, it can be a challenge to vet the quality, incorporate all of the data,
+
+00:30:10.979 --> 00:30:16.420
+manage all the sources. It sounds like a lot of people have a similar experience with their
+
+00:30:16.420 --> 00:30:21.060
+sort of project-specific work. Thank you, Anonymous Asker, for that fantastic question.
+
+00:30:21.140 --> 00:30:29.380
+You sent us in a great direction. We have an AI question. Rizwan, you asked an AI question.
+
+00:30:29.380 --> 00:30:34.739
+Would you like to ask that live? Let's see if we can get Rizwan. There he is. Hey.
+
+00:30:38.260 --> 00:30:46.180
+Yeah, hi, Florenda. Hi, Florenda. Just a generic doubt. Do you guys use large language models to
+
+00:30:46.260 --> 00:30:53.459
+aggregate your research flow? I'm just asking, not just simple cloud UI or any other UI.
+
+00:30:53.459 --> 00:31:00.579
+Do you guys actually use that in research purposes? So, it's something we are currently looking at.
+
+00:31:00.885 --> 00:31:02.885
+Florent Bled, Data Science Hangout, quarto, shiny-r
+
+00:31:30.885 --> 00:31:32.885
+Florent Bled, Data Science Hangout, quarto, shiny-r
+
+00:32:00.885 --> 00:32:02.885
+, and that is a lot of telltale
+
+00:32:02.885 --> 00:32:04.885
+s and there are a lot of
+
+00:32:04.885 --> 00:32:06.885
+lemmas that are passed through there.
+
+00:32:06.885 --> 00:32:08.885
+In that context, we do have
+
+00:32:08.885 --> 00:32:10.885
+specialized elements that are
+
+00:32:10.885 --> 00:32:12.885
+going to be just for
+
+00:32:12.885 --> 00:32:14.885
+analysing those specific data.
+
+00:32:14.885 --> 00:32:16.885
+So it is kind of like
+
+00:32:16.885 --> 00:32:18.885
+really project-specific, and we are
+
+00:32:18.885 --> 00:32:20.885
+in the process of trying to
+
+00:32:20.885 --> 00:32:22.885
+figure out ways of
+
+00:32:22.885 --> 00:32:24.885
+expanding that as needed, but it is
+
+00:32:24.885 --> 00:32:26.885
+really, at this time, project-
+
+00:32:26.885 --> 00:32:28.885
+specific.
+
+00:32:28.885 --> 00:32:30.885
+Thank you.
+
+00:32:30.885 --> 00:32:32.885
+We have another question that
+
+00:32:32.885 --> 00:32:34.885
+has arisen, which is a
+
+00:32:34.885 --> 00:32:36.885
+quick one.
+
+00:32:36.885 --> 00:32:38.885
+Favorite and least favorite animal.
+
+00:32:38.885 --> 00:32:40.885
+I don't know if least favorite is
+
+00:32:40.885 --> 00:32:42.885
+fair.
+
+00:32:42.885 --> 00:32:44.885
+I have a hard time picking favorites
+
+00:32:44.885 --> 00:32:46.885
+in general.
+
+00:32:46.885 --> 00:32:48.885
+I like, okay, so
+
+00:32:48.885 --> 00:32:50.885
+there are going to be
+
+00:32:50.885 --> 00:32:52.885
+my favorite one is probably the
+
+00:32:52.885 --> 00:32:54.885
+platypus.
+
+00:32:54.885 --> 00:32:56.885
+It has nothing to do with Florida,
+
+00:32:56.885 --> 00:32:58.885
+but it is kind of my
+
+00:32:58.885 --> 00:33:00.885
+top three.
+
+00:33:00.885 --> 00:33:02.885
+That being said, more specifically,
+
+00:33:02.885 --> 00:33:04.885
+when I work, I love bears.
+
+00:33:04.885 --> 00:33:06.885
+I had the chance to work with
+
+00:33:06.885 --> 00:33:08.885
+scojag bears.
+
+00:33:08.885 --> 00:33:10.885
+They are the largest bears that we
+
+00:33:10.885 --> 00:33:12.885
+have in the world with
+
+00:33:12.885 --> 00:33:14.885
+polar bears.
+
+00:33:14.885 --> 00:33:16.885
+That has been such a humbling
+
+00:33:16.885 --> 00:33:18.885
+experience.
+
+00:33:18.885 --> 00:33:20.885
+They are just fantastic.
+
+00:33:20.885 --> 00:33:22.885
+I also love looking at things
+
+00:33:22.885 --> 00:33:24.885
+like ants, because they are
+
+00:33:25.885 --> 00:33:27.885
+just so beautiful.
+
+00:33:27.885 --> 00:33:29.885
+They are very tactile, and
+
+00:33:29.885 --> 00:33:31.885
+their behavior can emerge from
+
+00:33:31.885 --> 00:33:33.885
+a very simple mechanism between
+
+00:33:33.885 --> 00:33:35.885
+the individual levels.
+
+00:33:35.885 --> 00:33:37.885
+So, I, and black-legged
+
+00:33:37.885 --> 00:33:39.885
+kittywags always enjoy a
+
+00:33:39.885 --> 00:33:41.885
+special place in my heart,
+
+00:33:41.885 --> 00:33:43.885
+seeing them against a blue sky
+
+00:33:43.885 --> 00:33:45.885
+when you have these
+
+00:33:45.885 --> 00:33:47.885
+beautiful black W pattern on
+
+00:33:47.885 --> 00:33:49.885
+their wings soaring through the
+
+00:33:49.885 --> 00:33:51.885
+sky.
+
+00:33:51.885 --> 00:33:53.885
+It just grounds you the moment
+
+00:33:53.885 --> 00:33:55.885
+the world is a beautiful place.
+
+00:33:55.885 --> 00:33:57.885
+There is magic
+
+00:33:57.885 --> 00:33:59.885
+out there.
+
+00:33:59.885 --> 00:34:01.885
+So, those will be
+
+00:34:01.885 --> 00:34:03.885
+my favorites, probably animals.
+
+00:34:03.885 --> 00:34:05.885
+Least favorites,
+
+00:34:05.885 --> 00:34:07.885
+I'm sorry, I think you have to say
+
+00:34:07.885 --> 00:34:09.885
+mosquitoes and ticks.
+
+00:34:09.885 --> 00:34:11.885
+You're not alone.
+
+00:34:11.885 --> 00:34:13.885
+I was just going to say Michael Morales in the chat
+
+00:34:13.885 --> 00:34:15.885
+says ticks are the least like for me,
+
+00:34:15.885 --> 00:34:17.885
+and I think I agree.
+
+00:34:17.885 --> 00:34:19.885
+Yeah, I mean, there is
+
+00:34:19.885 --> 00:34:21.885
+an argument for the important
+
+00:34:21.885 --> 00:34:23.885
+eco speaking,
+
+00:34:23.885 --> 00:34:25.885
+but in Florida,
+
+00:34:25.885 --> 00:34:27.885
+it can be challenging during the
+
+00:34:27.885 --> 00:34:29.885
+summer months to come out and
+
+00:34:29.885 --> 00:34:31.885
+say, oh, is that fog out there?
+
+00:34:31.885 --> 00:34:33.885
+No, it's mosquitoes.
+
+00:34:33.885 --> 00:34:35.885
+Yeah,
+
+00:34:35.885 --> 00:34:37.885
+mosquitoes are pretty bad. I feel like anyone
+
+00:34:37.885 --> 00:34:39.885
+in Minnesota would also agree.
+
+00:34:39.885 --> 00:34:41.885
+Mosquitoes are pretty bad.
+
+00:34:41.885 --> 00:34:43.885
+Okay, I asked in the
+
+00:34:43.885 --> 00:34:45.885
+chat if anybody could guess my favorite
+
+00:34:45.885 --> 00:34:47.885
+animal. Nobody did.
+
+00:34:47.885 --> 00:34:49.885
+Excellent.
+
+00:34:49.885 --> 00:34:51.885
+I love spiders.
+
+00:34:51.885 --> 00:34:53.885
+I'm obsessed with spiders. I've been obsessed with
+
+00:34:53.885 --> 00:34:55.885
+spiders for a very long time.
+
+00:34:55.885 --> 00:34:57.885
+My family calls
+
+00:34:57.885 --> 00:34:59.885
+me the spider lady. I love them.
+
+00:34:59.885 --> 00:35:01.885
+I know that that's not a normal
+
+00:35:01.885 --> 00:35:03.885
+question or answer, but
+
+00:35:03.885 --> 00:35:05.885
+spiders are absolutely fascinating,
+
+00:35:05.885 --> 00:35:07.885
+and there's so few of them that
+
+00:35:07.885 --> 00:35:09.885
+can actually hurt you.
+
+00:35:09.885 --> 00:35:11.885
+Especially if you know
+
+00:35:11.885 --> 00:35:13.885
+the ones in your state that can hurt you,
+
+00:35:13.885 --> 00:35:15.885
+and even the ones that can probably can't
+
+00:35:15.885 --> 00:35:17.885
+hurt you that bad.
+
+00:35:17.885 --> 00:35:19.885
+You shouldn't be that afraid of a black widow.
+
+00:35:19.885 --> 00:35:21.885
+Don't smush them.
+
+00:35:21.885 --> 00:35:23.885
+Don't get in bed with them or anything.
+
+00:35:23.885 --> 00:35:25.885
+I feel that
+
+00:35:25.885 --> 00:35:27.885
+for spiders, that's kind of a scale.
+
+00:35:27.885 --> 00:35:29.885
+Tiny
+
+00:35:29.885 --> 00:35:31.885
+spiders are cute and adorable.
+
+00:35:31.885 --> 00:35:33.885
+Big spiders are fluffy, and they
+
+00:35:33.885 --> 00:35:35.885
+look like little plushies. They're awesome.
+
+00:35:35.885 --> 00:35:37.885
+It's like the in-between where people are scared.
+
+00:35:37.885 --> 00:35:39.885
+I love them all.
+
+00:35:39.885 --> 00:35:41.885
+The worst thing you can do around me is
+
+00:35:41.885 --> 00:35:43.885
+kill a spider. I will lose it.
+
+00:35:43.885 --> 00:35:45.885
+Okay, thank you so much for
+
+00:35:45.885 --> 00:35:47.885
+your question and
+
+00:35:47.885 --> 00:35:49.885
+least favorite and favorite animal question.
+
+00:35:49.885 --> 00:35:51.885
+I don't know who that was. It was anonymous, but it was
+
+00:35:51.885 --> 00:35:53.885
+adorable. Thank you.
+
+00:35:53.885 --> 00:35:55.885
+Y'all, I am not going to ask this
+
+00:35:55.885 --> 00:35:57.885
+Florida man story question.
+
+00:35:57.885 --> 00:35:59.885
+It's in the chat. You are killing me.
+
+00:35:59.885 --> 00:36:01.885
+I
+
+00:36:01.885 --> 00:36:03.885
+would love to
+
+00:36:03.885 --> 00:36:05.885
+ask a shiny
+
+00:36:05.885 --> 00:36:07.885
+question, though, because
+
+00:36:07.885 --> 00:36:09.885
+we had anonymous questions. I think we had
+
+00:36:09.885 --> 00:36:11.885
+a couple people asking how you
+
+00:36:11.885 --> 00:36:13.885
+happen to do shiny apps internally.
+
+00:36:13.885 --> 00:36:15.885
+Do you containerize? Do you use Docker?
+
+00:36:15.885 --> 00:36:17.885
+Stuff like that.
+
+00:36:17.885 --> 00:36:19.885
+I figured it's a good time to ask a tool
+
+00:36:19.885 --> 00:36:21.885
+question as well. Are you mainly
+
+00:36:21.885 --> 00:36:23.885
+working in R doing biostats?
+
+00:36:23.885 --> 00:36:25.885
+Do you have people working in Python? Do you
+
+00:36:25.885 --> 00:36:27.885
+work in Python as well?
+
+00:36:27.885 --> 00:36:29.885
+Yeah, R, Python, shiny.
+
+00:36:29.885 --> 00:36:31.885
+A little bit of a glimpse into
+
+00:36:31.885 --> 00:36:33.885
+how you use your tools and how you deploy.
+
+00:36:33.885 --> 00:36:35.885
+For
+
+00:36:35.885 --> 00:36:37.885
+shiny,
+
+00:36:37.885 --> 00:36:39.885
+one thing that I find is
+
+00:36:39.885 --> 00:36:41.885
+I'm going to take a really quick tangent.
+
+00:36:41.885 --> 00:36:43.885
+Not that I do that on a
+
+00:36:43.885 --> 00:36:45.885
+constant basis.
+
+00:36:45.885 --> 00:36:47.885
+I feel
+
+00:36:47.885 --> 00:36:49.885
+like we always see those really cool shiny
+
+00:36:49.885 --> 00:36:51.885
+apps. Really big,
+
+00:36:51.885 --> 00:36:53.885
+really complex.
+
+00:36:53.885 --> 00:36:55.885
+Those are awesome tool caps.
+
+00:36:55.885 --> 00:36:57.885
+But I also
+
+00:36:57.885 --> 00:36:59.885
+like the smaller ones that have
+
+00:36:59.885 --> 00:37:01.885
+just, hey, I want to be able to share
+
+00:37:01.885 --> 00:37:03.885
+my data, the really simple one.
+
+00:37:03.885 --> 00:37:05.885
+I want to be able to show to somebody
+
+00:37:05.885 --> 00:37:07.885
+the path that my
+
+00:37:07.885 --> 00:37:09.885
+bears are taking or that my
+
+00:37:09.885 --> 00:37:11.885
+cows are taking. It can be just as
+
+00:37:11.885 --> 00:37:13.885
+simple as a simple territory
+
+00:37:13.885 --> 00:37:15.885
+visualization app.
+
+00:37:15.885 --> 00:37:17.885
+I like
+
+00:37:17.885 --> 00:37:19.885
+this kind of
+
+00:37:19.885 --> 00:37:21.885
+range, this gradient
+
+00:37:21.885 --> 00:37:23.885
+of you can go from really simple
+
+00:37:23.885 --> 00:37:25.885
+apps to the really big ones and all of
+
+00:37:25.885 --> 00:37:27.885
+those are important because all of them
+
+00:37:27.885 --> 00:37:29.885
+have
+
+00:37:29.885 --> 00:37:31.885
+a purpose.
+
+00:37:31.885 --> 00:37:33.885
+For us,
+
+00:37:33.885 --> 00:37:35.885
+right now, we had to develop.
+
+00:37:35.885 --> 00:37:37.885
+We recently brought, now that
+
+00:37:37.885 --> 00:37:39.885
+is a couple of years, brought Connect
+
+00:37:39.885 --> 00:37:41.885
+to the agency.
+
+00:37:41.885 --> 00:37:43.885
+People were really enthusiastic
+
+00:37:43.885 --> 00:37:45.885
+for that, and we get
+
+00:37:45.885 --> 00:37:47.885
+requests for apps on a really
+
+00:37:47.885 --> 00:37:49.885
+regular basis.
+
+00:37:49.885 --> 00:37:51.885
+We had to develop a whole governance
+
+00:37:51.885 --> 00:37:53.885
+process with that.
+
+00:37:53.885 --> 00:37:55.885
+I took care of that with
+
+00:37:55.885 --> 00:37:57.885
+brilliant, brilliant
+
+00:37:57.885 --> 00:37:59.885
+researcher too, and that was
+
+00:37:59.885 --> 00:38:01.885
+kind of our job to
+
+00:38:01.885 --> 00:38:03.885
+put all of that together.
+
+00:38:04.885 --> 00:38:06.885
+Some of those apps are
+
+00:38:06.885 --> 00:38:08.885
+really simple.
+
+00:38:08.885 --> 00:38:10.885
+I try.
+
+00:38:10.885 --> 00:38:12.885
+It's one of those things where
+
+00:38:12.885 --> 00:38:14.885
+through my career, my
+
+00:38:14.885 --> 00:38:16.885
+job description changes
+
+00:38:16.885 --> 00:38:18.885
+little by little where
+
+00:38:18.885 --> 00:38:20.885
+I came from
+
+00:38:20.885 --> 00:38:22.885
+to now
+
+00:38:22.885 --> 00:38:24.885
+also helping
+
+00:38:24.885 --> 00:38:26.885
+with all this app development
+
+00:38:26.885 --> 00:38:28.885
+and other things, and
+
+00:38:28.885 --> 00:38:30.885
+one of the things that I do now is trying
+
+00:38:30.885 --> 00:38:32.885
+to get better, helping people bring
+
+00:38:32.885 --> 00:38:34.885
+their apps in production.
+
+00:38:34.885 --> 00:38:36.885
+We take that into consideration,
+
+00:38:36.885 --> 00:38:38.885
+and each app is going to have
+
+00:38:38.885 --> 00:38:40.885
+different level of
+
+00:38:40.885 --> 00:38:42.885
+scrutiny that it has to go
+
+00:38:42.885 --> 00:38:44.885
+through.
+
+00:38:44.885 --> 00:38:46.885
+That's one of the things where
+
+00:38:46.885 --> 00:38:48.885
+we try to
+
+00:38:48.885 --> 00:38:50.885
+make it possible for the subject
+
+00:38:50.885 --> 00:38:52.885
+matter expert to share
+
+00:38:52.885 --> 00:38:54.885
+their passion with everyone and
+
+00:38:54.885 --> 00:38:56.885
+their data and their conclusions
+
+00:38:56.885 --> 00:38:58.885
+depending on the scale
+
+00:38:58.885 --> 00:39:00.885
+they need to do that at.
+
+00:39:00.885 --> 00:39:02.885
+In terms of
+
+00:39:02.885 --> 00:39:04.885
+like what we use
+
+00:39:04.885 --> 00:39:06.885
+mostly in our team, we're
+
+00:39:06.885 --> 00:39:08.885
+like most of them are more
+
+00:39:08.885 --> 00:39:10.885
+familiar with R.
+
+00:39:10.885 --> 00:39:12.885
+We do have some people that work with
+
+00:39:12.885 --> 00:39:14.885
+SAS, and we're trying to bring
+
+00:39:14.885 --> 00:39:16.885
+to us, to the
+
+00:39:16.885 --> 00:39:18.885
+lights
+
+00:39:18.885 --> 00:39:20.885
+with R,
+
+00:39:20.885 --> 00:39:22.885
+and we do have people that work
+
+00:39:22.885 --> 00:39:24.885
+with Python.
+
+00:39:24.885 --> 00:39:26.885
+That's one of the skills where I'm
+
+00:39:26.885 --> 00:39:28.885
+personally trying to work on it.
+
+00:39:28.885 --> 00:39:30.885
+I'm still trying
+
+00:39:30.885 --> 00:39:32.885
+to get better at developing it.
+
+00:39:32.885 --> 00:39:34.885
+I've heard once that
+
+00:39:34.885 --> 00:39:36.885
+Python is not the best
+
+00:39:36.885 --> 00:39:38.885
+language for any project,
+
+00:39:38.885 --> 00:39:40.885
+but it's the second best language for all
+
+00:39:40.885 --> 00:39:42.885
+of them.
+
+00:39:42.885 --> 00:39:44.885
+Just trying to get better at it.
+
+00:39:44.885 --> 00:39:46.885
+But we do have people that work with Python.
+
+00:39:46.885 --> 00:39:48.885
+Amazing. I didn't
+
+00:39:48.885 --> 00:39:50.885
+even mention SAS in my
+
+00:39:50.885 --> 00:39:52.885
+list of options and flavors,
+
+00:39:52.885 --> 00:39:54.885
+but, of course, SAS is there.
+
+00:39:54.885 --> 00:39:56.885
+Very valid option.
+
+00:39:56.885 --> 00:39:58.885
+Does anybody use SPSS
+
+00:39:58.885 --> 00:40:00.885
+at your office?
+
+00:40:00.885 --> 00:40:02.885
+Hmm.
+
+00:40:02.885 --> 00:40:04.885
+I still shamelessly kind of
+
+00:40:04.885 --> 00:40:06.885
+like SPSS sometimes.
+
+00:40:06.885 --> 00:40:08.885
+We don't have to go there.
+
+00:40:08.885 --> 00:40:10.885
+I've seen some SPSS code
+
+00:40:10.885 --> 00:40:12.885
+a couple of years ago, but
+
+00:40:12.885 --> 00:40:14.885
+it's
+
+00:40:14.885 --> 00:40:16.885
+not that I can think of
+
+00:40:16.885 --> 00:40:18.885
+right now. It's tough.
+
+00:40:18.885 --> 00:40:20.885
+You have to have a license for it, just like SAS, but
+
+00:40:20.885 --> 00:40:22.885
+it's cheaper. It's a cheaper license from IBM.
+
+00:40:22.885 --> 00:40:24.885
+Okay.
+
+00:40:24.885 --> 00:40:26.885
+Let's hop back into the Slido
+
+00:40:26.885 --> 00:40:28.885
+here.
+
+00:40:28.885 --> 00:40:30.885
+I had a question
+
+00:40:30.885 --> 00:40:32.885
+that we already asked
+
+00:40:32.885 --> 00:40:34.885
+some of the challenges
+
+00:40:34.885 --> 00:40:36.885
+questions. There it is. I can highlight it here.
+
+00:40:36.885 --> 00:40:38.885
+It was anonymous. It says,
+
+00:40:38.885 --> 00:40:40.885
+how are ongoing challenges handled
+
+00:40:40.885 --> 00:40:42.885
+with invasive species and habitats?
+
+00:40:42.885 --> 00:40:44.885
+But I really
+
+00:40:44.885 --> 00:40:46.885
+liked the follow-up question they included,
+
+00:40:46.885 --> 00:40:48.885
+which is, which project has been most
+
+00:40:48.885 --> 00:40:50.885
+rewarding for you?
+
+00:40:50.885 --> 00:40:52.885
+That's
+
+00:40:52.885 --> 00:40:54.885
+a great question,
+
+00:40:54.885 --> 00:40:56.885
+and there's no easy answer
+
+00:40:56.885 --> 00:40:58.885
+to it.
+
+00:40:58.885 --> 00:41:00.885
+I am not
+
+00:41:00.885 --> 00:41:02.885
+a specialist when
+
+00:41:02.885 --> 00:41:04.885
+it comes to taking care of it.
+
+00:41:04.885 --> 00:41:06.885
+I have a couple of projects right now
+
+00:41:06.885 --> 00:41:08.885
+where we are
+
+00:41:08.885 --> 00:41:10.885
+helping some of our
+
+00:41:10.885 --> 00:41:12.885
+IPM invasive species,
+
+00:41:12.885 --> 00:41:14.885
+even its plant management
+
+00:41:14.885 --> 00:41:16.885
+group, to kind of
+
+00:41:16.885 --> 00:41:18.885
+develop and bring their
+
+00:41:18.885 --> 00:41:20.885
+apps to life.
+
+00:41:22.885 --> 00:41:24.885
+What I try to do
+
+00:41:24.885 --> 00:41:26.885
+in my job is basically
+
+00:41:26.885 --> 00:41:28.885
+provide the best information possible
+
+00:41:28.885 --> 00:41:30.885
+for other people to be able to
+
+00:41:30.885 --> 00:41:32.885
+make those decisions.
+
+00:41:32.885 --> 00:41:34.885
+I don't have, personally, I could
+
+00:41:34.885 --> 00:41:36.885
+direct contact
+
+00:41:36.885 --> 00:41:38.885
+with the policy element
+
+00:41:38.885 --> 00:41:40.885
+of our agency, the law enforcement.
+
+00:41:40.885 --> 00:41:42.885
+This is kind of
+
+00:41:42.885 --> 00:41:44.885
+removed from what I can do.
+
+00:41:44.885 --> 00:41:46.885
+I'm not the best person to answer that
+
+00:41:46.885 --> 00:41:48.885
+question. I just know that we do a lot of work,
+
+00:41:48.885 --> 00:41:50.885
+and I know the people that work on it,
+
+00:41:50.885 --> 00:41:52.885
+and that we are always passionate
+
+00:41:52.885 --> 00:41:54.885
+to try to make
+
+00:41:54.885 --> 00:41:56.885
+this
+
+00:41:56.885 --> 00:41:58.885
+a better place for the long-term
+
+00:41:58.885 --> 00:42:00.885
+for everyone.
+
+00:42:00.885 --> 00:42:02.885
+When it comes to specific
+
+00:42:02.885 --> 00:42:04.885
+policies, I'm not the best person to answer that.
+
+00:42:04.885 --> 00:42:06.885
+I'm going to take the
+
+00:42:06.885 --> 00:42:08.885
+coward way out on this one and say
+
+00:42:08.885 --> 00:42:10.885
+I would recommend contacting
+
+00:42:10.885 --> 00:42:12.885
+the people that are better suited
+
+00:42:12.885 --> 00:42:14.885
+to give a full and
+
+00:42:14.885 --> 00:42:16.885
+knowledgeable answer to that.
+
+00:42:16.885 --> 00:42:18.885
+There was a second part
+
+00:42:18.885 --> 00:42:20.885
+to that question.
+
+00:42:20.885 --> 00:42:22.885
+The best part. Which project
+
+00:42:22.885 --> 00:42:24.885
+has been most rewarding for you?
+
+00:42:28.885 --> 00:42:30.885
+There are so many of them.
+
+00:42:30.885 --> 00:42:32.885
+That's a good problem to have.
+
+00:42:32.885 --> 00:42:34.885
+Lots to pick from.
+
+00:42:34.885 --> 00:42:36.885
+Oh, my God. I'm going to get
+
+00:42:36.885 --> 00:42:38.885
+some of my coworkers angry if I don't pick their project.
+
+00:42:44.885 --> 00:42:46.885
+One that I really
+
+00:42:46.885 --> 00:42:48.885
+like is a white
+
+00:42:48.885 --> 00:42:50.885
+tailed deer project.
+
+00:42:50.885 --> 00:42:52.885
+Because it was such
+
+00:42:52.885 --> 00:42:54.885
+a complex
+
+00:42:54.885 --> 00:42:56.885
+project,
+
+00:42:56.885 --> 00:42:58.885
+trying to figure out ways of
+
+00:42:58.885 --> 00:43:00.885
+taking
+
+00:43:00.885 --> 00:43:02.885
+really advanced stats
+
+00:43:02.885 --> 00:43:04.885
+aspects,
+
+00:43:04.885 --> 00:43:06.885
+like techniques,
+
+00:43:06.885 --> 00:43:08.885
+to help us optimise
+
+00:43:08.885 --> 00:43:10.885
+the data that we collect
+
+00:43:10.885 --> 00:43:12.885
+so we can get better information about
+
+00:43:12.885 --> 00:43:14.885
+the white-tailed deer population
+
+00:43:14.885 --> 00:43:16.885
+in the context of
+
+00:43:16.885 --> 00:43:18.885
+Florida panther
+
+00:43:18.885 --> 00:43:20.885
+recovery and
+
+00:43:20.885 --> 00:43:22.885
+protection.
+
+00:43:22.885 --> 00:43:24.885
+It was a really interesting project
+
+00:43:24.885 --> 00:43:26.885
+because it is really
+
+00:43:26.885 --> 00:43:28.885
+complex in the sense that
+
+00:43:28.885 --> 00:43:30.885
+we are going to be dealing
+
+00:43:30.885 --> 00:43:32.885
+with multiple trophic levels
+
+00:43:32.885 --> 00:43:34.885
+that are also going to be impacted by
+
+00:43:34.885 --> 00:43:36.885
+management decisions that are not just
+
+00:43:36.885 --> 00:43:38.885
+everywhere, but we have
+
+00:43:38.885 --> 00:43:40.885
+a restoration project that is happening
+
+00:43:40.885 --> 00:43:42.885
+and that is going to change the whole
+
+00:43:42.885 --> 00:43:44.885
+hydrographic landscape
+
+00:43:44.885 --> 00:43:46.885
+that we are going to have
+
+00:43:46.885 --> 00:43:48.885
+in this area. What does it mean for
+
+00:43:48.885 --> 00:43:50.885
+a white-tailed deer?
+
+00:43:50.885 --> 00:43:52.885
+How is that going to impact
+
+00:43:52.885 --> 00:43:54.885
+the Florida panther?
+
+00:43:54.885 --> 00:43:56.885
+Our population was down to a few individuals
+
+00:43:56.885 --> 00:43:58.885
+back in the 90s, and thanks to the work of
+
+00:43:58.885 --> 00:44:00.885
+amazing people here at WWT and others
+
+00:44:00.885 --> 00:44:02.885
+outside of the agency,
+
+00:44:02.885 --> 00:44:04.885
+we have NPS, we have so many people
+
+00:44:04.885 --> 00:44:06.885
+and I'm really sorry
+
+00:44:06.885 --> 00:44:08.885
+for leaving people, but it was such
+
+00:44:08.885 --> 00:44:10.885
+a huge, huge
+
+00:44:10.885 --> 00:44:12.885
+work inter-agency
+
+00:44:12.885 --> 00:44:14.885
+and
+
+00:44:14.885 --> 00:44:16.885
+with people that are passionate, and in general
+
+00:44:16.885 --> 00:44:18.885
+with the public, because trying to educate
+
+00:44:18.885 --> 00:44:20.885
+the public and make sure that they really
+
+00:44:20.885 --> 00:44:22.885
+understand why we're doing that
+
+00:44:22.885 --> 00:44:24.885
+and why it's important.
+
+00:44:24.885 --> 00:44:26.885
+In that regard,
+
+00:44:26.885 --> 00:44:28.885
+the project was really interesting because
+
+00:44:28.885 --> 00:44:30.885
+it just made me
+
+00:44:30.885 --> 00:44:32.885
+think about all those different
+
+00:44:32.885 --> 00:44:34.885
+elements and how they connect.
+
+00:44:34.885 --> 00:44:36.885
+Then,
+
+00:44:36.885 --> 00:44:38.885
+we were able to use that
+
+00:44:38.885 --> 00:44:40.885
+to take
+
+00:44:40.885 --> 00:44:42.885
+into action
+
+00:44:42.885 --> 00:44:44.885
+some of
+
+00:44:44.885 --> 00:44:46.885
+those information that
+
+00:44:46.885 --> 00:44:48.885
+we learned.
+
+00:44:48.885 --> 00:44:50.885
+Something as simple as,
+
+00:44:50.885 --> 00:44:52.885
+this is how many cameras we need to put out there
+
+00:44:52.885 --> 00:44:54.885
+for as long.
+
+00:44:54.885 --> 00:44:56.885
+We don't need to do it as much
+
+00:44:56.885 --> 00:44:58.885
+there because we have some
+
+00:44:58.885 --> 00:45:00.885
+information that we're getting from this other
+
+00:45:00.885 --> 00:45:02.885
+option that we can use to supplement
+
+00:45:02.885 --> 00:45:04.885
+that using Bayesian statistics.
+
+00:45:04.885 --> 00:45:06.885
+People, if you can,
+
+00:45:06.885 --> 00:45:08.885
+use informative priors.
+
+00:45:08.885 --> 00:45:10.885
+That's a useful tool to have.
+
+00:45:10.885 --> 00:45:12.885
+We have that, use it.
+
+00:45:14.885 --> 00:45:16.885
+That was, in that regard, really
+
+00:45:16.885 --> 00:45:18.885
+rewarding because I had
+
+00:45:18.885 --> 00:45:20.885
+the chance to work with so many different people
+
+00:45:20.885 --> 00:45:22.885
+and this project that you're interested in has
+
+00:45:22.885 --> 00:45:24.885
+implications in
+
+00:45:24.885 --> 00:45:26.885
+my day-to-day work.
+
+00:45:26.885 --> 00:45:28.885
+That was
+
+00:45:28.885 --> 00:45:30.885
+one of the big ones.
+
+00:45:30.885 --> 00:45:32.885
+I love that
+
+00:45:32.885 --> 00:45:34.885
+part of the rewarding part was
+
+00:45:34.885 --> 00:45:36.885
+getting to work with so many good people.
+
+00:45:36.885 --> 00:45:38.885
+It's not always about
+
+00:45:38.885 --> 00:45:40.885
+the impact that your project is making.
+
+00:45:40.885 --> 00:45:42.885
+It's also about the impact that all of
+
+00:45:42.885 --> 00:45:44.885
+these human beings are making on each other.
+
+00:45:44.885 --> 00:45:46.885
+I love it. Thank you
+
+00:45:46.885 --> 00:45:48.885
+so much for that great question, Anonymous Asker.
+
+00:45:50.885 --> 00:45:52.885
+What are we going to do with our last eight minutes?
+
+00:45:52.885 --> 00:45:54.885
+I would love to ask
+
+00:45:54.885 --> 00:45:56.885
+Florent a question
+
+00:45:56.885 --> 00:45:58.885
+we always ask, which is, do you have a
+
+00:45:58.885 --> 00:46:00.885
+piece of career advice for people?
+
+00:46:00.885 --> 00:46:02.885
+Something you wish you knew when you were
+
+00:46:02.885 --> 00:46:04.885
+getting started or something that might help
+
+00:46:04.885 --> 00:46:06.885
+somebody else entering maybe the Biostats
+
+00:46:06.885 --> 00:46:08.885
+space?
+
+00:46:08.885 --> 00:46:10.885
+It's a loaded question
+
+00:46:10.885 --> 00:46:12.885
+because it's
+
+00:46:12.885 --> 00:46:14.885
+one of those things where
+
+00:46:14.885 --> 00:46:16.885
+I'm happy
+
+00:46:16.885 --> 00:46:18.885
+where I'm at and
+
+00:46:18.885 --> 00:46:20.885
+I can tell you about
+
+00:46:20.885 --> 00:46:22.885
+the things that have
+
+00:46:22.885 --> 00:46:24.885
+happened to me and the chances that it
+
+00:46:24.885 --> 00:46:26.885
+took and that brought
+
+00:46:26.885 --> 00:46:28.885
+me there, but I can't tell you
+
+00:46:28.885 --> 00:46:30.885
+the path that I missed and I'm not aware
+
+00:46:30.885 --> 00:46:32.885
+of. That's why
+
+00:46:32.885 --> 00:46:34.885
+I mean by it's a loaded question.
+
+00:46:34.885 --> 00:46:36.885
+Oftentimes
+
+00:46:36.885 --> 00:46:38.885
+if you want to get to
+
+00:46:38.885 --> 00:46:40.885
+a place, it's more informative to look
+
+00:46:40.885 --> 00:46:42.885
+at the path
+
+00:46:42.885 --> 00:46:44.885
+that didn't take you there or didn't take people
+
+00:46:44.885 --> 00:46:46.885
+there. With that being
+
+00:46:46.885 --> 00:46:48.885
+said,
+
+00:46:48.885 --> 00:46:50.885
+I was given an
+
+00:46:50.885 --> 00:46:52.885
+advice a long time
+
+00:46:52.885 --> 00:46:54.885
+ago where
+
+00:46:54.885 --> 00:46:56.885
+I was told
+
+00:46:56.885 --> 00:46:58.885
+don't say that you want to
+
+00:46:58.885 --> 00:47:00.885
+work with dolphins. Don't say
+
+00:47:00.885 --> 00:47:02.885
+that you want to work with bears.
+
+00:47:02.885 --> 00:47:04.885
+Think about the actual scientific
+
+00:47:04.885 --> 00:47:06.885
+question that you want to ask.
+
+00:47:06.885 --> 00:47:08.885
+From there,
+
+00:47:08.885 --> 00:47:10.885
+if it so happens that it's on
+
+00:47:10.885 --> 00:47:12.885
+dolphins,
+
+00:47:12.885 --> 00:47:14.885
+that's what you need to be working with.
+
+00:47:14.885 --> 00:47:16.885
+That was really helpful for me to
+
+00:47:16.885 --> 00:47:18.885
+figure out, yeah, what I'm trying to figure out is
+
+00:47:18.885 --> 00:47:20.885
+understanding the
+
+00:47:20.885 --> 00:47:22.885
+scientific aspect
+
+00:47:22.885 --> 00:47:24.885
+of it.
+
+00:47:24.885 --> 00:47:26.885
+To take a step back,
+
+00:47:26.885 --> 00:47:28.885
+there are
+
+00:47:28.885 --> 00:47:30.885
+two elements that I think are really important.
+
+00:47:30.885 --> 00:47:32.885
+There is this passion
+
+00:47:32.885 --> 00:47:34.885
+that we all have, all of us.
+
+00:47:34.885 --> 00:47:36.885
+I know that
+
+00:47:36.885 --> 00:47:38.885
+in the data science
+
+00:47:38.885 --> 00:47:40.885
+Hangout community that we have here
+
+00:47:40.885 --> 00:47:42.885
+that you guys are fostering, we are all
+
+00:47:42.885 --> 00:47:44.885
+really passionate and we all
+
+00:47:44.885 --> 00:47:46.885
+care. Take that passion
+
+00:47:46.885 --> 00:47:48.885
+with you.
+
+00:47:48.885 --> 00:47:50.885
+There are times that are going to be hard.
+
+00:47:50.885 --> 00:47:52.885
+There are times when you want to give up.
+
+00:47:52.885 --> 00:47:54.885
+Just remember why you're doing
+
+00:47:54.885 --> 00:47:56.885
+all of that.
+
+00:47:56.885 --> 00:47:58.885
+Just keep that drive.
+
+00:47:58.885 --> 00:48:00.885
+If you have a goal, figure out how
+
+00:48:00.885 --> 00:48:02.885
+to get there. Just look at the people that are doing
+
+00:48:02.885 --> 00:48:04.885
+that. Contact them.
+
+00:48:04.885 --> 00:48:06.885
+We all love talking about
+
+00:48:06.885 --> 00:48:08.885
+what we're doing
+
+00:48:08.885 --> 00:48:10.885
+and sharing. If you have
+
+00:48:10.885 --> 00:48:12.885
+some people that are doing what you want to do,
+
+00:48:12.885 --> 00:48:14.885
+shoot them an email.
+
+00:48:14.885 --> 00:48:16.885
+I'm sure they'll be more than happy to answer
+
+00:48:16.885 --> 00:48:18.885
+you and say, hey, this is what I've done. Maybe it doesn't work
+
+00:48:18.885 --> 00:48:20.885
+for you, maybe not, but at least you have this information.
+
+00:48:20.885 --> 00:48:22.885
+That's the first thing. Stay focused.
+
+00:48:22.885 --> 00:48:24.885
+Second
+
+00:48:24.885 --> 00:48:26.885
+piece of advice, though, is
+
+00:48:26.885 --> 00:48:28.885
+don't
+
+00:48:28.885 --> 00:48:30.885
+miss opportunities.
+
+00:48:30.885 --> 00:48:32.885
+Be open to also other ideas.
+
+00:48:32.885 --> 00:48:34.885
+I
+
+00:48:34.885 --> 00:48:36.885
+wanted to be an autologist when I
+
+00:48:36.885 --> 00:48:38.885
+grew up. Then I switched to
+
+00:48:38.885 --> 00:48:40.885
+a vet. That didn't work
+
+00:48:40.885 --> 00:48:42.885
+for me in terms of
+
+00:48:42.885 --> 00:48:44.885
+that just didn't happen.
+
+00:48:44.885 --> 00:48:46.885
+What can I do then? I still love animals.
+
+00:48:46.885 --> 00:48:48.885
+I want to be a bivouac ecologist.
+
+00:48:48.885 --> 00:48:50.885
+Okay, perfect. Now I can do that.
+
+00:48:50.885 --> 00:48:52.885
+I also love math. I have those people
+
+00:48:52.885 --> 00:48:54.885
+that want to talk to me about
+
+00:48:54.885 --> 00:48:56.885
+stats. How can I integrate that?
+
+00:48:56.885 --> 00:48:58.885
+If you have
+
+00:48:58.885 --> 00:49:00.885
+something you really want to do, try and
+
+00:49:00.885 --> 00:49:02.885
+go for it. If that
+
+00:49:02.885 --> 00:49:04.885
+doesn't pan out the way
+
+00:49:04.885 --> 00:49:06.885
+you want to, there are other ways
+
+00:49:06.885 --> 00:49:08.885
+to get there,
+
+00:49:08.885 --> 00:49:10.885
+where you can be happy with what you're doing.
+
+00:49:10.885 --> 00:49:12.885
+I know
+
+00:49:12.885 --> 00:49:14.885
+that for me,
+
+00:49:14.885 --> 00:49:16.885
+going
+
+00:49:16.885 --> 00:49:18.885
+through the academic setting,
+
+00:49:18.885 --> 00:49:20.885
+becoming
+
+00:49:20.885 --> 00:49:22.885
+a professor was
+
+00:49:22.885 --> 00:49:24.885
+always, oh, that's what I
+
+00:49:24.885 --> 00:49:26.885
+have to do, because that's what everybody
+
+00:49:26.885 --> 00:49:28.885
+else that I'm talking with is
+
+00:49:28.885 --> 00:49:30.885
+doing.
+
+00:49:30.885 --> 00:49:32.885
+At some point, I realized, well,
+
+00:49:32.885 --> 00:49:34.885
+actually, that's not exactly what I want to do.
+
+00:49:34.885 --> 00:49:36.885
+Then you open the door, and
+
+00:49:36.885 --> 00:49:38.885
+oh, now I'm here working in the public
+
+00:49:38.885 --> 00:49:40.885
+sector, and I'm so happy doing that.
+
+00:49:42.885 --> 00:49:44.885
+It is
+
+00:49:44.885 --> 00:49:46.885
+important to just keep the energy.
+
+00:49:46.885 --> 00:49:48.885
+Use your passion to stay focused,
+
+00:49:48.885 --> 00:49:50.885
+and have the energy to pursue
+
+00:49:50.885 --> 00:49:52.885
+your passions.
+
+00:49:54.885 --> 00:49:56.885
+Keep in mind that
+
+00:49:56.885 --> 00:49:58.885
+we are a large community
+
+00:49:58.885 --> 00:50:00.885
+working on so many different topics,
+
+00:50:00.885 --> 00:50:02.885
+and we are all
+
+00:50:02.885 --> 00:50:04.885
+here to help each other.
+
+00:50:06.885 --> 00:50:08.885
+If you try to look at the people in the chat
+
+00:50:08.885 --> 00:50:10.885
+right now, we are all coming from different
+
+00:50:10.885 --> 00:50:12.885
+backgrounds and work on different
+
+00:50:12.885 --> 00:50:14.885
+things, and we
+
+00:50:14.885 --> 00:50:16.885
+all took a different path to get there.
+
+00:50:16.885 --> 00:50:18.885
+Sometimes, it's a
+
+00:50:18.885 --> 00:50:20.885
+straightforward path, and people say, I want
+
+00:50:20.885 --> 00:50:22.885
+to do this, I want to do that.
+
+00:50:22.885 --> 00:50:24.885
+Other times, it's
+
+00:50:24.885 --> 00:50:26.885
+bumpier. I think
+
+00:50:26.885 --> 00:50:28.885
+that's important to just not close the
+
+00:50:28.885 --> 00:50:30.885
+door in that regard.
+
+00:50:30.885 --> 00:50:32.885
+Sometimes, you can go through
+
+00:50:32.885 --> 00:50:34.885
+a bumpy path, but I
+
+00:50:34.885 --> 00:50:36.885
+think with the passion that we all have, we
+
+00:50:36.885 --> 00:50:38.885
+can get through it.
+
+00:50:38.885 --> 00:50:40.885
+That's wonderful. Thank you so much for
+
+00:50:40.885 --> 00:50:42.885
+sharing. I think that I am looking at the faces
+
+00:50:42.885 --> 00:50:44.885
+of my grid, and I know some of
+
+00:50:44.885 --> 00:50:46.885
+these bumpy paths, and the bumps are the
+
+00:50:46.885 --> 00:50:48.885
+best part. When I talk to
+
+00:50:48.885 --> 00:50:50.885
+them and hear their stories,
+
+00:50:50.885 --> 00:50:52.885
+the parts that seem squiggly
+
+00:50:52.885 --> 00:50:54.885
+are where they gained a lot of their
+
+00:50:54.885 --> 00:50:56.885
+skills
+
+00:50:56.885 --> 00:50:58.885
+and passion
+
+00:50:58.885 --> 00:51:00.885
+and picked up interesting stuff
+
+00:51:00.885 --> 00:51:02.885
+along the way. Well, I have a
+
+00:51:02.885 --> 00:51:04.885
+question.
+
+00:51:04.885 --> 00:51:06.885
+Just one in that realm.
+
+00:51:06.885 --> 00:51:08.885
+A quote that I keep with me
+
+00:51:08.885 --> 00:51:10.885
+all the time is
+
+00:51:10.885 --> 00:51:12.885
+a ship is safe
+
+00:51:12.885 --> 00:51:14.885
+in a harbor, but that's
+
+00:51:14.885 --> 00:51:16.885
+not what ships are made for.
+
+00:51:16.885 --> 00:51:18.885
+That's true, yeah.
+
+00:51:18.885 --> 00:51:20.885
+That has really helped me.
+
+00:51:20.885 --> 00:51:22.885
+Go out there, explore, because
+
+00:51:22.885 --> 00:51:24.885
+that's what we're made for.
+
+00:51:24.885 --> 00:51:26.885
+What's that saying?
+
+00:51:26.885 --> 00:51:28.885
+Smooth seas never meet a
+
+00:51:28.885 --> 00:51:30.885
+skilled sailor? Somebody in the
+
+00:51:30.885 --> 00:51:32.885
+chat can help me with that one.
+
+00:51:32.885 --> 00:51:34.885
+Okay.
+
+00:51:34.885 --> 00:51:36.885
+I saw a question from Gregory,
+
+00:51:36.885 --> 00:51:38.885
+and I like it so much, I want to just
+
+00:51:38.885 --> 00:51:40.885
+pop it in here right at the end, when we
+
+00:51:40.885 --> 00:51:42.885
+only have two minutes left.
+
+00:51:42.885 --> 00:51:44.885
+Gregory asks, if you could wave
+
+00:51:44.885 --> 00:51:46.885
+a magic wand and solve a
+
+00:51:46.885 --> 00:51:48.885
+day-to-day problem, what problem
+
+00:51:48.885 --> 00:51:50.885
+would you solve?
+
+00:51:52.885 --> 00:51:54.885
+Dealing with dates.
+
+00:51:54.885 --> 00:51:56.885
+Oh, my gosh.
+
+00:51:56.885 --> 00:51:58.885
+Good choice.
+
+00:51:58.885 --> 00:52:00.885
+I mean,
+
+00:52:00.885 --> 00:52:02.885
+we do have this magic wand with
+
+00:52:02.885 --> 00:52:04.885
+dates. It's an amazing package.
+
+00:52:04.885 --> 00:52:06.885
+I love it.
+
+00:52:06.885 --> 00:52:08.885
+That has helped me a lot.
+
+00:52:08.885 --> 00:52:10.885
+This is one of the most frustrating things
+
+00:52:10.885 --> 00:52:12.885
+in my day-to-day basis, dealing with dates.
+
+00:52:12.885 --> 00:52:14.885
+Going
+
+00:52:14.885 --> 00:52:16.885
+from that, and
+
+00:52:16.885 --> 00:52:18.885
+do I have data in Excel?
+
+00:52:18.885 --> 00:52:20.885
+You open Excel and just mess with everything,
+
+00:52:20.885 --> 00:52:22.885
+then you bring it back in R,
+
+00:52:22.885 --> 00:52:24.885
+and then you have to deal.
+
+00:52:24.885 --> 00:52:26.885
+Yes, that's a big
+
+00:52:26.885 --> 00:52:28.885
+one. If you could just make
+
+00:52:28.885 --> 00:52:30.885
+dealing with dates even easier, that would be that one.
+
+00:52:30.885 --> 00:52:32.885
+I've never seen
+
+00:52:32.885 --> 00:52:34.885
+the chat explode
+
+00:52:34.885 --> 00:52:36.885
+so thoroughly and quickly as
+
+00:52:36.885 --> 00:52:38.885
+everybody agreeing that dates and times are
+
+00:52:38.885 --> 00:52:40.885
+the absolute worst problem
+
+00:52:40.885 --> 00:52:42.885
+in data. Yes, we love
+
+00:52:42.885 --> 00:52:44.885
+LuberDate. We love all of the packages,
+
+00:52:44.885 --> 00:52:46.885
+including wonderful
+
+00:52:46.885 --> 00:52:48.885
+libraries in Python to deal with dates and times
+
+00:52:48.885 --> 00:52:50.885
+too, but oh, my gosh.
+
+00:52:50.885 --> 00:52:52.885
+I will say
+
+00:52:52.885 --> 00:52:54.885
+date and time problems
+
+00:52:54.885 --> 00:52:56.885
+will keep me
+
+00:52:56.885 --> 00:52:58.885
+from enjoying a project, for
+
+00:52:58.885 --> 00:53:00.885
+sure. Something that I would otherwise enjoy
+
+00:53:00.885 --> 00:53:02.885
+will make me
+
+00:53:02.885 --> 00:53:04.885
+miserable. I see
+
+00:53:04.885 --> 00:53:06.885
+some other public sector people
+
+00:53:06.885 --> 00:53:08.885
+in the chat as well, and
+
+00:53:08.885 --> 00:53:10.885
+lots of people who came from academia
+
+00:53:10.885 --> 00:53:12.885
+to public sector.
+
+00:53:12.885 --> 00:53:14.885
+I see a question from Paul
+
+00:53:14.885 --> 00:53:16.885
+that I wish we had gotten to today.
+
+00:53:16.885 --> 00:53:18.885
+Paul, I bet this is Paul Lloyd, who
+
+00:53:18.885 --> 00:53:20.885
+said he can't do video right now.
+
+00:53:20.885 --> 00:53:22.885
+We will have to get some public sector
+
+00:53:22.885 --> 00:53:24.885
+people together and have a public sector
+
+00:53:24.885 --> 00:53:26.885
+day. I think that would be so
+
+00:53:26.885 --> 00:53:28.885
+much fun.
+
+00:53:28.885 --> 00:53:30.885
+Thank you, Paul. This has been so much
+
+00:53:30.885 --> 00:53:32.885
+fun. Thank you for hanging
+
+00:53:32.885 --> 00:53:34.885
+out with us. Florent, I hope
+
+00:53:34.885 --> 00:53:36.885
+you had a wonderful time. Thank you for sharing
+
+00:53:36.885 --> 00:53:38.885
+all of your wisdom with us.
+
+00:53:38.885 --> 00:53:40.885
+Well, thank you for having me.
+
+00:53:40.885 --> 00:53:42.885
+It was great to have the chance to just
+
+00:53:42.885 --> 00:53:44.885
+share with all of you, like
+
+00:53:44.885 --> 00:53:46.885
+seeing you every week.
+
+00:53:46.885 --> 00:53:48.885
+That was nice to be part of this.
+
+00:53:48.885 --> 00:53:50.885
+If anybody in the chat has any questions,
+
+00:53:50.885 --> 00:53:52.885
+feel free to just shoot me an email or send me
+
+00:53:52.885 --> 00:53:54.885
+a message on Discord. I'm not super active on Discord,
+
+00:53:54.885 --> 00:53:56.885
+but I will probably get your message.
+
+00:53:56.885 --> 00:53:58.885
+Thank you to the team for having me.
+
+00:53:58.885 --> 00:54:00.885
+Wonderful. Well, Florent, I'm putting
+
+00:54:00.885 --> 00:54:02.885
+your contact information
+
+00:54:02.885 --> 00:54:04.885
+in the chat for everybody that you
+
+00:54:04.885 --> 00:54:06.885
+gave to us. There's
+
+00:54:06.885 --> 00:54:08.885
+his LinkedIn, his GitHub, his
+
+00:54:08.885 --> 00:54:10.885
+website, which is PreludeInR. If anyone
+
+00:54:10.885 --> 00:54:12.885
+has seen PreludeInR, that is Florent's work.
+
+00:54:12.885 --> 00:54:14.885
+Thank you so much, everybody.
+
+00:54:14.885 --> 00:54:16.885
+This was so much fun. I
+
+00:54:16.885 --> 00:54:18.885
+hope that you will come join us
+
+00:54:18.885 --> 00:54:20.885
+on Tuesday at the Data
+
+00:54:20.885 --> 00:54:22.885
+Science Lab,
+
+00:54:22.885 --> 00:54:24.885
+where I think we're going to be joined
+
+00:54:24.885 --> 00:54:26.885
+by
+
+00:54:26.885 --> 00:54:28.885
+Frank Hull, who has been
+
+00:54:28.885 --> 00:54:30.885
+on the Data Science Hangout before.
+
+00:54:30.885 --> 00:54:32.885
+He's going to be talking about
+
+00:54:32.885 --> 00:54:34.885
+well, he's going to be walking through building
+
+00:54:34.885 --> 00:54:36.885
+a modeling assistant in Elmer.
+
+00:54:36.885 --> 00:54:38.885
+He's also going to be talking a little bit about
+
+00:54:38.885 --> 00:54:40.885
+TabPFN, so some tabular
+
+00:54:40.885 --> 00:54:42.885
+model stuff. Very, very
+
+00:54:42.885 --> 00:54:44.885
+exciting, very fun.
+
+00:54:44.885 --> 00:54:46.885
+Please come join us and hang out.
+
+00:54:46.885 --> 00:54:48.885
+All right, everybody. Oh, if you want to join
+
+00:54:48.885 --> 00:54:50.885
+the lab, Rachel put it in the chat,
+
+00:54:50.885 --> 00:54:52.885
+pos.it.dslab. It's
+
+00:54:52.885 --> 00:54:54.885
+Tuesdays at this same time.
+
+00:54:54.885 --> 00:54:56.885
+It's the Tuesday version, where we share
+
+00:54:56.885 --> 00:54:58.885
+screens and do technical stuff.
+
+00:54:58.885 --> 00:55:00.885
+All right, everybody. If you want to
+
+00:55:00.885 --> 00:55:02.885
+grab the chat, you can click the top
+
+00:55:02.885 --> 00:55:04.885
+three dots or top
+
+00:55:04.885 --> 00:55:06.885
+right corner three dots,
+
+00:55:06.885 --> 00:55:08.885
+unless Zoom has changed for you or you're in
+
+00:55:08.885 --> 00:55:10.885
+the browser, and click Save
+
+00:55:10.885 --> 00:55:12.885
+Chat. Then we will see you in the Discord
+
+00:55:12.885 --> 00:55:14.885
+server, where we also attempt
+
+00:55:14.885 --> 00:55:16.885
+to put the chat
+
+00:55:16.885 --> 00:55:18.885
+if we can.
+
+00:55:18.885 --> 00:55:20.885
+Oh, yes, and the time is changing
+
+00:55:20.885 --> 00:55:22.885
+next week.
+
+00:55:22.885 --> 00:55:24.885
+We just talked about how much we
+
+00:55:24.885 --> 00:55:26.885
+hate dates and times, but for
+
+00:55:26.885 --> 00:55:28.885
+people who...
+
+00:55:28.885 --> 00:55:30.885
+It will be 12 to 1
+
+00:55:30.885 --> 00:55:32.885
+Eastern time,
+
+00:55:32.885 --> 00:55:34.885
+so just a heads up for people who
+
+00:55:34.885 --> 00:55:36.885
+are observing daylight savings time.
+
+00:55:36.885 --> 00:55:38.885
+Yes.
+
+00:55:38.885 --> 00:55:40.885
+Okay, yes. In the U.S., on
+
+00:55:40.885 --> 00:55:42.885
+Sunday, November 1st,
+
+00:55:42.885 --> 00:55:44.885
+we are going to fall back
+
+00:55:44.885 --> 00:55:46.885
+an hour from
+
+00:55:46.885 --> 00:55:48.885
+2 a.m. to 1 a.m.
+
+00:55:48.885 --> 00:55:50.885
+If you have any questions,
+
+00:55:50.885 --> 00:55:52.885
+I'm going to go on to the Discord.
+
+00:55:52.885 --> 00:55:54.885
+I'm going to try very hard to go on to the Discord
+
+00:55:54.885 --> 00:55:56.885
+and change the little event time
+
+00:55:56.885 --> 00:55:58.885
+in Discord so that it will match,
+
+00:55:58.885 --> 00:56:00.885
+because it never does. It doesn't update for me,
+
+00:56:00.885 --> 00:56:02.885
+unfortunately. I'm so sorry.
+
+00:56:02.885 --> 00:56:04.885
+But, yes.
+
+00:56:04.885 --> 00:56:06.885
+Reach out anywhere in the world
+
+00:56:06.885 --> 00:56:08.885
+if you're in the U.S.
+
+00:56:08.885 --> 00:56:10.885
+If you're in the U.S.
+
+00:56:10.885 --> 00:56:12.885
+If you're in the U.S.
+
+00:56:12.885 --> 00:56:14.885
+If you're in the U.S.
+
+00:56:14.885 --> 00:56:16.885
+If you're in the U.S.
+
+00:56:16.885 --> 00:56:18.885
+But, yes. Reach out anywhere
+
+00:56:18.885 --> 00:56:20.885
+on LinkedIn if you're worried
+
+00:56:20.885 --> 00:56:22.885
+about your timing stuff.
+
+00:56:22.885 --> 00:56:24.885
+We will try to hook you up with a good
+
+00:56:24.885 --> 00:56:26.885
+time, okay? All right, everybody.
+
+00:56:26.885 --> 00:56:28.885
+Super fitting with the conversation
+
+00:56:28.885 --> 00:56:30.885
+in the chat. Thank you so much, Florin.
+
+00:56:30.885 --> 00:56:32.885
+It was so nice to see you again, and great to get
+
+00:56:32.885 --> 00:56:34.885
+to meet you at Conf, too.
+
+00:56:34.885 --> 00:56:36.885
+Yes, you're welcome. Thank you so much.
+
+00:56:36.885 --> 00:56:38.885
+Bye. Happy Halloween, everybody.
