@@ -256,7 +256,9 @@ class CircuitBreaker:
             self.consecutive = 0
 
 
-def build_ytdlp_cmd(url: str, dest_dir: Path, browser: str | None, cookies: Path | None) -> list[str]:
+def build_ytdlp_cmd(
+    url: str, dest_dir: Path, browser: str | None, cookies: Path | None, verbose: bool = False
+) -> list[str]:
     cmd = [
         sys.executable,
         "-m",
@@ -269,7 +271,8 @@ def build_ytdlp_cmd(url: str, dest_dir: Path, browser: str | None, cookies: Path
         str(dest_dir / "audio.%(ext)s"),
         "--no-playlist",
         "--no-progress",
-        "--quiet",
+        # --verbose shows the JS runtime, PO token providers, and clients used.
+        "--verbose" if verbose else "--quiet",
     ]
     if browser:
         cmd += ["--cookies-from-browser", browser]
@@ -295,7 +298,7 @@ def download_audio(
     run: Callable[..., subprocess.CompletedProcess],
     label: str,
 ) -> Path:
-    cmd = build_ytdlp_cmd(url, dest_dir, browser, cookies)
+    cmd = build_ytdlp_cmd(url, dest_dir, browser, cookies, verbose=log.isEnabledFor(logging.DEBUG))
     log.debug("%s: running %s", label, " ".join(cmd))
     result = run(cmd, capture_output=True, text=True)
     output = "\n".join(s for s in (result.stderr, result.stdout) if s and s.strip())

@@ -133,7 +133,10 @@ def test_build_ytdlp_cmd(tmp_path):
     assert cmd[cmd.index("--cookies-from-browser") + 1] == "chrome"
     assert cmd[cmd.index("--cookies") + 1] == "c.txt"
     assert "--no-warnings" not in cmd  # warnings explain failures
+    assert "--quiet" in cmd and "--verbose" not in cmd
     assert cmd[-1] == URL_A
+    verbose = t.build_ytdlp_cmd(URL_A, tmp_path, None, None, verbose=True)
+    assert "--verbose" in verbose and "--quiet" not in verbose
 
 
 class TestChunking:
