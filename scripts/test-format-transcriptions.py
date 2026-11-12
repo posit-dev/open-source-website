@@ -207,6 +207,19 @@ class TestRepairTimestamps:
         out, _ = f.repair_timestamps(html, cues)
         assert re.findall(r'data-t="(\d+)"', out) == ["0", "10", "20"]
 
+    def test_short_anchor_does_not_jump_far_ahead(self):
+        # "For us," occurs again much later; matching it there would leave
+        # every following anchor behind the search position.
+        filler = [f"filler sentence number {i} goes here." for i in range(30)]
+        cues = cues_from("Something else entirely.", "and then more words.", *filler, "For us, it was later.")
+        html = (
+            '<p><a data-t="0">For us,</a> <a data-t="0">Something else entirely.</a> '
+            '<a data-t="3">and then more words.</a></p>'
+        )
+        out, stats = f.repair_timestamps(html, cues)
+        assert re.findall(r'data-t="(\d+)"', out) == ["0", "0", "10"]
+        assert stats["unmatched"] == 1
+
     def test_blockquote_reuses_prose_value(self):
         html = (
             '<p><a data-t="0">Hello everyone and welcome.</a> <a data-t="12">And then about Shiny.</a></p>\n\n'

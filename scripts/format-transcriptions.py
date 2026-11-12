@@ -382,6 +382,10 @@ def validate_html(html: str, cues: list[videolib.Cue], duration: int) -> dict[st
 
 # How far ahead (in words) to look for the next anchor's text in the VTT.
 REPAIR_WINDOW_WORDS = 800
+# Anchors shorter than REPAIR_KEY_WORDS ("For us,", "I came from") occur all
+# over a transcript, so they may only match this close to the previous one;
+# otherwise one false match far ahead derails all the anchors after it.
+REPAIR_SHORT_WINDOW_WORDS = 40
 # Words of an anchor used to find it in the VTT.
 REPAIR_KEY_WORDS = 4
 
@@ -410,7 +414,8 @@ def repair_timestamps(html: str, cues: list[videolib.Cue]) -> tuple[str, dict[st
     vocab = [w for w, _ in words]
 
     def find(key: list[str], pos: int) -> int | None:
-        limit = min(len(vocab) - len(key) + 1, pos + REPAIR_WINDOW_WORDS)
+        window = REPAIR_WINDOW_WORDS if len(key) >= REPAIR_KEY_WORDS else REPAIR_SHORT_WINDOW_WORDS
+        limit = min(len(vocab) - len(key) + 1, pos + window)
         for i in range(pos, max(pos, limit)):
             if vocab[i] == key[0] and vocab[i : i + len(key)] == key:
                 return i
