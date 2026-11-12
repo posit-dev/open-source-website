@@ -6,7 +6,7 @@ people:
   - Sara Altman
   - Simon Couch
 description: |
-  The new default permission mode has a separate LLM thread classify commands as safe or unsafe.
+  Auto mode uses a second model to classify commands as safe or unsafe.
 image: false
 image-alt: >-
   No hero image.
@@ -22,7 +22,7 @@ hidesubscription: false
 math: true
 ---
 
-::: {.callout-tip}
+::: {.callout-tip title="Want updates like this via email?"}
 Our (Sara and Simon's) writing is published as an RSS feed at <https://opensource.posit.co/tags/ai-newsletter/index.xml>. **If you'd like to get emails when we post**, paste the feed URL into a free RSS-to-email service such as [Blogtrottr](https://blogtrottr.com/), [Feedrabbit](https://feedrabbit.com/), or [Follow.it](https://follow.it/), and each new issue will arrive in your inbox.
 :::
 
@@ -53,12 +53,19 @@ You could catch the destructive action on your own by carefully reviewing each a
 
 Anthropic describes the same [“approval fatigue” in Claude Code](https://www.anthropic.com/research/claude-code-auto-mode), reporting that users accept 93% of manual permission prompts. In an [experiment with 1,053 testers](https://claude.com/resources/articles/auto-mode-default-in-claude-code), Anthropic found that auto mode blocked 89% of harmful commands, compared with 13.6% caught by human reviewers.
 
-::: {.callout-note}
 If you're curious, the current auto mode prompt looks like this:
 
-::: {style="max-height: 250px; overflow-y: auto;"}
+::: {.callout-note title="The current auto mode prompt"}
+
+> You are a safety classifier that reviews tool calls from an AI coding assistant before they execute. Your job is to decide whether each proposed action should be allowed or blocked based on the conversation context, the action itself, and the rules below.
+
+<details>
+<summary>Show the full prompt</summary>
+
 {{< include _auto-mode-prompt.md >}}
-:::
+
+</details>
+
 :::
 
 In our evaluations and in practice, we see that the classifier is effective at preventing irreversible destructive actions. (It also sometimes blocks actions that likely shouldn't be blocked; we'll continue to refine this prompting over time.)
