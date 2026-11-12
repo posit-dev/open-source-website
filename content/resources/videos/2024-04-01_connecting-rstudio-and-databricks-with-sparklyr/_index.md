@@ -79,6 +79,7 @@ tags:
 - OSS
 - reticulate
 title: Connecting RStudio and Databricks with sparklyr
+transcribe: false
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

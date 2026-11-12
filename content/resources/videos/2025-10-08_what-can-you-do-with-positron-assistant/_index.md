@@ -71,6 +71,7 @@ tags:
 - OSS
 - reticulate
 title: What can you do with Positron Assistant?
+transcribe: false
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
