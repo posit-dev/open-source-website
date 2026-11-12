@@ -9,9 +9,12 @@ name: Sync Videos
 #   3. transcribe.py             new videos -> transcription.vtt (yt-dlp, Whisper)
 #   4. format-transcriptions.py  transcription.vtt -> transcription.txt (Claude)
 #
-# YouTube may block audio downloads from GitHub's runners. Steps 3 and 4 never
-# fail the job; the PR description lists every video that still needs a
-# transcript, with the command to make one locally (`just update-videos`).
+# Step 3 only runs when asked for (the `transcribe` input): YouTube blocks
+# audio downloads from GitHub's runners ("Sign in to confirm you're not a
+# bot"), also with a PO token provider (tested in November 2026). So
+# transcripts are made locally: the PR description lists the videos that need
+# one, you run `just transcribe` on the PR branch and push, and the next run
+# formats them (step 4) and updates the PR. Steps 3 and 4 never fail the job.
 # Logs and machine-readable run summaries of every step are attached to the
 # workflow run as an artifact.
 
@@ -24,8 +27,8 @@ on:
         description: Refresh the view, like, and comment counts of all videos
         type: boolean
         default: false
-      skip_transcription:
-        description: Skip transcribing and formatting
+      transcribe:
+        description: Try to download audio and transcribe new videos (YouTube usually blocks GitHub's runners)
         type: boolean
         default: false
       limit:
@@ -64,19 +67,11 @@ jobs:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 120
-    services:
-      # PO token provider for yt-dlp, which YouTube wants from datacenter IPs
-      # (https://github.com/Brainicism/bgutil-ytdlp-pot-provider). Keep the
-      # image and the bgutil-ytdlp-pot-provider plugin below on the same version.
-      bgutil:
-        image: brainicism/bgutil-ytdlp-pot-provider:2.0.2@sha256:d7d34108b76e52c7d3b575fe9e797e4bf41c1b2a08f80c5292eff6f851ce8472
-        ports:
-          - 4416:4416
     env:
       # Only scheduled runs and manual runs on main open a pull request.
       DRY_RUN: ${{ github.event_name == 'pull_request' || inputs.dry_run == true || github.ref != 'refs/heads/main' }}
       LIMIT: ${{ github.event_name == 'pull_request' && 2 || inputs.limit || 15 }}
-      SKIP_TRANSCRIPTION: ${{ inputs.skip_transcription == true }}
+      TRANSCRIBE: ${{ inputs.transcribe == true }}
       REFRESH_STATS_INPUT: ${{ inputs.refresh_stats == true }}
       TRANSCRIPT_MODEL: claude-sonnet-4-6
       # Keep log lines unwrapped in the job log
@@ -102,13 +97,13 @@ jobs:
           fi
           echo "refresh_stats=$refresh_stats" >> "$GITHUB_OUTPUT"
 
-          if [ "$SKIP_TRANSCRIPTION" = "true" ]; then
-            echo "expect=update-youtube-videos,sync-videos" >> "$GITHUB_OUTPUT"
-          else
+          if [ "$TRANSCRIBE" = "true" ]; then
             echo "expect=update-youtube-videos,sync-videos,transcribe,format-transcriptions" >> "$GITHUB_OUTPUT"
+          else
+            echo "expect=update-youtube-videos,sync-videos,format-transcriptions" >> "$GITHUB_OUTPUT"
           fi
           echo "event=$GITHUB_EVENT_NAME ref=$GITHUB_REF dry_run=$DRY_RUN limit=$LIMIT"
-          echo "skip_transcription=$SKIP_TRANSCRIPTION refresh_stats=$refresh_stats model=$TRANSCRIPT_MODEL"
+          echo "transcribe=$TRANSCRIBE refresh_stats=$refresh_stats model=$TRANSCRIPT_MODEL"
 
       - name: Restore files from the open sync pull request
         shell: bash
@@ -118,11 +113,11 @@ jobs:
         uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
 
       - name: Setup Deno (JavaScript runtime for yt-dlp)
-        if: env.SKIP_TRANSCRIPTION != 'true'
+        if: env.TRANSCRIBE == 'true'
         uses: denoland/setup-deno@22d081ff2d3a40755e97629de92e3bcbfa7cf2ed # v2.0.5
 
       - name: Install ffmpeg
-        if: env.SKIP_TRANSCRIPTION != 'true'
+        if: env.TRANSCRIBE == 'true'
         shell: bash
         run: |
           if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
@@ -164,13 +159,13 @@ jobs:
 
       - name: 3. Transcribe new videos
         id: transcribe
-        if: env.SKIP_TRANSCRIPTION != 'true'
+        if: env.TRANSCRIBE == 'true'
         shell: bash
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           set +e
-          uv run --with bgutil-ytdlp-pot-provider==2.0.2 --script ./scripts/transcribe.py --limit "$LIMIT" --jobs 3 --verbose \
+          ./scripts/transcribe.py --limit "$LIMIT" --jobs 3 \
             --summary-json "$SYNC_DIR/summaries/3-transcribe.json" \
             2>&1 | tee "$SYNC_DIR/logs/3-transcribe.log"
           status=${PIPESTATUS[0]}
@@ -180,7 +175,6 @@ jobs:
 
       - name: 4. Format transcriptions
         id: format
-        if: env.SKIP_TRANSCRIPTION != 'true'
         shell: bash
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

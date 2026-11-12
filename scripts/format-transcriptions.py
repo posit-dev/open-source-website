@@ -682,6 +682,7 @@ def select_videos(
 ) -> list[Path]:
     selected: list[Path] = []
     deferred: list[str] = []
+    needs_transcript: list[str] = []
     for d in dirs:
         fm = videolib.read_frontmatter(d / "_index.md")
         if fm.get("transcribe", True) is False:
@@ -689,6 +690,7 @@ def select_videos(
             continue
         if not (d / "transcription.vtt").exists():
             summary.tally("no_vtt")
+            needs_transcript.append(d.name)
             continue
         if (d / "transcription.txt").exists() and not force:
             if not reformat_invalid:
@@ -707,6 +709,10 @@ def select_videos(
         summary.tally("deferred", len(deferred))
         summary.extra["deferred"] = deferred
         log.info("Deferred %d videos to a later run (--limit)", len(deferred))
+    if needs_transcript:
+        # Newest first; video-sync-report.py lists them in the PR.
+        summary.extra["needs_transcript"] = needs_transcript
+        log.info("%d videos have no transcription.vtt yet (run transcribe.py)", len(needs_transcript))
     return selected
 
 

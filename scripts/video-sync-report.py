@@ -354,6 +354,21 @@ def problems_section(summaries: dict[str, dict[str, Any]], expected: list[str]) 
             [f"{code(i.get('slug'))}: {i.get('reason')}" for i in skipped],
         )
 
+    waiting = (fmt or {}).get("extra", {}).get("needs_transcript") or []
+    if waiting:
+        info += [
+            f"**{plural(len(waiting), 'video')} waiting for a transcript.** YouTube blocks audio downloads from "
+            "GitHub's runners, so transcribe them locally on this branch and push; the next run formats them:",
+            "",
+            "```bash",
+            "git fetch origin && git switch -C automation/sync-videos origin/automation/sync-videos",
+            "just transcribe --limit 15    # add --cookies-from-browser chrome if YouTube asks you to sign in",
+            'git add content/resources/videos && git commit -m "Add transcripts" && git push',
+            "```",
+            "",
+        ]
+        info += details("Videos without a transcript (newest first)", [code(slug) for slug in waiting])
+
     if out:
         out = ["### ⚠️ Problems", ""] + out
     if info:

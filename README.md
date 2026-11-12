@@ -541,8 +541,8 @@ The PR description lists new, renamed, and changed videos, the new transcripts,
 and any problems, each with the command to fix it locally. If last night's PR
 is still open, the next run builds on it instead of transcribing the same
 videos again. You can also run the workflow by hand (Actions → Sync Videos →
-Run workflow), with options to refresh view counts, skip transcription, change
-how many videos get transcribed, or do a dry run.
+Run workflow), with options to refresh view counts, try transcription, change
+how many videos get formatted, or do a dry run.
 
 **Only real changes.** Every run fetches the metadata of all videos, but an
 entry (and its `last_updated`) only changes when a field changed. View, like,
@@ -550,10 +550,20 @@ and comment counts are refreshed once a week, on Mondays, or with
 `--refresh-stats`. Pages and transcripts are only written when their content
 changes, so a quiet night produces no PR at all.
 
-**Transcripts.** Transcribing downloads the audio with yt-dlp, which YouTube
-sometimes blocks on GitHub's runners. Download failures never fail the
-workflow; the PR lists them, and the next run tries again. To transcribe
-locally instead, check out the sync branch (or any branch) and run:
+**Transcripts are made locally.** Transcribing downloads the audio with
+yt-dlp, and YouTube blocks that on GitHub's runners ("Sign in to confirm
+you're not a bot"), even with a PO token provider. So the nightly run skips
+step 3. The PR lists the videos waiting for a transcript; transcribe them on
+the PR branch and push, and the next run formats them (step 4, with Claude)
+and updates the PR:
+
+```bash
+git fetch origin && git switch -C automation/sync-videos origin/automation/sync-videos
+just transcribe --limit 15      # add --cookies-from-browser chrome if YouTube asks you to sign in
+git add content/resources/videos && git commit -m "Add transcripts" && git push
+```
+
+To do everything locally instead (on any branch):
 
 ```bash
 just update-videos              # all four steps, at most 15 new videos

@@ -361,6 +361,7 @@ class TestMain:
         code, data = run(repo)
         assert [i["slug"] for i in items(data, "formatted")] == ["2026-01-01_todo"]
         assert data["counts"] == {"already_formatted": 1, "excluded": 1, "formatted": 1, "no_vtt": 1}
+        assert data["extra"]["needs_transcript"] == ["2026-01-02_novtt"]
 
     def test_limit_newest_first(self, repo):
         for i in range(1, 4):

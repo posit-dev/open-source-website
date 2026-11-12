@@ -164,6 +164,23 @@ def test_blocked_night():
     ]
 
 
+def test_waiting_for_transcripts():
+    s = quiet_night()
+    del s["transcribe"]
+    s["format-transcriptions"] = summary(
+        "format-transcriptions",
+        tallies={"already_formatted": 1700, "no_vtt": 2},
+        extra={"needs_transcript": ["2026-11-11_b", "2026-11-10_a"]},
+    )
+    report, annotations = build(s, expected=["update-youtube-videos", "sync-videos", "format-transcriptions"])
+    assert "Transcription" not in report  # the step didn't run and wasn't expected
+    assert "**2 videos waiting for a transcript.**" in report
+    assert "git switch -C automation/sync-videos origin/automation/sync-videos" in report
+    assert "just transcribe --limit 15" in report
+    assert "- `2026-11-11_b`\n- `2026-11-10_a`" in report
+    assert annotations == []
+
+
 def test_stats_refresh():
     s = quiet_night()
     s["update-youtube-videos"] = summary(
