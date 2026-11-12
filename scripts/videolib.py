@@ -544,8 +544,9 @@ async def retry_async(
     *,
     label: str,
     logger: logging.Logger,
-    attempts: int = 5,
-    base_delay: float = 1.0,
+    attempts: int = 6,
+    base_delay: float = 2.0,
+    max_delay: float = 60.0,
     is_retryable: Callable[[BaseException], bool] = is_retryable_api_error,
     describe: Callable[[BaseException], str] = describe_api_error,
     sleep: Callable[[float], Awaitable[Any]] = asyncio.sleep,
@@ -553,7 +554,9 @@ async def retry_async(
     """Call ``fn`` with exponential backoff (plus jitter) on retryable errors.
 
     Every failed attempt is logged with the error description, so a flaky
-    API is visible in the logs even when the call eventually succeeds.
+    API is visible in the logs even when the call eventually succeeds. The
+    defaults wait about a minute in total, enough to ride out a short
+    network outage (with 1 s steps, a ten-second outage failed 15 videos).
     """
     for attempt in range(1, attempts + 1):
         try:
@@ -565,7 +568,7 @@ async def retry_async(
             if attempt == attempts:
                 logger.error("%s: %s (giving up after %d attempts)", label, describe(e), attempts)
                 raise
-            delay = base_delay * (2 ** (attempt - 1)) + random.uniform(0, base_delay)
+            delay = min(max_delay, base_delay * (2 ** (attempt - 1))) + random.uniform(0, base_delay)
             logger.warning(
                 "%s: attempt %d/%d failed: %s; retrying in %.1fs",
                 label,

@@ -298,8 +298,40 @@ class TestRetryAsync:
         assert result == "ok"
         assert len(sleeps) == 2
         assert 1.0 <= sleeps[0] < 2.0 and 2.0 <= sleeps[1] < 3.0  # exponential + jitter
-        assert "video-x: attempt 1/5 failed: RateLimitError status=429" in caplog.text
-        assert "attempt 2/5 failed: StatusError status=503" in caplog.text
+        assert "video-x: attempt 1/6 failed: RateLimitError status=429" in caplog.text
+        assert "attempt 2/6 failed: StatusError status=503" in caplog.text
+
+    def test_default_backoff_rides_out_a_minute(self):
+        async def fn():
+            raise TimeoutError()
+
+        sleeps = []
+
+        async def fake_sleep(s):
+            sleeps.append(s)
+
+        with pytest.raises(TimeoutError):
+            asyncio.run(videolib.retry_async(fn, label="x", logger=logging.getLogger("t"), sleep=fake_sleep))
+        assert len(sleeps) == 5
+        assert 60 <= sum(sleeps) <= 75
+        assert max(sleeps) <= 62
+
+    def test_delay_capped(self):
+        sleeps = []
+
+        async def fake_sleep(s):
+            sleeps.append(s)
+
+        async def fn():
+            raise TimeoutError()
+
+        with pytest.raises(TimeoutError):
+            asyncio.run(
+                videolib.retry_async(
+                    fn, label="x", logger=logging.getLogger("t"), sleep=fake_sleep, attempts=10, max_delay=5
+                )
+            )
+        assert max(sleeps) <= 5 + 2.0
 
     def test_non_retryable_raises_immediately(self, caplog):
         calls = []
