@@ -30,8 +30,8 @@
 
 <p><a data-t="286">On Agent mode, Positron Assistant can figure out the next steps needed for your request</a> <a data-t="292">and autonomously carry out those steps. On your behalf, Positron Assistant can execute</a> <a data-t="297">code in the Console, create and modify files, and identify the next steps based on the results</a> <a data-t="302">of the previous steps. For example, we could ask it to move this code that's in read diamonds.py</a> <a data-t="308">into a new Quarto file.</a></p>
 
-<p><a data-t="386">Positron Assistant creates a new Quarto document and moves my code over. Note that Positron</a> <a data-t="392">Assistant is currently a preview feature.</a></p>
+<p><a data-t="326">Positron Assistant creates a new Quarto document and moves my code over. Note that Positron</a> <a data-t="332">Assistant is currently a preview feature.</a></p>
 
 <h3>Documentation and getting started</h3>
 
-<p><a data-t="396">Just like in RStudio, you can pull up documentation for R or Python functions directly within</a> <a data-t="401">the IDE. For either R or Python, you can either use question mark or help. Pull up the documentation</a> <a data-t="414">in the help pane. You can also use the F1 key. This allows you to easily reference</a> <a data-t="421">documentation without leaving Positron. There's a lot more you can do with Positron, but I</a> <a data-t="426">hope this gave you a sense of what's possible. Use the following link to download Positron</a> <a data-t="431">and get started.</a></p>
+<p><a data-t="336">Just like in RStudio, you can pull up documentation for R or Python functions directly within</a> <a data-t="341">the IDE. For either R or Python, you can either use question mark or help. Pull up the documentation</a> <a data-t="354">in the help pane. You can also use the F1 key. This allows you to easily reference</a> <a data-t="361">documentation without leaving Positron. There's a lot more you can do with Positron, but I</a> <a data-t="366">hope this gave you a sense of what's possible. Use the following link to download Positron</a> <a data-t="371">and get started.</a></p>

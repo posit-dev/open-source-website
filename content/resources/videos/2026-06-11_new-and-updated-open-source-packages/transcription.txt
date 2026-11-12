@@ -8,10 +8,10 @@
 
 <h3>Python tooling and documentation</h3>
 
-<p><a data-t="45">5. GreatDocs version 0.10 marks the 10th release of the Python</a> <a data-t="52">documentation tool and has 10 key features added since launch, including LLM integration,</a> <a data-t="59">cross-reference validation, flexible theming, and enhanced API reference generation.</a> <a data-t="67">6. </a><a href="/software/bslib/">BSLib</a><a data-t="67"> 0.11</a> <a data-t="67">and PyShiny 1.6 introduce toolbar components.</a></p>
+<p><a data-t="45">5. GreatDocs version 0.10 marks the 10th release of the Python</a> <a data-t="52">documentation tool and has 10 key features added since launch, including LLM integration,</a> <a data-t="59">cross-reference validation, flexible theming, and enhanced API reference generation.</a> <a data-t="59">6. </a><a href="/software/bslib/">BSLib</a><a data-t="59"> 0.11</a> <a data-t="67">and PyShiny 1.6 introduce toolbar components.</a></p>
 
 <blockquote><a data-t="45">5. GreatDocs version 0.10 marks the 10th release of the Python</a> <a data-t="52">documentation tool and has 10 key features added since launch, including LLM integration,</a> <a data-t="59">cross-reference validation, flexible theming, and enhanced API reference generation.</a></blockquote>
 
 <h3><a href="/software/positron/">Positron</a> updates</h3>
 
-<p><a data-t="74">7. Positron's May release includes a lot of</a> <a data-t="74">highly requested features, including inline output for Quarto, package pane, and the Positron</a> <a data-t="80">notebook editor is now in beta.</a> <a data-t="85">We round up these updates in the Glimpse newsletter every month.</a> <a data-t="85">Which one are you most excited about? Let us know in the comments!</a></p>
+<p><a data-t="67">7. Positron's May release includes a lot of</a> <a data-t="74">highly requested features, including inline output for Quarto, package pane, and the Positron</a> <a data-t="80">notebook editor is now in beta.</a> <a data-t="80">We round up these updates in the Glimpse newsletter every month.</a> <a data-t="85">Which one are you most excited about? Let us know in the comments!</a></p>

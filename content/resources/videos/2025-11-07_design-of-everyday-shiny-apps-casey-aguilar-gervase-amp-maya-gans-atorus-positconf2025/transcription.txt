@@ -10,7 +10,7 @@
 
 <p><a data-t="62">But this talk is not about watering cans or doors.</a> <a data-t="66">It's about Shiny applications.</a> <a data-t="69">And you may have come to this talk thinking that design is about making aesthetic or pretty things.</a> <a data-t="76">But we're here to tell you that no.</a> <a data-t="78">Design is about utility and making users feel like they can use an app and trust it.</a></p>
 
-<p><a data-t="85">So if you couldn't tell by our outfits, Maya and I are pretty used to pair programming.</a> <a data-t="90">We work together as Shiny developers in consulting.</a> <a data-t="93">And our job is to connect function with feel so client applications can move from it runs to it's usable and clear.</a> <a data-t="101">This talk is going to be intentionally practical.</a> <a data-t="103">It's what our day-to-day kind of looks like when we're turning proof of concept applications into something not only functional but genuinely enjoyable.</a></p>
+<p><a data-t="85">So if you couldn't tell by our outfits, Maya and I are pretty used to pair programming.</a> <a data-t="90">We work together as Shiny developers in consulting.</a> <a data-t="93">And our job is to connect function with feel so client applications can move from it runs to it's usable and clear.</a> <a data-t="100">This talk is going to be intentionally practical.</a> <a data-t="103">It's what our day-to-day kind of looks like when we're turning proof of concept applications into something not only functional but genuinely enjoyable.</a></p>
 
 <p><a data-t="111">So in this talk, we're going to go through four lenses.</a> <a data-t="113">Layout, making it scannable and predictable.</a> <a data-t="116">Color, aiming attention without extra words.</a> <a data-t="119">Typography, setting a clear hierarchy that holds up in dense data.</a> <a data-t="123">And components, the answer to what's happening, what changed, what do I do next?</a></p>
 
@@ -82,7 +82,7 @@
 
 <p><a data-t="643">So this consistent use of weight, case,</a> <a data-t="645">and readability patterns across inputs</a> <a data-t="647">is gonna build subconscious trust for the user.</a></p>
 
-<p><a data-t="650">Rule number one, match your style to the brand.</a> <a data-t="655">You're given a typeface, use it.</a> <a data-t="657">If that typeface is super funky,</a> <a data-t="659">do not use that for smaller fonts.</a> <a data-t="662">Pair it, and just like we gave you five colors,</a> <a data-t="665">you get two fonts tops, even that, generous.</a></p>
+<p><a data-t="653">Rule number one, match your style to the brand.</a> <a data-t="655">You're given a typeface, use it.</a> <a data-t="657">If that typeface is super funky,</a> <a data-t="659">do not use that for smaller fonts.</a> <a data-t="662">Pair it, and just like we gave you five colors,</a> <a data-t="665">you get two fonts tops, even that, generous.</a></p>
 
 <p><a data-t="670">Casey showed us how you can also increase the font weight,</a> <a data-t="675">and in those value boxes,</a> <a data-t="677">we had the titles were uppercase</a> <a data-t="681">and the bylines were lowercase.</a> <a data-t="684">Those were the same font.</a> <a data-t="686">Those two are tools you have in your arsenal.</a> <a data-t="690">You don't just have to increment the font size.</a> <a data-t="693">However, if you are going to, be consistent.</a> <a data-t="696">We like incrementing by four or six pixels.</a> <a data-t="699">Do not just willy-nilly big, medium, small.</a></p>
 
@@ -112,7 +112,7 @@
 
 <h3>Why design matters</h3>
 
-<p><a data-t="879">So at this point, I hope not,</a> <a data-t="881">but you might still be wondering,</a> <a data-t="883">why should I care about all this design stuff?</a> <a data-t="888">The truth is, design is the difference</a> <a data-t="890">between an app people tolerate and a people actually use.</a></p>
+<p><a data-t="879">So at this point, I hope not,</a> <a data-t="883">but you might still be wondering,</a> <a data-t="885">why should I care about all this design stuff?</a> <a data-t="888">The truth is, design is the difference</a> <a data-t="890">between an app people tolerate and a people actually use.</a></p>
 
 <p><a data-t="895">If the layout is confusing,</a> <a data-t="897">users are gonna get frustrated and drop off.</a> <a data-t="899">If the tone feels off, they just don't trust it.</a> <a data-t="902">And if the app doesn't give clear feedback,</a> <a data-t="905">they might make mistakes or give up entirely.</a> <a data-t="908">So that's not just about looks,</a> <a data-t="910">that's about adoption, efficiency,</a> <a data-t="912">and whether your work even lands with its audience.</a></p>
 

@@ -38,7 +38,7 @@
 
 <p><a data-t="208">So to start our demo, let's introduce you to Posit Workbench.</a></p>
 
-<p><a data-t="214">After logging into Posit Workbench</a> <a data-t="215">using your team's preferred authentication method,</a> <a data-t="218">we land on the Posit Workbench homepage.</a> <a data-t="220">On the left-hand side, I'll click the New Session button,</a> <a data-t="223">which brings us to a new window</a> <a data-t="225">where I can choose my development environment.</a></p>
+<p><a data-t="214">After logging into Posit Workbench</a> <a data-t="215">using your team's preferred authentication method,</a> <a data-t="218">we land on the Posit Workbench homepage.</a> <a data-t="220">On the left-hand side, I'll click the New Session button,</a> <a data-t="224">which brings us to a new window</a> <a data-t="225">where I can choose my development environment.</a></p>
 
 <p><a data-t="228">Currently, Posit Workbench supports JupyterLab and JupyterNotebooks,</a> <a data-t="232">RStudio, and Visual Studio Code.</a></p>
 
@@ -116,7 +116,7 @@
 
 <p><a data-t="652">So far, we've used the R programming language</a> <a data-t="655">and various open source tools and packages</a> <a data-t="657">to create and interact with machine learning models.</a> <a data-t="660">We are going to switch gears</a> <a data-t="662">and now use Python within Posit Team</a> <a data-t="664">to monitor the performance of a model.</a></p>
 
-<p><a data-t="667">At Posit, we've developed an open source package</a> <a data-t="669">named Vetiver,</a> <a data-t="670">available in both R and Python.</a> <a data-t="673">This package aids in the deployment,</a> <a data-t="675">versioning, and monitoring</a> <a data-t="677">of machine learning models,</a> <a data-t="679">a field commonly known</a> <a data-t="679">as machine learning operations,</a> <a data-t="681">or MLOps.</a></p>
+<p><a data-t="667">At Posit, we've developed an open source package</a> <a data-t="669">named Vetiver,</a> <a data-t="670">available in both R and Python.</a> <a data-t="673">This package aids in the deployment,</a> <a data-t="675">versioning, and monitoring</a> <a data-t="677">of machine learning models,</a> <a data-t="678">a field commonly known</a> <a data-t="679">as machine learning operations,</a> <a data-t="681">or MLOps.</a></p>
 
 <p><a data-t="683">Let's use Vetiver to monitor</a> <a data-t="684">the performance of a model</a> <a data-t="686">using Python within VS Code</a> <a data-t="688">running on Posit Workbench.</a> <a data-t="690">To get started,</a> <a data-t="691">let's open a new session of VS Code.</a> <a data-t="694">A major benefit of Posit Workbench</a> <a data-t="696">is you can have multiple sessions</a> <a data-t="698">of various IDEs running at the same time.</a></p>
 
@@ -126,7 +126,7 @@
 
 <p><a data-t="740">It's also worth noting</a> <a data-t="742">that we could view this live preview</a> <a data-t="744">using the Posit Workbench VS Code extension</a> <a data-t="746">that provides secure proxying</a> <a data-t="748">to the local development environment.</a> <a data-t="750">This is great for viewing documents</a> <a data-t="752">or testing interactive applications.</a></p>
 
-<p><a data-t="755">Here we have three plots</a> <a data-t="756">that show three commonly collected metrics</a> <a data-t="759">for model performance,</a> <a data-t="762">mean absolute error,</a> <a data-t="762">mean squared error,</a> <a data-t="763">and the r-squared value.</a> <a data-t="765">These valuable metrics,</a> <a data-t="766">just like our Shiny application,</a> <a data-t="768">will likely need to be shared with others.</a> <a data-t="770">So let's publish the Quarto document</a> <a data-t="772">to Posit Connect.</a></p>
+<p><a data-t="755">Here we have three plots</a> <a data-t="756">that show three commonly collected metrics</a> <a data-t="759">for model performance,</a> <a data-t="760">mean absolute error,</a> <a data-t="762">mean squared error,</a> <a data-t="763">and the r-squared value.</a> <a data-t="765">These valuable metrics,</a> <a data-t="766">just like our Shiny application,</a> <a data-t="768">will likely need to be shared with others.</a> <a data-t="770">So let's publish the Quarto document</a> <a data-t="772">to Posit Connect.</a></p>
 
 <p><a data-t="773">In this example,</a> <a data-t="774">we are going to use</a> <a data-t="775">the </a><a href="/software/rsconnect/">rsconnect</a><a data-t="775"> command line interface tool</a> <a data-t="779">to assist with the dependency capturing</a> <a data-t="781">and publishing to Posit Connect.</a> <a data-t="783">In the terminal,</a> <a data-t="784">at the bottom of the screen,</a> <a data-t="785">I'll type out the following command,</a> <a data-t="787">rsconnect deploy Quarto.</a> <a data-t="790">And then provide the name</a> <a data-t="791">of our Quarto document,</a> <a data-t="792">which is mlops.qmd.</a></p>
 
@@ -150,7 +150,7 @@
 
 <p><a data-t="917">In fact, all the machine learning analyses</a> <a data-t="919">we've done so far in this demo</a> <a data-t="921">were using open source packages</a> <a data-t="923">installed from Posit Package Manager.</a></p>
 
-<p><a data-t="926">Let's start with a quick overview</a> <a data-t="927">of Posit Package Manager,</a> <a data-t="929">and we'll discuss many of its amazing features</a> <a data-t="931">along the way.</a> <a data-t="932">Once your administrator</a> <a data-t="934">installs Package Manager,</a> <a data-t="935">users can access the homepage,</a> <a data-t="938">where they are immediately greeted</a> <a data-t="938">with options to select various packages</a> <a data-t="941">from repositories</a> <a data-t="942">that your team can customize.</a></p>
+<p><a data-t="926">Let's start with a quick overview</a> <a data-t="927">of Posit Package Manager,</a> <a data-t="929">and we'll discuss many of its amazing features</a> <a data-t="931">along the way.</a> <a data-t="932">Once your administrator</a> <a data-t="934">installs Package Manager,</a> <a data-t="935">users can access the homepage,</a> <a data-t="937">where they are immediately greeted</a> <a data-t="938">with options to select various packages</a> <a data-t="941">from repositories</a> <a data-t="942">that your team can customize.</a></p>
 
 <p><a data-t="944">This instance of Package Manager</a> <a data-t="946">has 11 repositories</a> <a data-t="948">and is serving over 26,000 packages</a> <a data-t="951">from CRAN,</a> <a data-t="952">which is the primary repository</a> <a data-t="953">for our developers,</a> <a data-t="955">as well as over half a million</a> <a data-t="957">PyPI packages,</a> <a data-t="959">which is the primary repository</a> <a data-t="960">for Python developers.</a></p>
 
@@ -174,7 +174,7 @@
 
 <p><a data-t="1090">Finally, after choosing</a> <a data-t="1092">my development environment,</a> <a data-t="1093">I'm presented with</a> <a data-t="1094">a customized repository URL.</a> <a data-t="1097">Reading through the URL,</a> <a data-t="1098">you can see I'm using</a> <a data-t="1099">the eval instance of</a> <a data-t="1100">Posit Package Manager,</a> <a data-t="1102">the CRAN repository,</a> <a data-t="1104">and I will install Linux binaries</a> <a data-t="1106">that are frozen to a specific date.</a> <a data-t="1108">In this example,</a> <a data-t="1109">that date is January 26, 2024.</a></p>
 
-<p><a data-t="1112">Below the repository URL</a> <a data-t="1114">are the setup instructions</a> <a data-t="1116">to help users and administrators</a> <a data-t="1118">configure this repository</a> <a data-t="1118">in the development environment</a> <a data-t="1120">I selected above.</a></p>
+<p><a data-t="1112">Below the repository URL</a> <a data-t="1114">are the setup instructions</a> <a data-t="1116">to help users and administrators</a> <a data-t="1118">configure this repository</a> <a data-t="1119">in the development environment</a> <a data-t="1120">I selected above.</a></p>
 
 <p><a data-t="1122">For our previous</a> <a data-t="1124">machine learning operations analysis,</a> <a data-t="1126">we used vetiver,</a> <a data-t="1127">which is an open-source package</a> <a data-t="1129">in both Python and R.</a> <a data-t="1130">Let's take a look</a> <a data-t="1131">at the vetiver R package</a> <a data-t="1133">within this repository.</a></p>
 

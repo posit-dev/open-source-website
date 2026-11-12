@@ -8,12 +8,12 @@
 
 <h3>Picking the right visualization</h3>
 
-<p><a data-t="51">Learn how to pick a suitable visualization to transport your message.</a> <a data-t="55">We will discuss the strengths and weaknesses of different chart types and how to pick and</a> <a data-t="59">design a visualization that presents the data in an honest way but with a clear focus on</a> <a data-t="104">your main story.</a></p>
+<p><a data-t="51">Learn how to pick a suitable visualization to transport your message.</a> <a data-t="55">We will discuss the strengths and weaknesses of different chart types and how to pick and</a> <a data-t="59">design a visualization that presents the data in an honest way but with a clear focus on</a> <a data-t="64">your main story.</a></p>
 
 <h3>Mastering colors and typefaces</h3>
 
-<p><a data-t="107">Master colors and typefaces when designing data visualizations.</a> <a data-t="111">You will learn how to avoid pitfalls and how to effectively communicate with data by picking</a> <a data-t="116">suitable color palettes and a good combination of colors and fonts to not only transport</a> <a data-t="122">your main message but also the right emotion.</a></p>
+<p><a data-t="67">Master colors and typefaces when designing data visualizations.</a> <a data-t="71">You will learn how to avoid pitfalls and how to effectively communicate with data by picking</a> <a data-t="76">suitable color palettes and a good combination of colors and fonts to not only transport</a> <a data-t="82">your main message but also the right emotion.</a></p>
 
-<blockquote><a data-t="116">suitable color palettes and a good combination of colors and fonts to not only transport</a> <a data-t="122">your main message but also the right emotion.</a></blockquote>
+<blockquote><a data-t="76">suitable color palettes and a good combination of colors and fonts to not only transport</a> <a data-t="82">your main message but also the right emotion.</a></blockquote>
 
-<p><a data-t="126">During the course you will also have the chance to meet like-minded people, exchange about</a> <a data-t="130">your current projects and get feedback on your visualizations thanks to individual and</a> <a data-t="136">group exercises.</a> <a data-t="137">If this sounds interesting to you, then don't miss the chance and join us at the Puzzle</a> <a data-t="141">Conference in Chicago.</a></p>
+<p><a data-t="86">During the course you will also have the chance to meet like-minded people, exchange about</a> <a data-t="90">your current projects and get feedback on your visualizations thanks to individual and</a> <a data-t="96">group exercises.</a> <a data-t="97">If this sounds interesting to you, then don't miss the chance and join us at the Puzzle</a> <a data-t="101">Conference in Chicago.</a></p>

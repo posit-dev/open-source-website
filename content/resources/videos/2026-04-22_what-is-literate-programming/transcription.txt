@@ -1,6 +1,6 @@
 <p><a data-t="0">Did you know that you can write code and text together?</a> <a data-t="2">Literate programming combines them into one living story.</a> <a data-t="6">Coined by Donald Knuth, the idea is to weave your narrative and your code into a single document.</a> <a data-t="10">No more copy-pasting charts into Word.</a></p>
 
-<p><a data-t="14">We love </a><a href="/software/quarto/">Quarto</a><a data-t="14"> for this.</a> <a data-t="14">It's an open-source system that lets you combine languages like Python, R, or Julia</a> <a data-t="18">with simple markdown text.</a> <a data-t="19">We write our narrative in plain markdown,</a> <a data-t="21">immediately followed by the code that actually performs our analysis.</a> <a data-t="25">And at the top, we can define our metadata, like how we want the final product to look.</a></p>
+<p><a data-t="12">We love </a><a href="/software/quarto/">Quarto</a><a data-t="12"> for this.</a> <a data-t="14">It's an open-source system that lets you combine languages like Python, R, or Julia</a> <a data-t="18">with simple markdown text.</a> <a data-t="19">We write our narrative in plain markdown,</a> <a data-t="21">immediately followed by the code that actually performs our analysis.</a> <a data-t="25">And at the top, we can define our metadata, like how we want the final product to look.</a></p>
 
 <blockquote><a data-t="14">It's an open-source system that lets you combine languages like Python, R, or Julia</a> <a data-t="18">with simple markdown text.</a></blockquote>
 

@@ -1,100 +1,100 @@
 <p><a data-t="0">Do you personally encourage teams to be multilingual?</a> <a data-t="0">Or do you often write in multiple different languages, maybe even within the same project?</a></p>
 
-<p><a data-t="8">I think most people tend to be like, you know, like 90% R or 90% Python.</a> <a data-t="16">But in general, it's just better to be pragmatic.</a> <a data-t="20">And I think that's one area where I think generative AI is like really interesting.</a> <a data-t="25">It's really easy to translate between them.</a> <a data-t="28">Maybe this means the barriers between them are going to erode a little bit more.</a></p>
+<p><a data-t="8">I think most people tend to be like, you know, like 90% R or 90% Python.</a> <a data-t="8">But in general, it's just better to be pragmatic.</a> <a data-t="8">And I think that's one area where I think generative AI is like really interesting.</a> <a data-t="8">It's really easy to translate between them.</a> <a data-t="8">Maybe this means the barriers between them are going to erode a little bit more.</a></p>
 
 <p><a data-t="29">If we were going to have like a metric that me and my team are going to try and optimize, like I think the metric that I want to optimize is like the amount of time you spend in like flow states.</a></p>
 
-<p><a data-t="45">Dr. Hadley, welcome to the Super Data Science Podcast.</a> <a data-t="48">It is a surreal experience for me to have you here.</a> <a data-t="51">We have, I have seen you in person.</a> <a data-t="54">In fact, we have actually seen each other in person, I'm sure of this.</a> <a data-t="57">And so let me tell you these stories.</a> <a data-t="60">We didn't, I didn't tell you this before we started recording.</a> <a data-t="63">So you're just getting this on </a><a href="/software/air/">air</a><a data-t="63">.</a></p>
+<p><a data-t="45">Dr. Hadley, welcome to the Super Data Science Podcast.</a> <a data-t="45">It is a surreal experience for me to have you here.</a> <a data-t="45">We have, I have seen you in person.</a> <a data-t="45">In fact, we have actually seen each other in person, I'm sure of this.</a> <a data-t="45">And so let me tell you these stories.</a> <a data-t="45">We didn't, I didn't tell you this before we started recording.</a> <a data-t="45">So you're just getting this on </a><a href="/software/air/">air</a><a data-t="45">.</a></p>
 
-<p><a data-t="62">Circa 2014, in New York at an O'Reilly Strata Hadoop World Conference, you did some kind of hands on training, it might have been a half day training, they use the the air, the flight times data set.</a> <a data-t="82">Does that all track?</a> <a data-t="83">Yeah.</a> <a data-t="84">So I did that I was in the audience for that.</a> <a data-t="87">And then a couple of years later, in 2016, at the joint statistical meetings in Chicago,</a></p>
+<p><a data-t="62">Circa 2014, in New York at an O'Reilly Strata Hadoop World Conference, you did some kind of hands on training, it might have been a half day training, they use the the air, the flight times data set.</a> <a data-t="62">Does that all track?</a> <a data-t="62">Yeah.</a> <a data-t="62">So I did that I was in the audience for that.</a> <a data-t="62">And then a couple of years later, in 2016, at the joint statistical meetings in Chicago,</a></p>
 
-<p><a data-t="91">there was an announcement from our studio, that </a><a href="/people/hadley-wickham/">Hadley Wickham</a><a data-t="91"> would be at the RStudio booth at a certain window of time.</a> <a data-t="103">And I walked by a couple times.</a> <a data-t="106">And we made eye contact and you kind of smiled friendly.</a> <a data-t="110">But I was too nervous to talk to you.</a> <a data-t="113">I didn't know what to say.</a></p>
+<p><a data-t="91">there was an announcement from our studio, that </a><a href="/people/hadley-wickham/">Hadley Wickham</a><a data-t="91"> would be at the RStudio booth at a certain window of time.</a> <a data-t="91">And I walked by a couple times.</a> <a data-t="91">And we made eye contact and you kind of smiled friendly.</a> <a data-t="91">But I was too nervous to talk to you.</a> <a data-t="91">I didn't know what to say.</a></p>
 
-<p><a data-t="113">You were at that time and still today, one of the most iconic people in data science to me.</a> <a data-t="121">And I was just like, well, you know, there's no what do I do?</a> <a data-t="126">What do I say?</a> <a data-t="127">How do I introduce this?</a> <a data-t="129">And so now I finally know what to say.</a> <a data-t="132">I've got a question to ask you.</a> <a data-t="134">Hadley, welcome to the super data science podcast.</a> <a data-t="137">Where in the world are you calling in from?</a> <a data-t="139">I'm calling in from Houston, Texas.</a> <a data-t="141">Nice.</a> <a data-t="141">It is truly such an honor to have you on the show.</a> <a data-t="144">You were on the show in the past.</a></p>
+<p><a data-t="113">You were at that time and still today, one of the most iconic people in data science to me.</a> <a data-t="113">And I was just like, well, you know, there's no what do I do?</a> <a data-t="113">What do I say?</a> <a data-t="113">How do I introduce this?</a> <a data-t="113">And so now I finally know what to say.</a> <a data-t="113">I've got a question to ask you.</a> <a data-t="113">Hadley, welcome to the super data science podcast.</a> <a data-t="113">Where in the world are you calling in from?</a> <a data-t="113">I'm calling in from Houston, Texas.</a> <a data-t="113">Nice.</a> <a data-t="113">It is truly such an honor to have you on the show.</a> <a data-t="113">You were on the show in the past.</a></p>
 
-<p><a data-t="141">So four years ago, you were on the program.</a> <a data-t="144">And that was specifically episode number 337.</a> <a data-t="148">But at that time, our host was Kirill Aromenko.</a> <a data-t="152">And the timestamp on this is pretty interesting, because that episode was published in February 2020.</a> <a data-t="158">So it was a pre-pandemic world.</a></p>
+<p><a data-t="141">So four years ago, you were on the program.</a> <a data-t="141">And that was specifically episode number 337.</a> <a data-t="141">But at that time, our host was Kirill Aromenko.</a> <a data-t="141">And the timestamp on this is pretty interesting, because that episode was published in February 2020.</a> <a data-t="141">So it was a pre-pandemic world.</a></p>
 
-<p><a data-t="161">A very different, different time.</a> <a data-t="163">Exactly.</a> <a data-t="163">So all of that has passed and we're almost back to normal, except that so many data scientists are working from home.</a> <a data-t="171">All right.</a> <a data-t="171">So straight into the technical content.</a> <a data-t="173">Hadley, if there's one word that is most associated with you, it's got to be tidy.</a> <a data-t="178">In 2014, you wrote a highly cited paper called Tidy Data.</a> <a data-t="183">And you're also an author of the popular </a><a href="/software/tidyverse/">tidyverse</a><a data-t="183">, a collection of packages that share a high level design philosophy.</a></p>
+<p><a data-t="161">A very different, different time.</a> <a data-t="161">Exactly.</a> <a data-t="161">So all of that has passed and we're almost back to normal, except that so many data scientists are working from home.</a> <a data-t="161">All right.</a> <a data-t="161">So straight into the technical content.</a> <a data-t="161">Hadley, if there's one word that is most associated with you, it's got to be tidy.</a> <a data-t="161">In 2014, you wrote a highly cited paper called Tidy Data.</a> <a data-t="161">And you're also an author of the popular </a><a href="/software/tidyverse/">tidyverse</a><a data-t="161">, a collection of packages that share a high level design philosophy.</a></p>
 
-<p><a data-t="189">Last but not least, you have been writing a book called Tidy Data Principles, which is to be completed next year in 2025.</a> <a data-t="198">What does tidy mean in the context of data programming?</a> <a data-t="202">And yeah, what's the guiding principle?</a> <a data-t="205">That's definitely not a question that Chad GPT would have asked you.</a></p>
+<p><a data-t="189">Last but not least, you have been writing a book called Tidy Data Principles, which is to be completed next year in 2025.</a> <a data-t="189">What does tidy mean in the context of data programming?</a> <a data-t="189">And yeah, what's the guiding principle?</a> <a data-t="189">That's definitely not a question that Chad GPT would have asked you.</a></p>
 
 <h3>What "tidy" means</h3>
 
-<p><a data-t="211">Tidy to me is about having things that are kind of like well organized and like well broken down into kind of like little pieces that you can then like reassemble, like Legos.</a> <a data-t="228">I think that's been a motivation for a lot of my work is like, how do you take some like big, maybe kind of vaguely ill-defined problem and then break it down into like concrete pieces that you can actually get stuck into?</a></p>
+<p><a data-t="211">Tidy to me is about having things that are kind of like well organized and like well broken down into kind of like little pieces that you can then like reassemble, like Legos.</a> <a data-t="211">I think that's been a motivation for a lot of my work is like, how do you take some like big, maybe kind of vaguely ill-defined problem and then break it down into like concrete pieces that you can actually get stuck into?</a></p>
 
-<p><a data-t="240">And experiment with and play around with and iterate towards a final solution.</a> <a data-t="244">All right.</a> <a data-t="244">And yeah, so in your tidy data paper, you draw parallels between tidy data and the principles of relational databases, specifically Codd's relational algebra.</a> <a data-t="255">What is Codd's relational algebra?</a> <a data-t="257">Could you elaborate on how database design can benefit statisticians and data analysts in their work?</a></p>
+<p><a data-t="240">And experiment with and play around with and iterate towards a final solution.</a> <a data-t="240">All right.</a> <a data-t="240">And yeah, so in your tidy data paper, you draw parallels between tidy data and the principles of relational databases, specifically Codd's relational algebra.</a> <a data-t="240">What is Codd's relational algebra?</a> <a data-t="240">Could you elaborate on how database design can benefit statisticians and data analysts in their work?</a></p>
 
-<p><a data-t="265">Yeah, so you can go and like look up on like Wikipedia or somewhere what Codd's relational like algorithm actually algebra actually is, but like I can never remember it, but I think there's a.</a> <a data-t="277">I don't know, like I.</a></p>
+<p><a data-t="265">Yeah, so you can go and like look up on like Wikipedia or somewhere what Codd's relational like algorithm actually algebra actually is, but like I can never remember it, but I think there's a.</a> <a data-t="265">I don't know, like I.</a></p>
 
-<p><a data-t="280">Yeah, it's one of those kind of very precise definitions where every like word makes sense individually, but when you string them together in a sentence, it's very hard to understand what it means.</a> <a data-t="291">But I was kind of.</a></p>
+<p><a data-t="280">Yeah, it's one of those kind of very precise definitions where every like word makes sense individually, but when you string them together in a sentence, it's very hard to understand what it means.</a> <a data-t="280">But I was kind of.</a></p>
 
 <p><a data-t="295">And I sort of got into like relational data because my dad had done a lot of database design for capturing data about cows in particular, and this idea about cows, yeah, for cattle breeding.</a></p>
 
 <p><a data-t="312">And this idea of like making sure that kind of each facts, each unique fact is recorded like once in a data set rather than having it like potentially like either split across multiple places or reported recorded in multiple different ways in different places.</a></p>
 
-<p><a data-t="328">And so I think like that, like the ideas of Codd's relational algebra are really important.</a> <a data-t="333">Like you want to have your you know, you don't have inconsistencies in your data, but it's really difficult for folks who are not like trained in databases and computer science to get the idea of the algebra.</a></p>
+<p><a data-t="328">And so I think like that, like the ideas of Codd's relational algebra are really important.</a> <a data-t="328">Like you want to have your you know, you don't have inconsistencies in your data, but it's really difficult for folks who are not like trained in databases and computer science to get the idea of the algebra.</a></p>
 
-<p><a data-t="349">And so a lot of that, like the idea of the tidy data was like, how can I frame this in a way that like makes more sense to statisticians and data scientists and people working with data.</a> <a data-t="362">And to me, like it's like this, like, it's just like you've got a rectangle and all tidy data really is.</a></p>
+<p><a data-t="349">And so a lot of that, like the idea of the tidy data was like, how can I frame this in a way that like makes more sense to statisticians and data scientists and people working with data.</a> <a data-t="349">And to me, like it's like this, like, it's just like you've got a rectangle and all tidy data really is.</a></p>
 
-<p><a data-t="364">We put the variables and the columns and you put the observations in the rows and you kind of wonder like that legitimately took me like eight years to figure out.</a> <a data-t="376">It seems so simple in hindsight, but it's just one of those things that like once you figure it out and explain it to other people, it makes a lot of sense, but it takes a while to get there.</a></p>
+<p><a data-t="364">We put the variables and the columns and you put the observations in the rows and you kind of wonder like that legitimately took me like eight years to figure out.</a> <a data-t="364">It seems so simple in hindsight, but it's just one of those things that like once you figure it out and explain it to other people, it makes a lot of sense, but it takes a while to get there.</a></p>
 
-<blockquote><a data-t="364">We put the variables and the columns and you put the observations in the rows and you kind of wonder like that legitimately took me like eight years to figure out.</a> <a data-t="376">It seems so simple in hindsight, but it's just one of those things that like once you figure it out and explain it to other people, it makes a lot of sense, but it takes a while to get there.</a></blockquote>
+<blockquote><a data-t="364">We put the variables and the columns and you put the observations in the rows and you kind of wonder like that legitimately took me like eight years to figure out.</a> <a data-t="364">It seems so simple in hindsight, but it's just one of those things that like once you figure it out and explain it to other people, it makes a lot of sense, but it takes a while to get there.</a></blockquote>
 
-<p><a data-t="384">It takes a while, even for me as my first time using the tidy data principles, which must have been many years ago now is probably a decade ago or more.</a> <a data-t="394">But that first time kind of wrapping your head around shaping the data in this tidy way, it is so different from the way that we're typically taught in university.</a></p>
+<p><a data-t="384">It takes a while, even for me as my first time using the tidy data principles, which must have been many years ago now is probably a decade ago or more.</a> <a data-t="384">But that first time kind of wrapping your head around shaping the data in this tidy way, it is so different from the way that we're typically taught in university.</a></p>
 
 <p><a data-t="404">And so therefore, that first time doing things in a tidy way, exactly as you described, where each piece of information is only replicated once as opposed to having a whole column where the variable name, let's say you have a binary outcome and every row of this giant table is like outcome zero or outcome one.</a></p>
 
-<p><a data-t="426">It's so wasteful, especially if that's like a string.</a> <a data-t="429">It's incredibly inefficient.</a> <a data-t="430">And so popping over to the tidy principles where that goes away is transformative.</a> <a data-t="435">But it did it.</a> <a data-t="436">I remember the first time trying to like melt data.</a></p>
+<p><a data-t="426">It's so wasteful, especially if that's like a string.</a> <a data-t="426">It's incredibly inefficient.</a> <a data-t="426">And so popping over to the tidy principles where that goes away is transformative.</a> <a data-t="426">But it did it.</a> <a data-t="426">I remember the first time trying to like melt data.</a></p>
 
-<p><a data-t="441">And I'm like, what?</a> <a data-t="442">And even when I saw it the first time, it took me a while to figure out and I was kind of like, this isn't right.</a> <a data-t="449">Like I needed to kind of, I felt like I needed to change it into the way that I'm used to, to even work with it.</a></p>
+<p><a data-t="441">And I'm like, what?</a> <a data-t="441">And even when I saw it the first time, it took me a while to figure out and I was kind of like, this isn't right.</a> <a data-t="441">Like I needed to kind of, I felt like I needed to change it into the way that I'm used to, to even work with it.</a></p>
 
-<p><a data-t="454">Yeah, it's really, it's really interesting at the moment.</a> <a data-t="457">I'm on the sort of run the program committee for Posit Comp.</a> <a data-t="461">So we decide on like what talks we're going to have and how we're going to arrange them.</a> <a data-t="466">And so the program committee is mostly like data scientists.</a></p>
+<p><a data-t="454">Yeah, it's really, it's really interesting at the moment.</a> <a data-t="454">I'm on the sort of run the program committee for Posit Comp.</a> <a data-t="454">So we decide on like what talks we're going to have and how we're going to arrange them.</a> <a data-t="454">And so the program committee is mostly like data scientists.</a></p>
 
 <p><a data-t="469">And so the way we think we like, we do a lot of organizing data and like Google sheets because it's so easy to collaboratively edit, but it's always in like a tidy format.</a></p>
 
-<p><a data-t="479">So that, and what that typically means is you can't actually get a shape.</a> <a data-t="483">You can't really understand the shape of the whole program without like joining three different things together.</a></p>
+<p><a data-t="479">So that, and what that typically means is you can't actually get a shape.</a> <a data-t="479">You can't really understand the shape of the whole program without like joining three different things together.</a></p>
 
-<p><a data-t="486">And it's interesting, like when I share it with my colleagues in like marketing who have to then turn this into the website, like the way they want to put that in a Google sheet is just like so totally different.</a> <a data-t="499">There's like merge cells, there's like colors.</a> <a data-t="502">It's just like, I get it, but just like the, you could not like compute on data in that form, but it's so much easier to look at as a human.</a></p>
+<p><a data-t="486">And it's interesting, like when I share it with my colleagues in like marketing who have to then turn this into the website, like the way they want to put that in a Google sheet is just like so totally different.</a> <a data-t="486">There's like merge cells, there's like colors.</a> <a data-t="486">It's just like, I get it, but just like the, you could not like compute on data in that form, but it's so much easier to look at as a human.</a></p>
 
 <p><a data-t="509">Are you able to, when you're in a data science company like Posit, are you able to kind of dictate, you know, marketing, you've got to do things our way, the data scientist way, or is that, it's an, that's an impossible.</a></p>
 
-<p><a data-t="521">It's impossible.</a> <a data-t="521">I mean, I, you know, I, I don't think I could dictate it.</a> <a data-t="526">I could certainly do more to like try and persuade people or like, you know, help them do their jobs better, but it's like a lot of, a lot of work and you're, you know, fighting.</a></p>
+<p><a data-t="521">It's impossible.</a> <a data-t="521">I mean, I, you know, I, I don't think I could dictate it.</a> <a data-t="521">I could certainly do more to like try and persuade people or like, you know, help them do their jobs better, but it's like a lot of, a lot of work and you're, you know, fighting.</a></p>
 
-<p><a data-t="536">Like the fact that none of their tools think about data in this way.</a> <a data-t="540">And I don't really want to have to go and create like the tidyverse for marketing and the tidyverse for finance and like every other, every other field.</a></p>
+<p><a data-t="536">Like the fact that none of their tools think about data in this way.</a> <a data-t="536">And I don't really want to have to go and create like the tidyverse for marketing and the tidyverse for finance and like every other, every other field.</a></p>
 
 <p><a data-t="548">We like, we do, I think we have like more, certainly more penetration of like </a><a href="/software/quarto/">Quarto</a><a data-t="548"> and other kind of those, those sort of document generation tools, but there's still quite a high bar for folks who are like, if you're not used to using Git and GitHub, like collaborating in this way is pretty tough.</a></p>
 
-<p><a data-t="567">Even though that final product can be pretty nice.</a> <a data-t="570">And that's, that's one of the things we, I sort of hope for the future of Quarto is like these tools for, you know, scientific documents that let you mingle text and code, but also can like work with Google dogs and multiple people can be like contributing to them.</a></p>
+<p><a data-t="567">Even though that final product can be pretty nice.</a> <a data-t="567">And that's, that's one of the things we, I sort of hope for the future of Quarto is like these tools for, you know, scientific documents that let you mingle text and code, but also can like work with Google dogs and multiple people can be like contributing to them.</a></p>
 
-<p><a data-t="587">You can comment on them.</a> <a data-t="588">You can share them with non-technical folks.</a></p>
+<p><a data-t="587">You can comment on them.</a> <a data-t="587">You can share them with non-technical folks.</a></p>
 
-<p><a data-t="591">Yeah.</a> <a data-t="591">Quarto is something that we also have as a whole topic area later for discussion.</a> <a data-t="596">It is a great tool that I think anybody can be using within data science or amongst data analysts, particularly.</a></p>
+<p><a data-t="591">Yeah.</a> <a data-t="591">Quarto is something that we also have as a whole topic area later for discussion.</a> <a data-t="591">It is a great tool that I think anybody can be using within data science or amongst data analysts, particularly.</a></p>
 
-<p><a data-t="603">Have there been persistent challenges that you faced, like technical hurdles or adoption resistant conceptual misunderstanding?</a> <a data-t="611">Has there been any of that over the years?</a></p>
+<p><a data-t="603">Have there been persistent challenges that you faced, like technical hurdles or adoption resistant conceptual misunderstanding?</a> <a data-t="603">Has there been any of that over the years?</a></p>
 
 <p><a data-t="613">With tidy data in particular, sorry.</a></p>
 
-<p><a data-t="615">Tidy data.</a> <a data-t="615">Not too much.</a> <a data-t="616">I think there's definitely some areas where there's just such strong conventions for the field of having things that I would think want to be in a single column spread across multiple columns.</a></p>
+<p><a data-t="615">Tidy data.</a> <a data-t="615">Not too much.</a> <a data-t="615">I think there's definitely some areas where there's just such strong conventions for the field of having things that I would think want to be in a single column spread across multiple columns.</a></p>
 
-<p><a data-t="636">There's some types of data where it's just like arranging things in non tidy forms.</a> <a data-t="641">It's just much, much more memory efficient.</a></p>
+<p><a data-t="636">There's some types of data where it's just like arranging things in non tidy forms.</a> <a data-t="636">It's just much, much more memory efficient.</a></p>
 
 <p><a data-t="644">But like by and large, I think most people have like looked at the tidy data framework and even if they like don't agree with all the tools or don't use, I'll still find that like framing really, really useful.</a></p>
 
 <p><a data-t="655">And I think that thought of like, let's separate that out into a separate step rather than trying to make every other tool do a little bit of tidying just makes it makes life so, so much easier.</a></p>
 
-<p><a data-t="665">100%.</a> <a data-t="665">And for people out there who haven't had the tidy experience, it is absolutely worth wrapping your brain around it.</a> <a data-t="672">Because once you do get used to it, everything becomes so much easier.</a></p>
+<p><a data-t="665">100%.</a> <a data-t="665">And for people out there who haven't had the tidy experience, it is absolutely worth wrapping your brain around it.</a> <a data-t="665">Because once you do get used to it, everything becomes so much easier.</a></p>
 
-<p><a data-t="675">And all of the all of the tools in your tidyverse work so seamlessly together.</a> <a data-t="680">It's like, yeah, it's like, I don't know, when I was a kid, you know, you'd have some computer video games that were just garbage and buggy.</a></p>
+<p><a data-t="675">And all of the all of the tools in your tidyverse work so seamlessly together.</a> <a data-t="675">It's like, yeah, it's like, I don't know, when I was a kid, you know, you'd have some computer video games that were just garbage and buggy.</a></p>
 
-<p><a data-t="688">And you'd constantly like, you know, you'd be able to walk through walls or whatever.</a> <a data-t="693">And then you get your for me, it was like having a Super Nintendo for the first time.</a> <a data-t="698">And like nothing ever crashes and everything just works.</a></p>
+<p><a data-t="688">And you'd constantly like, you know, you'd be able to walk through walls or whatever.</a> <a data-t="688">And then you get your for me, it was like having a Super Nintendo for the first time.</a> <a data-t="688">And like nothing ever crashes and everything just works.</a></p>
 
-<p><a data-t="699">And the tidyverse is kind of like that you get the data formatted in that way.</a> <a data-t="703">And you're just it's just smooth sailing.</a></p>
+<p><a data-t="699">And the tidyverse is kind of like that you get the data formatted in that way.</a> <a data-t="699">And you're just it's just smooth sailing.</a></p>
 
 <h3>Flow states and the tidyverse goal</h3>
 
 <p><a data-t="704">Yeah, that's the I mean, we've we've one of the things we've sort of wondered about, like, if we're going to have like a metric that me and my team, we're going to try and optimize, like, I think the metric that I want to optimize is like the amount of time you spend in like, blow state, we are just like thinking of stuff you want to do with data, like code just kind of like flows out of your fingers.</a></p>
 
-<p><a data-t="726">And it all just works.</a> <a data-t="727">And, you know, we're certainly still some distance from that perfect utopia.</a> <a data-t="732">Over time, it really feels like the amount of time you can kind of stay stay in that flow state, stay answering asking questions of the data you actually care about, not like, how do I get this, this thing into this other function, so I can actually just do what I want to do.</a></p>
+<p><a data-t="726">And it all just works.</a> <a data-t="726">And, you know, we're certainly still some distance from that perfect utopia.</a> <a data-t="726">Over time, it really feels like the amount of time you can kind of stay stay in that flow state, stay answering asking questions of the data you actually care about, not like, how do I get this, this thing into this other function, so I can actually just do what I want to do.</a></p>
 
 <p><a data-t="793">On that note, in a recent article about strategies and function design, you have discussed the importance of making strategic choices explicit to users.</a></p>
 
@@ -102,17 +102,17 @@
 
 <p><a data-t="811">Do you think that this kind of this kind of concept of providing of providing a clear presentation of strategies in the way that you're designing a tool or function that that actually enhances the user's experience or functionality maybe allows them to be in that flow state for more of the time that they're programming because they understand the thinking behind the strategic choices in the tools?</a></p>
 
-<p><a data-t="835">Yeah, I think so.</a> <a data-t="836">And kind of framing that even like a little more broadly, like one of the things that me and my teams would think about and talk about quite a lot is like how much do you want to force you to learn some like new concept that's, you know, really going to that might really like a better mental model that's going to help you in the long run.</a></p>
+<p><a data-t="835">Yeah, I think so.</a> <a data-t="835">And kind of framing that even like a little more broadly, like one of the things that me and my teams would think about and talk about quite a lot is like how much do you want to force you to learn some like new concept that's, you know, really going to that might really like a better mental model that's going to help you in the long run.</a></p>
 
-<p><a data-t="856">But until you learn what that thing is, it's going to like the code is going to be a bit of a mystery for you.</a> <a data-t="863">And that kind of balance of like we want to we want you to like learn some new ideas like this idea of tidy data.</a></p>
+<p><a data-t="856">But until you learn what that thing is, it's going to like the code is going to be a bit of a mystery for you.</a> <a data-t="856">And that kind of balance of like we want to we want you to like learn some new ideas like this idea of tidy data.</a></p>
 
-<p><a data-t="867">Like they're clearly like this is big, pretty clearly a big payoff of getting that concept into your head.</a> <a data-t="875">And then versus other times, like, are we just teaching you some kind of like technical jargon that's like, you know, really useful for us, but maybe it's just more like junk to fill your brain up with.</a></p>
+<p><a data-t="867">Like they're clearly like this is big, pretty clearly a big payoff of getting that concept into your head.</a> <a data-t="867">And then versus other times, like, are we just teaching you some kind of like technical jargon that's like, you know, really useful for us, but maybe it's just more like junk to fill your brain up with.</a></p>
 
-<p><a data-t="885">So that's one of the things we're going to think about a lot, like how like what do we like?</a> <a data-t="890">How much do we want to accommodate your existing mental model versus how much we want to give you a new and better mental model like either possibly kind of against your will.</a></p>
+<p><a data-t="885">So that's one of the things we're going to think about a lot, like how like what do we like?</a> <a data-t="885">How much do we want to accommodate your existing mental model versus how much we want to give you a new and better mental model like either possibly kind of against your will.</a></p>
 
 <h3>Favorite libraries</h3>
 
-<p><a data-t="904">Amongst all of the libraries that you've developed in the tidyverse.</a> <a data-t="908">So there's things like reshape and plier for shaping the data and and being able to have pipelines of data within this tidy framework.</a></p>
+<p><a data-t="904">Amongst all of the libraries that you've developed in the tidyverse.</a> <a data-t="904">So there's things like reshape and plier for shaping the data and and being able to have pipelines of data within this tidy framework.</a></p>
 
 <p><a data-t="920">Is there any particular library that is near and dear to your heart that you feel like this was one that either I don't know, conceptually developing it like you must kind of have favorites, right?</a></p>
 
@@ -136,7 +136,7 @@
 
 <p><a data-t="1014">So that kind of tension there between like this again programming and like human psychology.</a> <a data-t="1019">I just find that like really interesting and fun to explore.</a></p>
 
-<p><a data-t="1026">Yeah, it must be interesting to think yourself.</a> <a data-t="1026">Well, there's clearly this need to be addressed and it's a it's an impossible problem to solve perfectly.</a></p>
+<p><a data-t="1024">Yeah, it must be interesting to think yourself.</a> <a data-t="1026">Well, there's clearly this need to be addressed and it's a it's an impossible problem to solve perfectly.</a></p>
 
 <p><a data-t="1038">So how can we get most of the way there in a way that will satisfy most people?</a></p>
 
@@ -164,23 +164,23 @@
 
 <p><a data-t="1167">And that again, that's that's that's one of these ideas like tidy data that takes your takes a little while to get your head around.</a> <a data-t="1173">It's like probably it's quite possibly an idea you've never encountered before in programming.</a></p>
 
-<p><a data-t="1180">It works a little bit differently to things you might have encountered.</a> <a data-t="1184">But like once you get that idea, it just gives you this incredible tool set to create apps that like where things just work.</a></p>
+<p><a data-t="1180">It works a little bit differently to things you might have encountered.</a> <a data-t="1180">But like once you get that idea, it just gives you this incredible tool set to create apps that like where things just work.</a></p>
 
 <p><a data-t="1190">And you don't have to worry about like things either like updating too often doing a bunch of needless work and making your app too slow or just failing to update.</a></p>
 
 <p><a data-t="1199">And so you've got these mysterious like bugs in your app where things don't change.</a> <a data-t="1203">And you expect them to, which is like one of the most frustrating things to try and debug when something doesn't happen.</a></p>
 
-<p><a data-t="1210">That that is fun.</a> <a data-t="1211">Yeah.</a> <a data-t="1211">So, yeah, shiny.</a> <a data-t="1212">Really, really, really cool.</a></p>
+<p><a data-t="1210">That that is fun.</a> <a data-t="1210">Yeah.</a> <a data-t="1210">So, yeah, shiny.</a> <a data-t="1210">Really, really, really cool.</a></p>
 
-<p><a data-t="1216">It allows you to spin up basically like that Super Nintendo game that I was just describing.</a> <a data-t="1221">It just kind of works like you think it should.</a> <a data-t="1222">People don't walk through walls accidentally as they're using your your dashboard that you developed in literally minutes.</a></p>
+<p><a data-t="1216">It allows you to spin up basically like that Super Nintendo game that I was just describing.</a> <a data-t="1216">It just kind of works like you think it should.</a> <a data-t="1222">People don't walk through walls accidentally as they're using your your dashboard that you developed in literally minutes.</a></p>
 
 <p><a data-t="1229">Yeah, it's funny.</a> <a data-t="1229">Like, I remember talking to Joe Chang, who wrote shiny like very early on.</a></p>
 
-<p><a data-t="1235">And I was like, Joey, you think I use this like website like you can use like use Ruby for that.</a> <a data-t="1245">Use PHP for that.</a> <a data-t="1246">Like why on earth would a data scientist want to make a website?</a></p>
+<p><a data-t="1235">And I was like, Joey, you think I use this like website like you can use like use Ruby for that.</a> <a data-t="1245">Use PHP for that.</a> <a data-t="1245">Like why on earth would a data scientist want to make a website?</a></p>
 
-<p><a data-t="1249">And now it's like so obvious because you don't want to give decision makers in the organization just like a PDF.</a> <a data-t="1255">You want to give them like a little interactive app.</a> <a data-t="1257">And there's just been so many examples of people just like really impressing their bosses with shiny.</a></p>
+<p><a data-t="1249">And now it's like so obvious because you don't want to give decision makers in the organization just like a PDF.</a> <a data-t="1255">You want to give them like a little interactive app.</a> <a data-t="1255">And there's just been so many examples of people just like really impressing their bosses with shiny.</a></p>
 
-<p><a data-t="1265">Because you can like whip up something in a couple of hours that looks like a polished app.</a> <a data-t="1270">It does exactly what you want.</a> <a data-t="1271">I remember a very early phone call from a shiny user saying like we saved him a quarter of a million dollars.</a></p>
+<p><a data-t="1265">Because you can like whip up something in a couple of hours that looks like a polished app.</a> <a data-t="1270">It does exactly what you want.</a> <a data-t="1270">I remember a very early phone call from a shiny user saying like we saved him a quarter of a million dollars.</a></p>
 
 <p><a data-t="1280">Because instead of going and like finding a like a contractor to implement a web app and a dashboard, he just did it himself over a weekend.</a></p>
 
@@ -198,19 +198,19 @@
 
 <p><a data-t="1348">And I think with how often executives think they want a dashboard and then relate it to how often they actually use it.</a> <a data-t="1355">That is another strong point for using shiny because you're not wasting weeks or months developing a dashboard.</a></p>
 
-<p><a data-t="1364">You're you're wasting hours of days.</a> <a data-t="1366">I mean, just in general, that whole iteration, the more you can do to like increase your iteration speed, like the more effective it makes you.</a></p>
+<p><a data-t="1364">You're you're wasting hours of days.</a> <a data-t="1364">I mean, just in general, that whole iteration, the more you can do to like increase your iteration speed, like the more effective it makes you.</a></p>
 
 <p><a data-t="1375">Because, again, like it's so hard to predict in advance, like what's the thing that's going to be valuable?</a> <a data-t="1380">There's definitely a lot to be said to just like trying out a ton of things and seeing what sticks rather than like doing a bunch of upfront planning and just hoping desperately that you've got a really good mental model of the world and your idea works.</a></p>
 
 <h3>Why use R? R vs Python</h3>
 
-<p><a data-t="1395">So we are going to talk about, as I already mentioned, the positive name change.</a> <a data-t="1399">We'll end up talking about Python a bit for our listeners.</a> <a data-t="1403">If there are listeners out there who don't already use R, why should they be using it for me?</a></p>
+<p><a data-t="1395">So we are going to talk about, as I already mentioned, the positive name change.</a> <a data-t="1399">We'll end up talking about Python a bit for our listeners.</a> <a data-t="1399">If there are listeners out there who don't already use R, why should they be using it for me?</a></p>
 
 <p><a data-t="1409">I can actually give one example, which is for me, for data visualizations.</a> <a data-t="1413">I still find I can do things way more quickly, have much more fun making visualizations in R and get exactly what I want.</a></p>
 
 <p><a data-t="1422">There had been in the past attempts to create a </a><a href="/software/ggplot2/">ggplot2</a><a data-t="1422"> style Python library, but the one that I had been using became deprecated and harder and harder to use.</a></p>
 
-<p><a data-t="1438">It never had all the functionality of your ggplot2 anyway.</a> <a data-t="1441">Anyway, so that's like my big example.</a> <a data-t="1444">I don't know if you have big examples of why people might want to use R still today.</a></p>
+<p><a data-t="1438">It never had all the functionality of your ggplot2 anyway.</a> <a data-t="1441">Anyway, so that's like my big example.</a> <a data-t="1441">I don't know if you have big examples of why people might want to use R still today.</a></p>
 
 <p><a data-t="1447">On the topic of ggplot2 specifically, I think the best Python equivalent is Plot9.</a> <a data-t="1453">That's actually by a developer, Hasan Kabiraji, that we've been sponsoring at </a><a href="/software/rstudio/">RStudio</a><a data-t="1453">.</a></p>
 
@@ -220,7 +220,7 @@
 
 <p><a data-t="1484">I think that comes down to at the heart of it, R is more of a special purpose programming language.</a> <a data-t="1489">It's designed from the ground up to support statistics and data science.</a></p>
 
-<p><a data-t="1494">I think that has a lot of benefits, particularly if you've never programmed before.</a> <a data-t="1498">I think you can get up and running in R using R to do data science.</a> <a data-t="1502">You can do that without learning a ton of programming.</a> <a data-t="1505">You can get up and running pretty quickly.</a></p>
+<p><a data-t="1494">I think that has a lot of benefits, particularly if you've never programmed before.</a> <a data-t="1498">I think you can get up and running in R using R to do data science.</a> <a data-t="1502">You can do that without learning a ton of programming.</a> <a data-t="1502">You can get up and running pretty quickly.</a></p>
 
 <p><a data-t="1507">Then there's just things about the language that other languages look at R and they're like, oh my god, that's a terrible idea or that makes me want to throw up in my mouth.</a></p>
 
@@ -228,163 +228,163 @@
 
 <p><a data-t="1534">That obviously lends to maybe a little bit of weaknesses.</a> <a data-t="1540">I'm like, now I've got this thing, I just wanted to do the same thing again and again and again and again.</a></p>
 
-<p><a data-t="1545">R tends to be a little bit magical.</a> <a data-t="1547">It tries to guess a little bit more of what you want and that's great when you're working interactively and it guesses correctly.</a> <a data-t="1553">It's not so great when you're working on a server somewhere else and it guesses the wrong thing.</a></p>
+<p><a data-t="1545">R tends to be a little bit magical.</a> <a data-t="1545">It tries to guess a little bit more of what you want and that's great when you're working interactively and it guesses correctly.</a> <a data-t="1553">It's not so great when you're working on a server somewhere else and it guesses the wrong thing.</a></p>
 
 <p><a data-t="1559">Everything about R I think makes it such a fluid environment for really exploring your data, digging into it, figuring out what's going on.</a></p>
 
 <h3>Posit's rebrand and the R/Python ecosystem</h3>
 
-<p><a data-t="1659">Speaking of differences between R and Python, I seem to remember, and you can correct me if I'm wrong about this,</a> <a data-t="1666">but I feel like you have a famous tweet from years ago where you say, somebody says something like,</a></p>
+<p><a data-t="1614">Speaking of differences between R and Python, I seem to remember, and you can correct me if I'm wrong about this,</a> <a data-t="1618">but I feel like you have a famous tweet from years ago where you say, somebody says something like,</a></p>
 
-<p><a data-t="1668">and it must have been a famous poster themself that you responded to, and I can't remember, it might have been like Wes McKinney or somebody like that</a> <a data-t="1678">saying that one of the advantages of Python is that it's faster than R.</a></p>
+<p><a data-t="1628">and it must have been a famous poster themself that you responded to, and I can't remember, it might have been like Wes McKinney or somebody like that</a> <a data-t="1638">saying that one of the advantages of Python is that it's faster than R.</a></p>
 
-<p><a data-t="1683">And then you have this super famous reply of, what is that, and I will make it faster.</a> <a data-t="1688">Do you know what I'm talking about?</a></p>
+<p><a data-t="1643">And then you have this super famous reply of, what is that, and I will make it faster.</a> <a data-t="1648">Do you know what I'm talking about?</a></p>
 
-<p><a data-t="1690">I don't, but I know I've heard things like that in the past.</a></p>
+<p><a data-t="1650">I don't, but I know I've heard things like that in the past.</a></p>
 
-<p><a data-t="1694">Yeah, it's kind of a misperception because Python isn't actually that fast itself.</a> <a data-t="1700">I mean, languages like Julia have come up to be faster than Python.</a></p>
+<p><a data-t="1654">Yeah, it's kind of a misperception because Python isn't actually that fast itself.</a> <a data-t="1662">I mean, languages like Julia have come up to be faster than Python.</a></p>
 
-<p><a data-t="1707">Yeah, I think one of the reasons, often the biggest, you have the worst arguments with your family and not with strangers.</a> <a data-t="1717">With people who are so similar to you, you tend to have more friction than with people who are really different.</a></p>
+<p><a data-t="1668">Yeah, I think one of the reasons, often the biggest, you have the worst arguments with your family and not with strangers.</a> <a data-t="1677">With people who are so similar to you, you tend to have more friction than with people who are really different.</a></p>
 
-<p><a data-t="1723">I think because R and Python are actually really close together in the spectrum of programming languages.</a> <a data-t="1729">It's so easy to see all of the little things that look weird to you as opposed to looking at some programming language that's miles away,</a> <a data-t="1737">and it just looks totally different.</a></p>
+<p><a data-t="1683">I think because R and Python are actually really close together in the spectrum of programming languages.</a> <a data-t="1689">It's so easy to see all of the little things that look weird to you as opposed to looking at some programming language that's miles away,</a> <a data-t="1697">and it just looks totally different.</a></p>
 
-<p><a data-t="1739">You can't, I just think that, I don't know, I think there's something to that.</a> <a data-t="1743">It's because we're close, you can see these little noises.</a></p>
+<p><a data-t="1699">You can't, I just think that, I don't know, I think there's something to that.</a> <a data-t="1703">It's because we're close, you can see these little noises.</a></p>
 
-<p><a data-t="1748">Certainly, when I see things in Python that people are like, wow, that's really cool.</a> <a data-t="1752">I'm like, challenge accepted.</a> <a data-t="1754">I will make that better in R.</a></p>
+<p><a data-t="1708">Certainly, when I see things in Python that people are like, wow, that's really cool.</a> <a data-t="1712">I'm like, challenge accepted.</a> <a data-t="1714">I will make that better in R.</a></p>
 
-<p><a data-t="1756">Yeah, exactly.</a> <a data-t="1757">Let's dig into that a bit now.</a> <a data-t="1759">For 11 years, you've been the chief scientist at Posit, makers of open-source software for data science, scientific research, technical communication communities.</a></p>
+<p><a data-t="1716">Yeah, exactly.</a> <a data-t="1717">Let's dig into that a bit now.</a> <a data-t="1719">For 11 years, you've been the chief scientist at Posit, makers of open-source software for data science, scientific research, technical communication communities.</a></p>
 
-<p><a data-t="1766">Many R users will know Posit as the makers of RStudio, a full-featured integrated development environment IDE for R,</a> <a data-t="1774">which I myself have been using for as long as I can remember.</a></p>
+<p><a data-t="1726">Many R users will know Posit as the makers of RStudio, a full-featured integrated development environment IDE for R,</a> <a data-t="1734">which I myself have been using for as long as I can remember.</a></p>
 
-<p><a data-t="1778">Basically, as long as I have been typing, I have been using RStudio.</a></p>
+<p><a data-t="1738">Basically, as long as I have been typing, I have been using RStudio.</a></p>
 
-<p><a data-t="1745">RStudio, as you actually kind of let slip earlier in this episode when you were talking about Joe Chang, I think.</a> <a data-t="1793">Oh, no, no, no.</a> <a data-t="1794">You were talking about plot nine and how you were like, RStudio is supporting.</a> <a data-t="1799">Wait, no, Posit.</a> <a data-t="1800">That's two years ago, the company name has changed to Posit.</a></p>
+<p><a data-t="1745">RStudio, as you actually kind of let slip earlier in this episode when you were talking about Joe Chang, I think.</a> <a data-t="1753">Oh, no, no, no.</a> <a data-t="1754">You were talking about plot nine and how you were like, RStudio is supporting.</a> <a data-t="1759">Wait, no, Posit.</a> <a data-t="1760">That's two years ago, the company name has changed to Posit.</a></p>
 
-<p><a data-t="1805">From a distance, I mean, I don't even think it's from a distance.</a> <a data-t="1808">I think this is explicitly related to how Posit is now supporting more than just R.</a> <a data-t="1814">Is that right?</a></p>
+<p><a data-t="1765">From a distance, I mean, I don't even think it's from a distance.</a> <a data-t="1768">I think this is explicitly related to how Posit is now supporting more than just R.</a> <a data-t="1774">Is that right?</a></p>
 
-<p><a data-t="1815">Yeah, yeah.</a> <a data-t="1816">I mean, the goal of RStudio and now Posit has always been to be this kind of like a company with a long-term vision.</a> <a data-t="1824">Like we talk internally about this sort of idea of a hundred-year company.</a></p>
+<p><a data-t="1775">Yeah, yeah.</a> <a data-t="1776">I mean, the goal of RStudio and now Posit has always been to be this kind of like a company with a long-term vision.</a> <a data-t="1784">Like we talk internally about this sort of idea of a hundred-year company.</a></p>
 
-<p><a data-t="1828">And when you think about a company like that, like obviously no programming language is going to be around in a hundred years' time.</a> <a data-t="1836">When we started with R, that's something that's near and dear to many of our hearts.</a> <a data-t="1840">It will always be.</a></p>
+<p><a data-t="1788">And when you think about a company like that, like obviously no programming language is going to be around in a hundred years' time.</a> <a data-t="1796">When we started with R, that's something that's near and dear to many of our hearts.</a> <a data-t="1800">It will always be.</a></p>
 
-<p><a data-t="1842">But we also want it in the name of our company to like embrace that there are now other languages and there will be even more languages in the future.</a></p>
+<p><a data-t="1802">But we also want it in the name of our company to like embrace that there are now other languages and there will be even more languages in the future.</a></p>
 
-<p><a data-t="1851">And I kind of think about this as like the Burlington Coat Factory problem.</a> <a data-t="1859">I don't know if you know Burlington Coat Factory, but we have a lot of ads for them on television.</a> <a data-t="1863">But for a long time, they were like, no, it's like Burlington Coat Factory.</a> <a data-t="1867">It's not just coats.</a></p>
+<p><a data-t="1811">And I kind of think about this as like the Burlington Coat Factory problem.</a> <a data-t="1819">I don't know if you know Burlington Coat Factory, but we have a lot of ads for them on television.</a> <a data-t="1823">But for a long time, they were like, no, it's like Burlington Coat Factory.</a> <a data-t="1827">It's not just coats.</a></p>
 
-<p><a data-t="1869">And for us to go into customers and say like, buy RStudio.</a> <a data-t="1872">It's not just R.</a> <a data-t="1874">It's hard to make that story.</a></p>
+<p><a data-t="1829">And for us to go into customers and say like, buy RStudio.</a> <a data-t="1832">It's not just R.</a> <a data-t="1834">It's hard to make that story.</a></p>
 
-<p><a data-t="1876">So I really, really wanted to say like, hey, for a long time now, like our products have supported not just R but Python and Julia and other tools.</a> <a data-t="1884">We don't want to lock ourselves into this.</a> <a data-t="1886">We're going to be R forever regardless of what happens with the rest of the world.</a></p>
+<p><a data-t="1836">So I really, really wanted to say like, hey, for a long time now, like our products have supported not just R but Python and Julia and other tools.</a> <a data-t="1844">We don't want to lock ourselves into this.</a> <a data-t="1846">We're going to be R forever regardless of what happens with the rest of the world.</a></p>
 
-<p><a data-t="1891">So renaming deposit, rebranding deposit was really about saying like we're in this for the long haul.</a> <a data-t="1897">And we care about data scientists regardless of what tool they're using.</a></p>
+<p><a data-t="1851">So renaming deposit, rebranding deposit was really about saying like we're in this for the long haul.</a> <a data-t="1857">And we care about data scientists regardless of what tool they're using.</a></p>
 
 <h3>Piping in R and Python</h3>
 
-<p><a data-t="1903">One of my favorite things that you can do really well thanks to the </a><a href="/software/dplyr/">dplyr</a><a data-t="1903"> library that you led development of is piping.</a> <a data-t="1910">And so you can extremely easily have functions pass it.</a> <a data-t="1916">I mean, just like if people are familiar with Unix programming pipes there where you have output from one function goes the input to a next function.</a></p>
+<p><a data-t="1863">One of my favorite things that you can do really well thanks to the </a><a href="/software/dplyr/">dplyr</a><a data-t="1863"> library that you led development of is piping.</a> <a data-t="1870">And so you can extremely easily have functions pass it.</a> <a data-t="1876">I mean, just like if people are familiar with Unix programming pipes there where you have output from one function goes the input to a next function.</a></p>
 
-<p><a data-t="1924">And prior to me discovering dplyr, which was probably around 2010.</a> <a data-t="1931">Does that make sense?</a> <a data-t="1934">Prior to that, I would have so many variables in my workspace.</a> <a data-t="1940">It was just such a pain to keep them all straight.</a></p>
+<p><a data-t="1884">And prior to me discovering dplyr, which was probably around 2010.</a> <a data-t="1892">Does that make sense?</a> <a data-t="1894">Prior to that, I would have so many variables in my workspace.</a> <a data-t="1900">It was just such a pain to keep them all straight.</a></p>
 
-<p><a data-t="1943">And you just end up in these weird situations where like should I be investing time thinking about the name of this intermediate variable?</a> <a data-t="1949">Am I going to use this later?</a></p>
+<p><a data-t="1903">And you just end up in these weird situations where like should I be investing time thinking about the name of this intermediate variable?</a> <a data-t="1909">Am I going to use this later?</a></p>
 
-<p><a data-t="1951">Or should I just name it like intermediate variable 15 and have really ugly code?</a></p>
+<p><a data-t="1911">Or should I just name it like intermediate variable 15 and have really ugly code?</a></p>
 
-<p><a data-t="1958">So piping gets rid of all that where you can read the flows like a sentence.</a> <a data-t="1965">You're like, okay, this preprocessing step happens, then this next, and you can just see it so easily it makes it so elegant to read.</a></p>
+<p><a data-t="1918">So piping gets rid of all that where you can read the flows like a sentence.</a> <a data-t="1925">You're like, okay, this preprocessing step happens, then this next, and you can just see it so easily it makes it so elegant to read.</a></p>
 
-<p><a data-t="1972">Do you think we'll get to a point where and I have used some kinds of piping attempts in Python, but my experience of that has never been.</a> <a data-t="1982">And I guess it's been a few years since I've tried.</a> <a data-t="1984">Yeah.</a> <a data-t="1985">But it seems like it's never been as smooth or as easy as with R.</a> <a data-t="1989">And maybe that's related to what you were talking about earlier with data visualization.</a></p>
+<p><a data-t="1932">Do you think we'll get to a point where and I have used some kinds of piping attempts in Python, but my experience of that has never been.</a> <a data-t="1942">And I guess it's been a few years since I've tried.</a> <a data-t="1944">Yeah.</a> <a data-t="1945">But it seems like it's never been as smooth or as easy as with R.</a> <a data-t="1949">And maybe that's related to what you were talking about earlier with data visualization.</a></p>
 
-<p><a data-t="1992">Yeah.</a> <a data-t="1993">So one, kind of like the native equivalent of piping in Python is like method chaining.</a> <a data-t="1999">You know, like if you're using pandas, you do something dot something.</a> <a data-t="2005">Yeah, pandas does it.</a> <a data-t="2007">Dot something.</a></p>
+<p><a data-t="1952">Yeah.</a> <a data-t="1953">So one, kind of like the native equivalent of piping in Python is like method chaining.</a> <a data-t="1961">You know, like if you're using pandas, you do something dot something.</a> <a data-t="1965">Yeah, pandas does it.</a> <a data-t="1967">Dot something.</a></p>
 
-<p><a data-t="2008">But the big difference between like method chaining and the pipe is in method chaining, like all of those methods have to come from the same class.</a> <a data-t="2016">They have to live in the same library, the same package.</a> <a data-t="2020">Whereas with piping, they can come from any package.</a></p>
+<p><a data-t="1968">But the big difference between like method chaining and the pipe is in method chaining, like all of those methods have to come from the same class.</a> <a data-t="1976">They have to live in the same library, the same package.</a> <a data-t="1980">Whereas with piping, they can come from any package.</a></p>
 
-<p><a data-t="2025">And I think the thing that's really interesting about that is that that is meant like Python is tended to have like these fewer, bigger packages like pandas and scikit-learn, matplotlib, like kind of everything in order to work with method chaining, like everything has to be glommed into this one giant package.</a></p>
+<p><a data-t="1985">And I think the thing that's really interesting about that is that that is meant like Python is tended to have like these fewer, bigger packages like pandas and scikit-learn, matplotlib, like kind of everything in order to work with method chaining, like everything has to be glommed into this one giant package.</a></p>
 
-<p><a data-t="2045">Where with R, you know, because you can combine things from different packages, like the equivalent of pandas is kind of like dplyr and </a><a href="/software/tidyr/">tidyr</a><a data-t="2045"> and readr and a bunch of other things.</a></p>
+<p><a data-t="2005">Where with R, you know, because you can combine things from different packages, like the equivalent of pandas is kind of like dplyr and </a><a href="/software/tidyr/">tidyr</a><a data-t="2005"> and readr and a bunch of other things.</a></p>
 
-<p><a data-t="2055">It's way easier to add extensions to ggplot2 than matplotlib that work exactly the same way because you can just combine them with different pieces.</a></p>
+<p><a data-t="2015">It's way easier to add extensions to ggplot2 than matplotlib that work exactly the same way because you can just combine them with different pieces.</a></p>
 
-<p><a data-t="2066">So I think this is one of these like sort of interesting, like subtle differences in language design that leads to, you know, fairly big impacts on the user experience and kind of almost even how the community has to work together and form.</a></p>
+<p><a data-t="2026">So I think this is one of these like sort of interesting, like subtle differences in language design that leads to, you know, fairly big impacts on the user experience and kind of almost even how the community has to work together and form.</a></p>
 
-<p><a data-t="2081">Yeah, it makes perfect sense.</a> <a data-t="2082">And it's actually your explanation is so simple for how that's happened.</a> <a data-t="2086">And that had kind of escaped my attention as to why it works so well in R.</a></p>
+<p><a data-t="2041">Yeah, it makes perfect sense.</a> <a data-t="2042">And it's actually your explanation is so simple for how that's happened.</a> <a data-t="2045">And that had kind of escaped my attention as to why it works so well in R.</a></p>
 
 <h3>Marrying R and Python: Arrow, DuckDB, and beyond</h3>
 
-<p><a data-t="2092">When you were last on this podcast four years ago, you said that you wanted to marry the Python and R languages.</a> <a data-t="2100">Four years on, how do you assess the progress made in achieving this dream, especially through projects like Apache Arrow?</a></p>
+<p><a data-t="2052">When you were last on this podcast four years ago, you said that you wanted to marry the Python and R languages.</a> <a data-t="2060">Four years on, how do you assess the progress made in achieving this dream, especially through projects like Apache Arrow?</a></p>
 
-<p><a data-t="2108">Yeah, I think we've come a long, a long way.</a> <a data-t="2111">And like Arrow has made a big difference in just being able to like seamlessly move data from one platform to another, you know, one programming language to another.</a></p>
+<p><a data-t="2068">Yeah, I think we've come a long, a long way.</a> <a data-t="2071">And like Arrow has made a big difference in just being able to like seamlessly move data from one platform to another, you know, one programming language to another.</a></p>
 
-<p><a data-t="2123">I think the other, and then kind of coupled with that, I think the other technologies that's really, really interesting is DuckDB.</a> <a data-t="2131">You can, you know, you can use DuckDB from R, you can use it from Python and you don't have to have like a database file.</a> <a data-t="2137">You have like a directory full of parquet files.</a></p>
+<p><a data-t="2083">I think the other, and then kind of coupled with that, I think the other technologies that's really, really interesting is DuckDB.</a> <a data-t="2091">You can, you know, you can use DuckDB from R, you can use it from Python and you don't have to have like a database file.</a> <a data-t="2097">You have like a directory full of parquet files.</a></p>
 
-<p><a data-t="2140">And it means that like, you know, people are using the same kinds of tools, just expressing them, you know, in the language that they feel most comfortable with.</a></p>
+<p><a data-t="2100">And it means that like, you know, people are using the same kinds of tools, just expressing them, you know, in the language that they feel most comfortable with.</a></p>
 
-<p><a data-t="2153">Another, you know, sort of a similar thing is like Keras and a lot of the machine learning toolkits in Python.</a> <a data-t="2161">Like the reason that they are fast is not because like Python is fast.</a> <a data-t="2165">It's because you express those high level ideas in Python and then they get compiled down to some low level machine code.</a></p>
+<p><a data-t="2113">Another, you know, sort of a similar thing is like Keras and a lot of the machine learning toolkits in Python.</a> <a data-t="2121">Like the reason that they are fast is not because like Python is fast.</a> <a data-t="2125">It's because you express those high level ideas in Python and then they get compiled down to some low level machine code.</a></p>
 
-<p><a data-t="2173">And that's why packages like the Keras package for R, which is maintained by one of my colleagues at Posit, Tomasz Komarski, like it does the same thing.</a> <a data-t="2183">Like you express these ideas in R rather than Python, but then it gets compiled down to machine code using exactly the same toolkit.</a></p>
+<p><a data-t="2133">And that's why packages like the Keras package for R, which is maintained by one of my colleagues at Posit, Tomasz Komarski, like it does the same thing.</a> <a data-t="2143">Like you express these ideas in R rather than Python, but then it gets compiled down to machine code using exactly the same toolkit.</a></p>
 
-<p><a data-t="2192">So I think that like we're just going to continue to see more and more of that.</a> <a data-t="2196">Like R is not fast.</a> <a data-t="2198">Python is not particularly fast.</a> <a data-t="2200">What is fast is like people really caring about stuff and Rust and C.</a> <a data-t="2204">And then you write a more user friendly interface on top of that.</a> <a data-t="2208">So the programming language is the data scientists use every day.</a></p>
+<p><a data-t="2152">So I think that like we're just going to continue to see more and more of that.</a> <a data-t="2156">Like R is not fast.</a> <a data-t="2158">Python is not particularly fast.</a> <a data-t="2160">What is fast is like people really caring about stuff and Rust and C.</a> <a data-t="2164">And then you write a more user friendly interface on top of that.</a> <a data-t="2168">So the programming language is the data scientists use every day.</a></p>
 
-<p><a data-t="2217">And those libraries that you mentioned there are super cool.</a> <a data-t="2220">In addition to the arrow that I mentioned, speaking of Wes McKinney.</a> <a data-t="2224">And we actually have.</a> <a data-t="2226">So we have a whole episode about that.</a></p>
+<p><a data-t="2175">And those libraries that you mentioned there are super cool.</a> <a data-t="2177">In addition to the arrow that I mentioned, speaking of Wes McKinney.</a> <a data-t="2181">And we actually have.</a> <a data-t="2182">So we have a whole episode about that.</a></p>
 
-<p><a data-t="2249">So back in episode number 523, we had Wes McKinney on and he talks about the Apache Arrow project at length.</a> <a data-t="2260">Really cool one.</a> <a data-t="2261">And the other projects you mentioned there, DuckDB as well as Keras for R.</a> <a data-t="2266">Yeah.</a> <a data-t="2267">Super cool.</a> <a data-t="2268">Invaluable packages that people should be trying out on the show for sure.</a></p>
+<p><a data-t="2189">So back in episode number 523, we had Wes McKinney on and he talks about the Apache Arrow project at length.</a> <a data-t="2200">Really cool one.</a> <a data-t="2201">And the other projects you mentioned there, DuckDB as well as Keras for R.</a> <a data-t="2206">Yeah.</a> <a data-t="2207">Super cool.</a> <a data-t="2208">Invaluable packages that people should be trying out on the show for sure.</a></p>
 
-<p><a data-t="2273">Arrow's also been top of mind for me lately because I've been working on some enhancements for the big query package, which allows you to get data from big query.</a></p>
+<p><a data-t="2213">Arrow's also been top of mind for me lately because I've been working on some enhancements for the big query package, which allows you to get data from big query.</a></p>
 
-<p><a data-t="2283">And previously, the only way you could get or the way that the big R query package used is downloading the data as JSON.</a></p>
+<p><a data-t="2223">And previously, the only way you could get or the way that the big R query package used is downloading the data as JSON.</a></p>
 
-<p><a data-t="2291">And JSON is like a great interchange format, but it is horrendously inefficient if you're sending like data frames of data.</a></p>
+<p><a data-t="2231">And JSON is like a great interchange format, but it is horrendously inefficient if you're sending like data frames of data.</a></p>
 
-<p><a data-t="2300">And so thanks to some folks who have been working on the big R query storage package, which talks to the Google API using Arrow instead of JSON.</a></p>
+<p><a data-t="2240">And so thanks to some folks who have been working on the big R query storage package, which talks to the Google API using Arrow instead of JSON.</a></p>
 
-<p><a data-t="2308">Like you can download data like an order or sometimes two orders of magnitude faster because you're using a data format like specifically designed for the type of data that, you know, data scientists care about.</a></p>
+<p><a data-t="2248">Like you can download data like an order or sometimes two orders of magnitude faster because you're using a data format like specifically designed for the type of data that, you know, data scientists care about.</a></p>
 
-<p><a data-t="2322">And that's just like it's really it's kind of nice to see that like in practice and that the kind of dream of Arrow of like you've got data over here and you want to get it over here.</a> <a data-t="2331">Let's make it as easy as possible.</a></p>
+<p><a data-t="2262">And that's just like it's really it's kind of nice to see that like in practice and that the kind of dream of Arrow of like you've got data over here and you want to get it over here.</a> <a data-t="2271">Let's make it as easy as possible.</a></p>
 
 <h3>Multilingual programming and generative AI</h3>
 
-<p><a data-t="2335">Speaking of multiple languages and interchanging between them, do you personally encourage teams to be multilingual or do you often write in multiple different languages, maybe even within the same project?</a></p>
+<p><a data-t="2275">Speaking of multiple languages and interchanging between them, do you personally encourage teams to be multilingual or do you often write in multiple different languages, maybe even within the same project?</a></p>
 
-<p><a data-t="2347">How do you think about that in your own?</a></p>
+<p><a data-t="2287">How do you think about that in your own?</a></p>
 
-<p><a data-t="2351">I'm like 100. I'm 100% R and as far as I can tell, I probably always will be.</a> <a data-t="2358">Like that's my job.</a> <a data-t="2359">Like if there's something that I could do better in Python, like I will write an R package.</a></p>
+<p><a data-t="2291">I'm like 100. I'm 100% R and as far as I can tell, I probably always will be.</a> <a data-t="2298">Like that's my job.</a> <a data-t="2298">Like if there's something that I could do better in Python, like I will write an R package.</a></p>
 
-<p><a data-t="2366">But, you know, but that's not the reality of like most people's lives and most people's jobs.</a> <a data-t="2373">I think most people tend to be like, you know, like 90% R or 90% Python.</a></p>
+<p><a data-t="2306">But, you know, but that's not the reality of like most people's lives and most people's jobs.</a> <a data-t="2313">I think most people tend to be like, you know, like 90% R or 90% Python.</a></p>
 
-<p><a data-t="2379">But in general, it's better to be pragmatic if there is something that's way easier to do in another language like you can, you know, you can learn the basics of R, you can learn the basics of Python pretty quickly so you can use that tool.</a></p>
+<p><a data-t="2319">But in general, it's better to be pragmatic if there is something that's way easier to do in another language like you can, you know, you can learn the basics of R, you can learn the basics of Python pretty quickly so you can use that tool.</a></p>
 
-<p><a data-t="2391">And I think that's one area where I think generative AI is like really interesting, like just being able to like generate code in another language quickly.</a></p>
+<p><a data-t="2331">And I think that's one area where I think generative AI is like really interesting, like just being able to like generate code in another language quickly.</a></p>
 
-<p><a data-t="2403">And like I use it, I've been using it quite a bit for to generate JavaScript because I do the occasional web thing.</a> <a data-t="2410">And I really like it because I like I know enough about JavaScript that I can kind of look at what it produces and say like that looks right.</a> <a data-t="2417">But for me to manually like figure out would just take like so much longer.</a></p>
+<p><a data-t="2343">And like I use it, I've been using it quite a bit for to generate JavaScript because I do the occasional web thing.</a> <a data-t="2350">And I really like it because I like I know enough about JavaScript that I can kind of look at what it produces and say like that looks right.</a> <a data-t="2357">But for me to manually like figure out would just take like so much longer.</a></p>
 
-<p><a data-t="2421">And so I think that's really, I think it's really interesting to kind of think about how that's going to affect kind of programming languages.</a> <a data-t="2429">If it's really easy to translate between them, maybe this means the barriers between them are going to erode a little bit more.</a></p>
+<p><a data-t="2361">And so I think that's really, I think it's really interesting to kind of think about how that's going to affect kind of programming languages.</a> <a data-t="2369">If it's really easy to translate between them, maybe this means the barriers between them are going to erode a little bit more.</a></p>
 
-<p><a data-t="2439">Yeah, I think that's right.</a> <a data-t="2440">We haven't, it's amazing that we've gotten this far in the episode without talking about generative AI yet.</a> <a data-t="2445">That's kind of a nice refreshing and actually looking at all the topics we have lined up.</a> <a data-t="2448">I don't think any of it touched on gen AI, which is kind of crazy today.</a></p>
+<p><a data-t="2378">Yeah, I think that's right.</a> <a data-t="2380">We haven't, it's amazing that we've gotten this far in the episode without talking about generative AI yet.</a> <a data-t="2385">That's kind of a nice refreshing and actually looking at all the topics we have lined up.</a> <a data-t="2388">I don't think any of it touched on gen AI, which is kind of crazy today.</a></p>
 
-<p><a data-t="2452">But as you were talking earlier about how in a hundred years, how Posit is aiming to be a hundred year company.</a> <a data-t="2458">And we think about what programming languages will be a hundred years from now.</a> <a data-t="2462">I was kind of just, that was batting around in my head, bouncing around in my head as you were speaking.</a> <a data-t="2467">How I wonder if a hundred years from now, anybody will be programming.</a></p>
+<p><a data-t="2392">But as you were talking earlier about how in a hundred years, how Posit is aiming to be a hundred year company.</a> <a data-t="2398">And we think about what programming languages will be a hundred years from now.</a> <a data-t="2402">I was kind of just, that was batting around in my head, bouncing around in my head as you were speaking.</a> <a data-t="2407">How I wonder if a hundred years from now, anybody will be programming.</a></p>
 
-<p><a data-t="2471">Because I wonder if just natural language expression of things will be so powerful.</a> <a data-t="2478">I wonder if we'll be working at all.</a> <a data-t="2482">It's just going to be like a Mad Max hellscape.</a></p>
+<p><a data-t="2411">Because I wonder if just natural language expression of things will be so powerful.</a> <a data-t="2418">I wonder if we'll be working at all.</a> <a data-t="2422">It's just going to be like a Mad Max hellscape.</a></p>
 
-<p><a data-t="2487">I think the other thing that's really interesting to me, though, is like if people are really going to be using like generative AI for programming a lot.</a> <a data-t="2496">Like what does that mean for new programming languages, which are not going to have any training data available for them?</a> <a data-t="2502">Like that seems like that's going to kind of raise the barrier to new languages even further.</a></p>
+<p><a data-t="2427">I think the other thing that's really interesting to me, though, is like if people are really going to be using like generative AI for programming a lot.</a> <a data-t="2436">Like what does that mean for new programming languages, which are not going to have any training data available for them?</a> <a data-t="2442">Like that seems like that's going to kind of raise the barrier to new languages even further.</a></p>
 
-<p><a data-t="2509">Yeah, it's also just like what happens to stack overflow.</a> <a data-t="2512">And I always sort of like this idea of like poisoning the well.</a> <a data-t="2515">Like people are stopping using stack overflow, which is kind of like fine in the short term.</a> <a data-t="2520">But where's like all the training data going to come from in the future?</a></p>
+<p><a data-t="2449">Yeah, it's also just like what happens to stack overflow.</a> <a data-t="2452">And I always sort of like this idea of like poisoning the well.</a> <a data-t="2455">Like people are stopping using stack overflow, which is kind of like fine in the short term.</a> <a data-t="2460">But where's like all the training data going to come from in the future?</a></p>
 
-<p><a data-t="2525">It's exciting and scary.</a> <a data-t="2527">Yeah, it is exciting and scary.</a></p>
+<p><a data-t="2465">It's exciting and scary.</a> <a data-t="2467">Yeah, it is exciting and scary.</a></p>
 
-<p><a data-t="2530">I have this perhaps completely unfounded intuition that somehow it's going.</a> <a data-t="2538">And there's people way smarter than me who have spent a lot of time thinking about this who could easily crush what I'm about to just say.</a> <a data-t="2545">You might even do it right now.</a></p>
+<p><a data-t="2470">I have this perhaps completely unfounded intuition that somehow it's going.</a> <a data-t="2478">And there's people way smarter than me who have spent a lot of time thinking about this who could easily crush what I'm about to just say.</a> <a data-t="2485">You might even do it right now.</a></p>
 
-<p><a data-t="2547">But somehow I have this feeling, based on how quickly issues like hallucinations have been stamped out,</a> <a data-t="2554">the jump between GPT-3.5 and GPT-4 with how much less it's hallucinating,</a> <a data-t="2560">I have this completely unscientific, uneducated intuition that somehow we're going to be fine on this front,</a> <a data-t="2570">that like we're not going to end up having a complete like there's a specific term for this.</a></p>
+<p><a data-t="2487">But somehow I have this feeling, based on how quickly issues like hallucinations have been stamped out,</a> <a data-t="2494">the jump between GPT-3.5 and GPT-4 with how much less it's hallucinating,</a> <a data-t="2500">I have this completely unscientific, uneducated intuition that somehow we're going to be fine on this front,</a> <a data-t="2510">that like we're not going to end up having a complete like there's a specific term for this.</a></p>
 
-<p><a data-t="2583">Yeah, I think the thing that makes me like less optimistic is like my Tesla and, you know,</a> <a data-t="2589">like this promise of like self-driving cars, which just doesn't seem to be getting any closer.</a> <a data-t="2593">It's like every, like, I don't know, 50% of the time that I pull into our garage,</a> <a data-t="2599">like it thinks the random collection of tools on the wall is like a semi.</a></p>
+<p><a data-t="2597">Yeah, I think the thing that makes me like less optimistic is like my Tesla and, you know,</a> <a data-t="2604">like this promise of like self-driving cars, which just doesn't seem to be getting any closer.</a> <a data-t="2609">It's like every, like, I don't know, 50% of the time that I pull into our garage,</a> <a data-t="2613">like it thinks the random collection of tools on the wall is like a semi.</a></p>
 
-<p><a data-t="2602">That's about it.</a> <a data-t="2603">So I'm just like, meh.</a> <a data-t="2604">And that's like clearly something that's been like very much hyped and a bunch of money has been.</a> <a data-t="2607">It's just gonna be interesting to see, like we're clearly in this like explosive growth.</a> <a data-t="2612">And is it just going to like flatten off or is it going to keep going?</a> <a data-t="2615">Or is it going to get steeper?</a> <a data-t="2616">Who knows?</a></p>
+<p><a data-t="2619">That's about it.</a> <a data-t="2619">So I'm just like, meh.</a> <a data-t="2622">And that's like clearly something that's been like very much hyped and a bunch of money has been.</a> <a data-t="2627">It's just gonna be interesting to see, like we're clearly in this like explosive growth.</a> <a data-t="2632">And is it just going to like flatten off or is it going to keep going?</a> <a data-t="2635">Or is it going to get steeper?</a> <a data-t="2635">Who knows?</a></p>
 
 <h3>S7 and object-oriented programming in R</h3>
 
-<p><a data-t="2818">So maybe we won't be going down the Excel route.</a> <a data-t="2822">But another big innovation for our that has actually happened recently is R7.</a></p>
+<p><a data-t="2815">So maybe we won't be going down the Excel route.</a> <a data-t="2818">But another big innovation for our that has actually happened recently is R7.</a></p>
 
-<p><a data-t="2833">Which I heard about for the first time doing the research for this episode or reading search our researchers research.</a> <a data-t="2838">Yeah.</a> <a data-t="2838">Do you want to tell us about R7 and the problems that it's aimed to address?</a></p>
+<p><a data-t="2825">Which I heard about for the first time doing the research for this episode or reading search our researchers research.</a> <a data-t="2833">Yeah.</a> <a data-t="2833">Do you want to tell us about R7 and the problems that it's aimed to address?</a></p>
 
-<p><a data-t="2842">So we actually renamed it to S7 relatively recently.</a> <a data-t="2847">Oh, really?</a> <a data-t="2847">It's called S7.</a></p>
+<p><a data-t="2838">So we actually renamed it to S7 relatively recently.</a> <a data-t="2842">Oh, really?</a> <a data-t="2843">It's called S7.</a></p>
 
-<p><a data-t="2848">So it's called S7 because there are two.</a> <a data-t="2852">This is like a lot of historical minutiae.</a> <a data-t="2856">But R was like the language that came before R was called S.</a> <a data-t="2860">And S was the kind of introduced object-oriented programming.</a> <a data-t="2863">And S version 3 and S version 4.</a></p>
+<p><a data-t="2845">So it's called S7 because there are two.</a> <a data-t="2848">This is like a lot of historical minutiae.</a> <a data-t="2852">But R was like the language that came before R was called S.</a> <a data-t="2856">And S was the kind of introduced object-oriented programming.</a> <a data-t="2860">And S version 3 and S version 4.</a></p>
 
-<p><a data-t="2866">So in R there are two types of object-oriented programming.</a> <a data-t="2868">S3 and S4.</a> <a data-t="2871">Two chief types.</a></p>
+<p><a data-t="2863">So in R there are two types of object-oriented programming.</a> <a data-t="2866">S3 and S4.</a> <a data-t="2868">Two chief types.</a></p>
 
 <p><a data-t="2871">And the kind of idea of S7 or R7 was to try and like take the add those two things together and get the best of both worlds.</a></p>
 
@@ -396,13 +396,13 @@
 
 <p><a data-t="2932">For our listeners who don't have a computer science background, what does it mean for a language to be object-oriented?</a> <a data-t="2939">And that it can have these kinds of grades from lightweight, like you were describing with S3.</a></p>
 
-<p><a data-t="2948">Yeah, I don't know.</a> <a data-t="2951">I don't know.</a> <a data-t="2955">You have objects and you program with them.</a> <a data-t="2959">I don't know.</a></p>
+<p><a data-t="2946">Yeah, I don't know.</a> <a data-t="2948">I don't know.</a> <a data-t="2951">You have objects and you program with them.</a> <a data-t="2955">I don't know.</a></p>
 
-<p><a data-t="2964">And it's especially weird in R because when you're using R, you're not really aware that you're using object-oriented programming.</a> <a data-t="2970">Unlike in Python, where I think you're much more aware that you have objects and you call methods on those objects.</a></p>
+<p><a data-t="2956">And it's especially weird in R because when you're using R, you're not really aware that you're using object-oriented programming.</a> <a data-t="2964">Unlike in Python, where I think you're much more aware that you have objects and you call methods on those objects.</a></p>
 
-<p><a data-t="2975">Object-oriented programming is much, much less important in R as a data scientist.</a> <a data-t="2979">I think you benefit from it because packages use it.</a></p>
+<p><a data-t="2970">Object-oriented programming is much, much less important in R as a data scientist.</a> <a data-t="2975">I think you benefit from it because packages use it.</a></p>
 
-<p><a data-t="2983">So I think the main benefit to you as a data scientist is not that you're going to be writing S7 code.</a> <a data-t="2989">But the packages that you use are going to and they're going to be able to write code faster and more correctly from the get-go.</a></p>
+<p><a data-t="2979">So I think the main benefit to you as a data scientist is not that you're going to be writing S7 code.</a> <a data-t="2986">But the packages that you use are going to and they're going to be able to write code faster and more correctly from the get-go.</a></p>
 
 <p><a data-t="2996">So hopefully more of a general uplift of developer productivity in R.</a> <a data-t="3001">Probably not going to affect data scientists day-to-day that much.</a></p>
 
@@ -416,9 +416,9 @@
 
 <p><a data-t="3044">And what that means is kind of fundamentally baked into our charter is that our sole goal is not to optimize shareholder revenue, which is kind of the classic LLC model.</a></p>
 
-<p><a data-t="3057">We explicitly kind of consider other stakeholders like the community and our employees as what we're trying to do as a company.</a></p>
+<p><a data-t="3058">We explicitly kind of consider other stakeholders like the community and our employees as what we're trying to do as a company.</a></p>
 
-<p><a data-t="3068">And I think that is pretty special because we can say legitimately we don't want to make products that lock you in.</a> <a data-t="3075">We want to make products that like, you know, we want to help you and we're going to sell you products that are going to help you do your job.</a></p>
+<p><a data-t="3068">And I think that is pretty special because we can say legitimately we don't want to make products that lock you in.</a> <a data-t="3078">We want to make products that like, you know, we want to help you and we're going to sell you products that are going to help you do your job.</a></p>
 
 <p><a data-t="3085">And you're going to hopefully pay us money for those because they save you time.</a> <a data-t="3089">They allow you to do things that you couldn't otherwise do.</a> <a data-t="3092">But we're not just about that money.</a> <a data-t="3094">Like we really care about your kind of life as a data scientist.</a> <a data-t="3098">We want to build tools for you.</a></p>
 

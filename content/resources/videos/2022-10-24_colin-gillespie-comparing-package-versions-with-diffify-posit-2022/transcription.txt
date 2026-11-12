@@ -16,7 +16,7 @@
 
 <p><a data-t="101">Felly, os ydych chi'n ddiddorol, mae'r byrdiau yn chi'n chi'n chi'n canu, mae'r fath yn ffynu.</a> <a data-t="105">Os ydych chi'n ddiddorol,</a> <a data-t="106">felly, efallai y mae'n rhaid i chi fynd i'r gynhyrch.</a> <a data-t="109">Dyma'r gynhyrch LibriDate, ond rydyn ni'n ceisio gwneud y styl cyffredinol.</a></p>
 
-<p><a data-t="115">Ac nid yw'n dda.</a> <a data-t="116">Yn y cynllun cyffredinol,</a> <a data-t="116">mynd trwy gynhyrch rhywun mae'n well na dim, ac mae'n iawn.</a></p>
+<p><a data-t="114">Ac nid yw'n dda.</a> <a data-t="115">Yn y cynllun cyffredinol,</a> <a data-t="116">mynd trwy gynhyrch rhywun mae'n well na dim, ac mae'n iawn.</a></p>
 
 <p><a data-t="121">Efallai y byddwch chi'n cymryd rhywbeth fel RWeekly, er enghraifft,</a> <a data-t="124">i'ch helpu i ddeall beth sy'n digwydd,</a> <a data-t="126">ac mae hynny'n ffordd arall i'w ddeall.</a></p>
 
@@ -38,7 +38,7 @@
 
 <h3>Demo: comparing <a href="/software/lubridate/">lubridate</a> versions</h3>
 
-<p><a data-t="187">Felly, fel enghraifft,</a> <a data-t="187">roeddwn i'n meddwl, byddwn i'n mynd i LibriDate,</a> <a data-t="189">felly rydych chi'n tyfu'n LibriDate,</a> <a data-t="190">ac mae hynny'n ymgyrch.</a></p>
+<p><a data-t="186">Felly, fel enghraifft,</a> <a data-t="187">roeddwn i'n meddwl, byddwn i'n mynd i LibriDate,</a> <a data-t="189">felly rydych chi'n tyfu'n LibriDate,</a> <a data-t="190">ac mae hynny'n ymgyrch.</a></p>
 
 <p><a data-t="191">Ac yna rydych chi'n cael penderfynu pa fersiwn</a> <a data-t="193">rydych chi eisiau cymharu.</a> <a data-t="194">Felly mae gennych un, rydych chi'n mynd o ddau.</a></p>
 

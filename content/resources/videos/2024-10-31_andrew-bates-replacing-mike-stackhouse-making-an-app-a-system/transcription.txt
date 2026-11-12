@@ -74,7 +74,7 @@
 
 <p><a data-t="613">What are your guidelines or general guidelines</a> <a data-t="616">on how much of the app code goes in the package?</a> <a data-t="622">It's pretty much as much as possible.</a> <a data-t="625">Right, because anything you're going to want to generalize.</a></p>
 
-<p><a data-t="641">Do you rely on the Gollum framework</a> <a data-t="643">to package the initial app?</a> <a data-t="645">I mean, that's up to you.</a> <a data-t="647">I think the MAD package has support</a> <a data-t="649">for setting up for Gollum and for Rhino,</a> <a data-t="651">maybe something else.</a> <a data-t="653">It doesn't really take an opinion on that.</a></p>
+<p><a data-t="631">Do you rely on the Gollum framework</a> <a data-t="643">to package the initial app?</a> <a data-t="645">I mean, that's up to you.</a> <a data-t="647">I think the MAD package has support</a> <a data-t="649">for setting up for Gollum and for Rhino,</a> <a data-t="651">maybe something else.</a> <a data-t="653">It doesn't really take an opinion on that.</a></p>
 
 <p><a data-t="658">And I have one more question here.</a> <a data-t="662">Can you say a few words about the various Shiny frameworks,</a> <a data-t="666">Gollumverse versus Rhinoverse?</a> <a data-t="668">Do you prefer one over the other?</a> <a data-t="670">I like both.</a> <a data-t="672">I mostly use Gollum</a> <a data-t="674">because it's been around a little longer</a> <a data-t="676">and that's what I've used.</a> <a data-t="678">I like some of the ideas that Rhino does,</a> <a data-t="680">like how you use this box,</a> <a data-t="682">so there's a little bit more control</a> <a data-t="684">over your dependencies.</a> <a data-t="686">I just haven't used it a lot in practice.</a></p>
 

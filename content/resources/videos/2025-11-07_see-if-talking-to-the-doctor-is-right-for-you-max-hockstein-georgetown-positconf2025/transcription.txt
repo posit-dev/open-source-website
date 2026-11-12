@@ -32,9 +32,9 @@
 
 <p><a data-t="304">We have no concept of what error is.</a> <a data-t="307">And when we hear about error, it's something that I did wrong,</a> <a data-t="310">not necessarily a thing that happens.</a></p>
 
-<p><a data-t="313">And we can create a lot of cool diagrams like this, right?</a> <a data-t="316">So the incidence of a certain disease process over time</a> <a data-t="319">appears to be going down.</a> <a data-t="322">And this has, this is probably just, you know,</a> <a data-t="325">the disease getting better, right?</a> <a data-t="328">So rather than using causal inference,</a> <a data-t="331">what doctors do is more casual inference,</a> <a data-t="335">where we kind of see like, ah, that's going down,</a> <a data-t="338">therefore the two must be related.</a></p>
+<p><a data-t="313">And we can create a lot of cool diagrams like this, right?</a> <a data-t="316">So the incidence of a certain disease process over time</a> <a data-t="319">appears to be going down.</a> <a data-t="322">And this has, this is probably just, you know,</a> <a data-t="325">the disease getting better, right?</a> <a data-t="328">So rather than using causal inference,</a> <a data-t="332">what doctors do is more casual inference,</a> <a data-t="335">where we kind of see like, ah, that's going down,</a> <a data-t="338">therefore the two must be related.</a></p>
 
-<blockquote><a data-t="328">So rather than using causal inference,</a> <a data-t="331">what doctors do is more casual inference,</a> <a data-t="335">where we kind of see like, ah, that's going down,</a> <a data-t="338">therefore the two must be related.</a></blockquote>
+<blockquote><a data-t="328">So rather than using causal inference,</a> <a data-t="332">what doctors do is more casual inference,</a> <a data-t="335">where we kind of see like, ah, that's going down,</a> <a data-t="338">therefore the two must be related.</a></blockquote>
 
 <p><a data-t="341">And you can imagine that this is like in direct confrontation</a> <a data-t="344">to our data science colleagues</a> <a data-t="347">who like to communicate in uncertainty,</a> <a data-t="350">which is to say when they publish papers,</a> <a data-t="353">they say how uncertain they are.</a></p>
 

@@ -1,6 +1,6 @@
 <p><a data-t="0">We need to know that the things we're producing are safe, are actually giving us the effect</a> <a data-t="11">that we are intending to create, as well as not causing any harm.</a> <a data-t="16">I think there's a lot of hope and promise to having standardized tools that are used</a> <a data-t="22">across Pharma.</a></p>
 
-<p><a data-t="23">The Open Source mindset allows you to ask all kinds of possibilities.</a> <a data-t="26">You can go right back and if you're not sure if something's right, you can go and explore</a> <a data-t="35">I think there's a lot of value in Open Source because that pipeline, although somewhat idiosyncratic</a> <a data-t="35">and unique across different Pharma companies, at the end of the day is standardized.</a></p>
+<p><a data-t="23">The Open Source mindset allows you to ask all kinds of possibilities.</a> <a data-t="26">You can go right back and if you're not sure if something's right, you can go and explore</a> <a data-t="29">I think there's a lot of value in Open Source because that pipeline, although somewhat idiosyncratic</a> <a data-t="35">and unique across different Pharma companies, at the end of the day is standardized.</a></p>
 
 <p><a data-t="40">You can get people who have both industry experience, they understand what it is to</a> <a data-t="45">build an Atom dataset, they understand that process, and so they have the right skills,</a> <a data-t="50">they're just a lot more transferable.</a></p>
 

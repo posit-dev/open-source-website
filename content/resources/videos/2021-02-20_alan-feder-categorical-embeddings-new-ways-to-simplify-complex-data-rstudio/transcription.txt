@@ -4,7 +4,7 @@
 
 <h3>The problem with categorical variables</h3>
 
-<p><a data-t="62">You might try to replace each category with a number, 1, 2, 3, which might work if your</a> <a data-t="68">data is ordinal, but if your data doesn't have any inherent order to it, this might</a> <a data-t="76">not work.</a> <a data-t="78">If one of your categories is color, how are you going to choose numbers for black, brown,</a> <a data-t="84">yellow, or green?</a></p>
+<p><a data-t="62">You might try to replace each category with a number, 1, 2, 3, which might work if your</a> <a data-t="70">data is ordinal, but if your data doesn't have any inherent order to it, this might</a> <a data-t="76">not work.</a> <a data-t="78">If one of your categories is color, how are you going to choose numbers for black, brown,</a> <a data-t="84">yellow, or green?</a></p>
 
 <p><a data-t="87">You might try to create dummy variables, but this actually can cause big data problems</a> <a data-t="93">really quick.</a> <a data-t="95">Dummy variables will create a new variable for each level of your data and, for example,</a> <a data-t="104">if one of your categories is United States ZIP Code, you're about to add 42,000 new variables</a> <a data-t="111">to your data and that's probably not what you want.</a></p>
 

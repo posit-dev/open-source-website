@@ -32,7 +32,7 @@
 
 <h3>Using debug to inspect the data</h3>
 
-<p><a data-t="447">So that's helpful.</a> <a data-t="448">But now I want to see, OK, what's wrong with the variable width boxes that's making this</a> <a data-t="452">not happen?</a> <a data-t="454">I want to explore what these functions are actually doing and look at what data they</a> <a data-t="458">see so I can try to get more insight into this.</a></p>
+<p><a data-t="446">So that's helpful.</a> <a data-t="448">But now I want to see, OK, what's wrong with the variable width boxes that's making this</a> <a data-t="452">not happen?</a> <a data-t="454">I want to explore what these functions are actually doing and look at what data they</a> <a data-t="458">see so I can try to get more insight into this.</a></p>
 
 <p><a data-t="461">So I'm very regretful that I wrote R code for many years without using debug or trace</a> <a data-t="469">or a lot of the really helpful tools for debugging that are built into R.</a> <a data-t="474">So debug is one that I'll give an example of right now.</a> <a data-t="477">And I use it all the time now because it lets you enter into the function that you're interested</a> <a data-t="482">in and step through it and see all of the data that it's passed and see all of the transformations</a> <a data-t="487">that it does as if you were in a regular R console.</a></p>
 
@@ -70,7 +70,7 @@
 
 <p><a data-t="989">With this dodging algorithm, I had started to wonder whether it could, in fact, completely</a> <a data-t="993">replace the original position dodge.</a> <a data-t="997">I was really hoping that it would.</a> <a data-t="998">It would have been really personally satisfying to kind of wrap everything up with a nice</a> <a data-t="1002">neat little bow and be able to just completely replace the old position algorithm with one</a> <a data-t="1009">that could handle a few more situations.</a> <a data-t="1012">But alas, when I tried this out, I found that it still didn't work for violin plots and</a> <a data-t="1017">dot plots, which also sometimes get dodged in ggplot.</a> <a data-t="1021">So violins, which look like this on the left, sorry, Hillary, just become slanty lines with</a> <a data-t="1028">position dodge, too.</a></p>
 
-<p><a data-t="1032">So after weeks of work, we decided to just wrap this up and call it good enough.</a> <a data-t="1037">We solved the original problem and many others besides, and while it would have felt satisfying</a> <a data-t="1041">to come up with one comprehensive dodging algorithm that could do everything, we figured</a> <a data-t="1045">that we could always come back and improve things later and it just wasn't worth the</a> <a data-t="1049">additional effort that it would take to make it completely, completely perfect.</a> <a data-t="1055">So we ended with a second dodging algorithm, position dodge 2, which is similar but slightly</a> <a data-t="1060">different to position dodge but can do some things that position dodge can't.</a></p>
+<p><a data-t="1032">So after weeks of work, we decided to just wrap this up and call it good enough.</a> <a data-t="1036">We solved the original problem and many others besides, and while it would have felt satisfying</a> <a data-t="1041">to come up with one comprehensive dodging algorithm that could do everything, we figured</a> <a data-t="1045">that we could always come back and improve things later and it just wasn't worth the</a> <a data-t="1049">additional effort that it would take to make it completely, completely perfect.</a> <a data-t="1055">So we ended with a second dodging algorithm, position dodge 2, which is similar but slightly</a> <a data-t="1060">different to position dodge but can do some things that position dodge can't.</a></p>
 
 <p><a data-t="1067">Now in telling the story of this pull request, I really smoothed over a lot of the finer</a> <a data-t="1071">details and the pain and suffering that went into getting something that actually worked</a> <a data-t="1076">in the end, but if you want to see more of the finer details of discussion, you're welcome</a> <a data-t="1082">to read this.</a> <a data-t="1083">I don't know why you would want to, but hopefully you just get some nice plots at the end.</a></p>
 
@@ -80,10 +80,10 @@
 
 <p><a data-t="1131">So I'd like to thank GitHub user mcall who originally reported this bug, which I don't</a> <a data-t="1136">know if there's any chance this person is here at the conference, but if so, I would</a> <a data-t="1139">love to meet you, and Hadley for reviewing the pull request and folks for giving me feedback</a> <a data-t="1145">on this talk.</a> <a data-t="1146">Thank you.</a></p>
 
-<p><a data-t="1174">We have time for one question while we get Amelia up here.</a></p>
+<p><a data-t="1160">We have time for one question while we get Amelia up here.</a></p>
 
-<p><a data-t="1190">Don't ask me why the violin plots have become slanty lines, because I don't really know.</a></p>
+<p><a data-t="1170">Don't ask me why the violin plots have become slanty lines, because I don't really know.</a></p>
 
-<p><a data-t="1213">The question was, how long did this take from start to finish?</a></p>
+<p><a data-t="1174">The question was, how long did this take from start to finish?</a></p>
 
-<p><a data-t="1259">It was I think about three weeks.</a> <a data-t="1263">I think about three weeks, and I worked on a few other things at the time, but it was</a> <a data-t="1268">a major presence in my life for about three weeks, I think.</a> <a data-t="1273">I don't know.</a> <a data-t="1274">I could look at the pull request to be sure, but that sounds about right.</a></p>
+<p><a data-t="1199">It was I think about three weeks.</a> <a data-t="1203">I think about three weeks, and I worked on a few other things at the time, but it was</a> <a data-t="1208">a major presence in my life for about three weeks, I think.</a> <a data-t="1213">I don't know.</a> <a data-t="1214">I could look at the pull request to be sure, but that sounds about right.</a></p>

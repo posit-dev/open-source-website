@@ -20,7 +20,7 @@
 
 <h3>Human readable filenames</h3>
 
-<p><a data-t="157">Let's say you drop in on a project at 3 a.m. before a deadline.</a> <a data-t="162">Which set of filenames are you hoping to see?</a> <a data-t="166">I think it's the ones on the right because they embrace the slug.</a> <a data-t="172">We're going to borrow this term from the world of the web, which has the idea that a good</a> <a data-t="177">URL indicates something about the page content.</a></p>
+<p><a data-t="157">Let's say you drop in on a project at 3 a.m. before a deadline.</a> <a data-t="163">Which set of filenames are you hoping to see?</a> <a data-t="166">I think it's the ones on the right because they embrace the slug.</a> <a data-t="172">We're going to borrow this term from the world of the web, which has the idea that a good</a> <a data-t="177">URL indicates something about the page content.</a></p>
 
 <p><a data-t="183">So human readable filenames make it easy for humans to </a><a href="/software/infer/">infer</a><a data-t="183"> what the content or the purpose</a> <a data-t="190">of a file is based on its name.</a></p>
 

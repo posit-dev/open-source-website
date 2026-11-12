@@ -10,7 +10,7 @@
 
 <h3>Running <a href="/software/quarto/">Quarto</a> preview on the command line</h3>
 
-<p><a data-t="78">So in this case we'll pull up a terminal, we need to do a quarto preview var lib rstudio</a> <a data-t="89">connect and we have a bunch of folders in here.</a> <a data-t="93">So for our particular app we'll need to go into the apps folder and we'll be presented</a> <a data-t="100">with a selection of numbers and the number that we need corresponds to the content ID</a> <a data-t="107">which in this case is 40.</a></p>
+<p><a data-t="78">So in this case we'll pull up a terminal, we need to do a quarto preview var lib rstudio</a> <a data-t="89">connect and we have a bunch of folders in here.</a> <a data-t="93">So for our particular app we'll need to go into the apps folder and we'll be presented</a> <a data-t="100">with a selection of numbers and the number that we need corresponds to the content ID</a> <a data-t="108">which in this case is 40.</a></p>
 
 <p><a data-t="109">So 68 is just the iteration if you've published multiple renditions of this app that number</a> <a data-t="116">will change but because we only have one we can leave it 68 for now.</a></p>
 
