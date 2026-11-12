@@ -311,6 +311,23 @@ def strip_markdown_fence(text: str) -> str:
     return text.strip()
 
 
+# Typos the model makes in otherwise fine output, seen in real transcripts:
+# '<a a data-t="623">' and '<a data-t="="1876">'.
+ANCHOR_TYPOS = [
+    (re.compile(r"<a(?:\s+a)+\s+data-t="), "<a data-t="),
+    (re.compile(r'data-t="=+"?(\d+)"'), r'data-t="\1"'),
+]
+
+
+def fix_anchor_typos(html: str) -> tuple[str, int]:
+    """Repair known harmless typos in <a> tags; return (html, number fixed)."""
+    fixed = 0
+    for pattern, replacement in ANCHOR_TYPOS:
+        html, n = pattern.subn(replacement, html)
+        fixed += n
+    return html, fixed
+
+
 WORD_RE = re.compile(r"[\w']+")
 
 
@@ -789,6 +806,10 @@ async def process_video(video_dir: Path, ctx: Context) -> dict[str, Any]:
             item["request_ids"] = [u["request_id"] for u in usages if u["request_id"]] or None
             item["estimated_cost_usd"] = estimate_cost(args.model, item["input_tokens"], item["output_tokens"])
 
+            html, typos = fix_anchor_typos(html)
+            if typos:
+                item["typos_fixed"] = typos
+                log.info("%s: fixed %d malformed <a> tags", label, typos)
             html, repair = repair_timestamps(html, cues)
             item["timestamps_repaired"] = repair["changed"]
             item["timestamps_unmatched"] = repair["unmatched"]

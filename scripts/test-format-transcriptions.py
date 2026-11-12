@@ -253,6 +253,20 @@ class TestRepairTimestamps:
         assert f.repair_timestamps(html, [])[0] == html
 
 
+@pytest.mark.parametrize(
+    "html, fixed, count",
+    [
+        ('<p><a a data-t="623">x</a></p>', '<p><a data-t="623">x</a></p>', 1),
+        ('<p><a a a data-t="1">x</a></p>', '<p><a data-t="1">x</a></p>', 1),
+        ('<p><a data-t="="1876">x</a></p>', '<p><a data-t="1876">x</a></p>', 1),
+        ('<p><a data-t="5">a a data-t="6"</a></p>', '<p><a data-t="5">a a data-t="6"</a></p>', 0),
+        (GOOD_HTML, GOOD_HTML, 0),
+    ],
+)
+def test_fix_anchor_typos(html, fixed, count):
+    assert f.fix_anchor_typos(html) == (fixed, count)
+
+
 def test_estimate_cost():
     assert f.estimate_cost("claude-sonnet-4-6", 1_000_000, 100_000) == 4.5
     assert f.estimate_cost("claude-haiku-4-5", 1_000_000, 0) == 1.0
@@ -426,6 +440,13 @@ class TestMain:
         assert code == 2
         assert (rejected / "2026-01-01_a.html").read_text() == '<p><a data-t="0">Hello.</a></p>'
         assert items(data, "error")[0]["rejected_output"] == str(rejected / "2026-01-01_a.html")
+
+    def test_anchor_typos_fixed_before_validation(self, repo):
+        d = write_video_dir(repo, "2026-01-01_a", url=URL, duration=26, vtt=SAMPLE_VTT)
+        code, data = run(repo, client=FakeAnthropic([GOOD_HTML.replace('<a data-t="4">', '<a a data-t="4">')]))
+        assert code == 0
+        assert "<a a " not in (d / "transcription.txt").read_text()
+        assert items(data, "formatted")[0]["typos_fixed"] == 1
 
     def test_markdown_fence_stripped(self, repo):
         d = write_video_dir(repo, "2026-01-01_a", url=URL, duration=26, vtt=SAMPLE_VTT)
