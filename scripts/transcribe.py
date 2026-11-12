@@ -1,5 +1,6 @@
-#!/usr/bin/env -S uv run
+#!/usr/bin/env -S uv run --script
 # /// script
+# requires-python = ">=3.11"
 # dependencies = [
 #   "pyyaml>=6.0",
 #   "rich>=13.0.0",
@@ -9,86 +10,255 @@
 # ]
 # ///
 
-
 """
-Download audio from YouTube and transcribe it for each video under
-content/resources/videos/.
+Download audio from YouTube and transcribe it with OpenAI Whisper.
 
-For each subdirectory:
-- If transcription.vtt already exists, skip.
-- If no audio file exists, download it from external.url in _index.md using
-  yt-dlp (pass --cookies-from-browser BROWSER if authentication is needed).
-- If the audio exceeds the 25 MB API limit, split into chunks at silence
-  boundaries, transcribe each chunk, and merge the VTT output with corrected
-  timestamps.
-- Delete the audio file after a successful transcription.
+Processes video directories under content/resources/videos/, newest first,
+that don't have a transcription.vtt yet. Skips videos with
+`transcribe: false` in their frontmatter and videos without a duration
+(live streams and premieres that haven't happened yet).
 
-Requires OPENAI_API_KEY in .env.
-Runs up to --jobs transcriptions in parallel (default 5) with at least 1 second
-between API requests and exponential backoff on rate-limit / server errors.
+For each video:
+- Download the audio with yt-dlp into a temporary directory (an audio.*
+  file already in the video directory is used instead, and deleted after a
+  successful transcription).
+- If the audio exceeds the 25 MB API limit, split it at silences, transcribe
+  each chunk, and merge the VTT output with corrected timestamps.
+- Check the result (at least one cue; a warning if it ends well before the
+  video does) and write transcription.vtt.
+
+YouTube may block downloads from datacenter IPs (such as GitHub Actions
+runners). Download errors are classified (bot_check, po_token, http_403, ...)
+and logged with yt-dlp's full output. After three blocked downloads in a row
+the remaining downloads are skipped, so we don't make matters worse.
+
+Requires OPENAI_API_KEY in the environment or .env, ffmpeg/ffprobe, and a
+JavaScript runtime for yt-dlp (Deno).
+
+Exit codes: 0 = success, 1 = fatal, 2 = partial (some videos failed).
 """
+
+from __future__ import annotations
 
 import argparse
 import asyncio
+import logging
 import os
-import random
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
+import time
+from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any
+from typing import Any, Awaitable, Callable
 
-import openai
-import yaml
-from dotenv import load_dotenv
-from rich.console import Console
-from rich.progress import (
-    BarColumn,
-    MofNCompleteColumn,
-    Progress,
-    SpinnerColumn,
-    TaskID,
-    TextColumn,
-    TimeElapsedColumn,
-)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-console = Console(stderr=True)
+import videolib  # noqa: E402
+
+log = logging.getLogger("transcribe")
 
 MAX_BYTES = 25 * 1024 * 1024
-MAX_RETRIES = 5
-BASE_BACKOFF = 1.0
+WHISPER_MODEL = "whisper-1"
+WHISPER_USD_PER_MINUTE = 0.006
+
+# Download failures that mean YouTube is blocking us, not this one video.
+BLOCKING_REASONS = {"bot_check", "po_token", "http_429"}
+BREAKER_THRESHOLD = 3
+# Download failures worth one more try.
+RETRY_REASONS = {"network", "http_403"}
+DOWNLOAD_RETRY_DELAY = 5.0
+# Warn when the transcript ends before this fraction of the video.
+TRUNCATION_RATIO = 0.9
+# Whisper sometimes returns a long run of cues without words (just ".")
+# for part of the audio. A chunk with a stretch this long is retried once;
+# a transcript that still has one is rejected.
+MAX_WORDLESS_S = 120
+# Aim chunks at this share of the API limit: bitrates vary, and a chunk
+# that ends up just over the limit gets split again into a tiny piece.
+CHUNK_TARGET_RATIO = 0.9
+MAX_STDERR_CHARS = 4000
 
 
-def parse_frontmatter(content: str) -> dict[str, Any]:
-    lines = content.split("\n")
-    if not lines or lines[0].strip() != "---":
-        return {}
-    end_idx = next((i for i in range(1, len(lines)) if lines[i].strip() == "---"), None)
-    if end_idx is None:
-        return {}
-    try:
-        return yaml.safe_load("\n".join(lines[1:end_idx])) or {}
-    except yaml.YAMLError:
-        return {}
+# ---------------------------------------------------------------------------
+# Selecting videos
+# ---------------------------------------------------------------------------
 
 
-def find_audio_file(video_dir: Path) -> Path | None:
-    for f in video_dir.glob("audio.*"):
-        if f.suffix != ".part":
-            return f
-    return None
+@dataclass
+class Candidate:
+    dir: Path
+    url: str
+    duration: int
+    frontmatter: dict[str, Any] = field(default_factory=dict)
+
+    @property
+    def slug(self) -> str:
+        return self.dir.name
+
+    @property
+    def video_id(self) -> str | None:
+        return videolib.youtube_id(self.url)
 
 
-def get_video_url(video_dir: Path) -> str | None:
-    index_file = video_dir / "_index.md"
-    if not index_file.exists():
-        return None
-    frontmatter = parse_frontmatter(index_file.read_text(encoding="utf-8"))
-    return frontmatter.get("external", {}).get("url")
+def select_videos(
+    dirs: list[Path],
+    summary: videolib.RunSummary,
+    *,
+    limit: int | None = None,
+    max_audio_minutes: float | None = None,
+) -> list[Candidate]:
+    """Pick the videos to transcribe this run, in the given order.
+
+    ``limit`` caps the number of videos and ``max_audio_minutes`` the total
+    duration (a single video longer than the budget is still taken if it is
+    the first one, so it doesn't block the queue forever).
+    """
+    selected: list[Candidate] = []
+    minutes = 0.0
+    deferred: list[str] = []
+
+    for d in dirs:
+        if (d / "transcription.vtt").exists():
+            summary.tally("already_transcribed")
+            continue
+        index = d / "_index.md"
+        if not index.exists():
+            summary.add("skipped", slug=d.name, reason="no_index")
+            continue
+        fm = videolib.read_frontmatter(index)
+        if fm.get("transcribe", True) is False:
+            summary.tally("excluded")
+            continue
+        external = fm.get("external") or {}
+        url = external.get("url")
+        if not url:
+            summary.add("skipped", slug=d.name, reason="no_url")
+            log.warning("Skipping %s: no external.url", d.name)
+            continue
+        duration = int(external.get("duration") or 0)
+        if duration <= 0:
+            summary.add("skipped", slug=d.name, video_id=videolib.youtube_id(url), reason="no_duration")
+            log.info("Skipping %s: no duration (live stream or premiere?)", d.name)
+            continue
+
+        over_limit = limit is not None and len(selected) >= limit
+        over_budget = (
+            max_audio_minutes is not None
+            and selected
+            and minutes + duration / 60 > max_audio_minutes
+        )
+        if over_limit or over_budget:
+            deferred.append(d.name)
+            continue
+        selected.append(Candidate(d, url, duration, fm))
+        minutes += duration / 60
+
+    if deferred:
+        summary.tally("deferred", len(deferred))
+        summary.extra["deferred"] = deferred
+        log.info("Deferred %d videos to a later run (--limit / --max-audio-minutes)", len(deferred))
+    summary.extra["selected_audio_minutes"] = round(minutes, 1)
+    return selected
 
 
-def download_audio(url: str, dest_dir: Path, browser: str | None) -> None:
+# ---------------------------------------------------------------------------
+# Downloading
+# ---------------------------------------------------------------------------
+
+# Ordered: the first matching pattern wins.
+YTDLP_ERROR_PATTERNS: list[tuple[str, str]] = [
+    ("age_restricted", r"confirm your age|age[- ]restricted|inappropriate for some users"),
+    ("bot_check", r"confirm you(?:'|’)?re not a bot|Sign in to confirm you|not a bot"),
+    ("po_token", r"PO Token|po_token|GVS PO"),
+    ("members_only", r"members[- ]only|Join this channel"),
+    ("private", r"Private video|video is private"),
+    ("live_or_upcoming", r"live event will begin|Premieres in|This live event|is not available until|is_upcoming"),
+    ("js_runtime", r"JavaScript runtime|JS runtime|challenge solv|n challenge|Signature extraction failed"),
+    ("unavailable", r"Video unavailable|video is not available|has been removed|This video is no longer available|account associated with this video has been terminated"),
+    ("http_403", r"HTTP Error 403|403: Forbidden|status code 403"),
+    ("http_429", r"HTTP Error 429|Too Many Requests"),
+    ("format_unavailable", r"Requested format is not available|No video formats found"),
+    (
+        "network",
+        r"timed out|Connection reset|Temporary failure in name resolution|Network is unreachable"
+        r"|Remote end closed|IncompleteRead|Connection refused|getaddrinfo failed|SSL",
+    ),
+]
+
+
+# Warnings that explain a vague ERROR line ("Requested format is not
+# available", "HTTP Error 403") better than the error itself.
+HINT_REASONS = ("bot_check", "po_token", "js_runtime")
+VAGUE_REASONS = ("unknown", "format_unavailable", "http_403")
+
+
+def _match(text: str, reasons: tuple[str, ...] | None = None) -> str:
+    for reason, pattern in YTDLP_ERROR_PATTERNS:
+        if (reasons is None or reason in reasons) and re.search(pattern, text, flags=re.IGNORECASE):
+            return reason
+    return "unknown"
+
+
+def classify_ytdlp_error(output: str) -> str:
+    """Classify a failed yt-dlp run from its output.
+
+    The ERROR lines decide; when they're vague, warnings such as "GVS PO
+    Token which was not provided" or "No supported JavaScript runtime" are
+    used instead.
+    """
+    error_lines = "\n".join(line for line in output.splitlines() if "ERROR" in line)
+    reason = _match(error_lines or output)
+    if reason in VAGUE_REASONS:
+        hint = _match(output, HINT_REASONS)
+        if hint != "unknown":
+            return hint
+    return reason
+
+
+def last_error_line(output: str) -> str:
+    """The most useful single line of yt-dlp output: the last ERROR line."""
+    lines = [line.strip() for line in output.splitlines() if line.strip()]
+    errors = [line for line in lines if "ERROR" in line]
+    return (errors or lines or ["(no output)"])[-1]
+
+
+class DownloadError(Exception):
+    def __init__(self, reason: str, stderr: str, attempts: int = 1):
+        super().__init__(last_error_line(stderr))
+        self.reason = reason
+        self.stderr = stderr
+        self.attempts = attempts
+
+
+class CircuitBreaker:
+    """Trips after ``threshold`` blocked downloads in a row."""
+
+    def __init__(self, threshold: int = BREAKER_THRESHOLD):
+        self.threshold = threshold
+        self.consecutive = 0
+        self.tripped = False
+
+    def record(self, reason: str | None) -> None:
+        if reason in BLOCKING_REASONS:
+            self.consecutive += 1
+            if self.consecutive >= self.threshold and not self.tripped:
+                self.tripped = True
+                log.error(
+                    "%d downloads in a row were blocked by YouTube (%s); "
+                    "skipping the remaining downloads this run",
+                    self.consecutive,
+                    reason,
+                )
+        else:
+            self.consecutive = 0
+
+
+def build_ytdlp_cmd(
+    url: str, dest_dir: Path, browser: str | None, cookies: Path | None, verbose: bool = False
+) -> list[str]:
     cmd = [
         sys.executable,
         "-m",
@@ -100,39 +270,85 @@ def download_audio(url: str, dest_dir: Path, browser: str | None) -> None:
         "--output",
         str(dest_dir / "audio.%(ext)s"),
         "--no-playlist",
-        "--quiet",
-        "--no-warnings",
+        "--no-progress",
+        # --verbose shows the JS runtime, PO token providers, and clients used.
+        "--verbose" if verbose else "--quiet",
     ]
     if browser:
         cmd += ["--cookies-from-browser", browser]
+    if cookies:
+        cmd += ["--cookies", str(cookies)]
     cmd.append(url)
-    result = subprocess.run(cmd, capture_output=True, text=True)
+    return cmd
+
+
+def find_audio_file(directory: Path) -> Path | None:
+    for f in sorted(directory.glob("audio.*")):
+        if f.suffix not in (".part", ".ytdl"):
+            return f
+    return None
+
+
+def download_audio(
+    url: str,
+    dest_dir: Path,
+    *,
+    browser: str | None,
+    cookies: Path | None,
+    run: Callable[..., subprocess.CompletedProcess],
+    label: str,
+) -> Path:
+    cmd = build_ytdlp_cmd(url, dest_dir, browser, cookies, verbose=log.isEnabledFor(logging.DEBUG))
+    log.debug("%s: running %s", label, " ".join(cmd))
+    result = run(cmd, capture_output=True, text=True)
+    output = "\n".join(s for s in (result.stderr, result.stdout) if s and s.strip())
     if result.returncode != 0:
-        raise RuntimeError(result.stderr.strip() or result.stdout.strip())
+        raise DownloadError(classify_ytdlp_error(output), output)
+    for line in output.splitlines():
+        log.debug("%s: yt-dlp: %s", label, line)
+    audio = find_audio_file(dest_dir)
+    if audio is None:
+        raise DownloadError("no_file", output or "yt-dlp succeeded but wrote no audio file")
+    return audio
 
 
-def build_prompt(frontmatter: dict[str, Any]) -> str:
-    parts = []
-    title = frontmatter.get("title", "")
-    if title:
-        parts.append(title)
-    software = frontmatter.get("software", []) or []
-    parts.extend(software)
-    return ", ".join(parts)
+async def download_with_retry(
+    candidate: Candidate,
+    dest_dir: Path,
+    args: argparse.Namespace,
+    run: Callable[..., subprocess.CompletedProcess],
+    sleep: Callable[[float], Awaitable[Any]],
+) -> Path:
+    label = f"{candidate.slug} ({candidate.video_id})"
+    for attempt in (1, 2):
+        try:
+            return await asyncio.to_thread(
+                download_audio,
+                candidate.url,
+                dest_dir,
+                browser=args.cookies_from_browser,
+                cookies=args.cookies,
+                run=run,
+                label=label,
+            )
+        except DownloadError as e:
+            e.attempts = attempt
+            if attempt == 1 and e.reason in RETRY_REASONS:
+                log.warning("%s: download failed (%s: %s); retrying in %.0fs", label, e.reason, e, DOWNLOAD_RETRY_DELAY)
+                await sleep(DOWNLOAD_RETRY_DELAY)
+                continue
+            raise
+    raise AssertionError("unreachable")
+
+
+# ---------------------------------------------------------------------------
+# Splitting large audio files
+# ---------------------------------------------------------------------------
 
 
 def get_audio_duration(src: Path) -> float:
     result = subprocess.run(
-        [
-            "ffprobe",
-            "-v",
-            "error",
-            "-show_entries",
-            "format=duration",
-            "-of",
-            "default=noprint_wrappers=1:nokey=1",
-            str(src),
-        ],
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "default=noprint_wrappers=1:nokey=1", str(src)],
         capture_output=True,
         text=True,
         check=True,
@@ -140,20 +356,9 @@ def get_audio_duration(src: Path) -> float:
     return float(result.stdout.strip())
 
 
-def detect_silence(
-    src: Path, noise_db: float = -30, min_duration: float = 0.5
-) -> list[float]:
+def detect_silence(src: Path, noise_db: float = -30, min_duration: float = 0.5) -> list[float]:
     result = subprocess.run(
-        [
-            "ffmpeg",
-            "-i",
-            str(src),
-            "-af",
-            f"silencedetect=noise={noise_db}dB:d={min_duration}",
-            "-f",
-            "null",
-            "-",
-        ],
+        ["ffmpeg", "-i", str(src), "-af", f"silencedetect=noise={noise_db}dB:d={min_duration}", "-f", "null", "-"],
         capture_output=True,
         text=True,
     )
@@ -171,8 +376,9 @@ def compute_chunk_boundaries(
     duration: float,
     file_size: int,
     silence_points: list[float],
+    max_bytes: int = MAX_BYTES,
 ) -> list[tuple[float, float]]:
-    max_chunk_secs = MAX_BYTES / (file_size / duration)
+    max_chunk_secs = CHUNK_TARGET_RATIO * max_bytes / (file_size / duration)
     boundaries: list[tuple[float, float]] = []
     start = 0.0
     while start < duration:
@@ -187,299 +393,372 @@ def compute_chunk_boundaries(
     return boundaries
 
 
-def split_at_silence(src: Path, _offset: float = 0.0) -> list[tuple[Path, float]]:
+def split_at_silence(
+    src: Path, work_dir: Path, _offset: float = 0.0, max_bytes: int = MAX_BYTES
+) -> list[tuple[Path, float]]:
+    """Split ``src`` into chunks under ``max_bytes``; return (path, offset) pairs."""
     duration = get_audio_duration(src)
     silence = detect_silence(src)
-    boundaries = compute_chunk_boundaries(duration, src.stat().st_size, silence)
+    boundaries = compute_chunk_boundaries(duration, src.stat().st_size, silence, max_bytes)
+    log.debug("Splitting %s (%.0fs) at %s", src.name, duration, [round(e) for _, e in boundaries])
     chunks: list[tuple[Path, float]] = []
     for start, end in boundaries:
-        tmp = Path(tempfile.mktemp(suffix=src.suffix))
+        fd, name = tempfile.mkstemp(suffix=src.suffix, prefix="chunk-", dir=work_dir)
+        os.close(fd)
+        tmp = Path(name)
         subprocess.run(
-            [
-                "ffmpeg",
-                "-y",
-                "-ss",
-                str(start),
-                "-i",
-                str(src),
-                "-t",
-                str(end - start),
-                "-c",
-                "copy",
-                str(tmp),
-            ],
+            ["ffmpeg", "-y", "-ss", str(start), "-i", str(src), "-t", str(end - start), "-c", "copy", str(tmp)],
             check=True,
             capture_output=True,
         )
-        if tmp.stat().st_size > MAX_BYTES:
-            sub_chunks = split_at_silence(tmp, _offset=_offset + start)
+        if tmp.stat().st_size > max_bytes and end - start > 1:
+            chunks.extend(split_at_silence(tmp, work_dir, _offset=_offset + start, max_bytes=max_bytes))
             tmp.unlink(missing_ok=True)
-            chunks.extend(sub_chunks)
         else:
             chunks.append((tmp, _offset + start))
     return chunks
 
 
-def parse_vtt_timestamp(ts: str) -> float:
-    parts = ts.strip().split(":")
-    if len(parts) == 3:
-        return int(parts[0]) * 3600 + int(parts[1]) * 60 + float(parts[2])
-    return int(parts[0]) * 60 + float(parts[1])
-
-
-def format_vtt_timestamp(seconds: float) -> str:
-    h = int(seconds // 3600)
-    m = int((seconds % 3600) // 60)
-    s = seconds % 60
-    return f"{h:02d}:{m:02d}:{s:06.3f}"
-
-
-def parse_vtt(content: str) -> list[tuple[float, float, str]]:
-    cues: list[tuple[float, float, str]] = []
-    for block in re.split(r"\n{2,}", content.strip()):
-        lines = block.strip().splitlines()
-        arrow = next((i for i, line in enumerate(lines) if "-->" in line), None)
-        if arrow is None:
-            continue
-        m = re.match(r"([\d:.]+)\s+-->\s+([\d:.]+)", lines[arrow])
-        if not m:
-            continue
-        start = parse_vtt_timestamp(m.group(1))
-        end = parse_vtt_timestamp(m.group(2))
-        text = "\n".join(lines[arrow + 1 :]).strip()
-        if text:
-            cues.append((start, end, text))
-    return cues
+# ---------------------------------------------------------------------------
+# Transcribing
+# ---------------------------------------------------------------------------
 
 
 def merge_vtt(parts: list[tuple[str, float]]) -> str:
-    lines = ["WEBVTT", ""]
-    for vtt_content, offset in parts:
-        for start, end, text in parse_vtt(vtt_content):
-            lines.append(
-                f"{format_vtt_timestamp(start + offset)} --> "
-                f"{format_vtt_timestamp(end + offset)}"
-            )
-            lines.append(text)
-            lines.append("")
-    return "\n".join(lines)
+    cues = [
+        (start + offset, end + offset, text)
+        for vtt_content, offset in parts
+        for start, end, text in videolib.parse_vtt(vtt_content)
+    ]
+    return videolib.render_vtt(cues)
 
 
-class RateLimiter:
-    """Ensures at least `min_interval` seconds between API requests."""
-
-    def __init__(self, min_interval: float = 1.0) -> None:
-        self._lock = asyncio.Lock()
-        self._last: float = 0.0
-        self._interval = min_interval
-
-    async def wait(self) -> None:
-        async with self._lock:
-            loop = asyncio.get_running_loop()
-            elapsed = loop.time() - self._last
-            if elapsed < self._interval:
-                await asyncio.sleep(self._interval - elapsed)
-            self._last = asyncio.get_running_loop().time()
+def build_prompt(frontmatter: dict[str, Any]) -> str:
+    parts = []
+    title = frontmatter.get("title", "")
+    if title:
+        parts.append(str(title))
+    parts.extend(str(s) for s in frontmatter.get("software", []) or [])
+    return ", ".join(parts)
 
 
-async def transcribe_audio(
+class TranscriptError(Exception):
+    def __init__(self, reason: str, detail: str):
+        super().__init__(detail)
+        self.reason = reason
+
+
+def longest_wordless_stretch(cues: list[videolib.Cue]) -> tuple[float, float]:
+    """``(seconds, start)`` of the longest run of consecutive cues without words."""
+    longest, longest_start = 0.0, 0.0
+    run_start = None
+    for start, end, text in cues:
+        if re.search(r"\w", text):
+            run_start = None
+            continue
+        if run_start is None:
+            run_start = start
+        if end - run_start > longest:
+            longest, longest_start = end - run_start, run_start
+    return longest, longest_start
+
+
+def check_transcript(vtt: str, duration: int) -> tuple[list[videolib.Cue], list[str]]:
+    """Return ``(cues, warnings)``; raise TranscriptError if unusable."""
+    cues = videolib.parse_vtt(vtt)
+    if not cues:
+        raise TranscriptError("empty_transcript", f"Whisper returned no cues ({len(vtt)} characters)")
+    stretch, at = longest_wordless_stretch(cues)
+    if stretch > MAX_WORDLESS_S:
+        raise TranscriptError(
+            "degenerate_transcript",
+            f"{stretch:.0f}s of cues without words from {videolib.format_vtt_timestamp(at)[:8]}",
+        )
+    warnings = []
+    last_end = cues[-1][1]
+    if duration > 0 and last_end < TRUNCATION_RATIO * duration:
+        warnings.append(
+            f"suspect_truncated: last cue ends at {videolib.format_vtt_timestamp(last_end)} "
+            f"of {videolib.format_vtt_timestamp(duration)}"
+        )
+    return cues, warnings
+
+
+async def transcribe_file(
+    client: Any,
     audio_file: Path,
     prompt: str,
-    name: str,
-    client: openai.AsyncOpenAI,
-    rate_limiter: RateLimiter,
+    *,
+    label: str,
+    rate_limiter: videolib.RateLimiter,
+    sleep: Callable[[float], Awaitable[Any]],
 ) -> str:
-    kwargs: dict[str, Any] = {
-        "model": "whisper-1",
-        "response_format": "vtt",
-    }
+    kwargs: dict[str, Any] = {"model": WHISPER_MODEL, "response_format": "vtt"}
     if prompt:
         kwargs["prompt"] = prompt
 
-    for attempt in range(MAX_RETRIES):
-        if attempt > 0:
-            delay = BASE_BACKOFF * (2 ** (attempt - 1)) + random.uniform(0, 1)
-            console.print(
-                f"  [yellow]↻[/] {name}  retry {attempt + 1}/{MAX_RETRIES} in {delay:.1f}s"
-            )
-            await asyncio.sleep(delay)
-
+    async def call() -> str:
         await rate_limiter.wait()
+        with open(audio_file, "rb") as f:
+            return await client.audio.transcriptions.create(file=f, **kwargs)
+
+    return await videolib.retry_async(call, label=label, logger=log, sleep=sleep)
+
+
+@dataclass
+class Context:
+    client: Any
+    args: argparse.Namespace
+    semaphore: asyncio.Semaphore
+    rate_limiter: videolib.RateLimiter
+    breaker: CircuitBreaker
+    run: Callable[..., subprocess.CompletedProcess]
+    sleep: Callable[[float], Awaitable[Any]]
+    max_bytes: int = MAX_BYTES
+
+
+async def process_video(c: Candidate, ctx: Context) -> dict[str, Any]:
+    async with ctx.semaphore:
+        label = f"{c.slug} ({c.video_id})"
+        item: dict[str, Any] = {"slug": c.slug, "video_id": c.video_id, "duration_s": c.duration}
+        if ctx.breaker.tripped:
+            log.info("%s: skipped, downloads are blocked this run", label)
+            return {**item, "status": "skipped", "reason": "download_blocked"}
+
+        timings: dict[str, float] = {}
+        item["timings"] = timings
+        legacy_audio = find_audio_file(c.dir)
         try:
-            with open(audio_file, "rb") as f:
-                return await client.audio.transcriptions.create(file=f, **kwargs)
-        except openai.RateLimitError:
-            if attempt == MAX_RETRIES - 1:
-                raise
-        except openai.APIStatusError as e:
-            if e.status_code < 500 or attempt == MAX_RETRIES - 1:
-                raise
+            with tempfile.TemporaryDirectory(prefix="transcribe-") as tmp:
+                work_dir = Path(tmp)
+                if legacy_audio:
+                    audio = legacy_audio
+                    log.info("%s: using existing %s", label, audio.name)
+                else:
+                    log.info("%s: downloading audio (%s)", label, videolib.format_vtt_timestamp(c.duration)[:8])
+                    t0 = time.monotonic()
+                    try:
+                        audio = await download_with_retry(c, work_dir, ctx.args, ctx.run, ctx.sleep)
+                    except DownloadError as e:
+                        ctx.breaker.record(e.reason)
+                        log.error("%s: download failed: %s: %s", label, e.reason, e)
+                        for line in e.stderr.splitlines():
+                            log.error("%s:   yt-dlp: %s", label, line)
+                        return {
+                            **item,
+                            "status": "error",
+                            "reason": e.reason,
+                            "stage": "download",
+                            "detail": str(e),
+                            "attempts": e.attempts,
+                            "stderr": e.stderr[-MAX_STDERR_CHARS:],
+                        }
+                    ctx.breaker.record(None)
+                    timings["download_s"] = round(time.monotonic() - t0, 1)
 
-    raise RuntimeError("Exceeded max retries")
-
-
-async def process_video_async(
-    video_dir: Path,
-    client: openai.AsyncOpenAI,
-    semaphore: asyncio.Semaphore,
-    rate_limiter: RateLimiter,
-    progress: Progress,
-    overall_task: TaskID,
-    browser: str | None,
-) -> str:
-    async with semaphore:
-        name = video_dir.name
-        job_task = progress.add_task(f"[dim]{name}", total=None)
-        try:
-            transcription_file = video_dir / "transcription.vtt"
-            if transcription_file.exists():
-                return "skipped"
-
-            audio_file = find_audio_file(video_dir)
-
-            if audio_file is None:
-                url = get_video_url(video_dir)
-                if not url:
-                    return "no_url"
-                progress.update(job_task, description=f"[cyan]{name}  downloading")
-                await asyncio.to_thread(download_audio, url, video_dir, browser)
-                audio_file = find_audio_file(video_dir)
-                if audio_file is None:
-                    raise RuntimeError("Download succeeded but audio file not found")
-
-            index_file = video_dir / "_index.md"
-            frontmatter = (
-                parse_frontmatter(index_file.read_text(encoding="utf-8"))
-                if index_file.exists()
-                else {}
-            )
-            prompt = build_prompt(frontmatter)
-
-            if audio_file.stat().st_size > MAX_BYTES:
-                size_mb = audio_file.stat().st_size / 1024 / 1024
-                progress.update(
-                    job_task,
-                    description=f"[yellow]{name}  chunking audio ({size_mb:.1f} MB)",
+                size = audio.stat().st_size
+                item["audio_bytes"] = size
+                item["audio_format"] = audio.suffix.lstrip(".")
+                log.info(
+                    "%s: audio %s, %.1f MB%s",
+                    label,
+                    item["audio_format"],
+                    size / 1024 / 1024,
+                    f" in {timings['download_s']}s" if "download_s" in timings else "",
                 )
-                chunks: list[tuple[Path, float]] = await asyncio.to_thread(
-                    split_at_silence, audio_file
-                )
-                is_temp = True
-            else:
-                chunks = [(audio_file, 0.0)]
-                is_temp = False
 
-            try:
-                vtt_parts: list[tuple[str, float]] = []
-                total_chunks = len(chunks)
-                for i, (chunk_path, offset) in enumerate(chunks):
-                    label = f" {i + 1}/{total_chunks}" if total_chunks > 1 else ""
-                    progress.update(
-                        job_task, description=f"[cyan]{name}  transcribing{label}"
+                if size > ctx.max_bytes:
+                    t0 = time.monotonic()
+                    chunks = await asyncio.to_thread(split_at_silence, audio, work_dir, 0.0, ctx.max_bytes)
+                    timings["split_s"] = round(time.monotonic() - t0, 1)
+                    log.info("%s: split into %d chunks at %s", label, len(chunks), ", ".join(f"{o:.0f}s" for _, o in chunks))
+                else:
+                    chunks = [(audio, 0.0)]
+                item["chunks"] = len(chunks)
+
+                prompt = build_prompt(c.frontmatter)
+                parts: list[tuple[str, float]] = []
+                t0 = time.monotonic()
+                for i, (chunk, offset) in enumerate(chunks, start=1):
+                    chunk_label = f"{label} chunk {i}/{len(chunks)}" if len(chunks) > 1 else label
+                    tc = time.monotonic()
+                    for attempt in (1, 2):
+                        vtt = await transcribe_file(
+                            ctx.client, chunk, prompt, label=chunk_label, rate_limiter=ctx.rate_limiter, sleep=ctx.sleep
+                        )
+                        stretch, at = longest_wordless_stretch(videolib.parse_vtt(vtt))
+                        if stretch <= MAX_WORDLESS_S:
+                            break
+                        log.warning(
+                            "%s: Whisper returned %.0fs of cues without words from %s (attempt %d/2)%s",
+                            chunk_label,
+                            stretch,
+                            videolib.format_vtt_timestamp(at + offset)[:8],
+                            attempt,
+                            "; retrying" if attempt == 1 else "",
+                        )
+                        item["whisper_retries"] = item.get("whisper_retries", 0) + (attempt == 1)
+                    log.info(
+                        "%s: transcribed %.1f MB (offset %.0fs) in %.1fs",
+                        chunk_label,
+                        chunk.stat().st_size / 1024 / 1024,
+                        offset,
+                        time.monotonic() - tc,
                     )
-                    vtt = await transcribe_audio(
-                        chunk_path, prompt, name, client, rate_limiter
-                    )
-                    vtt_parts.append((vtt, offset))
-            finally:
-                if is_temp:
-                    for chunk_path, _ in chunks:
-                        chunk_path.unlink(missing_ok=True)
+                    parts.append((vtt, offset))
+                timings["transcribe_s"] = round(time.monotonic() - t0, 1)
 
-            if len(vtt_parts) == 1:
-                data = vtt_parts[0][0]
-            else:
-                progress.update(
-                    job_task, description=f"[cyan]{name}  merging transcript"
-                )
-                data = merge_vtt(vtt_parts)
-            transcription_file.write_text(data, encoding="utf-8")
-            audio_file.unlink()
-            return "transcribed"
+                data = parts[0][0] if len(parts) == 1 else merge_vtt(parts)
+                cues, warnings = check_transcript(data, c.duration)
+                for w in warnings:
+                    log.warning("%s: %s", label, w)
+                videolib.atomic_write_text(c.dir / "transcription.vtt", data)
+                if legacy_audio:
+                    legacy_audio.unlink(missing_ok=True)
+        except TranscriptError as e:
+            log.error("%s: %s: %s", label, e.reason, e)
+            return {**item, "status": "error", "reason": e.reason, "stage": "check", "detail": str(e)}
+        except Exception as e:  # noqa: BLE001 - every failure goes in the summary
+            log.exception("%s: transcription failed", label)
+            return {
+                **item,
+                "status": "error",
+                "reason": "transcription_failed",
+                "stage": "transcribe",
+                "detail": videolib.describe_api_error(e),
+            }
 
-        except Exception as e:
-            console.print(f"  [red]✗[/] {name}: {e}")
-            return "error"
-        finally:
-            progress.remove_task(job_task)
-            progress.advance(overall_task)
+        cost = round(c.duration / 60 * WHISPER_USD_PER_MINUTE, 4)
+        log.info(
+            "%s: wrote transcription.vtt (%d cues, last at %s, ~$%.3f)",
+            label,
+            len(cues),
+            videolib.format_vtt_timestamp(cues[-1][1])[:8],
+            cost,
+        )
+        return {
+            **item,
+            "status": "transcribed",
+            "cues": len(cues),
+            "estimated_cost_usd": cost,
+            "warnings": warnings or None,
+        }
 
 
-async def main_async(jobs: int, browser: str | None) -> None:
-    console.print("\n[bold blue]Video Transcriber[/]\n")
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
 
-    load_dotenv()
+
+def build_client(project_root: Path) -> Any:
+    import openai
+    from dotenv import load_dotenv
+
+    load_dotenv(project_root / ".env")
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
-        console.print("[bold red]Error:[/] OPENAI_API_KEY not set in .env")
-        sys.exit(1)
-
-    client = openai.AsyncOpenAI(api_key=api_key)
-
-    videos_dir = Path(__file__).parent.parent / "content" / "resources" / "videos"
-    if not videos_dir.exists():
-        console.print(f"[bold red]Error:[/] Videos directory not found: {videos_dir}")
-        sys.exit(1)
-
-    dirs = sorted(d for d in videos_dir.iterdir() if d.is_dir())
-    console.print(f"[dim]Found {len(dirs)} video directories (--jobs {jobs})[/]\n")
-
-    semaphore = asyncio.Semaphore(jobs)
-    rate_limiter = RateLimiter(min_interval=1.0)
-
-    with Progress(
-        SpinnerColumn(),
-        TextColumn("{task.description}"),
-        BarColumn(),
-        MofNCompleteColumn(),
-        TimeElapsedColumn(),
-        console=console,
-    ) as progress:
-        overall_task = progress.add_task("[bold cyan]Transcribing", total=len(dirs))
-
-        results: list[str] = await asyncio.gather(
-            *[
-                process_video_async(
-                    d, client, semaphore, rate_limiter, progress, overall_task, browser
-                )
-                for d in dirs
-            ]
-        )
-
-    transcribed = results.count("transcribed")
-    skipped = results.count("skipped")
-    no_url = results.count("no_url")
-    errors = results.count("error")
-
-    console.print("\n[bold]Summary:[/]")
-    console.print(f"  [green]✓[/] Transcribed: {transcribed}")
-    console.print(f"  [dim]○[/] Skipped:     {skipped}")
-    console.print(f"  [dim]○[/] No URL:      {no_url}")
-    if errors:
-        console.print(f"  [red]✗[/] Errors:      {errors}")
-
-    console.print("\n[bold green]✓ Done![/]\n")
+        raise RuntimeError("OPENAI_API_KEY not set in .env or environment")
+    return openai.AsyncOpenAI(api_key=api_key, max_retries=0)  # we retry ourselves, with logging
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Download and transcribe video audio files using OpenAI Whisper"
-    )
+def parse_args(argv: list[str] | None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Download and transcribe video audio with OpenAI Whisper")
+    parser.add_argument("--jobs", type=int, default=5, metavar="N", help="parallel jobs (default: 5)")
+    parser.add_argument("--limit", type=int, metavar="N", help="transcribe at most N videos (newest first)")
     parser.add_argument(
-        "--jobs",
-        type=int,
-        default=5,
-        metavar="N",
-        help="number of parallel transcription jobs (default: 5)",
+        "--max-audio-minutes", type=float, metavar="M", help="stop selecting videos after M minutes of audio"
     )
+    parser.add_argument("--video", metavar="NAME", help="only this video directory (name, prefix, or path)")
     parser.add_argument(
         "--cookies-from-browser",
         metavar="BROWSER",
-        help="browser to read cookies from for yt-dlp (e.g. chrome, firefox, safari)",
+        help="browser to read YouTube cookies from for yt-dlp (e.g. chrome, firefox, safari)",
     )
-    args = parser.parse_args()
-    asyncio.run(main_async(args.jobs, args.cookies_from_browser))
+    parser.add_argument("--cookies", type=Path, metavar="FILE", help="cookies.txt file for yt-dlp")
+    parser.add_argument("--dry-run", action="store_true", help="list what would be transcribed")
+    videolib.add_common_args(parser)
+    return parser.parse_args(argv)
+
+
+def main(
+    argv: list[str] | None = None,
+    client: Any = None,
+    run: Callable[..., subprocess.CompletedProcess] = subprocess.run,
+    sleep: Callable[[float], Awaitable[Any]] = asyncio.sleep,
+    max_bytes: int = MAX_BYTES,
+    min_request_interval: float = 1.0,
+) -> int:
+    args = parse_args(argv)
+    videolib.setup_logging("transcribe", args.verbose)
+    summary = videolib.RunSummary("transcribe")
+    summary.extra.update(dry_run=args.dry_run, limit=args.limit, max_audio_minutes=args.max_audio_minutes)
+    videos_dir = args.project_root / "content" / "resources" / "videos"
+
+    def body() -> None:
+        nonlocal client
+        summary.environment = videolib.log_environment(
+            log, packages=["yt-dlp", "yt-dlp-ejs", "openai", "bgutil-ytdlp-pot-provider"], tools=["deno", "node", "ffmpeg", "ffprobe"]
+        )
+        if not videos_dir.exists():
+            summary.fatal = f"Videos directory not found: {videos_dir}"
+            return
+        if not args.dry_run:
+            missing = [t for t in ("ffmpeg", "ffprobe") if not shutil.which(t)]
+            if missing:
+                summary.fatal = f"Required tools not found: {', '.join(missing)}"
+                return
+            if not (shutil.which("deno") or shutil.which("node")):
+                log.warning("No JavaScript runtime (deno or node) found; YouTube downloads will probably fail")
+
+        dirs = [videolib.resolve_video_dir(args.video, videos_dir)] if args.video else videolib.video_dirs(videos_dir)
+        candidates = select_videos(dirs, summary, limit=args.limit, max_audio_minutes=args.max_audio_minutes)
+        log.info(
+            "Selected %d of %d video directories (%.0f minutes of audio, --jobs %d)",
+            len(candidates),
+            len(dirs),
+            summary.extra["selected_audio_minutes"],
+            args.jobs,
+        )
+        if args.dry_run:
+            for c in candidates:
+                log.info("Would transcribe %s (%s, %ds)", c.slug, c.video_id, c.duration)
+                summary.add("would_transcribe", slug=c.slug, video_id=c.video_id, duration_s=c.duration)
+            return
+        if not candidates:
+            return
+        if client is None:
+            client = build_client(args.project_root)
+
+        ctx = Context(
+            client=client,
+            args=args,
+            semaphore=asyncio.Semaphore(args.jobs),
+            rate_limiter=videolib.RateLimiter(min_interval=min_request_interval),
+            breaker=CircuitBreaker(),
+            run=run,
+            sleep=sleep,
+            max_bytes=max_bytes,
+        )
+
+        async def go() -> list[dict[str, Any]]:
+            return await asyncio.gather(*(process_video(c, ctx) for c in candidates))
+
+        for result in asyncio.run(go()):
+            summary.add(result.pop("status"), **result)
+
+        transcribed = summary.by_status("transcribed")
+        summary.extra["breaker_tripped"] = ctx.breaker.tripped
+        summary.extra["estimated_cost_usd"] = round(sum(i["estimated_cost_usd"] for i in transcribed), 3)
+        summary.extra["transcribed_audio_minutes"] = round(sum(i["duration_s"] for i in transcribed) / 60, 1)
+        log.info(
+            "Transcribed %d videos (%.0f minutes, ~$%.2f)",
+            len(transcribed),
+            summary.extra["transcribed_audio_minutes"],
+            summary.extra["estimated_cost_usd"],
+        )
+
+    return videolib.run_main(summary, log, args.summary_json, body)
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

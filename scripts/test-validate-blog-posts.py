@@ -566,3 +566,7 @@ class TestCheckImageExists:
         (p.parent / "assets" / "hero.png").touch()
         fm = {"image": "assets/hero.png"}
         assert v.check_image_exists(p, fm, ctx) == []
+
+
+if __name__ == "__main__":
+    sys.exit(pytest.main([__file__, "-p", "no:cacheprovider", *sys.argv[1:]]))
