@@ -158,6 +158,88 @@ class TestValidateHtml:
             f.validate_html(html(80), cues, 1)
 
 
+# --- Timestamp repair ---
+
+
+def cues_from(*texts, step=10):
+    return [(float(i * step) + 0.7, float(i * step) + 9, t) for i, t in enumerate(texts)]
+
+
+class TestRepairTimestamps:
+    cues = cues_from(
+        "Hello everyone and welcome.",
+        "Today we talk about Quarto,",
+        "the publishing system.",
+        "And then about Shiny.",
+        "Thanks for watching.",
+    )
+
+    def test_wrong_values_are_fixed(self):
+        html = (
+            '<p><a data-t="0">Hello everyone and welcome.</a> <a data-t="25">Today we talk about Quarto,</a> '
+            '<a data-t="15">the publishing system.</a></p>\n\n<p><a data-t="99">And then about Shiny.</a></p>'
+        )
+        out, stats = f.repair_timestamps(html, self.cues)
+        assert re.findall(r'data-t="(\d+)"', out) == ["0", "10", "20", "30"]
+        assert stats == {"anchors": 4, "matched": 4, "changed": 3, "unmatched": 0}
+        assert re.sub(r'data-t="\d+"', "", out) == re.sub(r'data-t="\d+"', "", html)  # only data-t changed
+
+    def test_merged_cues_get_the_first_start(self):
+        html = '<p><a data-t="7">Today we talk about Quarto, the publishing system.</a></p>'
+        out, _ = f.repair_timestamps(html, self.cues)
+        assert 'data-t="10"' in out
+
+    def test_anchor_starting_mid_cue(self):
+        html = '<p><a data-t="0">Hello everyone</a> <a data-t="0">and welcome.</a></p>'
+        out, _ = f.repair_timestamps(html, self.cues)
+        assert re.findall(r'data-t="(\d+)"', out) == ["0", "0"]
+
+    def test_corrected_leading_word(self):
+        # Whisper heard "Korto"; the model corrected it to "Quarto".
+        cues = cues_from("Hello everyone and welcome.", "Korto is great for documents.")
+        html = '<p><a data-t="0">Hello everyone and welcome.</a> <a data-t="3">Quarto is great for documents.</a></p>'
+        out, stats = f.repair_timestamps(html, cues)
+        assert 'data-t="10"' in out and stats["unmatched"] == 0
+
+    def test_repeated_phrase_searches_forward(self):
+        cues = cues_from("Thank you.", "Something in between.", "Thank you.")
+        html = '<p><a data-t="0">Thank you.</a> <a data-t="0">Something in between.</a> <a data-t="0">Thank you.</a></p>'
+        out, _ = f.repair_timestamps(html, cues)
+        assert re.findall(r'data-t="(\d+)"', out) == ["0", "10", "20"]
+
+    def test_blockquote_reuses_prose_value(self):
+        html = (
+            '<p><a data-t="0">Hello everyone and welcome.</a> <a data-t="12">And then about Shiny.</a></p>\n\n'
+            '<blockquote><a data-t="12">And then about Shiny.</a></blockquote>\n\n'
+            '<p><a data-t="40">Thanks for watching.</a></p>'
+        )
+        out, stats = f.repair_timestamps(html, self.cues)
+        assert re.findall(r'data-t="(\d+)"', out) == ["0", "30", "30", "40"]
+        assert stats["anchors"] == 3  # pull quotes aren't counted twice
+
+    def test_pieces_split_by_inject_links_stay_together(self):
+        linked = f.inject_links(
+            '<p><a data-t="13">Today we talk about Quarto,</a> <a data-t="14">the publishing system.</a></p>',
+            {},
+            {"Quarto": "/software/quarto/"},
+        )
+        assert '<a href="/software/quarto/">Quarto</a>' in linked
+        out, _ = f.repair_timestamps(linked, self.cues)
+        # "Today we talk about ", "," (the pieces around the link), "the publishing system."
+        assert re.findall(r'data-t="(\d+)"', out) == ["10", "10", "20"]
+        assert '<a href="/software/quarto/">Quarto</a>' in out
+
+    def test_unmatched_keeps_value_but_capped_at_last_cue(self):
+        html = '<p><a data-t="5">Words that were never said.</a> <a data-t="9999">Neither were these.</a></p>'
+        out, stats = f.repair_timestamps(html, self.cues)
+        assert re.findall(r'data-t="(\d+)"', out) == ["5", "40"]
+        assert stats["unmatched"] == 2
+
+    def test_no_cues(self):
+        html = '<p><a data-t="5">x</a></p>'
+        assert f.repair_timestamps(html, [])[0] == html
+
+
 def test_estimate_cost():
     assert f.estimate_cost("claude-sonnet-4-6", 1_000_000, 100_000) == 4.5
     assert f.estimate_cost("claude-haiku-4-5", 1_000_000, 0) == 1.0
@@ -360,6 +442,30 @@ class TestMain:
         assert [i["slug"] for i in items(data, "formatted")] == ["2026-01-01_bad"]
         assert len(client.calls) == 1
         assert f.check_existing(bad)[0]
+
+    def test_timestamps_repaired_before_writing(self, repo):
+        d = write_video_dir(repo, "2026-01-01_a", url=URL, duration=26, vtt=SAMPLE_VTT)
+        shifted = GOOD_HTML.replace('data-t="4"', 'data-t="9"').replace('data-t="20"', 'data-t="24"')
+        code, data = run(repo, client=FakeAnthropic([shifted]))
+        assert code == 0
+        values = re.findall(r'data-t="(\d+)"', (d / "transcription.txt").read_text())
+        assert set(values) == {"0", "4", "20"}  # pieces split by inject_links repeat a value
+        (done,) = items(data, "formatted")
+        assert done["timestamps_repaired"] == 2 and done["timestamps_unmatched"] == 0
+
+    def test_repair_timestamps_mode(self, repo):
+        shifted = GOOD_HTML.replace('data-t="20"', 'data-t="23"')
+        d = write_video_dir(repo, "2026-01-02_a", url=URL, duration=26, vtt=SAMPLE_VTT, html=shifted)
+        write_video_dir(repo, "2026-01-01_ok", url=URL, duration=26, vtt=SAMPLE_VTT, html=GOOD_HTML)
+        client = FakeAnthropic()
+        code, data = run(repo, "--repair-timestamps", "--dry-run", client=client)
+        assert (d / "transcription.txt").read_text() == shifted
+        code, data = run(repo, "--repair-timestamps", client=client)
+        assert code == 0 and client.calls == []
+        assert 'data-t="20"' in (d / "transcription.txt").read_text()
+        (fixed,) = items(data, "timestamps_repaired")
+        assert fixed["slug"] == "2026-01-02_a" and fixed["changed"] == 1
+        assert data["counts"]["timestamps_ok"] == 1
 
     def test_dry_run(self, repo):
         write_video_dir(repo, "2026-01-01_a", url=URL, duration=26, vtt=SAMPLE_VTT)

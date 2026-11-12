@@ -18,6 +18,8 @@ For each subdirectory under content/resources/videos/, newest first:
 - Skip if transcription.vtt does not exist.
 - For long videos (> 90 min), split the VTT into chunks and process each
   segment separately, then concatenate the results.
+- Repair the data-t timestamps: the model copies the cue text verbatim but
+  often gets the seconds wrong, so each <a> is matched back to its VTT cue.
 - Validate the HTML: only <h3>, <p>, <a data-t>, and <blockquote>; every
   data-t within the video; at least 90% of the spoken words present; and a
   response that hit the max_tokens limit is rejected. Invalid output is
@@ -369,6 +371,97 @@ def validate_html(html: str, cues: list[videolib.Cue], duration: int) -> dict[st
     return {"coverage": round(cov, 4), "anchors": anchors, "warnings": warnings or None}
 
 
+# ---------------------------------------------------------------------------
+# Timestamp repair
+# ---------------------------------------------------------------------------
+
+# How far ahead (in words) to look for the next anchor's text in the VTT.
+REPAIR_WINDOW_WORDS = 800
+# Words of an anchor used to find it in the VTT.
+REPAIR_KEY_WORDS = 4
+
+ANCHOR_RE = re.compile(r'<a data-t="(\d+)">(.*?)</a>', flags=re.DOTALL)
+BLOCKQUOTE_RE = re.compile(r"(<blockquote\b.*?</blockquote>)", flags=re.DOTALL | re.IGNORECASE)
+
+
+def _norm_words(text: str) -> list[str]:
+    return [w.lower().strip("'") for w in WORD_RE.findall(html_lib.unescape(re.sub(r"<[^>]+>", " ", text)))]
+
+
+def repair_timestamps(html: str, cues: list[videolib.Cue]) -> tuple[str, dict[str, int]]:
+    """Set every ``data-t`` to the start of the VTT cue its text comes from.
+
+    The model copies the cue text verbatim but often gets the seconds wrong
+    (in the existing transcripts typically by 5-20 s, sometimes by minutes).
+    Walk the anchors in document order and find each one's first words in
+    the VTT, searching forward from the previous match. Anchors that can't
+    be found keep the model's value. Pull quotes reuse the value of the
+    matching prose anchor. Consecutive anchors with the same original value
+    (split by inject_links) stay together.
+    """
+    words: list[tuple[str, int]] = []  # (word, cue start in whole seconds)
+    for start, _end, text in cues:
+        words.extend((w, int(start)) for w in _norm_words(text))
+    vocab = [w for w, _ in words]
+
+    def find(key: list[str], pos: int) -> int | None:
+        limit = min(len(vocab) - len(key) + 1, pos + REPAIR_WINDOW_WORDS)
+        for i in range(pos, max(pos, limit)):
+            if vocab[i] == key[0] and vocab[i : i + len(key)] == key:
+                return i
+        return None
+
+    stats = {"anchors": 0, "matched": 0, "changed": 0, "unmatched": 0}
+    by_text: dict[str, int] = {}
+    pos = 0
+    prev: tuple[int, int] | None = None  # (original, repaired)
+
+    def repair_prose(m: re.Match) -> str:
+        nonlocal pos, prev
+        original, inner = int(m.group(1)), m.group(2)
+        stats["anchors"] += 1
+        ws = _norm_words(inner)
+        new = original
+        found = None
+        # Skip a leading word or two in case the model corrected it
+        # (e.g. "Korto" -> "Quarto").
+        for skip in (0, 1, 2):
+            key = ws[skip : skip + REPAIR_KEY_WORDS]
+            if not key:
+                break
+            i = find(key, pos)
+            if i is not None:
+                pos = i + len(ws) - skip
+                found = words[i][1]
+                break
+        if found is not None:
+            stats["matched"] += 1
+            new = found
+        else:
+            stats["unmatched"] += 1
+            if prev is not None and prev[0] == original:
+                new = prev[1]  # a piece of an anchor that inject_links split
+            elif words:
+                # Keep the model's value, but not beyond the last cue.
+                # (Clamping to the neighbours was measured to make things
+                # worse: one wrong match then drags the next anchors along.)
+                new = min(original, words[-1][1])
+        prev = (original, new)
+        if new != original:
+            stats["changed"] += 1
+        by_text.setdefault(" ".join(ws), new)
+        return f'<a data-t="{new}">{inner}</a>'
+
+    def repair_quote(m: re.Match) -> str:
+        new = by_text.get(" ".join(_norm_words(m.group(2))), int(m.group(1)))
+        return f'<a data-t="{new}">{m.group(2)}</a>'
+
+    parts = BLOCKQUOTE_RE.split(html)
+    parts = [p if i % 2 else ANCHOR_RE.sub(repair_prose, p) for i, p in enumerate(parts)]
+    parts = [ANCHOR_RE.sub(repair_quote, p) if i % 2 else p for i, p in enumerate(parts)]
+    return "".join(parts), stats
+
+
 def unlink_entities(html: str) -> str:
     """Undo inject_links, so a published transcript can be validated again."""
     return re.sub(r'<a href="[^"]*">(.*?)</a>', r"\1", html, flags=re.DOTALL)
@@ -655,6 +748,16 @@ async def process_video(video_dir: Path, ctx: Context) -> dict[str, Any]:
             item["request_ids"] = [u["request_id"] for u in usages if u["request_id"]] or None
             item["estimated_cost_usd"] = estimate_cost(args.model, item["input_tokens"], item["output_tokens"])
 
+            html, repair = repair_timestamps(html, cues)
+            item["timestamps_repaired"] = repair["changed"]
+            item["timestamps_unmatched"] = repair["unmatched"]
+            log.info(
+                "%s: repaired %d of %d timestamps (%d anchors not found in the VTT)",
+                label,
+                repair["changed"],
+                repair["anchors"],
+                repair["unmatched"],
+            )
             metrics = validate_html(html, cues, duration)
             item.update(metrics)
             for w in metrics["warnings"] or []:
@@ -707,6 +810,34 @@ def run_check_existing(dirs: list[Path], summary: videolib.RunSummary) -> None:
     )
 
 
+def run_repair_timestamps(dirs: list[Path], summary: videolib.RunSummary, *, dry_run: bool) -> None:
+    """Fix the data-t values of published transcripts (no API calls)."""
+    for d in dirs:
+        txt, vtt = d / "transcription.txt", d / "transcription.vtt"
+        if not (txt.exists() and vtt.exists()):
+            continue
+        cues = videolib.parse_vtt(vtt.read_text(encoding="utf-8"))
+        if not cues:
+            summary.tally("no_cues")
+            continue
+        html = txt.read_text(encoding="utf-8")
+        repaired, stats = repair_timestamps(html, cues)
+        if repaired == html:
+            summary.tally("timestamps_ok")
+            continue
+        if not dry_run:
+            videolib.atomic_write_text(txt, repaired)
+        summary.add("timestamps_repaired", slug=d.name, **stats)
+        log.info(
+            "%s: %s %d of %d timestamps (%d anchors not found in the VTT)",
+            d.name,
+            "would repair" if dry_run else "repaired",
+            stats["changed"],
+            stats["anchors"],
+            stats["unmatched"],
+        )
+
+
 def build_client(project_root: Path) -> Any:
     import anthropic
     from dotenv import load_dotenv
@@ -750,6 +881,11 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
         action="store_true",
         help="only validate existing transcription.txt files and report the invalid ones (no API calls)",
     )
+    parser.add_argument(
+        "--repair-timestamps",
+        action="store_true",
+        help="only fix the data-t values of existing transcription.txt files from their VTT (no API calls)",
+    )
     parser.add_argument("--dry-run", action="store_true", help="list what would be formatted")
     videolib.add_common_args(parser)
     return parser.parse_args(argv)
@@ -779,6 +915,9 @@ def main(
         dirs = [videolib.resolve_video_dir(args.video, videos_dir)] if args.video else videolib.video_dirs(videos_dir)
         if args.check_existing:
             run_check_existing(dirs, summary)
+            return
+        if args.repair_timestamps:
+            run_repair_timestamps(dirs, summary, dry_run=args.dry_run)
             return
         selected = select_videos(
             dirs, summary, force=args.force, limit=args.limit, reformat_invalid=args.reformat_invalid

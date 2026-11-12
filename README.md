@@ -569,11 +569,14 @@ for music or members-only videos), or `publish = false` in
 Formatted transcripts are validated before they're written: only `<h3>`,
 `<p>`, `<a data-t>`, and `<blockquote>`; timestamps within the video; at least
 90% of the spoken words; and no responses cut off at the token limit. Videos
-longer than 20 minutes are formatted in 15-minute chunks. To check the
-transcripts on the site, and to redo the ones that fail:
+longer than 20 minutes are formatted in 15-minute chunks. The model's
+timestamps are often off by tens of seconds, so every `<a data-t>` is matched
+back to its VTT cue and gets that cue's start time. To check the transcripts on
+the site, and to fix the ones that fail:
 
 ```bash
 just format-transcriptions --check-existing           # report only, no API calls
+just format-transcriptions --repair-timestamps        # fix timestamps only, no API calls
 just format-transcriptions --reformat-invalid --limit 10
 ```
 
