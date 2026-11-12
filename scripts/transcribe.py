@@ -72,6 +72,13 @@ RETRY_REASONS = {"network", "http_403"}
 DOWNLOAD_RETRY_DELAY = 5.0
 # Warn when the transcript ends before this fraction of the video.
 TRUNCATION_RATIO = 0.9
+# Whisper sometimes returns a long run of cues without words (just ".")
+# for part of the audio. A chunk with a stretch this long is retried once;
+# a transcript that still has one is rejected.
+MAX_WORDLESS_S = 120
+# Aim chunks at this share of the API limit: bitrates vary, and a chunk
+# that ends up just over the limit gets split again into a tiny piece.
+CHUNK_TARGET_RATIO = 0.9
 MAX_STDERR_CHARS = 4000
 
 
@@ -368,7 +375,7 @@ def compute_chunk_boundaries(
     silence_points: list[float],
     max_bytes: int = MAX_BYTES,
 ) -> list[tuple[float, float]]:
-    max_chunk_secs = max_bytes / (file_size / duration)
+    max_chunk_secs = CHUNK_TARGET_RATIO * max_bytes / (file_size / duration)
     boundaries: list[tuple[float, float]] = []
     start = 0.0
     while start < duration:
@@ -438,11 +445,32 @@ class TranscriptError(Exception):
         self.reason = reason
 
 
+def longest_wordless_stretch(cues: list[videolib.Cue]) -> tuple[float, float]:
+    """``(seconds, start)`` of the longest run of consecutive cues without words."""
+    longest, longest_start = 0.0, 0.0
+    run_start = None
+    for start, end, text in cues:
+        if re.search(r"\w", text):
+            run_start = None
+            continue
+        if run_start is None:
+            run_start = start
+        if end - run_start > longest:
+            longest, longest_start = end - run_start, run_start
+    return longest, longest_start
+
+
 def check_transcript(vtt: str, duration: int) -> tuple[list[videolib.Cue], list[str]]:
     """Return ``(cues, warnings)``; raise TranscriptError if unusable."""
     cues = videolib.parse_vtt(vtt)
     if not cues:
         raise TranscriptError("empty_transcript", f"Whisper returned no cues ({len(vtt)} characters)")
+    stretch, at = longest_wordless_stretch(cues)
+    if stretch > MAX_WORDLESS_S:
+        raise TranscriptError(
+            "degenerate_transcript",
+            f"{stretch:.0f}s of cues without words from {videolib.format_vtt_timestamp(at)[:8]}",
+        )
     warnings = []
     last_end = cues[-1][1]
     if duration > 0 and last_end < TRUNCATION_RATIO * duration:
@@ -551,9 +579,22 @@ async def process_video(c: Candidate, ctx: Context) -> dict[str, Any]:
                 for i, (chunk, offset) in enumerate(chunks, start=1):
                     chunk_label = f"{label} chunk {i}/{len(chunks)}" if len(chunks) > 1 else label
                     tc = time.monotonic()
-                    vtt = await transcribe_file(
-                        ctx.client, chunk, prompt, label=chunk_label, rate_limiter=ctx.rate_limiter, sleep=ctx.sleep
-                    )
+                    for attempt in (1, 2):
+                        vtt = await transcribe_file(
+                            ctx.client, chunk, prompt, label=chunk_label, rate_limiter=ctx.rate_limiter, sleep=ctx.sleep
+                        )
+                        stretch, at = longest_wordless_stretch(videolib.parse_vtt(vtt))
+                        if stretch <= MAX_WORDLESS_S:
+                            break
+                        log.warning(
+                            "%s: Whisper returned %.0fs of cues without words from %s (attempt %d/2)%s",
+                            chunk_label,
+                            stretch,
+                            videolib.format_vtt_timestamp(at + offset)[:8],
+                            attempt,
+                            "; retrying" if attempt == 1 else "",
+                        )
+                        item["whisper_retries"] = item.get("whisper_retries", 0) + (attempt == 1)
                     log.info(
                         "%s: transcribed %.1f MB (offset %.0fs) in %.1fs",
                         chunk_label,

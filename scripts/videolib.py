@@ -80,6 +80,7 @@ class _UTCFormatter(logging.Formatter):
 
 NOISY_LOGGERS = [
     "httpx",
+    "httpx2",
     "httpcore",
     "openai",
     "anthropic",

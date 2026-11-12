@@ -709,6 +709,7 @@ async def process_video(video_dir: Path, ctx: Context) -> dict[str, Any]:
         label = f"{video_dir.name} ({video_id})"
         duration = int(external.get("duration") or 0)
         item: dict[str, Any] = {"slug": video_dir.name, "video_id": video_id, "duration_s": duration, "model": args.model}
+        html: str | None = None
         try:
             vtt_content = (video_dir / "transcription.vtt").read_text(encoding="utf-8")
             cues = videolib.parse_vtt(vtt_content)
@@ -742,6 +743,13 @@ async def process_video(video_dir: Path, ctx: Context) -> dict[str, Any]:
             parts = [html_part for html_part, _ in results]
             usages = [usage for _, usage in results]
             html = "\n<!-- segment separator -->\n".join(parts)
+            if len(chunks) > 1:
+                # Which chunk lost words, if any: useful when coverage is low.
+                item["chunk_coverage"] = [
+                    round(coverage(videolib.parse_vtt(chunk_vtt), part), 3)
+                    for (chunk_vtt, _), part in zip(chunks, parts)
+                ]
+                log.info("%s: coverage per chunk: %s", label, ", ".join(f"{c:.1%}" for c in item["chunk_coverage"]))
 
             item["input_tokens"] = sum(u["input_tokens"] for u in usages)
             item["output_tokens"] = sum(u["output_tokens"] for u in usages)
@@ -766,6 +774,12 @@ async def process_video(video_dir: Path, ctx: Context) -> dict[str, Any]:
             videolib.atomic_write_text(video_dir / "transcription.txt", html)
         except FormatError as e:
             log.error("%s: %s: %s", label, e.reason, e)
+            if args.rejected_dir and html is not None:
+                args.rejected_dir.mkdir(parents=True, exist_ok=True)
+                rejected = args.rejected_dir / f"{video_dir.name}.html"
+                videolib.atomic_write_text(rejected, html)
+                item["rejected_output"] = str(rejected)
+                log.info("%s: saved the rejected output to %s", label, rejected)
             return {**item, "status": "error", "reason": e.reason, "detail": str(e)}
         except Exception as e:  # noqa: BLE001 - every failure goes in the summary
             log.exception("%s: formatting failed", label)
@@ -885,6 +899,12 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
         "--repair-timestamps",
         action="store_true",
         help="only fix the data-t values of existing transcription.txt files from their VTT (no API calls)",
+    )
+    parser.add_argument(
+        "--rejected-dir",
+        type=Path,
+        metavar="DIR",
+        help="save model output that fails validation to DIR/<slug>.html, for debugging",
     )
     parser.add_argument("--dry-run", action="store_true", help="list what would be formatted")
     videolib.add_common_args(parser)

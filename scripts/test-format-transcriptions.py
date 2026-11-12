@@ -377,6 +377,14 @@ class TestMain:
         assert items(data, "error")[0]["reason"] == "disallowed_tag"
         assert not (d / "transcription.txt").exists()
 
+    def test_rejected_output_saved(self, repo, tmp_path):
+        write_video_dir(repo, "2026-01-01_a", url=URL, duration=26, vtt=SAMPLE_VTT)
+        rejected = tmp_path / "rejected"
+        code, data = run(repo, "--rejected-dir", str(rejected), client=FakeAnthropic(['<p><a data-t="0">Hello.</a></p>']))
+        assert code == 2
+        assert (rejected / "2026-01-01_a.html").read_text() == '<p><a data-t="0">Hello.</a></p>'
+        assert items(data, "error")[0]["rejected_output"] == str(rejected / "2026-01-01_a.html")
+
     def test_markdown_fence_stripped(self, repo):
         d = write_video_dir(repo, "2026-01-01_a", url=URL, duration=26, vtt=SAMPLE_VTT)
         code, _ = run(repo, client=FakeAnthropic([f"```html\n{GOOD_HTML}\n```"]))
@@ -408,6 +416,7 @@ class TestMain:
         assert out.count("<!-- segment separator -->") == 3
         (done,) = items(data, "formatted")
         assert done["chunks"] == 4 and done["input_tokens"] == 4000
+        assert done["chunk_coverage"] == [1.0, 1.0, 1.0, 1.0]
 
     def test_short_video_not_chunked(self, repo):
         cues = [(float(t), float(t) + 5, f"sentence number {t}.") for t in range(0, 1100, 10)]

@@ -179,6 +179,7 @@ jobs:
         run: |
           set +e
           ./scripts/format-transcriptions.py --limit "$LIMIT" \
+            --rejected-dir "$SYNC_DIR/rejected" \
             --summary-json "$SYNC_DIR/summaries/4-format-transcriptions.json" \
             2>&1 | tee "$SYNC_DIR/logs/4-format-transcriptions.log"
           status=${PIPESTATUS[0]}

@@ -141,15 +141,15 @@ class TestChunking:
         assert t.compute_chunk_boundaries(100, 10, [50], max_bytes=100) == [(0.0, 100)]
 
     def test_cuts_at_last_silence_before_limit(self):
-        # 100 s at 1 byte/s, 40 bytes per chunk -> at most 40 s per chunk.
+        # 100 s at 1 byte/s, 40 bytes per chunk, aiming at 90% -> at most 36 s per chunk.
         assert t.compute_chunk_boundaries(100, 100, [10, 35, 38, 70, 79], max_bytes=40) == [
-            (0.0, 38),
-            (38, 70),
+            (0.0, 35),
+            (35, 70),
             (70, 100),
         ]
 
     def test_hard_cut_without_silence(self):
-        assert t.compute_chunk_boundaries(100, 100, [], max_bytes=40) == [(0.0, 40.0), (40.0, 80.0), (80.0, 100)]
+        assert t.compute_chunk_boundaries(100, 100, [], max_bytes=40) == [(0.0, 36.0), (36.0, 72.0), (72.0, 100)]
 
     def test_merge_vtt_offsets(self):
         part = "WEBVTT\n\n00:00:01.000 --> 00:00:02.000\nhi\n"
@@ -157,7 +157,27 @@ class TestChunking:
         assert videolib.parse_vtt(merged) == [(1.0, 2.0, "hi"), (601.5, 602.5, "hi")]
 
 
+def degenerate_vtt(start=0, words_until=30, dots_until=300):
+    cues = [(float(t), float(t) + 2, f"word {t}") for t in range(start, words_until, 2)]
+    cues += [(float(t), float(t) + 2, ".") for t in range(words_until, dots_until, 2)]
+    return videolib.render_vtt(cues)
+
+
 class TestCheckTranscript:
+    def test_wordless_stretch(self):
+        cues = videolib.parse_vtt(degenerate_vtt())
+        assert t.longest_wordless_stretch(cues) == (270.0, 30.0)
+        assert t.longest_wordless_stretch(videolib.parse_vtt(SAMPLE_VTT)) == (0.0, 0.0)
+
+    def test_degenerate(self):
+        with pytest.raises(t.TranscriptError) as e:
+            t.check_transcript(degenerate_vtt(), 300)
+        assert e.value.reason == "degenerate_transcript"
+        assert str(e.value) == "270s of cues without words from 00:00:30"
+
+    def test_short_wordless_stretch_is_fine(self):
+        t.check_transcript(degenerate_vtt(dots_until=100), 100)
+
     def test_empty(self):
         with pytest.raises(t.TranscriptError) as e:
             t.check_transcript("WEBVTT\n\n", 100)
@@ -340,6 +360,23 @@ class TestMain:
         (error,) = items(data, "error")
         assert error["reason"] == "transcription_failed"
         assert error["detail"] == "StatusError status=400 request_id=req_400: Invalid file format"
+        assert not (a / "transcription.vtt").exists()
+
+    def test_degenerate_chunk_retried(self, repo):
+        a = write_video_dir(repo, "2026-01-01_a", url=URL_A, duration=26)
+        client = FakeOpenAI([degenerate_vtt()])  # then SAMPLE_VTT
+        code, data = run(repo, client=client)
+        assert code == 0 and len(client.calls) == 2
+        assert (a / "transcription.vtt").read_text() == SAMPLE_VTT
+        assert items(data, "transcribed")[0]["whisper_retries"] == 1
+
+    def test_degenerate_twice_is_an_error(self, repo):
+        a = write_video_dir(repo, "2026-01-01_a", url=URL_A, duration=300)
+        client = FakeOpenAI([degenerate_vtt(), degenerate_vtt()])
+        code, data = run(repo, client=client)
+        assert code == 2 and len(client.calls) == 2
+        (error,) = items(data, "error")
+        assert error["reason"] == "degenerate_transcript"
         assert not (a / "transcription.vtt").exists()
 
     def test_empty_transcript_not_written(self, repo):
