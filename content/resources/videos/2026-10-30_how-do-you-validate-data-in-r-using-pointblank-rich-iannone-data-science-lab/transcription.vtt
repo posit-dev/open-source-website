@@ -1,0 +1,3370 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:13.240
+Welcome back to the Data Science Lab, everybody. I'm so glad you're here. This is a space where
+
+00:00:13.240 --> 00:00:19.120
+we do live coding, technical topics, screen sharing, and we talk very openly about learning
+
+00:00:19.120 --> 00:00:27.760
+data science topics. We talk about all kinds of things across all the data science topics.
+
+00:00:28.320 --> 00:00:34.880
+We are joined by a rotating cast of people from either the community or also from inside Posit,
+
+00:00:34.880 --> 00:00:40.799
+where I work, that can teach us, share things with us, and also showcase projects that they've
+
+00:00:40.799 --> 00:00:44.959
+worked on. My name is Libby. I do community stuff here at Posit. I'm joined by Isabella,
+
+00:00:44.959 --> 00:00:49.200
+my co-host. Isabella, would you like to say hello? Isabella Martinez Yes, hi, everyone. Thanks for
+
+00:00:49.200 --> 00:00:54.320
+joining. Hooray. Isabella, do you have any housekeeping you would like to announce to
+
+00:00:54.320 --> 00:00:59.360
+anybody about anything? Isabella Martinez I think the biggest thing is Posit Conf is coming up in
+
+00:00:59.360 --> 00:01:06.080
+a few short weeks. It'd be lovely to see you either in Houston or online. I'll share a conference
+
+00:01:06.080 --> 00:01:10.480
+page with everybody to check it out. Libby Stegman Perfect. We would love to see you.
+
+00:01:10.480 --> 00:01:17.519
+Isabella and I will be shepherding your online experience at Posit Conf. If you're joining us
+
+00:01:17.519 --> 00:01:22.000
+virtually, go check out the virtual join options. And if you are going to be there in person,
+
+00:01:22.000 --> 00:01:27.040
+I highly recommend going to Posit Conf in person at least once if you possibly can. It's a wonderful
+
+00:01:27.040 --> 00:01:34.000
+experience. And maybe our illustrious lab manager today might be there in person. I would like to
+
+00:01:34.000 --> 00:01:40.000
+present Rich Ainoan. He will be okay. I thought so, but I was like, I might be wrong. Rich Ainoan,
+
+00:01:40.000 --> 00:01:43.760
+would you like to introduce yourself, Rich? Rich Ainoan Yeah, yeah. My name is Rich. I work at
+
+00:01:43.760 --> 00:01:50.559
+Posit. And I work on mostly open source, like R packages, and also more lately, Python packages,
+
+00:01:51.120 --> 00:01:55.839
+or are they called libraries? Maybe a little bit of both. But some of the things I've worked on in
+
+00:01:55.839 --> 00:02:04.320
+the R space are GT, Blasula, Pointblank, this thing that we're going to look at today. There's
+
+00:02:04.320 --> 00:02:11.279
+a bunch more. In Python, I'm working on some ports from those R packages to Python libraries,
+
+00:02:11.279 --> 00:02:18.160
+like GridTables is essentially GT in Python. There's Pointblank also in Python. I'll touch
+
+00:02:18.240 --> 00:02:21.600
+that a little bit today. I'm not going to go through a code, but I'll just mention it and
+
+00:02:21.600 --> 00:02:28.000
+show you the website. And something called GreatDocs. Basically, it's a way to, it's like
+
+00:02:28.000 --> 00:02:32.639
+package down for Python, essentially. You know, package down. It's basically just a site generator
+
+00:02:32.639 --> 00:02:38.800
+for your Python libraries. But nice. Hooray, we love package down. Yeah. All right. Fantastic.
+
+00:02:38.800 --> 00:02:44.399
+So now that you know Rich has his hands in a whole bunch of packages that you've probably used
+
+00:02:45.119 --> 00:02:51.119
+and love, or maybe you haven't used them and you're going to go explore GT, GreatDocs,
+
+00:02:51.119 --> 00:02:59.600
+GreatTables for Python, Blasula. Blasula is emailing in R. That is all you need to know.
+
+00:02:59.600 --> 00:03:04.080
+It is amazing. It gives you all kinds of functionality. Go check it out. But today,
+
+00:03:04.080 --> 00:03:10.720
+we're going to be talking about Pointblank. And Pointblank is all about data management
+
+00:03:10.720 --> 00:03:19.440
+and data validation in R with so many quality of life features for you that if you are used
+
+00:03:19.440 --> 00:03:25.759
+to using something that's very manual, like the validate package, you will absolutely be
+
+00:03:25.759 --> 00:03:31.679
+blown away by what's possible with Pointblank. So with that said, Rich, I would love it if you
+
+00:03:31.679 --> 00:03:41.279
+could share your screen and let's kick off with some quick discussion about data validation.
+
+00:03:41.919 --> 00:03:45.199
+Yes. First, I'm going to show you where stuff is just real fast.
+
+00:03:45.199 --> 00:03:46.160
+Perfect. Yes.
+
+00:03:46.160 --> 00:03:51.360
+Just so you don't have to capture the screen. All the stuff I'm going to show you inside
+
+00:03:51.360 --> 00:03:57.279
+Positron is actually on my presentations repo. So just look for my name and presentations. And
+
+00:03:57.279 --> 00:04:03.759
+it's actually in this folder right here, dslab, with the current date today. There's not much in
+
+00:04:03.759 --> 00:04:09.839
+here, but there's some stuff in here. It's mostly empty because we're going to muddle through some
+
+00:04:09.839 --> 00:04:15.679
+Pointblank code, so it's not all filled out. But the main things are there. And the thing we're
+
+00:04:15.679 --> 00:04:21.679
+going to focus on is this package, Pointblank. And it's been around for a very long time. And
+
+00:04:21.679 --> 00:04:26.880
+the whole idea is that you have data and you want to keep track of the quality of that data. So
+
+00:04:27.679 --> 00:04:34.399
+you're creating checks. Maybe new data comes in and it sort of appends or your data gets updated.
+
+00:04:34.399 --> 00:04:39.200
+You can keep on top of whether the quality is maintained. Or maybe you just have a problematic
+
+00:04:39.200 --> 00:04:44.880
+data set and you want to sort of cut down on the errors and fix it. Or maybe you get a lot of third
+
+00:04:44.880 --> 00:04:50.320
+party data. Or also, you just have a notebook and you want to do periodic checks during your
+
+00:04:50.320 --> 00:04:55.440
+transformations, like in between, to make sure things are nice and good. There's no surprises.
+
+00:04:55.440 --> 00:05:01.760
+So check this out. But that's a later thing. A lot of the stuff that we'll work on today,
+
+00:05:01.760 --> 00:05:07.359
+and it will be just basically like the most simplest example, will be just right here in
+
+00:05:07.359 --> 00:05:12.399
+Positron. And the reference right here. This is just to jog my own memory. Because even though
+
+00:05:12.399 --> 00:05:17.600
+I work on this package, I haven't really looked at it in a year. No, actually, no. That's a bit
+
+00:05:17.600 --> 00:05:22.480
+of a lie. But it sounds dramatic. But it's actually kind of fun. Because, like, I don't know half the
+
+00:05:22.480 --> 00:05:26.959
+stuff. Like, I don't remember this stuff. I didn't want to prepare either because I want to keep it,
+
+00:05:26.959 --> 00:05:32.320
+like, you know, like, some crowd participation happening here. So if you want to shout out
+
+00:05:32.320 --> 00:05:35.920
+something. This is very real. You go back to your work a year later and you're like, what did I do?
+
+00:05:35.920 --> 00:05:40.959
+And why did I do it? Yeah, exactly. It'll just be like, I'm a learner too. So that's the whole
+
+00:05:40.959 --> 00:05:47.279
+guise of this thing. So let me tell you about how this is going to go. I'm going to, like,
+
+00:05:47.279 --> 00:05:54.959
+work through this QMD right here in Positron. And I brought a data set, actually. So the data
+
+00:05:54.959 --> 00:06:04.399
+set is let me see if it works. Run. There we go. Okay. So it's working. So I created a data set
+
+00:06:04.399 --> 00:06:10.559
+just for this cool event. And it's called Films. And basically, it's just, like, stuff I watched.
+
+00:06:11.040 --> 00:06:17.119
+And I tried to, like, get down every movie I watched inside of an app called Letterboxd. It's
+
+00:06:17.119 --> 00:06:22.399
+like a site as well. And, you know, I tried to, like, you know, remember every single film I
+
+00:06:22.399 --> 00:06:28.880
+watched. I think I failed because it's a major undercount. But I tried. And I rated every film
+
+00:06:28.880 --> 00:06:35.440
+too just as, you know, to be completest, you know, to have a full data set. And I'm glad I did this
+
+00:06:35.440 --> 00:06:40.559
+because now we have a data set for this event and this lab. And I'm going to load that in right
+
+00:06:40.559 --> 00:06:46.559
+now so we can have a look at it. So Films. It just loaded. I just used read CSV from Reader.
+
+00:06:46.559 --> 00:06:52.959
+It's one of my favorite functions for reading in a CSV. Now let's take a look at the tibble. Okay.
+
+00:06:52.959 --> 00:06:58.000
+So real super small. It's all here crammed in this little console. Not the best way to look at it.
+
+00:06:58.000 --> 00:07:03.359
+So what I'll do instead is because we're in Positron, we can use the view function. So let's
+
+00:07:03.440 --> 00:07:08.079
+use that on Films. Ah, that's a lot better. I'm going to make this a little bit bigger. Here we
+
+00:07:08.079 --> 00:07:12.959
+go. And these are some of the movies I watched. And if you scroll a little bit, we see a lot of
+
+00:07:12.959 --> 00:07:18.000
+data here. And the cool thing is what I did to get this data is basically just, like, you know,
+
+00:07:18.000 --> 00:07:24.880
+sit one afternoon, maybe two afternoons on the Letterboxd app, read a bunch of films. And then
+
+00:07:24.880 --> 00:07:29.440
+I just grabbed the data and assembled the data set. If you log in, you can just grab the CSVs
+
+00:07:29.440 --> 00:07:34.239
+and sort of assemble it. It's actually not as straightforward as it should be.
+
+00:07:36.079 --> 00:07:40.079
+But it's all there. Potential's there. But I have this data set now.
+
+00:07:40.079 --> 00:07:46.239
+And another secret about this data set, I tried to make it a little bit, like, bad just for this
+
+00:07:46.239 --> 00:07:52.399
+event because this is all about data validation. And I sort of corrupted it. I changed things
+
+00:07:52.399 --> 00:07:56.320
+and I made some things, like, not right. So we're going to try to find those things.
+
+00:07:56.399 --> 00:08:00.079
+And we can't do it just by looking at the data. Like, this is impossible. Like,
+
+00:08:00.079 --> 00:08:02.559
+how many rows do we have? 1,000? Even that's too many.
+
+00:08:02.559 --> 00:08:08.000
+I would love to know, yeah. How many movies are in here? And also, what is your scale? Is it 1 to 5?
+
+00:08:08.000 --> 00:08:12.720
+It's 1 to 5. Yeah, I believe that's how it works in Letterboxd. Yeah, maybe even half,
+
+00:08:12.720 --> 00:08:18.399
+but I think it's, I think they allow half. But I think you have to at least, you can't have zero.
+
+00:08:18.399 --> 00:08:19.279
+Okay, 1 to 5.
+
+00:08:19.279 --> 00:08:21.119
+It's not like a detail, but this is super important to know.
+
+00:08:21.679 --> 00:08:24.399
+Over 1,000 movies? You've watched over 1,000 movies?
+
+00:08:24.399 --> 00:08:29.359
+Yeah, this, well, this might be, like, this is, like, in my entire life. So, you know,
+
+00:08:29.359 --> 00:08:34.000
+like, I had to scan, you know, like, like, I had to, like, think, jump around. It was pretty much
+
+00:08:34.000 --> 00:08:39.520
+chaotic. Sort of, like, jumping around, different directors, you know, like, oh, I saw, I saw this.
+
+00:08:39.520 --> 00:08:44.960
+Yes. And I, and I think I got, like, most of it, but there's surely stuff that, you know,
+
+00:08:44.960 --> 00:08:48.479
+I've seen that's not in here. So, you know, I do my best.
+
+00:08:49.359 --> 00:08:54.000
+One more thing that I want to get out there just for a primer, especially for anybody watching this
+
+00:08:54.000 --> 00:09:00.479
+on YouTube later, is a definition of data validation and why it's needed.
+
+00:09:01.919 --> 00:09:07.679
+You might get data from all kinds of different places, and one scenario is maybe you have a
+
+00:09:07.679 --> 00:09:11.679
+dashboard. Your dashboard is a composition of, like, five different regions. You're getting
+
+00:09:11.679 --> 00:09:17.919
+data that comes in every week or every day from those different regions, and it's all in a format
+
+00:09:17.919 --> 00:09:21.280
+that you would expect, right? Everything's coming in in the right way. It's feeding into your
+
+00:09:21.280 --> 00:09:26.080
+dashboard, and then something changes in one of the regions or a couple of the regions. Maybe
+
+00:09:26.080 --> 00:09:30.239
+there's a software update in one region and not another, and your data is coming in slightly
+
+00:09:30.239 --> 00:09:34.559
+different. Maybe it's not different enough to break things, so things are still coming through,
+
+00:09:34.559 --> 00:09:39.359
+but the data in your dashboard itself is now wrong. How would you know that it's wrong?
+
+00:09:40.000 --> 00:09:45.280
+How would you know that anything had changed? This is why data validation can be really important,
+
+00:09:45.280 --> 00:09:51.039
+so that you make sure that you are on top of everything coming in. Is it the right type?
+
+00:09:51.039 --> 00:09:56.719
+Is it within the correct range? Is it in the right format that you expect for your code to work?
+
+00:09:56.719 --> 00:10:03.840
+All of that stuff. Data management is a broader topic, but that is at least the gist of data
+
+00:10:03.840 --> 00:10:07.200
+validation. Yeah, and Libby, I've been there. I've seen all those issues. I dealt with, like,
+
+00:10:07.200 --> 00:10:11.919
+when I worked in analytics, third-party data would always come in. I mean, it would come in,
+
+00:10:11.919 --> 00:10:16.559
+which is great. Sometimes it wouldn't come in. I think you got to check, but sometimes the
+
+00:10:16.559 --> 00:10:22.239
+big batches of it would just be wrong, or a process would change, and people wouldn't know
+
+00:10:22.239 --> 00:10:27.119
+about the third-party data enough to integrate it properly into the table. Lots of issues. Oh,
+
+00:10:27.119 --> 00:10:32.320
+my God. That's why this package exists, because I tried to deal with it.
+
+00:10:32.320 --> 00:10:34.239
+Because your own woes.
+
+00:10:34.239 --> 00:10:37.440
+Yeah, exactly. Yeah, yeah. But now we have it.
+
+00:10:37.440 --> 00:10:42.239
+So you dirtied up this dataset just enough that it could simulate things coming in wrong,
+
+00:10:42.239 --> 00:10:43.840
+missing, whatever. Okay, cool.
+
+00:10:44.080 --> 00:10:49.119
+Yeah, and here's the thing. Some of these things are obvious. There's a difference between plausible
+
+00:10:49.119 --> 00:10:56.159
+sort of things, like implausible, and subtle sort of small things. Say, for instance, a movie could
+
+00:10:56.159 --> 00:11:04.159
+be, the year of release could be, like, 1825. Sounds wrong. Way before the advent of films,
+
+00:11:04.159 --> 00:11:12.719
+which was like 1880s or 1890s. Or there might be a movie that has an actual release date of
+
+00:11:13.840 --> 00:11:19.119
+2002, but was actually listed as 1998. It's like, how do you know that? I mean, that's tough,
+
+00:11:19.119 --> 00:11:24.080
+but we're going to try our best with this dataset here. So I got errors like that.
+
+00:11:25.280 --> 00:11:30.719
+Okay. So we looked at view. And I always recommend just taking a look at the data.
+
+00:11:31.359 --> 00:11:35.599
+Another one that people reach for a lot in R is, like, summary, which is great. I sort of
+
+00:11:35.599 --> 00:11:40.640
+see it here. I'm going to scroll this up a little bit. It's nice. It's not as good as view, though,
+
+00:11:40.640 --> 00:11:45.520
+because you can't see what's missing, like, how many missings you have in character columns.
+
+00:11:45.520 --> 00:11:50.479
+You have NAs for other things, but not for character. So it's not bad, but I think we
+
+00:11:50.479 --> 00:11:57.039
+have better these days. And actually, point blank has a don't thing. It's got a function called scan
+
+00:11:57.039 --> 00:12:02.400
+data. And rather than just talk about it, I'll just show you what it is. And one thing I did is,
+
+00:12:02.400 --> 00:12:08.239
+it's a little bit slow in some aspects. So basically, it creates an HTML report of your
+
+00:12:08.239 --> 00:12:13.760
+data. And there's an overview. That's what O is. And then V here is, like, variables. And S is the
+
+00:12:13.760 --> 00:12:18.719
+summary. So you can choose what parts you want in the report. So I'm just limiting the entire thing
+
+00:12:18.719 --> 00:12:22.960
+and just choosing these parts. So I'm just going to run this. So it's going to do that right now.
+
+00:12:22.960 --> 00:12:27.280
+It finished it. I'm going to scroll over here and open this up. So basically, this is, like,
+
+00:12:27.280 --> 00:12:31.840
+an overview of the dataset. So it shows you, like, just some top level things, like, you know,
+
+00:12:31.840 --> 00:12:37.679
+like the dimensions and how many NAs you have in total across all cells. Duplicate rows, even. And
+
+00:12:37.679 --> 00:12:43.200
+this is the really cool thing, like, variables. Like, film titles is, like, one variable. We can
+
+00:12:43.200 --> 00:12:49.119
+actually click this and see cool little things. We see things like duplicates, like, right here.
+
+00:12:49.119 --> 00:12:54.559
+And also troubling NAs for, like, the film. Like, if you don't have that, that's a bad row. You know,
+
+00:12:54.559 --> 00:12:57.919
+like, the thing that you actually want to, like, you know, describe is, like, missing the name.
+
+00:12:59.359 --> 00:13:04.640
+I think we caught right away just by doing some simple data inspection. We see a lot of, like,
+
+00:13:04.960 --> 00:13:09.359
+titles which have, like, you know, duplicates. That's fine. There's, like, remakes. And even,
+
+00:13:09.359 --> 00:13:16.640
+like, the Avengers has two different films entirely. So, yeah, we have that. And we also
+
+00:13:16.640 --> 00:13:20.239
+have a year. This is actually really good to see. Because we see, like, you know, like, the stats
+
+00:13:20.239 --> 00:13:24.080
+here. Like, the mean is not very important. But the min and the max are very important. So we
+
+00:13:24.080 --> 00:13:29.200
+see right away we have a minimum of, like, 53. Sounds kind of bad. We want to have a full year.
+
+00:13:29.280 --> 00:13:35.359
+Not, like, an apostrophe 53. We just want the whole year. And a max of, like, 2108,
+
+00:13:35.359 --> 00:13:39.359
+which does not look good for a year. So we're already seeing stuff that's kind of bad here.
+
+00:13:40.159 --> 00:13:45.679
+We've seen some NAs across the board. We have some here in this URI for, like, the letterboxed
+
+00:13:46.719 --> 00:13:51.919
+to get to, like, the info page for that movie. We see some NAs. So that's already kind of bad. So
+
+00:13:51.919 --> 00:13:56.640
+in our validation, we're going to, like, you know, firm that up and put in a check for NAs.
+
+00:13:57.359 --> 00:14:01.599
+Pretty much everywhere. And the film ratings, we just talked about that. It should go from, like,
+
+00:14:01.599 --> 00:14:08.880
+I think 0.5. Like, this is what's allowed in terms of the form to 5 inclusive. It goes in increments
+
+00:14:08.880 --> 00:14:16.080
+of 0.5 as well. And we see here a minimum of minus 3. Bad. Maximum of 8. Also bad. So
+
+00:14:16.960 --> 00:14:22.320
+these are problems. And the cool thing is we can see, you know, like, more stats here. These are
+
+00:14:22.320 --> 00:14:27.840
+useful or not useful, depending on what the measure is. But I think just looking at min and
+
+00:14:27.840 --> 00:14:34.080
+max are very, very useful. And right here, we see director and we have some NAs there as well.
+
+00:14:36.479 --> 00:14:40.960
+I think we learned a lot just by looking at this. First of all, this thing exists for you to just,
+
+00:14:40.960 --> 00:14:44.960
+you know, check out a new dataset quickly. And also we found some, like, things we can validate
+
+00:14:44.960 --> 00:14:49.280
+right away. And we know we're going to catch some errors just by knowing we have NAs and
+
+00:14:49.840 --> 00:14:52.479
+ranges which are have values which are improbable.
+
+00:14:53.119 --> 00:14:56.320
+I also got to say, I love the toggle details button. That's so nice.
+
+00:14:56.320 --> 00:14:58.880
+Yeah, it's kind of nice. Like, sometimes you want the details, sometimes you don't.
+
+00:14:58.880 --> 00:15:00.000
+It's there when you need them.
+
+00:15:00.000 --> 00:15:04.000
+Yeah. But, like, defaulting to it closed means I can go through this much more quickly when
+
+00:15:04.000 --> 00:15:08.000
+it pops up on my screen and I can only open it to be a bigger when I need it to be.
+
+00:15:08.000 --> 00:15:15.280
+Well, while we are here, let's ask some questions that are fun without digging in yet.
+
+00:15:16.239 --> 00:15:22.080
+Noor wants to know how you define a five. So, for our own edification, what are your
+
+00:15:23.200 --> 00:15:25.359
+film requirements for reading something a five?
+
+00:15:25.359 --> 00:15:29.760
+Yeah, I don't want to see it again. I don't want to be in that world again, like, a year from now.
+
+00:15:30.400 --> 00:15:34.320
+It's actually, like, it's weird. Like, sometimes I get a little bit obsessed. Like, I see a movie,
+
+00:15:34.320 --> 00:15:40.239
+like, sometimes, like, three times in a two-month period or even a one-month space. It's like, wow,
+
+00:15:40.239 --> 00:15:44.799
+I got to see this again. And it's like, maybe that's a five. Usually that's a five. Like,
+
+00:15:44.880 --> 00:15:47.919
+when I want to see it again, like, a strong impulse. I usually rate pretty high. Like,
+
+00:15:48.559 --> 00:15:53.679
+most films I rate or movies are, get, like, a 3.5 just, like, automatically. Because,
+
+00:15:53.679 --> 00:15:57.440
+you know, it's a movie. A movie is awesome. And, you know, I think unless you're, like,
+
+00:15:57.440 --> 00:16:00.320
+really trying to make me mad, it won't go too far below 3.5.
+
+00:16:01.280 --> 00:16:04.960
+Okay, good to know. It's nice from a data standpoint to know what we're working with
+
+00:16:04.960 --> 00:16:09.599
+here. Thank you, Noor. Excellent question. And then our second fun one is from Trey.
+
+00:16:09.599 --> 00:16:13.840
+Trey says, hey, what positron theme is Rich using? Do you know the name of your positron theme?
+
+00:16:14.080 --> 00:16:15.359
+I forgot. It's a good one, though.
+
+00:16:16.479 --> 00:16:21.119
+Command Shift P, theme. I bet it'll tell you what it is just by,
+
+00:16:22.159 --> 00:16:27.359
+by Command Shift P theming. Do you have one? Oh, no, it doesn't.
+
+00:16:27.359 --> 00:16:29.679
+Maybe I don't even have one. I'm just using the stock ones. Actually,
+
+00:16:29.679 --> 00:16:32.400
+it would tell me right here in settings. Oh, okay, good.
+
+00:16:32.400 --> 00:16:35.200
+Themes. Nothing. What?
+
+00:16:35.200 --> 00:16:40.159
+No, dang it. Anybody have a really quick way of, like, figuring out which theme you're on?
+
+00:16:40.159 --> 00:16:43.520
+I know exactly which theme I am. It was definitely a set it and forget it
+
+00:16:43.760 --> 00:16:46.159
+thing. I really, really love it and talk about it all the time.
+
+00:16:46.159 --> 00:16:50.159
+Okay, follow up. I'll find out. We'll figure out. Okay, Trey, we'll let you know.
+
+00:16:51.760 --> 00:16:53.440
+This seems great. It's, like, right on the money. It's, like,
+
+00:16:54.559 --> 00:16:57.440
+it's nice. It's, like, not too dark. It's not too light. It's, like,
+
+00:16:58.320 --> 00:17:01.520
+We're all going to learn. Isabella and I are probably, like, both, like,
+
+00:17:01.520 --> 00:17:04.319
+feverishly Googling how to very quickly find this in our themes.
+
+00:17:05.040 --> 00:17:08.959
+At this point, it was, like, here, like, in, like, settings and theme, but I don't know.
+
+00:17:08.959 --> 00:17:15.280
+Failed in that regard. But anyways, okay, this data, let me, we already got intuition here.
+
+00:17:15.280 --> 00:17:18.479
+It's not that big, like, in terms of columns. It's that way because, you know,
+
+00:17:18.479 --> 00:17:22.640
+I don't want a huge data set here in this lab. So, basically, film title, year,
+
+00:17:22.640 --> 00:17:26.479
+these are self-explanatory. The URI, it's basically just for getting to, like, the,
+
+00:17:26.479 --> 00:17:30.160
+you know, to Letterboxd film page. It's a shortened link, but, you know, no big deal.
+
+00:17:30.719 --> 00:17:37.680
+Film rating, we went over that. It's from, I believe, 0.5. You can't do zero to all the way
+
+00:17:37.680 --> 00:17:44.160
+to five in 0.5 increments. Director, this is a cool thing. It's a first name, last name,
+
+00:17:44.160 --> 00:17:48.719
+and there's multiple directors, and you said sometimes it's just comma separated, just like
+
+00:17:48.719 --> 00:17:53.599
+this. So, it might be useful to check that if that's a, you know, like, a thing you want to
+
+00:17:53.599 --> 00:18:00.560
+hold to. Not always important. As long as it has a director. Usually all films do.
+
+00:18:01.520 --> 00:18:07.839
+But there's always exceptions. Data is very surprising. Okay. So, point blank. Let's get
+
+00:18:07.839 --> 00:18:12.719
+to the thing we're going to do. So, the workflow is basically three components when you define
+
+00:18:12.719 --> 00:18:18.000
+a validation. You've got to create an agent, and this is way before AI LLM stuff came out.
+
+00:18:18.000 --> 00:18:21.359
+It's a little unfortunately named right now. But agent is just, yeah, nothing.
+
+00:18:21.359 --> 00:18:22.239
+Big coincidence.
+
+00:18:22.239 --> 00:18:28.560
+There's no AI here. Yeah, it's not. The idea, I think, a long time ago, the theme of this package,
+
+00:18:28.719 --> 00:18:32.560
+point blank was like, you know, we have an agent, it's going to interrogate the data,
+
+00:18:32.560 --> 00:18:36.239
+you know, really torture it, really violent stuff you're doing with the data.
+
+00:18:36.959 --> 00:18:41.040
+Wait, that begs the question that Brent just asked, which is, is point blank named after the
+
+00:18:41.040 --> 00:18:46.959
+movie? Oh, the Lee Marvin. Yeah. No, it's not. But great movie. Great movie, by the way.
+
+00:18:46.959 --> 00:18:47.680
+Okay.
+
+00:18:47.680 --> 00:18:53.439
+Yeah. Yeah. It's not a bad name. Like, it's pretty good as far as names go.
+
+00:18:53.920 --> 00:18:57.199
+But, yeah, that's, that's, agent is basically nothing to do with AI. It's basically just like
+
+00:18:57.199 --> 00:19:01.520
+the entry point. And you can define what the data actually is in this, like, one function.
+
+00:19:02.079 --> 00:19:05.520
+And then after that, you go to, like, validation functions. So, we have a ton to choose from.
+
+00:19:05.520 --> 00:19:09.439
+This is basically, like, each one has a different interface. It's kind of like if you just test
+
+00:19:09.439 --> 00:19:15.119
+that, there's, like, a bunch of those, like, testing functions, and, like, they all have,
+
+00:19:15.119 --> 00:19:18.640
+you know, their own little thing. Like, this value is above this, this value is below this,
+
+00:19:18.880 --> 00:19:23.359
+this value is below this, it matches this, so on and so forth. And then we end off with
+
+00:19:23.359 --> 00:19:27.520
+interrogate. The reason we sort of, like, explicitly say we want to actually interrogate
+
+00:19:27.520 --> 00:19:31.760
+the data now is, like, you can leave it out and just look at the plan, you know, and not touch
+
+00:19:31.760 --> 00:19:35.199
+your data. Because your data may be, it may take a while to validate. It may be in a, you know,
+
+00:19:35.199 --> 00:19:40.239
+like, in a data warehouse. It may, you know, be remote. You just want to, like, you know,
+
+00:19:40.239 --> 00:19:45.599
+like, not do it yet. You must, must see your plan. So, yeah, this is basically like a validation
+
+00:19:45.599 --> 00:19:50.640
+sandwich. You got, like, you know, the entry point, you got the final thing, and then you have
+
+00:19:50.640 --> 00:19:54.719
+all the stuff in between, which is the actual checks. And they run in the order that you define
+
+00:19:54.719 --> 00:20:01.040
+them. Yeah. While we are on this point, Hubert asked, how is the speed of scan data on larger
+
+00:20:01.040 --> 00:20:05.680
+datasets? Like, if you have a million rows, but an okay number of columns. Like, not super wide,
+
+00:20:05.680 --> 00:20:09.760
+but super long. It's not too bad, as long as you adhere to, like, not showing all the sections.
+
+00:20:09.760 --> 00:20:15.040
+I'm going to rework this. Some of them are pretty extra, where, like, they create these plots,
+
+00:20:15.680 --> 00:20:19.680
+like, these matrix plots, and that takes up a lot of time. That actually, like,
+
+00:20:20.400 --> 00:20:25.119
+takes, like, sometimes, like, for a huge dataset, like, lots of columns, like, a few minutes. So,
+
+00:20:25.760 --> 00:20:29.119
+I may actually change the defaults, so it just gives you this, because this is, like,
+
+00:20:29.119 --> 00:20:32.319
+pretty much all you need, and the other stuff is just kind of, like, bonus stuff that's, you know,
+
+00:20:32.319 --> 00:20:37.439
+like, if you need it, there you go. But it's pretty fast. Some of the slowness comes to do
+
+00:20:37.439 --> 00:20:44.479
+with, like, just, you know, like, page generation, using HTML tools for reasons. But it's not too
+
+00:20:44.479 --> 00:20:49.439
+bad, because we're basically just using simple queries, and dplyr or dbplyr is the case, maybe,
+
+00:20:50.640 --> 00:20:58.800
+to get the stats. Yeah. Yeah. Okay. So, again, this part right here in between is, like, the
+
+00:20:58.800 --> 00:21:03.920
+part that takes the longest, and requires the most care. It's basically what you're actually
+
+00:21:03.920 --> 00:21:08.400
+doing to make those checks. And they're all documented in here. So, if you go to this page,
+
+00:21:08.400 --> 00:21:12.560
+I'm going to show you that page real quick. It's basically this right here. Package index,
+
+00:21:13.280 --> 00:21:18.880
+it gives you, like, sort of, like, the lowdown on, like, you know, like, what all the different
+
+00:21:18.880 --> 00:21:24.400
+functions are. And I'll go through them, and we'll just intuitively understand what they are.
+
+00:21:24.400 --> 00:21:28.880
+But these ones that begin with call vals, we're actually just checking individual column values
+
+00:21:28.880 --> 00:21:33.839
+in a single column, so that we see that sort of pattern almost all the way down. And then we look
+
+00:21:33.839 --> 00:21:38.560
+at then we have ones which are, like, rows distinct, rows complete. We're actually checking
+
+00:21:38.560 --> 00:21:44.239
+at row data entirely. And then there's ones for, like, you know, like, type checks right here,
+
+00:21:44.239 --> 00:21:50.000
+like, call is. And then there's some special ones, which, you know, which are, you know,
+
+00:21:50.000 --> 00:21:54.239
+not fitting these patterns. But for the most part, we'll be checking individual column values,
+
+00:21:54.239 --> 00:21:58.560
+because that's kind of, like, you know, like, where you find the most errors, like, in individual,
+
+00:21:58.560 --> 00:22:05.359
+like, data values in a column. So, let's actually do this. Okay. So, let's start. So, the first
+
+00:22:05.359 --> 00:22:08.880
+thing we got to do is basically just follow this. I'm going to actually just do this sort of setup
+
+00:22:08.880 --> 00:22:15.680
+right here. Agent. And then basically just copy down what I have. Create agent. And autocomplete
+
+00:22:15.680 --> 00:22:22.479
+is really just nice. So, table is going to be films. And then I'm going to put just agent here
+
+00:22:22.479 --> 00:22:25.439
+at the bottom. So, I'm going to run this. I'll just, like, see what's going on. I'm just going
+
+00:22:25.439 --> 00:22:29.439
+to run this right now, see what happens. Okay. Great. Okay. So, the first thing you see is,
+
+00:22:29.439 --> 00:22:32.959
+okay, this is actually kind of sweet. Because it runs even with this. Okay. We see, like,
+
+00:22:32.959 --> 00:22:37.920
+this point bank validation plan. This is actually the report. We don't have interrogate at the end,
+
+00:22:37.920 --> 00:22:41.520
+and we don't have any steps. So, it's pretty much, like, an empty view. But this is where
+
+00:22:41.520 --> 00:22:44.560
+you're going to be filling in. This is where you're going to be seeing, like, where the,
+
+00:22:44.560 --> 00:22:48.880
+you know, issues arise with your data set. So, obviously, this is a, you know, like,
+
+00:22:48.880 --> 00:22:53.199
+very beginning. So, we're going to put in, like, some validation steps now. So, now,
+
+00:22:53.199 --> 00:22:58.160
+what's the first thing we should check? I guess for, like, missing values, right? Because we saw
+
+00:22:58.160 --> 00:23:03.280
+we have tons of them, and we want to know to what extent we have them and where they are. So,
+
+00:23:03.280 --> 00:23:12.800
+we can do call vals. I'm going to scroll down. There's lots of them. Call vals, not null.
+
+00:23:14.239 --> 00:23:18.479
+Okay. So, this is, like, the assertion. We're saying that column values are not null. Of course,
+
+00:23:18.479 --> 00:23:22.000
+we know the null values, but we're going to find out where they are. First argument is usually
+
+00:23:22.000 --> 00:23:27.280
+columns. I'm just going to put them in so we know exactly what we're doing here.
+
+00:23:28.319 --> 00:23:33.760
+We actually want to check all the columns. It would be rather tedious to just say, like,
+
+00:23:33.760 --> 00:23:37.760
+you know, like, to list all the different columns. So, we can actually do everything.
+
+00:23:37.760 --> 00:23:42.400
+We're going to test every single one of the columns for null values. Okay. I'm not going
+
+00:23:42.400 --> 00:23:46.560
+to put an interrogate. I'm just going to run this, and I'll show you what it looks like now on here.
+
+00:23:47.280 --> 00:23:51.040
+Great. Okay. So, we see nothing here. Nothing interrogated. So, we don't have results on the
+
+00:23:51.040 --> 00:23:59.119
+right side. But we have from, like, one line, we're checking, we're making five steps and checking
+
+00:23:59.119 --> 00:24:03.280
+each of these columns. We didn't have to know the names of the columns because we put in everything.
+
+00:24:03.280 --> 00:24:08.000
+We have a selector right there, which is nice because I already forgot the names, the exact
+
+00:24:08.000 --> 00:24:13.680
+names for these columns. I mean, I can look, but this is actually super convenient. So, I'm
+
+00:24:13.680 --> 00:24:17.199
+actually going to run this right now, and we can always, like, add more steps. So, it's going to
+
+00:24:17.199 --> 00:24:25.040
+be interrogate. Great. So, I'm going to run this cell. Great. Now, it's actually running, and what
+
+00:24:25.040 --> 00:24:28.560
+we see now is some results on the right side. I'm going to scroll just a little bit more so we can
+
+00:24:28.560 --> 00:24:34.880
+see, like, the whole table here. There we go. There we go. Okay. So, let's actually, like, take a look
+
+00:24:34.880 --> 00:24:39.280
+at this and unpack what the results show us. So, we see here, like, we'll just look at the first
+
+00:24:39.280 --> 00:24:42.719
+step right here, and if you hover over it, it actually tells you, like, in plain English what
+
+00:24:42.800 --> 00:24:47.359
+you're actually looking for. It says here expect that all values in film title, that column,
+
+00:24:47.359 --> 00:24:55.119
+should not be null. Or should not be null. Yes, that's right. And we see that there's a thousand
+
+00:24:55.119 --> 00:25:00.319
+units, and units are basically just, like, rows and, like, you know, individual cells. So, what
+
+00:25:00.319 --> 00:25:06.000
+we do here is we're actually saying, like, one check is actually checking somewhere around a
+
+00:25:06.000 --> 00:25:11.040
+thousand different values, right? And then we see here pass and fail. These are super important.
+
+00:25:11.599 --> 00:25:18.479
+We have around a thousand different test units passing, but four are failing. So,
+
+00:25:18.479 --> 00:25:22.959
+a very small amount, like, a very small percentage. It's not 1%. It's, like, rounded up to that.
+
+00:25:24.079 --> 00:25:28.560
+It's basically, like, almost like needle in a haystack type stuff here we're looking at.
+
+00:25:28.560 --> 00:25:32.719
+Right. I have to jump in really quickly. While we were talking about a check for not null,
+
+00:25:33.280 --> 00:25:40.880
+someone had asked, I think Connor had asked, is null in point blank the same as ours in A?
+
+00:25:41.839 --> 00:25:46.800
+It is, yeah. The terminology is like this. Yeah, I'll explain why I went with null. It's because
+
+00:25:46.800 --> 00:25:51.839
+we also can check database tables here. And it would be maybe a little bit weird saying, like,
+
+00:25:51.839 --> 00:25:55.760
+you know, we're checking NAs in a database table. I mean, both are weird. But we're checking,
+
+00:25:55.760 --> 00:26:01.520
+essentially, missing values. And not including empty strings, though, is a small detail.
+
+00:26:02.160 --> 00:26:05.599
+We're essentially checking NA or null, depending on what kind of frame we're looking at.
+
+00:26:08.239 --> 00:26:12.560
+Yeah. So, we have some failures. So, these are absolute values here on the top. Like,
+
+00:26:13.439 --> 00:26:18.800
+real raw numbers of, like, failing test units. And below is, like, a proportion of failing. So,
+
+00:26:19.359 --> 00:26:25.359
+1% rounded up, like, way rounded up. It's nearly 0%. And then we have these little buttons here.
+
+00:26:26.000 --> 00:26:30.479
+They don't actually work in Positron. They're actually, like, okay, these are because this
+
+00:26:30.479 --> 00:26:35.839
+whole thing is a communication sort of medium. You can create this report, show someone else
+
+00:26:35.839 --> 00:26:39.680
+that doesn't know about point blank, doesn't know about R. And then we get a sense of, like,
+
+00:26:40.880 --> 00:26:44.719
+you know, like, stuff is failing in our table. Like, let's do something about it.
+
+00:26:44.719 --> 00:26:48.319
+I can actually put this in a browser. And now if you click this button,
+
+00:26:48.319 --> 00:26:52.880
+it'll actually download a CSV. And I think CSV is open in the weirdest place.
+
+00:26:55.199 --> 00:26:58.800
+Should I open it? I'm going to open it. If you want to.
+
+00:26:58.800 --> 00:27:02.959
+I'm going to open it. Let's see what happens. Okay. There's a CSV here. It's opening in numbers.
+
+00:27:04.239 --> 00:27:08.000
+All right. Here we go. That's fine. So, basically, it's showing, like,
+
+00:27:08.000 --> 00:27:12.239
+the different values in the first column, which are NAs right here. And we see, like,
+
+00:27:12.239 --> 00:27:16.719
+this is film title. And we see it right here. These are the rows which have NAs in film title.
+
+00:27:17.520 --> 00:27:21.920
+And it's unfortunate. So, now we don't know what this film by Christopher Kane really is.
+
+00:27:21.920 --> 00:27:27.280
+We know it was, you know, made in 1988. But we don't even know the film. So, this is kind of
+
+00:27:27.280 --> 00:27:33.359
+cool. So, it shows us failing rows, essentially. And I'm just going to get rid of this. All these
+
+00:27:33.359 --> 00:27:39.119
+CSV buttons will do that. Will give you, like, small extracts of, like, failing data. And you
+
+00:27:39.119 --> 00:27:44.560
+can pass those to whomever, you know, is concerned with, you know, like, fixing the table. Could be
+
+00:27:44.560 --> 00:27:50.560
+a data engineer. Could be someone else. Like, a database admin. You have this sort of quick way
+
+00:27:50.560 --> 00:27:54.880
+of getting that up. Of course, we do that through the point blank API as well. But this is just sort
+
+00:27:54.880 --> 00:28:00.079
+of like a quick and dirty way of doing that. All right. Cool. I have one question from Renato. And
+
+00:28:00.079 --> 00:28:04.319
+also, time check. We're at the halfway mark. Just thought I would let everybody know. Renato had
+
+00:28:04.319 --> 00:28:11.359
+asked, why do the null stuff instead of is.na or any other NA affordances? And I thought it might
+
+00:28:11.359 --> 00:28:14.640
+just be checking is.na under the hood and just letting you know the results of that.
+
+00:28:16.800 --> 00:28:23.119
+Yeah. Well, it's tricky. Like, we do other checks, too. We're mixing in, like, you know,
+
+00:28:23.199 --> 00:28:27.359
+like, say, for instance, like, greater than checks. And some of those columns may have,
+
+00:28:27.359 --> 00:28:32.319
+you know, NAs in them. And we have to have a way to sort of separate between, like, you know,
+
+00:28:32.319 --> 00:28:36.800
+NAs and, like, you know, the actual numbers, which are, you know, like, not, you know, in the range
+
+00:28:36.800 --> 00:28:44.319
+or whatever. And it's you could, of course, like, have an is.na check. But then it doesn't scale,
+
+00:28:44.319 --> 00:28:48.400
+I guess, you know, if you want to use this one function and you change your data source from,
+
+00:28:48.400 --> 00:28:51.680
+like, say, being, like, an R data frame to, like, the database version of that,
+
+00:28:52.640 --> 00:28:57.520
+which could be, like, a MySQL database, for instance. So, it's just, like, nicely scales
+
+00:28:57.520 --> 00:29:01.280
+or, you know, you write it once and you don't have to worry about the fine details of, like,
+
+00:29:01.280 --> 00:29:08.239
+you know, what is NA. All right, cool. Thank you. Well, on the topic really quickly of
+
+00:29:09.040 --> 00:29:14.319
+your data can be a CSV or a data object in R or it can be data from a database.
+
+00:29:14.719 --> 00:29:21.040
+Yeah. I know, I think behind the scenes that you, when you are querying a database,
+
+00:29:21.040 --> 00:29:25.680
+this is happening on the database itself and you are not actually processing in your system,
+
+00:29:25.680 --> 00:29:31.280
+so you don't have to pull the data in. So, Lizette had asked for parquet files,
+
+00:29:31.280 --> 00:29:36.640
+do we need to collect, like, the function collect before using the point blank functions? I think
+
+00:29:36.640 --> 00:29:41.040
+this is a good place to throw that in. Okay, yeah. Right now for parquet,
+
+00:29:41.280 --> 00:29:45.839
+um, I don't believe you do, because you're actually reading those parquets into, like,
+
+00:29:45.839 --> 00:29:52.000
+a data frame, right? You're typically going to read that into, like, DuckDB or you're not actually
+
+00:29:52.000 --> 00:29:55.040
+reading on the parquet itself, you're actually going to read that first into, like, either,
+
+00:29:55.040 --> 00:30:02.160
+like, DuckDB or dplyr. And in that case, for sure, you're not pulling in the data,
+
+00:30:02.160 --> 00:30:07.680
+but you're doing a first initial read, for sure, before that. Yeah. I hope that that helps, Lizette.
+
+00:30:11.040 --> 00:30:15.520
+Alright, um, I feel like one more question while we're here, because we were talking about the
+
+00:30:15.520 --> 00:30:21.520
+buttons. Yeah. Grant had asked, has your use of point blank changed with the Positron viewer
+
+00:30:21.520 --> 00:30:25.280
+being more capable than the RStudio or past Positron versions?
+
+00:30:28.560 --> 00:30:32.000
+Well, usually what I do with these reports, I don't really, like, use them within, like,
+
+00:30:32.000 --> 00:30:36.160
+the viewer here. It's always going to be part of, like, a core document if they're sent out at all,
+
+00:30:36.800 --> 00:30:39.599
+and, you know, like, published. And in that case,
+
+00:30:40.719 --> 00:30:43.680
+I'm not really using Positron so much. I'm using it as a quick view.
+
+00:30:44.889 --> 00:30:46.369
+I'm not really using positron so much.
+
+00:30:46.369 --> 00:30:48.589
+I'm using it as a quick view.
+
+00:30:48.589 --> 00:30:50.929
+But I will say like, compared to like VS Code,
+
+00:30:50.929 --> 00:30:52.629
+this positron viewer is much better.
+
+00:30:52.629 --> 00:30:54.589
+Like VS Code will do a bunch of like,
+
+00:30:55.829 --> 00:30:58.609
+not nice things to like these outputs.
+
+00:30:58.609 --> 00:31:00.729
+I'm not sure why it does, but it just does.
+
+00:31:00.729 --> 00:31:02.289
+It tends to inject its own like, you know,
+
+00:31:02.289 --> 00:31:05.768
+like table stuff, like CSS.
+
+00:31:05.768 --> 00:31:08.809
+Whereas positron does not do that.
+
+00:31:08.809 --> 00:31:11.929
+So I'm thankful for positron
+
+00:31:11.929 --> 00:31:14.369
+in not, you know, wrecking the outputs.
+
+00:31:15.209 --> 00:31:16.409
+I know VS Code is trying to be helpful,
+
+00:31:16.409 --> 00:31:18.289
+but sometimes it's not.
+
+00:31:20.168 --> 00:31:21.969
+Sometimes it's not, that happens.
+
+00:31:21.969 --> 00:31:22.808
+Yeah.
+
+00:31:24.769 --> 00:31:26.289
+Okay, I'm going to keep going.
+
+00:31:26.289 --> 00:31:27.929
+We're going to add one or two more checks and-
+
+00:31:27.929 --> 00:31:29.008
+Let's do it.
+
+00:31:29.008 --> 00:31:31.648
+I think we should check for the readings.
+
+00:31:31.648 --> 00:31:34.209
+Because I've got that suspicion.
+
+00:31:34.209 --> 00:31:36.808
+I mean, well-founded that they're out of range.
+
+00:31:36.808 --> 00:31:39.049
+Okay, so basically call vals.
+
+00:31:39.049 --> 00:31:39.889
+And I love this about autocomplete.
+
+00:31:40.049 --> 00:31:41.409
+You can just like see,
+
+00:31:41.409 --> 00:31:43.129
+you have all your point blank functions here.
+
+00:31:43.129 --> 00:31:45.609
+You can just like choose one that looks good.
+
+00:31:45.609 --> 00:31:46.848
+In this case, I'm on between.
+
+00:31:46.848 --> 00:31:47.729
+Because we want to check, you know,
+
+00:31:47.729 --> 00:31:50.488
+like our readings between two bounded values.
+
+00:31:50.488 --> 00:31:52.969
+And it's going to be a yes for that one.
+
+00:31:52.969 --> 00:31:55.329
+So I'm going to put in the right column name.
+
+00:31:55.329 --> 00:31:57.088
+In this case, it will be film reading.
+
+00:31:57.088 --> 00:31:58.808
+So I'm going to type in the argument.
+
+00:31:58.808 --> 00:32:00.929
+I'm just going to put in film reading right here.
+
+00:32:00.929 --> 00:32:02.969
+And then it's going to be left and right.
+
+00:32:03.969 --> 00:32:06.049
+Again, not going to put in the arguments, though I could,
+
+00:32:06.049 --> 00:32:08.528
+but these are the next two arguments, left and right.
+
+00:32:08.528 --> 00:32:11.889
+So maybe it's 0.5 and five.
+
+00:32:13.329 --> 00:32:14.289
+And there's more arguments too.
+
+00:32:14.289 --> 00:32:18.088
+Inclusive being, you know, C true true,
+
+00:32:18.088 --> 00:32:21.289
+means that the bounds are including 0.5 and five,
+
+00:32:21.289 --> 00:32:24.369
+not less than, like just shy of the bound.
+
+00:32:24.369 --> 00:32:26.569
+So that's actually good because we want to include five
+
+00:32:26.569 --> 00:32:29.289
+and we want to include 0.5.
+
+00:32:29.289 --> 00:32:30.369
+So that's the default.
+
+00:32:31.408 --> 00:32:33.929
+Let's run that and see what happens.
+
+00:32:33.929 --> 00:32:35.488
+Okay, run cell.
+
+00:32:35.488 --> 00:32:36.329
+There we go.
+
+00:32:36.329 --> 00:32:38.289
+So now we have it added as step six.
+
+00:32:39.049 --> 00:32:39.889
+So these numbers are really important
+
+00:32:39.889 --> 00:32:42.448
+because if you want to actually see the data,
+
+00:32:42.448 --> 00:32:44.209
+you'd have to refer to these test numbers.
+
+00:32:44.209 --> 00:32:45.209
+So I'm going to do that right now.
+
+00:32:45.209 --> 00:32:46.768
+I'm going to go to point blank,
+
+00:32:49.128 --> 00:32:51.928
+get data extracts.
+
+00:32:53.368 --> 00:32:55.568
+And then I'll put an agent right here
+
+00:32:55.568 --> 00:32:57.728
+as where I'm getting the data from.
+
+00:32:57.728 --> 00:33:01.129
+And then I, I will be the number six in this case.
+
+00:33:01.129 --> 00:33:03.609
+So there'll be all the readings which are out of bounds.
+
+00:33:03.609 --> 00:33:07.008
+So I'm going to run this and we see right here inside,
+
+00:33:07.008 --> 00:33:09.568
+and we're still as a, there we are.
+
+00:33:09.568 --> 00:33:11.088
+So we see here, we have some readings
+
+00:33:11.088 --> 00:33:14.249
+which are just either NA right here,
+
+00:33:15.249 --> 00:33:17.609
+eight, pangd2 got a really high rating.
+
+00:33:17.609 --> 00:33:20.168
+Well, you know, kind of did a limit break of,
+
+00:33:20.168 --> 00:33:21.209
+you know, like eight.
+
+00:33:22.329 --> 00:33:24.368
+A hotshots maybe got NA.
+
+00:33:24.368 --> 00:33:26.609
+Somebody's got negatives, which are not great.
+
+00:33:26.609 --> 00:33:28.648
+So some data corruption happened.
+
+00:33:28.648 --> 00:33:29.928
+That's my doing.
+
+00:33:29.928 --> 00:33:31.168
+So basically we can find them out.
+
+00:33:31.168 --> 00:33:33.889
+We can find the exact rows, which is quite nice.
+
+00:33:34.728 --> 00:33:35.568
+Great.
+
+00:33:35.568 --> 00:33:38.368
+So again, here we have a CSV button as before,
+
+00:33:38.368 --> 00:33:41.168
+because if there's any errors, anything here in fail,
+
+00:33:41.168 --> 00:33:44.168
+anything above zero, we're going to have this button appear.
+
+00:33:45.049 --> 00:33:46.129
+Great. Okay.
+
+00:33:46.129 --> 00:33:47.448
+I think there's a few more.
+
+00:33:49.249 --> 00:33:53.648
+One other one would be, let's see here, a year.
+
+00:33:53.648 --> 00:33:55.088
+Okay. So let's, let's do that one.
+
+00:33:55.088 --> 00:33:59.168
+So same thing, same thing, call vals between.
+
+00:33:59.168 --> 00:34:01.368
+Oops, we have two pipes there on 123.
+
+00:34:01.368 --> 00:34:03.088
+No. Okay. That's way too many pipes.
+
+00:34:03.648 --> 00:34:05.409
+Yeah. There we are.
+
+00:34:05.409 --> 00:34:07.088
+Thanks.
+
+00:34:07.088 --> 00:34:08.609
+In this case, it'll be just a year.
+
+00:34:08.609 --> 00:34:10.889
+And I think I want to choose like something
+
+00:34:10.889 --> 00:34:12.568
+that's like, like plausible.
+
+00:34:13.568 --> 00:34:18.409
+The left one being 1900 and the right one being 2026.
+
+00:34:20.928 --> 00:34:23.689
+Okay. And then one more pipe to close.
+
+00:34:23.689 --> 00:34:25.648
+I'm going to run that cell.
+
+00:34:25.648 --> 00:34:27.928
+And then we see here another call vals between.
+
+00:34:27.928 --> 00:34:30.329
+This case is for the year column.
+
+00:34:30.329 --> 00:34:33.288
+We see here it's between the ranges 1900, 2026.
+
+00:34:33.288 --> 00:34:37.568
+And we see there's 15 items, which are not between that range.
+
+00:34:37.568 --> 00:34:39.168
+Uh-oh, illegal values.
+
+00:34:39.168 --> 00:34:40.129
+Exactly, exactly.
+
+00:34:40.129 --> 00:34:42.249
+And again, here, if you use this, this thing here,
+
+00:34:42.249 --> 00:34:45.288
+get data extracts, we can, through the point blank API,
+
+00:34:45.288 --> 00:34:49.689
+just see the data that is essentially got wrong years.
+
+00:34:49.689 --> 00:34:50.928
+I bet you a lot of them will be NAs.
+
+00:34:50.928 --> 00:34:52.368
+Yeah. A lot of the NAs here,
+
+00:34:53.528 --> 00:34:55.249
+some films in 1800s, like Pector here,
+
+00:34:55.249 --> 00:34:58.088
+is like 1898 and not 1998.
+
+00:34:58.088 --> 00:34:59.168
+That's totally wrong.
+
+00:35:00.688 --> 00:35:03.609
+Yeah. Speed ratio is like, it's like set in the future,
+
+00:35:03.609 --> 00:35:04.568
+but it's actually like, you know,
+
+00:35:04.568 --> 00:35:07.008
+like the years in the future of a publication date.
+
+00:35:07.008 --> 00:35:07.848
+Totally wrong.
+
+00:35:09.089 --> 00:35:10.489
+So good to see, good to see.
+
+00:35:10.489 --> 00:35:12.848
+It's, we're catching, we're catching the errors.
+
+00:35:12.848 --> 00:35:14.809
+What if, we have a question here.
+
+00:35:14.809 --> 00:35:18.728
+What if you don't specify that I in get data extracts?
+
+00:35:18.728 --> 00:35:19.568
+Oh.
+
+00:35:19.568 --> 00:35:21.529
+Does it return only the rows that field all checks?
+
+00:35:21.529 --> 00:35:22.369
+Well, you know what?
+
+00:35:22.369 --> 00:35:24.369
+Instead of just answering that, I'll just try it.
+
+00:35:24.369 --> 00:35:25.209
+Let's do it.
+
+00:35:25.209 --> 00:35:26.049
+It does, it does.
+
+00:35:26.049 --> 00:35:26.889
+Live coding, all right, yay.
+
+00:35:26.889 --> 00:35:29.168
+Yeah, basically it returns a list of all the problems.
+
+00:35:29.529 --> 00:35:30.369
+Good intuition, Garrett.
+
+00:35:30.369 --> 00:35:32.568
+And it's keyed by like the step,
+
+00:35:32.568 --> 00:35:33.448
+which is actually super nice.
+
+00:35:33.448 --> 00:35:36.089
+So you can totally use this and run with it.
+
+00:35:36.089 --> 00:35:37.809
+You see right here, we just get like, you know,
+
+00:35:37.809 --> 00:35:40.128
+the first one is like the not null.
+
+00:35:40.128 --> 00:35:41.968
+If you want like this one right here,
+
+00:35:41.968 --> 00:35:42.848
+call that's between,
+
+00:35:42.848 --> 00:35:44.529
+which has to do with the film rating.
+
+00:35:44.529 --> 00:35:45.929
+Let's just go to list item five.
+
+00:35:45.929 --> 00:35:47.728
+Yeah. If your data is pretty small,
+
+00:35:47.728 --> 00:35:50.168
+this is actually a nice little like summary.
+
+00:35:50.168 --> 00:35:51.008
+Yeah, this is not bad.
+
+00:35:51.008 --> 00:35:52.288
+If your data is huge though, this could be-
+
+00:35:52.288 --> 00:35:53.529
+Yeah, you might get tons and tons of errors.
+
+00:35:53.529 --> 00:35:54.369
+It might overflow.
+
+00:35:54.369 --> 00:35:55.209
+Yeah.
+
+00:35:55.209 --> 00:35:56.049
+It would be way too much.
+
+00:35:56.049 --> 00:35:57.168
+But I really like that.
+
+00:35:57.168 --> 00:35:58.728
+Yeah. Great question, Garrett.
+
+00:35:59.649 --> 00:36:01.089
+Excellent question.
+
+00:36:01.089 --> 00:36:02.448
+How are we doing on time here?
+
+00:36:02.448 --> 00:36:04.008
+Cause I want to get to like-
+
+00:36:04.008 --> 00:36:05.728
+We have 22 minutes left.
+
+00:36:05.728 --> 00:36:06.568
+Oh, that's a lot.
+
+00:36:06.568 --> 00:36:09.769
+And I wanted to touch on a question that Zach asked.
+
+00:36:09.769 --> 00:36:11.168
+I did answer it in the chat,
+
+00:36:11.168 --> 00:36:13.848
+but it needs more explanation and you might get there.
+
+00:36:13.848 --> 00:36:18.848
+And that is, we have the WSN, which is warn, stop, notify.
+
+00:36:19.128 --> 00:36:21.209
+He was like, what are the WSN?
+
+00:36:21.209 --> 00:36:23.408
+I think Rich might get there.
+
+00:36:23.408 --> 00:36:24.248
+I can tell you right now.
+
+00:36:24.248 --> 00:36:27.248
+So basically we have like, you know, these numbers here
+
+00:36:27.248 --> 00:36:29.049
+and, you know, they mean something,
+
+00:36:29.889 --> 00:36:31.128
+but they may not mean something
+
+00:36:31.128 --> 00:36:32.568
+until you ascribe a meaning to them
+
+00:36:32.568 --> 00:36:34.209
+and you show it on report.
+
+00:36:34.209 --> 00:36:35.049
+So basically what you can do
+
+00:36:35.049 --> 00:36:37.848
+is you can provide failure thresholds.
+
+00:36:37.848 --> 00:36:40.728
+Like just basically like if 5%, for instance,
+
+00:36:40.728 --> 00:36:44.889
+5% of your data is bad, that may elicit a warning.
+
+00:36:44.889 --> 00:36:47.609
+And you might just create that directive to like say,
+
+00:36:47.609 --> 00:36:50.769
+if this goes above 0.05,
+
+00:36:50.769 --> 00:36:53.968
+let's mark it off here in the W column with a, you know,
+
+00:36:53.968 --> 00:36:55.529
+like a marker.
+
+00:36:55.529 --> 00:36:56.848
+And then we may have three of those levels.
+
+00:36:57.448 --> 00:36:58.288
+So we just have three slots available.
+
+00:36:58.288 --> 00:37:00.288
+So warn, stop, notify.
+
+00:37:00.288 --> 00:37:01.128
+So you may have like, you know,
+
+00:37:01.128 --> 00:37:03.929
+increasingly severe, you know, thresholds.
+
+00:37:03.929 --> 00:37:06.889
+Like this could be 5%, 10%, you know,
+
+00:37:06.889 --> 00:37:09.489
+like 20% or something like that, whatever you want.
+
+00:37:09.489 --> 00:37:11.649
+These are like a little buckets for you to say like,
+
+00:37:11.649 --> 00:37:12.929
+oh, it's getting really bad.
+
+00:37:12.929 --> 00:37:15.288
+You may just have like one error might be a warning.
+
+00:37:15.288 --> 00:37:18.728
+And more than that is, you know, like is stop.
+
+00:37:18.728 --> 00:37:20.649
+You may not use this one.
+
+00:37:20.649 --> 00:37:22.649
+So the kind of like semantic sort of like little buckets
+
+00:37:22.649 --> 00:37:25.728
+for you to say like, okay, let's put a stoplight here.
+
+00:37:25.728 --> 00:37:28.968
+Let's, for the person who's seen this report,
+
+00:37:28.968 --> 00:37:31.728
+let's focus on, you know, like the rows that have these,
+
+00:37:31.728 --> 00:37:33.649
+you know, these indicators.
+
+00:37:33.649 --> 00:37:34.688
+Yeah.
+
+00:37:34.688 --> 00:37:38.168
+So it's kind of like, you can set that also.
+
+00:37:38.168 --> 00:37:40.288
+I'll just show you how that works through.
+
+00:37:41.889 --> 00:37:42.848
+One sec here.
+
+00:37:42.848 --> 00:37:44.008
+Zoom is getting in the way.
+
+00:37:44.008 --> 00:37:45.168
+Let me just go to.
+
+00:37:46.288 --> 00:37:47.769
+Zoom's always in the way, isn't it?
+
+00:37:47.769 --> 00:37:49.688
+Nobody can see it, but on Richie's screen,
+
+00:37:49.688 --> 00:37:51.848
+there's like this bar in the way.
+
+00:37:51.848 --> 00:37:52.688
+Yeah.
+
+00:37:53.128 --> 00:37:55.929
+So action levels is how you set those things.
+
+00:37:55.929 --> 00:37:56.769
+And you put that,
+
+00:37:56.769 --> 00:38:00.529
+and there's an example right here inside of createAgent.
+
+00:38:00.529 --> 00:38:03.568
+You would just put, as part of the actions argument,
+
+00:38:03.568 --> 00:38:06.008
+you would use this function right here.
+
+00:38:06.008 --> 00:38:08.489
+And then what you get in the end is,
+
+00:38:09.609 --> 00:38:10.769
+although it doesn't show the report,
+
+00:38:10.769 --> 00:38:14.448
+it would say like, it would show you those indicators.
+
+00:38:14.448 --> 00:38:16.329
+And also give you some metadata
+
+00:38:16.329 --> 00:38:17.568
+when you look at the object,
+
+00:38:17.568 --> 00:38:19.809
+whether things actually tripped those levels.
+
+00:38:21.609 --> 00:38:22.448
+Yeah.
+
+00:38:23.688 --> 00:38:26.248
+I hope that answers it.
+
+00:38:26.248 --> 00:38:29.408
+Let me get to like one more really good
+
+00:38:31.209 --> 00:38:32.769
+validation function.
+
+00:38:32.769 --> 00:38:35.609
+Maybe two, if we have time.
+
+00:38:35.609 --> 00:38:37.489
+So we have ones where you could like
+
+00:38:37.489 --> 00:38:39.288
+use an expression of your own,
+
+00:38:39.288 --> 00:38:43.329
+and it's called callValsExper, like this.
+
+00:38:43.329 --> 00:38:47.248
+And this one's like a little more difficult to use.
+
+00:38:47.248 --> 00:38:50.408
+You have to start off with this argument,
+
+00:38:50.408 --> 00:38:53.728
+and then you have to wrap it with the exper function.
+
+00:38:53.728 --> 00:38:54.968
+It's like a helper function.
+
+00:38:54.968 --> 00:38:56.329
+But then once you're there,
+
+00:38:56.329 --> 00:38:57.489
+within that you can do things like,
+
+00:38:57.489 --> 00:39:00.369
+you can check whether pretty much anything you want.
+
+00:39:00.369 --> 00:39:03.329
+You're kind of like customizing your own check.
+
+00:39:03.329 --> 00:39:04.568
+So in one case,
+
+00:39:04.568 --> 00:39:06.369
+in the case I want to look at is that
+
+00:39:06.369 --> 00:39:09.209
+the ratings are separated by 0.5s.
+
+00:39:09.209 --> 00:39:12.369
+Like we have, you know, like half, one,
+
+00:39:12.369 --> 00:39:14.848
+one and a half, two, and so on.
+
+00:39:14.848 --> 00:39:15.688
+So we can do that.
+
+00:39:15.688 --> 00:39:17.209
+And this is the thing I always forget,
+
+00:39:17.209 --> 00:39:22.209
+but I know it's used also in like years.
+
+00:39:22.209 --> 00:39:23.048
+If you're looking at like, you know,
+
+00:39:23.048 --> 00:39:25.089
+like every five years, every 10 years,
+
+00:39:25.089 --> 00:39:27.649
+you basically use this like module.
+
+00:39:27.649 --> 00:39:29.169
+Wrong one.
+
+00:39:29.169 --> 00:39:30.248
+You want to use this,
+
+00:39:31.368 --> 00:39:33.368
+and then use the increment right here.
+
+00:39:33.368 --> 00:39:35.368
+And then if there's no remainder,
+
+00:39:35.368 --> 00:39:37.048
+then it's correct.
+
+00:39:37.048 --> 00:39:39.529
+Like everything is in terms of 0.5s.
+
+00:39:40.488 --> 00:39:43.769
+And another cool thing I'm gonna show you is that,
+
+00:39:43.769 --> 00:39:45.209
+so it just checks every single value
+
+00:39:45.209 --> 00:39:46.729
+within that film reading column,
+
+00:39:47.248 --> 00:39:49.048
+because we actually specify here in the expression.
+
+00:39:50.289 --> 00:39:52.248
+We also want to make sure we're just,
+
+00:39:52.248 --> 00:39:53.248
+we're not looking at NAs.
+
+00:39:53.248 --> 00:39:56.608
+So in this case, we're going to pass the NAs like this.
+
+00:39:56.608 --> 00:39:58.448
+So in this case, we're saying like, you know,
+
+00:39:58.448 --> 00:40:00.368
+NA won't be a part of this right here.
+
+00:40:00.368 --> 00:40:02.209
+We were not checking any value guesses.
+
+00:40:02.209 --> 00:40:03.969
+It's going to be a real value that's not NA
+
+00:40:03.969 --> 00:40:05.529
+that's being checked.
+
+00:40:05.529 --> 00:40:07.729
+We're sort of like a separation of concerns.
+
+00:40:09.448 --> 00:40:11.209
+Okay, so let's add the pipe here
+
+00:40:11.209 --> 00:40:12.649
+and let's take a look at this in the end.
+
+00:40:12.649 --> 00:40:14.289
+This will be like the step eight.
+
+00:40:15.289 --> 00:40:16.568
+Great, okay.
+
+00:40:16.568 --> 00:40:18.248
+So let's take a look at this more in full.
+
+00:40:18.248 --> 00:40:21.289
+We see here that we have six values,
+
+00:40:21.289 --> 00:40:24.649
+which are numeric, not nulls, that fail.
+
+00:40:24.649 --> 00:40:25.889
+Okay, so now I'm really curious,
+
+00:40:25.889 --> 00:40:29.769
+like what values we have, which are 9.5 increments.
+
+00:40:29.769 --> 00:40:31.568
+So let's actually do that.
+
+00:40:31.568 --> 00:40:34.608
+Get to extracts agent, then I,
+
+00:40:34.608 --> 00:40:36.169
+and it's gonna be number eight.
+
+00:40:37.969 --> 00:40:39.969
+So pull this up.
+
+00:40:39.969 --> 00:40:41.808
+Oh, okay, here, I see it right now.
+
+00:40:42.128 --> 00:40:47.128
+We have a film reading of 4.75, 4.25, another 4.25.
+
+00:40:48.568 --> 00:40:51.529
+Yeah, basically you should not be, these are not right.
+
+00:40:51.529 --> 00:40:53.248
+Illegal, red card, okay.
+
+00:40:53.248 --> 00:40:55.169
+Yes, yes, these are bad values.
+
+00:40:55.169 --> 00:40:57.289
+Yeah, we got to fix these like somehow,
+
+00:40:57.289 --> 00:40:58.568
+but now we know, right?
+
+00:40:58.568 --> 00:41:02.849
+Like before we wouldn't know, but we knew the rule, right?
+
+00:41:02.849 --> 00:41:05.289
+The rule is like, you know, we have this range
+
+00:41:05.289 --> 00:41:07.769
+and there must be these values within that range.
+
+00:41:07.769 --> 00:41:09.649
+I love your little symbols too.
+
+00:41:09.808 --> 00:41:14.169
+Like their little range call between or the little lambda.
+
+00:41:14.169 --> 00:41:17.169
+Yeah, some of them I'm like, wow,
+
+00:41:17.169 --> 00:41:19.969
+I don't know what that Greek symbol is at all.
+
+00:41:19.969 --> 00:41:21.409
+Oh, the lambda, yeah, yeah.
+
+00:41:21.409 --> 00:41:22.368
+I know what lambda is,
+
+00:41:22.368 --> 00:41:24.849
+but I don't know what the W symbol,
+
+00:41:24.849 --> 00:41:25.729
+where they cross through it.
+
+00:41:25.729 --> 00:41:28.248
+My brain was like, which Greek letter is this?
+
+00:41:28.248 --> 00:41:29.089
+I had to really research these.
+
+00:41:29.089 --> 00:41:30.969
+Yeah, apparently like it's omega.
+
+00:41:30.969 --> 00:41:33.289
+And like, this is like rare knowledge.
+
+00:41:33.289 --> 00:41:35.409
+I just found on some dusty corner of the internet.
+
+00:41:35.409 --> 00:41:37.529
+It's like omega is kind of like, you know,
+
+00:41:37.529 --> 00:41:39.849
+how you say if you have nulls or missing values.
+
+00:41:39.849 --> 00:41:42.209
+Maybe it's a math thing, not so much a database thing,
+
+00:41:42.209 --> 00:41:44.089
+but that's the only thing I could find.
+
+00:41:44.089 --> 00:41:46.849
+Okay, lowercase omega.
+
+00:41:46.849 --> 00:41:50.488
+All right, good to know, learning new things every day.
+
+00:41:52.329 --> 00:41:53.608
+Yeah, it's fun too.
+
+00:41:53.608 --> 00:41:55.649
+Also, you know, sometimes you just want to draw things
+
+00:41:55.649 --> 00:41:57.048
+instead of like, you know, write code.
+
+00:41:57.048 --> 00:41:59.008
+So that's that.
+
+00:42:00.409 --> 00:42:02.048
+Okay, one thing I want to show you also,
+
+00:42:02.048 --> 00:42:03.289
+this is like a ton of data validation.
+
+00:42:03.289 --> 00:42:04.688
+I feel like our data is,
+
+00:42:04.688 --> 00:42:07.488
+we've elucidated tons of little issues.
+
+00:42:08.329 --> 00:42:09.169
+With this data set.
+
+00:42:09.169 --> 00:42:10.969
+And now it's my job to fix that data set.
+
+00:42:10.969 --> 00:42:14.568
+Or, you know, if this were a real thing, you know,
+
+00:42:14.568 --> 00:42:17.448
+like that, you know, my job to hit it on,
+
+00:42:17.448 --> 00:42:21.529
+I would fix this data set in whichever way I could.
+
+00:42:21.529 --> 00:42:23.128
+But I want to show you another method
+
+00:42:23.128 --> 00:42:24.649
+for getting validations.
+
+00:42:24.649 --> 00:42:26.488
+We can use something called draft validation.
+
+00:42:26.488 --> 00:42:27.928
+It's a function.
+
+00:42:27.928 --> 00:42:29.769
+And I'm just going to write out draft validation.
+
+00:42:29.769 --> 00:42:33.969
+And you just point towards your table.
+
+00:42:33.969 --> 00:42:35.448
+This case, it is films.
+
+00:42:35.969 --> 00:42:38.889
+You can give it a bunch of other names,
+
+00:42:38.889 --> 00:42:40.969
+a bunch of other arguments.
+
+00:42:40.969 --> 00:42:42.928
+Might as well put table name in there.
+
+00:42:42.928 --> 00:42:44.769
+This is just for the report, I think.
+
+00:42:45.889 --> 00:42:47.368
+I'll just call it films again.
+
+00:42:48.448 --> 00:42:51.928
+And the key thing is you have to have file name
+
+00:42:51.928 --> 00:42:55.889
+because it wants to write an R file to disk.
+
+00:42:55.889 --> 00:42:57.649
+And basically, what's this going to do?
+
+00:42:57.649 --> 00:43:00.409
+It's going to create like a validation workflow for you
+
+00:43:00.409 --> 00:43:01.969
+just based on the data itself.
+
+00:43:01.969 --> 00:43:05.368
+It's going to fit your data to like validations at work.
+
+00:43:06.289 --> 00:43:08.688
+So I'll just call it like test.r.
+
+00:43:08.688 --> 00:43:10.808
+I think it's going to go to like the base directory.
+
+00:43:10.808 --> 00:43:11.729
+We're going to find this.
+
+00:43:11.729 --> 00:43:13.488
+So I'm going to hit run.
+
+00:43:13.488 --> 00:43:16.289
+Okay, so it says like the point blank.r file has been written.
+
+00:43:16.289 --> 00:43:18.089
+Okay, I'm going to try to find that.
+
+00:43:19.089 --> 00:43:21.008
+Here it is, test right here.
+
+00:43:22.248 --> 00:43:23.089
+I believe that's the one.
+
+00:43:23.089 --> 00:43:23.928
+Yeah, this is it.
+
+00:43:23.928 --> 00:43:24.969
+This is it.
+
+00:43:24.969 --> 00:43:26.289
+Okay.
+
+00:43:26.289 --> 00:43:28.769
+So basically what it did here is it doesn't,
+
+00:43:30.769 --> 00:43:32.889
+it creates like the whole agent workflow.
+
+00:43:33.409 --> 00:43:35.889
+Puts the name of the dataset in.
+
+00:43:35.889 --> 00:43:37.889
+Even put some like thresholds in for you
+
+00:43:37.889 --> 00:43:41.008
+just as a way of, it's basically just templating.
+
+00:43:41.969 --> 00:43:44.008
+It gives you like a label even.
+
+00:43:44.008 --> 00:43:48.769
+And it gives you like line by line validation steps.
+
+00:43:48.769 --> 00:43:51.409
+Like is this column a character?
+
+00:43:51.409 --> 00:43:54.368
+Does this column have integer values?
+
+00:43:54.368 --> 00:43:55.209
+Are they between?
+
+00:43:55.209 --> 00:43:57.248
+We see right here that it just fit on the data.
+
+00:43:57.248 --> 00:43:58.729
+So this is wrong.
+
+00:43:58.729 --> 00:43:59.688
+But it's actually kind of cool.
+
+00:43:59.688 --> 00:44:01.608
+You can just see this and go, this is totally wrong.
+
+00:44:01.608 --> 00:44:02.769
+I just changed this.
+
+00:44:03.649 --> 00:44:04.488
+This is actually this.
+
+00:44:04.488 --> 00:44:05.889
+Basically gives you a starting spot.
+
+00:44:05.889 --> 00:44:07.488
+Starting point, exactly, exactly.
+
+00:44:07.488 --> 00:44:10.169
+Yeah, it's assuming like the data is perfect.
+
+00:44:10.169 --> 00:44:11.488
+So it's basically fitting on your data,
+
+00:44:11.488 --> 00:44:12.608
+but it's actually fine
+
+00:44:12.608 --> 00:44:14.729
+because you can elucidate all sorts of things.
+
+00:44:14.729 --> 00:44:16.769
+We can, you know, remove some of these.
+
+00:44:16.769 --> 00:44:18.488
+We can like change them.
+
+00:44:18.488 --> 00:44:20.169
+But it's a really great starting point.
+
+00:44:20.169 --> 00:44:22.729
+Like right here, for instance, this is totally wrong.
+
+00:44:22.729 --> 00:44:24.928
+So I'm just changing that to this.
+
+00:44:26.289 --> 00:44:27.608
+But it's cool that it gives you comments,
+
+00:44:27.608 --> 00:44:28.889
+which are sort of like plain English.
+
+00:44:28.889 --> 00:44:31.488
+It's telling you exactly what the step is trying
+
+00:44:31.488 --> 00:44:33.448
+to like check for.
+
+00:44:33.448 --> 00:44:34.928
+And then it's like, great.
+
+00:44:34.928 --> 00:44:36.969
+I got all these steps written pretty quickly
+
+00:44:36.969 --> 00:44:38.209
+based on a dataset.
+
+00:44:38.209 --> 00:44:41.448
+And it just scales with the size of your dataset too, right?
+
+00:44:41.448 --> 00:44:43.769
+Imagine typing, you know, looking at your dataset
+
+00:44:43.769 --> 00:44:46.128
+and typing all these things.
+
+00:44:46.128 --> 00:44:47.808
+And whereas you can just start from here
+
+00:44:47.808 --> 00:44:51.688
+and reduce it, change things, tweak things.
+
+00:44:51.688 --> 00:44:52.568
+This is amazing.
+
+00:44:52.568 --> 00:44:54.209
+And I've already forgot the name of the function.
+
+00:44:54.209 --> 00:44:55.048
+Can you scroll up just a little bit?
+
+00:44:55.048 --> 00:44:55.969
+Oh, yeah, draft validation.
+
+00:44:55.969 --> 00:44:56.928
+Draft validation, okay.
+
+00:44:56.928 --> 00:44:57.928
+Yeah, yeah.
+
+00:44:59.568 --> 00:45:00.608
+Amazing.
+
+00:45:00.608 --> 00:45:01.448
+Thank you.
+
+00:45:02.289 --> 00:45:04.128
+I'm gonna try to stick a little,
+
+00:45:04.128 --> 00:45:05.928
+a link in there to draft validation.
+
+00:45:09.928 --> 00:45:10.769
+Oh my God, there's some more.
+
+00:45:10.769 --> 00:45:12.729
+Okay, there's a bit more.
+
+00:45:12.729 --> 00:45:13.568
+One more thing.
+
+00:45:13.568 --> 00:45:14.889
+We have 12 minutes left.
+
+00:45:14.889 --> 00:45:15.729
+12 minutes left.
+
+00:45:15.729 --> 00:45:16.889
+I can get it in, don't worry.
+
+00:45:16.889 --> 00:45:19.608
+Okay, so sometimes you have like a dataset
+
+00:45:19.608 --> 00:45:21.248
+and you do your validations on it.
+
+00:45:21.248 --> 00:45:23.169
+And you find that some of the rows are bad.
+
+00:45:23.169 --> 00:45:24.849
+Like we saw some rows that didn't even have
+
+00:45:24.849 --> 00:45:26.688
+like the name of the movie on it.
+
+00:45:26.688 --> 00:45:29.008
+It's like, those are obviously, I can't use those in,
+
+00:45:29.008 --> 00:45:30.849
+you know, what I'm gonna do with the dataset.
+
+00:45:30.849 --> 00:45:33.769
+Pretend like I'm gonna do something with the dataset.
+
+00:45:33.769 --> 00:45:35.488
+So what we can do is use this function
+
+00:45:35.488 --> 00:45:37.048
+called getSunderedData.
+
+00:45:37.048 --> 00:45:38.849
+I'm gonna just put that in right here.
+
+00:45:38.849 --> 00:45:40.568
+Okay, let's take a look at that.
+
+00:45:40.568 --> 00:45:41.409
+So you got your data.
+
+00:45:41.409 --> 00:45:42.248
+GetSundered.
+
+00:45:42.248 --> 00:45:44.928
+Yeah, it's like splitting it apart.
+
+00:45:44.928 --> 00:45:46.568
+Like, you know, like torn asunder.
+
+00:45:46.568 --> 00:45:48.008
+You know, that sort of thing.
+
+00:45:49.849 --> 00:45:52.289
+Yeah, that's what it's trying to do here.
+
+00:45:52.289 --> 00:45:55.128
+We got agents and what we're doing here is
+
+00:45:56.008 --> 00:45:58.368
+we're splitting it into like two different pieces.
+
+00:45:58.368 --> 00:46:01.368
+And one piece of the dataset has all the rows
+
+00:46:01.368 --> 00:46:04.448
+which passed validation entirely.
+
+00:46:04.448 --> 00:46:06.688
+And we have another set, which is, you know,
+
+00:46:06.688 --> 00:46:09.048
+like the rest of the rows, which failed in some way,
+
+00:46:09.048 --> 00:46:12.248
+like some value in a row has failed.
+
+00:46:12.248 --> 00:46:16.048
+So we're gonna sequester those rows to like the fail piece.
+
+00:46:16.048 --> 00:46:18.448
+But by default, it gives you the good piece.
+
+00:46:19.529 --> 00:46:21.209
+So let's actually run this.
+
+00:46:21.209 --> 00:46:22.608
+And really, okay, so if you look down here,
+
+00:46:22.608 --> 00:46:25.008
+it just really passes through your table.
+
+00:46:25.008 --> 00:46:27.729
+So now we have like 10, 14 rows.
+
+00:46:28.089 --> 00:46:32.688
+So let's compare this against, you know, just like films.
+
+00:46:32.688 --> 00:46:34.488
+I'm just gonna erase this for a sec,
+
+00:46:35.729 --> 00:46:39.048
+which has 1055 rows.
+
+00:46:39.048 --> 00:46:41.969
+Okay, so what we've done here is basically we have like,
+
+00:46:41.969 --> 00:46:45.568
+we've applied sort of like a filter to like our dataset
+
+00:46:45.568 --> 00:46:48.289
+and are just filtering the good rows.
+
+00:46:48.289 --> 00:46:49.368
+We can do the, you know,
+
+00:46:49.368 --> 00:46:51.969
+the thing where we just want to see the bad rows
+
+00:46:51.969 --> 00:46:54.409
+and that'd be type equals fail.
+
+00:46:55.248 --> 00:46:56.089
+And this would be, you know,
+
+00:46:56.089 --> 00:46:57.729
+of course, a very small number of rows.
+
+00:46:57.729 --> 00:47:01.008
+So here we see, we have 41 rows,
+
+00:47:01.008 --> 00:47:02.008
+but it keeps everything the same.
+
+00:47:02.008 --> 00:47:04.008
+Like, you know, it's all the columns are there.
+
+00:47:04.008 --> 00:47:06.568
+And if you were to, you know, like add these like together,
+
+00:47:06.568 --> 00:47:07.729
+like the row counts,
+
+00:47:07.729 --> 00:47:09.729
+it would equal up to like the original dataset.
+
+00:47:09.729 --> 00:47:11.409
+So nothing is lost in this.
+
+00:47:11.409 --> 00:47:12.928
+You're basically just splitting your dataset
+
+00:47:12.928 --> 00:47:14.169
+based on your validation.
+
+00:47:16.769 --> 00:47:17.608
+So this is good.
+
+00:47:17.608 --> 00:47:19.048
+So like, you know, my job would be like,
+
+00:47:19.048 --> 00:47:20.688
+oh yeah, I got these 41 rows.
+
+00:47:21.849 --> 00:47:23.769
+You know, I gotta rate, I gotta rate this movie
+
+00:47:23.769 --> 00:47:27.969
+or, you know, I gotta find a year for Buffalo 66.
+
+00:47:27.969 --> 00:47:29.048
+You know, what year is that in?
+
+00:47:29.048 --> 00:47:29.889
+I gotta find out.
+
+00:47:32.289 --> 00:47:33.409
+Yeah, yeah.
+
+00:47:33.409 --> 00:47:34.488
+So it gets under data.
+
+00:47:34.488 --> 00:47:36.649
+Useful at times when you have data,
+
+00:47:36.649 --> 00:47:38.248
+you know you have bad data,
+
+00:47:38.248 --> 00:47:39.649
+but you want to use some of it, you know,
+
+00:47:39.649 --> 00:47:41.969
+and you probably can't use the bad data,
+
+00:47:41.969 --> 00:47:43.329
+but you're fine with that.
+
+00:47:43.329 --> 00:47:44.889
+You're fine with that.
+
+00:47:44.889 --> 00:47:46.409
+Or you want to know what the bad data is
+
+00:47:46.409 --> 00:47:47.929
+so you can fix those problems.
+
+00:47:48.008 --> 00:47:48.848
+Yeah.
+
+00:47:48.848 --> 00:47:50.409
+And it's pretty flexible as well.
+
+00:47:50.409 --> 00:47:51.608
+You can do things like,
+
+00:47:52.728 --> 00:47:54.929
+you can also like, you know, instead of like,
+
+00:47:54.929 --> 00:47:56.569
+you can put the entire dataset
+
+00:47:56.569 --> 00:47:58.449
+and put a flag column in instead
+
+00:47:58.449 --> 00:48:01.248
+and say like, you know, and choose what the value is.
+
+00:48:01.248 --> 00:48:02.409
+So you can have the entire dataset
+
+00:48:02.409 --> 00:48:04.328
+just sort of decorated with a new column
+
+00:48:04.328 --> 00:48:07.649
+and it has like, you know, yes or no, or one or zero.
+
+00:48:07.649 --> 00:48:08.488
+It's sort of like, you know,
+
+00:48:08.488 --> 00:48:11.248
+distinguish what rows are pass validation or not.
+
+00:48:11.608 --> 00:48:12.449
+Yeah.
+
+00:48:13.289 --> 00:48:14.128
+Okay.
+
+00:48:14.128 --> 00:48:17.049
+So this is probably as far as I wanted to get
+
+00:48:17.049 --> 00:48:18.728
+with point blank for R.
+
+00:48:18.728 --> 00:48:19.569
+Okay, good.
+
+00:48:19.569 --> 00:48:20.409
+Cause we have so many questions.
+
+00:48:20.409 --> 00:48:21.248
+I was just going to say.
+
+00:48:21.248 --> 00:48:22.088
+Okay, good.
+
+00:48:22.088 --> 00:48:22.929
+Okay, this is a great job for Q&A.
+
+00:48:22.929 --> 00:48:24.529
+Okay, great.
+
+00:48:24.529 --> 00:48:27.488
+This, first of all, we all agree in the discord chat
+
+00:48:27.488 --> 00:48:31.248
+that this is infinitely cool and so amazing.
+
+00:48:31.248 --> 00:48:33.809
+And like the HTML widgets and actions
+
+00:48:33.809 --> 00:48:36.008
+and all of that stuff is just so cool.
+
+00:48:36.008 --> 00:48:37.689
+And I think it's a great way to kind of
+
+00:48:37.848 --> 00:48:39.049
+and so amazing.
+
+00:48:39.049 --> 00:48:41.769
+And like the HTML widgets and outputs
+
+00:48:41.769 --> 00:48:44.968
+are such amazing little quality of life things
+
+00:48:44.968 --> 00:48:47.848
+compared with like the raw scrolling
+
+00:48:47.848 --> 00:48:48.968
+that a lot of us are doing
+
+00:48:48.968 --> 00:48:51.409
+or the raw checks or individual assertions
+
+00:48:51.409 --> 00:48:52.248
+and stuff like that.
+
+00:48:52.248 --> 00:48:53.608
+So this is amazing.
+
+00:48:53.608 --> 00:48:54.449
+Yes.
+
+00:48:54.449 --> 00:48:56.608
+We're all like all the applause,
+
+00:48:56.608 --> 00:48:59.088
+but I would love to get to some questions
+
+00:48:59.088 --> 00:49:00.769
+so we can help people understand.
+
+00:49:00.769 --> 00:49:05.169
+The first one is Lizette had sort of reworded
+
+00:49:05.169 --> 00:49:06.368
+her question about parquet
+
+00:49:06.368 --> 00:49:09.088
+so we could get a little bit more clarity around that.
+
+00:49:09.088 --> 00:49:10.409
+If you don't have clarity around it,
+
+00:49:10.409 --> 00:49:13.328
+we can follow up and that's okay too.
+
+00:49:13.328 --> 00:49:14.169
+She was saying,
+
+00:49:14.169 --> 00:49:16.248
+do we need to read the parquet data
+
+00:49:16.248 --> 00:49:19.128
+into the R environment first?
+
+00:49:19.128 --> 00:49:20.968
+I understand from Rich's response
+
+00:49:20.968 --> 00:49:23.769
+that we don't like for databases.
+
+00:49:23.769 --> 00:49:24.968
+Oh, okay.
+
+00:49:24.968 --> 00:49:25.809
+Yeah, yeah, yeah.
+
+00:49:25.809 --> 00:49:26.848
+Okay, let me see.
+
+00:49:26.848 --> 00:49:29.409
+Just based on my own understanding with parquet,
+
+00:49:29.409 --> 00:49:30.608
+I think you do have to,
+
+00:49:30.608 --> 00:49:31.769
+cause it's just a file format.
+
+00:49:31.769 --> 00:49:33.809
+You have to read into a data frame first.
+
+00:49:34.809 --> 00:49:38.169
+So that's like step before you can get to point blank.
+
+00:49:38.169 --> 00:49:41.728
+So, and so once you read that into a table
+
+00:49:41.728 --> 00:49:43.449
+and I imagine DuckDB would be the same thing.
+
+00:49:43.449 --> 00:49:45.689
+Arrow table would be sort of same thing.
+
+00:49:45.689 --> 00:49:47.328
+Whatever can read parquet.
+
+00:49:47.328 --> 00:49:49.049
+It's almost the same as like reading a CSV.
+
+00:49:49.049 --> 00:49:50.449
+We're not looking at CSV directly.
+
+00:49:50.449 --> 00:49:53.008
+We're not looking at parquet directly.
+
+00:49:53.008 --> 00:49:56.248
+We're always reading into a data frame
+
+00:49:56.248 --> 00:49:57.488
+or some sort of table.
+
+00:49:57.488 --> 00:49:58.328
+Yeah.
+
+00:49:58.328 --> 00:49:59.248
+And does the difference come
+
+00:49:59.248 --> 00:50:01.728
+when you are using a database connection
+
+00:50:01.769 --> 00:50:04.848
+where you are like connected to a SQL database
+
+00:50:04.848 --> 00:50:06.809
+where things are actually happening on the database
+
+00:50:06.809 --> 00:50:08.449
+and not inside of R?
+
+00:50:08.449 --> 00:50:09.649
+Yeah, that's pretty much it.
+
+00:50:09.649 --> 00:50:10.488
+Like, yeah.
+
+00:50:10.488 --> 00:50:11.569
+The difference there is
+
+00:50:11.569 --> 00:50:13.569
+independent of how you get the data there,
+
+00:50:13.569 --> 00:50:15.889
+you're always running all the queries
+
+00:50:15.889 --> 00:50:17.289
+on the remote database.
+
+00:50:17.289 --> 00:50:19.968
+You're not pulling any large amount of data
+
+00:50:19.968 --> 00:50:22.649
+through the wire, like to your system.
+
+00:50:22.649 --> 00:50:23.488
+Okay.
+
+00:50:23.488 --> 00:50:25.088
+So the checks are basically just like,
+
+00:50:25.088 --> 00:50:26.889
+they just get transformed into SQL check,
+
+00:50:26.889 --> 00:50:28.809
+SQL checks that run there.
+
+00:50:28.809 --> 00:50:29.649
+And they basically,
+
+00:50:29.649 --> 00:50:32.889
+it is a summary of like passing and failing.
+
+00:50:32.889 --> 00:50:34.289
+And then that gets pulled over.
+
+00:50:34.289 --> 00:50:35.769
+If there's any sort of pull
+
+00:50:35.769 --> 00:50:37.368
+and there has to be something,
+
+00:50:37.368 --> 00:50:40.728
+it's like two or three rows of summarized data.
+
+00:50:40.728 --> 00:50:41.569
+Like summarized, yes.
+
+00:50:41.569 --> 00:50:42.409
+Okay, great.
+
+00:50:42.409 --> 00:50:43.248
+Yeah.
+
+00:50:43.248 --> 00:50:44.169
+And as Hubert says,
+
+00:50:44.169 --> 00:50:47.929
+like it's great to have stuff happening outside.
+
+00:50:47.929 --> 00:50:48.769
+Yeah, yeah.
+
+00:50:48.769 --> 00:50:50.449
+Database whenever possible.
+
+00:50:50.449 --> 00:50:51.488
+Okay.
+
+00:50:51.488 --> 00:50:56.368
+We had a question about Python that was in this same vein.
+
+00:50:56.368 --> 00:50:58.809
+That was, can we use the point blank
+
+00:50:59.769 --> 00:51:04.769
+to validate data streaming over S3 or GCS bucket
+
+00:51:05.008 --> 00:51:07.289
+using pollers and the Python ecosystem?
+
+00:51:07.289 --> 00:51:12.008
+I did link to the point blank in Python version.
+
+00:51:12.008 --> 00:51:15.488
+But is there any extra you want to add there?
+
+00:51:15.488 --> 00:51:17.248
+Well, basically, let me show you that
+
+00:51:17.248 --> 00:51:18.088
+just so people know.
+
+00:51:18.088 --> 00:51:19.529
+There's a point blank for Python.
+
+00:51:19.529 --> 00:51:22.488
+And if you just look through like the user guide,
+
+00:51:22.488 --> 00:51:23.689
+you'll find in demos,
+
+00:51:23.689 --> 00:51:26.809
+you'll find it works with all sorts of tables,
+
+00:51:26.809 --> 00:51:29.208
+pollers, pandas, anything that narbles supports.
+
+00:51:29.208 --> 00:51:31.289
+If you know that it's basically interchange,
+
+00:51:31.289 --> 00:51:34.769
+data interchange for data frames in Python.
+
+00:51:34.769 --> 00:51:37.248
+And it works with, of course,
+
+00:51:37.248 --> 00:51:41.208
+stuff that works on databases as well.
+
+00:51:41.208 --> 00:51:42.728
+But we're talking about pollers here.
+
+00:51:42.728 --> 00:51:44.608
+And yeah, basically anything that works with pollers
+
+00:51:44.608 --> 00:51:47.208
+works here, including lazy frames as well.
+
+00:51:47.208 --> 00:51:52.208
+And although like if you do try it
+
+00:51:52.208 --> 00:51:54.008
+and somehow it doesn't work,
+
+00:51:54.008 --> 00:51:55.929
+let me know because it's not formally tested,
+
+00:51:55.929 --> 00:51:58.809
+but pretty much everything should work
+
+00:51:58.809 --> 00:52:01.649
+because it's being very simple with the pollers.
+
+00:52:01.649 --> 00:52:03.169
+Great, yes, that's great.
+
+00:52:03.169 --> 00:52:04.488
+If you do use anything,
+
+00:52:04.488 --> 00:52:07.529
+if something doesn't work, send feedback.
+
+00:52:07.529 --> 00:52:09.649
+That would be super helpful.
+
+00:52:09.649 --> 00:52:13.208
+And then we wanted to also,
+
+00:52:13.208 --> 00:52:17.809
+let's go check out a couple of questions here.
+
+00:52:17.809 --> 00:52:21.128
+One was from Hubert about Shiny.
+
+00:52:21.128 --> 00:52:24.208
+Is there a way to integrate this into a Shiny app
+
+00:52:24.208 --> 00:52:27.128
+or could this be used to interrogate a Shiny app?
+
+00:52:28.368 --> 00:52:29.608
+Do you have any experience
+
+00:52:29.608 --> 00:52:31.769
+with people using it with Shiny or have you?
+
+00:52:31.769 --> 00:52:33.289
+Yeah, not myself,
+
+00:52:33.289 --> 00:52:38.289
+but I know Eric Nance used it in a table contest entry,
+
+00:52:39.649 --> 00:52:42.328
+like basically point blank in Shiny.
+
+00:52:42.328 --> 00:52:45.608
+And there's a full word example and there's a repo there.
+
+00:52:45.608 --> 00:52:47.608
+He'd use it to validate podcasts,
+
+00:52:47.608 --> 00:52:48.968
+like every single podcast,
+
+00:52:48.968 --> 00:52:51.929
+basically like the podcast index.
+
+00:52:51.929 --> 00:52:53.049
+And so I know it could be done.
+
+00:52:53.049 --> 00:52:54.409
+And I've seen other instances
+
+00:52:54.409 --> 00:52:57.968
+where it actually is used in Shiny.
+
+00:52:57.968 --> 00:53:00.769
+I think another pharma company used it
+
+00:53:00.769 --> 00:53:02.569
+and created a front end for this.
+
+00:53:03.889 --> 00:53:07.049
+And I believe there's been more than one of these as well.
+
+00:53:07.049 --> 00:53:09.409
+There's a few instances of that.
+
+00:53:09.409 --> 00:53:11.328
+Because basically you just have code here
+
+00:53:11.328 --> 00:53:12.529
+and you have objects
+
+00:53:12.529 --> 00:53:16.208
+and you can use them pretty much in Shiny as well
+
+00:53:16.208 --> 00:53:18.248
+because they're just simple outputs.
+
+00:53:18.769 --> 00:53:20.889
+And if you don't know Eric Nance,
+
+00:53:20.889 --> 00:53:23.049
+he does the R Weekly podcast
+
+00:53:24.368 --> 00:53:25.968
+and maintains a whole bunch of stuff
+
+00:53:25.968 --> 00:53:27.968
+that's really beneficial for the R ecosystem.
+
+00:53:27.968 --> 00:53:30.968
+So everybody round of applause for Eric Nance.
+
+00:53:30.968 --> 00:53:33.608
+I'm hoping we can have Eric on actually at some point
+
+00:53:33.608 --> 00:53:37.889
+to talk us through Nix slash Rix, which would be great,
+
+00:53:37.889 --> 00:53:39.968
+but he's a busy dude.
+
+00:53:39.968 --> 00:53:41.208
+Okay, let's move on.
+
+00:53:41.208 --> 00:53:42.368
+In the next couple of minutes,
+
+00:53:42.368 --> 00:53:46.529
+we've got a question from Dave.
+
+00:53:46.529 --> 00:53:48.649
+Do you know where those icons came from?
+
+00:53:48.649 --> 00:53:50.529
+Like we have the omega with the line through it,
+
+00:53:50.529 --> 00:53:52.769
+the little range and the little Lambda icon.
+
+00:53:52.769 --> 00:53:55.328
+He was asking like, are they Unicode?
+
+00:53:55.328 --> 00:53:56.248
+Like, what are they?
+
+00:53:56.248 --> 00:53:58.569
+No, I made them myself in Sketch.
+
+00:53:58.569 --> 00:53:59.889
+He made them himself.
+
+00:53:59.889 --> 00:54:02.008
+Yeah, I've got this little program here called Sketch.
+
+00:54:02.008 --> 00:54:04.689
+And basically I just draw and it's like really good.
+
+00:54:04.689 --> 00:54:07.208
+I mean, it's kind of like an old copy of it.
+
+00:54:08.128 --> 00:54:10.289
+But basically, yeah, I just create like icons
+
+00:54:10.289 --> 00:54:11.449
+and I have like little,
+
+00:54:13.289 --> 00:54:15.368
+I just export them as PNG and SVG
+
+00:54:15.368 --> 00:54:16.608
+and then they just work.
+
+00:54:16.608 --> 00:54:17.769
+And I just draw a bunch of these,
+
+00:54:17.769 --> 00:54:19.008
+have a little template for these
+
+00:54:19.008 --> 00:54:24.008
+and they're sized really nicely and nicely exportable.
+
+00:54:24.128 --> 00:54:26.569
+And I also use them in Python as well for the same report.
+
+00:54:26.569 --> 00:54:28.569
+I basically replicate this report in Python as well
+
+00:54:28.569 --> 00:54:30.809
+and just move those assets over.
+
+00:54:30.809 --> 00:54:32.008
+All right, cool.
+
+00:54:32.008 --> 00:54:34.449
+We have another one that is from Nathan that says,
+
+00:54:34.449 --> 00:54:37.049
+does the sundered data have a way to show
+
+00:54:37.049 --> 00:54:41.649
+which columns last row failed with which validation step?
+
+00:54:41.649 --> 00:54:42.929
+No, not that one in particular.
+
+00:54:42.929 --> 00:54:44.809
+Basically it's very summarizing and kind of filter.
+
+00:54:45.208 --> 00:54:47.328
+So you really don't know which like cell
+
+00:54:49.328 --> 00:54:53.409
+cause that row to be labeled as like bad or failed.
+
+00:54:53.409 --> 00:54:54.529
+Okay.
+
+00:54:54.529 --> 00:54:56.208
+Yeah, it's basically just like a quick utility
+
+00:54:56.208 --> 00:54:58.488
+for basically splitting.
+
+00:54:58.488 --> 00:54:59.328
+Okay.
+
+00:54:59.328 --> 00:55:00.169
+You have to drill down.
+
+00:55:00.169 --> 00:55:01.008
+His question was like,
+
+00:55:01.008 --> 00:55:03.289
+for this data with the five columns,
+
+00:55:03.289 --> 00:55:05.529
+something that he is thinking of would output
+
+00:55:05.529 --> 00:55:09.569
+like a true or false column next to each of them.
+
+00:55:09.569 --> 00:55:11.848
+Sounds like something you could build, Nathan.
+
+00:55:11.848 --> 00:55:13.208
+Yeah, you could do that.
+
+00:55:13.208 --> 00:55:15.368
+Basically each step would,
+
+00:55:15.368 --> 00:55:17.248
+you'd have a vector of like true and false.
+
+00:55:17.248 --> 00:55:18.529
+You can get that from the object itself,
+
+00:55:18.529 --> 00:55:19.929
+from the agent object.
+
+00:55:19.929 --> 00:55:22.208
+So it's totally possible to make your original data set
+
+00:55:22.208 --> 00:55:24.649
+with that basically just like from that vector,
+
+00:55:24.649 --> 00:55:26.689
+make a new column.
+
+00:55:26.689 --> 00:55:27.529
+Cool.
+
+00:55:27.529 --> 00:55:29.889
+I know everyone's probably like thinking about use cases
+
+00:55:29.889 --> 00:55:31.769
+for their own data.
+
+00:55:31.769 --> 00:55:34.968
+And to that point, Brent had asked
+
+00:55:34.968 --> 00:55:37.968
+because Brent works in the medical space.
+
+00:55:39.169 --> 00:55:41.529
+He says, I can see a great use case for this
+
+00:55:41.569 --> 00:55:45.649
+for medical device data with the internet of things or IOT.
+
+00:55:45.649 --> 00:55:47.289
+Has it been used for this purpose
+
+00:55:47.289 --> 00:55:49.248
+or have you seen anybody use it for that?
+
+00:55:49.248 --> 00:55:51.488
+There's actually a presentation at Posit Conf,
+
+00:55:51.488 --> 00:55:54.889
+I believe 2022, where someone presented on exactly,
+
+00:55:54.889 --> 00:55:55.889
+wasn't sure if it was medical devices,
+
+00:55:55.889 --> 00:55:58.008
+but it was definitely a medical setup.
+
+00:55:58.008 --> 00:56:00.809
+And it was an entire like half hour long talk.
+
+00:56:02.488 --> 00:56:06.008
+So look for, look there.
+
+00:56:06.008 --> 00:56:08.128
+2022, I believe that was like Chicago.
+
+00:56:08.128 --> 00:56:08.968
+And-
+
+00:56:08.968 --> 00:56:09.809
+It was DC.
+
+00:56:09.809 --> 00:56:11.368
+Chicago was 2023.
+
+00:56:12.169 --> 00:56:13.328
+Okay.
+
+00:56:13.328 --> 00:56:14.328
+Thank you.
+
+00:56:14.328 --> 00:56:15.169
+Yeah.
+
+00:56:15.169 --> 00:56:17.169
+Look up 2023 and look up Point Blank.
+
+00:56:17.169 --> 00:56:20.449
+I was gonna say, I bet Isabel has got it already.
+
+00:56:20.449 --> 00:56:21.289
+There we go.
+
+00:56:21.289 --> 00:56:22.128
+Okay.
+
+00:56:22.128 --> 00:56:23.008
+It was Michael Garcia
+
+00:56:23.008 --> 00:56:26.449
+and it's scale your data validation workflow with Point Blank
+
+00:56:26.449 --> 00:56:29.608
+and also there is praise for the animated hex,
+
+00:56:29.608 --> 00:56:30.529
+which is beautiful.
+
+00:56:30.529 --> 00:56:31.368
+It's gorgeous.
+
+00:56:31.368 --> 00:56:33.689
+If anybody hasn't seen the GIF of the Point Blank,
+
+00:56:34.968 --> 00:56:35.809
+it's beautiful.
+
+00:56:35.809 --> 00:56:37.409
+Kind of scans through and shows all these little-
+
+00:56:37.409 --> 00:56:39.169
+Hard to get that on a sticker, I'm telling you.
+
+00:56:39.169 --> 00:56:40.008
+It is.
+
+00:56:40.008 --> 00:56:41.809
+It's like a lenticular sticker or something.
+
+00:56:41.809 --> 00:56:45.368
+I've been thinking about lenticular hex stickers lately.
+
+00:56:45.368 --> 00:56:46.208
+Okay.
+
+00:56:46.208 --> 00:56:47.049
+One more.
+
+00:56:47.049 --> 00:56:48.409
+If we have just a quick second,
+
+00:56:49.289 --> 00:56:50.128
+Notobeko asked,
+
+00:56:50.128 --> 00:56:53.128
+does Point Blank have a debrief function
+
+00:56:53.128 --> 00:56:55.409
+that gives you a summary of all the results
+
+00:56:55.409 --> 00:56:57.689
+from all the validation exercises?
+
+00:57:00.728 --> 00:57:02.409
+Not really, but we have something close.
+
+00:57:02.409 --> 00:57:04.368
+What you can do is we have something called,
+
+00:57:04.368 --> 00:57:06.128
+okay, this is an embarrassing name, briefs.
+
+00:57:06.128 --> 00:57:08.248
+And basically it's something called an auto brief.
+
+00:57:08.248 --> 00:57:09.569
+This is very embarrassing.
+
+00:57:10.569 --> 00:57:11.409
+But what you can do is,
+
+00:57:11.409 --> 00:57:12.809
+I think if you just said,
+
+00:57:12.809 --> 00:57:13.649
+I forget how you do this.
+
+00:57:13.649 --> 00:57:15.049
+It's like brief true.
+
+00:57:17.769 --> 00:57:18.689
+There's a way to do this.
+
+00:57:18.689 --> 00:57:21.769
+And I feel a little embarrassed that I do not know it now,
+
+00:57:21.769 --> 00:57:22.608
+but you can have it.
+
+00:57:22.608 --> 00:57:25.008
+So like it automatically creates text here.
+
+00:57:25.889 --> 00:57:26.728
+It adds text.
+
+00:57:26.728 --> 00:57:29.689
+Basically like these lines right here will be inserted.
+
+00:57:29.689 --> 00:57:32.289
+We don't have a thing where like it just gets that
+
+00:57:32.289 --> 00:57:35.169
+into like, you know, like a data frame or,
+
+00:57:35.169 --> 00:57:36.608
+but I'm sure that can be rigged up
+
+00:57:36.608 --> 00:57:38.649
+because all that information is actually in the object.
+
+00:57:38.649 --> 00:57:39.488
+It's in there.
+
+00:57:39.929 --> 00:57:40.769
+It's in there somewhere.
+
+00:57:40.769 --> 00:57:41.649
+I think you could pull it out
+
+00:57:41.649 --> 00:57:43.689
+and make yourself a little table object,
+
+00:57:43.689 --> 00:57:45.049
+write yourself a custom function
+
+00:57:45.049 --> 00:57:47.769
+or add a PR package.
+
+00:57:47.769 --> 00:57:49.169
+Very welcome, yes.
+
+00:57:49.169 --> 00:57:50.008
+Okay, amazing.
+
+00:57:50.008 --> 00:57:51.248
+Well, we've reached the top of the hour.
+
+00:57:51.248 --> 00:57:52.848
+People are hopping off to their next meeting,
+
+00:57:52.848 --> 00:57:54.289
+which I totally understand.
+
+00:57:54.289 --> 00:57:55.608
+Rich, this was so amazing.
+
+00:57:55.608 --> 00:57:57.529
+Thank you so much for joining us.
+
+00:57:57.529 --> 00:57:58.689
+Oh, thanks for having me.
+
+00:57:58.689 --> 00:57:59.529
+It was great.
+
+00:57:59.529 --> 00:58:00.368
+Oh, wonderful.
+
+00:58:00.368 --> 00:58:01.529
+Thank you everybody for joining us
+
+00:58:01.529 --> 00:58:03.289
+for asking amazing questions.
+
+00:58:03.289 --> 00:58:05.289
+I learned a ton more than I would have today
+
+00:58:05.289 --> 00:58:08.328
+because you asked great questions.
+
+00:58:08.328 --> 00:58:10.289
+If you would like more Rich,
+
+00:58:10.289 --> 00:58:12.328
+go to positive confident person and say hi to him,
+
+00:58:12.328 --> 00:58:13.968
+go see him in Houston.
+
+00:58:13.968 --> 00:58:16.529
+But also he has given workshops on point blank
+
+00:58:16.529 --> 00:58:19.889
+for different conferences throughout the years.
+
+00:58:19.889 --> 00:58:20.728
+First time I saw him,
+
+00:58:20.728 --> 00:58:22.929
+I think was at R Medicine or R Pharma.
+
+00:58:22.929 --> 00:58:25.049
+So there are tons of resources out there.
+
+00:58:25.049 --> 00:58:27.728
+The documentation for both the Python and R packages
+
+00:58:27.728 --> 00:58:29.049
+is beautiful.
+
+00:58:29.049 --> 00:58:30.368
+Go check out Blastula,
+
+00:58:30.368 --> 00:58:32.208
+go check out GT if you haven't
+
+00:58:32.208 --> 00:58:33.929
+and Great Tables in Python.
+
+00:58:33.929 --> 00:58:37.208
+All right, everybody, we will see you next week.

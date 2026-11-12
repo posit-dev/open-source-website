@@ -1,0 +1,1348 @@
+WEBVTT
+
+00:00:00.240 --> 00:00:05.200
+All right, we are one minute past the hour. Thank you, everyone. Really appreciate your time today
+
+00:00:05.200 --> 00:00:10.000
+and excited to talk to you about MCP in practice. So I'm Matt Leary. I'm a product manager here at
+
+00:00:10.000 --> 00:00:14.640
+Posit and I work on Posit Connect. And I'm joined today by my colleague Samuel. Samuel,
+
+00:00:14.640 --> 00:00:19.360
+do you want to introduce yourself as well? Yes, sure. Hi, my name is Samuel Hawk. I'm a
+
+00:00:19.360 --> 00:00:25.040
+solution architect in the HLS enterprise segment at Posit. I support our customers building AI
+
+00:00:25.040 --> 00:00:30.959
+workflows. Great. Thanks, Samuel. Well, together, we're excited to host this workflow that's going
+
+00:00:30.959 --> 00:00:36.160
+to focus on or this workflow webinar that's going to focus on using MCPs in your workflow.
+
+00:00:36.160 --> 00:00:40.320
+So before I jump into a couple of slides, just lay out what you can expect today. I'm going to
+
+00:00:40.320 --> 00:00:46.720
+start us off and cover some basics of MCP and also review how you can host MCP servers on Posit
+
+00:00:46.720 --> 00:00:50.560
+Connect. And then I'm going to hand it off to Samuel. He's going to then do a walkthrough of
+
+00:00:50.560 --> 00:00:55.680
+workflows using MCPs and show you some code and different things with that. And then our intent is
+
+00:00:55.680 --> 00:01:00.320
+to leave about 15 minutes at the end for Q&A and we'll wrap it up there. And for me, I'm really
+
+00:01:00.320 --> 00:01:04.879
+excited about the Q&A, both to hear your questions, but also hear the use cases you're seeing,
+
+00:01:05.440 --> 00:01:09.680
+what you're doing with MCP, and just have that discussion at the end as well.
+
+00:01:13.919 --> 00:01:19.199
+All right. So let's just start off with some level setting of what is MCP. So MCP stands for
+
+00:01:19.199 --> 00:01:24.000
+Model Context Protocol. It was developed by Anthropic in late 2024, and it's now under
+
+00:01:24.000 --> 00:01:29.839
+governance under the Linux Foundation. So I'm going to walk through a basic example in the
+
+00:01:29.839 --> 00:01:36.400
+next slide. But for now, I think it's key just to highlight that MCP is a widely adopted and
+
+00:01:36.400 --> 00:01:43.199
+open source protocol, kind of similar to REST APIs. It's a specification that defines how things can
+
+00:01:43.199 --> 00:01:48.080
+work and how your AI clients can consume tools. And there's a couple of key terms I just want to
+
+00:01:48.080 --> 00:01:53.360
+hit right here before we move on. The first, as I just said, MCP is a protocol. It's the standards
+
+00:01:53.360 --> 00:01:59.760
+itself. It defines how a client and a server can talk to each other. Moving over to the second box
+
+00:01:59.760 --> 00:02:07.199
+there, MCP servers provide tools. That's what you host to write tools, prompts, and resources
+
+00:02:07.199 --> 00:02:11.440
+to an MCP client. Now, I should note the specification, and we'll share that in the
+
+00:02:11.440 --> 00:02:15.600
+link so that if you want to look at it, you can see all the details on that. It talks about tools,
+
+00:02:15.600 --> 00:02:19.279
+prompts, and resources, but largely what I've seen and people are using are the tools.
+
+00:02:20.479 --> 00:02:26.320
+And then lastly, you have MCP clients, and that's what consumes the tools from the MCP servers.
+
+00:02:26.320 --> 00:02:31.520
+Now, they're called MCP clients, but they're also often called AI clients or AI applications.
+
+00:02:31.520 --> 00:02:39.119
+But you can think about that as Cloud Desktop, Chat GPT, Posit Assistant. It's an AI front end
+
+00:02:39.119 --> 00:02:43.440
+that is able to access and use those tools that we mentioned hosted by the MCP servers.
+
+00:02:44.000 --> 00:02:48.479
+And then lastly, I want to highlight a couple other distinctions too. You can host MCP servers
+
+00:02:48.479 --> 00:02:54.000
+either locally or remote. Local is exactly what it sounds like. It's running on your own computer.
+
+00:02:54.000 --> 00:02:56.960
+And what's nice about that is you don't really have to worry about the security as much,
+
+00:02:56.960 --> 00:03:02.160
+but you also can't share it easily with colleagues. Remote servers means the MCP server is hosted
+
+00:03:02.160 --> 00:03:06.000
+outside of your computer and you're connecting to it. That means you really have to consider
+
+00:03:06.000 --> 00:03:11.520
+security and authentication, but it also makes it easier to share. We're going to focus on remote
+
+00:03:11.839 --> 00:03:17.039
+MCPs for this presentation. And as part of that, we'll talk about how Posit Connect makes it easy
+
+00:03:17.039 --> 00:03:21.919
+for you to host MCP servers. And the last part, before I kind of go over an example of MCP,
+
+00:03:22.639 --> 00:03:26.880
+server MCP versus skills. That's probably something if you're looking at MCP servers
+
+00:03:26.880 --> 00:03:32.320
+you're talking about. We're going to focus on MCP for this webinar, but there's also a lot of times
+
+00:03:32.320 --> 00:03:37.279
+where a skill or a CLI might be the more appropriate way to go to solve your business problem.
+
+00:03:37.360 --> 00:03:41.600
+Like I said, we won't go into it, but it's important to note that MCP servers can solve
+
+00:03:41.600 --> 00:03:46.880
+a task, but they can also be used with skills, with CLI tools, and you can pair them effectively
+
+00:03:46.880 --> 00:03:56.240
+together. All right. As I mentioned, I want to quickly go over an example of like what's behind
+
+00:03:56.240 --> 00:04:01.119
+an MCP server. So let's start on the left-hand side where we have our MCP client. In this example,
+
+00:04:01.119 --> 00:04:07.360
+it's Posit Assistant running in Positron using one of the cloud models. So that's your MCP client.
+
+00:04:07.360 --> 00:04:12.960
+That's where you're doing work. In this example, we built an MCP server that has one tool that's
+
+00:04:12.960 --> 00:04:18.480
+a classifier tool. So what does that mean? It means that we have a tool that's going to call
+
+00:04:18.480 --> 00:04:23.359
+out to a large language model on the right-hand side, and we've had a customized prompt and some
+
+00:04:23.359 --> 00:04:30.079
+instruction so that it can classify text in a very specific way. So your MCP client can connect
+
+00:04:30.079 --> 00:04:36.720
+to the MCP server, see there's a classifier tool available, know what inputs it has to pass along
+
+00:04:36.720 --> 00:04:41.679
+for it to be able to operate, and then at the end of the day, the MCP server will go out to the
+
+00:04:41.679 --> 00:04:48.399
+external system, which is an LLM here, get the response, and return it to the MCP client. Now I'm
+
+00:04:48.399 --> 00:04:52.399
+doing a pretty basic overview, but I think what's really powerful about that is for the individual
+
+00:04:52.399 --> 00:04:56.720
+who's using Posit Assistant, you don't need to worry about the back-end. What is the tool doing?
+
+00:04:56.720 --> 00:05:01.920
+Where is it accessing this LLM? What is the prompt? Did somebody update the system prompt last night?
+
+00:05:01.920 --> 00:05:06.959
+All of that is handled for you. You just know you have access to this tool, and your AI client can
+
+00:05:06.959 --> 00:05:10.320
+call it, and it knows what to do with it and how to get the instructions back.
+
+00:05:13.839 --> 00:05:17.279
+We did want to cover what you should consider before you build an MCP,
+
+00:05:18.000 --> 00:05:22.959
+and this isn't an exhaustive list by any means, but we'll kind of go through some use
+
+00:05:22.959 --> 00:05:26.399
+cases where MCP works well, and maybe where you want to be kind of careful.
+
+00:05:27.040 --> 00:05:33.200
+So where it works well, you want to share tools across groups and different AI clients. As I
+
+00:05:33.200 --> 00:05:38.320
+mentioned, MCP is a standard protocol, so if you have business users who aren't writing code in an
+
+00:05:38.320 --> 00:05:44.640
+IDE's operating cloud desktop, they can connect to the same MCP server that you connect to with
+
+00:05:44.640 --> 00:05:50.640
+Posit Assistant. So that can be really powerful that it extends where the MCP server can be consumed
+
+00:05:50.640 --> 00:05:55.920
+by individuals. It also makes it easy to distribute and update. You could share skills
+
+00:05:55.920 --> 00:06:01.200
+across a cloud desktop and Posit Assistant, but you have to keep those up to date, and again,
+
+00:06:01.200 --> 00:06:06.640
+with a remote hosted MCP server, you update it, and your users don't even have to worry about it.
+
+00:06:06.640 --> 00:06:11.519
+They automatically have access to the new functions. Another use case where it might be
+
+00:06:11.519 --> 00:06:16.799
+helpful to use MCP is if you have tools that have specific resources or packages. I'll go back to
+
+00:06:16.799 --> 00:06:22.320
+it. If you have a Python-based tool that's calling NumPy or Pandas under the hood, if you have a user
+
+00:06:22.320 --> 00:06:26.000
+using cloud desktop, how do you know if they have those packages installed and they have proper
+
+00:06:26.000 --> 00:06:32.079
+access to it? You can put these different requirements and resources on a remote MCP server,
+
+00:06:32.079 --> 00:06:35.519
+and again, your users don't have to worry about that. That's all hosted centrally, and you can
+
+00:06:35.519 --> 00:06:40.239
+manage that. You have credentials you don't want to share. I can use an example that we use here
+
+00:06:40.239 --> 00:06:46.160
+at Posit. We use Zendesk as our help desk, and you can access that via an API key. Well, we might
+
+00:06:46.160 --> 00:06:50.399
+want multiple developers to have access to that to look into different issues and look at code at
+
+00:06:50.399 --> 00:06:54.640
+the same time. We don't want to have to distribute API keys to everyone and then manage and rotate
+
+00:06:54.640 --> 00:07:00.799
+them. We can put the API key behind an MCP server and then monitor the use and give access via the
+
+00:07:00.799 --> 00:07:07.119
+MCP server, and nobody even has to be aware that an API key is being used. And then lastly, it
+
+00:07:07.119 --> 00:07:12.399
+shines where your tool returns small targeted results. I actually talk about that where to be
+
+00:07:12.399 --> 00:07:18.320
+careful about why that's so important. But as an example, let's say your organization has
+
+00:07:18.959 --> 00:07:24.160
+datasets on hundreds of clinical studies, and you just want to know, do we have a dataset that has
+
+00:07:24.160 --> 00:07:29.519
+this type of information in it? Well, if you have somewhere stored the metadata around the different
+
+00:07:29.519 --> 00:07:34.079
+datasets you have, that would be a good use case for an MCP to go out, search, and say, yeah, you
+
+00:07:34.079 --> 00:07:37.920
+have access to these three different datasets, and then you could independently go out and look at
+
+00:07:37.920 --> 00:07:42.640
+that data. All right, so that's kind of where it works well. Again, not an exhaustive list,
+
+00:07:42.640 --> 00:07:47.920
+but some good examples. Where to be really careful. We need to call out here, you are using
+
+00:07:47.920 --> 00:07:52.559
+an AI client, so a large language model on the front end. So every tool call and every tool that
+
+00:07:52.559 --> 00:07:57.839
+you bring into your context, it's going to eat up tokens in your context window. So you're losing
+
+00:07:57.839 --> 00:08:02.399
+space in your context window, and you're also paying for that. I mentioned before about small
+
+00:08:02.399 --> 00:08:08.079
+target results. MCP is not great at moving large quantities of data. That's because the data is
+
+00:08:08.079 --> 00:08:11.920
+going to pass through tokens, and again, there's a cost to that, and it's really not an efficient way
+
+00:08:11.920 --> 00:08:17.679
+of doing that. And then lastly, a skill is often cheaper and quicker depending on what you're
+
+00:08:17.679 --> 00:08:21.440
+trying to do if you're teaching or instructing an AI client how to do something. I'll use the
+
+00:08:21.440 --> 00:08:26.320
+example of coding standards. If your organization uses CamelCase and you want to document functions
+
+00:08:26.320 --> 00:08:31.679
+in a certain way, you could pass 500 lines of code to an MCP server, but that's highly inefficient
+
+00:08:31.679 --> 00:08:36.000
+and slow. A skill would probably be more efficient there, so your AI client knows how to generate the
+
+00:08:36.000 --> 00:08:40.479
+code that meets your company's standards. And then lastly, I mentioned about, I think it's worth
+
+00:08:40.479 --> 00:08:46.719
+reinforcing, remote servers really allow you to use shared computer resources. They're easier to
+
+00:08:46.719 --> 00:08:50.320
+update, and your end users don't have to worry about it. And then more importantly, they give
+
+00:08:50.320 --> 00:08:54.080
+you centralized logging and insight into how they're being used, which if they're all running
+
+00:08:54.080 --> 00:08:57.760
+locally or if people are downloading skills on their own computer, you don't really have that
+
+00:08:57.760 --> 00:09:04.799
+insight of how it's being used. Now I want to move on to how we've been making Connect a great
+
+00:09:04.799 --> 00:09:09.919
+place to host remote MCP servers. And here's some of the things we've been doing for that.
+
+00:09:10.479 --> 00:09:15.760
+First, auto-detecting MCP servers based on popular frameworks and listing them out on their own tab
+
+00:09:15.760 --> 00:09:20.400
+so they're easy to find and discover. And we also set a minimum process so that if someone's connected
+
+00:09:20.400 --> 00:09:24.640
+to the MCP server, it's warmed up and you don't have a 10-second lag as it's spinning up, because
+
+00:09:24.640 --> 00:09:28.320
+that can be strange for the user who doesn't understand why it's taking so long to respond.
+
+00:09:29.119 --> 00:09:33.919
+We also now have an interactive landing page. If you've built an MCP with FastMCP, which is a very
+
+00:09:33.919 --> 00:09:39.200
+popular Python framework, we auto-generate an interactive landing page with info on connecting
+
+00:09:39.200 --> 00:09:44.880
+to the server and what tools are available. We'll show you this later, but it's possible because,
+
+00:09:44.880 --> 00:09:49.359
+as I mentioned, MCP is a well-defined standard, so we're able to inspect the different tools and
+
+00:09:49.359 --> 00:09:53.440
+pull that information out. I'm really excited about this feature, but it can be really helpful
+
+00:09:53.440 --> 00:09:57.919
+to quickly see information that was hard to get at before if you didn't build your own custom
+
+00:09:57.919 --> 00:10:01.520
+landing page, which you can still do, but we just want to do that out of the box for you as well.
+
+00:10:02.799 --> 00:10:07.599
+Additionally, Connect comes with a built-in OAuth 2.1 server. This allows you to authenticate to an
+
+00:10:07.599 --> 00:10:13.119
+MCP server hosted on Connect via browser-based flow. I'm going to show that on the next slide.
+
+00:10:13.119 --> 00:10:17.359
+This means no API keys that you have to manage and rotate. It's something your security teams
+
+00:10:17.359 --> 00:10:21.039
+will appreciate, and it's the recommended flow that we, or the flow that we recommend.
+
+00:10:21.599 --> 00:10:26.479
+We also have built-in usage monitoring. You can quickly see how many people are using my MCP and
+
+00:10:26.479 --> 00:10:30.080
+how often. We think that's really valuable. You can see the value that people are getting out of
+
+00:10:30.080 --> 00:10:36.239
+the MCP. And speaking of access, you can manage access to your MCP via access control lists and
+
+00:10:36.239 --> 00:10:40.719
+groups already in Connect. You can integrate Connect with your identity provider, such as
+
+00:10:40.719 --> 00:10:46.080
+IntraID or Okta or many others, making it easy to manage that access with the groups your
+
+00:10:46.080 --> 00:10:50.239
+organization is already using. And then lastly, we spend a lot of time building out integrations
+
+00:10:50.960 --> 00:10:56.239
+with popular third-party services, such as AWS, Azure, Databricks, Snowflake, and you can use
+
+00:10:56.239 --> 00:11:01.599
+these to connect those resources securely. I do want to note, a lot of these things, the OAuth
+
+00:11:01.599 --> 00:11:06.479
+server, the ACLs, the usage dashboard, they're not just for MCP servers. They're built into Connect,
+
+00:11:06.479 --> 00:11:11.039
+and you can use with other content types. So that's some of the ways we're trying to make
+
+00:11:11.039 --> 00:11:15.359
+Connect a great place to host MCP servers. For my last slide, returning over to Samuel,
+
+00:11:15.359 --> 00:11:21.359
+I wanted to show you how you can connect to an MCP server on Connect by that browser-based flow.
+
+00:11:22.880 --> 00:11:28.880
+All right. Let me get this started. Okay. You can see here in this example, I'm using Posit Assistant
+
+00:11:28.880 --> 00:11:33.840
+and Positron. I have this repo, and I'm going to ask, what MCP servers are configured in this
+
+00:11:33.840 --> 00:11:37.359
+project? Now, I know the answer. None are configured right now, so it's going to come
+
+00:11:37.359 --> 00:11:42.880
+back and tell me I don't have anything configured. And so a very standardized way to configure and
+
+00:11:42.880 --> 00:11:48.320
+connect MCP servers is with a settings.json file. So you can see here, I'm going to my Posit
+
+00:11:48.320 --> 00:11:53.760
+Assistant settings.json. I'm pasting in about nine lines of code that says, hey, here's the URL. Here's
+
+00:11:53.760 --> 00:12:00.320
+I want to connect to it. Here's the browser-based flow where I'm just going in, authenticating to
+
+00:12:00.320 --> 00:12:07.359
+the Connect and to the MCP server through OAuth. So what this means, again, no API key that's
+
+00:12:07.359 --> 00:12:12.400
+hard-coded that I have to manage and have to keep secure. So again, that's the recommended flow that
+
+00:12:12.400 --> 00:12:16.719
+we suggest for connecting MCP servers. Again, your security team is probably going to prefer that
+
+00:12:16.719 --> 00:12:21.840
+method as well. You can see here now I asked the same question about what MCPs are available.
+
+00:12:21.840 --> 00:12:26.719
+It's listing out all the tools, and now I can connect to the MCP server. So it's something
+
+00:12:26.719 --> 00:12:30.799
+that's been very popular and I think is a really nice way to connect to MCP servers hosted on Connect.
+
+00:12:35.440 --> 00:12:41.599
+All right. With that, I'm going to stop sharing. Thank you for that time. Just kind of do an
+
+00:12:41.599 --> 00:12:44.719
+overview. Happy to answer more questions at the end, and Samuel, I'll turn it over to you.
+
+00:12:45.520 --> 00:12:54.640
+Thank you, Matt. Okay. So Matt gave a great overview of how we can deploy and use MCPs. So let's see
+
+00:12:54.640 --> 00:13:00.479
+how it's been done, right? And we'll start with how do we even build an MCP server in the first
+
+00:13:00.479 --> 00:13:06.400
+place, right? So if you're familiar with building APIs, it's pretty straightforward because, as
+
+00:13:06.479 --> 00:13:11.599
+I mentioned, FastMCP provides a really nice wrapper. So you're kind of building it very
+
+00:13:11.599 --> 00:13:18.159
+similar to FastAPI tool calling, and you can deploy it. But where I love to get started is this
+
+00:13:18.960 --> 00:13:25.280
+documentation of MCP servers within PositDocs, right? Because it walks you through in various
+
+00:13:25.280 --> 00:13:30.559
+aspects. For example, if you already have a local MCP server, and how do you want to convert it to
+
+00:13:30.559 --> 00:13:35.599
+a remote MCP server and serve it across your organization? It has very much detailed
+
+00:13:35.599 --> 00:13:44.799
+documentation, and you'll find really get-started examples, right? And basically, for most of your
+
+00:13:44.799 --> 00:13:50.559
+tool calling, either you can add a decorator, or there are other options to add custom tools
+
+00:13:50.559 --> 00:13:55.599
+by definitions, and then just define your Python functions as a tool. That's pretty much it.
+
+00:13:56.479 --> 00:14:04.320
+What I do then is I go to my Posit Workbench, right? So for those who are not familiar with
+
+00:14:04.320 --> 00:14:11.280
+the Posit ecosystem, Connect is where we host our applications, APIs, and MCP servers. And Workbench
+
+00:14:11.280 --> 00:14:19.119
+is where we do most of our development. So if I open a Posit transaction on my Workbench,
+
+00:14:19.119 --> 00:14:26.880
+I can literally go to Posit Assistant and provide the description of the MCP server I want to build,
+
+00:14:27.599 --> 00:14:34.400
+and I just ask it to get started. So this flow has become very popular for the users who are
+
+00:14:34.400 --> 00:14:41.039
+building MCP within Positron. So this is where you might want to get started. So literally,
+
+00:14:41.039 --> 00:14:46.320
+just come here and give it a try. I think that's the best way to get started with the MCP server.
+
+00:14:47.200 --> 00:14:54.320
+Now we're going to go over a few examples, but before I go there, I wanted to show you
+
+00:14:55.039 --> 00:15:03.039
+an MCP server that I have built over here, which talks to Snowflake. And the idea is sometimes,
+
+00:15:03.039 --> 00:15:09.039
+if you're in life sciences, either your clinical data or your EHR data, they are landed in Snowflake
+
+00:15:09.039 --> 00:15:14.719
+and they might be updated very frequently, right? And you may want to serve some key insights
+
+00:15:14.719 --> 00:15:19.520
+from the data source. It could be a new adverse event or a total serious adverse event you're
+
+00:15:19.520 --> 00:15:26.000
+observing. And you want your AI tool to be able to grab those results, right? And you don't want
+
+00:15:26.000 --> 00:15:34.000
+the AI tool to go and execute a random SQL query, right? So the idea is, if you already know there
+
+00:15:34.000 --> 00:15:41.679
+are some structured SQL query or functions that you trust or that might have been validated by
+
+00:15:41.679 --> 00:15:48.000
+your data scientist, you can just convert them into MCP tools, right? And deploy the MCP server
+
+00:15:48.799 --> 00:15:54.880
+into Connect. I wanted to highlight that for integrating role-based access control for
+
+00:15:54.880 --> 00:16:00.400
+Snowflake, right? That's where OAuth on the Connect comes into play. Through Posit SDK,
+
+00:16:01.039 --> 00:16:06.320
+we provide some great tools to ensure that authentication is seamless, right? And we'll
+
+00:16:06.320 --> 00:16:16.559
+share the documentation to this SDK later in the chat. Okay, so if I build an MCP server,
+
+00:16:16.559 --> 00:16:23.599
+then how do I deploy it? It's really a single click. So here is the deploy option in Positron,
+
+00:16:23.599 --> 00:16:28.080
+which is Posit Publisher, and you just deploy your project. You select which Connect deployment you
+
+00:16:28.080 --> 00:16:34.880
+want to use and deploy it over there. So let's see how things look on the Connect site.
+
+00:16:35.840 --> 00:16:41.119
+So I am on my Connect deployment, and you see I have many different deployments here.
+
+00:16:42.719 --> 00:16:48.159
+Say I just want to see what are the MCP servers that we have here, and then it will just slice
+
+00:16:48.159 --> 00:16:53.119
+and dice my MCP servers that I have deployed. I can also see, because I have admin privilege
+
+00:16:53.119 --> 00:17:00.719
+and some of the MCPs are shared with me, what other teammates are deploying in this Connect
+
+00:17:00.960 --> 00:17:07.760
+instance. What I really love about deploying this Connect, before this feature was available,
+
+00:17:07.760 --> 00:17:12.160
+I had to do a lot of debugging, right? I deploy it and then I test if I'm getting back the right
+
+00:17:12.160 --> 00:17:18.560
+result. What I love about this is the landing page, right? So now I have opened an adverse
+
+00:17:18.560 --> 00:17:25.119
+event MCP server, and this is the first example that Matt was talking about, right? So if you
+
+00:17:25.119 --> 00:17:33.599
+have a free text adverse event narrative, we created a customized SLM harness as a tool call,
+
+00:17:33.599 --> 00:17:39.119
+which basically structured it into a MedDRA definition. So for those who are not familiar
+
+00:17:39.119 --> 00:17:44.560
+with MedDRA, it's a controlled terminology to share different adverse event narratives
+
+00:17:44.560 --> 00:17:51.199
+across the healthcare and life sciences ecosystem. So here you can see I am getting a nice view of
+
+00:17:51.199 --> 00:17:57.680
+what tools are available here, right, in the adverse event summary. Actually, I opened the
+
+00:17:57.680 --> 00:18:01.359
+wrong one. So this is the pharmacovigilance, where we have the classified adverse event tool.
+
+00:18:01.359 --> 00:18:10.719
+So here you can see I have three tool calls here, and I can ask. I have copy-pasted a sample
+
+00:18:10.719 --> 00:18:16.160
+narrative, but this is a patient narrative that someone has, right? So I can run this, and what
+
+00:18:16.160 --> 00:18:23.680
+it will do, if the API token or the credentials that I am using here is valid, it gives me this
+
+00:18:23.680 --> 00:18:29.040
+nice classification because that's how we have constructed the tool. So imagine using this from
+
+00:18:29.040 --> 00:18:33.359
+any client, right? It doesn't need to be positive system. It could be your cloud desktop or other
+
+00:18:33.359 --> 00:18:40.959
+custom AI client you're building. So there are different patterns of using this. So what's
+
+00:18:40.959 --> 00:18:47.920
+happening here under the hood, it's calling another model in MEDDRA, right? Now you may ask,
+
+00:18:47.920 --> 00:18:53.599
+okay, how do we connect to MEDDRA from this deployed MCP server, right? Again, there are two
+
+00:18:53.599 --> 00:18:58.800
+different ways. In this case, we consider a scenario where you may have a service account, right? So you
+
+00:18:58.800 --> 00:19:06.000
+want to use that same service account, and what you'll do is you can embed your AWS XSK token,
+
+00:19:06.160 --> 00:19:11.839
+so that's one way. But there could be a better way, right, where you may need role-based access
+
+00:19:11.839 --> 00:19:19.119
+control. That's where we move into a second example, where we look into really getting some
+
+00:19:19.119 --> 00:19:26.719
+adverse event summary and adverse event details. In this case, we are actually connecting to a
+
+00:19:26.719 --> 00:19:34.640
+Snowflake instance, right? So again, I think I have already shown this MCP server has six tool calls,
+
+00:19:34.640 --> 00:19:41.920
+right? A overview, a summary. If you want a description of a table, it can describe those
+
+00:19:41.920 --> 00:19:46.640
+tables. You can get a preview of the table, as Matt was mentioning. We don't want to pull a really
+
+00:19:46.640 --> 00:19:51.520
+large table here, but if you want to see a sneak peek, just the first five rows or things like
+
+00:19:51.520 --> 00:19:57.199
+those, you can see those, right? And then if you're interested only in the serious AI listing,
+
+00:19:57.199 --> 00:20:02.160
+right, you can get them. Now, how does this integration work, right? So on the Pranav
+
+00:20:02.719 --> 00:20:11.119
+MCP, you saw I used token, but here you see I'm using a native auth integration that's available
+
+00:20:11.119 --> 00:20:16.319
+to me. And I can actually have many different types of custom integration, including Snowflake
+
+00:20:16.319 --> 00:20:21.119
+and Databricks, right? So you can imagine a scenario, you may have disparate data sources,
+
+00:20:21.119 --> 00:20:26.160
+right? And you may want your, or disparate tools, and you may want your MCP servers to connect to
+
+00:20:26.160 --> 00:20:32.079
+multiple tools. That is possible, right? So you can really use your use case and imagination
+
+00:20:32.079 --> 00:20:40.319
+to get creative. But once I log in or connect through OAuth to this MCP server, it will also
+
+00:20:40.319 --> 00:20:46.079
+trigger the Snowflake authentication as well. Because in that case, we'll reach out to Snowflake
+
+00:20:46.079 --> 00:20:51.280
+as my user role, not as a service account. So the role-based access control will be maintained.
+
+00:20:52.239 --> 00:21:00.000
+So if I ask that I want to see an area overview from an ongoing study, so in this case,
+
+00:21:00.800 --> 00:21:05.199
+my ongoing study is CitiesPilot1, because that's the one I have access to.
+
+00:21:06.319 --> 00:21:13.119
+But basically, what it's going to do is, I think I have mistaken something. Okay,
+
+00:21:13.760 --> 00:21:18.640
+yeah, there was a typo, so the study was not found. So in this case, it's really going to
+
+00:21:18.719 --> 00:21:25.599
+Snowflake and bringing back the results live to this, right? So now, just for testing, I deployed
+
+00:21:25.599 --> 00:21:31.520
+it. I have not yet shared it with my entire organization, but here I can really nicely test
+
+00:21:32.640 --> 00:21:37.040
+what's happening. Matt, you want to add something? If you don't mind saying, well, just because I'm
+
+00:21:37.040 --> 00:21:41.599
+such a big fan, this is a new feature in Connect about two months ago. Exactly what you're saying.
+
+00:21:41.599 --> 00:21:45.199
+We add this in because what we were hearing is, you know, you deploy an MCP server,
+
+00:21:45.199 --> 00:21:50.079
+then you go back to your MCP client to connect, and debugging could be a little bit difficult.
+
+00:21:50.079 --> 00:21:54.079
+And so we put a lot of really nice information here where you can test it and get the response
+
+00:21:54.079 --> 00:21:57.760
+you can see there. The connection strings at the top just make it easier so that you don't
+
+00:21:57.760 --> 00:22:01.199
+have to remember, like, well, I'm using Cloud Code here. What's the format? And now I'm using
+
+00:22:01.199 --> 00:22:05.359
+Positron. It just makes it very easy to connect to it. And I should note, if you want to make
+
+00:22:05.359 --> 00:22:09.760
+your own custom landing page, you can. This will only be displayed automatically if you don't
+
+00:22:09.760 --> 00:22:13.359
+already have one. So you do have the ability to control that, but it's really nice that just out
+
+00:22:13.359 --> 00:22:17.280
+of the box, it will get this information. I know I find it very useful, like you're saying, Samuel,
+
+00:22:17.280 --> 00:22:22.719
+to test it out and make sure things are working. Yeah. Actually, on that note, that's what I was
+
+00:22:22.719 --> 00:22:29.439
+going to show as well, because this is the default landing page, right? But Matt also created a few
+
+00:22:29.439 --> 00:22:34.719
+weeks ago a custom landing page for this use case we are working on, which is, again, CDISK SDTM
+
+00:22:34.719 --> 00:22:40.319
+validator, right? In your case, probably you are reaching out to some standardized API call that
+
+00:22:40.319 --> 00:22:45.199
+your organization already uses for validating your dataset, right? But you can think now,
+
+00:22:45.199 --> 00:22:51.439
+you can also provide these tools to AI clients through these MCP servers, right? So if you
+
+00:22:51.439 --> 00:22:56.640
+create your custom CDISK SDTM validator, you can also create a custom landing page. And this is
+
+00:22:56.640 --> 00:23:01.680
+what you are seeing here. So this page is slightly different than what I was showing before, because
+
+00:23:01.680 --> 00:23:06.959
+this is a custom landing page, right? So you have both options available. It's very flexible.
+
+00:23:07.680 --> 00:23:14.719
+Okay, so now we have the MCP server. How do we use it? What I'm going to show first is how can we
+
+00:23:14.719 --> 00:23:21.520
+connect from Posit Assistant, from Positron, and how does the experience look like? Okay.
+
+00:23:22.800 --> 00:23:31.280
+So here I am in my Posit Assistant, and I'll show you my settings.json, because within this project,
+
+00:23:32.079 --> 00:23:37.199
+I'm connected to these three different MCP servers, right? So I have this pharmacovigilance
+
+00:23:37.199 --> 00:23:45.760
+MCP that I covered. I have CDISK MCP, and I have adverse event MCP. And you'll see,
+
+00:23:45.760 --> 00:23:52.800
+like this CDISK MCP sits on a different instance of Connect. So it doesn't need to be all one
+
+00:23:52.800 --> 00:23:56.880
+same Connect server. You can have multiple Connect instances within your organization and connect to
+
+00:23:56.880 --> 00:24:06.640
+those. So once I come here, and let me go full screen, because I can do that. So let me see.
+
+00:24:06.640 --> 00:24:22.479
+If I ask, okay, tell me about adverse events in the CDISK pilot one study. Okay, maybe I want to be
+
+00:24:23.040 --> 00:24:28.800
+more specific. I want to know the number of adverse events. So now you see it's immediately
+
+00:24:28.800 --> 00:24:35.760
+triggered, that MCP tool call, and it's asking me whether I would allow this call. And what I'm
+
+00:24:35.760 --> 00:24:41.199
+going to do, I can allow it for once, but I'm going to allow this MCP adverse event server
+
+00:24:42.079 --> 00:24:49.359
+for this session. Okay, so now what's happening is basically it's going to Snowflake and running
+
+00:24:50.160 --> 00:24:54.079
+some live query on behalf of me, and then it's getting back the result.
+
+00:24:57.439 --> 00:25:04.079
+There you go, right? So we have now a summary of the adverse event that has been reported, right?
+
+00:25:05.520 --> 00:25:11.280
+Just to confirm that, who am I, right? I can also ask, who am I? Okay.
+
+00:25:13.839 --> 00:25:17.359
+Now it's again asking to call another tool, which is called, who am I?
+
+00:25:19.599 --> 00:25:22.000
+And I'm going to allow this for this project this time.
+
+00:25:27.599 --> 00:25:32.800
+Okay, and it's reporting. Snowflake sees me as samuelhawk at posit.com, right? So this is my
+
+00:25:32.800 --> 00:25:38.319
+user account. So, and it's assuming the role that I'm supposed to, that's my default role,
+
+00:25:38.319 --> 00:25:44.079
+and it's using the warehouse that I asked to, right? So you can have really granular level
+
+00:25:44.079 --> 00:25:47.680
+access control on this tool calling, and that's the beauty, right? That's why we want
+
+00:25:48.239 --> 00:25:53.599
+for enterprise use cases to use this tool. Similarly, another thing that I love,
+
+00:25:54.800 --> 00:26:01.599
+positive system is context-aware, right? So here I have an adverse event narrative dataset, right?
+
+00:26:01.599 --> 00:26:08.959
+So maybe you are just working with this data, and you want to, maybe you load this. Let me see.
+
+00:26:10.000 --> 00:26:17.119
+Where did it go? Okay, so I want to source this R file, and I want to see my variables.
+
+00:26:18.319 --> 00:26:23.920
+Okay, so this AE data is loaded, and you'll see this dataset has some AE variable team,
+
+00:26:24.479 --> 00:26:30.560
+and I'm basically looking at different subject ID and their report of their different adverse
+
+00:26:30.560 --> 00:26:38.560
+events, right? So I can come on, and let's see. I can create a new chat, and can you,
+
+00:26:39.280 --> 00:26:47.119
+so I'm asking, classify the adverse event for subject ID,
+
+00:26:50.160 --> 00:26:55.199
+so maybe I'm interested in this particular subject, okay? And I just want to see what
+
+00:26:55.199 --> 00:27:01.760
+the major classification would look like. So what it's doing first is trying to get the data,
+
+00:27:02.079 --> 00:27:13.599
+get the data, and it's filtering the adverse event, and then you see, after it filtered out
+
+00:27:14.560 --> 00:27:19.920
+the data for that particular subject ID, now it's going to call this pharmacovigilant
+
+00:27:19.920 --> 00:27:22.079
+MCP, right? So I'm going to allow this call,
+
+00:27:22.800 --> 00:27:28.959
+and then what it's going to provide is the MedDRA classification that we already seen
+
+00:27:28.959 --> 00:27:37.680
+on the Connect side, right, by testing the API tool calls, and you can see this is the classifier
+
+00:27:37.680 --> 00:27:45.439
+output, right? So this is what exactly came out of the MCP tool. For some reason, Opus also thought
+
+00:27:46.319 --> 00:27:54.880
+that it needs to provide its own read to that, which is fine, I don't mind it, but this is the
+
+00:27:54.880 --> 00:28:03.040
+classifier, actual classifier output, and this is what Opus kind of, its own explanation of the
+
+00:28:03.040 --> 00:28:10.239
+model we are using. Okay, so you might be saying this is great, but not all of my business users
+
+00:28:10.239 --> 00:28:16.400
+are going to use Posita system, right, because you may have your enterprise subscription to
+
+00:28:16.400 --> 00:28:24.079
+certain desktop client, right? How do we use it? So you may have noticed, let me minimize it,
+
+00:28:24.880 --> 00:28:31.119
+in this page, we provide instruction to how to connect to different clients, right, including
+
+00:28:31.119 --> 00:28:37.199
+cloud desktop, cloud code, or any other custom client that you could think of, right? So what
+
+00:28:37.199 --> 00:28:44.640
+I'm going to show next is how does this work on cloud desktop. Okay, so I have a small recording
+
+00:28:45.439 --> 00:28:54.239
+that shows how do you basically copy this URL, and of your MCP server, right, so you're here,
+
+00:28:54.239 --> 00:29:02.880
+you can create a vanity URL, copy this URL, so this is the CDisk validator MCP that we discussed,
+
+00:29:03.839 --> 00:29:11.040
+and then on your cloud desktop, basically, you add it as a custom connector, right? To do that,
+
+00:29:12.000 --> 00:29:17.280
+you give it a name, because it's a custom connector, and then you just provide this
+
+00:29:17.280 --> 00:29:25.280
+MCP server URL, right? And depending on the type of authentication you are going to use,
+
+00:29:25.280 --> 00:29:32.479
+there will be different options. In this example, we did not require a sign-in, it's a more flexible
+
+00:29:32.479 --> 00:29:40.000
+MCP tool anyone can use, and then you can also see the tool listing, right, on your cloud desktop.
+
+00:29:41.040 --> 00:29:46.880
+Now you have this connector, right, and you can just start asking questions. For example,
+
+00:29:46.880 --> 00:29:54.239
+if you have some CDisk data or metadata, you can drag it here on your cloud desktop,
+
+00:29:55.199 --> 00:30:02.719
+and ask it to validate the dataset for you. So now what it's going to do, again, a very similar
+
+00:30:02.719 --> 00:30:10.800
+pattern, right? You allow cloud to reach out to this custom MCP tool, and then it's going to
+
+00:30:10.800 --> 00:30:16.400
+search for the available tools, see what's there, and bring back the result on cloud desktop, right?
+
+00:30:16.400 --> 00:30:23.119
+So again, this kind of showcases how you start distributing the custom tools that you build
+
+00:30:23.839 --> 00:30:27.760
+to enterprise-wide AI clients by hosting it and connect.
+
+00:30:30.800 --> 00:30:33.920
+That covers the key component that we wanted to cover today.
+
+00:30:34.719 --> 00:30:38.560
+Matt, back to you if you want to add any additional thoughts.
+
+00:30:39.557 --> 00:30:42.677
+That covers the key component that we wanted to cover today.
+
+00:30:43.477 --> 00:30:46.757
+Matt, back to you if you want to add any additional thoughts.
+
+00:30:47.877 --> 00:30:50.837
+No, thanks for that, Samuel. I think just, I like how you showed the cloud
+
+00:30:51.477 --> 00:30:55.237
+desktop version right there too, because I think that really highlights one of the key
+
+00:30:57.476 --> 00:31:01.636
+reasons why MCP Servers can be really helpful for you. Because again, it can connect to different
+
+00:31:02.197 --> 00:31:07.237
+cloud desktop, positron, you can meet users who are using different tools in the standardized
+
+00:31:07.957 --> 00:31:13.396
+Yeah, I actually wanted to cover one more thing that I forgot, because
+
+00:31:13.396 --> 00:31:17.957
+using itself is not enough. You also want to know who are using it and how.
+
+00:31:19.637 --> 00:31:28.196
+Right, so if I go back to my, let's see, there you go. So if you click on the settings, right,
+
+00:31:28.837 --> 00:31:32.997
+you have these monitoring options. So you can actually monitor how your
+
+00:31:33.077 --> 00:31:38.277
+total visit, who are the visitors. In this case, I am the only visitor, so one unique visitors.
+
+00:31:39.317 --> 00:31:45.316
+So you can kind of have this monitoring capabilities to see what's happening to your
+
+00:31:45.316 --> 00:31:53.797
+MCP Server. As an admin, you can go to the admin dashboard as well. So if you are connect admin,
+
+00:31:53.797 --> 00:32:02.276
+you can actually have a broader look of all the MCPs that are deployed and who are using it.
+
+00:32:03.077 --> 00:32:08.757
+You can drill down and see users pattern of each one of these different MCP Servers.
+
+00:32:10.996 --> 00:32:14.197
+That's great timing, because we actually had a question about tracking user calls. So that's
+
+00:32:14.197 --> 00:32:17.877
+exactly what Samuel just showed. We can see how often your question is about seeing the
+
+00:32:17.877 --> 00:32:21.557
+individual tools and what they're doing. That's not built into that usage monitor, but it's
+
+00:32:21.557 --> 00:32:24.676
+something that we're looking at and trying to figure out how to make it even easier for everyone
+
+00:32:24.676 --> 00:32:32.996
+to have the insights into that type of granularity. Now we will start the Q&A at this
+
+00:32:33.636 --> 00:32:36.437
+part. So we'd like to thank everyone who's been sending in questions.
+
+00:32:37.316 --> 00:32:41.316
+And I'm going to go down the list of some we have. And the first question I see here is,
+
+00:32:41.316 --> 00:32:47.717
+is the R package MCP tools recommended for deploying fast MCP to connect on PositConnect
+
+00:32:47.717 --> 00:32:53.316
+with R? So one little nuance there. So fast MCP is a Python framework that you can absolutely
+
+00:32:53.316 --> 00:33:00.436
+deploy to PositConnect. MCP tools is a Posit package that we've built that is for R. And yes,
+
+00:33:00.436 --> 00:33:07.316
+you can deploy R-based MCPs to connect with the MCP tools package. It also has some other
+
+00:33:07.316 --> 00:33:12.757
+components that you can do other things around MCPs, like make it easier to build an MCP client
+
+00:33:12.757 --> 00:33:18.917
+as well. So fast MCP, a Python framework that's really, really popular and used heavily for MCP
+
+00:33:18.917 --> 00:33:24.837
+servers. And MCP tools is an R-based package that can do different things around MCP, including
+
+00:33:24.837 --> 00:33:31.557
+deploying an MCP to PositConnect. Yeah. And just want to add, it is supported, right? And it uses
+
+00:33:31.557 --> 00:33:37.876
+a tool calling based on LMR. So if you're using LMR already and have LMR tools built in,
+
+00:33:37.876 --> 00:33:40.516
+you can bring them quite easily to MCP tools ecosystem.
+
+00:33:42.436 --> 00:33:45.717
+All right. Our next question, Samuel, I'll take it at first, but I'd love to get your take on it
+
+00:33:45.796 --> 00:33:51.717
+too from a practitioner standpoint. But what's the minimum memory footprint for an MCP? Since
+
+00:33:51.717 --> 00:33:54.997
+it's recommended for it to be always on, I'm curious what the overhead will be.
+
+00:33:56.036 --> 00:34:00.357
+So what I'd say there is we auto-detect it and turn it on to a minimum process of one.
+
+00:34:01.557 --> 00:34:05.396
+But there might be a use case where you can adjust that. You could turn it down to zero.
+
+00:34:05.396 --> 00:34:09.316
+Maybe you're just testing it out and you know I use this MCP once a week. You probably don't
+
+00:34:09.316 --> 00:34:13.477
+need to set that to one. We also have some intelligent logic built into PositConnect
+
+00:34:13.477 --> 00:34:18.436
+that at a certain point, it won't keep setting every MCP to one because eventually you'll max
+
+00:34:18.436 --> 00:34:23.477
+out processes like that. So I'll start by saying that in most cases, it probably makes sense to
+
+00:34:23.477 --> 00:34:27.717
+have them turned on, but that's something you can configure based on your use case.
+
+00:34:27.717 --> 00:34:31.637
+And then same thing, I would say it depends in terms of how much resources to put behind it.
+
+00:34:32.596 --> 00:34:37.156
+If you have a tool that just a few people on our team are using, you probably don't need that much
+
+00:34:37.156 --> 00:34:41.236
+resource behind it. But it also depends on what it's doing behind the scenes. If it needs more
+
+00:34:41.236 --> 00:34:47.316
+memory because it's doing some large computation. So it depends. But what I would say is the nice
+
+00:34:47.316 --> 00:34:52.117
+thing with the usage dashboard Samuel just showed, take a look at that. You can see are 10 people
+
+00:34:52.117 --> 00:34:57.477
+using it? Are 50 people using it? Are they using it 18,000 times a month like one of our internal
+
+00:34:57.477 --> 00:35:02.276
+MCP servers? Or is it 50 people using it twice a month? So I don't have a direct answer in terms
+
+00:35:02.276 --> 00:35:05.637
+of like, oh, here's what you should set. It's really going to be based on your use case and
+
+00:35:05.637 --> 00:35:09.477
+then probably monitoring and adjusting as you go along. Samuel, would you agree with that or
+
+00:35:09.477 --> 00:35:13.716
+anything to add there? Exactly. That's what I'm going to tell. It depends on the use case, right?
+
+00:35:13.716 --> 00:35:19.237
+If you have a very popular MCP server that's used every day, probably you need to have it turned on
+
+00:35:19.237 --> 00:35:26.757
+and scale it accordingly. The next question, and Samuel, I'll look for your help on this as well,
+
+00:35:26.757 --> 00:35:31.397
+but what environment variables do you need to set if the Connect instance is authenticated to Bedrock
+
+00:35:31.397 --> 00:35:38.677
+via an IAM role policy? I'll let you, do you mind tackling that one? Yeah, sure. In my example,
+
+00:35:38.677 --> 00:35:45.077
+I used a temporary live access token that on my Bedrock side, I was setting a time limit.
+
+00:35:45.077 --> 00:35:50.116
+You can also get a service account, right? One thing that I want to highlight, and this has
+
+00:35:50.116 --> 00:35:55.637
+nothing to do specifically with MCP, but with Connect. Connect supports adding IAM integration,
+
+00:35:55.637 --> 00:36:00.036
+like so you can bring in your IAM, like as you saw my Snowflake integration, you can also have
+
+00:36:00.036 --> 00:36:08.757
+your AWS integration. And as an IAM role, or you can have also your AWS service account.
+
+00:36:09.316 --> 00:36:14.757
+So it could be a very similar flow, or it could be API token based. So both patterns are supported.
+
+00:36:18.596 --> 00:36:23.637
+Great, thanks. I'm going to read out this next question, but I'll respond directly to the person
+
+00:36:23.637 --> 00:36:27.237
+probably outside of this, because it might be a nuanced discussion, but in case everyone else is
+
+00:36:27.237 --> 00:36:32.197
+having this, the question is, does the OAuth authentication flow between PositConnect hosted
+
+00:36:32.197 --> 00:36:39.077
+MCPs and Positron and Posit Assistant currently only work on Positron desktop? And their setup
+
+00:36:39.077 --> 00:36:42.996
+is using Workbench, and they're saying they're having some issue doing the authorization.
+
+00:36:43.797 --> 00:36:50.517
+So that is something where you have to set a redirect variable in your instances to make sure
+
+00:36:50.517 --> 00:36:55.797
+that flow goes correctly. And we have some documentation on it, and there was a version
+
+00:36:55.797 --> 00:37:01.397
+of Workbench that had some issues. So I'll reach out to that individual and ask a couple questions
+
+00:37:01.397 --> 00:37:05.316
+so we can answer that. But yes, that might be a configuration setting in your Workbench and
+
+00:37:05.316 --> 00:37:09.797
+Connect instance where you have to tell it where the redirect goes. And we do have documentation
+
+00:37:09.797 --> 00:37:17.957
+on that. We had a question around, and this is an interesting example, I'll maybe let you go first,
+
+00:37:17.957 --> 00:37:23.477
+or happy to take a crack at it if you want, about the use of custom MCP servers versus
+
+00:37:23.477 --> 00:37:32.116
+third-party MCP servers. Any thoughts around that? Yeah, I mean, again, I think in pharma,
+
+00:37:32.116 --> 00:37:39.876
+right, probably custom MCP servers, think then about custom tools or validated statistics or
+
+00:37:40.436 --> 00:37:46.836
+queries that you trust, right? Because you build it, you can vet it, you can
+
+00:37:47.716 --> 00:37:54.757
+get other people on board very easily, right? So when you use third-party, right, either you have
+
+00:37:54.757 --> 00:38:03.316
+to trust completely whoever provided that to you, or if you're using MCP provided by another vendor,
+
+00:38:03.316 --> 00:38:08.197
+you may already have an agreement with that vendor, and you trust them enough so that you use
+
+00:38:08.677 --> 00:38:18.276
+their tool in a regulated environment. And I'll be frank, I think for most of the custom workflow,
+
+00:38:18.276 --> 00:38:24.757
+right, the way the live services industry has evolved, you probably have your own custom
+
+00:38:24.757 --> 00:38:33.237
+SAS macros, right, your own R libraries that you don't expose to the world. Rather, those lives as
+
+00:38:33.237 --> 00:38:39.397
+your internal GitHub repo and maybe connected to the opposite package manager. Think of MCP tools
+
+00:38:39.397 --> 00:38:44.996
+like that way, I would say, the custom ones, but if there is something already available that you
+
+00:38:44.996 --> 00:38:51.556
+can vet or you can trust comes from third-party, definitely go use them, right? Like at Posit,
+
+00:38:51.556 --> 00:38:57.477
+we trust some connectors, right, like I can connect to my Gmail, right, like because we have that
+
+00:38:57.477 --> 00:39:04.917
+trust, we have that agreement with Google, so we allow, and also with Anthropic, right, so we allow
+
+00:39:04.917 --> 00:39:11.236
+Cloud to read my Gmail and summarize my email, right, so it again depends on your organization's
+
+00:39:11.236 --> 00:39:15.157
+security and IT policy and overall how you look at AI governance.
+
+00:39:16.757 --> 00:39:23.077
+Absolutely, agree, and one other thing I'd like to note too is a great example is GitHub has an
+
+00:39:23.077 --> 00:39:29.077
+MCP and to Samuel's point, it often seems better to have targeted, you build your own custom one
+
+00:39:29.077 --> 00:39:32.996
+because the GitHub MCP might have a hundred calls. It was actually well known early on that it had a
+
+00:39:32.996 --> 00:39:36.676
+bunch of different tools that you could invoke, so that was again eating up a lot of your memory
+
+00:39:36.676 --> 00:39:41.876
+context and maybe you don't, maybe you want your AI client to have the ability to read issues but
+
+00:39:41.876 --> 00:39:47.556
+not write issues, so in that case you can take a third-party one and then Samuel kind of mentioned
+
+00:39:47.556 --> 00:39:52.277
+you can adjust it, you can edit down, you can fork that copy, have your AI client say, hey, remove all
+
+00:39:52.277 --> 00:39:55.957
+this, we only want these couple of skills, so that's something else that I've seen as well as
+
+00:39:55.957 --> 00:39:59.717
+taking an open source third-party one and just taking out the components you need because
+
+00:39:59.717 --> 00:40:04.277
+they're building an MCP for a bunch of different use cases and maybe in your organization we only
+
+00:40:04.277 --> 00:40:08.676
+need these seven tool calls, we don't need all these other ones, so you can take open source
+
+00:40:08.676 --> 00:40:13.476
+third-party ones and then change them to fit your needs and add new tools or remove things so that
+
+00:40:13.476 --> 00:40:20.436
+it really customized for your organization. I don't know much about this but I found some
+
+00:40:20.517 --> 00:40:24.197
+documentation, but there's a question that came in Samuel, I'll ask you if you know, about integrating
+
+00:40:24.197 --> 00:40:31.157
+MCP servers with Microsoft Copod, I'm assuming that means Copod 365, do you know anything about
+
+00:40:31.157 --> 00:40:37.717
+that? I have not explored that, that's a good question. That is, I will put into the channel
+
+00:40:37.717 --> 00:40:42.996
+because I looked it up as I saw that, there's some documentation on the Microsoft site about
+
+00:40:42.996 --> 00:40:47.957
+Copod extending it with MCP, but we'll admit I just found the documentation, looked at it briefly,
+
+00:40:47.957 --> 00:40:52.597
+in terms of implementation your security might have standard or you'd have to really talk to
+
+00:40:52.597 --> 00:40:56.037
+probably to your security team as well, but there is some documentation on Microsoft to share,
+
+00:40:56.916 --> 00:41:03.717
+I'll post that there. Great, well we're getting close to time, I think we have time for at least
+
+00:41:03.717 --> 00:41:08.277
+one more question and this is one Samuel, again I'll maybe ask you if you want to take the first
+
+00:41:08.277 --> 00:41:13.796
+cut at it, but there's a question around to Posit Assistant and being used with PHI, can it be used
+
+00:41:13.796 --> 00:41:20.996
+with PHI? Yeah, so Posit Assistant when used from our professional product which is Posit Workbench,
+
+00:41:20.996 --> 00:41:28.436
+right, or also with our free version desktop, Posit Assistant itself does not store the data,
+
+00:41:28.436 --> 00:41:33.397
+right, we do not, but it's also important to understand when you are sending the data to an
+
+00:41:33.397 --> 00:41:40.837
+LLM, right, that LLM can see parts of the data, right, whatever, or the metadata, whatever you
+
+00:41:40.837 --> 00:41:48.757
+are sending. So in an enterprise setting what is expected, right, ideally you have a zero data
+
+00:41:48.757 --> 00:41:54.757
+retention policy and agreement with your LLM service provider, that's how I would say majority
+
+00:41:54.757 --> 00:42:01.796
+of the licenses organizations operate, right, so they probably have some kind of agreement
+
+00:42:01.796 --> 00:42:09.556
+with this LLM service provider, where we do not, so they do not retain any data. Now
+
+00:42:09.556 --> 00:42:15.957
+Posit also provides something called Posit AI Pass, right, and Posit AI Pass also comes with
+
+00:42:15.957 --> 00:42:20.037
+this zero data retention policy and that's a subscription, right, so you can also use that
+
+00:42:20.037 --> 00:42:28.916
+and that will not store your data, but LLM can see your data, right, that I think is important.
+
+00:42:30.197 --> 00:42:35.316
+I think one thing to add there to the Posit AI Pass is really for consumers,
+
+00:42:35.316 --> 00:42:40.996
+that's not really an organizational thing, our expectation, especially here for enterprise
+
+00:42:40.996 --> 00:42:45.717
+accounts or organization, is it is a bring your own provider, bring your own key, as Sam was saying,
+
+00:42:45.717 --> 00:42:49.637
+so that's really up to you, what you feel comfortable in the agreements you have in place
+
+00:42:49.637 --> 00:42:55.957
+with your provider versus with Posit Assistant directly. I guess actually we have time for one
+
+00:42:55.957 --> 00:43:03.157
+more question. There is a question about the languages that are supported for MCPs on Connect,
+
+00:43:03.157 --> 00:43:10.277
+so we mentioned R, we mentioned Python, we do on the advanced tier also have Node.js,
+
+00:43:10.277 --> 00:43:14.517
+so that is an option as well, that's a recent addition where you could build a Node.js
+
+00:43:15.157 --> 00:43:17.077
+MCP server and host that on Connect as well.
+
+00:43:21.876 --> 00:43:26.597
+Great, well we are one minute out, so I think this is the perfect time to wrap up.
+
+00:43:26.597 --> 00:43:30.757
+Again, thank you to everyone who took the time to join us today. We have a couple of questions we'll
+
+00:43:30.757 --> 00:43:35.717
+respond to outside after this, especially as it related to that workbench and getting connected
+
+00:43:35.717 --> 00:43:40.517
+to an MCP server on Connect, so we can get you unblocked there. But from my side, I really
+
+00:43:40.517 --> 00:43:44.436
+appreciate you taking the time to spend with us today. Feel free to reach out with any questions
+
+00:43:44.436 --> 00:43:50.597
+and yeah, have a great rest of your Wednesday. Thank you everyone. Thank you.

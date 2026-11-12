@@ -1,4 +1,4 @@
-<p><a data-t="0">Welcome, welcome everyone.</a> <a data-t="0">Without further ado, help me welcome Jeroen.</a></p>
+<p><a data-t="0">Welcome, welcome everyone.</a> <a data-t="0">Hope everyone is having a great time in the session.</a> <a data-t="0">Without further ado, help me welcome Jeroen.</a></p>
 
 <p><a data-t="18">All right, let's get started.</a> <a data-t="18">So my name is </a><a href="/people/jeroen-janssens/">Jeroen Janssens</a><a data-t="18">.</a> <a data-t="18">And yeah, I'm honored to be spending the next hour and a half with you and tell you, yeah, as much as I can, as much as time permits about Python Polars.</a> <a data-t="18">So this is going to be a crash course, based on a book that I wrote a couple of months ago, together with</a> <a data-t="48">Thijs Nieuwdog.</a> <a data-t="48">Thijs is standing here on the left.</a> <a data-t="48">That's me on the right.</a> <a data-t="48">And so, yeah, we've written this book, it contains a lot of information.</a> <a data-t="48">And what I've tried to do is extract, yeah, the best stuff from this.</a> <a data-t="48">And, you know, this is the first time I'm giving this crash course.</a> <a data-t="48">So, you know, I may have just way too much material, or, or not enough, I have no idea.</a></p>
 
@@ -6,11 +6,13 @@
 
 <p><a data-t="96">But, you know, it's always a challenge.</a> <a data-t="96">When when you're doing a tutorial like this, with so many people and, you know, text, I'll do my best to every now and then look at the chat.</a> <a data-t="96">If I, you know, forget to look at it, please forgive me, or, you know, just remind me like, hey, we have some questions in the chat.</a></p>
 
+<p><a data-t="120">Yes, and then we'll see how things go.</a> <a data-t="120">All right.</a></p>
+
 <p><a data-t="126">Oh, yeah, yeah, a few words about myself so that you know where I'm coming from.</a> <a data-t="126">Right.</a> <a data-t="126">I wrote this book Python Polars, the definitive guide earlier this year, and the two years before that, but it came out earlier this year.</a></p>
 
 <p><a data-t="140">I also wrote a book called Data Science at the command line.</a> <a data-t="140">That's a bit older.</a> <a data-t="140">First edition is from 2014.</a> <a data-t="140">And then in 2021, we got a second edition.</a> <a data-t="140">I work at Posit as the head of developer relations.</a> <a data-t="140">And yeah, again, very, very happy to be here.</a></p>
 
-<h3>Overview and agenda</h3>
+<h3>Overview and structure of the tutorial</h3>
 
 <p><a data-t="162">This here is the is the rough outline that I have in mind.</a> <a data-t="162">But again, if there is any question that, you know, forces me to go into a different direction.</a> <a data-t="162">Forces is actually not the right word because I do enjoy doing that.</a> <a data-t="162">Then we'll just do that.</a> <a data-t="162">Right.</a> <a data-t="162">So again, questions.</a> <a data-t="162">I love them.</a></p>
 
@@ -28,6 +30,8 @@
 
 <p><a data-t="298">So you know that it's fast.</a> <a data-t="298">You know that it's, you know, building rust and all this good stuff.</a> <a data-t="298">So I'm not going to focus on that.</a> <a data-t="298">Instead, we're going to be focusing on the API on writing actual Polars code.</a> <a data-t="298">And, you know, I can imagine it would be quite boring watching me type.</a> <a data-t="298">So what I've done is I've prepared a complete notebook.</a></p>
 
+<blockquote><a data-t="283">It's often said, come for the speed, stay for the API.</a></blockquote>
+
 <p><a data-t="324">That reminds me, you have access to this notebook, if you like.</a> <a data-t="324">There's a QR code in here.</a> <a data-t="324">I hope the resolution on my screen, my face is in front of that QR code.</a> <a data-t="324">Although I can do, I can move my own face.</a> <a data-t="324">I hope you can do the same so that you can scan this QR code.</a></p>
 
 <p><a data-t="348">This QR code will take you to the GitHub repository that is associated with the book.</a> <a data-t="348">In there, there's a directory called Crash Course.</a></p>
@@ -35,6 +39,10 @@
 <p><a data-t="359">Right, it kind of looks like this.</a> <a data-t="359">If you look here on the left, you can see all these notebooks, one per chapter.</a> <a data-t="359">So all the code that's in the book is actually shared, is available for free.</a> <a data-t="359">The book itself, unfortunately not.</a> <a data-t="359">You can get the first chapter, but that's it.</a></p>
 
 <p><a data-t="375">And if for some reason this QR code is not working, you can go to polarsguide.com.</a></p>
+
+<p><a data-t="386">Polarsguide.com.</a></p>
+
+<p><a data-t="393">Yes.</a></p>
 
 <p><a data-t="395">Okay, okay, okay.</a> <a data-t="395">So, but you know, it's not necessary at all that you do that right now.</a> <a data-t="395">You can just sit back and relax.</a></p>
 
@@ -48,7 +56,7 @@
 
 <p><a data-t="441">So reading and a little bit of writing data.</a></p>
 
-<p><a data-t="446">So this table here shows that, you know, there's a variety of formats that Polar supports.</a></p>
+<p><a data-t="446">So this table here shows that, you know, there's a variety of formats that Polars supports.</a></p>
 
 <p><a data-t="455">The usual suspects are in there, CSV, databases, Excel, and Parquet.</a> <a data-t="455">Those are the formats that I typically work with most often.</a></p>
 
@@ -78,33 +86,37 @@
 
 <p><a data-t="696">Otherwise, you get a very wide data frame.</a> <a data-t="696">So we can see that there are some columns that indeed have missing values.</a></p>
 
+<h3>Reading multiple files and handling questions</h3>
+
 <p><a data-t="705">Okay.</a> <a data-t="705">So let's have a look here at how we can work with multiple files.</a> <a data-t="705">It's quite common that, especially when data is coming in on a regular basis, that you have a series or a collection, I should say, of files.</a></p>
 
 <p><a data-t="730">And there are different ways to be reading in all those files in one go as one data frame.</a> <a data-t="730">You can use globbing.</a> <a data-t="730">So you can specify some pattern that will match the file names that you want to read.</a></p>
 
 <p><a data-t="751">So I have some stock data right here, some NVIDIA stock data.</a> <a data-t="751">And because there's a question mark here, it matches – well, every year that's in the 2010s.</a> <a data-t="751">Yeah, so the question mark represents any single character.</a></p>
 
-<p><a data-t="773">Let me have a look at the questions.</a> <a data-t="773">There are some questions here.</a> <a data-t="773">Does read CSV detect bombs?</a> <a data-t="773">I don't know.</a> <a data-t="773">I would have to look that up if pollers had issues with the Palmer penguins.</a> <a data-t="773">I would be worried, yes.</a></p>
+<p><a data-t="773">Let me have a look at the questions.</a> <a data-t="773">There are some questions here.</a> <a data-t="773">Does read CSV detect bombs?</a> <a data-t="773">I don't know.</a> <a data-t="773">I would have to look that up if polars had issues with the Palmer penguins.</a> <a data-t="773">I would be worried, yes.</a></p>
 
-<p><a data-t="792">Well, issues – so size is – I guess you're referring to the size.</a> <a data-t="792">And you know, pollers is indeed capable of handling very large data sets.</a> <a data-t="792">And the Palmer's data set is by no means big data.</a></p>
+<p><a data-t="792">Well, issues – so size is – I guess you're referring to the size.</a> <a data-t="797">And you know, polars is indeed capable of handling very large data sets.</a> <a data-t="792">And the Palmer's data set is by no means big data.</a></p>
 
 <p><a data-t="808">So problems with a data frame, then it's not so much – I wasn't so much referring to the amount of data, but more in how the data was structured or how it was represented as data.</a></p>
 
-<p><a data-t="823">So the null values equals NA.</a> <a data-t="823">What it does, whenever pollers encounters the text NA as it does here, it will treat that as a missing value.</a> <a data-t="823">So this is without specifying null values equals NA.</a></p>
+<p><a data-t="823">So the null values equals NA.</a> <a data-t="823">What it does, whenever polars encounters the text NA as it does here, it will treat that as a missing value.</a> <a data-t="823">So this is without specifying null values equals NA.</a></p>
 
 <p><a data-t="845">And this is with.</a> <a data-t="845">So you can actually have multiple values here.</a> <a data-t="845">So what if Adélie – so that's one of the species here – is also a missing value, then now all those values over here are interpreted as null.</a></p>
 
-<p><a data-t="868">And it's best to specify that when you're reading in the data, because then pollers gets a chance to </a><a href="/software/infer/">infer</a><a data-t="868"> the correct data type from that column.</a> <a data-t="868">You can always fix things later when it's already loaded in.</a></p>
+<p><a data-t="868">And it's best to specify that when you're reading in the data, because then polars gets a chance to </a><a href="/software/infer/">infer</a><a data-t="868"> the correct data type from that column.</a> <a data-t="868">You can always fix things later when it's already loaded in.</a></p>
 
 <p><a data-t="883">You can still replace your values and cast your strings to numbers.</a> <a data-t="883">That's all possible.</a> <a data-t="883">But if you have the opportunity to do that when you're reading in the CSV file, then it's best to specify that over here.</a></p>
 
+<p><a data-t="898">Oh, Ola Stein, you already answered my question.</a> <a data-t="898">Thank you so much.</a> <a data-t="898">You know what?</a> <a data-t="898">Next time I'll have a look.</a> <a data-t="898">And I do appreciate this.</a> <a data-t="898">So I ramble a lot in this tutorial.</a></p>
+<!-- segment separator -->
 <p><a data-t="918">So if you know the answer to a question someone else has, you are absolutely welcome to answer it for me.</a> <a data-t="918">So thank you, Ola.</a> <a data-t="918">And Stephen, I hope that we have answered your question.</a></p>
 
-<p><a data-t="931">Oh, wait.</a> <a data-t="931">Yes.</a> <a data-t="931">Where are we?</a> <a data-t="931">Yeah, reading multiple files.</a> <a data-t="931">So if it's a globbing pattern and multiple files match that pattern, then pollers will just concatenate those automatically.</a></p>
+<p><a data-t="931">Oh, wait.</a> <a data-t="931">Yes.</a> <a data-t="931">Where are we?</a> <a data-t="931">Yeah, reading multiple files.</a> <a data-t="931">So if it's a globbing pattern and multiple files match that pattern, then Polars will just concatenate those automatically.</a></p>
 
 <p><a data-t="951">So this globbing pattern right here means that it will recursively go into any subdirectory and it will just read all the CSVs it will find in there.</a> <a data-t="951">So yeah, if that works and if that's what you want, then that's fantastic.</a> <a data-t="951">There's a lot of flexibility there.</a></p>
 
-<p><a data-t="972">If for some reason you need to be – you know, you have – you need to be more specific or you have a pattern of files that you cannot express using a globbing pattern, then you can still give pollers a list of files.</a></p>
+<p><a data-t="972">If for some reason you need to be – you know, you have – you need to be more specific or you have a pattern of files that you cannot express using a globbing pattern, then you can still give Polars a list of files.</a></p>
 
 <p><a data-t="993">Or you would generate a list of files, file names, right?</a> <a data-t="993">These are all the leap years that we have for ASML, right?</a> <a data-t="993">Just an example.</a> <a data-t="993">And then what we do here is we have here a generator expression, I guess.</a></p>
 
@@ -116,13 +128,15 @@
 
 <p><a data-t="1067">Yeah.</a> <a data-t="1067">Here there's another globbing pattern, right?</a> <a data-t="1067">I have no – let me see here.</a> <a data-t="1067">I'm timing.</a> <a data-t="1067">Yeah.</a> <a data-t="1067">Did you see how fast that was?</a> <a data-t="1067">This is just on a laptop, right?</a> <a data-t="1067">1.3 seconds.</a> <a data-t="1067">And we're dealing here with almost 40 million rows.</a> <a data-t="1067">Not a problem.</a></p>
 
-<p><a data-t="1089">And I guess that's – I just wanted to show off how pollers can handle this so easily.</a> <a data-t="1089">So – but from now on, I'll stick to the smaller data frames because that is just much easier to present.</a></p>
+<p><a data-t="1089">And I guess that's – I just wanted to show off how Polars can handle this so easily.</a> <a data-t="1089">So – but from now on, I'll stick to the smaller data frames because that is just much easier to present.</a></p>
 
 <p><a data-t="1105">Yeah.</a> <a data-t="1105">But now you can rest assured – oh, 40 million rows.</a> <a data-t="1105">That covers a lot of use cases.</a> <a data-t="1105">And yeah.</a> <a data-t="1105">Yeah, JSON or new line delimited JSON.</a> <a data-t="1105">That's something you can – you know, you often have when you work with RESTful APIs, for example.</a></p>
 
+<h3>Reading nested JSON data</h3>
+
 <p><a data-t="1128">And the reason why this is worth covering is because JSON is often nested.</a> <a data-t="1128">It has the ability to be nested.</a> <a data-t="1128">Here we have the information for all the Pokémon, right?</a> <a data-t="1128">We're just looking at a single Pokémon, Bulbasaur.</a> <a data-t="1128">And yeah, you can see there is some nesting going on here.</a></p>
 
-<p><a data-t="1154">Now, pollers can read this, but it doesn't look pretty when you just don't give it any options or when you just read it as is.</a> <a data-t="1154">It reads the entire JSON structure as a single value, yeah?</a> <a data-t="1154">And that's because in this JSON file, there's only one key.</a></p>
+<p><a data-t="1154">Now, Polars can read this, but it doesn't look pretty when you just don't give it any options or when you just read it as is.</a> <a data-t="1154">It reads the entire JSON structure as a single value, yeah?</a> <a data-t="1154">And that's because in this JSON file, there's only one key.</a></p>
 
 <p><a data-t="1175">And that's – those are all the Pokémon, right?</a> <a data-t="1175">So, we need to do some work in order to turn this into a data frame that we can actually use.</a> <a data-t="1175">And two methods that you can use for this are explode, which allows you to convert a list of items into rows or, for example, a list of Pokémon.</a></p>
 
@@ -140,13 +154,15 @@
 
 <p><a data-t="1300">And again, to demonstrate this, there's no exploding needed I guess in this case because every object is already its own line.</a> <a data-t="1300">So, we only need unnesting in order to create some columns.</a></p>
 
+<h3>Handling other formats and interoperability with Pandas</h3>
+
 <p><a data-t="1317">Yeah, and there are so many other formats.</a> <a data-t="1317">Now, spreadsheets, I'm not going to cover those.</a> <a data-t="1317">Also not going to cover databases.</a> <a data-t="1317">But if there is some format that Polars doesn't handle, then as far as I'm concerned, it's totally fine to use Pandas.</a></p>
 
 <p><a data-t="1343">Pandas has been around for over 15 years, so it can handle way more formats.</a> <a data-t="1343">And because you can use the fromPandas function to convert a Pandas data frame into a Polars data frame, you're good.</a></p>
 
 <p><a data-t="1358">So, what I'm doing right here in this example, I'm using the readHTML function from Pandas to turn a HTML table into a data frame.</a> <a data-t="1358">And this is then in turn converted to a Polars data frame.</a></p>
 
-<p><a data-t="1378">Yeah, and I guess this is now a good opportunity to mention that there's also the opposite function.</a> <a data-t="1378">You can also go to Pandas again.</a> <a data-t="1378">So, and this is a strategy that I have used together with my co-author Thijs Nieuwdorp in the past when we worked for a client and we needed to convert a very long or a large code base that used a lot of Pandas.</a></p>
+<p><a data-t="1378">Yeah, and I guess this is now a good opportunity to mention that there's also the opposite function.</a> <a data-t="1378">You can also go to Pandas again.</a> <a data-t="1378">So, and this is a strategy that I have used together with my co-author </a><a href="/people/thijs-nieuwdorp/">Thijs Nieuwdorp</a><a data-t="1378"> in the past when we worked for a client and we needed to convert a very long or a large code base that used a lot of Pandas.</a></p>
 
 <p><a data-t="1408">Instead of converting everything all at once, we just took out little bits and pieces and said, okay, here we are going to convert to Polars, do some work, and then convert back to Pandas.</a> <a data-t="1408">Yeah, and that allowed us to gradually convert this large code base from Pandas into Polars.</a> <a data-t="1408">So, there's a tip from the trenches.</a></p>
 
@@ -154,7 +170,7 @@
 
 <p><a data-t="1439">So, Ola, yes, when your CSV files are not compatible, then I do believe that you get an exception.</a> <a data-t="1439">Now, there is still a way to get around that by concatenating them and setting some parameter.</a></p>
 
-<p><a data-t="1459">Joining and concatenating.</a> <a data-t="1459">Horizontal concatenation.</a> <a data-t="1459">So, that would be vertical, diagonal, align.</a> <a data-t="1459">So, here we have ABC.</a> <a data-t="1459">Yeah, so this would be your situation.</a></p>
+<p><a data-t="1459">Let me see if I can quickly go there.</a> <a data-t="1459">Joining and concatenating.</a> <a data-t="1459">Horizontal concatenation.</a> <a data-t="1459">So, that would be vertical, diagonal, align.</a> <a data-t="1459">So, here we have ABC.</a> <a data-t="1459">Yeah, so this would be your situation.</a></p>
 
 <p><a data-t="1485">In this basic example, we have two data frames that we create from scratch.</a> <a data-t="1485">We're not reading from some file, but we're creating them by specifying the actual values.</a> <a data-t="1485">One has columns ID and value, and the other one has value and value too.</a> <a data-t="1485">So, they're incompatible.</a></p>
 
@@ -162,9 +178,17 @@
 
 <p><a data-t="1526">Just because Polars doesn't give an error doesn't mean that it's semantically also correct, but now you know.</a></p>
 
-<h3>Data structures: DataFrames, Series, and LazyFrames</h3>
+<p><a data-t="1534">Okay.</a> <a data-t="1534">Thank you for that question.</a> <a data-t="1534">I'm very pleased that I was able to answer it.</a> <a data-t="1534">Let's go back to – let's see here.</a> <a data-t="1534">Oh, yeah.</a> <a data-t="1534">We created this data frame based on an HTML table.</a> <a data-t="1534">That's awesome.</a></p>
 
-<p><a data-t="1534">Moving on.</a> <a data-t="1594">So, I kind of glossed over this, but that nice-looking table, that is a Polars data frame, a two-dimensional data structure that consists of rows and columns.</a></p>
+<h3>Writing data</h3>
+
+<p><a data-t="1549">Now, when it comes to writing data, I mean, at some point when you read data, there is a chance that you also want to write some data.</a> <a data-t="1549">Maybe not.</a> <a data-t="1549">Maybe the thing that you want to create is a visualization or a nice-looking table or what have you, but if you just have an ETL pipeline, there's nothing wrong with that.</a></p>
+
+<p><a data-t="1574">And you do need to write some data.</a> <a data-t="1574">There is an appropriate method for each of those.</a> <a data-t="1574">So, nothing special.</a> <a data-t="1574">Write CSV, write Excel, write Parquet, and some of them have options.</a> <a data-t="1574">Not such a big deal.</a></p>
+
+<h3>Data structures: DataFrame, Series, and LazyFrame</h3>
+
+<p><a data-t="1594">Okay.</a> <a data-t="1594">Moving on.</a> <a data-t="1594">So, I kind of glossed over this, but that nice-looking table, that is a Polars data frame, a two-dimensional data structure that consists of rows and columns.</a></p>
 
 <p><a data-t="1612">And those columns are actually called series under the hood.</a> <a data-t="1612">So, you can also have a series by itself, but in practice, that doesn't happen that often.</a> <a data-t="1612">Usually, you just work with a data frame.</a></p>
 
@@ -178,16 +202,16 @@
 
 <p><a data-t="1708">And I also apply the with columns method, meaning I'm going to create a new column called is heavy.</a> <a data-t="1708">We're going to go into this.</a> <a data-t="1708">Don't worry.</a> <a data-t="1708">But let's just say I do – I'm reading.</a> <a data-t="1708">That's one instruction, and I'm also adding a new column.</a></p>
 
-<p><a data-t="1730">And this is lazy.</a> <a data-t="1730">Okay.</a> <a data-t="1730">It's a big diagram here, but this is the lazy data frame, lazy DF.</a> <a data-t="1730">Again, just to demonstrate that it doesn't do anything by itself.</a></p>
+<p><a data-t="1730">And this is lazy.</a> <a data-t="1730">Okay.</a> <a data-t="1730">It's a big diagram here, but this is the lazy data frame, lazy DF.</a> <a data-t="1730">Again, just to demonstrate that it doesn't do anything by itself.</a> <a data-t="1730">Oh, this looks much nicer.</a> <a data-t="1730">Why – okay.</a> <a data-t="1730">Yeah, I guess show graph uses –</a></p>
 
-<p><a data-t="1758">Yeah, that's another thing when it comes to being lazy is that you give the opportunity – you give Polars the opportunity to be a lot more optimized.</a></p>
+<p><a data-t="1758">uses the optimized version.</a> <a data-t="1758">Yeah, that's another thing when it comes to being lazy is that you give the opportunity – you give Polars the opportunity to be a lot more optimized.</a></p>
 
-<p><a data-t="1770">Now – so, it's an instruction.</a> <a data-t="1770">And when you then do want to execute, you want to materialize your lazy data frame into a data frame, you can do collect.</a> <a data-t="1770">And this will trigger all the instructions.</a></p>
+<p><a data-t="1770">Now – so, it's an instruction.</a> <a data-t="1770">And when you then do want to execute, you want to materialize your lazy data frame into a data frame, you can do collect.</a> <a data-t="1770">And this will trigger all the instructions.</a> <a data-t="1770">Yeah, it flips to the next cell.</a> <a data-t="1770">That's a little bit annoying.</a></p>
 
-<p><a data-t="1797">Now – so, here you can see this is a data frame.</a> <a data-t="1797">This prints nicely, but we started with something that was lazy.</a> <a data-t="1797">Okay.</a> <a data-t="1797">So, those are the three main data structures.</a></p>
+<p><a data-t="1797">Sorry for that.</a> <a data-t="1797">Now – so, here you can see this is a data frame.</a> <a data-t="1797">This prints nicely, but we started with something that was lazy.</a> <a data-t="1797">Okay.</a> <a data-t="1797">So, those are the three main data structures.</a></p>
 
 <p><a data-t="1818">Now, in those series, right, which are very often columns, but not necessarily, every series has a data type associated with it.</a> <a data-t="1818">So, these can be numeric, related to dates and times.</a> <a data-t="1818">They can contain nested data, which then in turn can have other data types.</a> <a data-t="1818">Yeah.</a> <a data-t="1818">Strings.</a></p>
-
+<!-- segment separator -->
 <p><a data-t="1842">Boolean columns or series are very common.</a> <a data-t="1842">So, there's a lot.</a> <a data-t="1842">There's a lot of possibility.</a> <a data-t="1842">And I believe that a very recent feature of Polars in the latest release, you can actually extend those types.</a></p>
 
 <p><a data-t="1859">Now, I haven't played around with that yet, but that's quite exciting.</a> <a data-t="1859">So, I saw an example where you can easily specify, say, a coordinate, which is comprised of two floating point numbers.</a> <a data-t="1859">These are called extension types.</a> <a data-t="1859">That's quite exciting.</a></p>
@@ -196,21 +220,31 @@
 
 <p><a data-t="1892">When you are working with a data frame, you do everything in an eager fashion.</a> <a data-t="1892">So, every time there is a certain instruction, then it gets executed immediately.</a></p>
 
+<p><a data-t="1909">Is my sound – am I loud enough?</a> <a data-t="1909">Sorry.</a> <a data-t="1909">I'm looking at my microphone here.</a> <a data-t="1909">Okay.</a> <a data-t="1909">I do see one thumbs up.</a> <a data-t="1909">Hopefully, it's someone with regular ears, not very good ones.</a> <a data-t="1909">Okay.</a> <a data-t="1909">That's good.</a> <a data-t="1909">That's good.</a> <a data-t="1909">I see some more thumbs up.</a> <a data-t="1909">Maybe just a little bit louder.</a> <a data-t="1909">Okay.</a> <a data-t="1909">Okay.</a> <a data-t="1909">Sorry.</a> <a data-t="1909">Where was I?</a> <a data-t="1909">Just distracting myself.</a></p>
+
 <p><a data-t="1939">And you're doing everything in an eager fashion.</a> <a data-t="1939">Now, this has an advantage that, especially when you're working interactively with your data, say, in a notebook, you immediately see the result of what you're doing.</a></p>
 
-<p><a data-t="1958">The advantage of doing things in a lazy fashion is that all the operations will then be considered as a whole, and the query optimizer that Polar's has will then see if certain operations can be reordered or not done at all.</a></p>
+<p><a data-t="1958">The advantage of doing things in a lazy fashion is that all the operations will then be considered as a whole, and the query optimizer that Polars has will then see if certain operations can be reordered or not done at all.</a></p>
 
-<p><a data-t="1984">For example, if you have a filter, say, I only want to keep these rows, there is a chance that Polar's is able to move that filter in the reading part.</a> <a data-t="1984">So, it will only read in the data that's actually needed.</a> <a data-t="1984">That's quite exciting.</a></p>
+<p><a data-t="1984">For example, if you have a filter, say, I only want to keep these rows, there is a chance that Polars is able to move that filter in the reading part.</a> <a data-t="1984">So, it will only read in the data that's actually needed.</a> <a data-t="1984">That's quite exciting.</a></p>
 
-<p><a data-t="2002">So, there's a whole bunch of optimizations that can happen.</a> <a data-t="2002">And which ones?</a> <a data-t="2002">It's a little bit out of scope for this tutorial, but I think the main important reason here is to remember that when you are working in a lazy fashion, you give Polar's the opportunity to do all those operations.</a></p>
+<p><a data-t="2002">So, there's a whole bunch of optimizations that can happen.</a> <a data-t="2002">And which ones? It's a little bit out of scope for this tutorial, but I think the main important reason here is to remember that when you are working in a lazy fashion, you give Polars the opportunity to do all those operations.</a></p>
 
 <p><a data-t="2024">So, what I typically do is I start in eager mode, and then once I'm confident that my query does what I want it to do, I try to see which parts I can turn into lazy using lazy frames.</a></p>
+
+<h3>Nested data types</h3>
+
+<p><a data-t="2042">Okay.</a> <a data-t="2042">Yeah, so here's a nested data type.</a> <a data-t="2042">So, here we are using arrays.</a> <a data-t="2042">Yeah, so within a single column in one cell, we can have multiple values here.</a> <a data-t="2042">That's basically it.</a> <a data-t="2042">It's nested.</a> <a data-t="2042">And it can be arbitrarily nested.</a></p>
+
+<p><a data-t="2070">So, you can have, I guess, a good example of that was the Pokadex that was very deeply nested.</a> <a data-t="2070">It was still just one value, but luckily we had the unnest and the explode methods, which allowed us to turn it into a data frame that we could work with.</a></p>
 
 <p><a data-t="2090">So, there's the array.</a> <a data-t="2090">There's a list.</a> <a data-t="2090">Now, a list is kind of like an array, but it can have, you can have different lengths per row.</a> <a data-t="2090">Yeah, within the same column.</a></p>
 
 <p><a data-t="2102">Here's an example of a struct.</a> <a data-t="2102">It's often used when you want to work with multiple series at once.</a> <a data-t="2102">Yeah, I know it sounds kind of vague.</a></p>
 
-<h3>Expressions: the building blocks of Polars</h3>
+<p><a data-t="2125">Yeah, yeah, maybe I'll get to an example later.</a></p>
+
+<h3>Expressions</h3>
 
 <p><a data-t="2132">Okay.</a> <a data-t="2132">Yes, this is the moment that I have been waiting for.</a> <a data-t="2132">Expressions.</a> <a data-t="2132">I'm very excited about this.</a></p>
 
@@ -218,13 +252,13 @@
 
 <p><a data-t="2154">Turned out that we needed three chapters.</a> <a data-t="2154">So, at least 300 pages in the book are dedicated to just expressions.</a></p>
 
-<p><a data-t="2164">So, we underestimated the depth of these things, how important they are.</a> <a data-t="2164">They really are the building blocks when it comes to writing polar's code.</a></p>
+<p><a data-t="2164">So, we underestimated the depth of these things, how important they are.</a> <a data-t="2164">They really are the building blocks when it comes to writing Polars code.</a></p>
 
 <p><a data-t="2179">So, that means that when you understand expressions, you're halfway there.</a> <a data-t="2179">You're halfway there.</a></p>
 
-<p><a data-t="2191">This is, right, and I can imagine that some of you have some experience with pandas.</a></p>
+<blockquote><a data-t="2179">So, that means that when you understand expressions, you're halfway there.</a> <a data-t="2179">You're halfway there.</a></blockquote>
 
-<p><a data-t="2199">If you do, you know, it's not always an advantage.</a> <a data-t="2199">There are some things that you need to unlearn, right, because polar's is just different, and for a large part, that is because of those expressions.</a></p>
+<p><a data-t="2191">This is, right, and I can imagine that some of you have some experience with pandas.</a> <a data-t="2199">If you do, you know, it's not always an advantage.</a> <a data-t="2199">There are some things that you need to unlearn, right, because Polars is just different, and for a large part, that is because of those expressions.</a></p>
 
 <p><a data-t="2218">Just a different syntax, which, of course, then will lead to other awesome stuff like optimizations and whatnot, but we're focusing on the API here.</a></p>
 
@@ -234,7 +268,7 @@
 
 <p><a data-t="2269">So, the select method here allows us to keep a subset of columns from the original data frame.</a> <a data-t="2269">We are, in this case, the first argument here selects the column that has the name, name.</a></p>
 
-<p><a data-t="2292">This next argument contains a regular expression.</a> <a data-t="2292">Now, not to be confused with a polar's expression, but this one will select all the columns that contain the characters OR.</a> <a data-t="2292">In our case, that is color and origin.</a></p>
+<p><a data-t="2292">This next argument contains a regular expression.</a> <a data-t="2292">Now, not to be confused with a Polars expression, but this one will select all the columns that contain the characters OR.</a> <a data-t="2292">In our case, that is color and origin.</a></p>
 
 <p><a data-t="2312">The third argument here, it selects the weight column, but then it also divides it by a thousand.</a> <a data-t="2312">So, all these arguments, so the first three, they are all expressions.</a></p>
 
@@ -256,7 +290,7 @@
 
 <p><a data-t="2463">Before, we used pl.col to select an existing column from a data frame.</a> <a data-t="2463">pl.lit, which stands for literal, creates a new, well, creates a series that just contains the value true.</a></p>
 
-<p><a data-t="2481">Alias here gives it a name.</a> <a data-t="2481">Otherwise, well, let's see here.</a> <a data-t="2481">Yes, otherwise, it gets the column name literal.</a> <a data-t="2481">And that is something you probably don't want.</a></p>
+<p><a data-t="2481">alias here gives it a name.</a> <a data-t="2481">Otherwise, well, let's see here.</a> <a data-t="2481">Yes, otherwise, it gets the column name literal.</a> <a data-t="2481">And that is something you probably don't want.</a></p>
 
 <p><a data-t="2502">So, we can give a new name to a column by using the alias method.</a> <a data-t="2502">Another way to give a column or a series, I should say, sorry, I'm very often confusing myself.</a> <a data-t="2502">It will become clear later when we get to the definition of what an expression is.</a></p>
 
@@ -279,7 +313,7 @@
 <p><a data-t="2702">Here's another example.</a> <a data-t="2702">Aggregation.</a> <a data-t="2702">Yes.</a> <a data-t="2702">In this case, actually, when it comes to aggregation, you can use expressions in two different places.</a> <a data-t="2702">The first one is over here.</a> <a data-t="2702">It's a long one, but this one determines how to group the data, how to split the data into groups.</a></p>
 
 <p><a data-t="2728">So, what are we doing here?</a> <a data-t="2728">This will – yeah.</a> <a data-t="2728">So, if we look at the origin, sometimes it consists of two words.</a> <a data-t="2728">So, South America and North America.</a> <a data-t="2728">Both of those will be turned into just America.</a> <a data-t="2728">Yeah?</a></p>
-
+<!-- segment separator -->
 <p><a data-t="2752">So, that's what this does.</a> <a data-t="2752">It's first the method split from the STR namespace and then the last method from the list namespace because this will create a list.</a> <a data-t="2752">It's quite a lot.</a> <a data-t="2752">As long as you remember – okay.</a> <a data-t="2752">Yeah.</a> <a data-t="2752">So, whenever we have North America and South America, they both turn into America.</a> <a data-t="2752">That will become one group.</a></p>
 
 <p><a data-t="2775">And then per group, we compute two things here.</a> <a data-t="2775">We compute the number of rows in the group or the length using the PL.len function and the average weight.</a></p>
@@ -290,6 +324,8 @@
 
 <p><a data-t="2838">If you just want to use the column as is, which is very well possible when you're selecting columns.</a> <a data-t="2838">You don't want to do any other transformation.</a> <a data-t="2838">You can just use their name.</a></p>
 
+<h3>Sorting and the series vs. column distinction</h3>
+
 <p><a data-t="2850">And then the last example of where expressions are used a lot, that's when it comes to sorting.</a></p>
 
 <p><a data-t="2862">Yeah.</a> <a data-t="2862">So, here we are sorting by the length of the name.</a> <a data-t="2862">Yeah.</a> <a data-t="2862">I'm not sure how useful that is, but I just wanted to show you something here.</a></p>
@@ -299,6 +335,14 @@
 <p><a data-t="2895">But we never get to see this series.</a> <a data-t="2895">So, that's actually an important property here and why there is actually a distinction between series and columns.</a></p>
 
 <p><a data-t="2909">Yeah.</a> <a data-t="2909">So, every column is a series, but not every series actually becomes a column.</a></p>
+
+<blockquote><a data-t="2909">So, every column is a series, but not every series actually becomes a column.</a></blockquote>
+
+<p><a data-t="2920">Yeah.</a> <a data-t="2920">So, it does when we say, hey, let's do with columns and say length equals this same expression.</a> <a data-t="2934">Right?</a> <a data-t="2934">Then it becomes a new column added at the end with the number of characters that each fruit name has.</a></p>
+
+<p><a data-t="2946">But in this first one here, it is only used for sorting and then it's gone afterwards.</a></p>
+
+<h3>What an expression actually is</h3>
 
 <p><a data-t="2954">So, now that you've seen a couple of examples of where expressions are used and how you create them and what you can do with them, I hope that by now you have sort of a feeling for what an expression is and that they are indeed very useful.</a></p>
 
@@ -330,15 +374,15 @@
 
 <p><a data-t="3188">So, if expressions are like recipes, the methods are the cooks.</a> <a data-t="3188">And they decide what to do with it.</a> <a data-t="3188">Now, there is another part to that, which of course plays a big role with – in determining the output.</a></p>
 
+<blockquote><a data-t="3188">So, if expressions are like recipes, the methods are the cooks.</a> <a data-t="3188">And they decide what to do with it.</a></blockquote>
+
 <p><a data-t="3211">And that is of course the data frame itself.</a> <a data-t="3211">You can reuse expressions onto other data frames.</a> <a data-t="3211">So, here I have a brand new data frame with just three flowers.</a></p>
 
 <p><a data-t="3226">I guess I can print this data frame first.</a> <a data-t="3226">So, we have three flowers.</a> <a data-t="3226">But then if we apply the filter is orange, we keep two rows.</a> <a data-t="3226">And all this time it was the exact same expression.</a></p>
 
 <p><a data-t="3244">Now, this is very powerful.</a> <a data-t="3244">Being able to give expressions names, especially when you have those complicated expressions that combine all sorts of things.</a> <a data-t="3244">I think it can make your code a lot cleaner.</a></p>
 
-<blockquote><a data-t="3188">So, if expressions are like recipes, the methods are the cooks.</a> <a data-t="3188">And they decide what to do with it.</a></blockquote>
-
-<p><a data-t="3260">I demonstrated this with the sort method in that they create a series, but not every series becomes a column.</a></p>
+<p><a data-t="3260">Sorry, I have to go up a little bit because constructing.</a> <a data-t="3260">I demonstrated this with the sort method in that they create a series, but not every series becomes a column.</a></p>
 
 <p><a data-t="3278">But when they do, they can also become more than one.</a> <a data-t="3278">So, with a single expression, you can actually generate or you can apply it to multiple columns.</a></p>
 
@@ -348,11 +392,17 @@
 
 <p><a data-t="3336">Now, since I'm adding a suffix times 10, I get two new columns.</a> <a data-t="3336">That's quite awesome.</a> <a data-t="3336">You don't have to repeat yourself when you want to do the same thing to multiple columns.</a></p>
 
+<p><a data-t="3361">You can check here.</a> <a data-t="3361">You can pass.</a> <a data-t="3361">Sorry, what was this?</a> <a data-t="3361">Sorry, I misclicked.</a> <a data-t="3361">There's a method, meta.hasMultipleOutputs, which gives true when it indeed has multiple outputs, when it will construct multiple series.</a></p>
+
+<p><a data-t="3385">They're lazy and they're function and data dependent.</a> <a data-t="3385">I already covered this.</a> <a data-t="3385">Yeah.</a> <a data-t="3385">Okay.</a> <a data-t="3385">Okay.</a> <a data-t="3385">So, there's a bunch of things that I have already covered as well when it comes to creating expressions.</a></p>
+
 <p><a data-t="3403">The two most common ones are pl.call and pl.lit for literal values.</a> <a data-t="3403">Yeah.</a> <a data-t="3403">I think I can go a little bit faster.</a> <a data-t="3403">You can also get an error when a column doesn't exist.</a> <a data-t="3403">It's smelly.</a> <a data-t="3403">It's not a column that's in this data frame.</a> <a data-t="3403">So, we get an exception.</a></p>
 
 <p><a data-t="3430">So, pl.all, we saw that before, is a way to select all the columns.</a> <a data-t="3430">You can select all the strings.</a> <a data-t="3430">No, but by passing in a data type.</a> <a data-t="3430">Data types are also part of the global namespace.</a></p>
 
-<p><a data-t="3476">Multiple data types, column names.</a> <a data-t="3476">So, this is all cool, but what's even cooler are, I hope to show you in a moment, but I'm already giving you the name.</a></p>
+<p><a data-t="3448">So, you have pl. and then you have access to all.</a> <a data-t="3448">Let me just show you.</a> <a data-t="3448">Pl.</a> <a data-t="3448">Hello.</a> <a data-t="3448">Can I get some shift tab, control tab?</a> <a data-t="3448">Okay.</a> <a data-t="3448">I wish I didn't say that.</a> <a data-t="3448">Code completion is not really working at the moment.</a></p>
+
+<p><a data-t="3476">Okay.</a> <a data-t="3476">Never mind.</a> <a data-t="3476">Moving on.</a> <a data-t="3476">Yeah.</a> <a data-t="3476">Multiple data types, column names.</a> <a data-t="3476">So, this is all cool, but what's even cooler are, I hope to show you in a moment, but I'm already giving you the name.</a></p>
 
 <p><a data-t="3498">And that is, those are column selectors.</a> <a data-t="3498">Yeah.</a> <a data-t="3498">If we don't get there, write it down and look it up.</a> <a data-t="3498">Column selectors.</a> <a data-t="3498">They give you a lot more flexibility when it comes to selecting columns according to certain rules.</a></p>
 
@@ -364,22 +414,156 @@
 
 <p><a data-t="3575">But now I do want to give you an example.</a> <a data-t="3575">Fruit select.</a> <a data-t="3575">I guess we can even rename in here, right?</a> <a data-t="3575">So, we can say fruit name equals PL.call name.</a> <a data-t="3575">Let me try this one.</a> <a data-t="3575">Yeah.</a> <a data-t="3575">So, we can rename at the same time.</a></p>
 
-<p><a data-t="3597">We can actually create new columns.</a> <a data-t="3597">That's what I'm actually doing here.</a> <a data-t="3597">Creating new columns within the select method.</a> <a data-t="3597">But now if I want to say, well, I'm also interested in the origin, well, then you get a syntax error.</a> <a data-t="3597">This is just not allowed in Python.</a> <a data-t="3597">Nothing that pollers can do about.</a> <a data-t="3597">You cannot have a positional argument to follow a keyword argument.</a></p>
+<p><a data-t="3597">We can actually create new columns.</a> <a data-t="3597">That's what I'm actually doing here.</a> <a data-t="3597">Creating new columns within the select method.</a> <a data-t="3597">But now if I want to say, well, I'm also interested in the origin, well, then you get a syntax error.</a> <a data-t="3597">This is just not allowed in Python.</a> <a data-t="3597">Nothing that Polars can do about.</a> <a data-t="3597">You cannot have a positional argument to follow a keyword argument.</a></p>
 
 <p><a data-t="3624">So, yeah, yeah, yeah.</a> <a data-t="3624">There are pros and cons to both of those approaches.</a></p>
 
-<p><a data-t="3649">Renaming expressions.</a> <a data-t="3649">So, this is actually an interesting one.</a> <a data-t="3649">I learned something today as I was preparing for this tutorial.</a></p>
+<p><a data-t="3630">Yep, yep.</a> <a data-t="3630">Okay.</a> <a data-t="3630">From ranges.</a> <a data-t="3630">Yeah.</a> <a data-t="3630">Let me speed this up just a little.</a> <a data-t="3630">You can define ranges on numbers, on dates.</a></p>
 
-<p><a data-t="3697">And this used to be – this used to give an error.</a> <a data-t="3697">And it was a longstanding issue on the Pollers GitHub repo.</a></p>
+<p><a data-t="3649">Yeah, yeah.</a> <a data-t="3649">So, not too exciting.</a> <a data-t="3649">Renaming expressions.</a> <a data-t="3649">So, this is actually an interesting one.</a> <a data-t="3649">I learned something today as I was preparing for this tutorial.</a></p>
+<!-- segment separator -->
+<p><a data-t="3676">So, here's a very small data frame, three columns, one row.</a> <a data-t="3676">Yeah. There are various things you can do.</a> <a data-t="3676">Those are to those column names.</a> <a data-t="3676">Those are all in the namespace. Yeah.</a></p>
 
-<p><a data-t="3714">But when I tried this out today, it actually worked.</a> <a data-t="3714">So, there was this problem where you could not do multiple naming methods.</a> <a data-t="3714">You could not chain them.</a> <a data-t="3714">But now you can.</a> <a data-t="3714">So, that's fantastic.</a> <a data-t="3714">Go Pollers team.</a></p>
+<p><a data-t="3697">Alias is also just immediately available because it is so common, I guess.</a> <a data-t="3697">And this used to be – this used to give an error.</a> <a data-t="3697">And it was a longstanding issue on the Polars GitHub repo.</a></p>
 
-<p><a data-t="3775">Speaking of idiomatic, expressions are idiomatic.</a> <a data-t="3775">You may – if you're familiar with pandas, you may recognize this syntax here.</a> <a data-t="3775">Yeah.</a> <a data-t="3775">Lots of brackets.</a> <a data-t="3775">That's what pandas code usually has is lots of brackets.</a></p>
+<p><a data-t="3714">But when I tried this out today, it actually worked.</a> <a data-t="3714">So, there was this problem where you could not do multiple naming methods.</a> <a data-t="3714">You could not chain them.</a> <a data-t="3714">But now you can.</a> <a data-t="3714">So, that's fantastic. Go Polars team.</a></p>
 
-<p><a data-t="3797">And so, you may be tempted or just out of habit, be like, oh, let me try this one.</a> <a data-t="3797">And you know what?</a> <a data-t="3797">It works.</a> <a data-t="3797">So, we can extract a single series from a data frame using the bracket notation.</a></p>
+<p><a data-t="3735">So, yeah. No need to worry there.</a> <a data-t="3735">If the – let me see here. What's this? What's this?</a> <a data-t="3735">Oh, yeah. This was the workaround that we actually have in the book is to just apply a lambda function to each column name.</a></p>
 
-<p><a data-t="3815">Yeah.</a> <a data-t="3815">And the ampersand – so, the and operator here works on those two series.</a> <a data-t="3815">It will create a new series and pass that into the filter method.</a> <a data-t="3815">So, there is no expression in this code cell.</a></p>
+<p><a data-t="3765">Now, that's of course something, yeah, that you don't – it works, but it's not pretty.</a> <a data-t="3765">This is better, right? This is more idiomatic.</a></p>
 
-<p><a data-t="3841">This is all evaluated very eagerly.</a> <a data-t="3841">Yeah.</a> <a data-t="3841">So, this gets evaluated, this part, then this part, then they're combined, and then that's passed to the filter method.</a> <a data-t="3841">It works.</a></p>
+<p><a data-t="3775">Speaking of idiomatic, expressions are idiomatic.</a> <a data-t="3775">You may – if you're familiar with pandas, you may recognize this syntax here.</a> <a data-t="3775">Yeah. Lots of brackets.</a> <a data-t="3775">That's what pandas code usually has is lots of brackets.</a></p>
 
-<p><a data
+<p><a data-t="3797">And so, you may be tempted or just out of habit, be like, oh, let me try this one.</a> <a data-t="3797">And you know what? It works.</a> <a data-t="3797">So, we can extract a single series from a data frame using the bracket notation.</a></p>
+
+<p><a data-t="3815">Yeah. And the ampersand – so, the and operator here works on those two series.</a> <a data-t="3815">It will create a new series and pass that into the filter method.</a> <a data-t="3815">So, there is no expression in this code cell.</a></p>
+
+<p><a data-t="3841">This is all evaluated very eagerly. Yeah.</a> <a data-t="3841">So, this gets evaluated, this part, then this part, then they're combined, and then that's passed to the filter method. It works.</a></p>
+
+<p><a data-t="3855">What am I trying to do here?</a> <a data-t="3855">So, while this one works, this example, there are lots of situations where this doesn't work.</a></p>
+
+<p><a data-t="3874">So, let me see if I can rewrite this expression right here.</a> <a data-t="3874">So, this is a lazy expression.</a> <a data-t="3874">We turn the data frame fruit into a lazy frame.</a> <a data-t="3874">We filter, and then we create a new column, and then we materialize that into a data frame.</a></p>
+
+<p><a data-t="3897">So, this is the result here, those two rows.</a> <a data-t="3897">Now, let's see if we can use that non-idiomatic syntax, those brackets, and let's see what happens.</a> <a data-t="3897">Well, I'm already giving it away here.</a> <a data-t="3897">This raises a shape error. There we go.</a></p>
+
+<p><a data-t="3920">And the explanation is actually quite helpful here.</a> <a data-t="3920">Unable to add a column of length 10 to a data frame of height 2.</a> <a data-t="3920">Of course, all the columns need to be of equal length.</a> <a data-t="3920">So, what's going on here? So, we are filtering. Yeah. Okay. That works.</a></p>
+
+<p><a data-t="3941">But then, at this point, the data frame only has two rows left, and because we're using this syntax right here, we're actually going outside of the expression, and we're referring to the fruit data frame that is still in memory, and we're extracting that name column, which is of length 10.</a> <a data-t="3941">So, those are now incompatible.</a></p>
+
+<p><a data-t="3966">Yeah. It might be obvious if you're looking at this like, yeah, of course, this doesn't work.</a> <a data-t="3966">But, you know, just as a word of caution, use expressions.</a> <a data-t="3966">And you probably don't need to use any brackets when you're writing Polars code. Yeah.</a></p>
+
+<blockquote><a data-t="3966">But, you know, just as a word of caution, use expressions.</a> <a data-t="3980">And you probably don't need to use any brackets when you're writing Polars code.</a></blockquote>
+
+<p><a data-t="3984">Let's see. Any questions?</a></p>
+
+<p><a data-t="4011">They create a new object.</a> <a data-t="4011">But what you're perhaps referring to, Ola, is PL.SELECT can create new – oh, sorry. You're saying PL.SELECT.</a> <a data-t="4011">Yeah, PL.SELECT is – I've never used it in production, in reality, in practice.</a></p>
+
+<p><a data-t="4036">PL.SELECT is very useful for when you want to demonstrate an expression because it has no context.</a> <a data-t="4036">There is no data associated with it.</a> <a data-t="4036">So, it only works with expressions that are self-contained, that don't need any external data, like literal values.</a> <a data-t="4036">So, I used it here only for demonstration purposes.</a></p>
+
+<p><a data-t="4074">Yes. So, how are we doing on time?</a></p>
+
+<p><a data-t="4081">I have 20 minutes left.</a></p>
+
+<p><a data-t="4086">Time flies when you're having fun. So, still, we're good.</a></p>
+
+<p><a data-t="4093">Yes. Thank you, Patricia. 20 minutes indeed.</a> <a data-t="4093">I should probably also reserve some time for questions at the end.</a></p>
+
+<h3>Continuing and combining expressions</h3>
+
+<p><a data-t="4101">Now, let's stick with expressions a little bit more because they are indeed at the heart of Polars.</a></p>
+
+<p><a data-t="4109">There are various ways in which you can continue an expression, continue in the sense that you have an expression, and you apply some operation, and that will yield a new expression, and then you can keep on doing that.</a></p>
+
+<p><a data-t="4130">So, you can write these long chains of expressions.</a> <a data-t="4130">They don't need to be defined separately on separate lines of code.</a> <a data-t="4130">You can just define it as a whole, and Polars will optimize that.</a></p>
+
+<p><a data-t="4150">So, I want to give you a couple of examples in what types of operations there exist when it comes to continuing expressions.</a></p>
+
+<p><a data-t="4163">So, there are those that maintain the length.</a> <a data-t="4163">So, you put in a series of length 10, and you get back a series of length 10.</a> <a data-t="4163">Now, some of those operate on a per element basis, so they're element-wise, and some are considered a series as a whole.</a></p>
+
+<p><a data-t="4185">Then there are those operations that reduce the length.</a> <a data-t="4185">Now, some will always reduce the length to one.</a> <a data-t="4185">An example of that is mean.</a> <a data-t="4185">Some to one or more.</a> <a data-t="4185">For example, the mode of a series or the unique values.</a></p>
+
+<p><a data-t="4204">And then there is a handful of methods that actually extend the length.</a> <a data-t="4204">These are, I guess, explode is one that we have seen before.</a> <a data-t="4204">So, just a couple of examples here.</a></p>
+
+<p><a data-t="4219">So, when you apply the square root or the exponent to a column, those are evaluated element-wise.</a> <a data-t="4219">Internally, there's a whole lot, again, a whole lot of optimization going on.</a> <a data-t="4219">No need to worry about that.</a></p>
+
+<p><a data-t="4245">But the order of the rows does not influence the outcome.</a> <a data-t="4245">That's actually an interesting statement.</a> <a data-t="4245">I'm not sure if that's true for all expressions that are element-wise. Okay, better forget that.</a></p>
+
+<p><a data-t="4270">Yes, the mean, just a single value.</a> <a data-t="4270">Or you want the first value of something.</a> <a data-t="4270">That's sometimes useful, especially when you're using this in a group by context, as we've seen before with the fruit.</a></p>
+
+<p><a data-t="4288">Unique. Yeah, this could be a single value.</a> <a data-t="4288">It could be, you could end up with the same values if they're all unique.</a> <a data-t="4288">So, you don't know how many values that will come out of this.</a></p>
+
+<p><a data-t="4304">Oh, yeah. Here's an example here.</a> <a data-t="4304">We're just repeating values here 3,000 times.</a> <a data-t="4304">We create one single series and then we add one value to that.</a> <a data-t="4304">Honestly, I have never used this in practice.</a></p>
+
+<p><a data-t="4331">I guess when you're writing a book, the definitive guide, there is some expectation that you're presenting a complete thing here.</a> <a data-t="4331">Now, there is a long list of things that we can do here.</a></p>
+
+<p><a data-t="4349">In fact, when you count all the methods that a single expression has, it's over 300, last time that I counted.</a> <a data-t="4349">And so it would not be a very good use of our time to just go over all of them.</a></p>
+
+<p><a data-t="4366">Let me just scroll down a little to see which ones are interesting.</a> <a data-t="4366">Let me know if there is anything that you would like to see in particular. Let me know.</a> <a data-t="4366">Oh, I guess I want to show you this.</a></p>
+
+<h3>Rolling statistics and visualization</h3>
+
+<p><a data-t="4387">Rolling statistics, because this is actually the only visualization that I have included in this crash course.</a> <a data-t="4387">So, rolling statistics. We can compute a rolling mean, for example.</a> <a data-t="4387">And when you look at this data frame, you're like, yeah, sure, whatever.</a></p>
+
+<p><a data-t="4406">But I guess this is where a visualization will come in handy.</a> <a data-t="4406">So, we have the red line, reddish line here. That's the original value.</a> <a data-t="4406">And then those other three, those are rolling statistics.</a> <a data-t="4406">So, they will smoothen out the original values here.</a></p>
+
+<p><a data-t="4436">Can we increase this? I'm just curious.</a> <a data-t="4436">Yeah, this is even better. Yeah, even clearer.</a> <a data-t="4436">This, by the way, ladies and gentlemen, is visualize using </a><a href="/software/plotnine/">plotnine</a><a data-t="4436">, my favorite package when it comes to visualizing data using the grammar of graphics.</a></p>
+
+<p><a data-t="4463">But anyway, there is – I'm just looking at what is it that I want to show you.</a> <a data-t="4463">Yeah, let's spend a little bit of time in combining expressions.</a> <a data-t="4463">So, I think you get the idea of how you can continue an existing expression.</a></p>
+
+<p><a data-t="4486">Now, another thing – and we have already seen examples of this.</a> <a data-t="4486">Another thing that you can do in expressions is combine them.</a> <a data-t="4486">Yeah, this is actually the thing that will create this tree-like structure of an expression here.</a></p>
+
+<p><a data-t="4501">So, here's an example of – again, we're filtering – we're only keeping fruit that is round and that weighs more than 1,000 grams.</a> <a data-t="4501">So, I'm combining those two using the AND operator.</a></p>
+
+<p><a data-t="4520">Now, it's interesting to know that for – as far as I know, all those inline methods – inline operators, I should say – there is a corresponding method.</a></p>
+
+<p><a data-t="4542">And yeah, depending on your situation, you may want to use one or the other.</a> <a data-t="4542">Here's an example.</a> <a data-t="4542">The mul operator – method, sorry – is the same as the inline multiplication operator, the asterisk.</a></p>
+
+<p><a data-t="4566">Yeah, so they will – you will need – it's a slightly different order because – well, I guess we can rewrite this to – I think it's AND, underscore AND.</a></p>
+<!-- segment separator -->
+<p><a data-t="4582">No? No. What? Am I going crazy? I was going a little bit crazy, but I have recovered. It's because AND is a reserved keyword. I knew that there was going to be an underscore here. It's kind of ugly, but that's conventions and things like that.</a></p>
+
+<p><a data-t="4607">What we have done now is – this is actually a different way of writing the same thing. Yeah? So, I tend to use those inline operators. They're a little bit easier on the eyes, but just so you know, you can use either.</a></p>
+
+<p><a data-t="4629">So, this is Boolean – this is an example actually of Boolean algebra. Another one that you'll use very often is arithmetic. Yeah? So, you add things together or multiply things together.</a> <a data-t="4644">Comparison – that's actually also included in this example. Greater than equals less than. So, yeah, yeah, yeah. What is there to say about all of these?</a></p>
+
+<p><a data-t="4660">So, at the same time, there is so much content in this notebook, and you are very welcome to look at that. Although, it might be better to just look at the individual chapter files that are in the GitHub repo.</a> <a data-t="4682">So, they're numbered from 1 to 18, and I have not used all of them in this one. So, at the same time, there is so much content, but at the same time, I am also just already quite satisfied with what I have been able to show you.</a></p>
+
+<p><a data-t="4709">Because expressions really do make up the most of your code. So, I think what we can do is now just check if there are any questions left. Anything at all, preferably related to Polars in some way.</a> <a data-t="4730">But something that – it could be something that I have showed you, but you're like, wait a minute. What was that? That was way too fast, or I have no idea what was going on. Or it is something that I have not shown you.</a> <a data-t="4745">Maybe I'm just making all these assumptions in what is perhaps interesting or not interesting, but then I do hope that you'll be able to correct me. So, please, if you have any questions, now is the time.</a></p>
+
+<p><a data-t="4761">Although, if you have any questions after this tutorial, if you Google my name, you'll get to my website and you'll find various ways to get a hold of me. So, you're always welcome to shoot me a message.</a></p>
+
+<h3>Audience Q&A</h3>
+
+<p><a data-t="4778">So, okay. So, Stephen mentions – oh, no, wait. Let's go back a little bit more. Risa Baltasar, does it do data visualizations as well, or is it better to use other packages for that? Okay. So, that's a yes and a no answer there, and a funny story.</a> <a data-t="4800">So, this was at a Christmas party maybe two years ago. Richie Vink, the creator of Polars, came up to me and said, hey, Jeroen, we're going to add visualization to Polars. And this was when I was like – we were like – we started writing the book and we already knew like this is going to take forever.</a></p>
+
+<p><a data-t="4824">And so, Richie said, okay, we're going to add even more functionality. And at first I was like, oh, man, there are already so many data visualization packages out there for Python. We don't need another data visualization package.</a> <a data-t="4840">But then, luckily, Richie was like, no, no, no, no, no. What we're going to do is we're going to – we're just going to add a plot namespace and then all the individual methods will be forwarded. They will use some other package under the hood.</a></p>
+
+<p><a data-t="4859">And when they first implemented this, this was a package called hvplot. So, and then I was like, all right, that's a solid choice. I'll start writing about this. Then once I was done with that chapter, they switched the backend thanks to Marco Gorelli, which at first I was, of course, really annoyed with Marco Gorelli.</a> <a data-t="4885">But we had a really good chat. We know each other by now. And I totally understood why they changed the backend to Altair. So, by itself, Polars – and by the way, the reason why I was annoyed is because I had to rewrite a good chunk of that data visualization chapter.</a></p>
+
+<p><a data-t="4910">But it's all good now. So, now the plotting backend is Altair. And so, Polars by itself doesn't do any data visualization. It has some methods that will then be forwarded to Altair.</a> <a data-t="4926">So, in my opinion, this is kind of limited. You can never have that same functionality as Altair itself. It's impossible to add that to Polars.</a></p>
+
+<p><a data-t="4942">So, I am personally inclined to just import explicitly some other data visualization package – could be Altair, could be Plot9, could be whatever – and then pass in the Polars data frame.</a> <a data-t="4960">Now, many visualization packages can work with Polars data frames, sometimes natively by using the NeuralWalls package under the hood, sometimes by first converting it to a Pandas data frame. It doesn't really matter in practice.</a></p>
+
+<p><a data-t="4975">So, that's the yes and the no. Let me see here.</a></p>
+
+<p><a data-t="4993">Let me read the questions. All right. Ola asks, Jeroen, what is your favorite thing about Polars? What would you say to convince someone to use it?</a></p>
+
+<p><a data-t="5007">So, that would be the API. It's not perfect, but I like it a lot more than the Pandas API. I don't want to hate on Pandas. We are all extremely grateful for Pandas. Without Pandas, there wouldn't be Polars.</a> <a data-t="5028">But I just find the way of writing Polars code to be more in line with how I think. Someone mentioned in the chat the </a><a href="/software/tidyverse/">tidyverse</a><a data-t="5028">, and that is indeed something that I have used extensively over the years.</a> <a data-t="5047">And yeah, there are some similarities there as well. It's more about describing the operations that you want to do, and then let Polars figure out how to do that.</a></p>
+
+<blockquote><a data-t="5047">It's more about describing the operations that you want to do, and then let Polars figure out how to do that.</a></blockquote>
+
+<h3>Wrapping up</h3>
+
+<p><a data-t="5066">Yeah, let me wrap up here. So, this was quite a crash course. I've been rambling a lot, and I can imagine that by now, I mean, if this was your first encounter with Polars, you feel pretty overwhelmed with everything that you have seen.</a> <a data-t="5095">That's okay. It's okay to be overwhelmed. What I do hope is that this has – that I have been able to give you enough so that you are inclined to try it out for yourself.</a></p>
+
+<p><a data-t="5113">And that's, of course, the best thing that you can do right now is to just get some data and install Polars using UV and just get going. Make mistakes. Just try things out. Read the documentation.</a> <a data-t="5130">Again, the book that we wrote, the first chapter you can get for free. That will allow you perhaps even better to determine whether you want to continue learning Polars. There is a learning curve involved.</a></p>
+
+<p><a data-t="5149">It also allows you to determine whether you think the book is worth your time and money. But I do hope – that's all I can hope for is that I have been able to inspire you a little bit when it comes to this wonderful package.</a></p>
+
+<p><a data-t="5169">So, thank you all so much for staying with me, and I wish you a wonderful time for the rest of the conference. Thanks.</a></p>
+
+<p><a data-t="5181">Thank you so much, Arun. I'm giving applause to you too from here.</a></p>
+
+<p><a data-t="5187">Thank you.</a></p>
+
+<p><a data-t="5189">We are out of time, so we're going to go ahead and wrap up this session. Thank you all for joining today. And if you'd like to continue this discussion, you can head over to the Discord. That link is available in the reception area. And a recording of this session will be available shortly.</a> <a data-t="5206">So, thank you guys so much, and I'm going to go ahead and end this session.</a></p>

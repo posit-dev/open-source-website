@@ -1,0 +1,2392 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:12.840
+We are joined by our featured lab manager, Thomas Pedersen. Thomas, would you like to
+
+00:00:12.840 --> 00:00:13.840
+introduce yourself?
+
+00:00:13.840 --> 00:00:21.200
+Hello, everyone. My name is Thomas. I live in Denmark and have been with POSIT for far
+
+00:00:21.200 --> 00:00:31.440
+too long now. 18, I think. I'm working on the Tidyverse team, but also working on stuff
+
+00:00:31.440 --> 00:00:37.200
+that is not R. And I've been taking care of graphics, more or less. I think that's the
+
+00:00:37.200 --> 00:00:47.200
+overarching theme of my work. Everything graphics-related is kind of my table. So I'm maintaining ggplot2
+
+00:00:47.200 --> 00:00:56.080
+for those that are using R, but also the lower levels that make ggplot2 work underneath.
+
+00:00:56.080 --> 00:01:02.959
+And lately, I am taking all of that to a new place with ggsql, which we'll talk about today.
+
+00:01:02.959 --> 00:01:06.839
+I'm so excited. And you do artwork.
+
+00:01:06.839 --> 00:01:17.040
+I do artwork as well. So I do algorithmic art. I started out using ggplot2 for that.
+
+00:01:17.040 --> 00:01:24.879
+A lot of it now is shader-based and JavaScript-based for some more interactive and animated stuff.
+
+00:01:24.879 --> 00:01:29.040
+But still, yeah, that's also part of my gig.
+
+00:01:29.040 --> 00:01:36.040
+I was going to show everybody one of your pieces, which I have here, I think. Do I?
+
+00:01:36.040 --> 00:01:38.800
+Yeah, I do. Isn't this gorgeous?
+
+00:01:38.800 --> 00:01:41.800
+That is rendered with ggplot2, actually.
+
+00:01:41.800 --> 00:01:44.680
+Beautiful. Can you imagine?
+
+00:01:44.680 --> 00:01:52.680
+It's just a bunch of polygons. Yeah, so at some point, I started out being a data scientist,
+
+00:01:52.680 --> 00:01:59.680
+actually a bioinformatician, and doing a lot of visualization work. And I have gradually moved over
+
+00:01:59.680 --> 00:02:07.680
+to becoming full-time software engineer, which meant that I didn't really use ggplot2 as a user anymore.
+
+00:02:07.680 --> 00:02:15.679
+So at least for a period of time, it was really nice to be able to maybe not use it, but abuse it a bit for artwork
+
+00:02:15.679 --> 00:02:22.679
+and become a user of my own tools again. I believe deeply that being a user of your own tools
+
+00:02:22.679 --> 00:02:26.679
+builds empathy around what you're doing.
+
+00:02:26.679 --> 00:02:31.679
+But it's very hard to maintain that kind of balance because once you go full software engineer,
+
+00:02:31.679 --> 00:02:37.679
+it's really hard to get back. So I'm finding small ways to get back there.
+
+00:02:37.679 --> 00:02:42.679
+It is really hard. Amazing. Well, all right, I say we go ahead and get started.
+
+00:02:42.679 --> 00:02:47.679
+If you would like to share your screen, tell us a little bit about what you are going to be talking about today.
+
+00:02:47.679 --> 00:02:52.679
+And as a reminder to everybody in the chat, if you see a little golf flag next to your question,
+
+00:02:52.679 --> 00:02:58.679
+that is Isabella and I, or other people in the chat, letting us know that there's a question.
+
+00:02:58.679 --> 00:03:02.679
+And so that little golf flag means Isabella or I are aware that there's a question,
+
+00:03:02.679 --> 00:03:06.679
+and we will try to give that to Thomas whenever we can.
+
+00:03:06.679 --> 00:03:10.679
+And then if you also see anybody lighting candles, that means somebody is probably live coding.
+
+00:03:10.679 --> 00:03:17.679
+You'll see my candles right up here. Don't worry, they're not real. Not a house fire hazard.
+
+00:03:17.679 --> 00:03:21.679
+But just wanted to let you know what those were because sometimes people ask,
+
+00:03:21.679 --> 00:03:26.679
+all right, Thomas, take it away. Tell me. I already have so many questions about ggSQL.
+
+00:03:26.679 --> 00:03:29.679
+I'm going to try to hold them in a little bit and see if anybody else asks them.
+
+00:03:29.679 --> 00:03:33.679
+And then maybe I'll unleash them.
+
+00:03:33.679 --> 00:03:36.679
+Okay. You should all be able to see.
+
+00:03:36.679 --> 00:03:40.679
+This is really just a website.
+
+00:03:40.679 --> 00:03:45.679
+So yeah, we live on ggsql.org, at least for now.
+
+00:03:45.679 --> 00:03:48.679
+And this is the website.
+
+00:03:48.679 --> 00:03:53.679
+So I'm just starting here so you can get acquainted.
+
+00:03:53.679 --> 00:03:55.679
+What is ggSQL?
+
+00:03:55.679 --> 00:04:04.679
+Well, it's a weird thing that we have built over the course of the last half year or so.
+
+00:04:04.679 --> 00:04:08.679
+GG gives it away. It's the grammar of graphics.
+
+00:04:08.679 --> 00:04:12.679
+If you're not familiar with that concept, it's what underpins ggplot2.
+
+00:04:12.679 --> 00:04:14.679
+There's the GG again.
+
+00:04:14.679 --> 00:04:19.679
+And it's a theoretical framework for describing graphics,
+
+00:04:19.679 --> 00:04:22.679
+which means that from a programming point of view,
+
+00:04:22.679 --> 00:04:29.679
+it's a way to be very structured about how you describe your graphics
+
+00:04:29.679 --> 00:04:32.679
+and do it in a composable way
+
+00:04:32.679 --> 00:04:36.679
+because it kind of breaks down the concepts of data visualization
+
+00:04:36.679 --> 00:04:39.679
+into smaller bits that can be composed.
+
+00:04:39.679 --> 00:04:42.679
+So there's not something like a scatterplot, a boxplot,
+
+00:04:42.679 --> 00:04:46.679
+and these things cannot be like mingled together.
+
+00:04:46.679 --> 00:04:50.679
+Everything is just parts, Lego bricks that you can put together.
+
+00:04:50.679 --> 00:04:55.679
+And if you're coming from the R world, you know ggplot2.
+
+00:04:55.679 --> 00:04:57.679
+It has been widely successful.
+
+00:04:57.679 --> 00:05:01.679
+I think it's partly because of this whole idea.
+
+00:05:01.679 --> 00:05:05.679
+Once you've rocked the idea of ggplot2, you can build more or less anything.
+
+00:05:05.679 --> 00:05:09.679
+You don't have to learn new concepts, and that makes it very powerful.
+
+00:05:09.679 --> 00:05:12.679
+The learning curve is a bit steep compared to something like a function
+
+00:05:12.679 --> 00:05:17.679
+that's called scatterplot, and you know how to make a scatterplot.
+
+00:05:17.679 --> 00:05:20.679
+But it pays dividends, and people really enjoy it.
+
+00:05:20.679 --> 00:05:24.679
+So ggplot2 is pretty old.
+
+00:05:24.679 --> 00:05:26.679
+We wanted to build something new.
+
+00:05:26.679 --> 00:05:28.679
+We also wanted to explore something completely different.
+
+00:05:28.679 --> 00:05:33.679
+So that's the last three letters of ggsql.
+
+00:05:33.679 --> 00:05:36.679
+That's the SQL part.
+
+00:05:36.679 --> 00:05:41.679
+So ggsql is a grammar of graphics for a SQL.
+
+00:05:41.679 --> 00:05:46.679
+And it's probably just easier to show it.
+
+00:05:46.679 --> 00:05:51.679
+So this is the front page, and it actually starts with an editable.
+
+00:05:51.679 --> 00:05:56.679
+It can run in the browser.
+
+00:05:56.679 --> 00:06:01.679
+If you're familiar with SQL, hopefully this looks not too unfamiliar,
+
+00:06:01.679 --> 00:06:03.679
+at least the first part up here.
+
+00:06:03.679 --> 00:06:05.679
+That's pure SQL.
+
+00:06:05.679 --> 00:06:09.679
+Everything below that is ggsql.
+
+00:06:09.679 --> 00:06:13.679
+And what we have tried to do is to express the ideas
+
+00:06:13.679 --> 00:06:19.679
+around the grammar of graphics in a way that feels very native to SQL.
+
+00:06:19.679 --> 00:06:25.679
+So even though we have come up with new concepts and new clauses and so on,
+
+00:06:25.679 --> 00:06:28.679
+the hope is that if you're used to SQL,
+
+00:06:28.679 --> 00:06:32.679
+then these things and the way they work together would feel familiar
+
+00:06:32.679 --> 00:06:37.679
+and at least feel ergonomic to the language.
+
+00:06:37.679 --> 00:06:41.679
+So here we start by creating some data.
+
+00:06:41.679 --> 00:06:43.679
+We have some built-in data sets.
+
+00:06:43.679 --> 00:06:47.679
+Our lovely penguins data set is there, so we can toy with that.
+
+00:06:47.679 --> 00:06:50.679
+So we just select everything from penguins,
+
+00:06:50.679 --> 00:06:54.679
+where island is this Abisko island.
+
+00:06:54.679 --> 00:06:57.679
+And then usually you would get a table back from this,
+
+00:06:57.679 --> 00:07:00.679
+but here we just funnel it into the next clause,
+
+00:07:00.679 --> 00:07:03.679
+which is this visualize clause.
+
+00:07:03.679 --> 00:07:07.679
+It looks kind of like a select clause if you're familiar with SQL.
+
+00:07:07.679 --> 00:07:12.679
+We visualize build length as X and build depth as Y.
+
+00:07:12.679 --> 00:07:16.679
+This means that we are mapping these columns in the table
+
+00:07:16.679 --> 00:07:20.679
+into these abstract ideas of what exists in the plot.
+
+00:07:20.679 --> 00:07:22.679
+So X and Y are things in the plot, right?
+
+00:07:22.679 --> 00:07:25.679
+And we say, well, build length is going to be X
+
+00:07:25.679 --> 00:07:27.679
+and build depth is going to be Y,
+
+00:07:27.679 --> 00:07:31.679
+and body mass is going to be the fill color, which is just called fill.
+
+00:07:31.679 --> 00:07:33.679
+And then we begin to compose it.
+
+00:07:33.679 --> 00:07:36.679
+So now we have how the data relates to everything,
+
+00:07:36.679 --> 00:07:38.679
+and now we can begin to compose it.
+
+00:07:38.679 --> 00:07:40.679
+We can say we'll draw points,
+
+00:07:40.679 --> 00:07:43.679
+and we'll just inherit all of these things we have up here.
+
+00:07:43.679 --> 00:07:49.679
+So if we just, like, let's just delete all of that.
+
+00:07:49.679 --> 00:07:52.679
+So if we just draw points, we have the points, we have the fill.
+
+00:07:52.679 --> 00:07:54.679
+It already gives us a lot for free.
+
+00:07:54.679 --> 00:07:58.679
+It gives us this legend and so on and so forth.
+
+00:07:59.679 --> 00:08:06.679
+We could do things like draw smooth,
+
+00:08:06.679 --> 00:08:10.679
+and it will layer on top of that an additional layer,
+
+00:08:10.679 --> 00:08:15.679
+which is a smoothing curve through all of these points.
+
+00:08:15.679 --> 00:08:20.679
+We can see that there might be some different structures in there.
+
+00:08:20.679 --> 00:08:32.679
+So we could say draw smooth partition by species probably, right?
+
+00:08:32.679 --> 00:08:36.679
+And we'll get to, so we group the data into two things,
+
+00:08:36.679 --> 00:08:39.679
+and we get a line from each of them.
+
+00:08:39.679 --> 00:08:45.679
+So this concept, like, it's a lot of code
+
+00:08:45.679 --> 00:08:47.679
+if you just want to have a scatterplot, right?
+
+00:08:47.679 --> 00:08:51.679
+But you can see that this concept naturally extends to
+
+00:08:51.679 --> 00:08:54.679
+basically whatever you want to plot.
+
+00:08:54.679 --> 00:08:57.679
+If we're not interested in points at all,
+
+00:08:57.679 --> 00:09:01.679
+we can say let's draw something else.
+
+00:09:01.679 --> 00:09:08.679
+We'll say species as X.
+
+00:09:13.679 --> 00:09:16.679
+This is unrehearsed, true to the style.
+
+00:09:16.679 --> 00:09:22.679
+And we'll draw a bar, and we'll have a bar plot with automatic count.
+
+00:09:24.679 --> 00:09:27.679
+So you can see that there is a lot of flexibility
+
+00:09:27.679 --> 00:09:31.679
+in some ideas that are universal to plots, right?
+
+00:09:31.679 --> 00:09:35.679
+And this is the thing that underpins ggplot2,
+
+00:09:35.679 --> 00:09:37.679
+and now we're doing it for SQL.
+
+00:09:39.679 --> 00:09:41.679
+Why do we do that?
+
+00:09:41.679 --> 00:09:44.679
+Well, we think we don't want to keep ggplot2
+
+00:09:44.679 --> 00:09:49.679
+and the fantastic ideas behind that to only our users.
+
+00:09:49.679 --> 00:09:53.679
+So that's one of the things we want to engage with a new audience.
+
+00:09:53.679 --> 00:09:59.679
+In Puzzit, we have not spent too much time catering to SQL users,
+
+00:09:59.679 --> 00:10:03.679
+but SQL is such an integral part of data science
+
+00:10:03.679 --> 00:10:05.679
+that it feels wrong not to.
+
+00:10:05.679 --> 00:10:08.679
+And it's also like we feel like there's a gap there
+
+00:10:08.679 --> 00:10:13.679
+in their workflows that when you're a heavy SQL users,
+
+00:10:13.679 --> 00:10:16.679
+if you want to look at the data, usually you would have to export it,
+
+00:10:16.679 --> 00:10:19.679
+put it into Excel, put it into Python, put it into R,
+
+00:10:19.679 --> 00:10:22.679
+do all of that context switching just for the sake
+
+00:10:22.679 --> 00:10:26.679
+of looking at some interesting part of your data.
+
+00:10:26.679 --> 00:10:30.679
+So why not engage with them in a more direct manner?
+
+00:10:30.679 --> 00:10:31.679
+This is amazing.
+
+00:10:31.679 --> 00:10:35.679
+I have so many questions, but not as many questions as Dan does.
+
+00:10:35.679 --> 00:10:38.679
+Dan is firing off so many.
+
+00:10:38.679 --> 00:10:43.679
+So let's see if we can answer just a few of them.
+
+00:10:43.679 --> 00:10:48.679
+One is, is ggplot2 more like ggplot2 or more like Seaborn?
+
+00:10:48.679 --> 00:10:51.679
+Because they both implement the grammar of graphics,
+
+00:10:51.679 --> 00:10:54.679
+but Seaborn is explicitly limited to only statistical plots.
+
+00:10:54.679 --> 00:11:00.679
+ggplot2 allows you to make any arbitrary visualization.
+
+00:11:00.679 --> 00:11:02.679
+ggplot2.
+
+00:11:03.679 --> 00:11:06.679
+So first and foremost, I am not a Python user.
+
+00:11:06.679 --> 00:11:08.679
+This is not like a value judgment.
+
+00:11:08.679 --> 00:11:11.679
+It just doesn't click with me.
+
+00:11:11.679 --> 00:11:15.679
+I also don't think that like Seaborn doesn't really click with me.
+
+00:11:15.679 --> 00:11:19.679
+So this is not something that I would naturally,
+
+00:11:19.679 --> 00:11:21.679
+this is not growing much in any way,
+
+00:11:21.679 --> 00:11:24.679
+but it's like I have been working with ggplot2
+
+00:11:24.679 --> 00:11:27.679
+for like maintaining it for nine years.
+
+00:11:27.679 --> 00:11:29.679
+So I'm probably biased as well,
+
+00:11:29.679 --> 00:11:35.679
+but it also means that it's more natural for me to think in those terms.
+
+00:11:35.679 --> 00:11:41.679
+What I'm going to like, it is not a direct port of ggplot2.
+
+00:11:41.679 --> 00:11:45.679
+ggplot2 is like 19 years old now.
+
+00:11:45.679 --> 00:11:47.679
+Like it's an old thing.
+
+00:11:47.679 --> 00:11:50.679
+And it's carrying around like all of this technical depth
+
+00:11:50.679 --> 00:11:56.679
+and this syntax depth of like bad decisions that Hadley did.
+
+00:11:56.679 --> 00:11:59.679
+I've, of course, never done bad decisions during my time,
+
+00:11:59.679 --> 00:12:04.679
+but carrying around so much from his reign over there,
+
+00:12:04.679 --> 00:12:09.679
+it means that we can just kind of start over from a blank canvas
+
+00:12:09.679 --> 00:12:11.679
+and take the things that we think,
+
+00:12:11.679 --> 00:12:14.679
+well, those we really nailed in ggplot2,
+
+00:12:14.679 --> 00:12:17.679
+but also remove things and rethink things
+
+00:12:17.679 --> 00:12:20.679
+that will be hard to do in ggplot2
+
+00:12:20.679 --> 00:12:24.679
+because of the backwards compatibility and like the whole infrastructure.
+
+00:12:24.679 --> 00:12:26.679
+But here we're kind of free to just say,
+
+00:12:26.679 --> 00:12:30.679
+what if we don't carry around all of that depth?
+
+00:12:30.679 --> 00:12:31.679
+So we're doing that.
+
+00:12:31.679 --> 00:12:33.679
+And it's very exciting for someone
+
+00:12:33.679 --> 00:12:36.679
+who has maintained such an old package for so long.
+
+00:12:36.679 --> 00:12:38.679
+It is, it's breaking new ground.
+
+00:12:38.679 --> 00:12:44.679
+Well, we have a couple of questions from Noor and Nathan
+
+00:12:44.679 --> 00:12:46.679
+that are a little similar.
+
+00:12:46.679 --> 00:12:51.679
+Noor asked, when would I use ggSQL
+
+00:12:51.679 --> 00:12:54.679
+versus porting my data into R or Y?
+
+00:12:54.679 --> 00:12:59.679
+And Nathan had asked, do people write slash execute SQL in an IDE?
+
+00:12:59.679 --> 00:13:01.679
+Where would I use this?
+
+00:13:01.679 --> 00:13:04.679
+So when and where would we use ggSQL?
+
+00:13:04.679 --> 00:13:07.679
+Good questions.
+
+00:13:07.679 --> 00:13:12.679
+And perhaps I cannot give like a very satisfying answer right now.
+
+00:13:12.679 --> 00:13:15.679
+First and foremost, ggSQL is still in alpha.
+
+00:13:15.679 --> 00:13:17.679
+So where do you use it?
+
+00:13:17.679 --> 00:13:20.679
+Well, we're still figuring that out.
+
+00:13:20.679 --> 00:13:22.679
+It's not that we don't have any ideas,
+
+00:13:22.679 --> 00:13:25.679
+but we don't see ggSQL as like a monolithic thing
+
+00:13:25.679 --> 00:13:27.679
+where we build an IDE around it.
+
+00:13:27.679 --> 00:13:31.679
+We want to integrate it in as many offerings as possible.
+
+00:13:31.679 --> 00:13:34.679
+We have a Jupyter kernel for it now.
+
+00:13:34.679 --> 00:13:40.679
+So I think that's so you can have like notebooks running ggSQL queries.
+
+00:13:40.679 --> 00:13:43.679
+And we have a Positron extension
+
+00:13:43.679 --> 00:13:47.679
+that means that you can execute ggSQL in Positron.
+
+00:13:47.679 --> 00:13:50.679
+I can actually show that to you.
+
+00:13:50.679 --> 00:13:55.679
+Let's see if I just redo my sharing.
+
+00:13:55.679 --> 00:14:00.679
+So I think this is, yeah.
+
+00:14:00.679 --> 00:14:05.679
+So this is my Positron window.
+
+00:14:05.679 --> 00:14:08.679
+And you can see here, if you're working in R,
+
+00:14:08.679 --> 00:14:10.679
+you're used to having this R console.
+
+00:14:10.679 --> 00:14:12.679
+You can also have a ggSQL console back down there.
+
+00:14:12.679 --> 00:14:19.679
+And we can do like visualize.
+
+00:14:19.679 --> 00:14:25.679
+Now I'm just like very uncreative, but doing the same.
+
+00:14:25.679 --> 00:14:32.679
+That's okay. This is live.
+
+00:14:32.679 --> 00:14:38.679
+And you can see it pops up and like acts as an integral.
+
+00:14:38.679 --> 00:14:40.679
+Oh, that's an interesting.
+
+00:14:40.679 --> 00:14:44.679
+I think that must be assumed thing with resizing. Sorry.
+
+00:14:44.679 --> 00:14:47.679
+That's okay.
+
+00:14:47.679 --> 00:14:49.679
+There we go.
+
+00:14:49.679 --> 00:14:52.679
+I can do, yeah, that's better.
+
+00:14:52.679 --> 00:14:54.679
+Staying on the same size.
+
+00:14:54.679 --> 00:14:59.679
+So you can see the integration feels a bit like R.
+
+00:14:59.679 --> 00:15:00.679
+This has a console.
+
+00:15:00.679 --> 00:15:05.679
+You can have ggSQL files, script files that you command enter,
+
+00:15:05.679 --> 00:15:08.679
+send to the console, get your visualization back.
+
+00:15:08.679 --> 00:15:10.679
+So all of these things are kind of integrated.
+
+00:15:10.679 --> 00:15:14.679
+We also have integration with the connection panes,
+
+00:15:14.679 --> 00:15:18.679
+which can still be improved, of course.
+
+00:15:18.679 --> 00:15:25.679
+But if you have like an ODBC, this is a Postgres SQL.
+
+00:15:25.679 --> 00:15:31.679
+So I have running just for testing.
+
+00:15:31.679 --> 00:15:33.679
+There you go. I can connect to that.
+
+00:15:33.679 --> 00:15:40.679
+I can see my database in here.
+
+00:15:40.679 --> 00:15:42.679
+And have all of these things.
+
+00:15:42.679 --> 00:15:49.679
+And now I can use that database directly from the console and interact with that.
+
+00:15:49.679 --> 00:15:51.679
+Awesome. That was one of the questions, actually,
+
+00:15:51.679 --> 00:15:54.679
+Diane had asked about database connection.
+
+00:15:54.679 --> 00:15:57.679
+So that kind of, that doesn't answer the other question.
+
+00:15:57.679 --> 00:16:00.679
+Like when, why would I even use that?
+
+00:16:00.679 --> 00:16:04.679
+And that's a fair question.
+
+00:16:04.679 --> 00:16:09.679
+I am not here today to sell you on the, like, change your workflow.
+
+00:16:09.679 --> 00:16:16.679
+If you're a happy, like, SQL plus R or SQL plus Python user, that's fantastic.
+
+00:16:16.679 --> 00:16:20.679
+I'm not here to like kind of convince you that you should change your ways.
+
+00:16:20.679 --> 00:16:25.679
+But there is like a huge amount of people that are, I would say,
+
+00:16:25.679 --> 00:16:30.679
+starved for good visualization options because they do not work in R or Python.
+
+00:16:30.679 --> 00:16:37.679
+They work in SQL and they will then have to put it into a GUI or some sort of thing.
+
+00:16:37.679 --> 00:16:40.679
+And in order to see their data.
+
+00:16:40.679 --> 00:16:43.679
+And I think we can do better for them.
+
+00:16:43.679 --> 00:16:49.679
+I also think that there are like, there are technical good reasons to reach for GSQL,
+
+00:16:49.679 --> 00:16:53.679
+even if you're working in R or Python.
+
+00:16:53.679 --> 00:17:00.679
+One of the things is that GSQL is structured in a way that means that like every plot is,
+
+00:17:00.679 --> 00:17:08.680
+like if you have a billion data points and want to create a, let's say a histogram of that,
+
+00:17:08.680 --> 00:17:16.680
+you would have to like take all of that into R and do segmentation and so on to do it in ggplot2.
+
+00:17:16.680 --> 00:17:24.680
+With GGSQL, what it does is actually like it constructs a SQL query to only get back the data required to plot it.
+
+00:17:24.680 --> 00:17:31.680
+So all of the statistical transformation, even for something like density plot or box plots and all of these things,
+
+00:17:31.680 --> 00:17:35.680
+they all happen in your high powered SQL database.
+
+00:17:35.680 --> 00:17:37.680
+And it's very, very fast.
+
+00:17:37.680 --> 00:17:41.680
+So for some situations, especially with large data warehouses,
+
+00:17:41.680 --> 00:17:47.680
+like I think it's a much more economic way to do data exploration.
+
+00:17:47.680 --> 00:17:54.680
+I like the idea of keeping your EDA inside of SQL and adding visualizations to it.
+
+00:17:54.680 --> 00:18:01.680
+And one of the questions we also had, let me see what was from Hubert.
+
+00:18:02.680 --> 00:18:09.680
+It was, okay, is it usually like here's your SQL to get your data and then we have GGSQL after that?
+
+00:18:09.680 --> 00:18:18.680
+Or can they be intermingled somehow as far as like having SQL code interspersed with GGSQL code?
+
+00:18:18.680 --> 00:18:29.680
+Yeah, so if you have a GGSQL file, then you can like have delimiters that like break them up in chunks.
+
+00:18:29.680 --> 00:18:34.680
+We're still like working on how the best way to do that is.
+
+00:18:34.680 --> 00:18:39.680
+So that's a kind of a weak answer.
+
+00:18:39.680 --> 00:18:43.680
+But yes, you can. I don't think it's perfect right now.
+
+00:18:43.680 --> 00:18:52.680
+We are missing some infrastructure to make the feeling in Positron even better.
+
+00:18:52.680 --> 00:18:58.680
+We don't have a pure language server that understands GGSQL and can say statement ends here.
+
+00:18:58.680 --> 00:19:03.680
+So when you say command enter, it executes down to that line and so on.
+
+00:19:03.680 --> 00:19:11.680
+So some of the affordances that we're used to with Python and R is still like on the building block in the pipeline.
+
+00:19:11.680 --> 00:19:17.680
+All right. Well, I have so many more questions.
+
+00:19:17.680 --> 00:19:23.680
+I would love us to keep going, but I will ask one more, which I think could be pretty quick.
+
+00:19:23.680 --> 00:19:29.680
+It's from Nessa, and it says, can I use something like this with a really big data platform like Snowflake?
+
+00:19:29.680 --> 00:19:31.680
+Is that a main use case?
+
+00:19:31.680 --> 00:19:35.680
+Yes, it's a very main use case.
+
+00:19:35.680 --> 00:19:47.680
+Basically, what we have now is we have a modular setup for GGSQL, which consists of a reader module, a plot module, which is kind of the central thing, and a writer module.
+
+00:19:47.680 --> 00:19:50.680
+The reader module is the one that interacts with your database.
+
+00:19:50.680 --> 00:19:56.680
+And it's modular. It has DuckDB bindings. It has ODBC bindings.
+
+00:19:56.680 --> 00:20:01.680
+Through ODBC, it has a dedicated Snowflake binding as well.
+
+00:20:01.680 --> 00:20:07.680
+And we're going to add so many interesting backends to it.
+
+00:20:07.680 --> 00:20:12.680
+Kind of what we said, we want to meet people where their data are.
+
+00:20:12.680 --> 00:20:16.680
+And that's where we're going with it.
+
+00:20:17.680 --> 00:20:30.680
+On the other side, there's this writer module, which is the one that takes all of these queries that end up in the data that should be plotted and converts it to something that is actually a plot.
+
+00:20:30.680 --> 00:20:33.680
+And currently, we only have one writer, which is a Megalite writer.
+
+00:20:33.680 --> 00:20:42.680
+So it takes all of these things and writes it into a Megalite spec, which is like a JSON spec, and then renders it.
+
+00:20:42.680 --> 00:20:47.680
+But this is not the end of the line for writers.
+
+00:20:47.680 --> 00:20:50.680
+We're working on something much more exciting.
+
+00:20:50.680 --> 00:20:57.680
+But it allowed us to move very fast because we didn't have to think about the actual rendering.
+
+00:20:57.680 --> 00:21:03.680
+Yeah. Well, let's go ahead and keep going with a little bit more demonstration.
+
+00:21:03.680 --> 00:21:05.680
+And I'm going to hold on to some of these questions.
+
+00:21:05.680 --> 00:21:07.680
+Thank you, everybody, for asking them.
+
+00:21:07.680 --> 00:21:14.680
+They have been amazing questions that are getting at things that I would love to know, too.
+
+00:21:14.680 --> 00:21:16.680
+Let's see.
+
+00:21:16.680 --> 00:21:18.680
+Let me look at my notes here.
+
+00:21:18.680 --> 00:21:32.680
+One of the questions that I had, you touched on it just a little bit with the visualization part, is like, if I wanted to use this, do I need to be in a platform that has a visualization tool like a viewer?
+
+00:21:32.680 --> 00:21:38.680
+Because a lot of people might be like, oh, can I just pop into SQLite 3 and use this?
+
+00:21:38.680 --> 00:21:41.680
+Is it going to open up like a graphics viewer of some kind?
+
+00:21:41.680 --> 00:21:43.680
+Yes.
+
+00:21:43.680 --> 00:21:47.680
+So we have a DuckDB extension.
+
+00:21:47.680 --> 00:21:56.680
+So if you're working in DuckDB, you can say install ggSQL and you can immediately use ggSQL from within DuckDB.
+
+00:21:56.680 --> 00:22:01.680
+I think it's always interesting to figure out how to integrate.
+
+00:22:01.680 --> 00:22:10.680
+I think what we want to do with Positron is to create the premier SQL platform, this premier SQL IDE.
+
+00:22:10.680 --> 00:22:21.680
+So it's going to be the obvious way to use this, but we don't want to make it monolithic in the sense that you have to use Positron to get a nice experience with this.
+
+00:22:21.680 --> 00:22:26.680
+So one of this is like a DuckDB extension for it.
+
+00:22:26.680 --> 00:22:29.680
+It obviously doesn't have a viewer pane.
+
+00:22:29.680 --> 00:22:36.680
+So what it does is it's popping up a browser window and displays it there.
+
+00:22:36.680 --> 00:22:39.680
+And that's kind of the thing.
+
+00:22:39.680 --> 00:22:52.680
+You can be a bit constrained when you're dealing with extensions for specific SQL engines, but hopefully we can meet people in a lot of places.
+
+00:22:52.680 --> 00:22:58.680
+Marimo is another interesting place to see this.
+
+00:22:58.680 --> 00:23:03.680
+We don't have anything for it right now, but I think that's an obvious thing to explore.
+
+00:23:03.680 --> 00:23:10.680
+And then there's Quarto documents with the ggSQL kernel.
+
+00:23:10.680 --> 00:23:13.680
+I don't even think of Marimo plus SQL.
+
+00:23:13.680 --> 00:23:16.680
+I just think of it as Python.
+
+00:23:16.680 --> 00:23:21.680
+And I know that it can play well with Quarto.
+
+00:23:21.680 --> 00:23:26.680
+We had a couple more questions that if you have time to answer them would be amazing.
+
+00:23:27.680 --> 00:23:37.680
+So Nathan had asked, I can see a future thing like dbplyr where ggplot2 just has a SQL backend and runs ggSQL.
+
+00:23:37.680 --> 00:23:39.680
+If you give it a database.
+
+00:23:39.680 --> 00:23:42.680
+So is that a direction y'all are thinking of going?
+
+00:23:42.680 --> 00:23:47.680
+Not exactly.
+
+00:23:47.680 --> 00:23:48.680
+I don't think so.
+
+00:23:48.680 --> 00:24:04.680
+I think for all of their similarities, there are also strong dissimilarities between the way ggplot2 works and how it expresses itself and how ggSQL works.
+
+00:24:04.680 --> 00:24:13.680
+Part of it is some of these chains of old depth that we want to shed, which means there's not a direct translation.
+
+00:24:14.680 --> 00:24:26.680
+So I think it's more natural to think that we would in some way provide a good high level API for this in R.
+
+00:24:26.680 --> 00:24:35.680
+That's not ggplot2, but just like kind of what dbplyr does constructs a query that is then executed.
+
+00:24:35.680 --> 00:24:38.680
+I think that's a better approach.
+
+00:24:38.680 --> 00:24:42.680
+There's already like a ggSQL R package with bindings for ggSQL.
+
+00:24:42.680 --> 00:24:53.680
+So it doesn't have a high level interface like you just give it a SQL string, but you can use that to actually create your own readers.
+
+00:24:53.680 --> 00:25:03.680
+So if you have some data source in R that you cannot interact with with ggSQL, then you can use R, the R package as a binding between that and quickly get going.
+
+00:25:03.680 --> 00:25:05.680
+We have the same for Python as well.
+
+00:25:05.680 --> 00:25:07.680
+We have a ggSQL Python package.
+
+00:25:08.680 --> 00:25:16.680
+This also kind of shows that we're trying to put this in as many places as we possibly can.
+
+00:25:16.680 --> 00:25:21.680
+One interesting thing about the R package is that it's also a knitter engine.
+
+00:25:21.680 --> 00:25:32.680
+So you can use ggSQL in knitter and then use that to mix R, Python, and ggSQL code in a single quarter document.
+
+00:25:32.680 --> 00:25:43.680
+And ggSQL automatically gets access to the datasets that you have in both your R and Python chunks in front of it.
+
+00:25:44.680 --> 00:25:57.680
+So that's a very smooth way of saying, I'm using Python or R to do my data wrangling, and then I'm going to use ggSQL to describe my plots and just automatically get access to whatever data you create.
+
+00:26:00.680 --> 00:26:02.680
+That is so super cool.
+
+00:26:05.680 --> 00:26:08.680
+I think that Isabella has a question for you.
+
+00:26:09.680 --> 00:26:21.680
+I'm just curious, would you mind showing us, say, we have a lot of folks who are new to the SQL world and particularly coming from the R, Python world.
+
+00:26:21.680 --> 00:26:25.680
+What would it look like to, you mentioned the Positron extension.
+
+00:26:25.680 --> 00:26:31.680
+After you install the extension, what do you do to use ggSQL within Positron?
+
+00:26:31.680 --> 00:26:37.680
+Sure, let's get back to this view.
+
+00:26:37.680 --> 00:26:42.680
+So let's assume that I'm here, I am an R developer.
+
+00:26:42.680 --> 00:26:48.680
+I was also curious, what is the .rs file? I've never seen that before.
+
+00:26:48.680 --> 00:26:52.680
+Oh, this is a Rust file.
+
+00:26:52.680 --> 00:26:54.680
+So ggSQL is written in Rust.
+
+00:26:54.680 --> 00:27:05.680
+It's pure Rust, which means that it compiles to WebAssembly, which is also why we can have it in our website and executing things.
+
+00:27:05.680 --> 00:27:10.680
+It's not talking to a server, it's just running in your browser, doing interesting stuff.
+
+00:27:10.680 --> 00:27:13.680
+Anyway, you're here.
+
+00:27:13.680 --> 00:27:21.680
+You have installed the ggSQL extension.
+
+00:27:21.680 --> 00:27:25.680
+Can everybody see Thomas' size? Does it need to be a little bit bigger?
+
+00:27:25.680 --> 00:27:29.680
+We might do one zoom in, one command plus sign.
+
+00:27:29.680 --> 00:27:31.680
+There we go.
+
+00:27:31.680 --> 00:27:34.680
+For the YouTube crowd, yes, thank you.
+
+00:27:35.680 --> 00:27:39.680
+So you have installed this, you have installed ggSQL as well.
+
+00:27:39.680 --> 00:27:47.680
+It's kind of like with Quoto, you can install the extension, but you also need to install Quoto so that the executable exists in your system.
+
+00:27:47.680 --> 00:27:53.680
+So if you go to the website and go to get started, there's install instructions there.
+
+00:27:53.680 --> 00:27:55.680
+It's just a regular installer.
+
+00:27:55.680 --> 00:28:00.680
+Anyway, so you have all this set up, and now you want to do something.
+
+00:28:00.680 --> 00:28:11.680
+What you can do is, if you want to get back to this console that I had before, we can do this by saying start another.
+
+00:28:11.680 --> 00:28:22.680
+And then you can see that it exists there as a console engine, and we're up and running.
+
+00:28:22.680 --> 00:28:27.680
+And then you can just do whatever, as I did before.
+
+00:28:27.680 --> 00:28:36.680
+If you have data sources in your connection pane, you can have them set up and connect to them again.
+
+00:28:36.680 --> 00:28:40.680
+Resume connection, and you can begin to explore.
+
+00:28:41.680 --> 00:28:52.680
+So this console, while it's a ggSQL console, can also execute regular SQL.
+
+00:28:52.680 --> 00:28:57.680
+So you can do both, one and the other.
+
+00:28:57.680 --> 00:29:00.680
+We don't have tab completion yet.
+
+00:29:00.680 --> 00:29:03.680
+This is one of the things, one of the four instances that we're looking into.
+
+00:29:03.680 --> 00:29:05.680
+I will just...
+
+00:29:05.680 --> 00:29:08.680
+Lego cars.
+
+00:29:08.680 --> 00:29:10.680
+There you go.
+
+00:29:12.828 --> 00:29:21.948
+So you can do that, and then you can, let's say, what's a meaningful
+
+00:29:23.788 --> 00:29:25.388
+way to describe this?
+
+00:29:25.388 --> 00:29:33.307
+Which visualize is trans.
+
+00:29:42.748 --> 00:29:46.988
+Super interested in where this dataset lives as well.
+
+00:29:46.988 --> 00:30:01.148
+This is my PostgreSQL dataset of Lego colors.
+
+00:30:01.148 --> 00:30:11.707
+So this is me using ggsql to run a query on an ODBC-backed PostgreSQL database, and
+
+00:30:11.948 --> 00:30:19.148
+I'm getting a horrible plot out of it, but anyway, the core idea is there.
+
+00:30:21.307 --> 00:30:27.707
+And you can see that, for instance, Lego sets, that's a larger thing.
+
+00:30:28.748 --> 00:30:36.267
+We also have, so this connection pane is driven by the ggsql extension, but we also integrate
+
+00:30:36.267 --> 00:30:38.188
+into the data viewer as well.
+
+00:30:38.188 --> 00:30:45.067
+So you have all of these things that you're used to looking at when you're in ggsql world
+
+00:30:45.067 --> 00:30:46.108
+and positron as well.
+
+00:30:48.508 --> 00:30:52.508
+Yeah, so I think that's how you'd get started, I think.
+
+00:30:52.508 --> 00:31:00.347
+If you want to get started just toying around and seeing if this really is something for
+
+00:31:00.428 --> 00:31:12.027
+you, then we also have a no setup solution on the website, which is, let's see, the playground,
+
+00:31:12.908 --> 00:31:17.707
+which is somewhat of an IDE that exists in your browser.
+
+00:31:18.748 --> 00:31:23.627
+You can upload your own data to play with it, but you can also use some of the built-in
+
+00:31:23.627 --> 00:31:30.428
+datasets, and just like there are examples, example plots that you can start off and then
+
+00:31:30.428 --> 00:31:33.707
+just begin to do fun stuff with it.
+
+00:31:34.668 --> 00:31:39.388
+This is so fun, because you could still just use basic SQL in here, right?
+
+00:31:39.388 --> 00:31:43.228
+You could just play around with SQL.
+
+00:31:43.228 --> 00:31:47.627
+This is a good little chance to learn if anybody is curious.
+
+00:31:48.267 --> 00:31:48.767
+Yeah.
+
+00:31:49.567 --> 00:31:54.448
+In terms of the SQL that you wrote in positron, can it do all the SQL?
+
+00:31:56.207 --> 00:31:56.707
+Yes.
+
+00:31:56.928 --> 00:31:57.428
+Wow.
+
+00:32:00.528 --> 00:32:05.567
+So the way it works is that it's basically just taking your SQL statement and sending
+
+00:32:05.567 --> 00:32:06.368
+it to your backend.
+
+00:32:06.368 --> 00:32:08.127
+So you're constrained by your backend.
+
+00:32:08.127 --> 00:32:10.368
+You cannot use DuckDB functions.
+
+00:32:10.368 --> 00:32:17.728
+If you have a PostgreSQL database, then you're limited to that and vice versa.
+
+00:32:19.088 --> 00:32:25.567
+So whatever SQL your data, whatever dialect your data lives in, you can use that.
+
+00:32:27.808 --> 00:32:34.127
+We had a question from Notobeko that said, have you discovered anything that this fusion
+
+00:32:34.127 --> 00:32:41.168
+of SQL and ggplot can do that is unique to it past what the individual parts alongside
+
+00:32:41.168 --> 00:32:42.528
+one another can do?
+
+00:32:43.487 --> 00:32:51.008
+And I would further this by saying, have you hit the limits of it where you're like, it's
+
+00:32:51.008 --> 00:32:52.607
+good for this, but it's not good for this?
+
+00:32:53.567 --> 00:32:54.067
+Yeah.
+
+00:32:56.767 --> 00:32:57.808
+That's a good question.
+
+00:32:58.528 --> 00:33:14.047
+I think this, where SQL and gg shines together is more on like a theoretical, like foundational
+
+00:33:14.047 --> 00:33:14.547
+level.
+
+00:33:16.767 --> 00:33:18.607
+It feels very right.
+
+00:33:18.607 --> 00:33:23.567
+Like the first time someone told me about this was like, I didn't come up with this
+
+00:33:23.567 --> 00:33:24.607
+idea, but I took it on.
+
+00:33:25.168 --> 00:33:28.767
+The first time it was presented to me, it was like, that sounds weird.
+
+00:33:29.568 --> 00:33:34.928
+But SQL is declarative data manipulation.
+
+00:33:35.568 --> 00:33:39.487
+gg, grammar of graphics, is declarative data visualization.
+
+00:33:39.487 --> 00:33:46.528
+And like these two things just feel so right together in the same sense that dplyr and
+
+00:33:46.528 --> 00:33:49.648
+ggplot2 also feels kind of right together.
+
+00:33:51.887 --> 00:33:54.287
+But this is like, this is on a different level.
+
+00:33:54.528 --> 00:33:58.688
+It's like purely the syntax of SQL.
+
+00:33:58.688 --> 00:34:02.928
+It's very verbose, but it also reads like super nice.
+
+00:34:04.688 --> 00:34:11.248
+And what we have found also, if you're using like LLMs to generate your code, like it picks
+
+00:34:11.248 --> 00:34:14.287
+up gg SQL syntax, like very easy.
+
+00:34:14.287 --> 00:34:21.007
+And it's very good at expressing itself with it because it reads like text.
+
+00:34:21.808 --> 00:34:28.047
+And it has like, it tries to stay as true to SQL, which it has a lot of, like there's
+
+00:34:28.047 --> 00:34:31.248
+a lot of SQL in LLMs training data.
+
+00:34:32.047 --> 00:34:34.767
+And it tries to stay as true to that, like ether.
+
+00:34:34.767 --> 00:34:37.408
+So it like picks it up really easy.
+
+00:34:39.887 --> 00:34:42.528
+Yeah, so, sorry, go ahead.
+
+00:34:42.528 --> 00:34:46.928
+No, no, I was going to say, I think that that covers the first part.
+
+00:34:46.928 --> 00:34:51.727
+And I was going to ask, I was going to say, can I like rephrase my question?
+
+00:34:51.727 --> 00:34:53.887
+Because I said, have you reached the limits of it?
+
+00:34:54.607 --> 00:34:59.968
+I guess what I'm really saying is like, could you talk a little bit about what alpha means?
+
+00:34:59.968 --> 00:35:01.167
+What being an alpha means?
+
+00:35:02.207 --> 00:35:06.128
+Because have you reached the limits is definitely not a challenge.
+
+00:35:06.128 --> 00:35:10.607
+It's more like, hey, let's talk about where the state of things right now, where we hope
+
+00:35:10.607 --> 00:35:13.568
+they will go and how people can help give feedback too.
+
+00:35:14.047 --> 00:35:19.088
+Yeah, I can start by saying we haven't reached the limit, but we have, I will entertain that
+
+00:35:19.088 --> 00:35:27.007
+idea a bit first, because it does like trying to be true to the SQL syntax and the SQL field
+
+00:35:27.727 --> 00:35:32.767
+also provides us with some limits in what we can do to express ourselves.
+
+00:35:33.568 --> 00:35:39.167
+And one of them is like, in R and Python, you can just like make up functions and pass
+
+00:35:39.167 --> 00:35:42.207
+them into other functions.
+
+00:35:42.207 --> 00:35:51.088
+So like if you wanted to quickly make a summary function, you'll pass it into the stat summary
+
+00:35:53.327 --> 00:35:55.808
+layer and you can do all sorts of things.
+
+00:35:55.808 --> 00:35:56.607
+We're limited here.
+
+00:35:56.607 --> 00:36:03.968
+We don't want people like, it's not even possible in a sensible way to create functions on the
+
+00:36:03.968 --> 00:36:04.848
+fly.
+
+00:36:04.848 --> 00:36:10.207
+So we have to create a syntax that is maximally expressive without resorting to these cheap
+
+00:36:10.207 --> 00:36:10.707
+tricks.
+
+00:36:11.648 --> 00:36:20.607
+And that is limiting, but it also forces us to think like very clearly around the syntax.
+
+00:36:20.607 --> 00:36:25.327
+There is no escape hatch of just passing the function and like you deal with it.
+
+00:36:25.327 --> 00:36:26.287
+Like we can't do that.
+
+00:36:26.287 --> 00:36:28.128
+We have to think all these things through.
+
+00:36:28.128 --> 00:36:30.287
+So that's also been very interesting.
+
+00:36:32.447 --> 00:36:33.727
+What does alpha mean?
+
+00:36:33.727 --> 00:36:38.287
+It means that you should probably not build a company around it yet.
+
+00:36:38.767 --> 00:36:45.568
+I think I am like, you could call it better or alpha.
+
+00:36:45.568 --> 00:36:47.808
+I don't put too much into this.
+
+00:36:47.808 --> 00:36:53.088
+It's to me, it just means that it's unfinished and it's subject to change if we find out
+
+00:36:53.088 --> 00:36:55.568
+that something doesn't work as we want it to.
+
+00:36:57.167 --> 00:37:05.648
+In terms of polish, I think we are way beyond the alpha mark there in terms of what it can
+
+00:37:05.648 --> 00:37:07.007
+do and so on.
+
+00:37:07.327 --> 00:37:12.287
+I think we have superseded what we set out to do by many, many leaks.
+
+00:37:13.727 --> 00:37:20.848
+So alpha is just us being honest that it's still a very, very active development and
+
+00:37:20.848 --> 00:37:23.088
+we're still feeling our way around it.
+
+00:37:25.167 --> 00:37:29.808
+But as you can see, I think from the website as well, I don't want to rewrite all of this
+
+00:37:32.207 --> 00:37:33.007
+documentation.
+
+00:37:33.088 --> 00:37:39.167
+So we're staying pretty, it's fairly solid as it is right now.
+
+00:37:39.968 --> 00:37:45.248
+And I think if you learn it now, you will not wake up in six months and see it being
+
+00:37:45.248 --> 00:37:49.167
+changed drastically and you have to relearn it in any way.
+
+00:37:51.167 --> 00:37:53.568
+There are things that we really want to get in.
+
+00:37:53.568 --> 00:37:55.568
+So this is spatial stuff.
+
+00:37:56.128 --> 00:38:00.047
+It's one of these things that will be part of the next release.
+
+00:38:00.768 --> 00:38:01.268
+Oh, yeah.
+
+00:38:03.487 --> 00:38:12.368
+So Jian, my co-developer, has been working on this for a month or so with very rich spatial
+
+00:38:12.368 --> 00:38:20.368
+support and support for all of these crazy projections and sort of things.
+
+00:38:20.607 --> 00:38:27.727
+That also presents us with some interesting, let's say, challenges, because usually when
+
+00:38:27.727 --> 00:38:33.407
+you have SQL data, you don't have borders of countries, right?
+
+00:38:33.407 --> 00:38:38.448
+You have a country and you have some value for it, and you want to make a chloropleth
+
+00:38:38.448 --> 00:38:39.487
+map or whatever.
+
+00:38:41.248 --> 00:38:49.248
+So how in R, it's more normal to like, well, you just like, you know, you have a lot of
+
+00:38:49.248 --> 00:38:54.047
+data, well, you just like download some data from natural earth, and then you do left join
+
+00:38:54.047 --> 00:38:56.128
+and you'll have your like all of these kind of things.
+
+00:38:56.928 --> 00:39:05.808
+And working with spatial data is, I think, even more foreign for your regular pure SQL
+
+00:39:05.808 --> 00:39:10.688
+user, because spatial data is usually not part of a database, right?
+
+00:39:11.167 --> 00:39:20.287
+So how do we, without making cheap excuses and polluting the syntax with
+
+00:39:23.647 --> 00:39:31.328
+unpure escape hatches, how do we provide a nice experience for people that are not super
+
+00:39:31.328 --> 00:39:37.568
+into spatial data, but want to make a chloropleth map, for instance, or want to plot location
+
+00:39:37.568 --> 00:39:43.328
+of instances on the globe, like earthquake centers or whatever, like these kind of things.
+
+00:39:44.527 --> 00:39:45.888
+So that's pretty interesting.
+
+00:39:45.888 --> 00:39:47.888
+We're still feeling a way around that.
+
+00:39:48.688 --> 00:39:49.087
+All right.
+
+00:39:49.087 --> 00:39:53.808
+Well, I think that the questions that we have rolling in can lead us in a cool direction.
+
+00:39:53.808 --> 00:39:55.808
+So let me do a couple of things.
+
+00:39:56.368 --> 00:40:00.047
+One is, I want to read a comment from Tara.
+
+00:40:00.047 --> 00:40:01.888
+Tara or Tara, I don't know how you say your name.
+
+00:40:01.888 --> 00:40:02.847
+I'm so sorry I said it wrong.
+
+00:40:04.287 --> 00:40:06.047
+Tara says, I love this.
+
+00:40:06.047 --> 00:40:11.167
+At work, we query more often than we code in R, and not everyone codes in R.
+
+00:40:11.167 --> 00:40:16.448
+This has been a pain point for me to do some minimal statistical review slash graph creation
+
+00:40:16.448 --> 00:40:23.888
+directly in SQL for those simpler queries before needing to move to the query data in R Python.
+
+00:40:23.888 --> 00:40:30.128
+And I think that that is a great explanation for anybody who's like, who is this good for?
+
+00:40:30.128 --> 00:40:31.248
+Who would this be good for?
+
+00:40:31.248 --> 00:40:32.847
+Who would be a great use case?
+
+00:40:33.808 --> 00:40:38.527
+There are loads of people that I know in the data world who actually don't code in R or
+
+00:40:38.527 --> 00:40:44.928
+Python at all, who do all of their querying in SQL, and then they might move things over
+
+00:40:44.928 --> 00:40:49.967
+into a Power BI or Tableau or Looker or something else like that.
+
+00:40:51.008 --> 00:40:55.167
+And it would be great to be able to visualize what they're looking at before they take that
+
+00:40:55.167 --> 00:41:01.487
+step of porting it over and use all of that time, effort, or memory to do that.
+
+00:41:02.448 --> 00:41:03.888
+So thank you, Tara, for sharing that.
+
+00:41:04.928 --> 00:41:13.568
+Kevin had also asked, do you imagine any useful integration between Orbital and GGSQL?
+
+00:41:15.008 --> 00:41:15.508
+Oh.
+
+00:41:15.888 --> 00:41:17.568
+I know we don't have Emil here to ask that.
+
+00:41:17.568 --> 00:41:18.068
+Yeah.
+
+00:41:19.888 --> 00:41:26.527
+It's kind of like, it's coming from the same place, right?
+
+00:41:26.527 --> 00:41:27.407
+It is, yeah.
+
+00:41:27.967 --> 00:41:33.008
+How to express something as database queries and get something back.
+
+00:41:34.208 --> 00:41:39.967
+I have not, to be honest, it sounds like an interesting coupling that I have not thought
+
+00:41:39.967 --> 00:41:40.847
+about, so I won't.
+
+00:41:40.847 --> 00:41:41.347
+All right.
+
+00:41:42.527 --> 00:41:43.647
+Watch this space, everybody.
+
+00:41:43.647 --> 00:41:46.128
+We'll ask Emil next time he's on.
+
+00:41:47.808 --> 00:41:48.607
+Okay.
+
+00:41:48.607 --> 00:41:53.568
+NunnTobacco had also said, it really feels like this is skipping a lot of the backend steps,
+
+00:41:53.568 --> 00:41:58.688
+more so on the Gigi plot side, at least when you're generating a Viz without any styling.
+
+00:41:58.688 --> 00:42:00.047
+So what about styling?
+
+00:42:00.047 --> 00:42:03.647
+Are you purely focusing on creating basic plots just for now?
+
+00:42:06.368 --> 00:42:08.287
+So right now you cannot style.
+
+00:42:08.287 --> 00:42:09.967
+So that is the honest question.
+
+00:42:09.967 --> 00:42:13.407
+And this is just an omission for now.
+
+00:42:14.287 --> 00:42:16.847
+It is certainly something that will appear.
+
+00:42:18.527 --> 00:42:22.208
+The reason for the omission is that styling is messy.
+
+00:42:23.647 --> 00:42:34.287
+And if you try to express it in, I guess, easy in Gigi plot 2, if you just buy into
+
+00:42:35.008 --> 00:42:37.248
+one of the prebuilt themes, then it's easy.
+
+00:42:38.287 --> 00:42:47.328
+But the theme function is horrible in any way, their number of arguments and so on.
+
+00:42:47.328 --> 00:42:52.928
+So I think the reason why it's not there right now is that I have not yet decided
+
+00:42:52.928 --> 00:42:55.087
+on exactly how it should look.
+
+00:42:56.688 --> 00:43:02.287
+Rather than give a half-assed solution for it for now, I'd rather just say,
+
+00:43:03.967 --> 00:43:07.328
+right now it looks like theme gray and be happy with it.
+
+00:43:08.287 --> 00:43:12.128
+Well, it does seem like there's one styling you can do, which is changing your labels.
+
+00:43:12.128 --> 00:43:15.727
+And Renato had asked if we could demonstrate the label clause.
+
+00:43:15.727 --> 00:43:17.568
+Is that something you could do with us on screen?
+
+00:43:18.287 --> 00:43:18.688
+Oh, yeah.
+
+00:43:20.128 --> 00:43:21.487
+Yeah, so that's more...
+
+00:43:24.448 --> 00:43:25.647
+It's a little bit of styling.
+
+00:43:25.647 --> 00:43:29.328
+I know that it's technically like, let's just make things correct here.
+
+00:43:29.328 --> 00:43:30.287
+But it does exist.
+
+00:43:31.167 --> 00:43:35.487
+It does exist to take control over labels.
+
+00:43:35.487 --> 00:43:43.167
+So you can have, you can set, like right now, the automatic label for the legend,
+
+00:43:43.167 --> 00:43:45.967
+the fill legend over here is just the name of the column.
+
+00:43:45.967 --> 00:43:48.208
+So that doesn't feel super nice.
+
+00:43:48.527 --> 00:43:56.287
+Instead, we'll call it, I guess it's a graph.
+
+00:43:57.808 --> 00:44:00.208
+So the label styling is there.
+
+00:44:01.167 --> 00:44:11.568
+Other things you can do that feels sort of there is, for instance, to do like...
+
+00:44:16.128 --> 00:44:16.847
+What's the name?
+
+00:44:16.847 --> 00:44:17.888
+So we are really...
+
+00:44:22.527 --> 00:44:23.167
+Reliable?
+
+00:44:24.847 --> 00:44:25.087
+No.
+
+00:44:26.287 --> 00:44:27.008
+I'm sorry.
+
+00:44:27.008 --> 00:44:32.928
+I've been working on something else that is actually GSQL related, but not really.
+
+00:44:32.928 --> 00:44:34.688
+So it's been a while since I rinsed.
+
+00:44:35.727 --> 00:44:36.928
+That's okay, we're testing.
+
+00:44:36.928 --> 00:44:37.967
+Renaming, yeah, yeah.
+
+00:44:37.967 --> 00:44:38.688
+Look at the candles.
+
+00:44:39.647 --> 00:44:39.888
+Yeah.
+
+00:44:40.448 --> 00:44:41.248
+Yes, exactly.
+
+00:44:41.808 --> 00:44:50.448
+So you can do something like renaming, which allows you to rename the break labels,
+
+00:44:51.167 --> 00:44:53.888
+for instance, for an access or here for this over here.
+
+00:44:54.527 --> 00:44:57.487
+So let's say...
+
+00:45:03.487 --> 00:45:07.087
+You can do something like that, but you can also, and this is kind of,
+
+00:45:07.087 --> 00:45:11.727
+you cannot pass in functions, but we've created our own little mini language
+
+00:45:14.047 --> 00:45:21.647
+to allow you to do kind of quick glue-ish interpolation of strings.
+
+00:45:24.047 --> 00:45:28.448
+So the value will be inserted here, and then you can put things around it.
+
+00:45:28.448 --> 00:45:38.287
+And you can also specify like a printf specifier up here.
+
+00:45:38.287 --> 00:45:39.087
+So you could have...
+
+00:45:43.808 --> 00:45:44.688
+Oh, yeah.
+
+00:45:44.688 --> 00:45:47.808
+So if you want horrible scientific formatting.
+
+00:45:47.808 --> 00:45:54.688
+So there are these kind of affordances right now around text that we have,
+
+00:45:54.688 --> 00:45:58.128
+but if you want to change like the color of grid lines,
+
+00:45:58.128 --> 00:46:00.928
+or if you want to change like the title font,
+
+00:46:00.928 --> 00:46:04.607
+all of these things doesn't exist now, but will certainly.
+
+00:46:05.487 --> 00:46:11.008
+I think that if the question is around like, will it be like D3?
+
+00:46:11.008 --> 00:46:14.368
+Can you do like really off the rails visualization?
+
+00:46:14.368 --> 00:46:19.088
+Then no, this is for creating more regular plots.
+
+00:46:20.767 --> 00:46:22.367
+Definitely feels like more EDA to me.
+
+00:46:22.527 --> 00:46:25.728
+You are having a conversation with your data and you want to look at it,
+
+00:46:25.728 --> 00:46:28.688
+much less I'm going to put this in a report, right?
+
+00:46:28.688 --> 00:46:30.127
+That I'm giving to an executive.
+
+00:46:31.647 --> 00:46:32.367
+But we did have a question.
+
+00:46:32.367 --> 00:46:33.167
+We're going there.
+
+00:46:33.167 --> 00:46:34.047
+We're going there.
+
+00:46:34.047 --> 00:46:35.007
+Oh, okay.
+
+00:46:35.007 --> 00:46:36.127
+Yeah, absolutely.
+
+00:46:36.127 --> 00:46:38.287
+I'm not going to limit your potential.
+
+00:46:39.247 --> 00:46:41.808
+We had a question, I think that it was from Ken,
+
+00:46:42.367 --> 00:46:45.328
+that said, could the color of the points be sized up?
+
+00:46:45.328 --> 00:46:49.007
+So do you have options available in the draw point clause?
+
+00:46:50.047 --> 00:46:50.547
+Yes.
+
+00:46:51.188 --> 00:46:57.988
+Well, right now the color of the points are based on this mapping, right?
+
+00:46:57.988 --> 00:46:58.787
+The body mass.
+
+00:46:59.828 --> 00:47:03.108
+So the fill of the points are here.
+
+00:47:03.108 --> 00:47:11.188
+They're very small, so we could say setting size to something bigger.
+
+00:47:11.188 --> 00:47:13.588
+Oh, that's probably a bit too much.
+
+00:47:15.507 --> 00:47:16.068
+There you go, Ken.
+
+00:47:16.147 --> 00:47:22.147
+So you can see, so this is the default continuous color scale,
+
+00:47:23.108 --> 00:47:28.068
+but we can do scale fill.
+
+00:47:28.068 --> 00:47:29.667
+Oh, we already have the scale fill.
+
+00:47:31.108 --> 00:47:31.907
+Yeah.
+
+00:47:31.907 --> 00:47:33.108
+We do, yeah.
+
+00:47:33.108 --> 00:47:34.308
+We have a scale bin.
+
+00:47:34.308 --> 00:47:36.468
+We can make it not binned.
+
+00:47:36.468 --> 00:47:39.267
+So we can see we have a gradient here instead.
+
+00:47:40.228 --> 00:47:43.108
+And then we can name a palette if we want to.
+
+00:47:43.188 --> 00:47:47.188
+So we have tons of palettes in there.
+
+00:47:47.188 --> 00:47:55.507
+You can also just say from red to green.
+
+00:47:56.948 --> 00:48:02.068
+Are they the basic built-ins like plasma or magma or whatever it is?
+
+00:48:02.787 --> 00:48:03.747
+Don't get me started.
+
+00:48:04.627 --> 00:48:08.387
+I've been asking the visualization king of his question.
+
+00:48:08.387 --> 00:48:09.108
+I gotta know.
+
+00:48:09.588 --> 00:48:13.588
+So these are the palettes that are built in.
+
+00:48:14.948 --> 00:48:16.387
+So we have a bunch, right?
+
+00:48:16.948 --> 00:48:22.068
+So there is like all of the Viridis things.
+
+00:48:22.068 --> 00:48:23.188
+There's Color Brewer.
+
+00:48:23.188 --> 00:48:25.828
+There is the Scientific Color Scales from Krameri.
+
+00:48:27.747 --> 00:48:33.188
+There is a bunch of, there's our own like discrete scale,
+
+00:48:33.188 --> 00:48:37.747
+but we also have the Tableau and the D3 and more Color Brewer.
+
+00:48:39.108 --> 00:48:40.468
+So we have a bunch, right?
+
+00:48:41.747 --> 00:48:45.507
+You should not feel limited by the palettes.
+
+00:48:46.308 --> 00:48:47.188
+Right now, we don't have.
+
+00:48:47.188 --> 00:48:49.108
+You can customize, which is nice.
+
+00:48:49.907 --> 00:48:53.747
+But Becca had asked a question that I also had
+
+00:48:53.747 --> 00:48:55.747
+as I was watching you play around,
+
+00:48:55.747 --> 00:49:00.147
+which was, are you pressing anything to render as you type?
+
+00:49:00.147 --> 00:49:03.507
+Or is it just executing as you're typing that code
+
+00:49:03.507 --> 00:49:07.267
+and recognizing in the web interface that you have typed good code?
+
+00:49:07.828 --> 00:49:11.108
+Yeah, the web interface evaluates constantly.
+
+00:49:11.108 --> 00:49:12.387
+And it's this fast.
+
+00:49:12.387 --> 00:49:15.027
+Like it's very, very quick to update.
+
+00:49:15.027 --> 00:49:17.667
+If there is a syntax error, it will not change it.
+
+00:49:17.667 --> 00:49:19.428
+So you don't have this like flickering
+
+00:49:19.428 --> 00:49:21.907
+from like a blank plot or an error.
+
+00:49:21.907 --> 00:49:25.828
+So if I remove this, it'll just say execute error.
+
+00:49:26.547 --> 00:49:27.828
+Horrible errors now.
+
+00:49:27.828 --> 00:49:29.828
+We're going to improve that as well.
+
+00:49:30.547 --> 00:49:31.507
+But it will not render.
+
+00:49:31.507 --> 00:49:33.027
+Like it will just keep the old plot.
+
+00:49:33.027 --> 00:49:36.547
+So we don't have like flickering
+
+00:49:36.547 --> 00:49:39.988
+of going from good syntax to bad syntax, right?
+
+00:49:41.108 --> 00:49:43.267
+But if I just change this,
+
+00:49:43.267 --> 00:49:45.188
+you can see it getting updated instantly.
+
+00:49:45.188 --> 00:49:48.708
+I'm not doing anything other than just typing things in.
+
+00:49:49.907 --> 00:49:50.708
+Wonderful.
+
+00:49:50.708 --> 00:49:52.787
+Okay, and I think, Dave,
+
+00:49:52.787 --> 00:49:55.988
+I saw you ask a question about GGSQL and Snowflake.
+
+00:49:55.988 --> 00:49:57.348
+I think we talked about that earlier,
+
+00:49:57.348 --> 00:49:59.027
+but it might've been before you got here
+
+00:49:59.027 --> 00:50:02.787
+that yes, GGSQL and Snowflake is a thing.
+
+00:50:03.348 --> 00:50:05.747
+Thomas, if people do want to use GGSQL and Snowflake,
+
+00:50:05.747 --> 00:50:07.828
+do they have to do anything specific to get it?
+
+00:50:10.228 --> 00:50:13.348
+No, if they have Snowflake set up
+
+00:50:13.348 --> 00:50:16.547
+and have ODBC drivers for Snowflake,
+
+00:50:16.547 --> 00:50:18.787
+then things should work.
+
+00:50:19.348 --> 00:50:19.907
+Okay, great.
+
+00:50:20.627 --> 00:50:23.828
+I'm wielding the should with a very strong conviction.
+
+00:50:25.507 --> 00:50:27.828
+Everybody go test it if you have Snowflake
+
+00:50:27.828 --> 00:50:28.948
+and an ODBC driver.
+
+00:50:29.988 --> 00:50:32.147
+There's probably some jankiness still,
+
+00:50:32.147 --> 00:50:34.228
+but it should work.
+
+00:50:34.228 --> 00:50:37.588
+Yes, good reminder that this isn't alpha, right?
+
+00:50:37.588 --> 00:50:38.547
+Yes, exactly.
+
+00:50:38.547 --> 00:50:40.708
+If you hit problems, come back here and talk to us
+
+00:50:40.708 --> 00:50:41.348
+and let us know.
+
+00:50:42.228 --> 00:50:45.988
+Christoph had also asked if you could demo the visualize from
+
+00:50:46.708 --> 00:50:48.068
+with an R data frame
+
+00:50:48.068 --> 00:50:51.108
+that you constructed in the R console in Positron.
+
+00:50:51.108 --> 00:50:53.747
+The ODBC backend makes sense, he says.
+
+00:50:53.747 --> 00:50:57.907
+I'm not clear on how visualize from accesses a data frame.
+
+00:50:58.867 --> 00:51:00.068
+Um, yes.
+
+00:51:00.787 --> 00:51:05.747
+So I will do this by not writing things
+
+00:51:05.747 --> 00:51:09.108
+because right now, so for the R package,
+
+00:51:12.068 --> 00:51:15.907
+what it provides is a way to connect to GD
+
+00:51:15.907 --> 00:51:19.667
+or execute GDSQL from within an R process.
+
+00:51:19.667 --> 00:51:21.188
+And then this has this knitter engine
+
+00:51:21.428 --> 00:51:31.267
+that allows you to put in like a GDSQL block like this, right?
+
+00:51:31.267 --> 00:51:34.147
+And when you then knit your R markdown
+
+00:51:34.147 --> 00:51:37.348
+or your Quoto document,
+
+00:51:37.348 --> 00:51:39.588
+then it will do what expected.
+
+00:51:41.348 --> 00:51:44.147
+So this website is built with Quoto.
+
+00:51:44.147 --> 00:51:47.667
+So this is actually what we see up here
+
+00:51:47.667 --> 00:51:49.267
+and it creates this thing, right?
+
+00:51:51.507 --> 00:51:56.627
+Um, so in this particular instance,
+
+00:51:57.507 --> 00:51:59.348
+this allows us to have one document
+
+00:51:59.348 --> 00:52:01.907
+where you start by creating,
+
+00:52:01.907 --> 00:52:04.228
+so this is an R, some R code
+
+00:52:04.228 --> 00:52:06.948
+and we create a new data frame
+
+00:52:06.948 --> 00:52:10.068
+that's called gapminder underscore 2002.
+
+00:52:10.867 --> 00:52:15.988
+And then we can fetch that in our GDSQL code
+
+00:52:15.988 --> 00:52:18.468
+by just prefixing R colon.
+
+00:52:19.027 --> 00:52:22.068
+Um, and it's just there, right?
+
+00:52:23.428 --> 00:52:26.627
+So that is how data flows in a Quoto document
+
+00:52:26.627 --> 00:52:28.068
+or an R markdown document.
+
+00:52:28.068 --> 00:52:30.787
+You can do the same with Python.
+
+00:52:30.787 --> 00:52:33.267
+It's just a py colon instead.
+
+00:52:33.828 --> 00:52:36.308
+So you can like within the context of Quoto document,
+
+00:52:36.308 --> 00:52:37.747
+you can intermingle all these things.
+
+00:52:38.387 --> 00:52:40.387
+If you're in Puzzletron,
+
+00:52:40.387 --> 00:52:42.228
+we don't have like a communication channel
+
+00:52:42.228 --> 00:52:47.188
+between the different engines running in Puzzletron
+
+00:52:47.188 --> 00:52:50.948
+in the same way that in Quoto,
+
+00:52:50.948 --> 00:52:53.188
+you can communicate between R and Python chunks,
+
+00:52:54.468 --> 00:52:57.428
+but you can't do that in Puzzletron, right?
+
+00:52:57.428 --> 00:52:59.428
+Those are confined things.
+
+00:53:00.787 --> 00:53:02.308
+So if you have something in R,
+
+00:53:02.308 --> 00:53:04.468
+like some data that you've prepared in R
+
+00:53:04.468 --> 00:53:06.387
+and want to use GDSQL,
+
+00:53:06.387 --> 00:53:08.308
+you can either use the GDSQL package
+
+00:53:08.308 --> 00:53:12.068
+and just like, here is GDSQL.
+
+00:53:13.667 --> 00:53:15.267
+Let's see, just a moment.
+
+00:53:17.667 --> 00:53:18.547
+Probably have it here.
+
+00:53:18.547 --> 00:53:20.468
+We have three minutes left, but that's okay.
+
+00:53:20.468 --> 00:53:22.787
+Yeah, so you can do something like this
+
+00:53:25.267 --> 00:53:27.108
+where you just like pass in a string,
+
+00:53:27.108 --> 00:53:33.588
+giving your GDSQL or just pure SQL code
+
+00:53:36.308 --> 00:53:38.787
+and render it like you would render,
+
+00:53:38.787 --> 00:53:41.667
+like just printing the plot and it will render.
+
+00:53:42.627 --> 00:53:44.948
+So if you're in R and want to play with it,
+
+00:53:44.948 --> 00:53:47.267
+then the R package is probably the easiest thing.
+
+00:53:47.267 --> 00:53:49.108
+Otherwise you can write to parquet files
+
+00:53:49.108 --> 00:53:53.027
+and just like pick them up automatically from GDSQL.
+
+00:53:53.027 --> 00:53:53.667
+Good deal.
+
+00:53:53.667 --> 00:53:56.068
+It looks like the documentation is amazing.
+
+00:53:56.068 --> 00:53:58.867
+Well, I have a couple of rapid fire questions for you
+
+00:53:58.867 --> 00:54:00.627
+that you can answer very succinctly
+
+00:54:00.627 --> 00:54:01.907
+if you don't want to give any details,
+
+00:54:01.907 --> 00:54:03.188
+but Hubert had asked,
+
+00:54:03.188 --> 00:54:05.348
+can you use GDSQL in a Shiny app?
+
+00:54:06.228 --> 00:54:06.867
+Yes, you can.
+
+00:54:07.667 --> 00:54:09.108
+Okay, yes, you can.
+
+00:54:09.988 --> 00:54:13.747
+And Dan asked, what was the hardest technical part
+
+00:54:13.747 --> 00:54:15.828
+of getting GDSQL implemented?
+
+00:54:18.387 --> 00:54:19.907
+Syntax, which is not a,
+
+00:54:20.627 --> 00:54:23.588
+like it's a soft technical part, I would say,
+
+00:54:23.588 --> 00:54:27.267
+but like we have spent so much time nailing the syntax
+
+00:54:27.267 --> 00:54:30.068
+and have so many long discussions around syntax.
+
+00:54:30.708 --> 00:54:34.627
+Everything else I would say kind of clicks into place
+
+00:54:34.627 --> 00:54:37.348
+and it's not like it's a coding problem,
+
+00:54:37.348 --> 00:54:39.588
+but like it's solvable,
+
+00:54:39.588 --> 00:54:44.468
+like getting the syntax right is like steep in my heart.
+
+00:54:45.027 --> 00:54:47.428
+And that has been the toughest thing.
+
+00:54:47.428 --> 00:54:51.988
+Like that's been the cause for most discussions, I would say.
+
+00:54:51.988 --> 00:54:53.907
+Well, speaking of syntax,
+
+00:54:53.907 --> 00:54:58.228
+which flavor of SQL is GDSQL based on, asks Zach.
+
+00:55:00.627 --> 00:55:06.147
+We have gone very far to not buy into any particular flavor.
+
+00:55:06.228 --> 00:55:09.428
+So this is, if we're trying to do like,
+
+00:55:09.988 --> 00:55:12.948
+if we're trying to mimic a syntax, it's ANSI SQL,
+
+00:55:12.948 --> 00:55:15.747
+which is the boring like ground truth.
+
+00:55:16.948 --> 00:55:20.387
+The only place where we have kind of needed
+
+00:55:20.387 --> 00:55:23.667
+to come up with something is this fat arrow thingy
+
+00:55:25.188 --> 00:55:27.267
+that doesn't exist in ANSI SQL,
+
+00:55:27.267 --> 00:55:30.468
+but we really needed something for assignment.
+
+00:55:31.428 --> 00:55:32.627
+Ass doesn't really cut it.
+
+00:55:32.627 --> 00:55:38.068
+It's different semantically than setting something.
+
+00:55:38.627 --> 00:55:39.747
+Right, a setting, yeah.
+
+00:55:40.468 --> 00:55:46.068
+Yeah, so that is the only thing that we have kind of bought into.
+
+00:55:47.027 --> 00:55:51.267
+This thing up here, everything that comes before visualize,
+
+00:55:51.267 --> 00:55:54.627
+it's just like pushed to whatever backend you have.
+
+00:55:54.627 --> 00:55:59.348
+So if you have DuckDB there, you can write DuckDB SQL there, whatever.
+
+00:56:00.627 --> 00:56:03.428
+This is the only thing where we put kind of limits.
+
+00:56:04.547 --> 00:56:07.188
+I think that Ken's question is what we will end on
+
+00:56:07.188 --> 00:56:10.228
+because we have one minute left and it pertains to that.
+
+00:56:10.228 --> 00:56:13.667
+He says, can you also pass an ODBC connection object
+
+00:56:13.667 --> 00:56:16.228
+directly to the header of a JGSQL code block
+
+00:56:16.228 --> 00:56:17.828
+to query your database directly?
+
+00:56:17.828 --> 00:56:20.708
+Or do you have to convert to the data frame first
+
+00:56:20.708 --> 00:56:23.027
+in order, you know, in the context of like a QMD?
+
+00:56:25.108 --> 00:56:29.108
+Uh, I'm not sure I understand it, sorry.
+
+00:56:29.747 --> 00:56:33.988
+That's okay, it's in the Discord and we can follow up afterwards.
+
+00:56:33.988 --> 00:56:35.667
+I can get a better answer.
+
+00:56:35.667 --> 00:56:36.787
+That one's a big one.
+
+00:56:36.787 --> 00:56:40.228
+We had a couple that were just hanging on there at the end
+
+00:56:40.228 --> 00:56:43.027
+and hopefully we can get an answer and stick those in the Discord.
+
+00:56:43.027 --> 00:56:46.468
+For example, Isabella said, how do we give feedback as it moves to beta?
+
+00:56:47.027 --> 00:56:49.667
+I think that GitHub might be a good place to do that.
+
+00:56:50.708 --> 00:56:53.988
+GitHub, certainly if you're like,
+
+00:56:53.988 --> 00:56:56.468
+if you can see yourself becoming a user of this
+
+00:56:56.468 --> 00:56:58.387
+or your organization becoming a user,
+
+00:56:58.387 --> 00:57:00.468
+like we would love to just chat with you
+
+00:57:00.468 --> 00:57:05.988
+or just like our database is in this esoteric format
+
+00:57:05.988 --> 00:57:07.348
+and we would love a reader for that.
+
+00:57:07.348 --> 00:57:11.027
+Like we maintain a list of readers that we want to create.
+
+00:57:12.948 --> 00:57:14.867
+Like reach out there, reach out.
+
+00:57:14.867 --> 00:57:17.828
+Yeah, you can also reach out to Isabella and I
+
+00:57:17.828 --> 00:57:19.907
+and we can help connect you with the team.
+
+00:57:19.907 --> 00:57:21.507
+So you know where we are.
+
+00:57:21.507 --> 00:57:22.308
+We're easy to find.
+
+00:57:22.308 --> 00:57:24.308
+We're on Discord and Blue Sky all the time.
+
+00:57:24.308 --> 00:57:24.948
+We're on LinkedIn.
+
+00:57:25.828 --> 00:57:27.108
+Thomas, this was so much fun.
+
+00:57:27.108 --> 00:57:29.507
+Thank you so much for showing us all of the things.
+
+00:57:29.507 --> 00:57:30.547
+It was a pleasure. Thanks for attending.
+
+00:57:30.547 --> 00:57:31.348
+Thank you.

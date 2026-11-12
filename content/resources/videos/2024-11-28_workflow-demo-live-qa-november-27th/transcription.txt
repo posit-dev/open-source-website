@@ -1,18 +1,20 @@
 <p><a data-t="30">Hey everybody, thank you for jumping over here to the Q&A room, we'll give people another</a> <a data-t="41">minute here to join us.</a></p>
 
-<p><a data-t="59">Alright let me bring Nick over here on stage. Hey Nick, can you hear me okay? There we go.</a> <a data-t="69">Perfect, well let's give people maybe 20 more seconds to jump over. And Isabella and Hannah, thanks for helping out backstage, if you wouldn't mind going to let people know in the demo room where we are for Q&A as well.</a></p>
+<p><a data-t="59">Alright let me bring Nick over here on stage. Hey Nick, can you hear me okay? There we go.</a></p>
+
+<p><a data-t="69">Perfect, well let's give people maybe 20 more seconds to jump over. And Isabella and Hannah, thanks for helping out backstage, if you wouldn't mind going to let people know in the demo room where we are for Q&A as well.</a></p>
 
 <p><a data-t="90">Awesome, well we can get started here and people will join us as they do, but thank you all so much for joining us for today's Workflow Demo and happy early Thanksgiving to everybody this week.</a> <a data-t="102">Thank you so much to Nick for such a great session. As a reminder, we do host these Workflow Demos the last Wednesday of every month and they are all recorded, so I'll share the link in the chat if you want to add the recurring event to your calendar.</a></p>
 
-<p><a data-t="117">Just a note, next month won't be on the last Wednesday of the month because of Christmas, so it will be the week before, but there are now over 20 different workflows that we've featured, from building model annotation tools, to pins workflows, to beautiful business reports, and so you can go and access all those recordings in the YouTube playlist as well.</a> <a data-t="142">And once I am done with my spiel here, I'll put those links in the chat. But while I know many people joining today are current customers, if you're new to Posit Team and Posit Connect, which we saw today, and you'd like to try it out for free or want to chat more with our team, I'll also share a link where you can book a call to chat with us, but feel free to DM me as well.</a></p>
+<p><a data-t="117">Just a note, next month won't be on the last Wednesday of the month because of Christmas, so it will be the week before, but there are now over 20 different workflows that we've featured, from building model annotation tools, to pins workflows, to beautiful business reports, and so you can go and access all those recordings in the YouTube playlist as well.</a></p>
 
-<p><a data-t="166">I know a lot of times in big organizations, you might not know that your company already has our products in one department.</a></p>
+<p><a data-t="142">And once I am done with my spiel here, I'll put those links in the chat. But while I know many people joining today are current customers, if you're new to Posit Team and Posit Connect, which we saw today, and you'd like to try it out for free or want to chat more with our team, I'll also share a link where you can book a call to chat with us, but feel free to DM me as well.</a> <a data-t="166">I know a lot of times in big organizations, you might not know that your company already has our products in one department.</a></p>
 
 <p><a data-t="174">But let me jump into some of the questions here, and I just want to let you know, you can use the YouTube chat here to ask questions, or if you prefer to ask a question anonymously, you can use this link here on the screen and you can go and ask that question over in Slido.</a></p>
 
-<h3>Why Orbital stands out</h3>
+<p><a data-t="192">So let me, oh, I don't want to be just the big face here. Let's try a different view.</a></p>
 
-<p><a data-t="200">Okay, so let me jump into some of the questions, Nick. But I first have to ask you, because you said in the beginning, Orbital is the coolest package you've ever seen. Why is it the coolest package you've ever seen?</a></p>
+<p><a data-t="200">Okay, thanks for letting me play with these different views. Okay, so let me jump into some of the questions, Nick. But I first have to ask you, because you said in the beginning, Orbital is the coolest package you've ever seen. Why is it the coolest package you've ever seen?</a></p>
 
 <p><a data-t="214">That's a great question. I think it because it really answers a, it really solves for a problem that I ran into a ton when I was a data scientist when I was running data science teams, which is previously it took absolutely forever. I mean, it's just a lot of extra work. Once you fit a model to deploy it somewhere, you've got to either go find a place, you've got to find a place to deploy it, you've got to create a deployment package, you've got to create a way that that</a> <a data-t="245">model can get itself, the results of that model can be given to your stakeholders. There are certain tools that make that a little bit easier than others, things like Posit Connect. But they're not really, I mean, again, it's just, it's another step. Whereas Orbital, it's one line of code. I mean, you can basically have, you can set a model and have it basically in production in a couple minutes, which is super cool.</a></p>
 
@@ -20,62 +22,150 @@
 
 <blockquote><a data-t="270">And I think it's really going to kind of level up teams ability to take the great models that they're building every day and have them out to their stakeholders the same day, which is super cool.</a></blockquote>
 
-<h3>Handling new data and database compatibility</h3>
+<p><a data-t="283">That's awesome. Did it did it replace a different package for you as your favorite package?</a></p>
 
-<p><a data-t="331">So let me jump over to a few questions that were asked earlier in the chat during the demo. And somebody said, in the distributed workflow using orbital, how does new data get entered, entered into the analysis? Is it in another database that uses the same variable names?</a></p>
+<p><a data-t="290">You know, I had a bunch of different favorite packages, depending on what I was working on. But this one really just kind of knocked them all out.</a></p>
 
-<p><a data-t="350">Great question. Yes, you can absolutely do something like that. You can take you can create a new table in your database with the same variable names run the same orbital generated SQL code against that absolutely possible.</a> <a data-t="364">One of the cool advantages of what I showed you in that demo is deploying the model as a snowflake view is that snowflake views are any SQL views in any SQL flavor are computed basically when you call them.</a></p>
+<p><a data-t="299">So I just wanted to call out the blog post because they see long. Thank you for asking this again in the chat. But could you please give us a link to the blog post mentioned in the presentation? And so I know Isabella and Nick worked on a blog together, and she just shared that there in the chat. But Nick, do you want to just kind of give us a quick overview of what's in that post as well?</a></p>
 
-<p><a data-t="378">So they're not going to be they're not tied to specific data. They can just be run on basically any data. So one of the really cool things about what your models a snowflake view is what you could do is append new data to that table that I showed you.</a> <a data-t="394">So you could just be adding new data to that table consistently. And every time you call the view, it's going to run on all the data in that table. So gives you a couple different options to deploy it whichever one makes sense for you.</a></p>
+<p><a data-t="322">Yeah, that post is really just kind of long form written version of what I just showed you takes you through the entire orbital model setting and deployment process.</a></p>
+
+<p><a data-t="331">Perfect. So let me jump over to a few questions that were asked earlier in the chat during the demo. And somebody said, in the distributed workflow using orbital, how does new data get entered, entered into the analysis? Is it in another database that uses the same variable names?</a></p>
+
+<p><a data-t="350">Great question. Yes, you can absolutely do something like that. You can take you can create a new table in your database with the same variable names run the same orbital generated SQL code against that absolutely possible.</a> <a data-t="364">One of the cool advantages of what I showed you in that demo is deploying the model as a Snowflake view is that Snowflake views are any SQL views in any SQL flavor are computed basically when you call them.</a></p>
+
+<p><a data-t="378">So they're not going to be they're not tied to specific data. They can just be run on basically any data. So one of the really cool things about what your models a Snowflake view is what you could do is append new data to that table that I showed you.</a> <a data-t="394">So you could just be adding new data to that table consistently. And every time you call the view, it's going to run on all the data in that table. So gives you a couple different options to deploy it whichever one makes sense for you.</a></p>
+
+<p><a data-t="408">Thank you.</a></p>
 
 <p><a data-t="410">Okay, maybe a quick question here. Somebody asked, Can I do this in Python?</a></p>
 
-<p><a data-t="415">No, this is an R only functionality. Big reason behind that is simply because a lot of what a lot of the magic of orbital comes from the tidy models universe.</a> <a data-t="427">Tidy models provides an incredibly awesome, very opinionated framework on how you construct models and the pre processing steps.</a> <a data-t="437">And that really opinionated framework has got what let us build and let specifically I shouldn't say us let Emil build orbital and build it to do all the to do all the magic you just saw.</a></p>
+<p><a data-t="415">No, this is an R only functionality. Big reason behind that is simply because a lot of what a lot of the magic of orbital comes from the tidy models universe.</a> <a data-t="427">Tidy models provides an incredibly awesome, very opinionated framework on how you construct models and the pre processing steps.</a></p>
 
-<p><a data-t="450">However, that is doing it in Python is something that we are we we'd actually, it's something kind of very interesting to us.</a> <a data-t="459">If you have questions about that, feel free to reach out to us. You know, we're constantly looking for new ways to kind of push the open source frontier on both are in Python. And that's something we're, we're interested in doing.</a></p>
+<p><a data-t="437">And that really opinionated framework has got what let us build and let specifically I shouldn't say us let Emil build orbital and build it to do all the to do all the magic you just saw.</a> <a data-t="450">However, that is doing it in Python is something that we are we we'd actually, it's something kind of very interesting to us.</a> <a data-t="459">If you have questions about that, feel free to reach out to us. You know, we're constantly looking for new ways to kind of push the open source frontier on both are in Python. And that's something we're, we're interested in doing.</a></p>
 
-<p><a data-t="478">Okay. Another question asked earlier was, We do not have snowflake. We're using redshift. Could this be applied to redshift as well. Any drawbacks and using redshift.</a> <a data-t="490">Yes, you can absolutely do this in redshift as well as snowflake because orbital translates to a standard anti sequel. So any, any database, you could do this and redshift. You could do this in postgres the really, the only drawbacks are going to be what the drawbacks of using redshift versus snowflake for the rest of your data modeling work or the rest of your data warehousing work.</a> <a data-t="517">But absolutely, you can use any database flavor you're already using.</a></p>
+<p><a data-t="471">And a shout out to Emil. I think I saw Emil in the YouTube chat earlier.</a></p>
 
-<p><a data-t="525">Okay, so I think that reiterates this, this question as well. So you said you can use any database flavor that you are interested in.</a> <a data-t="534">Yeah, no, that's a, that's a great question. The, the only thing that I would say, and I haven't had a chance to personally test it again. Snowflake. Sorry. Orbital is generating anti sequel. So, basically, that's going to cover most SQL flavors or most database backends. I would be cautious around using it with things that kind of go away from that kind of general sequel. I mean, I'm thinking things like Apache Presto, but I don't think that's going to cover most SQL flavors.</a> <a data-t="565">Which provides SQL, but it's a little bit of a different SQL flavor. It may work, but I don't want to promise that it will work.</a></p>
+<p><a data-t="478">Okay. Another question asked earlier was, We do not have Snowflake. We're using Redshift. Could this be applied to Redshift as well. Any drawbacks and using Redshift.</a></p>
+
+<p><a data-t="490">Yes, you can absolutely do this in Redshift as well as Snowflake because orbital translates to a standard ANSI SQL. So any, any database, you could do this and Redshift. You could do this in Postgres the really, the only drawbacks are going to be what the drawbacks of using Redshift versus Snowflake for the rest of your data modeling work or the rest of your data warehousing work.</a> <a data-t="517">But absolutely, you can use any database flavor you're already using.</a></p>
+
+<p><a data-t="525">Okay, so I think that reiterates this, this question as well. So you said you can use any database flavor that you are interested in.</a> <a data-t="534">Yeah, no, that's a, that's a great question. The, the only thing that I would say, and I haven't had a chance to personally test it again. Snowflake. Sorry. Orbital is generating ANSI SQL. So, basically, that's going to cover most SQL flavors or most database backends. I would be cautious around using it with things that kind of go away from that kind of general SQL. I mean, I'm thinking things like Apache Presto, but I don't think that's going to cover most SQL flavors.</a></p>
+
+<p><a data-t="565">Which provides SQL, but it's a little bit of a different SQL flavor. It may work, but I don't want to promise that it will work.</a></p>
 
 <h3>Champion vs challenger and speed gains</h3>
 
 <p><a data-t="574">Okay, thank you. Lots of great questions coming in. I'm trying to just copy over as captions here. Another question on Slido was, can it support tagging models in a champion versus challenger approach so that a retrained model is only versioned deployed if it is better than an older model.</a></p>
 
-<p><a data-t="594">Great question. I really encourage you to check out the blog post on that one. We actually have a an exploration on how you would do kind of a champion versus challenger.</a> <a data-t="605">Yeah, a champion versus challenger evaluation using positive connect using scheduled scheduled content in positive connect. But yes, absolutely. You could do you could do that. We go into a little bit more depth in the in the blog post didn't have time for it in this in this presentation.</a></p>
+<p><a data-t="594">Great question. I really encourage you to check out the blog post on that one. We actually have a an exploration on how you would do kind of a champion versus challenger.</a> <a data-t="605">Yeah, a champion versus challenger evaluation using Posit Connect using scheduled scheduled content in Posit Connect. But yes, absolutely. You could do you could do that. We go into a little bit more depth in the in the blog post didn't have time for it in this in this presentation.</a></p>
+
+<p><a data-t="624">Thank you. Thanks for letting me just fire fire away these questions at you.</a></p>
 
 <p><a data-t="630">One, I wanted to ask you is what are the speed gains I can expect from my models.</a></p>
 
-<p><a data-t="637">I will say it's going to depend specifically on the models, you're looking to deploy the data you're looking at and what you've been what you've been doing previously.</a> <a data-t="646">I will say just anecdotally, the the speed gains we've seen from some of our customers who've already adopted this are phenomenal. I've been working with a customer who was previously</a> <a data-t="657">fitting models that pre that before they were doing it. They're using a very large server to fit their models and that on that very large server. It was taking on the order of a couple hours to fit specific models.</a> <a data-t="670">By moving to orbital and they were specific they were using snowflake as a database back end.</a> <a data-t="676">They saw some of those models which previously had taken about three hours go down to running in about 24 seconds.</a></p>
+<p><a data-t="637">I will say it's going to depend specifically on the models, you're looking to deploy the data you're looking at and what you've been what you've been doing previously.</a> <a data-t="646">I will say just anecdotally, the the speed gains we've seen from some of our customers who've already adopted this are phenomenal. I've been working with a customer who was previously</a> <a data-t="657">fitting models that pre that before they were doing it. They're using a very large server to fit their models and that on that very large server. It was taking on the order of a couple hours to fit specific models.</a> <a data-t="670">By moving to orbital and they were specific they were using Snowflake as a database back end.</a> <a data-t="676">They saw some of those models which previously had taken about three hours go down to running in about 24 seconds.</a></p>
 
 <blockquote><a data-t="676">They saw some of those models which previously had taken about three hours go down to running in about 24 seconds.</a></blockquote>
 
 <p><a data-t="684">So it's a really cool capability and a lot of that comes from the ability to just</a> <a data-t="690">container it to just basically package up all of the feature engineering that needs to go all the pre processing steps and need to go to your models.</a> <a data-t="699">And the actual model fitting itself and then doing it all within the database. So you're not incurring the latency, the network cost of moving data from a database to a server and then back again. It's all just happening in that database. So it runs really fast.</a></p>
 
-<h3>Demo code and supported models</h3>
+<p><a data-t="714">That's amazing. Is that the customer you reference is the first time seeing somebody fist pump on a call.</a> <a data-t="721">Yes, yes.</a></p>
+
+<h3>Demo files, model support, and use cases</h3>
 
 <p><a data-t="725">Okay, let me see. Another question was, could you possibly share the demo dot QMD file that you went over in this presentation.</a> <a data-t="733">Yeah, we are actually we're working on creating a kind of public facing GitHub demo asset, something that you can something that you can download the full QMD. I will say, if you want to grab the raw code. A lot of that raw code is in the blog post. So if you want to check out our blog post, which we've linked</a> <a data-t="752">Please check that out. Feel free to grab any of the code from that you want. Great place to get started.</a></p>
 
-<p><a data-t="760">And it is does orbital encode game or GM models into SQL and I might need to know what that is.</a> <a data-t="771">It does not right now.</a> <a data-t="774">So actually, let me and we'll actually link this in the chat. So if you go to the</a> <a data-t="779">Orbital if you go to the orbital page, the orbital documentation, you can set the there's actually there's a list on that. If you go up to articles on that documentation page, you can see a list of currently supported models. We are exploring adding more models to that list right now.</a></p>
+<p><a data-t="756">Sounds good. And I see Matthew just asked a question.</a> <a data-t="760">And it is does orbital encode GAM or GM models into SQL and I might need to know what that is.</a></p>
 
-<p><a data-t="807">One other question from earlier was, when would I use this over deploying a model endpoint to connect as an API.</a> <a data-t="815">Awesome question. So this really orbital really provides an excellent way to do batch prediction workloads. So batch prediction being you're running a you're running a large set of predictions all at once. And you're not, you don't need those predictions to return in real time, but you're running a large set of predictions all at once.</a> <a data-t="837">And you're not, you don't need those predictions to return in real time. So you're not doing it. You're not making a decision immediately like while a customer is doing something.</a> <a data-t="847">You can use. So if you need something for that kind of real time prediction real time inference, you might hear it might have heard it called online inference.</a> <a data-t="854">If you need something for that, that's when the something like hosting a model as an endpoint on posit connect is a really great option, because that lets you do single predictions, really, really quickly.</a></p>
+<p><a data-t="771">It does not right now.</a> <a data-t="774">So actually, let me and we'll actually link this in the chat. So if you go to the</a> <a data-t="779">Orbital if you go to the orbital page, the orbital documentation, you can set the there's actually there's a list on that. If you go up to articles on that documentation page, you can see a list of currently supported models. We are exploring adding more models to that list right now.</a></p>
 
-<p><a data-t="879">Is there a reason to use tidy predict over orbital?</a> <a data-t="885">orbital actually orbital builds on tidy predict. So orbital, the actual like converting the model itself and all the model coefficients into into SQL. This comes from the tidy predict package. What orbital does orbital extends the tidy predict package to also support</a> <a data-t="903">doing to also support encoding pre processing steps and feature engineering steps into SQL as well.</a> <a data-t="911">I can't think of many situations in which I would want to use tidy predict over orbital because feature engineering such a key part of model development.</a></p>
+<p><a data-t="798">Thank you. Okay, let's see. You jump over to see what if we miss any Slido questions.</a></p>
 
-<p><a data-t="1146">To get on the orbital documentation you can actually find a list of what algorithms are</a> <a data-t="1151">supported.</a> <a data-t="1152">Right now it's limited to regression models.</a> <a data-t="1157">I know we're actively working on including classification models as well.</a> <a data-t="1161">And right now we support, again, I definitely encourage you to go check out the full list,</a> <a data-t="1169">but we support what I tend to think of as the most common regression models.</a> <a data-t="1174">So things like linear models.</a> <a data-t="1177">We support random forests.</a> <a data-t="1180">We support XGBoost.</a> <a data-t="1182">So a lot of the common regression models you find in use right now are supported by orbital right now.</a> <a data-t="1187">And that's something we're actively exploring, adding to that list.</a></p>
+<p><a data-t="807">One other question from earlier was, when would I use this over deploying a model endpoint to connect as an API.</a> <a data-t="815">Awesome question. So this really orbital really provides an excellent way to do batch prediction workloads. So batch prediction being you're running a you're running a large set of predictions all at once. And you're not, you don't need those predictions to return in real time, but you're running a large set of predictions all at once.</a> <a data-t="837">And you're not, you don't need those predictions to return in real time. So you're not doing it. You're not making a decision immediately like while a customer is doing something.</a></p>
 
-<h3>Closing and introductions</h3>
+<p><a data-t="847">You can use. So if you need something for that kind of real time prediction real time inference, you might hear it might have heard it called online inference.</a> <a data-t="854">If you need something for that, that's when the something like hosting a model as an endpoint on Posit Connect is a really great option, because that lets you do single predictions, really, really quickly.</a></p>
 
-<p><a data-t="1199">So while I'm going to see if there's any questions that I miss, I want to ask a question to all of you.</a> <a data-t="1206">And feel free to use Slido to answer if you don't want to put into the YouTube chat.</a> <a data-t="1211">But as I mentioned, we host these workflow demos once a month, the last Wednesday of every month.</a> <a data-t="1218">And I'm just curious, what different workflows would you all like to see?</a></p>
+<p><a data-t="868">Thanks so much, Nick. Okay, let me</a> <a data-t="871">go back and see some questions from a little bit earlier. Okay, one was</a> <a data-t="879">me copy it into a caption. Is there a reason to use tidy predict over orbital?</a></p>
+
+<p><a data-t="885">orbital actually orbital builds on tidy predict. So orbital, the actual like converting the model itself and all the model coefficients into into SQL. This comes from the tidy predict package. What orbital does orbital extends the tidy predict package to also support</a></p>
+<!-- segment separator -->
+<p><a data-t="903">doing to also support encoding pre processing steps and feature engineering steps into SQL as well.</a></p>
+
+<p><a data-t="911">I can't think of many situations in which I would want to use tidy predict over orbital because feature engineering such a key part of model development.</a></p>
+
+<h3>Tutorials and resources</h3>
+
+<p><a data-t="920">Okay, a few more questions here.</a> <a data-t="920">One was, is there any tutorial on workflows, I can check out.</a> <a data-t="928">And I think the blog post would be the best tutorial to follow along for this one.</a> <a data-t="934">Yeah, blog posts would be that it would be a great place to start.</a></p>
+
+<p><a data-t="938">Yeah, blog posts would be that it would be a great place to start.</a> <a data-t="938">And then also the orbital the the tidy models site and the tidy models documentation have some great vignettes all over the place.</a> <a data-t="938">So I think the blog post would be the best tutorial to follow along for this one.</a></p>
+
+<p><a data-t="953">Awesome.</a> <a data-t="953">And if you are curious about other workflow demos that you want it.</a> <a data-t="953">If you want to check those out.</a> <a data-t="953">I did mention a full playlist of them.</a> <a data-t="953">I think there's a link in the chat.</a></p>
+
+<p><a data-t="962">Okay, thank you so much, Isabelle.</a> <a data-t="962">And I think the blog post would be the best tutorial to follow along for this one.</a></p>
+
+<p><a data-t="970">Yeah, I think the blog post would be the best tutorial to follow along for this one.</a></p>
+
+<p><a data-t="975">Awesome.</a> <a data-t="975">And if you are curious about other workflow demos that you want it.</a> <a data-t="975">If you want to check those out.</a> <a data-t="975">I did mention a full playlist of them.</a> <a data-t="975">I think there's over 20 now, but I'll just, I just shared that playlist in the chat as well.</a></p>
+
+<h3>Snowflake access and free version of <a href="/software/rstudio/">RStudio</a></h3>
+
+<p><a data-t="989">Okay, thank you so much, Isabella for helping me gather these questions that you haven't answered yet.</a> <a data-t="989">I think one we hadn't asked yet is, could we access snowflake for free from within the free version of RStudio.</a></p>
+
+<p><a data-t="1005">I think I need a little bit more clarification on this question.</a> <a data-t="1005">Are you asking if, if you can use if you can use snowflake.</a> <a data-t="1005">Basically, does the free version of RStudio include snowflake for free.</a> <a data-t="1005">The answer is no snowflakes its own product.</a></p>
+
+<p><a data-t="1022">The, can you access snowflake from, can you actually just make a database connection to snowflake from the free version of RStudio.</a> <a data-t="1022">Yes, you can using snowflakes </a><a href="/software/odbc/">ODBC</a><a data-t="1022"> drivers.</a> <a data-t="1022">The one thing I'll say on that is that a lot of the automated connection that automated credential management, those features are only included with RStudio on posit workbench.</a></p>
+
+<h3>Geospatial queries and algorithm support</h3>
+
+<p><a data-t="1048">Thank you.</a> <a data-t="1048">I think we're getting through a record number of questions here.</a> <a data-t="1048">One was maybe you mentioned it before, but are geospatial queries supported.</a></p>
+
+<p><a data-t="1060">That's a great question.</a> <a data-t="1060">I right now. I do not believe I don't think they are.</a> <a data-t="1064">But that's something that's something I know we're kind of exploring where to go for where to go from here with orbital.</a> <a data-t="1064">And I'll make sure that our, our team that's developing orbital and developing DB plier.</a> <a data-t="1064">Here's about here's that geospatial queries are of interest.</a></p>
+
+<p><a data-t="1082">So I like to make sure I just add this in because I know sometimes when we're asking questions in the YouTube chat, it can be hard to get the full context.</a> <a data-t="1082">So if you do ever want to chat with our team in a setting that isn't a YouTube video.</a> <a data-t="1082">I'm just going to put this short link here on the screen for you to book time to chat with our team.</a></p>
+
+<p><a data-t="1100">Okay, I think we have maybe two more questions we didn't get to yet.</a></p>
+
+<p><a data-t="1107">Okay, this is a maybe a little bit redundant, but I just want to make sure I get to it.</a> <a data-t="1111">I'm not sure if we covered this one more question, which algorithms are supported, like random algorithms.</a></p>
+
+<p><a data-t="1117">Listening for the shout out to</a> <a data-t="1121">team talk.</a> <a data-t="1123">Scoutables in the chat here.</a> <a data-t="1124">Here's one that I forgot we have on the robot team chat.</a> <a data-t="1126">Toml in the chat.</a> <a data-t="1128">Yeah no problem.</a></p>
+
+<p><a data-t="1130">Yes, you can see we're having a lot of interest in that.</a></p>
+
+<p><a data-t="1138">Awesome.</a> <a data-t="1139">Okay.</a> <a data-t="1140">Awesome question.</a></p>
+
+<p><a data-t="1146">To get on the orbital documentation you can actually find a list of what algorithms are</a> <a data-t="1151">supported.</a> <a data-t="1152">Right now it's limited to regression models.</a> <a data-t="1157">I know we're actively working on including classification models as well.</a></p>
+
+<p><a data-t="1161">And right now we support, again, I definitely encourage you to go check out the full list,</a> <a data-t="1169">but we support what I tend to think of as the most common regression models.</a> <a data-t="1174">So things like linear models.</a> <a data-t="1177">We support random forests.</a> <a data-t="1180">We support XGBoost.</a> <a data-t="1182">So a lot of the common regression models you find in use right now are supported by orbital right now.</a> <a data-t="1187">And that's something we're actively exploring, adding to that list.</a></p>
+
+<blockquote><a data-t="1174">So things like linear models.</a> <a data-t="1177">We support random forests.</a> <a data-t="1180">We support XGBoost.</a> <a data-t="1182">So a lot of the common regression models you find in use right now are supported by orbital right now.</a></blockquote>
+
+<h3>Audience question: future workflow topics</h3>
+
+<p><a data-t="1198">Thank you so much.</a> <a data-t="1199">So while I'm going to see if there's any questions that I miss, I want to ask a question to all</a> <a data-t="1205">of you.</a> <a data-t="1206">And feel free to use Slido to answer if you don't want to put into the YouTube chat.</a> <a data-t="1211">But as I mentioned, we host these workflow demos once a month, the last Wednesday of</a> <a data-t="1217">every month.</a> <a data-t="1218">And I'm just curious, what different workflows would you all like to see?</a> <a data-t="1223">And I would love to hear from you.</a></p>
+
+<p><a data-t="1230">And I do see there was a quick question.</a> <a data-t="1233">Alex said, lots of good links in this chat.</a> <a data-t="1235">How can we see them later or save the chat ourselves?</a></p>
+
+<p><a data-t="1241">I don't think in the replay it's actually going to show the chat for some reason.</a> <a data-t="1248">But I think Hannah and Isabella, if you would be so kind to grab all of these chats here,</a> <a data-t="1254">I could put it right with the recording details as well.</a> <a data-t="1257">So you'll see it right in the YouTube description.</a></p>
+
+<h3>Remaining questions and introductions</h3>
 
 <p><a data-t="1266">OK, thank you so much, Isabella and Hannah, again for helping me in the background here.</a> <a data-t="1272">Are there any questions that I may have missed?</a></p>
 
-<p><a data-t="1290">Let me do one more check here into the chat.</a> <a data-t="1293">And Nick, I know you introduced yourself in the very beginning when you were giving the demo, but not when we all came into this Q&A room.</a> <a data-t="1302">And I'll introduce myself as well.</a> <a data-t="1303">But if we haven't had a chance to meet, I'm Rachel Dempsey.</a> <a data-t="1307">Sorry for not introducing myself in the beginning.</a> <a data-t="1310">I lead customer marketing here at Posit.</a> <a data-t="1312">And so I host a variety of different events where we're bringing customers in the community together to share workflows and use cases with each other.</a></p>
+<p><a data-t="1279">One was going back to the databases.</a> <a data-t="1282">But I think we covered that around all the database backends supported by Orbital.</a> <a data-t="1287">OK, perfect.</a></p>
 
-<p><a data-t="1323">So I did just want to call out, I also host a data science Hangout that we host every Thursday, except for tomorrow because of Thanksgiving.</a> <a data-t="1332">But each week, we're joined by a different featured leader from the community to answer questions from you all as well.</a> <a data-t="1338">So if you haven't been to that, I want to personally invite you to join us, and I'll share that in the chat.</a> <a data-t="1345">But Nick, do you want to maybe reintroduce yourself as well if anybody ended up in the chat and wasn't in the demo?</a></p>
+<p><a data-t="1290">Let me do one more check here into the chat.</a> <a data-t="1293">And Nick, I know you introduced yourself in the very beginning when you were giving the</a> <a data-t="1298">demo, but not when we all came into this Q&A room.</a> <a data-t="1302">And I'll introduce myself as well.</a> <a data-t="1303">But if we haven't had a chance to meet, I'm Rachel Dempsey.</a> <a data-t="1307">Sorry for not introducing myself in the beginning.</a> <a data-t="1310">I lead customer marketing here at Posit.</a> <a data-t="1312">And so I host a variety of different events where we're bringing customers in the community</a> <a data-t="1317">together to share workflows and use cases with each other.</a></p>
 
-<p><a data-t="1352">Yeah, I'm Nick Pelkin.</a> <a data-t="1353">I'm a senior solution architect here at Posit.</a> <a data-t="1355">So what I do is I help our customers find the best way to leverage the Posit tools, our partners like Snowflake to best achieve their data science goals.</a></p>
+<p><a data-t="1323">So I did just want to call out, I also host a data science Hangout that we host every</a> <a data-t="1328">Thursday, except for tomorrow because of Thanksgiving.</a> <a data-t="1332">But each week, we're joined by a different featured leader from the community to answer</a> <a data-t="1336">questions from you all as well.</a> <a data-t="1338">So if you haven't been to that, I want to personally invite you to join us, and I'll</a> <a data-t="1343">share that in the chat.</a> <a data-t="1345">But Nick, do you want to maybe reintroduce yourself as well if anybody ended up in the</a> <a data-t="1349">chat and wasn't in the demo?</a></p>
 
-<p><a data-t="1369">OK, really quickly, I'm doing one last check for questions.</a> <a data-t="1372">And the other only one I see that hasn't been answered is, can we use Orbital in our studio without Snowflake?</a> <a data-t="1387">Yes, you can absolutely. Orbital is an open source package.</a> <a data-t="1390">You can absolutely grab the Orbital package, use it to convert your existing Tidy Models</a> <a data-t="1397">workflows to SQL.</a> <a data-t="1400">The real magic of Orbital comes, though, from having access to a database back end.</a></p>
+<p><a data-t="1352">Yeah, I'm Nick Pelkin.</a> <a data-t="1353">I'm a senior solution architect here at Posit.</a> <a data-t="1355">So what I do is I help our customers find the best way to leverage the Posit tools, our</a> <a data-t="1361">partners like Snowflake to best achieve their data science goals.</a></p>
+
+<h3>Using Orbital without Snowflake</h3>
+
+<p><a data-t="1369">OK, really quickly, I'm doing one last check for questions.</a> <a data-t="1372">And the other only one I see that hasn't been answered is, can we use Orbital in RStudio</a> <a data-t="1384">without Snowflake?</a></p>
+
+<p><a data-t="1387">Yes, you can absolutely.</a> <a data-t="1388">Orbital is an open source package.</a> <a data-t="1390">You can absolutely grab the Orbital package, use it to convert your existing Tidy Models</a> <a data-t="1397">workflows to SQL.</a> <a data-t="1400">The real magic of Orbital comes, though, from having access to a database back end.</a></p>
+
+<p><a data-t="1406">Thank you so much.</a> <a data-t="1408">And I see there was a question that Isabella wanted me to share this causal in first post</a> <a data-t="1415">to with somebody in the chat.</a> <a data-t="1417">So I'm just copying that over for you right now.</a></p>
 
 <p><a data-t="1419">Thank you all so much for taking the time out of your day to join us.</a> <a data-t="1424">I really appreciate all these great questions as well.</a> <a data-t="1427">And thank you so much, Nick, for an awesome demo.</a> <a data-t="1431">Thanks for having me.</a> <a data-t="1432">Thanks, everyone, for all the great questions.</a> <a data-t="1434">And have a very happy Thanksgiving.</a> <a data-t="1437">Thank you all so much.</a> <a data-t="1438">Have a great Thanksgiving.</a> <a data-t="1440">We'll see you all for the next workflow demo.</a></p>

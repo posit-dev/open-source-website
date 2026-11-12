@@ -1,0 +1,1498 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.600
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.600 --> 00:00:21.959
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:21.959 --> 00:00:27.200
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.200 --> 00:00:30.639
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.639 --> 00:00:36.279
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.279 --> 00:00:37.279
+Can't wait to see you there.
+
+00:00:37.279 --> 00:00:42.480
+And I will say that I am so excited to introduce you to our featured leader today. He's a whole
+
+00:00:42.480 --> 00:00:47.799
+lot of fun. His name is Dwight Barry. He's the Principal Data Scientist at Seattle Children's
+
+00:00:47.799 --> 00:00:53.560
+Hospital. Dwight, it's so wonderful to have you here today. If you could introduce yourself,
+
+00:00:53.599 --> 00:00:56.520
+that'd be great. And also tell us something that you like to do for fun.
+
+00:00:56.520 --> 00:01:02.720
+Thank you, Libby. Good morning, everyone. Good morning from Seattle. Happy time zone
+
+00:01:02.720 --> 00:01:09.000
+to wherever you are. What do I like to do? Hiking is probably my favorite thing to do.
+
+00:01:09.000 --> 00:01:12.800
+You know, I just live an hour from the Cascades, so I get to go hiking a lot.
+
+00:01:12.800 --> 00:01:16.680
+You live in the perfect place to do that, to have that as your fun thing.
+
+00:01:16.680 --> 00:01:21.480
+Yeah, I'm just 20 minutes from the beach, then I can go kayaking. So yeah,
+
+00:01:21.480 --> 00:01:23.559
+being outdoors is pretty awesome, even when it's wet.
+
+00:01:26.839 --> 00:01:27.559
+All right.
+
+00:01:27.559 --> 00:01:29.320
+So yeah, what do I do?
+
+00:01:29.320 --> 00:01:35.959
+What do you do? And what does Seattle Children's do as far as the data science
+
+00:01:35.959 --> 00:01:37.879
+function that you work inside?
+
+00:01:37.879 --> 00:01:46.440
+Yeah, so Seattle Children's started over 100 years ago. And we've expanded from a small
+
+00:01:47.000 --> 00:01:54.599
+hospital in Seattle to being the primary pediatric hospital for all of Washington, Idaho,
+
+00:01:54.599 --> 00:02:00.680
+Montana, and Alaska. So not the biggest population, but definitely the biggest geographic
+
+00:02:00.680 --> 00:02:09.160
+area of any children's hospital, pretty much anywhere. And we got into data science fairly
+
+00:02:09.160 --> 00:02:16.839
+early on for hospitals. This was in the mid-teens. And I've been working with, I guess,
+
+00:02:18.440 --> 00:02:23.559
+data science is such a weird thing, because we all call it different things and mean different
+
+00:02:23.559 --> 00:02:28.360
+things, but I use it inclusively about any sort of advanced analytics, whether it's biostats
+
+00:02:28.360 --> 00:02:34.440
+or machine learning or AI, whatever. But the machine learning part was fairly new for health
+
+00:02:34.440 --> 00:02:48.919
+care in the mid-teens. And we started doing that, yeah, it was about 2015, 2016. And we
+
+00:02:48.919 --> 00:02:58.360
+gradually expanded to now we have a team of eight. And we have probably 90-odd people in our data
+
+00:02:58.360 --> 00:03:05.559
+analytics community. So it's fairly large. Oh, and for those folks who are interested in sort of
+
+00:03:05.559 --> 00:03:10.520
+the analyst angle of things, I think we've got three positions open right now. So if you go to
+
+00:03:10.520 --> 00:03:16.199
+seattlechildrens.org, and look for our careers page, and then type data into the search, you
+
+00:03:16.199 --> 00:03:21.320
+can see those. And connect me with me on LinkedIn, and I can talk more about it.
+
+00:03:22.039 --> 00:03:28.039
+That sounds amazing. Thank you for sharing. Maybe Isabel or Rachel can behind the scenes go
+
+00:03:28.039 --> 00:03:32.199
+find a career website somewhere, and we can share it in the chat with everybody.
+
+00:03:34.039 --> 00:03:39.960
+All right. I think that this is a great spot to ask one of my favorite questions that Natasha
+
+00:03:39.960 --> 00:03:45.559
+usually asks, which is a day in the life question. What does a day in the life or a week in the life
+
+00:03:45.559 --> 00:03:51.960
+look like for you that could help us build context around the data science job function?
+
+00:03:51.960 --> 00:03:57.240
+So that might be like what tools do you work in? Are you an R team? Are you a Python team?
+
+00:03:57.240 --> 00:04:02.679
+Where does your data get stored? Do you deploy things? What do they look like? Do you build
+
+00:04:02.679 --> 00:04:10.600
+things for other users internally? Yeah, I'd love to hear. Well, the short answer is all of the above.
+
+00:04:11.559 --> 00:04:17.559
+I am primarily an R user. I've been using R since the aughts, back before I even knew what
+
+00:04:18.279 --> 00:04:24.920
+the tidyverse was. But we have other folks who are primarily Python users,
+
+00:04:25.640 --> 00:04:34.600
+and we have our data warehouse hosted in Google Cloud Platform. And we're an Epic organization,
+
+00:04:34.600 --> 00:04:42.440
+so we also have the chronicles and clarity and all that stuff for the various data sources within
+
+00:04:42.440 --> 00:04:53.320
+Epic. We do anything from building a plot for a doctor to setting up a machine learning pipeline
+
+00:04:53.320 --> 00:05:02.359
+to predict our inpatient census every few hours. An Epic for everybody is an EHR,
+
+00:05:02.359 --> 00:05:07.720
+which is an electronic health record, just so we make sure we get all of our acronyms
+
+00:05:07.720 --> 00:05:13.559
+and stuff out there. I was wondering also if you might want to touch just a little bit on
+
+00:05:13.559 --> 00:05:18.839
+your background for us, because I think it is super interesting where you came from and how
+
+00:05:18.839 --> 00:05:24.040
+you got how you navigated your way into this healthcare data science space, because you are
+
+00:05:24.839 --> 00:05:34.839
+an ecology guy, right? And that's where your stats background actually came from and got
+
+00:05:34.839 --> 00:05:40.200
+developed. Could you tell us just a little bit about your windy road to data science and healthcare?
+
+00:05:40.200 --> 00:05:49.000
+Sure. My undergrad degree is in philosophy, of all things, and I decided towards the end of
+
+00:05:49.000 --> 00:05:55.720
+my undergrad that I didn't particularly want to do philosophy professionally. So I got enough hours
+
+00:05:55.720 --> 00:06:00.359
+to have a minor in natural resource management, and then I got a master's in forestry, and then
+
+00:06:00.359 --> 00:06:10.279
+a PhD in environmental science. And after my PhD, I ran a wildlife refuge for about three or four
+
+00:06:10.279 --> 00:06:19.000
+years, and then after that, I became a research professor for about a decade. But along the way,
+
+00:06:21.320 --> 00:06:27.320
+well, in ecology, you end up having to learn a lot of different statistical tools to address
+
+00:06:27.320 --> 00:06:35.000
+all of the very questions that come up. And so, you know, starting with the basics, everything
+
+00:06:35.000 --> 00:06:40.920
+from a t-test all the way up to crazy ordination and cluster analysis, and this was way back when
+
+00:06:41.559 --> 00:06:49.959
+when it was hard to do those things back in the 90s. And when I became a professional,
+
+00:06:50.600 --> 00:06:56.760
+a lot of my colleagues realized that I had these stat skills, and they didn't want to develop them.
+
+00:06:56.760 --> 00:07:01.720
+They're like, oh, let's ask Dwight. He'll do the stats for us. So I ended up learning a lot of
+
+00:07:01.720 --> 00:07:10.760
+things on other people's projects. Like, for example, I helped with a soil microdiversity and
+
+00:07:10.760 --> 00:07:16.760
+chemistry project in Costa Rica, where I got a free trip to Costa Rica, which I guess I didn't
+
+00:07:16.760 --> 00:07:22.679
+need to do because I was just doing the computer work, but I appreciated the visit. And
+
+00:07:23.640 --> 00:07:31.640
+yeah, and then I guess in 2011, I moved into health care. And the reason for that is that in the late
+
+00:07:31.640 --> 00:07:37.000
+aughts, my son was born with some serious health problems. And we were coming over to Seattle,
+
+00:07:37.000 --> 00:07:46.200
+basically weekly, to Children's Hospital, Seattle Children's. And after a while, I was like, you know,
+
+00:07:46.839 --> 00:07:52.279
+after a while, I was like, you know, I have these quant skills, I would really like to use them
+
+00:07:52.279 --> 00:08:06.359
+to help kids like my son. So I took some SAS classes on the side. And because SAS was primarily
+
+00:08:06.440 --> 00:08:18.040
+what was in healthcare at the time. And I learned SAS and got into got into a company called Group
+
+00:08:18.040 --> 00:08:23.160
+Health, which has been bought out since then by Kaiser Permanente. And so it's Kaiser Permanente
+
+00:08:23.160 --> 00:08:31.640
+Northwest. And so at the time, I really wanted to get into children. But even my son's doctor was
+
+00:08:31.640 --> 00:08:39.080
+like, you don't want to work at Children's, our IT is terrible. And so, but I tried anyway,
+
+00:08:39.080 --> 00:08:43.320
+and back then you had to have three years of healthcare experience before they'd even consider
+
+00:08:43.320 --> 00:08:48.840
+you. But I got into Group Health, and I worked at Group Health for three years and one week.
+
+00:08:52.599 --> 00:08:58.039
+As long as it took. When I when you told me that for the first time, I just about
+
+00:08:58.599 --> 00:09:03.640
+was like jaw on the floor, because I know so many people who are like, yeah, my plan was,
+
+00:09:03.640 --> 00:09:08.679
+I'm going to go get this experience that I need to do this other thing. And then along the way
+
+00:09:08.679 --> 00:09:13.400
+of getting that experience, their focus would shift. And they would be like, Oh, well, I turned
+
+00:09:13.400 --> 00:09:18.200
+into a different person in those three years. And then I went and did something else. But you had
+
+00:09:18.200 --> 00:09:23.479
+real focus, you were like, I'm going to go get the experience that I need. And you still had a focus
+
+00:09:24.440 --> 00:09:29.479
+of I'm going to go put my effort where my heart is and do this thing. And I think that that is
+
+00:09:29.479 --> 00:09:34.679
+absolutely amazing. I was kind of tearing up as you were talking. I don't think I'm the only one.
+
+00:09:36.679 --> 00:09:44.599
+And I think that this is a fantastic example of someone persevering through the I don't have the
+
+00:09:44.599 --> 00:09:49.640
+domain experience, which is a question we get a ton on the Hangout, right? Like people asking,
+
+00:09:49.640 --> 00:09:53.159
+well, I really am interested in finance, but I don't have any finance background,
+
+00:09:53.159 --> 00:09:57.159
+or I'm really interested in insurance or supply chain, I don't have any background, how do I do
+
+00:09:57.159 --> 00:10:06.359
+it? Do you have any advice on that from a career career perspective? From what you did? Did you
+
+00:10:06.359 --> 00:10:10.679
+just go like, okay, well, I need this healthcare experience, let me go find some place that fits
+
+00:10:10.679 --> 00:10:16.760
+this bill, that's not exactly what I what I want, but really kind of gets me in the door or that I
+
+00:10:16.760 --> 00:10:27.239
+have just enough experience to do? Yeah. So what I found living from ecology to healthcare was that
+
+00:10:27.239 --> 00:10:33.960
+the questions are different, but the tools are the same. And so, you know, just earlier this week,
+
+00:10:33.960 --> 00:10:40.840
+I was doing an ordination problem on healthcare data instead of ecological data. So all of these
+
+00:10:40.840 --> 00:10:48.840
+skills that all of you have are transferable. And the trick is to demonstrate how you can apply
+
+00:10:48.840 --> 00:10:57.159
+what you already know to where you want to move into. And so one of the ways I did that to move
+
+00:10:57.159 --> 00:11:01.400
+into healthcare is that when I got interviewed at group health, well, when I had several interviews
+
+00:11:01.400 --> 00:11:08.119
+before I got into healthcare, but at group health in particular, I brought artifacts of my work.
+
+00:11:08.200 --> 00:11:13.080
+So it wasn't just a website, I actually had maps printed out of some of the map work I'd done.
+
+00:11:15.559 --> 00:11:19.799
+What else did I bring? I brought a few examples of analytics projects that I had done
+
+00:11:20.760 --> 00:11:28.039
+on paper so that they could look at them right there. And my boss at group health later on said,
+
+00:11:28.599 --> 00:11:34.119
+you're the only person I've ever seen do that. And it just struck me as something you should do
+
+00:11:34.119 --> 00:11:37.159
+because you want to not just talk to people when you're interviewing, you want to
+
+00:11:37.799 --> 00:11:45.559
+show them what you can do. So I think of, even if it's like a pet project that you did for fun on
+
+00:11:45.559 --> 00:11:50.840
+the side, bring some sort of artifact to the interview. That's wonderful advice. Thank you
+
+00:11:50.840 --> 00:11:55.239
+for sharing. I think I saw some people in the chat saying, I really needed to hear this, that
+
+00:11:55.239 --> 00:12:00.200
+you can really push through that. I don't have that domain experience. I promise that you can
+
+00:12:00.200 --> 00:12:04.919
+everybody. I know that it's, it can be really intimidating to be looking at this big wall of,
+
+00:12:05.479 --> 00:12:08.840
+I need the experience to get the job, but I need a job to get the experience. And it's
+
+00:12:09.559 --> 00:12:16.599
+often so, so disheartening. But I would also refer you to like our episode of the Data Science
+
+00:12:16.599 --> 00:12:20.280
+Hangout with Hubert, who is in the crowd right now, who I'm about to call on, by the way,
+
+00:12:20.280 --> 00:12:26.840
+to ask a question live. Get ready, Hubert. Who was like a computer programmer, a computer
+
+00:12:26.840 --> 00:12:34.679
+scientist, a math person who made friends in this space of research and transplant research and
+
+00:12:34.679 --> 00:12:42.280
+stuff like that. And said yes to, can you help me solve this computer specific problem? And then
+
+00:12:42.280 --> 00:12:47.320
+moved into this space and didn't really have the background there before that either. But there's
+
+00:12:47.320 --> 00:12:53.400
+this power when you make friends and you are putting yourself in a space in a community way.
+
+00:12:54.359 --> 00:12:59.799
+Okay. So I said I wanted to call on, on Hubert and I absolutely do. Hubert, you had a question
+
+00:12:59.799 --> 00:13:05.159
+in Slido. I will put it in the chat for everybody to see. And I also highlighted it to the top so
+
+00:13:05.159 --> 00:13:16.359
+that you can see it as well. Okay. So can you hear me? Yes. Hi Hubert. Hi Dwight. So my question,
+
+00:13:16.359 --> 00:13:24.359
+what was my question? Oh, there it is. Yeah. Are there data or data quality resource constraints
+
+00:13:24.359 --> 00:13:29.719
+that affect your work? I've worked with data from children's hospitals, various children's
+
+00:13:29.719 --> 00:13:34.760
+hospitals around the country. And it's obvious that some of them do not have some of the
+
+00:13:34.760 --> 00:13:41.640
+informatics or other resources and constructing their data sets or quality of their data. Does,
+
+00:13:41.640 --> 00:13:49.719
+does that impact you at Seattle Children's? Absolutely. Yeah. In so many different ways.
+
+00:13:49.719 --> 00:13:54.840
+One is just the end size. I mean, any single hospital is going to have a small
+
+00:13:54.840 --> 00:14:02.760
+in any way. And pediatrics tends to be smaller than adult hospitals. And so that definitely
+
+00:14:02.760 --> 00:14:08.039
+impacts what we do. We find that we really don't have the end to do machine learning very much
+
+00:14:09.000 --> 00:14:13.799
+on the clinical side, on the business side. Sure. I work primarily on the clinical side
+
+00:14:15.000 --> 00:14:25.159
+and some other things missing data because patients will come in and out
+
+00:14:26.599 --> 00:14:31.239
+to our specialists. If they can't get a specialist in the time they want to go see
+
+00:14:31.239 --> 00:14:35.320
+somebody else and then maybe come back later. And so we have a gap in the record.
+
+00:14:38.119 --> 00:14:42.200
+Parents move all the time and their kids go with them. So they're lost to follow up.
+
+00:14:46.599 --> 00:14:52.119
+And then I guess the biggest one that gets me, and it's the same problem for healthcare anyway,
+
+00:14:52.119 --> 00:14:58.840
+anywhere is that we have longitudinal data where decisions made along the way,
+
+00:14:58.840 --> 00:15:06.760
+change the trajectory. And that's so hard to both conceptualize and deal with statistically.
+
+00:15:08.359 --> 00:15:16.840
+Yeah. So many sounds like problems that look just like problems I've seen in other sectors too,
+
+00:15:18.599 --> 00:15:23.880
+with customer journey in retail spaces and things like that, where you just have these big gaps
+
+00:15:23.880 --> 00:15:28.840
+between interactions and you don't know why you have a gap in interaction and there is no follow
+
+00:15:28.840 --> 00:15:32.119
+up and you're never going to be able to answer a question. I always think it's interesting that
+
+00:15:33.000 --> 00:15:38.280
+this is, there are so many examples of just how experience transfers to different places. And I
+
+00:15:38.280 --> 00:15:44.520
+wanted to call out in the chat as well, Richard had said, kind of as we were on our last topic,
+
+00:15:44.520 --> 00:15:49.320
+Richard will be joining us by the way, on the data science hangout on November 19th. He's from
+
+00:15:49.320 --> 00:15:55.239
+Hennepin County, but he said, I've been on interview panels and we always like specifics,
+
+00:15:55.239 --> 00:16:01.000
+examples and show and tell. If it's general and vague, the panel might be also struggling with
+
+00:16:01.000 --> 00:16:10.359
+that too. I wanted to add to this and say, so few people actually do go to the step of having an
+
+00:16:10.359 --> 00:16:16.039
+example that if you do, you are automatically putting yourself in the top 10% of people who
+
+00:16:16.599 --> 00:16:22.840
+just tried, because there are a lot of people who are like, I think everybody assumes that everybody
+
+00:16:22.840 --> 00:16:26.520
+else is doing something that they're not actually doing. They're not actually putting the effort
+
+00:16:26.520 --> 00:16:31.960
+forth. And you might assume, oh, those 400 people who clicked that thing on LinkedIn applied for
+
+00:16:31.960 --> 00:16:37.320
+that job when really maybe only 20 followed through and actually applied for that job.
+
+00:16:37.320 --> 00:16:44.359
+And then maybe out of those 20, only one of them has a portfolio or an example or a link to click
+
+00:16:44.359 --> 00:16:50.679
+through to see work that they've done. So if you just decide to put the effort forward, you might
+
+00:16:50.679 --> 00:16:57.080
+be in the minority already. Thank you, Richard. We're looking forward to seeing you in November.
+
+00:16:57.799 --> 00:17:01.719
+All right, let's head back over to Slido and let's grab another question here.
+
+00:17:03.479 --> 00:17:09.959
+Because we have a question from Noor and Noor, there are a few here. Hold on. Wait a minute.
+
+00:17:11.000 --> 00:17:17.160
+Noor had three questions. I'm going to put one to the top here because you asked one about AI.
+
+00:17:17.160 --> 00:17:20.040
+And I think that's very interesting. I'm going to put it in the chat for everybody as well. I just
+
+00:17:20.040 --> 00:17:26.359
+wanted you to know which one I was talking about. I'm sorry. I was really enthusiastic. We love your
+
+00:17:26.359 --> 00:17:33.640
+prolific question asking. Anyway, this is regarding the question that unfortunately everyone gets.
+
+00:17:33.640 --> 00:17:41.239
+And I apologize for the clichedness. But we're unfortunately for better work in the age of AI,
+
+00:17:41.239 --> 00:17:48.280
+whatever that means. Have you felt a push to incorporate AI into your workflows from
+
+00:17:49.000 --> 00:17:55.319
+stakeholders at the hospital or not? Maybe not. And what are some challenges and or pitfalls
+
+00:17:55.319 --> 00:18:03.800
+with that, especially with the kind of delicate data you would direct with? Right. Good question.
+
+00:18:05.079 --> 00:18:17.319
+So a few years ago when I think AI was at its peak of the hype cycle, I felt a lot of top-down
+
+00:18:18.839 --> 00:18:26.920
+not pressure, but not request either, more like a sentiment that, yeah, let's use AI. It's going
+
+00:18:26.920 --> 00:18:33.239
+to solve all our problems. And it was exactly what I heard in the mid to late teens about machine
+
+00:18:33.239 --> 00:18:41.000
+learning. So I was like, OK, not a fad. Let's just see how this goes. And so the organization moved
+
+00:18:41.000 --> 00:18:47.880
+forward with AI. And we have a private instance of Gemini. So we do have that on-prem. And it's
+
+00:18:48.040 --> 00:18:55.239
+HIPAA compliant. So we can use it for patient data. And none of it goes back to Google.
+
+00:18:57.160 --> 00:19:00.920
+So that part's cool. But that's sort of where it stalled out.
+
+00:19:02.599 --> 00:19:09.959
+So we can access Gemini through the web interface with prompts. We can't do it programmatically
+
+00:19:09.959 --> 00:19:13.959
+yet. So it's like, hmm. So I cut and paste a lot of code.
+
+00:19:19.000 --> 00:19:24.760
+The pressure to use more AI, I think, has gone down a little bit as people realize that
+
+00:19:27.079 --> 00:19:31.400
+it does have the same problems in machine learning, that if you don't have a lot of in,
+
+00:19:32.119 --> 00:19:39.319
+it doesn't help and can even hurt. And then probably more
+
+00:19:41.079 --> 00:19:45.880
+concerning is that if you have too many conflicting advice to give the AI,
+
+00:19:45.880 --> 00:19:52.199
+the model is going to collapse back to the average. And if you're in health care, it's like,
+
+00:19:52.199 --> 00:20:01.079
+nobody's average. So we use it in a few areas in the hospital. Like we have something called
+
+00:20:01.079 --> 00:20:08.359
+clinical standard work. And a lot of hospitals have this. And what that is, is a set of
+
+00:20:08.359 --> 00:20:16.760
+instructions for doctors to follow when they have a suspected diagnosis. And it's basically
+
+00:20:16.760 --> 00:20:23.800
+meant to be the best available evidence on treatment pathways. And you don't have to
+
+00:20:23.800 --> 00:20:29.239
+follow it as a doctor. If you have reasons to diverge from it, you can. But we've put that
+
+00:20:29.239 --> 00:20:37.160
+into an AI now. So instead of slipping through thousands of pages of PDFs online, you can
+
+00:20:37.160 --> 00:20:42.760
+actually query it and bring it up. And our AI interface will actually give you references
+
+00:20:42.760 --> 00:20:51.000
+for each one. So it's not making stuff up in theory. But a lot of people are experimenting
+
+00:20:51.000 --> 00:20:57.479
+with it in the hospital. That's the only thing that I know that's actually being used,
+
+00:20:58.439 --> 00:21:00.040
+other than us writing code with it.
+
+00:21:01.479 --> 00:21:05.400
+It sounds like the security part is very, very important in the health care space,
+
+00:21:05.959 --> 00:21:13.319
+making sure that things don't go back into a system to train, which is a struggle. But there
+
+00:21:13.319 --> 00:21:20.359
+are the different providers, different model providers, do work with people to be HIPAA
+
+00:21:20.359 --> 00:21:24.839
+compliant, as far as I can tell, and sign agreements. So if you have questions about that,
+
+00:21:25.000 --> 00:21:28.199
+for sure, ask around in the Discord if you're in the health care space, because there are some
+
+00:21:28.199 --> 00:21:31.800
+people in the Discord I know who have a little bit of experience about this, or with this,
+
+00:21:32.520 --> 00:21:33.800
+talking with different model providers.
+
+00:21:35.239 --> 00:21:39.479
+Okay. Thank you so much, Noor, for your questions. And Noor, you had another one that was,
+
+00:21:39.479 --> 00:21:43.319
+I think, really similar to Hubert's. So I think it got answered, which was like, what are some
+
+00:21:43.319 --> 00:21:47.719
+specific challenges that you face in your role that might be distinct from others? So I'm going
+
+00:21:47.719 --> 00:21:52.520
+to mark that one as answered as well. Thank you for all your wonderful questions. I wanted to hop
+
+00:21:52.520 --> 00:21:57.640
+in really quickly, Dwight, and ask you if you voted in Fat Bear Week, because you did not mention
+
+00:21:57.640 --> 00:22:03.880
+this. But when you said that you used to work in the field, in the forest, you were tracking bears,
+
+00:22:03.880 --> 00:22:09.479
+right? Do you want to talk just a little bit about that? And what do you think about Fat
+
+00:22:09.479 --> 00:22:13.319
+Bear Week? There was also a question in the chat from somebody that I saw, just like a brief
+
+00:22:13.319 --> 00:22:19.319
+mention about the reintroduction of grizzly bears into the North Cascades. Any thoughts, bear
+
+00:22:19.319 --> 00:22:31.400
+thoughts? Okay, so, yay, backpack. Yay, backpack. Backpack one, if anybody is curious about Fat Bear
+
+00:22:31.400 --> 00:22:44.760
+Week. Backpack also has the cutest story to get his name. Yeah, so between Stinson grad school,
+
+00:22:44.760 --> 00:22:52.760
+I worked in southwest Colorado. And at the time, and to this day, people are still wondering if
+
+00:22:52.760 --> 00:22:57.160
+there is a remnant population, a small remnant population of grizzlies in Colorado.
+
+00:22:58.359 --> 00:23:05.560
+And so my job was wandering around the San Juan Mountains for a couple of summers,
+
+00:23:05.560 --> 00:23:10.760
+looking for them. And the only bears I ever saw were the butts because they were running away.
+
+00:23:11.239 --> 00:23:21.000
+Bears are mostly, and probably for good, lots of good reasons, scared of humans. But grizzlies,
+
+00:23:21.000 --> 00:23:25.079
+of course, can be quite dangerous. And they're not nearly as afraid of humans, especially in Alaska,
+
+00:23:25.079 --> 00:23:36.199
+where you're basically another option for lunch. But so yeah, it was basically,
+
+00:23:36.599 --> 00:23:41.959
+every time you saw some bear scat, which is ecological talk for poop, you picked it up,
+
+00:23:41.959 --> 00:23:49.239
+put it in a bag, recorded where you were, and brought it back for DNA testing. And we also
+
+00:23:49.239 --> 00:23:54.280
+characterized the habitat, you know, what good bear foods were out there in terms of the plants.
+
+00:23:55.319 --> 00:24:03.400
+And we did that over hundreds of square miles. I don't even know, maybe more.
+
+00:24:03.640 --> 00:24:11.880
+And through all of that, the evidence was mostly equivocal. If you're curious to find out more,
+
+00:24:11.880 --> 00:24:17.640
+there's a book called Ghost Grizzlies by David Peterson. And he ended up writing three different
+
+00:24:17.640 --> 00:24:22.439
+versions of it. And I mentioned in passing in the second edition, I think.
+
+00:24:23.719 --> 00:24:24.680
+Oh, nice.
+
+00:24:24.680 --> 00:24:30.280
+But, but he, it's funny, if you look at all three, I mean,
+
+00:24:31.239 --> 00:24:37.479
+it's funny, if you look at all three editions, he changes his mind about what he thinks about it,
+
+00:24:38.359 --> 00:24:43.400
+about the possibility of grizzlies there. And Dave lives in Durango, he's been there
+
+00:24:43.400 --> 00:24:50.359
+for decades and decades, and is a local basically. So he wrote it from a local's
+
+00:24:50.359 --> 00:24:54.439
+perspective, as well as from an interested environmentalist perspective.
+
+00:24:55.400 --> 00:25:01.000
+Awesome. Well, I didn't mean to derail us too much into bear data. But it's too much of a
+
+00:25:01.000 --> 00:25:06.760
+coincidence you coming on right at the tail end of Fat Bear Week. I will also mention Fat Marmot
+
+00:25:06.760 --> 00:25:12.599
+Week, which just concluded for the first time this year, which I enjoyed that as well and voted in.
+
+00:25:12.599 --> 00:25:19.000
+Everybody go Google Fat Marmot Week. We had an anonymous question that I thought was very
+
+00:25:19.959 --> 00:25:25.319
+interesting as well come up. And we have one from Frank Leyva, too, in the Slido. Everybody hop in
+
+00:25:25.319 --> 00:25:33.640
+Slido, ask your questions. And don't forget that you can upvote questions. So, Frank, if you are
+
+00:25:33.640 --> 00:25:39.640
+available to ask your question live, I'd love it if we could do that. Frank Leyva. Let's see if we
+
+00:25:39.719 --> 00:25:44.680
+can find Frank to unmute him. Maybe.
+
+00:25:50.680 --> 00:25:58.599
+I think maybe the microphone's not working. Try again. Oh, not yet. Okay, I can read it.
+
+00:25:58.599 --> 00:26:00.920
+No! Okay, Rachel, you're going to read Frank's.
+
+00:26:01.640 --> 00:26:07.640
+But it was, what is a recent data science win that you are personally proud of? Anything goes.
+
+00:26:08.520 --> 00:26:09.560
+Hmm, recent.
+
+00:26:09.560 --> 00:26:12.680
+I like the anything goes. Anything goes. Could be work, could be personal.
+
+00:26:14.439 --> 00:26:15.160
+Okay, so.
+
+00:26:19.800 --> 00:26:22.839
+Well, there's nothing personal because I don't do data science on my time off.
+
+00:26:24.439 --> 00:26:27.560
+I don't blame you. You do a lot in your paid time.
+
+00:26:27.719 --> 00:26:38.599
+At work, I've done several really cool and impactful things over the years. And the most
+
+00:26:38.599 --> 00:26:45.479
+recent has probably been a paper that we have in review in the journal Neurology right now.
+
+00:26:46.439 --> 00:26:50.760
+And so this is looking at
+
+00:26:54.040 --> 00:27:01.319
+a relatively new medication for stroke and pediatric stroke. It's really devastating
+
+00:27:02.520 --> 00:27:07.319
+unless you can get to it quickly. And when you are able to get to it quickly,
+
+00:27:07.319 --> 00:27:09.640
+there's a much better chance of having a good outcome.
+
+00:27:09.800 --> 00:27:17.000
+And the pediatric world usually lags behind the adult world, simply because of
+
+00:27:17.959 --> 00:27:25.000
+the sheer amount. And so, I guess adults become the guinea pigs for children. And
+
+00:27:29.479 --> 00:27:37.640
+I'm going to say this wrong. The newer med for helping stroke care is called Tenecteplase,
+
+00:27:38.199 --> 00:27:46.119
+I think. It's abbreviated as TNK, so I always call it TNK. And the paper we have in review
+
+00:27:46.119 --> 00:27:54.760
+is talking about initial use of this in children, which it's been used for a little while in adults.
+
+00:27:55.719 --> 00:27:59.959
+And the risk profile is fairly small, but it was completely unknown what it is in children.
+
+00:28:00.920 --> 00:28:13.319
+And so, we had 43 patients over three or four years. So, a fairly small N. But I just basically
+
+00:28:13.319 --> 00:28:19.239
+did a beta bimillimil Bayesian model, and we used a prior based on the adult risk profile.
+
+00:28:20.119 --> 00:28:29.800
+And so, we determined the estimated risk for these kids. And we think it's going to be as safe
+
+00:28:29.800 --> 00:28:35.719
+for children as it is for adults. That is amazing. Frank, I'm so glad that
+
+00:28:35.719 --> 00:28:41.880
+you asked this question so that we could hear about this. I put a little link so that people
+
+00:28:41.880 --> 00:28:47.719
+can see what Tenecteplase is, and you did say it exactly the way that I would read it. So,
+
+00:28:47.719 --> 00:28:54.839
+I think you got it exactly right. And then I will also put a link to a chapter of Bayes'
+
+00:28:54.839 --> 00:29:01.640
+Rules, which is a great book. Oh, I love that book. Yeah, which as soon as you said the beta
+
+00:29:01.640 --> 00:29:06.520
+binomial Bayesian model, I wanted to share this. So, I'm going to put this in the chat for you as
+
+00:29:06.520 --> 00:29:11.560
+well. So, everybody can see it if you're curious. Yeah, Bayes' Rules is great. Everybody go check
+
+00:29:11.560 --> 00:29:19.319
+out Bayes' Rules, the book. Single best intro to Bayesian statistics there is. Yes, I'm a baby
+
+00:29:19.319 --> 00:29:25.880
+Bayesian. I'm very frequentist, and Bayes freaks me out. So, anytime there's a friendly and fun
+
+00:29:25.880 --> 00:29:32.680
+introduction to it or information about it, I think it's wonderful. Okay, well, we had a fantastic
+
+00:29:32.680 --> 00:29:37.719
+anonymous question. Not sure who asked this, but it's great. I would love to read it aloud.
+
+00:29:37.719 --> 00:29:43.479
+It says, when I present my work, sometimes people suggest really difficult statistical analyses that
+
+00:29:43.479 --> 00:29:49.880
+are over my head. I don't have a stats background, so I never really know what to say or do in that
+
+00:29:49.880 --> 00:29:55.719
+situation. What would you suggest? Nor how to reply on this one as well. You can reply in Slido in
+
+00:29:55.719 --> 00:30:00.920
+case you didn't know. Nor says, ask them why or what their motivation for that suggestion is.
+
+00:30:00.920 --> 00:30:04.199
+Force them to think about why they are making that suggestion and talk about it more.
+
+00:30:05.479 --> 00:30:09.479
+Dwight, as a person who doesn't have a super formalized stats background,
+
+00:30:10.439 --> 00:30:16.760
+what advice would you give? Nor's advice is perfect. That's how you start it. You push it
+
+00:30:16.760 --> 00:30:25.959
+back on them to explain their reasoning. What I found, and this gets easier as you get older with
+
+00:30:25.959 --> 00:30:36.119
+more experience, if you've got a solid background of basic stats and probability, you can usually
+
+00:30:36.359 --> 00:30:43.239
+learn these more advanced techniques. It may take a little time, but it's possible.
+
+00:30:47.160 --> 00:30:53.560
+I guess one example is a while back I had to do a partial proportional odds model,
+
+00:30:53.560 --> 00:30:58.760
+which I had never done before. So I had to do a lot of reading to see
+
+00:31:00.569 --> 00:31:04.409
+do a partial-proportional odds model, which I had never done before.
+
+00:31:06.489 --> 00:31:11.129
+So I had to do a lot of reading to see Frank Carroll, thank you, if you're out there.
+
+00:31:11.769 --> 00:31:14.329
+Yay, Frank Carroll! We love Frank Carroll. I love Frank Carroll.
+
+00:31:16.089 --> 00:31:19.529
+To learn about it. And then I had Jim and I help me with the code.
+
+00:31:22.009 --> 00:31:25.049
+And so that combination was pretty helpful.
+
+00:31:25.049 --> 00:31:33.689
+Anybody who does not know Frank Carroll, lots of great books, but also I think Frank is on
+
+00:31:33.689 --> 00:31:38.568
+Blue Sky. You can go follow him. Somebody find him on Blue Sky or some books. I'm pretty sure
+
+00:31:38.568 --> 00:31:45.048
+I had a Frank Carroll book in undergrad. Oh, so many questions just popped up in Slido.
+
+00:31:46.649 --> 00:31:50.728
+All right, any other thoughts on this one question? Since I interrupted you,
+
+00:31:50.728 --> 00:31:54.408
+I did the end girl over Frank Carroll. No worries. Yeah, the other, just real quick.
+
+00:31:55.368 --> 00:32:00.649
+Yeah, so push it back on them. Ask them the reasoning. Learn it if you have to.
+
+00:32:01.528 --> 00:32:08.568
+And think about the context between what they need to know and what they're asking for, because
+
+00:32:10.009 --> 00:32:14.488
+a lot of times a simpler approach will answer the questions they have.
+
+00:32:15.369 --> 00:32:19.929
+And if you can demonstrate that, you may not have to go to the more complicated technique.
+
+00:32:20.888 --> 00:32:25.369
+Oh, funny that you say that because Zach said the same thing in the chat. Zach said,
+
+00:32:25.369 --> 00:32:29.128
+I agree with Noor. Something else to keep in mind is that simple methods are usually
+
+00:32:29.128 --> 00:32:35.689
+preferable because they're easier to explain. So be wary of using that complex model that
+
+00:32:35.689 --> 00:32:41.369
+the stakeholder might have suggested because they themselves may not even understand it
+
+00:32:41.369 --> 00:32:47.848
+or understand how important maybe model parsimony might be to making sure that all of the results
+
+00:32:47.848 --> 00:32:53.769
+of your analysis are even interpretable. Fantastic. Oh, our community is so good and
+
+00:32:53.769 --> 00:33:00.969
+smart. I love y'all. Yay. Okay. Let's hop back into Slido where there are so many questions now
+
+00:33:00.969 --> 00:33:06.649
+that I cannot even choose, but I saw that Olaya had asked a question.
+
+00:33:07.849 --> 00:33:13.769
+Olaya, would you like to unmute and ask yours live? Let's see. Do I see her? Where are you,
+
+00:33:13.769 --> 00:33:22.248
+Olaya? There she is. Hey. I was having lunch, so that's why I didn't have video. Hi. Hi.
+
+00:33:24.329 --> 00:33:31.448
+Yeah. So you mentioned the publication before, which is what made me think of this question
+
+00:33:31.448 --> 00:33:38.008
+and my massive conflict of interest because I work for a preprint server. And my question is,
+
+00:33:38.409 --> 00:33:50.329
+what would be your dream display for all the analyses and not just the final products with
+
+00:33:50.329 --> 00:33:56.489
+the graphs or whatever other end point you may have, but also sort of the process?
+
+00:33:59.609 --> 00:34:05.129
+Does that make sense? What sort of format? Is that what you're asking? Yeah. I mean,
+
+00:34:05.129 --> 00:34:11.849
+a normal publication now is we're on the online world, so it will be a PDF that is online,
+
+00:34:11.849 --> 00:34:19.209
+and that's kind of like the standard, right? There have been some experiments with the life,
+
+00:34:21.129 --> 00:34:27.448
+not life code. I don't know what they called it, but essentially like a notebook type format.
+
+00:34:27.448 --> 00:34:34.808
+So either that or even beyond, what would be your dream for someone who has done those analyses
+
+00:34:35.448 --> 00:34:41.528
+to communicate to a fellow scientist who could like really see what you did?
+
+00:34:45.689 --> 00:34:51.929
+Way back in the heyday of Stats Twitter, which we all mourn its passing,
+
+00:34:54.329 --> 00:35:01.769
+I saw this absolutely brilliant tweet. It said it was on the research side and it was,
+
+00:35:02.489 --> 00:35:04.329
+how was it phrased? It was phrased like,
+
+00:35:05.689 --> 00:35:14.409
+what is a habit that you or your lab does for purely superstitious reasons? And somebody replied,
+
+00:35:14.409 --> 00:35:25.128
+publish in journals. And given the abilities of what we can do with interactive graphics these
+
+00:35:25.128 --> 00:35:44.168
+days, PDFs are stupid. So I saw a brand new journal. I think Alberto Cairo is involved with
+
+00:35:44.168 --> 00:35:49.769
+this. The Journal of Visualization, Data Visualization, Data Presentation, something
+
+00:35:49.769 --> 00:35:57.769
+like that. It's a brand new one. They've only been around for a year or so. And you can publish
+
+00:35:57.769 --> 00:36:06.489
+interactive articles there. And I think that's brilliant. I really like what they're doing.
+
+00:36:07.369 --> 00:36:14.249
+It has everything from source, the code that you can go get. It has the written part if you just
+
+00:36:14.249 --> 00:36:19.529
+want to see something static. And for those who want to share interactive stuff, you can.
+
+00:36:21.049 --> 00:36:23.609
+And so far, that's the best example I've seen.
+
+00:36:24.809 --> 00:36:31.369
+Cool. I'll look it up. So it's something about Journal of Data Visualization-ish and it's new.
+
+00:36:32.249 --> 00:36:32.968
+Yeah.
+
+00:36:32.968 --> 00:36:35.688
+Okay. Great. Thank you.
+
+00:36:36.568 --> 00:36:39.128
+I think that there's a link in the chat from Aaron.
+
+00:36:39.128 --> 00:36:41.128
+Oh, good. Somebody found it already.
+
+00:36:41.128 --> 00:36:41.609
+Let's see.
+
+00:36:42.089 --> 00:36:47.688
+Journal of Visualization and Interaction. There it is. I actually had it on my browser.
+
+00:36:48.649 --> 00:36:54.168
+Awesome. You just happened to have it up. So sorry I was not muted when I cracked up at you
+
+00:36:55.209 --> 00:37:01.529
+saying what you said. I try to mute myself when I know I'm going to be laughing. Did not expect it.
+
+00:37:01.529 --> 00:37:06.649
+Okay. Thank you so much, Alaia, for your wonderful question. I appreciate it.
+
+00:37:07.609 --> 00:37:12.809
+We are going to hop over to Zach's question. We have about 15 minutes left,
+
+00:37:12.809 --> 00:37:15.929
+and Zach has asked with a little asterisk, so I'm going to ask it for him.
+
+00:37:15.929 --> 00:37:20.809
+This is a fun one. What developments in data science are you most excited about, not including
+
+00:37:20.809 --> 00:37:21.309
+AI?
+
+00:37:22.408 --> 00:37:23.128
+That's a good one.
+
+00:37:23.769 --> 00:37:25.609
+It is. Putting you on the spot.
+
+00:37:25.609 --> 00:37:33.769
+Yeah. I think the recent advances in Bayesian workflows is really cool.
+
+00:37:36.888 --> 00:37:45.848
+I think folks like Gelman and his group and the BMRS folks are doing some really amazing things
+
+00:37:45.848 --> 00:37:51.609
+on making Bayesian modeling as easy to do as machine learning.
+
+00:37:55.848 --> 00:37:57.369
+And that's Andrew Gelman, right?
+
+00:37:57.369 --> 00:37:58.089
+Yeah.
+
+00:37:58.089 --> 00:38:02.408
+Yeah. Just for anybody who doesn't know who Andrew is,
+
+00:38:02.408 --> 00:38:04.888
+maybe we can find a link to Andrew's website.
+
+00:38:04.888 --> 00:38:10.089
+Yeah. They have a new book that just came out that's online for free called Bayesian Workflows.
+
+00:38:11.049 --> 00:38:15.448
+Amazing. I was just going to link to the YouTube for Bayesian Workflows. I'm going to let somebody
+
+00:38:15.448 --> 00:38:21.288
+else handle that, though. And also, I will pitch the same thing that Dylan pitched in the chat,
+
+00:38:21.288 --> 00:38:22.249
+which is McElroy's.
+
+00:38:23.688 --> 00:38:29.128
+He is great. He's just hard to get past the basics if you don't already have the basics.
+
+00:38:29.128 --> 00:38:36.329
+Yes. I would say statistical rethinking can be a lot to chew on if you are just getting into that.
+
+00:38:36.329 --> 00:38:44.249
+But I think that the more widespread adoption of Bayesian workflows and Bayesian approaches
+
+00:38:44.249 --> 00:38:48.249
+to problems is also really exciting. And I want to learn more. I hope that we can have some more
+
+00:38:48.809 --> 00:38:51.769
+Bayesian folks on the Hangout soon to chat more about it.
+
+00:38:51.769 --> 00:38:52.568
+Yeah.
+
+00:38:52.568 --> 00:38:55.848
+Yes. And thank you to everybody who's helping with links. You guys are amazing. Thank you,
+
+00:38:55.848 --> 00:39:02.008
+Nora, for the Bayesian Workflow link. Thank you, Zach, for the question. Okay. Logan, I saw you
+
+00:39:02.008 --> 00:39:06.888
+had a question, and I know that you're here because I can see. Would you like to ask your question live?
+
+00:39:09.929 --> 00:39:11.609
+I'll put it in the chat.
+
+00:39:12.249 --> 00:39:13.688
+Yes. Hello.
+
+00:39:15.609 --> 00:39:23.288
+So I work in higher education doing data for colleges and universities. And we have a lot of
+
+00:39:23.288 --> 00:39:29.209
+cases where we have small end sizes, students responding to course surveys or anything.
+
+00:39:30.008 --> 00:39:34.728
+And I've been brought on to a new team to help them build models and really try to use their
+
+00:39:34.728 --> 00:39:40.088
+data in better ways. And I wanted to know how you approach having useful outputs when you have
+
+00:39:40.088 --> 00:39:44.968
+end models, but also just in a simple data analysis, this is what happened kind of thing.
+
+00:39:46.009 --> 00:39:51.049
+Because, yeah, like I said, we just have students not responding to things. And I can't glean too
+
+00:39:51.049 --> 00:39:54.408
+much of, you know, one student said one bad thing about a professor.
+
+00:39:55.848 --> 00:40:00.249
+Yeah. Yeah. Rate My Professor is pretty evil.
+
+00:40:01.768 --> 00:40:05.609
+The worst. We don't talk about Rate My Professor.
+
+00:40:05.609 --> 00:40:06.889
+No. We don't use it.
+
+00:40:08.728 --> 00:40:18.728
+Yeah. My brief time in academia, well, I guess it wasn't too brief. It was about a decade.
+
+00:40:19.609 --> 00:40:28.968
+Yeah. Patient surveys are hard because they're optional. They tend to be, you get the whale
+
+00:40:28.968 --> 00:40:32.648
+distribution where everything's pushed up in the four and fives, and then you got a little tail
+
+00:40:32.648 --> 00:40:43.609
+and it pops up again at one. And the professor could probably name the ones. But how does it
+
+00:40:43.609 --> 00:40:56.728
+help at the population level? It's hard to say. One of the things I got to do when I was a
+
+00:40:56.728 --> 00:41:04.648
+professor was set up my own exam, my own surveys. And so the first thing I did was make sure that
+
+00:41:05.528 --> 00:41:10.809
+in a or no opinion was set off to the side and you had to go one way or the other. And so I only
+
+00:41:10.809 --> 00:41:17.049
+had a four point scale instead of something in the middle. And so then I could just look at the
+
+00:41:17.049 --> 00:41:23.689
+ones who had actual opinions and get a better sense for things and which way they're going.
+
+00:41:29.449 --> 00:41:36.968
+But that was a long time ago, and I don't know how well that works anymore. I think a great
+
+00:41:37.848 --> 00:41:43.369
+approach now that you can do is because ordinal models are so easy to do in Bayesian statistics.
+
+00:41:44.328 --> 00:41:47.528
+And if you string that along with marginal effects,
+
+00:41:49.449 --> 00:41:55.129
+you can get some really good outputs that aren't stupid odds ratios. You can actually get
+
+00:41:55.129 --> 00:42:01.528
+probabilities. And if you set your priors reasonably enough and don't use the default flat priors,
+
+00:42:02.009 --> 00:42:06.968
+you can get some reasonable inferences. And you can say, OK, look, the credible intervals are
+
+00:42:06.968 --> 00:42:16.648
+really wide, but the balance of the of the posterior distribution is in this direction.
+
+00:42:17.609 --> 00:42:23.049
+So it can be directionally correct. Awesome. Thank you. Yeah.
+
+00:42:23.049 --> 00:42:26.328
+Thank you for your question, Logan. I appreciate it. I think there are other people in the chat
+
+00:42:26.648 --> 00:42:32.249
+as well who are in a low in zone where they just don't have a lot of people all the time.
+
+00:42:33.288 --> 00:42:37.929
+And so that's a that's a widespread question. OK, thank you so much. I wanted to call some
+
+00:42:37.929 --> 00:42:43.929
+stuff out from the chat that was fun. And yet the chat is moving around so much that I think
+
+00:42:43.929 --> 00:42:49.208
+I've lost most of what I was going to was going to like point out. Oh, I'm so sad.
+
+00:42:50.809 --> 00:42:53.848
+Well, there was a hilarious thing that Richard said. Small ins for students
+
+00:42:53.848 --> 00:42:56.889
+evaluations, but they still hurt my feelings with a big effect size.
+
+00:42:59.449 --> 00:43:06.648
+Hilarious. I will say I used my professor for I just used it in the opposite way in undergrad
+
+00:43:06.648 --> 00:43:11.129
+to pick professors that I would like, because they would have really low scores on difficulty.
+
+00:43:11.129 --> 00:43:14.489
+And if somebody if a whole bunch of people were complaining that a professor was really
+
+00:43:14.489 --> 00:43:18.088
+challenging, I'd be like, that's the one for me. I want somebody who's going to be really hard.
+
+00:43:18.088 --> 00:43:23.768
+And then I just learn a ton. And a big part of it is that I don't have a lot of time to
+
+00:43:24.249 --> 00:43:29.369
+other people would like drop the course. And I would just stay stand on my ground and learn
+
+00:43:29.369 --> 00:43:35.929
+a massive amount from a really challenging professor. Yes. Yeah. Student evaluations
+
+00:43:36.809 --> 00:43:44.569
+rough. There is a question from Alejandro in the Slido that is fantastic for our sort of
+
+00:43:44.569 --> 00:43:50.249
+signature career advice question as well. And so, Alejandro, I see you just came on camera.
+
+00:43:50.249 --> 00:43:55.768
+Would you like to ask that live? Yes. Hey, can you can you hear me OK?
+
+00:43:57.288 --> 00:44:04.648
+No, Alejandro. How are you doing? I'm doing very well. I had a question for you because
+
+00:44:05.369 --> 00:44:10.728
+I just joined. OK, first of all, I got the job. Thank you for the recommendation. I appreciate
+
+00:44:10.728 --> 00:44:19.768
+that. So there's some career advice right there. So seeing as this is like my first
+
+00:44:20.648 --> 00:44:26.489
+statistical or official position in like the statistical workplace, I was wondering if you
+
+00:44:26.489 --> 00:44:32.968
+had any advice for interpersonal skills that has been that have been useful to you in your
+
+00:44:32.968 --> 00:44:38.328
+workplaces. And I think I'll say that, like anything goes with this one, you know, doesn't
+
+00:44:38.328 --> 00:44:44.968
+have to necessarily relate to your role as a statistician on your team. But I don't know,
+
+00:44:45.208 --> 00:44:50.968
+I feel like, you know, a lot of the time for young people and for students, like a lot of
+
+00:44:50.968 --> 00:44:55.449
+the emphasis is on the technical skill. And then maybe that helps you enough to get into a job
+
+00:44:55.449 --> 00:44:59.208
+position. And then you kind of have to like figure out the interpersonal on your own.
+
+00:45:00.408 --> 00:45:06.648
+So anyway, this is wondering what your thoughts were. That is a great question.
+
+00:45:07.049 --> 00:45:17.848
+Well, so I guess just as a start, and this is this is sort of a
+
+00:45:20.569 --> 00:45:26.569
+across-the-board advice. If you have an attitude where you always want to keep learning,
+
+00:45:26.569 --> 00:45:31.609
+that's the single most important thing, not just for technical things, but for interpersonal things.
+
+00:45:32.569 --> 00:45:37.848
+I guess the thing, I was really shy as a kid. I think the thing that really broke me out of that
+
+00:45:37.848 --> 00:45:44.968
+was having to do presentations in college. So the more speaking I had to do, the more comfortable
+
+00:45:44.968 --> 00:45:49.129
+I got talking to a room. And of course, at the beginning, it was totally scary.
+
+00:45:50.489 --> 00:45:54.968
+By the time I was out of grad school, I was like, I'm not going to do this. I'm not going to do
+
+00:45:55.208 --> 00:45:58.328
+talking to a room. And of course, at the beginning, it was totally scary.
+
+00:45:59.609 --> 00:46:03.929
+By the time I was out of grad school, I was like, I'm totally confident now.
+
+00:46:03.929 --> 00:46:09.848
+You know, I still get butterflies, but I'm confident. And to the extent that
+
+00:46:10.569 --> 00:46:17.129
+when I was working at Group Health, my boss told me later, because I had talked back to a VP or
+
+00:46:17.129 --> 00:46:21.609
+something like an SVP. And she says, you don't care who's in the room, do you? I was like, no.
+
+00:46:21.609 --> 00:46:31.449
+But that's not great advice, though. I wouldn't necessarily recommend talking back to an SVP,
+
+00:46:31.449 --> 00:46:33.288
+unless you're really confident in your answer.
+
+00:46:41.369 --> 00:46:46.408
+Going to conferences is really cool, especially Posit Conf, you know, used to be our conf,
+
+00:46:47.369 --> 00:46:52.968
+our user groups, because the community is so wonderful, and so open, and so welcoming,
+
+00:46:53.768 --> 00:47:00.728
+that I hate networking. I absolutely hate networking. But I love being around our folks,
+
+00:47:00.728 --> 00:47:06.249
+because we just go and start talking to each other about whatever. And it's comfortable.
+
+00:47:06.249 --> 00:47:12.168
+And it's the only professional semi-professional group that I've ever been around that is like
+
+00:47:12.168 --> 00:47:20.009
+that. So that's really appreciated. I mean, like, things like JSM and those types of meetings are
+
+00:47:20.009 --> 00:47:25.449
+not like that. It's very clicky. And JSM is Joint Statistical Meeting,
+
+00:47:25.449 --> 00:47:31.369
+for anybody who is not aware. Usually in a different spot in, I think, the US or at least
+
+00:47:31.369 --> 00:47:37.528
+in North America each year. Someone correct me if JSM is frequently in Europe, I'm not sure,
+
+00:47:37.528 --> 00:47:44.408
+but I think it's mostly in the US. But I love the suggestion to just make friends, like,
+
+00:47:45.288 --> 00:47:50.728
+don't worry about networking, just make friends with people, Alejandro. Go be yourself. You seem
+
+00:47:50.728 --> 00:47:55.528
+like you are an absolute delight and just go make friends. I wanted to point out some advice from
+
+00:47:55.528 --> 00:48:01.929
+the chat from some very smart people, because Ellis Hughes is with us today. Ellis is a fantastic
+
+00:48:01.929 --> 00:48:08.009
+organizer up in the Pacific Northwest where Dwight is organizing Cascadia Com. Hey, Ellis.
+
+00:48:09.448 --> 00:48:17.048
+And Ellis says interpersonal skills equals being comfortable reaching out to folks across the org
+
+00:48:17.048 --> 00:48:22.249
+just to learn about them is a massive unlock. Just to learn about them. What do you do?
+
+00:48:23.208 --> 00:48:30.249
+What do you like? What do you have going on? You know, how's the family? How are things going?
+
+00:48:30.249 --> 00:48:34.249
+What are your hobbies? What do you like to do for fun? Just get to know people as much as you can.
+
+00:48:34.808 --> 00:48:39.609
+Makes it easier the next time you need to reach out to them for something that is work related.
+
+00:48:40.728 --> 00:48:44.889
+And then you have absolutely unlocked a superpower within yourself, which is just
+
+00:48:44.889 --> 00:48:51.448
+being willing to ask for help. One of the biggest barriers that I have ever experienced in myself,
+
+00:48:51.448 --> 00:48:55.609
+in my own brain is going, I really want to reach out to this person and ask them for help. And I'm
+
+00:48:55.609 --> 00:49:00.328
+just so worried I'm bugging them. And I'll ask Rachel, Rachel, what should I ask this person
+
+00:49:00.328 --> 00:49:03.769
+for help? She's like, yes, just go message them on Slack or something. They're very nice.
+
+00:49:04.328 --> 00:49:10.328
+Get out of your own head about it. And then Gonzalo also mentioned something that I thought
+
+00:49:10.328 --> 00:49:16.009
+was very important to recognize. Gonzalo says, for me, the interpersonal is different since
+
+00:49:16.009 --> 00:49:22.649
+moving to Latvia because I'm shy as an American, but I'm too extroverted for a Latvian. And so now
+
+00:49:22.649 --> 00:49:28.409
+it's like learning about the cultural differences. Those differences can exist inside of organizations
+
+00:49:28.409 --> 00:49:36.808
+too. If you pop into an organization that's super, I would say more academic than you're used to,
+
+00:49:36.808 --> 00:49:41.208
+or less academic than you're used to, that difference can be a little jarring as well,
+
+00:49:41.208 --> 00:49:46.649
+or much bigger, much smaller. Thank you Alejandro for asking that question. It was great.
+
+00:49:47.208 --> 00:49:52.409
+Yeah. I want to, with our last, oh, go ahead. With Ellis here too, we should give a shout out
+
+00:49:52.409 --> 00:50:00.009
+to the Cascadia conference. Heck yeah. I don't know if Ellis, you want to jump in and tell us
+
+00:50:00.009 --> 00:50:04.649
+a little about it. I would definitely be putting you on the spot, or if you want to share about it
+
+00:50:04.649 --> 00:50:11.369
+in the chat. But I just always hear so many good things about this conference. One of my favorites
+
+00:50:11.369 --> 00:50:15.529
+for the whole year. Yeah, I guess I can speak to it for a second. Cascadia is an annual regional
+
+00:50:15.529 --> 00:50:22.169
+conference that we run every year where we just try to have folks from the area. So from the
+
+00:50:22.169 --> 00:50:31.048
+Washington, Oregon, North California, BC, everyone's invited. And we want to just get people talking
+
+00:50:31.048 --> 00:50:35.529
+about stuff that they're doing in R. We try to focus on students, give them an opportunity to
+
+00:50:35.529 --> 00:50:41.129
+present. We're usually, I mean, the last several years we've been between like 120 to 160 people
+
+00:50:41.129 --> 00:50:45.208
+that are all just coming together on their Saturday to talk about R and be massive nerds
+
+00:50:45.208 --> 00:50:50.249
+together. It's a ton of fun to be together. The last few years we've run workshops as well. The
+
+00:50:50.249 --> 00:50:55.609
+day before, we really try to focus on making it very cost-effective as well. So that folks,
+
+00:50:55.609 --> 00:51:01.289
+if they have to self fund, it's not a massive burden. The other conferences just can be really
+
+00:51:01.289 --> 00:51:07.369
+expensive. And we try to run a lean ship as much as we can. Really, really great community. Everyone's
+
+00:51:07.369 --> 00:51:15.369
+incredibly friendly. If you are in the Pacific Northwest Cascadia area, we have a LinkedIn page.
+
+00:51:15.369 --> 00:51:23.928
+We have a Mastodon and Blue Sky. We're not the best at social media. We work on it every year,
+
+00:51:23.928 --> 00:51:30.489
+but we're just not that great at it. Join, follow them. And you'll see some updates for when we put
+
+00:51:30.489 --> 00:51:37.688
+out the call for papers. We're going to be in Seattle. Next June is our aim for a timeline.
+
+00:51:37.688 --> 00:51:41.048
+We're trying to figure out where we're going to actually host the conference inside of Seattle.
+
+00:51:43.048 --> 00:51:48.649
+But yeah, please reach out if you're in the Pacific Northwest area, because we'd love to have you.
+
+00:51:49.529 --> 00:51:56.328
+Yay. It's so wonderful. I go to Cascadia every year, even though I am nowhere near the Pacific
+
+00:51:56.328 --> 00:52:02.808
+Northwest. We also have virtual tickets as well that we provide to everyone. And we do actively
+
+00:52:02.808 --> 00:52:08.409
+try to make it a very fun thing for folks that aren't in the area or for some reason can't make
+
+00:52:08.409 --> 00:52:14.169
+it physically in person. We do offer that virtual option as well. And Libby's been a fantastic
+
+00:52:14.169 --> 00:52:22.968
+advocate for us for years. I love it. Best little RConf in the US, I think, for just like a one day.
+
+00:52:22.968 --> 00:52:27.609
+You don't have to take off work to do it. It's on Saturday. It's so much fun. Okay. Well,
+
+00:52:27.609 --> 00:52:33.609
+with our last two minutes left, I think that we have to thank Dwight for hanging out with us,
+
+00:52:33.609 --> 00:52:39.848
+for talking about bears, for giving us all of the advice about finding experience in an industry
+
+00:52:39.848 --> 00:52:46.409
+when we don't have any domain experience, about adopting Bayesian methods and learning all about
+
+00:52:46.409 --> 00:52:51.048
+stats and incorporating them when you are not a hardcore stats person from the get-go,
+
+00:52:52.009 --> 00:52:56.009
+talking about your windy career path. This was so much fun. I hope you had a wonderful time
+
+00:52:56.009 --> 00:52:59.688
+here as well, Dwight. I did. Thank you so much for the invite. And thank you,
+
+00:52:59.688 --> 00:53:01.769
+everyone, for the wonderful questions.

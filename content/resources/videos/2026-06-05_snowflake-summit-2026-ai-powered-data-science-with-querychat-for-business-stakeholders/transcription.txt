@@ -1,1 +1,11 @@
 <p><a data-t="0">AI-Powered Data Science with </a><a href="/software/querychat/">Querychat</a><a data-t="0"> for Business Stakeholders, querychat</a></p>
+
+<p><a data-t="30">AI-Powered Data Science with Querychat for Business Stakeholders, querychat</a></p>
+
+<p><a data-t="60">AI-Powered Data Science with Querychat for Business Stakeholders, querychat</a></p>
+
+<p><a data-t="90">AI-Powered Data Science with Querychat for Business Stakeholders, querychat</a></p>
+
+<p><a data-t="120">AI-Powered Data Science with Querychat for Business Stakeholders, querychat</a></p>
+
+<p><a data-t="150">AI-Powered Data Science with Querychat for Business Stakeholders, querychat</a></p>
