@@ -372,15 +372,43 @@ class TestMain:
 
     def test_invalid_html_not_written(self, repo):
         d = write_video_dir(repo, "2026-01-01_a", url=URL, duration=26, vtt=SAMPLE_VTT)
-        code, data = run(repo, client=FakeAnthropic(["<div>nope</div>"]))
+        code, data = run(repo, client=FakeAnthropic(["<div>nope</div>", "<div>nope</div>"]))
         assert code == 2
         assert items(data, "error")[0]["reason"] == "disallowed_tag"
         assert not (d / "transcription.txt").exists()
 
+    def test_low_coverage_retried(self, repo):
+        d = write_video_dir(repo, "2026-01-01_a", url=URL, duration=26, vtt=SAMPLE_VTT)
+        client = FakeAnthropic(['<p><a data-t="0">Hello everyone.</a></p>'])  # then a complete answer
+        code, data = run(repo, client=client)
+        assert code == 0 and len(client.calls) == 2
+        (done,) = items(data, "formatted")
+        assert done["coverage"] == 1.0 and done["coverage_retries"] == 1
+        assert done["input_tokens"] == 2000  # both requests are counted
+        assert (d / "transcription.txt").exists()
+
+    def test_retry_keeps_the_better_answer(self, repo):
+        cues = [(float(t), float(t) + 5, f"sentence number {t}.") for t in range(0, 1500, 10)]
+        vtt = videolib.render_vtt(cues)
+        write_video_dir(repo, "2026-01-01_long", url=URL, duration=1500, vtt=vtt)
+        chunks = f.split_vtt_into_chunks(vtt, f.CHUNK_DURATION_S)
+        assert len(chunks) == 2
+        good = [vtt_to_html(c) for c, _ in chunks]
+        half = vtt_to_html(videolib.render_vtt(videolib.parse_vtt(chunks[1][0])[:40]))
+        worse = vtt_to_html(videolib.render_vtt(videolib.parse_vtt(chunks[1][0])[:10]))
+        client = FakeAnthropic([good[0], half, worse])
+        code, data = run(repo, client=client)
+        assert len(client.calls) == 3  # only chunk 2 is asked again
+        (error,) = items(data, "error")
+        assert error["reason"] == "low_coverage"
+        assert error["coverage_retries"] == 1
+        assert error["chunk_coverage"][0] == 1.0
+        assert 0.6 < error["chunk_coverage"][1] < 0.7  # the first, better answer was kept
+
     def test_rejected_output_saved(self, repo, tmp_path):
         write_video_dir(repo, "2026-01-01_a", url=URL, duration=26, vtt=SAMPLE_VTT)
         rejected = tmp_path / "rejected"
-        code, data = run(repo, "--rejected-dir", str(rejected), client=FakeAnthropic(['<p><a data-t="0">Hello.</a></p>']))
+        code, data = run(repo, "--rejected-dir", str(rejected), client=FakeAnthropic(['<p><a data-t="0">Hello.</a></p>'] * 2))
         assert code == 2
         assert (rejected / "2026-01-01_a.html").read_text() == '<p><a data-t="0">Hello.</a></p>'
         assert items(data, "error")[0]["rejected_output"] == str(rejected / "2026-01-01_a.html")

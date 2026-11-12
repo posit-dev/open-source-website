@@ -109,6 +109,11 @@ Do NOT paraphrase, correct grammar, fix spelling, or improve wording.
 Copy the spoken words exactly as they appear in the VTT, including filler
 words ("um", "uh", "sort of", "you know") and false starts.
 
+Include EVERY cue, from the first to the last. Do NOT skip, shorten, or
+summarize any part — not small talk, not logistics ("can you see my
+screen?", "next slide"), not jokes, not audience questions, not the closing
+remarks. The output must contain all the words of the VTT.
+
 ## Correcting technology-name mishearings
 The metadata lists technologies used in this video. If a word is clearly a
 phonetic mishearing of one of those technology names, silently correct it.
@@ -723,33 +728,50 @@ async def process_video(video_dir: Path, ctx: Context) -> dict[str, Any]:
             item["chunks"] = len(chunks)
             log.info("%s: formatting %d cues in %d chunk(s)", label, len(cues), len(chunks))
 
+            def request(i: int):
+                return call_api(
+                    ctx.client,
+                    build_user_message(chunks[i][0], fm),
+                    model=args.model,
+                    max_tokens=args.max_tokens,
+                    rate_limiter=ctx.rate_limiter,
+                    label=f"{label} chunk {i + 1}/{len(chunks)}" if len(chunks) > 1 else label,
+                    system=build_chunk_system(i, len(chunks)) if len(chunks) > 1 else PROMPT,
+                    sleep=ctx.sleep,
+                )
+
             # Chunks are independent, so request them concurrently (the rate
             # limiter still spaces out the requests).
-            results = await asyncio.gather(
-                *(
-                    call_api(
-                        ctx.client,
-                        build_user_message(chunk_vtt, fm),
-                        model=args.model,
-                        max_tokens=args.max_tokens,
-                        rate_limiter=ctx.rate_limiter,
-                        label=f"{label} chunk {i + 1}/{len(chunks)}" if len(chunks) > 1 else label,
-                        system=build_chunk_system(i, len(chunks)) if len(chunks) > 1 else PROMPT,
-                        sleep=ctx.sleep,
-                    )
-                    for i, (chunk_vtt, _seg_start) in enumerate(chunks)
-                )
-            )
+            results = list(await asyncio.gather(*(request(i) for i in range(len(chunks)))))
             parts = [html_part for html_part, _ in results]
             usages = [usage for _, usage in results]
+            chunk_cues = [videolib.parse_vtt(chunk_vtt) for chunk_vtt, _ in chunks]
+            chunk_coverage = [coverage(cs, part) for cs, part in zip(chunk_cues, parts)]
+
+            # The model sometimes skips parts of a chunk. Ask once more for
+            # the chunks that lost too many words and keep the better answer.
+            retry = [i for i, c in enumerate(chunk_coverage) if c < MIN_COVERAGE]
+            if retry:
+                log.warning(
+                    "%s: %s lost words (%s); asking once more",
+                    label,
+                    "chunks " + ", ".join(str(i + 1) for i in retry) if len(chunks) > 1 else "the response",
+                    ", ".join(f"{chunk_coverage[i]:.1%}" for i in retry),
+                )
+                second = await asyncio.gather(*(request(i) for i in retry))
+                for i, (html_part, usage) in zip(retry, second):
+                    usages.append(usage)
+                    c = coverage(chunk_cues[i], html_part)
+                    log.info("%s: retry of chunk %d: %.1f%% coverage (was %.1f%%)", label, i + 1, c * 100, chunk_coverage[i] * 100)
+                    if c > chunk_coverage[i]:
+                        parts[i], chunk_coverage[i] = html_part, c
+                item["coverage_retries"] = len(retry)
+
             html = "\n<!-- segment separator -->\n".join(parts)
             if len(chunks) > 1:
                 # Which chunk lost words, if any: useful when coverage is low.
-                item["chunk_coverage"] = [
-                    round(coverage(videolib.parse_vtt(chunk_vtt), part), 3)
-                    for (chunk_vtt, _), part in zip(chunks, parts)
-                ]
-                log.info("%s: coverage per chunk: %s", label, ", ".join(f"{c:.1%}" for c in item["chunk_coverage"]))
+                item["chunk_coverage"] = [round(c, 3) for c in chunk_coverage]
+                log.info("%s: coverage per chunk: %s", label, ", ".join(f"{c:.1%}" for c in chunk_coverage))
 
             item["input_tokens"] = sum(u["input_tokens"] for u in usages)
             item["output_tokens"] = sum(u["output_tokens"] for u in usages)
