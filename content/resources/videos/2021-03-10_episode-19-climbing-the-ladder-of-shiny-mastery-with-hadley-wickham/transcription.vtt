@@ -1,0 +1,1378 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:12.040
+Hello friends and welcome to episode 19 of the Shiny Developer Series. My name is Eric Nance
+
+00:00:12.040 --> 00:00:18.480
+and I am so happy that you joined me for this episode. This one's an exciting one because you've
+
+00:00:18.480 --> 00:00:24.719
+heard me say in previous episodes that if you're getting into shiny and you're trying to level up
+
+00:00:24.719 --> 00:00:31.320
+your skill set, this is really one of the best times to be doing it. You've heard some excellent
+
+00:00:31.320 --> 00:00:37.360
+guests in our previous episodes that have been authoring some great materials on leveling up
+
+00:00:37.360 --> 00:00:45.480
+your shiny skills and the guest today is on that same thread so to speak and it is none other than
+
+00:00:45.480 --> 00:00:52.599
+rstudio's chief scientist Hadley Wickham, the author of the soon-to-be-published Mastering
+
+00:00:52.599 --> 00:00:59.119
+Shiny. In this episode you're going to hear us talk about the origins of shiny from his perspective
+
+00:00:59.119 --> 00:01:04.639
+and get some of his advice for just starting out with shiny and for those that are already familiar
+
+00:01:04.639 --> 00:01:09.919
+with shiny we're going to talk about some great lessons with debugging, how to level up your skills
+
+00:01:09.919 --> 00:01:16.720
+and best practices for seeking help and contributing to the shiny community. Well let's not wait any
+
+00:01:16.760 --> 00:01:22.839
+longer. It is a real thrill to start share with you our interview with Hadley Wickham.
+
+00:01:23.879 --> 00:01:29.160
+Well hello friends and welcome to another exciting episode of the Shiny Developer Series
+
+00:01:29.160 --> 00:01:36.919
+and I am absolutely thrilled to welcome for my guest of this episode chief scientist at rstudio,
+
+00:01:36.919 --> 00:01:40.599
+architect of the tidyverse and many other accolades that you probably know about.
+
+00:01:41.239 --> 00:01:45.559
+I'd like to welcome Hadley Wickham to the Shiny Developer Series. So Hadley, thank you so much
+
+00:01:45.559 --> 00:01:52.440
+for joining me today. Yeah thanks for having me Eric. Absolutely. So certainly many in the community
+
+00:01:52.440 --> 00:01:57.639
+I alluded to it earlier know you best of your contributions to the tidyverse and many contributions
+
+00:01:57.639 --> 00:02:04.839
+before that but not many might know about your involvement with the early days of designing shiny.
+
+00:02:04.839 --> 00:02:10.440
+So first maybe in your own words where do you why do you think shiny is so important in the
+
+00:02:10.679 --> 00:02:15.720
+ecosystem and then maybe you could elaborate a bit on how you were involved with the early
+
+00:02:15.720 --> 00:02:22.839
+days of shiny development. Yeah so I remember I don't remember exactly where this fit in the
+
+00:02:22.839 --> 00:02:29.000
+sequence of kind of shiny development but I remember Joe and I were in San Francisco together
+
+00:02:29.000 --> 00:02:36.199
+and we visited a bunch of you know kind of like big internet companies like you know like Airbnb
+
+00:02:36.199 --> 00:02:42.440
+and Pinterest and places like that. And one thing that came up kind of again and again with our
+
+00:02:42.440 --> 00:02:49.160
+discussions with data scientists is how like the struggles of like turning what the data
+
+00:02:49.160 --> 00:02:54.600
+scientists were kind of working on into like dashboards that other people in the
+
+00:02:54.600 --> 00:02:59.880
+company could use. And you know a very common pattern you know at the time I think it still
+
+00:02:59.880 --> 00:03:05.479
+exists today is that the data scientists would like do the thing and then they would turn it over to
+
+00:03:05.479 --> 00:03:10.279
+the web development team to make the dashboard. And then you know there's a lot of back and forth
+
+00:03:10.279 --> 00:03:14.279
+explaining what everything means and how it's supposed to work and you know it takes a long
+
+00:03:14.279 --> 00:03:18.199
+time to get on the web development team's schedule and you know like six months later you finally get
+
+00:03:18.199 --> 00:03:23.720
+the dashboard and then by the time it's up like it's basically out of date already. And this is
+
+00:03:23.720 --> 00:03:29.240
+kind of you know coming up a very common struggle a lot amongst lots of people and I think that
+
+00:03:29.240 --> 00:03:38.679
+really that kind of really drove the need for Shiny. Like how could we give our developers
+
+00:03:38.679 --> 00:03:43.880
+the ability to create you know compelling web applications that they can then use to surface
+
+00:03:43.880 --> 00:03:50.279
+what they've been working on. Great yeah that's great to hear that back story and certainly
+
+00:03:50.919 --> 00:03:56.199
+I mean for me personally it's been a huge revolution in my workflow and it's enabled so
+
+00:03:56.199 --> 00:04:01.639
+many opportunities that as you alluded to before that we would always have to hand off these
+
+00:04:02.199 --> 00:04:07.960
+different stages of the analysis to another team and there might be you know gaps in timing gaps
+
+00:04:07.960 --> 00:04:14.360
+and understanding but now with the data scientists or statistician involved in that end-to-end process
+
+00:04:14.919 --> 00:04:20.760
+of developing these applications it's it's been a huge win in collaboration across multiple
+
+00:04:20.760 --> 00:04:26.519
+industries and you even alluded to the book which we'll get to but my industry of life science is
+
+00:04:26.519 --> 00:04:32.920
+one of the biggest customers of Shiny so certainly we even had Joe Cheng give a keynote at our first
+
+00:04:32.920 --> 00:04:39.160
+R&Pharma conference and he was genuinely surprised by all the workflows we were fitting Shiny in so
+
+00:04:39.160 --> 00:04:44.839
+we are very much appreciative of that. We've also had I know I've had like at least two people
+
+00:04:44.839 --> 00:04:50.279
+have like thanked Joe and said like you've saved me like several hundred thousand dollars. Oh
+
+00:04:50.279 --> 00:04:54.679
+absolutely. We were like we were like looking at hiring a company to do this and I just started
+
+00:04:54.679 --> 00:04:59.160
+playing around with Shiny and then like over a weekend I like created the app you know the basic
+
+00:04:59.160 --> 00:05:06.359
+app that we needed. Yeah it's truly amazing yeah both the time and the money and frankly the
+
+00:05:06.359 --> 00:05:13.399
+collaboration enhancements are just immeasurable in my book so speaking of yeah so speaking of
+
+00:05:13.399 --> 00:05:19.720
+books you know I was of course extremely excited when I heard that you were authoring Mastering
+
+00:05:19.720 --> 00:05:24.200
+Shiny so maybe you could tell us a bit about the backstory and what inspired you to author the book.
+
+00:05:25.239 --> 00:05:33.160
+Yeah so I guess Joe is one of the victims of my book writing advice which is like writing a book
+
+00:05:33.160 --> 00:05:38.839
+is I think it's quite simple like all you need to do to write a book is like write for like an
+
+00:05:38.839 --> 00:05:43.079
+hour or two every morning and that's like that's the secret to how I've written so many books like
+
+00:05:43.079 --> 00:05:48.839
+that like that's all you need to do. Interesting. It turns out that that advice like I've given it
+
+00:05:48.839 --> 00:05:56.200
+to a number of people and no one has managed to use it successfully because I think like the
+
+00:05:56.200 --> 00:05:59.959
+writing for an hour every you know writing for an hour or two every morning is actually the
+
+00:06:00.519 --> 00:06:05.559
+the hard part and it's like this is something like clearly that I've internalized that allows
+
+00:06:05.559 --> 00:06:10.839
+me to do that which is which I don't know how to put into words so Joe had actually been working
+
+00:06:10.839 --> 00:06:17.799
+on Mastering Shiny for I don't know like a year or two maybe and I was just like really just having
+
+00:06:17.799 --> 00:06:22.440
+a really hard time of it and I just thought like you know I'd love to help him out love to learn
+
+00:06:22.440 --> 00:06:28.200
+more about Shiny and how it all works and I you know had a kind of a an open slot in my book
+
+00:06:28.200 --> 00:06:33.799
+writing schedule and thought it'd be kind of fun to tackle it. Wow that's a that's a certainly an
+
+00:06:33.799 --> 00:06:40.119
+interesting set of circumstances but it's also maybe a unique time for you where you're writing
+
+00:06:40.119 --> 00:06:46.920
+about a concept or a package here or a workflow that certainly like we alluded to you've been
+
+00:06:46.920 --> 00:06:51.000
+involved in kind of the early genesis of it but it sounds like you were learning more about it
+
+00:06:51.000 --> 00:06:54.760
+as you were writing the book and that's pretty fascinating as well it's a great way to learn.
+
+00:06:55.959 --> 00:07:00.359
+The other thing I really like about it is like compared to alpha data science like if there's
+
+00:07:00.359 --> 00:07:05.959
+any like when I'm writing about something in alpha data science and it just feels like like annoying
+
+00:07:06.040 --> 00:07:11.640
+or hard to use I feel like I have to stop writing and then go and fix that little thing like it's
+
+00:07:11.640 --> 00:07:15.640
+someone else's responsibility so I can just kind of write about it and say you know this is like a
+
+00:07:15.640 --> 00:07:20.760
+little bit of a rough edge it's not a big deal just work around it by doing this which was you
+
+00:07:20.760 --> 00:07:27.720
+know I've also filed a bunch of issues and pull requests to Shiny but just nice to have that
+
+00:07:27.720 --> 00:07:33.079
+to kind of write it it is nice to like write about someone else's work and just that that
+
+00:07:33.079 --> 00:07:37.079
+distance is I don't know I found that really really enjoyable in the writing process.
+
+00:07:37.079 --> 00:07:42.920
+Yeah I did notice some activity in the issue trackers for not only Shiny but also some of
+
+00:07:42.920 --> 00:07:48.040
+the extension packages like Shiny test and others so I knew you were definitely learning and seeing
+
+00:07:48.040 --> 00:07:52.839
+some issues along the way so that's great to have that collaborative development on multiple fronts
+
+00:07:54.200 --> 00:08:00.600
+and you alluded to early obviously you know your previous efforts in authoring like of course R for
+
+00:08:00.600 --> 00:08:07.000
+Data Science and Advanced R and as I've been reading Mastering Shiny in the early web form
+
+00:08:07.880 --> 00:08:14.600
+I have seen themes at least from my opinion where you're taking learnings or concepts from like
+
+00:08:14.600 --> 00:08:19.880
+how an R for Data Science is worrying about the analytical workflow the data science pipeline
+
+00:08:19.880 --> 00:08:25.079
+and then from Advanced R it is certainly coming from an engineering you know going inside R
+
+00:08:25.720 --> 00:08:31.160
+how it works perspective so how do you think something like Shiny
+
+00:08:31.160 --> 00:08:35.000
+blends those two different frameworks together in your opinion?
+
+00:08:36.200 --> 00:08:40.919
+Yeah I mean Shiny I think I mean I kind of think about like there's at least a
+
+00:08:41.880 --> 00:08:46.440
+I sort of bucketed in my mind a little bit differently to you like I think Advanced R
+
+00:08:46.440 --> 00:08:51.239
+is being about like programming okay like how do you like write like how does R work as a
+
+00:08:51.239 --> 00:08:55.799
+programming language and how do you do stuff and then you've got like R packages which is more
+
+00:08:55.799 --> 00:09:02.599
+about like software engineering like how do you write big like big bodies of code that like work
+
+00:09:02.599 --> 00:09:07.320
+and maintainable and can kind of grow over a longer period of time sure and then you've
+
+00:09:07.320 --> 00:09:12.919
+kind of got the data science side and like Shiny kind of touches on all of them like you're using
+
+00:09:12.919 --> 00:09:19.479
+Shiny you know primarily to do data analysis you've got to learn about this new like programming
+
+00:09:19.479 --> 00:09:26.039
+framework of reactivity and then you've also got like because Shiny has been so incredibly
+
+00:09:26.039 --> 00:09:30.440
+successful people are like writing bigger and bigger apps yes and then so you also need to
+
+00:09:30.440 --> 00:09:35.479
+learn like a little bit of software engineering so that as your app gets bigger it hopefully
+
+00:09:35.479 --> 00:09:39.719
+like the pace of development stays constant hopefully you know maybe if you're lucky it
+
+00:09:39.719 --> 00:09:44.840
+actually increases as you get better at it rather than like decreasing over time which I think is
+
+00:09:44.840 --> 00:09:50.440
+the big like if you're if if if you're like working on a coding project and it just gets
+
+00:09:50.440 --> 00:09:55.400
+like slower and slower and slower to do anything over time I think that's a sign that there's like
+
+00:09:55.400 --> 00:09:59.400
+something wrong with your kind of software engineering process and that that's kind of
+
+00:09:59.400 --> 00:10:08.039
+like one of the things we see a lot in um with Shiny apps like people people make these incredible
+
+00:10:08.039 --> 00:10:13.880
+apps like they've all been surprised by like how far that people have been able to go to make these
+
+00:10:13.880 --> 00:10:19.960
+really useful apps and then we look at the code and we're like oh my god like what are you what
+
+00:10:19.960 --> 00:10:25.479
+are you doing that's which is not you know it's not like the fault of the like it's like a testament
+
+00:10:25.479 --> 00:10:30.039
+to like you don't know that much about software engineering you've created this incredibly you
+
+00:10:30.039 --> 00:10:35.080
+know incredibly useful thing but it's really difficult for us to kind of look at and say like
+
+00:10:35.080 --> 00:10:39.799
+this is what you need to improve because it's like you know you need to like go back to kind of
+
+00:10:40.440 --> 00:10:45.799
+step one and so that that's hopefully like one of the goals of this book is to give people those
+
+00:10:45.799 --> 00:10:51.799
+skills so that you can start off with a simple app and you know it gets more and more featureful
+
+00:10:51.799 --> 00:10:57.400
+and complicated over time but it doesn't become this kind of like unmaintainable nightmare where
+
+00:10:57.400 --> 00:11:03.479
+like you you don't understand like whether you know your change you know with the one reactive
+
+00:11:03.479 --> 00:11:10.440
+ends up firing 50 other things what's going wrong yeah i can uh i'm i'm certainly laughing
+
+00:11:10.440 --> 00:11:15.960
+from past experience um so i was one of the early adopters of shiny and i my first i would say major
+
+00:11:15.960 --> 00:11:21.320
+app it was exactly the trap that you you just alluded to i built all these different things
+
+00:11:21.320 --> 00:11:25.640
+together and this was even before modules became a thing which i'm sure i'll hit on a little bit
+
+00:11:25.640 --> 00:11:31.000
+and trying to network all that together is just a nightmare but more importantly i cannot instill
+
+00:11:31.000 --> 00:11:37.640
+like what my philosophy was to other collaborators or frankly even the future me so it's certainly a
+
+00:11:37.640 --> 00:11:43.159
+lot of these principles that don't come natural right away but once you once you adhere to them
+
+00:11:43.159 --> 00:11:49.239
+it's a better product and it's a better experience for sure so we we can all sympathize with those
+
+00:11:49.239 --> 00:11:55.080
+things yeah and like i don't want to like you don't want to feel anyone to feel bad about like
+
+00:11:55.080 --> 00:11:59.719
+the quality of the card because the only way you can write good card is to write like a lot of
+
+00:11:59.719 --> 00:12:05.640
+bad code and that's exactly you know what i what i have done oh yeah i remember you said that in one
+
+00:12:05.640 --> 00:12:11.880
+of your previous presentations exactly yep hopefully we can just skip you a few steps
+
+00:12:11.880 --> 00:12:18.440
+so you get into good code without going quite down quite so many dead ends yeah absolutely so
+
+00:12:18.440 --> 00:12:23.400
+yeah let's maybe dive into a little bit of the structure of the book and one theme i want to
+
+00:12:23.400 --> 00:12:29.479
+touch on first is you do a great job of talking about you know what are the best ways to get
+
+00:12:29.479 --> 00:12:35.719
+started with shiny certainly there are resources about it but it's great to kind of see a kind of
+
+00:12:35.719 --> 00:12:41.080
+recipe driven approach to how you create your first app but my my question to you is as somebody
+
+00:12:41.080 --> 00:12:45.559
+who's getting involved with shiny maybe for the first time or have basic familiarity with it
+
+00:12:46.200 --> 00:12:50.840
+what are some of the expectations you think users should have before they embark on this journey as
+
+00:12:50.840 --> 00:12:56.599
+compared to maybe getting into say the tidyverse analytical workflow or things like that in your
+
+00:12:56.599 --> 00:13:04.520
+opinion i think probably like the two things to me the two biggest differences are probably
+
+00:13:05.400 --> 00:13:10.919
+um like you're gonna have to learn reactivity which is like a fundamentally different programming
+
+00:13:10.919 --> 00:13:17.239
+model and like it absolutely takes a while to get your head around yes like i still you know
+
+00:13:17.799 --> 00:13:20.919
+things still surprise me and i have to like do little experiments or just ask
+
+00:13:21.559 --> 00:13:26.599
+show why it works that way sure um and then i think the other part of it which is
+
+00:13:27.239 --> 00:13:31.960
+another area where you can just like there's just so much to learn is like user interface
+
+00:13:31.960 --> 00:13:37.080
+development like how do you actually make an app for people but other people who are not experts
+
+00:13:37.080 --> 00:13:41.559
+can use effectively right and you know i don't get into that into the book at all because that's just
+
+00:13:41.559 --> 00:13:48.039
+this huge huge topic really really important and but but thinking about that and learning a little
+
+00:13:48.119 --> 00:13:54.599
+bit about that i think helps really helps make apps more effective yeah it's it's just interesting
+
+00:13:54.599 --> 00:13:59.880
+to see the different mindsets that come into play here and yeah there are there are definitely what's
+
+00:13:59.880 --> 00:14:05.239
+great about this time and like learning shiny is that there's a lots of great resources now
+
+00:14:05.239 --> 00:14:10.039
+that are hitting different themes even in more detail if you need to dive into those worlds so
+
+00:14:11.080 --> 00:14:17.080
+actually respect the user interfaces david grandgen is authoring the outstanding shiny ui
+
+00:14:17.080 --> 00:14:21.400
+so that's a great place to go if you need to get in the nuts and bolts of that alone
+
+00:14:21.400 --> 00:14:27.000
+but when i first started shiny the best the only resource i really had was the google mailing list
+
+00:14:27.000 --> 00:14:32.039
+where joe and others are frequent and that's how we were trying to learn so it's a much different
+
+00:14:32.039 --> 00:14:39.880
+time now and um another part of the book that i was really excited to see as i've been adopting
+
+00:14:39.880 --> 00:14:46.359
+more of the tidyverse related packages in my a lot of my work but including my shiny app work
+
+00:14:46.359 --> 00:14:53.000
+is how we can leverage tidy evaluation in developing your back end shiny code and you
+
+00:14:53.000 --> 00:14:58.440
+touch on a couple great concepts that i didn't really articulate well in my head before is that
+
+00:14:58.440 --> 00:15:05.960
+within tidy evaluation you have these constructs of n for e and v variables and then these more of
+
+00:15:05.960 --> 00:15:10.760
+the data variables maybe you could elaborate a bit more to our audience what that means and how
+
+00:15:10.760 --> 00:15:17.559
+that fits into like using tidy evaluation with shiny yeah i mean so tidy evaluation i think has
+
+00:15:17.559 --> 00:15:23.400
+had a lot of ups and downs and it's history i think like two years ago maybe someone posted
+
+00:15:23.400 --> 00:15:28.840
+on our studio community saying like is tidy evaluation destroying the tidyverse oh i saw that
+
+00:15:29.880 --> 00:15:36.119
+i think part of the challenge was like the it was so obvious to us like the theory behind tidy
+
+00:15:36.119 --> 00:15:40.760
+evaluation was kind of correct and gave us a lot of power but it was it took it's taken us a very
+
+00:15:40.760 --> 00:15:46.760
+long time to kind of crisply explain like what do you need to know to actually learn it and to use
+
+00:15:46.760 --> 00:15:53.880
+it sure i think what it's come down to now i think what kind of captures why it is so difficult at
+
+00:15:53.880 --> 00:16:01.239
+first is this idea like we use the word variable to mean two different things and until you kind
+
+00:16:01.239 --> 00:16:06.119
+of disentangle those in your head it's really difficult to use tidy evaluation because you
+
+00:16:06.119 --> 00:16:11.159
+don't have quite the right like hooks in your brain to hang things off them and it's basically
+
+00:16:11.159 --> 00:16:16.039
+the idea that like in r you've got like this we use variable to mean two different things we use
+
+00:16:16.039 --> 00:16:22.119
+like a a data frame variable that's like you know in the m in the in the iris in the iris data frame
+
+00:16:22.119 --> 00:16:27.799
+there's a variable called species and we also use it to talk about kind of like objects that exist
+
+00:16:27.799 --> 00:16:36.520
+environments in r like the the iris data frame is a variable in the the data sets package right
+
+00:16:36.520 --> 00:16:43.479
+right and and the the thing that i think makes tidy evaluation kind of challenging is now you've
+
+00:16:43.479 --> 00:16:49.799
+got this like extraction you've got the name of a data frame variable stored in an environment
+
+00:16:49.799 --> 00:16:56.200
+variable and first of all like that like until you've like separated the two types of variable
+
+00:16:56.200 --> 00:16:59.320
+like that seems doesn't even make sense right you've got a variable that's stored in another
+
+00:16:59.320 --> 00:17:04.280
+variable like what does that what does that even mean and it's that but it's that indirection like
+
+00:17:06.040 --> 00:17:10.839
+that that that's really at the heart of tidy evaluation that that being able to capture like
+
+00:17:10.839 --> 00:17:15.880
+this is the name of a variable a data variable i'm going to put it in an environment variable
+
+00:17:15.880 --> 00:17:20.359
+and later on i'm going to use it in the context where it's going to be a data variable yes
+
+00:17:20.760 --> 00:17:26.760
+um and so i think i mean my hope is like that that now like once you get that kind of idea in
+
+00:17:26.760 --> 00:17:33.160
+your head and and then the problem of the you know the great thing about tidy evaluation like as a
+
+00:17:33.160 --> 00:17:38.839
+from a user perspective is that you can use data variables and environment variables interchangeably
+
+00:17:39.400 --> 00:17:43.400
+and that's what you know that's like when you're subsetting a data frame you can just say species
+
+00:17:43.400 --> 00:17:48.920
+equals you don't have to say iris to all science right right but it's that ambiguity that then
+
+00:17:48.920 --> 00:17:52.839
+makes it hard to program with and the basic idea is like once you've identified what's the
+
+00:17:52.839 --> 00:17:58.599
+data variable what's the environment variable you can now use these these pronouns called dot data
+
+00:17:58.599 --> 00:18:04.280
+and dot n to kind of be explicit about where things are coming from and then you know after
+
+00:18:04.280 --> 00:18:09.319
+that i think things just kind of relatively naturally fall out at least at least for the
+
+00:18:09.319 --> 00:18:15.160
+case of using it in shiny apps which is a you know slightly simpler case than all of the general
+
+00:18:15.160 --> 00:18:20.599
+possible cases you might want to use it right and it reminds me back when i was taking one of your
+
+00:18:20.599 --> 00:18:25.959
+workshops at rstudio conf it was about a couple years ago when you're doing an advanced tidyverse
+
+00:18:25.959 --> 00:18:31.400
+kind of workshop and when you were talking about tidy evaluation at that time i didn't it didn't
+
+00:18:31.400 --> 00:18:36.280
+really click with me this concept of the different types of variables but now after reading this
+
+00:18:36.280 --> 00:18:40.839
+chapter it it once you start there like if you start there then you're able to decompose it
+
+00:18:40.839 --> 00:18:45.640
+successfully it becomes much easier to harness than maybe when i first tried it a couple years
+
+00:18:45.640 --> 00:18:50.439
+ago so i know you like you alluded to you've learned a lot along the way you and others on
+
+00:18:50.439 --> 00:18:55.000
+the team but i think it really shows in how you've authored the material here and i think it's a great
+
+00:18:55.000 --> 00:19:01.400
+win for shiny authors to leverage these concepts effectively especially if you have like back-end
+
+00:19:01.400 --> 00:19:06.199
+code that's like doing data processing data manipulation and you have functions that are
+
+00:19:06.199 --> 00:19:11.079
+already doing this kind of thing you don't have to like mentally shift to a different paradigm
+
+00:19:11.079 --> 00:19:15.319
+if you want to use it again so like i said i was that was extremely excited for me to see that
+
+00:19:15.319 --> 00:19:20.680
+yeah it's great yeah yeah i mean am i an expert at it certainly not yet but i'm i'm known enough
+
+00:19:20.680 --> 00:19:27.160
+to be dangerous as they say so it's been exciting to learn about that and um the other concept you
+
+00:19:27.160 --> 00:19:33.160
+alluded to that i think is the most fundamental in shiny in my humble opinion of course is
+
+00:19:33.160 --> 00:19:39.880
+reactivity it's really what distinguishes it from a regular r kind of analytical workflow here
+
+00:19:39.880 --> 00:19:45.000
+and so what's your opinion you kind of alluded to it a little bit on some of the more challenging
+
+00:19:45.000 --> 00:19:50.599
+aspects of reactivity that you can the users need to grasp across the different
+
+00:19:50.599 --> 00:19:57.000
+maybe spectrums of experience that someone might have with shiny yeah i think the
+
+00:19:57.880 --> 00:20:02.760
+i think reactivity is kind of challenging because like when you when you start using it like very
+
+00:20:02.760 --> 00:20:08.359
+simply and very initially it's you know it's like magic but it just works and you don't have to like
+
+00:20:08.359 --> 00:20:13.160
+think you don't build up like a mental model of what's happening just your like outputs update
+
+00:20:13.160 --> 00:20:19.400
+automatically as your inputs change and if you've never really thought about it like that just it
+
+00:20:19.400 --> 00:20:25.560
+just feels like that's how like that's just obviously how the world should be like and
+
+00:20:25.560 --> 00:20:31.640
+how the world should work but like as your app starts to get more complicated you need to start
+
+00:20:31.640 --> 00:20:35.640
+to kind of make that reactivity maybe like a little bit conditional you only want to update
+
+00:20:35.640 --> 00:20:42.359
+this thing if that thing is true it's very easy like you to kind of get yourself into the state
+
+00:20:42.359 --> 00:20:46.359
+where you have no idea what's going wrong and it's just just magic and you're just like in a
+
+00:20:46.359 --> 00:20:52.119
+randomly changing things in the hope that it'll that'll um fix your app and i think at that point
+
+00:20:52.119 --> 00:20:56.359
+like then you really have to sit down and like say well now i'm going to spend a little time like
+
+00:20:56.359 --> 00:21:00.760
+really trying to understand the theory and that's when i think like starting to think about like the
+
+00:21:00.760 --> 00:21:05.880
+reactive graph and the arrows connect you know that that that's like picture that's what i picture in
+
+00:21:05.880 --> 00:21:10.280
+my head is like when i'm looking i'm going to show this how do all these things connect together
+
+00:21:10.280 --> 00:21:16.599
+right and right like the clearer you can make that both in terms of like your internal mental model
+
+00:21:16.599 --> 00:21:21.959
+and how easily you can see that by reading the car i think you know the better you become as a
+
+00:21:21.959 --> 00:21:29.239
+shiny developer yeah it's it's definitely a learning journey for sure um lots of things i
+
+00:21:29.239 --> 00:21:34.439
+learned the hard way especially as you start mixing the concepts like reactives and observers
+
+00:21:34.439 --> 00:21:39.400
+and trying to figure out okay where do things launch at what point and there are nice tooling
+
+00:21:39.400 --> 00:21:45.000
+available that you allude to in the book as well on drawing that kind of reactive flow even in your
+
+00:21:45.000 --> 00:21:50.599
+head kind of on paper at first but then verifying are your assumptions actually correct with things
+
+00:21:50.599 --> 00:21:56.599
+like the react log package that uh very slicky has been offering so it's definitely getting easier
+
+00:21:56.599 --> 00:22:02.040
+to find those issues but boy that's the biggest debugging nightmare sometimes it's not so much as
+
+00:22:02.040 --> 00:22:07.239
+an error but it's like it's not firing at the exact time i want it so that's a it can be a
+
+00:22:07.239 --> 00:22:12.920
+frustrating experience but i think we've experienced um it come we experience a reactivity it hopefully
+
+00:22:12.920 --> 00:22:19.160
+gets a bit smoother i think the other mistake that's like one of the most common mistakes i
+
+00:22:19.160 --> 00:22:24.839
+see people doing is putting too much like non-reactive code in the server function like
+
+00:22:24.839 --> 00:22:29.479
+if you've got to do like a lot of complicated you know like data cleaning or data analysis
+
+00:22:29.479 --> 00:22:33.400
+it doesn't actually depend on reactivity you're better off like pulling that out into a separate
+
+00:22:33.400 --> 00:22:39.640
+function so that your serve like your server app almost becomes like just the connections in the
+
+00:22:39.640 --> 00:22:45.400
+reactive graph yes and then you know like the the more you can kind of condense that down and make
+
+00:22:45.400 --> 00:22:50.359
+it like a very crisp declaration of the reactive graph the easier it is to understand what's going
+
+00:22:50.359 --> 00:22:55.880
+on yeah i i wish i could mark like a hundred stars next to that one comment because too many times i
+
+00:22:55.880 --> 00:23:03.400
+see people put these absolutely massive server files just and inside reactives it's it's so hard
+
+00:23:03.400 --> 00:23:09.640
+to decompose like where the problem really resides where if you can factor out that back-end logic
+
+00:23:09.640 --> 00:23:14.920
+and dedicated functions then it's much easier to just debug at those points when you need it but
+
+00:23:14.920 --> 00:23:19.319
+then to rule out if that's a problem or not and i think that's another thing that comes through
+
+00:23:19.319 --> 00:23:24.359
+experience and more like you said kind of the software engineering principles but certainly
+
+00:23:24.359 --> 00:23:30.359
+when i started with shiny it wasn't natural yet but now the value of decomposing and making things
+
+00:23:30.359 --> 00:23:36.119
+more articulate in your intention of where you want to use back-end logic and make your server
+
+00:23:36.119 --> 00:23:42.280
+files whether they're in modules or in the overall server construct more easier to understand and
+
+00:23:42.280 --> 00:23:48.760
+easier to reason with it can only lead to better things yeah yeah and then those skills like you
+
+00:23:48.760 --> 00:23:54.439
+know they transfer to basically any place you're writing a code like the better you can get it
+
+00:23:54.439 --> 00:24:00.439
+kind of extracting out like a you know clear concise idea and like isolating that so you can
+
+00:24:00.439 --> 00:24:07.719
+think about it separately but you know the better a programmer you become yeah right right and and
+
+00:24:07.719 --> 00:24:13.239
+on that thread of kind of like learning and maybe getting help along the way i was again very
+
+00:24:13.239 --> 00:24:18.040
+excited to see that you have a great section in the book about how you can effectively get help
+
+00:24:18.040 --> 00:24:23.479
+with shiny and this is where the concept of reproducible examples come into huge play here
+
+00:24:24.040 --> 00:24:29.880
+now for me personally shiny has always been one of the more challenging areas to develop a reprex for
+
+00:24:29.880 --> 00:24:35.239
+but maybe you could you could um touch on if you don't mind maybe on top of what you're authoring
+
+00:24:35.239 --> 00:24:40.839
+in the book for reprexes what additional advice do you have for shiny developers to help create
+
+00:24:40.839 --> 00:24:47.560
+effective reprexes when they're facing issues with say reactivity or any anything like that yeah just
+
+00:24:49.880 --> 00:24:55.319
+i think just to emphasize that like to me like the reprex is the tool that i use like if there's a
+
+00:24:55.319 --> 00:25:01.959
+problem you want to like isolate like figure out exactly where the problem is yes and like the more
+
+00:25:01.959 --> 00:25:06.680
+the more you can kind of like throw stuff away to get to like the heart of the problem the easier
+
+00:25:06.680 --> 00:25:13.160
+it is going to be to figure out um like what's gone what's gone wrong and like as the author of
+
+00:25:13.160 --> 00:25:18.439
+the app like you are more suited you can do that more easily than anyone else because you kind of
+
+00:25:18.439 --> 00:25:23.319
+know what's going on whereas if you want someone to help you and then you give them like a thousand
+
+00:25:23.319 --> 00:25:28.920
+lines of code and like one of those lines is a problem like it's really difficult to figure out
+
+00:25:29.479 --> 00:25:34.839
+what's going on and you know it's going to be frustrating when you make your first reprex like
+
+00:25:34.839 --> 00:25:39.319
+it's kind of slow and annoying but it's like it's absolutely a skill you get better at it over time
+
+00:25:39.319 --> 00:25:44.680
+and then just you know it makes it easier for other people to get help you and then you know
+
+00:25:44.680 --> 00:25:50.119
+you discover like 90 of the time when you make a minimal reprex you're like oh now i know what the
+
+00:25:50.119 --> 00:25:54.439
+problem is like it's obvious right like you don't need any like sophisticated
+
+00:26:24.436 --> 00:26:29.156
+it is something like I enjoy, like here's a hundred lines of code, now I'm going to get it down to like
+
+00:26:29.156 --> 00:26:33.395
+the three lines of code that actually illustrate the problem, and you know that that's kind of
+
+00:26:33.395 --> 00:26:39.395
+like a fun little game. Yeah, the learning journey that I'm on is as I develop these apps with say
+
+00:26:40.035 --> 00:26:44.996
+5, 10, maybe 20 modules inside, and they're all kind of networking with each other, passing things
+
+00:26:44.996 --> 00:26:50.035
+back and forth, that when something goes wrong in one of them, how I can isolate it to like maybe
+
+00:26:50.035 --> 00:26:55.555
+that one specific module, but find the best way to do a reprex that cuts off the fluff that it
+
+00:26:55.555 --> 00:27:00.916
+doesn't need if I want to post to say rstudio community or somewhere else, and admittedly
+
+00:27:00.916 --> 00:27:05.635
+that's the part I'm probably the weakest in, because when I deal with issues as shiny at my
+
+00:27:05.635 --> 00:27:11.315
+day job, people usually go to me for the shiny questions, so I don't have all first the expertise
+
+00:27:11.315 --> 00:27:16.436
+we're trying to develop, but then if I want to get help, I got to figure out how to decompose a lot of
+
+00:27:16.436 --> 00:27:23.236
+that other unnecessary logic that isn't really impacting the problem, so I'm going to be
+
+00:27:23.236 --> 00:27:28.916
+practicing that, but that's a journey I'm on currently. And I think that also helps you like
+
+00:27:28.916 --> 00:27:33.476
+as you do that more, like you'll get a better sense for like when you start designing something,
+
+00:27:34.196 --> 00:27:38.355
+like there's a little voice in the back of your head, like am I going to be able to like debug
+
+00:27:38.355 --> 00:27:45.075
+this later, and like could I make a design a little simpler. Right. I forget where this
+
+00:27:45.075 --> 00:27:52.035
+comes from, but there's a kind of a saying like it's always harder to write, it's always harder
+
+00:27:52.035 --> 00:28:00.516
+to debug code than to write code. Interesting. So if you write code that is like you at your
+
+00:28:00.516 --> 00:28:08.436
+smartest, you're not going to be smart enough to debug it. You can't like write code at the peak
+
+00:28:08.436 --> 00:28:12.036
+of your abilities, because you won't be able to debug it, you've always got to like kind of claw
+
+00:28:12.036 --> 00:28:16.436
+it back a little bit. So if something goes wrong, there's a little intellectual headroom for you
+
+00:28:16.436 --> 00:28:22.436
+to deal with it. Yeah, I had a situation with a colleague yesterday, we were debugging a Shiny
+
+00:28:22.436 --> 00:28:27.236
+issue, and I think he was very smart in how we got to that piece, but then trying to decompose
+
+00:28:27.236 --> 00:28:32.195
+why something wasn't firing, yeah we ran into all sorts of hurdles, and I think we walked into
+
+00:28:32.195 --> 00:28:41.555
+that one whether we liked it or not. So a couple more things I wanted to touch on is from a developer
+
+00:28:41.555 --> 00:28:46.516
+perspective, what we're seeing now especially in the industries that we that we see Shiny
+
+00:28:46.516 --> 00:28:53.075
+prevalent in, is that we're often working with multiple teammates on even a single Shiny app
+
+00:28:53.075 --> 00:28:58.915
+as they get bigger complexity, may have different parts of the logic or more for like ingesting data
+
+00:28:58.915 --> 00:29:06.036
+versus doing some analytical workflow maybe with HPC technology. And this actually reminds me of
+
+00:29:06.036 --> 00:29:10.355
+the example that you outlined in the module book where I was networking all this different workflow
+
+00:29:10.355 --> 00:29:15.715
+together, and in that case I was the sole developer, but now I've got sometimes I got multiple
+
+00:29:15.715 --> 00:29:21.555
+members helping me. But maybe you could let us know from your experience in you know developing
+
+00:29:21.555 --> 00:29:28.115
+the tidyverse of your team at RStudio, maybe what are some thoughts about enhancing the developer
+
+00:29:28.115 --> 00:29:33.396
+type of collaboration as you're engineering these more complex apps, and maybe you could
+
+00:29:33.715 --> 00:29:41.236
+talk to us about. Yeah I think there are two things that feel particularly important to me.
+
+00:29:41.236 --> 00:29:47.396
+The one is like trying to like decompose things as much as possible, and then just having a few
+
+00:29:47.396 --> 00:29:52.835
+kind of connection points between them so that people can work like largely independently
+
+00:29:53.475 --> 00:29:58.355
+on different paths at the same time, and you know that they're only connected between these like few
+
+00:29:58.355 --> 00:30:03.796
+ways so it's relatively easy to like iterate on one thing and not break everything else.
+
+00:30:05.396 --> 00:30:12.115
+And then that's I mean that is I don't know that's like maybe the hardest kind of software
+
+00:30:12.115 --> 00:30:16.675
+engineering skill, like figuring out how to decompose things into independent pieces.
+
+00:30:16.675 --> 00:30:21.876
+Right. And you know you just you do it wrong for a long time and then it you know slowly you get
+
+00:30:21.876 --> 00:30:27.555
+better at it. I don't know I wish I wish there were some shortcuts but. Yeah I don't know Amoeber.
+
+00:30:28.196 --> 00:30:33.476
+I know for me when I knew an app was probably going to be bigger than I initially anticipated,
+
+00:30:34.196 --> 00:30:38.916
+I would even use modules even in the case where maybe that module is called once because that's
+
+00:30:38.916 --> 00:30:44.115
+still a separate piece of code that another developer could work on and I could work on
+
+00:30:44.115 --> 00:30:48.675
+something different but then I could be the one that kind of brings it all together and we can
+
+00:30:48.675 --> 00:30:54.835
+yeah do that in parallel. That's certainly been a huge win for me. I think the other part is like
+
+00:30:54.835 --> 00:31:00.675
+really kind of investing in shared conventions so that you can like well like most of the time
+
+00:31:00.675 --> 00:31:05.555
+you stay in kind of you can you know you stay in your lane but if you do need to like touch
+
+00:31:05.555 --> 00:31:12.115
+someone else's code like it's very natural like it feels like you know it's your code uses the
+
+00:31:12.115 --> 00:31:16.995
+same style it uses the same conventions you can kind of drop in and you know basically understand
+
+00:31:16.995 --> 00:31:22.835
+how it works. Right. And I think that's you know that that's something that we have kind of you
+
+00:31:22.835 --> 00:31:29.395
+know I think in the tidyverse team like that's the things we spend the most time kind of discussing
+
+00:31:29.395 --> 00:31:35.555
+are those like big picture design ideas so that while by and large everyone kind of maintains
+
+00:31:35.555 --> 00:31:40.596
+their own set of packages anyone can kind of like jump in and easily make a fix they know where the
+
+00:31:40.596 --> 00:31:45.395
+tests live they know what the the policies around naming things are they know how to document they
+
+00:31:45.395 --> 00:31:50.115
+know what the basic style is and it just makes it much much easier to be collaborative like you
+
+00:31:50.115 --> 00:31:54.835
+don't want to force force that kind of tight into linking where people have to be constantly
+
+00:31:54.835 --> 00:31:58.995
+kind of communicating back and forth in order to get anything done but when people do want
+
+00:31:58.995 --> 00:32:04.275
+to collaborate it just it's just easy it all feels like one you know it all feels like the
+
+00:32:04.275 --> 00:32:09.715
+code has all been written by like one person. Yes. Even if you might have forgotten how some of the
+
+00:32:09.715 --> 00:32:15.476
+code works. And that probably was my weaker area in a recent project is we had the whole like
+
+00:32:15.476 --> 00:32:20.995
+decomposing of these different distinct components but then they took a completely
+
+00:32:20.995 --> 00:32:25.156
+different approach architecturally than what I would do in certain parts of the app and
+
+00:32:25.156 --> 00:32:29.715
+it was difficult to kind of reconcile when I brought all that together to understand what
+
+00:32:29.715 --> 00:32:35.316
+their reason is for that kind of logic and their conventions on like variable you know
+
+00:32:35.316 --> 00:32:40.835
+derivations and everything so that's something I'm going to try to do in the future too is have
+
+00:32:40.835 --> 00:32:47.636
+kind of a unified you know developer kind of guideline developer syntax that we all can can
+
+00:32:47.636 --> 00:32:52.275
+follow through because it is more difficult to debug when it's written from a completely different
+
+00:32:52.275 --> 00:32:57.795
+perspective than what you're used to. Yeah and I find that the other thing I've been trying to do
+
+00:32:57.795 --> 00:33:04.596
+more of lately is when I make like a small breaking change in a package I will do pull requests to all
+
+00:33:04.596 --> 00:33:09.316
+of the packages that it affects. Ah yes. And that's been really interesting I think that that's been
+
+00:33:09.316 --> 00:33:15.395
+really useful at building like my my empathy with developers because like I'm I'm also like as well
+
+00:33:15.395 --> 00:33:22.115
+as breaking and I'm also doing fixing but it's also just it's really useful to see like kind of
+
+00:33:22.115 --> 00:33:25.715
+what are the things that are working well like what are the things that we've done well about
+
+00:33:25.715 --> 00:33:29.795
+like explaining how to develop packages and what are the things that we could could do better at
+
+00:33:29.795 --> 00:33:34.115
+because there's there's some packages that are just really hard for me to fix because I'm like
+
+00:33:34.115 --> 00:33:39.156
+you know I you know I don't know where the light switch is kind of it just makes it like very
+
+00:33:39.156 --> 00:33:44.596
+difficult to like quickly figure out like what the problem is and fix it. Yeah that is that that's
+
+00:33:44.596 --> 00:33:49.156
+excellent advice like I said I'm going to take a lot of those learnings as I develop more shiny
+
+00:33:49.156 --> 00:33:55.555
+apps in the future. The other thread I wanted to hit on is more the community aspect so as we've
+
+00:33:55.555 --> 00:34:01.476
+seen the tidyverse gain popularity and and gain traction in the R ecosystem you have done an
+
+00:34:01.476 --> 00:34:07.076
+excellent job with your colleagues at RStudio on making the onboarding of getting involved with
+
+00:34:07.076 --> 00:34:12.756
+the tidyverse easier I think of after the previous RStudio conferences having like the tidyverse
+
+00:34:12.756 --> 00:34:18.115
+developer days where we all could get together and and share ideas on fixing issues but the
+
+00:34:18.115 --> 00:34:23.795
+shiny community I think is also gaining a lot of traction as well so I'm just wondering do you have
+
+00:34:23.795 --> 00:34:28.436
+advice that those maybe getting involved with shiny on ways they might be able to connect with
+
+00:34:28.436 --> 00:34:33.155
+others in the shiny community and learning from each other from your from your perspective?
+
+00:34:34.196 --> 00:34:35.396
+Yeah that's interesting
+
+00:34:37.956 --> 00:34:43.316
+so I think shiny yeah there's sort of a I think one like one thing that's different
+
+00:34:43.316 --> 00:34:50.196
+with shiny is like how quickly it feels to me like the ecosystem of packages around shiny
+
+00:34:50.995 --> 00:34:56.756
+has grown. Absolutely. You know there's like you know dozens from you know more than like
+
+00:34:56.756 --> 00:35:03.876
+dozens 50-60 packages that like more that even that they kind of build on shiny in some way.
+
+00:35:03.876 --> 00:35:07.956
+Yeah you should see the description file one of my bigger apps that probably has like 45
+
+00:35:07.956 --> 00:35:13.795
+packages and more than half of them are shiny related. Yeah so I think that that somehow
+
+00:35:15.475 --> 00:35:20.115
+that makes it a little like the tidyverse this sort of a much kind of like stronger like
+
+00:35:20.836 --> 00:35:24.035
+locus of control that's going to seem to like you know around my team
+
+00:35:24.756 --> 00:35:32.035
+whereas I think shiny is much more diffuse so yeah so I think that yeah that's sort of
+
+00:35:32.035 --> 00:35:36.516
+interesting and I don't know what like you know probably ask what we could what our studio we
+
+00:35:36.516 --> 00:35:41.235
+could be doing to kind of bring that community together and to keep people you know talking to
+
+00:35:41.235 --> 00:35:47.475
+each other you know discoverability pretty quickly becomes a problem like maybe there is a package
+
+00:35:47.475 --> 00:35:51.956
+out there that will really help you solve the problem you're working on but how the heck do you
+
+00:35:52.196 --> 00:35:56.756
+find it and on the kind of flip side like as a package developer like what should you be doing
+
+00:35:56.756 --> 00:36:01.716
+to market your work since you've put all this time and effort into it how do you help people
+
+00:36:01.716 --> 00:36:08.675
+actually discover it so it can help them yeah it's it's a it's a big issue but I'm certainly
+
+00:36:08.675 --> 00:36:13.076
+doing my part with things like this developer series to highlight some of these but certainly
+
+00:36:13.076 --> 00:36:19.475
+I'm only one person so hopefully others will will be along that journey but I know I've benefited
+
+00:36:19.475 --> 00:36:24.436
+from the networking I've gotten at various conferences that I've maybe they're industry
+
+00:36:24.436 --> 00:36:31.555
+specific but also just putting things out there of like example apps and certainly what our studio
+
+00:36:31.555 --> 00:36:36.355
+has done with the shiny contest has been a huge benefit as well so you got to see how people are
+
+00:36:36.355 --> 00:36:42.115
+blending these different other packages together then you can kind of see unified themes on ones
+
+00:36:42.115 --> 00:36:46.675
+that are appearing maybe more common than others and you can kind of grok them what are the ones
+
+00:36:46.675 --> 00:36:52.836
+that you think you should be investing in but it is I won't say a wild west but there can be a bit
+
+00:36:52.836 --> 00:36:58.516
+of variation in what these packages are doing so you definitely need to have a more honed in on
+
+00:36:58.516 --> 00:37:04.276
+perspective and make sure it's useful for the project you have but from what I've from my
+
+00:37:04.276 --> 00:37:09.235
+experiences the community has been very welcoming they love when we report issues they love when we
+
+00:37:09.235 --> 00:37:14.516
+can contribute pull requests to enhance a package and I've certainly done that for a few of them
+
+00:37:14.516 --> 00:37:20.276
+so I hope it just grows over time but I think it's an exciting journey to be on for sure yeah
+
+00:37:20.276 --> 00:37:24.355
+and I found that like you know there are a few there are a few packages I talk about in the book
+
+00:37:24.355 --> 00:37:29.555
+and you know basically whenever I start using a package I discover like a lot of little things
+
+00:37:29.555 --> 00:37:34.516
+that kind of bug me and some of them about 10 issues or something and sure developers are like
+
+00:37:34.516 --> 00:37:40.595
+really happy to kind of dig in and fix them which is which is awesome yeah and I know that in in now
+
+00:37:40.595 --> 00:37:44.756
+I'm in a particular industry where I have to keep a lot of things close to the vest so to speak but
+
+00:37:44.756 --> 00:37:50.196
+as we start to build examples that mimic real world usage that's when we get the opportunity
+
+00:37:50.196 --> 00:37:56.276
+to do more networking with other developers and share our ideas and maybe for future enhancements
+
+00:37:56.276 --> 00:38:03.956
+and certainly yeah I think we all can can benefit from that so I guess to kind of wrap things up
+
+00:38:03.956 --> 00:38:09.396
+here the book is still in progress but what's your expectations for when it will be finished and
+
+00:38:09.396 --> 00:38:16.675
+in the hands of in paper form so the goal is to like finish it um next by the end well
+
+00:38:16.675 --> 00:38:21.155
+the goal was to finish it today but I did not make that goal oh today really
+
+00:38:23.475 --> 00:38:29.555
+next Friday so that basically means like I'm kind of done with the all the big picture writing okay
+
+00:38:29.555 --> 00:38:33.795
+then it goes over to O'Reilly for like the you know they start assembling the book and making
+
+00:38:33.795 --> 00:38:38.355
+sure all the images the right size and do a bunch of proofreading and stuff so I think it's like
+
+00:38:39.876 --> 00:38:46.115
+probably under six months away now hopefully I think probably three to six months away I would
+
+00:38:46.115 --> 00:38:52.035
+imagine before you can like get a physical book in your hands um and then you know the content
+
+00:38:52.035 --> 00:38:57.396
+on the website is basically done so yeah well if you've been waiting to start reading it until
+
+00:38:57.396 --> 00:39:04.115
+it's finished wait wait no longer well I'm one of those people I'm an early reader so to speak so
+
+00:39:04.115 --> 00:39:09.555
+it's great to see the evolution of the different sections in place and yeah it's been I just I
+
+00:39:09.555 --> 00:39:14.995
+mean as a kind of an aside the open publishing model that started with things like R4DS has been
+
+00:39:15.636 --> 00:39:20.915
+so helpful to the R community so I'm so thankful that you followed that that same principle here
+
+00:39:20.915 --> 00:39:26.035
+so we could kind of see the development in action and comment on ideas as you were reaching out to
+
+00:39:26.035 --> 00:39:30.436
+the community on authoring certain sections I know you would reach out on Twitter sometimes and say
+
+00:39:30.436 --> 00:39:35.876
+hey I'm offering this section any advice so that's really been benefiting everybody I think
+
+00:39:35.876 --> 00:39:40.276
+yeah I mean I I love it too because it'd be otherwise if you just sit down to write a book
+
+00:39:40.276 --> 00:39:46.595
+and you get kind of no feedback it's hard it's so hard to keep your motivation high and like even
+
+00:39:46.595 --> 00:39:50.756
+when people are reporting problems or complaining about things it's still like a positive to me
+
+00:39:50.756 --> 00:39:54.595
+because at least like they read it and they cared enough about the plan and that like keeps me
+
+00:39:55.155 --> 00:40:01.956
+keeps me motivated so yeah yeah getting that feedback so helpful so I guess one last kind
+
+00:40:01.956 --> 00:40:07.475
+of question to the Shiny audience is do you have some last bit of advice on top of course reading
+
+00:40:07.475 --> 00:40:13.235
+mastering Shiny of how users can kind of level up their skills as they start to transition from like
+
+00:40:13.235 --> 00:40:21.475
+that basic familiarity to developing more complex you know applications I think the best advice I
+
+00:40:21.475 --> 00:40:27.235
+can give is to make sure that you are setting aside time to kind of improve like the quality
+
+00:40:27.235 --> 00:40:33.475
+of your app like not so that the what it might do stays exactly the same but I think the quality of
+
+00:40:33.475 --> 00:40:40.756
+your code increases and like making sure that like like you understand why that's important
+
+00:40:40.756 --> 00:40:45.475
+because it you know increases it allows you to keep the pace of development up over time
+
+00:40:45.475 --> 00:40:49.555
+and then also selling it to like you know your boss or whoever like you know I'm going to be
+
+00:40:49.555 --> 00:40:56.836
+working on this there's not going to be any like visible outputs but you know the ease at which I
+
+00:40:56.836 --> 00:41:02.035
+can maintain this is going to improve and my software engineering skills are going to improve
+
+00:41:02.035 --> 00:41:06.675
+and if you can like regularly invest in your programming skills and your software engineering
+
+00:41:06.675 --> 00:41:10.995
+skills that's just you know that's something that compounds over time you get better and better and
+
+00:41:10.995 --> 00:41:18.675
+better yeah well that's that's an excellent way to wrap that piece of it up so in closing if
+
+00:41:18.675 --> 00:41:22.516
+anybody wants to get in touch with me either about the book for about anything else what's
+
+00:41:22.516 --> 00:41:27.235
+what's the best way they can get a hold of you twitter twitter and github nope that's that's
+
+00:41:27.235 --> 00:41:32.355
+everywhere I've been interacting with you a lot yep that's great well um Hadley again thank you
+
+00:41:32.355 --> 00:41:37.475
+so much for joining me for this episode again on behalf of the overall Shiny community we are so
+
+00:41:37.475 --> 00:41:43.795
+excited to see your efforts and you know helping us on the journey of learning Shiny with this
+
+00:41:43.795 --> 00:41:49.716
+excellent resource and I'm sure we'll be hearing more about you in this space even in the future
+
+00:41:49.716 --> 00:41:55.235
+so yeah thanks Eric all right great to talk of you Hadley we'll be back right after this yep
+
+00:41:57.475 --> 00:42:03.795
+well that was extremely exciting to hear what Hadley has in store for us with with this
+
+00:42:03.795 --> 00:42:10.355
+excellent resource and the advice that he gave us from his wealth of experience with obviously
+
+00:42:10.355 --> 00:42:16.115
+authoring the tidyverse related packages and coming at this from the practitioner standpoint
+
+00:42:16.115 --> 00:42:21.235
+and this software development mindset it's just such a great time to be learning about these
+
+00:42:21.235 --> 00:42:26.915
+concepts in Shiny because as I alluded to in the talk a lot of these resources simply were not
+
+00:42:26.915 --> 00:42:32.595
+around when I first started with Shiny so you're you're coming at this at a great time if you're
+
+00:42:32.595 --> 00:42:38.436
+if you're kind of new to this journey so if you want to hear more and be up to date with the great
+
+00:42:38.436 --> 00:42:44.675
+community of Shiny certainly the best way to get in touch is to subscribe to this very YouTube
+
+00:42:44.675 --> 00:42:49.716
+channel use the little links below and all the resources that are mentioned in each of our
+
+00:42:49.716 --> 00:42:56.595
+episodes is posted on our official website of shinydevseries.com and also keep an eye on our
+
+00:42:56.595 --> 00:43:02.035
+studio community we'll have some posts there in the near future as these episodes are being published
+
+00:43:02.035 --> 00:43:07.795
+and I have lots of plans for future guests this year and you'll be hearing about that across all
+
+00:43:07.875 --> 00:43:13.395
+the spectrums of Shiny development and it'll be really exciting and of course I'm going to be
+
+00:43:13.956 --> 00:43:18.675
+continuing my live streaming efforts so I kind of learn out loud with all of you and
+
+00:43:18.675 --> 00:43:23.795
+try some fun projects and certainly I might do some more on that little fun racing initiative
+
+00:43:23.795 --> 00:43:30.436
+I've been a part of so okay so once again feel free to get in touch with me I'm on Twitter at
+
+00:43:30.436 --> 00:43:36.596
+at thercast and also like I said head to shinydevseries.com you'll have a contact page
+
+00:43:36.596 --> 00:43:43.076
+you can file your your request to as well and I'll be glad to talk with all of you all right
+
+00:43:43.076 --> 00:43:48.035
+so that's going to wrap up this episode the Shiny Developer Series and we will see you next time
+
+00:43:48.035 --> 00:43:54.675
+bye-bye everybody

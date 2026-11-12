@@ -1,0 +1,1831 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.639
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.639 --> 00:00:22.000
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:22.000 --> 00:00:27.240
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.240 --> 00:00:30.680
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.680 --> 00:00:35.560
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.560 --> 00:00:38.040
+We can't wait to see you there.
+
+00:00:38.040 --> 00:00:43.759
+With that, I am so excited to introduce you to our featured leader today. His name is
+
+00:00:43.759 --> 00:00:50.119
+David Brodkey. He is a data science manager at Intuitive Surgical. David, it is so nice
+
+00:00:50.119 --> 00:00:55.240
+to have you here with us. It would be great if you could introduce yourself, tell us a
+
+00:00:55.240 --> 00:00:58.840
+little bit about what you do, and something that you like to do for fun.
+
+00:00:58.840 --> 00:01:03.480
+Awesome. Well, thanks, Libby, for having me. Really excited to be here today. Hi, everyone.
+
+00:01:03.480 --> 00:01:09.879
+My name is David Brodkey. I'm a statistician by training, and I've been working at Intuitive
+
+00:01:09.879 --> 00:01:16.720
+Surgical for almost seven years now. We are a large medical device company who makes surgical
+
+00:01:16.720 --> 00:01:22.599
+robots and accompanying products. We're mostly known for the DaVinci surgical robot, which
+
+00:01:22.599 --> 00:01:31.440
+is a system that allows surgeons to control a robotic system that's performing surgery
+
+00:01:31.440 --> 00:01:37.400
+on a patient. If you've ever seen the video of doing surgery on a grape, that was a promotional
+
+00:01:37.400 --> 00:01:42.720
+material that they did with our machine a number of years ago. I've been in our global
+
+00:01:42.720 --> 00:01:49.519
+operations org for a little over five years. This is an org that supports manufacturing,
+
+00:01:49.519 --> 00:01:54.919
+supply chain, logistics, and planning. Everything about our released and approved products in
+
+00:01:54.919 --> 00:02:00.099
+the market, the ways that we need to actually produce them, get them out there, keep everything
+
+00:02:00.099 --> 00:02:06.040
+flowing smoothly. Right now, I work in a data science management role. I've kind of slowly
+
+00:02:06.040 --> 00:02:12.199
+transitioned from being a pure IC to hybrid to now it's mostly management and still squeezing
+
+00:02:12.199 --> 00:02:17.679
+out a little bit of time for IC work. I think it's a really fun role. We cover a plethora
+
+00:02:17.679 --> 00:02:23.639
+of domains, and we really use a broad spectrum of data science techniques and methods, which
+
+00:02:23.639 --> 00:02:28.119
+I'm excited to talk about today. I think the favorite one that I would plug would definitely
+
+00:02:28.119 --> 00:02:33.639
+be Monte Carlo simulation. I love using that, and we've used that in a number of different
+
+00:02:33.639 --> 00:02:39.479
+domains and applications with really good success. Then as for something personal, I'm
+
+00:02:39.479 --> 00:02:45.240
+a really big soccer fan. I grew up playing. I still play pickup. Then I love watching
+
+00:02:45.240 --> 00:02:50.720
+the Premier League. I was talking with Libby. I have a personal data science project that
+
+00:02:50.720 --> 00:02:59.559
+we may hit on where I've built a shiny app and some logic to try and calculate trips
+
+00:02:59.559 --> 00:03:03.839
+for me where I can kind of optimally find routes. I've used this to visit England a
+
+00:03:03.839 --> 00:03:07.520
+few times and go on these amazing trips.
+
+00:03:08.360 --> 00:03:14.679
+Are you able to hit multiple games happening in one stretch of time in the best location
+
+00:03:14.679 --> 00:03:18.080
+for them to happen? Tell me a little bit more about this app.
+
+00:03:18.080 --> 00:03:22.720
+Yeah, I mean, so you get all this data about these are the days that the games are happening
+
+00:03:22.720 --> 00:03:27.559
+and where they're happening. What we've done is we've flown to England usually around December
+
+00:03:27.559 --> 00:03:32.679
+when the games are really jam-packed and gone to a bunch of games. Last year, we were there
+
+00:03:32.679 --> 00:03:39.279
+for 12 days and we went to nine games all around the country. Then a few years before
+
+00:03:39.279 --> 00:03:44.360
+that, even slightly more intensely, we did nine games in eight days. So every day a game
+
+00:03:44.360 --> 00:03:49.440
+in one day, we had two. So I've used this for some other applications with friends,
+
+00:03:49.440 --> 00:03:54.759
+but the idea is you get all this data about where games are geographically. You need to
+
+00:03:54.759 --> 00:04:00.000
+compute distance matrices to see how far all the stadiums are from each other. Then you
+
+00:04:00.080 --> 00:04:05.119
+need to try and plan out what kind of trips are optimally possible.
+
+00:04:05.119 --> 00:04:10.479
+All right. Well, we already have two questions in the Slido and they are the same question.
+
+00:04:11.759 --> 00:04:17.119
+And I see people asking in the chat. So we're going to round this up and I'll ask David together,
+
+00:04:17.679 --> 00:04:19.200
+who is your favorite Premier League team?
+
+00:04:20.239 --> 00:04:25.600
+Manchester City. When I started supporting soccer, my closest friend at the time was
+
+00:04:25.600 --> 00:04:30.799
+a Manchester United fan. So I kind of picked Man City to be contrarian to him. So I've been
+
+00:04:30.799 --> 00:04:40.000
+supporting them for, oh geez, let's see, it goes back to about 14 years now. So yeah,
+
+00:04:40.000 --> 00:04:43.040
+a really good time. Nice. It's been some amazing periods.
+
+00:04:43.679 --> 00:04:48.959
+We're going to hear in the chat whether everybody agrees with you or disagrees with you.
+
+00:04:49.600 --> 00:04:52.880
+But yeah, we have, I think, let me see.
+
+00:04:54.640 --> 00:04:58.640
+Have we shared the link? Because I have the link.
+
+00:04:58.640 --> 00:05:01.679
+I'll share it now. I didn't know if we were waiting.
+
+00:05:01.679 --> 00:05:07.119
+Y'all don't give it the hug of death, okay? Don't give it the hug of death all at once,
+
+00:05:07.119 --> 00:05:11.279
+but go check it out afterwards and see what you think.
+
+00:05:11.279 --> 00:05:18.160
+Okay. All right. The Slido is now open for all questions. I would love to ask David
+
+00:05:18.160 --> 00:05:22.640
+just some context building questions about what you do so that we can all kind of get
+
+00:05:22.640 --> 00:05:31.679
+oriented around it and we know even what we can ask you. You work for a medical device,
+
+00:05:31.679 --> 00:05:37.359
+surgical device company, but you are not a doctor and you don't work with clinical trial data.
+
+00:05:38.079 --> 00:05:43.760
+Tell me the sort of area that you work in and the type of data that you work with,
+
+00:05:43.760 --> 00:05:46.959
+and also the tools that you use so that we can orient ourselves.
+
+00:05:47.760 --> 00:05:51.279
+Yeah, no, that's a good call out. I don't know a lot about kind of healthcare data and things
+
+00:05:51.279 --> 00:05:57.119
+like that. Intuitive is a very large company. I think we're somewhere around 15,000 employees.
+
+00:05:58.000 --> 00:06:02.079
+And so there's analytics all throughout the company. And so I'm a part of an analytics
+
+00:06:02.079 --> 00:06:07.440
+org specifically supporting operations. And so I mentioned before, but manufacturing,
+
+00:06:07.440 --> 00:06:11.679
+supply chain, logistics, and planning. And then within that, I lead our data science team.
+
+00:06:12.320 --> 00:06:17.679
+I'd call our mandate is to come up with advanced analytics solutions that somehow optimize the
+
+00:06:17.679 --> 00:06:21.839
+business and try to improve things. So for our supply chain org, this could look like
+
+00:06:22.559 --> 00:06:28.160
+identifying parts that were at risk of going low on inventory and trying to proactively identify
+
+00:06:28.160 --> 00:06:34.559
+those so we can handle that. For our logistics team, it could be extracting information from
+
+00:06:34.559 --> 00:06:40.000
+shipments documents in a programmatic way. For our planning team, it's helping to
+
+00:06:40.959 --> 00:06:45.359
+manage our algorithms that are predicting how much we're going to sell or how much we need to
+
+00:06:45.359 --> 00:06:50.480
+produce of different parts so we can have really smooth, stable plans that are going to allow our
+
+00:06:50.480 --> 00:06:57.279
+operations to run smoother. For a tech stack, we have basically all of our data is in Snowflake.
+
+00:06:57.279 --> 00:07:03.839
+So we're using SQL to access that. We are historically a very R-heavy team, although
+
+00:07:03.839 --> 00:07:08.000
+I'd say we're somewhat transitioning to be a little bit more bilingual between R and Python.
+
+00:07:08.720 --> 00:07:16.320
+We use Posit's commercial products. So Posit Workbench is where I'm typically working for dev,
+
+00:07:16.320 --> 00:07:22.399
+although I'll say that my IDE situation has been rapidly changing in the last year with all these
+
+00:07:22.399 --> 00:07:28.880
+new AI tools and AI IDE add-ons. And then we publish all of our stuff in Posit Connect. So
+
+00:07:29.440 --> 00:07:34.239
+most commonly, a Shiny app would be our end product for being user-facing. It really lets us
+
+00:07:34.239 --> 00:07:38.959
+do whatever we want to do. Although there'd be some other things like sometimes we'll have
+
+00:07:38.959 --> 00:07:43.040
+scripts that are scheduled that are going to send out emails, or even it's just a part of
+
+00:07:43.040 --> 00:07:49.279
+a data preparation that's then later consumed by a Shiny app. Nice. Okay. So when you say
+
+00:07:49.279 --> 00:07:55.920
+you're end users, who are your internal customers? Yeah, that would be anyone inside of operations.
+
+00:07:55.920 --> 00:08:01.440
+So you could have, for example, in our supply chain team, maybe our buyers who are responsible
+
+00:08:01.440 --> 00:08:06.799
+for actually purchasing the materials, right? So we purchased thousands of raw materials.
+
+00:08:06.799 --> 00:08:11.600
+There could be someone who's usually specific to an area, like I purchased this kind of electronic
+
+00:08:11.600 --> 00:08:16.320
+components, and you're responsible for managing inventory levels. And so we'll do something like
+
+00:08:16.320 --> 00:08:20.720
+say, hey, we're kind of nervous about the inventory levels of these parts. We really
+
+00:08:20.720 --> 00:08:24.799
+should take a look at it because we have this model running that flagged it to us, right? And
+
+00:08:24.799 --> 00:08:28.799
+here are the parts that you really need to go take a second look at. Or our planning team to say,
+
+00:08:29.200 --> 00:08:32.320
+you know, here's an application where you can view all of our forecasts for
+
+00:08:34.000 --> 00:08:37.440
+how much we think we're going to need of these different components. And then they can also have
+
+00:08:37.440 --> 00:08:42.320
+interaction with it. So it's everybody within the operations org. We really don't have anyone
+
+00:08:42.320 --> 00:08:48.559
+external using it. It's all inside intuitive. Nice. Okay, cool. Yeah, I wanted to give a little
+
+00:08:48.559 --> 00:08:53.039
+bit of background for anybody who is not used to operations speak, there's all kinds of different
+
+00:08:53.039 --> 00:09:00.479
+end users inside, because you've got to forecast and look at supply on the inside,
+
+00:09:00.479 --> 00:09:05.760
+all of your supplies, and all of your supplies and your raw components might have suppliers,
+
+00:09:05.760 --> 00:09:09.440
+multiple suppliers, maybe multiple different prices, maybe different countries they come from,
+
+00:09:09.440 --> 00:09:12.799
+maybe there is a supply shortage in one country, and you have to switch suppliers.
+
+00:09:13.760 --> 00:09:17.919
+There's all kinds of juicy problems that go along with operations. I'm always trying to
+
+00:09:17.919 --> 00:09:21.359
+shill for that a little bit because it was the smallest major at my college. It's what I did
+
+00:09:21.359 --> 00:09:26.799
+in undergrad. And I think more people should consider studying it because there's such
+
+00:09:26.799 --> 00:09:32.159
+cool problems in there. And you also do forecasting. So what kind of what other kind
+
+00:09:32.159 --> 00:09:37.119
+of forecasting do you do? Do you do supply forecasting as well as like industry demand
+
+00:09:37.119 --> 00:09:42.640
+forecasting that's more external? So we've done some service forecasting is something that I've
+
+00:09:42.640 --> 00:09:47.679
+owned for a very long time. And this is where we have these very large medical device products
+
+00:09:47.679 --> 00:09:52.239
+when something goes, you know, either something isn't working correctly, or just we're flagging
+
+00:09:52.239 --> 00:09:56.000
+something needs replacement. We have service parts where we're swapping out components.
+
+00:09:56.000 --> 00:10:00.719
+And for a very long time, I've been the owner of our service forecasting where we're trying to
+
+00:10:00.719 --> 00:10:05.119
+predict how much we're going to need of components as well as where we need to stock those around
+
+00:10:05.119 --> 00:10:12.559
+the world because they need very quick servicing. I've done some more consulting for our commercial
+
+00:10:12.559 --> 00:10:18.320
+tools on sales and build plan forecasting. So we're saying this is how much we're going to sell
+
+00:10:18.320 --> 00:10:24.239
+of this product, or this is how much we need to build of this product by period of time. And,
+
+00:10:24.239 --> 00:10:27.599
+you know, just with the size and scope, it's really important to get those forecasts as close
+
+00:10:27.599 --> 00:10:31.599
+as possible, because you need to plan for headcount, you need to plan for resources,
+
+00:10:31.599 --> 00:10:36.880
+you need to plan for space, things that if you miss on it, it's not easy to make up quickly.
+
+00:10:37.679 --> 00:10:41.840
+Right? Yeah. Oh, this reminds me of there's this real, there's some really cool products around
+
+00:10:41.840 --> 00:10:45.760
+maintenance prediction and maintenance forecasting that have come out in the past 10 years
+
+00:10:46.400 --> 00:10:53.919
+that use cameras that analyze the shake of a machine on an assembly line or a production line
+
+00:10:53.919 --> 00:10:57.679
+or even an engine. Very, very cool. If anybody remembers what that company is called that does
+
+00:10:57.679 --> 00:11:02.320
+that, let me know in the chat. But we have some great questions in Slido. Prem asked a question
+
+00:11:03.280 --> 00:11:08.080
+that I think is fantastic, even though they said no need to answer straight away. This is a great
+
+00:11:08.080 --> 00:11:14.239
+question. Let's see if we can get Prem unmuted to ask live if you're able.
+
+00:11:16.799 --> 00:11:18.239
+We'll see if Rachel can find Prem.
+
+00:11:22.400 --> 00:11:25.599
+They might want you to ask the question, but I could, I could ask.
+
+00:11:26.719 --> 00:11:28.159
+Can you see it in Slido?
+
+00:11:28.159 --> 00:11:33.520
+I can see it. Yeah. So Prem said, when you're building data products, how do you decide when
+
+00:11:33.520 --> 00:11:38.640
+a problem needs a more advanced data science approach versus a simpler analytical solution?
+
+00:11:40.080 --> 00:11:44.159
+Yeah, that's a great question. And I think one thing that has always been a struggle in my
+
+00:11:44.159 --> 00:11:50.159
+career is a lot of times stakeholders come to you with a solution in mind, which is usually like
+
+00:11:50.159 --> 00:11:55.359
+whatever is the current hot thing. So for a very long time, the solution to everything was machine
+
+00:11:55.359 --> 00:12:00.159
+learning. And now for the last year or two, the solution to everything that's being told to us is
+
+00:12:00.159 --> 00:12:08.239
+AI. I think we always try to start as simple as possible, right, and try to build up slowly. So a
+
+00:12:08.239 --> 00:12:14.400
+lot of times if we're venturing in something that's like really new ground, where we don't even have
+
+00:12:14.400 --> 00:12:18.880
+like the right data set up or the right process, we'll start simple and then we'll try to add on
+
+00:12:18.880 --> 00:12:27.359
+complexity as we derive value. We definitely have a very much of a discovery mindset where we try
+
+00:12:27.359 --> 00:12:31.840
+to test things out, POC things really quickly, get feedback loops, and there's stuff where we
+
+00:12:31.840 --> 00:12:36.159
+absolutely look at it and say like, this is the right approach, or this isn't the wrong, this
+
+00:12:36.159 --> 00:12:40.640
+isn't going to yield that much value. So just really quick experimentation and being okay to
+
+00:12:41.280 --> 00:12:46.080
+let go of things. Those would be kind of the two main things I would say.
+
+00:12:47.599 --> 00:12:53.440
+I think that's a great question, Prem. Let me know in the chat, everybody, if you have some litmus
+
+00:12:53.440 --> 00:12:58.080
+tests or some heuristics that help you decide when you want to have a bigger solution that's
+
+00:12:58.080 --> 00:13:05.280
+more complicated or when a simpler approach will do. I saw a reply on Prem's question that says
+
+00:13:05.280 --> 00:13:11.760
+I would always go for the simplest approach. I tend to be the same way. I feel like model parsimony
+
+00:13:11.760 --> 00:13:17.440
+was like really, really hammered into my head when I was learning statistics, and I think that I use
+
+00:13:17.440 --> 00:13:24.719
+that approach in business questions as well. All right, we have a question from Natasha. It has an
+
+00:13:24.719 --> 00:13:28.400
+asterisk in there, so I'm going to read it for Natasha, and it says, what does an average day
+
+00:13:28.400 --> 00:13:34.320
+or week look like for you? What areas, like programming, reporting, meetings, do you split
+
+00:13:34.320 --> 00:13:39.919
+your time between? Yeah, I can answer for myself, and also I can comment on maybe my team because I
+
+00:13:39.919 --> 00:13:46.640
+think for a lot of folks that's an interesting perspective as well. I would say over a typical
+
+00:13:46.640 --> 00:13:54.159
+week, I'm probably spending nowadays maybe 25% of my time like actually writing code and solving
+
+00:13:54.159 --> 00:14:02.719
+problems, and that would probably be about, I would say a small sliver on that is kind of maintenance
+
+00:14:02.719 --> 00:14:07.200
+of existing projects and just anything that's coming up of, okay, there's this new change in
+
+00:14:07.200 --> 00:14:11.679
+our data structure, something like that. A much bigger one would be people are asking for some
+
+00:14:11.679 --> 00:14:16.719
+kind of enhancement to it, and I'm trying to just keep things moving along, and then the third piece
+
+00:14:16.719 --> 00:14:20.000
+would be like something just kind of totally net new that I'm experimenting and trying out.
+
+00:14:21.760 --> 00:14:26.239
+I would say for me then probably about another quarter of my time, it would be purely just
+
+00:14:26.239 --> 00:14:31.280
+working with my team and supporting them, so understanding what they're working on, brainstorming
+
+00:14:31.280 --> 00:14:40.000
+on solutioning, trying to come up with, you know, ways to get past roadblocks. I put another
+
+00:14:40.000 --> 00:14:43.919
+quarter is probably working with stakeholders, trying to really understand what their problems are,
+
+00:14:44.559 --> 00:14:50.239
+trying to get feedback on things we have, working back and forth, and then I probably put a quarter
+
+00:14:50.239 --> 00:14:55.280
+on about, I call it more administrative tasks. So, for example, right now I'm doing some stuff
+
+00:14:55.280 --> 00:15:01.919
+with hiring, or we have goal setting, or working with leadership to just get a line on roadmaps.
+
+00:15:02.559 --> 00:15:08.080
+That's becoming a bigger and bigger part. If I flipped over to my team members who I'd probably,
+
+00:15:08.080 --> 00:15:14.000
+you know, say for them, it probably looks like maybe two-thirds of their time is actually working
+
+00:15:14.000 --> 00:15:19.760
+on solutions, and we try to be really protective of that focused development time. I try to hold
+
+00:15:19.760 --> 00:15:24.799
+off on meetings and discussions and keep it as thin as possible, and then the other time I'd say,
+
+00:15:24.799 --> 00:15:28.799
+you know, split between internal and external discussions.
+
+00:15:30.239 --> 00:15:36.799
+Awesome. I like that you said a full quarter of your time is helping learn what problems are
+
+00:15:36.799 --> 00:15:40.000
+and helping dissolve roadblocks, because that's a big chunk of time.
+
+00:15:41.760 --> 00:15:47.359
+Did you have any difficulty when you went from IC to manager in making that move and
+
+00:15:48.239 --> 00:15:52.799
+having your time spent differently? Did it feel different? Did it feel less productive somehow?
+
+00:15:54.239 --> 00:16:01.520
+Yeah, I would say there's definitely days where I sometimes don't internally feel like I did a lot,
+
+00:16:01.520 --> 00:16:04.640
+but then I have to step back and say, okay, I actually did, I'm just not measuring it correctly,
+
+00:16:04.640 --> 00:16:09.200
+where I'd be like, you know, I didn't write a single piece of code today, but I say, well,
+
+00:16:09.200 --> 00:16:12.880
+you know, if I helped this person and this person and this person with their problem,
+
+00:16:13.520 --> 00:16:18.080
+and I, you know, worked on this, you know, getting in a tool that's going to be really
+
+00:16:18.080 --> 00:16:22.239
+impactful for our team and important, and I connected with these two stakeholders to help
+
+00:16:22.239 --> 00:16:28.000
+brainstorm on their problems, sometimes I get home and I say, okay, I didn't write any code,
+
+00:16:28.000 --> 00:16:31.919
+I feel like I didn't do a lot, but then I have to look back and say, no, I'm really still
+
+00:16:31.919 --> 00:16:38.239
+contributing to the broader effort. For myself, it was a very gradual transition. So I started as
+
+00:16:38.239 --> 00:16:44.320
+a pure IC, you know, it was a relatively greenfield space for us. In data science,
+
+00:16:44.320 --> 00:16:49.679
+we had a lot of experience in what I would call more data analytics or BI analytics, and we still
+
+00:16:49.679 --> 00:16:53.840
+have a significant footprint in that where we're doing more descriptive analytics. But this idea
+
+00:16:53.840 --> 00:16:59.119
+of data science, advanced analytics, more getting ahead of things was relatively new for the
+
+00:16:59.119 --> 00:17:04.000
+organization at the time. And so, you know, it went well, they said, okay, you know, we want you to
+
+00:17:04.000 --> 00:17:09.119
+mentor an intern, mentor a contractor, okay, we want you to make a full-time hire, now we want a
+
+00:17:09.119 --> 00:17:13.599
+second full-time hire. And so it's kind of just gradually gone, which I think has really been
+
+00:17:15.680 --> 00:17:18.800
+something I've been really fortunate about. I've seen people who have done, you know, these kind
+
+00:17:18.800 --> 00:17:23.680
+of hard cut transitions, which I think would be much more difficult, and I've stayed away from that.
+
+00:17:24.560 --> 00:17:29.040
+I always feel like whatever I'm not doing is sometimes the thing that I'm eager to do. So
+
+00:17:29.040 --> 00:17:32.560
+I remember when I was kind of just doing pure coding, I'd be like, I want to discuss this,
+
+00:17:32.560 --> 00:17:36.800
+I want to brainstorm on problems. And now the thing that sometimes I'm most squeezed for and
+
+00:17:36.800 --> 00:17:42.959
+most missing is just actually sitting down and writing code for a problem. But, you know,
+
+00:17:44.239 --> 00:17:48.800
+there's a lot of great stuff to enjoy. Of course, and now you get to enable other people to
+
+00:17:49.680 --> 00:17:54.560
+to do the cool stuff too, which is, I find a good feeling. All right, we have an anonymous
+
+00:17:54.560 --> 00:18:00.800
+question here in Slido that says, we are doing more AI projects at work, but the issue is that
+
+00:18:00.800 --> 00:18:06.800
+we need to finish them and spend the project money by a particular date. Can anybody else relate?
+
+00:18:07.520 --> 00:18:12.880
+The dilemma we have is to get a contractor quicker, but more expensive, or upskill someone
+
+00:18:12.880 --> 00:18:17.040
+internally, which is potentially slower. What would you do in this situation? And there is a
+
+00:18:17.040 --> 00:18:20.640
+reply on here that says, sometimes companies go for contractors because they feel they're
+
+00:18:20.640 --> 00:18:26.880
+actually outsourcing risk. If it goes wrong, you just blame the contractor. So what do you think?
+
+00:18:29.599 --> 00:18:34.479
+So we've done some, you know, either contractors, interns, things like that.
+
+00:18:36.400 --> 00:18:43.680
+I've always looked at it as whenever we've had like an intern or a contractor, I would say that
+
+00:18:43.680 --> 00:18:49.520
+the majority of the value has not been from the work that they've done during that period, because
+
+00:18:49.520 --> 00:18:53.280
+the reality is it's like pretty complicated to get up to date on our company, our tech stack,
+
+00:18:53.280 --> 00:18:59.439
+and what they're doing. And so I usually find that those kind of individuals are not able to make,
+
+00:18:59.439 --> 00:19:04.000
+you know, gigantic contributions compared to our existing employees. But the way that we've found
+
+00:19:04.000 --> 00:19:09.119
+a lot of value on that has been a really good kind of roadmap for potential hiring, for potential
+
+00:19:09.119 --> 00:19:13.199
+inclusion in the future. And so we have, you know, employees who were past interns or past
+
+00:19:13.199 --> 00:19:17.760
+contractors who transitioned to full-time employees. And so I've kind of looked at that
+
+00:19:17.760 --> 00:19:23.920
+avenue, not as much as a short-term labor supplement, because I just haven't found as
+
+00:19:23.920 --> 00:19:28.160
+much success with that, but more of really good kind of test the water for hiring path.
+
+00:19:30.160 --> 00:19:37.359
+As for upskilling, I think that's something that we've done at times. It's not easy also.
+
+00:19:37.359 --> 00:19:40.400
+You need to have people who are really bought in and internally motivated,
+
+00:19:41.199 --> 00:19:44.560
+and you really need to have buy-in from their leadership is probably the most important,
+
+00:19:44.560 --> 00:19:48.160
+because if they continue to still get, you know, whatever their existing workload is,
+
+00:19:48.160 --> 00:19:52.560
+and they're struggling to make time for this new thing you want them to do, it's not going to
+
+00:19:52.560 --> 00:19:58.719
+succeed. So I think I would probably lean towards the upskilling if it's really about like getting
+
+00:19:58.719 --> 00:20:03.760
+the deliverable and things done, but eyes wide open of lots of challenges on that front also.
+
+00:20:04.719 --> 00:20:09.119
+Yes. And Rachel asked a great question in the chat, which was like, wait, I'm curious about
+
+00:20:09.119 --> 00:20:14.800
+the fact that you need to spend the money quickly. So chime in in the chat on Rachel's question so
+
+00:20:14.800 --> 00:20:20.640
+that we can give context to that, because sometimes grants have spending windows, right?
+
+00:20:20.640 --> 00:20:24.319
+Like you have to spend the money in a certain amount of time. It might be a long window,
+
+00:20:24.319 --> 00:20:29.439
+maybe like two years, but sometimes you might be picking up a project that falls within a grant
+
+00:20:29.439 --> 00:20:33.520
+that actually in six months from now, maybe you're at the end of the grant window,
+
+00:20:34.160 --> 00:20:38.319
+and it's not going to be renewed, or there might be a contract. So there are all kinds
+
+00:20:38.319 --> 00:20:41.439
+of reasons why sometimes you have this short window of time to spend money.
+
+00:20:42.319 --> 00:20:47.040
+And as a freelancer, that can actually be a good thing for you if you're a data freelancer,
+
+00:20:47.040 --> 00:20:50.079
+you catch somebody at the end of a spending window, they have extra money to spend,
+
+00:20:50.880 --> 00:20:56.319
+they can put more towards a project or something. So I've been on either side of that.
+
+00:20:56.319 --> 00:20:59.760
+Thank you for that fantastic question, anonymous asker, that was great.
+
+00:21:01.119 --> 00:21:04.400
+And thank you, everybody, for hopping in with lots of context on that question for Rachel,
+
+00:21:04.400 --> 00:21:10.959
+you guys are the freaking best. Okay, okay, okay, okay. Let's get more slide questions.
+
+00:21:10.959 --> 00:21:15.760
+We have some really great ones in here. Zach asked one that I like, it has a little asterisk
+
+00:21:15.760 --> 00:21:20.800
+next to it. And it says, although you want your forecast to be as close as possible,
+
+00:21:20.800 --> 00:21:24.000
+would you rather a forecast be too high or too low?
+
+00:21:24.719 --> 00:21:30.400
+Um, so great question. A lot of times that we talk about is first doing a forecast where we're
+
+00:21:30.400 --> 00:21:34.400
+just trying to get it as mathematically close as possible. Like this is just our estimation.
+
+00:21:34.400 --> 00:21:37.760
+And then sometimes, you know, depending on what we're doing, we can also attach confidence
+
+00:21:37.760 --> 00:21:43.359
+intervals to that. And then completely situationally dependent, we may say, okay,
+
+00:21:43.920 --> 00:21:48.880
+this is our prediction, but we are going to, you know, bias it one way or another because of the
+
+00:21:49.439 --> 00:21:55.839
+downsides of certain things, right. And that all comes from really understanding the business
+
+00:21:55.839 --> 00:21:59.920
+question of what are the negative implications of getting it wrong in either direction.
+
+00:22:00.880 --> 00:22:04.640
+You know, sometimes we try to quantify that with, you know, especially like dollars for a comparison,
+
+00:22:04.640 --> 00:22:08.640
+because you can try to translate a lot of things to dollars format and say,
+
+00:22:08.640 --> 00:22:12.479
+this is our negative implication on either side, and then say, this is what we're going to bias it.
+
+00:22:12.479 --> 00:22:19.760
+But we usually first start with, you know, what is our really best prediction. And I'll say there's
+
+00:22:19.760 --> 00:22:27.439
+been times where different teams have different motivations for how they want forecasts to look,
+
+00:22:27.439 --> 00:22:32.800
+right, and what ways they kind of want it biased. And so, like, for example, I've seen times where
+
+00:22:32.800 --> 00:22:37.280
+maybe our sales team wants to give our sales representative something that they can have a
+
+00:22:37.280 --> 00:22:41.680
+good chance of beating, right, you don't want to, like, really make it too harsh of R, you kind of
+
+00:22:41.680 --> 00:22:46.319
+want to keep positive momentum going. But if they're consistently beating it, and then you're
+
+00:22:46.319 --> 00:22:50.160
+using that, it's no longer really a valuable forecast for, like, operations perspective,
+
+00:22:50.160 --> 00:22:56.000
+we're like, well, give us the true one, right. So I try to think about it both ways. And ideally,
+
+00:22:56.000 --> 00:23:01.359
+we try to forecast with confidence intervals when business is able to accept those kinds of nuance
+
+00:23:01.359 --> 00:23:08.319
+and the methodologies we're using work for it. And then sometimes we kind of have different
+
+00:23:08.319 --> 00:23:15.599
+confidence levels that we want to pull out. Fantastic. I really like also, when forecasters
+
+00:23:15.599 --> 00:23:22.400
+do like a pessimistic, more probable optimistic, right, so you can get a little, a little spread.
+
+00:23:23.280 --> 00:23:28.079
+All right, Zach, thank you so much for that question. And there was a reply on there,
+
+00:23:28.079 --> 00:23:32.640
+by the way, from Saptarishi that said, hey, maybe add confidence intervals. So great suggestion.
+
+00:23:34.000 --> 00:23:37.760
+Thank you so much, everybody for asking questions. As a reminder, we're at the halfway point,
+
+00:23:37.760 --> 00:23:42.079
+you can ask questions in Slido. Rachel is putting the link to the Slido in the chat
+
+00:23:42.079 --> 00:23:46.000
+every once in a while for the people who are still kind of trickling in as their
+
+00:23:46.000 --> 00:23:53.280
+their half hour meeting ends. Good to see you, everybody. And oh, hey, look, Saptarishi,
+
+00:23:53.280 --> 00:23:59.839
+you have a question. Do you want to ask that one live? We'll see if we can help Saptarishi get
+
+00:23:59.839 --> 00:24:12.000
+unmuted. I keep pressing unmute, so now I'm not sure. No, that's okay. Okay. I see him. He says,
+
+00:24:12.000 --> 00:24:15.680
+I can't speak on my mic right now. As a reminder, that's always okay if you can't speak.
+
+00:24:15.680 --> 00:24:19.119
+If you put a little asterisk either next to your name or somewhere in your question,
+
+00:24:19.119 --> 00:24:24.479
+I'll ask it for you. No worries. So he says, in the midst of the LLM craze,
+
+00:24:24.479 --> 00:24:30.959
+how do you set up a project that would utilize some LLM capabilities? Instead of throwing
+
+00:24:30.959 --> 00:24:35.920
+everything but the kitchen sink to AI and getting unreliable results, how do you put
+
+00:24:35.920 --> 00:24:42.400
+guardrails around your data and workflows to utilize Gen AI more effectively and reliably?
+
+00:24:43.119 --> 00:24:49.199
+Yeah, no, that's a great, very timely question. And we're definitely integrating LLM tools a lot
+
+00:24:49.199 --> 00:24:53.760
+more. I was just looking yesterday with a team member on a problem where they're working on,
+
+00:24:53.760 --> 00:24:59.680
+which is, you know, at a high level doing this kind of deep analysis with LLMs where
+
+00:24:59.680 --> 00:25:05.119
+we want to check all these different data sources, and we want to come to a high level conclusion.
+
+00:25:05.119 --> 00:25:09.040
+And what he was doing really well, which we talked about, and I was really excited about, was
+
+00:25:09.040 --> 00:25:16.719
+he was mixing in purely deterministic steps with LLM steps and scoping them as small as possible.
+
+00:25:16.719 --> 00:25:21.119
+So there were things like he would execute a query. And then based on the results of that,
+
+00:25:21.119 --> 00:25:25.920
+it may just decide, I don't even need to call an LLM for this check at all, right? I've ran this
+
+00:25:25.920 --> 00:25:31.680
+query, there's nothing noteworthy in this. There's nothing noteworthy in this data set that needs an
+
+00:25:31.680 --> 00:25:36.479
+LLM to look at it. So we're just going to skip that step entirely. Or we're going to scope it
+
+00:25:36.479 --> 00:25:41.119
+down, you know, we've now found this interesting thing in the data set. We're doing this in kind
+
+00:25:41.119 --> 00:25:48.079
+of mass and we need an LLM to provide some level of analysis on it, but we're going to give it as
+
+00:25:48.160 --> 00:25:52.239
+small a thing as possible and see what it gives back to us. So that's the biggest thing we're
+
+00:25:52.239 --> 00:25:56.479
+trying to do is pull things away. We've had really good results with things like we're setting up
+
+00:25:57.040 --> 00:26:02.079
+tool calling and things like that, where we're just trying to scope things down and make it
+
+00:26:02.079 --> 00:26:06.800
+deterministic where possible. So we're just cutting out as much variability as we can.
+
+00:26:07.599 --> 00:26:13.199
+Lots of work on testing always whenever we have these LLM workflows. It's gotten much better at
+
+00:26:13.199 --> 00:26:18.560
+constraining formats of outputs. I remember when I was first using them to generate stuff,
+
+00:26:18.560 --> 00:26:23.920
+I was like, please, please, please follow this format or it will break, you know, return it
+
+00:26:23.920 --> 00:26:28.959
+exactly like this. And now there's great tools where you can actually forcibly constrain it
+
+00:26:28.959 --> 00:26:33.119
+to have a certain kind of output. So that works great. Or you could just throw a deterministic
+
+00:26:33.119 --> 00:26:40.079
+check on top of it. So as much determinism as possible. As much determinism as possible. Okay,
+
+00:26:40.079 --> 00:26:44.239
+fantastic. And I want to shout out that we did have.
+
+00:26:44.434 --> 00:26:51.714
+Fantastic and I want to shout out that we did have Leslie Emery join us at the Data Science
+
+00:26:51.714 --> 00:26:57.874
+Hangout not too long ago. She is at Bristol Myers Squibb and she talked about reproducible
+
+00:26:57.874 --> 00:27:01.874
+workflows with LLMs and I think it's what her PositConf talk is about this year. So if this
+
+00:27:01.874 --> 00:27:08.034
+is a topic, Saptarishi, that you are interested in, make sure you check out her talk. Join us
+
+00:27:08.034 --> 00:27:15.073
+at Conf. If you can't go in person, join us virtually. It's super accessible and then things
+
+00:27:15.073 --> 00:27:19.474
+will be up on YouTube many months later after Conf, but that will be a good one to look out for.
+
+00:27:20.594 --> 00:27:25.393
+Thank you so much for your question. Tim, Tim Golden, alumni here at the Data Science
+
+00:27:25.393 --> 00:27:29.954
+Hangout has a question and I don't see an asterisk. So Tim, could you ask yours live?
+
+00:27:30.274 --> 00:27:38.274
+Highlighted it in Fido. Yes, yes. So I've for the last 30 years done data science, well actually 15
+
+00:27:38.274 --> 00:27:46.114
+years in data science, in large law firms and I've had to do data analysis on medical device
+
+00:27:46.114 --> 00:27:54.434
+litigation. To what extent are you instrumenting the instruments that you produce so that you've got
+
+00:27:54.514 --> 00:28:01.313
+good data to make sure that the application of these instruments in a medical setting is defensible?
+
+00:28:03.953 --> 00:28:09.393
+Yeah, great question. One thing I would call out is I'm not on the medical side or I'm not on the
+
+00:28:09.393 --> 00:28:13.794
+kind of software development side, but I do know and certainly utilize some of the logs and
+
+00:28:13.794 --> 00:28:20.834
+traceability that our software engineers primarily producing these products put in there. So we have
+
+00:28:20.834 --> 00:28:27.073
+very extensive logs of what's occurring on our systems, some of that that we use. Same thing with
+
+00:28:27.073 --> 00:28:33.953
+our instruments. Even our instruments, there's things like are set for a limited number of uses.
+
+00:28:33.953 --> 00:28:39.393
+So you would have an instrument that attacks us like monopolar curved scissors that are reusable
+
+00:28:39.393 --> 00:28:43.874
+so you can use it and then you can sterilize it and use it again. That has chips that track lives
+
+00:28:43.874 --> 00:28:48.914
+in it. And so when you attach it to the system, if you've used it for say the 10 number of times,
+
+00:28:48.914 --> 00:28:54.434
+that it's been cleared for, it won't even let you use it, right? So there's a lot of these
+
+00:28:54.434 --> 00:29:03.234
+controls in place. Being a very tech forward company, you know, our entire system is
+
+00:29:03.234 --> 00:29:07.874
+running on, you know, software and grabbing all this data that it can. We have our new system,
+
+00:29:07.874 --> 00:29:13.633
+which has gigantic amounts of computes in it. So I would say that there's gigantic amounts of
+
+00:29:13.874 --> 00:29:18.833
+logging and tracking going on. And I use some of that for some of our analytics purposes.
+
+00:29:20.353 --> 00:29:24.034
+And then there's some things that are recorded during surgery as well. Like video data is
+
+00:29:24.034 --> 00:29:29.154
+something that we have something called the MyIntuitive app, where surgeons are able to
+
+00:29:29.154 --> 00:29:34.594
+watch back videos of portions of their surgery to learn from it. So I think it's probably one of the
+
+00:29:34.594 --> 00:29:40.833
+most data capturing processes that I've seen. I realized when I asked the question that there's,
+
+00:29:40.833 --> 00:29:44.594
+this is being recorded, and there's probably no good answer for you to give, given this,
+
+00:29:46.193 --> 00:29:49.713
+without getting some level of call from someone else in the organization.
+
+00:29:50.514 --> 00:29:54.674
+Lots of data in lots of places. I would say it's the biggest thing. Lots of data everywhere.
+
+00:29:54.674 --> 00:29:55.174
+Thanks.
+
+00:29:56.193 --> 00:30:05.073
+Thanks, Tim. All right. I wanted to like come back around for just one second to the AI and LLM
+
+00:30:06.034 --> 00:30:12.754
+question, because I saw Mike and Rory mentioned in the chat that they are using Posit Assistant,
+
+00:30:12.754 --> 00:30:19.154
+Posit AI. Is that part of your workflow? I know that a couple of people have been saying that
+
+00:30:19.154 --> 00:30:23.553
+they have been using it at work or using it on their own to test it out.
+
+00:30:24.514 --> 00:30:31.073
+Yeah, I think the IDE and IDE plus AI Assistant journey has been like all over the place for me.
+
+00:30:31.154 --> 00:30:36.993
+I'd say I had like 10 years where basically all I ever used was RStudio. And then for a little
+
+00:30:36.993 --> 00:30:42.434
+while, it was RStudio plus like an LLM on the side that I would copy paste back and forth.
+
+00:30:42.434 --> 00:30:46.034
+And in the last, I don't know, year, year and a half, I've tried a lot of things. I've tried
+
+00:30:46.034 --> 00:30:50.993
+Positron. I've tried, we have some internal tools like a tool called Windsurf, which is
+
+00:30:50.993 --> 00:30:59.553
+a AI development platform. I've tried it with Cloud Code, Cloud Code plus Windsurf, Cloud Code
+
+00:30:59.553 --> 00:31:06.513
+plus VS Code, Cloud Code plus Positron, Posit AI, I've used personally, but we don't have that
+
+00:31:06.513 --> 00:31:13.874
+set up at work. I think my favorite right now is Posit AI, because it's just so fine tuned for the
+
+00:31:13.874 --> 00:31:18.833
+data science workflow. And I'd love to get that set up at work, which I'm hopeful we will shortly.
+
+00:31:19.634 --> 00:31:23.314
+There's some things where we have to be on the latest version of the commercial products of
+
+00:31:23.314 --> 00:31:28.513
+Workbench and Connect. And it like just got released in the last, I don't want to get this
+
+00:31:28.513 --> 00:31:33.074
+wrong, but very recently. And so we're a little bit behind on that. And then we need to set up
+
+00:31:33.074 --> 00:31:38.754
+like our API keys correctly. But I've used that personally, they have the, you can do like a free
+
+00:31:38.754 --> 00:31:43.154
+$5 in credit, and then you can buy a month for $20. So I've used that a couple times,
+
+00:31:44.113 --> 00:31:48.113
+and really liked it. So everything's in flux. Yeah.
+
+00:31:48.673 --> 00:31:52.993
+Everything is in flux. You said we're behind. I'm like, I feel like there's no way to not
+
+00:31:52.993 --> 00:31:58.513
+be behind right now. Like everything is moving so quickly. Even inside of Posit,
+
+00:31:58.513 --> 00:32:06.194
+I work at a company that is actively developing products that enable data scientists with AI,
+
+00:32:06.194 --> 00:32:11.874
+alongside AI. And I am constantly like, oh, am I behind? Am I just like two steps behind what
+
+00:32:11.874 --> 00:32:16.993
+they're already like producing the next thing? So I don't think that you are. There's always
+
+00:32:16.993 --> 00:32:23.713
+something new happening. And Tim, thanks for shouting out some packages there for us. Everybody
+
+00:32:23.713 --> 00:32:28.273
+go check those out if you would like to as well. When you were saying in the beginning that the
+
+00:32:28.273 --> 00:32:33.634
+IDE game is changing so quickly, I was like, oops, sorry, not sorry. We're part of the problem
+
+00:32:33.634 --> 00:32:40.354
+there, aren't we? Like giving you more options. Okay. Fantastic questions. I saw one from Dev
+
+00:32:40.354 --> 00:32:45.953
+and then also someone followed on to Dev. I think it was Ken. I think it was Ken. So
+
+00:32:46.993 --> 00:32:52.833
+let's see if we can get those together. Dev, do you happen to be able to unmute and ask yours live?
+
+00:32:53.634 --> 00:33:00.754
+Yes, sure. So hi, David. Hi, everyone. I wanted to ask, I've been working 10 years in the industry
+
+00:33:00.754 --> 00:33:06.914
+and besides the technical aspect of data science, one of the things that I've always found
+
+00:33:06.914 --> 00:33:11.793
+challenging is estimating the timelines for a project and how to communicate that to the
+
+00:33:11.793 --> 00:33:16.673
+stakeholders. So just wanted to check in the era of AI, like whether a project's the number
+
+00:33:16.673 --> 00:33:22.273
+of requests coming in are increasing and the speed of work is genuinely also increasing. You can do
+
+00:33:22.273 --> 00:33:28.194
+more, but how do you still estimate timelines accurately, especially in a health tech environment
+
+00:33:28.194 --> 00:33:33.314
+where edge cases and validation, how do you carve out time for them and how do you estimate project
+
+00:33:33.314 --> 00:33:40.354
+timelines in today's times? Yeah, great question. I'll give kind of a cop out at first and say,
+
+00:33:40.354 --> 00:33:46.673
+I try as much as possible to give people very loose things and to not to commit to specific
+
+00:33:46.673 --> 00:33:50.513
+things. And I have a lot of stakeholders who I've known for a long time who kind of just trust that
+
+00:33:50.513 --> 00:33:53.634
+we're going to do a good job. We're going to work as fast as we can and we're going to hit what we're
+
+00:33:53.634 --> 00:33:59.474
+going to hit. When I have stakeholders who really want to pin me down to timelines, what I usually
+
+00:33:59.474 --> 00:34:04.194
+end up doing is setting things more conservatively because, you know, if I have like my median
+
+00:34:04.194 --> 00:34:08.513
+estimate in my head of what it'll take, I don't want to give a response that I think there's a
+
+00:34:08.513 --> 00:34:12.993
+50-50 shot we're going to have to go over. So I end up setting things fairly conservatively. And
+
+00:34:14.194 --> 00:34:18.833
+I will say for them that usually ends up resulting in them getting things slower than they would have
+
+00:34:18.833 --> 00:34:22.673
+if they had just not tried to press me down for timelines. Because then if I have something and
+
+00:34:22.673 --> 00:34:28.914
+I have time, I may kind of put it on pause and wait for something else. That's a skill that I've
+
+00:34:28.914 --> 00:34:33.474
+definitely learned recently is just because you have something done and ready doesn't mean you
+
+00:34:33.474 --> 00:34:36.914
+have to send it off the second you have it there, right? If you've kind of communicated with this
+
+00:34:36.914 --> 00:34:42.434
+stakeholder this is what it's going to take. We will have, you know, things that are sitting and
+
+00:34:42.434 --> 00:34:47.474
+so we can kind of deliver things in a more steady process. You know, we have one project where
+
+00:34:47.474 --> 00:34:53.154
+we're trying to ship out like meaningful enhancements on about a two-week cadence.
+
+00:34:53.154 --> 00:34:58.434
+And so we certainly have at least like our next two releases kind of basically done with
+
+00:34:58.434 --> 00:35:02.113
+development and we're trying to be kind of very steady in what we put in for testing and then
+
+00:35:02.113 --> 00:35:07.393
+release to production. Other than that, I'd say, you know, it comes with experience and learning
+
+00:35:08.034 --> 00:35:12.034
+what are the nuances and what are the things that you're going to hit. You know, trying to be
+
+00:35:12.034 --> 00:35:17.394
+protective of those things and explaining it. The kind of pure development is usually not the biggest
+
+00:35:17.394 --> 00:35:22.434
+thing. It's what are the exceptions and do we actually have the data that we need? Do we have
+
+00:35:22.434 --> 00:35:27.233
+access to it? Do we have it in a reasonable format and structure? Those are the things that can just
+
+00:35:27.793 --> 00:35:33.793
+really extend timelines out like crazy. I think we're all agreeing in the chat that this is a
+
+00:35:33.793 --> 00:35:39.233
+really, really hard thing, Dev. So at least you're not alone in the fact that it's really, really
+
+00:35:39.233 --> 00:35:47.153
+difficult. I love like Renato says, yeah, under promise, over deliver. I like the reminder that
+
+00:35:47.153 --> 00:35:53.153
+just because you have something doesn't mean you have to send it out right now. For me, that's a
+
+00:35:53.153 --> 00:35:56.993
+lesson that I have had to learn over time with emails. Hey Libby, just because you get an email
+
+00:35:56.993 --> 00:36:02.194
+doesn't mean you need to answer it immediately, even if you can. I frequently need to at this
+
+00:36:02.194 --> 00:36:08.274
+point in my career, in my life, let an email simmer for like a day or two so I can batch it with other
+
+00:36:08.274 --> 00:36:13.233
+emails and do them together because they're the same type of thing. But if you are early in your
+
+00:36:13.233 --> 00:36:19.153
+career right now, just know that if you answer emails immediately, right away, 20 minutes after
+
+00:36:19.153 --> 00:36:25.634
+someone sends them to you, you are building a standard that is unachievable long-term. This is
+
+00:36:25.634 --> 00:36:31.793
+not something you can keep up. Don't do that to yourself. 24 to 48 hours is generally okay unless
+
+00:36:31.793 --> 00:36:36.194
+you have an SLA, which is a service level agreement that is different than that. If you have an
+
+00:36:36.194 --> 00:36:40.993
+agreement with a client that you have a quicker turnaround time than that, by all means, observe
+
+00:36:40.993 --> 00:36:46.834
+that. But don't do that to yourself. Free career advice for Libby, everybody from her mess ups.
+
+00:36:47.553 --> 00:36:54.113
+Okay, so we have so many questions in Slido that I'm wondering if you would be willing to do
+
+00:36:54.113 --> 00:37:00.194
+a little bit of a lightning round, like let's see if we can get a few questions in where we
+
+00:37:00.834 --> 00:37:04.834
+go as fast as possible. And this is where I also would love everybody in the chat to chime in with
+
+00:37:04.834 --> 00:37:11.553
+your answer too, because it's always fun seeing that. Okay, so the first one, Nelly had asked it
+
+00:37:11.553 --> 00:37:16.274
+and it has a little asterisk, so I will read that for her. It says, what pieces have you found are
+
+00:37:16.274 --> 00:37:23.074
+better done by a human than by AI? What do you do with your team to ensure the human aspect is
+
+00:37:23.074 --> 00:37:30.993
+still important? The server logic, especially like in an app, knowing the actual computation
+
+00:37:30.993 --> 00:37:35.714
+is something that I'm very hesitant to give up control of. The UI is something I've been a lot
+
+00:37:35.714 --> 00:37:43.153
+more okay to let go of and say, I can read that, it looks reasonable, it looks fine, let it go.
+
+00:37:43.153 --> 00:37:48.913
+So I'll give you a quick one on that. Server logic, okay. I get nervous if I can't understand
+
+00:37:48.913 --> 00:37:53.074
+something that something wrote and then if somebody asked me a question, if I couldn't
+
+00:37:53.074 --> 00:37:59.634
+answer it, I'm nervous. I love it. Okay, that was a two-parter, Nelly. We might have missed the second
+
+00:37:59.634 --> 00:38:04.834
+part. We have an anonymous question that says, how much does medical or engineering knowledge
+
+00:38:04.834 --> 00:38:12.033
+factor into your role versus pure data science? I'd say you build it up over time. I don't think
+
+00:38:12.033 --> 00:38:17.874
+we expect anyone to have any kind of specific domain knowledge coming in, but knowing about
+
+00:38:17.874 --> 00:38:23.954
+the products and processes of what you're doing really enables you to be successful. And so
+
+00:38:23.954 --> 00:38:31.634
+you really need to be curious about it to succeed. Not so much medical, but some engineering for some
+
+00:38:31.634 --> 00:38:37.714
+on the manufacturing side. Yeah, some engineering, that's a good point too. I think everybody gets
+
+00:38:37.714 --> 00:38:41.793
+nervous that they don't know everything about a domain when they're applying for a job. You learn
+
+00:38:41.793 --> 00:38:46.754
+over time. You really, really do. And I think that people understand and expect you to learn
+
+00:38:46.754 --> 00:38:52.033
+over time. Fantastic question. Let's see. We have another one that's anonymous. It says,
+
+00:38:52.033 --> 00:38:59.394
+do you deal with analyzing freeform text that's generated from your process users? If so, what
+
+00:38:59.394 --> 00:39:05.553
+have been your most effective tools for re-engineering or processing your freeform text?
+
+00:39:06.353 --> 00:39:08.113
+Any freeform text for you? Yeah, definitely. Somewhat.
+
+00:39:08.113 --> 00:39:10.593
+Yeah? Somewhat. Like one example,
+
+00:39:10.593 --> 00:39:16.834
+so we have an internal request system where people submit what they need. And we have an
+
+00:39:16.834 --> 00:39:22.353
+automation now where we try to route it to the right person in our 30-person org of analytics to
+
+00:39:22.353 --> 00:39:27.874
+see who's the right person to try and tackle it. Anything freeform text has definitely moved to
+
+00:39:27.874 --> 00:39:34.673
+LLMs in the last few years. A long time ago, I did some more like NLP things, but I feel like
+
+00:39:34.673 --> 00:39:40.353
+LLMs have really taken over anytime there's freeform text. Yeah, I'm going to second that.
+
+00:39:40.353 --> 00:39:45.473
+I work with freeform text as well. I also work with semi-structured freeform text,
+
+00:39:45.473 --> 00:39:50.834
+which is confusing. Ask me later. And I use LLMs for that as well. I love NLP. There's so
+
+00:39:50.834 --> 00:39:55.714
+much that you can do with basic NLP that you don't need an LLM for, but whenever it's super
+
+00:39:55.714 --> 00:40:02.113
+freeform text and you have a very specific task, LLMs are really, really great at that.
+
+00:40:02.194 --> 00:40:07.553
+Thank you, Anonymous Asker. That was a fantastic question. Okay, advice section.
+
+00:40:08.514 --> 00:40:13.874
+This question is anonymous and it says, I am keen to upskill in AI. I contact people in my company
+
+00:40:13.874 --> 00:40:18.113
+who are working on projects and offer my help. They're happy to talk to me about their projects,
+
+00:40:18.113 --> 00:40:23.473
+but I'm finding it difficult to get involved in their projects from the design and coding side.
+
+00:40:23.473 --> 00:40:28.274
+Do you have any advice for me? I have one last thought on the last one,
+
+00:40:28.274 --> 00:40:32.113
+so let me go to that for one second, then I'll bounce to this. LLMs are really good at writing
+
+00:40:32.113 --> 00:40:37.233
+a ton of regex for you. I'll have an LLM write hundreds of lines of regular expression and use
+
+00:40:37.233 --> 00:40:43.793
+that. Thought of that one. That's a tough one. I would say that's something I've seen people
+
+00:40:43.793 --> 00:40:49.553
+succeed with is reaching out to people and trying to volunteer their time. I would say if you're
+
+00:40:49.553 --> 00:40:55.394
+first getting involved, I would not be super picky about what you're doing. If it's not the most
+
+00:40:55.394 --> 00:41:00.113
+complex side of it, if they need help with something that's a little bit more on the side,
+
+00:41:00.113 --> 00:41:05.394
+I would be totally willing to do that. You can then kind of broadly learn about what's going on
+
+00:41:05.394 --> 00:41:10.113
+and hopefully over time, uplevel your complexity and get to a little bit more heart of the problem.
+
+00:41:12.353 --> 00:41:16.514
+If you're kind of just starting with something or just offering your advice to someone or trying
+
+00:41:16.514 --> 00:41:21.153
+to collaborate with them, being a little bit flexible on what tasks you're willing to take on
+
+00:41:21.153 --> 00:41:24.673
+is a lot more probably likely to succeed and then building up trust with them.
+
+00:41:25.394 --> 00:41:29.954
+Rather than trying to say, let me help with the absolute central core of your
+
+00:41:29.954 --> 00:41:33.714
+really important thing where they're probably going to be a little bit more apprehensive about
+
+00:41:33.714 --> 00:41:37.874
+someone totally new. I love that. Yes. Build trust. That is very, very important.
+
+00:41:38.673 --> 00:41:42.673
+Tim Golden had a reply on that one, which is an example of how you can build trust.
+
+00:41:42.673 --> 00:41:46.593
+Tim said, find out the language or platforms involved. See if you can do some hello world
+
+00:41:46.593 --> 00:41:50.913
+projects on your own. That is like beginner projects that help you build foundational
+
+00:41:50.913 --> 00:41:56.274
+skills in something. Then you can show those as examples next time you're asking if you can help
+
+00:41:56.274 --> 00:41:59.553
+so that you can sort of show that you're interested, prove that you're working on it,
+
+00:41:59.553 --> 00:42:04.194
+stuff like that. That can help you build a little bit of trust. I wanted to say that
+
+00:42:04.194 --> 00:42:08.353
+Kenneth had chimed in in the chat and said it also could be a permissions issue.
+
+00:42:10.274 --> 00:42:15.954
+You could offer to QA, which is like help do quality checks or help with the presentation
+
+00:42:15.954 --> 00:42:22.113
+review if you don't have permission to be in on that more nitty gritty foundational side.
+
+00:42:22.993 --> 00:42:28.754
+You guys have the best suggestions. Thank you, everybody. All right. What's next?
+
+00:42:29.473 --> 00:42:34.113
+Oh, another advice question. Anonymous, it says, if you had recently graduated from a degree in
+
+00:42:34.113 --> 00:42:40.754
+data science, how would you go about getting your first job today in 2026? No pressure, David.
+
+00:42:40.754 --> 00:42:47.233
+Yeah, no, it's tough. The biggest thing I would say is to find creative ways at the beginning
+
+00:42:47.233 --> 00:42:51.314
+to kind of make inroads, to make connections. And I'll tell two anecdotes on that.
+
+00:42:52.993 --> 00:42:57.074
+When I just was finishing my freshman year of college, I really wanted to do like an analytics
+
+00:42:57.074 --> 00:43:02.754
+internship. I wasn't having success finding one that would take a freshman. And so I reached
+
+00:43:02.754 --> 00:43:07.394
+out to a bunch of like local nonprofits and said, can I come volunteer? Do you have analytics work
+
+00:43:07.394 --> 00:43:12.593
+they need help with? And so I worked with three nonprofits for the summer, split my time between
+
+00:43:12.593 --> 00:43:17.954
+them. And then I was able to highlight on my resume, like all this, you know, really great
+
+00:43:17.954 --> 00:43:22.993
+experience that I had. And that helped me get an internship with intuitive. I've seen a lot of folks
+
+00:43:22.993 --> 00:43:27.634
+where they take roles that are maybe not 100% a match for what they hoped for. But it's a way to
+
+00:43:27.634 --> 00:43:33.553
+break in and start doing things, you know, starting on the analytics space, maybe. And then, like the
+
+00:43:33.553 --> 00:43:37.714
+prior commenter mentioned, you know, offering to work with people who are doing the work that you
+
+00:43:37.714 --> 00:43:42.353
+really want to aspire to collaborate. There's someone in my team who basically followed that
+
+00:43:42.353 --> 00:43:46.834
+path. They were in more of an analytics role. They were really interested in data science. They said,
+
+00:43:46.834 --> 00:43:50.994
+hey, can we collaborate on some stuff? They worked with their manager to make it happen. They,
+
+00:43:50.994 --> 00:43:55.393
+you know, definitely worked extra for a period to kind of dual do these things. They did a fantastic
+
+00:43:55.393 --> 00:44:00.913
+job and we hired them into our team. So being flexible and being creative at the beginning
+
+00:44:00.913 --> 00:44:05.954
+would be the biggest thing I would say. Excellent advice. We don't even need to ask you a career
+
+00:44:05.954 --> 00:44:10.753
+advice question today because I feel like we've asked you three already. I am going to add to this
+
+00:44:10.753 --> 00:44:18.913
+and say there are so many tools that people use in the workplace that you can learn to use for free,
+
+00:44:18.913 --> 00:44:24.273
+especially our products because they're open source. So if you're like, oh, well, I've never
+
+00:44:24.273 --> 00:44:31.234
+used connect, go get a free connect cloud account, right? And start building some shiny apps. David
+
+00:44:31.234 --> 00:44:37.714
+builds shiny apps and his team builds shiny apps, right? You could both build a shiny app and deploy
+
+00:44:37.714 --> 00:44:43.074
+it to connect cloud and kind of show that you already have that skill set without needing to
+
+00:44:43.074 --> 00:44:50.194
+like pay for a pro license. There are a lot of different ways you can do that if you Google
+
+00:44:50.194 --> 00:44:55.873
+around, including I can investigate this SQL database with a free license or whatever it is.
+
+00:44:55.873 --> 00:45:01.474
+Do as much of that as you can in exploring so that you don't feel limited by these tools that
+
+00:45:01.474 --> 00:45:09.633
+feel proprietary. David, I know that you said you all use connect. And I'm having a personal
+
+00:45:11.234 --> 00:45:17.793
+conversation with one of my friends lately around trying to get people to use the things that get
+
+00:45:17.793 --> 00:45:23.474
+built that they spend a lot of time building. Do you have any advice around how to get people to
+
+00:45:23.474 --> 00:45:29.553
+use the things that you build and how do you connect your users with the stuff that you guys
+
+00:45:29.553 --> 00:45:34.434
+build? Because I feel like you have had a lot of progression with getting things implemented,
+
+00:45:34.434 --> 00:45:40.913
+new tools like connect and shiny apps and stuff inside intuitive. Yeah, we've been using connect
+
+00:45:40.913 --> 00:45:46.513
+for a little bit over six years. It was there when I joined. So it's been a big part of what
+
+00:45:46.513 --> 00:45:53.074
+we've done for a long time. Two things on that. One, I would say, I think it is important to
+
+00:45:53.074 --> 00:46:00.753
+somewhat separate out your kind of like personal feelings about a project from its impact. Because
+
+00:46:00.753 --> 00:46:05.793
+I have absolutely had projects that I was like, this is the coolest thing. I'm incredibly proud
+
+00:46:05.793 --> 00:46:10.913
+of it. I worked on stuff I really felt good about. And I even had like a huge one that just leadership
+
+00:46:10.913 --> 00:46:15.633
+decided not to implement for different reasons outside of my control. And I've had some projects
+
+00:46:15.633 --> 00:46:20.513
+where I wasn't super emotionally invested in it. It was like to me fairly simple, a quick thing,
+
+00:46:20.513 --> 00:46:27.314
+and it just totally took off. So and I've seen some people sometimes really struggle with that
+
+00:46:27.314 --> 00:46:31.153
+where they work on something and it doesn't get the traction they want. It could be different for
+
+00:46:31.153 --> 00:46:35.633
+different roles. But for our role, there's definitely like an acceptance that it's not
+
+00:46:35.633 --> 00:46:41.314
+always one to one, right. And so our products, you know, we don't judge people based on that always,
+
+00:46:41.314 --> 00:46:46.194
+that's certainly a factor. One huge thing I would say is to not overbuild at the beginning.
+
+00:46:46.994 --> 00:46:52.273
+We really try to just start with an MVP and keep it as small scoped as possible and see
+
+00:46:53.074 --> 00:46:59.153
+usage and see utilization and build from there. Connect has like fantastic usage tracking. So we
+
+00:46:59.153 --> 00:47:06.354
+use SSO for all of our logins. So I can see exactly who signed in when with what their name is, what
+
+00:47:06.434 --> 00:47:12.434
+their time is, how long they spent on it. And Connect also makes that data available via API.
+
+00:47:12.434 --> 00:47:17.074
+So we've invested the time of, we've built our own analytics on how people are using our
+
+00:47:17.074 --> 00:47:22.273
+applications and products where we pull that data from the API, and then produce apps that consume
+
+00:47:22.273 --> 00:47:28.273
+it. And that guides a lot of our decision making. And we've said at times, like, you know, we saw
+
+00:47:28.273 --> 00:47:34.994
+more potential for a project, but the truth is, it's not getting usage, and we're not going to
+
+00:47:34.994 --> 00:47:39.393
+invest time in it. And we've had times when we're talking to like our leadership in an area, you
+
+00:47:39.393 --> 00:47:42.594
+know, and say, the planning leadership says, oh, this is great, we need to spend more and more time
+
+00:47:42.594 --> 00:47:47.954
+on that. And we say, hey, here's the data, like, the people in your org aren't using it, they don't
+
+00:47:47.954 --> 00:47:53.474
+want to make it a part of their workflow. So, you know, we want to rectify that before spending more
+
+00:47:53.474 --> 00:47:58.513
+time on it. That was my next question was like, does this development pressure or the ideas,
+
+00:47:58.513 --> 00:48:03.633
+is it coming from the top down? Is it coming from users asking for something? And sometimes that
+
+00:48:03.633 --> 00:48:07.553
+could be, that could make all the difference. However, I have seen like end users ask for
+
+00:48:07.553 --> 00:48:13.234
+something that, again, that they didn't end up using, it just felt like a good idea. But maybe
+
+00:48:13.234 --> 00:48:18.753
+the modality was wrong. You know, who knows? Yeah, we definitely say like, we're, you know,
+
+00:48:18.753 --> 00:48:23.633
+we try to start small, keep it small. As we see usage, as we see buy in will grow, right? And
+
+00:48:23.633 --> 00:48:28.513
+really thinking about what is an essential for an MVP for a starting point, and what's something good
+
+00:48:28.513 --> 00:48:33.074
+to add on later. Because if you if you start building like the perfect thing, number one,
+
+00:48:33.074 --> 00:48:37.873
+you know, you may be overbuilding to where it's not really needed. And a lot of times,
+
+00:48:37.873 --> 00:48:42.753
+the direction of our products changes pretty drastically. Like we'll build something thinking,
+
+00:48:42.753 --> 00:48:45.873
+this is how we think users are going to use it and the value they're going to get out of it.
+
+00:48:45.873 --> 00:48:49.314
+And then sometimes they come back and say, actually, you know, it does this other thing
+
+00:48:49.314 --> 00:48:54.273
+on the side that to you was more a minor piece, but to us, that's what we really care about. And
+
+00:48:54.273 --> 00:49:03.153
+so we have to course correct. Excellent, excellent advice. Okay. Do we have one more
+
+00:49:03.153 --> 00:49:11.314
+question that we can fit in? Maybe one more. Let's see. We have, oh, we have Ken's question
+
+00:49:11.314 --> 00:49:15.633
+that was tagging on to Deb's question. Ken, do you want to ask that one live in our last little
+
+00:49:15.633 --> 00:49:20.673
+five minutes? I can highlight it in Slido for you. Ken Roosevelt.
+
+00:49:26.273 --> 00:49:32.513
+Hey, how's it going? I think this is my first live question. So tagging on Deb's question,
+
+00:49:33.074 --> 00:49:38.594
+with competing interests and limited resources, as a service department with customers in the
+
+00:49:38.594 --> 00:49:44.033
+organization, how are you prioritizing projects? Is it you? Is it a management team, leadership?
+
+00:49:44.994 --> 00:49:50.273
+Yeah, great question. It's a mixture. You know, there's a few kind of philosophical things we've
+
+00:49:50.273 --> 00:49:55.954
+done. So one is we have like kind of a dumping ground for ideas where we just put in anything
+
+00:49:55.954 --> 00:49:59.793
+that comes in and then the ideas and that can be from other people or from us internally. And so
+
+00:49:59.793 --> 00:50:04.114
+we actually have like a GitHub repo where we create an issue for every idea from anyone.
+
+00:50:04.913 --> 00:50:09.314
+We have a standing once a month call with our leadership where we go over what are our
+
+00:50:09.714 --> 00:50:14.033
+priorities for the month. So that could be continuing on existing projects or new ones
+
+00:50:14.033 --> 00:50:21.393
+we're picking up. I would say that I drive a fair amount of it, but then keep leadership both
+
+00:50:22.513 --> 00:50:27.153
+in touch. And then on key decision points, especially, we'll talk with them to get feedback.
+
+00:50:28.114 --> 00:50:31.714
+And so my broader leadership, and then they connect that with even beyond that,
+
+00:50:33.393 --> 00:50:36.434
+trying to make database decisions. So we're saying, OK, this application is really getting
+
+00:50:36.434 --> 00:50:39.714
+value, getting usage is what we're seeing. We want to lean into it. But there's also
+
+00:50:40.673 --> 00:50:43.474
+kind of our gut intuition of just like, what is the potential here?
+
+00:50:44.434 --> 00:50:49.314
+Is it really going to have a larger impact? So the biggest things I would say is just trying to be
+
+00:50:49.314 --> 00:50:54.033
+very clear, trying to get things out of people's heads and documented on paper. So you're not
+
+00:50:54.033 --> 00:50:58.114
+carrying that mental load. And so it's very traceable are some of my biggest philosophies.
+
+00:50:58.434 --> 00:51:06.033
+And do projects come to you from management or do you triage them and then put an analyst on it?
+
+00:51:07.074 --> 00:51:11.714
+It's all over the place. So we get requests from leadership. We get requests from more of
+
+00:51:11.714 --> 00:51:15.873
+our business teams. We have some of our most successful projects have been one that we've
+
+00:51:15.873 --> 00:51:21.393
+been we've created on our own. We've seen like, OK, they asked for this, but we have this other
+
+00:51:22.354 --> 00:51:28.913
+idea. And so it's a kind of a blending of that. We also have a structure where we have data
+
+00:51:28.913 --> 00:51:33.714
+scientists. But then in my kind of sister team, we have data analytics who's doing more descriptive
+
+00:51:33.714 --> 00:51:37.393
+work. And so we partner with them a lot to see when things are kind of reaching a maturity
+
+00:51:37.393 --> 00:51:41.873
+standpoint. So it's all over the place. It's very loose. It takes a lot of time and energy,
+
+00:51:41.873 --> 00:51:45.633
+but just trying to keep everyone in the loop and trying to keep things documented.
+
+00:51:45.633 --> 00:51:53.954
+Well, thank you. Thanks, Kenneth. OK, we technically have time for one more question.
+
+00:51:53.954 --> 00:52:00.354
+There is another small one on the Slido that is anonymous, and it says, what are your favorite
+
+00:52:00.354 --> 00:52:06.994
+data science tools, packages, tutorials, softwares, books, etc.? I will extend this
+
+00:52:06.994 --> 00:52:10.273
+out and just say, like, is there stuff that you're excited about right now in data science?
+
+00:52:11.234 --> 00:52:15.474
+I'll plug again. I love Monte Carlo simulation. I've had really good success with that in
+
+00:52:15.474 --> 00:52:19.153
+a number of domains. And it's like one of my favorite things to do. And it also just
+
+00:52:19.153 --> 00:52:24.834
+really matches with my mental model for processes. And so we built out across a lot of domains,
+
+00:52:24.834 --> 00:52:30.273
+really successful things with that. Favorite packages and tools, I would say, you know,
+
+00:52:30.273 --> 00:52:35.553
+there's some new ones that we're really loving, like Elmer and ShinyChat have been really fun.
+
+00:52:37.474 --> 00:52:40.434
+Some of our more classic ones, I would say all of the tidyverse for sure.
+
+00:52:40.913 --> 00:52:45.153
+There's some really great like shiny extension tools, like shiny widgets,
+
+00:52:47.234 --> 00:52:52.434
+I would say is a big one. Let's see other things that Blastula, like anything that
+
+00:52:52.434 --> 00:52:56.834
+just makes processes smoother. All of our database connection tools.
+
+00:52:58.753 --> 00:53:03.393
+I think, yeah, integrating LLMs in a controlled way for different things has been really exciting.
+
+00:53:03.393 --> 00:53:09.714
+And we have some things that are looking really promising there. But it's obviously like
+
+00:53:09.714 --> 00:53:15.314
+constantly changing all the time. As always, as with the LLM and AI stuff, right?
+
+00:53:16.513 --> 00:53:21.633
+You mentioned Blastula. This is a good time to say we're missing Isabella or Isabella would like
+
+00:53:21.633 --> 00:53:28.354
+normally quickly be like Blastula link. I'm trying to keep up with Isabella.
+
+00:53:29.074 --> 00:53:34.033
+It's so hard. Isabella is so much faster than we are. Go check out Blastula. If you haven't
+
+00:53:34.033 --> 00:53:41.474
+used it, this is a Rich Iannone package. If you know Rich Iannone, he makes point blank, great tables.
+
+00:53:37.273 --> 00:53:43.913
+This is a Rich Iannone package if you know Rich Iannone. He makes point blank, great tables,
+
+00:53:45.033 --> 00:53:52.713
+two packages like the GT package that you have probably heard of and used. He also makes Blastula
+
+00:53:53.273 --> 00:53:59.353
+which helps you send emails. And if you have connect, PositConnect like David has,
+
+00:53:59.353 --> 00:54:04.232
+you can also schedule emails inside of PositConnect. You have so many ways to like get the thing done
+
+00:54:04.232 --> 00:54:09.193
+that you want to do. All of those are fantastic packages. Yeah, Zach says Isabella is sonic. She
+
+00:54:09.193 --> 00:54:13.353
+is. We miss you, Isabella. We'll see her soon. Also, Saptarisha wanted to call out, hey, if you
+
+00:54:13.353 --> 00:54:19.593
+have a university email, a .edu, you can access O'Reilly through that for free often. And I will
+
+00:54:19.593 --> 00:54:26.872
+also say if you have a university affiliation, log into your library and you can often access
+
+00:54:27.753 --> 00:54:33.593
+papers, books, tons of material for free. Go do that while you still have that .edu email address
+
+00:54:33.593 --> 00:54:38.872
+access, okay? All right, David, this was so much fun. Everybody in the chat agrees this was fun.
+
+00:54:38.872 --> 00:54:44.313
+We had a fantastic time. I hope you did too. Thank you so much for having me. Really appreciate it.
+
+00:54:44.313 --> 00:54:50.073
+And yeah, hope people got some interesting stuff out of it. Yes, I think that we all did. Everyone's
+
+00:54:50.073 --> 00:54:54.953
+applauding. Thank you everybody for hanging out with us. We love spending time with you. We will
+
+00:54:54.953 --> 00:55:01.673
+see you on Tuesday at the Data Science Lab, pos.it.dslab. We will see you next week at the Data
+
+00:55:01.673 --> 00:55:07.753
+Science Hangout, and we cannot wait to see you on the Discord channel. So make your way there,
+
+00:55:07.753 --> 00:55:11.512
+because we're there, you know, all week long. You don't have to wait till Thursday. If you want to
+
+00:55:11.512 --> 00:55:15.673
+save the chat, there's three dots at the top right of your chat panel if you're in the Zoom app, at
+
+00:55:15.673 --> 00:55:22.313
+least, so you can save the chat. And I think that that's it for me. Go sign up for PositCons,
+
+00:55:22.313 --> 00:55:25.112
+because I want to hang out with you. Okay, bye!
+
+00:55:31.673 --> 00:55:32.713
+you

@@ -1,0 +1,545 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.320
+Hello everyone! Welcome to episode 14 of the Shiny Developer Series. My name is Eric Nance and I'm
+
+00:00:06.320 --> 00:00:12.240
+delighted that you joined us today. We are concluding our multi-part series with RStudio
+
+00:00:12.240 --> 00:00:18.160
+software engineer and member of the Shiny Development Team, Barrett Schlerke, as he gives
+
+00:00:18.160 --> 00:00:25.440
+us an awesome overview of the learnr package and why Shiny is such a critical component to making
+
+00:00:25.440 --> 00:00:32.480
+all the powerful processing in this package work seamlessly. He's going to give us a few demos and
+
+00:00:32.480 --> 00:00:38.080
+give us some great examples of how learnr can be used to supercharge teaching, data science,
+
+00:00:38.080 --> 00:00:44.400
+or any other concepts that an educator would like to use. So let's not wait any longer. Let's dive
+
+00:00:44.400 --> 00:00:53.680
+into our chat with Barrett Schlerke. And speaking of learning, one thing that I've known for a while
+
+00:00:53.680 --> 00:00:59.360
+but I'm not sure if our audience does is that Shiny plays a prominent role in one of the excellent
+
+00:00:59.360 --> 00:01:06.800
+packages that has come from RStudio in how we can educate others on any sort of topic and it's
+
+00:01:06.800 --> 00:01:11.760
+called learnr. So maybe if you give our audience a bit of overview how learnr works and maybe some
+
+00:01:11.760 --> 00:01:18.879
+of the things you're proud of of that and maybe some demos about that too. Absolutely. Yeah, so
+
+00:01:18.879 --> 00:01:26.160
+learnr is a great package to, you know, get people involved with R without even knowing that they're
+
+00:01:26.160 --> 00:01:31.839
+doing the R programming language because it's in the browser. We can deploy something on Shiny
+
+00:01:31.839 --> 00:01:37.599
+apps.io and they can just look at the R markdown output which, you know, people are familiar with
+
+00:01:38.160 --> 00:01:43.040
+but they don't they may not know that there's things like exercises or quiz questions that
+
+00:01:43.040 --> 00:01:50.559
+are actually powered by R underneath the hood. And this is nice for authors in that they can
+
+00:01:50.559 --> 00:01:57.040
+create exercises for users in a familiar language that they're used to with R and they can then
+
+00:01:57.040 --> 00:02:04.320
+host it somewhere else or locally for students to do on their own time or so they have it like
+
+00:02:04.320 --> 00:02:10.559
+running already. And I think that's like a very powerful part of learnr. So for some examples
+
+00:02:10.559 --> 00:02:15.759
+though I'd like to take you to the RStudio education primers. They've done a lot of work to
+
+00:02:16.320 --> 00:02:22.880
+really nail down like some of these steps that users have when like, hey, I'm working with data
+
+00:02:22.880 --> 00:02:28.479
+or I'm visualizing data. What are some things that can remind me what I should do or what is
+
+00:02:28.479 --> 00:02:35.199
+I'm able to do? And they have many different tutorials to go through and some of them, you
+
+00:02:35.199 --> 00:02:42.720
+know, they're on their way. But I think they're just so nice. So let's actually take a peek at
+
+00:02:43.839 --> 00:02:51.119
+just, you know, the basics. And we'll do visualization basics. So this is what a
+
+00:02:51.119 --> 00:02:56.720
+learner tutorial will normally look like. We have a sidebar on the left and we have our content on
+
+00:02:56.720 --> 00:03:01.839
+the right. So this will be our topic and then these are some different sections. So I'll say
+
+00:03:01.839 --> 00:03:08.160
+continue and yep, we're going to go through. And here we have just a quick quiz question.
+
+00:03:08.800 --> 00:03:16.080
+It's like, okay, bigger cars consume more fuel. Cars with bigger engines use more fuel. Let's say
+
+00:03:16.080 --> 00:03:22.080
+that one. Submit answer. Great. So we get some immediate feedback. We let users know, you know,
+
+00:03:22.080 --> 00:03:29.520
+what were some correct answers. And it's really nice. These questions now are actually built
+
+00:03:29.520 --> 00:03:39.360
+using Shiny modules. So you can have, yes. And so like these modules, you can have 50 of these
+
+00:03:39.360 --> 00:03:45.440
+questions on one page and it's not overloading to Shiny server. It's only one instance of Shiny.
+
+00:03:45.440 --> 00:03:52.000
+It's not 50 instances. So that's really good. And it's not 50 iframes either outsourcing to
+
+00:03:52.000 --> 00:04:01.360
+somewhere else. And then here we have an exercise. And this doesn't really look too intimidating to
+
+00:04:01.360 --> 00:04:09.119
+newer users compared to like maybe opening up an IDE and saying library, doing all that. So here,
+
+00:04:09.119 --> 00:04:20.160
+you know, they say type in MPG. Okay. And I'll hit run code. It's thinking about it and hey,
+
+00:04:20.480 --> 00:04:27.200
+we got a DT data frame already set up. It's got page scrolling. This is all automatically done
+
+00:04:27.200 --> 00:04:33.519
+for you knowing that a data frame was returned. That's really slick. And you didn't have to know
+
+00:04:33.519 --> 00:04:37.920
+about how that output was generated. You just had to just type the name of it and
+
+00:04:37.920 --> 00:04:41.200
+Learner was smart enough to know the effective way of rendering it.
+
+00:04:42.959 --> 00:04:49.359
+Yeah. We have a few of them that work like that. So data frame is one of them. And then also
+
+00:04:49.359 --> 00:04:55.119
+HTML widgets are passed through as well. So if you return a widget in your example, we will
+
+00:04:55.119 --> 00:05:03.679
+display that full HTML widget. But also just to say submit answer, we can also grade their
+
+00:05:03.679 --> 00:05:12.799
+exercises as well and get feedback to the users. So I think this is great. I think this demo is
+
+00:05:12.799 --> 00:05:18.880
+really good. But it also, you know, leaves like more for the user to want or the author to want
+
+00:05:18.880 --> 00:05:24.720
+in that it's pretty minimal. It's pretty clean. There's not much going on for colors or styling.
+
+00:05:25.440 --> 00:05:33.920
+And Allison Horst has done a really good job with a Learner tutorial for the NA non-ER package. I
+
+00:05:33.920 --> 00:05:46.239
+can never say it right. Nick Tierney, come on. But she did a wonderful job looking at this. And
+
+00:05:46.799 --> 00:05:53.839
+let's just load up that tutorial. So, you know, I'll have the links later that we can post. But
+
+00:05:53.839 --> 00:05:59.119
+she's done full, you know, illustrations that can be added in just like regular images.
+
+00:05:59.839 --> 00:06:05.760
+This is gorgeous. Wow. Yeah. You see it and you go, that's not Learner. And then
+
+00:06:05.760 --> 00:06:09.359
+you look at the components and you go, okay, it is. Wow, that's so pretty.
+
+00:06:11.839 --> 00:06:16.880
+And that's amazing. And, you know, with just a little investment in some styling,
+
+00:06:16.880 --> 00:06:20.959
+you can just totally transform the experience of these things. And that's certainly something,
+
+00:06:21.519 --> 00:06:25.600
+obviously, this is a case of LearnR, but even my Shiny apps, I'm trying to
+
+00:06:25.600 --> 00:06:30.160
+get away from kind of the cookie cutter template look. And this is certainly
+
+00:06:30.160 --> 00:06:37.600
+inspiration of how powerful that can be. Yes, absolutely. And it's neat to see,
+
+00:06:37.600 --> 00:06:43.040
+like, even the buttons change. They're orange now. And, you know, the styling's just a little
+
+00:06:43.040 --> 00:06:50.160
+different. So, if I run the code, it'll produce the same answer. I can also start over. But yes,
+
+00:06:50.480 --> 00:06:57.119
+her work on this one is just awesome. Yeah, I do agree, though, adding just a little bit
+
+00:06:57.119 --> 00:07:04.079
+of styling to some of the Shiny apps just elevates them. Yeah. And yeah, I'll have to
+
+00:07:04.079 --> 00:07:08.079
+look at this one as well. I'm sure I have some colleagues in my group that would love to
+
+00:07:08.079 --> 00:07:13.359
+play with something like this. So, how difficult is it to get started with LearnR? Is it pretty
+
+00:07:13.359 --> 00:07:19.200
+easy to get up and running quickly, in your opinion? I think it's very easy. It's very
+
+00:07:19.279 --> 00:07:26.559
+familiar, like, with what we do. So, if I actually pull up the source for Allison's
+
+00:07:28.399 --> 00:07:37.359
+presentation, or Allison's tutorial, if I go into the Explorer tutorial RMD,
+
+00:07:39.440 --> 00:07:46.559
+the thing that we need to do is to say output LearnR tutorial, and then in your setup chunk,
+
+00:07:46.559 --> 00:07:53.279
+just say library learner. That's the main requirement. Beyond that, we just need to
+
+00:07:54.399 --> 00:08:05.440
+have exercises. So, exercise equals true. So, we just say exercise equals true.
+
+00:08:06.799 --> 00:08:11.040
+And now, all of a sudden, this whole R chunk is turned into an exercise.
+
+00:08:11.839 --> 00:08:14.799
+There's nothing else that the authors need to write.
+
+00:08:16.000 --> 00:08:20.320
+The other one is quiz questions, but I don't think I know if she has any in here.
+
+00:08:23.359 --> 00:08:28.640
+I don't believe so, but they would be just a regular R chunk that is not an exercise,
+
+00:08:28.640 --> 00:08:35.200
+and you would be able to say, you know, question, you know, answer is A, answer is B,
+
+00:08:35.200 --> 00:08:42.320
+and correct is true, submit. Like, that's all you need to do in one of these lines.
+
+00:08:45.599 --> 00:08:50.719
+Very nice. Very nice. So, we'll definitely have links to getting started with LearnR
+
+00:08:50.719 --> 00:08:54.080
+in the notes for this, but it sounds like, yeah, Shiny is giving you all
+
+00:08:54.640 --> 00:08:59.119
+a great way to have these different, you know, modules of, like, the code running,
+
+00:08:59.119 --> 00:09:04.320
+the questions answered, without you having to be an expert in building all that infrastructure from
+
+00:09:04.320 --> 00:09:08.719
+scratch. That's really cool, and it sounds like we've seen some really nice extensions
+
+00:09:08.719 --> 00:09:11.200
+that LearnR can plug into. Maybe we can see some of that, too.
+
+00:09:12.239 --> 00:09:19.359
+Yes. So, one of the quick things that we gravitate towards with questions, quiz questions,
+
+00:09:20.080 --> 00:09:27.280
+is ranking questions. So, you know, what's your favorite cookie? Let's rank them and see what the
+
+00:09:27.280 --> 00:09:34.400
+answer is. And so, sortable JS is a JavaScript library that had already kind of solved ranking
+
+00:09:34.400 --> 00:09:41.599
+problems or ranking in the HTML, and it really quickly extends to, you know, we can use it for
+
+00:09:41.599 --> 00:09:49.440
+our quiz questions. So, what sortable did is we made an HTML widget package that will just use
+
+00:09:49.440 --> 00:09:56.799
+this sortable JS library underneath the hood, and then we connected it to LearnR by using
+
+00:09:56.799 --> 00:10:04.400
+Learner's question API. And so, this is just the widget here, but if I go to a demo, we have our
+
+00:10:04.400 --> 00:10:11.440
+sortable library, and this is the code that's being used. We say, hey, give me a question rank.
+
+00:10:11.440 --> 00:10:18.000
+Here's my title. I have an answer of my insects, and if you happen to give me the reverse order
+
+00:10:18.000 --> 00:10:23.440
+of the insects, tell them that the answer is wrong and, by the way, other direction.
+
+00:10:23.919 --> 00:10:26.239
+Getting a little hint along the way. That's always good. Yep.
+
+00:10:26.880 --> 00:10:32.640
+You can have many forms of these. You can have, like, many different ways so that you can give
+
+00:10:32.640 --> 00:10:39.599
+them custom messages for each style of wrong answer. And I always like to say that, you know,
+
+00:10:39.599 --> 00:10:49.359
+hey, let's allow users to retry. So, let's do this ourselves. Let's do the ant, bumblebee,
+
+00:10:49.359 --> 00:10:54.960
+dragonfly in reverse order, and I'll submit it, and incorrect, by the way, other direction.
+
+00:10:56.000 --> 00:11:04.640
+So, I'll say try again, and I do it again here, and, okay, in alphabetical order, I hit submit,
+
+00:11:04.640 --> 00:11:13.359
+correct. Moving on. And this is great. You can allow users to put in their own, or not,
+
+00:11:13.359 --> 00:11:18.159
+authors can put in their own choices or even complex HTML. It doesn't need to be just plain
+
+00:11:18.159 --> 00:11:23.200
+text. You can have images in here. You can have full HTML DOM. It's great.
+
+00:11:24.880 --> 00:11:30.080
+Boy, this, to me, opens up a lot of possibilities that you don't just have to have the typical
+
+00:11:30.080 --> 00:11:37.679
+kind of quiz answers or questions. You could bring another widget into play. I know Sorvel,
+
+00:11:37.679 --> 00:11:43.280
+like this one here, is extremely powerful, but there seems like there's opportunity to bring
+
+00:11:43.280 --> 00:11:49.440
+other widgets in play here, too, for the future. If anyone is listening on that, I do have a
+
+00:11:49.440 --> 00:11:56.080
+dream that someone could have a leaflet map, and I could click on it and add points, and then I
+
+00:11:56.080 --> 00:12:02.479
+could say, you know, submit my answer, and if it worked, then the points would highlight up where
+
+00:12:02.479 --> 00:12:08.640
+you'd say, ah, you clicked close enough to the cities, you know, thank you. And, you know,
+
+00:12:08.640 --> 00:12:14.000
+leaflet's there. We just need to make the glue, so. Yeah, well, I was going to say, leaflet's a
+
+00:12:14.000 --> 00:12:19.440
+great example. I'm thinking things like Plotly, too, like anything where you could let the user
+
+00:12:19.440 --> 00:12:26.239
+explore a visual and maybe try to get the gist of what it's trying to convey. Yeah, I'm just being
+
+00:12:26.239 --> 00:12:31.200
+like a dreamer here. That would be really cool to see, so certainly I hope this is kind of like a
+
+00:12:31.200 --> 00:12:36.080
+template for others to follow for how that might work. So, anything else about Learner you want to
+
+00:12:36.080 --> 00:12:43.520
+show us about? But I will mention that the next release of Learner will have multi-language
+
+00:12:43.520 --> 00:12:50.559
+support, and so just as an explanation of what this will entail, currently all exercises
+
+00:12:51.200 --> 00:12:57.599
+are executed using R code, but underneath the hood, it's just an R Markdown document, right?
+
+00:12:57.599 --> 00:13:04.880
+But R Markdown understands many languages thanks to Knitter, things like Python using Reticulate
+
+00:13:04.880 --> 00:13:13.520
+or MySQL or even Bash, you know, you could do that, and we've now developed, thanks to the help
+
+00:13:13.520 --> 00:13:22.400
+with Nischal, summer intern, he made it so that the exercises are submitted using R Markdown fully,
+
+00:13:22.400 --> 00:13:29.599
+and that allows for any language to be supported. So, I have some demos that I'm working on to make
+
+00:13:29.679 --> 00:13:35.280
+sure that the UI is going to be up to date where, you know, I type in SQL code and it will return an
+
+00:13:35.280 --> 00:13:43.280
+answer. Wow, yeah, that's going to be so exciting to see on multiple levels. Yeah, I can't wait to
+
+00:13:43.280 --> 00:13:49.280
+can't wait to play with that because I'm one of those people that hop from R to other languages
+
+00:13:49.280 --> 00:13:53.520
+from time to time and be able to educate others about that process would be really cool too.
+
+00:13:53.760 --> 00:14:00.400
+Yep, yes, we're very excited about that, and I think it'll be very a powerful tool that you
+
+00:14:00.400 --> 00:14:07.359
+could have in R exercise and then a Python exercise in the same web page. Yep, across all the data
+
+00:14:07.359 --> 00:14:13.359
+science spectrum of tools. Yep, that's awesome. Yeah, we'll have links to all these great demos
+
+00:14:13.359 --> 00:14:20.479
+you've had, Lerner, in the show notes. So, one thing I'd like to leave with is, you know, as
+
+00:14:20.479 --> 00:14:24.479
+somebody who's been working on the Shiny team for a while, you've been developing these extensions
+
+00:14:24.479 --> 00:14:30.239
+of Shiny itself and these other packages that are using Shiny in different ways. What advice do you
+
+00:14:30.239 --> 00:14:34.400
+have to those in the audience that want to take their Shiny development skills to the next level
+
+00:14:34.400 --> 00:14:39.760
+instead of just like the basic tutorials, now they're doing more production-grade applications
+
+00:14:39.760 --> 00:14:45.359
+at work, whether it's by choice or they're forced to. What kind of advice do you have for those to
+
+00:14:45.359 --> 00:14:52.000
+take that extra climb up the ladder, so to speak? That's a really good one. It's a very
+
+00:14:52.640 --> 00:15:05.840
+open-ended question. My gut reaction is that Shiny is quite fast, but we can only deliver
+
+00:15:05.840 --> 00:15:13.599
+your code as fast as it's calculated. So, don't be afraid to use Profvis and find out where
+
+00:15:13.599 --> 00:15:24.640
+the bottlenecks are in your code. Also, using a little bit of CSS, external CSS, or templates to
+
+00:15:24.640 --> 00:15:32.080
+give it a little bit of flair go a really long way. As we saw with Allison's demo and her
+
+00:15:33.039 --> 00:15:45.679
+tutorial, it really had a wow factor, and just a little bit of effort in the CSS makes a lot of
+
+00:15:45.679 --> 00:15:53.119
+difference, and Shiny is not going to impose or try to impose certain themes, so we're not going
+
+00:15:53.119 --> 00:16:00.719
+to be adding them ourselves. The other things I can think of, you know, don't be afraid to use
+
+00:16:00.719 --> 00:16:07.840
+React Log. I think it's, you know, enable that option, and then go ahead and run your app and
+
+00:16:07.840 --> 00:16:14.719
+see what's going on, even if you just want to see the app in action. I think it's a really good
+
+00:16:15.440 --> 00:16:20.960
+feature. Yeah, well, I mean, I was saying during your React Log demo, just that visual presentation
+
+00:16:20.960 --> 00:16:25.760
+of what's happening, Shiny itself is a highly visual thing that you're making. Any web interface
+
+00:16:25.760 --> 00:16:31.520
+is obviously visual to the end user. That helps you as a developer wrap your head around all the
+
+00:16:31.520 --> 00:16:36.719
+logic that you've imposed in the app, and maybe you didn't intend to impose certain patterns, but
+
+00:16:36.719 --> 00:16:41.200
+then you see what those patterns are, and you're like, not the best idea, or maybe it's like, hey,
+
+00:16:41.200 --> 00:16:46.159
+I nailed it the first time, which doesn't always happen with me, to be transparent. I don't always
+
+00:16:46.159 --> 00:16:51.200
+get reactivity right the first time, but seeing it will definitely give me weeds on that for sure,
+
+00:16:51.200 --> 00:16:58.000
+so certainly those are great points. A couple of the use cases that I've seen is that users
+
+00:16:58.000 --> 00:17:03.599
+thought that if I only update this one value, that single output is only being calculated, so why is
+
+00:17:03.599 --> 00:17:10.479
+it taking so long? Right. And all of a sudden, they'll realize that one of the other outputs,
+
+00:17:10.479 --> 00:17:15.439
+which might be a heavy output, is reading that value or having a connection to it in some way
+
+00:17:15.439 --> 00:17:24.880
+that maybe should have been isolated, and now all of a sudden, the whole app is being invalidated
+
+00:17:24.880 --> 00:17:32.079
+and recalculating, so that's always a maybe unpleasant surprise, but it's nice to uncover,
+
+00:17:32.079 --> 00:17:37.040
+at least. Yeah, yeah. The first step is awareness. You've got to know about the problem before you
+
+00:17:37.040 --> 00:17:43.599
+can solve it, so very cool. Barron, I mean, we could talk all day about all the awesome stuff
+
+00:17:43.599 --> 00:17:48.160
+you're doing. For those that want to get a hold of you, maybe in some of the work you're doing,
+
+00:17:48.160 --> 00:17:54.079
+what are the best ways they can reach you online, if they want? I think Twitter might be the easiest
+
+00:17:54.079 --> 00:17:59.839
+one for everyone. You know, email is a little bit too formal today, but yeah, Twitter,
+
+00:17:59.839 --> 00:18:05.760
+atchlerkey. I'm the only one. I try to make a handle on that name. It's pretty unique, so
+
+00:18:06.479 --> 00:18:12.719
+very cool, but yeah, Twitter should be good. Awesome. Well, certainly, we greatly appreciate
+
+00:18:12.719 --> 00:18:17.680
+showing us off all these great extensions of Shiny and how it can up our game, so to speak,
+
+00:18:17.680 --> 00:18:23.439
+of Shiny development, and you're welcome back on the series anytime as you
+
+00:18:23.439 --> 00:18:29.439
+make these great feature additions, so thank you, Barron, for joining us. Thank you. I appreciate
+
+00:18:29.439 --> 00:18:33.920
+you having me. It's been a pleasure. Absolutely. All right, everybody, we're back right after this.
+
+00:18:34.880 --> 00:18:40.160
+All right. I hope you enjoyed this and on previous episodes where we talked about so many great
+
+00:18:40.160 --> 00:18:46.560
+concepts with Barron that it definitely could not fit into just one, so certainly, as always,
+
+00:18:46.560 --> 00:18:51.760
+if you want to look at the resources that Barron and I mentioned throughout the chat,
+
+00:18:51.760 --> 00:18:57.119
+head to ShinyDevSeries.com, and you'll see this latest episode posted right there
+
+00:18:57.119 --> 00:19:02.560
+with all the links that Barron has assembled for us, and we got some great content coming up in
+
+00:19:03.040 --> 00:19:08.400
+the very near future, already produced some great recordings, and I will say that the
+
+00:19:08.400 --> 00:19:13.839
+next installments are using this brand new technical setup that I've set up here,
+
+00:19:13.839 --> 00:19:19.920
+and I think you're going to really like it, so that's going to conclude episode 14. As always,
+
+00:19:19.920 --> 00:19:24.800
+if you want to get in touch with me, the best place to do that, you can give me a shout on
+
+00:19:24.800 --> 00:19:30.959
+Twitter. I am at TheRCast. You can also feel free to leave a comment on the YouTube video
+
+00:19:30.959 --> 00:19:36.880
+posting of this episode, and definitely head to ShinyDevSeries.com for all the previous episodes
+
+00:19:36.880 --> 00:19:41.839
+and resources associated with those. So, I hope you have a great rest of your day.
+
+00:19:41.839 --> 00:19:46.640
+Thank you so much for tuning in, and we will see you next time. Bye-bye.
+
