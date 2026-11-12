@@ -6,15 +6,15 @@
 
 <h3>RStudio Cloud as an alternative</h3>
 
-<p><a data-t="45">Another option is to use RStudio Cloud.</a> <a data-t="45">RStudio Cloud is a lightweight cloud-based solution that allows you to teach data science using the</a> <a data-t="54">RStudio IDE directly from your browser.</a> <a data-t="57">With RStudio Cloud, Git works out of the box, and you can avoid the majority of the</a> <a data-t="61">installation issues you're likely to encounter when you have learners download to their personal computer.</a> <a data-t="66">What's more, you don't need any system administration experience or IT support to get your course set up.</a> <a data-t="73">Let's take a look.</a></p>
+<p><a data-t="45">Another option is to use RStudio Cloud.</a> <a data-t="45">RStudio Cloud is a lightweight cloud-based solution that allows you to teach data science using the</a> <a data-t="54">RStudio IDE directly from your browser.</a> <a data-t="57">With RStudio Cloud, Git works out of the box, and you can avoid the majority of the</a> <a data-t="61">installation issues you're likely to encounter when you have learners download to their personal computer.</a> <a data-t="66">What's more, you don't need any system administration experience or IT support to get your course set up.</a> <a data-t="66">Let's take a look.</a></p>
 
 <blockquote><a data-t="45">RStudio Cloud is a lightweight cloud-based solution that allows you to teach data science using the</a> <a data-t="54">RStudio IDE directly from your browser.</a> <a data-t="57">With RStudio Cloud, Git works out of the box, and you can avoid the majority of the</a> <a data-t="61">installation issues you're likely to encounter when you have learners download to their personal computer.</a></blockquote>
 
 <h3>Workspaces and base projects</h3>
 
-<p><a data-t="73">Once you log into RStudio Cloud, you have a variety of tools available to you.</a> <a data-t="79">In the menu on the left, we can take a look at workspaces.</a> <a data-t="79">You'll always have your own personal workspace, and you can create additional workspaces for each of your courses, like this.</a></p>
+<p><a data-t="73">Once you log into RStudio Cloud, you have a variety of tools available to you.</a> <a data-t="73">In the menu on the left, we can take a look at workspaces.</a> <a data-t="79">You'll always have your own personal workspace, and you can create additional workspaces for each of your courses, like this.</a></p>
 
-<p><a data-t="108">To avoid having students each download packages to their computer, we can set up all of the projects within our workspace using a default set of files and packages by creating a base project.</a> <a data-t="117">This means we can install all of the packages used throughout our course, along with any files we want our learners to have access to by default.</a> <a data-t="124">And we can update this base project throughout our course as needed.</a></p>
+<p><a data-t="88">To avoid having students each download packages to their computer, we can set up all of the projects within our workspace using a default set of files and packages by creating a base project.</a> <a data-t="117">This means we can install all of the packages used throughout our course, along with any files we want our learners to have access to by default.</a> <a data-t="124">And we can update this base project throughout our course as needed.</a></p>
 
 <h3>Managing members and projects</h3>
 

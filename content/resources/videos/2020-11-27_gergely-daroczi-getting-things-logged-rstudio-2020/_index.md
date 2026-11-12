@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: One of the greatest strengths of R is the ease and speed of developing a prototype (let it be a report or dashboard, a statistical model or rule-based automation to solve a business problem etc), but deploying to production is not a broadly discussed topic despite its importance. This hands-on talk focuses on best practices and actual R packages to help transforming the prototypes developed by business analysts and data scientist into production jobs running in a secured and monitored environment that is easy to maintain -- discussing the importance of logging, securing credentials, effective helper functions to connect to database, open-source and SaaS job schedulers, dockerizing the run environment and scaling infrastructure.
   duration: 1332
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:17.861120+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 28
   playlist: ''
   software:

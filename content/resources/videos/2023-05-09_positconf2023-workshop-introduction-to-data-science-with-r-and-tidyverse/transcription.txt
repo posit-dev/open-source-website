@@ -1,4 +1,4 @@
-<p><a data-t="0">Hi, my name is Brendan Cullen and I'm a Data Science Educator at Posit.</a> <a data-t="11">I work with a team of fellow educators who specialize in teaching open source, code-first</a> <a data-t="17">data science, and we are really excited to be offering a workshop at PositConf this year,</a> <a data-t="23">Introduction to Data Science with R.</a> <a data-t="28">In this video, we'll share with you a few reasons</a> <a data-t="28">why we think you should join us.</a></p>
+<p><a data-t="0">Hi, my name is Brendan Cullen and I'm a Data Science Educator at Posit.</a> <a data-t="11">I work with a team of fellow educators who specialize in teaching open source, code-first</a> <a data-t="17">data science, and we are really excited to be offering a workshop at PositConf this year,</a> <a data-t="23">Introduction to Data Science with R.</a> <a data-t="23">In this video, we'll share with you a few reasons</a> <a data-t="28">why we think you should join us.</a></p>
 
 <h3>The Posit Academy apprenticeship model</h3>
 

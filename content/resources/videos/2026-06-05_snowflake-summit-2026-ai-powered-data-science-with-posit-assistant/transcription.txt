@@ -1,1 +1,7 @@
-<p><a data-t="0">AI-Powered Data Science with Posit Assistant</a></p>
+<p><a data-t="0">AI-Powered Data Science with Posit Assistant</a> <a data-t="30">AI-Powered Data Science with Posit Assistant</a> <a data-t="60">AI-Powered Data Science with Posit Assistant</a> <a data-t="90">AI-Powered Data Science with Posit Assistant</a> <a data-t="120">AI-Powered Data Science with Posit Assistant</a></p>
+
+<p><a data-t="150">AI-Powered Data Science with Posit Assistant</a> <a data-t="180">AI-Powered Data Science with Posit Assistant</a> <a data-t="210">AI-Powered Data Science with Posit Assistant</a> <a data-t="240">AI-Powered Data Science with Posit Assistant</a> <a data-t="270">AI-Powered Data Science with Posit Assistant</a></p>
+
+<p><a data-t="300">AI-Powered Data Science with Posit Assistant</a> <a data-t="330">AI-Powered Data Science with Posit Assistant</a> <a data-t="360">AI-Powered Data Science with Posit Assistant</a> <a data-t="390">AI-Powered Data Science with Posit Assistant</a> <a data-t="420">AI-Powered Data Science with Posit Assistant</a></p>
+
+<p><a data-t="450">AI-Powered Data Science with Posit Assistant</a> <a data-t="480">AI-Powered Data Science with Posit Assistant</a> <a data-t="510">AI-Powered Data Science with Posit Assistant</a> <a data-t="540">AI-Powered Data Science with Posit Assistant</a></p>

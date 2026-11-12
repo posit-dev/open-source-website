@@ -6,17 +6,17 @@
 
 <p><a data-t="63">But what I really want to talk to you today is about cutlery drawers, and what they say</a> <a data-t="67">about you.</a> <a data-t="68">Now, these cutlery drawers are from people that you might bump into at this conference,</a> <a data-t="74">and I think it's an interesting exercise in how people arrange things, structure things,</a> <a data-t="81">whether they do it by size, whether they do it by most frequently used, the differences</a> <a data-t="85">between perhaps US and European cutlery drawers.</a></p>
 
-<p><a data-t="91">But here's mine.</a> <a data-t="94">If you visit my house, you'll see my cutlery drawer.</a> <a data-t="97">My wife will also be very surprised that you're visiting the house, and quite alarmed that</a> <a data-t="101">you just want to see the cutlery drawer.</a></p>
+<p><a data-t="88">But here's mine.</a> <a data-t="91">If you visit my house, you'll see my cutlery drawer.</a> <a data-t="94">My wife will also be very surprised that you're visiting the house, and quite alarmed that</a> <a data-t="97">you just want to see the cutlery drawer.</a></p>
 
-<p><a data-t="105">Now, I did the </a><a href="/software/tidyverse/">tidyverse</a><a data-t="105"> Train the Trainer course, and thanks to Greg and Garrett for</a> <a data-t="111">teaching on that, and I'm now taking every opportunity to have a learning experience</a> <a data-t="117">for the tidyverse.</a> <a data-t="116">So, if you take cutlery drawer, you might want to group by type.</a> <a data-t="116">You want to gather those things together and arrange, and if you could do that from my</a> <a data-t="119">cutlery drawer, I would be really happy.</a></p>
+<p><a data-t="99">Now, I did the </a><a href="/software/tidyverse/">tidyverse</a><a data-t="99"> Train the Trainer course, and thanks to Greg and Garrett for</a> <a data-t="105">teaching on that, and I'm now taking every opportunity to have a learning experience</a> <a data-t="112">for the tidyverse.</a> <a data-t="113">So, if you take cutlery drawer, you might want to group by type.</a> <a data-t="116">You want to gather those things together and arrange, and if you could do that from my</a> <a data-t="119">cutlery drawer, I would be really happy.</a></p>
 
 <p><a data-t="122">New hashtag for the conference is untidyverse.</a> <a data-t="127">And I'm really pleased that XKCD views the need for tidiness in the house in very similar</a> <a data-t="133">ways.</a> <a data-t="135">You can get Wi-Fi in a laptop.</a> <a data-t="136">You can put all your other possessions in a big bucket marked miscellaneous.</a></p>
 
 <h3>The lazy, distracted brain problem</h3>
 
-<p><a data-t="143">Okay, here's the premise for my talk.</a> <a data-t="148">My brain is lazy, shallow, and very easily distracted.</a> <a data-t="148">I hesitate to say that your brain is the same, but then we had Zhou Cheng up here telling</a> <a data-t="154">us all that our intuition sucks.</a> <a data-t="156">So I think some people in this audience must have a brain that's lazy, shallow, and easily</a> <a data-t="160">distracted.</a></p>
+<p><a data-t="140">Okay, here's the premise for my talk.</a> <a data-t="143">My brain is lazy, shallow, and very easily distracted.</a> <a data-t="148">I hesitate to say that your brain is the same, but then we had Zhou Cheng up here telling</a> <a data-t="154">us all that our intuition sucks.</a> <a data-t="156">So I think some people in this audience must have a brain that's lazy, shallow, and easily</a> <a data-t="160">distracted.</a></p>
 
-<blockquote><a data-t="148">My brain is lazy, shallow, and very easily distracted.</a></blockquote>
+<blockquote><a data-t="143">My brain is lazy, shallow, and very easily distracted.</a></blockquote>
 
 <p><a data-t="162">Now, we're all familiar with this plot that's from the R4 Data Science book, and it gives</a> <a data-t="166">us a framework or a structure for understanding any analysis.</a> <a data-t="170">And on the Not So Standard Deviations podcast recently, there was a good discussion about</a> <a data-t="174">this, and they came to the conclusion that really this is just a framework.</a> <a data-t="179">It's a mental model.</a> <a data-t="180">Real data analysis don't necessarily have to follow all of these steps or in sequence.</a></p>
 
@@ -28,7 +28,7 @@
 
 <p><a data-t="251">I discuss the findings with my boss, I circulate the report, and my job is done.</a></p>
 
-<p><a data-t="261">Okay, the other thing is, did anyone notice that the transform and visualize bits from</a> <a data-t="271">the R for data science diagram were back to front and swapped over?</a> <a data-t="276">Cognitive load theory score one.</a></p>
+<p><a data-t="265">Okay, the other thing is, did anyone notice that the transform and visualize bits from</a> <a data-t="271">the R for data science diagram were back to front and swapped over?</a> <a data-t="276">Cognitive load theory score one.</a></p>
 
 <p><a data-t="279">So anyway, six months passed.</a> <a data-t="281">This is not an exaggeration.</a> <a data-t="283">I got an email yesterday from my manager saying, you know that team and the work that you did</a> <a data-t="289">for them?</a> <a data-t="290">They're interested in your results, can you dig them out and share them?</a> <a data-t="293">Now if you're anything like me, what happens is you pop open your R script or something</a> <a data-t="299">like that, and you think, what the heck did I do, right?</a></p>
 
@@ -38,7 +38,7 @@
 
 <p><a data-t="334">It's also the future me, the six months later me that pops open the Markdown document and</a> <a data-t="338">goes, all right, I'm good, because I've got my code, I've got the explanation, I can see</a> <a data-t="344">the outputs.</a> <a data-t="345">I've even got text that explains what I was thinking.</a> <a data-t="348">Hurrah.</a></p>
 
-<p><a data-t="353">But here's another audience for your reports.</a> <a data-t="357">It could be a quantitative colleague who wants to see code, who wants to see data,</a> <a data-t="362">who wants to see your assumptions, who wants to dig into your residual plots from your</a> <a data-t="363">model.</a> <a data-t="364">I can guarantee you the non-quantitative people won't want to see that.</a> <a data-t="369">So it's good if you can try to balance up and try to have techniques that would allow</a> <a data-t="373">you to hide the bits that the non-quantitative people want to see, but also allow the quantitative</a> <a data-t="378">people to get what they want from that report.</a></p>
+<p><a data-t="350">But here's another audience for your reports.</a> <a data-t="354">It could be a quantitative colleague who wants to see code, who wants to see data,</a> <a data-t="358">who wants to see your assumptions, who wants to dig into your residual plots from your</a> <a data-t="363">model.</a> <a data-t="364">I can guarantee you the non-quantitative people won't want to see that.</a> <a data-t="369">So it's good if you can try to balance up and try to have techniques that would allow</a> <a data-t="373">you to hide the bits that the non-quantitative people want to see, but also allow the quantitative</a> <a data-t="378">people to get what they want from that report.</a></p>
 
 <p><a data-t="384">So, back to notebooks just for a second.</a> <a data-t="386">I realize, and again, thank you E-Wait, that there is a debate here.</a> <a data-t="391">But for analysis, if you're writing analysis, I think notebooks are fantastic.</a> <a data-t="397">And back to Garrett's stuff about Markdown, if you're writing more comments than code,</a> <a data-t="405">then you should be using rmarkdown in notebooks.</a> <a data-t="407">If you're writing more code than comments, write more comments and use rmarkdown.</a></p>
 
@@ -78,7 +78,7 @@
 
 <h3>More on parameterization</h3>
 
-<p><a data-t="772">Okay, so more about parameterization.</a> <a data-t="772">So what we saw was when we rendered the report, you go to the render with parameters or knit</a> <a data-t="779">with parameters, but from the command line you can pass in your parameters just through</a> <a data-t="783">a list like this, okay, and it's really straightforward.</a> <a data-t="788">The second thing is you might want to change your analysis depending on which endpoint</a> <a data-t="792">you're looking at.</a> <a data-t="793">If you're looking at a categorical outcome, you're not going to want to fit a linear model,</a> <a data-t="798">or at least you shouldn't.</a></p>
+<p><a data-t="768">Okay, so more about parameterization.</a> <a data-t="772">So what we saw was when we rendered the report, you go to the render with parameters or knit</a> <a data-t="779">with parameters, but from the command line you can pass in your parameters just through</a> <a data-t="783">a list like this, okay, and it's really straightforward.</a> <a data-t="788">The second thing is you might want to change your analysis depending on which endpoint</a> <a data-t="792">you're looking at.</a> <a data-t="793">If you're looking at a categorical outcome, you're not going to want to fit a linear model,</a> <a data-t="798">or at least you shouldn't.</a></p>
 
 <p><a data-t="801">So in that case you may want to tailor your analysis depending on the parameter endpoint,</a> <a data-t="806">but again it's just, you know, another thing that you can compute on within a chunk.</a> <a data-t="811">Also if something goes wrong with your analysis, then if you're handling the error appropriately,</a> <a data-t="816">if you're using try-catch or something like that, you can compute on that and then have</a> <a data-t="821">a trial document that says something helpful like, you know, something's gone wrong, contact</a> <a data-t="825">your friendly data scientist, you know, here's his details, okay?</a></p>
 
@@ -90,6 +90,6 @@
 
 <p><a data-t="871">All right, thank you very much, Mike.</a> <a data-t="877">We have time for questions before the break for lunch.</a> <a data-t="880">Hands, please.</a></p>
 
-<p><a data-t="891">Can I ask one myself?</a> <a data-t="893">So you're building all of this wonderful machinery and then you move on and somebody else has</a> <a data-t="896">to maintain it.</a> <a data-t="898">How many of the people that you work with understand and value the machinery that you've</a> <a data-t="903">just shown us?</a></p>
+<p><a data-t="888">Can I ask one myself?</a> <a data-t="891">So you're building all of this wonderful machinery and then you move on and somebody else has</a> <a data-t="896">to maintain it.</a> <a data-t="898">How many of the people that you work with understand and value the machinery that you've</a> <a data-t="903">just shown us?</a></p>
 
 <p><a data-t="904">Ooh, that's a tricky question.</a> <a data-t="908">Not many at present.</a> <a data-t="911">And how are you tackling that?</a> <a data-t="912">Well, I've just done the train the trainer on the tidyverse and I'm here, so I'm going</a> <a data-t="916">to go back and evangelize and, you know, but yes, it's a problem that we need to try to</a> <a data-t="921">roll this out and get more and more people familiar with how it works.</a></p>

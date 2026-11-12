@@ -1,0 +1,128 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.300
+What am I most excited for in the next release of Positron?
+
+00:00:03.700 --> 00:00:07.100
+I would say number one is the import data functionality.
+
+00:00:07.400 --> 00:00:08.100
+Functionality.
+
+00:00:08.500 --> 00:00:10.500
+Number one is the import data functionality.
+
+00:00:10.600 --> 00:00:13.500
+So this is something that was highly requested by users, where
+
+00:00:13.500 --> 00:00:16.299
+you can click on like a CSV or a parquet file.
+
+00:00:16.400 --> 00:00:19.100
+You can open it up, play around with it in the data explorer,
+
+00:00:19.100 --> 00:00:21.500
+add your filters, do whatever you want to it.
+
+00:00:21.700 --> 00:00:23.799
+And then with the click of a button, it will turn it into a
+
+00:00:23.799 --> 00:00:28.400
+full Python script, including your filters and import it from
+
+00:00:28.400 --> 00:00:29.799
+like the file path itself.
+
+00:00:30.299 --> 00:00:33.099
+In Positron, I'm really excited about the ways that you can
+
+00:00:33.099 --> 00:00:34.400
+install Python.
+
+00:00:34.400 --> 00:00:38.099
+It has been a joke in the Python system for a very long time,
+
+00:00:38.099 --> 00:00:39.900
+but it's so hard to install.
+
+00:00:39.900 --> 00:00:44.400
+Nowadays, I can delete all of the Pythons off of my laptop and
+
+00:00:44.400 --> 00:00:47.400
+go to the select interpreter button inside of Positron and
+
+00:00:47.400 --> 00:00:51.400
+it automatically comes up with a button to install Python.
+
+00:00:51.700 --> 00:00:54.500
+I just choose whatever version I want and using uv, it will
+
+00:00:54.500 --> 00:00:58.599
+set everything up for me and I don't have to sweat over installing
+
+00:00:58.599 --> 00:01:00.099
+Python on a new machine anymore.
+
+00:01:00.599 --> 00:01:05.000
+A lot of people have been asking about inline output for Cordo
+
+00:01:05.199 --> 00:01:07.500
+and now it is available in Positron.
+
+00:01:07.500 --> 00:01:11.000
+Tell your friends, tell your enemies, inline output is in
+
+00:01:11.000 --> 00:01:11.900
+Positron.
+
+00:01:11.900 --> 00:01:14.800
+So if you've been waiting to try Positron because inline output
+
+00:01:14.800 --> 00:01:18.000
+is not available, now is the time to download it.
+
+00:01:18.000 --> 00:01:21.500
+One of my favorite things about working in open source is the
+
+00:01:21.599 --> 00:01:23.500
+really cool people in our community.
+
+00:01:23.500 --> 00:01:27.400
+And recently folks in the Julia community have made an extension.
+
+00:01:27.500 --> 00:01:32.300
+So now you can install Julia for Python on OpenVSX and Julia
+
+00:01:32.300 --> 00:01:33.500
+works inside Positron.
+
+00:01:33.699 --> 00:01:35.000
+You can see all your variables.
+
+00:01:35.000 --> 00:01:36.300
+You can use the console.
+
+00:01:36.300 --> 00:01:40.000
+And so now Positron is a fantastic place to be running Julia
+
+00:01:40.000 --> 00:01:43.400
+code. We love to be involved in whatever projects or whatever
+
+00:01:43.400 --> 00:01:45.699
+things you're seeing inside of Positron.
+
+00:01:45.699 --> 00:01:49.400
+So if you ever see anything and you wish it existed or maybe
+
+00:01:49.400 --> 00:01:52.800
+you wish it didn't exist, we're excited to hear about any feedback
+
+00:01:52.800 --> 00:01:56.000
+you have for Positron. Just like me on day two of conferences,
+
+00:01:56.000 --> 00:01:57.699
+I'm just doing strange side quests.
+
+00:01:58.800 --> 00:01:59.800
+That's my makeup now.
+

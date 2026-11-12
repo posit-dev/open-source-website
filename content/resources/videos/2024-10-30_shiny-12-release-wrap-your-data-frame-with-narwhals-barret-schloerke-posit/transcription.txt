@@ -16,6 +16,6 @@
 
 <p><a data-t="100">So the SMP 500 given pandas data set as your original data, we have polars, we have PyArrow,</a> <a data-t="108">and if you happen to just return Narwhals itself, you can do that as well.</a> <a data-t="114">There are new methods being displayed for your render data frame, and please check them</a> <a data-t="119">out.</a></p>
 
-<p><a data-t="124">To learn more about this, check out PyShiny website component gallery, which will be linked</a> <a data-t="124">down below.</a> <a data-t="125">Also, check out Narwhals so that you can see the latest support and what they have for</a> <a data-t="130">their eager data frames.</a></p>
+<p><a data-t="120">To learn more about this, check out PyShiny website component gallery, which will be linked</a> <a data-t="124">down below.</a> <a data-t="125">Also, check out Narwhals so that you can see the latest support and what they have for</a> <a data-t="130">their eager data frames.</a></p>
 
 <p><a data-t="138">Thank you.</a></p>

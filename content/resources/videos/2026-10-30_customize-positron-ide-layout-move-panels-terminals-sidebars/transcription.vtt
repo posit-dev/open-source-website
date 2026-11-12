@@ -1,0 +1,41 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.500
+Here's a quick tip on how to customize your Positron layout exactly how you want it.
+
+00:00:04.500 --> 00:00:08.700
+The layout defaults with the editor above the console and the terminal below,
+
+00:00:08.700 --> 00:00:11.200
+and the variables and plot panes to the right.
+
+00:00:11.200 --> 00:00:15.900
+So this is designed more for interactive workflows with scripts and quarto documents.
+
+00:00:15.900 --> 00:00:19.100
+But almost every component can be rearranged by dragging.
+
+00:00:19.100 --> 00:00:23.100
+So for example, you can try moving the Help pane into the Session pane,
+
+00:00:23.100 --> 00:00:27.799
+and you can also toggle most of these components in and out of view using commands
+
+00:00:27.799 --> 00:00:31.100
+such as ViewTogglePrimarySidebarVisibility.
+
+00:00:31.100 --> 00:00:35.900
+You can also use the CustomizeLayout command for more specific layout choices.
+
+00:00:35.900 --> 00:00:41.500
+So Stacked is the default, but you can also make it side-by-side or notebook layout.
+
+00:00:41.500 --> 00:00:44.599
+The Assistant layout makes Posit Assistant larger,
+
+00:00:44.599 --> 00:00:47.900
+and the Agent layout puts it front and center.
+
+00:00:47.900 --> 00:00:50.700
+How do you have your Positron set up? Let us know.
+

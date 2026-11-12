@@ -21,8 +21,8 @@ external:  # updated automatically, do not edit
   description: Overview of Shiny Pro
   duration: 235
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:19.005994+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 0
   playlist: ''
   software:

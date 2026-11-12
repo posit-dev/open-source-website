@@ -1,0 +1,1837 @@
+WEBVTT
+
+00:00:00.240 --> 00:00:03.920
+All right, welcome everyone. It's my pleasure to welcome you all to today's webinar.
+
+00:00:04.640 --> 00:00:09.280
+I first had the opportunity to meet Dilip and the team a little over three years ago when I visited
+
+00:00:09.280 --> 00:00:15.360
+them in New Jersey, and even in that meeting they really challenged the way I thought about the
+
+00:00:15.360 --> 00:00:20.799
+market, the space, and the various possibilities ahead of us. And so some of the things that Dilip
+
+00:00:20.799 --> 00:00:25.920
+proposed at the time seemed really far-fetched, and several of the conjectures have actually
+
+00:00:25.920 --> 00:00:30.080
+come true. And actually three weeks ago I had the opportunity to visit with them again,
+
+00:00:30.799 --> 00:00:35.040
+and once again the questions that were being asked were exactly the right kinds of questions,
+
+00:00:35.040 --> 00:00:39.439
+and they helped sort of push our thinking and make sure that we're sort of on the right path.
+
+00:00:39.439 --> 00:00:44.560
+So I suspect that all of us today will walk away from today's webinar with some deeper insights,
+
+00:00:44.560 --> 00:00:48.000
+some questions, and maybe some challenges to what we think the right answer is.
+
+00:00:48.000 --> 00:00:51.439
+And so it is my pleasure now to introduce Dilip Raghunathan.
+
+00:00:55.919 --> 00:01:05.199
+There you go. Thank you, Tariq. Appreciate the intro.
+
+00:01:08.000 --> 00:01:21.440
+All right. I'm going to start off with a video that we prepared just to kick this off.
+
+00:01:26.480 --> 00:01:34.000
+All right. For decades, analytical platforms have helped us understand what has happened,
+
+00:01:34.720 --> 00:01:42.559
+and most likely that process has ended up with a static report. And now languages, data, modern
+
+00:01:42.559 --> 00:01:48.800
+computing infrastructure can work together in a unified computing environment, scaling endlessly
+
+00:01:48.879 --> 00:01:57.279
+scaling endlessly to the needs of the scientists. Science drives curiosity. Scientists ask the right
+
+00:01:57.279 --> 00:02:04.320
+questions, and AI assists in writing code and making sure that it's relevant. And validated
+
+00:02:04.320 --> 00:02:10.720
+software and reproducible workflows help answer the initial question, but also iterate through
+
+00:02:10.720 --> 00:02:17.119
+interactive visualizations. So this is how enterprise data flows into analytical platforms
+
+00:02:17.119 --> 00:02:24.080
+augmented by AI through a controlled environment and producing observable code and traceable
+
+00:02:24.080 --> 00:02:29.839
+workflows, providing insights that drive decisions and decisions that drive the next,
+
+00:02:30.639 --> 00:02:37.199
+and that ultimately driving the science. The future isn't just better analytics.
+
+00:02:37.919 --> 00:02:44.320
+It is about connecting those dots, a continuous connection between scientific questions
+
+00:02:44.880 --> 00:02:50.559
+fueled by curiosity through software and applications, having data go to insights,
+
+00:02:50.559 --> 00:02:57.199
+go to evidence fueled by AI. And this is then the way that we have better medicines
+
+00:02:57.759 --> 00:03:04.720
+and fueled by the sum of all these parts. All right. This is the story that we're going to
+
+00:03:04.720 --> 00:03:09.119
+be telling you today, and we're going to be using this webinar as a platform to say that.
+
+00:03:09.520 --> 00:03:16.160
+My name is Dilip Raghunathan, and I'm joined here by my colleagues Sri Ramakrishnamurthy
+
+00:03:16.160 --> 00:03:20.320
+and Anand Ganesan. And we're going to walk you through the story of how it started,
+
+00:03:20.880 --> 00:03:26.559
+what our vision is, and what that vision boiled down into as of today. And we obviously have a
+
+00:03:26.559 --> 00:03:32.479
+journey into the future. And we're going to also showcase a big use case that essentially drew
+
+00:03:32.479 --> 00:03:39.199
+benefit out of this thing that we created. I'll pass the mic on to Sri Ramakrishnamurthy
+
+00:03:40.240 --> 00:03:48.240
+and hang out in the back. Thank you, Dilip, for the introduction. So my name is Sri
+
+00:03:48.240 --> 00:03:52.639
+Krishnamurthy. I'm a director of global development IT with the region ROM.
+
+00:03:53.839 --> 00:04:00.240
+So before we get started, maybe we go back a little bit in history to about three years back,
+
+00:04:00.960 --> 00:04:07.759
+where, yeah, I think we're just trying to get the slides in. So three years back, where our
+
+00:04:07.759 --> 00:04:17.600
+statistical computing environment was aging, right, and entering end of life. And the environment was
+
+00:04:17.600 --> 00:04:25.119
+fragmented as well. So we were on SAS Grid, which had served us pretty well through the years.
+
+00:04:25.839 --> 00:04:32.399
+But as new studies kept coming in, and then the data complexity grew, and then there was a need
+
+00:04:32.399 --> 00:04:39.920
+of flexibility from various users, the platform was not able to scale. So we were faced with
+
+00:04:39.920 --> 00:04:46.480
+five main issues towards us. The first one was, as I mentioned, the aging SAS infrastructure.
+
+00:04:47.119 --> 00:04:51.200
+The SAS Grid, which had served us so well through the years, was approaching end of life.
+
+00:04:51.760 --> 00:04:55.119
+And it was on-prem, and because of it, it was constrained on scale,
+
+00:04:55.839 --> 00:05:03.600
+in terms of scaling on volume and compute capacity. The other problem we had was that there was a
+
+00:05:04.720 --> 00:05:11.359
+great need for open source computing platform. There were people who wanted to use languages
+
+00:05:11.359 --> 00:05:16.399
+such as R, Python, but they were not able to use it because there was no centralized platform
+
+00:05:16.480 --> 00:05:21.600
+to enable that capability. And the other thing was that a lot of these
+
+00:05:22.959 --> 00:05:29.519
+capabilities did exist in pockets, in the sense that there would be RStudio available on laptops,
+
+00:05:29.519 --> 00:05:34.880
+which people would use, but there was no integrated platform through which open
+
+00:05:34.880 --> 00:05:40.640
+source computing could be done. The third issue, as I mentioned earlier, was that there was
+
+00:05:41.200 --> 00:05:48.160
+a fragmented landscape, in the sense that data was existing in various silos, and the data was
+
+00:05:48.160 --> 00:05:54.160
+spread across various storage systems. So people had to actually manually fetch the data from one
+
+00:05:54.160 --> 00:06:00.239
+store to another, and that resulted in duplication of data, as well as additional burden in bringing
+
+00:06:00.239 --> 00:06:07.839
+the data in. So that was a big issue as well. And all this led to challenges with the collaboration
+
+00:06:07.839 --> 00:06:13.279
+and interoperability. The issue was that people might code in SAS in one environment,
+
+00:06:13.279 --> 00:06:17.440
+but they would not be able to carry forward that code or collaborate with others in another
+
+00:06:17.440 --> 00:06:22.559
+environment. The same thing happened for people who are coding in R or Python. So there was no
+
+00:06:22.559 --> 00:06:27.440
+good way of collaborating, and that was really because of lack of shared storage, as well as a
+
+00:06:27.440 --> 00:06:33.440
+common governed environment. So all this led to the final issue, which was the biggest, which is
+
+00:06:33.440 --> 00:06:44.079
+essentially the lack of governance and standards. So the lack of governance led to a lack of
+
+00:06:45.119 --> 00:06:51.359
+rule-based access controls on the data. And this was very important in a validated environment,
+
+00:06:51.359 --> 00:06:56.559
+because blinding, unblinding controls are necessary in this particular environment.
+
+00:06:56.559 --> 00:07:02.880
+And this was extremely hard to manage because of the fragmented data landscape, as well as tools
+
+00:07:02.880 --> 00:07:10.079
+which were scattered all around the landscape. So we took a look at this problem, and then we
+
+00:07:10.079 --> 00:07:16.799
+felt that the easy solution is really to upgrade, in the sense that why don't we just go from one
+
+00:07:16.799 --> 00:07:22.000
+version of SAS Grid to the next, and we can address some of those issues. But we took a
+
+00:07:22.000 --> 00:07:26.959
+different approach, in the sense that we took this as an opportunity to sort of reboot and then look
+
+00:07:26.959 --> 00:07:33.359
+at what we had, and then think on how we can convert this system from an analytical system
+
+00:07:33.359 --> 00:07:37.760
+to a system which can result in better decisions. So next slide, please.
+
+00:07:39.920 --> 00:07:45.519
+So every journey needs to be backed by a bold vision. And our vision was to accelerate the
+
+00:07:45.519 --> 00:07:51.440
+journey from data to decision. So that's what we wanted to accelerate here. And this was founded on
+
+00:07:51.440 --> 00:07:57.600
+five main pillars. The first pillar was to establish a connected scalable infrastructure.
+
+00:07:57.600 --> 00:08:02.239
+So that means we have infrastructure which is based on cloud rather than on-prem which we had
+
+00:08:02.239 --> 00:08:08.079
+earlier. And then we make sure that this infrastructure is scalable, both for compute
+
+00:08:08.079 --> 00:08:13.920
+as well as storage. And we wanted AI layer to be integrated with it, not come in as an afterthought.
+
+00:08:15.040 --> 00:08:20.799
+The second pillar which we wanted to build was to have a unified tool and user experience.
+
+00:08:20.799 --> 00:08:26.880
+So what it means is we wanted people to use the tool of their choice seamlessly, whether it was
+
+00:08:26.880 --> 00:08:33.359
+R, Python, SAS, Scala, or any other language. And they use it in a single environment which is
+
+00:08:33.359 --> 00:08:38.239
+shared by everyone so that they can collaborate. The third one is important because this really
+
+00:08:38.239 --> 00:08:43.760
+leads us from infrastructure and tool usage to decision support. Because we wanted people to use
+
+00:08:44.400 --> 00:08:49.520
+tools autonomously, but we wanted the decision support to be united. So that means everyone
+
+00:08:49.520 --> 00:08:53.919
+is looking at the same data, the same governed content, and use the tools they choose.
+
+00:08:55.119 --> 00:08:59.599
+And the fourth pillar which we wanted to build was to have a single source of truth.
+
+00:08:59.599 --> 00:09:04.960
+So that means we wanted all the data, all the clinical data, to be united in one validated
+
+00:09:04.960 --> 00:09:10.159
+source so that people would be making decisions off that single source itself. And there would
+
+00:09:10.159 --> 00:09:16.159
+be no manual handoffs from one point to another. And finally, what we wanted to do is support all
+
+00:09:16.159 --> 00:09:21.280
+of these pillars by overarching governance. So that means we wanted to have a GXP-validated
+
+00:09:21.280 --> 00:09:28.640
+environment. And we wanted to make sure that there was rule-based access controls built in.
+
+00:09:28.640 --> 00:09:34.159
+And we also have robust audit trails throughout the system end-to-end. So that way,
+
+00:09:34.159 --> 00:09:41.039
+every decision is traceable. So that was our vision to build this system. Next slide, please.
+
+00:09:41.760 --> 00:09:48.559
+So we had this vision. So on what path does this vision put us in? What is the destination?
+
+00:09:48.559 --> 00:09:52.320
+How does it bring us to our end goal? So that's the question here.
+
+00:09:53.359 --> 00:09:59.280
+So the point here is we no longer wanted to stop at analysis, but we wanted to make sure
+
+00:09:59.280 --> 00:10:02.960
+that the platform or the system results in decision-making. So that is our end goal.
+
+00:10:03.599 --> 00:10:08.559
+And our goal was to use these foundational pillars to work towards that goal.
+
+00:10:08.719 --> 00:10:13.520
+So if you look at this diagram left to right, then, as I mentioned earlier, we wanted to make
+
+00:10:13.520 --> 00:10:20.880
+sure that the data is all centralized and sourced into one single location or a data store. And this
+
+00:10:20.880 --> 00:10:26.640
+data is governed, and it is validated. So we wanted to centralize the data. And using this
+
+00:10:26.640 --> 00:10:32.320
+centralized data, which is trustworthy, the analysts, scientists, as well as statisticians,
+
+00:10:32.320 --> 00:10:36.719
+they could write code on the language of their choice, whether it's R, Python,
+
+00:10:36.719 --> 00:10:42.000
+or SAS. And this would be AI-enabled. And what it means is that their focus would not be data
+
+00:10:42.000 --> 00:10:47.919
+wrangling or bringing in the data, but rather they would be answering the business problems.
+
+00:10:47.919 --> 00:10:52.239
+They would be looking at the business questions and what is the appropriate code to answer those
+
+00:10:52.239 --> 00:10:56.960
+business questions. That's what would be their focus. And that naturally would lead to insights
+
+00:10:56.960 --> 00:11:01.440
+in the sense that that would be an analysis performed, which would be around a decision
+
+00:11:01.919 --> 00:11:06.880
+performed, which would be around a decision question, like, say, a hypothesis. For example,
+
+00:11:06.880 --> 00:11:11.760
+is this biomarker effective or not? So that would be a question which would be sort of
+
+00:11:11.760 --> 00:11:16.479
+answered through this analysis. And there could be other questions as well. So that's what is
+
+00:11:16.479 --> 00:11:22.400
+the insight. So, so far, what we have looked at is the traditional analytical platform.
+
+00:11:22.400 --> 00:11:27.119
+And many of the systems really stop here, in the sense that they would write code,
+
+00:11:27.119 --> 00:11:32.239
+they would provide some insights, they would probably bring in some analytics as well.
+
+00:11:32.239 --> 00:11:37.840
+And what they would do is maybe create a nice report and then pass it on to their stakeholders.
+
+00:11:37.840 --> 00:11:44.239
+So that's where analytical foundation stops. But we do not want to end here. What we wanted to do
+
+00:11:44.239 --> 00:11:49.840
+is layer this with a decision support system. And what that means is building apps or applications
+
+00:11:49.840 --> 00:11:55.280
+on top of these insight layer, so that an intelligent evaluation can be done. So what
+
+00:11:55.280 --> 00:11:59.919
+this means is we look at all these evidences, we look at all these data points, we look at all
+
+00:11:59.919 --> 00:12:07.520
+these analytics, we look at all these decision points. And based on that, we do a evaluation.
+
+00:12:07.520 --> 00:12:13.919
+And based on that evaluation, we can provide recommendations which can result in the next
+
+00:12:13.919 --> 00:12:19.679
+action. So the analysts or the statisticians or scientists can look at all these data points,
+
+00:12:19.679 --> 00:12:24.239
+and then go from one point to another, and then look at various decisions and then feed into the
+
+00:12:24.239 --> 00:12:30.719
+next decision. So that's what this application does. So it transforms the analytics into decision
+
+00:12:30.719 --> 00:12:34.799
+points. But at this point of time, these are nothing more than recommendations, because
+
+00:12:34.799 --> 00:12:40.320
+what would happen next is the most important part, which is HITL, right? And traditionally,
+
+00:12:40.320 --> 00:12:45.440
+we interpret that as human in the loop. But the way I look at it is it's human in the lead,
+
+00:12:45.440 --> 00:12:50.479
+in the sense that we have scientists, statisticians looking at this recommendation,
+
+00:12:50.479 --> 00:12:58.000
+and based on that, making the decision and logging the call. So that's how we envisioned that
+
+00:12:58.640 --> 00:13:04.000
+we would lay the foundation of a decision support system, which is beyond mere analytics.
+
+00:13:04.960 --> 00:13:09.280
+If you look at the bottom of this diagram, you can see these dotted lines, which is providing
+
+00:13:09.280 --> 00:13:15.599
+feedback. So this is essentially the feedback loop, which takes the various decision logs.
+
+00:13:16.559 --> 00:13:21.760
+It takes usage analytics, the observability, as well as telemetry, which is collected from the
+
+00:13:21.760 --> 00:13:28.640
+various systems, and then feeds it back. So what it essentially does is it conveys information about
+
+00:13:28.640 --> 00:13:33.679
+what calls were made, who made it, when they made it, why they made it, all that information is
+
+00:13:33.679 --> 00:13:38.799
+passed back, along with information on whether AI contributed or not. So that is the information
+
+00:13:38.799 --> 00:13:44.799
+which feeds back and based on that, the decisions are refined. So each time a decision is made,
+
+00:13:45.280 --> 00:13:50.000
+it is better than the last one, because there is a feedback loop. Next slide, please.
+
+00:13:52.239 --> 00:13:57.760
+So now that we had our vision, and then we also knew our final destination, we come to the
+
+00:13:57.760 --> 00:14:03.280
+blueprint. So the blueprint is what we created three years back, but this is a dynamic living
+
+00:14:03.280 --> 00:14:09.599
+document, because essentially what we did is, as there were changes to our requirements, there were
+
+00:14:09.599 --> 00:14:16.000
+changes to directions, as well as new technologies and new ways of working came in. For example,
+
+00:14:16.960 --> 00:14:23.119
+AI and then agentic methods. So when all those things came in, we kept modifying this blueprint
+
+00:14:23.119 --> 00:14:28.960
+so that it could stay modern and relevant to the new technologies. So I'll go from left to right
+
+00:14:28.960 --> 00:14:35.280
+to explain what this conceptual architecture is. So on the left-hand side, you can see the various
+
+00:14:35.280 --> 00:14:40.320
+data sources. They come in various flavors. You have the EDC data, which in our case is
+
+00:14:40.320 --> 00:14:46.000
+metadata RAM. And then you also have non-EDC data, which is essentially data coming from labs,
+
+00:14:46.719 --> 00:14:53.840
+imaging sources, IoT devices, various external vendors, as well as real-world data. So these are
+
+00:14:53.840 --> 00:15:00.400
+data which are sort of real-world evidence, claims data, for example. So all these data are ingested
+
+00:15:00.400 --> 00:15:05.679
+into a data store where we have two partitions. One is the raw partition, where the data is
+
+00:15:06.479 --> 00:15:11.760
+unmodified. It is as received, and we also have a timestamped version. So that is what is the raw
+
+00:15:11.760 --> 00:15:17.440
+data. But then we also have a process which would convert that raw data into standardized clinical
+
+00:15:17.440 --> 00:15:23.039
+data model. And the purpose of this standard clinical model is to really have a common
+
+00:15:23.039 --> 00:15:30.080
+vocabulary so that downstream systems can use the data without the need to map it into a standardized
+
+00:15:30.080 --> 00:15:37.359
+structures. So this common clinical data model itself would lay the basis of standardization
+
+00:15:37.359 --> 00:15:42.880
+and would be the common source to various downstream systems. So now this is the data store.
+
+00:15:43.440 --> 00:15:47.760
+And now we come to the interesting part, which is essentially our unified analytical platform,
+
+00:15:47.760 --> 00:15:54.239
+which is the statistical computing environment which we have built. So this comprises of the
+
+00:15:54.239 --> 00:16:00.559
+compute layer. The compute layer has SAS Viya, which is our upgraded version of SAS. And then
+
+00:16:00.559 --> 00:16:06.559
+we also have Posit here, which supports open source programming. It supports our Python,
+
+00:16:06.559 --> 00:16:12.159
+Scala, and other languages as well. And we also have the third component, which is high-performance
+
+00:16:12.159 --> 00:16:17.679
+computing for parallel computing loads, as well as very complex workload, which needs a lot of
+
+00:16:17.679 --> 00:16:22.880
+computation power. So we have HPC clusters supporting it. And we also have Databricks,
+
+00:16:22.880 --> 00:16:32.320
+which takes care of ML workloads, as well as big data in the sense that if we have petabytes,
+
+00:16:32.320 --> 00:16:37.679
+terabytes of data coming from real-world sources, then Databricks is the place to go where it can
+
+00:16:38.320 --> 00:16:45.760
+crunch this data. So we have all these different platforms. But the magic here is they are all
+
+00:16:45.760 --> 00:16:50.719
+integrated. And then they all talk to one another. And that is really achieved through the common
+
+00:16:50.719 --> 00:16:56.799
+shared storage. So we have a common shared storage, which all these different platforms
+
+00:16:56.799 --> 00:17:04.640
+share and use. And by means of that, the developers or the analysts who are using
+
+00:17:04.640 --> 00:17:08.959
+each of these platforms are able to collaborate and talk to each other through the common shared
+
+00:17:08.959 --> 00:17:16.239
+storage. So we also have a governance layer, which takes care of access management, the role-based
+
+00:17:16.239 --> 00:17:21.760
+access controls, as well as audit trails and administration of the whole platform itself,
+
+00:17:21.760 --> 00:17:26.880
+which sits on top of it. And it is a common governance layer. And finally, we also have
+
+00:17:26.880 --> 00:17:32.400
+version control in the sense that we make sure that versioning is done for any code which goes
+
+00:17:32.400 --> 00:17:37.920
+into any of these platforms, whether it's SAS Viya, or it is POSIT, or it is HCP or Databricks.
+
+00:17:37.920 --> 00:17:43.839
+We make sure that there is version control sitting on top of it. And then we also have CICD enabled.
+
+00:17:44.560 --> 00:17:52.000
+So this is essentially the unified analytical platform. And we have also built AI and
+
+00:17:52.000 --> 00:17:57.760
+agentic layer. And this sits on top of previous slide, please. So that sits on top of the data
+
+00:17:57.760 --> 00:18:04.640
+layer, as well as the SE layer. And so this is a journey at this point of time, because what we
+
+00:18:04.640 --> 00:18:13.280
+have enabled so far in terms of AI is really the code generation using Positron within POSIT.
+
+00:18:13.839 --> 00:18:20.239
+Which works closely with Cloud and uses MCP so that it can connect to our governed data.
+
+00:18:20.880 --> 00:18:24.800
+So that's what it does. And in the future, probably we'll be using other features of AI as
+
+00:18:24.800 --> 00:18:32.640
+well. But that's what we have enabled at this point of time. And it is in a dotted format,
+
+00:18:32.640 --> 00:18:37.280
+which indicates that it is to grow. And probably it'll start employing agents at some point of
+
+00:18:37.280 --> 00:18:44.000
+time. So that is what we have in terms of blueprint. And what is being done here is
+
+00:18:44.000 --> 00:18:49.119
+because we have governed data in one place. We have all these different platforms working
+
+00:18:49.119 --> 00:18:55.119
+closely with one another. And we have version control in place. And we also have AI and agents
+
+00:18:55.119 --> 00:19:02.880
+working for us. All this aids and brings together rapid decision making, which is accurate. And then
+
+00:19:02.880 --> 00:19:10.400
+leverages and makes sure that there is a human being sitting on top of whatever AI tells us,
+
+00:19:10.400 --> 00:19:15.439
+in order to make the final decision and press the button. Next slide, please.
+
+00:19:23.359 --> 00:19:28.400
+OK, so now we move to strategy. So now we move to execution, because we have been talking about
+
+00:19:28.400 --> 00:19:35.359
+strategy so far. So once the strategy is clear, what needs to be done next is really the
+
+00:19:35.359 --> 00:19:42.560
+implementation. So that's where the rubber meets the road. And starting with a very strong strategy
+
+00:19:43.119 --> 00:19:48.959
+is a very strong execution plan is really important at this point of time, because that is
+
+00:19:48.959 --> 00:19:54.959
+what is going to drive the rest of the project. So in any kind of complex project like this one,
+
+00:19:54.959 --> 00:20:00.560
+what is really important is the stakeholder commitment. In our case, we had almost like 12
+
+00:20:00.560 --> 00:20:10.160
+to 13 groups we were working with across global development, as well as research. And the most
+
+00:20:10.160 --> 00:20:17.920
+important thing was to have a very strong business sponsor who would make sure that he or she would
+
+00:20:17.920 --> 00:20:23.760
+drive commitment and alignment through all these different groups and keep everyone motivated as
+
+00:20:23.760 --> 00:20:28.640
+well as engaged. So that is one thing we did. And then the other thing is we made sure that we had
+
+00:20:28.640 --> 00:20:35.920
+engagement and active leadership from each of the stakeholder teams. So we made sure that we created
+
+00:20:35.920 --> 00:20:40.239
+the structure, and we also created a communication structure so that they would know when they would
+
+00:20:40.239 --> 00:20:44.880
+get the information, and what is the point of escalation, and how they could reach out to us
+
+00:20:44.880 --> 00:20:51.839
+while we embarked on this journey. The second thing is rigorous planning. So within, I think,
+
+00:20:51.839 --> 00:20:59.680
+the first one month or so, we had a complete set of roadmap, which she passed on to several years,
+
+00:20:59.680 --> 00:21:04.400
+like the next four years. So we had a roadmap for that, and we had detailed project plans for each
+
+00:21:04.400 --> 00:21:13.920
+and every step. And we also had a plan for GXP as well as non-GXP. So this is very important,
+
+00:21:13.920 --> 00:21:19.040
+because we had an approach where we wanted to go non-GXP first for these platforms,
+
+00:21:19.040 --> 00:21:25.680
+SAS Viya as well as Posit. And then based on those lessons learned, we wanted to graduate to GXP.
+
+00:21:25.680 --> 00:21:30.479
+So we had all these plans in place. Of course, whatever was coming first, we had more detailed
+
+00:21:30.479 --> 00:21:36.959
+plans, and then we had a roadmap for the remaining parts. So the importance of rigorous
+
+00:21:36.959 --> 00:21:42.800
+planning cannot really be understated. The next one is important, like test small and then scale big.
+
+00:21:43.680 --> 00:21:48.719
+So this is important because a lot of the things we did was really new to the industry,
+
+00:21:48.959 --> 00:21:54.400
+not only for region, but was new for the industry as well, because we were implementing SAS Viya,
+
+00:21:54.400 --> 00:22:00.560
+if I'm not mistaken, for the first time in the life sciences industry. And probably even Posit
+
+00:22:00.560 --> 00:22:06.959
+GXP, the same can be said here. So there were many things which we had to do on a POC or a pilot level.
+
+00:22:07.599 --> 00:22:13.599
+And we had to really experiment with that, do some fail fast, so that if it was not feasible,
+
+00:22:13.599 --> 00:22:20.560
+we would give up on that and then go on to the next idea. One example I can give is FSX on tap,
+
+00:22:20.560 --> 00:22:27.680
+which we initially considered as a storage media. But then due to several reasons, we tested that
+
+00:22:27.680 --> 00:22:33.359
+and we felt that Isilon was really the appropriate storage for us. And then we quickly moved on to
+
+00:22:33.359 --> 00:22:37.920
+that. So of course, I'm not saying here that FSX on tap is not the right solution for everyone.
+
+00:22:37.920 --> 00:22:43.439
+But in our case, there were certain reasons why we had to abandon that and then move on to Isilon.
+
+00:22:44.000 --> 00:22:48.880
+But what I mean here is really that it makes sense to test more rather than use the big
+
+00:22:48.880 --> 00:22:52.880
+bang approach. And then if it works well and good, you expand it. Otherwise, we
+
+00:22:53.439 --> 00:23:00.000
+sort of move on in another direction. Change management support, that is extremely important,
+
+00:23:00.000 --> 00:23:05.760
+because you have so many stakeholders. It is a very expensive project. You have multiple people
+
+00:23:05.760 --> 00:23:11.520
+involved in this journey. So it is very important to create a change management plan on the first
+
+00:23:11.520 --> 00:23:16.319
+day itself. So you need to figure out different ways of communication. How do you communicate
+
+00:23:16.319 --> 00:23:20.239
+with the leadership? How do you communicate with the immediate team? How do you communicate with
+
+00:23:20.239 --> 00:23:26.719
+the various leads in various groups? How do you do that? And then how do you send out information?
+
+00:23:26.719 --> 00:23:31.599
+Like, do you send out information verbally? Do you have status meetings? Do you send out
+
+00:23:31.599 --> 00:23:38.000
+information in the form of newsletters? So these are all different kinds of change management
+
+00:23:38.000 --> 00:23:43.280
+consideration you need to do. And then you also need to make sure that proper training is provided
+
+00:23:43.280 --> 00:23:48.880
+to the stakeholders at the appropriate time. So that means you want to have all these
+
+00:23:49.520 --> 00:23:58.000
+stakeholders and everyone in your team engaged as well as educated and involved at each step
+
+00:23:58.000 --> 00:24:02.959
+of the journey. So I cannot understate the importance of change management in this kind
+
+00:24:02.959 --> 00:24:08.640
+of project. Finally, execute, execute, execute. There is nothing more to say here. Essentially,
+
+00:24:08.640 --> 00:24:15.040
+make sure that the team executes meticulously on each and every deliverable and then everything
+
+00:24:15.040 --> 00:24:22.160
+is tracked to the bottom most detail. The next one is adapt and refine, which is very important
+
+00:24:22.160 --> 00:24:28.000
+because nothing is going to go as per plan. There are going to be changes due to technology
+
+00:24:28.000 --> 00:24:34.400
+constraints as well as other challenges we face. There could be directions in terms of
+
+00:24:34.400 --> 00:24:41.280
+changes in requirements as well as new technologies or AI features we may want to
+
+00:24:41.839 --> 00:24:46.959
+consider. So that's why it is important for us to stay agile and then adapt and refine a strategy
+
+00:24:46.959 --> 00:24:53.680
+based on that. So that is why this is an overall feedback loop where each step sort of feeds into
+
+00:24:53.680 --> 00:25:01.599
+the next and this results in like a meticulous execution strategy as well as superior user
+
+00:25:01.599 --> 00:25:08.319
+experience. So with that, let me hand it over to Anand Ganesan who will be taking us through
+
+00:25:08.319 --> 00:25:17.439
+the journey of execution. Thank you very much. Thank you, Sree. So Sree talked about the libk1
+
+00:25:17.439 --> 00:25:21.920
+overview of what we intend to do and why this is a significant project for us and
+
+00:25:22.319 --> 00:25:26.959
+the journey essentially is what I'm talking about and Sree gave an overview about what the strategy
+
+00:25:26.959 --> 00:25:33.040
+is. So I primarily was in the portion where Sree talked about execute, execute, execute and change
+
+00:25:33.040 --> 00:25:38.160
+management essentially. The change management and execution along with stakeholder engagement are
+
+00:25:38.160 --> 00:25:43.680
+the key aspects why this project is a huge success. We started with the storage. Essentially,
+
+00:25:43.680 --> 00:25:49.599
+we started this back in September 2024 when I think that's the point when we had the initial
+
+00:25:50.479 --> 00:25:56.719
+storage discussion on what storage we should go with FSx versus Isilon on AWS, the one FS system
+
+00:25:57.439 --> 00:26:04.239
+and as Sree said, we basically owned in on a specific storage platform because that's basically
+
+00:26:04.239 --> 00:26:10.880
+the center of this universe. The ideal platform which we want to build is basically a single
+
+00:26:10.880 --> 00:26:15.839
+storage. I should not be having one set of files for my programmers on SAS Viya, another set of
+
+00:26:16.400 --> 00:26:23.920
+programmers accessing faucet in a different order. Historically, there were multiple S3 drives,
+
+00:26:23.920 --> 00:26:30.959
+multiple EFS drives, multiple EVS drives, data was all over. This created a major consideration
+
+00:26:30.959 --> 00:26:36.880
+effort and basically we had to plan for those in a way that we get everything with the common
+
+00:26:36.880 --> 00:26:44.239
+storage and build out the systems around that. So we had an Isilon on one FS and we did extensive
+
+00:26:44.239 --> 00:26:49.439
+testing with a triple SD configuration which essentially means that there should be no
+
+00:26:49.439 --> 00:26:54.959
+differentiation for end user or a programmer to access via Windows or Linux and we spent
+
+00:26:54.959 --> 00:26:59.199
+significant amount of time trying to establish that common storage which went all the way until
+
+00:26:59.199 --> 00:27:04.640
+February 2025. We did multiple POCs, a lot of tweaking. SAS Viya and faucet are different in
+
+00:27:04.640 --> 00:27:09.520
+the way they interact with the same system so we had to be very cognizant of the way the
+
+00:27:09.520 --> 00:27:15.599
+POSIX compliance works. The 777 POSIX compliance in SAS Viya versus the 777 in faucet are slightly
+
+00:27:15.599 --> 00:27:21.680
+different. We had to be aware of that and we went first with the faucet non-JXP. That's where
+
+00:27:21.680 --> 00:27:27.599
+we spent the initial effort. We went with a non-JXP platform built in June 2025. All the way
+
+00:27:27.599 --> 00:27:32.400
+in the background, we are building the SAS Viya non-JXP, tweaking the configurations on the same
+
+00:27:32.400 --> 00:27:39.280
+storage. So once we started getting faucet, we started getting feedback and then tweak the
+
+00:27:39.280 --> 00:27:45.439
+platform further and we started working on the SAS Viya platform. So all this time between September
+
+00:27:45.439 --> 00:27:52.319
+2024 and August 2025, we had extensive workshops with both the businesses. We had about five or
+
+00:27:52.319 --> 00:27:57.119
+six major business groups. We had individual interactions and the big change from a SAS
+
+00:27:57.119 --> 00:28:01.680
+perspective was historically these users were using Enterprise Guide and we are basically
+
+00:28:01.680 --> 00:28:07.359
+moving them to a cloud-based approach which means no desktop client, no physical folders on your
+
+00:28:07.359 --> 00:28:11.920
+laptop, everything is on the cloud on Isilon. So that required significant change management
+
+00:28:11.920 --> 00:28:18.880
+exercise and basically we did multiple POCs to get to the stage and we went with the faucet first
+
+00:28:18.880 --> 00:28:24.079
+on non-JXP and then the SAS Viya non-JXP live and we let the users to start building applications.
+
+00:28:25.040 --> 00:28:32.640
+In parallel, we had about 130 components on SAS Grid which we have to get to SAS Viya and then
+
+00:28:32.640 --> 00:28:36.959
+start the POSIX JXP also. That's basically the background plan which we are working on
+
+00:28:36.959 --> 00:28:41.680
+and we were continuously engaging with the business to talk about and strategize
+
+00:28:42.400 --> 00:28:48.560
+of how each compound gets moved to the new platform essentially depending on what the
+
+00:28:48.560 --> 00:28:52.719
+regulatory submissions are, what work they are doing from a submissions perspective and
+
+00:28:52.719 --> 00:28:57.439
+prioritizing and reprioritizing on the go and having a plan and basically delivering that.
+
+00:28:58.000 --> 00:29:04.319
+So phase three is about JXP platforms where we went SAS Viya live which is without the migration
+
+00:29:04.319 --> 00:29:11.920
+in December 2025 and we followed a risk-based validation strategy. So SAS Viya had both R as
+
+00:29:11.920 --> 00:29:18.319
+well as Python enabled and we were also building the POSIX platform which is the JXP platform
+
+00:29:18.319 --> 00:29:23.280
+which we started the work at that point.
+
+00:29:21.609 --> 00:29:27.609
+And then starting in March, we were basically doing the entire migration phase for SAS Viya,
+
+00:29:27.609 --> 00:29:30.609
+while still building the Posit platform in the background.
+
+00:29:30.609 --> 00:29:36.609
+So migration was a significant effort and we had about 150 terabytes of data,
+
+00:29:36.609 --> 00:29:42.609
+which moved from on-prem to SAS Viya on Isilon Cloud.
+
+00:29:42.609 --> 00:29:48.609
+And then we continued building the Posit GxP, which both of them have been completed
+
+00:29:48.609 --> 00:29:54.609
+and we are basically having a platform which is Posit GxP as well as migration of that data,
+
+00:29:54.609 --> 00:29:57.609
+which is moved from on-prem.
+
+00:29:57.609 --> 00:30:01.609
+Now currently, the team is working on their integration through Guarded Realms.
+
+00:30:01.609 --> 00:30:08.609
+We do have some projects which use that and there are some significant apps which use this strategy.
+
+00:30:08.609 --> 00:30:12.609
+I think Sushant Dilip will talk about it a little bit more on the upcoming slides.
+
+00:30:12.609 --> 00:30:16.609
+And both SAS and Posit are connected to the Validated Data Lake.
+
+00:30:16.609 --> 00:30:23.609
+And we have provided the ability for the end-user to choose the platform of choice.
+
+00:30:23.609 --> 00:30:28.609
+And this basically is supported by a security architecture and basically audit logs of who does what.
+
+00:30:28.609 --> 00:30:31.609
+And that basically concludes our unified SA platform.
+
+00:30:31.609 --> 00:30:37.609
+And we are spending the next couple of months to solidify the audit trail and basically integrate it with the
+
+00:30:37.609 --> 00:30:44.609
+Validated Data Lake, which we are basically making a change and enabling more and more AI features,
+
+00:30:44.609 --> 00:30:53.609
+either through MCPs, LRMs, and connecting to the centralized LRM architecture within Region 1.
+
+00:30:53.609 --> 00:30:57.609
+So some observability use cases which I want to display here.
+
+00:30:57.609 --> 00:31:05.609
+So once we had the non-JXP Posit, we had a huge surge in the applications
+
+00:31:05.609 --> 00:31:07.609
+and we had to do constant performance tuning.
+
+00:31:07.609 --> 00:31:12.609
+And we had built an app which supports observability to see how the usage patterns are,
+
+00:31:12.609 --> 00:31:14.609
+how many applications are being deployed every month.
+
+00:31:14.609 --> 00:31:16.609
+And basically, you constantly tune that.
+
+00:31:16.609 --> 00:31:23.609
+And we also included a high-performance compute, which is basically an AWS LRM instance to the Posit.
+
+00:31:23.609 --> 00:31:29.609
+And we have further enabled those AI capabilities with this app,
+
+00:31:29.609 --> 00:31:35.609
+which basically use the end-user and administrators can query how many new deployments happened over the last month,
+
+00:31:35.609 --> 00:31:41.609
+what are the cumulative deployments, those kind of interactive sessions.
+
+00:31:41.609 --> 00:31:47.609
+I'll just transition before I hand it over to Dilip about how each team uses SAS Viya and Posit.
+
+00:31:47.609 --> 00:31:52.609
+So as you can see, there are multiple use cases, both in the non-JXP as well as JXP world.
+
+00:31:52.609 --> 00:31:56.609
+So going back to the initial diagram, which we highlighted.
+
+00:31:56.609 --> 00:32:00.609
+So data flows in both from EDC and non-EDC data sources.
+
+00:32:00.609 --> 00:32:07.609
+And we use SAS Viya for the traditional TLF building, SDTM, Adam, and CSR.
+
+00:32:07.609 --> 00:32:13.609
+And data management also uses a combination of Python script, which basically monitors safety and adverse event alerting.
+
+00:32:13.609 --> 00:32:16.609
+And we have Python enabled via SAS.
+
+00:32:16.609 --> 00:32:21.609
+And there are significant medical monitoring reports, which are being developed by statistical programming,
+
+00:32:21.609 --> 00:32:27.609
+which basically use highly interactive R-Scene apps, which basically what-if scenarios can be seen,
+
+00:32:27.609 --> 00:32:34.609
+basically using the R-Scene apps and basically enabling early pattern detection and what-if analysis.
+
+00:32:35.609 --> 00:32:37.609
+Clinical data management reporting is the other aspect.
+
+00:32:37.609 --> 00:32:42.609
+We are moving away from traditional platforms like JReview, Looking Glass,
+
+00:32:42.609 --> 00:32:50.609
+and basically this would, in future, serve as the primary reporting platform, both SAS Viya as well as Posit, R-Scene.
+
+00:32:50.609 --> 00:32:54.609
+And real-world data sources, it's a different ballgame here.
+
+00:32:54.609 --> 00:32:59.609
+Essentially, here the need for speed is the most important part.
+
+00:32:59.609 --> 00:33:08.609
+And we have dealing with data sets, which are like 1.5 terabytes, 2 terabytes, 10 years worth of pharmacopediacology and health outcomes data.
+
+00:33:08.609 --> 00:33:11.609
+And Databricks has been plugged into the non-JXP.
+
+00:33:11.609 --> 00:33:18.609
+And basically, we are using Databricks extensively to do a lot of cohort building and R-Scene apps,
+
+00:33:18.609 --> 00:33:21.609
+which uses machine learning models as well here.
+
+00:33:21.609 --> 00:33:24.609
+And there is also instances where AI models are being used.
+
+00:33:24.609 --> 00:33:31.609
+And the last one, which Dilip will give a demo, is about the biomarker data, which is a cool app, which the team has built.
+
+00:33:31.609 --> 00:33:37.609
+And I will hand it over to Dilip to talk about that.
+
+00:33:37.609 --> 00:33:39.609
+Thank you, Anand.
+
+00:33:39.609 --> 00:33:45.609
+Anand is going to cue a video very shortly about this, but just a very quick sort of –
+
+00:33:45.609 --> 00:33:50.609
+I think we started out with like sort of the art of the possible, imagine this, imagine that, right?
+
+00:33:50.609 --> 00:33:57.609
+And we explained our journey of where we came from, how our vision sort of was born,
+
+00:33:57.609 --> 00:34:06.609
+and then how we drove that vision into execution and some of the considerations around that in terms of maybe some challenges and so on.
+
+00:34:06.609 --> 00:34:15.609
+This specific section now, I just want to highlight, how did this all come together for a specific use case?
+
+00:34:15.609 --> 00:34:28.609
+As Anand just presented the previous slide, we have every different business unit utilizing this decision platform in their own way,
+
+00:34:28.609 --> 00:34:32.609
+for their own use cases, for their own purposes.
+
+00:34:32.609 --> 00:34:40.609
+We were actually struggling with, do we go with the grid approach of just showing you all the things that we've been doing with this decision platform,
+
+00:34:40.609 --> 00:34:43.609
+or should we just go deep dive into one particular use case?
+
+00:34:43.609 --> 00:34:45.609
+And that's sort of where we landed at the latter.
+
+00:34:45.609 --> 00:34:47.609
+Let's just deep dive into one particular use case.
+
+00:34:47.609 --> 00:34:50.609
+This is specifically talking about biomarker analysis.
+
+00:34:50.609 --> 00:34:54.609
+This capability did not exist before.
+
+00:34:54.609 --> 00:35:01.609
+So, this is a bit more special for us because the amount of biomarker data that is out there,
+
+00:35:01.609 --> 00:35:08.609
+both from public sources as well as from the repository of information that is prevalent within our own organization,
+
+00:35:09.609 --> 00:35:16.609
+just the data wrangling part of it to bring everything into the same system.
+
+00:35:16.609 --> 00:35:18.609
+Take, for example, Databricks.
+
+00:35:18.609 --> 00:35:25.609
+Databricks as an entity existed before this came through and this connected approach came through.
+
+00:35:25.609 --> 00:35:36.609
+But scientists were essentially spending more than 80 to 90% of the time that they were dedicating for getting that one analysis in just the data wrangling part.
+
+00:35:37.609 --> 00:35:39.609
+Sri talked about that earlier.
+
+00:35:39.609 --> 00:35:48.609
+It's one of our tenets of our vision, which is the enterprise data should be seamlessly connected, seamlessly flowing through, well managed with governance,
+
+00:35:48.609 --> 00:35:58.609
+so that scientists with PhDs and all sorts of scientific curiosity can really focus their attention into that and not the data wrangling part.
+
+00:35:58.609 --> 00:36:00.609
+We're going to cue a video right now.
+
+00:36:00.609 --> 00:36:04.609
+And I'm not going to voice over this video.
+
+00:36:04.609 --> 00:36:10.609
+The video does have enough text on it that you can sort of see and understand how this thing came about.
+
+00:36:10.609 --> 00:36:16.609
+And then I will sort of pick up after that video is done and sort of conclude on all the things that we've been talking about.
+
+00:36:34.609 --> 00:36:58.609
+That is correct, Adam.
+
+00:36:58.609 --> 00:37:00.609
+There is no audio in this video.
+
+00:37:00.609 --> 00:37:02.609
+My apologies, I forgot to mention that.
+
+00:37:30.609 --> 00:37:56.609
+There is no audio in this video.
+
+00:37:57.609 --> 00:38:13.609
+All right.
+
+00:38:13.609 --> 00:38:16.609
+Thank you for staying tuned to that video.
+
+00:38:16.609 --> 00:38:23.609
+As I mentioned, there was not supposed to be an audio to that because there was enough text to read throughout the process.
+
+00:38:23.609 --> 00:38:29.609
+But as you saw there, and we could have done this through multiple slides and so on and so forth.
+
+00:38:29.609 --> 00:38:34.609
+But we chose to bring that to life with a great video.
+
+00:38:34.609 --> 00:38:37.609
+Shout out to Freddie who helped create that.
+
+00:38:37.609 --> 00:38:51.609
+And that's truly sort of what we believe, which is, as the video explained to you guys, the fact that the biomarker data itself was ubiquitously present everywhere in multiple systems.
+
+00:38:51.609 --> 00:38:59.609
+We brought everything together through a common data model, which in and of itself was a feat to accomplish.
+
+00:38:59.609 --> 00:39:05.609
+Because how do you represent various modalities of biomarkers within just a common model?
+
+00:39:05.609 --> 00:39:08.609
+So, yes, we did have a few iterations and finally we settled on something.
+
+00:39:08.609 --> 00:39:15.609
+And then we were able to have a common data model at least that is able to take care of the data that we have integrated so far.
+
+00:39:15.609 --> 00:39:20.609
+And we know that this is going to be a journey that continues on and expanding that model.
+
+00:39:20.609 --> 00:39:28.609
+But out came an ability for us to develop shiny applications on top of this common data model.
+
+00:39:28.609 --> 00:39:38.609
+Essentially, the applications were generated in a way where it answers some of those burning questions of biomarker expressions.
+
+00:39:39.609 --> 00:39:50.609
+How it differs in patient populations against, interestingly enough, the outcomes that those patient populations have had in our clinical trials.
+
+00:39:50.609 --> 00:39:57.609
+Did a group of patients benefit from the drug because they had a certain biomarker expression?
+
+00:39:57.609 --> 00:40:02.609
+Did a certain group of people did not benefit from the drug because they had other expressions?
+
+00:40:02.609 --> 00:40:14.609
+These were very interesting analysis and a sort of like an end way analysis that the scientists now were able to start understanding with volcano plots, heat maps, and so on and so forth.
+
+00:40:14.609 --> 00:40:17.609
+But the point is that they were always able to do that before.
+
+00:40:17.609 --> 00:40:23.609
+But like I said, 80% to 90% of their time goes away and just getting all these data together and starting that analysis.
+
+00:40:24.609 --> 00:40:35.609
+Versus now, they need to ask questions in their head, come to the platform, go to a specific, I don't know, study or a group of data that represents that particular question.
+
+00:40:35.609 --> 00:40:46.609
+And very quickly land on a pre-canned analysis, which is as soon as you filter and so on and so forth, the volcano plot, for example, is already in front of you.
+
+00:40:47.609 --> 00:40:52.609
+And then you interactively query that data and look at certain things.
+
+00:40:52.609 --> 00:40:55.609
+And if you want to dive deep into one aspect, you go ahead and do that.
+
+00:40:55.609 --> 00:41:06.609
+In a way, it helps scientists target to the actual question, thereby, you know, possibly very soon.
+
+00:41:06.609 --> 00:41:08.609
+And we're hoping to hear success stories from this.
+
+00:41:08.609 --> 00:41:11.609
+This has just come live just a few months ago.
+
+00:41:11.609 --> 00:41:23.609
+But we're hoping to hear some success stories such as discovering a new biomarker that holds the key to perhaps a diagnosis of a disease, perhaps predicting a treatment benefit for our future trials.
+
+00:41:23.609 --> 00:41:31.609
+And more coolly, if it can identify a target for curing or treating an illness in the future.
+
+00:41:31.609 --> 00:41:33.609
+These are great possibilities, right?
+
+00:41:33.609 --> 00:41:51.609
+Unlocked by the very fact that there is a decision platform that is now built that brings all the data and one decision or one inquisition is leading to another very rapidly, thereby the ability to sort of keep going and having that done.
+
+00:41:51.609 --> 00:41:58.609
+As you heard from our colleagues here, AI has essentially just come in to this ecosystem.
+
+00:41:58.609 --> 00:42:05.609
+This ecosystem was imagined prior to AI being out there, or at least being out there ubiquitously.
+
+00:42:05.609 --> 00:42:10.609
+We are still integrating AI in a meaningful way.
+
+00:42:10.609 --> 00:42:18.609
+Yes, we have AI coming in, recommending code, for example, in our analytical platforms and so on and so forth, right?
+
+00:42:18.609 --> 00:42:37.609
+What we want to do is really tidy up that interaction with the user itself because we truly believe that the user interaction with AI is of top importance as much as the accuracy and the sustainability of that AI itself.
+
+00:42:37.609 --> 00:42:45.609
+Because if it's highly accurate and highly sustainable, highly scalable, but the UI UX is just people can't just work in their way.
+
+00:42:45.609 --> 00:42:47.609
+It's all going to just go crashing down.
+
+00:42:47.609 --> 00:42:56.609
+And if they can work with it really greatly, it is so embedded, but then it's always hallucinating and it's always wrong or it costs a ton and that goes crashing down as well.
+
+00:42:56.609 --> 00:42:59.609
+So we wanted to make sure that these two things are hand in hand.
+
+00:42:59.609 --> 00:43:00.609
+That's sort of our vision.
+
+00:43:00.609 --> 00:43:03.609
+It's our North Star that we try to go towards.
+
+00:43:03.609 --> 00:43:04.609
+All right.
+
+00:43:04.609 --> 00:43:07.609
+I wanted to sort of wrap up with a big picture.
+
+00:43:07.609 --> 00:43:09.609
+I know we're maybe 15 minutes out.
+
+00:43:09.609 --> 00:43:12.609
+Do want to give a few for Q&A.
+
+00:43:13.609 --> 00:43:18.609
+The big picture here is that we started with the journey of an analytical platform three years ago.
+
+00:43:18.609 --> 00:43:28.609
+And we still have to do a little bit of brand rebranding internally here to name it as a decision platform because that's what's evolved into.
+
+00:43:28.609 --> 00:43:34.609
+And it was built because of fragmented data, legacy systems and silos and so on.
+
+00:43:34.609 --> 00:43:40.609
+And now we have best in breed solutions that are all coming together.
+
+00:43:40.609 --> 00:43:42.609
+So that's SAS Viya, POSIT, Databricks.
+
+00:43:42.609 --> 00:43:45.609
+And that list is going to keep growing, by the way.
+
+00:43:45.609 --> 00:43:52.609
+We're a strong believer in the fact that it should be a best in breed system or an environment.
+
+00:43:52.609 --> 00:43:55.609
+And we have a unified storage underneath all of that.
+
+00:43:55.609 --> 00:44:00.609
+So as a human being, you come in, you only have access to what you have access to, period.
+
+00:44:00.609 --> 00:44:04.609
+It doesn't matter what tool you want to use in order to process that data and to analyze.
+
+00:44:04.609 --> 00:44:10.609
+We've always sort of taken that philosophy to sort of at heart of all the things that we've done.
+
+00:44:10.609 --> 00:44:18.609
+And as I mentioned before, now that we're in the age of AI, we have made sure that this is not only infused with AI,
+
+00:44:18.609 --> 00:44:25.609
+but we're also going into very much of observabilities and telemetry around AI.
+
+00:44:25.609 --> 00:44:28.609
+There's always observability and telemetry that we baked in for other components.
+
+00:44:29.609 --> 00:44:35.609
+But now we're doing that specifically for the usage of AI and AI generated code.
+
+00:44:35.609 --> 00:44:40.609
+Code accepts, code rejects, and many of those kind of considerations.
+
+00:44:40.609 --> 00:44:44.609
+And from a strategic importance standpoint, I mean, we did this not to just be cool.
+
+00:44:44.609 --> 00:44:46.609
+It is very cool.
+
+00:44:46.609 --> 00:44:51.609
+We did this because we know that if we provide an environment like this, for example,
+
+00:44:51.609 --> 00:44:56.609
+translational scientists who do biomarker research, we're going to retain that talent.
+
+00:44:56.609 --> 00:44:57.609
+We're going to attract new talent.
+
+00:44:57.609 --> 00:45:02.609
+People are going to want to be here and regenerate on doing cool science to medicine stuff, right?
+
+00:45:02.609 --> 00:45:08.609
+We truly believe that user experience really trumps a lot of things.
+
+00:45:08.609 --> 00:45:12.609
+We want to bring therapies to the market faster.
+
+00:45:12.609 --> 00:45:19.609
+As you noticed, if each scientist is spending a very large amount of time in data wrangling and things like that,
+
+00:45:19.609 --> 00:45:23.609
+that's not contributing to the bottom line.
+
+00:45:23.609 --> 00:45:30.609
+We want to stay abreast in this world of AI and how AI can improve analytics.
+
+00:45:30.609 --> 00:45:37.609
+We want to do that in a way where it's scalable, not only from a speed and that perspective,
+
+00:45:37.609 --> 00:45:39.609
+but also from a cost perspective.
+
+00:45:39.609 --> 00:45:43.609
+And we are keeping governance in mind forefront.
+
+00:45:43.609 --> 00:45:45.609
+It was always important to us.
+
+00:45:45.609 --> 00:45:50.609
+It's mandated by regulatory agencies, and we will continue to hold that.
+
+00:45:50.609 --> 00:45:54.609
+And the final thing that I want to conclude with, by the numbers here,
+
+00:45:54.609 --> 00:46:03.609
+we have a whole lot of people on this system in its entirety, 400 plus users,
+
+00:46:03.609 --> 00:46:08.609
+whether that's developers or people who essentially consume reports of the Viya ecosystem.
+
+00:46:08.609 --> 00:46:14.609
+I believe that there is twice as much of that on the Posit system at this point.
+
+00:46:14.609 --> 00:46:17.609
+Once again, a mix of developers and consumers.
+
+00:46:18.609 --> 00:46:24.609
+We have just about, I heard that that number grew recently of how much data was migrated to the system.
+
+00:46:24.609 --> 00:46:27.609
+I think we probably have more than 100 terabytes at this point,
+
+00:46:27.609 --> 00:46:32.609
+more than 1,000 apps that was developed on Posit over the course of the last three years in our journey.
+
+00:46:32.609 --> 00:46:37.609
+And many publications, many files transferred during the migrations,
+
+00:46:37.609 --> 00:46:44.609
+and 100 molecules, essentially, worth of data that are in there.
+
+00:46:44.609 --> 00:46:47.609
+So that's the big picture.
+
+00:46:47.609 --> 00:46:56.609
+We went from having a first principles design on an analytical platform,
+
+00:46:56.609 --> 00:47:02.609
+evolved with the times, with AI, and with everything else that is going on,
+
+00:47:02.609 --> 00:47:07.609
+into what we truly see now is as a decision platform,
+
+00:47:07.609 --> 00:47:13.609
+interactivity, and the ability to iterate, and the ability to have an AI enablement.
+
+00:47:13.609 --> 00:47:19.609
+And like I said before, one decision itself made very fast,
+
+00:47:19.609 --> 00:47:23.609
+but then that decision leading to another, and then that cycle endlessly continuing.
+
+00:47:23.609 --> 00:47:28.609
+I think that is how we see our business users benefiting.
+
+00:47:28.609 --> 00:47:33.609
+And that is why we truly feel that the era of analytical platforms is dead.
+
+00:47:33.609 --> 00:47:38.609
+And we are open arms welcoming the era of decision platforms.
+
+00:47:44.609 --> 00:47:49.609
+Thank you very much, Dilip, Sriram, and Anand.
+
+00:47:49.609 --> 00:47:55.609
+Hi, everyone. I'm Samuel. I'm a solution advisor at Posit Life Sciences team.
+
+00:47:55.609 --> 00:47:59.609
+So we have a bunch of questions. We'll see if we can cover all of them,
+
+00:47:59.609 --> 00:48:03.609
+and I will help you guys go through. So I'll read this out.
+
+00:48:03.609 --> 00:48:10.609
+First question from Stefan, what specific metrics does your AI telemetry capture?
+
+00:48:10.609 --> 00:48:15.609
+For example, acceptance, edit, and rejection rates of AI suggestions,
+
+00:48:15.609 --> 00:48:22.609
+share of code AI generated per program, and validation findings for AI versus human written code?
+
+00:48:22.609 --> 00:48:28.609
+Yeah, great question. I think I started answering this in the chat.
+
+00:48:28.609 --> 00:48:37.609
+So just as a continuation of that, our philosophy of how we deploy AI to do a code generation
+
+00:48:37.609 --> 00:48:48.609
+is essentially AI as an orchestrator to utilize governed, validated modules of code that has always existed, right?
+
+00:48:48.609 --> 00:48:52.609
+An organization our size with many people doing analysis for many years,
+
+00:48:52.609 --> 00:48:58.609
+we already have a very robust library of code that is validated and rigorously tested, etc.
+
+00:48:58.609 --> 00:49:03.609
+Essentially, we are employing AI as an orchestrator of doing that,
+
+00:49:03.609 --> 00:49:08.609
+and also at the points where it's not able to sort of flag that out.
+
+00:49:08.609 --> 00:49:15.609
+At this point, all of that sort of interactivity is within just the developers, right?
+
+00:49:15.609 --> 00:49:19.609
+What we ultimately want to do is bring about this, and this is exactly,
+
+00:49:19.609 --> 00:49:25.609
+I was so pleased to see Posit Commons as a product or solution go exactly in this space,
+
+00:49:25.609 --> 00:49:30.609
+which is whether it is a developer or if it is a ultimate end business user,
+
+00:49:30.609 --> 00:49:34.609
+you ask a question, you want it to generate code or produce an output,
+
+00:49:34.609 --> 00:49:40.609
+how much of that underlying background work was done by AI using validated code, robust code,
+
+00:49:40.609 --> 00:49:44.609
+the things that you controlled, versus how much of it was generated by it on the fly,
+
+00:49:44.609 --> 00:49:48.609
+and how confident is it that it generated the right code, right?
+
+00:49:48.609 --> 00:49:55.609
+That's sort of a multi-layered sort of metric is certainly where we're going to.
+
+00:49:55.609 --> 00:50:01.609
+And in terms of telemetry, yes, we want to capture the number of times it,
+
+00:50:01.609 --> 00:50:03.609
+for example, like the false positive, false negatives,
+
+00:50:03.609 --> 00:50:06.609
+like number of times it claims that it's using a code from the code base,
+
+00:50:06.609 --> 00:50:11.609
+but it's not, the number of times it is using, for example,
+
+00:50:11.609 --> 00:50:17.609
+it's creating a new code base while something else existed in the repository.
+
+00:50:17.609 --> 00:50:22.609
+So we want to kind of see all these various combinations of how it performs.
+
+00:50:22.609 --> 00:50:27.609
+And with that level of telemetry, with the accepts and rejects from the actual developers
+
+00:50:27.609 --> 00:50:32.609
+or the business users, that is the next phase of how we're going about.
+
+00:50:32.609 --> 00:50:35.609
+So great question. That's exactly what we're thinking about.
+
+00:50:35.609 --> 00:50:38.609
+We haven't done it yet, but we know how important that is.
+
+00:50:38.609 --> 00:50:40.609
+And I think there is a follow-up to that.
+
+00:50:40.609 --> 00:50:43.609
+And I know many folks are asking this question.
+
+00:50:43.609 --> 00:50:46.609
+Is AI-assisted code being used for submission?
+
+00:50:46.609 --> 00:50:49.609
+And if not, what needs to be done to make it happen?
+
+00:50:49.609 --> 00:50:52.609
+I love this topic. I love this topic. I'll take this one.
+
+00:50:52.609 --> 00:50:55.609
+So here's our philosophy, right?
+
+00:50:55.609 --> 00:51:00.609
+And this is, if you look at what the FDA is saying, what the EMA is saying,
+
+00:51:00.609 --> 00:51:06.609
+like what the general guidance is around AI or usage of AI in submissions,
+
+00:51:06.609 --> 00:51:11.609
+or regulatory submissions, especially with analysis and outputs created using analysis,
+
+00:51:11.609 --> 00:51:18.609
+everybody would want you to define the use cases of how you're using the AI
+
+00:51:18.609 --> 00:51:19.609
+and what you're planning to achieve.
+
+00:51:19.609 --> 00:51:21.609
+They do want you to test that process.
+
+00:51:21.609 --> 00:51:27.609
+They do want you to go through all the rigorous process of how you do a computer system validation today.
+
+00:51:27.609 --> 00:51:34.609
+The idea behind, are you using a code generated by an AI in submissions?
+
+00:51:34.609 --> 00:51:44.609
+I mean, we have been having code assistance in a way, right, throughout, even before AI,
+
+00:51:44.609 --> 00:51:50.609
+whether that's modules, macros, whether that's just go on and find a bunch of code online,
+
+00:51:50.609 --> 00:51:54.609
+which does a particular thing and sort of take that and integrate it into your code base
+
+00:51:54.609 --> 00:51:56.609
+and sort of run it, test it, et cetera.
+
+00:51:56.609 --> 00:52:02.609
+It always went back to the developer as your accountability
+
+00:52:02.609 --> 00:52:05.609
+to make sure that you have architected that code well,
+
+00:52:05.609 --> 00:52:10.609
+that you've optimized it for accuracy and runtime and efficiencies and so on and so forth.
+
+00:52:10.609 --> 00:52:14.609
+I don't think any of that is different now that we're in the age of AI.
+
+00:52:14.609 --> 00:52:19.609
+Yes, a lot of those individual steps can be fine-tuned by AI.
+
+00:52:19.609 --> 00:52:23.609
+Maybe AI becomes more confident and the confidence core sort of drives you,
+
+00:52:23.609 --> 00:52:27.609
+looking at a lesser amount of things than previously.
+
+00:52:27.609 --> 00:52:34.609
+But I feel that that is really not much different than what it was before.
+
+00:52:34.609 --> 00:52:39.609
+So whether or not to use a piece of code generated by AI in a submission,
+
+00:52:39.609 --> 00:52:43.609
+well, that code, whether it was generated by a human or a computer,
+
+00:52:43.609 --> 00:52:48.609
+needs to have gone through certain specific stage gates.
+
+00:52:48.609 --> 00:52:56.609
+The stage gates are now, in an old world, SOPs, which did not have anything about AI.
+
+00:52:56.609 --> 00:53:03.609
+In the new world, we're anticipating that there are a few more stage gates to be added
+
+00:53:03.609 --> 00:53:07.609
+or a few more documentations to be produced through the existing stage gates
+
+00:53:07.609 --> 00:53:14.609
+to highlight the fact that certain things were reviewed and approved and so on and so forth.
+
+00:53:14.609 --> 00:53:19.609
+But we fully expect that AI-generated code will be used in submissions
+
+00:53:19.609 --> 00:53:25.609
+and it will follow the same rigor that we've always followed for the last 70 plus years.
+
+00:53:25.609 --> 00:53:32.609
+Yeah, I think as long as you can trace back who is responsible for generating the code, I think.
+
+00:53:32.609 --> 00:53:35.609
+And I always think it is like a self-driving car, right?
+
+00:53:35.609 --> 00:53:39.609
+Like who will take the responsibility when you're using a self-driving car?
+
+00:53:39.609 --> 00:53:42.609
+So next question from Devam.
+
+00:53:42.609 --> 00:53:51.609
+Are you separating GXP deliverables from non-GXP exploratory deliverables in this platform?
+
+00:53:51.609 --> 00:53:54.609
+Yeah, I can actually take that question.
+
+00:53:54.609 --> 00:53:56.609
+Let's see. I think we're good.
+
+00:53:56.609 --> 00:53:57.609
+So I'll take that question.
+
+00:53:57.609 --> 00:54:03.609
+So the question is whether we are separating the GXP deliverables from non-GXP deliverables.
+
+00:54:03.609 --> 00:54:04.609
+Again, a good question.
+
+00:54:04.609 --> 00:54:08.609
+And that's something we touched upon in our presentation as well.
+
+00:54:08.609 --> 00:54:11.609
+So we wanted to keep the migration journey separate.
+
+00:54:11.609 --> 00:54:16.609
+Like we wanted to do the non-GXP first, followed by GXP, right?
+
+00:54:16.609 --> 00:54:22.609
+And the rigor also differs because you need many more deliverables
+
+00:54:22.609 --> 00:54:27.609
+and then many more artifacts supporting your GXP compared to non-GXP.
+
+00:54:27.609 --> 00:54:33.609
+And also we wanted to make sure that when you do a non-GXP, the lessons learned can feed into GXP, right?
+
+00:54:33.609 --> 00:54:35.609
+So that that journey is much smoother.
+
+00:54:35.609 --> 00:54:37.609
+So that is the approach we took.
+
+00:54:37.609 --> 00:54:41.609
+And the short answer to the question, are we keeping the deliverables separate?
+
+00:54:41.609 --> 00:54:42.609
+The answer is yes.
+
+00:54:42.609 --> 00:54:49.609
+It has to be kept separate because, first of all, the environment itself is separate for both of them.
+
+00:54:49.609 --> 00:54:56.609
+And then the deliverables which need to be tracked and then audited and then reviewed are also different.
+
+00:54:56.609 --> 00:55:02.609
+So for that matter, I think we sort of keep the deliverables separate between these two environments.
+
+00:55:02.609 --> 00:55:06.609
+I don't know, Anand, if you have anything to add here.
+
+00:55:06.609 --> 00:55:14.609
+I think I kind of 100% agree with you, Sri, on that.
+
+00:55:14.609 --> 00:55:22.609
+And I think the way we handle the implementation, it's pretty much – Sri has summarized it pretty much.
+
+00:55:22.609 --> 00:55:25.609
+I think that's basically what the approach is.
+
+00:55:25.609 --> 00:55:28.609
+Any additional thoughts on that?
+
+00:55:28.609 --> 00:55:31.609
+I think we have a lot of questions.
+
+00:55:31.609 --> 00:55:32.609
+We have three minutes.
+
+00:55:32.609 --> 00:55:34.609
+I'm trying to catch up as much as possible.
+
+00:55:34.609 --> 00:55:35.609
+Yeah.
+
+00:55:35.609 --> 00:55:45.609
+So I think the next question that I will select, did the migration process help you identify GXP gaps and close them?
+
+00:55:45.609 --> 00:55:46.609
+I can talk about it.
+
+00:55:46.609 --> 00:55:49.609
+I was just responding to that question, actually.
+
+00:55:50.609 --> 00:55:54.609
+So we have done – basically, it's a major shift.
+
+00:55:54.609 --> 00:55:58.609
+We have historically been using SAS Grid.
+
+00:55:58.609 --> 00:56:05.609
+And we are basically migrating out, and there are multiple questions from a data perspective as well as platform perspective.
+
+00:56:05.609 --> 00:56:11.609
+So I think the key strategy is to separate the platform from the migration effort.
+
+00:56:11.609 --> 00:56:13.609
+So we did the platform first, qualified it.
+
+00:56:13.609 --> 00:56:21.609
+So as you can remember, the timeline, we started this in September 2024, and the platform was live in December 2025, SAS Viya.
+
+00:56:21.609 --> 00:56:27.609
+And we were basically talking about the specific inventory of what has to be migrated.
+
+00:56:27.609 --> 00:56:30.609
+We are not talking about some 10 gigs, 10, 20 gigs.
+
+00:56:30.609 --> 00:56:32.609
+We are talking about 150 terabytes.
+
+00:56:32.609 --> 00:56:39.609
+And the key aspect is we don't want any regulatory issues because that's being actively used for submissions and responses.
+
+00:56:39.609 --> 00:56:42.609
+So that's basically through our entire migration strategy.
+
+00:56:42.609 --> 00:56:47.609
+We had multiple try-runs to essentially ensure that we got what we needed, and there were some nuances.
+
+00:56:47.609 --> 00:56:48.609
+It was not easy.
+
+00:56:48.609 --> 00:56:53.609
+So the old platform was LATIN1, and the new platform, SAS Viya, by default was UTF-8.
+
+00:56:53.609 --> 00:57:00.609
+So we have to basically have a compatibility mode to ensure that both the UTF-8 as well as LATIN1 have to be enabled.
+
+00:57:00.609 --> 00:57:03.609
+So it has to be tested, but you have to give sufficient time.
+
+00:57:03.609 --> 00:57:05.609
+You should not rush through the migration, especially.
+
+00:57:05.609 --> 00:57:07.609
+Thanks.
+
+00:57:07.609 --> 00:57:08.609
+Thank you.
+
+00:57:08.609 --> 00:57:09.609
+We'll just take one more question.
+
+00:57:09.609 --> 00:57:14.609
+Because of time, we'll try to get back to other questions later.
+
+00:57:14.609 --> 00:57:18.609
+And this will be posted in YouTube as well, the webinar.
+
+00:57:18.609 --> 00:57:21.609
+So the question that I choose, it's from Anand.
+
+00:57:21.609 --> 00:57:36.609
+Can POSIT become the enterprise statistical computing platform across clinical development, biostats, regulatory submission, and real-world evidence, rather than simply an alternative RStudio development environment?
+
+00:57:36.609 --> 00:57:44.609
+I will let you guys comment on that.
+
+00:57:44.609 --> 00:57:45.609
+I'm so sorry, Sam.
+
+00:57:45.609 --> 00:57:48.609
+Can you summarize that question just real quick?
+
+00:57:48.609 --> 00:57:49.609
+Yes.
+
+00:57:49.609 --> 00:57:50.609
+I would like to take that.
+
+00:57:50.609 --> 00:57:58.609
+So can POSIT become the enterprise SC across clinical development, biostat submissions, and RWE?
+
+00:57:58.609 --> 00:58:00.609
+Just to summarize this question.
+
+00:58:00.609 --> 00:58:01.609
+Yeah.
+
+00:58:01.609 --> 00:58:04.609
+Okay.
+
+00:58:04.609 --> 00:58:18.609
+So I think that any one platform has the ability to become the platform to go around and fulfill all of these different use cases.
+
+00:58:18.609 --> 00:58:22.609
+And POSIT has many great features.
+
+00:58:22.609 --> 00:58:27.609
+It has AI embedded in ways that some of the competition is not at this moment.
+
+00:58:28.609 --> 00:58:37.609
+And it's coming up with various ways of observability and also utilizing trusted codes and so on and so forth, like the commons, for example.
+
+00:58:37.609 --> 00:58:43.609
+I feel that the question is ultimately going to sort of go back to…
+
+00:58:44.162 --> 00:59:00.162
+I feel that the question is ultimately going to sort of go back to the developers, their talent base, how they're used to doing things, and the way that they can sort of migrate and move towards a new sort of an environment.
+
+00:59:00.162 --> 00:59:29.162
+And given that we are at the pace at which software is developing, the pace at which new analytical platforms and systems and so on is coming about, I feel strongly, and this is personal views, I feel strongly that the real answer here is to go for a best-in-breed hybrid environment with principles and values as a focus and tools and platforms as the means by which you accomplish those principles.
+
+00:59:29.162 --> 00:59:51.162
+Because tools might come and go, but values and principles should stay. And if we follow that approach, I think what we're seeing is today we have the best-in-breed with us, right? We have SAS, we have Posit, we have Databricks, and each one of them can individually become its own only platform for a client or a sponsor or a CRO and so on and so forth.
+
+00:59:51.162 --> 01:00:08.162
+But what we're finding is that bringing these things together, having them play in an environment with common shared values and principles, we're getting something that is more than just the sum of its parts. And that's been greatly beneficial to our users.
+
+01:00:08.162 --> 01:00:19.162
+That's a great answer. So with that, we'll end our webinar today. Thanks everyone for joining, and we look forward to seeing you on our next webinar.
+
+01:00:19.162 --> 01:00:22.162
+Thank you so much. Thanks for having us.

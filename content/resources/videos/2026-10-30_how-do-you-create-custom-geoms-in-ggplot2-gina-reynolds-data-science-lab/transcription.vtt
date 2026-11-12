@@ -1,0 +1,1342 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:15.440
+Today we are joined by our featured lab manager, Gina Reynolds, and I will also say our extra
+
+00:00:15.440 --> 00:00:21.520
+featured lab manager, Hassan Kibirige, and he will be joining us for the second half,
+
+00:00:21.520 --> 00:00:24.000
+I think. Gina, would you like to say hello?
+
+00:00:24.400 --> 00:00:31.280
+Yeah, thanks for having me, Libby and Isabella. Yep, really happy to be here. So,
+
+00:00:32.959 --> 00:00:39.599
+I and others are joining kind of by way of a different community initiative, which is the
+
+00:00:39.599 --> 00:00:48.080
+ggplot2 extenders. So, some of our regular joiners are on the call. We did kind of like a rehearsal
+
+00:00:48.799 --> 00:00:57.439
+yesterday and a number of our folks got to that. So, we have them on call too. So, you can
+
+00:00:57.439 --> 00:01:01.759
+meet some of the ggplot2 extenders as well as tackle some extension.
+
+00:01:02.639 --> 00:01:07.760
+Yeah, okay. So, here's what we're going to be doing today. We all know and love ggplot2. If
+
+00:01:07.760 --> 00:01:16.320
+you don't know and love ggplot2, welcome to the fan club. It is a package for R, for plotting in R
+
+00:01:16.320 --> 00:01:25.040
+that makes plotting accessible and magical and extremely accessible and sort of plain language,
+
+00:01:25.040 --> 00:01:31.519
+right? It lets you create plots the way that you want to speak them into existence by layering
+
+00:01:31.519 --> 00:01:37.040
+things on top of each other, layering elements on top of each other. That said, ggplot2 is a
+
+00:01:37.040 --> 00:01:44.160
+base package that can be extended. You can add functionalities to it with custom functions. You
+
+00:01:44.160 --> 00:01:49.919
+can put those custom functions in packages. And that is often what happens. And we are blessed in
+
+00:01:49.919 --> 00:01:56.080
+this R ecosystem to have so many packages that extend the functionality of ggplot2. If you've
+
+00:01:56.080 --> 00:02:03.760
+ever used something like ggforce or ggfx, like adding things, special things to your ggplot,
+
+00:02:03.760 --> 00:02:10.000
+you are using an extension package. So, that's what I wanted to start with today. What is a ggplot2
+
+00:02:10.000 --> 00:02:19.039
+extension package? And we are going to have Isabella walking through live coding an extension
+
+00:02:19.039 --> 00:02:25.199
+to ggplot2. Gina is going to help her drive. So, we're doing a bit of mass pair coding here, if you
+
+00:02:25.199 --> 00:02:32.559
+will, in R. And then also, if you are a Python user and you know about plot9, you'll know that
+
+00:02:32.559 --> 00:02:38.880
+that brings the grammar of graphics, which is ggplots, underpinnings, to Python plotting. And
+
+00:02:38.880 --> 00:02:45.360
+we have Hasan here, who is the author of that package, who can also walk through the Python side
+
+00:02:45.360 --> 00:02:51.360
+of extending functionality for plot9. I'm really excited about all of this. This means that I will
+
+00:02:51.360 --> 00:02:57.839
+be taking a back seat today. I will be in the Discord with all of you while Isabella takes over
+
+00:02:57.839 --> 00:03:02.639
+with screen sharing. So, this is what I will do. I will say, Isabella, would you like to go ahead
+
+00:03:02.639 --> 00:03:10.080
+and share your screen? And we can start chatting a little bit about the links that we're going to
+
+00:03:10.080 --> 00:03:16.160
+see today to some resources from Gina. That's what we're using. Some recipes to create extensions.
+
+00:03:16.880 --> 00:03:21.520
+And it would also be great if we could all talk about our favorite extensions. Like,
+
+00:03:21.520 --> 00:03:25.839
+mine is geomtextpath. That's my favorite one. I'll add that in the Discord right now.
+
+00:03:25.839 --> 00:03:30.399
+If you have a favorite, please share it. And I'm hoping Isabella will share hers on her screen as
+
+00:03:30.399 --> 00:03:38.080
+well. All right. Take it away, Isabella. Maybe this is a good moment to make sure my sharing
+
+00:03:38.080 --> 00:03:47.919
+works. Is this okay? But just to briefly chat about my favorite ggplot2 extension package. It's
+
+00:03:47.919 --> 00:03:56.080
+called ggrigis. And it does this really cool way of rather than a bunch of line plots that might be
+
+00:03:56.080 --> 00:04:02.880
+a bit difficult to interpret, it creates these kind of ridge-like sort of plots that then you
+
+00:04:02.880 --> 00:04:09.759
+can kind of overlap. You may have seen this to do things like visualize temperature or over time.
+
+00:04:10.559 --> 00:04:15.759
+I think this is a really fun package. Gina, how about you? What's your favorite?
+
+00:04:16.559 --> 00:04:24.000
+Yes. Well, I like ggbump a lot. I think that sits in my consciousness as like, oh, there is
+
+00:04:24.799 --> 00:04:35.679
+someone that is not like a full-time like posit employee that created a ggplot2 extension package
+
+00:04:35.679 --> 00:04:42.720
+that felt like really powerful. So, that was kind of an inspiration for me. Yeah.
+
+00:04:44.480 --> 00:04:51.040
+Here's ggbump. It's so cool. Oh, this would be a really interesting one if we could do it with
+
+00:04:51.440 --> 00:04:57.200
+the soccer tournament that just finished. Yes. World Cup stuff. ggbump is so special. I don't
+
+00:04:57.200 --> 00:05:03.200
+know if anybody knows making bump charts is actually really difficult in other plotting
+
+00:05:03.200 --> 00:05:12.959
+modalities. ggbump does something amazing. Awesome. So, all of these packages that kind
+
+00:05:12.959 --> 00:05:19.200
+of exist, if you imagine somebody had to think of the idea, come up with the inspiration,
+
+00:05:19.200 --> 00:05:24.720
+and then actually do them. And Gina, do you mind if I turn it over to you to kind of talk about the
+
+00:05:24.720 --> 00:05:33.679
+philosophy of like how these even work and how to create them? Yeah, sure. So, I think there's kind
+
+00:05:33.679 --> 00:05:44.000
+of like two major classes of ggplot2 extensions. And so, some are like really practical and they
+
+00:05:44.000 --> 00:05:48.799
+just like want to do a specific job and they're like, well, we know how to use ggplot2. We're
+
+00:05:48.799 --> 00:05:56.399
+going to write a wrapper function that is going to get this task done for us. But other people
+
+00:05:56.399 --> 00:06:02.959
+are like more motivated by I guess the grammar itself and want to create functions that break
+
+00:06:02.959 --> 00:06:10.320
+out the different components. So, they really follow the pattern of creating functions that
+
+00:06:10.959 --> 00:06:18.000
+similar to those that we see in base ggplot2. So, like scale functions that we can apply
+
+00:06:18.000 --> 00:06:31.920
+independently. Scales, coordinates, geoms, scale, sorry, stats. So, all those independently
+
+00:06:31.920 --> 00:06:38.079
+declared components. And that's more where my interest is. I'm like inspired by what Libby was
+
+00:06:38.079 --> 00:06:51.519
+saying, you know, that incremental plot build. So, I guess that's the gist of the meeting. And
+
+00:06:52.160 --> 00:07:01.200
+what we're going to focus on today is layer extension. So, and layer in the sense like
+
+00:07:01.200 --> 00:07:06.799
+the kind of original sense that layer was used. So, like in the seminal paper about the grammar
+
+00:07:06.799 --> 00:07:12.559
+of graphics, it's called the layer grammar of graphics. And that's to distinguish between
+
+00:07:15.440 --> 00:07:21.839
+Leland Wilkinson's grammar of graphics. So, layers in this kind of original sense
+
+00:07:23.040 --> 00:07:32.559
+talked about geoms and stats. These marks that would be applied onto the plot. So, I think the
+
+00:07:32.559 --> 00:07:37.679
+meaning has kind of changed now, right? So, we have all of the different components. We're like,
+
+00:07:37.679 --> 00:07:43.519
+oh, those are all layers. That's what Wilkinson meant. But like when Hadley wrote about it at
+
+00:07:43.519 --> 00:07:51.440
+first, it was like it was layer extension. You would think of stat extension or geom extension.
+
+00:07:51.440 --> 00:07:58.640
+So, we have like we think of scales as a separate type of extension. And I think like, you know,
+
+00:07:59.440 --> 00:08:07.760
+and this is a really powerful extension point. Like I'm thinking of kind of Cedric
+
+00:08:07.760 --> 00:08:13.440
+Scherer's work. He talks about his favorite extensions. A lot of them are layer extensions.
+
+00:08:13.440 --> 00:08:19.600
+So, and I think that's true of a lot of people. Like the layer extensions grab people's attention.
+
+00:08:20.720 --> 00:08:28.079
+They tend to give people a lot of power in plotting. And yeah. Did you want to jump in,
+
+00:08:28.079 --> 00:08:34.799
+Isabella? Oh, that's what I'm saying. Shall we show like what does it start to look like
+
+00:08:35.679 --> 00:08:41.440
+when we actually start to as we're building plots, like how we can actually start to build
+
+00:08:41.440 --> 00:08:47.359
+out this kind of layer extension? Yeah. I'll share my screen and I'll stop unsharing it. Sorry. It's
+
+00:08:47.359 --> 00:08:55.599
+a habit of mine. Yeah. Perfect. Yeah. So, I guess like a little bit of background,
+
+00:08:56.559 --> 00:09:03.039
+we can look at the internals of some familiar functions, probably to everybody that uses
+
+00:09:03.039 --> 00:09:13.599
+ggplot2. So, we're gonna actually like kind of borrow some of what's going on with geom point.
+
+00:09:14.320 --> 00:09:21.200
+So, let's look at the internals of geom point. So, if you just type, Isabella. Isabella's gonna
+
+00:09:21.200 --> 00:09:29.200
+do my typing. Yeah. Geom point. And then we'll erase the parentheses to look at the definition.
+
+00:09:30.000 --> 00:09:34.880
+Yeah. This is a very cool way of just taking a quick look within a function and what it
+
+00:09:34.880 --> 00:09:40.880
+all entails. Yeah. And so, there's like actually a lot of infrastructure here. A lot of
+
+00:09:41.599 --> 00:09:50.159
+scaffolding. But like a main thing to notice is that this function wraps another function
+
+00:09:50.159 --> 00:09:59.679
+layer, which is the very general function for the like classic layer functions. And every
+
+00:09:59.679 --> 00:10:06.880
+layer function is gonna have three main characters is how I think of it. Okay. So, a stat.
+
+00:10:09.200 --> 00:10:14.960
+Here? Yep. And then a geom and a position.
+
+00:10:14.960 --> 00:10:24.799
+Oh, right here. Yeah. And the geom that Isabella highlighted, that's hard coded.
+
+00:10:26.159 --> 00:10:32.960
+So, that's written out. Geom is gonna be point. And then the user could actually go in and change
+
+00:10:32.960 --> 00:10:39.280
+if they want to. Oftentimes, you just use the user facing function as is. They can change
+
+00:10:39.599 --> 00:10:50.640
+the stat. The default here is identity. And then the position is also identity.
+
+00:10:52.000 --> 00:10:58.559
+So, just to confirm, this cannot be changed. It's built into how geom point is defined.
+
+00:10:59.359 --> 00:11:08.000
+But things can be. Right. So, those are what the user can modify. So, there's a default,
+
+00:11:08.000 --> 00:11:18.479
+but that can be modified. Point is kind of hard coded. So, there's like three main
+
+00:11:19.840 --> 00:11:27.919
+definers of every layer. So, stat is pretty much in this case with identity, it's not making any
+
+00:11:27.919 --> 00:11:34.400
+major modifications. Position also no modifications. And geom point we can think of
+
+00:11:34.960 --> 00:11:43.039
+as kind of the mark or the rendered ink on the page. So, the data's gonna flow through the
+
+00:11:44.239 --> 00:11:50.719
+layer. We will go through stat and then geom and then position, which might do a little bit
+
+00:11:50.719 --> 00:12:01.200
+of offsetting. Hassan said the position makes the rendered layer dance. It's often a handle
+
+00:12:01.359 --> 00:12:07.359
+over plotting or something like that. But let's have a quick look at geom jitter to see a little
+
+00:12:07.359 --> 00:12:14.080
+bit of variation. Probably, I mean, I suspect that everybody's also familiar with geom jitter.
+
+00:12:15.599 --> 00:12:19.679
+Yeah. So, there's a little bit more here with the definition, but we can see
+
+00:12:20.880 --> 00:12:29.200
+where layer shows up again. And it, again, is has geom point hard coded. And then stat,
+
+00:12:29.200 --> 00:12:39.200
+the stat, again, is flexible. So, it's identity. And position is like kind of, yeah. And position
+
+00:12:39.840 --> 00:12:50.719
+is the jitteriness of, you know, the user of geom jitter is actually defined by this position. So,
+
+00:12:50.719 --> 00:12:57.280
+the last phase of what's going on as the data passes through this layer.
+
+00:12:58.799 --> 00:13:03.679
+Let's look at one more, Isabella. Geom histogram. Let's look at the three
+
+00:13:06.239 --> 00:13:14.719
+main characters there. So, this is, yeah. Also, like a little involved. But the geom, you can,
+
+00:13:14.719 --> 00:13:26.799
+and so, the stat is bin. And the geom is bar. So, there's kind of like a major statistical
+
+00:13:26.799 --> 00:13:34.479
+transformation, actually, going on here, which is recording the account within a bin. And then
+
+00:13:34.479 --> 00:13:41.599
+the geom is bar. We see this geom also used in like geom bars. So, a geom that we know and is
+
+00:13:41.599 --> 00:13:49.679
+used elsewhere. It's the shape that is rendered on our plot. And then position stack, which is
+
+00:13:49.679 --> 00:13:57.919
+to help with the overplotting problem that we would have if we had like a group-wise histogram.
+
+00:13:57.919 --> 00:14:02.479
+So, we don't want those piled up on each other. Instead, we're going to have them stacked.
+
+00:14:03.200 --> 00:14:07.039
+Yeah. I feel like every time I use geom histogram, it tells me, don't you want to
+
+00:14:07.039 --> 00:14:12.000
+change the size of your bin? You have that option, right? But it's great to have a default,
+
+00:14:12.000 --> 00:14:17.679
+too, right? At least, like, it's nice to have a default built in. Do you change your bin size?
+
+00:14:18.640 --> 00:14:23.679
+Yeah. If they go too skinny, I'll change it. Yes. I'm like, actually, I'm fine with a default.
+
+00:14:23.679 --> 00:14:32.479
+Thank you. But yes, I think that's the warning is like the right thing to do. Yeah. So, today,
+
+00:14:32.479 --> 00:14:39.679
+what we're going to tackle is building our own stat. And so, this is the first, like,
+
+00:14:41.280 --> 00:14:49.599
+step in how the data flows through the layer. And so, this is actually probably the easiest way to
+
+00:14:49.599 --> 00:15:00.479
+do a geom or a layer extension. We're going to create a function that's user-facing called geom
+
+00:15:00.479 --> 00:15:10.960
+means, which is just going to take the means of X and Y and put a point at that means. So, that's
+
+00:15:10.960 --> 00:15:21.039
+kind of our target. So, we'll do it. We'll plot, like, the penguin's data set and do a full on
+
+00:15:21.039 --> 00:15:27.679
+scatter plot, but then also be able to, with a single function, ask for the means to be plotted
+
+00:15:27.679 --> 00:15:35.760
+in the middle of that scatter plot, which, you know, it feels convenient to me. It's something
+
+00:15:35.760 --> 00:15:42.799
+that, like, I often want to do is, like, central tendency. And I think it's, you know, it's a good,
+
+00:15:42.799 --> 00:15:49.679
+like, this is a good starting point for us, kind of something that everybody understands
+
+00:15:50.400 --> 00:15:59.760
+plotting means. And then we'll combine that with, yeah, we'll use a geom point and a position
+
+00:15:59.760 --> 00:16:06.000
+identity to construct this whole thing. Just for a little bit of context here,
+
+00:16:06.000 --> 00:16:11.760
+I'm going to hop in and say, Isabella, if you could switch to the page that actually is on
+
+00:16:11.760 --> 00:16:17.200
+the GitHub page that has the recipe for this for the means, just to show some context of what we're
+
+00:16:17.200 --> 00:16:21.280
+following behind the scenes would be great. I put that in Discord, and I also put an image of what
+
+00:16:21.280 --> 00:16:26.239
+we're going for here, which is that scatter plot with all of the black points, yep, and the red in
+
+00:16:26.239 --> 00:16:33.599
+the middle. That's what we're aiming for. Yeah. So, rather than having to calculate this, you know,
+
+00:16:33.599 --> 00:16:41.119
+calculate the build, depth, millimeter, mean, and length, mean, and then plotting it, you know,
+
+00:16:41.119 --> 00:16:46.960
+can we build something that is just called geom means and let's just write that out,
+
+00:16:47.679 --> 00:16:52.960
+and then it automatically creates that dot? Yes. So, if you want to follow along,
+
+00:16:52.960 --> 00:16:56.320
+I put the link to that in the Discord and in the chat here, too.
+
+00:16:57.840 --> 00:17:04.319
+Do you think in the interest so, my step zero, whenever I'm, like, tackling a layer extension,
+
+00:17:04.880 --> 00:17:13.839
+is to just, like, do the thing with base ggplot2. In the interest of time, Isabella,
+
+00:17:13.839 --> 00:17:20.880
+and just, like, keeping everybody's interest, maybe we should just copy that over from the
+
+00:17:20.880 --> 00:17:26.560
+recipes. I think, like, yeah, and then we can just kind of quickly talk through it. I think it will
+
+00:17:26.560 --> 00:17:34.000
+be, like, more interesting than, like, typing that bit out. Yeah, absolutely. Okay. So, I think
+
+00:17:34.000 --> 00:17:42.800
+the pre-rhythm code is median, but I can change it to median. Oh, yeah. Yeah, we can. All right.
+
+00:17:43.760 --> 00:17:50.719
+So, just to quickly walk over what this is, I'm going to change the meanings,
+
+00:17:50.800 --> 00:17:56.400
+if that makes sense. So, first, we're going to create the ping of means, right, Gina,
+
+00:17:56.400 --> 00:18:01.280
+which summarizes the length and depth by calculating their means. Yeah.
+
+00:18:03.599 --> 00:18:10.959
+So, we do, like, the computation outside of ggplot2. This is, like, one way to get that plot
+
+00:18:11.520 --> 00:18:20.079
+with base ggplot2, and then we have two point layers, but here we do use the data argument
+
+00:18:20.079 --> 00:18:28.719
+and then use our, like, pre-computed data set. Yeah, so, let's. Yeah, just to kind of show,
+
+00:18:28.719 --> 00:18:33.439
+like, this is what it would look like up to just using, like, a blank geom point, right,
+
+00:18:33.439 --> 00:18:39.439
+where it's just plotting the two scatter points, and then we can also add an additional scatter
+
+00:18:39.439 --> 00:18:44.560
+or geom point to add that additional layer, which is now that kind of calculate those means and give
+
+00:18:44.640 --> 00:18:53.839
+us that big red dot. Yeah. Yeah. So, we're going to, like, kind of refer to this as we build up our
+
+00:18:53.839 --> 00:19:02.800
+first layer extension. But and then so, that's, like, a step zero. So, something for reference
+
+00:19:02.800 --> 00:19:10.000
+that we all know as ggplot2 users. And then we're going to kind of reflect on the computation that
+
+00:19:10.000 --> 00:19:16.239
+needs to happen. And then we'll test that computation. So, we'll create a function
+
+00:19:19.040 --> 00:19:31.839
+compute group means. And yeah, Isabella's on it. So, yeah, we're going to have our data passing
+
+00:19:31.839 --> 00:19:36.719
+into this function, and then we're going to want to do some statistical transformation with it.
+
+00:19:37.359 --> 00:19:48.079
+Um, inside of ggplot2, the data is going to refer to the variables based on the aesthetic mapping.
+
+00:19:48.079 --> 00:19:56.000
+So, the data, it's no longer understood as, like, the penguin data. It's just the generic data. So,
+
+00:19:56.000 --> 00:20:01.359
+we can do our statistical manipulation based on that. And then, yeah, summarize.
+
+00:20:02.160 --> 00:20:14.479
+Um, x. We're going to do x. We're going to find the mean of x. And I'm sorry that everybody's
+
+00:20:15.920 --> 00:20:24.719
+I think there are some. Yeah. So, like, the we're going to go ahead and kind of be liberal with our
+
+00:20:24.719 --> 00:20:33.439
+means. We'll allow a mean to be computed even if there's an NA value. So, it's just a generalization
+
+00:20:33.439 --> 00:20:42.719
+of what we did up here. Yes. And then one thing that you'll note is that with this computation,
+
+00:20:44.079 --> 00:20:50.160
+we want the scales to be operated on. We want all of the good stuff that happens for free
+
+00:20:50.719 --> 00:21:02.560
+in plotting to happen with our compute group means. So, an additional
+
+00:21:04.239 --> 00:21:10.400
+required argument in the function is scales. All right.
+
+00:21:10.400 --> 00:21:16.000
+Does this look good? Yeah. Great.
+
+00:21:20.479 --> 00:21:28.719
+And then, so, we can then test our function with the penguin's data. But we're going to make the
+
+00:21:28.719 --> 00:21:35.599
+data first look like it's going to look when it's received by the layer function by changing the
+
+00:21:35.599 --> 00:21:46.319
+names of those variables. So, I like to do it with a select call. And x equals bill length.
+
+00:21:48.800 --> 00:22:00.160
+Sorry. Bill depth mm. And y equals bill depth or length mm. Yeah. And so, then having modified the
+
+00:22:00.160 --> 00:22:06.719
+data to look like it's going to look inside, right, because that's what kind of the AES call
+
+00:22:06.719 --> 00:22:13.040
+does within ggplot is now these variables have been declared to be your x and y. Then we can
+
+00:22:14.560 --> 00:22:25.439
+compute use compute group means as like another step. All right. Yeah.
+
+00:22:26.160 --> 00:22:29.680
+Mm-hmm. And then, oh, we have those group means computed.
+
+00:22:32.640 --> 00:22:37.760
+So, this 17.2, we can see it reflected here. 43.9 here.
+
+00:22:39.680 --> 00:22:50.319
+Yeah. And then, so, having that compute defined, we can go on and define a stat finally. So,
+
+00:22:50.319 --> 00:23:00.880
+we're like coming to ggproto, which is like the object oriented mechanism that works with inside
+
+00:23:00.880 --> 00:23:13.839
+ggplot2. Now we're in the internals of ggplot2. Now that we know that function works, we can
+
+00:23:13.839 --> 00:23:23.520
+define our stat using that function. So, that will be stat means. So, capital. So,
+
+00:23:23.520 --> 00:23:28.239
+this is using camel case. It's maybe something different than what you're using in like
+
+00:23:30.640 --> 00:23:40.800
+yeah. Stat means. And then, ggproto. Okay. Yeah. And then, we're defining a new class.
+
+00:23:40.800 --> 00:23:52.160
+So, let's go ahead and use the autocomplete. The underscore class. Yeah. And then,
+
+00:23:52.160 --> 00:23:55.680
+in quotation marks. So, we kind of have to write stat means twice.
+
+00:23:58.719 --> 00:24:05.839
+Okay. And then, the nice thing with defining a new stat is that we can actually inherit a lot
+
+00:24:05.839 --> 00:24:11.680
+of information from existing stats. And we're going to inherit from the most generic one.
+
+00:24:13.280 --> 00:24:19.280
+So, we'll use inherit. It's also another one. I'm hitting tab and it's showing
+
+00:24:19.280 --> 00:24:29.760
+all of the different arguments that I can type in. Yeah. And then, not in quotations. We'll just
+
+00:24:29.760 --> 00:24:41.040
+refer to the object itself. Stat. Yeah. And then, we're going to overwrite some of the
+
+00:24:41.040 --> 00:24:48.160
+information that like stat would have in it. One of the slots is compute group.
+
+00:24:49.119 --> 00:24:56.719
+Okay. So, this is no longer one of the yeah. Because yeah. So, ggproto is so general and
+
+00:24:56.719 --> 00:25:06.560
+there's a lot of different slots depending on what you're subclassing. Yeah. So, compute group,
+
+00:25:07.920 --> 00:25:13.280
+we're going to define as the function that we created. Yeah. So, exactly the function
+
+00:25:13.920 --> 00:25:19.920
+without parentheses. Are there multiple options for this compute group or
+
+00:25:20.000 --> 00:25:27.359
+is it something you define yourself? Yeah. So, it kind of depends on what you're after.
+
+00:25:28.719 --> 00:25:36.880
+So, if you're interested in group-wise computation, then you would define compute group.
+
+00:25:38.160 --> 00:25:48.160
+There's also a slot for computing panel, right? So, if you only want the compute to happen
+
+00:25:48.959 --> 00:25:54.319
+when you're faceting out, then you'd go with like a compute panel.
+
+00:25:57.760 --> 00:26:06.160
+So, here we like what we are saying is like, oh, if I change the color and use a factor variable,
+
+00:26:06.959 --> 00:26:15.599
+then I do like factor for species. Like, I want color equal species. Automatically, I'm going to
+
+00:26:15.599 --> 00:26:28.079
+have the group-wise computations done. Yeah. And then, like, this will actually work. But
+
+00:26:30.000 --> 00:26:38.800
+it's best practice to include one more helpful thing for your users, which is the required AES.
+
+00:26:38.800 --> 00:26:44.880
+So, you've probably seen like when you've missed a required AES, a message back to you saying,
+
+00:26:45.599 --> 00:26:56.719
+hey, you need to include a declaration about what is being mapped to X. So, our required AES here,
+
+00:26:56.719 --> 00:27:05.119
+what needs to come in for our data and to be declared is X and Y. So, we can enter that with
+
+00:27:05.119 --> 00:27:13.520
+the C function, concatenate, I guess it is, and X and Y.
+
+00:27:15.439 --> 00:27:22.000
+And that would be referring to whatever it is that we used in this function.
+
+00:27:23.359 --> 00:27:31.040
+Yes. Yeah. So, we are computing our means based on a variable that has been passed through.
+
+00:27:31.040 --> 00:27:39.359
+Does this look okay? Yeah. Let's execute that.
+
+00:27:42.800 --> 00:27:48.800
+And then up here as environment. Yeah. Let's just, just as a matter of personal
+
+00:27:48.800 --> 00:27:55.359
+taste, let's just put each declaration on its own line. So, just a return for it.
+
+00:27:56.319 --> 00:28:03.359
+Just to have it like really clear that we have the four, these four kind of declarations.
+
+00:28:04.319 --> 00:28:11.520
+Yeah. And then we're like, so, we're at a place where we can actually test out stat means
+
+00:28:11.520 --> 00:28:16.560
+in our familiar function geom point. So, let's try that. We can,
+
+00:28:17.680 --> 00:28:23.520
+we're going to create something that's user facing, but let's test out our stat and actually
+
+00:28:23.520 --> 00:28:31.760
+create a plot. So, that's going to be, if you want to like copy and paste code again,
+
+00:28:31.760 --> 00:28:37.199
+like maybe we'll copy and paste to the scatterplot. Isabella, if you want to do
+
+00:28:38.560 --> 00:28:44.640
+like up to here. Yeah. Let's copy and paste our scatterplot and then we'll do one more layer.
+
+00:28:45.280 --> 00:28:52.239
+Yeah. Yeah. And it's going to be geom point, but here we're going to like take advantage of the
+
+00:28:52.319 --> 00:29:03.439
+fact that we can change the stat. And we'll set it to equals our new stat means.
+
+00:29:06.000 --> 00:29:14.239
+That it's sufficient. That's all I mean. Oh, and I think it showed up, but it's the same.
+
+00:29:15.680 --> 00:29:18.400
+Right. So, we haven't changed anything fundamental about
+
+00:29:19.359 --> 00:29:24.160
+geom point that's in play. So, let's just change like the,
+
+00:29:27.199 --> 00:29:33.520
+something about the set of statics. So, we can change the size to eight.
+
+00:29:36.560 --> 00:29:46.959
+All right. That's much clearer what's happening. Yeah. Yeah. Yeah. So, our stat is working as it
+
+00:29:46.959 --> 00:29:48.800
+should. And then,
+
+00:29:50.445 --> 00:29:53.325
+Yeah, does anybody have, are there any questions? I feel like I've been like,
+
+00:29:55.725 --> 00:29:58.125
+or comments from our group?
+
+00:30:00.205 --> 00:30:05.565
+No, we did have a brief question that got answered in the Discord, actually, by Hassan
+
+00:30:05.565 --> 00:30:14.764
+and James, which is amazing, about calculating based on stat summary instead. So Andrew had
+
+00:30:14.764 --> 00:30:20.205
+asked, instead of creating a separate geom medians and geom means, would it be possible
+
+00:30:20.205 --> 00:30:27.244
+to create something like geom summary and have the stat mean and median be defined when creating
+
+00:30:27.244 --> 00:30:33.404
+the plot? And Hassan said, yes, it is possible. And James actually linked to an implementation
+
+00:30:33.404 --> 00:30:36.525
+in ggplot as stat underscore summary. So that was really helpful.
+
+00:30:37.404 --> 00:30:45.724
+Yeah, yeah. Yeah, so that is like, that's another quick way to do group-wise,
+
+00:30:47.965 --> 00:30:53.965
+group-wise, something like this in a group-wise way.
+
+00:30:55.004 --> 00:30:59.165
+All right, well, for a time check, we're 35 minutes in, which means we're over the halfway
+
+00:30:59.165 --> 00:31:07.004
+point. And we have about 20 to 25 minutes left. And I know that we still wanted to do a little
+
+00:31:07.004 --> 00:31:14.285
+bit more, I think, on this and then also attempt an extension to plot nine. So I will leave it
+
+00:31:14.285 --> 00:31:16.364
+back at that. But if there are any more questions, let me know.
+
+00:31:17.805 --> 00:31:25.245
+Yeah, yeah, I think maybe we'll look, I'm not sure how far we'll get with the plot nine stuff. I
+
+00:31:25.324 --> 00:31:29.004
+think we didn't really like actually rehearse that. But I think we can definitely take a look
+
+00:31:29.004 --> 00:31:36.525
+at what Hassan has available and some of the live chunks there.
+
+00:31:37.404 --> 00:31:40.525
+I think one of the nice things is there are a lot of parallels, right?
+
+00:31:40.525 --> 00:31:41.004
+Yeah, yeah.
+
+00:31:41.004 --> 00:31:45.964
+Once we've walked through this, it'll look very similar if you're attending it in Python.
+
+00:31:47.004 --> 00:31:52.044
+Real quick, do you mind if I show what happens if we don't fulfill this required AES?
+
+00:31:53.245 --> 00:31:54.605
+Yeah, great.
+
+00:31:54.605 --> 00:32:01.164
+So say we've defined here that we would need an X and a Y. So let's say what happens if I delete
+
+00:32:01.164 --> 00:32:09.964
+the Y? And I have definitely run into this error before where they're like, hey, you require the
+
+00:32:09.964 --> 00:32:14.445
+following missing aesthetics. And this error message is really nice, too, because it's very
+
+00:32:14.445 --> 00:32:20.684
+clear, hey, the one that you're missing is the Y. I think this is relatively recent, right? Like
+
+00:32:20.684 --> 00:32:23.964
+these really nice error messages from ggplot2.
+
+00:32:26.125 --> 00:32:34.445
+Yeah, I think they're super helpful. And so taking advantage of making that declaration
+
+00:32:34.445 --> 00:32:45.244
+about what's required is very user friendly. Yeah, so we're almost at the point where we can
+
+00:32:46.205 --> 00:32:57.005
+create a user facing function, our geom means. And this is done really succinctly now with ggplot2
+
+00:32:57.005 --> 00:33:05.404
+4.0.0, this latest big release with the make constructor function. So it used to be that you
+
+00:33:05.404 --> 00:33:12.524
+had to find some example scaffolding code to make sure that all of your arguments were in the right
+
+00:33:12.604 --> 00:33:19.565
+place. But Ton van der Brandt, who's done a lot of work on the latest release of ggplot2,
+
+00:33:19.565 --> 00:33:24.845
+has created this make constructor function for us. Let's have a look at how it works
+
+00:33:24.845 --> 00:33:30.845
+and what it's writing for us underneath. So Isabel, we can just do, yeah, we can do,
+
+00:33:31.884 --> 00:33:36.205
+you have the right version. I don't want to touch you for this.
+
+00:33:36.285 --> 00:33:44.684
+Thank you. We want to use it. It's very helpful. So yeah, we'll actually start, we can do,
+
+00:33:45.645 --> 00:33:52.125
+okay, we can do, yeah, so let's do the classic thing. Like if you're a very like classical
+
+00:33:52.125 --> 00:33:57.324
+extender, we can do, we can create stat means first. So if you're creating a stat,
+
+00:33:58.524 --> 00:34:04.125
+you might want to create a user facing function that is a stat. So this kind of, this is like
+
+00:34:04.925 --> 00:34:11.165
+no false advertising user facing function, right? So you're telling your user, oh, there's a stat
+
+00:34:11.165 --> 00:34:16.364
+called stat means. We're going to do a little bit of false advertising because users like to use
+
+00:34:16.364 --> 00:34:21.804
+geoms. They're comfortable with geoms and sometimes they never use stats. And as we saw with
+
+00:34:21.804 --> 00:34:28.364
+like geom jitter and geom histogram, there's a lot of false, useful false advertised user
+
+00:34:28.524 --> 00:34:38.285
+facing functions. So, okay. So stat means we can do assignment and then make constructor.
+
+00:34:40.204 --> 00:34:46.204
+We go, yeah. And then we'll, as our, the first input, the X is going to be stat means.
+
+00:34:51.244 --> 00:34:57.005
+Yeah. And then comma, we have, we do have to specify two things, our geom
+
+00:34:59.084 --> 00:35:08.364
+equals geom point. In quotations or not? You can do, you can either do like refer directly to
+
+00:35:08.364 --> 00:35:17.565
+probably, sorry, it would be in quotations point, lowercase point. Yeah. Or you can do,
+
+00:35:21.565 --> 00:35:27.325
+or you could refer to the object itself, which would be uppercase geom, uppercase point.
+
+00:35:27.964 --> 00:35:35.404
+So this should work. Let's, let's try it. And then we'll see, we can look at
+
+00:35:37.644 --> 00:35:42.765
+the, what is the full written out function that make constructor has written for us.
+
+00:35:42.765 --> 00:35:47.005
+And we say, oh yeah, this looks like kind of familiar. It's this function that has
+
+00:35:47.644 --> 00:35:53.325
+our three main characters, geom point, position. The default is always to use that identity.
+
+00:35:54.204 --> 00:35:59.804
+And then within what's hard-coded is stat equals means.
+
+00:36:04.605 --> 00:36:10.285
+Excellent. Yeah. Great. And let's just go ahead. We could use this right in place of line 44 and
+
+00:36:10.285 --> 00:36:16.045
+we'd get the same kind of result. We'd have to define the size, but we wouldn't have to
+
+00:36:16.045 --> 00:36:23.644
+do anything more in parentheses. Should we do that? Let's do it. Okay. Yeah.
+
+00:36:23.644 --> 00:36:25.804
+And now just stat means. Stat means.
+
+00:36:32.045 --> 00:36:34.845
+Oops. And then, yeah. It's there.
+
+00:36:38.204 --> 00:36:44.364
+Yeah. And then let's do the like really friendly geom means with make constructor.
+
+00:36:44.364 --> 00:36:54.445
+It's really similar. Okay. And then our first argument is going to be geom point.
+
+00:36:55.244 --> 00:37:01.484
+Following the convention that if you have some user facing function, geom underscore,
+
+00:37:02.364 --> 00:37:09.325
+you'll have that hard-coded thing being, being the geom. And then we'll, we'll say, okay,
+
+00:37:09.325 --> 00:37:13.964
+it's a combination. Now we're combining a point and stat here. We have to say stat equals.
+
+00:37:14.605 --> 00:37:26.684
+Okay. And then we could use the object itself or means lowercase. Okay. Let's have a look at that.
+
+00:37:27.644 --> 00:37:34.445
+And we can look at the contents of the function. It is almost, it's an alias basically
+
+00:37:35.165 --> 00:37:39.325
+of stat means, but it has the different parts hard-coded.
+
+00:37:40.285 --> 00:37:46.924
+Okay. So, geom, do you mean like geom? Yeah, geom point is hard-coded and the,
+
+00:37:48.524 --> 00:37:55.885
+yes. And the stat is flexible. It's like, you wouldn't expect people to like really
+
+00:37:57.244 --> 00:38:04.524
+use this function. It's, it's, you wouldn't expect them to go out and be changing the
+
+00:38:04.524 --> 00:38:10.045
+stat out. It would be like a weird move, but anyway, that's, that's according to convention.
+
+00:38:11.244 --> 00:38:18.765
+So, okay. So, let's look at, we're like, we've, we're, we've succeeded, I hope, at
+
+00:38:19.404 --> 00:38:30.284
+getting to our goal. Let's do the same as 48 to 53, except for we're using that geom means.
+
+00:38:35.164 --> 00:38:41.244
+Yeah, we get the same. Yeah. It's the same plot. Yeah, it should be the same.
+
+00:38:42.684 --> 00:38:49.484
+Are both of these steps required to get to geom means, creating stat means and geom means?
+
+00:38:50.125 --> 00:38:54.924
+No, if you're that, if you're the type of person that like just knows that you want that
+
+00:38:55.565 --> 00:39:01.325
+geom underscore function, you could go straight there and like your user are those type of people,
+
+00:39:01.885 --> 00:39:08.844
+then, then you can do that. It's just like the most classic thing to do, I think, and like,
+
+00:39:10.044 --> 00:39:18.125
+and I feel like it's appropriate to, to talk about is, is creating a stat user facing function
+
+00:39:18.125 --> 00:39:24.445
+when you create a stat object. I feel like the rest of the folks on the call would,
+
+00:39:24.445 --> 00:39:28.924
+would probably agree. Yeah, that's very interesting. I don't think I've ever used
+
+00:39:28.924 --> 00:39:34.844
+a stat function in gduplot before, and maybe because they've all been masked as a geom one.
+
+00:39:36.364 --> 00:39:40.844
+Yes, I think that that makes sense to me, too. And Nathan Jeffrey had just asked in the chat
+
+00:39:42.125 --> 00:39:47.565
+about the difference one more time between a geom underscore something and a stat underscore
+
+00:39:47.565 --> 00:39:53.724
+something. Yeah, so they're both layers. And this is like, even something that Hadley talks about,
+
+00:39:53.724 --> 00:39:58.844
+he's like, oh, I should have just called everything layer underscore histogram layer
+
+00:39:58.844 --> 00:40:05.405
+underscore point layer underscore jitter. Because they're used like almost in the exact same way.
+
+00:40:06.684 --> 00:40:17.005
+The the main difference is like what is modifiable by the user. So what's the arguments that are
+
+00:40:17.724 --> 00:40:27.244
+hard coded in the in the stat underscore case, it's going to be the stat that you can't change.
+
+00:40:27.244 --> 00:40:34.924
+And in the geom underscore case, it's going to be the geom that is that is not changeable.
+
+00:40:36.445 --> 00:40:42.924
+So it's for more sophisticated, if you have more sophisticated users in mind,
+
+00:40:42.924 --> 00:40:46.044
+and like maybe you're going to become a more sophisticated user yourself,
+
+00:40:47.724 --> 00:40:57.565
+providing stat means means that you can mix and match like the geoms that that goes in the this
+
+00:40:57.565 --> 00:41:08.284
+stat means function. So that's like one argument to create both. Hassan, do you have any insights
+
+00:41:08.364 --> 00:41:18.445
+into this problem? Yes, the way the way I think about it is, or the way it is, is that a layer is
+
+00:41:19.085 --> 00:41:24.525
+exactly as, as a layer is would say, every like the drawing programs that you use,
+
+00:41:24.525 --> 00:41:30.205
+if I use Photoshop, you draw on a layer. Now, because a layer has so much functionality,
+
+00:41:30.205 --> 00:41:37.244
+they created like a geom for like, basically to wrap layers into, like, more user friendly
+
+00:41:37.244 --> 00:41:46.044
+things. But when you are creating a visualization, before you create the thing that is
+
+00:41:46.044 --> 00:41:51.724
+observable, that like the geometry, you have to summarize the world. So you have to do a computation.
+
+00:41:51.724 --> 00:41:57.965
+And that computation is the is the statistic. So there comes in like, this like idea of a statistic,
+
+00:41:58.525 --> 00:42:04.684
+but you cannot have a statistic by itself, without like, it's meaningless without being
+
+00:42:04.684 --> 00:42:09.804
+accompanied by a geometry that you can see if you're doing a visualization. So a statistic
+
+00:42:10.364 --> 00:42:17.645
+also becomes a convenient way to create a layer. So you end up with this, like with these two
+
+00:42:17.645 --> 00:42:22.924
+battling ideas of like a geometry, like fitting a layer with a geom or creating a layer with a
+
+00:42:22.924 --> 00:42:29.005
+statistic. Now, where a statistic makes sense to make more sense is when things get a little
+
+00:42:29.005 --> 00:42:33.965
+more complicated. And, and you are actually thinking in terms of the statistic first,
+
+00:42:33.965 --> 00:42:40.205
+and then the geom second. For example, like, when you do like, when you think about the densities,
+
+00:42:40.205 --> 00:42:44.445
+like, yeah, you tend to think sometimes you tend to think a little more in terms of like,
+
+00:42:44.445 --> 00:42:49.645
+the statistic or what type of like parameters go into this density, what type of it then,
+
+00:42:49.645 --> 00:42:56.445
+obviously, you get to visualize it as like, as a curve and, and like, so many other things can do
+
+00:42:56.445 --> 00:43:03.724
+that. So you so when you look for that, when you do a search, where like the places where most stats
+
+00:43:03.724 --> 00:43:09.164
+are used, you'll find them being used, for example, like stat smooth, because you wonder about like,
+
+00:43:09.164 --> 00:43:15.804
+oh, what statistic is being deployed to create like this smoothing thing, usually some kind of
+
+00:43:15.804 --> 00:43:22.604
+like a density estimate, and then also, like, stat density, like, almost like almost the same thing.
+
+00:43:22.604 --> 00:43:29.804
+So, so these are kind of like a conflict between how to think about how you get that, like, last,
+
+00:43:29.804 --> 00:43:37.325
+like the output that you care about. And that tends to, to drive the choice between geom and
+
+00:43:37.325 --> 00:43:44.044
+statistic. But in all honesty, you, like, you probably could have defined everything the same,
+
+00:43:44.044 --> 00:43:49.565
+and it would take and have taken away that, that friction of like, oh, which one, like,
+
+00:43:49.565 --> 00:43:55.885
+which one should I use, which one, but in most cases, like geom is wrap, wrap whatever you want
+
+00:43:55.885 --> 00:44:00.125
+in a, in a geom. And yeah, it's a, it's a good rule of thumb.
+
+00:44:03.164 --> 00:44:05.005
+Thank you. That was really helpful.
+
+00:44:06.445 --> 00:44:13.005
+How about we add, let's just do one more aesthetic mapping here, to show that for free,
+
+00:44:13.005 --> 00:44:21.565
+we're going to have group wise means computed. And so is within geom means?
+
+00:44:22.525 --> 00:44:31.484
+Um, we could, you can just, let's use the weird plus AES.
+
+00:44:32.125 --> 00:44:33.325
+Oh, okay.
+
+00:44:36.044 --> 00:44:39.325
+Color equals species.
+
+00:44:40.284 --> 00:44:40.784
+Cool.
+
+00:44:42.525 --> 00:44:51.885
+And then species is a character or a factor variable. And so that's going to trigger for
+
+00:44:51.885 --> 00:44:58.364
+something, a stat that's compute group, it's going to trigger group wise compute.
+
+00:44:59.565 --> 00:45:06.445
+So each one of these is reflecting the mean for each of the species. So this is chinstrap
+
+00:45:06.445 --> 00:45:07.885
+mean, deaf mean length.
+
+00:45:08.684 --> 00:45:14.205
+Yeah. So I think like, that's one of the things that I'm really drawn to about extension is like,
+
+00:45:14.205 --> 00:45:19.405
+oh, you've got all this for free. We could do that facet wise too. We could go like facet island,
+
+00:45:19.405 --> 00:45:24.205
+but since like we are, um, are running out. Yeah. Let's do it. Let's do it.
+
+00:45:26.445 --> 00:45:27.724
+That's it. Rat maybe.
+
+00:45:27.724 --> 00:45:43.965
+I feel like most correct thing to do is facets equals vars and, uh, island.
+
+00:45:44.844 --> 00:45:45.344
+Except?
+
+00:45:47.405 --> 00:45:52.364
+Not, I think that in plot in plot nine, you probably have to put quotation marks, but not
+
+00:45:52.364 --> 00:45:57.325
+in ggplot2. Let's, let's, let's give it a go.
+
+00:45:58.364 --> 00:45:58.844
+That's awesome.
+
+00:46:00.205 --> 00:46:09.244
+Yeah. So, um, so like computing all five, um, group wise means based on X and Y, um, all for
+
+00:46:09.244 --> 00:46:10.044
+free. Yeah.
+
+00:46:12.684 --> 00:46:20.284
+They're like kind of recap too. So it means like rather than having to compute this for each one
+
+00:46:20.284 --> 00:46:27.005
+of these different combinations of, um, of species and of islands, and then like calculating
+
+00:46:27.005 --> 00:46:32.765
+all that and then putting it in some separate geom point. Like all we have to do is create this
+
+00:46:33.405 --> 00:46:36.205
+geo means once, and then we get everything else.
+
+00:46:37.244 --> 00:46:43.325
+Yeah. Yeah. Um, and like, if you're like kind of doing some storytelling with data,
+
+00:46:43.325 --> 00:46:50.284
+you might like break this plot up and save a plot object and then like add the facets like,
+
+00:46:50.284 --> 00:46:55.724
+oh, we we're doing this by species and, and we can break this up further. And it can,
+
+00:46:55.724 --> 00:46:58.604
+like code can be like super concise.
+
+00:46:59.645 --> 00:47:00.145
+Amazing.
+
+00:47:01.324 --> 00:47:06.925
+Um, so maybe we can, um, just look at that, like other recipes to expose, like really quick to,
+
+00:47:07.724 --> 00:47:14.125
+um, like the compute panels and then let's look at Hassan's. So, so we have this resource
+
+00:47:14.125 --> 00:47:20.685
+available. Um, and so we went through the first recipe, basically it talks through a lot of
+
+00:47:20.685 --> 00:47:26.844
+concepts and then at the end there's live code in chunks where you could like do this exercise
+
+00:47:27.805 --> 00:47:37.724
+again. Recipe two, um, it looks at, um, like using geom text on how you might use, um,
+
+00:47:38.685 --> 00:47:44.525
+how you might combine it with a stat. The third recipe is like a bit of exposure to
+
+00:47:45.244 --> 00:47:52.444
+panel-wise computation. So if, if you're interested in that situation, um, and,
+
+00:47:52.444 --> 00:48:01.484
+and the fourth is more about like, I don't know, like using this in stats classroom context. It's
+
+00:48:01.484 --> 00:48:09.564
+thinking about, um, yeah, linear modeling, but like with, uh, where the, the, the model is,
+
+00:48:10.525 --> 00:48:17.564
+um, is, uh, computed in a unified way. So, um, but let's, and then maybe we could,
+
+00:48:18.125 --> 00:48:22.685
+Hassan, do you want to talk through, um, your work a little bit? Uh, the easy recipes,
+
+00:48:22.685 --> 00:48:29.244
+I feel like that maybe is what we have time for. Yeah. And it looks very similar, but if you
+
+00:48:29.244 --> 00:48:40.125
+notice this support, yeah, this site is, uh, all in Python. Yeah. Um, it's, uh, it's essentially
+
+00:48:40.125 --> 00:48:46.204
+a parallel between what you're doing in, uh, um, the easy geom recipes, the original in R,
+
+00:48:46.204 --> 00:48:54.364
+and then how does that translate to, to plot nine? So the only difference, the big difference
+
+00:48:54.364 --> 00:49:03.165
+and encumbrance that you would find, it's mostly that it uses pandas. So the data manipulation,
+
+00:49:03.805 --> 00:49:10.685
+um, that is not as, is not as fluid. Um, it doesn't look, it doesn't look as clean and as,
+
+00:49:10.685 --> 00:49:21.005
+as aesthetic, but on the other hand, um, the, uh, difference, yeah, it's like, it's a little clunky,
+
+00:49:21.005 --> 00:49:27.885
+unfortunately. Um, on the other hand, um, when you are creating the, uh, the geoms and classes,
+
+00:49:27.885 --> 00:49:33.805
+you don't have to bother, uh, with the, and stats, you, you create them once you don't bother about
+
+00:49:33.805 --> 00:49:37.645
+like the wrapping of like, oh, you have this object, let me drop it into a function.
+
+00:49:38.285 --> 00:49:45.244
+So, and, uh, the rest is, uh, the rest is, uh, written with them. So, um,
+
+00:49:46.045 --> 00:49:47.964
+like the steps are the same.
+
+00:49:47.964 --> 00:49:57.165
+Yes. This, this, yeah, the steps, the steps are the same and, uh, um, and yeah, the live examples
+
+00:49:57.165 --> 00:49:57.805
+work as well.
+
+00:49:58.525 --> 00:50:00.685
+Yeah. Using a web R, right?
+
+00:50:01.645 --> 00:50:03.005
+Yeah. Um, Pyodide.
+
+00:50:04.844 --> 00:50:07.165
+Oh, that's right. Pyodide for Python.
+
+00:50:07.805 --> 00:50:09.165
+Yeah. Python. So.
+
+00:50:10.204 --> 00:50:16.204
+Amazing. I realized, Gina, um, I skipped over this part in the beginning. I'm sorry that
+
+00:50:16.204 --> 00:50:21.484
+there are actually different kinds of extensions too. So these that we've been talking about are
+
+00:50:21.484 --> 00:50:28.045
+the layer extensions. Um, but there are multiple other ones, right? I think I have.
+
+00:50:28.045 --> 00:50:33.244
+Yeah. So I think like, um, what's also popular. Oh yeah. You're the theme extensions.
+
+00:50:34.204 --> 00:50:42.285
+Does this theme park like advertise a lot of, uh, different theme packages or just offers like,
+
+00:50:43.885 --> 00:50:45.645
+oh, okay. I don't really know it.
+
+00:50:46.925 --> 00:50:50.925
+I remember being Barbie when Barbie was out. It was very, very popular.
+
+00:50:54.125 --> 00:51:00.204
+Yeah. So, and the theme extension is, I think it's especially fun to get into now because,
+
+00:51:00.285 --> 00:51:08.204
+um, even the, like, um, the layers, like the geoms are responsive to theme. So, um,
+
+00:51:08.204 --> 00:51:15.645
+so that's like an innovation in, um, I think it, I think it's ggplot2 4.0.0, um, where,
+
+00:51:15.645 --> 00:51:22.844
+where, um, like the, the points themselves used to not be like as, or like as responsive to,
+
+00:51:22.925 --> 00:51:29.724
+uh, theme declarations, but now they are with, um, the inputs like, um, paper and ink, like
+
+00:51:29.724 --> 00:51:38.285
+point kind of shows up in ink color. And, um, and, and that's really fun. It's like a way to
+
+00:51:38.285 --> 00:51:47.805
+overhaul the look and feel of your plot. Um, and in a really easy way. Um, yeah. Yeah.
+
+00:51:48.685 --> 00:51:50.525
+Are there other questions that.
+
+00:51:53.564 --> 00:52:01.405
+I think that we are just all wandering at many themes that we can go try. I put an example of,
+
+00:52:01.405 --> 00:52:06.765
+of Barbie's theme in there. Tom is looking at the Wes Anderson themes. Yes. They're super fun. The
+
+00:52:06.765 --> 00:52:15.805
+Simpsons one is also really, really fun. Um, I also shared in the discord, a link to, um, uh,
+
+00:52:15.805 --> 00:52:19.484
+older blog posts that I wrote for getting started with geom text path, which kind of
+
+00:52:20.045 --> 00:52:25.645
+shows how to create some basic stuff, which is great. It's my favorite extension package for
+
+00:52:25.645 --> 00:52:34.685
+sure. Um, and we also had some shout outs to tiny plots for some great implementations of some of
+
+00:52:34.685 --> 00:52:39.805
+the things that we're talking about today. Thank you. No tobacco for the shout outs there. It's
+
+00:52:39.805 --> 00:52:47.244
+a GG plot to rapper. You can go play around with all of those. Um, okay. No tobacco says
+
+00:52:47.244 --> 00:52:54.525
+how's there's no, how is there no Barbenheimer theme? Go make one, go make one. That's a
+
+00:52:54.525 --> 00:53:00.685
+combination of Oppenheimer and Barbie. And there's so many other things like there's themes,
+
+00:53:00.685 --> 00:53:05.405
+there's layers, and we also have this one, but this is a different kind of extension, right?
+
+00:53:05.405 --> 00:53:13.805
+This is scales. If anybody has seen in this poison frogs, love it. Absolutely love it.
+
+00:53:13.805 --> 00:53:20.444
+And skills can encompass so much, right? Um, because skills could encompass formatting for
+
+00:53:20.444 --> 00:53:27.484
+text inside of, um, inside of different parts of your plot. There's all kinds of places that
+
+00:53:27.484 --> 00:53:33.645
+text could be in your plot, but this scale is for color scales, which is really exciting.
+
+00:53:33.645 --> 00:53:37.885
+Palettes are so much fun. Um, and I know that we've reached the top of our hour. We have three
+
+00:53:37.885 --> 00:53:43.244
+minutes left, so we have to say thank you so much to Gina. Thank you to Hassan. Thank you to James.
+
+00:53:43.244 --> 00:53:48.685
+Thank you to everybody who answered questions. Gina, thank you so much for being here and Hassan.
+
+00:53:48.685 --> 00:53:51.964
+Thank you. I hope you had a good time. Thanks so much for having us.
+
+00:53:54.525 --> 00:53:59.885
+Yay. Everybody, please go forth. Use your imagination on what you could use this
+
+00:53:59.885 --> 00:54:06.444
+knowledge to build. These are very, very user-friendly entry points, those recipes,
+
+00:54:06.444 --> 00:54:12.125
+right? But from that, so much can come, and you've seen through the other extension packages just how
+
+00:54:12.125 --> 00:54:17.084
+much can happen. We enjoyed having you. Thank you for hanging out with us. We'll see you next week.
+
+00:54:17.084 --> 00:54:29.484
+Bye, everybody.

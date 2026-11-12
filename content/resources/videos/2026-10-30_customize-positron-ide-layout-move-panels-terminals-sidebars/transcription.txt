@@ -1,0 +1,7 @@
+<p><a data-t="0">Here's a quick tip on how to customize your </a><a href="/software/positron/">Positron</a><a data-t="0"> layout exactly how you want it.</a> <a data-t="4">The layout defaults with the editor above the console and the terminal below,</a> <a data-t="8">and the variables and plot panes to the right.</a> <a data-t="11">So this is designed more for interactive workflows with scripts and </a><a href="/software/quarto/">quarto</a><a data-t="11"> documents.</a> <a data-t="15">But almost every component can be rearranged by dragging.</a></p>
+
+<p><a data-t="19">So for example, you can try moving the Help pane into the Session pane,</a> <a data-t="23">and you can also toggle most of these components in and out of view using commands</a> <a data-t="27">such as ViewTogglePrimarySidebarVisibility.</a></p>
+
+<p><a data-t="31">You can also use the CustomizeLayout command for more specific layout choices.</a> <a data-t="35">So Stacked is the default, but you can also make it side-by-side or notebook layout.</a> <a data-t="41">The Assistant layout makes Posit Assistant larger,</a> <a data-t="44">and the Agent layout puts it front and center.</a></p>
+
+<p><a data-t="47">How do you have your Positron set up? Let us know.</a></p>

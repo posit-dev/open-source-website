@@ -1,0 +1,1720 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.639
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.639 --> 00:00:22.000
+of our weekly community call that happens every Thursday at 12pm US Eastern Time. If
+
+00:00:22.000 --> 00:00:27.240
+you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.240 --> 00:00:30.680
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.680 --> 00:00:35.680
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.680 --> 00:00:41.000
+Can't wait to see you there. Today, I'm so excited to introduce our featured leader,
+
+00:00:41.000 --> 00:00:46.080
+Cori Campbell. She's a data scientist in the health data science realm. Cori, thank you
+
+00:00:46.080 --> 00:00:49.279
+so much for being here. I would love it if you could introduce yourself, tell us a little
+
+00:00:49.279 --> 00:00:52.000
+bit about what you do and something that you like to do for fun.
+
+00:00:53.000 --> 00:00:56.799
+Great, thanks so much Libby and everybody on the team for having me to the hangout.
+
+00:00:56.799 --> 00:01:02.919
+I'm super excited to be here. Yeah, my name is Cori. I'm a health data scientist. My background
+
+00:01:02.919 --> 00:01:09.320
+is in quantitative epidemiology and health data science. For a large part of my career,
+
+00:01:09.320 --> 00:01:15.180
+I was in academia and research based in Europe and the UK and I was leveraging electronic
+
+00:01:15.180 --> 00:01:20.919
+health data and lots of administrative data sources to generate robust evidence with regards
+
+00:01:20.919 --> 00:01:28.680
+to health systems, analysis, drug safety, vaccine safety, those types of things. And
+
+00:01:28.680 --> 00:01:34.599
+I am based now in Montreal in health data science consulting. So still in a very similar
+
+00:01:34.599 --> 00:01:40.400
+world kind of through a different lens, using a lot of the same methods and tools that we've
+
+00:01:40.400 --> 00:01:48.639
+talked about already that we've mentioned. And yeah, I would say for fun in the last
+
+00:01:48.639 --> 00:01:54.199
+year, I've been getting into enjoying the snow again, making that part of my, you know,
+
+00:01:54.199 --> 00:01:58.400
+self-care routine, getting back into skiing, all of that stuff. I love a good hike any
+
+00:01:58.400 --> 00:02:04.400
+time of the year, anytime I can get into nature and kind of feel that reset. So this is a
+
+00:02:04.400 --> 00:02:06.639
+beautiful place to be doing it. I'm super lucky.
+
+00:02:06.639 --> 00:02:11.279
+Oh, it is extra beautiful. I have only seen pictures, but I'm very jealous. Someday I
+
+00:02:11.279 --> 00:02:17.520
+hope to go. Well, I heard tons of topics in there. I put some of them in the chat. So
+
+00:02:17.520 --> 00:02:22.800
+these are things that we can think about asking Corey about, including a PhD journey,
+
+00:02:22.800 --> 00:02:29.520
+EHR and admin data, academia to industry, drug safety, but also open source tooling
+
+00:02:29.520 --> 00:02:34.440
+for science and collaboration, obviously. And you are a globetrotter. You've been all
+
+00:02:34.440 --> 00:02:42.600
+over the world. So probably also collaborating across multiple time zones, multiple countries
+
+00:02:42.759 --> 00:02:48.119
+and multiple sites. These are all going to be fantastic things to ask Corey about. I
+
+00:02:48.119 --> 00:02:53.800
+would love to start with the PhD question. Did you always know you were going to get
+
+00:02:53.800 --> 00:02:57.800
+a PhD? Was that always the plan? And what did you get your PhD in?
+
+00:02:57.800 --> 00:03:02.000
+Oh, that's so funny. That's such a good question. I was just talking about this recently with
+
+00:03:02.000 --> 00:03:10.000
+some friends. My PhD was in, I guess, pharmaco epidemiology was really the main subject.
+
+00:03:10.479 --> 00:03:16.479
+Wait, that's a long couple of words. Can you explain pharmaco epidemiology?
+
+00:03:17.360 --> 00:03:21.839
+It's such a long word. And it's only a word I learned when I started a PhD in it, ironically.
+
+00:03:23.039 --> 00:03:29.679
+It's kind of, I guess you could say epidemiology quantitative methods with regards to medicine
+
+00:03:29.679 --> 00:03:36.399
+use, medicine coverage, sometimes uncovering those mechanisms that are underpinning modes
+
+00:03:36.399 --> 00:03:45.520
+of action and that kind of thing. So I guess that's kind of a high level how I would describe
+
+00:03:45.520 --> 00:03:53.919
+it. And I kind of, I guess, not fell into a PhD, but I just had been really enjoying what I was
+
+00:03:53.919 --> 00:03:58.720
+studying on my master's. And it kind of just felt like the natural next progression. I did my
+
+00:03:58.720 --> 00:04:03.919
+master's in epidemiology in the Department of Population Health at the University of Oxford.
+
+00:04:03.919 --> 00:04:09.119
+And then from there, I moved into the Department of Medicine for my PhD, which I did together
+
+00:04:09.119 --> 00:04:16.079
+in collaboration and co-sponsored by GSK. So that was awesome because I had the flavor of academic
+
+00:04:16.079 --> 00:04:22.480
+research and epidemiology and also the pharma side from them. And I feel like I was super lucky to
+
+00:04:22.480 --> 00:04:28.559
+learn so much on that process and work with great colleagues. But I would say that I was definitely
+
+00:04:28.559 --> 00:04:34.480
+guided by the team and my research interests. And I definitely didn't have a PhD on my radar
+
+00:04:35.679 --> 00:04:43.200
+from the beginning. I'm a huge proponent of PhDs, no matter what your motivation might be,
+
+00:04:43.200 --> 00:04:47.519
+but I wasn't necessarily always motivated to do one or thought that I would do one.
+
+00:04:47.519 --> 00:04:51.600
+Well, that's the question that I thought was going to come up quickly was, do you still
+
+00:04:51.600 --> 00:04:57.440
+recommend a PhD in 2026 and the age of AI and everything? But also I wanted to make sure that
+
+00:04:57.440 --> 00:05:01.600
+I understood what epidemiology is, especially for anybody who's not in the science world.
+
+00:05:01.600 --> 00:05:07.119
+Epidemiology is the study of health and disease and populations of people, right?
+
+00:05:08.000 --> 00:05:11.200
+Yep. Yep, exactly. It doesn't count how I describe it. Yeah.
+
+00:05:11.920 --> 00:05:17.760
+Okay, great. Well, I have a question from Noor that came in on the Slido, and I would love it
+
+00:05:17.760 --> 00:05:21.600
+if Noor would unmute and ask that question live. And I see she's on camera too. Hey, Noor.
+
+00:05:22.320 --> 00:05:31.119
+Hi, I'm Noor. I also came from the PhD land. And my question is, what are tips you would give
+
+00:05:31.119 --> 00:05:36.160
+for people transitioning from a more academic space or academic leading space
+
+00:05:36.160 --> 00:05:40.959
+to an industry space to not only successfully make that transition, but also thrive?
+
+00:05:43.200 --> 00:05:47.920
+Oh, that's a great question. And I think it's still one that I'm in the process of answering,
+
+00:05:47.920 --> 00:05:54.959
+to be honest. I'm super, super green, super new in kind of the industry space. And I'm not sure
+
+00:05:54.959 --> 00:06:05.359
+if you made the same transition or if you'd like to. But I think that kind of seeing both sides of
+
+00:06:05.359 --> 00:06:11.279
+the fence less as one versus the other and looking more for the spaces where we're overlapping and
+
+00:06:11.279 --> 00:06:15.679
+opportunities to collaborate, I think those are a lot more abundant than a lot of people
+
+00:06:15.679 --> 00:06:22.799
+may realize. And that a lot of industry folks are super happy to be reached out to cold emailed
+
+00:06:22.799 --> 00:06:26.799
+and to look for collaborations in that regard, kind of in the similar style you would do in
+
+00:06:26.799 --> 00:06:33.119
+academia. And I think that especially leveraging those opportunities for exposure at conferences
+
+00:06:33.119 --> 00:06:40.559
+and those types of things is really invaluable. But that being said, I was doing the bulk of my
+
+00:06:40.559 --> 00:06:48.000
+PhD during COVID, so I actually didn't go to any conferences in person during my PhD. So I feel like
+
+00:06:48.000 --> 00:06:55.119
+that actually was kind of a blessing because I just had to leverage email, LinkedIn, all of these
+
+00:06:55.119 --> 00:07:00.480
+other types of avenues for networking. And I feel like especially in this day and age, it's super
+
+00:07:00.480 --> 00:07:07.359
+easy to make those connections virtually. So I think one of my biggest pieces of advice is never
+
+00:07:07.359 --> 00:07:12.959
+be afraid to send the email, send the DM, just send it. You'll always be surprised what comes of that.
+
+00:07:15.359 --> 00:07:21.760
+Yeah, I think that that would be my first piece of advice. Does that answer your question?
+
+00:07:25.600 --> 00:07:31.200
+Feel free to follow up with anything if there's anything more I could add.
+
+00:07:32.160 --> 00:07:39.040
+I think that talking to people is always the answer. It's always my answer. But it's really
+
+00:07:39.040 --> 00:07:45.679
+nice to know that it feels like people in this space are open to cold DMs and cold emails. Often
+
+00:07:45.679 --> 00:07:49.519
+their emails are listed, right? Like you go to the university website, you go to the department
+
+00:07:50.399 --> 00:07:56.480
+website, and their emails are there, they're public, and they might take them a few weeks to get back
+
+00:07:56.559 --> 00:08:02.000
+to you, but they generally do. That's my experience when I was, you know, looking at all these
+
+00:08:02.000 --> 00:08:08.880
+things. Also, look for professors of practice who are working both in academia and industry. I find
+
+00:08:08.880 --> 00:08:15.600
+that they are so easy to talk to, so easy to sort of like approach and say, I just need some advice
+
+00:08:15.600 --> 00:08:21.839
+or some help. Thank you so much for the question. We have a question from Natasha, which is,
+
+00:08:21.839 --> 00:08:24.640
+what is an average day or week look like for you?
+
+00:08:26.720 --> 00:08:33.919
+Oh, that's another interesting one. I think that the pace of my day has kind of changed
+
+00:08:33.919 --> 00:08:40.159
+rapidly from academia to industry. I think that might be one of the major shifts that I've
+
+00:08:40.159 --> 00:08:48.880
+experienced so far. I had to kind of get used to now arriving to the office and being ready for my
+
+00:08:48.880 --> 00:08:55.760
+whole plan or my whole timetable to kind of shift majorly and for priorities to almost seem like
+
+00:08:55.760 --> 00:09:03.440
+they have changed overnight. And now I'm focused on project B, whereas I thought I would be coming
+
+00:09:03.440 --> 00:09:08.239
+in and focusing on project A and specific deliverables. And that's been an excellent
+
+00:09:08.239 --> 00:09:14.880
+lesson because I feel like in academia, because the timelines are kind of so much longer, it can
+
+00:09:14.880 --> 00:09:20.080
+be kind of easy to stay very planned and very regimented. And especially if your work isn't
+
+00:09:20.080 --> 00:09:25.760
+particularly interdisciplinary or you're not relying on a lot of other people or moving parts to
+
+00:09:25.760 --> 00:09:33.280
+deliver things, it can be really easy to work kind of according to your own schedule. So the
+
+00:09:34.239 --> 00:09:39.119
+really necessary collaboration and reliance and teamwork that we have on each other in industry,
+
+00:09:39.119 --> 00:09:43.599
+I feel, has been super rewarding and a new skill that I've learned really quickly.
+
+00:09:44.640 --> 00:09:50.239
+So on any given day, I'll come in and I usually have a couple tasks or deliverables that I know
+
+00:09:50.239 --> 00:09:55.440
+need to be delivered within the next few days, kind of trying to plan week by week. But there's
+
+00:09:55.440 --> 00:10:00.719
+always things that come up, always fun surprises and changing priorities. A colleague might ask
+
+00:10:00.719 --> 00:10:07.599
+you for help on something urgent. That's awesome. You know, we do have typical seasonal flows as
+
+00:10:07.599 --> 00:10:15.200
+well, similar to all industries. But yeah, it's super dynamic and exciting. I'm someone who likes
+
+00:10:15.200 --> 00:10:20.559
+to stay busy and feel challenged kind of all the time. So it's definitely been satisfying in that
+
+00:10:20.559 --> 00:10:27.760
+way. Thank you. What about the context of tools? Like what tools do you find yourself working in
+
+00:10:27.760 --> 00:10:36.159
+day to day? Are you in R, Python, SAS, SPSS? And I'm curious what you use for collaboration as well.
+
+00:10:38.159 --> 00:10:44.320
+Oh, well, that's another great question. Previously, when I've been doing a lot of
+
+00:10:44.320 --> 00:10:49.840
+disciplinary work, especially spanning different countries, we've relied really heavily on
+
+00:10:50.479 --> 00:10:57.440
+RStudio and GitHub for sharing our workflows. I feel like that's something that I really love
+
+00:10:57.440 --> 00:11:02.799
+and is still near and dear to my heart. I'd been undertaking federated analysis before in a
+
+00:11:02.799 --> 00:11:09.440
+previous role where we would share the workflow through a GitHub repo, and then each data site
+
+00:11:09.440 --> 00:11:15.840
+would pull that and run it locally. And we might have some little nuances or debugging to undertake
+
+00:11:15.840 --> 00:11:20.479
+kind of at each local site. But by and large, the methods and the processing pipeline was the same
+
+00:11:21.200 --> 00:11:26.479
+across all the sites. And that was so awesome. And it's really where I kind of fell in love with
+
+00:11:26.479 --> 00:11:33.520
+open source and transparent pipelines. So I'm still trying to get managed things every
+
+00:11:33.520 --> 00:11:42.080
+opportunity I get. Still a lot of stuff day to day in R and RStudio. Trying to, yeah, make Positron
+
+00:11:42.080 --> 00:11:47.679
+my bread and butter IDE right now, which I'm loving. Loving learning how to navigate that.
+
+00:11:47.679 --> 00:11:54.960
+That's been awesome. I'm also new to SAS recently in the last year. So learning a new language has
+
+00:11:54.960 --> 00:12:03.919
+been awesome. And definitely feeling challenged in that regard. And then in my personal time,
+
+00:12:03.919 --> 00:12:12.719
+I try to keep up to date with, you know, novel methods and open source tools and languages and
+
+00:12:12.719 --> 00:12:19.280
+stuff. In my spare time, I'm currently trying to, for example, do some sports analytics stuff,
+
+00:12:19.280 --> 00:12:25.599
+develop some open source stuff there in Python. So it's really a mix. I feel like it's awesome
+
+00:12:25.599 --> 00:12:32.400
+to stay current and try to share things as much as you can. But always across, you know,
+
+00:12:32.400 --> 00:12:37.440
+all of the places I've been working, always sharing code and workflows with colleagues. And
+
+00:12:37.440 --> 00:12:39.840
+it's something that I love and always want to be doing.
+
+00:12:40.719 --> 00:12:45.200
+Do you feel like that's a skill set that you had to learn? That openness to sharing and
+
+00:12:45.919 --> 00:12:50.400
+showing people something that feels a little bit vulnerable sometimes, like other people
+
+00:12:50.400 --> 00:12:53.679
+seeing your code, you can be like, oh, I don't want to look at that. Because I feel like when
+
+00:12:53.679 --> 00:12:59.119
+I came out of school, I had been teaching and tutoring so much that I was really used to just
+
+00:12:59.119 --> 00:13:03.440
+working out loud, showing everybody everything I was doing. I was used to live coding already,
+
+00:13:03.440 --> 00:13:09.119
+screen sharing. And I met others who really, really, really struggled with just showing people
+
+00:13:09.119 --> 00:13:14.000
+what they were doing. And I feel like it held them back and it helped me. What do you think
+
+00:13:14.000 --> 00:13:19.359
+about that? What was your journey there? Oh, that's so interesting. It's awesome that you
+
+00:13:19.359 --> 00:13:22.799
+were kind of habituated to that right away. I think that's an excellent skill.
+
+00:13:22.799 --> 00:13:27.280
+I got lucky. Everybody go tutor. If you're in school right now, go tutor other people. It'll
+
+00:13:27.280 --> 00:13:32.479
+teach you some skills. Yeah. Live coding, live debugging is, you're right,
+
+00:13:32.479 --> 00:13:38.400
+it's intimidating at first. But I actually, I love doing that with my colleagues. Any chance
+
+00:13:38.400 --> 00:13:44.799
+we get to debug something together? I really love to do it. I think I totally agree that it
+
+00:13:44.799 --> 00:13:50.320
+feels really vulnerable, especially if it's kind of a workflow and analysis you've been working
+
+00:13:50.320 --> 00:13:55.919
+pretty independently on. And then all of a sudden you feel like, oh, I have to open up this little
+
+00:13:55.919 --> 00:14:00.159
+world that I've just been programming, this whole system that I've programmed myself in.
+
+00:14:00.159 --> 00:14:08.080
+I think especially these days where I've felt the biggest switch is with academic journals.
+
+00:14:08.080 --> 00:14:14.159
+I think the tide has kind of turned relatively quickly there where you are really often now asked
+
+00:14:14.159 --> 00:14:20.640
+to submit your analytical code or a repository alongside your manuscript. And that's been a big
+
+00:14:20.640 --> 00:14:27.280
+shift. I'm absolutely in support of it. I think it's all for the better. And it's, I think,
+
+00:14:27.280 --> 00:14:33.440
+changed the way that a lot of academic teams program their analyses from start to finish
+
+00:14:33.440 --> 00:14:42.080
+and thinking from the beginning, how can we make this accessible and legible to other people,
+
+00:14:42.080 --> 00:14:48.000
+reviewers, potential collaborators, that kind of thing. And it's always so, it feels so nice
+
+00:14:48.000 --> 00:14:52.960
+on the flip side when you learn to love that workflow, when someone uses something you've
+
+00:14:52.960 --> 00:14:58.640
+written before and they tell you how it's impacted their workflow or they give you tips or
+
+00:14:59.039 --> 00:15:04.320
+you know, submit a pull request or those kinds of things. It's so much fun and it really feels
+
+00:15:04.320 --> 00:15:10.000
+like sharing. So you're right, there was kind of a barrier to entry there, but once I came
+
+00:15:10.000 --> 00:15:16.479
+around to it, I really learned to love it. Wonderful. Well, Isabella put a link in the chat
+
+00:15:16.479 --> 00:15:21.840
+as well to something that Cori mentioned earlier, which was Positron. If you are coming from RStudio
+
+00:15:21.840 --> 00:15:26.479
+and I'm sure Cori came from RStudio, loving RStudio and using it to Positron, I still love
+
+00:15:26.479 --> 00:15:32.239
+RStudio. I still use it as well. But if you are coming from RStudio to Positron and Positron looks
+
+00:15:32.239 --> 00:15:38.400
+unwieldy or you're worried about it or you have questions about the change in your experience,
+
+00:15:38.960 --> 00:15:44.000
+Isabella and I did a walkthrough with RLadies Melbourne and they have a video up already of
+
+00:15:44.000 --> 00:15:49.840
+the recording. So please, please go watch that. Okay. Hubert had a question on Slido and I would
+
+00:15:49.840 --> 00:15:54.080
+love it if Hubert could ask that live. I'll stick it in the chat as well.
+
+00:15:58.479 --> 00:16:01.039
+Sorry, I was slow with my unmuting over here.
+
+00:16:03.119 --> 00:16:06.799
+I am so many. I have my two screens and I lost it. There we go.
+
+00:16:10.719 --> 00:16:18.000
+Hi, Cori. My question is, what are some of your data challenges? Is it, you know, you've got
+
+00:16:18.559 --> 00:16:25.599
+a wide range of collaborators in many, you know, all over the world. Do you have,
+
+00:16:25.599 --> 00:16:31.039
+is it lack of kinds of data? Is it things buried in unstructured data? You know,
+
+00:16:31.039 --> 00:16:34.880
+I live with a lot of clinical notes and all the good stuff's in clinical notes.
+
+00:16:36.880 --> 00:16:42.080
+Yeah, stitching different data sources together. So what are some of the data challenges you face
+
+00:16:42.799 --> 00:16:44.080
+and how have you approached those?
+
+00:16:46.479 --> 00:16:52.239
+Oh, that's really interesting to think about. And it's nice to hear from someone else who
+
+00:16:52.239 --> 00:16:57.760
+appreciates the challenge of clinical notes and getting useful information from that. They're so,
+
+00:16:57.760 --> 00:17:01.280
+they're so rich, but they're a challenge to work with for sure.
+
+00:17:03.520 --> 00:17:08.319
+I think that in general, across my health data science experience,
+
+00:17:08.319 --> 00:17:17.439
+a lot of the big challenges that I've encountered kind of relate to how different health systems
+
+00:17:17.439 --> 00:17:23.199
+operate and how that information flows from general practices or doctors or hospitals into
+
+00:17:23.199 --> 00:17:28.560
+those records and how different linkages are undertaken, not just across countries, but even
+
+00:17:28.560 --> 00:17:33.839
+across different regions within a country, this can look so different place to place or hospital
+
+00:17:33.839 --> 00:17:43.040
+to hospital and understanding where things are coming from and why has been huge. And I think
+
+00:17:43.040 --> 00:17:49.680
+that especially for a lot of lab data or things that we would measure for patients or people kind
+
+00:17:49.680 --> 00:17:55.439
+of on a repeated basis on a regular basis, you know, the tools to undertake those measurements,
+
+00:17:55.439 --> 00:18:02.640
+the assays, those labs, the ways that things are measured can be so variable.
+
+00:18:04.400 --> 00:18:09.920
+So just learning really how we can reliably identify our populations of interest or a study
+
+00:18:09.920 --> 00:18:17.839
+sample, given all of this nuance across data is massive. In my previous team in the Netherlands,
+
+00:18:17.839 --> 00:18:25.599
+we were harmonizing data for up to 10 countries for any given study. And that was so much fun.
+
+00:18:25.599 --> 00:18:33.599
+And we had this extra challenge about language and translating things also. And, you know,
+
+00:18:33.599 --> 00:18:38.640
+different things can be collected in some countries or some settings, not in others. In
+
+00:18:38.640 --> 00:18:43.280
+some countries, it comes from a general practitioner or a family doctor in other
+
+00:18:43.280 --> 00:18:51.359
+countries, things come from the hospital. So I think it really taught me to think high level
+
+00:18:51.359 --> 00:18:55.359
+about a health system and how information flows through different health systems.
+
+00:18:56.319 --> 00:19:02.000
+The clinical notes piece is another beast that I haven't had to tackle majorly yet. I'm sure it's
+
+00:19:02.000 --> 00:19:06.079
+coming and I'm excited for it, but I'm always so interested to hear about the methods other
+
+00:19:06.079 --> 00:19:11.680
+people are using for that because they seem so diverse and interesting, but it seems challenging
+
+00:19:11.680 --> 00:19:20.079
+for sure. Well, Hubert knows something about data harmonization and data modeling across many
+
+00:19:20.079 --> 00:19:26.079
+different types of data contributors. If anybody's interested, go watch Hubert's episode
+
+00:19:26.079 --> 00:19:30.079
+of the Data Science Hangout as well. It's wonderful to be asked a question by somebody
+
+00:19:30.079 --> 00:19:34.959
+who has empathy with what you do, isn't it, Cori? I can tell this person knows that this is a
+
+00:19:34.959 --> 00:19:42.000
+challenge. Okay. Well, update on the poll that I put, I put the results into the chat. I'm going
+
+00:19:42.000 --> 00:19:46.719
+to go ahead and stop that one. I asked, do you love being asked for help by coworkers? Because
+
+00:19:46.719 --> 00:19:51.280
+Cori mentioned part of her week sometimes is like being asked for help. And she was like,
+
+00:19:51.280 --> 00:19:58.319
+that's always fun, right? I think so too, but not everybody does. So we had about 17, 18% said, no,
+
+00:19:58.319 --> 00:20:05.040
+about 82, 83% said, yes, I love it. Count me in the yes. Nerd snipe me anytime. I have to stop
+
+00:20:05.040 --> 00:20:12.560
+myself from being nerd sniped because if that could be my whole job, I would love it. I see
+
+00:20:12.560 --> 00:20:17.040
+some people shaking their heads, yes, in the chat as well. Thank you, Hubert, for that great
+
+00:20:17.040 --> 00:20:21.920
+question. We had an anonymous question. I'm so curious what you think about this one. It says,
+
+00:20:21.920 --> 00:20:27.119
+I have been told at work that I need to write more journal articles. I'm good at doing the
+
+00:20:27.119 --> 00:20:33.680
+analysis, but I get writer's block when writing anything up. Do you have any tips? Oh my gosh,
+
+00:20:33.680 --> 00:20:38.800
+I totally empathize with whoever sent this question. And I feel like it's a sentiment
+
+00:20:38.800 --> 00:20:45.280
+that's shared kind of widely across a lot of research jobs, research settings. I hear a lot
+
+00:20:45.280 --> 00:20:54.400
+of people say that they're allergic to writing, which I think is not uncommon. It's a great
+
+00:20:54.400 --> 00:21:03.520
+question. I feel like on a high level, trying to think about the narrative or the story that your
+
+00:21:03.520 --> 00:21:08.719
+analysis tells can maybe help you find that motivation for writing sometimes. That's a piece
+
+00:21:08.719 --> 00:21:14.000
+of advice that I think I received in my undergrad and really stuck with me, is that find the way
+
+00:21:14.000 --> 00:21:19.760
+to connect your findings to the overall big picture and understanding what that is and how
+
+00:21:19.760 --> 00:21:24.160
+we can make it interesting and accessible to the people who are going to be reading our article,
+
+00:21:24.160 --> 00:21:32.800
+which really helps, I think, distill key messages and guide the flow. In terms of practical tips,
+
+00:21:32.800 --> 00:21:38.479
+I guess everybody kind of finds what works for them. So it's maybe a lot of trial and error
+
+00:21:38.479 --> 00:21:43.680
+finding what works for you if it's about making a scaffold or an outline at first, and then
+
+00:21:43.680 --> 00:21:49.119
+kind of filling in the pieces as you go. Something that I learned to do, and I'm curious what other
+
+00:21:49.119 --> 00:21:55.199
+people feel like is their process, because I don't know if my process is shared necessarily,
+
+00:21:55.199 --> 00:21:59.920
+but I front load my methods. So that's the first thing I write with a research article. And
+
+00:21:59.920 --> 00:22:03.680
+normally they're huge, and they're long, and there's way too much detail. And then with my
+
+00:22:03.680 --> 00:22:08.079
+co-authors, we need to go through revisions, and they usually end up being cut by 50%. But it's
+
+00:22:08.079 --> 00:22:14.079
+almost like a guide for me as the analysis is ongoing and being iterated. Okay, why did we do
+
+00:22:14.079 --> 00:22:19.839
+this? Okay, now we're going to go change this sensitivity analysis or that one. And it kind
+
+00:22:19.839 --> 00:22:24.800
+of feels like it lowers the burden for the article, because then when I go to write everything else,
+
+00:22:24.800 --> 00:22:28.319
+it's like I have a decent chunk written already. That's been really helpful for me.
+
+00:22:30.479 --> 00:22:35.599
+I love it. We have lots of people in the chat showing empathy for writing is hard. I love
+
+00:22:35.599 --> 00:22:42.640
+writing. I like editing better. But I don't like using LLMs to write. It's not a thing that I
+
+00:22:42.640 --> 00:22:49.520
+enjoy. I know some people do. There are lots of different apps nowadays that help you with
+
+00:22:49.520 --> 00:22:55.359
+dictation as well. Like I can talk someone's ear off. It has to be a person though. So I have to
+
+00:22:55.359 --> 00:23:00.959
+have my husband come in and sit with me and just sort of nod, even though he has no idea what I'm
+
+00:23:00.959 --> 00:23:06.319
+talking about. Hire your friends to get on Zoom with you and be like, can I just talk through
+
+00:23:06.319 --> 00:23:12.239
+this thing? And sometimes you'll find yourself just spilling out the entire thing with no blocks.
+
+00:23:12.239 --> 00:23:16.719
+Whereas if you had just sat there with a blank page, it would have been really hard. Oh my
+
+00:23:16.719 --> 00:23:21.920
+goodness. Well, thank you so much for that. Great question. Anonymous, ask her whoever you are. It
+
+00:23:22.000 --> 00:23:27.920
+was fantastic. We loved it. Mike K. Smith asked a question and it has an asterisk, which is rare
+
+00:23:27.920 --> 00:23:32.959
+for Mike. Mike, I'm going to read this for you. It says pharmaco epidemiology feels like it may
+
+00:23:32.959 --> 00:23:38.800
+take a while to build and test predictive features of the models. How do you make sure you get
+
+00:23:38.800 --> 00:23:43.839
+answers in time for decision-making? That's a good question. What is your horizon for just
+
+00:23:43.839 --> 00:23:50.880
+time horizon for decision-making for projects? That's a really good question. And I almost
+
+00:23:50.880 --> 00:23:56.160
+feel like I've been a little lucky thus far because a lot of my pharmaco-epi work has been
+
+00:23:56.160 --> 00:24:02.560
+focused on defining disease populations and kind of unmet clinical needs. So maybe I've been a
+
+00:24:02.560 --> 00:24:09.520
+little lucky in that I haven't been tasked with major prediction challenges in the pharmaco-epi
+
+00:24:09.520 --> 00:24:16.239
+space. So I'm really curious to hear from other people and how they're tackling that. I think
+
+00:24:16.319 --> 00:24:25.280
+maybe an underlying theme across these kind of behemoth pharmaco-epi analyses is really about
+
+00:24:25.280 --> 00:24:31.599
+understanding your data source and the strengths and weaknesses there and what might be missing
+
+00:24:32.319 --> 00:24:38.719
+and really how that's influencing the sample that's being selected and then thereby the
+
+00:24:38.719 --> 00:24:44.880
+generalizability of the results and how quickly you can deliver the product that you want. Because
+
+00:24:45.359 --> 00:24:54.319
+I think you can always come to the most accurate answer possible. The methods can always be more
+
+00:24:54.319 --> 00:24:58.880
+sophisticated. It just needs more time and probably more of that investment to understand
+
+00:24:58.880 --> 00:25:03.599
+the data you're working in. Whereas I feel like in a lot of industry settings, and maybe this is
+
+00:25:03.599 --> 00:25:09.439
+more common in industry pharma, is that we don't necessarily have the long time horizons that we'd
+
+00:25:09.439 --> 00:25:14.319
+have in academic research. So it's about understanding exactly the message that we'd
+
+00:25:14.319 --> 00:25:19.599
+like to deliver right now and what we might like to deliver in the next quarter, the near future,
+
+00:25:21.359 --> 00:25:28.319
+and working kind of incrementally in that way. But with that being said, I have enjoyed the work
+
+00:25:28.319 --> 00:25:34.959
+that I've done so far, which has been a lot of population at risk identification and that kind
+
+00:25:34.959 --> 00:25:40.719
+of thing. I'd love to undertake some prediction in the future. Yeah. Everybody does different
+
+00:25:40.719 --> 00:25:46.239
+sorts of tasks with their data, right? I think that this is a big difference, that time horizon,
+
+00:25:46.239 --> 00:25:51.119
+and also the pace is a difference between academia and industry as well, right? Where
+
+00:25:52.000 --> 00:25:57.599
+you have different goals. Because I heard you talking sort of around a business question in
+
+00:25:57.599 --> 00:26:02.479
+a way. I know that health and epidemiology, that doesn't go to one-to-one, but that's what I hear
+
+00:26:02.479 --> 00:26:06.959
+from people coming from academia to industry when they're not in health spaces as well,
+
+00:26:06.959 --> 00:26:14.800
+is that they go from a rigorous question that has to do with the data, the subject, nothing else,
+
+00:26:14.800 --> 00:26:19.280
+to I'm answering a business question and I'm on a timeline and the rigor is not quite as
+
+00:26:19.280 --> 00:26:26.479
+important. Have you found that shift in the health space as well or no? Definitely. I think
+
+00:26:27.119 --> 00:26:33.439
+understanding how the priorities are shifting across the two environments is a
+
+00:26:33.439 --> 00:26:38.719
+major learning curve for sure. And that's something that I've heard over and over again
+
+00:26:38.719 --> 00:26:47.199
+across people who are moving between those spaces. And I think that maybe the longer you spend
+
+00:26:47.839 --> 00:26:55.359
+in both spaces, it's easier to see how they kind of go hand in hand. But there's definitely
+
+00:26:56.160 --> 00:27:03.359
+definitely different, I guess, priorities with regards to analytical timelines and
+
+00:27:03.359 --> 00:27:11.520
+objectives and that kind of thing across both spaces. And yeah, it's so interesting
+
+00:27:11.520 --> 00:27:19.359
+to being in health specifically, maybe that makes them feel like more one side of the
+
+00:27:19.359 --> 00:27:24.239
+fence versus the other, where if you come from a different academic discipline, maybe they
+
+00:27:24.719 --> 00:27:31.199
+tend to align better. But it's always really interesting to think from, I think, a pharmaceutical
+
+00:27:31.199 --> 00:27:36.959
+perspective in general, because a lot of that common thread, I think, is addressing unmet
+
+00:27:36.959 --> 00:27:43.280
+clinical needs, addressing unmet patient needs, understanding really comprehensively what's our
+
+00:27:43.280 --> 00:27:48.719
+disease population of interest. Those types of themes, I think, span across the spaces, which is
+
+00:27:49.280 --> 00:27:51.680
+really nice to keep in mind those principles.
+
+00:27:53.439 --> 00:27:56.800
+Awesome. Thank you. Mike, thank you for that great question.
+
+00:27:56.800 --> 00:28:00.239
+I'm sorry that you weren't here to answer it or ask it yourself.
+
+00:28:00.455 --> 00:28:05.255
+Well we have a fun question in the Slido which is, I see your road bike in the
+
+00:28:05.255 --> 00:28:08.975
+background. Do you use your biking data for anything? Do you track your biking
+
+00:28:08.975 --> 00:28:16.135
+data? Oh that's that's super interesting. I don't have any biking data for
+
+00:28:16.135 --> 00:28:20.375
+myself because I don't have a watch or like a smart watch or anything like this
+
+00:28:20.375 --> 00:28:26.135
+and I know that it's kind of unusual these days. I would be really interested
+
+00:28:26.135 --> 00:28:31.414
+to start to play around with that data and it it did kind of motivate me a little
+
+00:28:31.414 --> 00:28:36.335
+bit to think about like a smart watch or a smart device. I've heard different
+
+00:28:36.335 --> 00:28:40.775
+preferences from different people with regards to maybe like the watch they
+
+00:28:40.775 --> 00:28:45.695
+choose and how granular their health data is. I have a couple friends who have
+
+00:28:45.695 --> 00:28:49.295
+whoop watches I think and if I understand correctly the data you get
+
+00:28:49.295 --> 00:28:53.214
+from your whoop watch is like super detailed and granular and you can really
+
+00:28:53.214 --> 00:28:58.495
+kind of do analysis on your physiology. So that might be something something
+
+00:28:58.495 --> 00:29:01.535
+coming for me in the future. I think for now I'm I'm happy to stay a little
+
+00:29:01.535 --> 00:29:07.895
+blissfully ignorant with regards to not tracking that stuff and not not uploading
+
+00:29:07.895 --> 00:29:13.535
+to Strava or anything but but it would be really interesting to just start to
+
+00:29:13.535 --> 00:29:18.734
+dig in into my my own data. My friends, I love seeing my friends stuff on Strava. I
+
+00:29:18.775 --> 00:29:23.615
+just I'm not putting stuff myself you know. There is nothing wrong with that
+
+00:29:23.615 --> 00:29:30.175
+although the wealth of data that you can get about yourself is sometimes how how
+
+00:29:30.175 --> 00:29:35.535
+would I say surprising? I'm like oh wow I am allowing my phone to track a lot. Some
+
+00:29:35.535 --> 00:29:38.974
+of it's really fun. I have several years of my own sleep data because I used to
+
+00:29:38.974 --> 00:29:44.974
+use the sleep app that would record sounds while sleeping. Ostensibly
+
+00:29:45.054 --> 00:29:49.935
+record your snoring. It never caught me snoring. It caught my husband snoring all the
+
+00:29:49.935 --> 00:29:54.495
+time so that was a little messy data thing where I'm like oh it says I
+
+00:29:54.495 --> 00:29:58.054
+snored all of these days right but I generally don't snore and I would
+
+00:29:58.054 --> 00:30:01.974
+listen to it and it would definitely be my husband. So if you are recording your
+
+00:30:01.974 --> 00:30:06.175
+own data know that there's some mess in there too probably for you to clean. I
+
+00:30:06.175 --> 00:30:12.055
+would love to know a little bit about the ways that you've used Shiny because
+
+00:30:12.214 --> 00:30:16.934
+I love Shiny and I know that you've used Markdown outputs. I'm curious if you use
+
+00:30:16.934 --> 00:30:21.895
+Quarto or Markdown or any other things. Do you have any recent Shiny work that
+
+00:30:21.895 --> 00:30:26.934
+you could talk about or any past work that was really fun? Oh I love this
+
+00:30:26.934 --> 00:30:35.014
+question. Yeah I've actually been like lucky to use it with colleagues
+
+00:30:35.014 --> 00:30:40.775
+across a few different examples. I haven't yet started in Quarto. I did
+
+00:30:40.775 --> 00:30:46.615
+have a colleague who he'd moved all of his like teaching over from Markdown to
+
+00:30:46.615 --> 00:30:50.734
+Quarto so I feel like that's kind of an ex-challenge that I'm excited for. But in
+
+00:30:50.734 --> 00:30:57.055
+regards to how I've used it in the past a really cool use case that we had at
+
+00:30:57.055 --> 00:31:02.775
+one of my previous jobs actually relates again back to the kind of harmonizing
+
+00:31:02.775 --> 00:31:07.335
+international data across different countries and health systems. We were
+
+00:31:07.335 --> 00:31:11.695
+mapping all of the data from the different hospitals and the sites onto a
+
+00:31:11.695 --> 00:31:17.055
+common data model and so an intermediate that a brilliant colleague had built was
+
+00:31:17.055 --> 00:31:26.574
+kind of a Markdown score sheet or data quality check about how well the data at
+
+00:31:26.574 --> 00:31:31.975
+a given site was formatted right now to be mapped onto the CDM, kind of what
+
+00:31:31.975 --> 00:31:35.895
+changes would need to happen and the different coverage and things that were
+
+00:31:35.895 --> 00:31:40.975
+missing that were key that we wouldn't really expect to be missing like very
+
+00:31:40.975 --> 00:31:49.815
+very kind of essential parameters like date of birth or postcode or these
+
+00:31:49.815 --> 00:31:55.374
+kinds of things. So that was I think the one of the first use cases
+
+00:31:55.374 --> 00:31:59.654
+I'd seen of like Shiny or Markdown output where I was like wow this is
+
+00:31:59.654 --> 00:32:04.335
+having such an impact and it's so important to our workflow and I think
+
+00:32:04.494 --> 00:32:10.975
+since then trying to find small ways to try to work that in it's such an
+
+00:32:10.975 --> 00:32:15.975
+invaluable tool to I think share results with people who maybe don't necessarily
+
+00:32:15.975 --> 00:32:21.574
+come from a data science or programming or quants background and to give them
+
+00:32:21.574 --> 00:32:27.134
+something that they can kind of play with and see what they need and
+
+00:32:27.134 --> 00:32:33.775
+find what they need I love. I'd love to do more in my spare time. I had one
+
+00:32:33.775 --> 00:32:39.055
+friend in her spare time she had built like an interactive Shiny for all of
+
+00:32:39.055 --> 00:32:43.335
+their household expenses like their bills and their rent every month and she
+
+00:32:43.335 --> 00:32:47.534
+and her husband were kind of managing their finances that way which I loved so
+
+00:32:47.534 --> 00:32:51.574
+I think a small personal project like that too is something I'd love to do and
+
+00:32:51.574 --> 00:32:56.534
+kind of a low barrier to entry introduction to those things as well but
+
+00:32:56.534 --> 00:33:03.175
+yeah I and if I oh yeah do you have any cool are you are you doing a lot of
+
+00:33:03.175 --> 00:33:08.335
+shiny Libby in your in your free time? In my free time not anymore although I
+
+00:33:08.335 --> 00:33:14.215
+did I do love doing shiny apps I have done shiny apps for my job but I only
+
+00:33:14.215 --> 00:33:17.694
+ever got to work on really boring ones or ones that I didn't agree with right
+
+00:33:17.694 --> 00:33:21.055
+where like I didn't get to build it I just had to maintain it and I didn't
+
+00:33:21.055 --> 00:33:25.534
+agree with the premise of it or the way that was designed or whatever but I
+
+00:33:25.534 --> 00:33:29.655
+really like the idea of building a shiny app for yourself especially if
+
+00:33:29.655 --> 00:33:33.615
+nobody cares about it or uses it that's my favorite thing I haven't I have one
+
+00:33:33.615 --> 00:33:36.455
+that I've shown people on the data science lab before that just makes an
+
+00:33:36.455 --> 00:33:42.814
+art piece that's it has absolutely no use case Mike says Libby has free time
+
+00:33:42.814 --> 00:33:47.775
+yeah not a lot of it but I love the idea of tracking finances I love personal
+
+00:33:47.775 --> 00:33:55.935
+finance that's like a niche of mine I shared a poll that said going back to a
+
+00:33:55.935 --> 00:34:00.014
+previous topic that said do you or do you currently struggle with sharing your
+
+00:34:00.014 --> 00:34:03.215
+code or sharing your screen while coding and I wanted to get everybody an update
+
+00:34:03.215 --> 00:34:08.414
+on that we had 30 votes about 50% of people said yes I struggle with this
+
+00:34:08.414 --> 00:34:13.935
+type of anxiety and only 13% said no I never struggled with this so you are not
+
+00:34:13.935 --> 00:34:18.895
+alone if you have struggled with this or if you are struggling with it but the
+
+00:34:18.895 --> 00:34:23.775
+most hopeful thing is that about 38 39 percent said not anymore but I did in
+
+00:34:23.775 --> 00:34:28.935
+the beginning so maybe there's hope that you can practice your way through it and
+
+00:34:28.935 --> 00:34:33.775
+it'll be okay oh yeah it's changing people are voting as I'm talking about
+
+00:34:33.775 --> 00:34:40.534
+it now um okay let's head back over to our questions in Slido and I see one
+
+00:34:40.534 --> 00:34:44.055
+from Zach that has an asterisk so I will read it and it says how do you see
+
+00:34:44.055 --> 00:34:50.974
+AI affecting health data science what a good question that's a really great
+
+00:34:50.974 --> 00:34:56.775
+question I think I feel like we're only just now
+
+00:34:56.775 --> 00:35:02.615
+releasing how it might have a major change for maybe health system
+
+00:35:02.615 --> 00:35:07.734
+processes I know there's so much incredible literature out there like
+
+00:35:07.734 --> 00:35:13.175
+really quantifying robustly all the different use cases or utilities we're
+
+00:35:13.175 --> 00:35:19.655
+integrating it but maybe now we're really understanding how how we can do
+
+00:35:19.655 --> 00:35:25.055
+that I think the paper that comes to mind is and maybe I'm sure a lot of
+
+00:35:25.055 --> 00:35:29.414
+people people in the hangout are familiar with it a lot more than I am
+
+00:35:29.414 --> 00:35:37.455
+but it's I think it was they'd used an LLM to triage emergency admissions and
+
+00:35:37.455 --> 00:35:42.974
+kind of weighing that up against kind of human triaging and the findings were
+
+00:35:42.974 --> 00:35:47.455
+just remarkable and so I guess thinking about how we can use these tools
+
+00:35:47.455 --> 00:35:52.455
+alongside healthcare practitioners and and help to integrate them into workflows
+
+00:35:52.455 --> 00:35:59.814
+so yeah everybody is benefiting the patients the healthcare providers or
+
+00:35:59.814 --> 00:36:03.854
+practitioners you know there's less on their plate they're under less stress in
+
+00:36:03.854 --> 00:36:07.655
+any given moment I can't imagine what it's like to be a doctor working in an
+
+00:36:07.655 --> 00:36:12.215
+emergency room especially on a weekend when when the waiting rooms overflowing
+
+00:36:12.215 --> 00:36:17.414
+and so just having a super robust tool or something to add to your arsenal that
+
+00:36:17.414 --> 00:36:22.215
+can really take that load off take that burden off I think that is the way that
+
+00:36:22.215 --> 00:36:28.734
+I'm really excited about AI impacting I guess you know health systems research
+
+00:36:28.734 --> 00:36:35.415
+and health systems in general yeah I guess and then I guess there's all of
+
+00:36:35.415 --> 00:36:39.455
+you know maybe the ways a lot of us are more familiar with using LLMs for
+
+00:36:39.455 --> 00:36:45.374
+writing or helping us code boilerplate stuff all of those use cases there's so
+
+00:36:45.374 --> 00:36:50.254
+many so I guess it's about like the scale of the impact as well but if I
+
+00:36:50.254 --> 00:36:54.574
+think high-level I think there's some really exciting opportunities there
+
+00:36:54.574 --> 00:37:00.614
+awesome yeah I saw Luke in the chat pop up at the mention of an emergency
+
+00:37:00.614 --> 00:37:07.134
+department I saw that we had several epi folks in our chat which is awesome and
+
+00:37:07.134 --> 00:37:12.215
+lots and lots of like empathy with a lot of the the topics that we're talking
+
+00:37:12.215 --> 00:37:16.934
+about which I love and also a lot of people saying that they build shiny apps
+
+00:37:16.934 --> 00:37:23.014
+for fun for stress relief you know to do all kinds of stuff and also I put
+
+00:37:23.014 --> 00:37:26.415
+another poll in the chat I can't stop with the polls they're fun Cory has so
+
+00:37:26.415 --> 00:37:31.254
+many like poll worthy questions and topics today about whether or not
+
+00:37:31.254 --> 00:37:36.775
+anybody tracks any of their own data so go answer that poll we are at like 11 or
+
+00:37:36.775 --> 00:37:41.415
+12 votes here but a lot of people for the most part saying that they like
+
+00:37:41.415 --> 00:37:44.335
+tracking the data but they don't analyze it themselves this is a perfect
+
+00:37:44.335 --> 00:37:48.895
+opportunity for a fun shiny app y'all that has no consequences that you can go
+
+00:37:48.895 --> 00:37:56.735
+play with all right let's take a look over it I lost my Slido one second
+
+00:37:56.735 --> 00:38:02.694
+everybody I had a question for you about in the beginning you talked about
+
+00:38:02.694 --> 00:38:07.795
+administrative data and I was wondering what administrative data is and what
+
+00:38:07.795 --> 00:38:13.054
+that looks like and whether or not you are seeing differences in that
+
+00:38:13.054 --> 00:38:15.655
+administrative data across all these different places that you work because
+
+00:38:15.655 --> 00:38:20.335
+you have worked in Europe you've worked specifically in the UK also in the US
+
+00:38:20.335 --> 00:38:24.295
+but you're in Canada right now do you see a difference between the
+
+00:38:24.295 --> 00:38:28.934
+administrative data and all of those places because we had Vitas who is from
+
+00:38:28.934 --> 00:38:34.335
+the central statistics office in Ireland talking all about Ireland specifically
+
+00:38:34.335 --> 00:38:37.614
+and we had some questions I remember that day about how it compared to the US
+
+00:38:37.614 --> 00:38:41.895
+and he was like I don't know but you might have some comparison right oh
+
+00:38:41.895 --> 00:38:47.814
+that's super interesting I yeah I guess I do I use the term administrative data
+
+00:38:47.814 --> 00:38:53.494
+as a super broad umbrella but I guess it means something kind of specific for me
+
+00:38:53.494 --> 00:39:01.095
+actually which is really data related to health systems any kind of part of a
+
+00:39:01.095 --> 00:39:05.814
+health system that's collected routinely and kind of passively but isn't collected
+
+00:39:05.814 --> 00:39:10.455
+necessarily for the purpose of research I think in a lot of health systems it's
+
+00:39:10.455 --> 00:39:17.174
+collected for the purpose of billing and and payment or reimbursement and I
+
+00:39:17.174 --> 00:39:22.215
+think that this was something that blew my mind on my PhD in the UK and and my
+
+00:39:22.215 --> 00:39:27.614
+work thereafter because I was like we have like population level data it's so
+
+00:39:27.614 --> 00:39:31.814
+granular and it's not even collected for us to do research on it but it
+
+00:39:31.814 --> 00:39:38.535
+facilitates such incredible research so that that really inspired me and then of
+
+00:39:38.535 --> 00:39:42.215
+course that that comes with the caveat that because it's not collected for
+
+00:39:42.215 --> 00:39:46.535
+research it often requires so much cleaning and harmonization and
+
+00:39:46.535 --> 00:39:53.054
+processing I I feel like the the typical split I hear is that we spend 90% of our
+
+00:39:53.054 --> 00:39:56.735
+time cleaning and 10% of our time actually running our analysis and I
+
+00:39:56.735 --> 00:40:02.895
+feel like I definitely empathize with that and share that sentiment and yeah
+
+00:40:02.895 --> 00:40:08.335
+in terms of geographical variation it's in my experience it's been it's been
+
+00:40:08.335 --> 00:40:14.254
+pretty broad and it's so interesting to think about how that reflects the health
+
+00:40:14.254 --> 00:40:21.134
+system design in general so I guess the example that I'm most familiar with is
+
+00:40:21.134 --> 00:40:26.934
+the UK where it's you know public system and it's free at the point of access or
+
+00:40:26.934 --> 00:40:33.254
+accessible kind of at the point of care and I think that that makes kind of the
+
+00:40:33.254 --> 00:40:38.054
+UK so exceptional in the way that they're able to link data across primary
+
+00:40:38.054 --> 00:40:44.374
+and secondary care sources and link to external sources like census data or
+
+00:40:44.374 --> 00:40:49.254
+Office for National Statistics records death records cancer registry all that
+
+00:40:49.254 --> 00:40:52.735
+stuff it really is such an incredible place to be doing health research and
+
+00:40:52.735 --> 00:40:57.134
+and I I really enjoyed digging into that data but then if I think about other
+
+00:40:57.134 --> 00:41:02.134
+health systems I think especially a lot of insurance based systems maybe the
+
+00:41:02.134 --> 00:41:07.415
+purpose of collecting that data and the payment mechanism looks a little
+
+00:41:07.494 --> 00:41:13.455
+different and that also has implications for how to clean how to process and what
+
+00:41:13.455 --> 00:41:19.174
+kind of population coverage we have and all of these things so it it really can
+
+00:41:19.174 --> 00:41:22.174
+impact your research question too and the data source that you're choosing
+
+00:41:22.174 --> 00:41:29.295
+kind of the health system design and and how the system works and I think it's
+
+00:41:29.295 --> 00:41:34.494
+really exciting for common data models it's a really exciting time I'm thinking
+
+00:41:34.535 --> 00:41:38.895
+of the OMOP common data model I I don't know if anybody in the chat or anyone
+
+00:41:38.895 --> 00:41:44.494
+here is familiar with that but I'll thinking it will be oh exactly yeah for
+
+00:41:44.494 --> 00:41:50.054
+sure yeah yeah yeah so thinking about how you know such different health
+
+00:41:50.054 --> 00:41:53.855
+systems in different countries are all mapping onto the same common data model
+
+00:41:53.855 --> 00:41:58.374
+it's it's an incredible challenge but it's been so much success so it's really
+
+00:41:58.374 --> 00:42:04.095
+awesome to see that oh awesome and Dan just added Odyssey which is there's a
+
+00:42:04.095 --> 00:42:08.455
+link there about data data standardization this is a really big
+
+00:42:08.455 --> 00:42:13.895
+topic I think that I before meeting so many people on the hangout who work in
+
+00:42:13.895 --> 00:42:18.254
+data modeling in data harmonization I don't think I really truly understood
+
+00:42:18.254 --> 00:42:23.494
+that the challenges that go along with modeling data not statistical modeling
+
+00:42:23.494 --> 00:42:29.254
+not machine learning modeling but modeling data absolutely something that
+
+00:42:29.254 --> 00:42:35.855
+I have massive respect for I had a question while you were describing that
+
+00:42:35.855 --> 00:42:39.814
+and I'm gonna ask it really quickly so we can get to a career advice question
+
+00:42:39.814 --> 00:42:44.574
+it sounds like you were talking about lots and lots of variables that were not
+
+00:42:44.574 --> 00:42:50.134
+meant to be variables right like these were things that we do collect and we
+
+00:42:50.134 --> 00:42:54.814
+can look at but they're not meant to be health data which brings up instrumental
+
+00:42:54.814 --> 00:42:58.975
+variables and I thought maybe you could talk a little bit about what an
+
+00:42:58.975 --> 00:43:03.614
+instrumental variable is and some of the ones that you see in your work
+
+00:43:03.614 --> 00:43:08.574
+because if anybody hasn't learned about them they're fascinating sure yeah and
+
+00:43:08.574 --> 00:43:12.855
+you know Libby I might love your input here because I haven't been doing
+
+00:43:12.855 --> 00:43:17.975
+instrumental variable analysis for a long time we're thinking oh I'm sure
+
+00:43:17.975 --> 00:43:21.415
+there are lots of people in the chat who are who can give me a lot of pointers
+
+00:43:21.415 --> 00:43:26.855
+but how I'm kind of describing the methodology or the framework but I think
+
+00:43:26.855 --> 00:43:34.415
+that the way that I think about it most frequently is kind of in regards to how
+
+00:43:34.415 --> 00:43:40.535
+we emulate a trial or simulate a randomized trial using this
+
+00:43:40.535 --> 00:43:44.814
+administrative data there's a methodology called target trial
+
+00:43:44.814 --> 00:43:49.374
+emulation which I was using quite frequently to kind of design my
+
+00:43:49.374 --> 00:43:55.174
+observational studies previously when I was working in academic research and I
+
+00:43:55.174 --> 00:44:04.095
+think that thinking about instrumental variables as kind of the instrument for
+
+00:44:04.095 --> 00:44:11.614
+our exposure I guess in that regard is is really is really the context in which
+
+00:44:11.614 --> 00:44:18.735
+I think about it so just thinking about kind of the mechanisms of exposure and
+
+00:44:18.735 --> 00:44:24.934
+the different exposure groups that we're interested in and instrumental variables
+
+00:44:25.215 --> 00:44:30.775
+analysis I think I think some people are using it in target trials I've actually
+
+00:44:30.775 --> 00:44:35.215
+more commonly used inverse treatment probability weighting which is kind of
+
+00:44:35.215 --> 00:44:39.694
+just another way to ensure that we can make causal inferences basically with
+
+00:44:39.694 --> 00:44:46.455
+our study design it's super super convoluted and really smart folks are
+
+00:44:46.455 --> 00:44:51.934
+developing those methods but really confusing I think the first time I
+
+00:44:51.934 --> 00:44:54.855
+learned about instrumental variables I was like oh no I don't even think I
+
+00:44:54.855 --> 00:44:58.014
+can explain this everybody should go Google instrumental variables though if
+
+00:44:58.014 --> 00:45:03.415
+you're interested in statistics causal analysis hmm complex statistical
+
+00:45:03.415 --> 00:45:11.495
+analyses but I wanted to end in our last eight minutes with two things one being
+
+00:45:11.495 --> 00:45:17.735
+a shout out to Phil Boucher who works at Posit who met you at a conference which
+
+00:45:17.735 --> 00:45:21.934
+means that you got to meet us which means you're here with us you talked
+
+00:45:21.934 --> 00:45:26.335
+earlier about tips for people coming from academia to industry right and I
+
+00:45:26.335 --> 00:45:32.335
+always say go where the people are I wanted to ask you like how did that
+
+00:45:32.335 --> 00:45:36.615
+happen what how many conferences do you go to every year do you go in person do
+
+00:45:36.615 --> 00:45:41.574
+you attend virtually how did you bump into Phil and just the importance of
+
+00:45:41.574 --> 00:45:46.855
+talking to people and how it can lead to things like this yeah it's a great
+
+00:45:46.855 --> 00:45:52.294
+question and I think I totally agree with the message you know go where the
+
+00:45:52.294 --> 00:45:56.735
+people are if something's interesting you something looks cool really follow
+
+00:45:56.735 --> 00:46:05.495
+it and and you know don't have any qualms about reaching out so I think
+
+00:46:05.495 --> 00:46:13.855
+Phil and I actually cross paths virtually about the farm verse packages
+
+00:46:13.855 --> 00:46:18.174
+actually in our because I'm really interested in those especially thinking
+
+00:46:18.174 --> 00:46:22.615
+about regular regulatory grade evidence and that kind of thing and developing
+
+00:46:22.615 --> 00:46:26.135
+open source tools together with pharma something I'm really passionate about
+
+00:46:26.135 --> 00:46:31.375
+and I'd like to move more into the space actually so we connected with regards to
+
+00:46:31.375 --> 00:46:35.615
+that and then you know it happens so often that if someone looks like they're
+
+00:46:35.615 --> 00:46:39.574
+they're doing stuff that is interesting to you there's probably so much more
+
+00:46:39.574 --> 00:46:42.615
+they're doing that you're gonna find interesting as well so once you start
+
+00:46:42.615 --> 00:46:47.495
+talking you know you find so many shared areas of interest and it kind of
+
+00:46:47.495 --> 00:46:52.255
+can so easily snowball from there so I'm super thankful that we connected and I
+
+00:46:52.255 --> 00:46:58.095
+got to meet you guys and yeah trying to hang out um and I think it's it's so
+
+00:46:58.095 --> 00:47:04.375
+it's so important it's it's such a opportunity especially again with all of
+
+00:47:04.375 --> 00:47:09.054
+the ways we have virtually now post COVID to connect and how that's become a
+
+00:47:09.054 --> 00:47:13.975
+lot more normalized I was really unfortunate that a lot of people had to
+
+00:47:13.975 --> 00:47:18.814
+stop you know those in-person meetings and conferences and things that we that
+
+00:47:18.814 --> 00:47:23.335
+are such a great opportunity but at the same time we became so creative about
+
+00:47:23.335 --> 00:47:29.414
+thinking about how we how we do that I would love to be going to more
+
+00:47:29.414 --> 00:47:33.455
+conferences always I always would love more I really love that side of things
+
+00:47:33.455 --> 00:47:37.054
+meeting people in person and chatting and getting excited about somebody else's
+
+00:47:37.054 --> 00:47:42.414
+research or findings at a poster or or a talk is just one of the best things
+
+00:47:42.414 --> 00:47:49.814
+for me so always would love more and I think that if I'm not mistaken our has
+
+00:47:49.814 --> 00:47:54.294
+some really exciting ones coming up I'm thinking of our pharma I'm sure you
+
+00:47:54.294 --> 00:47:58.735
+there are a lot more on the docket that I I'm not aware of but yeah our pharma
+
+00:47:58.735 --> 00:48:03.735
+something I'm really excited for coming up I love it our pharma and our medicine
+
+00:48:03.735 --> 00:48:07.574
+are both wonderful it doesn't matter if you're in pharma or medicine there are
+
+00:48:07.574 --> 00:48:11.814
+so many great talks so many great topics and amazing workshops that are
+
+00:48:11.814 --> 00:48:16.855
+accessible affordable and with Posit Conf you can attend virtually as well
+
+00:48:16.855 --> 00:48:22.135
+in person is always amazing I went in 2023 in Chicago it was amazing well we
+
+00:48:22.135 --> 00:48:25.894
+have five minutes left I'm wondering if you have a piece of career advice you
+
+00:48:25.894 --> 00:48:29.615
+would be willing to share with us something that you wish you knew before
+
+00:48:29.615 --> 00:48:32.934
+you got started or that you like to tell other people to help them along their
+
+00:48:32.934 --> 00:48:42.694
+journey oh oh that's a great question I think I think that I I've always found
+
+00:48:42.694 --> 00:48:51.615
+it so helpful to always just ask the people around me you know supervisors or
+
+00:48:51.615 --> 00:48:55.375
+our colleagues or everybody about their journeys and what they found worked for
+
+00:48:55.375 --> 00:49:00.894
+them and kind of take all those answers and understand what works for you and
+
+00:49:00.894 --> 00:49:05.894
+what applies to your journey and remembering there really is no one way
+
+00:49:05.894 --> 00:49:11.294
+or one one normal route or there's no one way to cut a cake you know
+
+00:49:11.294 --> 00:49:14.735
+everybody's path looks so different and everybody's timeline looks so different
+
+00:49:14.735 --> 00:49:19.054
+I think remembering that especially maybe because I came from an academic
+
+00:49:19.054 --> 00:49:26.015
+background where our our steps and our timeline can look really regimented and
+
+00:49:26.015 --> 00:49:32.335
+at the beginning I thought oh you know I guess it's there's there's one way to
+
+00:49:32.335 --> 00:49:35.574
+do something and if you leave academia you know you can't come back where it's
+
+00:49:35.574 --> 00:49:39.255
+really you're either in or you're out and then now that I'm kind of on the
+
+00:49:39.255 --> 00:49:42.294
+other side I see there's so many opportunities for collaboration and
+
+00:49:42.294 --> 00:49:47.975
+continuing to stay in both worlds or multiple worlds and just finding ways to
+
+00:49:47.975 --> 00:49:52.414
+be creative about building the career that you want and what works for you
+
+00:49:52.414 --> 00:49:57.814
+it's so much about seeing what's possible and how you can make kind of
+
+00:49:57.814 --> 00:50:02.255
+your ideal scenario a reality because I think lots of things are possible and we
+
+00:50:02.255 --> 00:50:08.814
+think outside of the box you can always find a way to get there that is the best
+
+00:50:08.814 --> 00:50:14.855
+advice I have heard in a really long time because I am the type of person who
+
+00:50:14.855 --> 00:50:19.335
+if I don't see something illustrated or scaffolded for me especially growing up
+
+00:50:19.335 --> 00:50:23.975
+I didn't realize it was an option so a lot of the women in my life especially
+
+00:50:23.975 --> 00:50:29.095
+growing up in the 80s and early 90s I didn't see a lot of people who were
+
+00:50:29.095 --> 00:50:33.455
+working in science working in math I didn't have math teachers who were women
+
+00:50:33.455 --> 00:50:37.534
+or science teachers who are women now my friends are women who are science
+
+00:50:37.534 --> 00:50:41.215
+teachers and math teachers and when I got to college I had two women who were
+
+00:50:41.215 --> 00:50:45.534
+my math teachers who completely turned my life around and I went oh my gosh I'm
+
+00:50:45.534 --> 00:50:50.015
+actually really good at math and I didn't think that I was before
+
+00:50:50.015 --> 00:50:55.015
+representation is so so important in that way but yes I love the advice of
+
+00:50:55.015 --> 00:51:01.174
+like think outside the box I will add to Corey's advice and say if you struggle
+
+00:51:01.174 --> 00:51:06.375
+like me with seeing the gray points between A and Z and all the options in
+
+00:51:06.375 --> 00:51:11.335
+between like she said go talk to other people and ask them what they do what
+
+00:51:11.335 --> 00:51:15.654
+they think and options because they will come up with more creative like oh
+
+00:51:15.654 --> 00:51:19.814
+yeah you could just do XYZ and you're like oh man I didn't think that like one
+
+00:51:19.814 --> 00:51:26.495
+time I this is this is like two months ago my ice maker is broken and I ran out
+
+00:51:26.495 --> 00:51:31.534
+of ice and I couldn't fit a bag of ice in my freezer and I texted my friend and
+
+00:51:31.534 --> 00:51:34.654
+said what do I do I'm so frustrated it's so hot and we don't have any ice and
+
+00:51:34.654 --> 00:51:39.215
+she's like just make ice in an ice tray I was like wait what she's like just put
+
+00:51:39.215 --> 00:51:42.414
+water in an ice tray and put it in the freezer you have one of those right and
+
+00:51:42.414 --> 00:51:46.375
+I stood there in my kitchen I was hot all over I was so embarrassed I was like
+
+00:51:46.375 --> 00:51:50.975
+I didn't think of that I truly didn't I'm a brilliant person I think I'm very
+
+00:51:50.975 --> 00:51:54.294
+smart had no idea ask your friends very
+
+00:51:54.294 --> 00:52:00.654
+vulnerably what the gray area is that you don't see okay everybody
+
+00:52:00.654 --> 00:52:05.015
+Corey we've reached the top of the hour I'm so glad that you could join us today
+
+00:52:05.015 --> 00:52:09.375
+talk about health data science I hope you had a good time oh it was so awesome
+
+00:52:09.375 --> 00:52:13.054
+thanks so much everybody and for the privilege of joining the hangout it's
+
+00:52:13.054 --> 00:52:17.735
+it's a pleasure we loved having you everybody we hope that you had a good
+
+00:52:17.735 --> 00:52:21.255
+time I hope that you'll join us again at the data science hangout next Thursday
+
+00:52:21.255 --> 00:52:25.414
+and also on Tuesday at the data science lab Isabella and I will be there talking
+
+00:52:25.414 --> 00:52:30.174
+about technical topics as we always do we cannot wait to see you also join the
+
+00:52:30.174 --> 00:52:33.975
+discord server go hop on go find us if you want a way to just always be at the
+
+00:52:33.975 --> 00:52:39.814
+hangout we are always there all of us are hanging out having fun and we enjoy
+
+00:52:39.814 --> 00:52:43.054
+this time with you so much if you would like to share the chat save the chat
+
+00:52:43.054 --> 00:52:46.814
+there's three dots at the top of your chat if you are on the browser it might
+
+00:52:46.814 --> 00:52:49.814
+be at the bottom where it might not work I'm so sorry browser based zoom is not
+
+00:52:49.814 --> 00:52:55.694
+ideal but if you're in the app you can save it and Isabella just put the
+
+00:52:55.694 --> 00:52:59.934
+meeting saved chat right there so you can download it hopefully as a txt file
+
+00:52:59.934 --> 00:53:03.975
+thank you everybody we love hanging out with you and we will see you next week
+
+00:53:03.975 --> 00:53:06.255
+bye

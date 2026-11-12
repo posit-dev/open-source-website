@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
     • How writing books is a form of tidying ideas, and how a Shiny textbook led to a custom bike'
   duration: 1709
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:07.658901+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 68
   people:
   - Hadley Wickham

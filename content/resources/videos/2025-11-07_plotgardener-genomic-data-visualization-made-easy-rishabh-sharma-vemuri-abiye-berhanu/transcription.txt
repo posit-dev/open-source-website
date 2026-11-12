@@ -1,19 +1,29 @@
+<p><a data-t="241">How can we</a> <a data-t="235">reverse engineer the script</a> <a data-t="238">itself and then learn R as they go?</a></p>
+
 <p><a data-t="241">Another benefit is reusability. Like we said, you can download</a> <a data-t="243">the R code from the R app itself and also save your Plotgardener session so you can continue on working what you</a> <a data-t="248">have and also share it with others so they can build on top</a> <a data-t="250">of what you have. And finally, is adaptability.</a></p>
 
 <p><a data-t="255">So, our flow of parsing the package itself and then</a> <a data-t="257">injecting it into our application is something that</a> <a data-t="259">can be replicated for a variety of applications.</a></p>
 
 <p><a data-t="262">So, we have a lot of great things that can be done with</a> <a data-t="264">Plotgardener.</a></p>
 
+<p><a data-t="269">We have a lot of great things that can be done with Plotgardener.</a></p>
+
 <p><a data-t="275">Now anyone can use the amazing capabilities of Plotgardener</a> <a data-t="278">without having to worry about a single semicolon and make</a> <a data-t="281">complex publication-ready visualizations.</a></p>
 
-<blockquote><a data-t="275">Now anyone can use the amazing capabilities of Plotgardener</a> <a data-t="278">without having to worry about a single semicolon and make</a> <a data-t="281">complex publication-ready visualizations.</a></blockquote>
+<p><a data-t="284">So, hopefully now building plots doesn't feel like putting big</a> <a data-t="285">logs together but just snapping Legos together.</a></p>
 
-<p><a data-t="284">So, hopefully now building plots doesn't feel like putting big</a> <a data-t="285">logs together but just snapping Legos together.</a> <a data-t="289">And so we hope this makes it more simple, powerful and</a> <a data-t="291">easy to use.</a></p>
+<blockquote><a data-t="284">So, hopefully now building plots doesn't feel like putting big</a> <a data-t="285">logs together but just snapping Legos together.</a></blockquote>
 
-<h3>Closing remarks</h3>
+<p><a data-t="289">And so we hope this makes it more simple, powerful and</a> <a data-t="291">easy to use.</a></p>
 
-<p><a data-t="294">So, with that, I'm going to turn it back over to you.</a> <a data-t="299">Thank you.</a></p>
+<p><a data-t="294">So, with that, I'm going to turn it back over to you.</a></p>
+
+<p><a data-t="299">Thank you.</a></p>
 
 <p><a data-t="302">And just before we go, we want to say thank you to everyone at</a> <a data-t="304">the Fansteel lab, namely everyone on screen here, Dr.</a> <a data-t="306">Doug Fansteel.</a></p>
 
 <p><a data-t="310">And then also a big thank you to Posit for allowing us to</a> <a data-t="312">present our work here today. Thank you.</a></p>
+
+<p><a data-t="315">APPLAUSE</a></p>
+
+<p><a data-t="321">So, with that, I'm going to turn it back over to Dr.</a> <a data-t="323">Doug Fansteel.</a></p>

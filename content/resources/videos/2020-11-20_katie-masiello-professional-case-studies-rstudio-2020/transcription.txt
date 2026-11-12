@@ -82,7 +82,7 @@
 
 <h3>Closing thoughts</h3>
 
-<p><a data-t="1137">So I want to close with a few thoughts.</a> <a data-t="1141">I do not want imposter syndrome to get you.</a> <a data-t="1145">There are plenty of sexy and intimidating words out there when we talk data science</a> <a data-t="1150">in the enterprise, Hadoop and Docker, Kubernetes, Spark and Slurm.</a> <a data-t="1150">It's okay.</a> <a data-t="1152">You don't have to know or understand it all.</a></p>
+<p><a data-t="1135">So I want to close with a few thoughts.</a> <a data-t="1137">I do not want imposter syndrome to get you.</a> <a data-t="1141">There are plenty of sexy and intimidating words out there when we talk data science</a> <a data-t="1145">in the enterprise, Hadoop and Docker, Kubernetes, Spark and Slurm.</a> <a data-t="1150">It's okay.</a> <a data-t="1152">You don't have to know or understand it all.</a></p>
 
 <p><a data-t="1156">Because successful enterprise data analytics teams are just that.</a> <a data-t="1159">They're a team.</a> <a data-t="1160">So you do what you do best.</a> <a data-t="1163">But build up, count on, communicate, and learn with your team.</a> <a data-t="1168">You need an R admin, you need IT and DevOps, and you need to be listening to your stakeholders.</a></p>
 
@@ -90,6 +90,6 @@
 
 <h3>Q&A</h3>
 
-<p><a data-t="1231">So I think we just have time for one question before the next speaker.</a> <a data-t="1235">So there's a couple questions that came in, but one of them was, so what do you think</a> <a data-t="1235">are some ways that data science teams can accelerate their learning and especially adopt</a> <a data-t="1240">newer open source packages they may not have used before, like Plumber or </a><a href="/software/tensorflow/">TensorFlow</a><a data-t="1240">?</a></p>
+<p><a data-t="1223">So I think we just have time for one question before the next speaker.</a> <a data-t="1231">So there's a couple questions that came in, but one of them was, so what do you think</a> <a data-t="1235">are some ways that data science teams can accelerate their learning and especially adopt</a> <a data-t="1240">newer open source packages they may not have used before, like Plumber or </a><a href="/software/tensorflow/">TensorFlow</a><a data-t="1240">?</a></p>
 
 <p><a data-t="1248">I really enjoy, it sounds so fundamental, but I find that the best learning happens</a> <a data-t="1253">when folks go to the main landing pages for each of these packages.</a> <a data-t="1259">So people may not realize, but the homepage for Shiny, for R Markdown, there's a getting</a> <a data-t="1263">started section there with tremendous tutorials.</a> <a data-t="1267">I'll say my first Shiny app I built by copying and pasting code from Stack Overflow, probably</a> <a data-t="1272">like maybe your first Shiny app.</a> <a data-t="1274">And after watching the tutorials on just one tutorial from the Shiny page, I started</a> <a data-t="1280">a Shiny app from blank page, and I knew every element and where it needed to go.</a> <a data-t="1284">So I think the resources are out there.</a> <a data-t="1287">And fundamentally, a lot of the building blocks of knowledge that people can benefit from</a> <a data-t="1290">are right on those main pages for the packages.</a></p>

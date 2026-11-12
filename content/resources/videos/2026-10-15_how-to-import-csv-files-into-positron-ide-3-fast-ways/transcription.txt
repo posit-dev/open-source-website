@@ -1,0 +1,27 @@
+<p><a data-t="0">So today I wanted to talk about three ways that you can ingest a CSV into </a><a href="/software/positron/">Positron</a><a data-t="0">.</a> <a data-t="5">Some people call this importing, some people call this loading.</a> <a data-t="9">In any case, it's bringing in a CSV into your environment so then you can actually</a> <a data-t="13">work with the data and do some analysis.</a></p>
+
+<p><a data-t="16">Here I have Positron open.</a> <a data-t="18">I'm going to create a new folder through this welcome screen.</a> <a data-t="22">I'll call it Ingest CSVs.</a> <a data-t="25">I open up that folder and it's going to prompt me and ask if I want to create a Python environment.</a> <a data-t="32">Positron does this using a tool called uv and I'm going to hit yes.</a> <a data-t="36">In the file explorer, you notice that there is a new virtual environment that has been</a> <a data-t="41">opened up.</a></p>
+
+<p><a data-t="43">From here I can actually install some packages.</a> <a data-t="46">I'm going to open up my terminal and I'm going to run the uv command uv pip install</a> <a data-t="52">pandas.</a> <a data-t="53">Pandas is a very common Python library for manipulating data.</a> <a data-t="59">And I'm also going to run uv pip install polars.</a> <a data-t="63">Polars is a relatively newer tool for data manipulation in Python.</a></p>
+
+<h3>Loading a CSV preview in Positron</h3>
+
+<p><a data-t="69">Here I have my CSV in my downloads folder and you can actually just drag and drop your</a> <a data-t="75">CSV directly into your file explorer.</a> <a data-t="79">Now it's popped up here, so that means it's available within the folder.</a> <a data-t="83">Positron automatically shows me a preview of the data using the data explorer.</a> <a data-t="88">So I can take a quick view of what's contained in the CSV.</a> <a data-t="93">But if you look at the variables pane, you'll notice that it's not actually loaded into</a> <a data-t="97">my session.</a> <a data-t="99">This is just a preview.</a></p>
+
+<p><a data-t="101">So if I actually want to load the CSV, here are the three ways that we could do that.</a></p>
+
+<h3>Method 1: writing a script with Polars</h3>
+
+<p><a data-t="106">So the first one is I'm going to hit command shift P to open up the command palette and</a> <a data-t="111">I'm going to select Python, new Python file.</a> <a data-t="115">And so of course the first way that we can import our data is writing a script.</a> <a data-t="120">From here I can write import polars as PL.</a> <a data-t="124">I run that line to import polars and then I could do something like dad equals PL dot</a> <a data-t="131">read CSV, then the name of the file.</a> <a data-t="134">And running that line, I can see that in my variables pane, the CSV is now loaded into</a> <a data-t="140">my session.</a></p>
+
+<h3>Method 2: using the import dataset button</h3>
+
+<p><a data-t="141">The second way I want to show you is through the import data button in Positron.</a> <a data-t="146">If I click this button and select my CSV, it can actually provide the pandas or the</a> <a data-t="152">R code for importing that data for reproducibility.</a> <a data-t="156">But if I hit import, it also directly imports that CSV into my session.</a></p>
+
+<h3>Method 3: using AI with Posit Assistant</h3>
+
+<p><a data-t="164">And the last way I want to show you that you can import data in Positron is you can use</a> <a data-t="169">AI.</a> <a data-t="170">So I'm going to open up Posit Assistant and then I can actually attach a file by clicking</a> <a data-t="177">the file button and I'll select my CSV.</a> <a data-t="181">And then I can tell Posit Assistant something like import this data set.</a> <a data-t="187">Just to do something different, I'm going to say using R because in Positron we can</a> <a data-t="190">switch between Python and R.</a> <a data-t="193">And so it's going to go ahead and do that.</a> <a data-t="195">I'll provide the R code for importing the CSV.</a> <a data-t="199">And now instead of our Python environment, we're actually in an R environment and we</a> <a data-t="203">have this data set, the CSV imported as a data frame.</a></p>
+
+<blockquote><a data-t="187">Just to do something different, I'm going to say using R because in Positron we can</a> <a data-t="190">switch between Python and R.</a></blockquote>
+
+<p><a data-t="209">We hope that you try importing some data into Positron and let us know how it goes.</a></p>

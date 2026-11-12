@@ -1,0 +1,1109 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.900
+Hello everyone, thank you for tuning in to episode 12 of the Shiny Developer Series.
+
+00:00:05.900 --> 00:00:09.520
+My name is Eric Nance and I am the host of this series and thank you so much for joining
+
+00:00:09.520 --> 00:00:10.520
+me.
+
+00:00:10.520 --> 00:00:16.120
+We are kicking off a multi-part series with RStudio software engineer and member of the
+
+00:00:16.120 --> 00:00:18.879
+Shiny team, Barret Schloerke.
+
+00:00:18.879 --> 00:00:23.400
+We talked about so many great ideas that it couldn't fit into just one episode.
+
+00:00:23.400 --> 00:00:27.520
+We lead off this series with learning more about Barret's background and his journey
+
+00:00:27.520 --> 00:00:34.240
+to the RStudio team, as well as learning about the excellent React Logpack framework
+
+00:00:34.240 --> 00:00:37.040
+with some great demonstrations.
+
+00:00:37.040 --> 00:00:38.740
+Let's not wait any longer.
+
+00:00:38.740 --> 00:00:41.680
+Let's connect with part one of our series with Barret.
+
+00:00:41.680 --> 00:00:43.680
+That's right.
+
+00:00:43.680 --> 00:00:44.680
+That's right.
+
+00:00:44.680 --> 00:00:45.680
+Yep.
+
+00:00:45.680 --> 00:00:46.680
+Well, welcome everybody.
+
+00:00:46.680 --> 00:00:50.320
+We have another exciting episode of the Shiny Developer Series on tap.
+
+00:00:50.320 --> 00:00:56.400
+And I am pleased to be joined by RStudio's software engineer, Barret Schloerke.
+
+00:00:56.400 --> 00:00:58.840
+Barret, thank you so much for joining me today.
+
+00:00:58.840 --> 00:01:00.840
+Ah, thank you for having me, Eric.
+
+00:01:00.840 --> 00:01:02.119
+I really appreciate it.
+
+00:01:02.119 --> 00:01:05.400
+Yeah, we're really excited to talk about some really cool topics.
+
+00:01:05.400 --> 00:01:09.559
+So I thought first, why don't you give us a bit about your background and how you discovered
+
+00:01:09.559 --> 00:01:12.120
+R and then by proxy, the Shiny package.
+
+00:01:12.120 --> 00:01:19.639
+Yeah, so my background, I am a computer engineer undergrad and I got that at Iowa State.
+
+00:01:19.639 --> 00:01:24.800
+And that is actually where I discovered R. I was in a freshman honors seminar and I just
+
+00:01:24.800 --> 00:01:31.040
+happened to be in a class taught by Hadley Wickham and Heike Hoffman about data visualization.
+
+00:01:31.040 --> 00:01:36.760
+And each week they offered up a new visualization tool to look at data.
+
+00:01:36.760 --> 00:01:39.720
+And we just, you know, talked about that.
+
+00:01:39.720 --> 00:01:44.199
+And at the very end of the seminar, he goes, hey, if anyone like a research position doing
+
+00:01:44.199 --> 00:01:46.959
+stuff like this, let me know if you're interested.
+
+00:01:46.959 --> 00:01:50.400
+And I was like, I can get paid to do this?
+
+00:01:50.400 --> 00:01:51.400
+This is great.
+
+00:01:51.599 --> 00:01:55.519
+That's a nice way to get involved, right?
+
+00:01:55.519 --> 00:01:57.760
+So I contacted him and said, this sounds great.
+
+00:01:57.760 --> 00:02:00.080
+I want to do this.
+
+00:02:00.080 --> 00:02:07.800
+And I joined up with the research group with Dai Cook, Hadley, Heike Hoffman, and Michael
+
+00:02:07.800 --> 00:02:11.279
+Lawrence, who were all there at Iowa State during that time.
+
+00:02:11.279 --> 00:02:13.360
+And it was a lot of fun.
+
+00:02:13.360 --> 00:02:20.199
+And I just did that as my side research while doing my undergrad there at Iowa State.
+
+00:02:20.199 --> 00:02:22.720
+To me, it was software engineering.
+
+00:02:22.720 --> 00:02:25.000
+But to them, it was statistics.
+
+00:02:25.000 --> 00:02:28.800
+And it, you know, just the application is towards statistics.
+
+00:02:28.800 --> 00:02:32.880
+And I think that is really useful in having that context of statistics.
+
+00:02:32.880 --> 00:02:39.399
+But in, you know, deep down for me, it was just coding at the heart of it.
+
+00:02:39.399 --> 00:02:41.559
+But anyways, I finished up at Iowa State.
+
+00:02:41.559 --> 00:02:48.199
+And then I did a quick pit stop out in San Francisco for a year and a half.
+
+00:02:48.199 --> 00:02:52.360
+And I was a front-end engineer for a company called Metamarkets.
+
+00:02:52.360 --> 00:02:54.399
+They've since been dissolved.
+
+00:02:54.399 --> 00:02:57.639
+But I was writing mostly in JavaScript.
+
+00:02:57.639 --> 00:03:03.559
+And I was working on a project called DVL, which is Data Visualization Legos, which wrapped
+
+00:03:03.559 --> 00:03:10.880
+around D3 and just made it a little bit smaller interface rather than the very complex and
+
+00:03:10.880 --> 00:03:14.240
+complicated D3 interface.
+
+00:03:14.240 --> 00:03:15.240
+And it was nice.
+
+00:03:15.240 --> 00:03:16.240
+It was really good.
+
+00:03:16.279 --> 00:03:19.679
+But that kind of gave me that foundation of reactivity.
+
+00:03:19.679 --> 00:03:23.240
+And if I change this input, then I'll change all these outputs.
+
+00:03:23.240 --> 00:03:26.039
+And so that gave me a pretty strong foundation.
+
+00:03:26.039 --> 00:03:30.399
+So after San Francisco, I continued on into grad school.
+
+00:03:30.399 --> 00:03:36.160
+I did a PhD in statistics at Purdue University.
+
+00:03:36.160 --> 00:03:40.919
+I was under the direction of Dr. Ryan Hafen and Dr. William Cleveland.
+
+00:03:41.199 --> 00:03:50.479
+Ryan is more known for his bokeh work in R. But I personally am very excited about his
+
+00:03:50.479 --> 00:03:52.639
+Trelliscope and Trelliscope.js work.
+
+00:03:52.639 --> 00:03:53.639
+Yes.
+
+00:03:53.639 --> 00:03:54.639
+Me too.
+
+00:03:54.639 --> 00:03:57.080
+I'm actually using that for a very important app as I speak.
+
+00:03:57.080 --> 00:03:59.919
+And my VP that I showed it to absolutely loves it.
+
+00:03:59.919 --> 00:04:02.679
+So I'm so thankful that Ryan made that.
+
+00:04:02.679 --> 00:04:03.679
+Yes.
+
+00:04:03.679 --> 00:04:07.820
+And that was actually, we could say, one of my first introductions to Shiny.
+
+00:04:07.820 --> 00:04:11.000
+Because Trelliscope was written in Shiny.
+
+00:04:11.000 --> 00:04:15.860
+And we had done the proof of concept and we weren't approaching things properly.
+
+00:04:15.860 --> 00:04:21.279
+And we said we need to spend the next 500 hours or next 100 hours optimizing this to
+
+00:04:21.279 --> 00:04:24.720
+try to turn it into an HTML widget.
+
+00:04:24.720 --> 00:04:28.519
+And that way, we can then have multiple Trelliscopes and it's a lot faster.
+
+00:04:28.519 --> 00:04:29.519
+Right.
+
+00:04:29.519 --> 00:04:33.779
+And you can port it into just a regular document.
+
+00:04:33.779 --> 00:04:37.720
+But one of the things that came out of that while I was there is I built a package called
+
+00:04:37.720 --> 00:04:44.700
+Autocog or I think, yeah, Autocogs and it created automatic cognostics, which are used
+
+00:04:44.700 --> 00:04:46.320
+inside Trelliscope.
+
+00:04:46.320 --> 00:04:50.980
+So if you have a ggplot object, there's no reason I can't inspect that object and say,
+
+00:04:50.980 --> 00:04:54.019
+oh, you're doing a linear model with the scatterplot.
+
+00:04:54.019 --> 00:04:57.859
+Let me give you the range of your X and Y values, your slope and intercept for your
+
+00:04:57.859 --> 00:05:01.239
+linear model and your R squared value.
+
+00:05:01.239 --> 00:05:06.079
+And then that's automatically added to your Trelliscope so that you can sort and filter
+
+00:05:06.100 --> 00:05:07.500
+and do all of that.
+
+00:05:08.980 --> 00:05:12.140
+So if you're using it for your VP, check it out.
+
+00:05:12.980 --> 00:05:19.299
+I know my wife is I know my wife is using it for sorting different traffic data that
+
+00:05:19.299 --> 00:05:22.260
+she's using. So, yeah, it just makes my so much easier.
+
+00:05:22.260 --> 00:05:24.380
+I don't have to build all this up from scratch.
+
+00:05:24.380 --> 00:05:29.019
+It's just let them do the organizing they want and then, yeah, drill down if they want.
+
+00:05:29.019 --> 00:05:31.339
+It's very cool. So excellent.
+
+00:05:31.339 --> 00:05:33.739
+Yeah. And so those are some awesome people to learn from.
+
+00:05:34.440 --> 00:05:38.600
+I'm a bit jealous, you know, that's a lot of great knowledge in that group.
+
+00:05:39.359 --> 00:05:44.000
+Yes. Thank you. It's also, as you know, happened to be at the right place at the right
+
+00:05:44.000 --> 00:05:47.839
+time. If I would have been at a different school or a different year, you know, I would
+
+00:05:47.839 --> 00:05:50.320
+have missed that seminar and who knows where I'd be.
+
+00:05:50.320 --> 00:05:52.760
+So, yep, yep.
+
+00:05:52.760 --> 00:05:55.200
+Life always works in a serious way sometimes.
+
+00:05:55.200 --> 00:05:59.480
+And then, yeah, maybe tell us a bit about how you found your way to the RStudio team.
+
+00:06:00.380 --> 00:06:07.420
+So since I had had tasted, you know, work life and I wasn't in school anymore, like I
+
+00:06:07.420 --> 00:06:10.420
+was really going to go back to school and finish that up.
+
+00:06:10.420 --> 00:06:15.380
+And but with the intent that I was going back to industry.
+
+00:06:15.380 --> 00:06:20.500
+And so I try to always position myself that even though the work that I'm doing is
+
+00:06:20.500 --> 00:06:27.420
+statistics for the PhD, it's going to have application towards industry and towards, you
+
+00:06:27.440 --> 00:06:32.320
+know, like this is a chance for me to build a two or three year resume that I can use to
+
+00:06:32.320 --> 00:06:37.160
+like say, hey, I am your candidate to work on on the RStudio team.
+
+00:06:37.720 --> 00:06:41.720
+And so I think it worked out, worked out well.
+
+00:06:41.720 --> 00:06:48.480
+So, yeah, I had a conversation with Hadley and, you know, because we're good friends at
+
+00:06:48.480 --> 00:06:54.600
+that point and then got a got a conversation with Tarif and then had to earn my way
+
+00:06:54.600 --> 00:06:56.200
+through through Joe and the team.
+
+00:06:56.200 --> 00:06:58.140
+So excellent.
+
+00:06:58.260 --> 00:07:00.179
+Yeah. You've been a wonderful addition.
+
+00:07:00.179 --> 00:07:03.660
+And this actually is a nice lead into when I first met you.
+
+00:07:04.059 --> 00:07:09.700
+It probably wasn't that long after you joined, but you and I spoke at the same RStudio
+
+00:07:09.700 --> 00:07:14.660
+comp session. It was a shiny session where I was talking about the effective use of shiny
+
+00:07:14.660 --> 00:07:19.220
+modules because I've been a big proponent of modules and you came right afterwards.
+
+00:07:19.220 --> 00:07:22.339
+And you probably saw my face in the front row.
+
+00:07:22.339 --> 00:07:26.480
+I was kind of decompressing from my talk because that's the first time I spoke in front
+
+00:07:26.480 --> 00:07:31.160
+of so many people. But then you gave a great talk about some excellent work you've done
+
+00:07:31.399 --> 00:07:34.279
+working on a package called React Log.
+
+00:07:34.279 --> 00:07:38.640
+And so I want to start with maybe showcasing some of the work you've done with React
+
+00:07:38.640 --> 00:07:44.480
+Log and why it's such an important tool for shiny users to leverage to understand their
+
+00:07:44.480 --> 00:07:46.119
+reactivity and their shiny apps.
+
+00:07:46.480 --> 00:07:47.880
+Maybe we could go to the demo now.
+
+00:07:48.540 --> 00:07:55.299
+Absolutely. So React Log is a way for users to look inside the black box of shiny, and I
+
+00:07:55.299 --> 00:08:03.000
+think it is so great because I've seen many different like napkin drawings by by shiny
+
+00:08:03.000 --> 00:08:07.739
+developers where they're like, I believe this input connects the output and it does it
+
+00:08:07.739 --> 00:08:09.959
+this way. Here's my napkin.
+
+00:08:10.859 --> 00:08:12.220
+Guilty as charged on that one.
+
+00:08:13.200 --> 00:08:17.799
+Yeah. And so I knew there's got to be a way that we can record this.
+
+00:08:17.799 --> 00:08:21.000
+And Joe had already implemented something beforehand.
+
+00:08:21.000 --> 00:08:26.160
+But it, you know, after about your toy example, it didn't really scale that well.
+
+00:08:26.619 --> 00:08:30.640
+And we needed something that was a full fledged network graphic and you could search, you
+
+00:08:30.640 --> 00:08:32.440
+could go backwards and forwards easily.
+
+00:08:32.880 --> 00:08:37.200
+And so I just was given a clean slate and said, hey, implement this.
+
+00:08:38.200 --> 00:08:45.340
+So for React Log, what it will do is that we can look at this and this is just a replaying
+
+00:08:45.340 --> 00:08:48.820
+GIF, but we can imagine an example like.
+
+00:08:50.340 --> 00:08:56.900
+Pythagoras theorem, right, we have our input A and our input B, and as I change the values
+
+00:08:56.900 --> 00:09:01.440
+of A, in this case, it's calculating, it will calculate A squared and B squared, we can
+
+00:09:01.440 --> 00:09:06.099
+then calculate C squared and then, you know, we take square root to C and then we can
+
+00:09:06.099 --> 00:09:10.320
+display it in our output as text or verbatim, just so we have some multiple outputs.
+
+00:09:11.159 --> 00:09:17.880
+And you can see here, if it's green, then the value is ready and ready to be used.
+
+00:09:18.280 --> 00:09:22.200
+If it's dark gray, it's invalidating, like it's trying to get rid of all the people that
+
+00:09:22.200 --> 00:09:26.559
+depend on it. If it's light gray, it hasn't been calculated yet, but exists.
+
+00:09:26.640 --> 00:09:31.239
+And if it's orange or this orange is yellow color, it's calculating its value.
+
+00:09:32.559 --> 00:09:35.000
+So I will do a quick demo here.
+
+00:09:35.979 --> 00:09:43.260
+So I have that app up here in the RStudio IDE, and I'm going to go ahead and run the
+
+00:09:43.260 --> 00:09:49.460
+app. I'm going to do it in the browser just because the key bindings are just a little
+
+00:09:49.460 --> 00:09:59.979
+funny. And so I can change the value to 5 and 12 and we get, you know, the 5, 12, 13
+
+00:09:59.979 --> 00:10:01.159
+triangle. Great.
+
+00:10:01.840 --> 00:10:09.000
+And if I open up React log with command FN3 or F3, then I get the React log right away.
+
+00:10:10.679 --> 00:10:14.119
+This shows up at the first time that Shiny is idle.
+
+00:10:14.440 --> 00:10:18.000
+And in this case, all of our outputs and inputs have been calculated.
+
+00:10:18.820 --> 00:10:23.880
+So, you know, this app isn't too exciting because everything is working as expected, but
+
+00:10:23.880 --> 00:10:31.500
+you can see when I change the value to 5, then now all the downstream dependencies will
+
+00:10:31.500 --> 00:10:32.820
+start to invalidate.
+
+00:10:33.500 --> 00:10:36.260
+B and B squared don't invalidate because they weren't changed.
+
+00:10:37.380 --> 00:10:41.659
+And then once everything's invalidated, we then calculate our outputs like the output C
+
+00:10:41.659 --> 00:10:42.820
+text and verbatim.
+
+00:10:43.700 --> 00:10:47.859
+And so they calculate upstream, retrieving the values as necessary and only calculating
+
+00:10:47.859 --> 00:10:53.179
+what's necessary. And then when we change B, the same pattern happened as well.
+
+00:10:54.739 --> 00:11:02.500
+The part, though, where it becomes really useful is when you believe something should work and it
+
+00:11:02.500 --> 00:11:08.039
+doesn't. And you can React log can't really tell you that your app is wrong, but it can tell you
+
+00:11:08.039 --> 00:11:08.900
+what's going on.
+
+00:11:09.219 --> 00:11:11.900
+Yeah, the first step is always knowing where the problem is.
+
+00:11:12.580 --> 00:11:12.940
+Where?
+
+00:11:12.940 --> 00:11:14.099
+It's very hard to find.
+
+00:11:14.979 --> 00:11:18.619
+Yeah. So we have our mental model of what things should be done.
+
+00:11:18.700 --> 00:11:22.419
+OK, so this one is where the Pythagoras theorem is broken.
+
+00:11:22.479 --> 00:11:25.039
+We have three, four and a five triangle.
+
+00:11:25.840 --> 00:11:27.880
+The C value here is not five.
+
+00:11:27.940 --> 00:11:29.200
+So that's not expected.
+
+00:11:29.440 --> 00:11:37.119
+Right. And if we change A to 5 and B to 12, we should have the 13 as our answer.
+
+00:11:37.119 --> 00:11:38.960
+And C is still wrong.
+
+00:11:38.960 --> 00:11:40.799
+And this one is not 13.
+
+00:11:41.400 --> 00:11:42.919
+So that's not good.
+
+00:11:43.559 --> 00:11:47.359
+So let's open up a React log, the command FN3 on Mac.
+
+00:11:47.640 --> 00:11:50.799
+And we see a different shape than what we had last time.
+
+00:11:50.799 --> 00:11:53.820
+Last time it was two inputs and two outputs.
+
+00:11:54.900 --> 00:11:59.659
+Now it's kind of a cone and this one isn't even connected to anything.
+
+00:12:01.099 --> 00:12:06.500
+So there's a reason why that C verbatim is not being correct.
+
+00:12:06.739 --> 00:12:11.099
+And then we can also see that C squared pulls in A squared, B squared.
+
+00:12:11.140 --> 00:12:15.979
+Good. But B squared pulls in A that does not pull in input B.
+
+00:12:16.960 --> 00:12:22.280
+So we could come to our code and validate that and say, ah, B squared does pull in A.
+
+00:12:22.359 --> 00:12:23.239
+That's a mistake.
+
+00:12:24.359 --> 00:12:28.640
+And C squared here is isolating on B squared.
+
+00:12:28.919 --> 00:12:32.719
+We didn't see that, but this answer is just five.
+
+00:12:33.080 --> 00:12:37.239
+So we should probably switch that to answer and then we can move on.
+
+00:12:39.320 --> 00:12:44.000
+So I think you can you can kind of see where, yeah, in this example, you're able to fix them
+
+00:12:44.000 --> 00:12:49.380
+fairly quickly, but you might have in a production setting, React is a whole bunch of
+
+00:12:49.380 --> 00:12:52.020
+inputs and outputs connected.
+
+00:12:52.059 --> 00:12:57.179
+And this having this visual just helps cognitively figure out where are the
+
+00:12:57.179 --> 00:12:59.900
+disconnects where we're just looking in code.
+
+00:13:00.299 --> 00:13:05.260
+It's it's hard enough to match up your input names of the right reactive references and all
+
+00:13:05.260 --> 00:13:10.099
+that. So this is certainly something that had this been around in this form when I was
+
+00:13:10.119 --> 00:13:14.200
+first learning Shiny, would have helped me understand reactivity a lot better.
+
+00:13:15.400 --> 00:13:20.320
+Yeah. Having that visual tool of knowing that I change A and this is how it changes
+
+00:13:20.320 --> 00:13:22.080
+downstream is just invaluable.
+
+00:13:23.000 --> 00:13:24.520
+It's not just magic anymore.
+
+00:13:24.719 --> 00:13:26.280
+There's a thing to explain it.
+
+00:13:27.440 --> 00:13:34.520
+So talking about the larger applications, this is actually the React log for Joe Chang's
+
+00:13:34.520 --> 00:13:36.719
+Cranwhales application that he built.
+
+00:13:37.020 --> 00:13:42.460
+Yes. And so I think we can probably just kind of link to that at some point.
+
+00:13:42.460 --> 00:13:44.340
+But we'll have that in the show notes for this.
+
+00:13:44.340 --> 00:13:51.739
+Yep. And but what it does, it has like a plot and it also has some numbers and it tries to
+
+00:13:51.739 --> 00:13:56.979
+tell you who is the major offenders for downloading all of the CRAN packages and causing
+
+00:13:56.979 --> 00:13:58.099
+all the bandwidth issues.
+
+00:13:58.940 --> 00:14:01.859
+And this is where we start to get a little bit more complicated.
+
+00:14:01.880 --> 00:14:05.159
+It's a lot taller than it was last time.
+
+00:14:05.479 --> 00:14:10.520
+And it has, you know, one, two, three, four, five, six, seven dependency layers.
+
+00:14:11.400 --> 00:14:13.760
+So it's quite a complicated application.
+
+00:14:15.000 --> 00:14:20.159
+But one of the things that I like is that we have our plot object that we're putting into
+
+00:14:20.159 --> 00:14:21.719
+the downloads per hour.
+
+00:14:22.840 --> 00:14:28.559
+And if I double click on it, I can actually search into its family tree, both, you know,
+
+00:14:28.739 --> 00:14:30.599
+ancestors and descendants.
+
+00:14:31.059 --> 00:14:37.059
+So if I even calculate maybe our whale downloads, I can see all the things that are
+
+00:14:37.059 --> 00:14:38.619
+involved with that whale downloads.
+
+00:14:40.200 --> 00:14:45.859
+This is really useful when you have many different reactive objects.
+
+00:14:46.859 --> 00:14:51.219
+I've seen some apps have like 2000 reactive IDs on load.
+
+00:14:51.739 --> 00:14:55.340
+Wow. And yeah, it is.
+
+00:14:56.280 --> 00:15:01.580
+And so when that happens, if hopefully everything has been labeled properly, but I like
+
+00:15:01.580 --> 00:15:03.280
+to use the search bar in the top right.
+
+00:15:04.000 --> 00:15:09.919
+So I'll say like whale and now two or three things have been been hit by that.
+
+00:15:09.960 --> 00:15:13.880
+If I do whale underscore now, it's just that whale underscore downloads.
+
+00:15:14.200 --> 00:15:16.280
+Oh, that's amazing to save time.
+
+00:15:16.280 --> 00:15:20.159
+And so I'm just kind of like poking and hoping for the best that you find the right
+
+00:15:20.159 --> 00:15:23.440
+areas. Yeah, absolutely.
+
+00:15:23.619 --> 00:15:29.020
+And when I move forward in the timeline, I'm using the arrow keys on my computer or I
+
+00:15:29.020 --> 00:15:31.900
+can use the buttons up top, depending on how far you want to skip.
+
+00:15:33.700 --> 00:15:39.859
+The jumps will only be for this particular subset of elements.
+
+00:15:40.260 --> 00:15:47.299
+So if you see the number up top, it goes from 201 directly to 207 because maybe 202
+
+00:15:47.299 --> 00:15:49.619
+and three were some things that weren't involved.
+
+00:15:50.080 --> 00:15:55.320
+OK, but it's nice because then you only are looking at your subset and you can see
+
+00:15:55.320 --> 00:15:57.880
+what's going on. Right.
+
+00:15:58.359 --> 00:16:02.400
+I guess this begs the question, obviously, yeah, the whales app is one of the bigger
+
+00:16:02.400 --> 00:16:03.719
+ones you could use this with.
+
+00:16:04.760 --> 00:16:08.320
+I mean, I know you've been building this with scalability in mind, but have you
+
+00:16:08.320 --> 00:16:11.000
+encountered apps that are almost too big for this yet?
+
+00:16:11.039 --> 00:16:13.719
+Or is it we're kind of in the cases that you've tried this with?
+
+00:16:14.700 --> 00:16:21.059
+I have encountered a few apps and it's very encouraging to see that I think it's
+
+00:16:21.059 --> 00:16:26.219
+really neat. It's too big when it is not filtered.
+
+00:16:27.900 --> 00:16:33.859
+When you filter down just a little bit, you know, if I do this animation here and
+
+00:16:33.859 --> 00:16:39.739
+there's 2000 edges that you're moving around, that's a lot of computation time.
+
+00:16:40.000 --> 00:16:47.000
+And so maybe I've thought about opening up settings to say, you know, for this
+
+00:16:47.000 --> 00:16:51.280
+visualization tool that we're using, the library, maybe we add in the option of like
+
+00:16:51.440 --> 00:16:57.000
+do not animate because then it would just jump jittery for a user experience.
+
+00:16:57.000 --> 00:17:00.479
+It's not useful, but for scalability, it's really nice because then you just paint
+
+00:17:00.479 --> 00:17:02.559
+once rather than painting many, many times.
+
+00:17:02.599 --> 00:17:03.440
+Sure. Yeah.
+
+00:17:03.859 --> 00:17:07.540
+But it's it's better than a very large napkin, that's for sure.
+
+00:17:07.859 --> 00:17:11.859
+Yes. Yes. And this one you can inspect at any time and not have to worry about your
+
+00:17:11.859 --> 00:17:12.859
+drawing skills to boot.
+
+00:17:14.699 --> 00:17:15.699
+Absolutely.
+
+00:17:16.819 --> 00:17:22.420
+Very cool. Other, yeah, let's let's see what else you have for React, did you want to?
+
+00:17:24.060 --> 00:17:32.060
+Yes. So the last one that I want to show for React Log is to show off, you know,
+
+00:17:32.160 --> 00:17:42.479
+show off a phrase that Zhou Cheng had had coined called an anti-pattern and users
+
+00:17:43.680 --> 00:17:45.520
+naively will do this.
+
+00:17:45.599 --> 00:17:47.560
+And it's not a bad thing.
+
+00:17:48.640 --> 00:17:53.680
+The way that memory management works within Shiny, things are being cleared up.
+
+00:17:54.319 --> 00:17:58.000
+However, React Log really exposes this pattern.
+
+00:17:58.500 --> 00:18:05.420
+So imagine we have an app that if I go ahead and run it in this, all it does is says
+
+00:18:05.420 --> 00:18:11.099
+click me. And then we get a histogram of the count of how many times the button has
+
+00:18:11.099 --> 00:18:14.699
+been clicked or, you know, our unit of the button clicks.
+
+00:18:15.459 --> 00:18:17.180
+So it's pretty simple app.
+
+00:18:17.300 --> 00:18:20.420
+The goal is to say when the button is clicked, draw a new graph.
+
+00:18:21.400 --> 00:18:28.560
+Now, if I was first learning Shiny, I would probably jump on to the the function called
+
+00:18:28.560 --> 00:18:35.920
+observe event and say observe every time the button is clicked, and then after we, you
+
+00:18:35.920 --> 00:18:40.680
+know, once the button is clicked, we will then render a plot given the histogram of the
+
+00:18:40.680 --> 00:18:44.079
+button click and save it to the output value.
+
+00:18:44.959 --> 00:18:46.400
+I mean, logically, it makes sense.
+
+00:18:46.500 --> 00:18:52.540
+Um, I think the rule of thumb that we should try to enforce with ourselves, though, is
+
+00:18:52.540 --> 00:18:56.780
+that any render method should not be inside an observe method.
+
+00:18:57.900 --> 00:18:59.180
+Plus 100 on that one.
+
+00:19:00.699 --> 00:19:07.579
+And so what we can do instead is have a temporary variable such as click count, which is
+
+00:19:07.579 --> 00:19:11.140
+an event reactive saying like, hey, listen to the button.
+
+00:19:11.479 --> 00:19:13.140
+Let's do some calculations here.
+
+00:19:13.199 --> 00:19:19.239
+I know this is, you know, just returning the identity, so it's not too complicated, but we
+
+00:19:19.239 --> 00:19:20.800
+could say do some calculations.
+
+00:19:21.439 --> 00:19:27.160
+Once we have a click count, then we can say, hey, on render plot, listen to that reactive
+
+00:19:27.160 --> 00:19:29.640
+value and, you know, redraw my histogram.
+
+00:19:29.760 --> 00:19:35.000
+And now we're only calling this function or this setup only one time.
+
+00:19:35.400 --> 00:19:35.760
+Right.
+
+00:19:37.599 --> 00:19:42.599
+So if I open up this in the browser to look at the React log, so I will click once.
+
+00:19:43.800 --> 00:19:46.719
+And let's do the React log here.
+
+00:19:47.719 --> 00:19:56.439
+So I've done this one click and, um, let's, this is the final state here in that it
+
+00:19:56.439 --> 00:20:00.000
+finishes and the, the butt, the button is done.
+
+00:20:00.280 --> 00:20:00.680
+Awesome.
+
+00:20:01.260 --> 00:20:06.560
+I'm going to mark this time point with a shit command shift, uh, FN3.
+
+00:20:07.119 --> 00:20:08.719
+So you can see the mark time point.
+
+00:20:09.239 --> 00:20:10.000
+Oh, interesting.
+
+00:20:10.540 --> 00:20:11.859
+And I'm going to click again.
+
+00:20:12.060 --> 00:20:13.380
+And now we have two clicks.
+
+00:20:14.579 --> 00:20:18.699
+If I refresh that React log, we'll start where we mark that time point.
+
+00:20:19.579 --> 00:20:24.939
+And now we can see there's this whole nother, you know, output bad pattern, output bad
+
+00:20:24.939 --> 00:20:33.420
+pattern, and, you know, things are getting filled out great, but the original output
+
+00:20:33.420 --> 00:20:36.020
+bad pattern is not being calculated.
+
+00:20:36.219 --> 00:20:37.300
+Only the new one.
+
+00:20:37.900 --> 00:20:38.380
+Yeah.
+
+00:20:39.079 --> 00:20:41.439
+And this is showing off that anti-pattern.
+
+00:20:41.640 --> 00:20:46.199
+So I'm going to, um, refresh or sorry, not refresh.
+
+00:20:46.199 --> 00:20:47.119
+I'm going to click.
+
+00:20:50.000 --> 00:20:57.560
+I think many more times I'm going to, uh, uh, look at the React log again, and we will
+
+00:20:57.560 --> 00:20:59.880
+see that the graph has now exploded.
+
+00:21:02.000 --> 00:21:02.599
+And.
+
+00:21:02.719 --> 00:21:03.719
+Adequate description.
+
+00:21:04.560 --> 00:21:04.920
+Yeah.
+
+00:21:05.459 --> 00:21:10.699
+And only one output bad pattern is actually getting the plot saved in the end.
+
+00:21:11.140 --> 00:21:16.380
+The, the prior ones have all been like, just, you know, non-existent anymore.
+
+00:21:18.219 --> 00:21:22.339
+So ours memory management will actually have cleaned those up, but the React log
+
+00:21:22.339 --> 00:21:24.500
+says, nah, no, you're not doing it.
+
+00:21:24.500 --> 00:21:24.819
+Right.
+
+00:21:24.939 --> 00:21:25.180
+You know?
+
+00:21:25.219 --> 00:21:25.540
+Yeah.
+
+00:21:25.579 --> 00:21:28.199
+You can't rely on that crutch forever or forever.
+
+00:21:28.199 --> 00:21:30.500
+And I, I, I remember my early days of Shiny.
+
+00:21:30.520 --> 00:21:35.839
+I was, you know, not cognitive enough to know that that was a bad idea to throw
+
+00:21:35.839 --> 00:21:39.680
+these different renders inside these observed blocks.
+
+00:21:39.680 --> 00:21:43.959
+And now I think it wasn't until after Shiny DevCon that I started to see the
+
+00:21:43.959 --> 00:21:48.319
+light a little bit from Joe Chang's reactivity talk back then, but like I
+
+00:21:48.319 --> 00:21:53.959
+said, this tool here, what a great way to kind of put this in a visual way that
+
+00:21:54.280 --> 00:21:57.079
+you can share with your, obviously yourself, but if you're working with a
+
+00:21:57.079 --> 00:22:01.859
+team of developers and maybe they did do some kind of hackery around a certain
+
+00:22:01.859 --> 00:22:05.780
+output and you can say, well, this is what's happening in terms of the backend
+
+00:22:05.780 --> 00:22:10.380
+of it, but we can't really reason with this as much as if you utilize reactivity,
+
+00:22:10.380 --> 00:22:14.579
+the, the optimal way where you minimize the time these things are
+
+00:22:14.619 --> 00:22:16.140
+invalidated and everything like that.
+
+00:22:16.140 --> 00:22:18.140
+So this is an excellent example.
+
+00:22:18.140 --> 00:22:19.859
+I definitely appreciate you sharing this.
+
+00:22:20.540 --> 00:22:21.540
+Oh, you're welcome.
+
+00:22:21.900 --> 00:22:26.780
+Uh, yeah, the, there's some things that I would like to like help out with this
+
+00:22:26.780 --> 00:22:31.000
+though, in, in that, um, the react log side, not necessarily the anti-pattern,
+
+00:22:31.000 --> 00:22:37.560
+but for react log, you know, we know that this output plot, you know, is a plot.
+
+00:22:37.800 --> 00:22:39.880
+And we know this plot object is a plot.
+
+00:22:40.160 --> 00:22:40.439
+Sure.
+
+00:22:40.439 --> 00:22:44.959
+So maybe it would be really nice if we could save these output values and I
+
+00:22:44.959 --> 00:22:47.040
+just don't have access to them right now.
+
+00:22:47.359 --> 00:22:48.119
+Okay.
+
+00:22:48.280 --> 00:22:48.520
+Yeah.
+
+00:22:48.520 --> 00:22:50.199
+That would be really handy to see.
+
+00:22:50.199 --> 00:22:50.439
+Yeah.
+
+00:22:50.439 --> 00:22:52.800
+What the actual changes are to these objects.
+
+00:22:52.839 --> 00:22:53.000
+Yeah.
+
+00:22:53.040 --> 00:22:53.640
+That's cool.
+
+00:22:54.319 --> 00:22:54.680
+Yeah.
+
+00:22:54.739 --> 00:22:57.660
+Cause if you had like, you know, we know this is a ggplot2 object.
+
+00:22:57.699 --> 00:22:59.699
+We could just put the image in right there.
+
+00:22:59.739 --> 00:23:00.780
+Not, not a problem.
+
+00:23:01.219 --> 00:23:05.339
+The only thing I have the values for is the reactive values at the top level.
+
+00:23:05.979 --> 00:23:08.099
+Where I can say, oh, the pixel ratio is two.
+
+00:23:08.380 --> 00:23:14.140
+Uh, the input button is 11 clicks, you know, but I can't tell you the value for this guy.
+
+00:23:15.060 --> 00:23:15.380
+So.
+
+00:23:16.420 --> 00:23:20.420
+Well, there's always future work for everything and that's certainly some,
+
+00:23:20.420 --> 00:23:21.699
+but it's excellent already.
+
+00:23:21.719 --> 00:23:26.560
+So I think it's a great way to learn more of what's happening behind the scenes.
+
+00:23:27.040 --> 00:23:31.079
+Thank you so much to Bear for taking us on this great journey through how react
+
+00:23:31.079 --> 00:23:36.280
+log can help give you insights into the reactive process of your shiny applications.
+
+00:23:36.839 --> 00:23:43.040
+I know I will be using this feature much more often in my apps, big or small for that matter.
+
+00:23:43.680 --> 00:23:47.280
+In our next installment of this series, we will go back to school.
+
+00:23:47.280 --> 00:23:53.300
+So to speak by examining the learn R package as well as new developments for the highly
+
+00:23:53.300 --> 00:23:54.900
+innovative plumber package.
+
+00:23:55.500 --> 00:24:01.859
+Until then, you can find detailed show notes for this episode on our main site at shiny dev
+
+00:24:01.859 --> 00:24:03.339
+series.com.
+
+00:24:03.979 --> 00:24:08.660
+And if you enjoyed the content from this series, we would greatly appreciate a thumbs up to
+
+00:24:08.660 --> 00:24:14.339
+this video on YouTube and be sure to subscribe so you can watch our future episodes a
+
+00:24:14.339 --> 00:24:15.819
+moment they are released.
+
+00:24:16.719 --> 00:24:19.640
+With that, we will close up shop for episode 12.
+
+00:24:20.079 --> 00:24:23.599
+Thank you so much for watching and we will see you next time.
+
+00:24:24.000 --> 00:24:26.880
+Until then, have fun creating shiny apps.
+
+00:24:27.160 --> 00:24:28.040
+Bye, everybody.
+

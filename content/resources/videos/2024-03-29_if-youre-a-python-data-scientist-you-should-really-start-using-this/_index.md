@@ -8,6 +8,7 @@ resources: []
 software: []
 tags: []
 title: If you’re a Python data scientist you should really start using this🤯
+transcribe: false
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

@@ -62,7 +62,7 @@
 
 <h3>What's new in Keras 3</h3>
 
-<p><a data-t="589">Back to Keras 3, what's new in Keras 3?</a> <a data-t="594">The biggest thing to know is the return of multi-backend support, and that comes with</a> <a data-t="599">a set of new features that let you write backend agnostic code.</a></p>
+<p><a data-t="584">Back to Keras 3, what's new in Keras 3?</a> <a data-t="589">The biggest thing to know is the return of multi-backend support, and that comes with</a> <a data-t="595">a set of new features that let you write backend agnostic code.</a></p>
 
 <p><a data-t="600">A backend is something that Keras uses to compute gradients and to interface with a</a> <a data-t="606">GPU.</a> <a data-t="607">And for most of its life, up to about three years ago, Keras supported multiple backends,</a> <a data-t="612">including </a><a href="/software/tensorflow/">TensorFlow</a><a data-t="612">, Theano, MXNet, and CNTKit.</a> <a data-t="615">And then over time, those last three were retired, and three years ago, TensorFlow became</a> <a data-t="621">the only supported backend when Keras became an official part of the TensorFlow project.</a></p>
 
@@ -82,9 +82,9 @@
 
 <p><a data-t="769">You can use these anywhere where you operate with tensors, including at the top level REPL,</a> <a data-t="774">and custom layers, custom losses, custom metrics, and so on.</a> <a data-t="777">You can also use them as standalone layers.</a> <a data-t="781">The Ops API surface aims to be comprehensive.</a> <a data-t="784">It includes the NumPy API, the TFNN API, a set of linear algebra operations, image operations</a> <a data-t="791">and more.</a></p>
 
-<p><a data-t="794">I think our users in particular are going to appreciate the Ops family because it provides</a> <a data-t="798">a more ergonomic alternative to using the backend through reticulate.</a> <a data-t="803">You get things like consistent one-based indexing, automatic coercion of arguments,</a> <a data-t="808">and best of all, built-in R documentation with lots and lots of R examples.</a></p>
+<p><a data-t="794">I think our users in particular are going to appreciate the Ops family because it provides</a> <a data-t="798">a more ergonomic alternative to using the backend through reticulate.</a> <a data-t="804">You get things like consistent one-based indexing, automatic coercion of arguments,</a> <a data-t="808">and best of all, built-in R documentation with lots and lots of R examples.</a></p>
 
-<p><a data-t="813">Another reason why I think our users will like it is a little more abstract, but all</a> <a data-t="819">the functions are pure, so they have no side effects.</a> <a data-t="822">That makes for a much more consistent experience.</a> <a data-t="824">It encourages experimentation at the REPL, and it aligns better with the mental model</a> <a data-t="829">that R encourages.</a></p>
+<p><a data-t="815">Another reason why I think our users will like it is a little more abstract, but all</a> <a data-t="819">the functions are pure, so they have no side effects.</a> <a data-t="822">That makes for a much more consistent experience.</a> <a data-t="824">It encourages experimentation at the REPL, and it aligns better with the mental model</a> <a data-t="829">that R encourages.</a></p>
 
 <h3>Other new features and resources</h3>
 
@@ -100,20 +100,20 @@
 
 <h3>Q&A</h3>
 
-<p><a data-t="960">People are already, like, wondering where to get your slides.</a> <a data-t="964">Where do I get my slides?</a> <a data-t="968">Now, where will they get your slides?</a> <a data-t="970">Oh, I can put them up on my GitHub.</a> <a data-t="972">I don't have a link yet, because I haven't made that public.</a> <a data-t="974">But I can put them up on my GitHub.</a></p>
+<p><a data-t="940">People are already, like, wondering where to get your slides.</a> <a data-t="944">Where do I get my slides?</a> <a data-t="946">Now, where will they get your slides?</a> <a data-t="948">Oh, I can put them up on my GitHub.</a> <a data-t="950">I don't have a link yet, because I haven't made that public.</a> <a data-t="952">But I can put them up on my GitHub.</a></p>
 
-<p><a data-t="982">I can't make them public, but I will.</a> <a data-t="984">There is interest.</a></p>
+<p><a data-t="962">I can't make them public, but I will.</a> <a data-t="964">There is interest.</a></p>
 
-<p><a data-t="990">Okay.</a> <a data-t="994">The next one, I swear it is not my question, but does Keras play nicely with tidy models?</a> <a data-t="996">Yes.</a> <a data-t="998">I believe so.</a> <a data-t="1002">I don't think it's been updated for Keras 3 yet, but it will be shortly.</a></p>
+<p><a data-t="968">Okay.</a> <a data-t="970">The next one, I swear it is not my question, but does Keras play nicely with tidy models?</a> <a data-t="974">Yes.</a> <a data-t="976">I believe so.</a> <a data-t="978">I don't think it's been updated for Keras 3 yet, but it will be shortly.</a></p>
 
-<p><a data-t="1016">How much work will it be rewriting my old Keras code to Keras 3?</a> <a data-t="1020">That depends on how much custom stuff you did that's backend-specific.</a> <a data-t="1024">So if you were mostly using the high-level layer functions</a> <a data-t="1029">and the built-in losses and metrics and optimizers,</a> <a data-t="1032">then there's very little work for you to do.</a> <a data-t="1034">It might even work out of the box.</a></p>
+<p><a data-t="996">How much work will it be rewriting my old Keras code to Keras 3?</a> <a data-t="1000">That depends on how much custom stuff you did that's backend-specific.</a> <a data-t="1004">So if you were mostly using the high-level layer functions</a> <a data-t="1009">and the built-in losses and metrics and optimizers,</a> <a data-t="1012">then there's very little work for you to do.</a> <a data-t="1014">It might even work out of the box.</a></p>
 
-<p><a data-t="1036">But if you were writing custom loss functions</a> <a data-t="1040">where you're using the TensorFlow API directly,</a> <a data-t="1042">you're going to have to translate that to using the ops family.</a> <a data-t="1044">And then more generally,</a> <a data-t="1046">if you're doing a lot of fancy serialization,</a> <a data-t="1049">the saving and serialization API is quite comprehensive now</a> <a data-t="1054">and very different than before.</a></p>
+<p><a data-t="1016">But if you were writing custom loss functions</a> <a data-t="1020">where you're using the TensorFlow API directly,</a> <a data-t="1022">you're going to have to translate that to using the ops family.</a> <a data-t="1024">And then more generally,</a> <a data-t="1026">if you're doing a lot of fancy serialization,</a> <a data-t="1031">the saving and serialization API is quite comprehensive now</a> <a data-t="1034">and very different than before.</a></p>
 
-<p><a data-t="1056">It wouldn't be 2024 without an LLM question.</a> <a data-t="1060">Can Keras be used to fine-tune LLMs?</a> <a data-t="1065">Yes, it can.</a> <a data-t="1067">I did not include that in my talk,</a> <a data-t="1069">but there is a Keras NLP package</a> <a data-t="1071">which you can use to articulate,</a> <a data-t="1073">and there is support for either training from scratch</a> <a data-t="1076">if you have the resources, or fine-tune.</a></p>
+<p><a data-t="1036">It wouldn't be 2024 without an LLM question.</a> <a data-t="1042">Can Keras be used to fine-tune LLMs?</a> <a data-t="1045">Yes, it can.</a> <a data-t="1047">I did not include that in my talk,</a> <a data-t="1049">but there is a Keras NLP package</a> <a data-t="1051">which you can use to articulate,</a> <a data-t="1053">and there is support for either training from scratch</a> <a data-t="1056">if you have the resources, or fine-tune.</a></p>
 
-<p><a data-t="1081">Why should a data scientist working exclusively with tabular data</a> <a data-t="1085">use deep learning through Keras</a> <a data-t="1087">instead of regression or tree-based approaches?</a> <a data-t="1075">So, you don't have to switch to deep learning.</a> <a data-t="1082">Deep learning is like duct tape,</a> <a data-t="1084">so it's not always the best solution for the tool,</a> <a data-t="1087">but more often than not, it's good enough.</a></p>
+<p><a data-t="1065">Why should a data scientist working exclusively with tabular data</a> <a data-t="1069">use deep learning through Keras</a> <a data-t="1071">instead of regression or tree-based approaches?</a> <a data-t="1078">So, you don't have to switch to deep learning.</a> <a data-t="1082">Deep learning is like duct tape,</a> <a data-t="1084">so it's not always the best solution for the tool,</a> <a data-t="1087">but more often than not, it's good enough.</a></p>
 
-<p><a data-t="1098">Somebody asks if there are any concerns</a> <a data-t="1100">using Keras for commercial use.</a> <a data-t="1102">Not that I know of.</a> <a data-t="1104">It's used in plenty of businesses in commercial context.</a></p>
+<p><a data-t="1095">Somebody asks if there are any concerns</a> <a data-t="1098">using Keras for commercial use.</a> <a data-t="1100">Not that I know of.</a> <a data-t="1104">It's used in plenty of businesses in commercial context.</a></p>
 
-<p><a data-t="1107">Any plans for Keras 4</a> <a data-t="1116">that didn't get implemented in Keras 3?</a> <a data-t="1120">No.</a> <a data-t="1122">Not yet.</a> <a data-t="1124">Keras 3 is out and you take a breath.</a></p>
+<p><a data-t="1111">Any plans for Keras 4</a> <a data-t="1116">that didn't get implemented in Keras 3?</a> <a data-t="1120">No.</a> <a data-t="1122">Not yet.</a> <a data-t="1124">Keras 3 is out and you take a breath.</a></p>

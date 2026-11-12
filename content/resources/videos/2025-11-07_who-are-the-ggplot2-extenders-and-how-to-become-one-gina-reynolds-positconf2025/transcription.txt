@@ -42,7 +42,7 @@
 
 <p><a data-t="399">So this actually kind of resonates with me.</a> <a data-t="401">I feel like there's a lot in common with what he's saying.</a> <a data-t="405">Tell me in my dominant language. Tell me in this non-friction mode of communication, relatively.</a></p>
 
-<p><a data-t="418">And the reasons that I'm here.</a> <a data-t="418">Because I might say something like, tell me visually. Tell me in pictures.</a> <a data-t="422">I like when people sit me down and show me stuff in schematics.</a> <a data-t="427">I think it's probably true of a lot of people, right?</a> <a data-t="430">Because visualized information is a superhighway.</a></p>
+<p><a data-t="416">And the reasons that I'm here.</a> <a data-t="418">Because I might say something like, tell me visually. Tell me in pictures.</a> <a data-t="422">I like when people sit me down and show me stuff in schematics.</a> <a data-t="427">I think it's probably true of a lot of people, right?</a> <a data-t="430">Because visualized information is a superhighway.</a></p>
 
 <p><a data-t="438">So visual information is pre-attentively processed.</a> <a data-t="441">We don't have to exert a lot of effort to understand and see patterns in our data, distributions, outliers.</a> <a data-t="448">All of that stuff is going to happen automatically and effortlessly.</a></p>
 
@@ -62,11 +62,11 @@
 
 <p><a data-t="649">Except for sometimes that's not the case, right?</a> <a data-t="652">So how do you say this in ggplot2?</a> <a data-t="654">There's kind of limits to what you can do with base ggplot2.</a> <a data-t="659">And, you know, at first building this plot is pretty staccato.</a> <a data-t="665">But then when I want to draw a line at the mean, it does require a fair amount of thinking and thinking things through.</a> <a data-t="677">And how would you say this?</a> <a data-t="679">Well, if you want to look at group means, then you might be doing some precomputation.</a> <a data-t="687">And then when you go ahead and plot those means, it also the code is a little bit verbose.</a></p>
 
-<p><a data-t="701">So what happens when ggplot2 isn't refreshing?</a> <a data-t="706">An extender might step in and write up something that's a little bit more effervescent and bubbly.</a> <a data-t="711">And that doesn't need to be like a very serious endeavor, especially when you're joining our group.</a> <a data-t="718">We're not going to push you to write a package right away.</a> <a data-t="723">You can just be playful with your extensions, too.</a></p>
+<p><a data-t="695">So what happens when ggplot2 isn't refreshing?</a> <a data-t="701">An extender might step in and write up something that's a little bit more effervescent and bubbly.</a> <a data-t="709">And that doesn't need to be like a very serious endeavor, especially when you're joining our group.</a> <a data-t="714">We're not going to push you to write a package right away.</a> <a data-t="718">You can just be playful with your extensions, too.</a></p>
 
-<p><a data-t="729">But an extension in this scenario might look like this.</a> <a data-t="734">Geom xmean.</a> <a data-t="737">And then for free, we get that group-wise computation.</a></p>
+<p><a data-t="724">But an extension in this scenario might look like this.</a> <a data-t="728">Geom xmean.</a> <a data-t="731">And then for free, we get that group-wise computation.</a></p>
 
-<p><a data-t="741">OK, so I covered kind of these assumptions.</a> <a data-t="751">I hope you're convinced that dataviz, ggplot2, and extension are all worthwhile and should be on your radar.</a></p>
+<p><a data-t="737">OK, so I covered kind of these assumptions.</a> <a data-t="741">I hope you're convinced that dataviz, ggplot2, and extension are all worthwhile and should be on your radar.</a></p>
 
 <h3>Things getting done: the ggsprings example</h3>
 

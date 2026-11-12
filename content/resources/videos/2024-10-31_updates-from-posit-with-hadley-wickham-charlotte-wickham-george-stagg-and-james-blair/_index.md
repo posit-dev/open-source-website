@@ -6,6 +6,7 @@ people:
 - Charlotte Wickham
 - George Stagg
 - Hadley Wickham
+- James Blair
 resource_type: video
 resources: []
 software:
@@ -72,6 +73,7 @@ external:  # updated automatically, do not edit
   - Charlotte Wickham
   - George Stagg
   - Hadley Wickham
+  - James Blair
   playlist: ''
   software:
   - quarto

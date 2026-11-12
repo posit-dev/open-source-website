@@ -18,18 +18,18 @@
 
 <h3>Existing tools and their limitations</h3>
 
-<p><a data-t="189">Although, while considering these complications and shortcomings, there are existing tools</a> <a data-t="198">that help to mitigate these shortcomings, some of which are Sphinx.js, JPEG design notebooks,</a> <a data-t="225">and Piddle.</a> <a data-t="226">These tools, to some extent, help with these issues I will face while generating good documentation.</a></p>
+<p><a data-t="189">Although, while considering these complications and shortcomings, there are existing tools</a> <a data-t="198">that help to mitigate these shortcomings, some of which are Sphinx.js, JPEG design notebooks,</a> <a data-t="205">and Piddle.</a> <a data-t="206">These tools, to some extent, help with these issues I will face while generating good documentation.</a></p>
 
-<p><a data-t="234">There's a little drawback with these tools, which is these tools fail to fully support</a> <a data-t="241">JavaScript.</a> <a data-t="242">These tools fail to fully support JavaScript.</a></p>
+<p><a data-t="214">There's a little drawback with these tools, which is these tools fail to fully support</a> <a data-t="221">JavaScript.</a> <a data-t="222">These tools fail to fully support JavaScript.</a></p>
 
 <h3>Introducing JSquarto</h3>
 
-<p><a data-t="245">So now this brings us to the question, how can we then streamline the process of generating</a> <a data-t="252">documentation for JavaScript projects?</a> <a data-t="256">Now, a good solution to this, a one-word solution to this, is JSquarto.</a></p>
+<p><a data-t="225">So now this brings us to the question, how can we then streamline the process of generating</a> <a data-t="232">documentation for JavaScript projects?</a> <a data-t="236">Now, a good solution to this, a one-word solution to this, is JSquarto.</a></p>
 
-<p><a data-t="261">So basically, JSquarto is a tool that helps with generating documentation, streamlines</a> <a data-t="266">the process of directing documentation with just one click, and this tool works by implementing</a> <a data-t="273">different features common with existing tools and existing technologies, one of which is</a> <a data-t="277">JSDoc.</a></p>
+<p><a data-t="261">So basically, JSquarto is a tool that helps with generating documentation, streamlines</a> <a data-t="246">the process of directing documentation with just one click, and this tool works by implementing</a> <a data-t="253">different features common with existing tools and existing technologies, one of which is</a> <a data-t="257">JSDoc.</a></p>
 
-<p><a data-t="279">So with JSDoc, you have the ability to generate documentation from basically comments within</a> <a data-t="287">your JavaScript project.</a> <a data-t="288">So in this case, you don't have to break your flow, having to dedicate separate extra time</a> <a data-t="294">to code and dedicate extra time to document your code.</a> <a data-t="299">So why not just document your code while working with projects directly?</a></p>
+<p><a data-t="259">So with JSDoc, you have the ability to generate documentation from basically comments within</a> <a data-t="267">your JavaScript project.</a> <a data-t="268">So in this case, you don't have to break your flow, having to dedicate separate extra time</a> <a data-t="274">to code and dedicate extra time to document your code.</a> <a data-t="279">So why not just document your code while working with projects directly?</a></p>
 
-<p><a data-t="304">So basically, what JSDoc does, it extracts your code comments and builds on that code</a> <a data-t="311">comment on your documentation.</a> <a data-t="313">So you can see on the left, you can see the code comments that describes how the function</a> <a data-t="319">has been used, and these code comments are now extracted to form your code documentation.</a></p>
+<p><a data-t="284">So basically, what JSDoc does, it extracts your code comments and builds on that code</a> <a data-t="291">comment on your documentation.</a> <a data-t="293">So you can see on the left, you can see the code comments that describes how the function</a> <a data-t="299">has been used, and these code comments are now extracted to form your code documentation.</a></p>
 
-<p><a data-t="325">So how JSquarto implements these features for JSDoc is that with one line, you can...</a></p>
+<p><a data-t="314">So how JSquarto implements these features for JSDoc is that with one line, you can...</a></p>

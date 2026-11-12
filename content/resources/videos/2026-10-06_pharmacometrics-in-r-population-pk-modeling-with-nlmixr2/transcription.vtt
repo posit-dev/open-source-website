@@ -1,0 +1,335 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.320
+Hi, I'm Matt presenting on the blog post by myself and Janice. Today we'll walk through
+
+00:00:16.320 --> 00:00:21.680
+a real dosing problem in R, how to dose a drug for preterm babies when we only have
+
+00:00:21.680 --> 00:00:25.719
+scraps of data.
+
+00:00:25.719 --> 00:00:32.279
+This talk is from a blog post we wrote together, putting Janice's cat supervised as usual.
+
+00:00:32.279 --> 00:00:37.000
+You'll see all three of us in the section pictures.
+
+00:00:37.000 --> 00:00:43.119
+The talk has seven parts. First, the dosing question. Second, what a pharmacometric model
+
+00:00:43.119 --> 00:00:51.639
+is. Third, the sparse data we have. Fourth, building the model in nlmixr2. Fifth, checking
+
+00:00:51.639 --> 00:00:56.880
+whether we can believe it. Sixth, using it to compare a flat dose with a weight-based
+
+00:00:56.880 --> 00:01:03.919
+dose. And last, how this fits into the wider R ecosystem.
+
+00:01:03.919 --> 00:01:10.959
+Let's start with a question. Preterm infants are prone to seizures and phenobarbital is
+
+00:01:10.959 --> 00:01:16.980
+used to treat them. The dose makes the poison. Too little and the seizures continue. Too
+
+00:01:16.980 --> 00:01:22.860
+much and the baby can stop breathing. A doctor read that one flat dose might work for every
+
+00:01:22.860 --> 00:01:28.500
+neonate. That would make giving the drug much simpler, but a flat dose tuned for an average
+
+00:01:28.500 --> 00:01:33.900
+one and a half kilogram baby might not suit our 900 gram baby. And we don't know where
+
+00:01:33.900 --> 00:01:37.500
+that baby would land.
+
+00:01:37.500 --> 00:01:42.019
+The usual way to check exposure is to take blood samples and measure the drug level.
+
+00:01:42.019 --> 00:01:46.580
+But a preterm baby has less than a teacup of blood in its whole body. So a study with
+
+00:01:46.580 --> 00:01:52.580
+15 samples per baby isn't possible. What we have is scraps. One sample here, another three
+
+00:01:52.580 --> 00:01:57.239
+days later. So we need a model that learns how weight affects drug clearance from earlier
+
+00:01:57.239 --> 00:02:02.500
+data and then simulates the dose instead.
+
+00:02:02.500 --> 00:02:09.119
+So what is a pharmacometric model? If you fit a mixed model before, you've done half
+
+00:02:09.119 --> 00:02:13.880
+of this already. The difference is the mean function. It isn't a line or a spline. It's
+
+00:02:13.880 --> 00:02:19.279
+the solution to a differential equation. Think of a bucket with a hole in it. Drug goes in
+
+00:02:19.279 --> 00:02:24.199
+with the dose. The volume is how widely the drug spreads and clearance is how fast it
+
+00:02:24.199 --> 00:02:31.320
+drains out. An L-mixer to that bucket is one line of ODE. Each infant gets their own clearance.
+
+00:02:31.320 --> 00:02:37.080
+The typical value plus their own random deviation.
+
+00:02:37.080 --> 00:02:42.059
+Models like this don't just fit a curve. Their parameters mean something. The loading dose,
+
+00:02:42.059 --> 00:02:47.080
+the first big dose, is set by volume. It's how much drug it takes to fill the bucket.
+
+00:02:47.080 --> 00:02:51.320
+The maintenance doses are set by clearance. They replace what drains out. Because the
+
+00:02:51.320 --> 00:02:56.080
+model separates the two, it can design a whole dosing regimen. It can also predict doses
+
+00:02:56.080 --> 00:03:01.279
+nobody in the study actually got. That's why drug labels and pediatric doses are so
+
+00:03:01.279 --> 00:03:06.000
+often built from models like this.
+
+00:03:06.000 --> 00:03:14.279
+Now let's look at the data. The data are 59 preterm infants given phenobarbital published
+
+00:03:14.279 --> 00:03:21.960
+in 1985. They ship with NL-mixer 2 as pheno underscore SD. Each row in this plot is one
+
+00:03:21.960 --> 00:03:28.279
+infant sorted by weight. The small ticks are doses and the circles are measured concentrations.
+
+00:03:28.279 --> 00:03:34.960
+There are 589 doses but only 155 measurements. The babies were dosed often and sampled rarely
+
+00:03:34.960 --> 00:03:38.559
+during routine care.
+
+00:03:38.559 --> 00:03:43.320
+Look closer and it gets worse. Nine infants have exactly one concentration. Forty percent
+
+00:03:43.320 --> 00:03:48.479
+have two or fewer. You can't estimate two parameters for a baby from one data point
+
+00:03:48.520 --> 00:03:53.559
+unless, that is, you let the infants borrow strength from each other. That's exactly what
+
+00:03:53.559 --> 00:03:57.559
+the mixed effects model does.
+
+00:03:57.559 --> 00:04:05.440
+Let's build the model in NL-mixer 2. The model is an ordinary R function with two blocks.
+
+00:04:05.440 --> 00:04:11.679
+In the INI block, an arrow sets a fixed effect and a wavy single line sets a random effect.
+
+00:04:11.679 --> 00:04:16.239
+The model block holds the differential equation written the way you'd write it on paper. The
+
+00:04:16.239 --> 00:04:21.160
+last line connects the prediction to the observed data with a proportional error. Notice
+
+00:04:21.160 --> 00:04:26.019
+there's no dosing in the model. Doses come from the data. The rest is plain R and one
+
+00:04:26.019 --> 00:04:34.119
+called NL-mixer 2 fits it. The base model gives 37 percent between infant variability
+
+00:04:34.119 --> 00:04:40.119
+on clearance and 47 percent on volume. That means two infants on the same dose can easily
+
+00:04:40.119 --> 00:04:45.480
+differ twofold in exposure. That's why a flat dose is risky. These babies range from
+
+00:04:45.480 --> 00:04:52.359
+0.6 to 3.6 kilograms. When we add body weight with standard allometric scaling, variability
+
+00:04:52.359 --> 00:04:59.440
+falls to about 17 and 18 percent. The objective function drops by about 144 points. More than
+
+00:04:59.440 --> 00:05:04.640
+half of the variability is just body weight.
+
+00:05:04.640 --> 00:05:09.880
+We didn't have to rewrite the model to add weight. With model piping, we swap the clearance
+
+00:05:10.480 --> 00:05:17.720
+the volume line and set the two new initial estimates. As an experiment in NL-mixer 2.7.0,
+
+00:05:17.720 --> 00:05:23.119
+we can also skip that step. The new variational autoencoder estimator searches for covariates
+
+00:05:23.119 --> 00:05:30.880
+by itself. Given the base model, it found weight 2. Here's what the VAE search picked.
+
+00:05:30.880 --> 00:05:36.200
+On clearance, it found a power of weight with an exponent of about 0.63 close to the textbook
+
+00:05:36.200 --> 00:05:41.920
+three quarters. On volume, it found a hockey stick that bends at 1.3 kilograms, steeper
+
+00:05:41.920 --> 00:05:47.320
+for the smallest babies. It chose weight for both parameters. Volume variability dropped
+
+00:05:47.320 --> 00:05:54.480
+further to 14 percent. Before we use this model for dosing, we need to check that we
+
+00:05:54.480 --> 00:05:56.279
+can believe it.
+
+00:05:56.279 --> 00:06:03.519
+First, let's look at individual profiles. Infants 56 and 28 gave one measurement each,
+
+00:06:03.519 --> 00:06:08.720
+and both still get a full concentration curve. Their individual and population curves nearly
+
+00:06:08.720 --> 00:06:12.959
+overlap. With one data point, there's nothing to pull the infant away from typical, and
+
+00:06:12.959 --> 00:06:18.239
+that's the right behavior. Infants 2 and 8 have three samples each, and their curves
+
+00:06:18.239 --> 00:06:23.480
+separate. Now there's enough information to say this baby isn't typical.
+
+00:06:23.480 --> 00:06:30.239
+Second, a prediction-corrected visual predictive check. We simulate the study many times from
+
+00:06:30.239 --> 00:06:35.200
+the fitted model and ask whether the real data look like one of those draws. The observed
+
+00:06:35.200 --> 00:06:41.040
+median and 5th and 95th percentiles, the solid and dashed lines, stay inside the simulated
+
+00:06:41.040 --> 00:06:50.000
+bands. With only 155 observations, the percentiles are noisy, but the model isn't misspecified.
+
+00:06:50.000 --> 00:06:56.320
+Now we can answer the question we started with. We compare two regimens. The flat one
+
+00:06:56.320 --> 00:07:02.760
+gives every infant a 30 mg loading dose, then 1.9 mg every 12 hours. That's right
+
+00:07:02.760 --> 00:07:11.000
+for a 1.5 kg baby. The weight-based one gives 20 mg per kg to load, then 1.25 per kg. The
+
+00:07:11.000 --> 00:07:16.640
+simulation passes the fitted object straight to RxSolve. It samples 400 new infants at
+
+00:07:16.640 --> 00:07:21.519
+each weight from the estimated variability. The model we simulate from is exactly the
+
+00:07:21.519 --> 00:07:29.760
+model we fit. Here's the result. The gray band is the 15 to 40 mg per liter window.
+
+00:07:29.760 --> 00:07:35.079
+The flat regimen, in red, hits the window at 1.5 kg because that's what it was designed
+
+00:07:35.079 --> 00:07:39.959
+for, but it slopes down across the weight range. Too high for the smallest babies, too
+
+00:07:39.959 --> 00:07:44.920
+low for the largest. The weight-based regimen, in teal, stays flat and inside the window
+
+00:07:44.920 --> 00:07:53.000
+at every weight. Here are the numbers. At 1.5 kg, the flat dose puts almost every infant
+
+00:07:53.000 --> 00:08:00.200
+in the window. At 0.7 kg, the median infant is at 41, above the window. At 3.1 kg, the
+
+00:08:00.200 --> 00:08:05.880
+median has dropped to 12, and fewer than 4% of infants reach the window at all. With weight-based
+
+00:08:05.880 --> 00:08:11.200
+dosing, 96% or more are in the window at every weight, and that weight was in the dataset
+
+00:08:11.200 --> 00:08:18.679
+all along. To be clear, this is a teaching example on a 1985 dataset. We kept it to
+
+00:08:18.679 --> 00:08:24.600
+one compartment and one covariate on purpose. It is not dosing guidance. Real neonatal dosing
+
+00:08:24.600 --> 00:08:30.119
+also accounts for postnatal age and maturation, and it's decided by a qualified doctor and
+
+00:08:30.119 --> 00:08:35.359
+pharmacist. The workflow, though, is the real one.
+
+00:08:35.359 --> 00:08:44.159
+Finally, where does all this sit in R? Nothing we did required leaving R. The fit object
+
+00:08:44.159 --> 00:08:50.200
+is a data frame, so every plot here is plain G, G plot 2, and every summary is plain D
+
+00:08:50.200 --> 00:08:56.880
+plier. There's no export step and no intermediate file format. That's not just convenient. Analyses
+
+00:08:56.880 --> 00:09:02.359
+usually break at the boundaries between tools, and this workflow doesn't have any. Add REMV
+
+00:09:02.359 --> 00:09:06.919
+to PIM packages and targets to rerun only what changed, and someone else can rebuild
+
+00:09:06.919 --> 00:09:14.479
+the dosing recommendation from the raw data. NLMixer2 isn't a walled garden. That's unusual
+
+00:09:14.479 --> 00:09:19.799
+in this field, and it may be the strongest practical reason to use it. BabelMixer2 runs
+
+00:09:19.799 --> 00:09:26.719
+the same model object through non-mem or monolix, so you can fit in NLMixer2 and confirm in non-mem.
+
+00:09:26.719 --> 00:09:32.799
+It also connects to PopEd for optimal experimental design. Going the other way, non-mem to R,
+
+00:09:32.799 --> 00:09:38.179
+X, and monolix to Rx bring finished runs into R, so years of legacy models can be simulated
+
+00:09:38.179 --> 00:09:44.880
+and checked with the same tools. Underneath it all, RxOD2 solves both the fits and the
+
+00:09:44.880 --> 00:09:50.000
+simulations, and there's no license to negotiate, so any collaborator can run your analysis
+
+00:09:50.000 --> 00:09:55.359
+today. Getting started is a smaller step than it
+
+00:09:55.359 --> 00:10:01.760
+looks. Everything in this talk is about 40 lines of code. Install NLMixer2 from CRAN,
+
+00:10:01.760 --> 00:10:08.400
+and on Windows, install RTools2. From there, the NLMixer2 website has the model, language,
+
+00:10:08.400 --> 00:10:14.479
+and worked examples. NLMixer2 lib has starting models. If you're coming from non-mem, non-mem
+
+00:10:14.479 --> 00:10:24.340
+to Rx will translate a model you already trust, and NLMixer2 7.0 makes FOCEI solve in parallel.
+
+00:10:24.340 --> 00:10:31.159
+To sum up, 155 scattered concentrations were enough to model 59 infants. Body weight explains
+
+00:10:31.159 --> 00:10:35.880
+more than half of the variability between them. A flat dose is right only for the baby
+
+00:10:35.880 --> 00:10:41.219
+it was designed for, while weight-based dosing keeps nearly every simulated infant in the
+
+00:10:41.219 --> 00:10:47.039
+window. And the whole analysis is one R document that also connects to the rest of the field.
+
+00:10:47.039 --> 00:10:51.880
+Whether your data come from sports analytics, supply chains, or neonatal wards, the shape
+
+00:10:51.880 --> 00:10:57.799
+of the problem is the same. Few observations per subject, a mechanistic model, and a decision
+
+00:10:57.799 --> 00:11:12.400
+someone has to make. Thanks for listening. From Matt, Janice, and Pudding.
+

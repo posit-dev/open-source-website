@@ -4,12 +4,12 @@
 
 <h3>Publishing to Quarto Pub</h3>
 
-<p><a data-t="40">So I have this locally, but I can also say I want to publish this to the web.</a> <a data-t="45">Inside RStudio, I can go down to the console pane.</a> <a data-t="48">I'm going to click over on the terminal or the command line interface and do Quarto Publish.</a> <a data-t="53">This is going to provide me with a few options.</a> <a data-t="53">You can publish to Quarto Pub, which is a free service that we provide.</a></p>
+<p><a data-t="40">So I have this locally, but I can also say I want to publish this to the web.</a> <a data-t="40">Inside RStudio, I can go down to the console pane.</a> <a data-t="48">I'm going to click over on the terminal or the command line interface and do Quarto Publish.</a> <a data-t="53">This is going to provide me with a few options.</a> <a data-t="53">You can publish to Quarto Pub, which is a free service that we provide.</a></p>
 
 <p><a data-t="59">I'm going to do that because I already have it set up.</a> <a data-t="59">It's going to ask which account do you want to use?</a> <a data-t="63">I already have an account on here, but if you don't have an account, it'll ask you to sign up.</a> <a data-t="67">I'll click enter, and it's going to publish that to Quarto Pub with a specific name, in this case testblog2.</a> <a data-t="74">I'll click enter, and it's going to use all that information and put it out on the web.</a></p>
 
-<p><a data-t="78">While it does all this, it's going to build all the website again, all the blog posts and everything together,</a> <a data-t="85">re-render all those different components, and then ship it out to the web.</a> <a data-t="90">In the span of this little speed run, we can go from no blog to new blog to blog on the internet and go and look at it.</a> <a data-t="95">And now we have a blog post that we can share and a blog to share with the world.</a></p>
+<p><a data-t="78">While it does all this, it's going to build all the website again, all the blog posts and everything together,</a> <a data-t="85">re-render all those different components, and then ship it out to the web.</a> <a data-t="85">In the span of this little speed run, we can go from no blog to new blog to blog on the internet and go and look at it.</a> <a data-t="95">And now we have a blog post that we can share and a blog to share with the world.</a></p>
 
-<blockquote><a data-t="90">In the span of this little speed run, we can go from no blog to new blog to blog on the internet and go and look at it.</a> <a data-t="95">And now we have a blog post that we can share and a blog to share with the world.</a></blockquote>
+<blockquote><a data-t="85">In the span of this little speed run, we can go from no blog to new blog to blog on the internet and go and look at it.</a> <a data-t="95">And now we have a blog post that we can share and a blog to share with the world.</a></blockquote>
 
 <p><a data-t="100">To learn more about using Quarto as a computational notebook for technical or scientific communication,</a> <a data-t="105">please check out the resources at quarto.org. Thanks!</a></p>

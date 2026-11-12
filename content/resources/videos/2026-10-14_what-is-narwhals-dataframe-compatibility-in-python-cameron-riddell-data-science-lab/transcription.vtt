@@ -1,0 +1,1624 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:14.680
+I am very pleased to introduce Cameron Riddell who works at Don't Use This Code and previously
+
+00:00:14.680 --> 00:00:22.080
+was in academia and studied psychology. Cameron and I met at PyCon US a few months, weeks
+
+00:00:22.080 --> 00:00:30.719
+ago. Time is fluid and it was a real delight to get to chat and learn a lot from Cameron.
+
+00:00:30.719 --> 00:00:37.759
+So thank you so much for joining us. I'm very happy to pass it over to talk about several
+
+00:00:37.759 --> 00:00:43.000
+things. And so if you come from the R world like I do, or if you're used to Python, you
+
+00:00:43.000 --> 00:00:48.919
+might realize that Python DataFrames are slightly different than R DataFrames. And there's
+
+00:00:48.919 --> 00:00:54.320
+a lot of interesting features about them that you have to know if you're using them
+
+00:00:54.320 --> 00:01:01.520
+in the context of, you know, working with DataFrames. And so Cameron is also a co-maintainer
+
+00:01:01.520 --> 00:01:06.680
+of Narwhals, which we'll talk about a bit today as to why it exists and how it helps
+
+00:01:06.680 --> 00:01:11.559
+all of these fun facts about Python. So Cameron, I'll pass it to you. And thank you again for
+
+00:01:11.559 --> 00:01:12.559
+joining us.
+
+00:01:12.559 --> 00:01:16.879
+Thanks so much, Isabella. Hello, everyone. My name is Cameron Riddell. Today we're going
+
+00:01:16.879 --> 00:01:21.379
+to talk about two of my favorite things, one of them being DataFrames and the second
+
+00:01:21.379 --> 00:01:26.559
+one of them being, of course, Narwhals, which I help maintain. Now, if you will bear with
+
+00:01:26.559 --> 00:01:31.360
+me, I lost my voice a little bit this past weekend. I was coaching at a lacrosse tournament
+
+00:01:31.360 --> 00:01:35.440
+and I ended up yelling for probably five hours straight and it was quite damaging on the
+
+00:01:35.440 --> 00:01:40.400
+vocal cords. So I will do my best. But in order to get started, why don't I go ahead
+
+00:01:40.400 --> 00:01:48.440
+and share my screen? We have here a lot to talk about. And what I don't want to do is
+
+00:01:48.440 --> 00:01:55.760
+I don't want to only talk about Narwhals. While the library itself is interesting, I
+
+00:01:55.760 --> 00:01:59.559
+don't think it's the most important topic that we could talk about and that we could
+
+00:01:59.559 --> 00:02:05.040
+disseminate. Instead, we're also going to focus on the broad topic of DataFrames and
+
+00:02:05.040 --> 00:02:11.399
+why Narwhals came into being in the first place. Because if you look at the R ecosystem,
+
+00:02:11.399 --> 00:02:18.960
+I don't think there's a need for a Narwhals style tool. That said, I only have a couple
+
+00:02:18.960 --> 00:02:23.559
+of years of R under my belt. I have a decade plus in Python. So all of my R friends, if
+
+00:02:23.559 --> 00:02:28.960
+you can fact check me, that would be fantastic. But perhaps if we can understand why Narwhals
+
+00:02:28.960 --> 00:02:34.360
+needs to exist in the Python ecosystem, we can also see why maybe R doesn't need a Narwhals
+
+00:02:34.360 --> 00:02:41.960
+style tool. Let's go ahead and start talking Narwhals and talking DataFrames. The first
+
+00:02:41.960 --> 00:02:48.699
+thing that I want to touch on is what is Narwhals? Aside from a very cool underwater creature,
+
+00:02:48.699 --> 00:02:57.199
+the unicorn of the sea, Narwhals is our lightweight, dependency-free data and lazy frame interface.
+
+00:02:57.199 --> 00:03:05.080
+And in fact, if you're using almost any tool that deals with tabular data in Python, there's
+
+00:03:05.080 --> 00:03:09.720
+a good chance that you're already using Narwhals. So if you check your virtual environments,
+
+00:03:09.720 --> 00:03:16.720
+you might even have it installed. But that means that Narwhals is not designed necessarily
+
+00:03:16.720 --> 00:03:25.080
+for a tail-end analytical tool. What this means is that Narwhals is going to be used
+
+00:03:25.080 --> 00:03:31.960
+primarily by library authors. That's going to be the folks over at PyShiny, Greattable
+
+00:03:31.960 --> 00:03:37.839
+Extras, Plotly, Altair, Bokeh, sklearn, Pandera, and more. In fact, I think we have at this
+
+00:03:37.839 --> 00:03:44.520
+point like 28 downstream adopters. Downstream just meaning they use Narwhals because their
+
+00:03:44.520 --> 00:03:49.639
+users come to them with DataFrames. And their users say, well, I use a Pandas DataFrame
+
+00:03:49.639 --> 00:03:54.199
+or I use a Polars DataFrame. I use a DuckDB table. I use a PyArrow table because everything
+
+00:03:54.199 --> 00:03:59.639
+else is just too much for me. And so we have all these tools that need to work with tabular
+
+00:03:59.639 --> 00:04:05.080
+data. And it becomes an incredible pain to say, OK, here's the implementation for Arrow.
+
+00:04:05.080 --> 00:04:08.600
+Here's the implementation for Pandas. Here's the implementation for Polars. Here's the
+
+00:04:08.600 --> 00:04:13.759
+implementation for Moden, plus that little patch. Because although Moden is 100% drop-in
+
+00:04:13.759 --> 00:04:18.160
+replacement for Pandas, there's just some things it doesn't do.
+
+00:04:18.160 --> 00:04:22.760
+The other audience that likes to use Narwhals, and I will say this is probably like the 5%
+
+00:04:22.760 --> 00:04:27.119
+audience here, but some subset of people who don't like writing SQL. And so if you
+
+00:04:27.119 --> 00:04:34.519
+want a more object-oriented Polars expression-like interface for using DuckDB, then Narwhals
+
+00:04:34.519 --> 00:04:37.399
+could be a route that you would go.
+
+00:04:37.399 --> 00:04:42.320
+But here's a quick slide that I made. And this is one Isabella I actually shared at
+
+00:04:42.320 --> 00:04:47.239
+PyCon US during the maintainers track. And Isabella, I will tell you, I need to update
+
+00:04:47.239 --> 00:04:52.720
+this because we have actually merged in. There is Pandera now. That should be on the slide.
+
+00:04:52.720 --> 00:04:59.679
+And there should be one more sklearn, scikit-learn subpackage that I need to add on here.
+
+00:04:59.679 --> 00:05:05.040
+But you can see a number of different tools are adopting and are starting to use Narwhals.
+
+00:05:05.040 --> 00:05:12.279
+Historically, these tools only supported Pandas. Some of the newer tools then said, oh, Pandas
+
+00:05:12.279 --> 00:05:16.200
+is the old thing. Polars is going to be the new thing. And then they only supported Polars.
+
+00:05:16.200 --> 00:05:21.959
+And now they say, you know what? We can support many different data frames by using Narwhals.
+
+00:05:22.200 --> 00:05:26.760
+Let's take a look at what this looks appears to be in code.
+
+00:05:27.559 --> 00:05:31.880
+So I'm going to come up with a quick example. And we'll do a little bit of live coding here.
+
+00:05:31.880 --> 00:05:37.000
+Actually, a good amount of live coding today. But I have a brief example where all I want to do
+
+00:05:37.000 --> 00:05:43.239
+is compute the sum of a column. And we'll see the different ways that we do that across these
+
+00:05:43.239 --> 00:05:48.279
+different tools. The first thing that we're going to need is some data. So I'll create a Pandas
+
+00:05:48.279 --> 00:05:57.559
+data frame here. And we'll just have some values. Nothing too crazy, just the numbers 1 through 5.
+
+00:05:59.480 --> 00:06:02.119
+We'll create a Polars data frame with the same data.
+
+00:06:05.239 --> 00:06:09.640
+And then we'll also, we can instantiate. So this is kind of a sleight of hand here,
+
+00:06:09.640 --> 00:06:15.559
+because this is not necessarily how DuckDB works. But we will go ahead and
+
+00:06:15.559 --> 00:06:25.160
+create a DuckDB pi relation. So here we have all three of these tools. And we'll go ahead,
+
+00:06:25.160 --> 00:06:29.160
+and I can print each of these out. I have a little utility helper here.
+
+00:06:31.320 --> 00:06:32.920
+And we'll just print all of these.
+
+00:06:33.160 --> 00:06:38.679
+And there we have our three data frames, just with one column each. If I wanted to take the sum
+
+00:06:38.679 --> 00:06:44.519
+of each of these columns within each of these data frames, well, I would take this sum for Pandas. I
+
+00:06:44.519 --> 00:06:48.200
+would do something like this. If we wanted to retain the fact that it is a data frame,
+
+00:06:48.200 --> 00:06:51.320
+I would use the double square brackets here to make sure I get a data frame back
+
+00:06:51.320 --> 00:06:55.959
+instead of a series. And I can compute the data frame for each of these columns.
+
+00:06:55.959 --> 00:07:00.760
+And then I can print out the sum of each of these columns within each of these data frames.
+
+00:07:00.760 --> 00:07:08.359
+And I can compute the dot sum just like this. Polars, while we could use the same syntax to
+
+00:07:08.359 --> 00:07:15.640
+grab the series and compute the sum, Polars often opts to use expressions. So I would use the select
+
+00:07:15.640 --> 00:07:20.440
+method on the data frame object. And then I would grab the Polars column. That's going to be our
+
+00:07:20.440 --> 00:07:25.239
+value column. And I would take the dot sum of that column. And then for the Duck data frame,
+
+00:07:25.239 --> 00:07:29.720
+this is why I said there's a sleight of hand here, because really, this is just going to be another
+
+00:07:29.720 --> 00:07:42.679
+query. All right, update. I did a poll in the Discord, by the way, just asking,
+
+00:07:43.399 --> 00:07:50.040
+did you learn Python or R first? We have about 22 votes in. Scroll up in the Discord and take that
+
+00:07:50.920 --> 00:07:56.359
+poll if you want to, if you still haven't. About 70, oh, more people are voting now that I
+
+00:07:56.359 --> 00:08:04.119
+mentioned it. Over 70% said R first. About 30% Python first. Excellent. And we can actually
+
+00:08:04.119 --> 00:08:09.799
+speak more about that, how the series object in Pandas or Polars is very similar to an R-style
+
+00:08:10.760 --> 00:08:17.640
+vector here. We'll wrap this up first. But we see that we have computed the sum of the numbers 1
+
+00:08:17.640 --> 00:08:23.160
+through 5 in Pandas and Polars and DuckDB. And you look at the code that was written, and none
+
+00:08:23.160 --> 00:08:29.239
+of these look like the other. They are all completely distinct. That means if you maintain a
+
+00:08:29.239 --> 00:08:33.559
+plotting library that says, give me your data frame, I just need to compute the sum. I need to
+
+00:08:33.559 --> 00:08:39.159
+do a very simple, straightforward operation. You have to manage three separate code paths.
+
+00:08:39.159 --> 00:08:45.080
+And it becomes kind of a headache to start maintaining each of these. Instead, what we
+
+00:08:45.080 --> 00:08:49.080
+can reach for is a little bit of narwhals here. So the way that narwhals works
+
+00:08:49.880 --> 00:08:56.200
+is we're going to take what we call the native data. This is going to be your Pandas data frame
+
+00:08:56.200 --> 00:09:04.280
+or your Polars data frame. And we convert it into a narwhals data frame here. Now, you'll notice
+
+00:09:05.320 --> 00:09:09.719
+that the narwhals data frame, even in the repper, the printouts that we have here,
+
+00:09:09.719 --> 00:09:14.679
+it's the Pandas data frame just tucked inside of a broader repper. And if we were to instead
+
+00:09:14.679 --> 00:09:18.200
+use the Polars data frame, we'd actually see the representation of the data change.
+
+00:09:19.080 --> 00:09:25.719
+So that it matches the actual Polars data frame. This is the whole core idea behind narwhals,
+
+00:09:25.719 --> 00:09:31.799
+is we take your data frame, we then put it into an object that has a very uniform interface,
+
+00:09:31.799 --> 00:09:35.159
+meaning it doesn't matter if you put a Polars data frame in here or Pandas data frame in here,
+
+00:09:35.159 --> 00:09:39.159
+the rest of the code will look the same. And then when you're all done with your data
+
+00:09:39.159 --> 00:09:44.760
+transformations, you can spit it back out into the same type that you put it in as.
+
+00:09:44.760 --> 00:09:50.679
+So I can use the syntax here. I can select a column. We'll take the value column here
+
+00:09:51.320 --> 00:09:58.520
+and compute the dot sum. The great part about this is I can perform this with
+
+00:09:59.719 --> 00:10:04.039
+any data frame that I have. In fact, I can write a function here. I can write
+
+00:10:04.039 --> 00:10:09.159
+what we call an agnostic function. This takes a data frame and I'll take the column.
+
+00:10:10.119 --> 00:10:13.239
+You'll take this code here. We'll just return this.
+
+00:10:19.000 --> 00:10:25.479
+And then we can do our agnostic sum from our Pandas data frame with our value column.
+
+00:10:26.520 --> 00:10:30.840
+And we'll do the same for the Polars data frame and the duck df here.
+
+00:10:33.559 --> 00:10:39.000
+Here are each of our sets of results that you see have come out. Let me get rid of the column.
+
+00:10:39.719 --> 00:10:46.520
+And there's our sets of results. We can cast this back to our native types here.
+
+00:10:47.080 --> 00:10:52.520
+And we'll get back out each our Pandas data frame, our Polars data frame, and so on and so forth.
+
+00:10:52.520 --> 00:10:57.159
+Let me just fix a small typo in the code. And now we have the sum on our Pandas,
+
+00:10:57.159 --> 00:11:02.679
+the sum on our Polars, the sum of our duck db. So instead of having to maintain all of
+
+00:11:02.679 --> 00:11:07.719
+these different code paths, you just can work with one code path. And that's the beauty of novels.
+
+00:11:08.440 --> 00:11:12.359
+Amazing. Are you open to stopping for some questions?
+
+00:11:12.359 --> 00:11:13.400
+Absolutely.
+
+00:11:13.960 --> 00:11:21.719
+Okay. First of all, we have a question that I knew we would get that actually Isabella and I asked
+
+00:11:21.719 --> 00:11:29.799
+Cameron the moment we saw it before we started our session. What are you using today? We had
+
+00:11:29.799 --> 00:11:34.760
+a question from Christoph that said, what IDE is Cameron using? Are we looking at his terminal?
+
+00:11:34.760 --> 00:11:38.840
+Is this Emacs? And I said, no, I think it's Vim plus extras is what you said.
+
+00:11:38.840 --> 00:11:39.960
+Would you explain a little bit?
+
+00:11:41.000 --> 00:11:48.440
+Absolutely. This is, yes, this is my terminal. We have a combination of tools here. And I cannot
+
+00:11:48.440 --> 00:11:52.599
+take credit for having created this. This was shared with me. And then I added a couple of
+
+00:11:52.599 --> 00:11:59.479
+additions on top of it. We have three tools that you'll see. The first tool is tmux. This is a
+
+00:11:59.479 --> 00:12:04.280
+terminal multiplexer. It lets me split my terminals into an arbitrary number of panes. So
+
+00:12:04.280 --> 00:12:08.679
+I can have a top pane, a bottom pane, a bottom, right? So on and so forth. I'm only using two
+
+00:12:08.679 --> 00:12:14.440
+panes here. As you can see in the top pane, I have Vim running as my code editor. And this is
+
+00:12:14.440 --> 00:12:20.119
+just a markdown file that we're reading through here. The last tool here is called I notify
+
+00:12:20.119 --> 00:12:26.919
+trigger. It's an I notify weight tool, meaning that I sit here and I monitor this file for any
+
+00:12:27.000 --> 00:12:31.159
+right events or any specific type of events. And when the file changes,
+
+00:12:31.159 --> 00:12:35.479
+I execute the code that's in the active cell. And that's how you see the output at the bottom.
+
+00:12:37.640 --> 00:12:38.599
+Amazing.
+
+00:12:38.599 --> 00:12:42.840
+As far as I know, there is no specific Vim plugin for this. There's a lot, there's a
+
+00:12:42.840 --> 00:12:45.479
+decent bit of custom scripting around this.
+
+00:12:45.479 --> 00:12:52.359
+Okay. Isabella put some links in the chat for everybody. And as a callback, if you remember
+
+00:12:52.359 --> 00:12:58.760
+the one where Joey Marshall joined us and we worked on the Frog Australia app, what he was
+
+00:12:58.760 --> 00:13:04.119
+using was Cmux, which I believe is built on Tmux, which, you know, don't quote me on that because
+
+00:13:04.119 --> 00:13:10.119
+I don't use either. But that's that extra flexibility added to the terminal. And then
+
+00:13:10.119 --> 00:13:14.760
+also Gregory in the chat mentioned that if anybody wants something that works like this on Windows,
+
+00:13:14.760 --> 00:13:20.679
+there's Zellige. Maybe he can add a link to that and that's helpful too. And then we had
+
+00:13:21.000 --> 00:13:29.320
+Nor who asked, so does narwhals essentially act as coercion for data frames, like coercing
+
+00:13:29.320 --> 00:13:36.119
+data frames into something and into something else? We think of coercion a lot in R. So that
+
+00:13:36.119 --> 00:13:40.280
+might be a thing that we're trying to make a parallel to in our brains.
+
+00:13:40.280 --> 00:13:42.760
+Yeah. Can you give me an example of what coercion would be like in R?
+
+00:13:43.719 --> 00:13:50.039
+Sure. So if you have, like, let's say you have something like a zip code that is a number,
+
+00:13:50.039 --> 00:13:53.000
+right? And you don't want it to be a number because you don't want to do math on it. And you
+
+00:13:53.000 --> 00:13:59.799
+want to preserve the maybe leading zero on it. You can coerce that numeric into a string in R,
+
+00:13:59.799 --> 00:14:05.799
+and we call that coercion. Okay. So under the hood, you can
+
+00:14:05.799 --> 00:14:14.840
+coerce things. But what we actually end up doing in narwhals is we have the native data frame that
+
+00:14:14.840 --> 00:14:18.280
+you passed in. So if you have a Polar's data frame, that's going to have all of the Polar's
+
+00:14:18.280 --> 00:14:25.239
+data types. What we do for all of the narwhals operations, we map a bunch of different narwhals
+
+00:14:25.239 --> 00:14:30.599
+data types on top of those Polar's data types, meaning that you can write your narwhals expressions
+
+00:14:30.599 --> 00:14:34.760
+and provided that the assumptions we made about the data types are correct, then your code will
+
+00:14:34.760 --> 00:14:40.200
+work. At the very end, we just translate it back to the Polar's data types. So every operation
+
+00:14:40.200 --> 00:14:46.599
+that we end up doing just gets translated effectively into the native backend or into
+
+00:14:46.599 --> 00:14:52.200
+Polar's or Pandas or anything in this case. So we don't do coercion. We're not actually
+
+00:14:52.200 --> 00:14:57.159
+changing your underlying data types. We make generalized inferences about those data types
+
+00:14:57.159 --> 00:15:03.159
+so that when we say, take the sum, we can then just tell Polar's, hey, go take the sum,
+
+00:15:03.159 --> 00:15:07.559
+and then Polar's does whatever Polar's is going to do. So we try to be as lightweight as possible.
+
+00:15:07.559 --> 00:15:11.479
+We're not intercepting your data types and transforming them and then doing something
+
+00:15:11.479 --> 00:15:16.760
+with them and then spitting them back out in a different format. We're using those data types to
+
+00:15:16.760 --> 00:15:21.400
+push our computation down into the backend and then let the backend do whatever the backend is
+
+00:15:21.400 --> 00:15:26.039
+going to do. That's one of our big philosophies. We didn't want to do too much with the expression
+
+00:15:26.039 --> 00:15:31.559
+tree or with the syntax tree because that could induce some overhead. And we want to keep overhead
+
+00:15:31.559 --> 00:15:35.799
+as minimal as possible. Yeah, that goes right into Hubert's question, which was, does narwhals
+
+00:15:35.799 --> 00:15:42.200
+impose any performance penalty? Yes. When you're wrapping things, the performance penalty
+
+00:15:42.200 --> 00:15:51.559
+is going to be unavoidable. However, the performance penalty is at a non-important
+
+00:15:51.559 --> 00:15:57.080
+portion of the code, meaning that typically for these data operations, if you have a million
+
+00:15:57.080 --> 00:16:02.840
+rows, a sum across a million rows is going to take half a second, a second, depending on the
+
+00:16:02.840 --> 00:16:10.039
+speed of your machine. But what we do is since we just take your data frame and we wrap it into
+
+00:16:10.039 --> 00:16:14.679
+our narwhals object, that is the expensive part. You just did the most expensive portion.
+
+00:16:15.320 --> 00:16:20.760
+It's literally going to be taking an object and just adding an attribute. The rest of the
+
+00:16:20.760 --> 00:16:25.000
+computation, we just translate it and put it back into the backend. So there's going to be a small
+
+00:16:25.000 --> 00:16:30.039
+overhead there. But the actual computation, the most expensive part, that's going to be completely
+
+00:16:30.039 --> 00:16:35.640
+running on whichever data frame engine you passed in. So the expensive part, which is the computation,
+
+00:16:35.640 --> 00:16:40.039
+we don't touch and we try to just let the backend do what it's going to do to minimize that
+
+00:16:40.039 --> 00:16:48.200
+performance penalty. All right. I like it. Isabella had asked that she was curious which syntax narwhals
+
+00:16:48.200 --> 00:16:56.679
+decided on. Yes. So here you can see that we very clearly made a choice. We decided, actually
+
+00:16:56.679 --> 00:17:03.400
+we, as say Marco, who's the lead maintainer of narwhals, Marco decided to use the Polars style
+
+00:17:03.400 --> 00:17:08.839
+syntax as inspiration for everything that you'll see here in narwhals. We are not a one-to-one
+
+00:17:08.839 --> 00:17:16.280
+mapping of the Polars API, but you can see that we use .select. We have this idea of expressions.
+
+00:17:16.280 --> 00:17:22.599
+Give me a column and then give me the sum of that column. We use .select to drive that computation.
+
+00:17:23.560 --> 00:17:26.920
+There's going to be a couple of deviations, which we can absolutely talk about,
+
+00:17:27.560 --> 00:17:34.359
+but for the large parts, we do suggest or we do follow Polars for the most part.
+
+00:17:36.119 --> 00:17:42.199
+Great. Awesome. And I shared a link to the Hangout that we had with Marco Gorelli. Marco joined
+
+00:17:42.199 --> 00:17:46.520
+us on the Hangout. So if you would like to meet him and learn all about philosophies behind stuff
+
+00:17:46.520 --> 00:17:51.880
+and decisions, I highly recommend going and checking out that YouTube video. If you're
+
+00:17:51.880 --> 00:17:55.959
+watching this later on YouTube, I'll put the links in the description for anything that we're
+
+00:17:55.959 --> 00:18:02.280
+saying here. Okay. All right. We had one more and then we are going to go back to letting Cameron
+
+00:18:02.280 --> 00:18:07.719
+live code some more perilously, although you're doing fantastically. And that is from Ken saying,
+
+00:18:07.719 --> 00:18:13.079
+so is it like a universal translator? Well, it can't be universal because you have to give narwhals
+
+00:18:13.079 --> 00:18:17.719
+the different types of data frames that you want it to be compatible with, right? Are you like
+
+00:18:17.719 --> 00:18:25.640
+constantly expanding that? We have been expanding it, um, probably up to the beginning of this year.
+
+00:18:26.280 --> 00:18:32.199
+And then we said, I think we have 11 different backends. I actually have a slide here that I
+
+00:18:32.199 --> 00:18:38.040
+can pull up. These are all of the backends that we supported, at least as of PyCon US, which as
+
+00:18:38.040 --> 00:18:41.640
+Isabella said, was that a couple of weeks ago or a couple of months ago? A couple of months ago.
+
+00:18:41.640 --> 00:18:46.199
+Some of these I haven't even heard of. Like I've heard of from an, from an, being our person,
+
+00:18:46.199 --> 00:18:53.959
+primarily I do R and Python, but I will admit primarily R. I recognize Polars and Ibis and
+
+00:18:53.959 --> 00:19:03.239
+DuckDB and Arrow and Pandas, but then I am not much of a SQL person. I avoid SQL whenever I can,
+
+00:19:03.239 --> 00:19:08.359
+unfortunately is my least favorite data manipulation language. Um, so I don't recognize
+
+00:19:08.359 --> 00:19:14.439
+all of these, but hopefully everybody else recognizes some of them. Um, we can go through
+
+00:19:14.439 --> 00:19:18.359
+them very quickly if you'd like. Yeah. Do you want to mention a couple that only have a symbol
+
+00:19:18.359 --> 00:19:25.880
+like D? Absolutely. Yeah, absolutely. So while I'm not, and I cannot say that I'm an expert in
+
+00:19:25.880 --> 00:19:31.880
+all 11 of these, I do know the general principles and their use cases. Rapids or also known as QDF,
+
+00:19:32.439 --> 00:19:39.000
+which is Nvidia's GPU data frame implementation, which actually Polars now has an API sitting on
+
+00:19:39.000 --> 00:19:44.599
+top of, and that's been a big part of the Nvidia and Polars collaboration. Um, but QDF is its own
+
+00:19:44.599 --> 00:19:51.880
+tool for running data frame computations on your GPU. Apache Spark. Uh, I believe Spark had a data
+
+00:19:51.880 --> 00:19:56.839
+frame interface called Koalas, but now I think it's just Spark data frames at this point. Um,
+
+00:19:56.839 --> 00:20:03.239
+but this is for running distributed data frame computations using Spark SQL frame. This is the
+
+00:20:03.239 --> 00:20:09.560
+one that I'm least familiar with probably. Uh, but SQL frame allows you to easily translate one
+
+00:20:09.560 --> 00:20:16.680
+style of SQL syntax to a variety of different SQL implementations. Moden here is a data frame tool
+
+00:20:17.479 --> 00:20:23.239
+came out probably eight years ago. That's the gas off the top of my head. So don't hold me to that.
+
+00:20:23.239 --> 00:20:29.160
+But Moden was a tool that said, Hey, pandas is kind of slow. We rewrote pandas and we made it
+
+00:20:29.160 --> 00:20:34.760
+fast. And we have the exact same API as the pandas API issue is the issue for that tool.
+
+00:20:34.760 --> 00:20:41.400
+However, is pandas is 15 years old. Pandas has more functions than I know, probably words in
+
+00:20:41.400 --> 00:20:46.680
+the English language. It's an exaggeration, of course, but it's, it's going to be impossible
+
+00:20:46.680 --> 00:20:52.280
+to mimic the pandas API a hundred percent. It is, it is a, and this is from also the developers of
+
+00:20:52.280 --> 00:20:58.040
+Moden. It's just an impossible task that they found out, unfortunately. Now they do have most
+
+00:20:58.040 --> 00:21:03.239
+of it captured. The hard part is, do they have the bits that you care about for your upcoming
+
+00:21:03.239 --> 00:21:07.239
+project? Because as soon as you hit a wall, it drops back to pandas and then you get the slow
+
+00:21:07.239 --> 00:21:13.640
+path. Hmm. Okay. Yeah. I think this is sometimes hard for the people who answered. I learned our
+
+00:21:13.640 --> 00:21:19.000
+first in the chat to wrap their heads around because in our, it's not a problem. Uh, data
+
+00:21:19.000 --> 00:21:25.800
+frames are native data types in our, and so that sort of like worry about is this data frame going
+
+00:21:25.800 --> 00:21:30.760
+to be covered on this backend is not something that we've ever had to think about. So I'm hoping
+
+00:21:30.760 --> 00:21:36.520
+that this is building empathy for folks who are, you know, learning about working outside of their
+
+00:21:36.520 --> 00:21:42.839
+language, that it is something that people have to worry about. Um, and I lied. I want to throw
+
+00:21:42.839 --> 00:21:46.439
+in one more question because I think it's great. And it's from Hubert and he said, were any of
+
+00:21:46.520 --> 00:21:49.160
+these backends more challenging than others to accommodate?
+
+00:21:51.880 --> 00:21:52.599
+I will say
+
+00:21:55.319 --> 00:22:03.640
+the hardest backend to accommodate so far has been ironically Polars. Most things we can just
+
+00:22:03.640 --> 00:22:09.160
+pass straight through because our interface is so similar to the Polars interface, but we did start
+
+00:22:09.160 --> 00:22:14.359
+supporting Polars versions that as of today are quite old, but at the time they were brand new.
+
+00:22:14.359 --> 00:22:19.560
+Polars is a very young library, so things change very quickly. And the reason I say it's hard to
+
+00:22:19.560 --> 00:22:25.800
+support is that if you look through the narwhal source code, um, I had to do this, uh, for the
+
+00:22:25.800 --> 00:22:31.959
+histogram method or for the hist method. There's like, if you have Polars version one point,
+
+00:22:31.959 --> 00:22:37.400
+something, you know, do this. Oh, they changed it. The Polars changed in 1.2 now. So now if you have
+
+00:22:37.400 --> 00:22:41.239
+version Polars version 1.2, do something slightly different because they changed how it was
+
+00:22:41.239 --> 00:22:46.680
+implemented. And since Polars keeps changing things, we have this decision to make. Do we
+
+00:22:46.680 --> 00:22:51.479
+adopt how Polars has changed? And then do we unify the rest of the backends across that?
+
+00:22:52.520 --> 00:22:57.479
+Or do we make the new Polars version align with what we have already implemented? And so this is
+
+00:22:57.479 --> 00:23:03.160
+a, this is a very common issue. Uh, when you try to say I have an API, it sits on top of somebody
+
+00:23:03.160 --> 00:23:08.280
+else's API. Yeah. This is one of those things that's like the best and worst thing about open
+
+00:23:08.280 --> 00:23:12.520
+source, especially a new and evolving thing is you're like, yeah, the new thing. But then also
+
+00:23:12.520 --> 00:23:18.280
+the new thing is constantly changing. Oh, great. Fantastic. I'm going to let you move ahead with
+
+00:23:18.280 --> 00:23:24.040
+some of your discussions here. I'm ready to learn. I'll pause you again later. We have more questions.
+
+00:23:24.040 --> 00:23:28.920
+Yes. So there's a, two things that I want to probably, we'll probably skip around a little
+
+00:23:28.920 --> 00:23:36.439
+bit if that's all right, but two things I want to address. The first is we can talk about overhead.
+
+00:23:37.160 --> 00:23:43.160
+And we can come up with probably some little example, examples to see how much latency or how
+
+00:23:43.160 --> 00:23:49.160
+much overhead does normal add to any given operation. The other thing that we can, I want
+
+00:23:49.160 --> 00:23:57.319
+to also address, and this is probably the first thing that I'll get to is this. I see a very
+
+00:23:57.319 --> 00:24:05.319
+popular and famous XKCD has entered the chat. And in fact, this XKCD comes up
+
+00:24:06.599 --> 00:24:13.079
+all the time when you talk about narwhals and you say, well, here's the issue. We have 15 things
+
+00:24:13.079 --> 00:24:20.040
+that we're trying to map and we want to unify them. We want to make one best implementation.
+
+00:24:20.920 --> 00:24:27.000
+And if you're familiar with the Python data frame community a decade ago, 15 years ago,
+
+00:24:27.000 --> 00:24:31.479
+it was just pandas. That was it. No other data frames in Python. Everybody built their tooling
+
+00:24:31.479 --> 00:24:39.800
+around pandas. And then probably in 2018, especially maybe 2017, 2020, you had group
+
+00:24:39.800 --> 00:24:44.520
+after group after group saying we can do pandas, but I think we can do it better.
+
+00:24:45.319 --> 00:24:50.680
+And so the ecosystem changed from just pandas and pandas by itself to Polars, DuckDB, Ibis,
+
+00:24:50.680 --> 00:24:55.479
+Dask, Mode, and all those tools and more because not all of the data frames have survived until
+
+00:24:55.479 --> 00:25:03.160
+today. I know for a fact Veix is still around, but I have not seen or heard anybody talk about
+
+00:25:03.160 --> 00:25:07.880
+it since probably at least a few years ago. And so it's not one of the back ends that we support,
+
+00:25:07.880 --> 00:25:12.920
+but it's a data frame library that existed. And so this brings up that very popular XKCD of,
+
+00:25:12.920 --> 00:25:17.880
+well, there's 14 competing data frames. That's crazy. Let's just make one universal one. And
+
+00:25:17.880 --> 00:25:23.400
+then now all of a sudden you have 15 competing data frames. And this is not what we want for
+
+00:25:23.400 --> 00:25:31.400
+narwhals. What we want for narwhals is to have one interface that you can opt into. It's going
+
+00:25:31.400 --> 00:25:39.000
+to let you do a well-defined subset of tasks. However, we encourage you that if you have
+
+00:25:39.000 --> 00:25:43.319
+something that falls outside that task, you can always submit a feature request, or we can provide
+
+00:25:43.319 --> 00:25:47.880
+you the guidance that maybe narwhals isn't the tool for this use case. So we don't want narwhals
+
+00:25:47.880 --> 00:25:52.680
+to compete with pandas or Polars. We want narwhals to help unify some of the things that pandas and
+
+00:25:52.680 --> 00:25:57.160
+Polars can do, some of the common operations. Do you think about our primary audience, like a
+
+00:25:57.160 --> 00:26:02.680
+plotting library? They don't need to do that many complex tasks. Maybe they need to pivot some data,
+
+00:26:02.680 --> 00:26:07.640
+or maybe they need to do a group by aggregation of some sort. And we fully and completely support
+
+00:26:07.640 --> 00:26:11.800
+that. But we're not here to say, oh, we're competing with IBIS, or we're competing with
+
+00:26:11.800 --> 00:26:16.520
+Dask. Because I'll even go ahead and say, if you're coming up with an analytical project,
+
+00:26:16.520 --> 00:26:21.400
+you have a big data analysis that you're planning to do, don't use narwhals. It's not the tool to
+
+00:26:21.479 --> 00:26:27.560
+do your data analysis. It is a tool that if you have a bunch of other users, and they all get to
+
+00:26:27.560 --> 00:26:31.880
+use their very own data frame, they keep giving them to you, and you want to write one function
+
+00:26:31.880 --> 00:26:36.040
+that can do something with any of those data frames, that's when you reach for narwhals.
+
+00:26:36.040 --> 00:26:40.439
+Amazing. Okay, that is the description that I think just finally landed on me
+
+00:26:40.439 --> 00:26:46.119
+for narwhals. Thank you. But also, that makes me ask another question that I'm hoping you
+
+00:26:46.119 --> 00:26:51.959
+didn't already answer and I didn't understand, which is like, I see Marco sometimes on LinkedIn
+
+00:26:51.959 --> 00:26:57.640
+being like, hey, yay, this package just added us as a dependency. Does that mean that all of those
+
+00:26:58.199 --> 00:27:03.479
+package builders and maintainers need to add narwhals as a dependency in their package
+
+00:27:04.520 --> 00:27:08.280
+in order for you to be their sort of universal translator?
+
+00:27:09.239 --> 00:27:14.199
+Yes, they do. But the nice thing about having narwhals as a dependency, if we go to the
+
+00:27:14.199 --> 00:27:21.239
+narwhals GitHub, I'm like crossing my fingers that this fact hasn't changed since the last time
+
+00:27:21.239 --> 00:27:27.400
+I looked. Because I've been a bit busy, so I haven't had a ton of time to contribute. But
+
+00:27:28.680 --> 00:27:35.400
+taking a look here at our pyproject.toml, you can see that we have zero hard dependencies.
+
+00:27:35.400 --> 00:27:38.439
+If you depend on narwhals, you're not bringing in a bunch of data frames,
+
+00:27:38.439 --> 00:27:45.479
+libraries with you. Whereas if you tried to create your own tool that can support multiple
+
+00:27:45.479 --> 00:27:49.719
+different data frames, you might need to have a dependency on each of those data frames in order
+
+00:27:49.719 --> 00:27:54.119
+to support them, or at the very least an optional set of dependencies. So all of the dependencies
+
+00:27:54.119 --> 00:27:59.239
+that you will find are going to be optional dependencies here. And so these are the versions
+
+00:27:59.239 --> 00:28:04.199
+of each of these tools that we've seen that we support. You can see it goes back quite far.
+
+00:28:04.199 --> 00:28:12.680
+Pandas 1.34, that's quite old. It's quite old. We even have versions of Polars here before their
+
+00:28:12.680 --> 00:28:18.119
+1.0 release, and Polars is coming up on their 2.0 release. I don't think it's released just yet,
+
+00:28:18.119 --> 00:28:25.719
+but it should be coming up soon. So if you depend on narwhals, we will appear in your pyproject.toml
+
+00:28:25.719 --> 00:28:33.560
+or whichever packaging configuration you're using. But you're not bringing in a bunch of
+
+00:28:33.560 --> 00:28:37.239
+other hard dependencies that everybody has to install every single time.
+
+00:29:07.515 --> 00:29:12.794
+pandas or import pandas. We try not to import a bunch of stuff and just guess. We do our
+
+00:29:12.794 --> 00:29:18.035
+best to infer what is it that you've given us so that we don't have to assume, make assumptions
+
+00:29:18.035 --> 00:29:22.515
+about what dependencies exist in any environment to keep the tool as lightweight as possible.
+
+00:29:22.515 --> 00:29:30.755
+Okay, great. Fantastic. Well, we had a sort of follow-up from earlier that I wanted to
+
+00:29:30.755 --> 00:29:36.675
+add from Ken when we were talking about histograms. Ken says, so you mentioned histogram, which
+
+00:29:36.675 --> 00:29:43.195
+I think is the hist function. And he was asking, does Narwhals only support what that
+
+00:29:43.195 --> 00:29:49.074
+passed in DataFrame architecture supports or does Narwhals as a wrapper extend capabilities
+
+00:29:49.074 --> 00:29:53.635
+that are not present in the underlying library? What a great question, Ken.
+
+00:29:53.635 --> 00:29:58.794
+That is an absolutely fantastic question. It's one of the trickiest things that we have
+
+00:29:58.794 --> 00:30:05.235
+to balance here when designing and working on the Narwhals interface is if DuckDB doesn't
+
+00:30:05.235 --> 00:30:13.515
+support this thing, do we implement it on our own? Like say DuckDB didn't support taking
+
+00:30:13.515 --> 00:30:18.675
+the correlation of two columns. Well, you can do the math to get there, right? Means
+
+00:30:18.675 --> 00:30:22.474
+and standard deviations, a little bit of division, a little bit of algebra, and you can make
+
+00:30:22.474 --> 00:30:28.875
+your way there. Typically, what we will do is if the math exists and it's well-defined,
+
+00:30:28.875 --> 00:30:35.354
+we will implement it. The thing that we will never, ever implement, though, is if it takes
+
+00:30:35.354 --> 00:30:41.315
+you outside of that tool. And so we can actually look at what I mean by this. If it takes you
+
+00:30:41.315 --> 00:30:48.274
+outside the tool, meaning like a Pandas series or DataFrame.apply, any of those incredibly,
+
+00:30:48.274 --> 00:30:55.475
+incredibly slow operations, we do not want to support. Because what we don't want from
+
+00:30:55.475 --> 00:31:00.515
+a user experience is, oh, I translate all my code into Narwhals, but now it runs 20 times slower
+
+00:31:00.515 --> 00:31:04.675
+than it used to. And that's just a disaster for everyone involved. It's going to result in an
+
+00:31:04.675 --> 00:31:09.315
+issue being filed and saying, why is this slow? And then we have to then give the guidance of,
+
+00:31:09.315 --> 00:31:13.634
+oh, well, if you write the code in this very slightly different way, it becomes fast again.
+
+00:31:13.634 --> 00:31:17.154
+But you hit one of the things that we only partially support or don't support completely,
+
+00:31:17.154 --> 00:31:22.434
+and that's why your code got slow. And in my eyes, it's a leaky abstraction. It means that we didn't
+
+00:31:22.434 --> 00:31:28.835
+do a good enough job of making the fast option, the fast thing, the only option or the most visible
+
+00:31:28.835 --> 00:31:33.475
+option. And so we never want the slow thing to be the default. And I think this is like part of the
+
+00:31:33.475 --> 00:31:44.035
+downfalls of Pandas. Like if we create a DataFrame here, let's do something really slow. We'll take
+
+00:31:44.035 --> 00:31:49.875
+the random number generator here. We'll make some groups. And we'll do an rng.choice.
+
+00:31:50.434 --> 00:31:54.994
+We have our ASCII lowercase. So we have all of our lowercase letters, A through Z here.
+
+00:31:54.994 --> 00:31:59.634
+I'll dump them into a list. And we'll just piecemeal this together. We'll see if this works
+
+00:31:59.634 --> 00:32:11.634
+here. That's fine. Forgot a couple of letters. So there's our letters. Now if I take this and I set
+
+00:32:12.515 --> 00:32:23.154
+the size, let's do 10,000. 10,000 by four. So now we have a two-dimensional array here. I can view
+
+00:32:23.154 --> 00:32:29.074
+into this because the arrays are fixed with strings in NumPy. But if I do a view less than the
+
+00:32:31.634 --> 00:32:40.115
+four, now it's less than four. All right. Now I have a bunch of groups or group identifiers here.
+
+00:32:40.194 --> 00:32:42.755
+We'll take the unique ones because there could be some repetitions.
+
+00:32:46.115 --> 00:32:51.714
+Okay. So now I have a bunch of groups. And if we check the length, this should be close to 10,000.
+
+00:32:52.675 --> 00:32:57.794
+So 9,874. I'm going to create a DataFrame here. We'll have these groups.
+
+00:32:59.874 --> 00:33:05.555
+And that will be our unique groups. And then we'll do like 200 observations per group. So
+
+00:33:05.555 --> 00:33:15.474
+I'll just repeat this 200 times. And then I'll assign in some values here. Say we want uniform
+
+00:33:15.474 --> 00:33:22.995
+values from zero to 100, whose size is the length of the current DataFrame.
+
+00:33:26.515 --> 00:33:31.874
+And there should be our DataFrame with a bunch of groups here and a bunch of values. And we'll even
+
+00:33:31.874 --> 00:33:39.715
+go the extra mile here because sometimes Pandas is decent at figuring out if your columns are
+
+00:33:39.715 --> 00:33:44.515
+sorted. And it can dispatch a couple of fast paths on here. So we'll even sample this to
+
+00:33:44.515 --> 00:33:50.435
+make it real slow. We'll just shuffle all of the rows here so that they are completely out of order.
+
+00:33:52.275 --> 00:33:56.914
+Now I'll go ahead and let's make a quick timer.
+
+00:33:57.874 --> 00:34:01.874
+Grab PerfCounter. And we'll need ContextLib.
+
+00:34:05.474 --> 00:34:10.115
+And we'll say def timed here. This takes a message. We'll do start.
+
+00:34:11.955 --> 00:34:16.914
+So once we have this timer up and running, we'll be able to time arbitrary units of code here.
+
+00:34:18.354 --> 00:34:21.874
+We'll try finally. We'll get our stop here just like that.
+
+00:34:22.275 --> 00:34:27.474
+And then we can print out start, stop, and start.
+
+00:34:30.435 --> 00:34:33.955
+We'll do our message. 30 characters, I think, should be enough.
+
+00:34:36.835 --> 00:34:40.194
+OK. This looks good.
+
+00:34:40.194 --> 00:34:44.675
+Anybody who is new to Python, what he was wrapping around was he was just a little bit
+
+00:34:44.675 --> 00:34:45.955
+of formatting on that.
+
+00:34:46.034 --> 00:34:52.194
+So we'll just time how long does it take to assign x equals 1. We'll comment out this code
+
+00:34:52.194 --> 00:35:01.314
+here so it doesn't run. And that should be timed with a D. And I need the ContextManager.
+
+00:35:04.835 --> 00:35:09.634
+As Libby was saying, if you're unfamiliar with Python, all this is doing is it's
+
+00:35:10.594 --> 00:35:13.794
+going to execute up to the yield and then pause.
+
+00:35:13.794 --> 00:35:18.594
+So we've captured our starting point as soon as we enter this with block here.
+
+00:35:18.594 --> 00:35:23.634
+So as soon as we reach the first piece of indented line that you see, we capture the
+
+00:35:23.634 --> 00:35:29.474
+starting time. Then when we leave the indented block, when we come out here, we're going to
+
+00:35:29.474 --> 00:35:34.115
+get our start. And we're going to get our stop. And we're going to get our stop.
+
+00:35:34.435 --> 00:35:39.235
+We capture the starting time. Then when we leave the indented block, when we come out
+
+00:35:39.235 --> 00:35:44.435
+here, we advance that function one more time. So we pick up where we left off. We pick up
+
+00:35:44.435 --> 00:35:48.354
+at the yield. And we execute the rest. We capture the stop. And then we print out.
+
+00:35:48.354 --> 00:35:53.555
+So how long did it take us to assign x equals 1? Well, barely a microsecond there.
+
+00:35:55.155 --> 00:36:00.194
+So what we can do with this is we can see the slow path that Pandas has.
+
+00:36:00.914 --> 00:36:10.675
+If we group by our groups column and we take the value,
+
+00:36:11.874 --> 00:36:16.354
+let's do the dot standard deviation, give it a slightly interesting computation.
+
+00:36:19.314 --> 00:36:22.115
+And that should be values with an S.
+
+00:36:25.155 --> 00:36:27.634
+So we'll do this. We'll say Pandas fast path.
+
+00:36:31.155 --> 00:36:33.634
+This computation took 0.13 seconds.
+
+00:36:35.955 --> 00:36:42.034
+And then Pandas also has a slow path via dot apply. And we pass in a lambda.
+
+00:36:43.474 --> 00:36:48.515
+And take the same result. We take the standard deviation of each of the series objects within
+
+00:36:49.155 --> 00:36:51.314
+the group that's being generated.
+
+00:36:54.115 --> 00:36:58.675
+But you can see it's almost nine times slower. And this is part of the downfall of Pandas. This
+
+00:36:58.675 --> 00:37:02.914
+is what we want to avoid with narwhals of there's two different ways you can write your code.
+
+00:37:02.914 --> 00:37:09.074
+One is super fast. And the other is incredibly slow. Nine times slower means that if we up the
+
+00:37:09.074 --> 00:37:14.275
+data to I think we have about 10 million rows here. If I did my math right. Or 1 million,
+
+00:37:14.275 --> 00:37:20.114
+I should say. If we up the data to 10 million or 100 million, the difference is going to be
+
+00:37:20.114 --> 00:37:26.035
+insane. It's going to be 1 second versus 10 seconds. Or it's going to be 10 seconds versus
+
+00:37:26.035 --> 00:37:30.194
+90 seconds. That's the difference between I can sit here and wait for this computation to finish.
+
+00:37:30.194 --> 00:37:33.395
+And well, I need to go get my fourth cup of coffee today. And I have the time because
+
+00:37:33.395 --> 00:37:37.634
+this is going to take about five minutes to complete. So that's what we want to avoid
+
+00:37:37.634 --> 00:37:44.035
+with narwhals. We just wanted one way to write the syntax. And then you always get the fast path.
+
+00:37:44.035 --> 00:37:49.795
+So in our narwhals back end for Pandas, we absolutely, absolutely always avoid the dot
+
+00:37:49.795 --> 00:37:59.554
+apply because it is expensive and it is slow. Yeah. Oh my goodness. I am. I was just asking
+
+00:37:59.554 --> 00:38:07.074
+in the chat if any R people are seeing Cameron write Python code and feeling mental friction
+
+00:38:07.074 --> 00:38:11.314
+where you're like, Oh, this is unfamiliar to me. And I love that Gregory chimed in and said, Hey,
+
+00:38:11.314 --> 00:38:17.795
+I feel the same way when I watch people type R code because I'm used to watching Python. Okay.
+
+00:38:18.355 --> 00:38:23.554
+So I think that we have handled a bunch of questions, but I believe Isabella has one.
+
+00:38:24.674 --> 00:38:32.355
+Yeah. It wasn't explicitly asked, but it was mentioned the IBIS framework. And so I was
+
+00:38:32.355 --> 00:38:38.754
+wondering if you wouldn't mind explaining a bit about what IBIS is and how it compares with narwhals
+
+00:38:38.754 --> 00:38:45.074
+or interacts with narwhals. Yeah. So this, this was some of the, the earliest feedback that Marco
+
+00:38:45.074 --> 00:38:51.395
+got, uh, after releasing narwhals as well. IBIS is also this framework that says we can work with
+
+00:38:51.395 --> 00:38:55.234
+any data frame. They used to support pandas. I actually don't, I don't think they dropped support
+
+00:38:55.234 --> 00:38:59.395
+for pandas a couple of years ago. Um, and now that at the very least their default implement
+
+00:38:59.395 --> 00:39:03.874
+backend is now duck DB, but it's another one of these tools where you can put in, you know,
+
+00:39:03.874 --> 00:39:10.114
+insert data frame type X here, and then you get one uniform style syntax. The thing that IBIS
+
+00:39:10.114 --> 00:39:16.035
+does differently is that they will actually work with the generated, uh, expression tree
+
+00:39:16.035 --> 00:39:22.114
+in order to optimize the queries that you are writing. So they do, uh, they go maybe an extra
+
+00:39:22.114 --> 00:39:31.795
+mile further, but not all of the optimizations that IBIS makes ends up being better for every
+
+00:39:31.795 --> 00:39:38.035
+single backend. Now, even in a world where we'll say that IBIS is a great, uh, is a perfect
+
+00:39:38.035 --> 00:39:42.355
+optimizer, it always performs better than the native code that you would have written.
+
+00:39:43.554 --> 00:39:48.035
+Well, now it's another API that you need to learn. And one of the things that we wanted to target
+
+00:39:48.035 --> 00:39:53.155
+with narwhals is you don't, there's not too much to learn. It's polar syntax. So if you're already
+
+00:39:53.155 --> 00:39:58.114
+familiar with polars, then you're already familiar with narwhals. And I will tell you, in fact,
+
+00:39:59.715 --> 00:40:04.515
+I have probably written 200 lines of narwhals code. So you're watching me write some of like
+
+00:40:04.515 --> 00:40:09.314
+my first narwhals code, like as an end user, because I only ever writes the backend code
+
+00:40:09.314 --> 00:40:14.515
+as a maintainer. And I'm leaning on all of the things that I know about polars in order to carry
+
+00:40:14.515 --> 00:40:19.795
+myself through working through these narwhals examples that you're seeing here. That said,
+
+00:40:19.795 --> 00:40:26.114
+narwhals also sits on top of IBIS. So if you do have an IBIS table, you can pass that into
+
+00:40:26.114 --> 00:40:30.595
+narwhals, use your narwhals syntax, and then you can recreate an IBIS table. And then you can let
+
+00:40:30.595 --> 00:40:34.275
+IBIS do all of the optimizations that it was going to do. And you don't need to remember,
+
+00:40:34.994 --> 00:40:38.595
+what was the name of that function? Again, I forgotten it. As long as you know polars,
+
+00:40:38.595 --> 00:40:43.395
+then you know narwhals. So that's the that's the big conceptual difference. They do occupy kind of
+
+00:40:43.395 --> 00:40:49.874
+a similar space. But we were going for as minimal and lightweight as possible with narwhals. Whereas
+
+00:40:50.994 --> 00:40:55.395
+IBIS kind of went the other direction where they wanted to make everything really fast and really
+
+00:40:55.395 --> 00:41:00.754
+shiny and nice. And part of doing that was investigating the syntax that you have written
+
+00:41:00.754 --> 00:41:04.754
+in a tree and seeing if they can reorganize things or optimize things based on that.
+
+00:41:06.275 --> 00:41:11.395
+Okay, cool. Well, I'm wondering if you have anything more, we have 15 minutes left.
+
+00:41:11.395 --> 00:41:15.874
+If there's anything more that you have on your plate that you would like to introduce us to
+
+00:41:15.874 --> 00:41:19.314
+before I ask the final big question that I have.
+
+00:41:19.874 --> 00:41:27.234
+Absolutely. Well, we can talk a little bit more about the overhead here that narwhals introduces.
+
+00:41:27.234 --> 00:41:31.314
+In fact, we are pretty set up to do just that. So we can wrap up this example.
+
+00:41:32.355 --> 00:41:36.754
+And then we can talk a little bit about how narwhals works under the hood and see if we
+
+00:41:36.754 --> 00:41:41.074
+can get something going in less than five minutes. It'll be a little bit of a race,
+
+00:41:41.074 --> 00:41:47.395
+so we'll find out. But in terms of overhead, the expensive parts, the most expensive part,
+
+00:41:48.355 --> 00:41:52.915
+as I shared before, is going to be the initial wrapping of the data frame.
+
+00:41:53.955 --> 00:41:59.155
+So if we have our narwhals import here, and we time, we'll take the fast
+
+00:41:59.155 --> 00:42:03.074
+pandas standard deviation here, and we're going to compare this to a narwhals.
+
+00:42:04.595 --> 00:42:08.515
+We'll call this the only path because the only way that you can express the same computation in
+
+00:42:08.515 --> 00:42:16.035
+narwhals. So I'll use a narwhals from native, capture pandas data frame that we have here,
+
+00:42:16.035 --> 00:42:20.194
+going to use, now we're entering in the polar syntax world, so it's group underscore by,
+
+00:42:20.194 --> 00:42:25.475
+not group by right next to each other, our narwhals column of values dot standard deviation.
+
+00:42:30.595 --> 00:42:36.114
+And when we do this, oops, and that should be, that's good. Oh, nobody told me that we're grouping
+
+00:42:36.114 --> 00:42:41.155
+by on the groups and then aggregating the values. I won't hold your feet to the fire for that one in
+
+00:42:41.155 --> 00:42:47.074
+the audience here for not catching my initial mistake. But you can see that the pandas fast
+
+00:42:47.074 --> 00:42:53.554
+path is about 0.11 seconds. The narwhals only path is about 0.15 seconds. And then the pandas,
+
+00:42:53.554 --> 00:42:56.835
+the slowest you can get pandas, in fact, if we tried, I'm sure we can make it slower,
+
+00:42:57.475 --> 00:43:02.275
+is about just one second or 0.95 seconds. So here you can start to see that overhead
+
+00:43:02.275 --> 00:43:08.035
+that we have for narwhals. In this case, it's coming out to four tenths of a second or four
+
+00:43:08.035 --> 00:43:13.634
+one hundredths, I should say, of a second, which in the grand scheme of things, the computation
+
+00:43:13.634 --> 00:43:17.074
+of actually computing the standard deviation per group is going to be the heavy part. And that's
+
+00:43:17.074 --> 00:43:21.395
+the part that we just let the back end do what it does. We're not intercepting anything. The only
+
+00:43:21.395 --> 00:43:26.114
+thing we're doing is we're just wrapping some syntax around the outside to make it a little
+
+00:43:26.114 --> 00:43:34.275
+bit more polar's like. And in fact, that actually wraps up nicely because this talks about, this
+
+00:43:34.275 --> 00:43:40.114
+touches on how narwhals actually works. And it's just layers upon layers of composing different
+
+00:43:40.114 --> 00:43:49.234
+entities or different objects here. And so one day we woke up and we said, the pandas API,
+
+00:43:49.234 --> 00:43:53.634
+it's it needs some love. And they're too deep. They're not going to reorganize and restructure
+
+00:43:53.634 --> 00:44:00.194
+everything. But people really seem to like what polar's has going on. Is there any way that I can
+
+00:44:00.194 --> 00:44:06.835
+use the polar's interface, but put it, map it to a panda's data frame? And you can do that through
+
+00:44:06.835 --> 00:44:14.275
+a couple of ways. But the hardest part is to understand that you have all of these different
+
+00:44:14.275 --> 00:44:20.994
+pieces that are moving. And so what we'll do here is I'll create a very basic data frame.
+
+00:44:22.434 --> 00:44:26.114
+And we'll see how far we can get in just a minute or two. I suspect we won't get all the way to the
+
+00:44:26.114 --> 00:44:35.234
+end, but if we have a data frame here has two columns, a and B, we'll say four, five, six, just
+
+00:44:35.234 --> 00:44:44.515
+to differentiate. We can take a look here at the data frame. Now, if I want to create an object
+
+00:44:44.515 --> 00:44:50.674
+that wraps this data frame and gives it a slightly different interface, there is no dot select method
+
+00:44:51.634 --> 00:44:57.874
+on a panda's data frame. And so we need to give it something that has a dot select method.
+
+00:44:57.874 --> 00:45:01.554
+There's two ways you can do this. Typical program, you talk inheritance, or you can talk composition.
+
+00:45:01.554 --> 00:45:05.715
+We went for composition because in our case, when you're trying to unify things, going for an
+
+00:45:05.715 --> 00:45:13.554
+inheritance pattern, it kind of inverts the chain that you want here. So we create inside of narwhals.
+
+00:45:13.554 --> 00:45:18.114
+We literally have a class. It's called pandas like data frame because we also use the same interface
+
+00:45:18.515 --> 00:45:23.314
+for moden and other things that claim to have 100 pandas compatibility. We have a class that looks
+
+00:45:23.314 --> 00:45:28.434
+like this. It's just a panda's data frame. And I'll grab our data classes import as well.
+
+00:45:30.835 --> 00:45:37.475
+This thing takes a data frame. We'll say it takes a panda's data frame specifically.
+
+00:45:39.155 --> 00:45:46.834
+And so now what I can do is I can take this data frame and say that we have our
+
+00:45:48.675 --> 00:45:54.435
+agnostic, I'll call it my ag data frame. I also did grad school at UC Davis, so go Aggies there.
+
+00:45:55.714 --> 00:46:02.035
+But this is our pandas data frame. And it just consumes a regular data frame.
+
+00:46:02.915 --> 00:46:06.594
+Now the wrapper is going to be quite, quite bad here.
+
+00:46:09.555 --> 00:46:14.834
+But this is effectively all that we do in narwhals. We take your data frame, and we put it
+
+00:46:14.834 --> 00:46:19.155
+inside of a different type. We then define the methods that we want, like a select method.
+
+00:46:19.874 --> 00:46:25.315
+A select method has access to the current data frame, and it has access to all of the expressions
+
+00:46:25.315 --> 00:46:30.195
+that you have put in. But then you have to say, well, wait a minute. What is an expression?
+
+00:46:30.195 --> 00:46:36.035
+So somewhere else in the narwhals source code, we have our pandas expression,
+
+00:46:38.594 --> 00:46:41.234
+which looks like this. And this will be another data class here.
+
+00:46:41.555 --> 00:46:45.714
+The expression, this is where the tricky part is, where a lot of the magic comes in.
+
+00:46:46.275 --> 00:46:53.075
+The expression stores a function that you can call, and the function has a very well-defined
+
+00:46:53.075 --> 00:46:57.395
+contract, meaning this function, if we grab our type hints here,
+
+00:46:59.795 --> 00:47:08.275
+this function takes in a pandas data frame, and this will return a list of pandas series objects.
+
+00:47:08.435 --> 00:47:15.714
+The idea is that an expression is just going to be a function whose only input is going to be a
+
+00:47:15.714 --> 00:47:20.834
+data frame, and it's going to return to you a bunch of series that you can horizontally stitch
+
+00:47:20.834 --> 00:47:25.075
+together and make a brand new data frame. And that's exactly how select is going to work under
+
+00:47:25.075 --> 00:47:30.435
+the hood. Now, these functions can also have some arguments, but maybe for time, out of the interest
+
+00:47:30.435 --> 00:47:36.515
+of time, we'll avoid dealing with any dependent arguments for expression chaining, or I should
+
+00:47:36.515 --> 00:47:42.354
+say nested expressions in this case. So if I want to do write code that looks like this,
+
+00:47:43.234 --> 00:47:48.195
+we're going to select, and I'm going to, let's create a single column selection. So this is
+
+00:47:48.195 --> 00:47:53.795
+going to be our column expression. This takes in a single name here. This is going to return
+
+00:47:53.795 --> 00:48:00.035
+a function. So we'll go ahead and return that pandas column function. This is the part of that
+
+00:48:00.035 --> 00:48:05.474
+API contract I was telling you about. This thing takes in just a pandas data frame.
+
+00:48:06.754 --> 00:48:10.275
+And we're going to go ahead. We have both pieces of information. We have the name that's already
+
+00:48:10.275 --> 00:48:15.075
+bound in the scope, and we have the data frame that's going to be passed in. We can return the
+
+00:48:15.075 --> 00:48:20.675
+data frame name just like this. In fact, this should just be a series. So this code will look
+
+00:48:20.675 --> 00:48:27.555
+like this. We could also use .lock to get to the same place. So now I have something that looks
+
+00:48:27.555 --> 00:48:36.114
+like this. I have the column expression, which as I shared earlier, just takes in a string,
+
+00:48:36.114 --> 00:48:40.994
+and then it gives you back some function that you can then evaluate on a pandas data frame.
+
+00:48:42.195 --> 00:48:49.075
+And so once we do that, that looks good. There's our name. This should be values for A.
+
+00:48:49.634 --> 00:48:55.634
+So we have our expression, which is the results of column A. And then we have the result, which is
+
+00:48:55.634 --> 00:48:59.795
+going to be calling the expression, giving the expression, the data frame back to that return
+
+00:48:59.795 --> 00:49:04.834
+type, which then selects out just a singular column. And that means in this select method,
+
+00:49:04.834 --> 00:49:09.474
+we do a lot of, we iterate over the expressions, we pass in the current data frame to that expression,
+
+00:49:09.474 --> 00:49:14.915
+and then we horizontally stitch together all of the results. And that's how it works. So there's
+
+00:49:15.795 --> 00:49:20.035
+moving parts here for sure. And I glossed over some of the details. We don't just have a pandas
+
+00:49:20.035 --> 00:49:24.834
+data frame. There's also the DuckDB frame and so on and so forth that we've implemented the same
+
+00:49:24.834 --> 00:49:31.714
+interface for across the board. But that's pretty much how it works. You have a couple of classes,
+
+00:49:31.714 --> 00:49:36.515
+you stitch them all together, and then you keep passing one data frame to expressions,
+
+00:49:36.515 --> 00:49:41.315
+which are really just functions that we evaluate. And the beautiful part is if you're working with
+
+00:49:41.474 --> 00:49:46.754
+And the beautiful part is if you're working with like, with polars, you have a, like a lazy,
+
+00:49:46.754 --> 00:49:52.754
+a lazy frame here, the expression that gets generated is just a polar's lazy expression,
+
+00:49:52.754 --> 00:49:57.555
+or just an actual polar's expression. And so you get to stay within the confines of your lazy
+
+00:49:57.555 --> 00:50:04.275
+system, you don't have to actually concretize or collect the data, and then use narwhals operations,
+
+00:50:04.275 --> 00:50:08.994
+it just passes straight through. This is a great example, I think of
+
+00:50:08.994 --> 00:50:15.555
+the work that developers do to abstract away all of the complicated stuff that like,
+
+00:50:16.275 --> 00:50:21.555
+end users will find really tedious and be like, this is a roadblock for me, I don't I don't want
+
+00:50:21.555 --> 00:50:25.395
+to do all of these things. And the developers are in the background just taking it, fixing it,
+
+00:50:25.395 --> 00:50:31.874
+allowing you to just write your code and have it work. So thank you so much for being the back end
+
+00:50:31.874 --> 00:50:36.994
+that allows people to just do data science. This is super amazing. And I wanted to point out a
+
+00:50:36.994 --> 00:50:43.634
+couple of things that because we have that 70% our users here in our group, there are some things
+
+00:50:43.634 --> 00:50:49.155
+that might not have made any sense to you while Cameron was typing them a second ago. So if
+
+00:50:49.155 --> 00:50:54.195
+Cameron's willing to scroll up a little bit, I wanted to mention just a couple of them. Because
+
+00:50:54.195 --> 00:50:57.874
+again, data frames are native in R, and we don't think about some of these things. We also don't
+
+00:50:57.874 --> 00:51:04.994
+have some of these things in our everyday work. So the first one, Isabella mentioned in the chat,
+
+00:51:04.994 --> 00:51:09.954
+there was a lambda function up there. That is sort of equivalent to an anonymous function in R.
+
+00:51:11.315 --> 00:51:14.754
+It's got a little bit of a different syntax, but it's really similar. So if you know what an
+
+00:51:14.754 --> 00:51:20.354
+anonymous function is in R, yeah, there we go. You'll understand that a little bit better.
+
+00:51:20.354 --> 00:51:26.435
+Don't let that throw you off. Another one is the way that Cameron was importing things. So he was
+
+00:51:26.435 --> 00:51:31.714
+importing multiple things from the same library, right? So he was going through and importing
+
+00:51:31.714 --> 00:51:37.395
+things bit by bit. Whereas in R, we might just call library and the whole thing, and we pull the
+
+00:51:37.395 --> 00:51:43.234
+whole thing in. So that might be another thing where you're like, what is he doing? He's also
+
+00:51:43.234 --> 00:51:48.994
+assigning aliases for his packages so that he can call them like pandas as pd. He doesn't have to
+
+00:51:48.994 --> 00:51:53.395
+type pandas each time. He doesn't have to type polars or numpy each time. He can just type pl or
+
+00:51:53.395 --> 00:52:00.275
+np by aliasing them. Another one is decorators. So you see he has a little at symbol and then context
+
+00:52:00.275 --> 00:52:07.795
+manager. Decorators can add functionality to functions basically. And that's not something
+
+00:52:07.795 --> 00:52:13.634
+that we have in R either. So if any of these things looked a little bit weird to you or even
+
+00:52:13.634 --> 00:52:19.954
+defining classes, don't worry. They are doing a lot of the same things that are happening in R.
+
+00:52:19.954 --> 00:52:24.275
+In R, they are very abstracted away. They're very, very behind the scenes, but they are
+
+00:52:24.275 --> 00:52:28.915
+happening still. Okay. I hope that that was helpful for anybody who needed a little bit of
+
+00:52:28.915 --> 00:52:34.435
+a translation. I really appreciate everybody hanging out with us. Cameron, thank you so much
+
+00:52:34.435 --> 00:52:39.795
+for joining, talking about DataFrames in Python, talking about narwhals. Thanks to you and Marco
+
+00:52:39.795 --> 00:52:44.195
+for doing the good work behind the scenes. We really appreciate you, and I hope that you had fun
+
+00:52:44.195 --> 00:52:50.114
+too. Absolutely. This has been a blast. Thank you all so much for the great questions, and I'm glad
+
+00:52:50.114 --> 00:52:54.275
+that I got to do a little bit of live coding for you and explore, like I said, one of my favorite
+
+00:52:54.275 --> 00:53:06.834
+topics, and that is DataFrames.

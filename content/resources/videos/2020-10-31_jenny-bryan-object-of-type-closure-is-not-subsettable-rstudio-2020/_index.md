@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: Your first “object of type ‘closure’ is not subsettable” error message is a big milestone for an R user. Congratulations, if there was any lingering doubt, you now know that you are officially programming! Programming involves considerably more troubleshooting and debugging than many of us expected (or signed up for). The ability to solve your own problems is an incredibly powerful stealth skill that is worth cultivating with intention. This talk will help you nurture your inner problem solver, covering both general debugging methods and specific ways to implement them in the R ecosystem.
   duration: 3170
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:18.221669+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 100
   people:
   - Jenny Bryan

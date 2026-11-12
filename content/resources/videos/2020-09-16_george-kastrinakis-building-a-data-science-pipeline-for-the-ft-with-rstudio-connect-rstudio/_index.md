@@ -70,8 +70,8 @@ external:  # updated automatically, do not edit
     We have recently implemented a new Data Science workflow and pipeline, using RStudio Connect and Google Cloud Services. This has vastly decreased our pipeline complexity, allowing us to bring our models and products into scheduled production more quickly. In addition, our workflow, working closely together as a team on all projects on a regular two-week sprint cycle, has increased the range of projects we have been able to take on and complete. To detail some of the key lessons we’ve learned (and some of the difficulties!), we’ll walk you through one of our recent sprints, where we productionalised the generation of a suite of behavioural and demographic features so that they can be more easily plugged in to a range of models and used across the business by the FT’s platform and product teams.'
   duration: 1009
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:18.221800+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 25
   playlist: ''
   software:

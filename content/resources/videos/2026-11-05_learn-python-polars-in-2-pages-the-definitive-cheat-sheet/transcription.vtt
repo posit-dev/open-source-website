@@ -1,0 +1,53 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.680
+Polars is a Python library for transforming, analyzing, and visualizing your data.
+
+00:00:05.680 --> 00:00:12.400
+A common saying about Polars is, come for the speed, stay for the API, which means that
+
+00:00:12.400 --> 00:00:18.480
+when you first use Polars, you'll notice how fast it is, but then eventually you'll also
+
+00:00:18.480 --> 00:00:21.660
+fall in love with the syntax it has.
+
+00:00:21.660 --> 00:00:28.000
+So a while ago, Thijs Nieudorp and I, we wrote this book, Python Polars, The Definitive Guide,
+
+00:00:28.000 --> 00:00:33.680
+and now recently, we've compressed these nearly 500 pages down to two.
+
+00:00:33.680 --> 00:00:41.680
+If you go to our website, opensource.posit.co, and then go to Resources, Cheat Sheets, you
+
+00:00:41.680 --> 00:00:48.799
+can find it and download it for free, and it has a lot of information on there.
+
+00:00:48.799 --> 00:00:53.360
+We explain how to get started with Polars, so how to install it, then we talk about the
+
+00:00:53.360 --> 00:00:58.400
+different data structures it contains, like Series, DataFrame, LazyFrame, the different
+
+00:00:58.400 --> 00:01:04.000
+APIs Polars has, all the data types are on here as a quick reference.
+
+00:01:04.000 --> 00:01:09.959
+Then we go on to reading and writing data, how you can transform that data, and then
+
+00:01:09.959 --> 00:01:16.199
+on the other side, we continue with expressions, which is really the heart of Polars.
+
+00:01:16.199 --> 00:01:20.580
+They come up everywhere when you're writing your Polars code.
+
+00:01:20.580 --> 00:01:25.139
+And lastly, there's a section on how to visualize your data.
+
+00:01:25.139 --> 00:01:29.339
+We can really recommend that you check out Polars and the cheat sheet that we created
+
+00:01:29.339 --> 00:01:29.699
+for you.
+

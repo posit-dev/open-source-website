@@ -20,7 +20,7 @@
 
 <h3>Examples gallery</h3>
 
-<p><a data-t="145">So let's do this.</a> <a data-t="150">All right, so here's an example of visualizing a Poisson distribution using a distribution</a> <a data-t="155">vector from the distributional package.</a> <a data-t="157">It knows that it's a discrete distribution, so it gives you a histogram instead of a density</a> <a data-t="162">plot.</a> <a data-t="163">And it also allows you to, for example, map the probability onto the color, so you can</a> <a data-t="167">get this nice little gradient effect.</a></p>
+<p><a data-t="144">So let's do this.</a> <a data-t="145">All right, so here's an example of visualizing a Poisson distribution using a distribution</a> <a data-t="150">vector from the distributional package.</a> <a data-t="152">It knows that it's a discrete distribution, so it gives you a histogram instead of a density</a> <a data-t="156">plot.</a> <a data-t="157">And it also allows you to, for example, map the probability onto the color, so you can</a> <a data-t="160">get this nice little gradient effect.</a></p>
 
 <p><a data-t="162">Speaking of gradients, here's a gradient plot.</a> <a data-t="164">This also shows the use of the dodge position from base ggplot with ggdist.</a> <a data-t="168">Maybe you decide that you want to map the CDF onto it, actually this is the complementary</a> <a data-t="172">CDF.</a> <a data-t="173">You can think about this as an infinite number of bar charts with infinitesimal opacity all</a> <a data-t="177">stacked on top of each other.</a></p>
 

@@ -1,6 +1,6 @@
 <p><a data-t="0">Hi, my name's </a><a href="/people/charlotte-wickham/">Charlotte Wickham</a><a data-t="0"> and I'm a Developer Educator at Posit.</a> <a data-t="11">In this video, I'll show you how to create a Quarto Document in </a><a href="/software/positron/">Positron</a><a data-t="11">.</a></p>
 
-<p><a data-t="17">Here I am in Positron, and you can see from the File Explorer I've got a folder open</a> <a data-t="22">called Penguins, but there's nothing in it, except I have set up a virtual environment</a> <a data-t="27">with uv, you could use pip or conda, or perhaps you're using R.</a> <a data-t="33">You can see that the Python from that environment is active up in the Session Picker, and that it is running down</a> <a data-t="39">in my console.</a></p>
+<p><a data-t="17">Here I am in Positron, and you can see from the File Explorer I've got a folder open</a> <a data-t="22">called Penguins, but there's nothing in it, except I have set up a virtual environment</a> <a data-t="27">with uv, you could use pip or conda, or perhaps you're using R.</a> <a data-t="27">You can see that the Python from that environment is active up in the Session Picker, and that it is running down</a> <a data-t="39">in my console.</a></p>
 
 <h3>Creating a new <a href="/software/quarto/">Quarto</a> document</h3>
 
@@ -16,7 +16,7 @@
 
 <h3>Quarto extension and <a href="/software/cli/">CLI</a> in Positron</h3>
 
-<p><a data-t="127">So a couple of things to note.</a> <a data-t="127">The command I used to create that document, Quarto Create New Document, is being provided</a> <a data-t="133">by the Quarto extension.</a> <a data-t="135">But because the Quarto extension comes pre-installed with Positron, you have all those commands</a> <a data-t="141">from the start.</a></p>
+<p><a data-t="126">So a couple of things to note.</a> <a data-t="127">The command I used to create that document, Quarto Create New Document, is being provided</a> <a data-t="133">by the Quarto extension.</a> <a data-t="135">But because the Quarto extension comes pre-installed with Positron, you have all those commands</a> <a data-t="141">from the start.</a></p>
 
 <p><a data-t="142">The other thing to notice is down in the status bar, you'll see what version of Quarto Positron's</a> <a data-t="148">picked up.</a> <a data-t="149">If you've never installed Quarto before, you'll just get the Quarto that's bundled with Positron.</a> <a data-t="154">If you have installed it before, you'll see the version of Quarto that you might have</a> <a data-t="158">installed before, and if you need to update it, you can just head to quarto.org, grab</a> <a data-t="163">the new version, and Positron will pick it up.</a></p>
 
@@ -70,9 +70,9 @@
 
 <h3>Previewing other formats</h3>
 
-<p><a data-t="588">So another great thing about Quarto is that you're not limited to sending things to HTML.</a> <a data-t="593">So right now, I've got format HTML up in the header here.</a> <a data-t="595">If you want to just take a look at what it might look like in a different format, there's</a> <a data-t="599">another Quarto command called preview, just like we've been running, but it's called preview</a> <a data-t="601">format.</a> <a data-t="602">So if you hit that command, it's going to give you some options.</a> <a data-t="605">It's going to start with any formats that are actually defined in the YAML header, and</a> <a data-t="610">then give some other options.</a> <a data-t="611">So let me have a look at this PDF via Typed.</a> <a data-t="614">So this is format Typed.</a></p>
+<p><a data-t="584">So another great thing about Quarto is that you're not limited to sending things to HTML.</a> <a data-t="588">So right now, I've got format HTML up in the header here.</a> <a data-t="592">If you want to just take a look at what it might look like in a different format, there's</a> <a data-t="595">another Quarto command called preview, just like we've been running, but it's called preview</a> <a data-t="601">format.</a> <a data-t="602">So if you hit that command, it's going to give you some options.</a> <a data-t="605">It's going to start with any formats that are actually defined in the YAML header, and</a> <a data-t="610">then give some other options.</a> <a data-t="611">So let me have a look at this PDF via Typed.</a> <a data-t="614">So this is format Typed.</a></p>
 
-<p><a data-t="619">Typed is an alternative to LaTeX.</a> <a data-t="621">It creates PDFs.</a> <a data-t="621">One of the great things about it is it's bundled in Quarto.</a> <a data-t="624">So you can create PDFs with Quarto without any other installations.</a> <a data-t="629">And up pops a preview of it that's now a PDF document.</a> <a data-t="634">And I'm viewing that in the viewer pane.</a></p>
+<p><a data-t="617">Typed is an alternative to LaTeX.</a> <a data-t="619">It creates PDFs.</a> <a data-t="621">One of the great things about it is it's bundled in Quarto.</a> <a data-t="624">So you can create PDFs with Quarto without any other installations.</a> <a data-t="629">And up pops a preview of it that's now a PDF document.</a> <a data-t="634">And I'm viewing that in the viewer pane.</a></p>
 
 <p><a data-t="636">If I run preview again, so now I'm just using the shortcut, it's going to stick with that</a> <a data-t="641">format that I selected from preview format.</a> <a data-t="643">If I want to go back to HTML, I'm going to need to rerun that preview format command</a> <a data-t="649">and get back to HTML.</a></p>
 

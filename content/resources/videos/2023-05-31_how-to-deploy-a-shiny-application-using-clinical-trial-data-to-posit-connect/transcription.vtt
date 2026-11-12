@@ -1,1601 +1,1037 @@
 WEBVTT
 
-00:00:01.000 --> 00:00:06.000
+00:00:01.000 --> 00:00:07.000
 Hello, everybody. My name is Ryan Johnson, and I'm a data science advisor here at Posit.
 
-00:00:07.000 --> 00:00:15.000
+00:00:07.000 --> 00:00:16.000
 And welcome to this month's Enterprise Community Meetup, where we'll discuss an end-to-end data science workflow using Posit Team.
 
-00:00:16.000 --> 00:00:24.000
+00:00:16.000 --> 00:00:25.000
 As a reminder, this will be a recurring event on the last Wednesday of every month, and we hope it'll serve as a good primer for those new to Posit Team,
 
-00:00:25.000 --> 00:00:28.000
+00:00:25.000 --> 00:00:29.000
 but also helps current Posit Team users become more familiar with our tools.
 
-00:00:28.000 --> 00:00:34.000
+00:00:29.000 --> 00:00:35.000
 Every month, we will cover a different topic and highlight all three tools within Posit Team.
 
-00:00:35.000 --> 00:00:39.000
+00:00:35.000 --> 00:00:40.000
 We have Posit Workbench, Posit Connect, and Posit Package Manager.
 
-00:00:40.000 --> 00:00:52.000
+00:00:40.000 --> 00:00:53.000
 During and after each presentation, there will be a few members of the Posit Team in the chat to address any questions you have about our tools, workflows, licensing, and anything else you may be curious about.
 
-00:00:53.000 --> 00:01:01.000
-So this month, we have a pretty exciting topic for everyone, especially those within the life sciences, healthcare, and pharmaceutical space.
+00:00:53.000 --> 00:01:02.000
+This month, we have a pretty exciting topic for everyone, especially those within the life sciences, healthcare, and pharmaceutical space.
 
-00:01:02.000 --> 00:01:14.000
-So we are going to use Posit Team to create a Shiny application of clinical trial data in R, all while discussing best practices for working within what's known as a validated environment.
+00:01:02.000 --> 00:01:15.000
+We are going to use Posit Team to create a Shiny application of clinical trial data in R, all while discussing best practices for working within what's known as a validated environment.
 
-00:01:15.000 --> 00:01:26.000
+00:01:16.000 --> 00:01:26.000
 As we go through today's session, I'll be sure to stop and note various ways Posit Team can help support a validated compute environment and encourage good coding practices.
 
-00:01:27.000 --> 00:01:28.000
-So let's get started.
+00:01:26.000 --> 00:01:28.000
+Let's get started.
 
-00:01:29.000 --> 00:01:34.000
+00:01:28.000 --> 00:01:34.000
 I first want to make sure everyone on the call has a solid, high-level understanding of Posit Team.
 
-00:01:34.000 --> 00:01:39.000
-So starting up here at the very top, we have our data scientists and analysts.
+00:01:35.000 --> 00:01:40.000
+Starting at the very top, we have our data scientists and analysts.
 
-00:01:40.000 --> 00:01:45.000
+00:01:40.000 --> 00:01:46.000
 These are the folks writing code and creating insights using Posit Workbench.
 
-00:01:46.000 --> 00:01:58.000
-And they can use whatever language they want, including R and Python, as well as any development environment they choose, including the RStudio IDE, JupyterLab, Jupyter Notebooks, and VS Code.
+00:01:46.000 --> 00:01:59.000
+They can use whatever language they want, including R and Python, as well as any development environment they choose, including the RStudio IDE, JupyterLab, Jupyter Notebooks, and VS Code.
 
-00:01:59.000 --> 00:02:10.000
-Now for the R developers, they may be creating insights like Shiny applications, pins, R Markdown documents, or APIs using the Plumber package.
+00:01:59.000 --> 00:02:11.000
+For R developers, they may be creating insights like Shiny applications, pins, R Markdown documents, or APIs using the Plumber package.
 
-00:02:11.000 --> 00:02:20.000
-And for Python developers, they have a home to create interactive applications using things like Streamlit, Dash, Bokeh, Shiny.
+00:02:11.000 --> 00:02:21.000
+For Python developers, they have a home to create interactive applications using things like Streamlit, Dash, Bokeh, and Shiny.
 
-00:02:21.000 --> 00:02:28.000
+00:02:21.000 --> 00:02:30.000
 They can also create documents using Jupyter Notebooks or even Quarto, and APIs using Flask and FastAPI.
 
-00:02:30.000 --> 00:02:42.000
-Now once the developers create content, they need a way to share it with the people that need to see it, including decision makers, coworkers, clients, or maybe even just friends and family.
+00:02:30.000 --> 00:02:43.000
+Once the developers create content, they need a way to share it with the people that need to see it, including decision makers, coworkers, clients, or maybe even just friends and family.
 
-00:02:43.000 --> 00:02:47.000
-And so that's the role of Posit Connect, which is our professional publishing platform.
+00:02:43.000 --> 00:02:48.000
+That's the role of Posit Connect, which is our professional publishing platform.
 
-00:02:47.000 --> 00:03:02.000
+00:02:48.000 --> 00:03:05.000
 And finally, we have Posit Package Manager, which helps organize and centralize the great open source R and Python packages your team uses, as well as host and distribute any internally developed R and Python packages you've created.
 
-00:03:03.000 --> 00:03:15.000
-So for today's session, we are going to start within Posit Workbench, and we will leverage the RStudio IDE to create a Shiny application in R using clinical trial data.
+00:03:05.000 --> 00:03:19.000
+So for today's session, we're going to start within Posit Workbench, and we will leverage the RStudio IDE to create a Shiny application in R using clinical trial data.
 
-00:03:16.000 --> 00:03:23.000
+00:03:19.000 --> 00:03:27.000
 And then we'll publish this application to Posit Connect, all within the context of a validated environment.
 
-00:03:24.000 --> 00:03:28.000
-Now just for awareness, the clinical trial data that we'll use today is publicly available.
+00:03:27.000 --> 00:03:38.000
+Now, just for awareness, the clinical trial data that we'll use today is publicly available. It's been properly de-identified and cleansed for demonstration purposes.
 
-00:03:28.000 --> 00:03:33.000
-It's been properly de-identified and cleansed for demonstration purposes.
-
-00:03:34.000 --> 00:03:41.000
+00:03:38.000 --> 00:03:45.000
 So before we actually dive into this workflow, let's take a few moments just to talk more about this clinical trial data set.
 
-00:03:42.000 --> 00:03:43.000
-Now what is it? Where does it come from?
+00:03:45.000 --> 00:03:49.000
+Now, what is it? Where does it come from?
 
-00:03:45.000 --> 00:03:54.000
-Now as a high level overview, clinical trials, they are conducted usually to assess the efficacy of some disease intervention.
+00:03:49.000 --> 00:03:59.000
+Now, as a high level overview, clinical trials, they are conducted usually to assess the efficacy of some disease intervention.
 
-00:03:54.000 --> 00:04:08.000
+00:03:59.000 --> 00:04:14.000
 So during the trial, data will be collected, organized, and eventually that data will find itself inside of an analysis ready data set called an atom or analysis data model data set.
 
-00:04:09.000 --> 00:04:18.000
+00:04:14.000 --> 00:04:24.000
 So these atom data sets are usually what's submitted to various regulatory agencies, such as the Food and Drug Administration or FDA.
 
-00:04:18.000 --> 00:04:24.000
+00:04:24.000 --> 00:04:31.000
 So here's actually a quick glimpse into what this example atom data set looks like.
 
-00:04:25.000 --> 00:04:37.000
-Now we are only going to focus on the columns that you see here, which include things like subject ID number, the treatment group, age, BMI, height, weight, and years of education.
+00:04:31.000 --> 00:04:44.000
+Now, we are only going to focus on the columns that you see here, which include things like subject ID number, the treatment group, age, BMI, height, weight, and years of education.
 
-00:04:38.000 --> 00:04:42.000
-So these subject level variables are usually found in the data set.
+00:04:44.000 --> 00:04:56.000
+So these subject level variables are usually found within a specific type of atom data set called a subject level or ADSL data set.
 
-00:04:42.000 --> 00:04:52.000
-Now while this data is not particularly large, it does contain numerous descriptive columns, and it can be a challenge to create static insights such as plots and tables to explore them all.
+00:04:56.000 --> 00:05:07.000
+Now, while this data is not particularly large, it does contain numerous descriptive columns, and it can be a challenge to create static insights such as plots and tables to explore them all.
 
-00:04:53.000 --> 00:04:59.000
-So for this reason, we will create an interactive web application using this data set.
+00:05:07.000 --> 00:05:15.000
+So for this reason, we will create an interactive web application using the shiny R package, which I'm showing here.
 
-00:04:59.000 --> 00:05:07.000
-It does contain numerous descriptive columns, and it can be a challenge to create static insights such as plots and tables to explore them all.
-
-00:05:08.000 --> 00:05:15.000
-So for this reason, we will create an interactive web application using this data set.
-
-00:05:16.000 --> 00:05:28.000
+00:05:15.000 --> 00:05:29.000
 So this application will allow viewers to explore the data for themselves and compare various subject level variables between the three treatments groups, which we'll talk about a little bit more in a bit.
 
-00:05:29.000 --> 00:05:36.000
+00:05:29.000 --> 00:05:37.000
 So to start, let's open an RStudio session within Posit Workbench.
 
-00:05:37.000 --> 00:05:45.000
+00:05:37.000 --> 00:05:46.000
 So here we have in Posit Workbench on the right hand side, you can see some of the projects I've been working on, but we'll go ahead and click New Session.
 
-00:05:46.000 --> 00:05:54.000
+00:05:46.000 --> 00:05:55.000
 And you can see right off the bat that I have a choice between Jupyter Notebooks, JupyterLab, RStudio Pro, and VS Code.
 
-00:05:54.000 --> 00:05:57.000
+00:05:55.000 --> 00:05:58.000
 So for today, we're going to select RStudio.
 
-00:05:58.000 --> 00:06:04.000
+00:05:58.000 --> 00:06:06.000
 And now before I start this session, I want to briefly describe our demo computing environment here at Posit.
 
-00:06:05.000 --> 00:06:13.000
+00:06:06.000 --> 00:06:14.000
 So we host Posit Workbench within a clustered environment, which is managed by a tool called Kubernetes, which you can see here.
 
-00:06:14.000 --> 00:06:30.000
+00:06:14.000 --> 00:06:31.000
 So for validated compute environments, it's often necessary that certain aspects of this RStudio session are controlled for, including what R version is being used, which R or system packages come pre-installed.
 
 00:06:31.000 --> 00:06:34.000
 And so that's where tools like Docker come into play.
 
-00:06:35.000 --> 00:06:41.000
+00:06:34.000 --> 00:06:42.000
 And here at the very bottom, you can see that I have a choice for various Docker images I can deploy within.
 
-00:06:42.000 --> 00:06:44.000
+00:06:42.000 --> 00:06:45.000
 And this can be customized to your team's needs.
 
-00:06:45.000 --> 00:06:48.000
+00:06:45.000 --> 00:06:49.000
 So for this demo, I'm just going to stick with the default image right here.
 
-00:06:49.000 --> 00:06:51.000
+00:06:49.000 --> 00:06:55.000
 And we'll go ahead and click Start Session.
 
-00:06:55.000 --> 00:07:07.000
+00:06:56.000 --> 00:07:08.000
 So while this is booting up, before we do any analyses, it's really important that we establish a new RStudio project for this clinical trial analysis.
 
-00:07:08.000 --> 00:07:13.000
+00:07:08.000 --> 00:07:14.000
 So this will provide us with a working directory for this project and only this project.
 
-00:07:14.000 --> 00:07:20.000
+00:07:14.000 --> 00:07:21.000
 So this helps ensure that the analyses we do here, that they won't impact anything else on our system or another project.
 
-00:07:21.000 --> 00:07:27.000
+00:07:21.000 --> 00:07:28.000
 And this is generally considered good practice for not just clinical trial data, but really all data science projects.
 
-00:07:29.000 --> 00:07:32.000
+00:07:28.000 --> 00:07:32.000
 So to create a project, we have a few different options.
 
-00:07:32.000 --> 00:07:35.000
+00:07:32.000 --> 00:07:36.000
 We can go to File at the top of my screen and select New Project.
 
-00:07:36.000 --> 00:07:39.000
+00:07:36.000 --> 00:07:40.000
 There's also a button right underneath the Edit button down here.
 
-00:07:40.000 --> 00:07:44.000
-Or if you go to the right-hand side of your screen, you can see Project None.
+00:07:40.000 --> 00:07:45.000
+Or if you go to the right hand side of your screen, you can see Project None.
 
-00:07:45.000 --> 00:07:48.000
+00:07:45.000 --> 00:07:49.000
 And this is actually a good way of knowing that I'm not currently within a project.
 
 00:07:49.000 --> 00:07:50.000
 So let's go ahead and create one.
 
-00:07:51.000 --> 00:07:53.000
+00:07:50.000 --> 00:07:59.000
 I'm going to click on this button and select New Project.
 
 00:07:59.000 --> 00:08:01.000
 So this is going to be a brand new project.
 
-00:08:02.000 --> 00:08:04.000
+00:08:01.000 --> 00:08:04.000
 So we're going to go ahead and create a new directory.
 
-00:08:05.000 --> 00:08:10.000
-But I do have a choice to create a project within an existing directory or pull in a project from Version Control.
+00:08:04.000 --> 00:08:10.000
+But I do have a choice to create a project within an existing directory or pull in a project from Virgin Control.
 
-00:08:11.000 --> 00:08:12.000
+00:08:10.000 --> 00:08:13.000
 But we'll stick with New Directory.
 
-00:08:13.000 --> 00:08:15.000
+00:08:13.000 --> 00:08:16.000
 Select New Project, the first option.
 
-00:08:16.000 --> 00:08:22.000
-And the directory name, I'll just say testADSLAnalysis.
+00:08:16.000 --> 00:08:24.000
+And the directory name, I'll just say Test ADSL Analysis.
 
-00:08:24.000 --> 00:08:28.000
+00:08:24.000 --> 00:08:29.000
 I'll place this directory, this project, under my PositProjects directory.
 
 00:08:29.000 --> 00:08:35.000
-And then you'll see two boxes right here, Create Git Repository and Use renv with this project.
+And then you'll see two boxes right here, Create Git Repository and UseRenv with this project.
 
-00:08:36.000 --> 00:08:39.000
+00:08:35.000 --> 00:08:41.000
 So I'm going to check those boxes and I'm going to hit Create Project.
 
 00:08:41.000 --> 00:08:45.000
 So while this is booting up, a quick note on those two boxes that we just checked.
 
-00:08:46.000 --> 00:08:52.000
-So to ensure reproducibility for your project, it's always a good idea to use Version Control
+00:08:45.000 --> 00:08:52.000
+So to ensure reproducibility for your project, it's always a good idea to use Virgin Control
 
-00:08:53.000 --> 00:08:56.000
-and to initialize the project with something known as renv.
+00:08:52.000 --> 00:08:57.000
+and to initialize the project with something known as Renv.
 
-00:08:56.000 --> 00:09:02.000
-Now once we finish our workflow today, we'll actually go back and discuss renv in more detail
+00:08:57.000 --> 00:09:03.000
+Now, once we finish our workflow today, we'll actually go back and discuss Renv in more detail
 
-00:09:03.000 --> 00:09:07.000
+00:09:03.000 --> 00:09:08.000
 and how it can be used to record our project's package environment.
 
-00:09:08.000 --> 00:09:12.000
-Alright, so here we are now within our new project and you can see the name of it in the top right corner.
+00:09:08.000 --> 00:09:11.000
+All right, so here we are now within our new project.
 
-00:09:13.000 --> 00:09:18.000
+00:09:11.000 --> 00:09:14.000
+And you can see the name of it in the top right corner.
+
+00:09:14.000 --> 00:09:19.000
 So first step in our workflow is to upload that Atom ADSL dataset,
 
-00:09:19.000 --> 00:09:23.000
+00:09:19.000 --> 00:09:24.000
 which can be found right here on the CDISC website or the GitHub page.
 
-00:09:23.000 --> 00:09:27.000
+00:09:24.000 --> 00:09:30.000
 So this is going to be the dataset right here, ADSL.xpt.
 
-00:09:28.000 --> 00:09:34.000
-So I've downloaded this file to my local machine and to upload it to Posit Workbench,
+00:09:30.000 --> 00:09:33.000
+So I've downloaded this file to my local machine.
 
-00:09:35.000 --> 00:09:40.000
-all we have to do is select this Upload button, choose File,
+00:09:33.000 --> 00:09:40.000
+And to upload it to Posit Workbench, all we have to do is select this Upload button,
 
-00:09:41.000 --> 00:09:45.000
-and I'll select ADSL.xpt, hit Open and OK.
+00:09:40.000 --> 00:09:47.000
+choose File, and I'll select ADSL.xpt, hit Open, and OK.
 
-00:09:46.000 --> 00:09:50.000
-And now we can see the file right here at the bottom in our Files directory.
+00:09:47.000 --> 00:09:53.000
+And now we can see the file right here at the bottom in our files directory.
 
-00:09:50.000 --> 00:09:55.000
+00:09:53.000 --> 00:09:58.000
 So now that we have the data in our environment, we need to install some packages,
 
-00:09:56.000 --> 00:10:00.000
+00:09:58.000 --> 00:10:03.000
 some R packages that will be used for the creation of our Shiny application.
 
-00:10:01.000 --> 00:10:07.000
-Now in a validated environment, developers are often limited to a select number of packages
+00:10:03.000 --> 00:10:10.000
+Now, in a validated environment, developers are often limited to a select number of packages
 
-00:10:08.000 --> 00:10:12.000
+00:10:10.000 --> 00:10:15.000
 that their team has approved for clinical data analyses.
 
-00:10:13.000 --> 00:10:19.000
-So the question really becomes, how do I make sure I use packages from a validated environment?
+00:10:15.000 --> 00:10:22.000
+So the question really becomes, how do I make sure I use packages from a validated repository?
 
-00:10:20.000 --> 00:10:22.000
-How do I use a validated repository?
-
-00:10:23.000 --> 00:10:25.000
+00:10:22.000 --> 00:10:26.000
 Well, enter Posit Package Manager.
 
 00:10:26.000 --> 00:10:31.000
 So here in our demo environment of Posit Package Manager,
 
-00:10:32.000 --> 00:10:37.000
+00:10:31.000 --> 00:10:37.000
 you can see I have a few customized R repositories over here on the left-hand side of your screen,
 
-00:10:38.000 --> 00:10:41.000
+00:10:37.000 --> 00:10:41.000
 including right down here a validated repository,
 
-00:10:42.000 --> 00:10:46.000
+00:10:41.000 --> 00:10:46.000
 which includes packages that we have classified as validated for clinical work.
 
-00:10:46.000 --> 00:10:50.000
-Now this is just an example repository to demonstrate that it's possible
+00:10:46.000 --> 00:10:51.000
+Now, this is just an example repository to demonstrate that it's possible to create
 
-00:10:51.000 --> 00:10:55.000
-to create customized R repositories depending on your team's needs.
+00:10:51.000 --> 00:10:56.000
+customized R repositories depending on your team's needs.
 
-00:10:56.000 --> 00:10:59.000
-Alright, so we can start exploring these various R packages,
+00:10:56.000 --> 00:11:00.000
+All right, so we can start exploring these various R packages.
 
-00:11:00.000 --> 00:11:03.000
-but how do we actually install them from this repository
-
-00:11:04.000 --> 00:11:07.000
-into our RStudio session on Posit Workbench?
+00:11:00.000 --> 00:11:08.000
+But how do we actually install them from this repository into our RStudio session on Posit Workbench?
 
 00:11:08.000 --> 00:11:12.000
-So to do this, we're going to select the Setup tab at the top of your screen,
+So to do this, we're going to select the Setup tab at the top of your screen.
 
-00:11:12.000 --> 00:11:14.000
-and I'm going to scroll down to the bottom right here,
+00:11:12.000 --> 00:11:15.000
+And I'm going to scroll down to the bottom right here.
 
-00:11:15.000 --> 00:11:19.000
-and we see Using Packages Inside the RStudio IDE.
+00:11:15.000 --> 00:11:20.000
+And we see using packages inside the RStudio IDE.
 
-00:11:20.000 --> 00:11:21.000
-And you have the choice.
+00:11:20.000 --> 00:11:26.000
+And you have the choice. You can change the repository URL using the global options,
 
-00:11:22.000 --> 00:11:25.000
-You can change the repository URL using the global options,
-
-00:11:26.000 --> 00:11:31.000
+00:11:26.000 --> 00:11:32.000
 or you can set it more programmatically by running the code right here at the very bottom.
 
 00:11:32.000 --> 00:11:37.000
-So I'm going to copy this code, and I'm going to come back into Posit Workbench,
+So I'm going to copy this code and I'm going to come back into Posit Workbench.
 
 00:11:37.000 --> 00:11:42.000
-and I'm going to paste it into my R profile script that you see right here.
+And I'm going to paste it into my R profile script that you see right here.
 
-00:11:43.000 --> 00:11:46.000
-So I'm going to click on this, and I'm going to add a few new lines here.
+00:11:42.000 --> 00:11:44.000
+So I'm going to click on this.
+
+00:11:44.000 --> 00:11:47.000
+And I'm going to add a few new lines here.
 
 00:11:47.000 --> 00:11:50.000
-I'll write a comment to myself saying Validated Repo,
+I write a comment to myself saying validated repo.
 
-00:11:51.000 --> 00:11:53.000
-and I'm going to paste that URL that I just copied,
+00:11:50.000 --> 00:11:53.000
+And I'm going to paste that URL that I just copied,
 
-00:11:54.000 --> 00:11:58.000
-which you can see here is that Validated Repository on Posit Package Manager.
+00:11:53.000 --> 00:11:59.000
+which you can see here is that validated repository on Posit Package Manager.
 
-00:11:59.000 --> 00:12:04.000
-So the .rprofile script will always be run as soon as you start a new R session,
+00:11:59.000 --> 00:12:05.000
+So the .rprofile script will always be run as soon as you start a new R session.
 
-00:12:04.000 --> 00:12:06.000
-so I'm going to go ahead and save this file,
+00:12:05.000 --> 00:12:07.000
+So I'm going to go ahead and save this file.
 
-00:12:07.000 --> 00:12:11.000
-and I'm going to restart R by clicking Session, Restart R.
+00:12:07.000 --> 00:12:13.000
+And I'm going to restart R by clicking Session, Restart R.
 
-00:12:13.000 --> 00:12:17.000
+00:12:13.000 --> 00:12:18.000
 So if I close out of this .rprofile and come into my console,
 
-00:12:18.000 --> 00:12:23.000
-I can check my active repository by running Options, Repos, and hit Enter,
+00:12:18.000 --> 00:12:24.000
+I can check my active repository by running options, repost, and hit enter.
 
-00:12:24.000 --> 00:12:29.000
-and you can see that I have my validated repository ready to be used and to install packages from.
+00:12:24.000 --> 00:12:33.000
+And you can see that I have my validated repository ready to be used and to install packages from.
 
-00:12:30.000 --> 00:12:37.000
-All right, so once we have all that, we can, well, for our Shiny application,
+00:12:33.000 --> 00:12:34.000
+All right.
 
-00:12:38.000 --> 00:12:40.000
+00:12:34.000 --> 00:12:41.000
+So once we have all that, we can, well, for our Shiny application,
+
+00:12:41.000 --> 00:12:44.000
 we actually need to install some of the packages first.
 
-00:12:41.000 --> 00:12:45.000
+00:12:44.000 --> 00:12:49.000
 So before I actually bring in the Shiny application, let's first install some packages.
 
-00:12:46.000 --> 00:12:50.000
-So I've actually copied these install script over here,
-
-00:12:51.000 --> 00:12:52.000
-and I'm just going to paste it into my console,
+00:12:49.000 --> 00:12:53.000
+So I've actually copied these install script over here.
 
 00:12:53.000 --> 00:12:56.000
-and we have a few packages here that we're going to need.
+And I'm just going to paste it into my console.
 
-00:12:56.000 --> 00:13:00.000
+00:12:56.000 --> 00:12:59.000
+And we have a few packages here that we're going to need.
+
+00:12:59.000 --> 00:13:05.000
 So we're going to install the Shiny package, obviously, to create our Shiny application.
 
-00:13:01.000 --> 00:13:07.000
+00:13:05.000 --> 00:13:11.000
 The Haven package is going to be used to read in this ADSL.xpt dataset.
 
-00:13:08.000 --> 00:13:13.000
-BSLib is used to customize the user interface for our Shiny application.
+00:13:11.000 --> 00:13:16.000
+BSlib is used to customize the user interface for our Shiny application.
 
-00:13:14.000 --> 00:13:17.000
-And then ggplot2, scales, and plotly,
+00:13:16.000 --> 00:13:24.000
+And then ggplot2, scales, and plotly, these will all be used to create that box plot for our Shiny application.
 
-00:13:18.000 --> 00:13:21.000
-these will all be used to create that box plot for our Shiny application.
+00:13:24.000 --> 00:13:38.000
+So I'll go ahead and I'm going to hit enter and install all these packages from that validated repository.
 
-00:13:22.000 --> 00:13:23.000
-So I'll go ahead and I'm going to hit Enter,
+00:13:38.000 --> 00:13:40.000
+All right. And there we go.
 
-00:13:23.000 --> 00:13:27.000
-and install all these packages from that validated repository.
-
-00:13:35.000 --> 00:13:36.000
-All right, and there we go.
-
-00:13:37.000 --> 00:13:38.000
+00:13:40.000 --> 00:13:42.000
 So now the stage is set.
 
-00:13:39.000 --> 00:13:43.000
+00:13:42.000 --> 00:13:47.000
 So let's go ahead and create a Shiny application to explore this Atom dataset.
 
-00:13:44.000 --> 00:13:47.000
+00:13:47.000 --> 00:13:51.000
 So to do this, I'm first going to create a blank R script.
 
-00:13:48.000 --> 00:13:49.000
-So right here in the top left corner,
+00:13:51.000 --> 00:13:54.000
+So right here in the top left corner, I have this little dropdown menu.
 
-00:13:50.000 --> 00:13:51.000
-I have this little dot dot dot.
+00:13:54.000 --> 00:13:57.000
+And I'm going to select R script.
 
-00:13:51.000 --> 00:13:52.000
-So right here in the top left corner,
-
-00:13:53.000 --> 00:13:54.000
-I have this little drop down menu,
-
-00:13:55.000 --> 00:13:56.000
-and I'm going to select R script.
-
-00:13:57.000 --> 00:14:00.000
+00:13:57.000 --> 00:14:01.000
 And I'm just going to paste the code for the Shiny application.
 
-00:14:01.000 --> 00:14:03.000
+00:14:01.000 --> 00:14:04.000
 We're not going to dive too much into the contents of it.
 
-00:14:04.000 --> 00:14:06.000
+00:14:04.000 --> 00:14:07.000
 But I do want to demonstrate its functionality.
 
-00:14:07.000 --> 00:14:08.000
+00:14:07.000 --> 00:14:09.000
 So before we do that, let's first save it.
 
-00:14:09.000 --> 00:14:10.000
-So I'm going to hit this little floppy disk symbol,
+00:14:09.000 --> 00:14:11.000
+Hit this little floppy disk symbol.
 
-00:14:11.000 --> 00:14:14.000
-and we'll save it as app.r.
+00:14:11.000 --> 00:14:16.000
+And we'll save it as app.r.
 
-00:14:16.000 --> 00:14:17.000
-And you can see right here,
+00:14:16.000 --> 00:14:23.000
+And you can see right here, I can run this application within the RStudio IDE running on Posit Workbench.
 
-00:14:17.000 --> 00:14:22.000
-I can run this application within the RStudio IDE running on Posit Workbench.
+00:14:23.000 --> 00:14:25.000
+So I'll select run app.
 
-00:14:23.000 --> 00:14:24.000
-So I'll select run app,
+00:14:25.000 --> 00:14:32.000
+And I'll open up my viewer pane down here.
 
-00:14:25.000 --> 00:14:27.000
-and I'll open up my viewer pane down here.
+00:14:32.000 --> 00:14:39.000
+And so this is the simple application that explores the subject level variables in this study.
 
-00:14:31.000 --> 00:14:33.000
-And so this is the simple application
+00:14:39.000 --> 00:14:42.000
+And it compares them between the various treatment arms.
 
-00:14:34.000 --> 00:14:37.000
-that explores the subject level variables in this study,
-
-00:14:38.000 --> 00:14:41.000
-and it compares them between the various treatment arms.
-
-00:14:42.000 --> 00:14:44.000
+00:14:42.000 --> 00:14:46.000
 So here we have those that were given a placebo.
 
-00:14:44.000 --> 00:14:47.000
-In the middle, we have those that were given a low dose of a drug
+00:14:46.000 --> 00:14:51.000
+In the middle, we have those that were given a low dose of a drug known as Xanamaline.
 
-00:14:48.000 --> 00:14:49.000
-known as Xanimaline.
+00:14:51.000 --> 00:14:56.000
+And then another treatment group that was given a high dose of Xanamaline.
 
-00:14:50.000 --> 00:14:51.000
-And then another treatment group
+00:14:56.000 --> 00:15:03.000
+And on the Y axis, we have the various subject level variables that we can explore.
 
-00:14:52.000 --> 00:14:54.000
-that was given a high dose of Xanimaline.
+00:15:03.000 --> 00:15:15.000
+Such as age, baseline BMI, baseline height, baseline weight, and we have years of education.
 
-00:14:55.000 --> 00:14:56.000
-And on the y-axis,
+00:15:15.000 --> 00:15:20.000
+So now that we've built the Shiny application within our validated environment,
 
-00:14:57.000 --> 00:15:00.000
-we had the various subject level variables
+00:15:20.000 --> 00:15:27.000
+it's now time to publish it to Posit Connect so that we can easily share it with the people that need to see it.
 
-00:15:01.000 --> 00:15:05.000
-that we can explore, such as age, baseline BMI,
+00:15:27.000 --> 00:15:34.000
+So for instructions on how to publish a Shiny application from within the RStudio IDE,
 
-00:15:06.000 --> 00:15:09.000
-baseline height, baseline weight,
+00:15:34.000 --> 00:15:40.000
+I'm actually going to enlist the help of one of our jumpstart examples on the Posit Connect homepage.
 
-00:15:10.000 --> 00:15:12.000
-and we have years of education.
+00:15:40.000 --> 00:15:44.000
+So let me switch over to Posit Connect.
 
-00:15:13.000 --> 00:15:15.000
-So now that we've built the Shiny application
+00:15:44.000 --> 00:15:49.000
+And on our homepage right here, I can select publish and I can go to jumpstart examples.
 
-00:15:16.000 --> 00:15:18.000
-within our validated environment,
+00:15:49.000 --> 00:15:55.000
+And you can see right here I have a portfolio dashboard Shiny application.
 
-00:15:19.000 --> 00:15:21.000
-it's now time to publish it to Posit Connect
+00:15:55.000 --> 00:16:00.000
+So we're not actually going to use this specific app within this example,
 
-00:15:22.000 --> 00:15:25.000
-so that we can easily share it with the people that need to see it.
+00:16:00.000 --> 00:16:06.000
+but we will use the instructions for how to publish to Posit Connect, which starts on step five.
 
-00:15:26.000 --> 00:15:30.000
-So for instructions on how to publish a Shiny application
+00:16:06.000 --> 00:16:10.000
+So we'll select get started using portfolio dashboard.
 
-00:15:31.000 --> 00:15:32.000
-from within the RStudio IDE,
+00:16:10.000 --> 00:16:16.000
+And then I'll skip forward to step five, which is publish.
 
-00:15:33.000 --> 00:15:36.000
-I'm actually going to enlist the help of one of our jumpstart examples
+00:16:16.000 --> 00:16:24.000
+So it tells us that we need to push the publish button, this little blue button, from within the RStudio IDE.
 
-00:15:37.000 --> 00:15:38.000
-on the Posit Connect homepage.
+00:16:24.000 --> 00:16:30.000
+And if publishing for the very first time, you'll actually need to grab the URL for your Posit Connect server.
 
-00:15:39.000 --> 00:15:41.000
-So let me switch over to Posit Connect
-
-00:15:42.000 --> 00:15:46.000
-and on our homepage right here, I can select publish
-
-00:15:47.000 --> 00:15:48.000
-and I can go to jumpstart examples.
-
-00:15:49.000 --> 00:15:50.000
-And you can see right here,
-
-00:15:51.000 --> 00:15:54.000
-I have a Portfolio Dashboard Shiny application.
-
-00:15:55.000 --> 00:15:58.000
-So we're not actually going to use this specific app
-
-00:15:59.000 --> 00:16:00.000
-within this example,
-
-00:16:01.000 --> 00:16:04.000
-but we will use the instructions for how to publish to Posit Connect,
-
-00:16:05.000 --> 00:16:06.000
-which starts on step five.
-
-00:16:07.000 --> 00:16:09.000
-So we'll select get started using Portfolio Dashboard
-
-00:16:09.000 --> 00:16:14.000
-and then I'll skip forward to step five, which is publish.
-
-00:16:15.000 --> 00:16:19.000
-So it tells us that we need to push the publish button,
-
-00:16:20.000 --> 00:16:22.000
-this little blue button, from within the RStudio IDE.
-
-00:16:23.000 --> 00:16:25.000
-And if publishing for the very first time,
-
-00:16:26.000 --> 00:16:29.000
-you'll actually need to grab the URL for your Posit Connect server.
-
-00:16:30.000 --> 00:16:31.000
+00:16:30.000 --> 00:16:33.000
 So I'll just copy that to have it on my clipboard.
 
-00:16:32.000 --> 00:16:34.000
+00:16:33.000 --> 00:16:35.000
 All right, so let's go ahead and do this.
 
-00:16:35.000 --> 00:16:36.000
-So we'll come back to Posit Workbench
+00:16:35.000 --> 00:16:39.000
+So we'll come back to Posit Workbench where I have my Shiny application running.
 
-00:16:37.000 --> 00:16:38.000
-where I have my Shiny application running.
-
-00:16:39.000 --> 00:16:40.000
+00:16:39.000 --> 00:16:41.000
 I'll go ahead and stop it.
 
-00:16:41.000 --> 00:16:42.000
-And here's our Shiny application.
+00:16:41.000 --> 00:16:44.000
+And here's our Shiny application, this app.rscript.
 
-00:16:43.000 --> 00:16:44.000
-It's app.rscript.
-
-00:16:45.000 --> 00:16:47.000
+00:16:44.000 --> 00:16:48.000
 And right at the top, we see that blue publishing button.
 
-00:16:48.000 --> 00:16:49.000
+00:16:48.000 --> 00:16:50.000
 So I'll go ahead and click on this.
 
 00:16:50.000 --> 00:16:53.000
 And you can see I'm publishing this for the very first time.
 
-00:16:54.000 --> 00:16:55.000
+00:16:53.000 --> 00:16:55.000
 So I'll select next.
 
-00:16:56.000 --> 00:16:57.000
+00:16:55.000 --> 00:16:58.000
 And I'm going to publish to Posit Connect.
 
-00:16:58.000 --> 00:17:00.000
-And here's where you want to paste in the address
+00:16:58.000 --> 00:17:05.000
+And here's where you want to paste in the address for your Connect server, which you can see for us is actually auto populated.
 
-00:17:01.000 --> 00:17:02.000
-for your Connect server,
-
-00:17:03.000 --> 00:17:04.000
-which you can see for us, it's actually auto-populated.
-
-00:17:05.000 --> 00:17:06.000
+00:17:05.000 --> 00:17:07.000
 So I'll select next.
 
 00:17:07.000 --> 00:17:10.000
 And it's going to get this little pop-up menu right here to connect.
 
-00:17:11.000 --> 00:17:12.000
-And that's what I want to do, so I'll select connect.
+00:17:10.000 --> 00:17:11.000
+And that's what I want to do.
 
-00:17:13.000 --> 00:17:14.000
+00:17:11.000 --> 00:17:13.000
+So I'll select connect.
+
+00:17:13.000 --> 00:17:15.000
 Successfully activated token.
 
-00:17:15.000 --> 00:17:17.000
+00:17:15.000 --> 00:17:18.000
 So I can close out of this and connect my account.
 
-00:17:18.000 --> 00:17:20.000
-And now you can see the Posit Connect instance
+00:17:18.000 --> 00:17:24.000
+And now you can see the Posit Connect instance over here in the top right quadrant.
 
-00:17:21.000 --> 00:17:22.000
-over here in the top right quadrant.
-
-00:17:24.000 --> 00:17:27.000
+00:17:24.000 --> 00:17:28.000
 We can give our application, our Shiny application, a title.
 
-00:17:28.000 --> 00:17:29.000
+00:17:28.000 --> 00:17:30.000
 I'll just leave it as a default right here.
 
-00:17:30.000 --> 00:17:31.000
-And this is where you want to choose
+00:17:30.000 --> 00:17:34.000
+And this is where you want to choose what's going to go into the deployment bundle.
 
-00:17:32.000 --> 00:17:33.000
-what's going to go into the deployment bundle.
+00:17:34.000 --> 00:17:42.000
+And so really we only need this ADSL data set as well as the code for the Shiny application, which is just showing over here.
 
-00:17:33.000 --> 00:17:35.000
-And so really we only need this ADSL dataset
-
-00:17:36.000 --> 00:17:38.000
-as well as the code for the Shiny application,
-
-00:17:39.000 --> 00:17:40.000
-which is just showing over here.
-
-00:17:41.000 --> 00:17:42.000
+00:17:42.000 --> 00:17:45.000
 And then we'll hit publish.
 
-00:17:44.000 --> 00:17:47.000
+00:17:45.000 --> 00:17:49.000
 And so once we do this, we'll get this deploy tab that opens up.
 
-00:17:48.000 --> 00:17:50.000
+00:17:49.000 --> 00:17:52.000
 And RStudio pretty much takes care of this for us.
 
-00:17:51.000 --> 00:17:52.000
-So what it's doing right now,
+00:17:52.000 --> 00:17:55.000
+So what it's doing right now, it's actually capturing my environment.
 
-00:17:53.000 --> 00:17:54.000
-it's actually capturing my environment.
+00:17:55.000 --> 00:17:58.000
+So it's looking to see what R version am I using?
 
-00:17:55.000 --> 00:17:57.000
-So it's looking to see what R version am I using,
+00:17:58.000 --> 00:18:00.000
+What packages am I using?
 
-00:17:58.000 --> 00:17:59.000
-what packages am I using,
+00:18:00.000 --> 00:18:02.000
+What versions of those packages?
 
-00:18:00.000 --> 00:18:01.000
-what versions of those packages.
+00:18:02.000 --> 00:18:10.000
+And some other information about my environment and then replicates it on the Posit Connect server, which it just opened up to.
 
-00:18:01.000 --> 00:18:03.000
-And some other information about my environment
+00:18:10.000 --> 00:18:18.000
+And once that environment's been replicated, it then deploys my Shiny application, which we see right here.
 
-00:18:04.000 --> 00:18:06.000
-and then replicates it on the Posit Connect server,
-
-00:18:07.000 --> 00:18:08.000
-which it just opened up to.
-
-00:18:09.000 --> 00:18:11.000
-And once that environment's been replicated,
-
-00:18:12.000 --> 00:18:13.000
-it then deploys my Shiny application,
-
-00:18:14.000 --> 00:18:15.000
-which we see right here.
-
-00:18:16.000 --> 00:18:18.000
+00:18:18.000 --> 00:18:20.000
 All right, so here's the running Shiny application.
 
-00:18:19.000 --> 00:18:20.000
-I can still interact with it
+00:18:20.000 --> 00:18:25.000
+I can still interact with it just like it was running within Posit Workbench.
 
-00:18:21.000 --> 00:18:23.000
-just like it was running within Posit Workbench.
-
-00:18:24.000 --> 00:18:26.000
+00:18:25.000 --> 00:18:28.000
 And now, but it's hosted on Posit Connect.
 
-00:18:27.000 --> 00:18:29.000
-And again, the main purpose of Posit Connect
+00:18:28.000 --> 00:18:35.000
+And again, the main purpose of Posit Connect is making it super easy to share this content with people that need to see it.
 
-00:18:29.000 --> 00:18:31.000
-is making it super easy to share this content
+00:18:35.000 --> 00:18:41.000
+So here within the access tab, so as a publisher, I have control over who has access.
 
-00:18:32.000 --> 00:18:33.000
-with people that need to see it.
-
-00:18:34.000 --> 00:18:36.000
-So here within the access tab,
-
-00:18:37.000 --> 00:18:39.000
-so as a publisher, I have control over who has access.
-
-00:18:40.000 --> 00:18:42.000
+00:18:41.000 --> 00:18:44.000
 I can change the sharing settings.
 
-00:18:43.000 --> 00:18:45.000
+00:18:44.000 --> 00:18:47.000
 Currently, it's set to specific users or groups.
 
-00:18:46.000 --> 00:18:47.000
-And I'm the only one, that's me,
+00:18:47.000 --> 00:18:53.000
+And I'm the only one, that's me, I'm the only one that can actually view or edit this application.
 
-00:18:48.000 --> 00:18:50.000
-I'm the only one that can actually view
+00:18:53.000 --> 00:18:59.000
+And if I want to be very specific, I can maybe share this with Rachel.
 
-00:18:51.000 --> 00:18:52.000
-or edit this application.
+00:18:59.000 --> 00:19:03.000
+And now we would be the only two that can view this content.
 
-00:18:53.000 --> 00:18:55.000
-And if I want to be very specific,
-
-00:18:56.000 --> 00:18:58.000
-I can maybe share this with Rachel.
-
-00:18:59.000 --> 00:19:01.000
-And now we would be the only two
-
-00:19:02.000 --> 00:19:03.000
-that can view this content.
-
-00:19:04.000 --> 00:19:05.000
+00:19:03.000 --> 00:19:05.000
 I have a few other options as well.
 
-00:19:06.000 --> 00:19:08.000
+00:19:05.000 --> 00:19:08.000
 I can select all users login required.
 
-00:19:09.000 --> 00:19:11.000
-And that just means that if someone has the credentials
+00:19:08.000 --> 00:19:15.000
+And that just means that if someone has the credentials to log into the Posit Connect server, they can view this content.
 
-00:19:12.000 --> 00:19:13.000
-to log into the Posit Connect server,
-
-00:19:14.000 --> 00:19:15.000
-they can view this content.
-
-00:19:16.000 --> 00:19:19.000
+00:19:15.000 --> 00:19:19.000
 Or I can select anyone no login required.
 
-00:19:20.000 --> 00:19:21.000
-And that basically means that if someone has the URL
+00:19:19.000 --> 00:19:27.000
+And that basically means that if someone has the URL at the top of my screen, which you can customize down here, they can then view this content.
 
-00:19:22.000 --> 00:19:23.000
-at the top of my screen,
-
-00:19:24.000 --> 00:19:25.000
-which you can customize down here,
-
-00:19:26.000 --> 00:19:27.000
-they can then view this content.
-
-00:19:27.000 --> 00:19:28.000
+00:19:27.000 --> 00:19:29.000
 So it pretty much opens it up to the world.
 
-00:19:29.000 --> 00:19:30.000
-And the people that are seeing it,
+00:19:29.000 --> 00:19:35.000
+And the people that are seeing it, they don't have to know anything about Shiny, R, Connect.
 
-00:19:31.000 --> 00:19:34.000
-they don't have to know anything about Shiny, R, Connect.
-
-00:19:35.000 --> 00:19:37.000
+00:19:35.000 --> 00:19:38.000
 They can just view it like they would any other website.
 
-00:19:38.000 --> 00:19:41.000
-Okay, so to wrap things up,
+00:19:38.000 --> 00:19:45.000
+Okay, so to wrap things up, let's actually go back to Posit Workbench.
 
-00:19:42.000 --> 00:19:44.000
-let's actually go back to Posit Workbench.
+00:19:46.000 --> 00:19:57.000
+And we're just going to take a moment to record our R environment so that anyone else or probably more likely our future self could reproduce our work.
 
-00:19:45.000 --> 00:19:47.000
-And we're just going to take a moment
+00:19:57.000 --> 00:20:11.000
+So some of the things we'll want to record include which R version did I use, which R packages we use and what versions of those packages, as well as which repositories we use to install the packages.
 
-00:19:48.000 --> 00:19:49.000
-to record our R environment,
+00:20:11.000 --> 00:20:18.000
+Now, as I mentioned earlier, we're going to use an R package called R env to help out here.
 
-00:19:50.000 --> 00:19:53.000
-so that anyone else or probably more likely
+00:20:18.000 --> 00:20:25.000
+So R env, it's an open source R package, and its name is shorthand for reproducible environments.
 
-00:19:54.000 --> 00:19:56.000
-our future self could reproduce our work.
+00:20:25.000 --> 00:20:31.000
+So we're going to use R env to record our R environment into what's known as an R env log file.
 
-00:19:57.000 --> 00:19:59.000
-So some of the things we'll want to record
+00:20:31.000 --> 00:20:37.000
+As you can see right here, I'll go ahead and click on this.
 
-00:20:00.000 --> 00:20:02.000
-include which R version did I use,
+00:20:37.000 --> 00:20:44.000
+So this is the current state of our log file, which was created when we first initialize this RStudio project.
 
-00:20:03.000 --> 00:20:04.000
-which R packages we use,
+00:20:44.000 --> 00:20:51.000
+And we can read it from top to bottom, you can see we're using R for this project version 4.2.
 
-00:20:05.000 --> 00:20:06.000
-and what versions of those packages,
+00:20:51.000 --> 00:21:02.000
+And here are the active repositories when I first initialize this project, which will obviously need to update to reflect our validator repository.
 
-00:20:07.000 --> 00:20:08.000
-as well as which repositories we use
+00:21:02.000 --> 00:21:05.000
+Now everything below this starting on line 11 right here.
 
-00:20:09.000 --> 00:20:10.000
-to install the packages.
+00:21:05.000 --> 00:21:12.000
+This is information about the packages in this project, including which version I need.
 
-00:20:11.000 --> 00:20:12.000
-Now, as I mentioned earlier,
+00:21:12.000 --> 00:21:16.000
+Now, as you can see, we are only seeing one package here, the R env package.
 
-00:20:13.000 --> 00:20:14.000
-we're going to use an R package
+00:21:16.000 --> 00:21:22.000
+And so we'll need to update this log file to reflect the current state of our package environment.
 
-00:20:15.000 --> 00:20:17.000
-called renv to help out here.
+00:21:23.000 --> 00:21:27.000
+So to do this, I'm going to open up my console down here, clear my screen.
 
-00:20:18.000 --> 00:20:20.000
-So renv, it's an open source R package,
+00:21:27.000 --> 00:21:35.000
+And I'm going to run from the R env package, the snapshot function.
 
-00:20:21.000 --> 00:20:22.000
-and its name is shorthand
-
-00:20:23.000 --> 00:20:24.000
-for reproducible environments.
-
-00:20:24.000 --> 00:20:25.000
-So we're going to use renv
-
-00:20:26.000 --> 00:20:27.000
-to record our R environment
-
-00:20:28.000 --> 00:20:30.000
-into what's known as an renv log file.
-
-00:20:31.000 --> 00:20:32.000
-As you can see right here,
-
-00:20:33.000 --> 00:20:34.000
-I'll go ahead and click on this.
-
-00:20:37.000 --> 00:20:40.000
-So this is the current state of our log file,
-
-00:20:41.000 --> 00:20:42.000
-which was created when we first initialized
-
-00:20:43.000 --> 00:20:44.000
-this RStudio project.
-
-00:20:45.000 --> 00:20:46.000
-And we can read it from top to bottom.
-
-00:20:47.000 --> 00:20:48.000
-You can see we're using R for this project,
-
-00:20:49.000 --> 00:20:50.000
-version 4.2.
-
-00:20:51.000 --> 00:20:53.000
-And here are the active repositories
-
-00:20:54.000 --> 00:20:56.000
-when I first initialized this project,
-
-00:20:57.000 --> 00:20:58.000
-which we'll obviously need to update
-
-00:20:59.000 --> 00:21:01.000
-to reflect our validator repository.
-
-00:21:02.000 --> 00:21:03.000
-Now, everything below this,
-
-00:21:04.000 --> 00:21:05.000
-starting on line 11 right here,
-
-00:21:06.000 --> 00:21:07.000
-this is information about the packages
-
-00:21:08.000 --> 00:21:09.000
-in this project,
-
-00:21:10.000 --> 00:21:11.000
-including which version I need.
-
-00:21:12.000 --> 00:21:13.000
-Now, as you can see,
-
-00:21:14.000 --> 00:21:15.000
-we are only seeing one package here,
-
-00:21:16.000 --> 00:21:17.000
-the renv package.
-
-00:21:18.000 --> 00:21:19.000
-And so we'll need to update this log file
-
-00:21:20.000 --> 00:21:21.000
-to reflect the current state
-
-00:21:22.000 --> 00:21:23.000
-of our package environment.
-
-00:21:24.000 --> 00:21:25.000
-So I'm going to open up my console down here,
-
-00:21:26.000 --> 00:21:27.000
-clear my screen.
-
-00:21:28.000 --> 00:21:29.000
-And I'm going to run from the renv package
-
-00:21:30.000 --> 00:21:31.000
-the snapshot function.
-
-00:21:35.000 --> 00:21:36.000
+00:21:35.000 --> 00:21:37.000
 We'll just ignore that message for right now.
 
-00:21:37.000 --> 00:21:39.000
+00:21:37.000 --> 00:21:41.000
 And we're going to see some text right here.
 
-00:21:41.000 --> 00:21:42.000
-So I think this is one of my,
+00:21:41.000 --> 00:21:51.000
+So I think this is one of my favorite parts about the R env package is that it will actually inform us what will happen if we decide to proceed.
 
-00:21:43.000 --> 00:21:44.000
-the favorite parts about the renv package
+00:21:51.000 --> 00:22:06.000
+So it's letting us know that all these packages that are not currently in our log file as represented by this asterisk will be written to the log file with the version reflecting reflected in my current R environment.
 
-00:21:45.000 --> 00:21:46.000
-is that it'll actually inform us
+00:22:06.000 --> 00:22:11.000
+So if this all looks good to you, which looks pretty good to me, do you want to proceed?
 
-00:21:47.000 --> 00:21:50.000
-what will happen if we decide to proceed.
-
-00:21:51.000 --> 00:21:53.000
-So it's letting us know that all these packages
-
-00:21:54.000 --> 00:21:56.000
-that are not currently in our log file,
-
-00:21:57.000 --> 00:21:58.000
-as represented by this asterisk,
-
-00:21:59.000 --> 00:22:00.000
-will be written to the log file
-
-00:22:01.000 --> 00:22:02.000
-with the version reflecting,
-
-00:22:03.000 --> 00:22:05.000
-reflected in my current R environment.
-
-00:22:06.000 --> 00:22:07.000
-So if this all looks good to you,
-
-00:22:08.000 --> 00:22:09.000
-which it looks pretty good to me,
-
-00:22:10.000 --> 00:22:11.000
-do you want to proceed?
-
-00:22:12.000 --> 00:22:13.000
+00:22:11.000 --> 00:22:17.000
 I'll hit Y for yes and hit enter.
 
-00:22:17.000 --> 00:22:18.000
-And so now if we open up our log file,
+00:22:17.000 --> 00:22:24.000
+And so now if we open up a log file, you can see there's a lot more packages in here, but I didn't have to edit this myself at all.
 
-00:22:19.000 --> 00:22:20.000
-you can see there's a lot more packages in here,
+00:22:24.000 --> 00:22:31.000
+It is now reflecting my current R environment and all those packages inside and the correct versions.
 
-00:22:21.000 --> 00:22:23.000
-but I didn't have to edit this myself at all.
+00:22:31.000 --> 00:22:39.000
+And so this file can be shared with other users or as a companion file for FDA submission, for example.
 
-00:22:24.000 --> 00:22:27.000
-And it is now reflecting my current R environment
+00:22:39.000 --> 00:22:45.000
+It can be used to reproduce your R environment and your analysis results.
 
-00:22:28.000 --> 00:22:30.000
-and all those packages inside and the correct versions.
+00:22:45.000 --> 00:22:49.000
+And so with that, we have come to the end of our workflow for today.
 
-00:22:31.000 --> 00:22:34.000
-And so this file can be shared with other users
-
-00:22:35.000 --> 00:22:38.000
-or as a companion file for FDA submission, for example.
-
-00:22:39.000 --> 00:22:41.000
-And it can be used to reproduce your R environment
-
-00:22:42.000 --> 00:22:44.000
-and your analysis results.
-
-00:22:45.000 --> 00:22:46.000
-And so with that,
-
-00:22:47.000 --> 00:22:49.000
-we have come to the end of our workflow for today.
-
-00:22:50.000 --> 00:22:52.000
+00:22:49.000 --> 00:22:52.000
 So I hope everyone found this month's demo helpful.
 
-00:22:52.000 --> 00:22:54.000
-And we'd certainly love to chat more
+00:22:52.000 --> 00:23:02.000
+And we'd certainly love to chat more about how Posit team can assist with your data science workflows and support a validated compute environment.
 
-00:22:55.000 --> 00:22:56.000
-about how Posit team can assist
+00:23:02.000 --> 00:23:07.000
+So feel free to stick around and we'll have a few Posit folks available to answer any questions you have.
 
-00:22:57.000 --> 00:22:58.000
-with your data science workflows
+00:23:07.000 --> 00:23:15.000
+So thanks, everyone, for joining and we look forward to seeing everyone again next month.
 
-00:22:59.000 --> 00:23:01.000
-and support a validated compute environment.
+00:23:15.000 --> 00:23:19.000
+Thank you so much for the demo, Ryan, and thank you, everybody, for joining us today.
 
-00:23:02.000 --> 00:23:03.000
-So feel free to stick around
+00:23:19.000 --> 00:23:22.000
+I see there's already been a few great questions in the chat.
 
-00:23:04.000 --> 00:23:05.000
-and we'll have a few Posit folks available
+00:23:22.000 --> 00:23:30.000
+And as Ryan mentioned, a few of us from Posit are going to stick around here for another 15 minutes and answer additional questions.
 
-00:23:06.000 --> 00:23:07.000
-to answer any questions you have.
+00:23:30.000 --> 00:23:36.000
+As a reminder, if you do want to ask anything anonymously, you can use the Slido link, which we'll share in the chat again.
 
-00:23:08.000 --> 00:23:09.000
-So thanks everyone for joining
+00:23:36.000 --> 00:23:41.000
+But it's pos.it slash demo dash questions.
 
-00:23:10.000 --> 00:23:13.000
-and we look forward to seeing everyone again next month.
+00:23:41.000 --> 00:23:45.000
+And I'll keep that open for the rest of the week if you want to add anything there.
 
-00:23:15.000 --> 00:23:17.000
-Thank you so much for the demo, Ryan.
+00:23:45.000 --> 00:23:49.000
+And we'll add the answers to the questions there, too.
 
-00:23:18.000 --> 00:23:19.000
-And thank you everybody for joining us today.
+00:23:49.000 --> 00:23:57.000
+While we are answering questions using only the chat today, if you'd like to talk with us live, we can set that up, too.
 
-00:23:20.000 --> 00:23:21.000
-I see there's already been a few great questions
+00:23:57.000 --> 00:24:01.000
+It's a little bit weird hopping from one platform to another in one session.
 
-00:23:22.000 --> 00:23:23.000
-in the chat.
+00:24:01.000 --> 00:24:09.000
+But I'm going to share a link in the chat right now where you can sign up to go through any follow-up questions with Ryan and I live, too.
 
-00:23:24.000 --> 00:23:25.000
-And as Ryan mentioned, a few of us from Posit
+00:24:09.000 --> 00:24:12.000
+With that, thank you again for joining us today.
 
-00:23:26.000 --> 00:23:27.000
-are going to stick around here
-
-00:23:28.000 --> 00:23:30.000
-for another 15 minutes and answer additional questions.
-
-00:23:31.000 --> 00:23:32.000
-As a reminder,
-
-00:23:33.000 --> 00:23:34.000
-if you do want to ask anything anonymously,
-
-00:23:35.000 --> 00:23:36.000
-you can use the Slido link,
-
-00:23:37.000 --> 00:23:38.000
-which we'll share in the chat again,
-
-00:23:39.000 --> 00:23:41.000
-but it's pos.it slash demo dash questions.
-
-00:23:42.000 --> 00:23:44.000
-And I'll keep that open for the rest of the week
-
-00:23:45.000 --> 00:23:46.000
-if you want to add anything there.
-
-00:23:47.000 --> 00:23:49.000
-And we'll add the answers to the questions there too.
-
-00:23:49.000 --> 00:23:50.000
-While we are answering questions
-
-00:23:51.000 --> 00:23:52.000
-using only the chat today,
-
-00:23:53.000 --> 00:23:54.000
-if you'd like to talk with us live,
-
-00:23:55.000 --> 00:23:56.000
-we can set that up too.
-
-00:23:57.000 --> 00:23:58.000
-It's a little bit weird hopping
-
-00:23:59.000 --> 00:24:00.000
-from one platform to another in one session,
-
-00:24:01.000 --> 00:24:02.000
-but I'm going to share a link in the chat right now
-
-00:24:03.000 --> 00:24:04.000
-where you could sign up
-
-00:24:05.000 --> 00:24:06.000
-to go through any follow-up questions
-
-00:24:07.000 --> 00:24:08.000
-with Ryan and I live too.
-
-00:24:09.000 --> 00:24:11.000
-But with that, thank you again for joining us today.
-
-00:24:12.000 --> 00:24:14.000
+00:24:12.000 --> 00:24:15.000
 And we're going to go jump over to the chat for Q&A.
 
 00:24:15.000 --> 00:24:16.000
-Bye everybody.
+Bye, everybody.
 
-00:24:19.000 --> 00:24:20.000
-Bye.
+00:24:31.000 --> 00:24:32.000
+Thanks, everyone.
 
-00:24:49.000 --> 00:24:50.000
-Bye.
+00:25:01.000 --> 00:25:03.000
+Thanks, everyone.
 
-00:25:19.000 --> 00:25:20.000
-Bye.
+00:25:31.000 --> 00:25:32.000
+Thanks, everyone.
 
-00:25:49.000 --> 00:25:50.000
-Bye.
+00:26:01.000 --> 00:26:02.000
+Thanks, everyone.
 
-00:26:19.000 --> 00:26:21.000
-Bye.
+00:26:32.000 --> 00:26:33.000
+Thanks, everyone.
 
-00:26:49.000 --> 00:26:51.000
-Bye.
+00:26:33.000 --> 00:26:34.000
+Thanks.
 
-00:27:20.000 --> 00:27:21.000
-Bye.
+00:26:34.000 --> 00:26:35.000
+Thanks.
 
-00:27:21.000 --> 00:27:22.000
-Bye.
+00:26:35.000 --> 00:26:36.000
+Thanks, everyone.
 
-00:27:49.000 --> 00:27:51.000
-Bye-bye.
+00:26:36.000 --> 00:26:37.000
+Thanks.
 
-00:29:19.000 --> 00:29:22.000
-Helo.
+00:26:37.000 --> 00:26:38.000
+Thanks, everyone.
 
-00:29:23.000 --> 00:29:25.000
-Helo.
+00:26:38.000 --> 00:26:39.000
+Thanks.
 
-00:29:26.000 --> 00:29:28.000
-...
+00:26:39.000 --> 00:26:39.000
 
-00:29:29.000 --> 00:29:31.000
-...
 
-00:29:32.000 --> 00:29:34.000
-...
+00:27:01.000 --> 00:27:02.000
+Thanks.
 
-00:29:35.000 --> 00:29:37.000
-...
+00:27:02.000 --> 00:27:03.000
+Thanks, everyone.
 
-00:29:38.000 --> 00:29:40.000
-...
+00:27:03.000 --> 00:27:04.000
+Thanks.
 
-00:29:41.000 --> 00:29:43.000
-...
+00:27:04.000 --> 00:27:04.000
 
-00:29:44.000 --> 00:29:46.000
-...
 
-00:29:46.000 --> 00:29:49.000
-...
+00:27:31.000 --> 00:27:32.000
+Thanks.
 
-00:29:50.000 --> 00:29:53.000
-...
+00:27:32.000 --> 00:27:33.000
+Thanks.
 
-00:29:54.000 --> 00:29:57.000
-...
+00:27:33.000 --> 00:27:34.000
+Thank you.
 
-00:29:58.000 --> 00:30:00.000
-...
+00:27:34.000 --> 00:27:34.000
 
-00:30:01.000 --> 00:30:03.000
-...
 
-00:30:04.000 --> 00:30:07.000
-...
+00:28:01.000 --> 00:28:02.000
+Thank you.
 
-00:30:08.000 --> 00:30:10.000
-...
+00:28:02.000 --> 00:28:03.000
+Thank you.
 
-00:30:11.000 --> 00:30:13.000
-...
+00:28:03.000 --> 00:28:04.000
+Thank you.
 
-00:30:13.000 --> 00:30:16.000
-...
+00:28:04.000 --> 00:28:04.000
 
-00:30:17.000 --> 00:30:20.000
-...
 
-00:30:21.000 --> 00:30:24.000
-...
+00:28:31.000 --> 00:28:32.000
+Thanks.
 
-00:30:25.000 --> 00:30:28.000
-...
+00:28:32.000 --> 00:28:33.000
+Thanks.
 
-00:30:29.000 --> 00:30:32.000
-...
+00:28:33.000 --> 00:28:34.000
+Thanks.
 
-00:30:33.000 --> 00:30:36.000
-...
+00:28:34.000 --> 00:28:34.000
 
-00:30:37.000 --> 00:30:40.000
-...
 
-00:30:40.000 --> 00:30:43.000
-...
+00:29:01.000 --> 00:29:02.000
+Thanks.
 
-00:30:44.000 --> 00:30:47.000
-...
+00:29:02.000 --> 00:29:03.000
+Thanks.
 
-00:30:48.000 --> 00:30:51.000
-...
+00:29:03.000 --> 00:29:04.000
+Thanks.
 
-00:30:52.000 --> 00:30:55.000
-...
+00:29:04.000 --> 00:29:04.000
 
-00:30:56.000 --> 00:30:59.000
-...
 
-00:31:00.000 --> 00:31:03.000
-...
+00:29:31.000 --> 00:29:32.000
+Thanks.
 
-00:31:04.000 --> 00:31:07.000
-...
+00:29:32.000 --> 00:29:33.000
+Thanks.
 
-00:31:07.000 --> 00:31:10.000
-...
+00:29:33.000 --> 00:29:34.000
+Thanks.
 
-00:31:11.000 --> 00:31:14.000
-...
+00:29:34.000 --> 00:29:34.000
 
-00:31:15.000 --> 00:31:18.000
-...
 
-00:31:19.000 --> 00:31:22.000
-...
+00:31:01.000 --> 00:31:02.000
+Thanks.
 
-00:31:23.000 --> 00:31:26.000
-...
+00:31:02.000 --> 00:31:03.000
+Thanks.
 
-00:31:27.000 --> 00:31:30.000
-...
+00:31:03.000 --> 00:31:04.000
+Thanks.
 
-00:31:31.000 --> 00:31:34.000
-...
+00:31:04.000 --> 00:31:04.000
 
-00:31:34.000 --> 00:31:37.000
-...
 
-00:31:38.000 --> 00:31:41.000
-...
+00:32:31.000 --> 00:32:32.000
+Thanks.
 
-00:31:42.000 --> 00:31:45.000
-...
+00:32:32.000 --> 00:32:33.000
+Thanks.
 
-00:31:46.000 --> 00:31:49.000
-...
+00:32:33.000 --> 00:32:34.000
+Thanks.
 
-00:31:50.000 --> 00:31:53.000
-...
+00:32:34.000 --> 00:32:34.000
 
-00:31:54.000 --> 00:31:57.000
-...
 
-00:31:58.000 --> 00:32:01.000
-...
+00:33:01.000 --> 00:33:02.000
+Thanks.
 
-00:32:01.000 --> 00:32:04.000
-...
+00:33:02.000 --> 00:33:03.000
+Thanks.
 
-00:32:05.000 --> 00:32:08.000
-...
+00:33:03.000 --> 00:33:04.000
+Thanks.
 
-00:32:09.000 --> 00:32:12.000
-...
+00:33:04.000 --> 00:33:04.000
 
-00:32:13.000 --> 00:32:16.000
-...
 
-00:32:17.000 --> 00:32:20.000
-...
+00:34:01.000 --> 00:34:02.000
+Thanks.
 
-00:32:21.000 --> 00:32:24.000
-...
+00:34:02.000 --> 00:34:03.000
+Thanks.
 
-00:32:25.000 --> 00:32:28.000
-...
+00:34:03.000 --> 00:34:04.000
+Thanks.
 
-00:32:28.000 --> 00:32:31.000
-...
+00:34:04.000 --> 00:34:04.000
 
-00:32:32.000 --> 00:32:35.000
-...
 
-00:32:36.000 --> 00:32:39.000
-...
+00:34:31.000 --> 00:34:32.000
+Thanks.
 
-00:32:40.000 --> 00:32:43.000
-...
+00:34:32.000 --> 00:34:33.000
+Thanks.
 
-00:32:44.000 --> 00:32:47.000
-...
+00:34:33.000 --> 00:34:34.000
+Thanks.
 
-00:32:48.000 --> 00:32:51.000
-...
+00:34:34.000 --> 00:34:34.000
 
-00:32:52.000 --> 00:32:55.000
-...
 
-00:32:55.000 --> 00:32:58.000
-...
+00:35:01.000 --> 00:35:02.000
+Thanks.
 
-00:32:59.000 --> 00:33:02.000
-...
+00:35:02.000 --> 00:35:03.000
+Thanks.
 
-00:33:03.000 --> 00:33:06.000
-...
+00:35:03.000 --> 00:35:04.000
+Thanks.
 
-00:33:07.000 --> 00:33:10.000
-...
+00:35:04.000 --> 00:35:04.000
 
-00:33:11.000 --> 00:33:14.000
-...
 
-00:33:15.000 --> 00:33:18.000
-...
+00:36:01.000 --> 00:36:02.000
+Thanks.
 
-00:33:19.000 --> 00:33:22.000
-...
+00:36:02.000 --> 00:36:03.000
+Thanks.
 
-00:33:22.000 --> 00:33:25.000
-...
+00:36:03.000 --> 00:36:04.000
+Thanks.
 
-00:33:26.000 --> 00:33:29.000
-...
+00:36:04.000 --> 00:36:04.000
 
-00:33:30.000 --> 00:33:33.000
-...
 
-00:33:34.000 --> 00:33:37.000
-...
+00:36:31.000 --> 00:36:32.000
+Thanks.
 
-00:33:38.000 --> 00:33:41.000
-...
+00:36:32.000 --> 00:36:33.000
+Thanks.
 
-00:33:42.000 --> 00:33:45.000
-...
+00:36:33.000 --> 00:36:34.000
+Thanks.
 
-00:33:46.000 --> 00:33:49.000
-...
+00:36:34.000 --> 00:36:34.000
 
-00:33:49.000 --> 00:33:52.000
-...
 
-00:33:54.000 --> 00:33:57.000
-...
+00:37:31.000 --> 00:37:32.000
+Thanks.
 
-00:33:59.000 --> 00:34:02.000
-...
+00:37:32.000 --> 00:37:33.000
+Thanks.
 
-00:34:04.000 --> 00:34:07.000
-...
+00:37:33.000 --> 00:37:34.000
+Thanks.
 
-00:34:09.000 --> 00:34:12.000
-...
+00:37:34.000 --> 00:37:34.000
 
-00:34:14.000 --> 00:34:17.000
-...
 
-00:34:19.000 --> 00:34:22.000
-...
+00:38:01.000 --> 00:38:02.000
+Thanks.
 
-00:34:24.000 --> 00:34:27.000
-...
+00:38:02.000 --> 00:38:03.000
+Thanks.
 
-00:34:29.000 --> 00:34:32.000
-...
+00:38:03.000 --> 00:38:04.000
+Thanks.
 
-00:34:34.000 --> 00:34:37.000
-...
+00:38:04.000 --> 00:38:04.000
 
-00:34:39.000 --> 00:34:42.000
-...
 
-00:34:44.000 --> 00:34:47.000
-...
+00:38:31.000 --> 00:38:32.000
+Thanks.
 
-00:34:49.000 --> 00:34:52.000
-...
+00:38:32.000 --> 00:38:33.000
+Thanks.
 
-00:34:54.000 --> 00:34:57.000
-...
+00:38:33.000 --> 00:38:34.000
+Thanks.
 
-00:34:59.000 --> 00:35:02.000
-...
+00:38:34.000 --> 00:38:34.000
 
-00:35:04.000 --> 00:35:07.000
-...
 
-00:35:09.000 --> 00:35:12.000
-...
+00:39:01.000 --> 00:39:02.000
+Thanks.
 
-00:35:14.000 --> 00:35:17.000
-...
+00:39:02.000 --> 00:39:03.000
+Thanks.
 
-00:35:19.000 --> 00:35:22.000
-...
+00:39:03.000 --> 00:39:04.000
+Thanks.
 
-00:35:24.000 --> 00:35:27.000
-...
+00:39:04.000 --> 00:39:04.000
 
-00:35:29.000 --> 00:35:32.000
-...
 
-00:35:34.000 --> 00:35:37.000
-...
+00:39:31.000 --> 00:39:32.000
+Thanks.
 
-00:35:39.000 --> 00:35:42.000
-...
+00:39:32.000 --> 00:39:33.000
+Thanks.
 
-00:35:44.000 --> 00:35:47.000
-...
+00:39:33.000 --> 00:39:34.000
+Thanks.
 
-00:35:49.000 --> 00:35:52.000
-...
+00:39:34.000 --> 00:39:34.000
 
-00:35:54.000 --> 00:35:57.000
-...
 
-00:35:59.000 --> 00:36:02.000
-...
+00:40:01.000 --> 00:40:02.000
+Thanks.
 
-00:36:04.000 --> 00:36:07.000
-...
+00:40:02.000 --> 00:40:03.000
+Thanks.
 
-00:36:09.000 --> 00:36:12.000
-...
+00:40:03.000 --> 00:40:04.000
+Thanks.
 
-00:36:14.000 --> 00:36:17.000
-...
+00:40:04.000 --> 00:40:04.000
 
-00:36:19.000 --> 00:36:22.000
-...
-
-00:36:24.000 --> 00:36:27.000
-...
-
-00:36:29.000 --> 00:36:32.000
-...
-
-00:36:34.000 --> 00:36:37.000
-...
-
-00:36:39.000 --> 00:36:42.000
-...
-
-00:36:44.000 --> 00:36:47.000
-...
-
-00:36:49.000 --> 00:36:52.000
-...
-
-00:36:54.000 --> 00:36:57.000
-...
-
-00:36:59.000 --> 00:37:02.000
-...
-
-00:37:04.000 --> 00:37:07.000
-...
-
-00:37:09.000 --> 00:37:12.000
-...
-
-00:37:14.000 --> 00:37:17.000
-...
-
-00:37:19.000 --> 00:37:22.000
-...
-
-00:37:25.000 --> 00:37:28.000
-...
-
-00:37:30.000 --> 00:37:33.000
-...
-
-00:37:35.000 --> 00:37:38.000
-...
-
-00:37:40.000 --> 00:37:43.000
-...
-
-00:37:45.000 --> 00:37:48.000
-...
-
-00:37:49.000 --> 00:37:52.000
-...
-
-00:37:54.000 --> 00:37:57.000
-...
-
-00:37:59.000 --> 00:38:02.000
-...
-
-00:38:04.000 --> 00:38:07.000
-...
-
-00:38:09.000 --> 00:38:12.000
-...
-
-00:38:14.000 --> 00:38:17.000
-...
-
-00:38:19.000 --> 00:38:22.000
-...
-
-00:38:25.000 --> 00:38:28.000
-...
-
-00:38:30.000 --> 00:38:33.000
-...
-
-00:38:35.000 --> 00:38:38.000
-...
-
-00:38:40.000 --> 00:38:43.000
-...
-
-00:38:44.000 --> 00:38:47.000
-...
-
-00:38:50.000 --> 00:38:53.000
-...
-
-00:38:55.000 --> 00:38:58.000
-...
-
-00:39:01.000 --> 00:39:04.000
-...
-
-00:39:06.000 --> 00:39:09.000
-...
-
-00:39:09.000 --> 00:39:12.000
-...
-
-00:39:16.000 --> 00:39:19.000
-...
-
-00:39:22.000 --> 00:39:25.000
-...
-
-00:39:28.000 --> 00:39:31.000
-...
-
-00:39:34.000 --> 00:39:37.000
-...
-
-00:39:39.000 --> 00:39:42.000
-...
-
-00:39:46.000 --> 00:39:49.000
-...
-
-00:39:52.000 --> 00:39:55.000
-...
-
-00:39:58.000 --> 00:40:01.000
-...
-
-00:40:04.000 --> 00:40:07.000
-...
-
-00:40:10.000 --> 00:40:13.000
-...
-
-00:40:17.000 --> 00:40:20.000
-...
-
-00:40:24.000 --> 00:40:27.000
-...
-
-00:40:31.000 --> 00:40:34.000
-...
 

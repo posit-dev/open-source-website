@@ -99,10 +99,10 @@ external:  # updated automatically, do not edit
 
 
     This interview is from CDO Vision Los Angeles March, 2026 (AIM Media House''s invite-only summit for Chief Data Officers and enterprise AI leaders)'
-  duration: 406
+  duration: 407
   has_captions: false
   language: en
-  last_updated: '2026-09-18T13:58:06.406161+00:00'
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 4
   playlist: ''
   tags:

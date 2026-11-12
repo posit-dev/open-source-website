@@ -75,8 +75,8 @@ external:  # updated automatically, do not edit
     The application "Uber App" in fact has that objective: To tell a story through statistics and geography, to know the logic and the trend of Uber trips within the city of New York, but how did the idea of ​​making this app come about? It was actually an interesting experience, since one day I was viewing examples of apps made within Python, so one in particular seemed quite interesting to me and at that moment I asked myself the question: Is it possible to do something similar in R? The answer to the previous question was the following: Not only is it possible, it is also possible to do it better.'
   duration: 2443
   has_captions: false
-  language: es
-  last_updated: '2026-09-18T13:58:15.783777+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 31
   playlist: ''
   software:

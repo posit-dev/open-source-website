@@ -55,8 +55,8 @@ external:  # updated automatically, do not edit
     • Big-picture thoughts on where data science — and open source tooling — are headed'
   duration: 4045
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:07.658741+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 10
   people:
   - Michael Chow

@@ -40,8 +40,8 @@ external:  # updated automatically, do not edit
     I am Ralph Asher, and I am the founder of Data Driven Supply Chain LLC, a Minnesota-based consultancy that helps organizations apply data science and AI methods, including simulation, to design and improve their supply chain. Prior to founding Data Driven Supply Chain, I worked as an Operations Research Scientist at Target, designing e-commerce supply chain networks, and at General Mills, designing warehousing networks. I have used R for supply chain analytics for over eight years at these companies. I live in the Minneapolis, MN area and love running in the (usually cool) Minnesota air. I can be reached at ralph@datadrivensupplychain.com'
   duration: 1941
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:16.539345+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 56
   playlist: ''
   software:

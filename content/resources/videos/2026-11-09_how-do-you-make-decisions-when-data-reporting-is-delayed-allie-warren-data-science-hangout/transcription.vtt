@@ -1,0 +1,2167 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.559
+Hey there, welcome to the Posit Data Science Hangout. I'm Libby Heron, and this is a recording
+
+00:00:16.559 --> 00:00:21.920
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:21.920 --> 00:00:27.160
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.160 --> 00:00:30.600
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.600 --> 00:00:36.200
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.200 --> 00:00:41.880
+Can't wait to see you there. All right, with that, I am so excited to introduce our featured
+
+00:00:41.880 --> 00:00:46.599
+leader today. Her name is Allie Warren. She's a data science and informatics specialist
+
+00:00:46.599 --> 00:00:51.240
+at Washington State Department of Health. And Allie also gave a virtual talk at Posit
+
+00:00:51.240 --> 00:00:55.880
+Conf about NowCasting, which I absolutely loved. And she got so many questions, she
+
+00:00:55.880 --> 00:01:00.360
+could not answer them all live. So we're so happy to have her here. Allie, it would
+
+00:01:00.360 --> 00:01:04.519
+be amazing if you could introduce yourself, tell us a little bit about what you do and
+
+00:01:04.519 --> 00:01:10.519
+something you like to do for fun. Thanks so much. Yeah, I'm Allie. I'm a data science
+
+00:01:10.519 --> 00:01:14.360
+and epidemiologist with the Washington State Department of Health. My thoughts are my own.
+
+00:01:15.239 --> 00:01:20.040
+My background is in computer science. And before being in public health, I worked in
+
+00:01:20.040 --> 00:01:24.519
+cancer research, like preclinical on the computational side and like single cell
+
+00:01:24.519 --> 00:01:29.480
+genomics. That's where I got my start in R. And then moved into public health during
+
+00:01:29.480 --> 00:01:35.160
+COVID, helping build like data science pipelines and helping scale for an amount of data that
+
+00:01:35.160 --> 00:01:39.720
+wasn't expected and doing record linkage and things like that. And then more recently,
+
+00:01:39.720 --> 00:01:47.639
+have moved more into doing modeling and analytics, as well as kind of building on training and
+
+00:01:47.639 --> 00:01:52.440
+community practice, helping train our local health jurisdictions in R and building out
+
+00:01:52.440 --> 00:01:59.639
+like a national network talking about AI in public health. Perfect. And something you like
+
+00:01:59.639 --> 00:02:09.399
+to do for fun. I like to hike and I like to rock climb. And I feel like you have some maybe
+
+00:02:09.399 --> 00:02:14.440
+personal projects around hiking and climbing that we can talk about too, which I'm excited
+
+00:02:14.440 --> 00:02:21.240
+to dig into because we love personal projects here. At least I do. But I wanted to also touch
+
+00:02:21.240 --> 00:02:27.000
+on the topic of your Posit Conf talk, which was now casting. If you could give us a little recap
+
+00:02:27.000 --> 00:02:33.559
+of what you talked about. And by the way, if anybody is registered for Conf or like on the
+
+00:02:33.559 --> 00:02:39.720
+Conf portal, which everybody could do for a for virtual for free, all the talks are still there.
+
+00:02:39.720 --> 00:02:44.919
+So you could still go watch Ali's talk. They won't be up on YouTube for a couple of months yet.
+
+00:02:45.639 --> 00:02:50.039
+But Ali, could you give us the rundown on now casting in public health and why it's important?
+
+00:02:50.839 --> 00:02:57.080
+Yeah. So now casting is the idea of can we estimate current counts of some reporting data
+
+00:02:57.080 --> 00:03:01.720
+based on what we know about like reporting delays. So this is a big problem in public health because
+
+00:03:02.279 --> 00:03:06.759
+you'll get reporting data that takes a while after someone gets sick. It has to go maybe
+
+00:03:06.759 --> 00:03:10.839
+through testing or it'll go to our local health jurisdiction first or requires additional
+
+00:03:11.559 --> 00:03:15.479
+follow-up and investigation. So there's this long delay between when someone actually gets sick and
+
+00:03:15.479 --> 00:03:19.880
+when we actually know about that case. And it causes this problem where it will always look
+
+00:03:19.880 --> 00:03:25.800
+like cases are declining, even though that's maybe not the case. So I was using now casting to model
+
+00:03:25.800 --> 00:03:32.600
+that delay for pertussis or whooping cough to try and better understand where an outbreak of
+
+00:03:32.600 --> 00:03:39.320
+whooping cough was going and what we expected it to look like. It was very, very interesting to me
+
+00:03:39.399 --> 00:03:46.440
+because in your talk, you showed some really misleading plots, right? Like it's a plot over
+
+00:03:46.440 --> 00:03:52.600
+time where we're looking at the levels of something like pertussis in the population
+
+00:03:52.600 --> 00:03:57.639
+and it looks like it's going down. If somebody just looked at it at a glance, they would be like
+
+00:03:57.639 --> 00:04:02.679
+cases are going down. We're headed in the right direction. But it was just because there's a delay
+
+00:04:02.679 --> 00:04:08.919
+in collecting the information or processing it or whatever. And eventually that's going to change,
+
+00:04:08.919 --> 00:04:15.160
+which sort of reminds me of the like jobs numbers that get updated two or three months down the
+
+00:04:15.160 --> 00:04:19.160
+road, right? They'll be like, jobs are up. And then two months later, they'll be like, oh,
+
+00:04:19.160 --> 00:04:22.760
+just kidding. In May jobs were actually like way down. And now that we have this info,
+
+00:04:23.320 --> 00:04:27.399
+it's different. It's kind of like that, but much more dire because we're talking about
+
+00:04:27.399 --> 00:04:35.880
+health and outbreaks and stuff like that. So now casting is a fantastic topic. We don't do like
+
+00:04:35.880 --> 00:04:40.359
+screen-sharing and presentations and stuff at the Hangout, though it's very, very tempting to do it
+
+00:04:40.359 --> 00:04:46.040
+for this. But you had lots of questions about how that works. And it was very, very interesting.
+
+00:04:47.559 --> 00:04:51.480
+And so I encourage anybody who is curious about this type of stuff,
+
+00:04:52.279 --> 00:04:58.519
+these are great questions for Allie today. And then some other things that we can talk about
+
+00:04:58.519 --> 00:05:07.559
+is public health disease modeling in general, the dynamics of disease transmission. I know a lot of
+
+00:05:07.559 --> 00:05:12.359
+us here have experience with bringing together different data types because you do some data
+
+00:05:12.359 --> 00:05:19.399
+harmonization. And I wanted to ask you some examples of like problems that you see or
+
+00:05:19.399 --> 00:05:23.880
+data challenges that you see and the types of data that you use so we can connect some dots.
+
+00:05:24.359 --> 00:05:28.839
+Yeah, I think one problem that comes up a lot, I feel like my work is record linkage. It's a lot of
+
+00:05:28.839 --> 00:05:36.040
+different data sources of like, you know, maybe it's test data and sequencing data, you know,
+
+00:05:36.040 --> 00:05:40.920
+back in COVID, we're doing a lot of sequencing and hospitalization data. And you're trying to
+
+00:05:40.920 --> 00:05:45.000
+connect, you know, the same person across all those different data sets. So there's always a
+
+00:05:45.000 --> 00:05:49.320
+use for record linkage or the same person over time, like within our hospitalization records.
+
+00:05:49.399 --> 00:05:56.440
+That comes up a lot. Data quality, you know, and just doing kind of basic QC and things like that,
+
+00:05:56.440 --> 00:06:01.640
+especially during COVID, we would get test data from like so many different sources. Some people
+
+00:06:01.640 --> 00:06:07.720
+are, you know, using more formal reporting systems we've created. Some people are sending emails and
+
+00:06:07.720 --> 00:06:13.799
+using varieties of different forms for that. And so just like harmonizing the different ways
+
+00:06:14.040 --> 00:06:14.839
+people send in data.
+
+00:06:15.559 --> 00:06:22.679
+That's a lot. And so are you seeing like hospital system data, patient level data? Are you seeing
+
+00:06:22.679 --> 00:06:28.600
+insurance claim data? What are the types of data that you are gathering to put all this
+
+00:06:28.600 --> 00:06:30.760
+information together and make forecasts?
+
+00:06:31.880 --> 00:06:39.480
+Yeah, so I work with, for the like pertussis, it's, it's kind of like,
+
+00:06:40.279 --> 00:06:44.839
+it's just a reportable condition in Washington. So each case gets reported to the state. So that's
+
+00:06:44.839 --> 00:06:49.880
+just like that level of data on an initial level. Yeah, I work with some hospitalization data,
+
+00:06:51.079 --> 00:06:56.440
+yeah, testing data sometimes. I would like to work with more insurance data, not yet, but yeah,
+
+00:06:56.440 --> 00:06:57.559
+that's definitely of interest.
+
+00:06:58.279 --> 00:07:03.559
+Okay, cool. Well, I would love to start with Natasha's fantastic question, which always gets
+
+00:07:03.559 --> 00:07:07.640
+us a little bit deeper into the context of what people are doing and what they're doing.
+
+00:07:07.640 --> 00:07:13.239
+So I'll read it for her. What does a typical day or week look like for you? What areas do you
+
+00:07:13.239 --> 00:07:20.839
+split your time between? So do you do programming, meetings, planning, stuff like that? Do you do
+
+00:07:20.839 --> 00:07:22.040
+any community building?
+
+00:07:23.160 --> 00:07:28.679
+Yeah, so my time is split between all three. I'll have like project meetings and planning
+
+00:07:28.679 --> 00:07:34.119
+meetings and maybe like smaller, like one off of like just helping people with like
+
+00:07:34.200 --> 00:07:39.480
+maybe like smaller, like one off of like just helping people with a data science question or
+
+00:07:39.480 --> 00:07:47.079
+like helping people migrate a pipeline or things like that. And then I have my own time to be
+
+00:07:47.079 --> 00:07:54.519
+coding and working on analytics and exploratory data analysis and modeling and maintaining existing
+
+00:07:54.519 --> 00:07:59.640
+models that I work with. And then I also have my kind of community building and training that I do.
+
+00:07:59.640 --> 00:08:07.320
+So we have an internal group called EpiCoders within the organization. And so helping run that
+
+00:08:07.320 --> 00:08:11.399
+and then also working with our local health jurisdictions to do trainings for them. And
+
+00:08:11.399 --> 00:08:18.519
+then also this national network that we started here at DOH to talk about AI and public health.
+
+00:08:19.799 --> 00:08:21.959
+And that is called PubHealth AI, right?
+
+00:08:21.959 --> 00:08:23.559
+Yes, PubHealth AI. Yep.
+
+00:08:23.559 --> 00:08:27.239
+And I think I have a link to that. So I'm going to put that in the chat for everybody if they
+
+00:08:27.239 --> 00:08:33.640
+are curious about that. And what is your role at PubHealth AI? How did that get going?
+
+00:08:34.760 --> 00:08:40.520
+Yeah, so I help facilitate that group. It started out, we had a pilot project here working with
+
+00:08:40.520 --> 00:08:46.760
+Google to look at whether we could use AI to classify reporting variables around unintentional
+
+00:08:46.760 --> 00:08:52.119
+drug overdose death reporting. It's a lot of like natural anchor processing where you've got these
+
+00:08:52.119 --> 00:08:55.799
+text heavy data about each death and there's a lot of, there's hundreds of variables that need
+
+00:08:55.799 --> 00:08:59.719
+to be reported to CDC. And so we were trying out whether we could use AI to do some of that.
+
+00:09:01.000 --> 00:09:07.159
+And we were running into challenges of how do you implement AI in public health and what does
+
+00:09:07.159 --> 00:09:10.679
+it work for? And this is a couple of years ago, so this is much earlier models. And we just wanted
+
+00:09:10.679 --> 00:09:14.280
+to like share and talk with other public health organizations about what they were trying to do,
+
+00:09:14.280 --> 00:09:19.559
+what was going well and what wasn't. And so we started just presenting that project to other
+
+00:09:19.559 --> 00:09:23.719
+people we knew in public health and then kind of started drawing more and more people together and
+
+00:09:23.719 --> 00:09:27.479
+be like, okay, what are actual use cases and what are other people trying to do? And how are people
+
+00:09:27.479 --> 00:09:34.280
+dealing with governance and ethical and legal issues? And it has just grown and grown and grown.
+
+00:09:34.280 --> 00:09:38.520
+We actually had someone from Posit who presented at the beginning of this year, Sarah Altman.
+
+00:09:39.320 --> 00:09:40.039
+Awesome.
+
+00:09:40.039 --> 00:09:44.280
+Yeah. And so we just have bi-weekly meetings where it's just, yeah, but usually public health
+
+00:09:44.840 --> 00:09:48.760
+big topics, either a project or a demo or a discussion topic.
+
+00:09:49.479 --> 00:09:56.919
+And so is it public health organizations all over the United States or is it international?
+
+00:09:56.919 --> 00:09:59.880
+We've got some international too. Yeah. We've got some international, but yeah,
+
+00:09:59.880 --> 00:10:03.719
+public health organizations from like federal to state to local level or tribal
+
+00:10:04.919 --> 00:10:10.119
+groups as well. And then some academics and then some like non-profit organizations.
+
+00:10:10.919 --> 00:10:14.840
+That is amazing. If you are in public health and you are interested in this,
+
+00:10:14.840 --> 00:10:21.080
+everybody go check out the link and take a look at, is there information there about how people
+
+00:10:21.080 --> 00:10:24.840
+can join and how they can join stuff online? Okay, cool.
+
+00:10:24.840 --> 00:10:28.919
+Yeah. So it'll be form. You'll get an email from me about what the organization is and then meeting
+
+00:10:28.919 --> 00:10:33.960
+invites and lots of emails, but yeah. Wonderful. Okay. Well, we have so many
+
+00:10:33.960 --> 00:10:39.719
+questions that just popped up in Slido. We will go through and add them to Slido,
+
+00:10:39.719 --> 00:10:43.719
+but in the meantime, I would love it if Nora could ask her question live.
+
+00:10:43.719 --> 00:10:51.000
+I'm going to highlight it there and we'll help Nora unmute and we can ask about data challenges.
+
+00:10:54.520 --> 00:11:00.679
+Hello. Chrome just crashed. I'm trying to open up the question again.
+
+00:11:00.679 --> 00:11:02.919
+Well, you know what? I'm going to put it in the chat. So everybody.
+
+00:11:02.919 --> 00:11:06.359
+Honestly, that's my fault for asking so many questions because I think.
+
+00:11:06.359 --> 00:11:11.159
+I was going to say she did ask like three. So with the one that I was thinking about
+
+00:11:11.159 --> 00:11:17.559
+was the challenges of coordinating with other organizations, which I would love to hear about.
+
+00:11:17.559 --> 00:11:26.840
+Yeah. So for hi, Allie. Hi, my name is Nora. In my last role, I actually worked in pathogen
+
+00:11:26.840 --> 00:11:32.760
+surveillance. So I actually worked as a consultant working in that particular sphere.
+
+00:11:33.640 --> 00:11:39.400
+So I am somewhat familiar with some of the data harmonization issues of working with
+
+00:11:40.119 --> 00:11:42.840
+public health data and trying to figure out how to coordinate and the.
+
+00:11:44.679 --> 00:11:50.440
+Some of the issues, especially around modernization. So particularly, what are some of the data
+
+00:11:50.440 --> 00:11:55.640
+challenges that you have run across to coordinate with other public health boards, be it federal
+
+00:11:55.640 --> 00:12:02.520
+or more local, like county organized county particular. Public health organizations and like,
+
+00:12:02.520 --> 00:12:07.239
+are there initiatives to help standardize and or modernize these approaches, be it from the
+
+00:12:07.239 --> 00:12:12.039
+reporting aspect or even from the having more standardized pipelines across?
+
+00:12:15.000 --> 00:12:16.359
+Yeah, OK, big question. OK.
+
+00:12:19.719 --> 00:12:26.760
+But I will say, like, Nora represents a big chunk of the questions that came in on Slido that were
+
+00:12:26.760 --> 00:12:30.200
+a lot of them were like data quality. How do you put these things together?
+
+00:12:31.239 --> 00:12:35.880
+This is my point. This is my old role before I was on the job market. So it's like
+
+00:12:36.440 --> 00:12:42.359
+a lot of people can relate. Yeah. So I think one challenge within Washington
+
+00:12:42.359 --> 00:12:47.799
+in the data harmonization level is we have like our local health jurisdictions,
+
+00:12:47.799 --> 00:12:52.039
+which are kind of counties, but a little bit different, have a really different sizes
+
+00:12:52.039 --> 00:12:56.039
+and have very different resources. So, you know, there's everything like King County includes
+
+00:12:56.039 --> 00:13:03.239
+Seattle. They have like a lot of people and their own great data people and are doing a lot of great
+
+00:13:03.239 --> 00:13:06.440
+work there and have a lot more resources. And then we have like very small counties. And so
+
+00:13:07.080 --> 00:13:11.559
+like you have small numbers where it's like, oh, we can't even, you know, maybe share the number of
+
+00:13:11.559 --> 00:13:15.239
+people for a case in those counties or things like that. And maybe they don't have as many
+
+00:13:15.239 --> 00:13:21.239
+resources. So it's challenges there of like, how do you provide, you know, for doing public
+
+00:13:21.239 --> 00:13:26.599
+reporting or things like that? How do you balance those different things of smaller units versus
+
+00:13:26.599 --> 00:13:31.719
+like and different needs and things like that? So that's one big challenge. I think the other
+
+00:13:31.719 --> 00:13:34.760
+work like directly with people from the local health jurisdictions makes a big difference
+
+00:13:36.359 --> 00:13:43.000
+for like federal reporting side of things. There's been efforts to do more data modernization
+
+00:13:43.000 --> 00:13:49.960
+and it's been a big effort over the past five years. And COVID definitely changed things in
+
+00:13:49.960 --> 00:13:57.000
+terms of like building out new systems and moving to like cloud and trying to do more standardization.
+
+00:13:57.559 --> 00:14:03.320
+Public health is having some challenges obviously right now and funding and things like that. So
+
+00:14:04.039 --> 00:14:10.280
+what will continue is always hard to know. But yeah, I think there's definitely more efforts
+
+00:14:10.280 --> 00:14:15.719
+that's noticing. I think there's a lot of like work groups and community groups to like talk
+
+00:14:15.719 --> 00:14:20.679
+between states. Yeah. It's advantage of like there's for everything that I'm trying to do.
+
+00:14:20.679 --> 00:14:23.880
+There's all these other groups that are probably trying to do the same thing. And if I can just
+
+00:14:24.119 --> 00:14:29.239
+talk with them, you can learn what works and what didn't. But it's also like hard to stay connected.
+
+00:14:29.880 --> 00:14:33.559
+So I've probably found getting people conferences and like having these like
+
+00:14:33.559 --> 00:14:39.559
+commutes of practice really helped with that. Yeah. And there are like data standards that
+
+00:14:39.559 --> 00:14:47.880
+exist in health rate that can help. Although like insert XKCD, now we have 15 standards coming
+
+00:14:48.520 --> 00:14:55.080
+here. Is that a problem that you face as well? Yeah, that definitely happens. Yeah. For a lot of
+
+00:14:55.080 --> 00:15:00.119
+like, there's like, you know, cold categories of like reportable conditions that are very
+
+00:15:00.119 --> 00:15:04.679
+standardized in how they're reported and what data is provided doesn't mean it's actually
+
+00:15:04.679 --> 00:15:09.080
+happening the same way in each state. And there are like different data delays and things like
+
+00:15:09.080 --> 00:15:15.559
+that. And so I think it's always important to be actually talking with the people who own each
+
+00:15:15.559 --> 00:15:20.039
+data set, because there will be data quality issues that, you know, you don't realize just
+
+00:15:20.039 --> 00:15:27.239
+looking at it. But yeah, there's definitely efforts to standardize things. All right. Well,
+
+00:15:27.239 --> 00:15:36.119
+let's ask another question here that might be in the same vein. Let me see if I get
+
+00:15:36.119 --> 00:15:44.280
+so many questions on Slido. Oh my gosh, they're going crazy. Give me one second while I
+
+00:15:44.280 --> 00:15:48.840
+filter through. As people vote for them, they like change position in Slido. So I'll be reading one
+
+00:15:48.840 --> 00:15:53.640
+and then all of a sudden it'll be like boop, boop, boop, boop and move around. But there was one that
+
+00:15:53.640 --> 00:15:58.359
+was anonymous. I'm going to put it at the top so it stops moving. And it says, how do you handle
+
+00:15:58.359 --> 00:16:05.880
+issues about whether data is trustworthy enough to release? What are your thoughts on concerns
+
+00:16:05.880 --> 00:16:11.400
+about political pushback when the numbers change as you get closer and closer to the truth? And I
+
+00:16:11.400 --> 00:16:15.719
+don't know if this is something that you handle at all, but it does touch on NowCasting a little
+
+00:16:15.719 --> 00:16:22.760
+bit. Like if numbers go out and then a week later or a month later, they're different. Is there any
+
+00:16:22.760 --> 00:16:27.320
+way that you handle that trustworthy part? I feel like NowCasting might be the answer.
+
+00:16:28.599 --> 00:16:31.479
+Yeah, I think that was like part of my interest in NowCasting was because
+
+00:16:32.359 --> 00:16:35.559
+some of the, yeah, you power port, it looks misleading. I even notice I'll like look at
+
+00:16:35.559 --> 00:16:38.760
+something and I'll be like, oh, look, numbers are declining. And then I'm like, I have to remind
+
+00:16:38.760 --> 00:16:42.760
+myself that I know that this is reporting data that will be adjusted. So yeah, I do like
+
+00:16:42.760 --> 00:16:46.919
+NowCasting for that. I think though with any like modeling, there's probably a lot more
+
+00:16:48.200 --> 00:16:54.599
+hesitancy and caution because yeah, we know that the harm or the problems that can come from
+
+00:16:54.599 --> 00:16:57.719
+putting out an incorrect model, even though if you're trying to do your best and communicating
+
+00:16:57.719 --> 00:17:05.079
+that, it is going out to a wide audience who aren't familiar maybe with the modeling efforts
+
+00:17:05.079 --> 00:17:10.040
+and things like that. So being able to, yeah, probably things happen slower where you're
+
+00:17:10.040 --> 00:17:16.040
+trying to do a lot more evaluation before things go out publicly and really communicate that
+
+00:17:16.040 --> 00:17:25.959
+uncertainty as it exists is always good. I think, yeah, during COVID, yeah, this was obviously a
+
+00:17:25.959 --> 00:17:30.040
+big topic of conversation of, you know, early models of like, okay, there's just not that
+
+00:17:30.520 --> 00:17:36.839
+much information and what does it mean to put out a model? I think things like
+
+00:17:39.239 --> 00:17:44.359
+how you phrase things of like, okay, this is a scenario production, not a forecast of like,
+
+00:17:44.359 --> 00:17:49.319
+there's kind of different wording in terms of like what certainty people might be assuming from
+
+00:17:49.319 --> 00:17:52.760
+each of those things. And so, yeah, it's a lot about the communications side of things.
+
+00:17:53.319 --> 00:17:58.599
+Oh, the assumed certainty is scary, right? Like you always want to caveat everything
+
+00:17:59.319 --> 00:18:03.959
+with the fact that all of these numbers are somewhat uncertain, even though you are a
+
+00:18:03.959 --> 00:18:09.479
+public health organization, you only have the data that you have and it's only as accurate as
+
+00:18:09.479 --> 00:18:16.359
+it is when it gets to you and not everything gets reported. There were a lot of questions about
+
+00:18:18.439 --> 00:18:23.479
+skill sets needed for inside of public health, breaking into public health, things like that.
+
+00:18:23.479 --> 00:18:28.760
+So, I think that this like kind of we're at the halfway mark is a great place to ask about
+
+00:18:29.479 --> 00:18:38.199
+some tools as well. So, I know that what you work on probably part of your products that you produce
+
+00:18:38.199 --> 00:18:43.400
+are dashboards, public health dashboards of some kind, but I figured I'd ask what tools you use.
+
+00:18:43.400 --> 00:18:48.439
+Are you all using R or Python? Are you deploying Deposit Connect? Do you have things that are
+
+00:18:48.439 --> 00:18:54.839
+public or is this just for consumption inside of your health organization? And then also,
+
+00:18:56.040 --> 00:19:00.040
+I will follow on with that in a minute because I know that one of your co-workers won a Posit
+
+00:19:00.040 --> 00:19:04.839
+Impact Award as well. And I can add a link in the chat to those so everybody can see them.
+
+00:19:06.680 --> 00:19:11.959
+Yeah. So, I work primarily in R, some Python as well. And I feel like, yeah,
+
+00:19:11.959 --> 00:19:18.599
+the balance between organization is mostly probably R, some Python, some SQL obviously
+
+00:19:18.599 --> 00:19:27.479
+used as well, and maybe bits of SAS still remaining. And we do use Posit Connect. It's
+
+00:19:27.479 --> 00:19:31.719
+a newer tool and we're kind of building out a larger cloud environment. We also have Databricks.
+
+00:19:33.640 --> 00:19:39.000
+We use Power BI for most of our dashboarding for like public facing dashboards. Everyone's all
+
+00:19:39.000 --> 00:19:46.040
+have some internal shiny dashboards, but nothing public facing for that. Yeah. Amazing. That's a
+
+00:19:46.040 --> 00:19:53.160
+really broad list, right? Like if you're looking at getting a job in public health, not that these
+
+00:19:53.160 --> 00:19:57.079
+tools are across the board, but just some of the things that you could be familiar with. So,
+
+00:19:57.719 --> 00:20:04.040
+Databricks for data storage, SQL for manipulating and retrieving data. I heard
+
+00:20:04.599 --> 00:20:09.160
+Posit Connect and Shiny for internal dashboards, Power BI for external dashboards,
+
+00:20:09.160 --> 00:20:14.680
+and then both R and Python. Do you have things that you work more in R in and more in Python
+
+00:20:14.680 --> 00:20:20.439
+in as far as the types or tasks that you're doing? Yeah. Most of my day-to-day work is,
+
+00:20:20.439 --> 00:20:25.479
+I would say, in R. I'm probably farther on that side. It's definitely like kind of the more
+
+00:20:25.479 --> 00:20:30.760
+probably common language in public health and a lot of the like analytics and modeling. There's
+
+00:20:30.760 --> 00:20:36.920
+a lot of great existing R packages that I take advantage of. So, and probably more familiarity
+
+00:20:36.920 --> 00:20:40.280
+with that. So, if I'm like helping another team like write a pipeline, I'm probably more likely
+
+00:20:40.280 --> 00:20:46.359
+to do that in R. But then there's some things that maybe kind of more on the data engineering
+
+00:20:46.359 --> 00:20:51.000
+side and others in my team who are further on that side are more likely to be working in Python
+
+00:20:52.199 --> 00:20:56.680
+and like large-scale scaling and take advantage of like PySpark and Databricks
+
+00:20:57.239 --> 00:21:01.880
+for like more parallelization can be quite useful. Sweet. Thank you. Okay. I hope that that gave
+
+00:21:01.880 --> 00:21:07.959
+everybody some context on tools around public health, but you know, this is the Washington
+
+00:21:07.959 --> 00:21:12.520
+Department of Health specifically. So, take all of that, you know, with a grain of salt.
+
+00:21:12.520 --> 00:21:17.160
+I have never seen so many questions in Slido in my entire life. And Allie, you had so many
+
+00:21:17.160 --> 00:21:21.800
+questions when you gave your virtual talk at PositConf as well. There must be something about
+
+00:21:21.800 --> 00:21:27.880
+Allie that really, really produces questions. So, what I'm going to try to do is consolidate
+
+00:21:27.880 --> 00:21:37.319
+some of these questions into one and nominate someone to ask because there was one from Belinda
+
+00:21:37.319 --> 00:21:43.880
+that was about some of the backgrounds of like your colleagues and your team and whether or not
+
+00:21:43.880 --> 00:21:51.880
+there are open positions in your organization and then whether or not you're looking for people
+
+00:21:51.880 --> 00:21:56.760
+with both public health and data science experience. I know that you're probably not doing
+
+00:21:57.400 --> 00:22:04.040
+the interviewing and the job hiring decisions. I think that your boss is here today. Not that I
+
+00:22:04.040 --> 00:22:09.239
+want to put Paul on the spot, but I think Paul is here today. So, if Paul wants to raise his hand
+
+00:22:09.239 --> 00:22:15.079
+and jump in at any time, I will let him choose whether or not he wants to do that. But could
+
+00:22:15.079 --> 00:22:22.280
+you give us some context around the breadth of experience and skills inside of your team at large
+
+00:22:22.280 --> 00:22:28.760
+or maybe how many people are on your team, different things that they do? Yeah. So, my team is like a
+
+00:22:28.760 --> 00:22:33.959
+kind of data science specific team mixture of like data science and data engineering. What are we?
+
+00:22:33.959 --> 00:22:39.560
+Eight, nine people. I don't know the exact number. And we, our team started during COVID.
+
+00:22:39.560 --> 00:22:45.000
+It was like definitely building out that additional data science capacity and how do you
+
+00:22:46.760 --> 00:22:53.319
+scale to data needs that COVID brought about. And so, I think my team is more heavily on the
+
+00:22:53.319 --> 00:22:59.000
+like computer science background side of things and maybe with a little bit less of the direct
+
+00:22:59.000 --> 00:23:02.599
+public health versus like other teams in our organization that are further on the public
+
+00:23:02.599 --> 00:23:06.520
+health side. Obviously, always collaborating and having both those skills and experiences
+
+00:23:06.520 --> 00:23:10.119
+quite useful. I didn't have a public health background. Yeah, I was working in cancer
+
+00:23:10.119 --> 00:23:14.839
+research. So, different side of things, but still building pipelines and similar kind of data
+
+00:23:14.839 --> 00:23:21.560
+modeling and analytics tools. We are unfortunately in a hiring freeze right now. It's obviously a,
+
+00:23:21.560 --> 00:23:26.280
+yeah, challenging time in public health. So, not hiring at the moment, but always good to
+
+00:23:26.280 --> 00:23:30.839
+keep an eye out. That is okay. I think that's kind of across the market right now. We're in a little
+
+00:23:30.839 --> 00:23:37.479
+bit of a rough patch with hiring, but I will say again, if you see jobs and you want to share them,
+
+00:23:37.479 --> 00:23:41.719
+or you're looking for one, head to the Discord server to the jobs and open to work tab.
+
+00:23:43.079 --> 00:23:47.400
+There are actually people on the server who have gotten jobs there from job postings, which makes
+
+00:23:47.400 --> 00:23:53.959
+me so, so, so happy because it's a lot easier to connect there with people than it is, you know,
+
+00:23:54.520 --> 00:23:58.359
+randomly on LinkedIn. And you have to be like, I'm that person from the hangout. Remember,
+
+00:23:58.520 --> 00:24:03.000
+just get on the Discord server. It's so much easier. Okay. Belinda, thank you for asking
+
+00:24:03.000 --> 00:24:08.599
+that question. Give us a little bit more information about the team. I'm going to head
+
+00:24:08.599 --> 00:24:13.400
+back to Slido here and see if we can find a question that is a good representation of a few
+
+00:24:14.119 --> 00:24:26.359
+questions that we can put together. Let's see. We had some AI questions, more data quality questions.
+
+00:24:28.520 --> 00:24:34.439
+I, there was an anonymous question about NLP that I think is great because you had mentioned
+
+00:24:35.000 --> 00:24:40.439
+that you get some big text-based data about things sometimes. And it says,
+
+00:24:40.439 --> 00:24:45.479
+I would love to understand a bit more about NLP use cases inside of public health.
+
+00:24:47.560 --> 00:24:54.040
+Yeah, so this pilot project was with our drug, initial drug overdose reporting data. And so
+
+00:24:54.280 --> 00:24:59.640
+data comes in from like coroner reports and medical examiners and scene investigations
+
+00:24:59.640 --> 00:25:04.920
+and police reports. And so it's all this text data. People in that team then compile all that
+
+00:25:04.920 --> 00:25:09.959
+combo of data into these kind of narratives that are a few paragraphs long and kind of have a
+
+00:25:09.959 --> 00:25:14.839
+centralized format, but are very varied to the varied kind of data that they're taking in.
+
+00:25:14.839 --> 00:25:19.640
+And so they're very like, yeah, text narrative with some format to like, you know,
+
+00:25:19.800 --> 00:25:25.479
+how information is broken up in terms of like medical history and scene reporting and investigation
+
+00:25:25.479 --> 00:25:33.400
+and like information about methods of use or items paraphernalia found or bystanders present
+
+00:25:33.400 --> 00:25:39.160
+and things like that. And then from those text narratives, they then extract these like 300
+
+00:25:39.160 --> 00:25:45.079
+variables that get reported to the CDC to kind of look for trends in, in a number of different
+
+00:25:45.479 --> 00:25:53.160
+to the CDC to kind of look for trends in initial drug overdose deaths, things again around use and
+
+00:25:53.160 --> 00:25:57.160
+patterns of use and things like that. But the very complex variables are subtle things like
+
+00:25:58.599 --> 00:26:05.079
+was a bystander present at the time? And that's like a complex definition. And each of them kind
+
+00:26:05.079 --> 00:26:11.800
+of have these like long definitions or big, you know, whole books about how each variable should
+
+00:26:11.800 --> 00:26:16.040
+be classified and much past work on how they've done that. And so we're trying to see whether we
+
+00:26:16.040 --> 00:26:21.560
+could use AI to train, do that classification. These were much, much earlier models. So the
+
+00:26:21.560 --> 00:26:27.719
+small pilot. And so it didn't continue, but that was the goal. Thank you. Yeah. It doesn't matter
+
+00:26:27.719 --> 00:26:33.479
+that it didn't continue. So many things in data science start and stop and don't continue. It's
+
+00:26:33.479 --> 00:26:40.599
+like 80 to 90% of the stuff that happens. We had a question that had just popped in from Lauren H.
+
+00:26:40.599 --> 00:26:50.119
+Let's see if we can find Lauren to unmute Lauren Hagan, I think. And I will highlight Lauren's
+
+00:26:50.119 --> 00:26:54.040
+question if I can find it. There we go. And I'll put it in the chat as well.
+
+00:26:55.479 --> 00:27:02.439
+Hello. All right. Hi, I'm Lauren. And I was wondering if you have any projects outside of
+
+00:27:02.439 --> 00:27:13.479
+your work as part of the Washington Health State Department. Yeah. So like hobby projects,
+
+00:27:13.479 --> 00:27:18.280
+my hobbies are like mostly hiking, backpacking, and climbing. And so I like to use my
+
+00:27:19.880 --> 00:27:24.599
+huge eyes to just assist those projects. So one thing is that in Washington for backpacking,
+
+00:27:24.599 --> 00:27:31.800
+most of the permits have to be put out in the like spring. And so I need to plan when I want
+
+00:27:31.800 --> 00:27:35.719
+to do various hikes. Washington has a really great website called the Washington Trails
+
+00:27:35.719 --> 00:27:40.520
+Association. I love it. I would always recommend it if people are planning any hiking in Washington
+
+00:27:40.520 --> 00:27:45.719
+and people like write trip reports about their hike and like various features of it. It's so
+
+00:27:45.719 --> 00:27:51.479
+great. It's widely used. So I took all of those trip report data and used it to like estimate
+
+00:27:51.479 --> 00:27:57.000
+better when hikes are more likely to be like snow free and less buggy. And if you like have like
+
+00:27:57.000 --> 00:28:02.680
+fall foliage, things like that. So I use that for my planning for putting in permits for hiking.
+
+00:28:04.040 --> 00:28:07.400
+And then I guess for climbing, I got in a conversation with someone about
+
+00:28:08.839 --> 00:28:12.280
+GeoGuessr and they were claiming that they could do a similar thing for climbing routes,
+
+00:28:12.280 --> 00:28:16.680
+that they could see a picture of a climbing route and guess where in the world it was.
+
+00:28:17.319 --> 00:28:22.280
+And that was a debate we were having. And so I made a little just shiny app of that,
+
+00:28:22.280 --> 00:28:25.479
+taking pictures of climbing routes and geolocating them. And then you could like
+
+00:28:25.479 --> 00:28:29.959
+choose on a map where you thought they were and score it, which was fun. They were surprisingly
+
+00:28:29.959 --> 00:28:34.599
+good at it. They were right. They were right. That is such a niche thing. I don't think that
+
+00:28:34.599 --> 00:28:40.599
+I would be able to do that. If it was Boba tea locations in San Antonio, I could probably do it.
+
+00:28:42.760 --> 00:28:49.959
+But yes, that sounds so fun. And I don't know if you have like public links to those things,
+
+00:28:50.040 --> 00:28:54.680
+but if you don't at the moment. Okay. Okay. I was going to say if you do at some point and you
+
+00:28:54.680 --> 00:28:59.400
+ever wanted to share, we would love to give them the hug of death by all clicking them at one time.
+
+00:29:01.000 --> 00:29:05.959
+Okay. So let's head back over to this. I don't think you learned for your question.
+
+00:29:07.079 --> 00:29:13.319
+There was one that was about fragmentation. I think it was from Jay, Jay Lee. I'm going to
+
+00:29:13.319 --> 00:29:17.400
+highlight this in the chat. Let's see if we can unmute, help Jay Lee unmute.
+
+00:29:20.760 --> 00:29:28.119
+I'll copy. Yeah. Hi, thanks, Allie. Hi. Yeah. I was wondering how you deal with like
+
+00:29:28.839 --> 00:29:32.760
+fragmentation just in terms of like your data sources coming from different places
+
+00:29:32.760 --> 00:29:34.040
+at different levels of.
+
+00:29:34.463 --> 00:29:38.283
+in terms of like your data sources coming from different places at different levels
+
+00:29:38.283 --> 00:29:44.323
+of government or health care, how you work with like one data source might come from
+
+00:29:44.323 --> 00:29:47.443
+the federal government, another might come from the state, another you might have to
+
+00:29:47.443 --> 00:29:50.883
+go to all of the different counties or public health areas that you were describing and
+
+00:29:50.883 --> 00:29:55.643
+like sometimes those are in the same format, sometimes they're not, and how you work with
+
+00:29:55.643 --> 00:29:57.283
+all of those issues.
+
+00:29:57.283 --> 00:29:58.283
+Yeah.
+
+00:29:58.283 --> 00:30:06.043
+A common problem, yeah, getting data from different labs, different counties, things
+
+00:30:06.043 --> 00:30:12.123
+like that, trying to establish data standards to like decide how you want your data to look,
+
+00:30:12.123 --> 00:30:18.483
+encouraging people to use them if you can, but often it's just like a lot of, yeah, not
+
+00:30:18.483 --> 00:30:25.402
+manual but laborious work to standardize things and then sometimes that's just how it goes.
+
+00:30:25.402 --> 00:30:28.562
+Also people will use different ID systems for the same topic.
+
+00:30:28.562 --> 00:30:35.003
+So there's a lot of data, like, yeah, tables that I have to translate between different
+
+00:30:35.003 --> 00:30:39.982
+systems of, you know, different names for the same things.
+
+00:30:39.982 --> 00:30:42.763
+So it's, yeah, it's a lot of just having those things.
+
+00:30:42.763 --> 00:30:47.323
+It's, yeah, often a pretty kind of manual process to kind of collect all that information.
+
+00:30:47.323 --> 00:30:53.723
+You would ideally like everyone to use the same thing, but that's not really realistic.
+
+00:30:53.723 --> 00:30:57.602
+So it's often just trying to get a handle of the data of like, who do you, who can you
+
+00:30:57.602 --> 00:31:00.482
+find that can tell you more about how this person treated their data and what the differences
+
+00:31:00.482 --> 00:31:03.842
+are and then trying to join them.
+
+00:31:03.842 --> 00:31:10.083
+Definitely like, yeah, record linkage where, yeah, I've done different approaches to that,
+
+00:31:10.083 --> 00:31:14.882
+it's non-problemistic or sometimes been interesting with neural network approach to that at one
+
+00:31:14.882 --> 00:31:20.602
+point, but yes, it's a common problem.
+
+00:31:20.602 --> 00:31:22.403
+It's a big, a big question.
+
+00:31:22.403 --> 00:31:25.922
+I don't know if anyone ever has a final answer to it.
+
+00:31:25.922 --> 00:31:29.842
+It's just like, yes, this is a problem and we all deal with it and it's like a case by
+
+00:31:29.842 --> 00:31:35.602
+case thing, right, of how we're going to deal with, like Lauren mentioned, standardization.
+
+00:31:35.602 --> 00:31:39.123
+There's also problems with missing this all over the place where you're having to make
+
+00:31:39.123 --> 00:31:44.002
+decisions on a case by case basis about how you're going to handle it.
+
+00:31:44.002 --> 00:31:46.843
+Thank you so much, Jay, for your fantastic question.
+
+00:31:46.843 --> 00:31:51.283
+I had another one that was about linkage from Liz Eisenhower, who has been on the Hangout
+
+00:31:51.283 --> 00:31:56.123
+before and who is a long time Data Science Hangout community member too.
+
+00:31:56.123 --> 00:32:00.683
+Liz, did you want to follow on with your question?
+
+00:32:00.683 --> 00:32:08.082
+Because it was a little bit more about incorporating uncertainty than just the problems, the challenges.
+
+00:32:08.082 --> 00:32:09.082
+Right, right.
+
+00:32:09.082 --> 00:32:10.082
+Exactly.
+
+00:32:10.082 --> 00:32:11.082
+Yeah.
+
+00:32:11.082 --> 00:32:12.082
+I was, thank you.
+
+00:32:12.082 --> 00:32:16.763
+I was asking about kind of what it looks like when you're presenting the results of an analysis
+
+00:32:16.763 --> 00:32:22.483
+that's had all these kind of duplicates that you've had to maybe come up with rules to
+
+00:32:22.483 --> 00:32:27.043
+de-duplicate the individual observations that come from different sources.
+
+00:32:27.043 --> 00:32:31.923
+And maybe there's other, you know, different data cleaning that you're doing.
+
+00:32:31.923 --> 00:32:35.043
+And then at the end, when you're presenting that, what does it look like?
+
+00:32:35.043 --> 00:32:42.763
+How do you try to, or how can you kind of present uncertainty in that, in that work?
+
+00:32:42.763 --> 00:32:43.763
+Yeah.
+
+00:32:43.763 --> 00:32:44.763
+Oh, man.
+
+00:32:44.763 --> 00:32:45.763
+Big questions.
+
+00:32:45.763 --> 00:32:50.242
+No, these are good questions I have to think more about.
+
+00:32:50.242 --> 00:32:54.323
+Yeah, I think often it's, yeah, just like on the communication side and visualization
+
+00:32:54.323 --> 00:33:00.403
+side of how do you incorporate uncertainty into your visualizations, I think is an interesting
+
+00:33:00.403 --> 00:33:01.403
+thing.
+
+00:33:01.403 --> 00:33:08.522
+I, yes, and it's a lot of testing it and getting feedback of do people know what this means?
+
+00:33:08.522 --> 00:33:09.522
+Things like that.
+
+00:33:09.522 --> 00:33:15.763
+And I think, yeah, being honest about the problems with data and your caveats there,
+
+00:33:15.763 --> 00:33:20.483
+it depends, you know, how much direct communication you actually have with the person you're trying
+
+00:33:20.483 --> 00:33:21.483
+to communicate those.
+
+00:33:21.483 --> 00:33:25.522
+And I use a dashboard and it's just like, this is going to go out to the public.
+
+00:33:25.522 --> 00:33:29.483
+And you know, they're, I don't get to talk with them directly.
+
+00:33:29.483 --> 00:33:34.642
+And so you're just hoping that the visualization stuff and you have your data notes, but also
+
+00:33:34.642 --> 00:33:36.323
+often no one reads those.
+
+00:33:36.323 --> 00:33:38.283
+And so you kind of have to accept that fact.
+
+00:33:38.283 --> 00:33:43.602
+And then sometimes it's a more direct communication of like sharing a report and you have it face
+
+00:33:43.602 --> 00:33:44.602
+to face.
+
+00:33:44.602 --> 00:33:51.362
+And so you can tell someone about the problems with it and communicate that and the limitations.
+
+00:33:51.362 --> 00:33:54.802
+But yeah, I think, yeah, I think there's an interesting kind of like the visualization
+
+00:33:54.802 --> 00:34:01.603
+side of things of what you can do and how you can try and convey that uncertainty.
+
+00:34:01.603 --> 00:34:05.163
+Just I admit it's probably earlier on this side where I'm just trying to get those uncertainties
+
+00:34:05.283 --> 00:34:06.283
+into our visualizations.
+
+00:34:06.283 --> 00:34:11.283
+And that's where like, now I think it's been interesting of like, how do we at least let
+
+00:34:11.283 --> 00:34:15.082
+people know that we have this uncertainty instead of maybe it just being like a note
+
+00:34:15.082 --> 00:34:18.482
+or like a gray bar over an area.
+
+00:34:18.482 --> 00:34:19.482
+All right.
+
+00:34:19.482 --> 00:34:20.482
+Fantastic.
+
+00:34:20.482 --> 00:34:25.883
+Yeah, those are all hard questions, but I like the question of like communicating it
+
+00:34:25.883 --> 00:34:28.802
+versus just dealing with it, because those are two different things.
+
+00:34:28.802 --> 00:34:29.802
+All right.
+
+00:34:29.802 --> 00:34:32.883
+I have a question in Slido from Tamalu.
+
+00:34:32.883 --> 00:34:37.042
+If you would like to unmute and ask your question live, that would be great.
+
+00:34:37.042 --> 00:34:40.242
+And I will highlight it in Slido and put it in the chat.
+
+00:34:40.242 --> 00:34:46.242
+Sorry, Libby, I might need help with spelling to unmute them.
+
+00:34:46.242 --> 00:34:49.242
+Oh, there it is.
+
+00:34:49.242 --> 00:34:50.242
+Okay.
+
+00:34:50.242 --> 00:34:51.242
+Hello.
+
+00:34:51.242 --> 00:34:55.242
+If you're there, hey.
+
+00:34:55.242 --> 00:34:56.242
+Yeah.
+
+00:34:56.242 --> 00:34:57.242
+Yes.
+
+00:34:57.603 --> 00:35:05.003
+So I want to ask, what kind of models do you use for personally identifiable data redaction
+
+00:35:05.003 --> 00:35:08.003
+and other sensitive data redaction?
+
+00:35:08.003 --> 00:35:15.003
+Yeah, I actually don't work that much on that.
+
+00:35:15.003 --> 00:35:21.003
+Yeah, I'm either doing internal work where I'm directly working with the PII and, you
+
+00:35:21.003 --> 00:35:24.482
+know, data is iterated, but you can share just internally.
+
+00:35:24.482 --> 00:35:30.322
+And so there's, you know, more versatility about what can be shared.
+
+00:35:30.322 --> 00:35:33.242
+Or it's on the public-facing side where things are fully aggregated.
+
+00:35:33.242 --> 00:35:38.522
+We have like rules around, you know, values under 10 not being reported, things like that.
+
+00:35:38.522 --> 00:35:42.922
+So it's very strict of like limitations on the data that's being reported there.
+
+00:35:42.922 --> 00:35:47.443
+So I think I tend to fall on either two sides of that, where it's either fully aggregated,
+
+00:35:47.443 --> 00:35:53.563
+you know, not any PII, or I'm fully working with PII and it's just for internal use.
+
+00:35:53.642 --> 00:35:58.683
+But yeah, I don't have as much experience with the redaction side of things.
+
+00:35:58.683 --> 00:35:59.683
+That is totally okay.
+
+00:35:59.683 --> 00:36:01.563
+That was a great question, Tamalou.
+
+00:36:01.563 --> 00:36:06.963
+And if anybody does work in public health and does work in redaction or censoring of
+
+00:36:06.963 --> 00:36:09.042
+data, let us know in the chat.
+
+00:36:09.042 --> 00:36:13.883
+Let us know what you do and what models you use and how you take care, because it is super
+
+00:36:13.883 --> 00:36:14.883
+important.
+
+00:36:14.883 --> 00:36:18.482
+And we had a question that was also to the group.
+
+00:36:18.482 --> 00:36:20.963
+Oh, did I lose it?
+
+00:36:20.963 --> 00:36:21.963
+Nope, I found it.
+
+00:36:22.963 --> 00:36:29.163
+I'm going to highlight it and address this to everybody, because it says, for folks interested
+
+00:36:29.163 --> 00:36:33.123
+in public health, what are some good projects to work on?
+
+00:36:33.123 --> 00:36:40.563
+And I think that regardless of what field you're aiming for, whether it's public health
+
+00:36:40.563 --> 00:36:45.683
+or not, everyone is going to have some good ideas on types of projects that you can do
+
+00:36:45.683 --> 00:36:47.762
+and the ways that you can share your work.
+
+00:36:47.762 --> 00:36:49.123
+So we'll open this up to everybody.
+
+00:36:49.123 --> 00:36:51.883
+Please share in the chat.
+
+00:36:51.883 --> 00:36:56.322
+And this is an anonymous question, but I will stick it here.
+
+00:36:56.322 --> 00:36:57.322
+Maybe we can make a thread.
+
+00:36:57.322 --> 00:37:01.683
+But Allie, I was wondering, do you have any advice for this person?
+
+00:37:01.683 --> 00:37:07.482
+If someone is interested in getting into public health, are there some good projects they
+
+00:37:07.482 --> 00:37:10.202
+might be able to work on with public data that they could find?
+
+00:37:10.202 --> 00:37:11.202
+Yeah.
+
+00:37:11.202 --> 00:37:15.482
+So there's a lot of public data that gets put out, you know, where you can find ours,
+
+00:37:15.482 --> 00:37:22.163
+you can look at the Y2H website or Open Data Portal, but then, yeah, CDC is also a great
+
+00:37:22.163 --> 00:37:23.163
+source for this.
+
+00:37:23.163 --> 00:37:28.322
+In terms of really open projects that are, you know, high-level complexity, but anyone
+
+00:37:28.322 --> 00:37:36.003
+can participate in, there's COVIDNet and FluNet for predictions and forecasting around those.
+
+00:37:36.003 --> 00:37:37.723
+It's fully set up to execute repos.
+
+00:37:37.723 --> 00:37:42.603
+You can see the data that you get to use and what the forecasting data has to look like
+
+00:37:42.603 --> 00:37:43.603
+for that.
+
+00:37:43.723 --> 00:37:49.003
+But yeah, they're interesting forecasting challenges, really challenging problems.
+
+00:37:49.003 --> 00:37:51.922
+But it's a nice way to, if you just want to start working with the data and try out and
+
+00:37:51.922 --> 00:37:55.563
+see what it would look like to do, it's very well set up to work with.
+
+00:37:55.563 --> 00:37:56.563
+Cool.
+
+00:37:56.563 --> 00:38:01.642
+I'm going to add the link to COVIDNet in there and let me see if I can find FluNet as well,
+
+00:38:01.642 --> 00:38:05.042
+or maybe Isabella can find it.
+
+00:38:05.042 --> 00:38:08.882
+And then we had a couple of people drop some of the other things that Allie mentioned there,
+
+00:38:08.882 --> 00:38:12.082
+like data.wa.gov from Andy Cooper.
+
+00:38:12.082 --> 00:38:13.082
+Thank you.
+
+00:38:13.562 --> 00:38:20.043
+Jason had added data.gov, overarching data.gov, which is an amazing resource.
+
+00:38:20.043 --> 00:38:26.082
+And the data portal on data.gov is where I go for a lot of stuff because there are state
+
+00:38:26.082 --> 00:38:31.202
+organizations, municipalities, there's all kinds of stuff in the data portal.
+
+00:38:31.202 --> 00:38:36.002
+And then everybody hop in the chat and just take a look at some of the answers that people
+
+00:38:36.002 --> 00:38:41.483
+are giving, connect with people, chat with them more, ask them questions.
+
+00:38:41.483 --> 00:38:44.522
+Dylan says, I'm very interested in hearing these answers because I'm a data science professor
+
+00:38:44.522 --> 00:38:46.522
+and I want to help my students.
+
+00:38:46.522 --> 00:38:47.882
+We all want to help students.
+
+00:38:47.882 --> 00:38:54.562
+We want everybody to learn good things and have good takeaways.
+
+00:38:54.562 --> 00:38:59.882
+Prajesh had said for PII redaction that they have cloud plugins as well.
+
+00:38:59.882 --> 00:39:02.483
+And there was a question around AI.
+
+00:39:02.483 --> 00:39:07.082
+So I'd like to transition, let's use Prajesh's comment to transition to a question that might
+
+00:39:07.122 --> 00:39:11.562
+be posed to both Ali and Paul.
+
+00:39:11.562 --> 00:39:17.723
+Paul, I put it for Paul in the chat, but I don't know if Paul's going to have a bunch of.
+
+00:39:19.283 --> 00:39:20.603
+Oh, no, Paul did respond.
+
+00:39:20.603 --> 00:39:26.642
+OK, so the question was, how do you think about where you invest limited resources in
+
+00:39:26.642 --> 00:39:29.483
+this time of manufactured scarcity and public health?
+
+00:39:29.483 --> 00:39:35.363
+I have concerns about investing in these marketed as AI tools when we could instead be using
+
+00:39:35.363 --> 00:39:39.762
+financial resources to rehire and retain public health professionals.
+
+00:39:41.163 --> 00:39:48.043
+And so Paul had said, like, this requires careful assessment and having a really grounded
+
+00:39:48.043 --> 00:39:52.483
+understanding in data science that can give benchmarking comparisons to see how things
+
+00:39:52.483 --> 00:39:53.363
+really perform.
+
+00:39:54.642 --> 00:40:00.082
+And so far, the best value lies in the small admin and the bureaucratic type tasks.
+
+00:40:00.243 --> 00:40:06.762
+So, Ali, where does AI succeed in your eyes and where is it maybe falling short as far as
+
+00:40:06.762 --> 00:40:07.283
+public health?
+
+00:40:08.163 --> 00:40:15.243
+Yeah, I think advantage of AI is often like a scaling question of places where I've seen it do
+
+00:40:15.243 --> 00:40:20.202
+interesting work is around like digitizing records where it's like thousands and thousands of
+
+00:40:20.202 --> 00:40:24.963
+records in this work that just wouldn't happen because it's just like too much manual work
+
+00:40:24.963 --> 00:40:28.882
+that is not feasible and there's just not the resources to do that.
+
+00:40:29.122 --> 00:40:30.803
+So I think there's interesting opportunities there.
+
+00:40:31.682 --> 00:40:37.522
+I think I would always prioritize people over AI, especially at a time of limited resources.
+
+00:40:39.043 --> 00:40:41.603
+Yeah, that would be always my preference.
+
+00:40:42.483 --> 00:40:46.963
+But I think, yeah, for that, like scaling, and I think it's often the work that wouldn't happen.
+
+00:40:46.963 --> 00:40:51.843
+I think there's some work where it's like that was the goal with our pilot around the
+
+00:40:51.843 --> 00:40:57.682
+overdose reporting is that this is really time intensive manual work that has to happen and is
+
+00:40:57.762 --> 00:40:59.363
+keeping people from other work.
+
+00:40:59.363 --> 00:41:04.322
+And I'd love to be able to replace more of that because it's like, yeah, just to do these kind
+
+00:41:04.322 --> 00:41:10.483
+of standardized reporting things is, yeah, it's like high priority, it has to happen, but it's
+
+00:41:10.483 --> 00:41:15.923
+very time intensive and it keeps people from being able to look at things deeper and do the
+
+00:41:15.923 --> 00:41:17.522
+further work that we would like to be doing.
+
+00:41:17.522 --> 00:41:20.243
+So I think it's always like it's ideally a partnership.
+
+00:41:20.243 --> 00:41:22.723
+I think you really need that human review and knowledge.
+
+00:41:22.723 --> 00:41:26.723
+So I think it really, really is a partnership, but I would like to be able to take more of that
+
+00:41:27.202 --> 00:41:28.882
+that work away from people.
+
+00:41:29.522 --> 00:41:31.442
+Fantastic stuff that's getting in the way.
+
+00:41:31.442 --> 00:41:36.403
+And that is not maybe bringing anybody a ton of value, personal value to do it themselves.
+
+00:41:37.442 --> 00:41:39.522
+Okay, we had an anonymous question.
+
+00:41:41.522 --> 00:41:46.723
+And I know that Ali, you said that you were coming from cancer research, right?
+
+00:41:46.723 --> 00:41:49.762
+Not specifically public health as a background.
+
+00:41:49.762 --> 00:41:54.483
+This person is asking for someone who's interested in starting a career in public health with a
+
+00:41:54.483 --> 00:41:55.762
+background in science.
+
+00:41:55.762 --> 00:42:00.243
+With a background in statistics, data science and AI, how would you recommend breaking into
+
+00:42:00.243 --> 00:42:00.803
+the field?
+
+00:42:00.803 --> 00:42:05.762
+Specifically, how would you recommend gaining that domain knowledge to be qualified to break
+
+00:42:05.762 --> 00:42:06.403
+into the field?
+
+00:42:07.043 --> 00:42:11.603
+Is there anything specific that you did to kind of change your trajectory?
+
+00:42:11.603 --> 00:42:17.442
+Yeah, I think it was definitely a bit of a different time when I broke into public health.
+
+00:42:17.442 --> 00:42:22.002
+It was, yeah, it was during COVID and there was just really, really that need for additional
+
+00:42:22.002 --> 00:42:28.562
+data science support and to build out systems that could scale and just how do you deal
+
+00:42:28.562 --> 00:42:33.122
+with more data and topics around like moving to the cloud and things like that.
+
+00:42:34.403 --> 00:42:38.803
+I think those are still like all current problems that we face and are still relevant.
+
+00:42:40.002 --> 00:42:42.483
+But it was like some of those were kind of newer problems.
+
+00:42:42.483 --> 00:42:46.163
+And so there was definitely more room to break in from a computer science background.
+
+00:42:46.163 --> 00:42:50.082
+And yeah, computational biology, similar skills.
+
+00:42:50.082 --> 00:42:50.803
+That says it that way.
+
+00:42:50.803 --> 00:42:55.603
+So I think you can always take your skills and they will be a value.
+
+00:42:56.963 --> 00:43:00.002
+I think I always was just like personally interested in public health and I was really
+
+00:43:00.002 --> 00:43:01.043
+interested in infectious disease.
+
+00:43:01.043 --> 00:43:03.363
+So I was always just reading a lot about that.
+
+00:43:03.363 --> 00:43:07.682
+And it's like good to get, you can do little projects of getting started and trying out
+
+00:43:07.682 --> 00:43:08.803
+working with public health data.
+
+00:43:10.243 --> 00:43:14.882
+It's great way to, you know, get your feet wet of like, what does it mean?
+
+00:43:14.882 --> 00:43:17.122
+What does it look like to work with public health data?
+
+00:43:18.002 --> 00:43:19.202
+Yeah, get excited about it.
+
+00:43:19.202 --> 00:43:20.642
+Go read publications and papers.
+
+00:43:20.642 --> 00:43:26.243
+I feel like if you get the chance to talk to somebody, your passion for something and
+
+00:43:26.243 --> 00:43:30.243
+your interest in something will come through in your conversations with them because you
+
+00:43:30.243 --> 00:43:35.843
+won't be the one asking really, really high level questions.
+
+00:43:35.843 --> 00:43:37.762
+You'll be asking more nuanced questions, right?
+
+00:43:37.762 --> 00:43:40.723
+You'll be asking better questions and it will show through.
+
+00:43:40.723 --> 00:43:47.202
+In our episode with Alex Gold that we had a couple of years ago now, maybe a year ago,
+
+00:43:47.202 --> 00:43:51.283
+he focused on like his hiring decisions being talking with people who are asking really
+
+00:43:51.283 --> 00:43:53.442
+good questions and what a good question looks like.
+
+00:43:54.562 --> 00:43:59.682
+And so I feel like if you want to get to the good questions, you have to go do the research
+
+00:44:00.803 --> 00:44:02.723
+and be really interested in the domain.
+
+00:44:03.442 --> 00:44:05.043
+That was a fantastic anonymous question.
+
+00:44:05.043 --> 00:44:08.403
+And I have another one that I think is so fun that I just saw pop up.
+
+00:44:08.403 --> 00:44:09.283
+Put it in the chat here.
+
+00:44:09.283 --> 00:44:15.122
+It says, what are the top five R packages besides the tidyverse that you use regularly
+
+00:44:15.122 --> 00:44:16.322
+for Epi projects?
+
+00:44:16.403 --> 00:44:17.442
+I'll put you on the spot.
+
+00:44:17.442 --> 00:44:18.082
+We'll let you know.
+
+00:44:18.082 --> 00:44:19.202
+Okay, top five.
+
+00:44:19.202 --> 00:44:19.442
+Okay.
+
+00:44:21.603 --> 00:44:22.882
+So I've been doing a lot of nowcasting.
+
+00:44:22.882 --> 00:44:27.283
+I'm a big fan of the Epi nowcast and baseline nowcast packages.
+
+00:44:27.283 --> 00:44:33.363
+They're really well implemented and good ways to get started with nowcasting and have various
+
+00:44:33.363 --> 00:44:37.923
+levels of like the most basic models to like you can do a lot of complexity in your models
+
+00:44:37.923 --> 00:44:43.122
+in terms of like how fine grained of like different patterns you're looking for and
+
+00:44:43.522 --> 00:44:46.882
+incorporating like day-to-week effects and all these different reporting kind of patterns
+
+00:44:46.882 --> 00:44:47.682
+that happen.
+
+00:44:47.682 --> 00:44:48.483
+So I like those.
+
+00:44:50.082 --> 00:44:51.043
+Record linkage.
+
+00:44:52.642 --> 00:44:57.202
+I guess I've done a different, not always are, but fuzzy join is always a good way.
+
+00:44:57.202 --> 00:45:03.043
+And I will put a plug in for one of my colleagues made a Rust implementation of fuzzy join called
+
+00:45:03.043 --> 00:45:03.682
+fuzzy join.
+
+00:45:03.682 --> 00:45:04.163
+That's cool.
+
+00:45:05.122 --> 00:45:05.843
+It's really fast.
+
+00:45:05.843 --> 00:45:07.363
+So that's an interesting one to work with.
+
+00:45:08.243 --> 00:45:09.043
+I'll share that one.
+
+00:45:09.682 --> 00:45:12.483
+I've enjoyed recently DizNetwork.
+
+00:45:12.483 --> 00:45:18.803
+I was like, yeah, working with some like tree data and I was looking at like employee data
+
+00:45:18.803 --> 00:45:19.603
+like in structures.
+
+00:45:19.603 --> 00:45:24.002
+And so it's a great, it was so nice for interactive, like tree and graph visualizations.
+
+00:45:25.522 --> 00:45:27.442
+Yeah, I really enjoyed that.
+
+00:45:27.442 --> 00:45:30.322
+And it made it a lot easier to look at the data that I was working with.
+
+00:45:32.403 --> 00:45:40.403
+Yeah, I think, yeah, I'm going to add fuzzy join, which is from John Downs.
+
+00:45:40.403 --> 00:45:44.963
+He gave a presentation about it at Cascadia Conf this year, which I freaking loved.
+
+00:45:44.963 --> 00:45:49.202
+And I am trying to get John to come on the data science lab to talk about the challenges
+
+00:45:49.202 --> 00:45:54.163
+of fuzzy joins, how fuzzy join as a package solves that problem.
+
+00:45:54.803 --> 00:45:59.122
+John, if you're listening, Ali, go tell John, reply to Libby's email.
+
+00:45:59.122 --> 00:46:02.642
+Come on the data science lab with Isabella and Libby.
+
+00:46:02.642 --> 00:46:03.682
+Yes, waka waka.
+
+00:46:04.723 --> 00:46:08.243
+Daniel, I think you were there watching that talk with me.
+
+00:46:08.243 --> 00:46:09.043
+It was so good.
+
+00:46:09.043 --> 00:46:10.163
+We had such a fun time.
+
+00:46:10.163 --> 00:46:11.603
+Okay, fantastic.
+
+00:46:12.642 --> 00:46:15.762
+Can we get in one more question in our last five minutes?
+
+00:46:15.762 --> 00:46:18.322
+Because I would love to ask you for a piece of career advice.
+
+00:46:18.322 --> 00:46:19.442
+Maybe we can even get into.
+
+00:46:21.603 --> 00:46:27.682
+Yeah, I think one thing I've done really useful in my career is just like making connections
+
+00:46:27.682 --> 00:46:31.442
+in your organization to people who work in a very different area to you.
+
+00:46:32.322 --> 00:46:37.522
+I've always found it really helpful for like learning about the organization
+
+00:46:37.603 --> 00:46:41.922
+and things about the data that you're working with.
+
+00:46:41.922 --> 00:46:46.562
+And they'll often have knowledge about a data set that I didn't even know existed
+
+00:46:46.562 --> 00:46:49.282
+or how something was done in the past.
+
+00:46:49.282 --> 00:46:51.202
+And that's always really useful.
+
+00:46:52.082 --> 00:46:53.603
+It pays to be in person.
+
+00:46:53.603 --> 00:46:55.603
+I feel like much easier to do in person.
+
+00:46:55.603 --> 00:46:59.763
+Bring food in was always a way to just draw people and you could meet a lot of people.
+
+00:46:59.763 --> 00:47:00.883
+But it's definitely harder.
+
+00:47:00.883 --> 00:47:05.682
+I work remote now based in Seattle, but we're working remotely for Washington.
+
+00:47:06.243 --> 00:47:08.562
+And so figuring out how to do that.
+
+00:47:08.562 --> 00:47:13.682
+I think like just scheduling kind of those like more informal coffee chats,
+
+00:47:13.682 --> 00:47:15.763
+virtual coffee chats has been really helpful.
+
+00:47:16.963 --> 00:47:19.603
+When there's a chance to be in person, I like go in every once in a while
+
+00:47:19.603 --> 00:47:21.603
+and I'll tell everyone and try and get them to come.
+
+00:47:22.322 --> 00:47:25.763
+And then finding those people in your organization who seem to know everyone
+
+00:47:25.763 --> 00:47:28.883
+and taking advantage of that because they will be able to introduce you
+
+00:47:29.603 --> 00:47:30.723
+to people that are very helpful.
+
+00:47:31.523 --> 00:47:33.442
+These are fantastic suggestions.
+
+00:47:33.442 --> 00:47:34.243
+I love that.
+
+00:47:34.562 --> 00:47:35.763
+Go find somebody.
+
+00:47:35.763 --> 00:47:41.042
+Go find their Rachel at an organization who's been there for a million years
+
+00:47:41.042 --> 00:47:44.802
+and knows all the people and is going to be fully open to just like
+
+00:47:44.802 --> 00:47:46.643
+introducing you to everybody.
+
+00:47:46.643 --> 00:47:48.003
+And now I get to do that too.
+
+00:47:48.003 --> 00:47:49.363
+New people will message me and I'll be like,
+
+00:47:49.363 --> 00:47:50.162
+have you met this person?
+
+00:47:50.162 --> 00:47:50.963
+Have you met this person?
+
+00:47:50.963 --> 00:47:51.763
+Have you met this person?
+
+00:47:52.322 --> 00:47:55.763
+I will be more than happy to invite you to talk to everybody.
+
+00:47:55.763 --> 00:47:59.843
+But yes, when you can go have coffee chats, do all that stuff.
+
+00:47:59.843 --> 00:48:00.402
+Fantastic.
+
+00:48:00.402 --> 00:48:00.883
+Okay.
+
+00:48:00.883 --> 00:48:04.003
+I had a question that came in that I thought was so funny in Slido
+
+00:48:04.003 --> 00:48:08.562
+because it says, this is being asked as I type, but I don't think we answered it.
+
+00:48:08.562 --> 00:48:09.363
+It was anonymous.
+
+00:48:09.363 --> 00:48:13.042
+And it says, I know some other data folks at DOH and seem to recall
+
+00:48:13.042 --> 00:48:14.562
+SAS being a major tool.
+
+00:48:14.562 --> 00:48:16.402
+Are other tools coming into the mix?
+
+00:48:17.202 --> 00:48:21.682
+This is being asked as I typed, but we didn't get to specifically address SAS.
+
+00:48:21.682 --> 00:48:22.723
+Are you a SAS user?
+
+00:48:22.723 --> 00:48:24.802
+Are there SAS users at DOH?
+
+00:48:24.802 --> 00:48:25.763
+Is it still in the mix?
+
+00:48:26.723 --> 00:48:27.763
+Yeah, definitely.
+
+00:48:27.763 --> 00:48:28.963
+I'm not a SAS user.
+
+00:48:28.963 --> 00:48:31.442
+There are certainly still some SAS users.
+
+00:48:31.442 --> 00:48:34.883
+It's definitely less, I think, historically in public health,
+
+00:48:34.883 --> 00:48:37.922
+it was much more of a true used language.
+
+00:48:39.523 --> 00:48:41.123
+Less true kind of when I joined.
+
+00:48:42.883 --> 00:48:48.402
+I think the cost of a SAS license is always a good argument for moving away from SAS.
+
+00:48:49.922 --> 00:48:53.843
+But yeah, so I have helped a little bit with sometimes people migrating away from SAS.
+
+00:48:54.723 --> 00:48:57.042
+But it definitely does have a historic use.
+
+00:48:57.042 --> 00:48:58.802
+And there are some things that just will continue.
+
+00:48:59.763 --> 00:49:01.042
+Amazing.
+
+00:49:01.042 --> 00:49:01.542
+OK.
+
+00:49:03.922 --> 00:49:08.643
+I wanted to see if there were any that were short enough that we could get them in the
+
+00:49:08.643 --> 00:49:10.243
+three minutes that we have left.
+
+00:49:11.363 --> 00:49:15.042
+I'm going through and trying to mark some as answered that I think that we answered
+
+00:49:15.042 --> 00:49:22.723
+because we covered like Ojo had asked something about data quality issues for duplications.
+
+00:49:22.723 --> 00:49:23.682
+We covered that.
+
+00:49:24.402 --> 00:49:28.402
+Nor had asked what the data stack looks like and whether or not you're more data engineering
+
+00:49:28.402 --> 00:49:31.843
+or like pathogen surveillance or a mix.
+
+00:49:31.843 --> 00:49:33.202
+I think we covered most of that.
+
+00:49:33.202 --> 00:49:37.603
+But do you want to cover any more details on that?
+
+00:49:37.603 --> 00:49:44.963
+You're split between like data engineering that you do versus analysis or like epigenetics
+
+00:49:44.963 --> 00:49:46.643
+or epidemiology.
+
+00:49:47.363 --> 00:49:48.162
+Yeah.
+
+00:49:48.162 --> 00:49:50.562
+Yeah, I think I kind of fall in between in the middle.
+
+00:49:50.883 --> 00:49:52.883
+And my team in general does a mix of both.
+
+00:49:53.763 --> 00:49:55.682
+We're not like pathogen specific.
+
+00:49:55.682 --> 00:49:59.202
+Like we kind of are more like central data science resource.
+
+00:49:59.202 --> 00:50:04.082
+We're working on projects across anything that the agency covers.
+
+00:50:04.082 --> 00:50:09.442
+Yeah, I've done like respiratory and pertussis and other vaccine-preventable diseases and
+
+00:50:09.442 --> 00:50:11.682
+like zoonotic disease and then the drug overdose work.
+
+00:50:12.483 --> 00:50:18.643
+So, yeah, I kind of get to have a little bit of work in everything and just find wherever
+
+00:50:18.643 --> 00:50:19.442
+help is needed.
+
+00:50:20.562 --> 00:50:22.162
+To be able to move on to those projects.
+
+00:50:23.843 --> 00:50:28.003
+So, yeah, it's a little more on the data science side in Linux, but I don't think I'm in my
+
+00:50:28.003 --> 00:50:30.963
+start at DOH was definitely kind of being more on that data engineering.
+
+00:50:32.243 --> 00:50:34.802
+Our stack may look like so many different things.
+
+00:50:34.802 --> 00:50:39.042
+There's so much work that is still just happening on network drives and things being shared
+
+00:50:39.042 --> 00:50:39.363
+that way.
+
+00:50:39.363 --> 00:50:41.442
+And then some things that are moving more into the cloud.
+
+00:50:41.442 --> 00:50:46.402
+And we have Unity Catalog and Databricks.
+
+00:50:46.402 --> 00:50:49.363
+And then there's a little closet cloud environment.
+
+00:50:49.363 --> 00:50:50.402
+It sounds like a big mix.
+
+00:50:50.402 --> 00:50:51.763
+I think a lot of people can relate to that.
+
+00:50:51.763 --> 00:50:55.603
+Yeah, some of the stuff we have in Unity Catalog, Unity Catalog is Databricks for anybody who's
+
+00:50:55.603 --> 00:50:56.883
+not aware.
+
+00:50:56.883 --> 00:50:58.483
+I'm not a Databricks user either.
+
+00:50:58.483 --> 00:50:59.202
+So I am.
+
+00:50:59.202 --> 00:51:05.042
+I just have Databricks imposter syndrome because I never know fully as a user.
+
+00:51:05.843 --> 00:51:08.723
+This has been so much information.
+
+00:51:08.723 --> 00:51:14.003
+I hope everybody learned a lot today about NowCasting, about public health in general.
+
+00:51:14.883 --> 00:51:20.402
+Allie, if anybody wants to connect with you, is it OK if I put your LinkedIn in the chat?
+
+00:51:21.282 --> 00:51:21.523
+Yes.
+
+00:51:22.082 --> 00:51:22.243
+OK.
+
+00:51:22.243 --> 00:51:22.643
+Definitely.
+
+00:51:23.523 --> 00:51:24.562
+I'll put my email below.
+
+00:51:24.562 --> 00:51:26.483
+I admit I'm bad on LinkedIn.
+
+00:51:26.483 --> 00:51:28.402
+So I'll put my email.
+
+00:51:28.402 --> 00:51:30.322
+I am also trying to break up with LinkedIn.
+
+00:51:30.322 --> 00:51:31.123
+I took it off my phone.
+
+00:51:31.763 --> 00:51:36.402
+Anybody who sent me a message lately and it's late to reply, that's because I'm trying to
+
+00:51:36.402 --> 00:51:38.082
+have good hygiene.
+
+00:51:39.042 --> 00:51:40.243
+But yes, thank you.
+
+00:51:40.243 --> 00:51:42.643
+Allie's contact info is in the chat.
+
+00:51:42.643 --> 00:51:45.123
+Thank you, everybody, for showing up and hanging out with us today.
+
+00:51:45.123 --> 00:51:46.723
+We love hanging out with you.
+
+00:51:46.723 --> 00:51:51.922
+We have so many more amazing people just booked up through the rest of the year.
+
+00:51:51.922 --> 00:51:56.082
+Keep coming back and hanging out with us, whether you get a reminder email a day before
+
+00:51:56.082 --> 00:51:57.843
+or two hours before.
+
+00:51:57.843 --> 00:52:01.042
+Put something on your calendar for Thursday at 12 p.m. Eastern.
+
+00:52:01.042 --> 00:52:05.123
+And then also, if you would like to join us at the Data Science Lab, Isabella and I would
+
+00:52:05.123 --> 00:52:06.243
+love to hang out with you.
+
+00:52:06.243 --> 00:52:07.843
+We have all of our chat on Discord.
+
+00:52:07.843 --> 00:52:09.843
+We are there same time, same place.
+
+00:52:09.843 --> 00:52:17.363
+But on Tuesdays, you can go to pos.at slash dslab to register for that one.
+
+00:52:17.363 --> 00:52:18.802
+Isabella just put that in the chat.
+
+00:52:18.802 --> 00:52:22.643
+We are rounding off the end of Testober.
+
+00:52:22.643 --> 00:52:27.603
+So we are doing testing for Shiny in Python with Barrett Schlerke, who is on the Shiny
+
+00:52:27.603 --> 00:52:28.402
+team here at Posit.
+
+00:52:29.042 --> 00:52:30.082
+Barrett's always a good time.
+
+00:52:30.082 --> 00:52:32.643
+He's open to so many interesting questions.
+
+00:52:33.442 --> 00:52:35.442
+Allie, thank you so much for joining us today.
+
+00:52:35.442 --> 00:52:36.243
+This was a lot of fun.
+
+00:52:36.243 --> 00:52:37.202
+I hope you had fun, too.
+
+00:52:37.922 --> 00:52:38.883
+Thanks so much for having me.
+
+00:52:39.763 --> 00:52:44.483
+Yes, and thank you for being a wonderful speaker at Virtual Day at PositConf this year.
+
+00:52:44.483 --> 00:52:45.922
+Absolutely loved working with you.
+
+00:52:46.562 --> 00:52:48.723
+Everybody, I hope you had a good time.
+
+00:52:48.723 --> 00:52:51.603
+I will see you on Tuesday or I'll see you next week on Thursday.
+
+00:52:52.643 --> 00:52:57.042
+The chat file will be in the Discord because I just saw that Isabella saved it.
+
+00:52:57.042 --> 00:52:58.402
+But you can save it, too, if you want.
+
+00:52:58.402 --> 00:53:03.763
+There's three dots in the top right-hand corner of your chat pane where you can save
+
+00:53:03.763 --> 00:53:04.483
+the chat.
+
+00:53:04.483 --> 00:53:06.003
+Okay, I'll see you on Discord, everybody.
+
+00:53:06.003 --> 00:53:06.503
+Bye!
+
+00:53:07.202 --> 00:53:07.702
+Bye!

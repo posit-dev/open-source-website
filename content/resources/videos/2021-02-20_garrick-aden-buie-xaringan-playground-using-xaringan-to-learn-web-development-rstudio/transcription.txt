@@ -26,4 +26,4 @@
 
 <p><a data-t="264">One last note, when you're done, you should put these styles in a CSS file.</a></p>
 
-<p><a data-t="278">Okay, I hope you enjoyed this and learned a little.</a> <a data-t="283">Go explore and have fun.</a> <a data-t="285">And also, check out Scheringen Extra.</a> <a data-t="287">It's an R package that brings lots of little goodies to Scheringen.</a> <a data-t="291">Go make great slides.</a></p>
+<p><a data-t="270">Okay, I hope you enjoyed this and learned a little.</a> <a data-t="278">Go explore and have fun.</a> <a data-t="280">And also, check out Scheringen Extra.</a> <a data-t="282">It's an R package that brings lots of little goodies to Scheringen.</a> <a data-t="286">Go make great slides.</a></p>

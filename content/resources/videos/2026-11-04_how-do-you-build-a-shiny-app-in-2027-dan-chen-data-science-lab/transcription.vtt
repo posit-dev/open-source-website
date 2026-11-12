@@ -1,0 +1,1012 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:13.080
+Welcome back to the Data Science Lab everybody, we're so happy you're here. This is where we
+
+00:00:13.080 --> 00:00:18.959
+share about technical topics, this is where we just get together to nerd out, share screens,
+
+00:00:18.959 --> 00:00:26.559
+and we are all about question asking and transparency. Oh look, I've been posting
+
+00:00:26.559 --> 00:00:30.480
+the links to the waiting room participants and didn't realize it, not to everybody in the chat.
+
+00:00:30.480 --> 00:00:38.040
+Well there we go. I am so excited to be joined by our featured lab manager today, Daniel Chen.
+
+00:00:38.040 --> 00:00:45.360
+Daniel, would you like to introduce yourself? Hello everyone, I'm Daniel, I am a lecturer at
+
+00:00:45.360 --> 00:00:55.160
+the University of British Columbia and longtime member of the lab crew, hangout crew, so nice
+
+00:00:55.160 --> 00:01:04.879
+to be able to talk here. Founding founding member. And what are we going to be talking, yes, from the
+
+00:01:04.879 --> 00:01:11.720
+beginning, what are we going to be talking about today Dan? Today we are going to walk through a
+
+00:01:11.720 --> 00:01:23.800
+like a basic introduction to Shiny application in R and sort of just show you how I sort of will
+
+00:01:23.959 --> 00:01:28.839
+create a new app and then a little bit of the basics and like how an app is structured and
+
+00:01:28.839 --> 00:01:35.279
+then maybe we'll get it deployed somehow so hopefully it all works out. It will all work
+
+00:01:35.279 --> 00:01:41.919
+out. I am making everybody yellow as I see you pop up, if you're not already yellow. If you're a
+
+00:01:41.919 --> 00:01:45.919
+different color, that's because you just have multiple roles. You're still, you're still a
+
+00:01:45.919 --> 00:01:53.680
+yellow, I promise. I am so excited about this topic and I was just telling Daniel before we
+
+00:01:53.680 --> 00:02:00.040
+hopped on here how excited I am to talk about basics. Daniel and I are both teachers who teach
+
+00:02:00.040 --> 00:02:07.519
+R, Python, Shiny, for data science, all of this stuff, and I find all the time that I have forgotten
+
+00:02:07.519 --> 00:02:15.479
+bits and pieces of the things that I learned years ago or that even that I teach or think that I
+
+00:02:15.479 --> 00:02:19.000
+know. So we're going to talk about fundamentals today but that does not mean that it's going to
+
+00:02:19.000 --> 00:02:26.119
+be low level or boring. It's going to be fun and if you find yourself with the ability to answer
+
+00:02:26.119 --> 00:02:31.880
+any questions that people have, I would love you as the community to hop in discord and help answer
+
+00:02:31.880 --> 00:02:38.279
+them. So today you might see people do things like put candle emojis in the chat or you might see
+
+00:02:39.000 --> 00:02:45.399
+things in the chat get flagged with a golf flag. The golf flag means this is a question. I have
+
+00:02:45.399 --> 00:02:50.199
+flagged it as a question or Dan has or someone in the community has helped us out by flagging it as
+
+00:02:50.199 --> 00:02:55.000
+a question so that we don't miss it. If there's ever a question that gets missed, please, please
+
+00:02:55.000 --> 00:02:58.919
+remind us. We're going to try to get to questions. If we can't get to them all today, we will follow
+
+00:02:58.919 --> 00:03:06.679
+up. And then the candles are a vigil for live coding. Daniel, how much live coding are we going
+
+00:03:06.679 --> 00:03:14.759
+to do today? I think it's going to be all of it. Okay, lots of candles are needed. I have some
+
+00:03:14.759 --> 00:03:19.240
+candles off to the side. I know lots of people have a few live candles. There might be some
+
+00:03:19.240 --> 00:03:28.119
+Claude live coding involved, but that's just even more treacherous. Okay, if you were here last week,
+
+00:03:28.119 --> 00:03:33.000
+you know that we had a whole episode pretty much predicated on the fact that Claude would work for
+
+00:03:33.000 --> 00:03:38.759
+an hour and Claude went down and betrayed us all. So everybody cross your fingers and light your
+
+00:03:38.759 --> 00:03:44.759
+candles. If your name is not yellow in Discord, I'm making it yellow shortly. All right, Dan,
+
+00:03:44.759 --> 00:03:50.119
+let's go ahead and I'll let you share your screen and we can get started. All right.
+
+00:03:54.520 --> 00:04:00.839
+And everybody, please let Dan know if like the text is too small, if we need to make things
+
+00:04:00.839 --> 00:04:08.440
+bigger, I will try to interrupt him and ask him to make things bigger and we'll get there together.
+
+00:04:09.160 --> 00:04:14.279
+Lots of candles in the chat happening. Thank you, everybody. Thank you.
+
+00:04:17.640 --> 00:04:22.679
+Raha says Dan is the best live coder I have ever seen and hopefully I didn't just jinx him.
+
+00:04:24.600 --> 00:04:30.679
+No pressure. Oh, Dan, can you share your screen? Are you able to?
+
+00:04:33.720 --> 00:04:37.079
+He's typing in Discord. This is what we're doing to him. We're distracting him.
+
+00:04:39.640 --> 00:04:45.160
+But hopefully you have permission to. Okay. Yeah. You do. Great. Great. All right, everybody.
+
+00:04:45.880 --> 00:04:50.600
+Can we see? Yes. I think it needs to be just a smidge bigger for text.
+
+00:04:56.600 --> 00:05:02.200
+Okay. I'm going to try again. Hello. Hopefully. I can hear you. Yeah. And see you.
+
+00:05:02.200 --> 00:05:05.720
+And we are going to try that again. All right. Is that good?
+
+00:05:06.200 --> 00:05:08.519
+Everyone can see? I think I can see. I can see the reference.
+
+00:05:08.519 --> 00:05:09.720
+I'm sorry. I haven't seen problems.
+
+00:05:10.920 --> 00:05:19.559
+We're off to a great start. Okay. So, a couple of things. I'll start creating a Shiny application
+
+00:05:20.760 --> 00:05:28.440
+right from the very beginning as if I was creating something for real. And that actually
+
+00:05:28.440 --> 00:05:36.200
+starts all the way in the world of GitHub. So, we'll go to GitHub.com slash new. That's the
+
+00:05:39.079 --> 00:05:46.679
+easier way to get to this new repository link. And using version control is always a good
+
+00:05:47.720 --> 00:05:56.600
+practice to have. And the other reason that I like to start my repositories in GitHub,
+
+00:05:56.600 --> 00:06:01.640
+if I know it's going to be under version control through GitHub, it helps with a lot of the
+
+00:06:01.640 --> 00:06:06.600
+plumbing so you don't have to set up repository remotes and things like that. So, we are going
+
+00:06:06.600 --> 00:06:17.079
+to call this 25 VS Lab. So, I usually date my repositories, again, mostly because if I go
+
+00:06:17.079 --> 00:06:24.600
+through this as a tutorial, again, I can literally do the same thing without, you know, with a unique
+
+00:06:24.600 --> 00:06:30.359
+name. So, I usually have a lot of dates in my repository names. It will be public. We don't
+
+00:06:30.359 --> 00:06:37.959
+really need a template, but we can sort of start off with a bunch of stuff if we need just to have
+
+00:06:37.959 --> 00:06:48.920
+a nonempty repository. Yeah, I learned about the GitHub slash new because I guess I've done enough
+
+00:06:50.040 --> 00:06:54.040
+live coding things where I'm like, okay, here's the quick way to get there, especially when you
+
+00:06:54.040 --> 00:07:01.320
+need to direct students into the, like, just go to this link. So, here's our URL. Here's our new
+
+00:07:01.320 --> 00:07:08.920
+repository. And I have my SSH keys set up. Do I have that set up? I believe I have it set up. I
+
+00:07:08.920 --> 00:07:16.679
+know I got a bunch of emails this morning about some things were expiring. But and this is sort
+
+00:07:16.679 --> 00:07:21.160
+of, like, where some of the magic is, is we are going to bring this folder from GitHub down to
+
+00:07:21.160 --> 00:07:27.000
+our computer. And because we know where in GitHub it exists, when we bring it to our computer,
+
+00:07:27.000 --> 00:07:31.559
+it sets up that connection between our computer and GitHub right away and it saves you a couple
+
+00:07:31.559 --> 00:07:45.000
+of extra steps. So, and the workflow I'm doing right now is creating a project from scratch. So,
+
+00:07:45.000 --> 00:07:49.480
+like, I haven't done anything on my local computer yet. So, if you sometimes do the workflow of,
+
+00:07:49.480 --> 00:07:54.200
+like, I'm going to start something first and then send it to GitHub, those buttons I clicked,
+
+00:07:55.000 --> 00:08:00.519
+which is oops. Those buttons I clicked.
+
+00:08:06.040 --> 00:08:10.119
+Those buttons I clicked here, you would typically leave them, like, alone. So, you don't end up,
+
+00:08:10.119 --> 00:08:15.239
+like, two different parallel trees and you have to merge that in Git. But we're starting from
+
+00:08:15.239 --> 00:08:23.399
+scratch. So, I'm okay with doing that. Okay. So, yes, we are totally going back to that.
+
+00:08:24.519 --> 00:08:30.679
+Deposit skills thing. Okay. So, we're going to bring this from a new folder from Git.
+
+00:08:31.480 --> 00:08:38.440
+And the other thing that I typically do as, like, a good thing or a good habit is in my
+
+00:08:38.440 --> 00:08:42.679
+home directory, I have a folder called Git. And you can see, like, I have some, like, subfolders
+
+00:08:42.679 --> 00:08:50.280
+already. But my suggestion to everyone is make a folder called Git in your home directory. And
+
+00:08:50.280 --> 00:08:55.400
+then all of your Git repositories go in that folder. It's a good way to make sure or keep
+
+00:08:55.400 --> 00:08:59.719
+all your Git repositories in one place because sometimes you don't not everything is a Git
+
+00:08:59.719 --> 00:09:09.159
+repository. And this way, yeah, like, all your Git repositories in one place. So, like, you're
+
+00:09:09.159 --> 00:09:15.960
+not, like, oh, here's the OneDrive folder. And there's some Git things there. They also don't
+
+00:09:15.960 --> 00:09:22.359
+like Git folders as well. So, keep everything in a Git folder and create subfolders as necessary.
+
+00:09:22.359 --> 00:09:26.599
+The other reason why I do this is it's really dangerous or you shouldn't, not necessarily
+
+00:09:26.599 --> 00:09:33.159
+dangerous, but Git gets really weird if you clone a repository inside another repository without
+
+00:09:33.159 --> 00:09:38.840
+setting up, like, Git submodules. And so, this also prevents you from doing something like that
+
+00:09:38.840 --> 00:09:42.840
+where the Git folder is always, like, a clean place for you to clone stuff.
+
+00:09:43.640 --> 00:09:53.080
+So, we're going to bring this folder down to our local computer. And one of the benefits of
+
+00:09:53.080 --> 00:09:58.520
+cloning it down, you'll see that, like, all of this Git stuff has already been set up and already
+
+00:09:58.520 --> 00:10:06.359
+has it will originally already have this connection to the remote repository. So, that's what this
+
+00:10:06.440 --> 00:10:13.080
+little purple thing is with the cloud. And so, we should be good to start for today.
+
+00:10:17.080 --> 00:10:24.760
+So, the other reason that I have, like, a Git folder, it's not, like, if you use Git
+
+00:10:24.760 --> 00:10:29.960
+hub for your other work. Me, personally, I also have a folder in my Git folder called private
+
+00:10:29.960 --> 00:10:35.479
+because not all my repositories are public. And so, it doesn't have to be just, like, create,
+
+00:10:35.479 --> 00:10:40.679
+like, a Git hub specific folder. Back in the day, I used to have, like, a Bitbucket account
+
+00:10:40.679 --> 00:10:44.599
+and a GitLab account and they used to have subfolders, but now everything's on Git hub,
+
+00:10:44.599 --> 00:10:50.440
+but then Git hub's been having a lot of outages. So, we're really trying to burn all the candles
+
+00:10:51.159 --> 00:11:02.119
+for today. Okay. Another thing, since this came up in the
+
+00:11:03.080 --> 00:11:10.840
+in the Discord channel is, yes, Git and Git hub get confused all the time. Git is the
+
+00:11:10.840 --> 00:11:17.159
+version control system and Git hub is where you put the repository the version control system
+
+00:11:17.880 --> 00:11:21.320
+creates. Think of it as, like, the cloud backup storage.
+
+00:11:21.960 --> 00:11:23.960
+Yeah. It's your remote.
+
+00:11:23.960 --> 00:11:29.239
+Okay. So, we now have our repository and we are going to create a
+
+00:11:30.200 --> 00:11:34.599
+Shiny app. And just to do some of the process a little make some of the process a little bit
+
+00:11:34.599 --> 00:11:40.520
+faster so we can talk through the code is I am going to fire up Cloud directly in this terminal
+
+00:11:41.559 --> 00:11:48.599
+and I'll accept the view there. The other thing that I have done in Positron right now
+
+00:11:48.599 --> 00:11:55.159
+is I am looking at this side by side layout. Usually, in data science mode, you're probably
+
+00:11:55.159 --> 00:12:00.840
+used to looking at the four or five pane view for the stacked layout. But since we're mostly
+
+00:12:00.840 --> 00:12:06.200
+going to be looking at the terminal, looking at some code, we're using the side by side layout
+
+00:12:06.200 --> 00:12:15.239
+just so things are as big as they can. Okay. So, we have Cloud loaded up. And then the question
+
+00:12:15.239 --> 00:12:22.039
+that someone saw was this thing about Posit skills. So, Posit, the folks on Posit, a lot of
+
+00:12:22.039 --> 00:12:29.719
+the engineers, have all collaborated or starting to work on a set of skills, which is really
+
+00:12:29.719 --> 00:12:37.960
+marked down instructions to do certain tasks. And so, you can find it at GitHub.com, Posit dev
+
+00:12:37.960 --> 00:12:45.080
+slash skills. And there's a lot of things in here. I typically install it and then check off
+
+00:12:45.080 --> 00:12:50.679
+everything and I'll show you how you can install it on your end. But the more important thing is
+
+00:12:50.679 --> 00:12:58.760
+we really need to make sure that we get the shiny bits involved. Mostly because of shiny BS lib,
+
+00:12:58.760 --> 00:13:07.000
+which is the newer or more modernish way of creating a shiny app in R. We talk a lot about
+
+00:13:07.000 --> 00:13:13.719
+Cordo in the data science lab. They have skills for how to write Cordo files. So, it's a really
+
+00:13:13.719 --> 00:13:21.400
+nice way of directing your LLM to the actual documentation instead of it trying to guess
+
+00:13:21.960 --> 00:13:28.039
+or figure out what to do from its training data. So, we can essentially install these skills.
+
+00:13:28.599 --> 00:13:34.840
+And the way this works, somewhere in here, there's an installation section. So, there are these
+
+00:13:35.080 --> 00:13:42.599
+MPM commands, MPX commands that you can copy paste to add. I'm using Claude. So, we're going to
+
+00:13:44.119 --> 00:13:49.479
+add the marketplace for Posit dev skills. So, you literally copy paste that.
+
+00:13:50.760 --> 00:13:58.599
+And then if we follow the instructions here, plugins. Manage Claude plugins.
+
+00:13:58.840 --> 00:14:08.280
+So, you can eventually go to the marketplaces. Make sure
+
+00:14:11.080 --> 00:14:14.200
+uh oh. Discover. Hold on. It's not on discover. Okay.
+
+00:14:17.799 --> 00:14:27.640
+Go to marketplaces. Select Posit. And then you can browse. And then all you can manually select
+
+00:14:27.719 --> 00:14:31.880
+all of these. So, you can see I've already installed a lot of these. But you can use the
+
+00:14:31.880 --> 00:14:37.960
+arrow keys. And I use the what is it? The space bar to select items. And then you'll see at the
+
+00:14:37.960 --> 00:14:43.239
+very bottom it says I to install. So, right now there's a new connect skill. So, I can hit I and
+
+00:14:43.239 --> 00:14:50.039
+it will now install that skill. So, all it's really doing is copying pasting markdown instructions
+
+00:14:50.039 --> 00:14:54.440
+into a dot Claude folder. So, now Claude knows how to do stuff.
+
+00:14:57.880 --> 00:15:03.799
+And I'm not currently using Posit Assistant. There's a couple of things that we might be
+
+00:15:03.799 --> 00:15:09.239
+able to show like where the differences between using Claude code versus Posit Assistant shows
+
+00:15:09.239 --> 00:15:14.679
+up. And I think we'll see that almost immediately when Claude starts to write some stuff.
+
+00:15:14.679 --> 00:15:25.239
+Okay. So, we're going to create a Shiny application. We are currently in TidyTuesday.
+
+00:15:25.239 --> 00:15:33.799
+So, what I'm going to do is have Claude create a TidyTuesday Shiny application for this week's
+
+00:15:33.799 --> 00:15:43.479
+dataset. And I did a quick look before this started. This week's dataset is around country
+
+00:15:43.479 --> 00:15:50.359
+music lyrics. So, that's what we'll be looking at. It was kind of funny because last week's
+
+00:15:50.359 --> 00:15:57.799
+was about the IELTS English exam. And it's pretty funny. My immigration process to Canada,
+
+00:15:57.799 --> 00:16:03.559
+I actually had to take CELPIP, which is another English exam. So, it would have been kind of fun
+
+00:16:03.559 --> 00:16:12.599
+to look at English exams. But this week we're on country music. Since the other thing that we've
+
+00:16:12.599 --> 00:16:21.080
+done, we can set a model. I don't think we need Fable. We'll just leave it at Opus right now
+
+00:16:21.080 --> 00:16:27.159
+because I kind of want to also save my tokens. So, we can set the model that way. We can set
+
+00:16:27.159 --> 00:16:36.200
+the effort to max. Sure. Maybe that's the way of balancing me not wanting to use Fable for this.
+
+00:16:37.159 --> 00:16:44.919
+And all that's going to do is one of the tradeoffs that you're doing is time to first token or
+
+00:16:44.919 --> 00:16:51.000
+forward to do stuff. Okay. Let's actually go ahead and create this application and then I'll
+
+00:16:51.000 --> 00:16:55.960
+talk about other stuff as it's kind of thinking. So, we're going to say create a Shiny app with
+
+00:16:56.039 --> 00:17:15.719
+this week's tidy Tuesday data. We'll say keep it simple since this is a live demo. Create it in a
+
+00:17:15.800 --> 00:17:25.800
+Shiny. The reason why I want to really specifically say keep it simple is because
+
+00:17:25.800 --> 00:17:30.839
+it actually will if you don't, like, tell it to keep it simple. What I've done right before
+
+00:17:30.839 --> 00:17:36.680
+starting is it made like a full blown, like, with theming and colors and all of this other stuff.
+
+00:17:38.040 --> 00:17:42.119
+Which is really nice, but it's a little bit too complicated of an example for
+
+00:17:43.079 --> 00:17:50.760
+just showing you how things work. So, this is sort of cooking in the background. You'll notice
+
+00:17:50.760 --> 00:17:54.760
+that, like, it's finding today's date and it's getting the contents. And if I very quickly
+
+00:17:55.880 --> 00:18:01.880
+look, like, yes, it is on country music lyrics. I'm also in auto mode. So, it's just going to
+
+00:18:01.880 --> 00:18:09.719
+just do its thing. But typically, I've been starting to put this in plan mode and reviewing
+
+00:18:09.719 --> 00:18:17.880
+plans. But then you end up prompting it. No, Libby, I cannot hear you.
+
+00:18:19.079 --> 00:18:24.599
+Don't think can anybody hear me? Thumbs up for me if you can hear Libby talking.
+
+00:18:24.599 --> 00:18:26.199
+Okay. Hold on. Hold on. Hold on.
+
+00:18:26.199 --> 00:18:33.719
+Okay. Raha says y'all can hear me. Anika says okay. I want to make sure Dan can hear me so
+
+00:18:33.719 --> 00:18:37.719
+that when I interrupt him to ask y'all's questions that he actually gets them.
+
+00:18:38.680 --> 00:18:42.839
+Okay. So, this is a me issue. I think it's Dan's computer. Yeah.
+
+00:18:44.520 --> 00:18:46.920
+Oh, wait. I can hear you now. You can hear me?
+
+00:18:47.719 --> 00:18:49.719
+Yes. Now you're the Verizon guy. Okay.
+
+00:18:50.680 --> 00:18:54.839
+I wanted to make sure that you could hear me so that I could ask you the questions that I see in
+
+00:18:54.839 --> 00:18:59.880
+the chat. Because I noticed a few times I was like, wait, I don't think Dan can hear what I'm
+
+00:18:59.880 --> 00:19:05.880
+saying. Okay. We fixed it, y'all. We made it. I wanted to say for anybody who had the question
+
+00:19:05.959 --> 00:19:12.359
+of how Dan got to the marketplace, because Amin had asked in the chat, you can literally type
+
+00:19:12.359 --> 00:19:18.280
+slash marketplace or slash plugin and you'll get there in Cloud. So, there's slash commands in
+
+00:19:18.280 --> 00:19:23.079
+Cloud that will get you all kinds of places. So, if Dan types a slash, you'll see them kind of pop
+
+00:19:23.079 --> 00:19:27.239
+up his little options. So, you just type slash marketplace. I believe.
+
+00:19:28.199 --> 00:19:33.640
+Yes. Yeah. Yeah. I'm just out of yeah. There we go. It's also the same as slash plugin,
+
+00:19:33.640 --> 00:19:38.760
+but yeah, you'll see slash marketplace. And in the instructions here, you'll see it like
+
+00:19:40.680 --> 00:19:45.640
+documented that way as well. Wonderful. Oh, plugin. I think I pluralized that. I'll go
+
+00:19:45.640 --> 00:19:49.719
+fix that in my oh, no, I got it right. Plugin. Yeah. So, this is adding it.
+
+00:19:50.599 --> 00:19:56.280
+This is adding it. And then I by habit, I go through the marketplace or through plugin.
+
+00:19:56.280 --> 00:19:59.560
+It's the same thing. And I find things through the menu system.
+
+00:20:00.119 --> 00:20:10.680
+Great. Okay. So, that's great. You'll notice that, yes, it is it has mentioned that
+
+00:20:11.719 --> 00:20:17.239
+today this is the correct date. We are using country music lyrics. And you'll see right here,
+
+00:20:17.239 --> 00:20:22.680
+it said skill shiny, shiny BS lib. So, it is actually understanding that we are creating a
+
+00:20:22.680 --> 00:20:30.680
+shiny app and we are creating a shiny for our app and shiny for our these days is using BS lib
+
+00:20:30.680 --> 00:20:39.400
+instead of the original functions that come with shiny to create the UI. And that's mostly because
+
+00:20:39.400 --> 00:20:45.560
+of the updated bootstrap library or CSS framework that's on top of shiny to make things, quote,
+
+00:20:45.560 --> 00:20:50.839
+unquote, look a little bit better. And you can see that being loaded right away.
+
+00:20:51.400 --> 00:20:55.880
+The other thing around skills with agents in general is I personally don't have that many
+
+00:20:55.880 --> 00:20:59.640
+skills loaded. A lot of some people just have they try to add everything and they get a little
+
+00:20:59.640 --> 00:21:04.839
+bit overboard. All of those skills and the description metadata get loaded in the context.
+
+00:21:06.119 --> 00:21:10.359
+Which means that, like, I'm on Opus right now, which has a million token context,
+
+00:21:10.359 --> 00:21:14.520
+which is totally fine. But if you're on other smaller models or if you're running on something
+
+00:21:14.520 --> 00:21:22.760
+local, those skills and everything, the agent needs to know that it exists. And knowing it
+
+00:21:22.760 --> 00:21:27.400
+exists means it needs to have some text written and that means it's in the context window. So,
+
+00:21:27.400 --> 00:21:31.560
+that's a little balance between, like, adding everything that you think is cool versus, like,
+
+00:21:31.560 --> 00:21:37.800
+just add what you need. Okay. So, we're running country music data and it says the data is clean
+
+00:21:37.800 --> 00:21:44.359
+and you can see that it's reading in this data set and it downloaded it and it created this app.r
+
+00:21:44.359 --> 00:21:53.400
+file. So, before we just continue, I'm just going to run it and see if this thing works.
+
+00:21:53.959 --> 00:21:58.359
+And then we'll talk a little bit about what's happening code wise.
+
+00:21:58.359 --> 00:22:05.000
+Okay. Great. And Dan clicked the little play button. Positron has very minimalistic icons.
+
+00:22:05.800 --> 00:22:09.079
+And so, if you want to know what they do, you have to kind of, like, hover over them for a second.
+
+00:22:09.079 --> 00:22:12.119
+But there's that little play button at the very top. That's what he clicked to
+
+00:22:12.119 --> 00:22:17.160
+go ahead and run the app. And Dan, I wanted to ask, because we are talking about, like,
+
+00:22:18.199 --> 00:22:24.119
+fundamentals of building a Shiny app in 2026, I feel like it's important to just point out that,
+
+00:22:24.119 --> 00:22:31.640
+like, you haven't done a ton of stuff granularly by hand. You are relying on an LLM and that is
+
+00:22:31.640 --> 00:22:37.000
+sort of the direction that a lot of people are going towards. Do you still think that there's
+
+00:22:37.000 --> 00:22:41.800
+value in learning the nitty gritty, step by step, building it yourself stuff? And are we
+
+00:22:41.800 --> 00:22:46.839
+going to talk about that? I think, well, in general, these days,
+
+00:22:46.839 --> 00:22:59.959
+I think it's especially writing a dashboard, you can confirm it by the dashboard actually
+
+00:22:59.959 --> 00:23:06.760
+working and loading, which, you know, it is not loading right now. For reasons unknown.
+
+00:23:09.400 --> 00:23:12.359
+Sometimes I pop it out in the browser and then it works, too. And I'm like, hmm.
+
+00:23:13.160 --> 00:23:21.719
+Yeah. It might also be the nope. All right. Hold on. We can do this. We can figure this out. Why?
+
+00:23:23.319 --> 00:23:28.680
+Annika says, as a beginner, I find it amazing that you can just tell Cloud to create an app
+
+00:23:28.680 --> 00:23:31.479
+with no input about what to actually do with the data.
+
+00:23:32.839 --> 00:23:41.880
+Yeah. So, in that sense, it's really nice that you can get started very quickly. I would say,
+
+00:23:43.400 --> 00:23:48.520
+like, I have one-off projects where it is completely vibe coded. It is in JavaScript.
+
+00:23:48.520 --> 00:23:53.079
+I actually have no idea what's going on in there. And don't ask me to, like, tell you what's going
+
+00:23:53.079 --> 00:24:01.079
+on. Which is actually very scary. But you can actually create things, which is really nice.
+
+00:24:01.079 --> 00:24:05.640
+And if that's your goal, I just want to create something that solves something really specific
+
+00:24:05.640 --> 00:24:10.760
+for my current need, go for it. Do you need to understand everything that's going in there?
+
+00:24:10.760 --> 00:24:17.239
+Probably not. If you are trying to create something that is, you know, for work and, like,
+
+00:24:17.239 --> 00:24:26.680
+the and the answer and the details actually matter, this is sort of what this is sort of
+
+00:24:26.680 --> 00:24:37.400
+the context I try to do things in where all right, we're going to we're going to, like,
+
+00:24:37.400 --> 00:24:46.520
+try something else. The way I do it is really similar to how I prompted this app, which is,
+
+00:24:46.920 --> 00:24:53.640
+keep it simple really for now. Give me something that I can actually review, like, almost line by
+
+00:24:53.640 --> 00:24:59.239
+line and then review it that way. So, you're not asking it to create this full-blown analysis.
+
+00:24:59.239 --> 00:25:03.959
+You're actually creating little pieces, something that you can understand, and then you can build
+
+00:25:03.959 --> 00:25:11.479
+on it. So, that's sort of what I've some of the workflow that I've gotten used to doing.
+
+00:25:12.439 --> 00:25:18.040
+Okay. So, the little button is not working for some reason. So, we are going to say
+
+00:25:22.040 --> 00:25:28.040
+what is it? Run app? Run app? Shiny run app?
+
+00:25:28.760 --> 00:25:29.560
+Shiny run app.
+
+00:25:32.439 --> 00:25:36.119
+Okay. We're going to run that. Okay. R script dash E.
+
+00:25:36.920 --> 00:25:43.160
+I'm looking at the bottom of your positron, and it says problems 11. I'm wondering if maybe that
+
+00:25:43.160 --> 00:25:49.160
+is part of why we have an app that's not running. It's my spell checker. We'll just ignore that.
+
+00:25:54.119 --> 00:26:00.599
+What is what is it's already in use. Okay. So, we are the other thing that
+
+00:26:01.160 --> 00:26:09.000
+the this thing is doing is it loaded up on a random port. Usually when I'm working, I try to
+
+00:26:09.880 --> 00:26:15.479
+oh, there it is. Okay. We'll just make a new one. I try to keep the port the same, and that's just
+
+00:26:15.479 --> 00:26:21.000
+so when I reload it, I can refresh the same web page and it just reloads. I'm just getting rid
+
+00:26:21.000 --> 00:26:28.040
+of that right now. Just because I have no idea why it wasn't working. Sometimes when the screen
+
+00:26:28.040 --> 00:26:32.760
+is zoomed in too much, it just doesn't know how to render stuff. I'm hoping that's the reason.
+
+00:26:32.760 --> 00:26:37.239
+But here's the application. It seems like it's doing its job. Here's some search terms.
+
+00:26:38.839 --> 00:26:43.160
+We have some cards at the top. So, these are you know, you can think of this as
+
+00:26:45.319 --> 00:26:51.959
+like KPI metrics. There's like a little figure here. This is using ggplot, I believe, because
+
+00:26:51.959 --> 00:26:57.319
+it's static. And then you have a viewable table down here. And off the bat, you can see throughout
+
+00:26:57.319 --> 00:27:04.280
+the years, the word girl shows up in country music a lot for reasons unknown. But it is a
+
+00:27:04.280 --> 00:27:10.280
+very commonly used word in country music. I don't know if it's it should be normalized to other
+
+00:27:10.280 --> 00:27:19.239
+music genres. But that is the really basic dashboard that we have. And it's got a title,
+
+00:27:19.239 --> 00:27:25.079
+it's got a little sidebar, and all those components. And then let's go into the application
+
+00:27:25.079 --> 00:27:30.760
+and see where everything is coming from. We need shiny. So, that's good. BS lib,
+
+00:27:30.760 --> 00:27:39.000
+this is where we get the newer UI infrastructure to make things a little bit prettier. So, like,
+
+00:27:39.000 --> 00:27:44.119
+these card elements here, like, you see this little somewhat small drop shadow around these
+
+00:27:44.119 --> 00:27:49.079
+boxes. And the title here instead of a ggplot title, that is all part of BS lib.
+
+00:27:50.040 --> 00:27:55.000
+There's going to be some data wrangling. So, we have the plier, ggplot2 for figures,
+
+00:27:55.000 --> 00:27:59.959
+and then string bar. Okay, cool. So, the first thing, one of the things that Claude does
+
+00:28:01.000 --> 00:28:05.959
+for better or for worse, I think it's a good thing, is Claude actually writes a lot of code
+
+00:28:05.959 --> 00:28:11.880
+that does, like, these conditional checks. So, you can see here, it's like, hey, here's your CSV.
+
+00:28:11.880 --> 00:28:17.800
+If it exists, then go and actually load it. And then sometimes it will throw in an error, like,
+
+00:28:17.880 --> 00:28:21.239
+else, like, just error out, right? So, Claude does end up
+
+00:28:22.760 --> 00:28:30.280
+writing a lot of safeguards for itself. Part of that is sometimes the LLM or the agent,
+
+00:28:30.280 --> 00:28:34.839
+really the agent, not the LLM. So, the agent is the thing that is just, like,
+
+00:28:34.839 --> 00:28:38.520
+able to run all the commands, and the LLM is the thing that, like, can generate it,
+
+00:28:38.520 --> 00:28:43.800
+generate the words. The agent will sometimes run your application, and if it sees an error,
+
+00:28:44.599 --> 00:28:48.359
+that's why it will know roughly, like, where that problem is and tries to solve it.
+
+00:28:48.920 --> 00:28:52.680
+And that's why it ends up writing a lot of, like, test cases, which is actually kind of good.
+
+00:28:54.040 --> 00:28:57.719
+It's, like, a good habit as you start to read. Because this is stuff I used to never write.
+
+00:28:58.680 --> 00:29:00.280
+Okay. So, now that we have this.
+
+00:29:00.280 --> 00:29:07.400
+STEPHANIE Even today, I probably don't. But also, it's, like, it's also fair to say,
+
+00:29:07.400 --> 00:29:11.079
+if you're a beginner, and this is your first Shiny app, and also you're new to
+
+00:29:11.079 --> 00:29:15.880
+coding and programming in general, you probably don't write those or think to write them or maybe
+
+00:29:15.880 --> 00:29:22.760
+even know what that is doing. So, like, don't be afraid to highlight that, paste it into Cloud,
+
+00:29:22.760 --> 00:29:27.640
+and be, like, what are you doing? What is this? Like, ask Cloud what it did so that you can
+
+00:29:27.640 --> 00:29:29.160
+learn and understand.
+
+00:29:29.399 --> 00:29:49.399
+https://data-science.blogspot.com
+
+00:29:59.399 --> 00:30:19.399
+https://data-science.blogspot.com
+
+00:30:19.399 --> 00:30:39.399
+https://data-science.blogspot.com
+
+00:30:39.399 --> 00:30:59.399
+https://data-science.blogspot.com
+
+00:30:59.399 --> 00:31:19.399
+https://data-science.blogspot.com
+
+00:31:19.399 --> 00:31:39.399
+https://data-science.blogspot.com
+
+00:31:39.399 --> 00:31:59.399
+https://data-science.blogspot.com
+
+00:31:59.399 --> 00:32:19.399
+https://data-science.blogspot.com
+
+00:32:19.399 --> 00:32:39.399
+https://data-science.blogspot.com
+
+00:32:39.399 --> 00:32:59.399
+https://data-science.blogspot.com
+
+00:32:59.399 --> 00:33:19.399
+https://data-science.blogspot.com
+
+00:33:19.399 --> 00:33:39.399
+https://data-science.blogspot.com
+
+00:33:39.399 --> 00:33:59.399
+https://data-science.blogspot.com
+
+00:33:59.399 --> 00:34:19.399
+https://data-science.blogspot.com
+
+00:34:19.399 --> 00:34:39.399
+https://data-science.blogspot.com
+
+00:34:39.399 --> 00:34:59.399
+https://data-science.blogspot.com
+
+00:34:59.399 --> 00:35:19.399
+https://data-science.blogspot.com
+
+00:35:19.399 --> 00:35:39.399
+https://data-science.blogspot.com
+
+00:35:39.399 --> 00:35:59.399
+https://data-science.blogspot.com
+
+00:35:59.399 --> 00:36:19.399
+https://data-science.blogspot.com
+
+00:36:19.399 --> 00:36:39.399
+https://data-science.blogspot.com
+
+00:36:39.399 --> 00:36:59.399
+https://data-science.blogspot.com
+
+00:36:59.399 --> 00:37:19.399
+https://data-science.blogspot.com
+
+00:37:19.399 --> 00:37:39.399
+https://data-science.blogspot.com
+
+00:37:39.399 --> 00:38:07.399
+https://data-science.blogspot.com
+
+00:38:07.399 --> 00:38:35.399
+https://data-science.blogspot.com
+
+00:38:35.399 --> 00:38:55.399
+https://data-science.blogspot.com
+
+00:38:55.399 --> 00:39:15.399
+https://data-science.blogspot.com
+
+00:39:15.399 --> 00:39:35.399
+https://data-science.blogspot.com
+
+00:39:35.399 --> 00:39:55.399
+https://data-science.blogspot.com
+
+00:39:55.399 --> 00:40:15.399
+https://data-science.blogspot.com
+
+00:40:15.399 --> 00:40:43.399
+https://data-science.blogspot.com
+
+00:40:43.399 --> 00:41:11.399
+https://data-science.blogspot.com
+
+00:41:11.399 --> 00:41:39.399
+https://data-science.blogspot.com
+
+00:41:39.399 --> 00:42:07.399
+https://data-science.blogspot.com
+
+00:42:07.399 --> 00:42:35.399
+https://data-science.blogspot.com
+
+00:42:35.399 --> 00:43:03.399
+https://data-science.blogspot.com
+
+00:43:03.399 --> 00:43:31.399
+https://data-science.blogspot.com
+
+00:43:31.399 --> 00:43:59.399
+https://data-science.blogspot.com
+
+00:43:59.399 --> 00:44:27.399
+https://data-science.blogspot.com
+
+00:44:27.399 --> 00:44:55.399
+https://data-science.blogspot.com
+
+00:44:55.399 --> 00:45:23.399
+https://data-science.blogspot.com
+
+00:45:23.399 --> 00:45:51.399
+https://data-science.blogspot.com
+
+00:45:51.399 --> 00:46:19.399
+https://data-science.blogspot.com
+
+00:46:19.399 --> 00:46:47.399
+https://data-science.blogspot.com
+
+00:46:47.399 --> 00:47:15.399
+https://data-science.blogspot.com
+
+00:47:15.399 --> 00:47:43.399
+https://data-science.blogspot.com
+
+00:47:43.399 --> 00:48:11.399
+https://data-science.blogspot.com
+
+00:48:11.399 --> 00:48:39.399
+https://data-science.blogspot.com
+
+00:48:39.399 --> 00:49:07.399
+https://data-science.blogspot.com
+
+00:49:09.399 --> 00:49:37.399
+https://data-science.blogspot.com
+
+00:49:39.399 --> 00:50:07.399
+https://data-science.blogspot.com
+
+00:50:07.399 --> 00:50:35.399
+https://data-science.blogspot.com
+
+00:50:35.399 --> 00:51:03.399
+https://data-science.blogspot.com
+
+00:51:03.399 --> 00:51:31.399
+https://data-science.blogspot.com
+
+00:51:31.399 --> 00:51:59.399
+https://data-science.blogspot.com
+
+00:51:59.399 --> 00:52:27.399
+https://data-science.blogspot.com
+
+00:52:29.399 --> 00:52:57.399
+https://data-science.blogspot.com
+
+00:52:57.399 --> 00:53:25.399
+https://data-science.blogspot.com
+
+00:53:25.399 --> 00:53:51.399
+https://data-science.blogspot.com
+
+00:53:51.399 --> 00:54:17.399
+https://data-science.blogspot.com
+
+00:54:17.399 --> 00:54:45.399
+https://data-science.blogspot.com
+
+00:54:45.399 --> 00:55:13.399
+https://data-science.blogspot.com
+
+00:55:15.399 --> 00:55:43.399
+https://data-science.blogspot.com
+
+00:55:43.399 --> 00:56:09.399
+https://data-science.blogspot.com
+
+00:56:09.399 --> 00:56:36.399
+https://data-science.blogspot.com
+
+00:56:39.399 --> 00:57:07.399
+https://data-science.blogspot.com
+
+00:57:07.399 --> 00:57:27.399
+https://data-science.blogspot.com
+
+00:57:27.399 --> 00:57:38.399
+https://data-science.blogspot.com

@@ -62,8 +62,8 @@ external:  # updated automatically, do not edit
     Smart DCC''s mission is to help digitise Britain’s energy network, and make a critical contribution in the effort to achieve net-zero greenhouse gas emissions, and improve the nation’s connectivity'
   duration: 1749
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:16.539274+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 52
   people:
   - RStudio Team

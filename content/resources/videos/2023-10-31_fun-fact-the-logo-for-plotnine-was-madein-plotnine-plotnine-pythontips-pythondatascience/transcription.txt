@@ -4,4 +4,4 @@
 
 <blockquote><a data-t="26">This grammar allows you to make and describe any plot, no matter what it looks like.</a></blockquote>
 
-<p><a data-t="34">Start by loading in your data.</a> <a data-t="39">Add your data to your grammar of graphics plot.</a> <a data-t="46">Next, add your aesthetics, like x and y variables.</a> <a data-t="50">Then, add geom shapes such as points.</a> <a data-t="53">These will be applied to your aesthetics.</a></p>
+<p><a data-t="34">Start by loading in your data.</a> <a data-t="39">Add your data to your grammar of graphics plot.</a> <a data-t="46">Next, add your aesthetics, like x and y variables.</a> <a data-t="50">Then, add geom shapes such as points.</a> <a data-t="50">These will be applied to your aesthetics.</a></p>

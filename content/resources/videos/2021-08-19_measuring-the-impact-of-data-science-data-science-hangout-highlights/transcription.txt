@@ -4,4 +4,4 @@
 
 <blockquote><a data-t="93">into a way to quantitatively measure the impact</a></blockquote>
 
-<p><a data-t="100">so to answer your question number one in my current</a> <a data-t="100">situation I'm so looped in with the stakeholders that yes I know when they are making decisions</a> <a data-t="105">number but I don't know how to quantitatively measure it yet which</a> <a data-t="110">leads to number two I'm trying to figure out ways to quantitatively measure it.</a></p>
+<p><a data-t="93">so to answer your question number one in my current</a> <a data-t="100">situation I'm so looped in with the stakeholders that yes I know when they are making decisions</a> <a data-t="105">number but I don't know how to quantitatively measure it yet which</a> <a data-t="110">leads to number two I'm trying to figure out ways to quantitatively measure it.</a></p>

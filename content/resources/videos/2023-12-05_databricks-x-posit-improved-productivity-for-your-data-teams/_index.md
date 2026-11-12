@@ -34,7 +34,8 @@ description: 'Timestamps:
 
   In this joint event, James Blair, Product Manager of Cloud Integrations at Posit, and Rafi Kurlansik, Lead Product Specialist from Databricks, will be sharing a live demo covering how data teams can build and share data-driven content more easily with the joint power of Posit and Databricks, along with an exciting look into the future of the partnership.'
 image: thumbnail.jpg
-people: []
+people:
+- James Blair
 resource_type: video
 resources: []
 software:
@@ -85,6 +86,8 @@ external:  # updated automatically, do not edit
   language: en
   last_updated: '2026-09-18T13:58:12.485233+00:00'
   like_count: 92
+  people:
+  - James Blair
   playlist: ''
   software:
   - odbc

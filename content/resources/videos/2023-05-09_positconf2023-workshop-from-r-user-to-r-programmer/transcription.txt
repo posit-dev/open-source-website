@@ -4,7 +4,7 @@
 
 <p><a data-t="47">Un yw sut i ddysgu ffunctionau sy'n dilyn cyfnodau sy'n gwneud nhw'n haws i ddysgu a ddefnyddio.</a> <a data-t="47">Yn nifer ddau, rydyn ni'n mynd i'ch fynd i'w ddysgu, sy'n dangos i chi sut i wneud yr un gwaith ar llawer o amgylcheddau R gwahanol.</a></p>
 
-<p><a data-t="63">Yn nifer ddau, rydw i'n meddwl yw i mi a Iain, felly gallwn ni i gyd gofio beth oedd e i ddysgu rhai o'r ymddygiadau hynny a'r ffynonellau cyffredinol sydd gennym ni, ac rydyn ni'n teimlo'n ddiddorol iawn bod e'n dda i roi'r ymddygiad hwnnw i bobl eraill o weithio i'n R Programmer.</a> <a data-t="103">Felly gobeithio eich gweld chi yno ym mis Cymru.</a></p>
+<p><a data-t="63">Yn nifer ddau, rydw i'n meddwl yw i mi a Iain, felly gallwn ni i gyd gofio beth oedd e i ddysgu rhai o'r ymddygiadau hynny a'r ffynonellau cyffredinol sydd gennym ni, ac rydyn ni'n teimlo'n ddiddorol iawn bod e'n dda i roi'r ymddygiad hwnnw i bobl eraill o weithio i'n R Programmer.</a> <a data-t="63">Felly gobeithio eich gweld chi yno ym mis Cymru.</a></p>
 
 <p><a data-t="83">Fy enw i yw Iain Lyttle, ddatysgwyr ddata yn Schneider Electric, ac rwy'n mwynhau eich bod yn gweithio gyda Emma Rand mewn gweithgaredd un diwrnod ar PositConf a'r enw o'r defnyddwr R i'r R Programmer.</a> <a data-t="97">Os ydych chi wedi ysgrifennu rhai sgriptau R, rhai adroddiadau R Markdown, efallai efallai rhai adroddiadau </a><a href="/software/quarto/">Quarto</a><a data-t="97">, ac ydych chi'n edrych i roi ychydig mwy o ffwrdd i'ch cod R, gallai'r gweithgaredd hon fod i chi.</a></p>
 

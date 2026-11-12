@@ -30,7 +30,8 @@ description: 'Using RStudio on Amazon SageMaker
 
   Answers to the Q&A are shared in this blog post: https://www.rstudio.com/blog/using-rstudio-on-amazon-sagemaker-faq/'
 image: thumbnail.jpg
-people: []
+people:
+- James Blair
 resource_type: video
 resources: []
 software:
@@ -77,6 +78,8 @@ external:  # updated automatically, do not edit
   language: en
   last_updated: '2026-09-18T13:58:16.153844+00:00'
   like_count: 86
+  people:
+  - James Blair
   playlist: ''
   software:
   - rstudio

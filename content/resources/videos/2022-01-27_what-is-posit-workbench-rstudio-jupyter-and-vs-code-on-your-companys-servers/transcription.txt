@@ -1,0 +1,17 @@
+<p><a data-t="0">Data science teams work in diverse technical environments with many data sources,</a> <a data-t="5">coding tools, computational requirements, and client expectations for data products.</a> <a data-t="11">Having this work spread across multiple systems creates inefficient work silos</a> <a data-t="16">and introduces critical gaps in security.</a></p>
+
+<h3>What is Posit Workbench?</h3>
+
+<p><a href="/software/rstudio/">RStudio</a><a data-t="21"> Workbench addresses all of this by providing IT the ability to manage and scale</a> <a data-t="27">data ingestion, analysis, and data product creation securely, all from one place,</a> <a data-t="34">while providing data scientists the ability to collaborate on R and Python projects,</a> <a data-t="39">whether RStudio with its ability to run multiple versions of R in different sessions,</a> <a data-t="44">or JupyterLab, or Jupyter Notebooks, or VS Code, each with the option of running pre-configured</a> <a data-t="51">data connectors, requesting compute resources, and providing the ability to collaborate with</a> <a data-t="56">in a shared environment.</a></p>
+
+<p><a data-t="56">If they choose to use the RStudio IDE, team members can share projects</a> <a data-t="63">and track work in real time, helping to keep up with changes and supporting best practices for</a> <a data-t="68">code review, which ultimately allows data science leaders to build happy and effective teams while</a> <a data-t="74">delivering value to their stakeholders.</a> <a data-t="74">Using RStudio Workbench, the data science team can</a> <a data-t="79">create reports, dashboards, and interactive applications for their organization's decision</a> <a data-t="85">makers, which can be hosted on platforms such as RStudio Connect.</a></p>
+
+<blockquote><a data-t="74">delivering value to their stakeholders.</a></blockquote>
+
+<h3>Moving work off the local laptop</h3>
+
+<p><a data-t="85">By moving work from the local laptop and onto RStudio Workbench, users can quickly authenticate and spin up the coding</a> <a data-t="96">environment of their choice for either R or Python, providing easy access to pre-configured</a> <a data-t="102">data connectors like Snowflake, MongoDB, and Spark, just to name a few.</a> <a data-t="102">Your team can also request</a> <a data-t="111">critical compute resources that they won't likely have access to on local systems, with different</a> <a data-t="116">user or group profiles for default and max resource usage, which helps to control cost.</a></p>
+
+<p><a data-t="116">RStudio Workbench</a> <a data-t="124">makes it easier for teams to work together by providing a standardized set of installed software,</a> <a data-t="130">which helps ensure that data science work is reproducible between team members,</a> <a data-t="134">and integration with Git supports collaboration and code governance across coding environments.</a></p>
+
+<p><a data-t="141">RStudio Workbench.</a> <a data-t="141">Enable your team to build great data science products.</a></p>

@@ -12,7 +12,7 @@
 
 <p><a data-t="60">So what do you need to set up your own Rproject templates?</a> <a data-t="64">You need an Rproject.</a> <a data-t="65">They have to live in an Rproject.</a> <a data-t="66">This can be just a simple internal project.</a> <a data-t="69">It can live on GitHub.</a> <a data-t="70">It can live wherever your Rprojects live.</a> <a data-t="73">You need a template metadata file and a template function file, and I'm going to show you using</a> <a data-t="78">our internal CetaTools package what those look like.</a></p>
 
-<p><a data-t="82">So I've highlighted them here.</a> <a data-t="84">So your project setup DCF is your template metadata, and newproject.R is our template</a> <a data-t="90">function, and I'm going to demonstrate how we as an organization use this functionality</a> <a data-t="97">in ours.</a> <a data-t="99">So we have the CetaTools package.</a> <a data-t="100">All of the code is available on GitHub.</a> <a data-t="102">So after this talk, if you want to see exactly all of these steps, you can see it there.</a></p>
+<p><a data-t="82">So I've highlighted them here.</a> <a data-t="84">So your project setup DCF is your template metadata, and newproject.R is our template</a> <a data-t="90">function, and I'm going to demonstrate how we as an organization use this functionality</a> <a data-t="98">in ours.</a> <a data-t="99">So we have the CetaTools package.</a> <a data-t="100">All of the code is available on GitHub.</a> <a data-t="102">So after this talk, if you want to see exactly all of these steps, you can see it there.</a></p>
 
 <h3>The CetaTools package in practice</h3>
 

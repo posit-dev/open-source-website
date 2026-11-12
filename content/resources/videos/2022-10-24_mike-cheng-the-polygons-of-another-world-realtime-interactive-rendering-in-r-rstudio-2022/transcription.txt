@@ -1,8 +1,8 @@
 <p><a data-t="0">My name is Mike, and I'm here to talk to you today about interactive graphics in R.</a> <a data-t="12">A little bit about me, I code in R for a living, and I believe R can be fun.</a> <a data-t="18">What do I mean by fun?</a> <a data-t="19">I mean things like including kittens in ggplots, running destructive physics simulations, and</a> <a data-t="28">currently I'm experimenting with voxel rendering.</a></p>
 
-<p><a data-t="38">There is fun to be had in R, and today I'd like to share with you such a discovery.</a> <a data-t="43">And that is, with careful use of base R, interactive graphics are possible, and this opens the way for new visualizations.</a> <a data-t="46">And when I say new visualizations, I'm going to use it to play games.</a></p>
+<p><a data-t="31">There is fun to be had in R, and today I'd like to share with you such a discovery.</a> <a data-t="38">And that is, with careful use of base R, interactive graphics are possible, and this opens the way for new visualizations.</a> <a data-t="46">And when I say new visualizations, I'm going to use it to play games.</a></p>
 
-<blockquote><a data-t="38">There is fun to be had in R, and today I'd like to share with you such a discovery.</a> <a data-t="43">And that is, with careful use of base R, interactive graphics are possible, and this opens the way for new visualizations.</a></blockquote>
+<blockquote><a data-t="31">There is fun to be had in R, and today I'd like to share with you such a discovery.</a> <a data-t="38">And that is, with careful use of base R, interactive graphics are possible, and this opens the way for new visualizations.</a></blockquote>
 
 <h3>The motivation: interactive games in R</h3>
 
@@ -16,7 +16,7 @@
 
 <p><a data-t="136">A fast graphics device is essential if I actually want to play games.</a> <a data-t="141">I need the graphics to respond at least 30 frames per second.</a> <a data-t="145">If not, then the games will never run smoothly.</a> <a data-t="149">When I say graphics device, I'm referring to the area or window where the plots are displayed in R, like the plot window in </a><a href="/software/rstudio/">RStudio</a><a data-t="149">.</a></p>
 
-<p><a data-t="161">On the Mac, there are a few other graphics devices.</a> <a data-t="164">There's the Quartz and the X11 device.</a> <a data-t="165">And I needed to compare them to find out what their speed and response times were.</a> <a data-t="170">I wrote a very simple benchmark to test how fast a graphics device would respond to a simple plotting command.</a></p>
+<p><a data-t="159">On the Mac, there are a few other graphics devices.</a> <a data-t="161">There's the Quartz and the X11 device.</a> <a data-t="165">And I needed to compare them to find out what their speed and response times were.</a> <a data-t="170">I wrote a very simple benchmark to test how fast a graphics device would respond to a simple plotting command.</a></p>
 
 <p><a data-t="179">And I was pleasantly surprised that the graphics devices can respond at 30 times per second.</a> <a data-t="185">In this plot, we see the RStudio and the Quartz device both reaching 30 frames per second, with the Quartz device about twice as fast as the RStudio device.</a> <a data-t="195">What was really surprising was to see that the X11 device can respond to commands at over 500 times per second.</a> <a data-t="202">So yes, R does have a fast graphics device.</a> <a data-t="205">We're over the first hurdle.</a> <a data-t="207">All graphics devices can respond fast enough, and some graphics devices are faster than others.</a> <a data-t="213">On the Mac, I'm going to choose to use the X11 device, because it is ridiculously fast.</a></p>
 
@@ -64,7 +64,7 @@
 
 <p><a data-t="765">And the next scene is rendering a later scene in the game where the main character is having a drink.</a></p>
 
-<p><a data-t="776">So that's how an individual frame is rendered.</a> <a data-t="779">For the actual gameplay of Another World, I created an R implementation of the virtual machine.</a> <a data-t="781">This was based upon the JavaScript and C versions, which were originally based upon the assembly versions for MS-DOS and the Amiga.</a> <a data-t="790">The event-driven game loop is quite simple, and I ask the graphics device when the mouse or keyboard are used, it calls a function to update the variables in my virtual machine.</a> <a data-t="799">And when the user is otherwise idle, it just executes the next instruction, maybe to draw a polygon or play a sound.</a></p>
+<p><a data-t="774">So that's how an individual frame is rendered.</a> <a data-t="776">For the actual gameplay of Another World, I created an R implementation of the virtual machine.</a> <a data-t="781">This was based upon the JavaScript and C versions, which were originally based upon the assembly versions for MS-DOS and the Amiga.</a> <a data-t="790">The event-driven game loop is quite simple, and I ask the graphics device when the mouse or keyboard are used, it calls a function to update the variables in my virtual machine.</a> <a data-t="799">And when the user is otherwise idle, it just executes the next instruction, maybe to draw a polygon or play a sound.</a></p>
 
 <p><a data-t="809">Which means I can show you the demo of the game.</a> <a data-t="812">This is a capture running live in R, and to preview what you're going to see, it is the typical life of a scientist.</a> <a data-t="819">You arrive at work in your Ferrari, you drink at your desk, and then your experiment gets hit by lightning.</a></p>
 
@@ -76,8 +76,8 @@
 
 <p><a data-t="900">Hopefully today with this presentation, I've managed to demonstrate that yes, with careful use of Base R, interactive graphics are possible, and this opens the way to play games and new visualizations.</a> <a data-t="910">I have released packages to document this work, and I encourage you to try them.</a> <a data-t="914">If you want to manipulate native raster images from R, I have released the NARA package.</a></p>
 
-<p><a data-t="934">I have released a friendlier wrapper around the event callbacks in the graphics devices.</a> <a data-t="938">This hopefully makes it a little bit easier to use for games.</a> <a data-t="942">I know that Matt Dre has used it already for his retro dungeon crawler, where we can see his blue character being chased by the yellow monster.</a></p>
+<p><a data-t="930">I have released a friendlier wrapper around the event callbacks in the graphics devices.</a> <a data-t="934">This hopefully makes it a little bit easier to use for games.</a> <a data-t="938">I know that Matt Dre has used it already for his retro dungeon crawler, where we can see his blue character being chased by the yellow monster.</a></p>
 
-<p><a data-t="954">If you want to see an example of a complex event-driven application, I have released the drum machine as a package.</a> <a data-t="958">And I hope soon to release the Another World package, so that everyone can play this game.</a></p>
+<p><a data-t="950">If you want to see an example of a complex event-driven application, I have released the drum machine as a package.</a> <a data-t="958">And I hope soon to release the Another World package, so that everyone can play this game.</a></p>
 
 <p><a data-t="966">R has the capability to write and run interactive graphics in games, and I'm fascinated to see what the R community can create.</a> <a data-t="974">Game on. Thank you.</a></p>

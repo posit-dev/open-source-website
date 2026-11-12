@@ -1,0 +1,1843 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.480
+Welcome to the test set. Here we talk with some of the brightest thinkers and tinkerers
+
+00:00:07.480 --> 00:00:12.720
+in statistical analysis, scientific computing, and machine learning. Digging into what makes
+
+00:00:12.720 --> 00:00:18.200
+them tick, plus the insights, experiments, and OMG moments that shape the field.
+
+00:00:18.200 --> 00:00:24.280
+In this episode, Michael talks with quote-unquote final boss, Greg Swinehart, designer at Posit
+
+00:00:24.280 --> 00:00:30.440
+since before it was Posit. He tells the story of his first rstudio.org mockup getting turned
+
+00:00:30.440 --> 00:00:35.200
+down for looking too hot, and gets into why the best design would have no words on it
+
+00:00:35.200 --> 00:00:41.840
+at all. Also featured, Greg's own podcast, where a bus jumping 50 feet is kind of the
+
+00:00:41.840 --> 00:00:45.080
+great bad movie game.
+
+00:00:45.080 --> 00:00:51.320
+Welcome to the test set. We're joined by Greg Swinehart. And Greg, you're a designer at
+
+00:00:51.320 --> 00:00:56.240
+Posit, but I like to think you're the final boss.
+
+00:00:56.240 --> 00:00:57.240
+In a video game?
+
+00:00:57.240 --> 00:01:01.279
+Exactly. People just got to hear from Joe Chang. You know, we've made our way through
+
+00:01:01.279 --> 00:01:08.639
+Hadley, through Wes, through Tarif, the CEO. And now we finally land at you. We got you.
+
+00:01:08.639 --> 00:01:09.639
+So
+
+00:01:09.639 --> 00:01:14.879
+Oh my gosh. We have made a massive mistake.
+
+00:01:14.879 --> 00:01:21.440
+We got you. Greg, you've been at Posit for like a pretty long time too. So I'm so excited
+
+00:01:21.440 --> 00:01:28.239
+to talk with you about design, everything you're up to, and sort of everything you've
+
+00:01:28.239 --> 00:01:35.000
+seen. I feel like for so much of Posit's history, you've been around and cooking on stuff. So
+
+00:01:35.000 --> 00:01:38.839
+thanks for so much. Thanks so much for coming on. We're super excited to have you.
+
+00:01:38.839 --> 00:01:43.000
+Yeah, man. It's good to see you. We should tell everybody what we're doing here too.
+
+00:01:43.000 --> 00:01:44.000
+Like what the idea behind
+
+00:01:44.000 --> 00:01:48.480
+the do this podcast was, well, here's why I'm in my kitchen right now. I'm in my kitchen
+
+00:01:48.480 --> 00:01:52.080
+and I'm listening to one of my favorite podcasts, The Test Set, right? With my friend Michael
+
+00:01:52.080 --> 00:01:57.919
+Chow. And we have this thing that happens in meetings at Posit where we'll be meeting
+
+00:01:57.919 --> 00:02:02.160
+about something oftentimes with Rich, because you guys are working on the great table stuff
+
+00:02:02.160 --> 00:02:08.839
+or whatever. And I'm helping out with stuff there. And you guys are the most fun people
+
+00:02:08.839 --> 00:02:11.880
+to hang out with. I think we could just declare that. You're saying I'm the final boss. You
+
+00:02:11.919 --> 00:02:17.839
+guys are 10 out of 10 no notes, the most fun people to be around. And we'll get like 65%
+
+00:02:17.839 --> 00:02:22.000
+into a meeting. And I'll be like, guys, we have to start talking about the thing we were
+
+00:02:22.000 --> 00:02:25.440
+here to meet about. But I really don't want to. But it was just like, I feel like we could
+
+00:02:25.440 --> 00:02:31.800
+talk forever joking around. And so I was like, hey, what? You know that week at the end of
+
+00:02:31.800 --> 00:02:38.600
+the year where everybody kind of takes a break? Kind of that week before New Year's. It seems
+
+00:02:38.600 --> 00:02:44.839
+like everybody who's using Posit stuff is on a break. People who are working at Posit,
+
+00:02:44.839 --> 00:02:47.320
+they're taking a break. It seems like there's just this collective like, we're just going
+
+00:02:47.320 --> 00:02:52.839
+to take a second. If a test set is coming out, then what if you just talked to like
+
+00:02:52.839 --> 00:02:55.839
+a designer type and joked around? That could be a test set episode.
+
+00:02:55.839 --> 00:03:01.479
+Yeah. Well, thanks for coming. I'm excited for whatever happens. But I do think it's
+
+00:03:01.479 --> 00:03:06.520
+worth noting like you have been at Posit for so long and have a lot of incredible takes
+
+00:03:06.520 --> 00:03:11.320
+on stuff. So I feel like we're lucky. This isn't just about clowning. You know, we're
+
+00:03:11.320 --> 00:03:19.320
+lucky to have you. What greater way to clown than the Hex sticker? You know, the humble
+
+00:03:19.320 --> 00:03:26.080
+Hex, which I feel like you've been pretty involved with. You're kind of like, are you
+
+00:03:26.080 --> 00:03:28.160
+like the gatekeeper of the Hex sticker?
+
+00:03:28.160 --> 00:03:30.199
+No, I'd say Hadley is.
+
+00:03:30.199 --> 00:03:31.199
+Yeah.
+
+00:03:32.199 --> 00:03:37.559
+Hadley's in charge of all the Hexes. Whenever I publish or, you know, write books, I do
+
+00:03:37.559 --> 00:03:42.479
+that under the name Hadley Wickham. But he as a person mostly just focuses on the Hexes,
+
+00:03:42.479 --> 00:03:43.479
+I think. Yeah.
+
+00:03:43.479 --> 00:03:49.679
+Yeah. Yeah. That makes sense. And by Hadley, you mean your pseudonym, Hadley Wickham.
+
+00:03:49.679 --> 00:03:50.679
+Yeah.
+
+00:03:50.679 --> 00:03:53.360
+When you're writing all the Tidyverse packages and...
+
+00:03:53.360 --> 00:03:58.759
+No, no, no, no. That's, I mean, when I'm writing the books, you know, when I'm writing the
+
+00:03:58.759 --> 00:04:03.160
+articles, the blog posts, what I'm doing is I'm checking in with his sister, Charlotte,
+
+00:04:03.160 --> 00:04:06.839
+who does all those GitHub commits. And we just kind of get on the same page about what
+
+00:04:06.839 --> 00:04:11.679
+it is, you know, the Hadley persona is doing out there in the world. And I write some stuff
+
+00:04:11.679 --> 00:04:12.679
+up.
+
+00:04:12.679 --> 00:04:17.239
+I love that. I love the idea that Hadley is some person you hired to give, like, keynotes
+
+00:04:17.239 --> 00:04:21.799
+to be the embodiment of the Hadley persona.
+
+00:04:21.799 --> 00:04:24.720
+Well, we had lots of contenders.
+
+00:04:24.720 --> 00:04:27.399
+Yeah. I applied, in fact.
+
+00:04:28.040 --> 00:04:31.359
+Yeah, but you didn't say Pac-Man theory. He had us at Pac-Man theory, I think, is what
+
+00:04:31.359 --> 00:04:32.359
+happened there.
+
+00:04:32.359 --> 00:04:36.799
+Yeah, exactly. You're cooking up a lot of Hex stickers, right? Like, are you designing
+
+00:04:36.799 --> 00:04:39.399
+a lot of the Hexes? What are you...?
+
+00:04:39.399 --> 00:04:46.640
+So early on, yeah, I was doing the Hex stickers. These days, it's very much an AI created,
+
+00:04:46.640 --> 00:04:53.239
+you know, vibe illustrated thing, which is something I'm happy to hand off a bit to AI.
+
+00:04:53.239 --> 00:04:58.920
+Although I think it's just a maddening process trying to illustrate with AI. So I'm often,
+
+00:04:58.920 --> 00:05:03.880
+like, asking AI to do a couple things. And then I'm pulling it out and turning it into
+
+00:05:03.880 --> 00:05:07.359
+vectors and putting it in Illustrator and sometimes Photoshop and, you know, using all
+
+00:05:07.359 --> 00:05:11.160
+of the design retools to, like, actually make it what I want it to be.
+
+00:05:11.160 --> 00:05:18.279
+But yeah, for the first many years, I was probably one of the main people doing Hexes.
+
+00:05:18.279 --> 00:05:25.040
+I remember the first set we did back in the day. And we were trying to figure out what's
+
+00:05:25.040 --> 00:05:29.040
+with the Hex stickers. And that's when I really got to know Hadley.
+
+00:05:29.040 --> 00:05:35.160
+Yeah. I remember I forgot that one conference you were like, we had just worked out the
+
+00:05:35.160 --> 00:05:40.279
+Great Tables logo, Great Tables Hex. And I remember you just, I think you just messaged
+
+00:05:40.279 --> 00:05:45.959
+me out of the blue and you were like, this should be holographic, right? Like, it'd be
+
+00:05:45.959 --> 00:05:53.000
+crazy if this Hex sticker wasn't a hologram. And then all I had to say was like, from that
+
+00:05:53.000 --> 00:05:56.519
+time forward, I think the GT Hex was just holographic.
+
+00:05:57.239 --> 00:06:01.079
+How do we do that? I remember I was talking about like, you know, those stickers when
+
+00:06:01.079 --> 00:06:05.160
+you see them at a different angle, they do different things. They kind of look 3D. I
+
+00:06:05.160 --> 00:06:09.880
+think that's probably what I was talking about. And I called a guy, I think maybe like in
+
+00:06:09.880 --> 00:06:15.399
+Montana, there's like few people who do limited runs of those. And I talked to him and he
+
+00:06:15.399 --> 00:06:20.119
+just said, unless you're doing like thousands and thousands, this is going to be very expensive
+
+00:06:20.119 --> 00:06:25.720
+for you. So I had to abandon that idea. But you know, I love getting the person on the phone.
+
+00:06:26.920 --> 00:06:32.519
+Yeah. Okay. It wasn't holographic. It was like foil. It was like shiny in the background,
+
+00:06:32.519 --> 00:06:37.799
+kind of like, yeah, yeah, yeah. But that was an incredible level up, I feel like for the
+
+00:06:38.600 --> 00:06:44.200
+Great Tables Hex to take. Okay. So when you're not designing Hex stickers, what are you doing?
+
+00:06:44.200 --> 00:06:49.880
+I know you've got a podcast of your own. Is that, maybe you could tell us a bit.
+
+00:06:51.160 --> 00:06:57.959
+We're podcast rivals. Yeah, we're just podcasting like crazy right now. I have a podcast called
+
+00:06:57.959 --> 00:07:04.839
+Great Bad Movies. And it is just a little hobby that I do evenings and weekends with
+
+00:07:05.959 --> 00:07:11.640
+one of my oldest best friends. And what we loved doing back in the day, when we lived together,
+
+00:07:11.640 --> 00:07:19.559
+was we would watch just somewhat ridiculous action movies. That's what we did. And so
+
+00:07:20.119 --> 00:07:25.000
+over COVID, we started recording Zoom hangouts in the evenings and realized, I think this might
+
+00:07:25.000 --> 00:07:30.920
+be a podcast. And it's important to say there's a million bad movie podcasts out there. That's
+
+00:07:30.920 --> 00:07:37.160
+not what we're doing. We only talk about great movies, things that are truly great. The kind
+
+00:07:37.160 --> 00:07:41.399
+of movie where you say, you know what, that movie is actually better than you think it's going to be.
+
+00:07:41.799 --> 00:07:45.559
+That's our wheelhouse. We said bad because we thought it was funny at the time. What we
+
+00:07:45.559 --> 00:07:52.359
+really mean is kind of exaggerated and ridiculous. Are you saying your criteria for a great bad
+
+00:07:52.359 --> 00:07:56.920
+movie is like, you kind of like on its face, you're like, I don't know, it's going to be bad.
+
+00:07:56.920 --> 00:07:59.959
+And then you're like, dang, that was pretty, that was pretty great.
+
+00:08:00.760 --> 00:08:03.239
+The truth is, it's really just movies we feel like watching every other week.
+
+00:08:03.239 --> 00:08:04.600
+It's just straight great. Yeah.
+
+00:08:05.239 --> 00:08:09.480
+It's just, what do I feel? What will I enjoy? So each episode, we call it a love letter to the
+
+00:08:09.480 --> 00:08:13.160
+most entertaining movies, you know? So it's, what movie do we feel like watching and truly
+
+00:08:13.160 --> 00:08:18.200
+diving into and enjoying? And because I'm kind of obsessed with the creative process,
+
+00:08:18.839 --> 00:08:26.760
+I'm also obsessed with movies and music and just how people end up expressing themselves
+
+00:08:26.760 --> 00:08:33.159
+through those mediums. So I get really deep on who made it, who shot it, what lens they're using,
+
+00:08:35.159 --> 00:08:38.280
+who's the cinematographer, who's setting up the lights, who's holding the camera,
+
+00:08:38.840 --> 00:08:41.400
+in the action movies, the second unit director is the person like,
+
+00:08:42.280 --> 00:08:47.479
+safely doing the car crashes and stuff and filming that. And what I realized was,
+
+00:08:48.280 --> 00:08:54.280
+if you go deep on the bench in these movies, there's really commonality amongst my favorite
+
+00:08:54.280 --> 00:08:57.960
+movies and the people who were deep on the bench, like the cinematographer or
+
+00:08:58.520 --> 00:09:04.599
+the second unit director or the stunt crew. Yeah, yeah, yeah, yeah. It's so awesome. It's
+
+00:09:04.599 --> 00:09:09.320
+just like when I was little and I was looking at like liner notes for records and realizing,
+
+00:09:09.320 --> 00:09:13.880
+hey, Nigel Godrich seems to be producing all of my very favorite records. I'm going to go
+
+00:09:13.880 --> 00:09:19.559
+through all of Nigel Godrich's records and see what's similar, what's different, what he brings
+
+00:09:19.559 --> 00:09:25.479
+to the creative process for a band. And so that's what I do every day. That's the itch I'm trying
+
+00:09:25.479 --> 00:09:30.679
+to scratch every day creatively. Who's the second unit director you're looking for? Like who,
+
+00:09:30.679 --> 00:09:35.640
+if that second unit director is on it, you, you want to see it? Like who's your,
+
+00:09:37.719 --> 00:09:41.880
+not to put you on the spot. Yeah, totally on the spot. I'm going to forget
+
+00:09:42.679 --> 00:09:49.799
+their names. It's more like before we record, I realize, oh my gosh, this guy, you know, worked
+
+00:09:49.799 --> 00:09:55.960
+on these other hilariously ridiculous, but also so enjoyable, you know, movies for me.
+
+00:09:55.960 --> 00:10:01.640
+There's a guy named Brad Martin who's done a lot. There's a guy named Sam Hargrave who has
+
+00:10:01.640 --> 00:10:07.719
+done a lot and he's actually kind of a director in his own right now. He comes from, we're going
+
+00:10:07.719 --> 00:10:13.799
+to go, are you ready to go deep? Is this happening? He, he comes from kind of a David Leitch school,
+
+00:10:13.799 --> 00:10:19.239
+David Leitch and Chad Stahelski directed, co-directed John Wick, which is a great,
+
+00:10:19.239 --> 00:10:23.479
+bad movie, a great, ridiculous, you know, it's, it's a movie that a few people saw.
+
+00:10:23.479 --> 00:10:27.400
+And then for the next year you're out with friends and somebody says, have you seen that?
+
+00:10:27.400 --> 00:10:31.159
+That was, that was better than I thought it was going to be. You know, there's something about it.
+
+00:10:33.640 --> 00:10:41.479
+So Sam Hargrave and David Leitch, they worked together on a lot of the Marvel movies early on,
+
+00:10:41.479 --> 00:10:48.520
+kind of those crazy stunt sequences in those movies. Some of the Bourne kind of identity,
+
+00:10:48.520 --> 00:10:54.440
+Bourne supremacy, ultimatum kind of worlds, that crew was around. You start noticing deep
+
+00:10:54.440 --> 00:10:59.080
+on the bench, like, hold on when these people are around, it creates a really incredible
+
+00:11:00.119 --> 00:11:04.119
+viewing experience. You know, I love that you did a deep dive into the side of the credits.
+
+00:11:04.119 --> 00:11:10.679
+Most people have kind of like gotten out of their seats by you're like keyed into this dimension
+
+00:11:10.679 --> 00:11:16.440
+that is like easy to miss. If you're just looking at the director, you know, and not the second year
+
+00:11:16.440 --> 00:11:22.760
+director, you're like missing out. Gosh. The, when I describe the show to people,
+
+00:11:22.760 --> 00:11:27.640
+we've been doing it for, I don't know, two and a half years now. I talk about the movie speed
+
+00:11:27.640 --> 00:11:33.479
+from the nineties, which had Keanu Reeves and Sandra Bullock. And it's a great, bad movie
+
+00:11:33.479 --> 00:11:39.719
+quintessentially because first of all, it's directed by the cinematographer of diehard,
+
+00:11:39.719 --> 00:11:43.400
+which was a big action movie kind of back in the eighties. I'm sure people have heard of it. And
+
+00:11:44.359 --> 00:11:50.200
+so cinematographer Yonda Bond steps up to the plate and decides to make speed. It's a movie
+
+00:11:50.200 --> 00:11:54.599
+where they're on this bus. And if the bus goes less than 50 miles an hour, it's going to,
+
+00:11:54.599 --> 00:11:59.880
+it's going to blow up. Another characteristic of great, bad movies is if you, if you say the plot,
+
+00:11:59.880 --> 00:12:06.760
+you can't say it without laughing. It's gonna that's. So this movie is already ridiculous on
+
+00:12:06.760 --> 00:12:11.559
+its face. Right. But it's also filmed in this way. That's like, oh my gosh, there's like true
+
+00:12:11.559 --> 00:12:18.840
+talent going on here. And in some cases, despite some of the performances in the movie, it's still
+
+00:12:18.840 --> 00:12:24.440
+so entertaining. And then there's this moment in the movie where the bus has to jump 50 feet.
+
+00:12:24.440 --> 00:12:28.599
+It's driving down this highway and the highway isn't finished and it has to jump 50 feet. And
+
+00:12:28.599 --> 00:12:33.000
+that is the kind of moment that I look for in a great, bad movie where you have to say to yourself,
+
+00:12:33.000 --> 00:12:38.599
+okay, that bus just jumped 50 feet. That's ridiculous, but I'm into it. If it's that
+
+00:12:38.599 --> 00:12:44.039
+moment where it's like, I'm on board, let's do this. So that's a great, bad movie quintessentially.
+
+00:12:45.159 --> 00:12:48.440
+It's incredible. I actually love that description of it where you're like,
+
+00:12:49.080 --> 00:12:55.400
+this thing that happened, if I take it seriously as absurd, but I'm still into the movie as a whole,
+
+00:12:55.400 --> 00:13:03.000
+you know, like if it hits, it hits that bus, jump 50 feet. And I'm here for it. Or like, um, I, I,
+
+00:13:03.000 --> 00:13:05.799
+I feel like, did you have the movie face-off on your list? Was that?
+
+00:13:08.039 --> 00:13:08.679
+Sure.
+
+00:13:08.679 --> 00:13:12.119
+Like that, I don't, that reminds me of that even just out of the gate where you're like, well,
+
+00:13:12.119 --> 00:13:14.599
+they trade faces and then you just.
+
+00:13:16.440 --> 00:13:17.320
+I'm interested.
+
+00:13:21.000 --> 00:13:26.679
+Face-off is the kind of movie where it should not work on paper. If you described it to me and say,
+
+00:13:26.679 --> 00:13:31.320
+that's a movie I'm going to run the opposite direction from. Um, but there's something about
+
+00:13:31.320 --> 00:13:40.520
+Nicholas Cage, John, uh, oh no, Travolta, John Travolta. Um, and quintessentially it's John Woo
+
+00:13:40.520 --> 00:13:46.119
+behind the camera coming to America and making movies and they're just doves flying in the
+
+00:13:46.119 --> 00:13:50.599
+background all the time. There's like 18 different kinds of slow motion happening at every given
+
+00:13:50.599 --> 00:13:53.799
+moment. And it is a ballet.
+
+00:13:54.520 --> 00:13:58.039
+Yeah. Yeah. I love that. I, I feel like I've got to somehow
+
+00:13:58.599 --> 00:14:03.400
+bring it back to Posit at this point in some way. And I'm, I'm going to try this. We can punt,
+
+00:14:03.400 --> 00:14:07.479
+you know, we don't, we don't have to go there, but, um, I feel like, okay. I feel like one thing
+
+00:14:07.479 --> 00:14:15.640
+you tell me about sometimes is Posit back in the day, our studio had like a great bad website.
+
+00:14:16.200 --> 00:14:18.679
+Is that, does that sound right?
+
+00:14:19.479 --> 00:14:24.280
+Well, I think what you're thinking of is a story I probably told you about. Um, when back in the
+
+00:14:24.919 --> 00:14:32.119
+day, I think this was like 2011, maybe JJ and Joe, uh, JJ Lair, Joe Chang were working on the
+
+00:14:32.119 --> 00:14:37.880
+R studio IDE and, um, they wanted to make the first R studio.org. And I had been doing a bit
+
+00:14:37.880 --> 00:14:43.880
+of design for them, um, just for random things here and there, like stickers and shirts, just
+
+00:14:43.880 --> 00:14:50.919
+like the random things, you know, they needed to like bring to meetups. Um, and so they said,
+
+00:14:50.919 --> 00:14:54.280
+can you mock up what the front page of R studio.org should look like? And so I
+
+00:14:54.280 --> 00:15:00.280
+mocked up something that I thought would work. And, um, and their feedback was, this looks great.
+
+00:15:01.400 --> 00:15:06.200
+Unfortunately, it's not at all what we're trying to do. This looks like a real software company,
+
+00:15:06.200 --> 00:15:12.440
+and this is just an open source project. And we're not trying to communicate big flashy software
+
+00:15:12.440 --> 00:15:20.119
+company. We're trying to communicate open source tool for people to use and, you know, do data
+
+00:15:20.119 --> 00:15:25.640
+science. And so it's, it was a slightly different thing. And, um, and so it was a really big lesson
+
+00:15:25.640 --> 00:15:31.799
+for me, um, in that you can't just assume all software companies are the same, but also it
+
+00:15:31.799 --> 00:15:39.080
+was a, it was my first experience of hearing what the DNA of the R studio project was for JJ and Joe
+
+00:15:39.080 --> 00:15:45.679
+back then. Um, and this is before kind of Hadley and Garrett and Winston had been hired. Um,
+
+00:15:46.400 --> 00:15:50.880
+it, it, I was a little bit embarrassed when it happened because my first two questions when I'm
+
+00:15:50.880 --> 00:15:57.039
+designing for somebody are really communication based questions. I think that's what design is.
+
+00:15:57.039 --> 00:16:03.919
+Um, what are you trying to say? And who are you trying to say it to? And design kind of sits in
+
+00:16:03.919 --> 00:16:08.799
+between those two things. And I hadn't asked them those two questions in whatever year it was,
+
+00:16:08.799 --> 00:16:13.679
+2011. And so then we started talking about it and that's when we made what was the first
+
+00:16:14.239 --> 00:16:20.640
+Rstudio.org, which, um, once packages kind of came in and, and we were, it needed to scale kind of
+
+00:16:20.640 --> 00:16:25.280
+in every other direction possible. We didn't know which direction it was going to go. As far as the
+
+00:16:25.280 --> 00:16:31.119
+user experience goes, we made a second version pretty fast, um, to include, you know, shiny and
+
+00:16:31.119 --> 00:16:36.719
+the different things that were coming up. If you had to capture like what, what, what did that
+
+00:16:36.719 --> 00:16:41.359
+audience want that was different from what you had in mind? Like what does an open source audience
+
+00:16:41.679 --> 00:16:46.719
+I think what JJ was alluding to was, um, you know, sometimes you go to like a vaporware website and
+
+00:16:46.719 --> 00:16:53.679
+it's a, it's a startup that's gotten a ton of funding and they have, um, uh, uh, an agency
+
+00:16:53.679 --> 00:16:58.479
+making just the most amazing looking website, but does their software work and will they be around
+
+00:16:58.479 --> 00:17:02.960
+in six months? And they're saying it's free now, but is it always going to be open source or is
+
+00:17:02.960 --> 00:17:07.839
+there going to be a hook? And there's, there's a catch here, you know, um, JJ wanted to be
+
+00:17:08.400 --> 00:17:14.400
+JJ wanted to be completely outside of that consideration. He wanted someone to instinctually
+
+00:17:14.400 --> 00:17:20.880
+know when they got to the site, Oh, this is for me. And this is just a, a usable open source tool
+
+00:17:20.880 --> 00:17:26.800
+that I can use. Um, and you know, when you, when you're talking about design, this is what I spend
+
+00:17:26.800 --> 00:17:33.040
+all day thinking about design needs to be able to communicate to somebody. This is, this is what
+
+00:17:33.040 --> 00:17:36.719
+you're looking for. If, if you're, if the person that you're trying to communicate to is looking
+
+00:17:36.719 --> 00:17:42.959
+at it. And so, you know, the best design would have no words on it. Um, and it would communicate
+
+00:17:42.959 --> 00:17:47.760
+to, it would say what JJ and Joe are trying to say, and it would be heard by the audience they
+
+00:17:47.760 --> 00:17:52.319
+were going after, um, saying this thing might be for you if you're doing data science in R.
+
+00:17:53.439 --> 00:18:00.400
+And so they really didn't want it to look like a big flashy. Um, the, the word that JJ used
+
+00:18:00.400 --> 00:18:06.160
+is, is hot. I don't want it to be too hot, which I, I now call the JJ Alair patented heat index.
+
+00:18:06.880 --> 00:18:11.680
+Because, uh, I had been in a million design review meetings at agencies and whatever,
+
+00:18:11.680 --> 00:18:16.640
+I'd never heard the word hot. And I just couldn't believe I had never heard this term. It's so
+
+00:18:16.640 --> 00:18:21.439
+perfect. And I, especially I told them this right away, I really can't wait for you to just say,
+
+00:18:21.439 --> 00:18:27.280
+it's too hot, Greg. It's too hot. I can't wait for JJ to yell that at me, turn it down, turn it down.
+
+00:18:27.280 --> 00:18:32.000
+So, um, so when I look at posits brand or any brand, you know, there's, there's,
+
+00:18:32.000 --> 00:18:36.000
+there's a temperature to it. And when it's really hot, it's probably trying to reach
+
+00:18:36.719 --> 00:18:40.880
+you know, an expensive audience. And when it's colder, it's more technical.
+
+00:18:41.599 --> 00:18:45.920
+And, you know, my people that I feel like I'm trying to reach in the world,
+
+00:18:45.920 --> 00:18:50.079
+they're the technical people who are just trying to do some data science. They're just trying to
+
+00:18:50.640 --> 00:18:55.839
+communicate some findings that they've got. It's incredible. Wait, how did you, and how did you
+
+00:18:55.839 --> 00:19:02.880
+get into design? Uh, I was, I was in a band. I was, I came from music. And when you're in a band,
+
+00:19:02.880 --> 00:19:09.439
+um, you need shirts, you need stickers and, you know, eventually you need albums. Um,
+
+00:19:09.439 --> 00:19:14.479
+and then if you're putting out the albums out in the world, um, someone needs to make ads
+
+00:19:14.479 --> 00:19:19.199
+for those albums. So throughout that process, I was learning about screen printing and,
+
+00:19:19.199 --> 00:19:23.760
+and design and print and digital stuff. And I just kind of learned what vectors were,
+
+00:19:23.760 --> 00:19:31.839
+what pixels were. And, um, it was so much fun to alongside playing drums in a band and kind of
+
+00:19:31.839 --> 00:19:37.359
+being a co-producer with, and with the guys that I was in the band with. Um, we also got to express
+
+00:19:37.359 --> 00:19:45.040
+ourselves visually with shirts and albums and, uh, and things like that. So that was, um, that's
+
+00:19:45.040 --> 00:19:48.800
+where it started. It was out of necessity. We had a show, I had booked us a show and we needed
+
+00:19:48.800 --> 00:19:53.760
+posters around town, so I need to make a poster. That's where it started. Yeah. I love that kind
+
+00:19:53.760 --> 00:20:00.560
+of like, but you're like, you're in a band now you need like t-shirts and signs and now you like
+
+00:20:00.560 --> 00:20:07.760
+need to put them up and like the whole, and now you're a designer basically. Yeah. I don't know.
+
+00:20:07.760 --> 00:20:12.319
+Well, I lived with, I lived with a guy who had gone to art school and became a graphic designer.
+
+00:20:12.319 --> 00:20:17.359
+And, um, his name was John and he was the guy in high school who was the best painter
+
+00:20:17.359 --> 00:20:23.199
+and also the best athlete. And he could navigate those two worlds relationally really well. And
+
+00:20:23.199 --> 00:20:29.520
+he was talented in both of those worlds. Um, and so he was actually, he had gone to art school,
+
+00:20:29.520 --> 00:20:34.880
+became a graphic designer, really disliked graphic design because it wasn't art. And so he
+
+00:20:34.880 --> 00:20:39.199
+bought an easel and got a different job. So he would go to his job and then he would come home
+
+00:20:39.199 --> 00:20:44.640
+and he would paint. And that was the best case for him. But, uh, I was living with him and I was
+
+00:20:44.640 --> 00:20:49.359
+starting to do this work and he said, you're really like, you're doing graphic design. Uh,
+
+00:20:49.359 --> 00:20:54.000
+I can teach you some fundamentals if you want. And so for the, for the next like year, year and a half,
+
+00:20:54.959 --> 00:21:00.400
+he would kind of pace behind me and introduce new, you know, theories or tools or whatever,
+
+00:21:00.400 --> 00:21:05.599
+whether it was like specific to the software or just an overall vision kind of scenario, um, for
+
+00:21:05.599 --> 00:21:10.000
+where something should go. And he kind of taught me the fundamentals of what he learned in art school
+
+00:21:10.000 --> 00:21:14.079
+and what he learned as a graphic designer. So he's the reason that I'm a designer. Yeah.
+
+00:21:14.880 --> 00:21:18.160
+Yeah. That's wild. And how did you, how'd you get involved with Posit? What was your
+
+00:21:19.119 --> 00:21:25.280
+Posit connection? So I went to a birthday party with my wife one night and it was a guy that we
+
+00:21:25.280 --> 00:21:30.319
+knew only sort of, well, we were just getting to know him and at this birthday party, um, there
+
+00:21:30.319 --> 00:21:34.239
+were like 50 people there and it was at a restaurant. So think about this, like 40 or 50
+
+00:21:34.239 --> 00:21:39.599
+people at a restaurant. And rather than being at a bunch of different little tables, what they did
+
+00:21:39.599 --> 00:21:45.680
+was they put one long table together, which is worst case scenario, because what if you sit across
+
+00:21:45.680 --> 00:21:49.599
+from, you know, somebody you don't feel like hanging out with. And it was on the other side
+
+00:21:49.599 --> 00:21:55.359
+of the table from my friend who it was like the only person I knew in the room. So, uh, we sit
+
+00:21:55.359 --> 00:22:02.800
+down at the table and we are across from Joe and his wife, Amy Chang. And over the course of the
+
+00:22:02.800 --> 00:22:07.760
+next hour or two, I don't think I've ever laughed that hard in my life. Like you guys, you know,
+
+00:22:07.760 --> 00:22:12.560
+Joe, he and his wife, it was so funny. And, you know, sometimes you walk away from something like
+
+00:22:12.560 --> 00:22:17.439
+that, you get in your car and, and you kind of go, should we try and get their phone numbers?
+
+00:22:17.439 --> 00:22:22.959
+Like, should we try and see those people again? That was a lot of fun. And so after that, uh,
+
+00:22:22.959 --> 00:22:28.319
+started hanging out with Joe. And so I knew Joe while this was all going on, um, as kind of the
+
+00:22:28.319 --> 00:22:35.199
+IDE was first getting started and he and JJ were working together. Yeah, cool. Um, yeah. What was
+
+00:22:35.199 --> 00:22:40.959
+it like working with them? Cause what was, wait, when you started working with Posit, what, how
+
+00:22:40.959 --> 00:22:47.119
+big was it? Like, what are we talking about? Like how many people? It was two or three people. Yeah.
+
+00:22:47.920 --> 00:22:53.199
+Wow. Yeah. Okay. And Hadley hasn't joined yet. Is that right? No, no, no, no. Yeah. It wasn't,
+
+00:22:53.199 --> 00:22:59.199
+it was an open source project. It wasn't a company yet. Um, and so in working with them and then when
+
+00:22:59.199 --> 00:23:03.599
+Hadley and Garrett and Winston, they were kind of, uh, employees four or five and six when they
+
+00:23:03.599 --> 00:23:06.560
+came along, I was meeting with them quite a bit cause they were, we were trying to communicate
+
+00:23:06.560 --> 00:23:13.199
+more stuff on the website. Um, it just kind of became clear that whoever worked at our studio,
+
+00:23:13.199 --> 00:23:19.199
+I really enjoyed talking to. And so, um, I don't remember what year Tariff came on board and kind
+
+00:23:19.199 --> 00:23:22.880
+of started turning it, you know, shifting from an open source project into a company,
+
+00:23:23.920 --> 00:23:30.719
+um, to make it a sustainable open source project. Um, when that happened, there was, there was now
+
+00:23:30.719 --> 00:23:34.719
+a couple of marketing people who came in, um, and those people were the greatest people I'd ever
+
+00:23:34.719 --> 00:23:39.839
+met in my life. And it was just like, Oh my gosh, every time I meet with anyone at this company,
+
+00:23:39.839 --> 00:23:45.280
+when they get more people, they're also still great. And so, um, my wife and I had started a
+
+00:23:45.280 --> 00:23:50.239
+design little shop out of our house and that was what I was doing full-time. And so I had a bunch
+
+00:23:50.239 --> 00:23:55.280
+of different clients, um, somewhere in Boston. I live in Seattle, so a lot of them were in Seattle.
+
+00:23:56.079 --> 00:24:04.319
+Um, and I just learned that when I'm working with our studio, I'm having a great time and it's these
+
+00:24:04.319 --> 00:24:08.880
+people are really, not only they're like the smartest people I've ever met in my life, but also
+
+00:24:08.880 --> 00:24:13.680
+what they're trying to do, uh, seemed really thoughtful and noble. I got on board really quick.
+
+00:24:13.680 --> 00:24:18.479
+And then when I started hearing from them who they were meeting that was using the software,
+
+00:24:18.479 --> 00:24:22.800
+that's really what sealed the deal. Um, when they said, uh, you know, I'm meeting people
+
+00:24:22.800 --> 00:24:26.719
+who are using this stuff. I'm like, they're legitimately doing some incredible data science
+
+00:24:26.719 --> 00:24:30.640
+with it and really kind of moving the needle towards good in the world that really puts
+
+00:24:30.640 --> 00:24:36.880
+enough gas in your tank for another year, you know? Um, so that became the full picture.
+
+00:24:37.680 --> 00:24:41.680
+And in 20 that, so that was, I started working with these guys like 2011, 2012,
+
+00:24:42.319 --> 00:24:46.319
+and then the company was growing. I was kind of like doing design stuff for shiny DevCon,
+
+00:24:46.319 --> 00:24:49.760
+the first conference. And then, and then our studio comp started happening. So I was doing
+
+00:24:49.760 --> 00:24:54.959
+that stuff. Um, and then just kind of whatever marketing stuff they needed, like, you know,
+
+00:24:54.959 --> 00:25:00.479
+brands, the R studio brand, um, the, uh, like trade show booth stuff, you know, whatever they
+
+00:25:00.479 --> 00:25:09.040
+needed, it was always a joy. And not all my clients were a joy. And, um, there was a day
+
+00:25:09.040 --> 00:25:13.280
+where I was talking to one of my clients was, uh, I won't say who, but like a massive, um,
+
+00:25:14.239 --> 00:25:20.640
+pharma company and wonderful people. But some of the things they said about the things they were
+
+00:25:20.640 --> 00:25:27.359
+dealing with, you know, um, really made me think, who am I, who am I, who am I giving my talents to
+
+00:25:27.359 --> 00:25:31.040
+here? You know, talent, I say talent in quotes, but like, who am I giving my time and energy to?
+
+00:25:31.920 --> 00:25:36.000
+Um, and I was doing a lot of work with chemical companies as well. And so I was working with
+
+00:25:36.000 --> 00:25:40.319
+these massive brands and I, it was just kind of, I don't know, disheartening, I guess is the word.
+
+00:25:40.880 --> 00:25:46.959
+And I, my office is in our backyard and, uh, I walked in and, and my wife, Nicole kind of said,
+
+00:25:46.959 --> 00:25:51.119
+what's that look on your face? I just said, I didn't, I think, I think we're going to need to
+
+00:25:51.119 --> 00:25:55.439
+start thinking about like who we're giving our time and talent to here. You know, it just seems
+
+00:25:55.439 --> 00:26:01.680
+like we're making money, but at what cost. And she said, well, at least you always have our studio.
+
+00:26:01.680 --> 00:26:07.439
+You love those people. Right. And I just realized this is 2017 and I late 2017 when she said this
+
+00:26:07.439 --> 00:26:12.319
+to me and I started working full-time for our studio in early 2018. And it's like the joy of
+
+00:26:12.319 --> 00:26:16.400
+my life to even say that sentence. This is the greatest place, um, because of the people, but
+
+00:26:16.400 --> 00:26:19.760
+also because of, you know, the people that we're trying to support with the software.
+
+00:26:20.640 --> 00:26:27.280
+Yeah. Yeah. It's so interesting hearing about kind of how you, how you got there. Do you have
+
+00:26:27.280 --> 00:26:34.400
+like a favorite project you've worked on or like a favorite thing? Like what's your favorite thing
+
+00:26:34.400 --> 00:26:40.160
+or set of things you've cooked on? A couple of years ago, um, we decided to kind of open the
+
+00:26:40.160 --> 00:26:48.160
+UI lid of shiny and, um, we got to kind of do a new take on that after 10 years of it being
+
+00:26:48.160 --> 00:26:53.920
+essentially looking the same. And I mean, the people who are using shiny are the people that I,
+
+00:26:53.920 --> 00:27:00.079
+you know, wake up every morning wanting to help out, um, make their lives easier. And so, um,
+
+00:27:00.079 --> 00:27:08.479
+that was incredible mostly because, um, it was a great challenge and the people, you know, Carson,
+
+00:27:08.560 --> 00:27:13.520
+Garrick, Winston, Joe, all the people who are working on the, on the shiny team. It was just
+
+00:27:13.520 --> 00:27:19.040
+like, well, these are my favorite people as well. It's so fun to hang out. Um, and so shiny was a
+
+00:27:19.040 --> 00:27:24.160
+really big deal for me because that was kind of like, you know, who I wanted to support by working
+
+00:27:24.160 --> 00:27:32.160
+here. Um, the people using shiny, um, I have, um, and, and the last two years I've been working on
+
+00:27:32.160 --> 00:27:36.319
+posit connect as well. I kind of have one foot in, uh, the open source world here where I'm helping
+
+00:27:36.319 --> 00:27:41.359
+out in all kinds of different ways. And then I'm also helping out with how posit connect looks.
+
+00:27:41.359 --> 00:27:49.359
+And another thing that kind of hadn't had a lot of UI UX, um, work done on it in 10 years. And so
+
+00:27:49.359 --> 00:27:55.119
+it was kind of a similar situation to shiny. And again, every corner of this company that I go to,
+
+00:27:55.119 --> 00:28:01.920
+it's like, well, these people are amazing. How did this happen? You know? So, um, so it's been
+
+00:28:01.920 --> 00:28:06.640
+the joy of my life to work on connect because, you know, people in big organizations,
+
+00:28:06.640 --> 00:28:10.719
+they need some security for their shiny apps, you know, their Cordo apps, all that.
+
+00:28:10.912 --> 00:28:16.112
+— all that, all those scenarios. So, you know, I feel like I'm still getting out of
+
+00:28:16.112 --> 00:28:20.132
+bed every morning, you know, helping the people who I'm trying to help, no matter what I'm
+
+00:28:20.132 --> 00:28:21.132
+working on.
+
+00:28:21.132 --> 00:28:27.352
+Yeah. And it's, it's interesting too, didn't you, you gave a talk on your shiny, shiny
+
+00:28:27.352 --> 00:28:33.232
+design stuff, right? Like at PositConf 2022 or 2023?
+
+00:28:33.232 --> 00:28:39.672
+Yeah, I think it was 2022. Yeah. I, yeah, I did kind of a, I did a before and after
+
+00:28:39.672 --> 00:28:44.112
+right after I had gotten to the shiny team, we kind of identified what, what we thought
+
+00:28:44.112 --> 00:28:49.392
+we could do. And so we kind of announced what we were working on. And then two conferences
+
+00:28:49.392 --> 00:28:55.952
+later, I, I did kind of a retrospective of what we had done and yeah, my heart was going
+
+00:28:55.952 --> 00:28:59.592
+out to anyone who works at these big organizations and they need to make their shiny app look
+
+00:28:59.592 --> 00:29:01.752
+like their brand.
+
+00:29:01.752 --> 00:29:12.831
+And so that was, we made shiny kind of designable for people. And then, and then hopefully it's
+
+00:29:12.831 --> 00:29:16.312
+something that people don't really need to think about who are at these massive companies
+
+00:29:16.312 --> 00:29:21.392
+or places with really strict kind of branding standards. Hopefully it's not a hard thing
+
+00:29:21.392 --> 00:29:25.511
+for them to do to make it look like their company.
+
+00:29:25.511 --> 00:29:31.272
+It's cool that you got to like do design for Posit, like on Posit's website, but also like
+
+00:29:31.272 --> 00:29:36.751
+bring design into the tools, like design into the open source tools for other people
+
+00:29:36.751 --> 00:29:41.551
+to essentially like tap good design at their companies.
+
+00:29:41.551 --> 00:29:45.952
+Yeah. The hope is they don't have to think about it at all. You know, it's the last thing
+
+00:29:45.952 --> 00:29:50.551
+I want them worrying about as they're, you know, curing cancer, ending world hunger,
+
+00:29:50.551 --> 00:29:56.151
+you know, just doing the most amazing things you can even imagine. I want them to not have
+
+00:29:56.151 --> 00:30:02.592
+to worry about what color blue is in their, their apps or whatever, you know, I want that
+
+00:30:02.592 --> 00:30:05.791
+to be the easiest thing possible so they can really focus on the stuff they're there to
+
+00:30:05.791 --> 00:30:06.791
+do.
+
+00:30:06.791 --> 00:30:15.831
+Yeah, that makes sense. And where you, you've been around since the earliest conferences,
+
+00:30:15.831 --> 00:30:22.031
+like you were there when the conferences first started.
+
+00:30:22.031 --> 00:30:26.912
+I wasn't there. I was going to be there, but then my son was born. And so, so priorities,
+
+00:30:26.912 --> 00:30:33.792
+we had a, yeah, totally. So our friend Danny went down there to film the first Shiny DevCon.
+
+00:30:33.792 --> 00:30:36.471
+So we have that footage at least, which is great. There were like 90 people there at
+
+00:30:36.471 --> 00:30:42.232
+Stanford at Shiny DevCon in 2016. And then, but yeah, then they just said, we're going
+
+00:30:42.232 --> 00:30:48.471
+to make it a real thing. It's called RStudioConf. And I just kind of went to Starbucks and started
+
+00:30:48.471 --> 00:30:54.432
+designing, you know, what that hotel would look like to the degree that, you know, we
+
+00:30:54.432 --> 00:30:58.951
+could afford for a small little scrappy conference. You asked what my favorite thing is. I can
+
+00:30:58.951 --> 00:31:05.352
+tell you my favorite thing. I really love setting an overall tone, whether visually
+
+00:31:05.352 --> 00:31:11.992
+and also with, with film and video. But my very favorite thing is operating on a scrappy
+
+00:31:11.992 --> 00:31:16.632
+little crew. A couple of people can come together and just say, we're going to go as fast as
+
+00:31:16.632 --> 00:31:21.671
+we can with the scrappy little crew. And so, you know, I love being with a bunch of
+
+00:31:21.671 --> 00:31:27.311
+like Swiss army knives who just, yeah, I can take care of that, you know? So that's my
+
+00:31:27.311 --> 00:31:32.512
+favorite situation to be in. A couple of people in a room moving fast. That's my very favorite
+
+00:31:32.512 --> 00:31:33.512
+thing.
+
+00:31:33.512 --> 00:31:38.632
+Okay. I don't want to blow this up, but is there a great bad movie that maybe embodies
+
+00:31:38.632 --> 00:31:43.352
+the scrappy little crew you're trying to be on? You know, I feel like a lot of great bad
+
+00:31:43.352 --> 00:31:48.232
+movies have scrappy crews. So I'm wondering, are you like a fast and furious scrappy crew?
+
+00:31:50.712 --> 00:31:52.872
+Who, who's your scrappy crew? If you had, uh,
+
+00:31:53.992 --> 00:31:56.951
+When, when we were getting the gang together for one last job, that's what you're talking
+
+00:31:56.951 --> 00:31:59.272
+about. That's a great bad movie right there. That's every great bad movie.
+
+00:31:59.272 --> 00:32:01.831
+One more wild ride. You know, who, who's in your crew?
+
+00:32:02.712 --> 00:32:05.272
+Oh man, I have to pick one crew.
+
+00:32:05.272 --> 00:32:07.031
+Is it Luda? You know, is Luda?
+
+00:32:08.152 --> 00:32:12.951
+I mean, Luda and Roman, you know, getting off to their shenanigans. That's really something.
+
+00:32:13.352 --> 00:32:16.311
+Um, um, let's see.
+
+00:32:18.471 --> 00:32:22.311
+Yeah, I'll just say fast and furious five. That crew coming together is, is going to
+
+00:32:22.311 --> 00:32:23.992
+be the crew I call every day of the week.
+
+00:32:24.632 --> 00:32:28.552
+I have to admit I invoke fast and furious, but I'm not the most fast and furious literate.
+
+00:32:28.552 --> 00:32:33.112
+Who's who's in five? The rock is the rock at that point or
+
+00:32:33.112 --> 00:32:34.711
+The rock shows up in five for the first time.
+
+00:32:35.271 --> 00:32:35.991
+Yep.
+
+00:32:35.991 --> 00:32:36.711
+Incredible.
+
+00:32:36.711 --> 00:32:37.271
+Yeah.
+
+00:32:37.271 --> 00:32:41.191
+Yeah. Yeah. Yeah. So, you know, we're dealing with Michelle Rodriguez, who is incredible
+
+00:32:41.191 --> 00:32:48.392
+and everything. Uh, Vin Diesel, Paul Walker. We got Gal Gadot. Um, we've got Ludacris.
+
+00:32:49.271 --> 00:32:55.271
+Um, we've got Tyrese. Yeah. Oh, it's yeah. Best case scenario. You know, it's amazing.
+
+00:32:58.392 --> 00:33:02.711
+I can't believe we're getting into this. I go really deep on, uh, on ridiculous things
+
+00:33:02.711 --> 00:33:07.271
+like this, but, um, let me tell you where short, where scrappy little crew came from though.
+
+00:33:07.271 --> 00:33:13.271
+Um, when I first started out designing in Seattle, um, a friend of mine was a bartender
+
+00:33:13.271 --> 00:33:16.471
+in Seattle and he said, Hey, there's a guy you need to meet. And there's a guy that wants to
+
+00:33:16.471 --> 00:33:22.072
+meet you. Um, he's an artist. He has an art, like a loft right around the corner from this
+
+00:33:22.072 --> 00:33:27.271
+bar in South Lake union in Seattle. I was like, all right. So I met up with this guy.
+
+00:33:27.271 --> 00:33:32.072
+He was, uh, he was an artist. I want to say he had overalls with paint on them. You know,
+
+00:33:32.072 --> 00:33:38.232
+he was that guy. Um, and he said, all right, let's go come over to the loft and I'll, I'll,
+
+00:33:38.232 --> 00:33:43.832
+I'll tell you what we're doing. This guy told me a story of he and his partner and two other people
+
+00:33:43.832 --> 00:33:50.552
+had redesigned every Safeway store on the planet. And I was like, what? He goes, yeah, it was my
+
+00:33:50.552 --> 00:33:56.952
+partner, me, this other guy, and then, and then a designer with a broken laptop in a, in a abandoned
+
+00:33:56.952 --> 00:34:03.991
+warehouse in the Bay area. And we redesigned every Safeway and, and it really worked out well
+
+00:34:03.991 --> 00:34:07.512
+because there were only four of us. And he kind of explained how these four people work together.
+
+00:34:08.392 --> 00:34:12.792
+And, but he said, the designer who owned the broken laptop was making sure all the ideas got
+
+00:34:12.792 --> 00:34:19.271
+in visually into what they were talking about. And he said, right now we are talking to Starbucks.
+
+00:34:20.232 --> 00:34:27.031
+Um, and we are going to turn most of the Starbucks on the planet into one of three ideas. And he
+
+00:34:27.031 --> 00:34:30.232
+explained to me what the three ideas were. It was kind of like a Starbucks that would be themed
+
+00:34:30.232 --> 00:34:37.751
+based on what part of town it was in. Um, and he said, we're about to do it again and we're
+
+00:34:37.751 --> 00:34:41.912
+putting together a crew. We're getting the gang back together. Ludacris is busy. Tyrese, you know,
+
+00:34:41.912 --> 00:34:46.632
+is, is busy filming something. So would you be the guy with the laptop making sure all of our
+
+00:34:46.632 --> 00:34:52.871
+ideas are getting into a design? And just, I mean, the idea, it was like, it was like the
+
+00:34:52.871 --> 00:34:56.952
+velvet underground playing music for the first time in a, in a garage, you know, it was just
+
+00:34:56.952 --> 00:35:02.392
+like, Oh my gosh. Yeah. Think of what we could do. Um, just the four of us. And so when he described
+
+00:35:02.392 --> 00:35:09.512
+the scrappy little crew to me, I was just like, I'm in. And he said, um, I don't know if it's
+
+00:35:09.512 --> 00:35:13.191
+going to happen. I don't know if we'll need you because there's a chance the Starbucks,
+
+00:35:14.072 --> 00:35:18.632
+you know, corporate, uh, designers will be, will, it will work out, but we're putting together this
+
+00:35:18.632 --> 00:35:24.232
+crew just in case that falls apart. And he said, we are, we don't know yet. We don't know Starbucks
+
+00:35:24.232 --> 00:35:28.871
+well enough. It might be full of people who are just trying to keep their job rather than do their
+
+00:35:28.871 --> 00:35:34.151
+job. And I think about that all the time. Are people trying to keep their job or are they trying
+
+00:35:34.151 --> 00:35:40.072
+to do their job? And I think in the context of this person, who's like trying to get you in on
+
+00:35:40.072 --> 00:35:46.311
+a heist versus that, like people trying to keep their jobs, but if not, we're going to run this
+
+00:35:46.311 --> 00:35:52.792
+heist, you know, we're going to like redesign Starbucks. We're going to drift around all the
+
+00:35:52.792 --> 00:35:58.232
+corners. You know, we're going to jump a bus. We're going to jump a bus 50 feet, you know,
+
+00:35:59.112 --> 00:36:03.271
+me and you, we're going to trade faces and then pull Starbucks redesign.
+
+00:36:03.991 --> 00:36:11.832
+Sure. 100%. Yeah. Um, he did call me a couple months later. No, it didn't happen. He called
+
+00:36:11.832 --> 00:36:14.792
+me and he said, turns out the Starbucks people are awesome. We're going to worry. We don't need
+
+00:36:14.792 --> 00:36:20.552
+the scrappy little crew. The people here are amazing. So it worked out. So happy for him.
+
+00:36:20.552 --> 00:36:24.871
+And, but this meeting really kind of changed. This is early on. I had done a little bit in town
+
+00:36:24.871 --> 00:36:29.751
+enough for him to say, I want to talk to this guy, but, um, but it really changed the way,
+
+00:36:29.751 --> 00:36:32.792
+first of all, I never want to be keeping my job. I only want to be doing my job.
+
+00:36:33.352 --> 00:36:39.912
+And, uh, but also a scrappy little crew and a broken down warehouse, um, is just best case
+
+00:36:39.912 --> 00:36:44.151
+scenario. What, how far, how far and fast can we go and furious? Yeah, that's incredible.
+
+00:36:44.951 --> 00:36:49.912
+Wow. What's your, uh, okay. I don't want to drag the metaphor out, but which one are you on the
+
+00:36:49.912 --> 00:36:55.432
+crew? Do you think, what's your role? Do you have a sense for like what you bring to the crew?
+
+00:36:55.992 --> 00:37:00.471
+Cause everybody's got a job in a scrappy crew. I feel like, are you the wild card?
+
+00:37:01.432 --> 00:37:02.792
+No, I'm the encouraging guy.
+
+00:37:05.031 --> 00:37:05.831
+You're the glue.
+
+00:37:07.271 --> 00:37:11.591
+I'm the glue. I am the glue. Yeah. I mean, I think that all the people around us,
+
+00:37:11.591 --> 00:37:15.352
+they don't know how amazing they are. And I feel like it's, it's, I just feel really
+
+00:37:15.352 --> 00:37:19.192
+compelled to let people know how great they are often. And I often, I'm usually speaking
+
+00:37:19.192 --> 00:37:23.031
+in hyperbole. A lot of people make fun of me for saying absolutely everybody in a story is
+
+00:37:23.992 --> 00:37:26.552
+the greatest person you've ever met, but I kind of, I kind of mean it.
+
+00:37:28.391 --> 00:37:35.192
+So, uh, I think my job is to say, listen, I don't think you recognize you are magic and we can do
+
+00:37:35.192 --> 00:37:43.031
+this. And that's huge. I mean, like people need that. I can see the like tasty glue layer being
+
+00:37:43.031 --> 00:37:50.792
+a critical piece and you, you really bring in that. Um, that also, I guess when we were chatting
+
+00:37:50.792 --> 00:37:57.432
+a little bit before this, maybe, maybe this is relevant to, like you mentioned in terms of like
+
+00:37:57.432 --> 00:38:04.391
+really being positive and telling people how important they are for things like conference
+
+00:38:04.391 --> 00:38:12.552
+video, like designing a video for conf. Oh yeah. Yeah. I don't know if this is a good time,
+
+00:38:12.552 --> 00:38:18.151
+but I wonder if that, that just reminded me a bit, maybe you could share a little bit about that
+
+00:38:18.792 --> 00:38:23.672
+video. Yeah, this, this speaks to kind of the DNA of our company and the organization and the people
+
+00:38:23.672 --> 00:38:35.591
+around us. Um, this was in, um, 2019 we had a conference in Austin and in 2018, um, in San
+
+00:38:35.591 --> 00:38:41.831
+Diego, the opening video to the conference had been, um, a way to welcome people in. And I don't
+
+00:38:41.831 --> 00:38:46.151
+know, there were maybe 40 something people working at our studio at the time. And in this video,
+
+00:38:46.151 --> 00:38:52.071
+they said, um, here's all the languages we speak, you know, verbal languages, here's all the, um,
+
+00:38:52.071 --> 00:38:57.752
+programming languages, data science languages that we, that we speak and we're using. And then I
+
+00:38:57.752 --> 00:39:03.752
+think they, um, and they said, you know, all of this is who we are and we welcome you to the
+
+00:39:03.752 --> 00:39:08.232
+conference. I think that's kind of what the vibe was. And so when I got here to work full time,
+
+00:39:08.232 --> 00:39:10.951
+they said, Hey, we want to make another one of these. We kind of want to build on it.
+
+00:39:10.951 --> 00:39:14.391
+We want the staff of our studio to welcome everybody to the conference again.
+
+00:39:15.031 --> 00:39:19.591
+And so we, you know, I was like, awesome, let's get everybody to send five seconds of video and
+
+00:39:19.591 --> 00:39:24.151
+I'll edit it together and turn it into the welcome video. And so we asked everybody to send five
+
+00:39:24.151 --> 00:39:30.151
+seconds of themselves in some place doing something that they loved. And so people are like, you know,
+
+00:39:30.151 --> 00:39:34.151
+like jumping out of planes, people are at their computer and their cat is walking over there.
+
+00:39:34.151 --> 00:39:39.752
+Um, their keyboard, people are riding their bike, people are doing awesome stuff and really kind of
+
+00:39:39.752 --> 00:39:46.711
+showing the character of, you know, the people who work here. It was very cool. And, um, and I
+
+00:39:46.711 --> 00:39:52.391
+got this email from, from JJ Allaire saying, I'm a little concerned about this video. Um, I'd like
+
+00:39:52.391 --> 00:39:55.591
+to talk to you about it. Something seems off about it to me. It's like, yeah, let's talk about it.
+
+00:39:56.232 --> 00:40:02.071
+And he just said, um, I liked the video last year. I'm worried going deeper on that theme,
+
+00:40:02.711 --> 00:40:07.192
+the conference is going to become about us. And that couldn't be further from the truth.
+
+00:40:07.192 --> 00:40:11.591
+The whole reason we're doing this conference, the whole reason we exist as an organization is
+
+00:40:11.591 --> 00:40:18.631
+because of the people who are using the software. And so the shift should be the people who are
+
+00:40:18.631 --> 00:40:23.031
+there, not us. He's like very uncomfortable with us being the star of this thing at all.
+
+00:40:23.591 --> 00:40:27.992
+And it was such a great, this is the first year that I worked here full time. And it was such a,
+
+00:40:28.552 --> 00:40:37.912
+um, helpful thing to, to get early on that this isn't about us at all. You know, um, it's really
+
+00:40:37.912 --> 00:40:42.391
+about the people who are using the software and trying to move the needle towards good as a result.
+
+00:40:43.112 --> 00:40:52.151
+And so, um, so we made a video that welcomed them, uh, by saying who they were and it finished the,
+
+00:40:52.151 --> 00:40:56.232
+the video finished with, um, I had taken the first name of everybody that was in the room,
+
+00:40:56.951 --> 00:41:02.071
+uh, from our registration. And literally at the end of the video, everybody's name of everybody
+
+00:41:02.071 --> 00:41:06.391
+who was in the room was on the screen. And it was like, you are the reason we're here,
+
+00:41:06.391 --> 00:41:12.232
+you know, welcome to our studio conf. And it was, it was a very, um, really teachable moment for me
+
+00:41:12.232 --> 00:41:17.511
+as far as what this, this organization is, um, and what the focus should be.
+
+00:41:18.552 --> 00:41:25.031
+Yeah. It's so cool. I mean, it's so neat to hear how you're able to take that and change it from
+
+00:41:25.031 --> 00:41:31.752
+like, yeah, looking inside Posit to figuring out a way to kind of reflect back to everybody there.
+
+00:41:31.752 --> 00:41:35.112
+I feel like, I don't know, for some, I feel like just putting people's names up is so
+
+00:41:35.672 --> 00:41:43.752
+personal to a whole conference is kind of such an interesting, I guess, design challenge,
+
+00:41:44.552 --> 00:41:50.792
+but it seems like such a nice way to like, yeah, really welcome people. And to your point, like
+
+00:41:51.752 --> 00:41:57.352
+put the focus on them as the, the community is like super inspiring.
+
+00:41:58.071 --> 00:42:02.552
+I mean, can I turn the, can I turn the tables on you for a second? I mean, with you working here,
+
+00:42:03.112 --> 00:42:06.711
+you know, you're meeting people who are using the software. What's it like when you meet somebody
+
+00:42:06.711 --> 00:42:12.071
+who's like, do you know, field science has turned into data science and they're working on, um,
+
+00:42:12.071 --> 00:42:16.872
+the coral reef, like the next video, the next welcome we did in San Francisco in 2020 told the
+
+00:42:16.872 --> 00:42:20.951
+story of one data scientist rather than everybody in the room and told the story of one data
+
+00:42:20.951 --> 00:42:27.752
+scientist who was working on the bleaching of the coral reef. Yeah. You're asking, um,
+
+00:42:28.951 --> 00:42:34.151
+what's it like to run into these people and see like, this is, these are like the problems people
+
+00:42:34.151 --> 00:42:40.232
+in the community are solving. And sometimes they're like, so impactful. Like, um, I mean,
+
+00:42:40.232 --> 00:42:46.312
+I think of like even the cook County, um, assessor's office figuring out like real estate
+
+00:42:46.312 --> 00:42:53.271
+taxes, which involves a lot of actually like historically like disenfranchised communities
+
+00:42:53.271 --> 00:43:02.151
+and, you know, like trying to be fair or kind of like, uh, people in low income neighborhoods,
+
+00:43:02.151 --> 00:43:08.232
+who's like houses get taxed, especially high. Like they, they have a huge challenge or like
+
+00:43:08.232 --> 00:43:13.591
+people from the ACLU have been to conf and I know personally in Philly, a lot of legal orgs
+
+00:43:14.232 --> 00:43:21.192
+that do data analysis for like impactful causes. And, but, but getting back, like what,
+
+00:43:22.792 --> 00:43:27.271
+what's my like reaction or what does that produce in me? I would say like,
+
+00:43:28.312 --> 00:43:34.471
+I too love a scrappy crew. I would consider myself the wild card. I'm a very, uh, off the cuff,
+
+00:43:35.192 --> 00:43:42.792
+maybe bias to action wild card. But, um, I, I only bring that up because I think when I run
+
+00:43:42.792 --> 00:43:48.071
+into people who are like using our tools for really impactful things, it kind of freaks me
+
+00:43:48.071 --> 00:43:55.352
+out. Like it really brings me back to like being careful. Like I would say in general, like I'm
+
+00:43:55.352 --> 00:44:01.352
+a mover, I like chaos, you know, but when I run into people using these tools for impactful things,
+
+00:44:01.352 --> 00:44:11.511
+I'm like, I gotta be so careful and conscientious and like, I've got to do a really good job for
+
+00:44:11.511 --> 00:44:20.312
+these people. And I really appreciate that kind of like pull back where I like to, I like busyness
+
+00:44:20.312 --> 00:44:27.992
+and chaos, but when I hit these, I feel way more careful. And like, I have a big desire to like
+
+00:44:28.631 --> 00:44:34.792
+make sure that everything is working out well. And so, I don't know, I really appreciate like
+
+00:44:34.792 --> 00:44:42.872
+being part of Posit and seeing that impact and the kind of what it does to me, you know, I think
+
+00:44:43.591 --> 00:44:51.031
+I find it really soul enriching and important kind of in my like push and pull work.
+
+00:44:52.391 --> 00:44:55.672
+Yeah. I don't know if that makes sense when you run into someone and you're like,
+
+00:44:55.752 --> 00:45:00.951
+I do, I do not want to mess things up for you. Like I want things to work so well for you.
+
+00:45:01.511 --> 00:45:05.992
+It's just incredibly, I feel like important and kind of grounding. So.
+
+00:45:06.872 --> 00:45:13.912
+Let me tell one story quick, really quick. So at the conference in 2020, we were in San Francisco
+
+00:45:14.872 --> 00:45:20.952
+and we had this interview booth set up for people to talk about their biggest challenges in data
+
+00:45:21.912 --> 00:45:27.432
+science and also give a synopsis of a talk. Everyone who spoke at the conference went to
+
+00:45:27.432 --> 00:45:32.552
+this little interview booth and I had been working on other things, but they needed somebody to cover
+
+00:45:33.432 --> 00:45:37.832
+and ask the questions at the very end of the week or the very end of the time.
+
+00:45:37.832 --> 00:45:45.111
+So I go in for this last session and it's the first interview I've done there. And this guy's
+
+00:45:45.111 --> 00:45:49.672
+talking about, you know, the challenges with SQL and what he's using Shiny for and things like that.
+
+00:45:50.552 --> 00:45:54.712
+And he's just awesome. And he works at the, he works at CHOP. He works at the Children's
+
+00:45:54.712 --> 00:46:02.712
+Hospital of Philadelphia. Speaking of where you're, you are right now. And I started crying
+
+00:46:05.031 --> 00:46:11.192
+because he, I just said, the reason I work here is because I want to help sick kids. Like that
+
+00:46:11.192 --> 00:46:15.432
+is my number one thing. And you are literally the reason. And as I started saying this,
+
+00:46:15.432 --> 00:46:18.391
+I just started crying. I was like, you are the reason I get out of bed in the morning
+
+00:46:18.472 --> 00:46:23.511
+because I want you to be able to do what you do. And it was just this really weird moment. I was
+
+00:46:23.511 --> 00:46:29.031
+like, oh my gosh, why am I crying right now? And he was just the nicest guy. And so, and I kind of
+
+00:46:29.031 --> 00:46:32.151
+learned something about myself as I was saying, like, oh my gosh, I didn't realize, you know,
+
+00:46:32.871 --> 00:46:39.271
+it's weird to say that out loud for the first time. And so then the next day there was a moment
+
+00:46:39.271 --> 00:46:46.792
+where there was like a break in like the main kind of lounge at the conference. And I walked in and I
+
+00:46:46.792 --> 00:46:50.231
+was looking for someone who wasn't talking to anybody yet just to walk up and introduce myself
+
+00:46:50.231 --> 00:46:54.312
+and, you know, say hi. And there was another guy who was walking in and everybody was kind of
+
+00:46:54.312 --> 00:47:00.231
+walking and getting cookies and coffee or whatever. And he walked in and he was kind of eating his
+
+00:47:00.231 --> 00:47:04.072
+cookie and drinking his coffee, but hadn't quite landed in a crew yet. So I just beelined straight
+
+00:47:04.072 --> 00:47:09.511
+to him and introduced myself and said, hi, this guy, really nice guy. And it turned out he also
+
+00:47:09.511 --> 00:47:15.592
+worked at CHOP. And so I was like, oh my gosh, I met your coworker yesterday. And then as I was
+
+00:47:15.592 --> 00:47:20.072
+recounting the story of the day before, I started crying again in the middle of this lounge. I was
+
+00:47:20.072 --> 00:47:24.312
+like, oh my gosh, this is a really deep thing for me. I can say it now because I've told the story
+
+00:47:24.312 --> 00:47:28.871
+a bunch of times, but I mean like the first like eight times I told the story and, but like that's,
+
+00:47:28.871 --> 00:47:32.312
+that's what gets me out of bed in the morning. And I feel like that's the caliber of the people
+
+00:47:32.312 --> 00:47:36.871
+that we work with. That's what they're doing as well. You know, it comes back to, let's think
+
+00:47:36.871 --> 00:47:42.151
+about that person who was really doing something in this world and make sure their life is better,
+
+00:47:42.151 --> 00:47:45.271
+you know, so that while they're doing their stuff, you know, they're supported by us.
+
+00:47:45.271 --> 00:47:49.751
+And I just love that we are an open source project. Anyone can download our stuff,
+
+00:47:49.751 --> 00:47:54.072
+regardless of economic means. And we've figured out how to turn this into a company that sustains
+
+00:47:54.072 --> 00:47:59.111
+that. And it just gets me out of bed in the morning, you know? But yeah, I mean, you're
+
+00:47:59.111 --> 00:48:03.432
+right. It's incredibly grounding and freaky, like just to hit. And I, I feel that too. Like when
+
+00:48:03.432 --> 00:48:11.672
+you hit a really impactful topic, you know, those tears, I feel like it just, yeah, that's, that's
+
+00:48:11.672 --> 00:48:18.151
+real. You know, uh, 2019, I was in that crowd, you know, I'm sure Michael's up on that screen.
+
+00:48:18.151 --> 00:48:23.511
+There's a hundred Michaels at that conference, but I feel like my big contribution in 2019.
+
+00:48:23.511 --> 00:48:29.511
+And the reason I'm a wild card in, in cruise is that the one thing I remember most from 2019
+
+00:48:29.511 --> 00:48:37.432
+is that I snuck an entire pecan pie into the final like little party. I can't remember where that
+
+00:48:37.432 --> 00:48:43.592
+little party in Austin was. It was like, um, at like a little club venue with like music and
+
+00:48:43.592 --> 00:48:49.031
+dancing. And I, I don't even remember why I snuck that pie. And I just remember, we like went to
+
+00:48:49.031 --> 00:48:55.672
+dinner and we were walking out and there was a display case of pies and we thought like, why not?
+
+00:48:56.712 --> 00:49:02.871
+Yeah. But it did, it did come back full circle because, um, I don't know if you remember Sam
+
+00:49:02.871 --> 00:49:08.792
+Towett, uh, I can't remember. I've never said her last name out loud. So I hope that's right.
+
+00:49:08.792 --> 00:49:15.672
+She, her partner was at like, she worked for Posit, her partner was at a Posit event and he
+
+00:49:15.672 --> 00:49:23.991
+came up to me and he was like, you're the guy who snuck that pie into like an event to Posit Conf
+
+00:49:24.151 --> 00:49:32.631
+2019. And I was like, oh my God, I'd like totally forgotten about that. But that was,
+
+00:49:32.631 --> 00:49:37.592
+that's all to say that was thanks to my scrappy little crew. And that was our heist in 2019.
+
+00:49:37.592 --> 00:49:42.391
+So can we talk about John Turtletaub, director of, uh, National Treasure for a second?
+
+00:49:44.151 --> 00:49:47.912
+Yeah, but let me just change it. Stealing the Declaration of Independence.
+
+00:49:47.912 --> 00:49:50.472
+We're stealing the Declaration of Independence first, then hearts.
+
+00:49:51.271 --> 00:49:54.231
+I mean, if we're going to do anything, we're probably going to, we're going to,
+
+00:49:54.231 --> 00:49:57.832
+if you're, if you're saying Olympus has fallen, I think we need to call Gerard Butler and we
+
+00:49:57.832 --> 00:50:01.912
+need to like help out the president. Honestly, we're going to need Jerry Butler stat who,
+
+00:50:01.912 --> 00:50:06.072
+by the way, is a, he's a short code to a great bad movie. You need Gerard Butler around.
+
+00:50:06.871 --> 00:50:11.751
+What's, who's Gerard Butler? What's, I don't know what's happening right now. Um,
+
+00:50:13.031 --> 00:50:16.472
+oh my gosh. I don't even know. I don't know where we are, Greg. I don't know.
+
+00:50:16.472 --> 00:50:19.031
+We went through a lot of nice places though. You know, I feel like
+
+00:50:20.552 --> 00:50:27.751
+you have been around for so long, so much of Posit's journey. I feel like I would want to
+
+00:50:27.751 --> 00:50:35.271
+be in your scrappy crew a hundred percent, you know? Um, yeah. And I, I really appreciate you
+
+00:50:35.271 --> 00:50:43.351
+talking more about like Posit's journey, the RStudio website, conf, you know, the need to
+
+00:50:43.351 --> 00:50:49.592
+like really, I think turn it back on the audience and what people use open source tools for and,
+
+00:50:49.592 --> 00:50:57.111
+and all the impactful work that they do. I mean, my MO is, um, I mean, I work here on purpose
+
+00:50:57.111 --> 00:51:01.351
+because I really, really like the people that work here and I like what they're doing. And I
+
+00:51:01.351 --> 00:51:06.472
+also really like the people who are using what this company makes. And so it's, it's, it's perfect
+
+00:51:06.472 --> 00:51:12.472
+for me on both sides of the fence. Um, and so I feel like I've hit a perfect lane. I would be
+
+00:51:12.472 --> 00:51:17.111
+designing every day, whether I, I worked here or not, you know, whether I had a job or not,
+
+00:51:17.111 --> 00:51:22.631
+this is just what I would be doing. Um, and so it's really important to me that once you find
+
+00:51:22.631 --> 00:51:27.111
+that lane, it's okay to have fun, you know, like we've been in a scrappy little crew, we've made
+
+00:51:27.111 --> 00:51:33.192
+a couple of things together. This is some of the most fun times I've had, you know? Uh, and so
+
+00:51:33.192 --> 00:51:38.871
+I feel like, uh, it's okay to have, once you find your lane, it's okay to have fun in it, you know?
+
+00:51:39.832 --> 00:51:46.231
+Um, yeah, I was going to say like, I, I suddenly started thinking about like, you know, words of
+
+00:51:46.231 --> 00:51:51.192
+wisdom to, to wrap up and, and, uh, this doesn't really play into anything we've talked about,
+
+00:51:51.192 --> 00:51:55.672
+but like I was thinking about my dad earlier today and his favorite saying, one of his favorite
+
+00:51:55.672 --> 00:52:03.271
+sayings is people don't grow old, people become old by not growing. And I feel like, uh, that's
+
+00:52:03.271 --> 00:52:08.792
+everyone around us here and everyone we meet through, um, this company. Uh, I feel like
+
+00:52:08.792 --> 00:52:13.192
+everybody's trying to grow up, you know, and it's, it's pretty amazing to, to walk alongside
+
+00:52:13.192 --> 00:52:18.472
+everybody here and, uh, grow up together. Yeah. Yeah. It's incredible. I mean, I think that's
+
+00:52:19.511 --> 00:52:27.511
+a great note to end on and something to, to think about. And I think that looking between the lines,
+
+00:52:27.511 --> 00:52:32.072
+like to do it in the service of kind of like this community, which it sounds like really
+
+00:52:32.871 --> 00:52:38.472
+gets you up in the morning. I think it's super inspiring. So I, yeah, I can't thank you enough
+
+00:52:38.472 --> 00:52:45.751
+for coming on and, and Gavin and, um, taking us through all the great bad movies and, and,
+
+00:52:45.751 --> 00:52:52.712
+and what the positive communities cooked up in the last decade and hopefully giving us a sense for,
+
+00:52:52.712 --> 00:52:59.351
+for a decade to come. Thanks, man. It's so fun to be here. I, uh, I just want to point out one
+
+00:52:59.351 --> 00:53:03.271
+thing. I'm really struck that we haven't talked about AI once in this conversation, and we've only
+
+00:53:03.271 --> 00:53:09.031
+been talking about people and relationships. And I feel like that is the secret to navigating your
+
+00:53:09.031 --> 00:53:15.351
+way through this crazy year, this crazy couple of years. And what will just no doubt get more
+
+00:53:15.351 --> 00:53:21.832
+crazy as we go on with AI is that the humanity that, um, relationships bring are just absolutely
+
+00:53:21.832 --> 00:53:27.351
+the thing they're going to get us through and make, you know, um, AI, uh, an okay thing in our
+
+00:53:27.351 --> 00:53:32.312
+world. I think it's, it's the humanity that people bring to it. Hopefully. You've brought
+
+00:53:32.312 --> 00:53:37.351
+so much humanity today. No, I, I really appreciate it. I think that that's crazy actually, that we
+
+00:53:37.351 --> 00:53:44.952
+have it literally every test set episode has AI. So, and I think everyone after it probably will
+
+00:53:44.952 --> 00:53:49.672
+too. I mean, if you're trying to say something, AI can help you create that thing that you're
+
+00:53:49.672 --> 00:53:55.672
+trying to say, but if it doesn't come from humanity, it's going to fall short on the person
+
+00:53:55.672 --> 00:53:59.991
+you're trying to communicate to. So, um, I think we're going to notice that, you know, people
+
+00:53:59.991 --> 00:54:05.672
+complain about slop in their code. We complain about slop in, you know, visuals and videos and
+
+00:54:05.672 --> 00:54:11.351
+whatever. Um, I think we're going to become really good at spotting that slop from a mile away. Like
+
+00:54:11.351 --> 00:54:15.832
+this isn't from a person I'm going to discredit it. Amen. I mean, I think that's, that's probably
+
+00:54:15.832 --> 00:54:23.271
+a good note. We don't have to give more to the AI, you know, I feel like we've, we made it,
+
+00:54:23.271 --> 00:54:29.031
+you know, geez, but no, I, I can't thank you enough for coming on. I feel like it's so fun
+
+00:54:29.751 --> 00:54:37.192
+chatting with you and also like freaky, you know, it's, uh, I, I appreciate you letting me be part
+
+00:54:37.192 --> 00:54:41.511
+of your little tiny crew. Can't thank you enough for coming on. All right, man. Well, thank you so
+
+00:54:41.511 --> 00:54:50.312
+much for having me take care. All right. See you soon. The test set is a production of PositPBC
+
+00:54:50.312 --> 00:54:54.151
+an open source and enterprise tooling data science software company.
+
+00:54:54.151 --> 00:54:59.511
+This episode was produced in collaboration with creative studio Agi. For more episodes,
+
+00:54:59.511 --> 00:55:09.672
+visit the test set.co or find us on your favorite podcast platform.

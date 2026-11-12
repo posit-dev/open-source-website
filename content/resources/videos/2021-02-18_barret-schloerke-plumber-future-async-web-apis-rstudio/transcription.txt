@@ -24,7 +24,7 @@
 
 <p><a data-t="210">Let's explore how Future can solve this for us.</a> <a data-t="215">So here we have our existing plumber API code.</a> <a data-t="219">This is what it would look like if we incorporated it with Future.</a></p>
 
-<p><a data-t="226">Future is an R package made by Henrik, which allows for parallel and distributed computing</a> <a data-t="231">in R.</a> <a data-t="232">Let's talk about the three lines of code that have been added to our plumber API.</a> <a data-t="237">The first line of code tells Future what plans should be used.</a> <a data-t="242">In this case, we're going to use a multi-session plan.</a> <a data-t="245">I'll leave it to you to figure out which plan is best for your situation.</a></p>
+<p><a data-t="226">Future is an R package made by Henrik, which allows for parallel and distributed computing</a> <a data-t="231">in R.</a> <a data-t="231">Let's talk about the three lines of code that have been added to our plumber API.</a> <a data-t="237">The first line of code tells Future what plans should be used.</a> <a data-t="242">In this case, we're going to use a multi-session plan.</a> <a data-t="245">I'll leave it to you to figure out which plan is best for your situation.</a></p>
 
 <p><a data-t="250">The remaining code is used to tell plumber that, hey, this expression needs to be calculated</a> <a data-t="255">using the Future R package.</a> <a data-t="258">This allows for the main R session to not be blocked.</a> <a data-t="262">A point of note, you must return the result of your Future call in your plumber router</a> <a data-t="268">for it to take effect.</a> <a data-t="270">Otherwise, plumber will not know what's happening.</a></p>
 

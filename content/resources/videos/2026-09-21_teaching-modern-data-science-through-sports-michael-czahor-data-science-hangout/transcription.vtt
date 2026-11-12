@@ -1,0 +1,1081 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.639
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.639 --> 00:00:22.000
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:22.000 --> 00:00:27.240
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.240 --> 00:00:30.700
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.700 --> 00:00:36.320
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.320 --> 00:00:37.320
+Can't wait to see you there.
+
+00:00:37.320 --> 00:00:44.060
+And I'm so excited to introduce our featured leader today, who I think is building a community
+
+00:00:44.060 --> 00:00:50.360
+of learners that's really amazing. We have here Michael Czahor, who is the President
+
+00:00:50.360 --> 00:00:54.360
+in Athletics. I'm going to let him introduce himself. Michael, if you could tell us a little
+
+00:00:54.360 --> 00:00:58.959
+bit about yourself, what you do, and something you like to do for fun. I'll try to remind
+
+00:00:58.959 --> 00:01:02.959
+you of that part. It's hard to remember a two-part question.
+
+00:01:02.959 --> 00:01:09.760
+Yeah, thanks. Thanks, Libby. Hopefully you can hear me okay. Yeah, so my name is Michael
+
+00:01:09.760 --> 00:01:18.160
+Czahor. As Libby said, I run a startup called Athletics. We recently partnered with Pawsit
+
+00:01:18.160 --> 00:01:24.160
+to include some of their tools on our site. My background is largely in statistics and
+
+00:01:24.160 --> 00:01:30.519
+reliability engineering. I went to school at Iowa State University, which I'm actually
+
+00:01:30.519 --> 00:01:35.320
+like a mile from campus right now. I'm visiting my in-laws, so I'm pretty close to where I
+
+00:01:35.320 --> 00:01:43.919
+went to school. I have spent most of my career in sports analytics. I have worked for several
+
+00:01:43.919 --> 00:01:51.879
+different professional MLB teams. I started as an intern in the NBA. And then I currently
+
+00:01:51.879 --> 00:01:59.260
+also work for a tech company working on high-speed camera technology for performance science.
+
+00:01:59.260 --> 00:02:06.040
+But beyond that, I have spent a lot of my focus on teaching. And so I started this company
+
+00:02:06.040 --> 00:02:12.399
+back in 2023, as kind of like a second iteration of something I had been working on. It started
+
+00:02:12.399 --> 00:02:17.600
+off as just teaching data science using sports concepts, but it grew into more of kind of
+
+00:02:17.600 --> 00:02:24.960
+a technology platform to have people be able to streamline data science into a learning
+
+00:02:24.960 --> 00:02:29.679
+management system, which I'll talk a little bit about today. And so we've integrated a
+
+00:02:29.679 --> 00:02:35.800
+lot of Pawsit tools directly to our learners in real time. And a big reason we wanted to
+
+00:02:35.800 --> 00:02:41.559
+do that is because we feel that the e-learning space is moving really quickly with all the
+
+00:02:41.559 --> 00:02:46.399
+AI things that are going on right now. And we wanted to be able to spin up content faster
+
+00:02:46.399 --> 00:02:52.800
+and faster, and that required a solution similar to the one that I'm going to share with you.
+
+00:02:52.800 --> 00:03:00.020
+And we currently have about 25 different instructors involved, focusing on a bunch of different
+
+00:03:00.020 --> 00:03:06.360
+topic areas. And we've had over 1,000 students take our material in the last three years.
+
+00:03:06.360 --> 00:03:12.759
+And we are looking forward to talking a little bit more about what it is that we do. As far
+
+00:03:12.759 --> 00:03:17.039
+as what I like to do for fun, I definitely like to go watch a lot of live music. And
+
+00:03:17.039 --> 00:03:22.600
+so myself and my wife, we live really close to Long Beach Island in New Jersey, where
+
+00:03:22.600 --> 00:03:28.600
+there's a lot of different live music going on all the time. And so we like to do that.
+
+00:03:28.600 --> 00:03:33.520
+I would definitely like to travel. I have two kids, one and three years old. And so
+
+00:03:33.520 --> 00:03:38.279
+we're definitely in the busy stage of life right now. And so a lot of our days are spent
+
+00:03:38.279 --> 00:03:41.839
+with both of our daughters. And so definitely enjoying that as well.
+
+00:03:41.839 --> 00:03:48.639
+Amazing. Okay. What about something that you like to do for fun, completely outside of
+
+00:03:48.639 --> 00:03:50.639
+data science?
+
+00:03:50.639 --> 00:04:00.880
+Yeah. So outside of data science, definitely like both attending sports games and coaching
+
+00:04:00.880 --> 00:04:08.119
+youth sports. So I spent a lot of time during graduate school coaching girls soccer, which
+
+00:04:08.119 --> 00:04:12.759
+I coached for five years during school. And then prior to grad school, I coached youth
+
+00:04:12.759 --> 00:04:17.760
+baseball for about five years. And so something that I'll probably get back into, haven't
+
+00:04:17.760 --> 00:04:23.239
+done it in a couple of years, but really enjoy doing things on the coaching side. And so
+
+00:04:23.239 --> 00:04:30.399
+yeah. And then like I mentioned before, traveling, whenever we go somewhere, we try to do like
+
+00:04:30.399 --> 00:04:34.359
+a combination of both like the music stuff, like I mentioned, but also whatever like historical
+
+00:04:34.359 --> 00:04:38.519
+stuff is in the area, we'll try to go around and do a little bit of that. And so definitely
+
+00:04:38.519 --> 00:04:45.179
+liking to see new places. I've definitely done a lot of travel just over the course
+
+00:04:45.179 --> 00:04:49.359
+of the last few years, just from working for, for teams. So I've got to see a lot of different
+
+00:04:49.359 --> 00:04:55.760
+cool cities. And so I thought the travel would slow down a little with life, but it really
+
+00:04:55.760 --> 00:05:00.320
+hasn't. It really hasn't. So I've, this, this, this particular last two weeks has been
+
+00:05:00.320 --> 00:05:06.640
+kind of crazy. I was just in, I was just in LA for work last week. I just completed a
+
+00:05:06.640 --> 00:05:12.799
+20 hour drive as of like yesterday, yesterday out to my in-laws. And then I'm actually flying
+
+00:05:12.799 --> 00:05:19.079
+to Boston tomorrow for JSM. So if anyone's going to be at joint statistical meetings
+
+00:05:19.079 --> 00:05:23.359
+in Boston, we will have a, we will have a booth there. I should probably know it for
+
+00:05:23.359 --> 00:05:28.160
+this call, but I think we're booth like two 11, but come in, come and say hi. I'll be
+
+00:05:28.160 --> 00:05:33.920
+there. Yeah. I'll be there from like tomorrow until Tuesday, I think.
+
+00:05:33.920 --> 00:05:38.640
+Sweet. Well, I know Donald will be there. Donald just joined us. You can see him walking
+
+00:05:38.640 --> 00:05:44.480
+on his treadmill. And I know a few other people will be there. I want to say Elizabeth Eisenhower
+
+00:05:44.480 --> 00:05:50.000
+from our crew will be there from the do sides, hang out kind of attendee crew. And she'll
+
+00:05:50.000 --> 00:05:54.799
+be joining us on the hangout in a couple of weeks too, as well. Okay. If you are going
+
+00:05:54.799 --> 00:06:01.040
+to JSM, everybody go find Michael and say, hello. I already have questions that I want
+
+00:06:01.040 --> 00:06:05.040
+to ask you. I feel like we should hop into Slido because I selfishly want to ask you
+
+00:06:05.040 --> 00:06:11.040
+about coaching and how your experiences coaching have informed your teaching. Cause I know
+
+00:06:11.040 --> 00:06:18.959
+I'm sure that they have, I love coaching too. Yeah. I can maybe give like a quick note on
+
+00:06:18.959 --> 00:06:24.079
+that. I would say, I would say like on the coaching side, I mean, you similar to, I mean,
+
+00:06:24.079 --> 00:06:29.040
+similar to teaching you're dealing with either students or players in a variety of different
+
+00:06:29.040 --> 00:06:33.519
+backgrounds. And so you really kind of have to be receptive to kind of where people are
+
+00:06:33.519 --> 00:06:37.040
+coming from, both from like a skill point, both from like a skill point of view, but
+
+00:06:37.040 --> 00:06:42.239
+also just like a life point of view. And so I've coached, I've coached players from a
+
+00:06:42.239 --> 00:06:46.559
+variety of different backgrounds, variety of different talent levels. And I would say
+
+00:06:46.559 --> 00:06:50.640
+just continuously getting feedback from the player on like how things are going, trying
+
+00:06:50.640 --> 00:06:55.760
+to individualize the coaching points to them as much as possible. It's always good at,
+
+00:06:55.760 --> 00:07:00.000
+you know, if you're coaching a soccer practice, baseball practice, whatever it might be to
+
+00:07:00.000 --> 00:07:04.880
+have kind of more you know, universal things that you're showing. But at the end of the
+
+00:07:04.880 --> 00:07:10.720
+day you definitely have to tailor it towards the student or player. And so I have taken
+
+00:07:10.720 --> 00:07:15.119
+a lot of time over the years to try to get things right with how I plan sessions. Whether
+
+00:07:15.519 --> 00:07:21.040
+that be from coaching in sports or from teaching in the classroom. And it definitely depends
+
+00:07:21.040 --> 00:07:26.880
+on the size of the group that you have. It's obviously easier to hyper focus on a group,
+
+00:07:26.880 --> 00:07:31.279
+whether that be players or students, if you have three to five people versus if you have
+
+00:07:31.279 --> 00:07:36.399
+80 to 100 people in a room. And so I definitely approach those things differently. But I think
+
+00:07:36.399 --> 00:07:41.279
+it just kind of comes with, you know, being as conversational as possible with people,
+
+00:07:41.279 --> 00:07:47.359
+both during and after the sessions. And so I've taken a lot of time with students,
+
+00:07:48.000 --> 00:07:52.000
+you know, outside of the classroom, even when I was TAing in school, just to try to learn
+
+00:07:52.000 --> 00:07:55.600
+what it is that they like and try to give examples that help them learn better.
+
+00:07:56.720 --> 00:08:01.040
+Amazing. I think that's what you're doing at athletics. Well, I would love to start with
+
+00:08:01.040 --> 00:08:07.679
+a anonymous question that came into the Slido, because I think it's very interesting as someone
+
+00:08:07.679 --> 00:08:13.600
+who is teaching and trying to stay at the edge of the, like the front of the curve of what people
+
+00:08:13.600 --> 00:08:18.559
+actually need to know to go into industry. This question says, which tech trends are
+
+00:08:18.559 --> 00:08:22.320
+actually worth the hype? And which are just shiny objects?
+
+00:08:24.079 --> 00:08:31.119
+Yeah, yeah, I, I've, over the years, whether it's for work, or just doing random things on
+
+00:08:31.119 --> 00:08:39.840
+like LinkedIn, or blogs, I've, I've always enjoyed making my own applications, in terms of like,
+
+00:08:39.840 --> 00:08:44.159
+whether it be like a shiny app, or react app, something like that, to kind of like, you know,
+
+00:08:44.159 --> 00:08:48.559
+hopefully get people engaged. And those things are so easy to make right now with all the different
+
+00:08:49.200 --> 00:08:54.400
+AI tooling that's going on, it's very easy to go on and kind of just type into a prompt and say,
+
+00:08:55.280 --> 00:09:02.479
+go ahead and make me an app. I think the I think the tooling that is worth knowing these days are
+
+00:09:02.479 --> 00:09:09.119
+tools that are getting you to the point of being able to produce something that's production level
+
+00:09:09.119 --> 00:09:15.280
+faster, but still understanding that things need to, you know, go into production. And so I see a
+
+00:09:15.280 --> 00:09:19.599
+lot of people that will spin things up, and they'll host it, and it might just be like an HTML,
+
+00:09:19.840 --> 00:09:26.400
+you know, an HTML based application, and then getting that, getting that to be able to be
+
+00:09:26.400 --> 00:09:34.239
+used day to day is a lot more difficult than just kind of putting up that demo. And so some of that
+
+00:09:34.239 --> 00:09:41.359
+tooling that I've used for that, I use a lot of cloud code, cursor, different coding assistance
+
+00:09:41.359 --> 00:09:46.400
+to kind of help me speed up, I don't want to say the boring parts, but the parts that are kind of
+
+00:09:46.960 --> 00:09:52.640
+used on every single project, whether that be exploratory data analysis, or being able to
+
+00:09:53.919 --> 00:09:59.679
+prototype a visualization faster. And so some of those some of the tools, at least on the
+
+00:10:00.880 --> 00:10:07.760
+LLM AI side, whatever you want to phrase it, I'm using much more for prototyping than I am
+
+00:10:08.640 --> 00:10:12.799
+implementation, at least at the base level, I think once you get a little further along,
+
+00:10:12.799 --> 00:10:18.640
+there's there's other things. As far as the different subscriptions, though, that I see
+
+00:10:18.640 --> 00:10:24.239
+floating around different places. You know, everyone has a SAS, everyone has a SAS product
+
+00:10:24.239 --> 00:10:32.239
+now. And it's, it's really easy to kind of, you know, buy into different buzz pages, whether it's
+
+00:10:32.239 --> 00:10:36.080
+like, you know, here's a here's a teaching tool that I'm using that someone could have designed
+
+00:10:36.080 --> 00:10:40.960
+in, you know, a day, it's hard, it's hard to know. And I think I think the way that you evaluate that
+
+00:10:40.960 --> 00:10:45.679
+is just making sure that reputable sources are using them, that the use case isn't something that
+
+00:10:45.679 --> 00:10:52.960
+you can solve yourself very quickly. And so I've definitely just tried staying with some of the
+
+00:10:52.960 --> 00:10:59.760
+more mainstream ones that are being used, you know, more globally, but I'm all I'm continuously
+
+00:10:59.760 --> 00:11:07.039
+I'm continuously looking for, you know, refinements and, you know, how to keep my toolkit as strong as
+
+00:11:07.039 --> 00:11:12.080
+possible. For what we're doing at athletics in terms of like, how we're streamlining people to
+
+00:11:12.080 --> 00:11:17.919
+get onto the system with with posits with posit stuff. You know, we, we were very, we were very
+
+00:11:17.919 --> 00:11:23.039
+excited to be able to kind of bring people, you know, a cloud based version of, you know, posits
+
+00:11:23.039 --> 00:11:28.559
+workbench on our site. And, you know, we already we already, you know, had a relationship with folks
+
+00:11:28.559 --> 00:11:32.880
+who have been working with posit. And so we felt good about that. But as far as like, the question
+
+00:11:32.960 --> 00:11:37.840
+goes in terms of how do you how do you know what's just a kind of a shiny object versus,
+
+00:11:39.280 --> 00:11:44.000
+you know, potentially something that's worth doing, I definitely think it's talking, talking
+
+00:11:44.000 --> 00:11:49.679
+to the people who are using it at the highest levels. And so any instructors or folks that
+
+00:11:49.679 --> 00:11:54.159
+we're bringing in, we're continuously asking them what they're using in their job. And we're trying
+
+00:11:54.159 --> 00:11:58.960
+to we're trying to understand because you certainly can't know everything. And that's why we're trying
+
+00:11:58.960 --> 00:12:04.479
+to have as kind of a much of a reach as possible, not just in terms of our own information, but what
+
+00:12:04.479 --> 00:12:09.200
+others are using as well. And so we're evaluating this kind of stuff every day. Yeah, well, I mean,
+
+00:12:09.200 --> 00:12:14.559
+I think it helps that you are bringing in people who work in various places in industry to be
+
+00:12:15.840 --> 00:12:23.119
+teachers or mentors, and leading classes. I don't think that she's here today. But Verla,
+
+00:12:23.119 --> 00:12:27.840
+who a lot of people know from all of her shiny teaching and everything that she shares about
+
+00:12:27.840 --> 00:12:34.239
+shiny online works with you a little bit. And I know that you have a whole host of folks who do
+
+00:12:34.239 --> 00:12:42.159
+this. I think that's amazing. So we, we had a couple of questions come in the Slido. For anybody
+
+00:12:42.159 --> 00:12:48.960
+who is not watching the chat, we have lots of jobs as well, like things that are hiring. So take a
+
+00:12:48.960 --> 00:12:55.919
+look. Rachel just posted a few. I know that Javier, who hasn't joined us in a while, is hiring as well.
+
+00:12:56.559 --> 00:13:03.359
+So check out that and really share those with people to help them reach opportunities. Okay,
+
+00:13:04.080 --> 00:13:09.440
+we had a question from Adam. Adam T. Adam Taggart, I believe. If you would like to
+
+00:13:10.320 --> 00:13:13.679
+see if we can get him unmuted and ask that one live, that'd be great.
+
+00:13:13.679 --> 00:13:14.159
+Oh,
+
+00:13:14.159 --> 00:13:16.239
+Highlight it. There he is. Hey, Adam.
+
+00:13:16.239 --> 00:13:21.840
+Oh, everyone. Hi, Michael. Thank you so much for being here. And also what a massive relief it is
+
+00:13:21.840 --> 00:13:28.719
+to hear a fellow coach talking about personalizing coaching to the athlete, to the student. And
+
+00:13:29.440 --> 00:13:33.919
+also, you know, I think people who do that for their local community should always receive
+
+00:13:33.919 --> 00:13:39.760
+thanks because it is a lot of time and effort for not always a great reward. So I think that's a
+
+00:13:39.760 --> 00:13:47.119
+wonderful thing. Thank you for that. My question is about the usefulness of the data for different
+
+00:13:47.119 --> 00:13:51.200
+sports and different disciplines and skills and stuff. And obviously baseball is the one a lot
+
+00:13:51.200 --> 00:13:55.119
+of people know from sabernomics and moneyball and things like that, where there's all of these
+
+00:13:55.119 --> 00:14:01.599
+different metrics, time on first base, time on second and so on, which allow that to generate
+
+00:14:01.599 --> 00:14:07.039
+useful data towards increasing performance of the sport. And also we were talking to Jamie not too
+
+00:14:07.039 --> 00:14:12.559
+long ago about hockey and the fan analytics and how that is useful data towards people getting
+
+00:14:12.559 --> 00:14:18.960
+interested in the sport. My question is, what, in your opinion, are the easiest sports to generate
+
+00:14:19.840 --> 00:14:26.320
+useful data for? And what are the ones which it's damn near impossible, seriously difficult
+
+00:14:27.280 --> 00:14:34.719
+to generate useful data for? Yeah, thanks for the question and for the nice comments about
+
+00:14:34.719 --> 00:14:41.119
+coaching. I would say in terms of the, I guess I'll take it two ways in terms of generating
+
+00:14:41.679 --> 00:14:48.400
+data. I would say there are sports, I'll start with like what sports have are easier to do
+
+00:14:48.400 --> 00:14:55.359
+projects on? I have found, I have found that sports that are more discreet are generally easier
+
+00:14:55.359 --> 00:15:00.960
+in terms of the way the data comes in to be able to kind of make some sort of meaningful contribution.
+
+00:15:00.960 --> 00:15:06.799
+So I was lucky enough to work in baseball for several years and baseball is a very discreet
+
+00:15:06.799 --> 00:15:13.280
+sport in the sense that every single pitch is kind of its own play. You're able to
+
+00:15:13.280 --> 00:15:18.640
+kind of make evaluation at the play level where as other sports, perhaps something like
+
+00:15:19.359 --> 00:15:22.719
+soccer is a bit more continuous, the game is kind of more free-flowing.
+
+00:15:23.679 --> 00:15:29.039
+And I've definitely found that being able to make insight on the discreet sports for a variety of
+
+00:15:29.039 --> 00:15:36.080
+reasons is probably much more intriguing, at least to me, as far as the actual data collection
+
+00:15:36.880 --> 00:15:42.320
+for some of these sports. A lot of sports are getting much more into tracking technologies,
+
+00:15:42.320 --> 00:15:47.280
+which is happening quite a bit. You just mentioned, I missed the name and I should know it
+
+00:15:47.280 --> 00:15:57.119
+because I've seen her post, but the woman from the NHL, I'm sure she probably spoke about some stuff
+
+00:15:57.119 --> 00:16:02.000
+perhaps with tracking in the NHL that is happening now. And of course, in baseball,
+
+00:16:02.559 --> 00:16:09.840
+back around 2020, some of the Hawkeye information began to come around, which is, it's essentially
+
+00:16:09.840 --> 00:16:16.320
+like an 18-point tracking system where you have essentially like markerless information on players
+
+00:16:16.880 --> 00:16:21.280
+at a very high frequency. And the question becomes, how do you actually make sense of this
+
+00:16:21.280 --> 00:16:26.159
+data? What's actually useful information? And what are these teams actually doing with this? And
+
+00:16:27.359 --> 00:16:32.640
+what's worth knowing? And once this tracking stuff started coming around, a lot of the teams,
+
+00:16:32.640 --> 00:16:36.559
+their minds immediately went to, and not just for baseball, I think this was kind of
+
+00:16:36.559 --> 00:16:41.359
+more globally across sports is how do we use this for things like injury prevention and player
+
+00:16:41.359 --> 00:16:47.520
+health and trying to better understand different movement patterns and things like that. And I think
+
+00:16:47.520 --> 00:16:53.280
+depending on who you talk to and how far along teams are in a given sport,
+
+00:16:54.400 --> 00:16:57.840
+different folks will have different answers for how they're using it. Some might just be using
+
+00:16:57.840 --> 00:17:02.640
+it just for exploratory analysis, and they might just be making really cool charts to try
+
+00:17:02.640 --> 00:17:07.520
+to understand what players' different key performance indicators are in a given game.
+
+00:17:07.520 --> 00:17:13.920
+Others might be making joint models for longitudinal and time-to-event data and trying
+
+00:17:13.920 --> 00:17:21.599
+to understand what different behaviors might lead up to some sort of injury. I would certainly say
+
+00:17:22.400 --> 00:17:33.199
+the sports that are benefiting more right now from different, like tracking options and computer
+
+00:17:33.199 --> 00:17:37.439
+vision and things like that, or at least the ones that are interesting to me are the ones that are
+
+00:17:37.439 --> 00:17:46.959
+not as major of sports. And so things maybe like gymnastics might be an example where you're able
+
+00:17:46.959 --> 00:17:50.719
+to use a lot of different vision technologies to try to understand player movement in the game,
+
+00:17:50.719 --> 00:17:54.880
+where they might not necessarily have a lot of the camera tracking that some of these other sports
+
+00:17:54.880 --> 00:18:00.160
+have. So I find that to kind of be interesting. And I think the more unique movements that
+
+00:18:00.160 --> 00:18:06.479
+players are making in those sports, the harder it is to understand. And so I definitely think
+
+00:18:06.479 --> 00:18:12.239
+if you talk to folks that are more on the biomechanics side and player development side
+
+00:18:12.239 --> 00:18:18.719
+for specific sports, they would tell you that for their sport, they're looking at very specific
+
+00:18:18.719 --> 00:18:22.959
+things, whereas, you know, baseball, they might be looking at overhand throwing motions for players,
+
+00:18:22.959 --> 00:18:28.000
+whereas in something like rowing, they might be looking at something different for players. And so
+
+00:18:28.000 --> 00:18:33.680
+it definitely varies, but I would say that the data collection has never probably been richer
+
+00:18:33.680 --> 00:18:40.560
+for sports, given a lot of the technology that exists right now. And, you know, kind of turning
+
+00:18:40.560 --> 00:18:45.280
+it back to some of the stuff that we're doing, at least with the teaching at athletics, I would say
+
+00:18:45.280 --> 00:18:51.359
+we are really big on showing folks a lot of these data in our different modules. And so we're getting
+
+00:18:51.359 --> 00:18:56.640
+students to work with some of this high-frequency time series data. When we don't have injury type
+
+00:18:56.640 --> 00:19:02.479
+data, you know, available, we might be showing students how to kind of simulate event-based data
+
+00:19:02.479 --> 00:19:08.000
+and then try to connect the two pieces. Because I think a lot of that stuff is
+
+00:19:08.000 --> 00:19:12.880
+super interesting, and it actually, you know, helps students learn different kind of methods
+
+00:19:12.880 --> 00:19:18.079
+of how to evaluate it, whether it be machine learning methods, Bayesian methods. And so,
+
+00:19:18.079 --> 00:19:21.680
+you know, it's going a little off your point, but I think, you know, it's extremely
+
+00:19:21.680 --> 00:19:25.760
+interesting to try to learn through those types of data, because they're really rich in information,
+
+00:19:25.760 --> 00:19:30.800
+and it has a lot of cross-connection for different areas of data science and statistics.
+
+00:19:32.160 --> 00:19:37.839
+I think this is bang on for a follow-on question. It was anonymous on Slido,
+
+00:19:37.839 --> 00:19:41.839
+and I would love to know, too. This anonymous question says, hello, I actually have a teaching-
+
+00:19:41.839 --> 00:19:48.079
+centric background and got into data analytics after. How are your learning materials organized
+
+00:19:48.079 --> 00:19:53.680
+and curated? How do you manage your resources, and are the sessions in-person or virtual, and do you
+
+00:19:53.680 --> 00:19:59.680
+ever hire for data science instructors? So this is a sneaky four-part question. Let's start with the
+
+00:19:59.680 --> 00:20:05.920
+first one. How are your learning materials organized or curated? And I think that this
+
+00:20:05.920 --> 00:20:10.400
+probably means, like, within the context of the courses that you offer and things like that.
+
+00:20:10.400 --> 00:20:15.280
+Also, I'm really excited to hear that you have this, like, plethora of data types that let you
+
+00:20:15.280 --> 00:20:19.280
+do different types of analyses. I don't know a lot about sports data, so that's fantastic to hear.
+
+00:20:21.439 --> 00:20:26.079
+Yeah. Yeah, thanks, Adam. I just saw your comment there. Thanks for the question. I
+
+00:20:26.079 --> 00:20:30.079
+appreciate it. Yeah, in terms of how things are organized, I would say one thing that
+
+00:20:30.079 --> 00:20:35.040
+definitely differentiates us, and I would, you know, kind of pitch ourselves to say,
+
+00:20:35.040 --> 00:20:40.800
+please stop by at JSM to see this in person. We, along the way, we built our own learning
+
+00:20:40.800 --> 00:20:44.560
+management system, which is not something that everyone that's doing content creation is doing,
+
+00:20:44.560 --> 00:20:49.920
+and for those that don't know what that means, if you are currently in academia, you might be
+
+00:20:49.920 --> 00:20:54.719
+using something like Blackboard or Canvas, and if you don't, and if you're not in academia,
+
+00:20:54.719 --> 00:20:59.359
+you might see things online where companies let you upload your own content, and there's nothing
+
+00:20:59.359 --> 00:21:03.920
+wrong with those companies. They're extremely efficient. They let you post a video and then
+
+00:21:03.920 --> 00:21:09.599
+type HTML or just have widget-based things to go into it. We built our own, and the reason we
+
+00:21:09.599 --> 00:21:14.959
+built our own is because we wanted to be able to streamline true data science environments to
+
+00:21:14.959 --> 00:21:21.199
+learners. We are a data science-centric learning management system, and so we are organizing all
+
+00:21:21.199 --> 00:21:29.439
+of our content directly through that LMS. We are definitely leveraging a lot of AI for our notes
+
+00:21:29.439 --> 00:21:35.760
+at this point, but the way that our actual instruction goes, instructors are encouraged to
+
+00:21:35.760 --> 00:21:41.760
+take their own teaching styles, create their content. We do have some standard operating
+
+00:21:41.760 --> 00:21:47.760
+procedures for how they should submit things like code to us, but in general, those instructors
+
+00:21:47.760 --> 00:21:55.760
+within their own disciplines are encouraged to organize their slides, their code, record their
+
+00:21:55.760 --> 00:21:59.680
+videos, and then they send them to our team, and then we eventually put them onto our site, and
+
+00:21:59.680 --> 00:22:05.040
+that's more for the courses. As far as how do we actually
+
+00:22:05.040 --> 00:22:11.119
+outline a syllabus or a curriculum or something like that, we're working directly with the
+
+00:22:11.119 --> 00:22:17.599
+instructor. We are researching literally any university or public offering on the e-learning
+
+00:22:17.599 --> 00:22:21.520
+side that you can think of and making sure that we're meeting the standard of what students are
+
+00:22:21.520 --> 00:22:25.680
+learning in college. We try to be extremely academic on our site while still being an e-learning
+
+00:22:25.680 --> 00:22:30.719
+site, and so we are researching pretty much everything that exists at the time that the course
+
+00:22:30.719 --> 00:22:36.719
+is created. This kind of brings me to my next point of, you know, okay, as you create a course on
+
+00:22:37.359 --> 00:22:44.239
+say July 30th, what happens a month, a year from now? Do these courses go stale, and how do you
+
+00:22:44.239 --> 00:22:49.839
+manage that on the site? We just recently launched what we call Athletics Masterclasses or
+
+00:22:49.839 --> 00:22:54.959
+Athletics Live, and this is kind of what led into the partnership with Posit, was we
+
+00:22:54.959 --> 00:23:01.119
+needed to be able to spin up virtual environments within like five seconds. It takes
+
+00:23:01.119 --> 00:23:08.160
+a long time to do what we were doing for courses, and so we now have the ability to
+
+00:23:08.160 --> 00:23:15.520
+take a zip file from an instructor where they are either teaching in R or Python. We drop it
+
+00:23:15.520 --> 00:23:22.319
+onto our content management system, and then a virtual environment will deploy, and then it lands
+
+00:23:22.319 --> 00:23:27.599
+directly on the page where the instructor is teaching, and so it lets us deploy these really
+
+00:23:27.599 --> 00:23:34.959
+quickly. As far as how we track things like student progress on there, we have a bunch of
+
+00:23:34.959 --> 00:23:41.280
+different analytics tools on the site to track completion. If there's quizzes, student progress,
+
+00:23:41.280 --> 00:23:44.640
+and things like that, but I think really the most important thing that we're doing
+
+00:23:45.359 --> 00:23:53.199
+for organizing all the content is we are making sure that the code runs before the session,
+
+00:23:53.199 --> 00:23:59.520
+and that's getting a little outside this question, but having taught both to students while
+
+00:23:59.520 --> 00:24:05.040
+TAing or doing my own stuff on the consulting side, one thing that always comes up is
+
+00:24:05.040 --> 00:24:08.880
+you might get a contact from a student, hey, my environment doesn't work, hey, I'm
+
+00:24:08.880 --> 00:24:14.719
+having install issues, hey, I'm having version issues. There is no session that runs on our platform
+
+00:24:14.719 --> 00:24:18.880
+that doesn't have that solved before the session starts, and it's something that we plan on bringing
+
+00:24:18.880 --> 00:24:26.000
+to conferences and to workshops and universities between about a month ago and
+
+00:24:26.000 --> 00:24:33.359
+2027. We want to be able to have people show up to those things, use professional
+
+00:24:33.359 --> 00:24:39.839
+environments, and so that's definitely something that we look forward to doing, and if
+
+00:24:39.839 --> 00:24:45.520
+you're at JSM again, we'll have demos going on this throughout the entire event.
+
+00:24:47.760 --> 00:24:56.640
+Amazing. Okay, I would love to ask the Natasha question, which is wonderful on Slido all the time.
+
+00:24:56.640 --> 00:25:01.760
+Thank you, Natasha. It's what does an average day or week look like for you? I know that you do
+
+00:25:01.839 --> 00:25:08.239
+athletics, but you also work in industry, so maybe not an average day or week, but even maybe an
+
+00:25:08.239 --> 00:25:20.959
+average month. Yeah, so my day-to-day right now is generally, it's predominantly
+
+00:25:20.959 --> 00:25:26.079
+my day job, which is I work for a company out in California doing the high-speed
+
+00:25:26.079 --> 00:25:32.160
+camera stuff, and that takes up probably between, depending on the day, probably
+
+00:25:32.160 --> 00:25:39.760
+between seven to ten hours in a day. Right now, I have other folks who've been helping me
+
+00:25:39.760 --> 00:25:47.839
+run athletics, anywhere from the instructor, instructor onboarding, making sure the sessions
+
+00:25:47.839 --> 00:25:53.599
+run well live, and so I would say athletics has a lot of autonomy compared to what it used to,
+
+00:25:53.599 --> 00:25:57.040
+and so if you asked me this question maybe two years ago, it probably would have been a
+
+00:25:57.040 --> 00:26:02.160
+little bit of a different answer in terms of balancing the two things. And definitely
+
+00:26:02.959 --> 00:26:10.400
+on the weekends, I'm definitely trying to just kind of check in on how sessions have gone,
+
+00:26:10.400 --> 00:26:15.839
+especially now that we're running live events, and so I might do a little bit of video editing
+
+00:26:15.839 --> 00:26:19.040
+on weekends, might be doing a little bit of just
+
+00:26:19.456 --> 00:26:35.456
+Michael Czahor, Data Science Hangout
+
+00:26:49.456 --> 00:27:17.456
+Michael Czahor, Data Science Hangout
+
+00:27:17.456 --> 00:27:37.456
+Michael Czahor, Data Science Hangout
+
+00:27:37.456 --> 00:27:57.456
+Michael Czahor, Data Science Hangout
+
+00:27:57.456 --> 00:28:11.456
+Michael Czahor, Data Science Hangout
+
+00:28:11.456 --> 00:28:39.456
+Michael Czahor, Data Science Hangout
+
+00:28:41.456 --> 00:29:01.456
+Michael Czahor, Data Science Hangout
+
+00:29:01.456 --> 00:29:27.456
+Michael Czahor, Data Science Hangout
+
+00:29:27.456 --> 00:29:47.456
+Michael Czahor, Data Science Hangout
+
+00:29:47.456 --> 00:30:07.456
+Michael Czahor, Data Science Hangout
+
+00:30:07.456 --> 00:30:27.456
+Michael Czahor, Data Science Hangout
+
+00:30:27.456 --> 00:30:47.456
+Michael Czahor, Data Science Hangout
+
+00:30:47.456 --> 00:31:07.456
+Michael Czahor, Data Science Hangout
+
+00:31:07.456 --> 00:31:27.456
+Michael Czahor, Data Science Hangout
+
+00:31:27.456 --> 00:31:47.456
+Michael Czahor, Data Science Hangout
+
+00:31:47.456 --> 00:32:07.456
+Michael Czahor, Data Science Hangout
+
+00:32:07.456 --> 00:32:27.456
+Michael Czahor, Data Science Hangout
+
+00:32:27.456 --> 00:32:47.456
+Michael Czahor, Data Science Hangout
+
+00:32:47.456 --> 00:33:07.456
+Michael Czahor, Data Science Hangout
+
+00:33:07.456 --> 00:33:31.456
+Michael Czahor, Data Science Hangout
+
+00:33:32.456 --> 00:34:00.456
+Michael Czahor, Data Science Hangout
+
+00:34:00.456 --> 00:34:28.456
+Michael Czahor, Data Science Hangout
+
+00:34:28.456 --> 00:34:39.456
+Michael Czahor, Data Science Hangout
+
+00:34:58.456 --> 00:35:27.456
+Michael Czahor, Data Science Hangout
+
+00:35:28.456 --> 00:35:57.456
+Michael Czahor, Data Science Hangout
+
+00:35:58.456 --> 00:36:27.456
+Michael Czahor, Data Science Hangout
+
+00:36:28.456 --> 00:36:57.456
+Michael Czahor, Data Science Hangout
+
+00:36:58.456 --> 00:37:27.456
+Michael Czahor, Data Science Hangout
+
+00:37:28.456 --> 00:37:57.456
+Michael Czahor, Data Science Hangout
+
+00:37:58.456 --> 00:38:26.456
+Michael Czahor, Data Science Hangout
+
+00:38:26.456 --> 00:38:46.456
+Michael Czahor, Data Science Hangout
+
+00:38:46.456 --> 00:39:14.456
+Michael Czahor, Data Science Hangout
+
+00:39:14.456 --> 00:39:42.456
+Michael Czahor, Data Science Hangout
+
+00:39:42.456 --> 00:40:11.456
+Michael Czahor, Data Science Hangout
+
+00:40:12.456 --> 00:40:40.456
+Michael Czahor, Data Science Hangout
+
+00:40:40.456 --> 00:41:00.456
+Michael Czahor, Data Science Hangout
+
+00:41:00.456 --> 00:41:28.456
+Michael Czahor, Data Science Hangout
+
+00:41:30.456 --> 00:41:58.456
+Michael Czahor, Data Science Hangout
+
+00:42:00.456 --> 00:42:29.456
+Michael Czahor, Data Science Hangout
+
+00:42:30.456 --> 00:42:59.456
+Michael Czahor, Data Science Hangout
+
+00:43:00.456 --> 00:43:28.456
+Michael Czahor, Data Science Hangout
+
+00:43:28.456 --> 00:43:57.456
+Michael Czahor, Data Science Hangout
+
+00:43:58.456 --> 00:44:27.456
+Michael Czahor, Data Science Hangout
+
+00:44:28.456 --> 00:44:57.456
+Michael Czahor, Data Science Hangout
+
+00:44:58.456 --> 00:45:26.456
+Michael Czahor, Data Science Hangout
+
+00:45:26.456 --> 00:45:55.456
+Michael Czahor, Data Science Hangout
+
+00:45:55.456 --> 00:46:24.456
+Michael Czahor, Data Science Hangout
+
+00:46:24.456 --> 00:46:53.456
+Michael Czahor, Data Science Hangout
+
+00:46:54.456 --> 00:47:23.456
+Michael Czahor, Data Science Hangout
+
+00:47:24.456 --> 00:47:53.456
+Michael Czahor, Data Science Hangout
+
+00:47:54.456 --> 00:48:23.456
+Michael Czahor, Data Science Hangout
+
+00:48:23.456 --> 00:48:52.456
+Michael Czahor, Data Science Hangout
+
+00:48:52.456 --> 00:49:20.456
+Michael Czahor, Data Science Hangout
+
+00:49:20.456 --> 00:49:49.456
+Michael Czahor, Data Science Hangout
+
+00:49:50.456 --> 00:50:18.456
+Michael Czahor, Data Science Hangout
+
+00:50:18.456 --> 00:50:47.456
+Michael Czahor, Data Science Hangout
+
+00:50:48.456 --> 00:51:16.456
+Michael Czahor, Data Science Hangout
+
+00:51:16.456 --> 00:51:45.456
+Michael Czahor, Data Science Hangout
+
+00:51:46.456 --> 00:52:15.456
+Michael Czahor, Data Science Hangout
+
+00:52:16.456 --> 00:52:38.456
+Michael Czahor, Data Science Hangout
+
+00:52:29.994 --> 00:52:34.754
+stay as curious as possible because right now there's never been a time to
+
+00:52:34.754 --> 00:52:40.594
+where it's been easier to be innovative with a lot of the AI stuff and I would
+
+00:52:40.594 --> 00:52:45.194
+just say from an academic side and just a learning side please do not ignore
+
+00:52:45.194 --> 00:52:49.553
+the fundamentals of anything that you're doing on mathematics or statistics I
+
+00:52:49.553 --> 00:52:54.293
+try to tell any students that I'm talking to to not skip over the the
+
+00:52:54.293 --> 00:52:57.953
+basics it helps you ask better questions it doesn't mean that you're gonna be I'm
+
+00:52:57.953 --> 00:53:02.694
+not encouraging people to do proofs at work and derive things from scratch but
+
+00:53:02.694 --> 00:53:05.933
+I think if you can ask a better question because you have a better understanding
+
+00:53:05.933 --> 00:53:08.753
+of something I think it'll make you a much stronger data scientist and
+
+00:53:08.753 --> 00:53:14.814
+statistician well said thank you so much Michael well I heartily agree talk to
+
+00:53:14.814 --> 00:53:17.394
+people talk to people at the data science hangout talk to people in the
+
+00:53:17.394 --> 00:53:21.674
+discord like Rachel said go to posit conf and meet people and I highly
+
+00:53:21.674 --> 00:53:25.074
+encourage you to talk about things that are not data related I was talking with
+
+00:53:25.074 --> 00:53:29.394
+no tobacco the other day about hand sewing and embroidery and how
+
+00:53:29.394 --> 00:53:34.354
+meditative that is we are whole people who do more than just data science be a
+
+00:53:34.354 --> 00:53:38.953
+whole person and recognize that in others go talk about fun stuff go ask
+
+00:53:38.953 --> 00:53:44.894
+Connor about birds I love talking with Connor about birds yeah hey Connor okay
+
+00:53:44.894 --> 00:53:48.513
+everybody this was so much fun you can save the chat if you would like to save
+
+00:53:48.513 --> 00:53:51.674
+all the resources or the LinkedIn links that people have shared there's three
+
+00:53:51.674 --> 00:53:56.794
+dots in the top right corner and we hope that you will join us at the data
+
+00:53:56.794 --> 00:54:01.314
+science lab which is on Tuesdays and again here if this was your first time
+
+00:54:01.314 --> 00:54:04.794
+we hope that you will come back and join us again we always have fun
+
+00:54:04.794 --> 00:54:09.593
+conversations going on and I believe next time we are going to be joined by
+
+00:54:09.593 --> 00:54:14.133
+Corey Campbell from NIH are so if you are in the healthcare space or curious
+
+00:54:14.133 --> 00:54:18.474
+about that come meet Corey she's gonna be super super fun all right everybody I
+
+00:54:18.553 --> 00:54:24.074
+hope you have a wonderful afternoon evening morning wherever you are in the
+
+00:54:24.074 --> 00:54:27.794
+world and we will see you again next week

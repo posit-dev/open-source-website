@@ -6,7 +6,7 @@
 
 <p><a data-t="39">It was back in the summer of 2020.</a> <a data-t="41">We all remember, but many would like to forget that time.</a> <a data-t="44">In addition to being in the middle of a lockdown and without childcare, my family and I had</a> <a data-t="49">moved in with my in-laws to get some extra support.</a> <a data-t="52">Moreover, my wife had gone full-time on her own new business back in January 2020, while</a> <a data-t="57">I had joined a startup as the first technical employee in February 2020.</a> <a data-t="62">Needless to say, it was a stressful time.</a></p>
 
-<p><a data-t="66">I have a feeling this is a picture many of you with kids have, or at least can relate</a> <a data-t="70">to.</a> <a data-t="70">If you don't have kids, just imagine everything you were doing back in summer 2020, but add</a> <a data-t="75">a two-year-old and a four-year-old to the mix.</a></p>
+<p><a data-t="66">I have a feeling this is a picture many of you with kids have, or at least can relate</a> <a data-t="69">to.</a> <a data-t="70">If you don't have kids, just imagine everything you were doing back in summer 2020, but add</a> <a data-t="75">a two-year-old and a four-year-old to the mix.</a></p>
 
 <h3>The problem: poor UI and stale data</h3>
 
