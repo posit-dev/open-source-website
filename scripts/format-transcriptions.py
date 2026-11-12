@@ -479,8 +479,14 @@ def repair_timestamps(html: str, cues: list[videolib.Cue]) -> tuple[str, dict[st
         by_text.setdefault(" ".join(ws), new)
         return f'<a data-t="{new}">{inner}</a>'
 
+    last_start = words[-1][1] if words else None
+
     def repair_quote(m: re.Match) -> str:
-        new = by_text.get(" ".join(_norm_words(m.group(2))), int(m.group(1)))
+        new = by_text.get(" ".join(_norm_words(m.group(2))))
+        if new is None:
+            new = int(m.group(1))
+            if last_start is not None:
+                new = min(new, last_start)
         return f'<a data-t="{new}">{m.group(2)}</a>'
 
     parts = BLOCKQUOTE_RE.split(html)

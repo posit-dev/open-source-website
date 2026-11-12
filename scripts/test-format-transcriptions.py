@@ -230,6 +230,14 @@ class TestRepairTimestamps:
         assert re.findall(r'data-t="(\d+)"', out) == ["0", "30", "30", "40"]
         assert stats["anchors"] == 3  # pull quotes aren't counted twice
 
+    def test_unmatched_blockquote_capped(self):
+        html = (
+            '<p><a data-t="0">Hello everyone and welcome.</a></p>\n\n'
+            '<blockquote><a data-t="46039">A quote that never appeared.</a></blockquote>'
+        )
+        out, _ = f.repair_timestamps(html, self.cues)
+        assert re.findall(r'data-t="(\d+)"', out) == ["0", "40"]
+
     def test_pieces_split_by_inject_links_stay_together(self):
         linked = f.inject_links(
             '<p><a data-t="13">Today we talk about Quarto,</a> <a data-t="14">the publishing system.</a></p>',
