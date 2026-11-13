@@ -64,7 +64,9 @@ predict(rf_ranger, lung_pred, type = "time")
 #> 3        643
 ```
 
-To use randomForestSRC instead of ranger, simply switch out the engine. As usual for censored, predictions of survival probability at various `eval_time` points are returned as nested tibbles, keeping to the tidymodels principle of one row per observation.
+To use randomForestSRC instead of ranger, simply switch out the engine.
+
+As usual for censored, predictions of survival probability at various `eval_time` points are returned as nested tibbles, keeping to the tidymodels principle of one row per observation.
 
 ``` r
 set.seed(1)
@@ -90,8 +92,8 @@ pred_rfsrc$.pred[[1]]
 #> # A tibble: 2 × 2
 #>   .eval_time .pred_survival
 #>        <dbl>          <dbl>
-#> 1        100          0.904
-#> 2        500          0.317
+#> 1        100          0.911
+#> 2        500          0.315
 ```
 
 ### Coming from randomForestSRC?
@@ -128,10 +130,10 @@ rf_spec <- rand_forest() |>
   set_engine("randomForestSRC") |>
   set_mode("censored regression")
 rec <- recipe(surv ~ ., data = lung_surv)
-rf_wflow <- workflow(rec, rf_spec) |>
+rf_fit <- workflow(rec, rf_spec) |>
   fit(data = lung_surv)
 
-extract_fit_engine(rf_wflow)$family
+extract_fit_engine(rf_fit)$family
 #> [1] "surv"
 ```
 
@@ -176,7 +178,7 @@ bind_rows(
 #> 2 ranger       brier_survival_integrated 0.173     5 0.00516
 ```
 
-On this small dataset (dropping observations with missing values for ranger only leaves 167 of them), the random forest is on par with the Kaplan-Meier but not better - exactly why we want to know how well a more complex model does compared to the baseline!
+On this small dataset (dropping observations with missing values for ranger only leaves 167 of them), the random forest is on par with the Kaplan-Meier but not better - exactly why we want to know how well a more complex model does compared to the baseline! If you wanted to dig deeper into this, you could assess the differences in these two models via `int_pctl()` to calculate bootstrap confidence intervals.
 
 ## mboost: tunable learning rate and `multi_predict()`
 
@@ -230,7 +232,7 @@ system.time(
   )
 )
 #>    user  system elapsed 
-#>  31.793   0.054  31.942
+#>  32.033   0.035  32.092
 ```
 
 To give you a ballpark figure, with censored 0.3.5 (and no `multi_predict()` method), the same code took about 90 seconds on my laptop. So this is roughly 3 times faster now, corresponding to fitting one model instead of ten per resample. The more values for `trees` you need to tune over, the more you will notice this speedup.
