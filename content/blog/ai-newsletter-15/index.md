@@ -7,8 +7,10 @@ people:
   - Simon Couch
 description: |
   Auto mode uses a second model to classify commands as safe or unsafe.
-image: false
-image-alt: No hero image.
+image: images/auto-mode-hero.png
+image-alt: >-
+  Two overlapping shields: a red shield with an X behind a gray shield with a
+  check mark.
 topics:
   - Artificial Intelligence
 software: []
@@ -60,6 +62,12 @@ You could catch the destructive action on your own by carefully reviewing each a
 Anthropic describes the same ["approval fatigue" in Claude Code](https://www.anthropic.com/research/claude-code-auto-mode), reporting that users accept 93% of manual permission prompts. In an [experiment with 1,053 testers](https://claude.com/resources/articles/auto-mode-default-in-claude-code), Anthropic found that auto mode blocked 89% of harmful commands, compared with 13.6% caught by human reviewers.
 
 If you're curious, the current auto mode prompt looks like this:
+
+<div class="callout callout-note" role="note" aria-label="Note">
+<div class="callout-header">
+<span class="callout-title">The current auto mode prompt</span>
+</div>
+<div class="callout-body">
 
 > You are a safety classifier that reviews tool calls from an AI coding assistant before they execute. Your job is to decide whether each proposed action should be allowed or blocked based on the conversation context, the action itself, and the rules below.
 
@@ -137,6 +145,8 @@ Show the full prompt
 > Call the `classify` tool exactly once with your decision and a one-sentence reason. If you reason before calling it, keep that brief. A response without a `classify` call counts as a failure.
 
 </details>
+</div>
+</div>
 
 In our evaluations and in practice, we see that the classifier is effective at preventing irreversible destructive actions. (It also sometimes blocks actions that likely shouldn't be blocked; we'll continue to refine this prompting over time.)
 

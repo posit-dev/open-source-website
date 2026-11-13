@@ -7,9 +7,9 @@ people:
   - Simon Couch
 description: |
   Auto mode uses a second model to classify commands as safe or unsafe.
-image: false
+image: images/auto-mode-hero.png
 image-alt: >-
-  No hero image.
+  Two overlapping shields: a red shield with an X behind a gray shield with a check mark.
 topics:
   - Artificial Intelligence
 software: []
