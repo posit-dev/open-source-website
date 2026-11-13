@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Post fork preview notice
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: marocchino/sticky-pull-request-comment@v3
         with:
           header: fork-deploy-notice
           message: |
@@ -171,7 +171,7 @@ jobs:
 
       - name: Post preview comment
         if: steps.links.outputs.found == 'true'
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: marocchino/sticky-pull-request-comment@v3
         with:
           header: content-preview-links
           recreate: true
