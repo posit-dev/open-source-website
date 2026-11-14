@@ -75,8 +75,8 @@ external:  # updated automatically, do not edit
     Talk to Posit: https://posit.co/schedule-a-call'
   duration: 1584
   has_captions: false
-  language: en
-  last_updated: '2026-11-12T12:18:01.684986+00:00'
+  language: ''
+  last_updated: '2026-11-14T05:08:23.669741+00:00'
   like_count: 55
   playlist: ''
   tags: []

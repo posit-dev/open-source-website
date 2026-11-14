@@ -41,8 +41,8 @@ external:  # updated automatically, do not edit
     When I''m not at my computer, you can usually find me outdoors (hiking or birdwatching) or spending entire days in the kitchen making up recipes. I tweet and blog, mostly about R.'
   duration: 1177
   has_captions: false
-  language: en
-  last_updated: '2026-11-12T12:18:01.684986+00:00'
+  language: ''
+  last_updated: '2026-11-14T05:08:23.669741+00:00'
   like_count: 38
   playlist: ''
   software:

@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
     Presented at the 2026 R/Pharma GenAI Day (APAC Track)'
   duration: 6849
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:19.006177+00:00'
+  language: ''
+  last_updated: '2026-11-14T05:08:23.669741+00:00'
   like_count: 13
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:
