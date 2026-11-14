@@ -39526,11 +39526,11 @@ view_count = 904
 like_count = 38
 comment_count = 1
 thumbnail = "https://i.ytimg.com/vi/gCbB3LleF_g/hqdefault.jpg"
-language = "en"
+language = ""
 has_captions = false
 definition = "hd"
 publish = true
-last_updated = "2026-11-12T12:18:01.684986+00:00"
+last_updated = "2026-11-14T05:08:23.669741+00:00"
 
 [[videos]]
 url = "https://www.youtube.com/watch?v=VMGQ3mVbYXI"
@@ -64359,11 +64359,11 @@ view_count = 382
 like_count = 13
 comment_count = 0
 thumbnail = "https://i.ytimg.com/vi/cPjlQAmw6xU/maxresdefault.jpg"
-language = "en"
+language = ""
 has_captions = false
 definition = "hd"
 publish = true
-last_updated = "2026-09-18T13:58:19.006177+00:00"
+last_updated = "2026-11-14T05:08:23.669741+00:00"
 
 [[videos]]
 url = "https://www.youtube.com/watch?v=MphOm5LDhi8"
@@ -66110,8 +66110,8 @@ last_updated = "2026-09-18T13:58:19.006122+00:00"
 
 [[videos]]
 url = "https://www.youtube.com/watch?v=v5iDW7g0h5w"
-title = "How can you add AI voice agents to a Shiny app? | Lucas Da Silva | DS Lab"
-slug = "2026-11-11_how-can-you-add-ai-voice-agents-to-a-shiny-app-lucas-da-silva-ds-lab"
+title = "How can you add AI voice agents to a mobile Shiny app? | Lucas Da Silva | DS Lab"
+slug = "2026-11-11_how-can-you-add-ai-voice-agents-to-a-mobile-shiny-app-lucas-da-silva-ds-lab"
 date = "2026-11-11T17:01:44Z"
 description = "Use shinyrealtime and GPT Realtime for a live voice agent, or MediaRecorder plus Deepgram for voice notes! Give the agent tools to do the work, and keep the app organized in Shiny modules.\n\nIn this Data Science Lab session, Lucas Da Silva, a data analyst at Suffolk Construction, demonstrates how his team uses AI and automation to bridge the gap between programming and construction field operations. Lucas presents the evolution of 'Vera,' a tool designed to solve the manual friction of construction scheduling. With Shiny for Python, Deepgram transcription, and an LLM, voice notes from the job site can be mapped to schedule tasks and reviewed later, no paper needed.\n\nThe Data Science Lab is a live weekly call. Register at pos.it/dslab! Discord invites go out each week on lives calls. We'd love to have you! It's is an open, messy space for learning and asking questions. Think of it like pair coding with a friend or two. Learn something new, and share what you know to help others grow.\n\nOriginally recorded September 29, 2026.\n\n0:00 Welcome to the Data Science Lab\n1:33 Meet Lucas Da Silva, Suffolk Construction\n2:53 How the session works\n4:26 Construction scheduling 101: planners and superintendents\n5:49 The problem: a digital schedule turned into paper and back\n7:42 The proposed solution: a voice assistant on the job site\n9:39 Getting buy-in for AI tools\n11:11 Demo: Vera, the voice agent (built with shinyrealtime)\n17:15 Q&A: speed, undo, and how the agent uses tools\n20:10 Q&A: BIM, change history, and exporting to P6\n22:07 Field-testing lessons: why friction isn't always a bad thing\n25:28 Q&A: security and privacy\n27:22 Demo: Vera Notes and Vera Review\n29:29 Q&A: accents and construction lingo\n34:07 Mapping notes to schedule tasks with an LLM\n37:11 Learning Shiny on the job\n40:37 Code walkthrough: Shiny modules\n42:19 Recording audio with JavaScript and MediaRecorder\n43:32 Transcription with Deepgram\n46:03 Don't one-shot it: building an app step by step\n47:42 How audio flows through the app\n49:04 Storing and structuring notes\n50:10 Q&A: Shiny vs. Streamlit, and why Shiny for Python\n52:00 Demo code on GitHub (QR code)\n54:17 Wrap-up and thank you\n\nResources:\n\n- Download Positron (the IDE Lucas uses): https://positron.posit.co/download.html\n- Lucas’ GitHub: https://github.com/Suffolk-Construction-Corporation-Inc/presentations_and_materials/tree/main/data_science_lab_2026 \n- Lucas’ presentation: https://github.com/Suffolk-Construction-Corporation-Inc/presentations_and_materials/tree/main/data_science_lab_2026\n- Shiny modules: https://mastering-shiny.org/scaling-modules.html\n- data-dict package: https://data-dict.tidyverse.org/\n\nVoice-Enabled Applications\n\n- Shinyrealtime: https://github.com/posit-dev/shinyrealtime \n- Deepgram: https://deepgram.com\n- Deepgram repo: https://github.com/deepgram/deepgram-python-sdk \n\nTalk To Your Data Applications\n\n- commons:  https://opensource.posit.co/blog/2026-09-15_commons-0-1-0/\n- commons repo: https://posit-dev.github.io/commons/\n\nOther Cool Things Lucas Saw At Conf That May (or May Not) Be Relevant\n\n- Shinyreact: https://github.com/posit-dev/shinyreact  \n- Data-dict: https://data-dict.tidyverse.org/"
 duration = 3383
@@ -66126,7 +66126,7 @@ language = "en"
 has_captions = true
 definition = "hd"
 publish = true
-last_updated = "2026-11-12T12:18:01.684986+00:00"
+last_updated = "2026-11-14T05:08:23.669741+00:00"
 
 [[videos]]
 url = "https://www.youtube.com/watch?v=EETn08zQMYw"
@@ -66530,11 +66530,11 @@ view_count = 3757
 like_count = 55
 comment_count = 4
 thumbnail = "https://i.ytimg.com/vi/4rUzyOIvAog/hqdefault.jpg"
-language = "en"
+language = ""
 has_captions = false
 definition = "hd"
 publish = true
-last_updated = "2026-11-12T12:18:01.684986+00:00"
+last_updated = "2026-11-14T05:08:23.669741+00:00"
 
 [[videos]]
 url = "https://www.youtube.com/watch?v=aYmMgJPUpu0"
@@ -67445,3 +67445,108 @@ has_captions = false
 definition = "hd"
 publish = true
 last_updated = "2026-11-12T12:18:01.684986+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=EeFa708AgAE"
+title = "Secure Sharing in the Cloud with Posit Connect Cloud"
+slug = "2026-11-13_secure-sharing-in-the-cloud-with-posit-connect-cloud"
+date = "2026-11-13T19:35:44Z"
+description = "Sharing data science work means deciding who sees what: your team, your clients, or the public. Each needs different controls, and your security team will have questions about all three.\n\nIn this session, Chris deMontmollin and Alex Chisholm from the Posit Connect Cloud team walk through the security work Posit shipped over the past year and why it mattered: SOC 2 Type I attestation, enterprise SSO, role-based access control, encrypted secrets, and custom domains. Then they go hands-on with a live demo of private, gated, and public sharing on Connect Cloud, and how to manage all of it as an organization.\n\nYou’ll learn how to:\n\nChoose the right sharing mode for each audience and level of data sensitivity\nShare with clients and partners as external guests who only see what you choose\nSet up roles, permissions, and secrets so sharing scales with your team\nAnswer the questions your security team will ask, including where to get the SOC 2 report\n\nGet started with a free Connect Cloud account: https://connect.posit.cloud\nConnect Cloud plans for teams and organizations: https://connect.posit.cloud/plans\nSecurity details: https://docs.posit.co/connect-cloud/user/platform/security.html\nRequest the SOC 2 report: https://trust.posit.co\n\nPosit Connect Cloud is the fastest way to securely publish and share R and Python work in the cloud. Publish Shiny, Streamlit, Dash, Quarto, and more from GitHub or your IDE, and control exactly who sees it."
+duration = 3396
+channel = "Posit PBC"
+playlist = ""
+tags = []
+view_count = 228
+like_count = 3
+comment_count = 0
+thumbnail = "https://i.ytimg.com/vi/EeFa708AgAE/maxresdefault.jpg"
+language = "en"
+has_captions = false
+definition = "hd"
+publish = true
+last_updated = "2026-11-14T05:08:23.669741+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=m-EHamzqOZE"
+title = "How can you build dynamic reactive inputs in Shiny? | Kyle Husmann | Data Science Lab"
+slug = "2026-11-13_how-can-you-build-dynamic-reactive-inputs-in-shiny-kyle-husmann-data-science-lab"
+date = "2026-11-13T02:00:23Z"
+description = "You can use the irid package, which complements Shiny, to help you build interactive, dynamically-changing reactive inputs and outputs that wont overwhelm or overly complicate your Shiny app.\n\nThe Data Science Lab is a live weekly call. Register at pos.it/dslab! Discord invites go out each week on lives calls. We'd love to have you! It's is an open, messy space for learning and asking questions. Think of it like pair coding with a friend or two. Learn something new, and share what you know to help others grow.\n\nOn this Lab, Kyle Husmann, software engineer at Posit, talks about his new irid package, which brings ideas from modern JavaScript component frameworks to Shiny, especially Solid.js, which pioneered fine-grained reactivity where each change updates only the specific DOM node it’s bound to.\n\nHosting crew from Posit: Libby Heeren\nRecorded: August 11, 2026\n\nKyle Husmann's socials and urls:\nhttps://bsky.app/profile/kylehusmann.bsky.social\nhttps://github.com/khusmann\nhttps://kylehusmann.com\n\nResources mentioned in video and/or the chat:\n{irid} website and docs: https://irid.kylehusmann.com/\n{irid} GitHub repo: https://github.com/khusmann/irid\nTemperature converter app example in {irid}: https://irid.kylehusmann.com/apps/temperature/index.html?_shinylive-mode=editor-terminal-viewer\nMore {irid} examples: https://irid.kylehusmann.com/articles/examples.html\nTo Do List example app using {irid}: https://irid.kylehusmann.com/apps/todo/index.html?_shinylive-mode=editor-terminal-viewer\n{irid} package vignette on CRAN: https://cran.rstudio.com/web//packages/irid/vignettes/irid.html\nReact JS: https://legacy.reactjs.org/\nshinystan: https://mc-stan.org/shinystan/\nUsing bslib in Shiny: https://shiny.posit.co/r/articles/build/themes/\nShiny for Python: https://shiny.posit.co/py/\nMastering Shiny book (free): https://mastering-shiny.org/\nWhat is reactivity? (from Mastering Shiny book): https://mastering-shiny.org/basic-reactivity.html\n\nTimestamps\n00:00 Introduction\n03:33 Interactivity and reactivity in standard Shiny\n06:08 \"Why did you make irid and what does it look like?\"\n06:57 Live coding a base Shiny app\n10:13 Adding reactivity in Shiny and UI/server split challenges\n12:57 Introducing {irid} and single-function app architecture\n16:18 \"Is this like implementing Shiny for Python's express mode, but in R?\"\n17:11 Hooking up reactive values in irid\n20:25 Dynamically styling HTML elements with reactive values\n21:50 \"What if you type something that isn't a color?\" (can we break this?)\n22:31 Circular observers and \"update chasing\" in Shiny\n25:48 \"Is it an anonymous function or a reference to the reactive value?\"\n28:57 Demoing the To Do list app in irid\n32:44 \"Can we build our own Shiny inputs using HTML widgets?\"\n33:15 Demoing the CodeMirror editor widget in irid\n35:55 Full tag tree re-renders vs. surgical DOM updates\n38:09 Demoing the bidirectional temperature converter\n39:19 Reviewing the To Do app source code\n42:20 Using conditional logic (when) and list loops (each)\n44:33 Component functions vs. traditional Shiny modules\n47:11 \"Component functions that handle UI and server reactivity sound like modules?\"\n47:44 Demoing the nested questions quiz builder\n48:54 \"Why did you call it Irid?\"\n49:19 Interoperability: Running irid components inside Shiny\n50:41 \"Do you have any specific recommendations when you want to convert an existing Shiny app to use irid?\"\n51:19 Exploring documentation, templates, and Claude skills for irid\n53:56 Diagnosing app freezes and refresh loops in complex apps\n55:26 \"Is the GitHub repo the best place for feedback?\""
+duration = 3415
+channel = "Posit PBC"
+playlist = ""
+tags = []
+view_count = 949
+like_count = 13
+comment_count = 0
+thumbnail = "https://i.ytimg.com/vi/m-EHamzqOZE/maxresdefault.jpg"
+language = "en"
+has_captions = true
+definition = "hd"
+publish = true
+last_updated = "2026-11-14T05:08:23.669741+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=QKGpnrY5uK0"
+title = "What's new in Shiny for Python 1.9?"
+slug = "2026-11-12_whats-new-in-shiny-for-python-19"
+date = "2026-11-12T14:23:58Z"
+description = "Async effects and outputs now run concurrently, sidebars can be ARIA landmarks, Express download buttons take an icon, and UI updates from background tasks reach the browser right away.\n\nRead more: https://opensource.posit.co/blog/2026-10-29_shiny-python-1-9/"
+duration = 60
+channel = "Posit PBC"
+playlist = ""
+tags = [
+    "rstudio",
+    "data science",
+    "machine learning",
+    "python",
+    "stats",
+    "tidyverse",
+    "data visualization",
+    "data viz",
+    "ggplot",
+    "technology",
+    "coding",
+    "connect",
+    "server pro",
+    "shiny",
+    "rmarkdown",
+    "package manager",
+    "CRAN",
+    "interoperability",
+    "serious data science",
+    "dplyr",
+    "forcats",
+    "ggplot2",
+    "tibble",
+    "readr",
+    "stringr",
+    "tidyr",
+    "purrr",
+    "github",
+    "data wrangling",
+    "tidy data",
+    "odbc",
+    "rayshader",
+    "plumber",
+    "blogdown",
+    "gt",
+    "lazy evaluation",
+    "tidymodels",
+    "statistics",
+    "debugging",
+    "programming education",
+    "rstats",
+    "open source",
+    "OSS",
+    "reticulate",
+]
+view_count = 348
+like_count = 11
+comment_count = 0
+thumbnail = "https://i.ytimg.com/vi/QKGpnrY5uK0/maxresdefault.jpg"
+language = "en"
+has_captions = false
+definition = "hd"
+publish = true
+last_updated = "2026-11-14T05:08:23.669741+00:00"

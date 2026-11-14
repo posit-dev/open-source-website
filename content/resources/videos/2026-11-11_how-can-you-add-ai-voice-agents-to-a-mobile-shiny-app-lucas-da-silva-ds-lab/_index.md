@@ -14,7 +14,7 @@ software:
 - tidyverse
 - tidyverse.org
 tags: []
-title: How can you add AI voice agents to a Shiny app? | Lucas Da Silva | DS Lab
+title: How can you add AI voice agents to a mobile Shiny app? | Lucas Da Silva | DS Lab
 
 external:  # updated automatically, do not edit
   channel: Posit PBC
@@ -25,7 +25,7 @@ external:  # updated automatically, do not edit
   duration: 3383
   has_captions: true
   language: en
-  last_updated: '2026-11-12T12:18:01.684986+00:00'
+  last_updated: '2026-11-14T05:08:23.669741+00:00'
   like_count: 4
   playlist: ''
   software:
@@ -38,7 +38,7 @@ external:  # updated automatically, do not edit
   - tidyverse.org
   tags: []
   thumbnail: https://i.ytimg.com/vi/v5iDW7g0h5w/maxresdefault.jpg
-  title: How can you add AI voice agents to a Shiny app? | Lucas Da Silva | DS Lab
+  title: How can you add AI voice agents to a mobile Shiny app? | Lucas Da Silva | DS Lab
   url: https://www.youtube.com/watch?v=v5iDW7g0h5w
   view_count: 512
 ---
