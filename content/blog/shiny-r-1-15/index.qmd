@@ -122,8 +122,6 @@ In v1.15, closing a session and destroying one are two different things:
 * When a session **closes**, its reactives stay readable at their last value, and R's garbage collector reclaims them later. Late async work finishes quietly. Observers are still destroyed, so a late write can't wake the session back up.
 * When you call **`session$destroy()`** on a live session, everything is torn down as before, and reading a destroyed reactive is still an error. In that case, a stale read is a real bug that you want to hear about.
 
-![What happens to a session's reactive objects when the session closes, and when you call `session$destroy()`.](close-vs-destroy.png){fig-alt="Two side-by-side panels. When the session closes because the browser goes away, observers are destroyed, reactive values and expressions are kept at their last value, onDestroy callbacks run, and a late read from async work succeeds. When you call session$destroy() to remove a module, observers, reactive values and expressions are all destroyed, onDestroy callbacks run, and a late read from async work is an error."}
-
 `onDestroy()` callbacks run in both cases, so your module cleanup code needs no changes.
 
 ### Outputs after a reconnect
