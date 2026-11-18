@@ -43,9 +43,9 @@ If you're new to commons, the [introductory post](/blog/2026-09-15_commons-0-1-0
 
 ## Interoperability
 
-As we started working on the 0.2.0 release of commons, one of the biggest questions in our minds was how to help folks use commons with other coding agents, like Posit Assistant, Claude Code, or Codex. Relatedly, we wanted commons users to be able to use commons under the hood of other analyses, like Quarto reports and Shiny apps.
+For commons 0.2.0, we wanted to make trusted code and context available independent of agent harness, including to coding agents like Posit Assistant, Claude Code, and Codex. 
 
-In service of this, the `commons()` function was split into two. Calls to `commons()` previously looked like this:
+In service of this, we split the `commons()` function into two, decoupling the structure that holds the commons information layers from the agent harness. Calls to `commons()` previously looked like this:
 
 ```r
 commons <- commons(
@@ -56,33 +56,30 @@ commons <- commons(
 )
 ```
 
-This interface coupled two operations that shouldn't have been coupled:
+This interface coupled two things that should have been independent: assembling the data structure that holds trusted calculations and context, and creating an agent to use them.
 
-1) The data structure that holds the data sources, semantic layer, and context layer
-2) The agent harness that makes that information available to an LLM
-
-`commons()` is now the function used to create the former, while a new function `agent()` is used to create the latter:
+`commons()` now only creates the data structure, while a new function, `agent()`, creates the agent harness:
 
 ```r
 commons <- commons(
-  data_sources, 
-  semantic_layer, 
-  context_layer
+  data_sources = data_sources, 
+  semantic_layer = semantic_layer, 
+  context_layer = context_layer
 )
 agent <- agent(client, commons = commons)
 ```
 
-We call that first data structure "the commons." The commons can be used to invoke trusted code and search trusted context directly from R and is intended for use with other coding agents. For example, here's Posit Assistant using the commons underlying the [DevRel Agent](https://github.com/posit-dev/devrel-agent), an agent we use at Posit for answering questions about our open source projects.
+We call that first data structure "the commons." Because the commons is now separated from the agent harness, you can use it to access trusted code and context directly from R, enabling the use of commons with other coding agents. For example, here's Posit Assistant using the commons behind the [DevRel Agent](https://github.com/posit-dev/devrel-agent), an agent we use at Posit for answering questions about our open source projects.
 
 <video class="column-page" autoplay loop muted playsinline controls preload="metadata" aria-label="Screen recording of Posit Assistant in Positron answering 'Plot opensource.posit.co traffic over time'. The assistant inspects a commons object, searches its governed metrics and context for web traffic, pulls daily pageviews and visitors, and plots them as a ggplot2 line chart from March through October 2026.">
   <source src="figures/posit-assistant-commons.mp4" type="video/mp4">
 </video>
 
-In the above, `devrel` is the commons. The agent runs "normal R code" to interface with it. For coding agents that don't already have a persistent R session, like Claude Code and Codex, we recommend [mcp-console](https://github.com/posit-dev/mcp-console). 
+In the above example, `devrel` is the commons. The agent runs "normal R code" to interface with it. For coding agents that don't already have a persistent R session, like Claude Code and Codex, we recommend [mcp-console](https://github.com/posit-dev/mcp-console). 
 
-This split into two also means that commons users can use one commons across multiple projects. For example, a commons could be defined in an R package, and then used both in a Shiny app (by invoking the trusted code directly) and in an agent (by calling `agent()` on the commons).
+This split also means that commons users can use one commons across multiple projects. For example, a commons could be defined in an R package, and then used both in a Shiny app (by invoking the trusted code directly) and in an agent (by calling `agent()` on the commons).
 
-This transition was implemented backward-compatibly; existing calls to `commons()` will raise a deprecation warning with migration instructions. See [`?commons()`](https://posit-dev.github.io/commons/r/reference/commons.html) and the new ["Sharing a commons across projects"](https://posit-dev.github.io/commons/r/articles/sharing.html) vignette to learn more.
+This transition maintains backward compatibility. Calls using the old `commons()` interface will continue to work, but raise a deprecation warning with migration instructions. See [`?commons()`](https://posit-dev.github.io/commons/r/reference/commons.html) and the new ["Sharing a commons across projects"](https://posit-dev.github.io/commons/r/articles/sharing.html) vignette to learn more.
 
 ## Sharing
 
@@ -92,11 +89,11 @@ On Posit Connect, users can now share conversations, documents, plots, or tables
   <source src="figures/devrel-agent-share.mp4" type="video/mp4">
 </video>
 
-For plots and tables, the source code for the content is included in the deployed page as well as the date it was created and a link back to the agent where it can be reproduced.
+For plots and tables, the deployed page will include the source code, creation date, and a link back to the original agent. 
 
 (Since the public-facing deployment of DevRel Agent is publicly available on Posit Connect Cloud rather than internally deployed, that deployment of the agent will not have sharing enabled.)
 
-Existing apps need no changes to enable this feature beyond a redeploy with the new commons version.
+To enable this feature in existing commons apps, redeploy them with the new commons version. No other changes are needed. 
 
 ## Artifacts
 
@@ -112,4 +109,4 @@ When users mention writing reports or creating something sharable, the agent can
 
 We're super grateful for all of the feedback since the initial release of commons, and we're excited to have this release out! Only the R side of commons 0.2.0 has been released; keep an eye out in the coming weeks for a release on the Python side with analogous features.
 
-In the coming months, we'll be focused on another substantial commons release. For one, we want to continue making commons apps feel increasingly like modern, powerful chat apps; namely, commons agents should be able to author interactive applications as artifacts. We're also interested in "loops," where a user might be able to e.g. request that some report is recreated and sent to them weekly. If you have thoughts on where you'd like to see commons go, feel free to reach out on our [issue tracker](https://github.com/posit-dev/commons/issues).
+In the coming months, we'll be focused on another substantial commons release. Our main focus is continuing to make commons apps feel like modern, powerful chat apps, including letting agents create interactive applications as artifacts. We're also interested in "loops," where a user could, for example, request that a report be regenerated and sent to them weekly. If you have thoughts on where you'd like to see commons go, feel free to reach out on our [issue tracker](https://github.com/posit-dev/commons/issues).
