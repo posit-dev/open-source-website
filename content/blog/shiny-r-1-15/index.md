@@ -44,6 +44,27 @@ When we [shipped agent skills in Shiny for Python v1.7](../../blog/2026-08-04_sh
 
 Coding agents write a lot of Shiny apps, and they tend to make the same mistakes: nested `fluidRow()` and `column()` pyramids where a bslib layout would do, tabs faked with buttons and `conditionalPanel()`, slow work that blocks every session, and `print()` calls in place of a debugger. Shiny v1.15 ships a `shiny-for-r` skill that follows the [Agent Skills](https://agentskills.io) convention and steers agents toward what the framework already provides.
 
+To show the difference, here is one small app written both ways. The data, inputs, and outputs are the same; only the choice of layout and navigation changes.
+
+<div class="grid gap-12 items-start mt-12 md:grid-cols-2">
+<div class="prose max-w-none">
+
+<figure>
+<img src="skill-before.png" data-fig-alt="A plain Shiny app titled Fuel economy. A grey box of inputs sits on the left. Three numbers are shown as plain text under small headings, above two buttons labelled Plot and Data and an unstyled scatterplot." alt="The habits above: a fluidRow() and column() grid, with two buttons and conditionalPanel() standing in for tabs." />
+<figcaption aria-hidden="true">The habits above: a <code>fluidRow()</code> and <code>column()</code> grid, with two buttons and <code>conditionalPanel()</code> standing in for tabs.</figcaption>
+</figure>
+
+</div>
+<div class="prose max-w-none">
+
+<figure>
+<img src="skill-after.png" data-fig-alt="The same Fuel economy app as a bslib dashboard. Inputs sit in a sidebar. Three value boxes show the numbers in large type, above a card with Plot and Data tabs that holds a coloured scatterplot." alt="What the skill points to: a bslib page with a sidebar, value boxes, and a card with real tabs." />
+<figcaption aria-hidden="true">What the skill points to: a bslib page with a sidebar, value boxes, and a card with real tabs.</figcaption>
+</figure>
+
+</div>
+</div>
+
 The skill is an index. Its `SKILL.md` is a short table of topics, and each row points to one of 21 reference files. An agent reads the index, then opens only the one or two references its task touches:
 
 | Area | References |
@@ -86,6 +107,11 @@ options(shiny.autoreload = TRUE)
 shiny::runApp("myapp")
 ```
 
+<figure>
+<img src="autoreload.gif" data-fig-alt="An animation with an editor showing app.R on the left and a browser showing the running app on the right. A line that sets the histogram colour is edited and saved, and the histogram in the browser turns from blue to red. Then the heading text is edited and saved, and the heading in the browser changes to match." alt="Each save of app.R reloads the app in the browser." />
+<figcaption aria-hidden="true">Each save of <code>app.R</code> reloads the app in the browser.</figcaption>
+</figure>
+
 The `shiny.autoreload.interval` and `shiny.autoreload.pattern` options work as before.
 
 ## Refresh and reconnect
@@ -106,6 +132,11 @@ In v1.15, closing a session and destroying one are two different things:
 
 - When a session **closes**, its reactives stay readable at their last value, and R's garbage collector reclaims them later. Late async work finishes quietly. Observers are still destroyed, so a late write can't wake the session back up.
 - When you call **`session$destroy()`** on a live session, everything is torn down as before, and reading a destroyed reactive is still an error. In that case, a stale read is a real bug that you want to hear about.
+
+<figure>
+<img src="close-vs-destroy.png" data-fig-alt="Two side-by-side panels. When the session closes because the browser goes away, observers are destroyed, reactive values and expressions are kept at their last value, onDestroy callbacks run, and a late read from async work succeeds. When you call session$destroy() to remove a module, observers, reactive values and expressions are all destroyed, onDestroy callbacks run, and a late read from async work is an error." alt="What happens to a session’s reactive objects when the session closes, and when you call session$destroy()." />
+<figcaption aria-hidden="true">What happens to a session’s reactive objects when the session closes, and when you call <code>session$destroy()</code>.</figcaption>
+</figure>
 
 `onDestroy()` callbacks run in both cases, so your module cleanup code needs no changes.
 

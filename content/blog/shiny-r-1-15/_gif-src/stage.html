@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- A stage for the autoreload recording: the app's source on the left and the
+     live app in an iframe on the right. capture.py fills both in. -->
+<style>
+  @font-face { font-family: 'Open Sans'; font-weight: 300 800;
+    src: url('../../../../static/fonts/open-sans-latin.woff2') format('woff2'); }
+  @font-face { font-family: 'Source Code Pro'; font-weight: 300 900;
+    src: url('../../../../static/fonts/source-code-pro-latin.woff2') format('woff2'); }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1100px; height: 480px; overflow: hidden; }
+  body { font-family: "Open Sans", sans-serif; background: #F6F8FB; padding: 16px;
+         display: grid; grid-template-columns: 560px 1fr; gap: 16px; }
+  .pane { border: 1px solid #DCE3EB; border-radius: 10px; overflow: hidden; background: #fff;
+          display: flex; flex-direction: column; }
+  .bar { height: 34px; background: #F1F4F8; border-bottom: 1px solid #DCE3EB; flex: none;
+         display: flex; align-items: center; gap: 10px; padding: 0 12px;
+         font-size: 13.5px; font-weight: 600; color: #4A6178; }
+  .state { margin-left: auto; font-size: 12.5px; padding: 2px 10px; border-radius: 999px; }
+  .state.saved { background: #E3F4E8; color: #1E7A3D; }
+  .state.unsaved { background: #FDEFD8; color: #8A5A0B; }
+  pre { font-family: "Source Code Pro", monospace; font-size: 13px; line-height: 1.6;
+        color: #17324D; background: #fff; padding: 12px 0; flex: 1; }
+  pre div { padding: 0 14px; white-space: pre; min-height: 1.6em; }
+  pre div.changed { background: #FFF3C4; }
+  /* Draw the app at 75% so the whole page fits in the pane. */
+  .view { flex: 1; position: relative; overflow: hidden; }
+  iframe { border: 0; position: absolute; top: 0; left: 0; width: 133.34%; height: 133.34%;
+           transform: scale(0.75); transform-origin: 0 0; }
+</style>
+</head>
+<body>
+  <div class="pane">
+    <div class="bar"><span>app.R</span><span id="state" class="state saved">Saved</span></div>
+    <pre id="code"></pre>
+  </div>
+  <div class="pane">
+    <div class="bar"><span>Browser</span></div>
+    <div class="view"><iframe id="app"></iframe></div>
+  </div>
+<script>
+  // Show `text` as the file's source, highlighting the lines in `changed`.
+  function showCode(text, changed, state) {
+    const pre = document.getElementById("code");
+    pre.replaceChildren(...text.replace(/\n$/, "").split("\n").map((line, i) => {
+      const div = document.createElement("div");
+      div.textContent = line;
+      if (changed.includes(i)) div.className = "changed";
+      return div;
+    }));
+    const badge = document.getElementById("state");
+    badge.textContent = state === "saved" ? "Saved" : "Unsaved";
+    badge.className = "state " + state;
+  }
+</script>
+</body>
+</html>

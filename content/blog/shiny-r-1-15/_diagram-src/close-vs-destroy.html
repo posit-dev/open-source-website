@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: 'Open Sans'; font-weight: 300 800;
+    src: url('../../../../static/fonts/open-sans-latin.woff2') format('woff2'); }
+  @font-face { font-family: 'Source Code Pro'; font-weight: 300 900;
+    src: url('../../../../static/fonts/source-code-pro-latin.woff2') format('woff2'); }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1000px; height: 446px; overflow: hidden; }
+  body { font-family: "Open Sans", sans-serif; color: #17324D; background: #F6F8FB;
+         padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  code { font-family: "Source Code Pro", monospace; font-weight: 600; font-size: 0.95em; }
+  .lane { background: #fff; border: 1px solid #E1E8F0; border-radius: 16px; padding: 22px 24px; }
+  .when { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .close .when { color: #2F5F8A; }
+  .destroy .when { color: #6740A8; }
+  h2 { font-size: 26px; font-weight: 700; margin: 6px 0 4px; }
+  .eg { font-size: 15px; color: #4A6178; margin-bottom: 16px; }
+  .row { display: flex; align-items: center; gap: 12px; padding: 11px 0;
+         border-top: 1px solid #E9EEF4; font-size: 16px; }
+  .what { flex: 1; }
+  .pill { font-size: 14px; font-weight: 700; padding: 4px 12px; border-radius: 999px; white-space: nowrap; }
+  .gone { background: #FBE6E4; color: #A8322A; }
+  .kept { background: #E3F4E8; color: #1E7A3D; }
+  .run  { background: #E5EFF8; color: #2F5F8A; }
+  .result { margin-top: 6px; padding: 12px 14px; border-radius: 10px; font-size: 15.5px; font-weight: 600; }
+  .close .result { background: #E3F4E8; color: #1E7A3D; }
+  .destroy .result { background: #FBE6E4; color: #A8322A; }
+</style>
+</head>
+<body>
+  <div class="lane close">
+    <div class="when">The session closes</div>
+    <h2>Browser goes away</h2>
+    <div class="eg">A page refresh, a closed tab, a lost connection</div>
+    <div class="row"><span class="what">Observers</span><span class="pill gone">destroyed</span></div>
+    <div class="row"><span class="what">Reactive values and expressions</span><span class="pill kept">kept at last value</span></div>
+    <div class="row"><span class="what"><code>onDestroy()</code> callbacks</span><span class="pill run">run</span></div>
+    <div class="row"><span class="what">A late read from async work</span></div>
+    <div class="result">Works. The task finishes quietly.</div>
+  </div>
+  <div class="lane destroy">
+    <div class="when">You call session$destroy()</div>
+    <h2>Module is removed</h2>
+    <div class="eg">The session is still live; you tear down one module</div>
+    <div class="row"><span class="what">Observers</span><span class="pill gone">destroyed</span></div>
+    <div class="row"><span class="what">Reactive values and expressions</span><span class="pill gone">destroyed</span></div>
+    <div class="row"><span class="what"><code>onDestroy()</code> callbacks</span><span class="pill run">run</span></div>
+    <div class="row"><span class="what">A late read from async work</span></div>
+    <div class="result">Error. A stale read is a real bug.</div>
+  </div>
+</body>
+</html>
