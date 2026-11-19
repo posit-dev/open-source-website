@@ -43,7 +43,7 @@ You can see a full list of changes in the [release notes](https://github.com/tid
 
 ## Two new engines for random forests
 
-`rand_forest()` for censored regression now has two more engines: `"ranger"` and `"randomForestSRC"`. These join `"partykit"` and `"aorsf"`. Both are popular, fast implementations of random survival forests. Both new engines support predicts of `type = "time"` for survival time and `type = "survival"` for probability of survival.
+`rand_forest()` for censored regression now has two more engines: `"ranger"` and `"randomForestSRC"`. These join `"partykit"` and `"aorsf"`. Both are popular, fast implementations of random survival forests. Both new engines support predictions of `type = "time"` for survival time and `type = "survival"` for probability of survival.
 
 ``` r
 lung <- na.omit(survival::lung)
@@ -109,7 +109,7 @@ rfsrc_direct$family
 #> [1] "surv-CR"
 ```
 
-Since a 1/2 encoding of the status is not uncommon, as, e.g., in the everyone's favorite example dataset `lung`, censored evaluates the `Surv()` response first, so a 1/2 coding is handled like in every other survival model:
+Since a 1/2 encoding of the status is not uncommon, as, e.g., in everyone's favorite example dataset `lung`, censored evaluates the `Surv()` response first, so a 1/2 coding is handled like in every other survival model:
 
 ``` r
 extract_fit_engine(rf_rfsrc)$family
@@ -184,7 +184,7 @@ On this small dataset (dropping observations with missing values for ranger only
 
 Boosted survival trees via `boost_tree()` with the `"mboost"` engine got several improvements. We've made the `learn_rate` tunable and as part of that, it now properly maps to `mboost::boost_control(nu)`. Previously it was silently ignored. I suspect that this might have been overlooked in part because the learn rate is not typically what you tune. (But now you can if you want to!) As long as it's small (mboost's default is 0.1), the number of trees is usually much more influential.
 
-This is where the second improvement for the mboost engine comes in. It now has a `multi_predict()` method which let's you predict for multiple number of trees from a single fitted model object.
+This is where the second improvement for the mboost engine comes in. It now has a `multi_predict()` method which lets you predict for multiple number of trees from a single fitted model object.
 
 ``` r
 boost_fit <- boost_tree(trees = 200, learn_rate = 0.05) |>
@@ -211,7 +211,7 @@ multi_pred$.pred[[1]]
 #> 6   200        500          0.271
 ```
 
-This submodel trick of "fit once, predict often" is nice when exploring one model but really shines when using `tune_grid()`. That uses the `multi_predict()` method automatically, making tuning over many different values for `trees` cheap(er). For each resample, it find the grid points which only differ in the number of trees, fits only the model with the largest number of trees, and predicts from it for all the smaller `trees` values, instead of fitting one model per grid point.
+This submodel trick of "fit once, predict often" is nice when exploring one model but really shines when using `tune_grid()`. That uses the `multi_predict()` method automatically, making tuning over many different values for `trees` cheap(er). For each resample, it finds the grid points which only differ in the number of trees, fits only the model with the largest number of trees, and predicts from it for all the smaller `trees` values, instead of fitting one model per grid point.
 
 So let's do a small example: We are tuning over `trees` (and keeping `learn_rate` at its default), reusing `lung_folds` from the null model section.
 
@@ -232,7 +232,7 @@ system.time(
   )
 )
 #>    user  system elapsed 
-#>  32.033   0.035  32.092
+#>  32.912   0.041  33.004
 ```
 
 To give you a ballpark figure, with censored 0.3.5 (and no `multi_predict()` method), the same code took about 90 seconds on my laptop. So this is roughly 3 times faster now, corresponding to fitting one model instead of ten per resample. The more values for `trees` you need to tune over, the more you will notice this speedup.
