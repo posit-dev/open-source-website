@@ -2,7 +2,8 @@
 date: '2025-09-18'
 description: "James Blair, a senior product manager at Posit, discusses the integration of Posit tools with partners like Snowflake and Databricks, emphasizing the role of AI in enhancing data scientists' efficiency. \n\nposit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/"
 image: thumbnail.jpg
-people: []
+people:
+- James Blair
 resource_type: video
 resources: []
 software: []
@@ -29,6 +30,8 @@ external:  # updated automatically, do not edit
   language: en
   last_updated: '2026-09-18T13:58:08.448358+00:00'
   like_count: 4
+  people:
+  - James Blair
   playlist: ''
   tags:
   - posit::conf(2025)

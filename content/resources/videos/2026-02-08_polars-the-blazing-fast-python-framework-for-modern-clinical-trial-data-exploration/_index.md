@@ -55,8 +55,8 @@ external:  # updated automatically, do not edit
     * UV Python package manager: https://docs.astral.sh/uv'
   duration: 6654
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:19.320839+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 3
   people:
   - Jeroen Janssens

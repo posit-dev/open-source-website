@@ -12,7 +12,7 @@
 
 <blockquote><a data-t="181">it's not reproducible. I don't know if you have done this. I have done this in class</a> <a data-t="184">where I decide to tweak something and I forget to tweak it in the PowerPoint or whatever,</a> <a data-t="188">and then my students are seeing code that doesn't match the graph. That's not great.</a></blockquote>
 
-<p><a data-t="193">And so we like to introduce Flare because you are adding kind of meaningless decoration.</a> <a data-t="201">It does not change how the code runs and it does not change the internal, I don't know,</a> <a data-t="207">value of the code.</a></p>
+<p><a data-t="198">And so we like to introduce Flare because you are adding kind of meaningless decoration.</a> <a data-t="201">It does not change how the code runs and it does not change the internal, I don't know,</a> <a data-t="207">value of the code.</a></p>
 
 <p><a data-t="209">And so how it works, very briefly, you have your code chunk. Nothing in this code chunk</a> <a data-t="212">is new except that it's very important that you give it a name and important probably</a> <a data-t="217">that you turn off include unless you want it to be duplicated.</a> <a data-t="221">And so we all love Iris. I only have five minutes. I can't tell you about new data sets.</a> <a data-t="224">So suppose this is my code chunk. That's what it looks like. Step two is you call this decorate</a> <a data-t="229">function that kind of preps that code chunk to be flared. And then all you have to do</a> <a data-t="234">is add the flare that you want to this code chunk.</a></p>
 

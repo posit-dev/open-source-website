@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: Even though I’ve completed 4 marathons, you certainly shouldn’t come to me for a training plan on how to achieve your goals for any race you’re about to run. So why do we often turn to “experienced R users” to help us learn R or train an organization? The RStudio certified trainers have been taught modern, evidence-based teaching practices which they use in planning training sessions in order to help delegates achieve THEIR learning goals effectively in a given time-frame. My talk will illustrate some of these teaching concepts and how, by becoming a certified trainer, you can help others learn about R more effectively. A 5 minute presentation in our Lightning Talks series
   duration: 321
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:17.861470+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 9
   playlist: ''
   software:

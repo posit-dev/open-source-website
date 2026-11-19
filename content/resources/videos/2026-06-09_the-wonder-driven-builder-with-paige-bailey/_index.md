@@ -58,8 +58,8 @@ external:  # updated automatically, do not edit
     • Why “taste” is the skill that matters when code costs nothing'
   duration: 2898
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:06.852965+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 8
   playlist: ''
   software:

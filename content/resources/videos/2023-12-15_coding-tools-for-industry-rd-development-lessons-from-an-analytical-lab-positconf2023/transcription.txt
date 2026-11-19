@@ -14,7 +14,7 @@
 
 <h3>Be a detective</h3>
 
-<p><a data-t="146">Your first assignment is to be a detective.</a> <a data-t="149">Shadow your users to discover their sources of pain points and inefficiencies.</a> <a data-t="154">By asking questions as they load samples, run measurements, and analyze data, you will</a> <a data-t="160">identify clues and assumptions that are overlooked when these steps are simply described to you.</a> <a data-t="165">For example, you notice that your users can export data in a different format that is</a> <a data-t="170">easier to parse, or that it's possible to save time and avoid copy-pasting errors by</a> <a data-t="175">extracting instrument metadata from a file otherwise ignored.</a></p>
+<p><a data-t="146">Your first assignment is to be a detective.</a> <a data-t="149">Shadow your users to discover their sources of pain points and inefficiencies.</a> <a data-t="154">By asking questions as they load samples, run measurements, and analyze data, you will</a> <a data-t="159">identify clues and assumptions that are overlooked when these steps are simply described to you.</a> <a data-t="165">For example, you notice that your users can export data in a different format that is</a> <a data-t="170">easier to parse, or that it's possible to save time and avoid copy-pasting errors by</a> <a data-t="175">extracting instrument metadata from a file otherwise ignored.</a></p>
 
 <h3>Be an architect</h3>
 

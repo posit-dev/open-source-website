@@ -126,8 +126,8 @@ external:  # updated automatically, do not edit
     Thank you for joining us!'
   duration: 1480
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:09.332426+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 92
   playlist: ''
   software:

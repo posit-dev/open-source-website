@@ -58,7 +58,7 @@
 
 <h3>Encoding domain knowledge into a package</h3>
 
-<p><a data-t="675">A third way that I think you can really make a lot of impact on your package contributions is by taking your domain knowledge.</a> <a data-t="681">The thing that you know better than anyone else.</a> <a data-t="683">And figure out a way to encode that into an R package.</a> <a data-t="689">Encode that into, somehow, R functions or documentation.</a> <a data-t="694">I've always really loved this quote from Zed Shaw.</a> <a data-t="697">He says, programming as a profession is only moderately interesting.</a> <a data-t="701">You're much better off using code as your secret weapon in another profession.</a> <a data-t="706">And this is exactly how I felt.</a></p>
+<p><a data-t="675">A third way that I think you can really make a lot of impact on your package contributions is by taking your domain knowledge.</a> <a data-t="683">The thing that you know better than anyone else.</a> <a data-t="686">And figure out a way to encode that into an R package.</a> <a data-t="689">Encode that into, somehow, R functions or documentation.</a> <a data-t="694">I've always really loved this quote from Zed Shaw.</a> <a data-t="697">He says, programming as a profession is only moderately interesting.</a> <a data-t="701">You're much better off using code as your secret weapon in another profession.</a> <a data-t="706">And this is exactly how I felt.</a></p>
 
 <p><a data-t="708">You know, I was coming at this studying sociology and other sorts of social research.</a> <a data-t="714">I was never going to be a professional programmer, but I did know a lot about census data.</a> <a data-t="719">I did know a lot about other kinds of social research.</a> <a data-t="722">And so the idea here is that that was my secret weapon, right?</a> <a data-t="726">I couldn't write the most amazing R code in the world, but was there some way that I could take what I knew about the census</a> <a data-t="734">and what I knew about sociology and put that into the R package somehow.</a></p>
 
@@ -84,7 +84,7 @@
 
 <h3>Q&A</h3>
 
-<p><a data-t="1033">Thanks, Matt. That was great.</a> <a data-t="1035">We do have a little bit of time for questions if you want to ask one or two.</a> <a data-t="1038">Anyone from the audience?</a> <a data-t="1038">There's none on Slido right now, but if you do have a question, I can come to you with the microphone.</a></p>
+<p><a data-t="1031">Thanks, Matt. That was great.</a> <a data-t="1033">We do have a little bit of time for questions if you want to ask one or two.</a> <a data-t="1036">Anyone from the audience?</a> <a data-t="1038">There's none on Slido right now, but if you do have a question, I can come to you with the microphone.</a></p>
 
 <p><a data-t="1044">I was curious to know, so you've contributed a lot to tidycensus now.</a> <a data-t="1048">Now that you've done all that, do you feel more comfortable contributing to other packages?</a> <a data-t="1052">And have you done any contributions to other packages?</a></p>
 

@@ -136,10 +136,10 @@ external:  # updated automatically, do not edit
     Learn more about Posit for Snowflake:
 
     https://posit.co/solutions/snowflake'
-  duration: 845
+  duration: 846
   has_captions: false
   language: en
-  last_updated: '2026-09-18T13:58:06.406188+00:00'
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 2
   playlist: ''
   software:

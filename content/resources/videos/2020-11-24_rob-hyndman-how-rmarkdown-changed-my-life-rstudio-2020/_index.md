@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: Over the last few years, Rmarkdown seems to have taken over my life, or at least my written communication. These days I use Rmarkdown to maintain my website, write my blog, write textbooks, write academic papers, prepare slides for talks, keep my CV up-to-date, help my students write theses, prepare university policy documents, write letters, prepare exams, write reports for clients, and more. I haven't quite got to the point of using it for shopping lists, but perhaps that's my next Rmarkdown template. I will reflect on the journey in getting to this point, what I've lost and what I've gained. I will also speculate on what might be next in the Rmarkdownification of my life.
   duration: 1398
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:17.861150+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 555
   playlist: ''
   software:

@@ -35,7 +35,8 @@ description: 'Leveraging R & Python in Tableau with RStudio Connect
 
   James'' slides: https://github.com/blairj09-talks/rstudio-tableau-webinar'
 image: thumbnail.jpg
-people: []
+people:
+- James Blair
 resource_type: video
 resources: []
 software:
@@ -88,9 +89,11 @@ external:  # updated automatically, do not edit
     James'' slides: https://github.com/blairj09-talks/rstudio-tableau-webinar'
   duration: 4238
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:16.154140+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 81
+  people:
+  - James Blair
   playlist: ''
   software:
   - odbc

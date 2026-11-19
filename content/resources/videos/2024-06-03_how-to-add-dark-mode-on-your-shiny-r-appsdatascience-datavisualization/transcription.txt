@@ -2,8 +2,8 @@
 
 <p><a data-t="17">Then, inside the sidebar, I'm simply going to add InputDarkMode.</a> <a data-t="21">Now, when users open your app, InputDarkMode will choose the color scheme that matches their system profile.</a> <a data-t="26">It also gives them a toggle button where they can switch between light and dark mode.</a></p>
 
-<p><a data-t="30">For most apps, this is all you need.</a> <a data-t="33">You can stop right here.</a> <a data-t="33">But in our app, we have a plot, and we would like the plot to match the current color mode.</a> <a data-t="37">To do that, I'm going to use the </a><a href="/software/thematic/">thematic</a><a data-t="37"> package, and simply call thematic on.</a> <a data-t="41">Thematic will automatically update my ggplot and other types of plots to match the current color mode.</a></p>
+<p><a data-t="30">For most apps, this is all you need.</a> <a data-t="30">You can stop right here.</a> <a data-t="33">But in our app, we have a plot, and we would like the plot to match the current color mode.</a> <a data-t="37">To do that, I'm going to use the </a><a href="/software/thematic/">thematic</a><a data-t="37"> package, and simply call thematic on.</a> <a data-t="41">Thematic will automatically update my ggplot and other types of plots to match the current color mode.</a></p>
 
 <blockquote><a data-t="41">Thematic will automatically update my ggplot and other types of plots to match the current color mode.</a></blockquote>
 
-<p><a data-t="46">For more complicated tasks, I can give InputDarkMode an ID so that I can react to the current color mode on the server.</a> <a data-t="52">I hope you enjoyed this tip.</a> <a data-t="56">Go make some beautiful Shiny apps that you can use at night.</a></p>
+<p><a data-t="46">For more complicated tasks, I can give InputDarkMode an ID so that I can react to the current color mode on the server.</a> <a data-t="52">I hope you enjoyed this tip.</a> <a data-t="52">Go make some beautiful Shiny apps that you can use at night.</a></p>

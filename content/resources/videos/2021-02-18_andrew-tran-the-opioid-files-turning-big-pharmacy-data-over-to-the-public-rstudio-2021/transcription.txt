@@ -12,7 +12,7 @@
 
 <p><a data-t="124">And the Drug Enforcement Administration is also under the Department of Justice.</a> <a data-t="128">And it's tracked because prescription pain pills are scheduled to drug, which means it</a> <a data-t="135">has a high potential for abuse, with use potentially leading to severe psychological</a> <a data-t="140">and physical dependence.</a> <a data-t="142">And we call it ARCOS for short.</a></p>
 
-<p><a data-t="148">And so pharmaceutical companies and the government have known the scope of this data for the</a> <a data-t="153">longest time, the reach of the spread of these pills.</a> <a data-t="158">And journalists and researchers have tried to get this data set for the longest time</a> <a data-t="162">as well.</a> <a data-t="162">But we've only been able to get it at the aggregate level, maybe by state, maybe by</a> <a data-t="166">county, maybe by zip code, maybe by overall drug.</a> <a data-t="171">We've never been able to get it at the raw data set level, where we could really dig</a> <a data-t="175">into the nuances of the data.</a> <a data-t="177">Every time we've made a request for it, it's been denied.</a></p>
+<p><a data-t="148">And so pharmaceutical companies and the government have known the scope of this data for the</a> <a data-t="153">longest time, the reach of the spread of these pills.</a> <a data-t="158">And journalists and researchers have tried to get this data set for the longest time</a> <a data-t="160">as well.</a> <a data-t="162">But we've only been able to get it at the aggregate level, maybe by state, maybe by</a> <a data-t="166">county, maybe by zip code, maybe by overall drug.</a> <a data-t="171">We've never been able to get it at the raw data set level, where we could really dig</a> <a data-t="175">into the nuances of the data.</a> <a data-t="177">Every time we've made a request for it, it's been denied.</a></p>
 
 <p><a data-t="182">That is until recently.</a></p>
 
@@ -42,7 +42,7 @@
 
 <h3>A case study: Walgreens in Florida</h3>
 
-<p><a data-t="459">And so we could really drill down in individual pharmacies like this one in Florida.</a> <a data-t="465">This is a Walgreens in Florida.</a> <a data-t="469">And what's important to really note is that it was the law for these companies to implement</a> <a data-t="474">in an effective system for monitoring their opioid sales for suspicious orders.</a> <a data-t="480">And so we found so many pharmacies that violated those suspicious orders but kept selling</a> <a data-t="486">anyway.</a></p>
+<p><a data-t="459">And so we could really drill down in individual pharmacies like this one in Florida.</a> <a data-t="465">This is a Walgreens in Florida.</a> <a data-t="469">And what's important to really note is that it was the law for these companies to implement</a> <a data-t="474">in an effective system for monitoring their opioid sales for suspicious orders.</a> <a data-t="480">And so we found so many pharmacies that violated those suspicious orders but kept selling</a> <a data-t="485">anyway.</a></p>
 
 <p><a data-t="486">This is an example of a store in Oviedo, Florida, where starting in 2011, sales started spiking.</a> <a data-t="493">You can see it's declined a little bit after legislators passed a bill to limit the sales</a> <a data-t="498">for a specific type of oxycodone, which slowed it for a month until customers realized they</a> <a data-t="506">could order a different type of milligram strength and get that much easier.</a> <a data-t="511">And so that started spiking even more exponentially.</a></p>
 

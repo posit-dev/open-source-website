@@ -108,23 +108,23 @@
 
 <p><a data-t="1201">And so in order to carry this out, the model needs to be able to actually find the files that it wants to delete in the first place, and then go and delete those files, which is writing state.</a></p>
 
-<p><a data-t="1220">We can do this with two ellmer tools.</a> <a data-t="1220">The first one we will call ls, and that just calls the dir function in R, which will list the files inside of the current directory.</a> <a data-t="1229">So this tool will give the model the ability to read state.</a></p>
+<p><a data-t="1216">We can do this with two ellmer tools.</a> <a data-t="1220">The first one we will call ls, and that just calls the dir function in R, which will list the files inside of the current directory.</a> <a data-t="1229">So this tool will give the model the ability to read state.</a></p>
 
 <p><a data-t="1235">Then we can provide a second tool called rm, and given a path, that path is just provided to the unlink function in R, and this tool will give the LM the ability to delete one or more files.</a></p>
 
-<p><a data-t="1262">So using these two tools, first the model can read state to find the CSV files that it wants to delete, and then given this rm tool, it can actually go and delete those files.</a></p>
+<p><a data-t="1284">So using these two tools, first the model can read state to find the CSV files that it wants to delete, and then given this rm tool, it can actually go and delete those files.</a></p>
 
-<p><a data-t="1280">So if we return to that fresh chat again and ask the same question, delete all the CSV files in the current directory,</a> <a data-t="1291">the model can choose to call the ls tool, which will return a bunch of information about the objects that are inside of that directory.</a> <a data-t="1303">The model can identify which of those are CSVs and call another tool.</a></p>
+<p><a data-t="1300">So if we return to that fresh chat again and ask the same question, delete all the CSV files in the current directory,</a> <a data-t="1311">the model can choose to call the ls tool, which will return a bunch of information about the objects that are inside of that directory.</a> <a data-t="1323">The model can identify which of those are CSVs and call another tool.</a></p>
 
-<p><a data-t="1310">So this is an example of that full tool calling loop, where the model calls a tool, it gets a response back, and before it says something and yields control back to the user, it decides to call another tool before it does so.</a> <a data-t="1330">So it will call this remove tool, and it will provide these two paths to the CSV files that it found, and then the tool will return.</a></p>
+<p><a data-t="1330">So this is an example of that full tool calling loop, where the model calls a tool, it gets a response back, and before it says something and yields control back to the user, it decides to call another tool before it does so.</a> <a data-t="1350">So it will call this remove tool, and it will provide these two paths to the CSV files that it found, and then the tool will return.</a></p>
 
-<p><a data-t="1341">So in this case, because all the rm tool is doing is writing state, it just says, okay, I did that, done, which is what this true represents.</a> <a data-t="1356">And only at this point will the model complete the tool calling loop and yield back to the user saying, done, I deleted those files.</a></p>
+<p><a data-t="1361">So in this case, because all the rm tool is doing is writing state, it just says, okay, I did that, done, which is what this true represents.</a> <a data-t="1376">And only at this point will the model complete the tool calling loop and yield back to the user saying, done, I deleted those files.</a></p>
 
 <h3>DataBot and Positron Assistant</h3>
 
-<p><a data-t="1388">So I want to call out a couple of coding agents that we've been spending our time on at Posit, and hopefully you could find pretty compelling.</a></p>
+<p><a data-t="1402">So I want to call out a couple of coding agents that we've been spending our time on at Posit, and hopefully you could find pretty compelling.</a></p>
 
-<p><a data-t="1402">The first of these is DataBot, which is an assistant for exploratory data analysis inside of Positron.</a> <a data-t="1409">When you install DataBot, it looks like a typical chat window, except that it has access to your active R environment.</a> <a data-t="1421">So imagine I've loaded this data already into my R session, it's called forested, I can tell the coding agent DataBot to go ahead and check that data out and make some ggplots.</a></p>
+<p><a data-t="1412">The first of these is DataBot, which is an assistant for exploratory data analysis inside of Positron.</a> <a data-t="1421">When you install DataBot, it looks like a typical chat window, except that it has access to your active R environment.</a> <a data-t="1429">So imagine I've loaded this data already into my R session, it's called forested, I can tell the coding agent DataBot to go ahead and check that data out and make some ggplots.</a></p>
 
 <p><a data-t="1443">So first thing, the model will take a look at the data and make sure that it knows the column names to use and what those column types are.</a> <a data-t="1453">And then once it's done so, it'll glimpse that out through running R code and then start making ggplots.</a></p>
 
@@ -144,25 +144,25 @@
 
 <h3>Sidekick: a coding agent for <a href="/software/rstudio/">RStudio</a></h3>
 
-<p><a data-t="1671">So up to this point, I've just talked about coding agents for Positron.</a> <a data-t="1677">I know that many of the folks here are probably still RStudio users, and I want to call out a quick coding agent that I've been spending some time on in recent weeks, and I hope you might be able to get some use from it.</a></p>
+<p><a data-t="1666">So up to this point, I've just talked about coding agents for Positron.</a> <a data-t="1671">I know that many of the folks here are probably still RStudio users, and I want to call out a quick coding agent that I've been spending some time on in recent weeks, and I hope you might be able to get some use from it.</a></p>
 
-<p><a data-t="1698">That coding agent is called Sidekick.</a> <a data-t="1700">Sidekick is built entirely in R, and it runs inside of a </a><a href="/software/shiny-r/">Shiny</a><a data-t="1700"> app.</a> <a data-t="1705">So if you run this function side colon colon kick, the first thing that it will do is spin up a Shiny app that runs in a background job inside of RStudio.</a></p>
+<p><a data-t="1686">That coding agent is called Sidekick.</a> <a data-t="1690">Sidekick is built entirely in R, and it runs inside of a </a><a href="/software/shiny-r/">Shiny</a><a data-t="1690"> app.</a> <a data-t="1695">So if you run this function side colon colon kick, the first thing that it will do is spin up a Shiny app that runs in a background job inside of RStudio.</a></p>
 
-<p><a data-t="1718">And it's a little hard to see because the viewer here has a little background, but there's a Shiny app pulled up on the left here that allows you to converse with the LLM via ellmer.</a> <a data-t="1728">So Sidekick can do normal Cloud Code codex coding agent sort of tasks.</a> <a data-t="1738">So for one, we could ask this agent to refactor some code into a helper.</a></p>
+<p><a data-t="1709">And it's a little hard to see because the viewer here has a little background, but there's a Shiny app pulled up on the left here that allows you to converse with the LLM via ellmer.</a> <a data-t="1723">So Sidekick can do normal Cloud Code codex coding agent sort of tasks.</a> <a data-t="1730">So for one, we could ask this agent to refactor some code into a helper.</a></p>
 
-<p><a data-t="1748">So these six lines, seven lines are pretty constrained in what they do, and we could probably make use of it in a few different places inside this package.</a> <a data-t="1758">So the model will first choose to run this code search tool that will help it find the code that I just passed along to it.</a> <a data-t="1769">And then it will read the whole file once it finds the function or the lines of code that I mentioned.</a></p>
+<p><a data-t="1738">So these six lines, seven lines are pretty constrained in what they do, and we could probably make use of it in a few different places inside this package.</a> <a data-t="1749">So the model will first choose to run this code search tool that will help it find the code that I just passed along to it.</a> <a data-t="1759">And then it will read the whole file once it finds the function or the lines of code that I mentioned.</a></p>
 
-<p><a data-t="1778">Once it's found those lines of code, it can then propose edits to the files using an edit files tool, and that tool will display the changes that the model wants to make inside of a nice diff format.</a> <a data-t="1794">You can choose to reject or approve the edits, but once you've approved them, those changes will show up inside of the real files.</a></p>
+<p><a data-t="1768">Once it's found those lines of code, it can then propose edits to the files using an edit files tool, and that tool will display the changes that the model wants to make inside of a nice diff format.</a> <a data-t="1786">You can choose to reject or approve the edits, but once you've approved them, those changes will show up inside of the real files.</a></p>
 
-<p><a data-t="1800">You can also start new chats and chats are persistent inside of Sidekick.</a> <a data-t="1807">So the Sidekick agent is also able to run our code inside of the active session.</a> <a data-t="1807">It can see your active session and you'll be able to see the results of the code that it runs nicely formatted inside of this UI.</a></p>
+<p><a data-t="1795">You can also start new chats and chats are persistent inside of Sidekick.</a> <a data-t="1800">So the Sidekick agent is also able to run our code inside of the active session.</a> <a data-t="1807">It can see your active session and you'll be able to see the results of the code that it runs nicely formatted inside of this UI.</a></p>
 
-<p><a data-t="1824">So if you've had an eye out for a coding agent for RStudio, I would encourage you to give Sidekick a try.</a> <a data-t="1830">This is freely available on my GitHub in the link shown at the bottom, and this will also be in the notes for the talk that I'll share at the end.</a></p>
+<p><a data-t="1817">So if you've had an eye out for a coding agent for RStudio, I would encourage you to give Sidekick a try.</a> <a data-t="1824">This is freely available on my GitHub in the link shown at the bottom, and this will also be in the notes for the talk that I'll share at the end.</a></p>
 
 <p><a data-t="1833">I just want to quickly say in </a><a href="/people/joe-cheng/">Joe Cheng</a><a data-t="1833">'s keynote at PositConf, Joe said that some AI functionality was coming for RStudio.</a> <a data-t="1842">I just want to clarify that this is not that.</a> <a data-t="1844">I'm really excited about the work that we're doing to integrate AI into RStudio for the users that do want that in the coming months.</a> <a data-t="1853">But this is sort of an early experiment for me.</a></p>
 
 <h3>Making it work in practice with secure deployments</h3>
 
-<p><a data-t="1858">This is the extent to which I'll talk about what's possible in R right now.</a> <a data-t="1878">And so I want to come back and revisit that second part of the conversation, which is what it looks like to actually make this work in practice.</a></p>
+<p><a data-t="1858">This is the extent to which I'll talk about what's possible in R right now.</a> <a data-t="1864">And so I want to come back and revisit that second part of the conversation, which is what it looks like to actually make this work in practice.</a></p>
 
 <p><a data-t="1887">So far in this talk, I've just talked about the entropic provider, which does not have zero data retention by default.</a> <a data-t="1897">And so you probably could not pass data that is confidential to these APIs.</a> <a data-t="1905">So how can you do that?</a></p>
 

@@ -4,7 +4,7 @@
 
 <h3>Getting started with Torch</h3>
 
-<p><a data-t="74">But Torch is a big project, and just like a big city, it's hard to find your way around</a> <a data-t="81">it when you are getting started, and we hope this is much better now because we recently</a> <a data-t="89">announced the Deep Learning and Scientific Computing with R Torch book.</a> <a data-t="95">This book was written by Sigrid K. Dana, my colleague at Posit, and it is available for</a> <a data-t="101">free online, or you can buy it from CRCpress, and it covers the basics of deep learning</a> <a data-t="107">as well as really implementing the models in Torch and R.</a></p>
+<p><a data-t="74">But Torch is a big project, and just like a big city, it's hard to find your way around</a> <a data-t="81">it when you are getting started, and we hope this is much better now because we recently</a> <a data-t="89">announced the Deep Learning and Scientific Computing with R Torch book.</a> <a data-t="95">This book was written by Sigrid K. Dana, my colleague at Posit, and it is available for</a> <a data-t="100">free online, or you can buy it from CRCpress, and it covers the basics of deep learning</a> <a data-t="107">as well as really implementing the models in Torch and R.</a></p>
 
 <h3>luz: a higher-level interface</h3>
 
@@ -18,7 +18,7 @@
 
 <p><a data-t="180">But sometimes you don't want to learn all the details and everything, and you can pick</a> <a data-t="186">a taxi, and that's what TabNet and Brule help in Torch.</a> <a data-t="192">They are actually just tidy models extensions powered by Torch that you can call with single</a> <a data-t="200">liners like this to train neural network models on tabular data, and they can also be used</a> <a data-t="209">in your usual tidy models workflows and vet deployments and et cetera.</a></p>
 
-<p><a data-t="218">And finally, it's nice to talk with the local community.</a> <a data-t="223">So we recently announced hugging face integrations.</a> <a data-t="228">So we have the Torch package and the HF hub.</a> <a data-t="233">With HF hub, you can download large models hosted in the hugging face hub.</a> <a data-t="240">For example, if you were in Jeremy Howard's talk where he downloaded a llama model into</a> <a data-t="249">Python, you can do this in R using HF hub and then load the model weights into R.</a> <a data-t="257">And Torch can be used to use the exact same preprocessing pipelines as they use when training</a> <a data-t="267">the model.</a> <a data-t="267">So you get the exact same result.</a></p>
+<p><a data-t="218">And finally, it's nice to talk with the local community.</a> <a data-t="223">So we recently announced hugging face integrations.</a> <a data-t="228">So we have the Torch package and the HF hub.</a> <a data-t="233">With HF hub, you can download large models hosted in the hugging face hub.</a> <a data-t="240">For example, if you were in Jeremy Howard's talk where he downloaded a llama model into</a> <a data-t="249">Python, you can do this in R using HF hub and then load the model weights into R.</a> <a data-t="249">And Torch can be used to use the exact same preprocessing pipelines as they use when training</a> <a data-t="267">the model.</a> <a data-t="267">So you get the exact same result.</a></p>
 
 <p><a data-t="270">So in theory, you can run these models directly in R without even having a Python</a> <a data-t="284">installation.</a></p>
 

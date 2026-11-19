@@ -1,0 +1,1885 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:13.120
+Welcome back to the Data Science Lab, everybody. We've been on break for a little while because
+
+00:00:13.120 --> 00:00:19.920
+of PositConf. Isabella and I both ran the virtual side of PositConf. So if you attended PositConf
+
+00:00:19.920 --> 00:00:24.719
+virtually in any way, whether it was virtual day or live streaming the talks on Tuesday and
+
+00:00:24.719 --> 00:00:30.320
+Wednesday, Isabella and I were running around like crazy behind the scenes making sure that
+
+00:00:30.320 --> 00:00:34.560
+everything was going well. And we're so glad that you joined us because it was a really,
+
+00:00:34.560 --> 00:00:41.279
+really good time. At the lab, we talk about data science topics of all shapes and sizes. Sometimes
+
+00:00:41.279 --> 00:00:45.360
+that is a show and tell. We have people showing and sharing things that they built, personal
+
+00:00:45.360 --> 00:00:51.919
+projects. Sometimes it's a learning topic, generally always a technical topic. And we pride ourselves
+
+00:00:51.919 --> 00:00:56.880
+on being a place where we get to ask questions. Chat and questions happen in the Discord. Isabella
+
+00:00:56.880 --> 00:01:00.720
+and I will be your hosts today. Isabella Velasquez, would you like to say hello?
+
+00:01:01.520 --> 00:01:04.239
+Hey, everyone. It's so good to see you again. Thanks for joining.
+
+00:01:05.120 --> 00:01:10.239
+Thank you so much for being here. My name is Libby Heron. I do community stuff here at Posit.
+
+00:01:10.239 --> 00:01:17.040
+We are joined by our featured lab manager for today, Lucas Da Silva. Lucas is a data analyst
+
+00:01:17.040 --> 00:01:24.160
+at Suffolk Construction. We love Suffolk Construction. We also have been joined by
+
+00:01:24.160 --> 00:01:29.199
+Blake at Suffolk on the Data Science Hangout before and he is so much fun and he's given
+
+00:01:29.199 --> 00:01:34.639
+conf talks. So I'm really excited that Lucas is here today. Lucas, would you like to introduce
+
+00:01:34.639 --> 00:01:40.480
+yourself? Tell us a little bit about your role at Suffolk and then also what you will be
+
+00:01:41.199 --> 00:01:46.400
+walking us through today. Yes. First of all, very excited to be here. So thanks for having me.
+
+00:01:47.360 --> 00:01:51.440
+As Libby was saying, I'm a data analyst at Suffolk Construction on the data product team.
+
+00:01:52.080 --> 00:01:57.680
+Kind of the focus of what I do is kind of bridge the gap between what we do on the programming side
+
+00:01:57.680 --> 00:02:04.480
+in terms of data and AI and then construction. So how do we make the lives of people who work
+
+00:02:04.480 --> 00:02:10.960
+on a job site a lot easier using data and then automation using AI? So that's kind of what I'm
+
+00:02:10.960 --> 00:02:15.839
+going to talk about today as well. So super excited to get into it. Yeah, let's do it. Well,
+
+00:02:15.839 --> 00:02:21.839
+on the lab, if you've never been here before, we're not a huge slide presentation
+
+00:02:23.199 --> 00:02:29.119
+group. I'm sorry. Again, my voice is going in and out today. We focus more on screen sharing. So
+
+00:02:29.119 --> 00:02:34.559
+Lucas might have some slides to help us interpret and understand things. And he's also going to be
+
+00:02:34.559 --> 00:02:39.679
+doing some screen sharing. So Lucas, I will say, take it away with the screen share. Let's do it.
+
+00:02:39.679 --> 00:02:46.800
+So I do have some slides. I'm sorry in advance. Oh, I think you have sound that might play. So
+
+00:02:46.800 --> 00:02:50.639
+make sure when you hit your share thing that you click the little button that lets you share system
+
+00:02:50.639 --> 00:02:56.240
+sound. Yes, we'll do. Okay, cool, cool, cool. So let me share my slides first. Hopefully,
+
+00:02:56.240 --> 00:03:02.720
+I'll try to breeze through these. But one thing I'll say as I go through this, can you see my
+
+00:03:02.720 --> 00:03:10.479
+slides? I think they're loading for me. Okay, yes, I see that. Awesome. As I go through this,
+
+00:03:10.479 --> 00:03:17.119
+what I want to say is, I love this whole idea of this is kind of community driven. So ask as
+
+00:03:17.119 --> 00:03:21.679
+many questions as you want. Even if you feel like I'm in the middle of something, I will stop and
+
+00:03:21.679 --> 00:03:26.000
+answer your question. I love that idea. I love answering questions. So and this is going to be
+
+00:03:26.000 --> 00:03:33.679
+kind of more of a code review than a kind of a live coding session. So the more questions you
+
+00:03:33.679 --> 00:03:39.119
+ask, the better I think this this conversation will be. So stop me at any time. And I think
+
+00:03:39.119 --> 00:03:47.279
+Libby and Isabella will be handling from from you to me. So we're on. Yes. So like I said,
+
+00:03:48.479 --> 00:03:53.279
+go to the next slide. So I kind of just went through this. But yeah, I'm Lucas de Silva,
+
+00:03:53.279 --> 00:03:57.759
+data analyst on the data product team here at Suffolk construction. And then that's a picture
+
+00:03:57.759 --> 00:04:05.119
+of me. Maybe you can't maybe you can spot me in that picture on a job site. I'm in there somewhere.
+
+00:04:05.119 --> 00:04:11.919
+And yeah, there you go. And then I'm going to kind of go over one of the examples of what I do,
+
+00:04:11.919 --> 00:04:18.079
+and how I was able to automate a pain point for our team members on the job site.
+
+00:04:19.040 --> 00:04:23.519
+So this is the most slidey slide I have. So apologies in advance. I'm going to kind of breeze
+
+00:04:23.519 --> 00:04:27.279
+through this. But feel free to ask questions if you have. But I'm going to first give a very brief
+
+00:04:27.279 --> 00:04:33.519
+overview of construction scheduling, what it means, and, you know, why this was a pain point.
+
+00:04:33.519 --> 00:04:38.799
+So really quickly, construction schedule, you have this this project on a job site,
+
+00:04:39.519 --> 00:04:43.679
+you can kind of break these down kind of line by line into individual tasks that have a start date
+
+00:04:43.679 --> 00:04:48.559
+and end date, a complete duration. And, you know, you go from one task at the start of the project
+
+00:04:48.559 --> 00:04:52.320
+to the next to the next, the next, the next. And then by the end of it, you have a finished
+
+00:04:52.320 --> 00:05:00.160
+building, right? For big projects, you're going to have a lot of tasks. So we have someone who's
+
+00:05:00.160 --> 00:05:05.600
+their whole job is to take care of the schedule, maintain the schedule, build the initial schedule,
+
+00:05:05.600 --> 00:05:10.000
+and then coordinate with the owner of the project to make sure that they understand
+
+00:05:10.799 --> 00:05:16.000
+if the project is on time, if it's finishing quick, or if there are delays. So that's the planner.
+
+00:05:16.000 --> 00:05:20.399
+And they're in charge of like tasks that can be it can be 1300 tasks, 1500 tasks,
+
+00:05:21.040 --> 00:05:27.440
+even more than that. So they're the owner of the construction schedule. But planners are not
+
+00:05:27.440 --> 00:05:32.079
+on site, they don't walk the job. So they get updates from superintendents. So superintendents
+
+00:05:32.160 --> 00:05:40.959
+are essentially they manage the day to day of a construction job. And they provide updates back
+
+00:05:40.959 --> 00:05:46.480
+to the planner to be able to give updates the schedule that they can then go to the owner.
+
+00:05:47.679 --> 00:05:54.559
+So quick overview. So I want to talk about the current workflow of what that maintenance looks
+
+00:05:54.559 --> 00:05:59.519
+like and what those updates look like. This is like my first foray into using I don't even want
+
+00:05:59.519 --> 00:06:06.640
+to call it AI art, like AI imagery into a presentation. So I thought these are gonna be
+
+00:06:06.640 --> 00:06:12.160
+really bad. I thought like maybe if I can atone for my sins of using AI imagery by making them not
+
+00:06:12.160 --> 00:06:21.359
+good. So you're in a safe space. We're gonna laugh with you. So I just want to preface that. So this
+
+00:06:21.359 --> 00:06:26.079
+is like the problem in the current workflow, and then kind of the worst case scenario. So you have
+
+00:06:26.079 --> 00:06:33.040
+a planner, and they have this construction schedule inside of P six, which is a software
+
+00:06:33.040 --> 00:06:40.399
+to handle construction schedules. And they would export that kind of digitized schedule into a PDF.
+
+00:06:41.279 --> 00:06:46.399
+What they're going to do then is send that over, likely via email to the superintendent,
+
+00:06:46.399 --> 00:06:52.000
+who in some cases will print out that PDF. And then once they're walking the job, they're
+
+00:06:52.559 --> 00:06:58.959
+taking notes on like a legal pad or a notebook, or maybe sometimes on the PDF itself, then they
+
+00:06:58.959 --> 00:07:03.839
+manually update this PDF, that's turned from something digitized to something manual.
+
+00:07:05.119 --> 00:07:09.920
+And then they're sending that PDF back to the planner who then read digitizes
+
+00:07:11.440 --> 00:07:17.119
+these updates, right. So this is a process where you have something digitized, you take it out of
+
+00:07:17.119 --> 00:07:22.160
+the digital realm into something physical, and then you read digitize into that same system. So
+
+00:07:22.160 --> 00:07:28.559
+I think any any one of us that have this like automation, bone in our body sees like several
+
+00:07:28.559 --> 00:07:33.119
+problems with this workflow. So we were like, Okay, this is a this is a major pain point. This
+
+00:07:33.119 --> 00:07:38.079
+is taking probably too much time. And there's a lot of unnecessary steps here, you're, you're
+
+00:07:38.079 --> 00:07:42.799
+taking something digital, and then making it not digital just to bring it back. So this was our
+
+00:07:42.799 --> 00:07:49.679
+original proposed solution, and going to be the first demo of the day. So this idea came to us
+
+00:07:49.679 --> 00:07:56.720
+where, you know, what if the ideally in an ideal world, you'd have the planner join the superintendent
+
+00:07:56.720 --> 00:08:02.480
+on these on these walkthroughs, so then they could get updates straight from the superintendent and
+
+00:08:02.480 --> 00:08:09.279
+be able to digitize them kind of in one step, there would be no bringing it to a PDF, and then
+
+00:08:09.359 --> 00:08:14.720
+going back to the planner to reach it re digitize. So obviously, we can't do that in the real world,
+
+00:08:14.720 --> 00:08:19.679
+there are constraints in terms of how many planners you have, obviously, they're not going
+
+00:08:19.679 --> 00:08:24.160
+to be able to walk the site there, they don't have time to do that. So it's like, Okay, how do we cut
+
+00:08:24.160 --> 00:08:30.239
+out the middleman a little bit, and be like, Okay, we can provide using AI, some voice assistant that
+
+00:08:30.239 --> 00:08:35.679
+can be kind of the planner without needing the planner to be there. And then that can help the
+
+00:08:35.679 --> 00:08:43.440
+superintendent provide updates. And go back to the planner, all always digitized, there's no step
+
+00:08:43.440 --> 00:08:49.840
+of being like I have this this schedule already digitized, I'm taking it into into the PDF realm,
+
+00:08:49.840 --> 00:08:53.919
+why don't we digitize it throughout the entire process and have an assistant be able to take
+
+00:08:53.919 --> 00:08:59.039
+the place of a planner on the site. So I'm going to start by showing this demo.
+
+00:09:00.880 --> 00:09:04.719
+Feel free to ask questions as I start to pull this up if you have any.
+
+00:09:04.719 --> 00:09:10.159
+We were having a conversation in the chat, because it's a common problem to have like
+
+00:09:11.840 --> 00:09:17.440
+a solution built that requires change management, right? Like it requires people to change the way
+
+00:09:17.440 --> 00:09:23.679
+that they work in order to do something in that more automated way. And so Shivani was asking,
+
+00:09:23.679 --> 00:09:28.479
+like, how do you even tackle that there is a solution that needs to be implemented?
+
+00:09:29.119 --> 00:09:32.719
+What if people don't use it? How do you get feedback on that and stuff like that?
+
+00:09:33.520 --> 00:09:38.400
+Um, so as we go, if you happen to have thoughts on that, we would love to.
+
+00:09:38.400 --> 00:09:45.919
+Yeah, I think buy in is the number one thing that you need, or especially an AI product,
+
+00:09:45.919 --> 00:09:49.760
+because instantly you think of AI. And it's scary, right? Like it's scary to me,
+
+00:09:50.320 --> 00:09:54.719
+when I'm thinking of how it can automate my job in places that I don't want it to automate,
+
+00:09:54.719 --> 00:10:00.159
+where it can like take over. So and I'm going to talk about this a little more later on. But I
+
+00:10:00.159 --> 00:10:07.039
+think this concept of like meeting people where they are, like, we don't automate things without
+
+00:10:07.039 --> 00:10:12.080
+talking to people getting their pain points and understanding like, people who are in this today,
+
+00:10:12.080 --> 00:10:17.119
+know that what they're doing is not great. Like this workflow is not something that people are
+
+00:10:17.119 --> 00:10:21.679
+like up in arms about that they want to keep and maintain. So we're like, first, what are your pain
+
+00:10:21.679 --> 00:10:27.599
+points? Where can we work to fix it in terms of your overall workflow? And then how do I keep you
+
+00:10:27.599 --> 00:10:32.719
+in every step of the way? And I think when people feel like they have this responsibility, as well,
+
+00:10:33.280 --> 00:10:39.599
+over improving their own workflow, like they're a part of the process, it makes it a lot easier for
+
+00:10:39.599 --> 00:10:45.520
+them to buy in. And I'd say buy in is like, you should treat that as as one of the pillars of any
+
+00:10:45.520 --> 00:10:52.159
+product that you're going to do, especially to a non technical crowd. And it's buying for the users
+
+00:10:52.159 --> 00:10:56.559
+and leadership too, right? Like both of those parties are really important, because leadership
+
+00:10:56.559 --> 00:11:01.280
+can put pressure downward. But if the people using the tool don't like it, they still probably
+
+00:11:01.280 --> 00:11:09.919
+won't use it. 100%. Okay. So this demo is the first iteration. Yes. Of the tool that you built
+
+00:11:09.919 --> 00:11:14.080
+to solve the problem. Exactly. So this is the original version of Vera. The idea is that this
+
+00:11:14.080 --> 00:11:19.359
+would live on the phone. At Suffolk, pretty much every superintendent has a work phone that they
+
+00:11:19.359 --> 00:11:23.679
+bring with them at all times. So this idea of like, meet them where they are, like, let's use the tools
+
+00:11:23.679 --> 00:11:28.159
+that they have at their disposal, and they're used to bringing with them and provide products
+
+00:11:28.159 --> 00:11:34.880
+that way. So this is a shiny app, I built this in R. And it's using a package called shiny real time,
+
+00:11:34.880 --> 00:11:40.000
+that I think was first developed by Joe Chang, for not this past positive cough, but the positive
+
+00:11:40.000 --> 00:11:47.440
+cough before. And I used it for this product. So I'll just launch here. So the idea is a
+
+00:11:47.440 --> 00:11:52.400
+superintendent would have this on their phone, and would be bringing this with them for the site
+
+00:11:52.400 --> 00:11:57.760
+walkthrough instead of their legal notepad, or the PDF that was generated by the planner. And
+
+00:11:57.760 --> 00:12:04.159
+then they just say the project ID to load up their schedule. My Oh, I just remembered, I don't have
+
+00:12:04.159 --> 00:12:11.280
+sound. Share the sound. Yeah, you stop sharing and share it again. This is going to be very
+
+00:12:11.280 --> 00:12:18.799
+important for this part. So we have to pause. We'll get the full experience. I have it. There
+
+00:12:18.799 --> 00:12:22.960
+we go. It's so funny seeing Vera as well. And I were talking about this too, because we've seen
+
+00:12:22.960 --> 00:12:32.559
+the name Vera on so many different like assistant tools across industries. Yeah. Very truthful.
+
+00:12:35.440 --> 00:12:41.359
+We named Vera after so P six is the scheduling software that we and many other construction
+
+00:12:41.359 --> 00:12:48.080
+companies use. That's short for primavera six. So we don't even get it from like the truth.
+
+00:12:48.080 --> 00:12:52.960
+Like the Latin. But maybe they did. But we get it from the actual software. It's like an Oracle
+
+00:12:54.159 --> 00:12:59.520
+software. So if anybody else has seen a Vera out in the wild, that's like an agent of some kind
+
+00:12:59.520 --> 00:13:03.840
+sharing discord. Oh, yeah, that would be cool. I would I would like to see there's more than just
+
+00:13:03.840 --> 00:13:11.440
+ours. Yeah, okay. Let me load my project here. My project ID is 123456. Let me know if you can hear
+
+00:13:11.440 --> 00:13:16.400
+it. You should now see the schedule data filtered to project 123456. Let me know if you would like
+
+00:13:16.400 --> 00:13:22.080
+to update any of the tasks. So the idea now is I don't have this this PDF that I have to bring
+
+00:13:22.080 --> 00:13:28.559
+around with me. I just have this agent that I can just chat with and provide updates in real time.
+
+00:13:28.559 --> 00:13:34.080
+So I could go through some of these. Can you set that third task to complete? And then can
+
+00:13:34.080 --> 00:13:39.520
+you set the plumbing pressure test level one task to complete but it completed on 927 not 926.
+
+00:13:39.760 --> 00:13:44.640
+I found both tasks you're looking for. The third task is overhead duct installation level one.
+
+00:13:44.640 --> 00:13:49.039
+The task plumbing pressure test level one is also found. Do you want to update both of these as
+
+00:13:49.039 --> 00:13:53.200
+requested? I'll proceed with marking them complete. And for the plumbing pressure test task,
+
+00:13:53.200 --> 00:13:57.280
+I'll set the completion date to 927. Please confirm if that's good to go.
+
+00:13:57.280 --> 00:13:58.479
+Yeah, that's perfect. Thank you.
+
+00:14:01.119 --> 00:14:05.359
+Both tasks have been updated. The third task overhead duct installation level one is now
+
+00:14:05.440 --> 00:14:09.359
+Overhead duct installation level one is now marked complete. And the plumbing pressure test
+
+00:14:09.359 --> 00:14:14.239
+level one task is also complete with the adjusted completion date of 927. You should see these
+
+00:14:14.239 --> 00:14:18.000
+reflected in the schedule now. So I could keep going here, right? Like,
+
+00:14:18.000 --> 00:14:22.080
+I can start updating these tasks, go to the next page. Go to the next page, please.
+
+00:14:24.719 --> 00:14:28.799
+Or I can even filter these down, say like only give me the tasks starting next week or
+
+00:14:28.799 --> 00:14:32.640
+this week, give me the tasks that are overdue, meaning they're in the past, but I haven't
+
+00:14:33.599 --> 00:14:39.840
+changed their status. And then I can keep updating this. So I'm sure people can see like the benefit
+
+00:14:39.840 --> 00:14:44.239
+of this over the original workflow. And if you're very astute, you can see the problems as well,
+
+00:14:44.239 --> 00:14:50.000
+which I'm going to talk about as well. Is there any questions about this so far?
+
+00:14:52.960 --> 00:15:00.239
+Okay, one funny one from Connor. I would love if the bot had the voice of Scotty from Star Trek.
+
+00:15:00.239 --> 00:15:05.520
+So Tan did really quickly. How did you pick the voice for this? Did this come pre-packaged?
+
+00:15:06.320 --> 00:15:11.520
+So I'm using Shiny Realtime, which connects. It's a wrapper for GPT Realtime,
+
+00:15:11.520 --> 00:15:16.640
+which is a service that OpenAI has for voice agents. You have like a selection
+
+00:15:17.599 --> 00:15:26.000
+of I think about four voices. So there's not many. Yeah. Yeah. I think my idea was like,
+
+00:15:26.960 --> 00:15:31.119
+it was like that just sounded the most like Avera to me, I guess.
+
+00:15:31.119 --> 00:15:34.799
+Oh yeah. You did have a name already. Okay. Well, there were a couple of
+
+00:15:34.799 --> 00:15:41.760
+legit ones that we can ask. Hubert was saying, I wonder about information density of what they
+
+00:15:41.760 --> 00:15:49.280
+need to see versus what those printed PDFs show. Yeah. Yeah. I think we were going to work on this.
+
+00:15:49.359 --> 00:15:56.880
+And again, this is an older version of this product. I think that's probably a problem
+
+00:15:56.880 --> 00:16:01.359
+in two places. It's like a problem in the original workflow where, you know,
+
+00:16:01.359 --> 00:16:05.039
+there is probably too much information there that they might not need to see.
+
+00:16:05.919 --> 00:16:10.400
+The PDFs. Yeah, exactly. And then that's probably something,
+
+00:16:10.400 --> 00:16:15.039
+you know, when you automate these workflows, in a lot of cases, you're going to bring
+
+00:16:15.039 --> 00:16:22.159
+some of the maybe inefficiencies into your version. But I actually don't know if that's
+
+00:16:22.159 --> 00:16:28.159
+necessarily a bad thing. Sometimes what you need to do is bring in these inefficiencies that may
+
+00:16:28.159 --> 00:16:33.200
+exist in this original workflow. So then you can kind of iterate on that process as well.
+
+00:16:33.200 --> 00:16:39.440
+But now you own it from end to end, right before you might have this inefficiency with this density
+
+00:16:39.440 --> 00:16:44.799
+in the PDF. And if you port it over, so people are at least like in this first phase, they're
+
+00:16:44.799 --> 00:16:49.840
+kind of seeing what they're used to. You go, okay, now let's try to wean you off of this inefficiency
+
+00:16:50.719 --> 00:16:54.960
+when you already have that trust built up with whoever you're providing this product with.
+
+00:16:56.239 --> 00:17:01.039
+I see that exact same thing. Yeah. You're like, we're going to bring over what looks familiar
+
+00:17:02.640 --> 00:17:08.319
+so that it's not so jarring to change the process. And then over time, maybe that can go away when
+
+00:17:08.319 --> 00:17:13.280
+people realize, oh, I don't actually need that. I was just used to seeing it. There was also one
+
+00:17:13.280 --> 00:17:19.199
+from Montesir who said, how come this is so blazing fast? That response was extremely fast.
+
+00:17:19.199 --> 00:17:24.640
+Is it that fast when you were testing it in the field? Yeah, definitely. So GPT real-time is
+
+00:17:24.640 --> 00:17:34.959
+pretty fast. I didn't love the idea of having the voice aspect of it, the model aspect of it,
+
+00:17:34.959 --> 00:17:39.680
+and then the response all in one call. Because this is one call, you're just
+
+00:17:40.719 --> 00:17:44.160
+sending this request to GPT real-time and it's giving you a response back.
+
+00:17:44.160 --> 00:17:51.920
+But it's just so fast. And it's using a WebSocket call to their service that it was hard to
+
+00:17:54.079 --> 00:17:57.599
+separate those out because it would just be slower going from one to the other. But that's all really
+
+00:17:57.599 --> 00:18:02.560
+GPT real-time. And then not using the WebSocket call to make it really, really fast.
+
+00:18:03.359 --> 00:18:07.599
+Yeah. It would be really disjointed for my brain to think, okay, you can only ask one thing at a
+
+00:18:07.599 --> 00:18:11.280
+time. I think as a human, I'm used to just being like, here, do these three things.
+
+00:18:12.560 --> 00:18:16.400
+Logan had said, is there a way to undo? He says, I'm the worst at talking to AI,
+
+00:18:16.400 --> 00:18:22.640
+so I always have to redo or undo. Yeah. So this is old now. I believe I did
+
+00:18:22.640 --> 00:18:27.359
+implement a way to just go undo the last thing I just did and then it would do that.
+
+00:18:27.680 --> 00:18:33.680
+Yeah. There is a way to undo. But these are all tools. So really behind the scenes of this,
+
+00:18:35.119 --> 00:18:42.079
+I have essentially just doing kind of harness building. So I have my agent with its initial
+
+00:18:42.079 --> 00:18:46.479
+system prompt. And then I just have a bunch of tools that I give it access to. So every time
+
+00:18:46.479 --> 00:18:50.560
+it's updating something, so I go overhead duct installation level two, can you set that to
+
+00:18:50.560 --> 00:18:56.800
+complete? The task overhead duct installation level two has been marked as complete. You should
+
+00:18:56.800 --> 00:19:00.640
+see this reflected in the schedule now. So let me know if there's anything else you'd like to adjust.
+
+00:19:00.640 --> 00:19:06.079
+Sorry, I didn't mean to interrupt you, Vera. But I'll kind of break down like what that just did,
+
+00:19:06.079 --> 00:19:12.000
+right? So I have a couple of tools that I give available to the agent. One, I'm letting it
+
+00:19:12.000 --> 00:19:18.160
+search through what's visible to it in this data set. And then I'm letting it search through what
+
+00:19:18.160 --> 00:19:24.319
+in this data set. And then I'm letting it kind of make the decision. You can see the task code,
+
+00:19:24.319 --> 00:19:28.719
+the task name, and everything you can see here. And a little more I give to the agent. And then
+
+00:19:30.560 --> 00:19:35.119
+its whole job is to search through the schedule and pinpoint the task. That's one tool that I
+
+00:19:35.119 --> 00:19:42.079
+provide to the agent. Secondly, switching between different statuses, end dates, start dates,
+
+00:19:42.079 --> 00:19:47.119
+et cetera. That's another tool. So this is just a lot of harness engineering that I'm doing.
+
+00:19:48.160 --> 00:19:53.040
+To go from the question to the final result. Does that answer the question? I don't know
+
+00:19:53.040 --> 00:19:56.640
+if I went on a tangent there. I think so. Well, there's another question
+
+00:19:56.640 --> 00:20:00.079
+too. Actually, there's two. There's one from Notobeco and one from Connor. But I think
+
+00:20:00.079 --> 00:20:06.319
+they asked something similar. And so we can feed into that, which is Notobeco said,
+
+00:20:06.319 --> 00:20:12.880
+does this app also feed into the company's project BIMs, the building information models?
+
+00:20:12.880 --> 00:20:15.760
+That's an awesome question. Yeah. And Connor's question was similar.
+
+00:20:16.079 --> 00:20:19.839
+Is this data being written back to some change history table via SQL?
+
+00:20:20.800 --> 00:20:31.359
+I'll start with the BIM question. The answer to that is no. I work very closely with a BIM
+
+00:20:31.359 --> 00:20:39.680
+data engineer that works at Suffolk too. That's a world where I would like to get more knowledge
+
+00:20:39.680 --> 00:20:47.359
+about and understand it fully. Because if you work in construction, there's so many data points
+
+00:20:47.359 --> 00:20:53.439
+there. And it's so interesting what you can do with BIM. But no, this does not connect to any
+
+00:20:53.439 --> 00:21:00.719
+BIM data systems or models. But that would be something I would love to explore.
+
+00:21:01.760 --> 00:21:07.119
+Second question. Yeah. So the idea here is that after a user would make all these updates,
+
+00:21:07.119 --> 00:21:10.959
+they would have the option to export. And so what that would do is it would
+
+00:21:14.400 --> 00:21:20.400
+send an additional schedule to P6 that the planner would get notified via their email
+
+00:21:20.400 --> 00:21:23.680
+that there's a new schedule there for them to look at. And it wouldn't update anything
+
+00:21:23.680 --> 00:21:26.719
+on their end. It would just give them an additional schedule. And then they could
+
+00:21:26.719 --> 00:21:33.920
+bring those updates back into the schedule that they had as the actual contractual document.
+
+00:21:33.920 --> 00:21:38.239
+So we didn't want to overwrite anything, especially because it's a contractual document,
+
+00:21:38.239 --> 00:21:43.439
+but we wanted it to be digitized for the planner right after the update. So they would get an
+
+00:21:43.439 --> 00:21:49.199
+additional schedule that they could bring back into their current. That is amazing. And keep
+
+00:21:49.199 --> 00:21:55.760
+in mind, everybody, we're at the halfway mark. This is literally the V1 version, the first
+
+00:21:55.760 --> 00:22:02.959
+iteration of what Lucas made. And Lucas, you learned a lot from this about what was going
+
+00:22:03.040 --> 00:22:06.640
+to work and what was not going to work. So when you field tested this with people, how did it go?
+
+00:22:07.439 --> 00:22:15.920
+Yeah. Let me move back here so we can chat about it a little more with more of my really bad-
+
+00:22:16.479 --> 00:22:19.359
+Slidy slides? Yeah, my really bad slidy slides. I'm sorry.
+
+00:22:19.359 --> 00:22:23.760
+I love that you said, this is the slidiest slide I have. And I'm like, oh, that is such a good
+
+00:22:23.760 --> 00:22:32.319
+adjective. So let me go back. So this bottom one, so here, I think what we did is we
+
+00:22:32.319 --> 00:22:38.880
+over-engineered the answer to this problem in a couple of ways. And I think if you're an
+
+00:22:38.880 --> 00:22:47.599
+astute observer, you could see some reasons why. So we actually found that when we were piloting
+
+00:22:47.599 --> 00:22:52.719
+this, the superintendents actually really loved the voice concept, like being able to just chat
+
+00:22:52.719 --> 00:22:57.680
+to your phone and give updates, that that really resonated with them. And they felt like that would
+
+00:22:57.680 --> 00:23:03.199
+be a really good way to speed up their process. But the one thing that they mentioned is talking
+
+00:23:03.199 --> 00:23:06.800
+to a voice agent, and you even saw it when it was interrupting me and it was being a little
+
+00:23:06.800 --> 00:23:15.920
+verbose, it's kind of annoying, just point blank. And it's time-consuming trying to find these
+
+00:23:15.920 --> 00:23:19.920
+tasks that you were writing on paper before, and then later on you were figuring out,
+
+00:23:19.920 --> 00:23:24.079
+trying to do it in the same space at the same time. And these walkthroughs are not just for
+
+00:23:24.079 --> 00:23:28.640
+schedule updates. You're also talking to trade partners, trying to make sure everything's going
+
+00:23:28.640 --> 00:23:34.479
+to plan. So it was a little bit jarring to try to do everything into one, and it was too time
+
+00:23:34.479 --> 00:23:38.719
+consuming for them to realistically do this on every walkthrough. So that kind of taught me two
+
+00:23:38.719 --> 00:23:44.400
+real product lessons. One, kind of meet people where they are, which we did okay. We're putting
+
+00:23:44.400 --> 00:23:49.760
+this on your phone. You have this already available to you. But one thing I kind of want to harp on
+
+00:23:50.239 --> 00:23:56.319
+is friction is not always an obstacle. So this friction of having the separation of your
+
+00:23:56.319 --> 00:24:01.920
+walkthrough, where you're actually getting the updates in real time, versus this place to kind
+
+00:24:01.920 --> 00:24:06.800
+of put them all together, that's a piece of friction. Not necessarily a bad thing to have
+
+00:24:06.800 --> 00:24:12.640
+friction. Sometimes it's there for a reason. So whenever you're trying to automate a workflow,
+
+00:24:12.640 --> 00:24:16.800
+think about the friction points and think about, is this piece of friction there for a reason?
+
+00:24:17.359 --> 00:24:23.520
+This separation of me going on my walkthrough and then providing updates later, maybe that's
+
+00:24:23.520 --> 00:24:28.319
+not necessarily something that needs to be automated away. So I think that leads us in
+
+00:24:28.319 --> 00:24:36.400
+to their notes pretty well. So I can pull up- Was it also too loud on a job site to
+
+00:24:36.400 --> 00:24:41.520
+have your sound parsed or during walkthroughs was it pretty chill and noise wasn't as big of a deal?
+
+00:24:42.239 --> 00:24:54.239
+So it did okay, I will say. I think especially if we had some type of headphones
+
+00:24:55.439 --> 00:25:00.319
+happening, usually the headphones are okay at blocking out those sounds. I think there was,
+
+00:25:00.880 --> 00:25:07.040
+probably if we continued this path, we would have had to do some more exploration on
+
+00:25:07.760 --> 00:25:15.280
+if we needed to provide some type of headphones that are noise canceling, have a good microphone,
+
+00:25:15.280 --> 00:25:22.800
+things like that. But based on the feedback that I got, it did an okay job even with the noise.
+
+00:25:23.599 --> 00:25:28.560
+Oh, you know what? Noor has a question that I hadn't even thought of. She said,
+
+00:25:28.560 --> 00:25:32.079
+how do you handle security with this type of app? Because you mentioned talking to trade
+
+00:25:32.079 --> 00:25:36.640
+partners while also doing walkthroughs. And she's like, I'm assuming you don't want it to
+
+00:25:36.640 --> 00:25:40.160
+record a trade partner meeting or somebody else talking, right?
+
+00:25:41.680 --> 00:25:49.359
+Yeah. I think part of that is... So one, everything that we do, when we tie it back to,
+
+00:25:49.359 --> 00:25:56.640
+especially in LLM, we have agreements with the providers that they're not going to store that
+
+00:25:56.640 --> 00:26:03.040
+data for training. So that's one thing. And then two, we're not doing this perpetual recording
+
+00:26:03.040 --> 00:26:08.880
+here. It's more engaged by the actual user. Because you're pressing a button.
+
+00:26:08.880 --> 00:26:10.880
+Exactly. It's not listening serious, right?
+
+00:26:10.880 --> 00:26:17.359
+Exactly. So I think that's part of the two pieces of security there, where we don't really
+
+00:26:17.920 --> 00:26:24.640
+save the recordings either. We just save the output. So what changes are being made,
+
+00:26:24.640 --> 00:26:31.439
+in this case, when you see the new Vera, the end note, not the actual recording.
+
+00:26:32.160 --> 00:26:37.839
+All right, cool. Well, let's see. New version. And is this new version deployed yet? Is it out
+
+00:26:37.839 --> 00:26:41.520
+in the field doing stuff already? I'd say it's a little bit pre-pilot
+
+00:26:41.520 --> 00:26:49.199
+and I'll explain why, but I've done a lot of presentations on this to people on site
+
+00:26:49.199 --> 00:26:52.560
+and they're pretty excited. They're like, can we get this today? And I'm like,
+
+00:26:53.280 --> 00:26:58.479
+let's give it a little bit of time. But the idea here is we're still on the phone,
+
+00:26:59.680 --> 00:27:09.760
+but now we've moved over to, and sorry, I need to pull up my script here. I have a little script.
+
+00:27:10.479 --> 00:27:15.839
+Okay, nice. Okay, I got it. So we're still on the phone,
+
+00:27:16.800 --> 00:27:23.439
+but we've kind of moved into two modules. We have Vera Notes and Vera Review. So Vera Notes,
+
+00:27:24.079 --> 00:27:29.680
+I've taken away the assistant. Again, it was annoying. And it was not only annoying to use
+
+00:27:29.680 --> 00:27:35.439
+as a user, it was really annoying to develop. Because you can imagine me in the office working
+
+00:27:35.439 --> 00:27:40.719
+on the original version of Vera and having to have full-on conversations with an AI assistant
+
+00:27:41.359 --> 00:27:45.119
+just in my office at my desk and people looking at me like, what are you doing?
+
+00:27:46.000 --> 00:27:49.119
+Especially when it would do wrong things and I had to be like, you're wrong.
+
+00:27:50.959 --> 00:27:56.239
+So it was annoying on both fronts. I'm glad we kind of moved away from it. So this is more of
+
+00:27:56.239 --> 00:28:03.040
+a transcription service, a note recording service that we can then use in a separate way to have a
+
+00:28:03.040 --> 00:28:08.160
+lot of utility. So I'll just start recording some notes. So this would be me walking the job site
+
+00:28:08.160 --> 00:28:11.040
+and I'll start to record some notes. And this is ShinyPython instead of ShinyOR.
+
+00:28:12.000 --> 00:28:14.800
+The fence is all the way up around the site now. The crew has finished getting
+
+00:28:14.800 --> 00:28:24.479
+everything set up this morning. So I just recorded that note. It took that in, made it into text.
+
+00:28:24.479 --> 00:28:29.280
+And now I have this review piece. Let me make sure it transcribed everything correctly. Or if it made
+
+00:28:29.280 --> 00:28:34.640
+a mistake, I can fix it up here just in text. This would be with my thumbs instead of my mouse
+
+00:28:34.640 --> 00:28:40.160
+and keyboard. And then I'm like, OK, got it correctly. Let me save that note. And so now
+
+00:28:40.560 --> 00:28:46.000
+this is tied in. This is what gets stored again. We don't save these recordings that you're making,
+
+00:28:46.000 --> 00:28:52.400
+just the output. And then I'll do another one. We haven't gone to the elevator pit forms yet.
+
+00:28:52.400 --> 00:28:55.280
+The crew should start October 1st and have them ready by October 5th.
+
+00:28:56.880 --> 00:28:59.920
+OK. And I stuttered there and it still got me, which is nice.
+
+00:29:02.000 --> 00:29:08.479
+Cool. I'll save that note too. And then I'll go, need to get some extra safety glasses in
+
+00:29:08.479 --> 00:29:15.040
+the trailer before the owner walks the job. And it got me there too. And I can save or discard.
+
+00:29:15.040 --> 00:29:19.760
+I'll save it. So any questions so far on this note portion?
+
+00:29:20.719 --> 00:29:26.319
+No, but we got some feedback from Notobeco saying project managers would froth for this.
+
+00:29:28.479 --> 00:29:33.439
+Oh, we did get one. Daniela says, does the voice assistant understand people with an accent?
+
+00:29:33.520 --> 00:29:41.599
+Yes. So we have used, like, we have a lot of different people from a lot of different
+
+00:29:41.599 --> 00:29:44.800
+backgrounds with a lot of different accents. And so we've had some testing with people with
+
+00:29:44.800 --> 00:29:53.119
+different accents. I think it does a worse job if you have an accent, maybe, but it does it pretty
+
+00:29:53.119 --> 00:29:57.119
+well still if you have an accent. And at least there's a reviews component,
+
+00:29:57.119 --> 00:30:03.280
+because you don't get stuck with just whatever it has decided you said. There was also a question
+
+00:30:03.280 --> 00:30:11.439
+from Logan that I was going to ask too, because you had mentioned elevator pit forms, which is
+
+00:30:11.439 --> 00:30:16.800
+like not a thing that I think normal people say in everyday conversation. So Logan's question was,
+
+00:30:16.800 --> 00:30:22.640
+are there ever industry lingo terms that it doesn't understand and you have to put industry
+
+00:30:22.640 --> 00:30:27.040
+knowledge into it so that it will? Yeah. I think that is more important
+
+00:30:27.040 --> 00:30:29.839
+if you have an assistant. So if you have something that's talking back and forth to
+
+00:30:29.920 --> 00:30:34.800
+you, we had to have this kind of data dictionary of construction terms and what they meant,
+
+00:30:34.800 --> 00:30:40.000
+especially because if you think about the original version, that was essentially an agent
+
+00:30:40.000 --> 00:30:47.439
+that was an orchestrator for tools. So there's this term actualization. And that just means
+
+00:30:48.959 --> 00:30:54.479
+saying that the date that's there happened. So if I actualize a start date, that means that the
+
+00:30:54.479 --> 00:31:00.319
+task started. If I actualize an end date, that means that the task completed. So that was a big
+
+00:31:00.319 --> 00:31:05.920
+thing. Like if a superintendent were to go in there and say, I want to actualize the start date,
+
+00:31:05.920 --> 00:31:12.640
+that's not a status that we have assigned. So you have to be able to give the agent context
+
+00:31:12.640 --> 00:31:19.520
+to be able to route it to the right tool. I love it. Okay. Also, we had a question that
+
+00:31:19.520 --> 00:31:25.839
+says, is it possible to edit those saved notes? Oh, that's actually a great point.
+
+00:31:25.839 --> 00:31:31.760
+Like before you save them. I didn't add the capability to edit saved notes, but I should
+
+00:31:31.760 --> 00:31:36.400
+have. So you already caught me on something I probably should have done. Product feedback.
+
+00:31:36.400 --> 00:31:43.119
+Yeah. All right. So Nor says, how is this preferable to just importing voice notes?
+
+00:31:43.119 --> 00:31:48.800
+Is it because it's loaded directly onto the platform? What do you mean by, do you mean by-
+
+00:31:49.199 --> 00:31:51.839
+Info Nor, we need some more context.
+
+00:31:52.560 --> 00:32:00.079
+I think I see what you're saying. So like being able to just type these in and store them that
+
+00:32:00.079 --> 00:32:04.000
+way. I think that's another good point. Like this should be flexible, I think.
+
+00:32:04.618 --> 00:32:10.058
+I think that's another good point like this should be flexible I think I will
+
+00:32:10.058 --> 00:32:15.058
+probably add a a form where you can either record or you can just type these
+
+00:32:15.058 --> 00:32:19.658
+in and so I think it's better than the manual obviously because we're already
+
+00:32:19.658 --> 00:32:23.218
+digitizing this like this is the idea of like can we get away from the manual
+
+00:32:23.218 --> 00:32:27.058
+side of this operation and can we kind of just keep this digital throughout the
+
+00:32:27.058 --> 00:32:31.458
+whole life cycle yeah I think maybe also this could be a question that's like
+
+00:32:31.458 --> 00:32:36.298
+well what if somebody's just like walking through and like you're in a
+
+00:32:36.298 --> 00:32:39.897
+text platform or you're in Slack you can usually add voice notes right by just
+
+00:32:39.897 --> 00:32:43.577
+recording on your phone and I do like that this is loaded directly into the
+
+00:32:43.577 --> 00:32:48.737
+platform because I have noticed when I am doing things I often I have gotten
+
+00:32:48.737 --> 00:32:51.978
+spoiled and I've gotten used to voice notes and when a platform itself doesn't
+
+00:32:51.978 --> 00:32:55.618
+have the voice note capability I'm like oh you're gonna make me type something
+
+00:32:55.618 --> 00:33:03.257
+like I think that this is really really helpful okay okay yeah yeah so nor said
+
+00:33:03.257 --> 00:33:10.058
+clarification most know most most point most phones have a voice note option
+
+00:33:10.058 --> 00:33:13.698
+right already so yeah I think it is that it's built into the platform right yeah
+
+00:33:13.698 --> 00:33:17.177
+it's built into the platform and I'll show you kind of like the the use case
+
+00:33:17.177 --> 00:33:21.217
+here like obviously if this was just you taking notes and this was this is not
+
+00:33:21.217 --> 00:33:24.817
+the end of this application if this was just you taking notes and saving them
+
+00:33:24.817 --> 00:33:28.338
+yeah it'd be nice because this is stored in in Databricks for us so it's
+
+00:33:28.338 --> 00:33:32.058
+protected by like where we have all of our other data sure like you could save
+
+00:33:32.058 --> 00:33:37.137
+it in Snowflake or whatever you use but we would probably just buy this service
+
+00:33:37.137 --> 00:33:41.897
+I'm sure there are a billion note-taking tools out there mm-hmm but there's more
+
+00:33:41.897 --> 00:33:46.338
+utility so you have this option now I've done my walkthrough I would probably do
+
+00:33:46.338 --> 00:33:51.658
+like five ten more notes and now I'm gonna push these so I'm gonna get this
+
+00:33:51.658 --> 00:33:57.137
+little pop-up so I'm pushing them which means I'm sending them to the review so
+
+00:33:57.137 --> 00:34:00.618
+you could do this on mobile as well but I'll send this to desktop so the idea
+
+00:34:00.618 --> 00:34:07.738
+would be maybe oh maybe if your workflow is okay I'm taking my notes as I'm doing
+
+00:34:07.738 --> 00:34:10.978
+my walkthrough then when I get back to my desk at the end of the day that's
+
+00:34:10.978 --> 00:34:15.377
+what I'm doing the review step so I would go into Vera review and then I
+
+00:34:15.377 --> 00:34:19.978
+have my notes here that I have previously so I can load the schedule in
+
+00:34:19.978 --> 00:34:26.938
+automap this mean you can open it on both mobile and laptop later exactly
+
+00:34:26.938 --> 00:34:32.737
+yeah this has a this has a mobile view too and I'll show a little bit like when
+
+00:34:32.737 --> 00:34:36.737
+I when we go over the code we're already coming up on time but I'll try to show
+
+00:34:36.737 --> 00:34:42.618
+the how I separate the desktop and the the mobile UI yeah I'm gonna save a
+
+00:34:42.618 --> 00:34:47.537
+question as well I saw one that was about the capability of the transcription
+
+00:34:47.537 --> 00:34:50.297
+tool you're using so we'll save that one for when you talk about tools tools
+
+00:34:50.297 --> 00:34:54.657
+as well sure cool so I have my notes on the left that I just pushed and I'm
+
+00:34:54.657 --> 00:34:59.177
+trying to map them now to my schedule and so what it's gonna do it takes two
+
+00:34:59.177 --> 00:35:02.897
+of my notes here one about the fence mapped it to the to a schedule component
+
+00:35:02.897 --> 00:35:07.177
+and then it made the changes that I said so I said the fences all the way up
+
+00:35:07.177 --> 00:35:09.737
+around the site now the crew has finished getting everything set up so
+
+00:35:09.737 --> 00:35:17.257
+the this task was originally in progress and so send this to an LLM it
+
+00:35:17.257 --> 00:35:22.858
+maps the the task maps my note to this individual task and then it makes the
+
+00:35:22.858 --> 00:35:26.418
+change to the status because I said it was complete and then it gives me this
+
+00:35:26.418 --> 00:35:32.657
+like confidence percentage just just so it gives me like an extra layer of
+
+00:35:32.657 --> 00:35:35.778
+protection to be like I'm pretty sure that this is what you're talking about
+
+00:35:35.778 --> 00:35:41.058
+and then I have the choice to be like okay is this correct or not I'll read
+
+00:35:41.058 --> 00:35:45.338
+its reasoning I'm like okay that that is right so I'm gonna confirm it and then
+
+00:35:45.338 --> 00:35:51.778
+now I haven't this this went from me going to a PDF reviewing my notes and
+
+00:35:51.778 --> 00:35:57.377
+then marking a PDF to send later to the planner I now just pressed a button like
+
+00:35:57.377 --> 00:36:01.058
+this was me just taking my notes which I was going to do anyway but in an easier
+
+00:36:01.058 --> 00:36:05.218
+platform and now I've mapped it to my task and I pressed one button and that
+
+00:36:05.218 --> 00:36:10.498
+that task has an update associated with it and then same here it maps it to the
+
+00:36:10.498 --> 00:36:13.737
+task and it moved the dates to October 1st and October 5th and I can either
+
+00:36:13.737 --> 00:36:19.618
+either undo this and just set it up to be changed in this in this format or
+
+00:36:19.618 --> 00:36:22.938
+I'll confirm this too and then for the rest of these that don't have a note I
+
+00:36:22.938 --> 00:36:28.417
+can still go through these and much easier than the PDF I can change this so
+
+00:36:28.417 --> 00:36:32.938
+maybe this is complete and then I can confirm it etc and so this is kind of
+
+00:36:32.938 --> 00:36:36.618
+the replacement for having this voice assistant that I kind of always have to
+
+00:36:36.618 --> 00:36:41.938
+chat with I can kind of separate these steps and do my note-taking in one
+
+00:36:41.938 --> 00:36:47.058
+component and then I can do my schedule updates in a second component that's now
+
+00:36:47.058 --> 00:36:54.417
+informed by this first step that I took so any any questions there um we had a
+
+00:36:54.417 --> 00:37:00.897
+suggestion from Renato who was saying it could be that send to review on the
+
+00:37:00.897 --> 00:37:05.177
+button could be more helpful than push it to have to have something that's like
+
+00:37:05.177 --> 00:37:10.457
+more explicit for what you're gonna do we're giving you totally unsolicited
+
+00:37:10.457 --> 00:37:14.297
+product feedback I love it iterating we love it
+
+00:37:14.297 --> 00:37:18.857
+Zack had asked did you need to learn how to build something like this on the job
+
+00:37:18.857 --> 00:37:24.017
+and if so how did you find the time to do so were you a shiny expert before you
+
+00:37:24.017 --> 00:37:33.778
+did this I would say not really I I've known how to code for a long time and so
+
+00:37:33.778 --> 00:37:39.498
+I think this job was the first time I had started to develop apps and I think
+
+00:37:39.498 --> 00:37:44.378
+shiny has been a very good way for me to understand how to build apps like the
+
+00:37:44.378 --> 00:37:49.137
+framework is is more robust than maybe some give it credit for but it's super
+
+00:37:49.137 --> 00:37:52.778
+easy to learn as well as iterate on top of so it's been a good experience for me
+
+00:37:52.778 --> 00:37:56.417
+to kind of get through like the life cycle of an entire app and to end
+
+00:37:56.417 --> 00:38:01.618
+through shiny but I was not an expert before this I'm probably not still not
+
+00:38:01.618 --> 00:38:10.058
+an expert but yeah I kind of learned on the on the job I love it find you a job
+
+00:38:10.058 --> 00:38:14.498
+where they're gonna let you learn as you go I think that you also have some
+
+00:38:14.498 --> 00:38:18.538
+pretty cool people that you work with and definitely a supportive environment
+
+00:38:18.538 --> 00:38:24.137
+which is amazing all right so the question that I was hanging on to was a
+
+00:38:24.137 --> 00:38:27.737
+capability question about tools and I think you're about to talk about tools
+
+00:38:27.737 --> 00:38:32.417
+so I'm gonna let you keep going we have about 20 minutes left okay so I think
+
+00:38:32.417 --> 00:38:38.818
+this point maybe we should go into some of the code so if you have any questions
+
+00:38:38.818 --> 00:38:44.498
+here but these the same idea here is in the last one where after you do your
+
+00:38:44.498 --> 00:38:50.417
+updates they're already digital and then you can send them back out to to
+
+00:38:50.417 --> 00:38:55.697
+the planner already digitized the main idea being that you no longer have to
+
+00:38:55.697 --> 00:39:00.897
+like print something out mark it up make all those changes manually send it back
+
+00:39:00.897 --> 00:39:03.577
+to somebody who's just gonna like print it out again or whatever they're gonna
+
+00:39:03.577 --> 00:39:09.818
+do which is like having worked with clients who are industrial and I also
+
+00:39:09.818 --> 00:39:14.737
+have a sister who's worked for like 30 years for a construction company that's
+
+00:39:14.737 --> 00:39:19.538
+normal like for most people across the United States like everything is still
+
+00:39:19.538 --> 00:39:23.818
+really really manual there's not a whole bunch of automation and stuff in the in
+
+00:39:23.818 --> 00:39:26.498
+this space and so I think this is a really really cool thing that's
+
+00:39:26.498 --> 00:39:30.897
+happening yeah innovative you're innovating Lucas yeah and what one thing
+
+00:39:30.897 --> 00:39:36.218
+I'll say like this is kind of why I say pre-pilot we're thinking about as I was
+
+00:39:36.218 --> 00:39:39.017
+building this tool and this was kind of based directly on feedback we got from
+
+00:39:39.017 --> 00:39:43.098
+the pilot now we're thinking of like can we expand this like we have so many
+
+00:39:43.098 --> 00:39:47.378
+source systems that they could this can be useful for and and schedule updates
+
+00:39:47.378 --> 00:39:50.338
+are not the only thing that superintendents are taking notes for
+
+00:39:50.338 --> 00:39:54.857
+they're taking notes to put in their logs they're taking notes to maybe
+
+00:39:54.857 --> 00:39:59.098
+inform safety observations that they have to note like how can we expand this
+
+00:39:59.098 --> 00:40:02.938
+and make this so you have one place to take your notes and then you can kind of
+
+00:40:02.938 --> 00:40:07.417
+push this out to all of these ends that you need in one centralized location
+
+00:40:07.417 --> 00:40:09.977
+instead of going to this source system and that's our system and that's our
+
+00:40:09.977 --> 00:40:13.098
+system so how can we make this an easier process so that's kind of what we're
+
+00:40:13.098 --> 00:40:18.177
+exploring here too that's a very good business proposition to is like hey I'm
+
+00:40:18.177 --> 00:40:21.758
+building this tool that is gonna solve this problem but it has the potential to
+
+00:40:21.758 --> 00:40:25.977
+solve all these other ones and that's a great way to get by and do I want to say
+
+00:40:25.977 --> 00:40:32.857
+if you might increase font size by just a little bit like a plus sign or a
+
+00:40:32.897 --> 00:40:37.498
+control plus sign that could be good for our people viewing on smaller screens
+
+00:40:37.498 --> 00:40:42.417
+thank you awesome mm-hmm okay so I'm gonna this is going to be this is a lot
+
+00:40:42.417 --> 00:40:46.458
+of code in this code base I just want to say so the more questions you ask I'm
+
+00:40:46.458 --> 00:40:50.818
+gonna kind of go over this at a high level instead of going like really deep
+
+00:40:50.818 --> 00:40:56.097
+into it but I want to say a couple of things here you're gonna notice that I
+
+00:40:56.097 --> 00:41:01.737
+have a lot of modules when you're making shiny apps I think it's very easy to put
+
+00:41:01.737 --> 00:41:07.618
+everything into your app file I think you should kind of think about it the
+
+00:41:07.618 --> 00:41:12.657
+opposite like this is a complicated shiny app so I separate everything into
+
+00:41:12.657 --> 00:41:17.217
+modules and the way that I see modules is like every script that I have in here
+
+00:41:17.217 --> 00:41:21.097
+I should be able to explain what it does in one sentence and you're kind of
+
+00:41:21.097 --> 00:41:25.458
+understanding where you need to go if something goes wrong or if you want to
+
+00:41:25.458 --> 00:41:29.657
+add a new feature you need to you can understand where you need to go in this
+
+00:41:29.657 --> 00:41:36.258
+code base and so you'll see my app file is maybe 230 lines just not not big a
+
+00:41:36.258 --> 00:41:40.857
+lot of this is like some basic UI stuff for the home page and then just making
+
+00:41:40.857 --> 00:41:44.657
+sure all of my other modules are tied together so I kind of want to say that
+
+00:41:44.657 --> 00:41:48.337
+at this point if you if you don't modularize your your apps today I would
+
+00:41:48.337 --> 00:41:54.698
+really really recommend it and then I'm gonna move over first to one of the
+
+00:41:54.698 --> 00:41:57.977
+reasons I really like shiny over like something like streamlit is I just think
+
+00:41:57.977 --> 00:42:01.618
+it's so easy to tie in you know JavaScript and when you're talking about
+
+00:42:01.618 --> 00:42:07.378
+voice you really probably need to use some type of JavaScript I know that's
+
+00:42:07.378 --> 00:42:14.058
+scary for some but this is a very simple script and I don't think it's even that
+
+00:42:14.058 --> 00:42:20.097
+many lines and a lot of its comments is 141 lines and this does all of my
+
+00:42:20.258 --> 00:42:27.378
+recording for for for voice and I just use a library called media recorder and
+
+00:42:27.378 --> 00:42:34.258
+then shiny makes it very easy and all good
+
+00:42:34.777 --> 00:42:41.818
+shiny makes it very easy for me to tie in input values that I have within the
+
+00:42:41.818 --> 00:42:47.777
+shiny application to my JavaScript files and so I have my recording all being
+
+00:42:47.818 --> 00:42:53.498
+done through media recorder which just it goes through your browsers built-in
+
+00:42:53.498 --> 00:42:59.737
+microphone and recording services and then I can record that audio and send
+
+00:42:59.737 --> 00:43:07.258
+that back to shiny specific objects so I can then keep this a shiny app so this
+
+00:43:07.258 --> 00:43:11.618
+is just the the JavaScript that that makes everything go but all of the
+
+00:43:11.618 --> 00:43:16.297
+complicated things are really happening in my shiny app outside of hey
+
+00:43:16.297 --> 00:43:21.058
+JavaScript files but this is a good place to ask the question that I think
+
+00:43:21.058 --> 00:43:25.818
+Amelia had asked on behalf of a student which was would it be possible to set
+
+00:43:25.818 --> 00:43:31.177
+the input to a different language altogether yes how many languages could
+
+00:43:31.177 --> 00:43:35.018
+you potentially have as your inputs I think that can be really dependent on
+
+00:43:35.018 --> 00:43:40.097
+the tool that you're using so I'm using I'm using a service called deep gram for
+
+00:43:40.097 --> 00:43:46.018
+this deep gram is a they kind of specialize in voice agents as well as
+
+00:43:46.018 --> 00:43:51.378
+voice transcription I believe they have multiple languages available you'll have
+
+00:43:51.378 --> 00:43:57.138
+to go to their website I think at the end of this I have a link for that but
+
+00:43:57.138 --> 00:44:03.378
+they give you a I believe a free $200 API credit and then you can kind of play
+
+00:44:03.378 --> 00:44:08.537
+around with this as well I'm also going to share I have to like demo code bases
+
+00:44:08.537 --> 00:44:14.018
+that one of them is shiny real-time base and the other one is deep gram based and
+
+00:44:14.018 --> 00:44:17.898
+then you can kind of play around with it on your own it's gonna be public free
+
+00:44:17.898 --> 00:44:21.698
+for you guys so I'd say play around with it I know they have more languages than
+
+00:44:21.698 --> 00:44:27.938
+just English but I don't know the the breadth of those options fantastic all
+
+00:44:27.938 --> 00:44:34.097
+right yeah I'm really loving that your app dotpy file is so tiny because I sure
+
+00:44:34.097 --> 00:44:38.498
+a lot of people have worked on shiny apps that are enormously long and
+
+00:44:38.498 --> 00:44:43.417
+monolithic yeah and then it makes it easier to like demo this type of thing
+
+00:44:43.417 --> 00:44:48.097
+because then I can just go to the file that I know things are happening in so
+
+00:44:48.097 --> 00:44:54.657
+yeah I'll move over to transcription so so the JavaScript this is my tie from
+
+00:44:54.657 --> 00:44:59.378
+the JavaScript and back into to Python so I have these kind of functions that
+
+00:44:59.378 --> 00:45:06.058
+bring in the recording that was done for media recorder that I tie into the
+
+00:45:06.058 --> 00:45:13.297
+browser and then now I can kind of build in this API request to deep gram and so
+
+00:45:13.698 --> 00:45:17.217
+they have these parameters available and I have the content type and then I'm
+
+00:45:17.217 --> 00:45:23.097
+just able to request transcription from deep gram I send them the audio file
+
+00:45:23.097 --> 00:45:27.698
+essentially and then I just pull in the the response that they get and I just
+
+00:45:27.698 --> 00:45:33.177
+isolate the transcript so I can use that for the note-taking portion so it's
+
+00:45:33.177 --> 00:45:37.458
+pretty thin I mean this is 58 lines the JavaScript was I don't remember maybe
+
+00:45:37.458 --> 00:45:42.378
+a couple hundred or maybe it's less than 200 so pretty pretty thin and this is
+
+00:45:42.378 --> 00:45:47.898
+all the the recording aspect of it kind of done it's just that JavaScript file
+
+00:45:47.898 --> 00:45:53.657
+and then this this Python file when you were building this did you do anything
+
+00:45:53.657 --> 00:45:59.018
+while you were building it to chunk out the testing portion were you like let's
+
+00:45:59.018 --> 00:46:02.898
+just get transcription transcription alone to work like let's just make sure
+
+00:46:02.898 --> 00:46:07.297
+that I can speak and it can transcribe it correctly did you like yeah step by
+
+00:46:07.297 --> 00:46:10.698
+step do that stuff or was this like I'm gonna one-shot this with an LLM it's
+
+00:46:10.698 --> 00:46:18.818
+gonna build everything for me yeah don't one-shot things like yeah I you
+
+00:46:18.818 --> 00:46:23.417
+you kind of have to when you're building a complicated application in your head
+
+00:46:23.417 --> 00:46:29.977
+you have to split these things up that's gonna be your way to get a MVP proof of
+
+00:46:29.977 --> 00:46:33.537
+concept as quickly as possible and as accurately as possible in my experience
+
+00:46:33.537 --> 00:46:37.938
+if you try to one-shot these things you're gonna always go back and have to
+
+00:46:37.938 --> 00:46:40.297
+tweak and have to tweak and have to tweak and then eventually you're gonna
+
+00:46:40.297 --> 00:46:43.458
+refactor the entire app because you didn't split it up originally and then
+
+00:46:43.458 --> 00:46:49.498
+you let an LLM make decisions for you so yeah I it was nice here because I had
+
+00:46:49.498 --> 00:46:55.337
+these already split out as modules in my head like the Vera notes was the first
+
+00:46:55.337 --> 00:47:00.417
+module so I'm like okay let me work on Vera notes so let me make sure that the
+
+00:47:00.417 --> 00:47:04.898
+audio works do the JavaScript files tied into the Python and then just make sure
+
+00:47:04.898 --> 00:47:09.258
+I can I can record notes and then I have that part done and then I move over okay
+
+00:47:09.258 --> 00:47:13.097
+now let's do the review portion so I build the second module so you kind of
+
+00:47:13.097 --> 00:47:15.378
+have to split these up in your head just like you're modularizing this
+
+00:47:15.378 --> 00:47:19.977
+application in the code base you have to kind of modularize it in your head and
+
+00:47:19.977 --> 00:47:24.217
+work on them in pieces and then also give yourself success criteria to be
+
+00:47:24.217 --> 00:47:29.857
+like okay this is what I'm done with this phase fantastic I love it okay I
+
+00:47:29.857 --> 00:47:34.657
+don't see any more questions so we can awesome we can move on so then let me
+
+00:47:34.657 --> 00:47:41.177
+move over to the notes portion and I kind of just want to talk about the
+
+00:47:41.177 --> 00:47:46.297
+audio piece so this is where like you're gonna see this this input audio data
+
+00:47:46.297 --> 00:47:49.898
+this is where audio is kind of traveling I'm trying to I've kind of bring you on
+
+00:47:49.898 --> 00:47:54.258
+the journey in the code of how this audio travels to each individual piece
+
+00:47:54.258 --> 00:48:00.097
+so now I had this reactive event for when audio data updates which is coming
+
+00:48:00.097 --> 00:48:04.977
+from from DeepGram and then now I I'm using all of these different functions
+
+00:48:04.977 --> 00:48:08.177
+helper functions that I've built throughout the way to you know
+
+00:48:08.177 --> 00:48:14.498
+transcribe that audio using DeepGram and then I can isolate that text and then I
+
+00:48:14.498 --> 00:48:22.378
+can update the UI to provide that editable text box that has the
+
+00:48:22.378 --> 00:48:26.818
+transcript that I I just did so this this is kind of a big function for this
+
+00:48:26.818 --> 00:48:31.138
+entire the note the note side because it's wrapping everything together so the
+
+00:48:31.138 --> 00:48:34.737
+JavaScript that went to the transcription to update the reactive
+
+00:48:34.737 --> 00:48:41.018
+value that then I can do this whole chain of events kind of in this function
+
+00:48:41.177 --> 00:48:45.578
+very cool I have so many questions I don't want to interrupt you okay you
+
+00:48:45.578 --> 00:48:50.498
+keep going sure I'm trying to go that I know we don't have too much time so so
+
+00:48:50.498 --> 00:48:53.138
+maybe I'll end it at this point but there's there's a lot to go over and
+
+00:48:53.458 --> 00:48:58.337
+then and then again there's a there's a mini version of this available on my
+
+00:48:58.337 --> 00:49:03.097
+github which will get a link to that that is one for shiny real-time and one
+
+00:49:03.097 --> 00:49:07.657
+for DeepGram so maybe this is the last part that I'll I'll go over and then
+
+00:49:07.657 --> 00:49:13.658
+here this is where I talk about like storing notes right now in this demo
+
+00:49:13.658 --> 00:49:17.577
+version it's just storing to like a JSON but this is where you can kind of like
+
+00:49:17.577 --> 00:49:23.178
+think about this as a class where you can set these different values for what
+
+00:49:23.178 --> 00:49:27.258
+a note is right and then you can structure these notes into something
+
+00:49:27.258 --> 00:49:31.138
+that you can then send to different modules and it's important to organize
+
+00:49:31.138 --> 00:49:37.337
+all of these pieces into things that you can then make usable by different
+
+00:49:37.337 --> 00:49:40.217
+modules especially if you're you know this is not just a note-taking tool
+
+00:49:40.217 --> 00:49:44.138
+there's a note-taking tool that I can then map out to a schedule I can map out
+
+00:49:44.138 --> 00:49:48.977
+to a safety observation so making sure that the note itself is is something
+
+00:49:48.977 --> 00:49:54.697
+that is a structured is really important it's not just free text right so this is
+
+00:49:54.697 --> 00:49:59.378
+where I start marking my notes pushing them out making sure they're they're
+
+00:49:59.378 --> 00:50:06.378
+available to each individual module and then yeah that's kind of this point so I
+
+00:50:06.378 --> 00:50:11.577
+might end I don't know we don't have too much time are there any questions there
+
+00:50:11.577 --> 00:50:16.937
+are yeah we hadn't go to those we had one that was did you consider a
+
+00:50:16.937 --> 00:50:22.378
+streamlit app initially for this or any other question I'll add that's a good
+
+00:50:22.378 --> 00:50:28.937
+question I will say to that I am NOT the biggest fan of streamlit if you guys are
+
+00:50:28.937 --> 00:50:35.418
+big fans of streamlit don't let my distaste stop you I think the answer
+
+00:50:35.418 --> 00:50:41.337
+that is no not really I think shiny is to me is a lot more robust of a
+
+00:50:41.337 --> 00:50:46.577
+framework than streamlit is but it lets you be flexible in a way that streamlit
+
+00:50:46.577 --> 00:50:50.577
+well it's it's like it's more flexible than streamlit but it's it's just as
+
+00:50:50.577 --> 00:50:55.618
+easy to kind of set up then streamlit in my opinion especially once you get to I
+
+00:50:55.618 --> 00:50:58.898
+think streamlit has a ceiling in terms of how complex you get until it's like
+
+00:50:58.898 --> 00:51:03.817
+impossible or it feels impossible to get to the next step I think shiny just
+
+00:51:03.817 --> 00:51:08.418
+doesn't really have that ceiling which is why I didn't go with streamlit
+
+00:51:08.418 --> 00:51:13.418
+awesome and I think I might be wrong but I think y'all have posit connect right
+
+00:51:13.418 --> 00:51:17.057
+we're like you can do it could have been a streamlit app because you can host
+
+00:51:17.057 --> 00:51:22.658
+all kinds of things on connect but one question that I did have as you were
+
+00:51:22.658 --> 00:51:28.298
+going was why the shift to shiny for Python yeah so was it just to use those
+
+00:51:28.298 --> 00:51:30.977
+like Python libraries that you were like these are all just really good at this
+
+00:51:30.977 --> 00:51:37.178
+yeah so for me I I'm one of those people who just doesn't care what
+
+00:51:37.178 --> 00:51:41.457
+language something is in like I just couldn't care less I can do both like
+
+00:51:41.457 --> 00:51:45.937
+left arm right arm the reason why I switched to Python was because deep gram
+
+00:51:45.937 --> 00:51:52.217
+had an SDK that was Python only and so I was like okay that's probably enough of
+
+00:51:52.217 --> 00:51:57.418
+a limitation for me to think that making this in Python will be easier but that
+
+00:51:57.418 --> 00:52:04.258
+is essentially the the only reason yeah and so I put this up on the screen just
+
+00:52:04.258 --> 00:52:10.618
+because this this QR code is going to link you to a github page that is going
+
+00:52:10.618 --> 00:52:14.898
+to show you the the two kind of demos I have one of them is with deep gram it's
+
+00:52:14.898 --> 00:52:18.857
+just a note-taking tool the other one is with real time and it's kind of a fun
+
+00:52:18.857 --> 00:52:23.217
+one it's like a choose your own adventure like Dungeons & Dragons style
+
+00:52:23.378 --> 00:52:30.538
+game so I want to put this up just so you have time to scan it and and then go
+
+00:52:30.538 --> 00:52:34.378
+through it a lot of those the practices that are in those demos are very similar
+
+00:52:34.378 --> 00:52:38.937
+to the practices I use to build out both vera versions so you're gonna get a lot
+
+00:52:38.937 --> 00:52:42.538
+of information from that that's hopefully going to be actionable after
+
+00:52:42.538 --> 00:52:48.418
+this conversation so I really implore you to go look at those and then if you
+
+00:52:48.418 --> 00:52:52.378
+want to for the deep gram it'll be easy because you can get the free API credit
+
+00:52:52.378 --> 00:52:58.457
+if you if you have a GPT license or API key that you want to use for the real
+
+00:52:58.457 --> 00:53:03.697
+time one feel free just keep in mind real time is not cheap so okay I'm gonna
+
+00:53:03.697 --> 00:53:07.378
+throw that out there that makes sense any other caveats that you want to throw
+
+00:53:07.378 --> 00:53:11.898
+out I did copy this by the way the QR code and I put it into the discord for
+
+00:53:11.898 --> 00:53:16.977
+posterity so we've all got it there I know some people are probably hopping
+
+00:53:16.977 --> 00:53:22.697
+Hebert says he's hopping for his next meeting yay hey Marcos I don't have my
+
+00:53:22.697 --> 00:53:28.618
+phone up to get that link you guys are gonna have to do it okay here's what I
+
+00:53:28.618 --> 00:53:35.418
+need I need a really quick way to like take a screenshot of a QR code and have
+
+00:53:35.418 --> 00:53:39.658
+it read it so that I can then copy the link the short link I always need this
+
+00:53:39.658 --> 00:53:44.697
+does this exist in some way that like I don't know about it must there must be
+
+00:53:44.697 --> 00:53:50.857
+something like it's gotta like I use um what do I already use I use snag it for
+
+00:53:50.857 --> 00:53:54.778
+like everything hmm I wonder if snag it has a way to do this that I'm not
+
+00:53:54.778 --> 00:53:58.817
+already paying for but yeah I want it snag it are you listening text me are
+
+00:53:58.817 --> 00:54:02.778
+you listening okay I think I say this like to Isabella if you want to share
+
+00:54:02.778 --> 00:54:09.898
+it oh yeah I mean yes I have my phone and I could pull it up so yeah yeah
+
+00:54:09.898 --> 00:54:13.418
+that's sort of like dance that I do between like oh let me scan this with my
+
+00:54:13.418 --> 00:54:15.937
+phone and then I'll like slack it to myself and then I'll put it in discord
+
+00:54:15.937 --> 00:54:22.977
+or something yeah okay yeah thank you so much this was so cool I know that this
+
+00:54:22.977 --> 00:54:30.178
+is such a huge show-and-tell this is why when Isabella and I saw this like Lucas
+
+00:54:30.178 --> 00:54:34.597
+showed us this in like 30 minutes right and we were like oh my gosh this is so
+
+00:54:34.597 --> 00:54:38.618
+cool this is like the coolest thing that I've seen somebody do with shiny and
+
+00:54:38.618 --> 00:54:42.217
+have it actually be like a deployable thing that people at work can use and
+
+00:54:42.217 --> 00:54:48.298
+not not just a like a cool fun side project and so I really really really
+
+00:54:48.298 --> 00:54:52.817
+am so glad that Suffolk has been willing to be open and talk about it and you're
+
+00:54:52.817 --> 00:54:55.898
+allowed to talk about it and you're allowed to share some version of code
+
+00:54:55.898 --> 00:54:59.697
+with us I feel like that never happens so thank you so much Lucas and thank you
+
+00:54:59.697 --> 00:55:05.057
+to Suffolk for being willing to do this if there are lingering questions for you
+
+00:55:05.057 --> 00:55:08.498
+is it okay if somebody puts them into the data science hangout or they say
+
+00:55:08.498 --> 00:55:13.057
+channel and discord yes first of all this has been so much fun like it this
+
+00:55:13.057 --> 00:55:16.618
+is just I'm such a big nerd so being able to talk to like-minded people not
+
+00:55:16.618 --> 00:55:22.097
+to call you guys nerds is so much fun so thank you for having me and yeah reach
+
+00:55:22.097 --> 00:55:25.298
+out to me in any way I'm in the discord reach out to me on LinkedIn whatever
+
+00:55:25.298 --> 00:55:30.258
+whatever you need I'd love to be a resource for any and all of you as you
+
+00:55:30.258 --> 00:55:35.398
+need so thank you I hope I don't know if you can see all of the clapping and the
+
+00:55:35.398 --> 00:55:40.918
+like the like oh my gosh amazing and like mind-blown faces and emojis that
+
+00:55:40.918 --> 00:55:46.077
+thank you so much in in zoom this has been so much fun if you are curious
+
+00:55:46.077 --> 00:55:50.998
+about any other stuff happening at Suffolk there are like several comp talks
+
+00:55:50.998 --> 00:55:56.477
+that Blake has done he also joined us on the hangout ask Isabella and I we can we
+
+00:55:56.477 --> 00:56:00.837
+can help you find links to stuff for past things but that's it we've reached
+
+00:56:00.837 --> 00:56:03.918
+the top of our hour we've got to go so we'll see you on discord we'll see you
+
+00:56:03.918 --> 00:56:08.638
+Thursday at the hangout if anybody wants to come p.o.s. it slash DSH if you
+
+00:56:08.638 --> 00:56:12.437
+want to join for that and Lucas we'll see you on the discord
+
+00:56:12.437 --> 00:56:17.798
+hey everybody thank you bye everybody

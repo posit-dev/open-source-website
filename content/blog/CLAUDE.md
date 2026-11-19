@@ -38,6 +38,10 @@ Use the fixed set defined in `data/topics.yaml` — these power the blog filter 
 
 Which projects the post is about (not a category substitute). Use the folder name from `content/software/`, e.g. `ggplot2`, `quarto`, `great-tables`. Links to `/software/<name>/`.
 
+### `other_software` (optional)
+
+Software the post is about that has no page in `content/software/` (e.g. `Polars`, `knitr`, `Apache Arrow`). Use the display name. These aren't a taxonomy, so Hugo doesn't create pages for them; they render as greyed-out, non-clickable pills before the linked `software` pills. Don't use this for software that does have a page; use `software` instead.
+
 ### `languages` (required)
 
 R, Python, etc. Links to `/languages/<name>/`.

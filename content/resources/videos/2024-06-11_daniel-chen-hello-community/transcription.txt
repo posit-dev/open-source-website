@@ -4,7 +4,7 @@
 
 <p><a data-t="44">So Dan recently had to relocate to Canada for a job.</a> <a data-t="47">So he's really enjoying Canadian culture.</a> <a data-t="49">You've gone curling and enjoying hockey and all that good stuff, right?</a> <a data-t="52">Yeah, the Canucks are in the playoffs.</a> <a data-t="55">There you go.</a></p>
 
-<p><a data-t="56">Alright, so Dan is going to do a quick little short presentation in order to keep his streak</a> <a data-t="61">alive.</a> <a data-t="63">Alright, yes.</a> <a data-t="64">So welcome everyone.</a> <a data-t="64">Sorry I can't be there in person, but this is just a quick little talk about the community</a> <a data-t="73">and my way to thank the community for the last 10 years.</a></p>
+<p><a data-t="56">Alright, so Dan is going to do a quick little short presentation in order to keep his streak</a> <a data-t="61">alive.</a> <a data-t="62">Alright, yes.</a> <a data-t="63">So welcome everyone.</a> <a data-t="64">Sorry I can't be there in person, but this is just a quick little talk about the community</a> <a data-t="73">and my way to thank the community for the last 10 years.</a></p>
 
 <p><a data-t="78">So for those who don't know me, I'm Daniel, I'm currently a postdoctoral teaching research</a> <a data-t="83">and teaching fellow at BC in Vancouver, Canada.</a> <a data-t="86">So that's why I'm in Canada right now.</a> <a data-t="89">I'm also a data science educator at Posit and working mostly as like on their developer</a> <a data-t="95">advocacy team.</a> <a data-t="97">And I also authored a book called Pandas for Everyone.</a> <a data-t="100">So I've been doing a lot of our stuff, but still do some Python stuff.</a></p>
 

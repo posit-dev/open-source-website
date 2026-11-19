@@ -1,0 +1,5 @@
+[lfs]
+	# Don't download cheat sheet source files (Keynote, PowerPoint, Illustrator)
+	# on clone or pull; the site build doesn't need them. To get them, run e.g.
+	#   git lfs pull --include="content/resources/cheatsheets/tidyr/*" --exclude=""
+	fetchexclude = content/resources/cheatsheets/**

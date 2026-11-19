@@ -16,7 +16,8 @@ description: 'In Part 1 of our conversation with James Blair, we trace his delig
 
   • Fighting confirmation bias: good analysis resists the answer you want'
 image: thumbnail.jpg
-people: []
+people:
+- James Blair
 resource_type: video
 resources: []
 software:
@@ -46,9 +47,11 @@ external:  # updated automatically, do not edit
     • Fighting confirmation bias: good analysis resists the answer you want'
   duration: 1858
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:07.658641+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 12
+  people:
+  - James Blair
   playlist: ''
   software:
   - shiny-r

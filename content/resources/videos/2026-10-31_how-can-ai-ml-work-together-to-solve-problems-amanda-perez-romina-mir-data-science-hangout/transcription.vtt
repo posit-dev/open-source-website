@@ -1,0 +1,1243 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.600
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Heron, and this is a recording
+
+00:00:16.600 --> 00:00:21.959
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:21.959 --> 00:00:27.200
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.200 --> 00:00:30.639
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.639 --> 00:00:35.520
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.520 --> 00:00:40.240
+We can't wait to see you there. Let's go ahead and get started. I'm so excited to introduce
+
+00:00:40.240 --> 00:00:47.959
+our featured leaders today, Amanda Perez and Romina Mir. Romina is an applied ML scientist
+
+00:00:47.959 --> 00:00:53.560
+and AI architect, and Amanda is a data scientist, and they both work at Central California Alliance
+
+00:00:53.560 --> 00:00:57.680
+for Health. And if I got any of those very long titles and words wrong, they will correct
+
+00:00:57.680 --> 00:01:03.520
+me. Amanda and Romina, it's so nice to have you here. Since we have two of you, I will
+
+00:01:03.520 --> 00:01:07.440
+start with Amanda. Amanda, I would love it if you could introduce yourself. Tell us a
+
+00:01:07.440 --> 00:01:11.120
+little bit about your role and something that you like to do for fun.
+
+00:01:11.120 --> 00:01:19.839
+Oh, okay. Fantastic. So a little bit about what I do for fun. Well, I've been writing
+
+00:01:19.919 --> 00:01:28.320
+and working with R since 2012, I believe. So as soon as I was able to, as soon as I
+
+00:01:28.320 --> 00:01:35.279
+took that first stats class that required it. So huge fan, always love data. So I would
+
+00:01:35.279 --> 00:01:40.239
+say that currently in what I do as a data scientist at the Alliance, which is what we
+
+00:01:40.239 --> 00:01:47.360
+call it for short, is my day-to-day is in this Posit ecosystem. So I develop in Posit
+
+00:01:47.360 --> 00:01:55.919
+Workbench, and I ship production, shiny apps, and ML pipelines, automated ETL through Posit
+
+00:01:55.919 --> 00:02:02.480
+Connect. And every, on my whole stack, it's just open source R. Tidyverse is a big part
+
+00:02:02.480 --> 00:02:09.759
+of it. And, you know, connecting with Snowflake underneath, which is our data warehouse. So
+
+00:02:09.759 --> 00:02:17.679
+that's kind of the day-to-day. Also a lot of workflow optimization, which is where that
+
+00:02:17.679 --> 00:02:23.440
+kind of ETL process that you can really do everything end-to-end in R. You can build
+
+00:02:23.440 --> 00:02:30.199
+an application where folks can go in and do all the work that they need to do in one place,
+
+00:02:30.199 --> 00:02:37.479
+as opposed to, as Romina knows, opening 20 different programs and tabs and scrolling
+
+00:02:37.479 --> 00:02:41.399
+and trying to figure things out for, you know, for one case that they need to work
+
+00:02:41.399 --> 00:02:48.919
+on in a day, you know, so going from a one-hour task to a five-minute task. So that's day-to-day,
+
+00:02:48.919 --> 00:02:58.119
+what I'm doing here at the Alliance. And what I like to do for fun, I mean, it's in my
+
+00:02:58.119 --> 00:03:04.039
+background, it's in my outfit. Dodger games is an extensive hobby of mine. So it's also
+
+00:03:04.039 --> 00:03:09.720
+family time. I go with my sister-in-law and my niece, and I've been to double-digit games
+
+00:03:09.720 --> 00:03:17.320
+this regular season. So I'll call that my fun hobby. And I'm based in LA, Los Angeles.
+
+00:03:17.320 --> 00:03:25.800
+So I was just gonna say a little more context. Well, you know, it'll take us an hour with
+
+00:03:25.800 --> 00:03:31.240
+traffic to get there, but only a half hour to get back. So it's the story of living in
+
+00:03:31.240 --> 00:03:38.039
+a big city. It's the story. So that's what I'll do for fun. I'll have that be my fun fact.
+
+00:03:38.839 --> 00:03:45.240
+Amazing. Your background is so much fun. Okay. Romina, I would love to hear the same from you,
+
+00:03:45.240 --> 00:03:48.919
+a little bit of background about what you do. Hopefully I got your title right and something
+
+00:03:48.919 --> 00:03:55.880
+you like to do for fun. Yes, sure. So I would say like, actually me and Amanda work very closely
+
+00:03:55.880 --> 00:04:02.039
+together. And we usually focus on internal tooling. So that's the, you know, how we can
+
+00:04:02.919 --> 00:04:08.199
+automate and optimize the, you know, the workflows within the company itself,
+
+00:04:09.080 --> 00:04:15.720
+coming from the company that is less techie for people who are coming from very techie world,
+
+00:04:15.720 --> 00:04:21.399
+I would call us less techie. And for that reason, we are there to, you know, transform the whole
+
+00:04:21.399 --> 00:04:26.679
+workflow for many different groups and different projects and who work on many things.
+
+00:04:28.200 --> 00:04:37.079
+My work is obviously creating some dashboards, but I think the, I think the lead there is Amanda.
+
+00:04:37.079 --> 00:04:41.799
+Amanda is like great at creating dashboards. Of course, I do as well based on the projects,
+
+00:04:41.799 --> 00:04:48.679
+but my work is mostly focusing on backend, which is mostly machine learning. So I do
+
+00:04:49.640 --> 00:04:57.079
+from supervised machine learnings to all the way to, you know, implementing LLMs, rack systems.
+
+00:04:58.760 --> 00:05:03.880
+And I can obviously talk about more about some of the projects that how that has happened,
+
+00:05:03.880 --> 00:05:09.239
+or how we are using some, you know, external tooling, some open sources to be able to achieve
+
+00:05:09.239 --> 00:05:16.040
+that. But yeah, I think my work is like mostly revolves around some sorts of machine learning.
+
+00:05:16.040 --> 00:05:23.160
+Again, it can be classical machine learning or not. But again, the way it goes out to the
+
+00:05:24.200 --> 00:05:29.399
+staff is usually through the dashboards, but in many of the bigger projects, because we have
+
+00:05:29.399 --> 00:05:37.880
+Amanda who's like perfect at it. I usually like I will hand off my, you know, my models and my,
+
+00:05:37.880 --> 00:05:42.679
+you know, outputs to Amanda to be able to create something. But if not, I'm also doing that on my
+
+00:05:43.320 --> 00:05:50.440
+own. That's how I'm going to talk about my day to day. Fun fact. Oh, my God, I don't know
+
+00:05:50.440 --> 00:05:59.160
+everything. I think. So my background is a little bit. My let's say my academia background
+
+00:05:59.160 --> 00:06:04.279
+is a little bit different, which is in robotics. And I'm still have some niche of, you know,
+
+00:06:05.000 --> 00:06:12.359
+you know, being still involved in that world. But again, true, true working. My, you know,
+
+00:06:12.359 --> 00:06:17.079
+my working history is always been like health tech companies or health care companies.
+
+00:06:18.040 --> 00:06:23.079
+But yeah, I guess I can talk about a little bit of that. I do. I like robotics. That's what I do
+
+00:06:23.079 --> 00:06:30.440
+or like on my fun time. If not, I'm baking. Both of these things. Oh, that totally counts.
+
+00:06:30.440 --> 00:06:34.839
+And Romina is an AI genius. I feel like you undersold yourself there. You are,
+
+00:06:34.839 --> 00:06:41.959
+I consider you an AI genius. I'm so fascinated. And I mean, the things that you do. Amazing.
+
+00:06:41.959 --> 00:06:47.239
+Amazing. Thank you. Yeah. Like, again, we really work closely on many of the projects.
+
+00:06:48.200 --> 00:06:55.320
+The projects are what I'm excited to talk about. Well, the way that I learned about Amanda and
+
+00:06:55.320 --> 00:07:00.119
+Romina and that Rachel learned about Amanda and Romina is because Amanda applied for
+
+00:07:00.359 --> 00:07:07.239
+deposit impact awards. And she actually applied twice. So I got to read two of their projects,
+
+00:07:07.239 --> 00:07:11.559
+which are both really, really impactful. It's kind of hard to choose between two really impactful
+
+00:07:11.559 --> 00:07:16.359
+things. But I would love it if you could give us a little bit of a rundown Amanda,
+
+00:07:16.359 --> 00:07:23.079
+and I put a link in the chat as well. So everybody can read about them, about your project
+
+00:07:23.079 --> 00:07:29.720
+in sort of a recap mode. But you have the unique experience of building something that was
+
+00:07:31.640 --> 00:07:35.640
+really going to move the needle. I think a lot of data scientists have the experience of like,
+
+00:07:35.640 --> 00:07:40.119
+oh, I build a lot of things and then nobody uses them or they don't go anywhere. Right?
+
+00:07:40.679 --> 00:07:43.880
+And this is super common. If this is you and you were building something and you're like,
+
+00:07:43.880 --> 00:07:48.040
+it didn't make this like huge splash that I thought that it would. That's pretty normal.
+
+00:07:48.839 --> 00:07:53.399
+So when we get the rare instance of like, I built something and it actually really,
+
+00:07:53.399 --> 00:07:58.600
+really made a difference. Being able to talk about it and share about it is so great. And also I
+
+00:07:58.600 --> 00:08:04.279
+applaud you for even applying because I hold back. I don't talk about the cool stuff I do all the
+
+00:08:04.279 --> 00:08:09.320
+time. And it's kind of hard career wise for me to do that. Probably hard for other people too.
+
+00:08:09.320 --> 00:08:15.799
+So kudos for that. I would love to hear about the project in a little recap mode and ask you a few
+
+00:08:15.799 --> 00:08:20.040
+questions about that and then we'll hop into Slido. Yeah. But I'll first, I love to touch on
+
+00:08:20.040 --> 00:08:24.920
+your point on building products that folks don't use. So one thing that we love about Posit and
+
+00:08:24.920 --> 00:08:32.039
+Posit Connect is we can track users and usage and on the application. So if there is an application
+
+00:08:32.039 --> 00:08:37.640
+that folks are not using, then we're like, hey, they don't like to really tell you that they don't
+
+00:08:37.640 --> 00:08:42.679
+like it. But we're like, hey, it doesn't hurt our feelings. Why don't you just talk to us and we
+
+00:08:42.679 --> 00:08:49.159
+can make it better for you? So that's why I really love Posit. So Romina, I can just do like
+
+00:08:49.159 --> 00:08:55.239
+the quick first, the first part and then let you talk about your part and split it like that.
+
+00:08:55.880 --> 00:08:59.239
+Okay. So we- Obviously I can talk more of the back end of it.
+
+00:08:59.239 --> 00:09:08.679
+Exactly. It's perfect. Exactly. So Romina and I won the Posit Impact Award for provider dispute
+
+00:09:08.679 --> 00:09:14.200
+resolution claims platform we built, which doesn't sound very exciting, but to us it is.
+
+00:09:14.200 --> 00:09:20.760
+Essentially whenever a provider submits a claim, their claim is denied. They don't agree with that
+
+00:09:20.760 --> 00:09:28.599
+claim being denied. Then it goes to provider disputes and our folks at our company have to
+
+00:09:28.599 --> 00:09:35.320
+work through those disputes. And they were at a huge backlog, Romina, of I believe 7,000 disputes
+
+00:09:35.320 --> 00:09:41.000
+and there are regulations. They're getting fined every day. They wanted to hire 12 full-time
+
+00:09:41.000 --> 00:09:47.799
+employees. And our boss said, you know what? Let Romina and Amanda take a stab at this. And that's
+
+00:09:47.799 --> 00:09:58.200
+how this project was born. So my part was everything. Romina is going to cover that ML
+
+00:09:58.200 --> 00:10:02.919
+side of it. And then I'm going to cover kind of everything kind of around it that wraps in,
+
+00:10:02.919 --> 00:10:11.080
+makes it look really nice in that dashboard. So the automated data infrastructure that I
+
+00:10:11.080 --> 00:10:19.479
+built for this dashboard, what it did was it consolidated all of the different things that
+
+00:10:19.479 --> 00:10:26.760
+they were doing. I mean, 20 tabs may be an exaggeration, but I know for a fact there
+
+00:10:26.760 --> 00:10:33.479
+are at least six different sources and even on one single source having to click around to so
+
+00:10:33.479 --> 00:10:40.760
+many different places. So I consolidated the cases, the claims, the vendors, the documents,
+
+00:10:40.760 --> 00:10:47.239
+which Romina had a big part in helping with, the notes, work queues. So all of these different
+
+00:10:47.239 --> 00:10:52.760
+systems that they were working into one unified, we like to call it a one-stop shop, that is
+
+00:10:52.760 --> 00:11:00.760
+refreshed daily before the staff log in. And it turned to production Shiny apps on Posit. So we
+
+00:11:00.760 --> 00:11:08.840
+have a manager dashboard where leadership is able to look at real-time KPIs, SLA, and aging monitor,
+
+00:11:08.840 --> 00:11:16.200
+making sure that they're on track and the backlog is not there anymore, which it's not. They caught
+
+00:11:16.359 --> 00:11:23.159
+up on all 7,000. And then also batch assignment, which is something that Romina worked on.
+
+00:11:24.200 --> 00:11:30.760
+And then this claims viewer dashboard, which is where the workers will, the claim techs will log
+
+00:11:30.760 --> 00:11:37.239
+in. It will recognize their Posit username based on their Posit username. It will show them their
+
+00:11:37.239 --> 00:11:42.679
+cases that they have been assigned. And they've got one place, they click their case, all of the
+
+00:11:42.679 --> 00:11:50.840
+information that they need is on one screen. And it replaced an hour and five minute, I think,
+
+00:11:50.840 --> 00:11:59.479
+was the estimate manual hunt across systems with one single pre-assembled view. And then I would
+
+00:11:59.479 --> 00:12:03.960
+like to hand it off to Romina to talk about all the exciting stuff under the hood, which makes
+
+00:12:03.960 --> 00:12:11.000
+it so powerful for them. Yeah, as Amanda said, before this tool, each case was taking more than
+
+00:12:11.000 --> 00:12:19.320
+an hour. And I think the stakeholders came to us originally, obviously to our manager and like,
+
+00:12:19.320 --> 00:12:25.880
+how can we deal with this? Obviously, I think all of us as somewhat, you know, as data scientists or,
+
+00:12:25.880 --> 00:12:31.479
+you know, with the data scientist background, we know that like, usually people who are not in
+
+00:12:32.280 --> 00:12:37.159
+this world, they don't know what they don't know. They didn't know how to handle this at all.
+
+00:12:37.159 --> 00:12:43.159
+And so we had to look into how we can like triage this workflow. So one of the main things I try to
+
+00:12:43.159 --> 00:12:51.159
+do, I try to see, first of all, is there is there a there there in the data can, because, for instance,
+
+00:12:51.159 --> 00:12:58.440
+like they taught, all of the cases are different. There is no way that we can predict a case, like
+
+00:12:58.440 --> 00:13:02.919
+we cannot predict an outcome by any means. And I was like, Okay, let's see what the data says. I
+
+00:13:02.919 --> 00:13:08.760
+know you have to look into like, I don't know, 20 data sources. But let's see if I only pick even
+
+00:13:08.760 --> 00:13:14.599
+the 15 that is like easiest for me to catch. Looking at these 15, you know, data points.
+
+00:13:15.559 --> 00:13:21.960
+Can I have something to showcase? And the answer was yes. We tried to actually look into the
+
+00:13:21.960 --> 00:13:27.000
+accuracy and precision. So not just accuracy, because it's really important, like, where the,
+
+00:13:27.000 --> 00:13:31.880
+you know, false positives are, again, we're dealing with claims, and we're talking about
+
+00:13:31.880 --> 00:13:37.479
+people's and, you know, we couldn't just like, close our, close our eyes on something, right.
+
+00:13:37.479 --> 00:13:43.719
+So one of the main things I did was be able to triage and be able to look into the triaging,
+
+00:13:43.719 --> 00:13:49.799
+the outcome, and looking to, okay, for the most outcome that we have, can be
+
+00:13:50.919 --> 00:13:56.359
+and like triaging it based on like, how probable it is to get there. And based on that, who can
+
+00:13:56.359 --> 00:14:01.640
+work on it. So that was the main, like one of the main things we tried to do. But I think it's
+
+00:14:01.640 --> 00:14:08.119
+important to mention that, like, usually, as data scientists, I think we need to be able to
+
+00:14:08.919 --> 00:14:13.559
+come up with different ways. So when we did that, we thought it's done, like we thought, okay,
+
+00:14:13.559 --> 00:14:19.640
+we are already giving you the probable answers, like final outcome of each of these cases,
+
+00:14:19.640 --> 00:14:24.359
+it should be enough for you to be able to, you know, go and ask for the staff to go and find
+
+00:14:24.359 --> 00:14:28.679
+their way and do your work. Apparently, that was not the case. So we had to see, okay, okay,
+
+00:14:28.679 --> 00:14:34.840
+how can we again, we brought the question back in, we said, okay, while we while we added one layer
+
+00:14:34.840 --> 00:14:42.359
+that was helpful for maybe the leadership, and perhaps the staff, the staff is not using it as
+
+00:14:42.359 --> 00:14:48.679
+it should be, as it could be per se, even though we're giving them all the sharp values, all the
+
+00:14:48.679 --> 00:14:55.320
+information that they can leverage. So we brought the question in, we tried to look at it differently.
+
+00:14:56.119 --> 00:15:02.359
+One of the things we realized is that previously, the managers and the leadership, they didn't know
+
+00:15:02.359 --> 00:15:09.960
+whatsoever how one like, how many how many cases of staff is working on staffs were blind of how
+
+00:15:09.960 --> 00:15:17.880
+many cases it existed. And we said, Okay, that's probably an issue that at most what the managers
+
+00:15:17.880 --> 00:15:22.440
+were doing, they're using Excels, they're using like exporting all the information on a daily or
+
+00:15:22.440 --> 00:15:29.000
+weekly basis, assigning people and everyone should like, go from Excel to another tab and from that
+
+00:15:29.000 --> 00:15:37.880
+tab to another 20 tabs. And we said, Okay, that's definitely not helpful. So I tried to bring in and
+
+00:15:37.880 --> 00:15:43.080
+based on the skill set. So I look at the skill taxonomy of the staff, obviously, with the help of
+
+00:15:43.080 --> 00:15:51.799
+the, you know, stakeholders. I tried to look at the skill sets, so skill taxonomy, and basically
+
+00:15:51.799 --> 00:15:59.640
+assign auto assign cases to people. Obviously, managers at this point can can say, Okay, maybe
+
+00:15:59.640 --> 00:16:03.799
+this week, I want, I don't want these people to work on these cases, or I don't want to, I want to
+
+00:16:03.799 --> 00:16:10.359
+delegate cases differently. And they can still as well. But now true managers dashboard, which is
+
+00:16:10.359 --> 00:16:16.119
+again, one of the main things I'm under worked on with the auto assignments, the manager knows who
+
+00:16:16.119 --> 00:16:22.039
+is getting how many cases, how long is taking them to work on something because in the past, it was
+
+00:16:22.039 --> 00:16:27.479
+again, it was just like a black box. No one knew, they had an estimate of like, okay, it's taking
+
+00:16:27.479 --> 00:16:33.159
+everyone more than an hour, I think an hour and five minutes to be able to close the case. And then
+
+00:16:33.159 --> 00:16:39.479
+now they know who is faster, who's who's not closing enough cases. And so they can have a look
+
+00:16:39.479 --> 00:16:46.599
+a closer look at their own stuff as well. So I think that was the second machine learning piece
+
+00:16:46.599 --> 00:16:55.320
+I worked on. And a smaller piece was the PDFs to be able to integrate bring all the PDFs in all the
+
+00:16:55.320 --> 00:17:00.119
+documents, let me not call them PDFs, like all the documents seen, because some of them are Excel,
+
+00:17:00.119 --> 00:17:02.760
+some of them are as PNG, some of them are PDFs. And
+
+00:17:06.280 --> 00:17:11.880
+some of them were dot tips. That was your biggest issue that you had to take the dot tips,
+
+00:17:12.439 --> 00:17:18.040
+yeah, hurt them and then have them read it. So I mean, that was yes. So that was again,
+
+00:17:18.040 --> 00:17:25.959
+that was another thing we added, because yeah, so I guess that's the full story,
+
+00:17:25.959 --> 00:17:31.719
+like from end to end where we started. But again, it was an iteration, it was an iteration
+
+00:17:31.719 --> 00:17:39.400
+of couple layers and adding more and more to it to be able to call it a final product. That resulted
+
+00:17:39.400 --> 00:17:47.640
+in now talking almost zero past dues and whoever works with claims, they know like, how difficult
+
+00:17:47.640 --> 00:17:52.199
+it is to deal with the claims. And imagine when you have like past due claims, you're now being
+
+00:17:52.199 --> 00:17:56.040
+charged, and so on, so forth. So we kind of like mitigated that.
+
+00:17:56.760 --> 00:18:02.839
+And I know that you had, you probably had an SLA of like 30 days, right? Where you were like,
+
+00:18:02.839 --> 00:18:06.520
+we need to get these done in a certain amount of time. And yeah, yeah, backlog,
+
+00:18:06.520 --> 00:18:09.719
+depending on contracted or non contracted 30 or 45 days.
+
+00:18:09.719 --> 00:18:15.319
+Continually missing SLA, which makes leadership really, really nervous. I think that the,
+
+00:18:16.280 --> 00:18:22.439
+the thing that I loved was that you didn't have to hire those 12 or 13 extra people, right? Like
+
+00:18:22.439 --> 00:18:26.920
+you were looking at, okay, we're going to need to double our team size, but you don't need to now.
+
+00:18:26.920 --> 00:18:33.079
+So now you have 12 people who can do the work of 45 people when that sort of workload exploded.
+
+00:18:33.959 --> 00:18:38.119
+Do you think that the workload exploded because of AI on the other end? Like AI made it easier
+
+00:18:38.119 --> 00:18:42.680
+for people to submit the disputes. And then that's what caused the number of disputes to
+
+00:18:42.680 --> 00:18:50.280
+get bigger on your end? I don't think so, because the provider portal is also not a great system.
+
+00:18:50.280 --> 00:18:57.479
+It's a little antiquated. We've not gotten to touch that or help with that yet. So I think
+
+00:18:57.479 --> 00:19:05.000
+it really was the fact that they were spending over an hour on a single case and they're getting
+
+00:19:05.000 --> 00:19:07.959
+hundreds of cases a month. And they just stack up.
+
+00:19:07.959 --> 00:19:12.520
+And then with Romina's auto assignment, the other issue is that certain claim
+
+00:19:12.520 --> 00:19:18.599
+checks can only work certain types of cases. So if there's like a DME, a durable medical equipment,
+
+00:19:18.599 --> 00:19:24.920
+you have to be trained in how to work on that kind of dispute. So I feel like it was really
+
+00:19:24.920 --> 00:19:33.000
+just like an oversight, like a managerial aspect of, they were just doing the best with what they
+
+00:19:33.000 --> 00:19:37.560
+had and they were drowning. And they just thought adding more people would solve the problem,
+
+00:19:38.199 --> 00:19:44.680
+which is why you need a better tool. You have to kind of think beyond what they think that they
+
+00:19:44.680 --> 00:19:50.119
+need. And I think Romina touched upon that, because sometimes they don't know the possibilities.
+
+00:19:50.119 --> 00:19:56.199
+They can't see the vision. And now, especially this manager view that we have, our COO is on that
+
+00:19:56.280 --> 00:20:00.920
+like every single day, just being able to have the ability.
+
+00:20:01.560 --> 00:20:06.839
+Yeah, it was a huge problem for the company to the point that like everyone was coming in
+
+00:20:06.839 --> 00:20:13.239
+to see how they can stop the bleeding, basically. And well, at some point again,
+
+00:20:14.359 --> 00:20:18.760
+because we brought, we've been brought in, we said, wait, wait, wait, I understand you want
+
+00:20:18.760 --> 00:20:23.719
+to hire more people, but let's see what we can do in the interim. And like we tried to,
+
+00:20:24.520 --> 00:20:30.119
+and I think one of the, at least internally, I can talk about our team. I don't know
+
+00:20:31.800 --> 00:20:38.280
+other teams' workflow, but like we have like a very quick turnaround. We believe in iterations.
+
+00:20:38.280 --> 00:20:44.199
+We don't want to look into the, like giving a perfect answer to the stakeholder. We're going
+
+00:20:44.199 --> 00:20:50.520
+to do iteration. So we built something very quick, something workable, reliable for sure,
+
+00:20:50.520 --> 00:20:56.040
+but like workable, very quick, even on a draft version, we send it over, we get feedback,
+
+00:20:56.040 --> 00:21:01.239
+people are working on it. And while stakeholders are giving us some feedback, we're going to go
+
+00:21:01.239 --> 00:21:05.719
+and go to the second iteration and the third iteration. And that's how the first machine
+
+00:21:05.719 --> 00:21:09.719
+learning was implemented. And the second machine learning was implemented. So it was like a very
+
+00:21:09.719 --> 00:21:17.319
+hand in hand and very close work to be able to achieve what we achieved. But I think one of the
+
+00:21:17.319 --> 00:21:22.599
+good things is we didn't want it to have the perfect answer in the very beginning because we
+
+00:21:22.599 --> 00:21:27.319
+didn't know what the perfect answer is even, because again, I taught triaging with the, you
+
+00:21:27.319 --> 00:21:34.680
+know, probability of the outcomes. That would be the answer, but probably that wasn't the bottleneck
+
+00:21:34.680 --> 00:21:39.880
+necessarily. Maybe the bottleneck was like having some visibility of how staffs are dealing with
+
+00:21:39.880 --> 00:21:45.880
+each case perhaps. So again, some of the things we don't know, probably stakeholders might not know
+
+00:21:45.880 --> 00:21:50.520
+either, sadly. So we have to like work together and learn this together. Yeah.
+
+00:21:50.520 --> 00:21:55.160
+It's a conversation, communication. All right. Well, we have so many questions in Slido.
+
+00:21:55.160 --> 00:21:59.959
+If we do not start asking them, we will never get through any of them. Let's do it.
+
+00:21:59.959 --> 00:22:02.839
+Yeah. Romina, I get so excited talking about this.
+
+00:22:02.839 --> 00:22:07.319
+No, it's been wonderful. And we have a question. In fact, the one that has bubbled to the top,
+
+00:22:07.319 --> 00:22:12.680
+because reminder, everybody, you can upload questions, is right in line with what Romina
+
+00:22:12.680 --> 00:22:16.359
+was talking about a little bit, because the question says, in your experience,
+
+00:22:16.359 --> 00:22:21.880
+what are the key indicators that a problem is a good candidate for machine learning rather than
+
+00:22:21.880 --> 00:22:27.400
+a simpler statistical approach? And that sort of iterative process is probably part of that.
+
+00:22:28.280 --> 00:22:31.079
+Who wants to take this one? Is this a Romina question?
+
+00:22:31.079 --> 00:22:36.680
+I can take that one. I think it's about what's the question we are answering. So here we did
+
+00:22:36.680 --> 00:22:44.359
+wanted to have a more predictive workflow instead of just like, because statistically,
+
+00:22:45.160 --> 00:22:51.160
+if we want to only use a statistical point of view, you're only looking at historic data.
+
+00:22:51.160 --> 00:22:58.760
+You're not looking at the future information. And I think what at least we wanted to influence,
+
+00:22:58.760 --> 00:23:06.359
+it was like maybe some predictive analysis would be an answer. And I think that's the way we kind
+
+00:23:06.359 --> 00:23:12.680
+of took it on this case. Again, we touch base many, many, many, many things. And for instance,
+
+00:23:12.680 --> 00:23:18.680
+Amanda does a lot of ROIs and causal analysis and more of a stat side. But because we're now
+
+00:23:18.680 --> 00:23:24.199
+focusing on the impact award and the project we did, which is, again, one of the biggest ones
+
+00:23:24.199 --> 00:23:29.560
+throughout the company as well, this is the approach we took. I hope I answered the question.
+
+00:23:29.560 --> 00:23:35.160
+I'll be happy to answer any follow-ups. There are plenty more questions for that
+
+00:23:35.160 --> 00:23:41.719
+case. Do not worry. Hubert had a question. And if he could ask that live, that would be amazing.
+
+00:23:41.719 --> 00:23:49.400
+And I will stick it in the chat as well. We'll get Hubert unmuted in two seconds here.
+
+00:23:54.199 --> 00:23:58.199
+Oh, my computer is telling me I need to update. Hold on. I'm ignoring that.
+
+00:23:58.199 --> 00:24:02.280
+Sorry. That was my being slow there. There we go.
+
+00:24:03.239 --> 00:24:10.439
+There I am. Yeah. So this is really interesting. And I think my question is,
+
+00:24:10.439 --> 00:24:17.160
+what kind of data sources do you use? You talk about claims data, EHR data, other kind of data,
+
+00:24:17.160 --> 00:24:22.599
+you've got provider-based data, or some of those, I mean, you've already talked some of those PDFs
+
+00:24:22.599 --> 00:24:29.000
+and TIFFs and all the crazy data challenges, but what are those data challenges, some of those
+
+00:24:29.000 --> 00:24:34.839
+tough data challenges that you've had and how have you solved them? And is it data challenges
+
+00:24:34.839 --> 00:24:44.839
+in terms of availability or structure of data or both? Everything. That's a great question,
+
+00:24:44.839 --> 00:24:50.439
+because that's what I struggle with since the first day I started here. So when I first started,
+
+00:24:50.439 --> 00:24:56.040
+initially, I thought that the main data issue was going to be the fact that we primarily rely
+
+00:24:56.040 --> 00:25:02.359
+on claims data, which has about, it can have up to a three-month lag before we can say,
+
+00:25:02.920 --> 00:25:08.680
+okay, we've, it's been enough time. If a claim happened, it would have been in our system. Now
+
+00:25:08.680 --> 00:25:14.359
+they have that amount of time. So we always have to take into account a claims lag when we do our
+
+00:25:14.359 --> 00:25:20.680
+analyses. But then as I started getting into more ROIs, program evals, building things, it was
+
+00:25:20.760 --> 00:25:28.280
+actually the sources of data, the quality of the data, not knowing the lineage of the data,
+
+00:25:28.280 --> 00:25:34.040
+having to ask like 20 people, hey, did you make this table? How did you make this table? Where's
+
+00:25:34.040 --> 00:25:40.119
+the code? So I kind of had to do my detective work to get to the top to find what are our sources of
+
+00:25:40.119 --> 00:25:47.000
+truth. And I feel like that's a big struggle because there are, we do have a lot of different
+
+00:25:47.000 --> 00:25:58.599
+vendors. So for example, for, for the, this project and Metatrack, which is a vendor,
+
+00:25:58.599 --> 00:26:04.359
+but in a way that's good because then we get source of truth, reliable data from them every
+
+00:26:04.359 --> 00:26:10.280
+night. So we can pull directly from those tables. On other projects that we're working on, they use
+
+00:26:10.280 --> 00:26:17.319
+a vendor Jiva for their UI and management. So then we're able to pull directly that Jiva data.
+
+00:26:18.439 --> 00:26:28.839
+The, the, the tricky part is the data storage, the data, you know, there's no oversight on folks
+
+00:26:28.839 --> 00:26:35.319
+making tables. So it can be a little bit tricky, but my solution where now I feel good about it,
+
+00:26:35.319 --> 00:26:40.680
+and I don't have a heart attack is that I'm making sure that when I'm pulling in data,
+
+00:26:40.680 --> 00:26:45.959
+I'm like, I'm from, I know where that data came from. I know that it's a direct ingestion from
+
+00:26:45.959 --> 00:26:52.920
+a vendor. I know that it's coming directly from a state file. And finding the locations also can
+
+00:26:52.920 --> 00:26:59.560
+be difficult. Romina can also speak to that. I mean, with the PDF files or the TIFF files,
+
+00:26:59.560 --> 00:27:06.040
+they are stored in some insane locations. So it really is, I think, from an organizational
+
+00:27:06.040 --> 00:27:18.359
+structure, the data governance, maybe we want to call it, it's just not where I would love it to
+
+00:27:18.359 --> 00:27:24.199
+be. I mean, I come from academia where, you know, data and gathering data and storing data was a
+
+00:27:24.199 --> 00:27:32.199
+lot simpler. So it was a huge, it was a huge challenge. So for me, I just have to always ask
+
+00:27:32.199 --> 00:27:38.599
+myself, what is this, where did this table come from? Is this the original ingestion? Because I
+
+00:27:38.599 --> 00:27:43.719
+don't want a table that somebody else has, has messed with, which has, has been the biggest
+
+00:27:43.719 --> 00:27:50.280
+headache. Amazing question, Hubert, thank you for taking us in a good direction. Lots of conversation
+
+00:27:50.280 --> 00:27:56.839
+in the chat about, in data quality or whether or not third-party data is reliable at all.
+
+00:27:56.839 --> 00:28:04.280
+And I want to make sure as well that we define TIFF out loud. I define it in the chat, but a
+
+00:28:04.280 --> 00:28:10.839
+.TIFF file is just an image file, which is a difficult thing to parse. Yeah. When it's full
+
+00:28:10.839 --> 00:28:17.239
+of information, PDFs are hard enough, but image files are notoriously, notoriously difficult when
+
+00:28:17.239 --> 00:28:25.000
+you have them as your sources of input. Okay. So we have some more questions here. There is one
+
+00:28:25.000 --> 00:28:31.640
+that I would love to ask both of you just to get a little bit of context about the way that we work
+
+00:28:31.640 --> 00:28:39.560
+here. Wait, I lost it because things moved around in Slido. Aha, it was Zach's question. I have put
+
+00:28:39.560 --> 00:28:42.760
+it to the top here and I will put it in the chat as well. It's got a little asterisk, so I'm going
+
+00:28:42.760 --> 00:28:49.400
+to read it for Zach. And Zach says, after automating a lot of processes, do you find
+
+00:28:49.400 --> 00:28:55.239
+yourself with not much work to do? And if so, what would you do in that kind of situation?
+
+00:28:55.880 --> 00:28:59.319
+I don't know if this is ever a problem for you. There's probably more and more stuff to fix,
+
+00:28:59.319 --> 00:29:04.599
+right? Like you said, there was like a portal that you hadn't even gotten your hands on yet, right?
+
+00:29:04.762 --> 00:29:06.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:29:34.762 --> 00:29:36.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:30:34.762 --> 00:30:36.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:31:04.762 --> 00:31:07.162
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:31:34.762 --> 00:31:36.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:32:04.762 --> 00:32:12.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:32:34.762 --> 00:32:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:33:04.762 --> 00:33:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:33:14.762 --> 00:33:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:33:24.762 --> 00:33:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:33:34.762 --> 00:33:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:33:44.762 --> 00:33:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:33:54.762 --> 00:34:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:34:04.762 --> 00:34:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:34:14.762 --> 00:34:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:34:24.762 --> 00:34:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:34:34.762 --> 00:34:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:34:44.762 --> 00:34:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:34:54.762 --> 00:35:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:35:04.762 --> 00:35:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:35:14.762 --> 00:35:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:35:24.762 --> 00:35:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:35:34.762 --> 00:35:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:35:44.762 --> 00:35:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:35:54.762 --> 00:36:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:36:04.762 --> 00:36:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:36:14.762 --> 00:36:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:36:24.762 --> 00:36:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:36:34.762 --> 00:36:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:36:44.762 --> 00:36:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:36:54.762 --> 00:37:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:37:04.762 --> 00:37:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:37:14.762 --> 00:37:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:37:24.762 --> 00:37:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:37:34.762 --> 00:37:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:37:44.762 --> 00:37:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:37:54.762 --> 00:38:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:38:04.762 --> 00:38:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:38:14.762 --> 00:38:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:38:24.762 --> 00:38:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:38:34.762 --> 00:38:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:38:44.762 --> 00:38:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:38:54.762 --> 00:39:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:39:04.762 --> 00:39:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:39:14.762 --> 00:39:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:39:24.762 --> 00:39:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:39:34.762 --> 00:39:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:39:44.762 --> 00:39:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:39:54.762 --> 00:40:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:40:04.762 --> 00:40:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:40:14.762 --> 00:40:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:40:24.762 --> 00:40:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:40:34.762 --> 00:40:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:40:44.762 --> 00:40:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:40:54.762 --> 00:41:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:41:04.762 --> 00:41:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:41:14.762 --> 00:41:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:41:24.762 --> 00:41:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:41:34.762 --> 00:41:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:41:44.762 --> 00:41:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:41:54.762 --> 00:42:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:42:04.762 --> 00:42:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:42:14.762 --> 00:42:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:42:24.762 --> 00:42:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:42:34.762 --> 00:42:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:42:44.762 --> 00:42:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:42:54.762 --> 00:43:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:43:04.762 --> 00:43:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:43:14.762 --> 00:43:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:43:24.762 --> 00:43:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:43:34.762 --> 00:43:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:43:44.762 --> 00:43:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:43:54.762 --> 00:44:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:44:04.762 --> 00:44:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:44:14.762 --> 00:44:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:44:24.762 --> 00:44:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:44:34.762 --> 00:44:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:44:44.762 --> 00:44:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:44:54.762 --> 00:45:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:45:04.762 --> 00:45:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:45:14.762 --> 00:45:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:45:24.762 --> 00:45:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:45:34.762 --> 00:45:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:45:44.762 --> 00:45:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:45:54.762 --> 00:46:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:46:04.762 --> 00:46:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:46:14.762 --> 00:46:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:46:24.762 --> 00:46:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:46:34.762 --> 00:46:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:46:44.762 --> 00:46:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:46:54.762 --> 00:47:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:47:04.762 --> 00:47:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:47:14.762 --> 00:47:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:47:24.762 --> 00:47:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:47:34.762 --> 00:47:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:47:44.762 --> 00:47:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:47:54.762 --> 00:48:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:48:04.762 --> 00:48:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:48:14.762 --> 00:48:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:48:24.762 --> 00:48:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:48:34.762 --> 00:48:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:48:44.762 --> 00:48:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:48:54.762 --> 00:49:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:49:04.762 --> 00:49:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:49:14.762 --> 00:49:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:49:24.762 --> 00:49:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:49:34.762 --> 00:49:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:49:44.762 --> 00:49:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:49:54.762 --> 00:50:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:50:04.762 --> 00:50:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:50:14.762 --> 00:50:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:50:24.762 --> 00:50:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:50:34.762 --> 00:50:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:50:44.762 --> 00:50:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:50:54.762 --> 00:51:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:51:04.762 --> 00:51:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:51:14.762 --> 00:51:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:51:24.762 --> 00:51:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:51:34.762 --> 00:51:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:51:44.762 --> 00:51:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:51:54.762 --> 00:52:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:52:04.762 --> 00:52:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:52:14.762 --> 00:52:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:52:24.762 --> 00:52:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:52:34.762 --> 00:52:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:52:44.762 --> 00:52:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:52:54.762 --> 00:53:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:53:04.762 --> 00:53:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:53:14.762 --> 00:53:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:53:24.762 --> 00:53:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:53:34.762 --> 00:53:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:53:44.762 --> 00:53:54.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:53:54.762 --> 00:54:04.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:54:04.762 --> 00:54:14.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:54:14.762 --> 00:54:24.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:54:24.762 --> 00:54:34.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r
+
+00:54:34.762 --> 00:54:44.762
+Amanda Perez & Romina Mir & Data Science Hangout, shiny-r

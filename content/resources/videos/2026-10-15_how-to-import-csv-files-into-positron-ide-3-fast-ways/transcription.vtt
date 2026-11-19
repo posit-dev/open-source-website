@@ -1,0 +1,152 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.400
+So today I wanted to talk about three ways that you can ingest a CSV into Positron.
+
+00:00:05.400 --> 00:00:09.060
+Some people call this importing, some people call this loading.
+
+00:00:09.060 --> 00:00:13.560
+In any case, it's bringing in a CSV into your environment so then you can actually
+
+00:00:13.560 --> 00:00:16.600
+work with the data and do some analysis.
+
+00:00:16.600 --> 00:00:18.360
+Here I have Positron open.
+
+00:00:18.360 --> 00:00:22.240
+I'm going to create a new folder through this welcome screen.
+
+00:00:22.240 --> 00:00:25.700
+I'll call it Ingest CSVs.
+
+00:00:25.700 --> 00:00:32.340
+I open up that folder and it's going to prompt me and ask if I want to create a Python environment.
+
+00:00:32.340 --> 00:00:36.980
+Positron does this using a tool called uv and I'm going to hit yes.
+
+00:00:36.980 --> 00:00:41.820
+In the file explorer, you notice that there is a new virtual environment that has been
+
+00:00:41.820 --> 00:00:43.080
+opened up.
+
+00:00:43.080 --> 00:00:46.099
+From here I can actually install some packages.
+
+00:00:46.099 --> 00:00:52.340
+I'm going to open up my terminal and I'm going to run the uv command uv pip install
+
+00:00:52.340 --> 00:00:53.340
+pandas.
+
+00:00:53.660 --> 00:00:59.380
+Pandas is a very common Python library for manipulating data.
+
+00:00:59.380 --> 00:01:03.860
+And I'm also going to run uv pip install polars.
+
+00:01:03.860 --> 00:01:09.500
+Polars is a relatively newer tool for data manipulation in Python.
+
+00:01:09.500 --> 00:01:15.739
+Here I have my CSV in my downloads folder and you can actually just drag and drop your
+
+00:01:15.739 --> 00:01:19.419
+CSV directly into your file explorer.
+
+00:01:19.419 --> 00:01:23.739
+Now it's popped up here, so that means it's available within the folder.
+
+00:01:23.739 --> 00:01:28.739
+Positron automatically shows me a preview of the data using the data explorer.
+
+00:01:28.739 --> 00:01:33.419
+So I can take a quick view of what's contained in the CSV.
+
+00:01:33.419 --> 00:01:37.620
+But if you look at the variables pane, you'll notice that it's not actually loaded into
+
+00:01:37.620 --> 00:01:39.139
+my session.
+
+00:01:39.139 --> 00:01:41.019
+This is just a preview.
+
+00:01:41.019 --> 00:01:46.019
+So if I actually want to load the CSV, here are the three ways that we could do that.
+
+00:01:46.019 --> 00:01:51.260
+So the first one is I'm going to hit command shift P to open up the command palette and
+
+00:01:51.260 --> 00:01:55.220
+I'm going to select Python, new Python file.
+
+00:01:55.220 --> 00:02:00.180
+And so of course the first way that we can import our data is writing a script.
+
+00:02:00.180 --> 00:02:04.699
+From here I can write import polars as PL.
+
+00:02:04.699 --> 00:02:11.220
+I run that line to import polars and then I could do something like dad equals PL dot
+
+00:02:11.220 --> 00:02:14.660
+read CSV, then the name of the file.
+
+00:02:14.660 --> 00:02:20.059
+And running that line, I can see that in my variables pane, the CSV is now loaded into
+
+00:02:20.059 --> 00:02:21.660
+my session.
+
+00:02:21.660 --> 00:02:26.960
+The second way I want to show you is through the import data button in Positron.
+
+00:02:26.960 --> 00:02:32.100
+If I click this button and select my CSV, it can actually provide the pandas or the
+
+00:02:32.100 --> 00:02:36.020
+R code for importing that data for reproducibility.
+
+00:02:36.059 --> 00:02:44.860
+But if I hit import, it also directly imports that CSV into my session.
+
+00:02:44.860 --> 00:02:49.460
+And the last way I want to show you that you can import data in Positron is you can use
+
+00:02:49.460 --> 00:02:50.699
+AI.
+
+00:02:50.699 --> 00:02:57.539
+So I'm going to open up Posit Assistant and then I can actually attach a file by clicking
+
+00:02:57.539 --> 00:03:01.660
+the file button and I'll select my CSV.
+
+00:03:01.660 --> 00:03:07.059
+And then I can tell Posit Assistant something like import this data set.
+
+00:03:07.059 --> 00:03:10.699
+Just to do something different, I'm going to say using R because in Positron we can
+
+00:03:10.699 --> 00:03:13.339
+switch between Python and R.
+
+00:03:13.339 --> 00:03:15.339
+And so it's going to go ahead and do that.
+
+00:03:15.339 --> 00:03:19.300
+I'll provide the R code for importing the CSV.
+
+00:03:19.300 --> 00:03:23.880
+And now instead of our Python environment, we're actually in an R environment and we
+
+00:03:23.880 --> 00:03:29.059
+have this data set, the CSV imported as a data frame.
+
+00:03:29.059 --> 00:03:32.699
+We hope that you try importing some data into Positron and let us know how it goes.
+

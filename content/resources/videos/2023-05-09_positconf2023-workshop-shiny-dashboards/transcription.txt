@@ -1,10 +1,10 @@
 <p><a data-t="0">Hello, my name is Colin Rendell, and I'm a professor at Duke University in the Department</a> <a data-t="9">of Statistical Science, and I've been teaching data science with R for a decade now.</a> <a data-t="13">And I've been teaching </a><a href="/software/shiny-r/">Shiny</a><a data-t="13"> specifically to our students since 2015.</a> <a data-t="18">This year at PositConf, I'm teaching a one-day workshop on developing and deploying Shiny</a> <a data-t="21">Dashboards.</a></p>
 
-<p><a data-t="25">Here are three reasons why you should consider taking this workshop.</a></p>
+<p><a data-t="22">Here are three reasons why you should consider taking this workshop.</a></p>
 
 <h3>Leveling up your Shiny skills</h3>
 
-<p><a data-t="28">The first reason is to level up your Shiny skills.</a> <a data-t="32">This is a workshop that is designed for our users who already have some basic experience</a> <a data-t="32">with Shiny and are looking to improve their existing skills.</a> <a data-t="34">We'll briefly review basic Shiny concepts around reactivity and app development, but</a> <a data-t="39">we'll quickly expand beyond that into topics like dynamic user interfaces, modularization,</a> <a data-t="45">and customization.</a></p>
+<p><a data-t="25">The first reason is to level up your Shiny skills.</a> <a data-t="28">This is a workshop that is designed for our users who already have some basic experience</a> <a data-t="32">with Shiny and are looking to improve their existing skills.</a> <a data-t="34">We'll briefly review basic Shiny concepts around reactivity and app development, but</a> <a data-t="39">we'll quickly expand beyond that into topics like dynamic user interfaces, modularization,</a> <a data-t="45">and customization.</a></p>
 
 <h3>Customizing and theming your apps</h3>
 
@@ -12,7 +12,7 @@
 
 <p><a data-t="76">In so doing, we'll also be touching on the larger Shiny extension ecosystem and how you</a> <a data-t="80">can use that to further customize your app and simplify your own code.</a> <a data-t="84">And then finally, we'll also be talking about options for theming.</a> <a data-t="87">So in particular, if you're working on a Shiny app for a client, how you can customize</a> <a data-t="90">your app to match your client's branding or other kinds of preferences for how it looks.</a></p>
 
-<blockquote><a data-t="58">One of the most powerful aspects of Shiny is that the app interface is just a webpage,</a> <a data-t="62">and therefore pretty much anything that you can do with HTML, you can do with Shiny.</a></blockquote>
+<blockquote><a data-t="54">One of the most powerful aspects of Shiny is that the app interface is just a webpage,</a> <a data-t="58">and therefore pretty much anything that you can do with HTML, you can do with Shiny.</a></blockquote>
 
 <h3>Deploying your Shiny apps</h3>
 

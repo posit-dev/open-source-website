@@ -20,7 +20,7 @@
 
 <h3>Making column selection easier in Great Tables</h3>
 
-<p><a data-t="192">Let's now get to know the Great Tables package.</a> <a data-t="196">As the name might imply, it's a package for making tables.</a> <a data-t="200">One could say it's a package for creating beautiful tables for display purposes.</a> <a data-t="205">On the left is a chunk of Great Tables code.</a> <a data-t="208">On the right is a very nice-looking table.</a> <a data-t="211">It's the kind of table that would look great in a </a><a href="/software/quarto/">Quarto</a><a data-t="211"> document or in a Shiny app.</a></p>
+<p><a data-t="198">Let's now get to know the Great Tables package.</a> <a data-t="201">As the name might imply, it's a package for making tables.</a> <a data-t="204">One could say it's a package for creating beautiful tables for display purposes.</a> <a data-t="210">On the left is a chunk of Great Tables code.</a> <a data-t="213">On the right is a very nice-looking table.</a> <a data-t="215">It's the kind of table that would look great in a </a><a href="/software/quarto/">Quarto</a><a data-t="215"> document or in a Shiny app.</a></p>
 
 <p><a data-t="221">Because we are using a dataframe to create a table for display,</a> <a data-t="224">we easily run into the problem where dealing with lots of table columns can be a bit tedious for the user.</a> <a data-t="229">Some tables just have lots of columns,</a> <a data-t="231">and with the way that Great Tables works,</a> <a data-t="233">we have to often declare column names in order to format values within them,</a> <a data-t="237">or to style cells.</a></p>
 
@@ -34,7 +34,7 @@
 
 <p><a data-t="311">If you are coming from </a><a href="/software/gt/">GT</a><a data-t="311">, which is the R version of Great Tables,</a> <a data-t="315">this is similar to the TySelect helpers used in that package.</a> <a data-t="319">Let's compare some bits of TySelect with Polar selectors.</a> <a data-t="324">As you can see in this comparison table, much of the nomenclature is the same.</a> <a data-t="328">Sure, everything becomes all in Polars, and by name does the work of two TySelect helper functions,</a> <a data-t="335">but by and large, these separate implementations of selectors largely use the same naming.</a></p>
 
-<p><a data-t="342">Having selectors available can encourage the use of smart column naming.</a> <a data-t="345">Let's have a look at the small table of column name motifs</a> <a data-t="350">and how Great Tables code with column selectors can take advantage of certain styles of naming.</a></p>
+<p><a data-t="342">Having selectors available can encourage the use of smart column naming.</a> <a data-t="347">Let's have a look at the small table of column name motifs</a> <a data-t="350">and how Great Tables code with column selectors can take advantage of certain styles of naming.</a></p>
 
 <p><a data-t="357">If you have columns that end with underscore PCT, they are all percentage values,</a> <a data-t="363">and you'd probably want to format them as such.</a> <a data-t="365">Using format percent along with the ends with column selector,</a> <a data-t="369">we can perform percentage formatting all in one statement.</a> <a data-t="373">Maybe you have columns with count values.</a> <a data-t="376">One naming convention you can hold to would be prefixing those column names with end underscore.</a> <a data-t="382">The Great Tables formatter format integer could be used with the starts with column selector.</a> <a data-t="388">Now all those count columns can be formatted.</a></p>
 
@@ -66,7 +66,7 @@
 
 <h3>Adding datasets to a Python package</h3>
 
-<p><a data-t="751">Well, that's all I wanted to say about making documentation great for a package website.</a> <a data-t="757">Let's move on to the fourth section,</a> <a data-t="759">and the topic there is adding lots of datasets to a Python package.</a></p>
+<p><a data-t="747">Well, that's all I wanted to say about making documentation great for a package website.</a> <a data-t="752">Let's move on to the fourth section,</a> <a data-t="754">and the topic there is adding lots of datasets to a Python package.</a></p>
 
 <p><a data-t="763">Great Tables has a lot of datasets.</a> <a data-t="767">Here they all are.</a> <a data-t="768">There are 16 datasets in total,</a> <a data-t="770">and each one has a decorative medallion.</a> <a data-t="773">Those serve to make the datasets nice and fun.</a></p>
 

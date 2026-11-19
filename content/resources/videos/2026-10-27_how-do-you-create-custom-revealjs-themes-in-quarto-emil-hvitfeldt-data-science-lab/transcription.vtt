@@ -1,0 +1,2083 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:12.640
+Welcome back to the Data Science Lab, everybody. My name is Libby. I do community stuff here at
+
+00:00:12.640 --> 00:00:19.280
+Posit and I am joined by my co-host, the Discord link maven, Isabella Velazquez. Isabella, would
+
+00:00:19.280 --> 00:00:24.719
+you like to say hello? Yes. Hi, everyone. Thanks so much for joining. Yeah, like Libby said,
+
+00:00:24.799 --> 00:00:30.799
+I'll be posting links on Discord and on Zoom. I also wanted to shout out, Libby does this amazing
+
+00:00:30.799 --> 00:00:35.439
+job of aggregating all the links after every single episode and when they're published
+
+00:00:36.720 --> 00:00:42.560
+on YouTube, they're linked in the description. So if you are ever re-watching an episode and
+
+00:00:42.560 --> 00:00:48.240
+you're like, what link is that? Just make sure to expand that and you'll see the lengthy, lengthy
+
+00:00:48.240 --> 00:00:55.919
+lists of links. So lengthy. So lengthy that I hit the limit on YouTube almost every time for like
+
+00:00:55.919 --> 00:01:03.759
+the length that your description can be because our group here in Zoom does such a good job with
+
+00:01:03.759 --> 00:01:10.400
+sharing resources. Today, as we are going through, you're going to see lots of resources get posted
+
+00:01:10.400 --> 00:01:15.440
+as links. Please do so yourself if you have stuff to share or interesting stuff. So if you've never
+
+00:01:15.440 --> 00:01:21.919
+been to the Data Science Lab, we are screen sharing, technical topics, relaxed discussion,
+
+00:01:21.919 --> 00:01:29.279
+we hang out, absolutely casual. We chat on Discord and the point of the Data Science Lab
+
+00:01:29.279 --> 00:01:34.559
+is for everybody to learn something together and for us to all be able to ask questions. So please
+
+00:01:34.559 --> 00:01:40.480
+ask your questions in Discord. You will see Isabella or I or anybody else, if you see someone
+
+00:01:40.480 --> 00:01:47.760
+who asked a question, put a golf flag emoji on their question. That just means a question
+
+00:01:48.320 --> 00:01:53.120
+letting me know so I can make sure I can try to ask it. If we don't get to your question or maybe
+
+00:01:53.120 --> 00:01:57.919
+it passed by and it didn't have a golf flag on it, feel free to just bump it, like send it again. Say
+
+00:01:57.919 --> 00:02:02.160
+hey, I think my question got missed and we'll try to get to it. If you know the answer to somebody's
+
+00:02:02.160 --> 00:02:07.680
+question and you're in the chat, answer it. Just hit reply on Discord. There is a little, if you
+
+00:02:07.680 --> 00:02:12.880
+hover over a question, you'll see like a left arrow that says reply. Reply to their question
+
+00:02:12.880 --> 00:02:19.600
+and answer it and we would absolutely be grateful for you to do that. I am so excited to welcome
+
+00:02:19.600 --> 00:02:28.720
+back our current reigning champion for most guest appearances as a lab manager on the Data Science
+
+00:02:28.720 --> 00:02:35.039
+Lab, Emil Beatbelt. He is here to talk about cortoslides once again. Reminder, Emil is on the
+
+00:02:35.039 --> 00:02:40.080
+tidy models team, the tidy team. He is not even like, this isn't even his full-time job to do
+
+00:02:40.080 --> 00:02:45.039
+corto stuff, and yet he is so prolific in this area. And today he's going to be talking to us
+
+00:02:45.039 --> 00:02:52.479
+about corto themes. Several themes to share. I'm really excited about it. This is a huge topic.
+
+00:02:52.479 --> 00:02:57.600
+We can't get through the nitty-gritty of all of it in one hour, but we are going to attempt to get
+
+00:02:57.600 --> 00:03:06.000
+through, you know, how can we learn the basics of building a theme in corto for reveal.js slides.
+
+00:03:07.279 --> 00:03:12.000
+And then also if you want to use Emils that are pre-made and ready, how do you do that?
+
+00:03:12.800 --> 00:03:19.600
+So Emil, I'm so excited to announce your lab managership and reigning championship.
+
+00:03:19.600 --> 00:03:22.960
+Would you like to introduce yourself briefly and go ahead and share your screen and get started?
+
+00:03:23.520 --> 00:03:26.639
+Yes. Thank you so much. It's always a pleasure being here with all of you.
+
+00:03:27.279 --> 00:03:32.800
+Yeah, so I am like technically on the tidy models team. That's where I spend the most of my time,
+
+00:03:32.800 --> 00:03:40.320
+trying to make modeling as easy and painless as possible for the eye user. But I also dabble a
+
+00:03:40.320 --> 00:03:49.600
+little bit in these like non-crucial parts, which is like corto for me. So I will get started.
+
+00:03:52.960 --> 00:03:58.880
+So a lot of this, like this invite started with Libby finding my Nest theme.
+
+00:04:00.960 --> 00:04:05.440
+Oh, Isabella sent that to me. Isabella was like, open me up to the world of Emil's
+
+00:04:05.440 --> 00:04:09.199
+themes. And I was like, there's an NES theme. I was immediately in love.
+
+00:04:11.600 --> 00:04:20.480
+So then this is just a corto theme. And this is actually done a little bit weird,
+
+00:04:20.480 --> 00:04:27.760
+but it is fine. So it's done as a different type of reveal JS theme. So this is totally a
+
+00:04:27.760 --> 00:04:34.160
+NAS reveal JS theme. So it's a new format, but you should also have done, this is one of my early
+
+00:04:34.160 --> 00:04:44.160
+ones, but essentially you use it and you just put format NAS reveal JS, and it overloads a lot of
+
+00:04:44.160 --> 00:04:52.880
+the CSS and adds a lot of little things. So essentially you just did this NAS CSS styling,
+
+00:04:52.880 --> 00:05:02.880
+which is a thing that someone made online and I adapted to the reveal JS idea. So we have the
+
+00:05:02.880 --> 00:05:13.519
+fonts and the sizing that's like this fun, like pixelated feel. And I added a little bit more
+
+00:05:13.519 --> 00:05:28.799
+stylings, like we had code chunks feel right, at least in this NAS-y fun idea. And if you
+
+00:05:30.320 --> 00:05:37.040
+spend just a little bit of time, you can extend this theme to stuff like gtplots,
+
+00:05:37.040 --> 00:05:46.399
+as long as you just put in the same font as the general theme. So you're getting this very nice,
+
+00:05:46.399 --> 00:05:52.799
+cohesive idea, as long as you pull in this font as well and match the colors
+
+00:05:53.760 --> 00:05:58.799
+of the theme. So we're doing that and now even let our plots match.
+
+00:05:59.119 --> 00:06:08.480
+I've also added a bunch of these custom CSS classes. So if you need to have the colors
+
+00:06:08.480 --> 00:06:16.880
+match throughout the whole thing, you just use these .blue, .green, .yellow classes around here,
+
+00:06:16.880 --> 00:06:22.160
+put on a span, and then it uses the colors that are specified by the theme. So you don't have to
+
+00:06:22.399 --> 00:06:28.320
+manually put them. And we have some social media icons that are also
+
+00:06:29.200 --> 00:06:37.600
+hoarded in if you tell about those, as well as just some general fun icons that
+
+00:06:37.600 --> 00:06:46.480
+also fit the theme, right? And you just add these with these, like this,
+
+00:06:47.040 --> 00:06:48.559
+like syntax on the left.
+
+00:06:50.399 --> 00:06:56.880
+And these all live in an SCSS file, maybe?
+
+00:06:57.440 --> 00:07:04.399
+Yeah. So this is all, as far as I know, this is all just like, I think there's two. Yeah. So there's
+
+00:07:04.399 --> 00:07:12.480
+technically two files that are being bundled in. So the first one sets the fonts, sets sizes, so
+
+00:07:13.040 --> 00:07:22.720
+we needed to update the sizes to make everything fit. You almost always need to update the sizes
+
+00:07:23.679 --> 00:07:31.359
+when you're changing the font of something because a 10 pixel
+
+00:07:34.559 --> 00:07:39.119
+reads differently depending on what font you're using. So sometimes when you're switching font,
+
+00:07:39.119 --> 00:07:46.399
+you need to update the sizing as well. There's this really handy presentation font size route
+
+00:07:47.359 --> 00:07:53.679
+that when you modify that one, then everything else modifies according to it, which is really nice.
+
+00:07:56.239 --> 00:07:59.519
+But then, yeah, it's just a bunch of setting
+
+00:08:01.760 --> 00:08:06.079
+the rest of the theme accordingly. And a lot of this isn't really,
+
+00:08:07.040 --> 00:08:14.000
+like we didn't really actually change that much. We changed the font colors and the sizes,
+
+00:08:15.119 --> 00:08:18.399
+and we added our classes. But then a lot of it really is just,
+
+00:08:21.119 --> 00:08:26.239
+a lot of the work is really being done to like the borders around our output.
+
+00:08:26.799 --> 00:08:35.520
+And a lot of work was put into this like black throat to make it look nice. So that before here
+
+00:08:35.520 --> 00:08:47.760
+is not after he has done to make that little speech bubble effect, which is like that's just
+
+00:08:47.760 --> 00:08:53.840
+an extra flag that doesn't really add much, but the file actually is much smaller than you think.
+
+00:08:54.799 --> 00:09:01.520
+We're actually not doing that much. Okay. So we have a couple of things to make sure that we can
+
+00:09:01.520 --> 00:09:06.320
+answer for people, but I think we're going to get to them. So Shelby and Notebeko had asked a couple
+
+00:09:06.320 --> 00:09:14.159
+of questions about adding icons and also getting different header levels in your QMD file. The QMD
+
+00:09:14.159 --> 00:09:20.479
+file, we can do that really quickly. So Shelby asked, how do you get the different header levels
+
+00:09:20.479 --> 00:09:26.239
+in your QMD file, not on the slides, to be color coordinated so that all the H1 headings are red
+
+00:09:26.239 --> 00:09:32.640
+and all the H2 headings are orange, et cetera. So this is actually just color formatting as a
+
+00:09:32.640 --> 00:09:42.479
+setting in Positron, I think. Right? Oh, like in this file? Yes. Yes. Yeah. So that is, oh,
+
+00:09:43.440 --> 00:09:51.119
+a little rain. Oh, no. Somewhere in my settings, I have that.
+
+00:09:51.119 --> 00:10:08.719
+Hmm. Is it maybe a Brad Pitt pair tolerization?
+
+00:10:08.719 --> 00:10:17.679
+Good question. We might need to-
+
+00:10:18.640 --> 00:10:25.840
+We might need to pin this question, Shelby, and get back to it. Because I think that I know where
+
+00:10:25.840 --> 00:10:30.239
+it is too, but I'm going to have to go look for it. Or I might have to ask Isabel Zimmerman,
+
+00:10:30.960 --> 00:10:33.840
+who knows all about this. But we will figure it out.
+
+00:10:33.919 --> 00:10:39.840
+I'm pretty sure I wrote it up on my blog. I had a blog post earlier this year about my
+
+00:10:40.880 --> 00:10:45.520
+Positron setup. Yeah. Oh, Isabella just found it. Okay. Yay.
+
+00:10:50.880 --> 00:10:56.559
+Yes. And then if you search for, well, I think it's the very second setting that you mentioned
+
+00:10:56.559 --> 00:11:05.359
+about the bracket pair colorization. Great question, Shelby. I know that it wasn't about
+
+00:11:05.359 --> 00:11:11.039
+the slides, but it's still, it's so helpful to have color pairing and color coordinating in your
+
+00:11:11.039 --> 00:11:17.440
+Quartos source code files. And then No Tobacco had asked about adding SVG icons. I think that
+
+00:11:17.440 --> 00:11:26.159
+Emil's going to get to this one. So we will hold on and wait. So what Emil is showing us is
+
+00:11:26.159 --> 00:11:34.559
+the guts of his NES theme. And a lot of this is in a .scss file. That stands for sassy CSS. And
+
+00:11:34.559 --> 00:11:42.320
+CSS stands for cascading style sheet. It's the way that you add styling, which is all of the colors,
+
+00:11:42.320 --> 00:11:48.400
+the fonts, and all of that stuff to a Quarto document or Quarto slides. If you've never used
+
+00:11:48.400 --> 00:11:58.000
+a .scss file before, you access it in your theme in the YAML. So if Emil goes over to his template.qmd
+
+00:12:00.159 --> 00:12:02.960
+and he looks at his- So this one is a little different.
+
+00:12:02.960 --> 00:12:14.320
+It might be more complicated than this one. Oh, I can show it real easy in this one.
+
+00:12:14.400 --> 00:12:23.599
+So this is my Quarto VLJS template that I use whenever I do a new thing. And when you're setting
+
+00:12:23.599 --> 00:12:30.400
+a format VLJS and your other settings, in that you can add a theme, which can be a list of things.
+
+00:12:32.080 --> 00:12:40.239
+And then I put styles.css, and then this is just a default one. And the main thing-
+
+00:12:40.559 --> 00:12:45.520
+I'm not sure if we're seeing what you're showing though, because I'm still seeing the
+
+00:12:46.080 --> 00:12:50.320
+just nes.scss file. Is anybody else seeing anything differently?
+
+00:12:51.039 --> 00:12:54.320
+Yeah, maybe. Oh, interesting.
+
+00:12:54.320 --> 00:12:55.119
+Might need to reshare.
+
+00:12:58.400 --> 00:13:02.880
+So I've been using... So if you look at the very top of the screen, I'm using
+
+00:13:02.880 --> 00:13:07.919
+this VS Code feature called native tabs. So when I have multiple
+
+00:13:09.679 --> 00:13:15.440
+Positron sessions open, I can just like go between them. And somehow when I was sharing,
+
+00:13:15.440 --> 00:13:21.039
+it's by tab. Oh, okay. So you switch tabs.
+
+00:13:21.039 --> 00:13:29.679
+So here I'm in my VLJS template that I use. And when you set format VLJS and all your other
+
+00:13:29.679 --> 00:13:36.719
+settings among those, you have the theme, and it can be a list of things. So then it just
+
+00:13:36.719 --> 00:13:42.239
+appends all of the themes together, and then it's normal CSS rules with like last one wins.
+
+00:13:43.359 --> 00:13:43.840
+Perfect.
+
+00:13:43.840 --> 00:13:47.359
+And in that, that's where you put everything in.
+
+00:13:48.239 --> 00:13:53.119
+Okay. So this is what I wanted to show is just the very basics of this. In his YAML,
+
+00:13:53.200 --> 00:14:00.640
+his front matter, he has got that linked as his style, that dot CSS file or dot CSS file.
+
+00:14:00.640 --> 00:14:08.320
+And then inside of that, he has these CSS chunks that define certain variables that represent
+
+00:14:08.320 --> 00:14:15.679
+colors or fonts or sizes or typefaces like bold or italic and stuff like that. All of that stuff
+
+00:14:15.679 --> 00:14:24.320
+can go in to CSS files, and then it is automatically applied by class. So just basic
+
+00:14:24.320 --> 00:14:30.320
+stuff here. Like if he defines H1s look like this, then all of his H1s that he puts into
+
+00:14:30.320 --> 00:14:37.119
+Quarto will look the way that he styles them. It's super, super fun to customize all of this
+
+00:14:37.119 --> 00:14:43.200
+stuff. It just takes a little time to get used to using CSS. The cloud is actually very helpful CSS.
+
+00:14:46.000 --> 00:14:51.760
+Oh, no. Let's do one that's easy. Dark green. Nice.
+
+00:14:56.080 --> 00:14:58.159
+That didn't show up, so then it might be...
+
+00:14:59.919 --> 00:15:01.280
+Oh, no.
+
+00:15:07.679 --> 00:15:08.320
+Yeah. So here-
+
+00:15:08.320 --> 00:15:08.880
+There you go.
+
+00:15:09.599 --> 00:15:15.840
+We can change. And now all the H1 look with this dark green. And this is partly why we're using
+
+00:15:18.000 --> 00:15:25.039
+a CSS plus it, at least in my opinion, adds nicer variable controls.
+
+00:15:26.479 --> 00:15:34.080
+So I have specified some color names up here, like theme, dark green. And I can specify once
+
+00:15:34.080 --> 00:15:40.799
+and then use it everywhere. But you can also do a little bit of math. So I could technically say
+
+00:15:40.799 --> 00:15:54.559
+dark green, like 20% maybe. And 20% here turned out to be a lot. But you can do a little bit of
+
+00:15:54.559 --> 00:16:05.200
+math as well. And here you have the presentation font size root. I have set the H1 font size to
+
+00:16:05.840 --> 00:16:13.919
+2.5 EM, but I could also set it to be four times the font size root.
+
+00:16:18.400 --> 00:16:23.760
+So then now the header one is too bad for this design.
+
+00:16:23.760 --> 00:16:24.479
+Just slightly.
+
+00:16:25.520 --> 00:16:29.919
+But then if I change the font size, but the font size root,
+
+00:16:31.840 --> 00:16:39.119
+then here our H1 is dynamically changing with it. And a lot of this is happening with the default
+
+00:16:39.840 --> 00:16:46.479
+SCSS theme that Tom built with Toro. And if we're using the same techniques, we can
+
+00:16:47.280 --> 00:16:49.840
+tell a lot of these things free, which is very nice.
+
+00:16:50.320 --> 00:16:54.960
+This is so cool. Okay. So the NES theme is amazing. It's my favorite. I'm a retro gamer
+
+00:16:54.960 --> 00:17:00.000
+and I love it so much. But there are a couple others that Emil has made that can kind of
+
+00:17:00.000 --> 00:17:05.599
+showcase the cool stuff. So I'm going to let Emil take it away and I'll stop talking.
+
+00:17:05.599 --> 00:17:09.280
+So here's another one that's kind of fun. And this one doesn't really show.
+
+00:17:09.920 --> 00:17:13.119
+So on the left-hand side, you will notice that
+
+00:17:13.839 --> 00:17:18.800
+the total looks like how we would expect, other than the fact that it's duplicated a lot to show
+
+00:17:18.800 --> 00:17:28.640
+different things. And the only thing I'm really doing on my QMD file is adding these dot theme,
+
+00:17:29.599 --> 00:17:36.160
+slash, and then a name. So here I have title one, title two, section one, two, and then just slide
+
+00:17:36.719 --> 00:17:48.719
+one, two, three. So my idea of this style of theme is that you don't really write any styling code
+
+00:17:48.719 --> 00:17:57.760
+in your QMD file. All of that happens in your SCSS files. And then the hope is that you write
+
+00:17:57.760 --> 00:18:01.760
+the theme once and then you just apply it over and over. And it's really fast to do.
+
+00:18:02.479 --> 00:18:10.959
+And this one does a little bit more than you might need. So this has, it changes the fonts and
+
+00:18:11.680 --> 00:18:16.880
+colors and everything, but I'm also adding background images. And that's what the different
+
+00:18:16.880 --> 00:18:26.719
+theme ideas are. So then here we have theme section one, and we're adding text. So everything
+
+00:18:27.680 --> 00:18:36.800
+works how you would expect, but depending on what theme you're setting,
+
+00:18:39.359 --> 00:18:45.680
+the background images change because that's a fun little aesthetic change of having something
+
+00:18:45.680 --> 00:18:50.479
+fun in the background that doesn't interfere with everything. But we know how to do little extra
+
+00:18:50.479 --> 00:18:56.959
+things. So here we have in the theme section one, since we have that little earth on the right that
+
+00:18:56.959 --> 00:19:06.959
+spins, I've also made it so the toad and text doesn't go as wide. So it wraps earlier than you
+
+00:19:06.959 --> 00:19:12.800
+would expect, like normally. I think you can kind of see it here, like the word finished right here
+
+00:19:13.599 --> 00:19:19.359
+is further, actually it might be the same, but it's like, or here's maybe a better example.
+
+00:19:19.359 --> 00:19:24.000
+So since we have the earth on the left-hand side, we need to move all the text a little bit to the
+
+00:19:24.000 --> 00:19:31.839
+right, but you don't do it when you're writing the slides because this slide theme just knows
+
+00:19:31.839 --> 00:19:37.599
+where everything is and just moves it around depending on all of it. And it might feel like a
+
+00:19:37.599 --> 00:19:45.040
+lot of effort to do it, but other than sourcing all the SVGs that you need or like file,
+
+00:19:45.599 --> 00:19:52.880
+the SVG is here because I needed the earth to rotate and you can do that as an SVG.
+
+00:19:53.920 --> 00:20:02.160
+But the theme, I would say, isn't that bad. So then we are setting our colors in the beginning
+
+00:20:03.280 --> 00:20:07.920
+and then we're updating all the things we need. So here we are changing the background color,
+
+00:20:07.920 --> 00:20:13.599
+the leg color, the toad colors, the bodies, the headings, setting the fonts, and then changing
+
+00:20:13.599 --> 00:20:21.760
+some sizes. So that's all of that. I'm unsetting, I'm removing the background colors and the
+
+00:20:21.760 --> 00:20:34.560
+background borders for the toad shots because otherwise then...I don't remember why. It's
+
+00:20:34.560 --> 00:20:42.719
+probably because it comes with a white background and if you put it, that's different than my white
+
+00:20:42.719 --> 00:20:47.920
+that I set because this is slightly off white. And if you don't unset it, then you see a white
+
+00:20:47.920 --> 00:20:51.839
+on white and it doesn't look that nice. And depending on what background color you have,
+
+00:20:52.959 --> 00:20:58.319
+I could also set it to the same background color, but just unsetting it in a way is the same.
+
+00:21:00.479 --> 00:21:09.119
+But then what makes all of these different themes really is just this idea right here,
+
+00:21:09.119 --> 00:21:14.880
+where I'm saying ThemeTitle1 and then ThemeTitle2. So it's just copy pasted
+
+00:21:15.680 --> 00:21:20.880
+over and over one for each and with any that isn't actually that much. So what I'm doing is
+
+00:21:20.880 --> 00:21:34.000
+I'm setting the h2. So h2 is the normal header you see. So I'm setting that one, I'm just changing
+
+00:21:34.000 --> 00:21:40.239
+the size and I'm centering it. The h3, which is like the subtitle here, I'm saying it's a blue,
+
+00:21:40.239 --> 00:21:46.479
+so it's always blue. And then I'm doing this a little bit more like...it's a little fiddly
+
+00:21:47.119 --> 00:21:54.479
+syntax to set the background because you can't set in reveal.js. There's technically like two
+
+00:21:54.479 --> 00:22:02.479
+things that count as a background. So you both have the background of the screen itself,
+
+00:22:03.359 --> 00:22:09.839
+which is like your window, which is why you see everything moves accordingly to my aspect ratio.
+
+00:22:10.719 --> 00:22:17.119
+But the other background is the background of the rectangle where all my content is.
+
+00:22:19.439 --> 00:22:26.959
+And if you just try to say it naively, you get both. So then you have two images that shift
+
+00:22:27.920 --> 00:22:33.599
+out of sync with each other. So this is how you do that. And then there's this weird thing where
+
+00:22:34.880 --> 00:22:40.239
+to make the...once you render your slides,
+
+00:22:46.160 --> 00:22:53.359
+you compile the CSS into CSS, and then it goes into this lib, like template files,
+
+00:22:53.520 --> 00:23:01.680
+which is my jubilee files for template, libs, reveal.js, dist, theme.
+
+00:23:03.280 --> 00:23:11.520
+And then I think it's this one that has like technically a CSS. So to make this file right here
+
+00:23:13.599 --> 00:23:20.719
+understand where my assets folder is, I found that it's like five of these.
+
+00:23:21.359 --> 00:23:26.959
+But once you know this, it's fairly easy. And that's an issue, but it's kind of hard to know
+
+00:23:28.000 --> 00:23:30.239
+where all of this is. So this is a little bit of a pain.
+
+00:23:31.119 --> 00:23:36.560
+It's a little bit of a pain. I feel like this is a Querta thing a little bit. But once you figure
+
+00:23:36.560 --> 00:23:43.359
+it out, the double dot notation to designate going up a folder level, you can get there.
+
+00:23:44.079 --> 00:23:51.839
+Yeah. And you just need to know it once, right? And this is written...there's a chapter in my book
+
+00:23:52.560 --> 00:23:57.040
+about slide drafting as well that has this specific example where if you want an image
+
+00:23:57.680 --> 00:24:01.520
+in your thing...but then each theme is the same, right? Here, like this one,
+
+00:24:01.520 --> 00:24:09.199
+like title one and two is the same other than the image. And then for the ones where it matters,
+
+00:24:09.280 --> 00:24:12.560
+oh, this section one, I needed to move some stuff around a little bit.
+
+00:24:12.560 --> 00:24:17.839
+I changed the width and margins a little bit to size it up. So it isn't...
+
+00:24:20.319 --> 00:24:25.359
+Once you know what you want and what you need to do, actually setting this up isn't that long
+
+00:24:25.359 --> 00:24:29.920
+if you have Claude as well, even faster, because this is very tedious.
+
+00:24:30.880 --> 00:24:35.040
+Because you're just copy pasting over, going through them one at a time saying,
+
+00:24:35.920 --> 00:24:38.959
+I want a different size, I want a different color. But once you're done,
+
+00:24:39.839 --> 00:24:43.760
+writing your slides takes no time. But all the
+
+00:24:46.640 --> 00:24:48.640
+configuration is really easily done.
+
+00:24:49.439 --> 00:24:56.239
+Yes. And time check, we're at half the way mark. And also, if you create this,
+
+00:24:56.239 --> 00:25:00.719
+you can share it with other people and they can use it too. And you can reuse it later.
+
+00:25:01.680 --> 00:25:04.719
+Like you could use any of Emil's if you wanted to.
+
+00:25:05.520 --> 00:25:11.760
+Yeah. So I just posted everything is on GitHub somewhere. And it's actually quite easy. I will
+
+00:25:11.760 --> 00:25:17.439
+actually just show how to do it now, just the task, right? So in the readme, it says how we do
+
+00:25:17.439 --> 00:25:28.880
+it. But if we go to the terminal, a clean terminal, and I'm just going to jump over to
+
+00:25:30.719 --> 00:25:40.319
+the desktop. Oh, no. So it's just product use template, and then the repo of your theme.
+
+00:25:42.239 --> 00:25:48.719
+In an organization, this can also be a file path, right? So it doesn't have to be a GitHub repo.
+
+00:25:48.719 --> 00:25:54.400
+This can be a file path to wherever you have or like any website. So if you have this folder
+
+00:25:54.479 --> 00:26:02.079
+somewhere inside whatever corporate firewall, you just post that link there,
+
+00:26:03.199 --> 00:26:08.479
+and Toro will understand it. So you don't have to have everything public.
+
+00:26:09.520 --> 00:26:16.239
+So if you put this in, say yes, then first thing, do you trust it? Yes. Do you want to
+
+00:26:16.239 --> 00:26:25.839
+create a subdirectory? Yes. And then like F2. Because product use template is really
+
+00:26:26.400 --> 00:26:37.119
+just a very fancy copy-paste. So it makes a zip, downloads it, unzips it, and then...
+
+00:26:37.119 --> 00:26:46.880
+Oh, it didn't open it for me. So let's open folder, desktop, add it. Oh, F2.
+
+00:26:51.280 --> 00:26:58.479
+So then it copied over everything I needed. Oh, it will not. Oh, no.
+
+00:26:59.359 --> 00:27:00.560
+Uh-oh, what's wrong?
+
+00:27:00.560 --> 00:27:02.560
+I mean, in a...
+
+00:27:17.040 --> 00:27:21.760
+We're lighting more candles as we speak for this live coding peril.
+
+00:27:22.319 --> 00:27:34.640
+Yeah. So somehow my 4.6.0 R version is messed up and it just defaults to it somehow. So
+
+00:27:34.640 --> 00:27:39.280
+turning off the Toad, now we have the theme as well and we can just do whatever we want.
+
+00:27:39.280 --> 00:27:47.439
+So the product use template name copies over everything we need. So here it has like a file,
+
+00:27:48.160 --> 00:27:57.359
+it portals over the assets, and it has everything we need and we can put everything else in it.
+
+00:27:57.359 --> 00:28:04.239
+And you can technically specify when you're making the theme. There's this portal ignore file
+
+00:28:05.520 --> 00:28:11.839
+where you can put stuff in your viewport, but not everything is being copied over. So there's
+
+00:28:11.839 --> 00:28:17.599
+some rules about what's being copied over, which is basically everything except things
+
+00:28:17.599 --> 00:28:24.800
+with periods in front, because they're private. So it doesn't copy over the .vstoad folder or
+
+00:28:24.800 --> 00:28:31.599
+the .digitnull and all of that. And you also copy over your .dig folder and all of that,
+
+00:28:31.599 --> 00:28:35.520
+but you can even remove even more things to be copied over.
+
+00:28:35.920 --> 00:28:44.880
+So then let's try to make our own theme and let's do it in the same way. So I want to use my...
+
+00:28:50.079 --> 00:28:55.359
+Okay. So we are on a totally new project and we're creating just like a simple theme?
+
+00:28:56.400 --> 00:28:56.959
+Yeah.
+
+00:28:57.920 --> 00:28:59.359
+Yeah. Okay.
+
+00:29:02.719 --> 00:29:08.479
+But I'm quickly making a new one. Yes, yes.
+
+00:29:08.479 --> 00:29:10.479
+So we're using core2u's template.
+
+00:29:15.760 --> 00:29:17.040
+Which somehow...
+
+00:29:18.719 --> 00:29:23.439
+And this is a template for making our own theme, right?
+
+00:29:24.400 --> 00:29:33.199
+This is the starter template I use for all of my slides, just because it sets up the things I
+
+00:29:33.199 --> 00:29:39.920
+normally write, but it already has the styles file. It has the width and height the way I like it.
+
+00:29:40.560 --> 00:29:46.160
+I don't really care for the total line numbers, the outputs, I turn it off.
+
+00:29:46.880 --> 00:29:52.239
+And it also has this... If you ever need JavaScript in your slides, which we don't need today,
+
+00:29:53.839 --> 00:29:57.599
+I can never remember where to put it. It's like include after body,
+
+00:29:57.599 --> 00:30:01.439
+but I never remember. So it's just part of this. So this is now we have...
+
+00:30:03.040 --> 00:30:07.520
+This is a very basic... Oh, same issue.
+
+00:30:09.119 --> 00:30:12.479
+Uh-oh. Darn our installation.
+
+00:30:12.479 --> 00:30:12.719
+Yeah.
+
+00:30:15.520 --> 00:30:22.640
+All right. So now we have just a very basic... There's no theming at all.
+
+00:30:22.640 --> 00:30:26.800
+This is some extra things that we don't need right now.
+
+00:30:29.839 --> 00:30:38.319
+All right. So here, really, then how you actually make the theme is we do the thing where we specify
+
+00:30:38.319 --> 00:30:44.640
+our colors and then we use them in different ways. So one of the things we can do is we can say link
+
+00:30:44.640 --> 00:30:48.160
+color and then...
+
+00:30:51.100 --> 00:30:55.100
+Right now, all the link colors are blue, but we might not want that.
+
+00:30:55.100 --> 00:30:58.100
+We might want a nice, light magenta.
+
+00:30:58.100 --> 00:31:02.100
+Love that. Love that you can just change that right there.
+
+00:31:02.100 --> 00:31:08.100
+Yeah, right. And now the link color is magenta.
+
+00:31:08.100 --> 00:31:11.100
+This might also be using a...
+
+00:31:11.100 --> 00:31:14.100
+So I don't know why there's two, but that's fine.
+
+00:31:14.100 --> 00:31:20.100
+So then we essentially just have a bunch of...
+
+00:31:20.100 --> 00:31:22.100
+But we need to remember...
+
+00:31:22.100 --> 00:31:25.100
+So here I had to remember what link color was.
+
+00:31:25.100 --> 00:31:29.100
+So I added this extension.
+
+00:31:29.100 --> 00:31:39.100
+tor-theme-treater, which is like a little extension.
+
+00:31:39.100 --> 00:31:44.100
+So you can find it via tor-positron.
+
+00:31:44.100 --> 00:31:51.100
+And then when you're in here, we say...
+
+00:31:51.100 --> 00:31:56.100
+So you open a command palette, which is command-shift-P.
+
+00:31:56.100 --> 00:32:00.100
+And you find the theme-treater, open theme-treater.
+
+00:32:00.100 --> 00:32:06.100
+And you have to have the Qt file open.
+
+00:32:06.100 --> 00:32:09.100
+So it knows which file you're thinking about.
+
+00:32:09.100 --> 00:32:15.100
+And now we have our slides, how you would expect them to look on the left-hand side.
+
+00:32:15.100 --> 00:32:23.100
+And then we have a UI-based way of modifying things.
+
+00:32:23.100 --> 00:32:30.100
+So now we can say, oh, I want to use Helvet's font.
+
+00:32:30.100 --> 00:32:32.100
+And I want to...
+
+00:32:32.100 --> 00:32:36.100
+I always think the font size is too small, so we can change it up a little bit.
+
+00:32:36.100 --> 00:32:38.100
+Make it 50 sized.
+
+00:32:38.100 --> 00:32:40.100
+And we can change all the different things.
+
+00:32:40.100 --> 00:32:42.100
+We can change the...
+
+00:32:42.100 --> 00:32:45.100
+Oh, no.
+
+00:32:45.100 --> 00:32:47.100
+Oh, I clicked the link.
+
+00:32:47.100 --> 00:32:50.100
+That's unfortunate.
+
+00:32:50.100 --> 00:32:53.100
+Let me try it one more time.
+
+00:32:53.100 --> 00:32:54.100
+Okay.
+
+00:32:54.100 --> 00:33:00.100
+So we need to repeat really quickly the command palette shortcut.
+
+00:33:00.100 --> 00:33:02.100
+Command-shift-P.
+
+00:33:02.100 --> 00:33:04.100
+Command-shift-P.
+
+00:33:04.100 --> 00:33:10.100
+Nathan, I hope that was your question.
+
+00:33:10.100 --> 00:33:12.100
+Theme-treater, open theme-treater.
+
+00:33:12.100 --> 00:33:14.100
+We did it.
+
+00:33:14.100 --> 00:33:20.100
+And you need to have your QMD file as, like, the active one, I think.
+
+00:33:20.100 --> 00:33:22.100
+But otherwise, it doesn't know.
+
+00:33:22.100 --> 00:33:31.100
+And what it does is it finds what the file is, and it sees, hey, he's using styles as CSS.
+
+00:33:31.100 --> 00:33:33.100
+And that will be important later.
+
+00:33:33.100 --> 00:33:38.100
+So then we just modify a bunch of things, like the sizing.
+
+00:33:38.100 --> 00:33:40.100
+We might say another header size.
+
+00:33:40.100 --> 00:33:42.100
+Heading size is a little bit too big.
+
+00:33:42.100 --> 00:33:45.100
+Move that down a little bit.
+
+00:33:45.100 --> 00:33:48.100
+And then we just background, right?
+
+00:33:48.100 --> 00:33:50.100
+So we want something more fun.
+
+00:33:50.100 --> 00:33:52.100
+So we need maybe...
+
+00:33:52.100 --> 00:33:55.100
+So this is where it's going to be horrible.
+
+00:33:55.100 --> 00:34:00.100
+Maybe a little peach, light peach maybe, right?
+
+00:34:00.100 --> 00:34:05.100
+Detached.
+
+00:34:05.100 --> 00:34:10.100
+It's not going to be pretty, but now we just, like, actually just made some really bad slides.
+
+00:34:10.100 --> 00:34:12.100
+But it's just the idea, right?
+
+00:34:12.100 --> 00:34:15.100
+So you're just modifying a bunch of things.
+
+00:34:15.100 --> 00:34:21.100
+We already wanted the magenta color for the links.
+
+00:34:21.100 --> 00:34:23.100
+And there's all the options, right?
+
+00:34:23.100 --> 00:34:27.100
+But imagine we're done with what we want.
+
+00:34:27.100 --> 00:34:31.100
+So we click this to make such changes.
+
+00:34:31.100 --> 00:34:34.100
+And it identifies what the SAS variables are.
+
+00:34:34.100 --> 00:34:36.100
+You press right.
+
+00:34:36.100 --> 00:34:42.100
+And if I'm not mistaken...
+
+00:34:42.100 --> 00:34:43.100
+Oh, I didn't.
+
+00:34:43.100 --> 00:34:44.100
+All right.
+
+00:34:44.100 --> 00:34:46.100
+We can type them over here.
+
+00:34:46.100 --> 00:34:54.100
+Hold them in.
+
+00:34:54.100 --> 00:35:01.100
+And now when we...
+
+00:35:01.100 --> 00:35:09.100
+So now we were able to change the theme in, like, a couple of minutes by just intuitively see, oh, these are options and moving them around.
+
+00:35:09.100 --> 00:35:11.100
+And obviously, these are trash.
+
+00:35:11.100 --> 00:35:14.100
+But this is not a great theme.
+
+00:35:14.100 --> 00:35:15.100
+But instead of having to...
+
+00:35:15.100 --> 00:35:16.100
+But it was so easy.
+
+00:35:16.100 --> 00:35:17.100
+Yeah.
+
+00:35:17.100 --> 00:35:20.100
+So instead of remembering all the names, you just do that.
+
+00:35:20.100 --> 00:35:22.100
+And it should work.
+
+00:35:22.100 --> 00:35:24.100
+So if I do...
+
+00:35:24.100 --> 00:35:31.100
+If we try it one more time and open it, it should have remembered all our options.
+
+00:35:31.100 --> 00:35:33.100
+So we say, actually, this magenta is a little much.
+
+00:35:33.100 --> 00:35:35.100
+So let's move it over a little bit.
+
+00:35:35.100 --> 00:35:37.100
+Tone it down.
+
+00:35:37.100 --> 00:35:38.100
+Right.
+
+00:35:38.100 --> 00:35:40.100
+So then...
+
+00:35:40.100 --> 00:35:41.100
+Yeah.
+
+00:35:41.100 --> 00:35:42.100
+Okay.
+
+00:35:42.100 --> 00:35:46.100
+So I want to recap and answer a question really quickly since I think we can.
+
+00:35:46.100 --> 00:35:55.100
+So the recap is we used Emil's template for Cordial Slides.
+
+00:35:55.100 --> 00:36:02.100
+It came preloaded with a CSS file, which Emil opened up and he changed stuff in.
+
+00:36:02.100 --> 00:36:07.100
+And what he used to change it using the UI is a Positron extension.
+
+00:36:07.100 --> 00:36:10.100
+So a VSCode slash Positron extension.
+
+00:36:10.100 --> 00:36:14.100
+That is linked in the Discord right now.
+
+00:36:14.100 --> 00:36:19.100
+You'll see it under that marketplace.visualstudio.co.com.
+
+00:36:19.100 --> 00:36:21.100
+Or visualstudio.com.
+
+00:36:21.100 --> 00:36:26.100
+And so he went and he installed that extension.
+
+00:36:26.100 --> 00:36:31.100
+And that allowed him to use the Command Palette, Command Shift P, or Control Shift P,
+
+00:36:31.100 --> 00:36:34.100
+to open up the theme tweaker.
+
+00:36:34.100 --> 00:36:37.100
+And then that theme tweaker was the UI.
+
+00:36:37.100 --> 00:36:40.100
+So in case that went by a little too fast, we had a bunch of questions that were like,
+
+00:36:40.100 --> 00:36:41.100
+wait, how did you get there?
+
+00:36:41.100 --> 00:36:42.100
+What is that thing?
+
+00:36:42.100 --> 00:36:43.100
+How do I get it?
+
+00:36:43.100 --> 00:36:47.100
+And then the lingering question is, is there a version of this that also works in RStudio
+
+00:36:47.100 --> 00:36:50.100
+since this is specific to Positron?
+
+00:36:50.100 --> 00:36:51.100
+Yes.
+
+00:36:51.100 --> 00:36:59.100
+So there's not a version that works in RStudio yet,
+
+00:36:59.100 --> 00:37:02.100
+because this is all VSCode related.
+
+00:37:02.100 --> 00:37:05.100
+One thing I know, this is still like, in a way,
+
+00:37:06.100 --> 00:37:17.100
+really the alternative is you open up this page on like behind or like second monitor and whatever.
+
+00:37:17.100 --> 00:37:22.100
+And you just like bind the names in here and modify them.
+
+00:37:22.100 --> 00:37:25.100
+So it's like you're not saving that much time, but you're saving a little time
+
+00:37:25.100 --> 00:37:29.100
+because finding the names take a while.
+
+00:37:29.100 --> 00:37:32.100
+Finding the formatting for me too, like having it all in there
+
+00:37:32.100 --> 00:37:37.100
+and you have the little like the default section, the rule section, the function section,
+
+00:37:37.100 --> 00:37:40.100
+having that predefined for you in a template is golden.
+
+00:37:40.100 --> 00:37:41.100
+It's very nice.
+
+00:37:41.100 --> 00:37:42.100
+Yes.
+
+00:37:42.100 --> 00:37:44.100
+And also just the name, that it knows the name.
+
+00:37:44.100 --> 00:37:45.100
+So here, yeah.
+
+00:37:45.100 --> 00:37:49.100
+So sometimes you can get it to work here.
+
+00:37:49.100 --> 00:37:53.100
+So here like if you, and this might be an extension somewhere,
+
+00:37:53.100 --> 00:37:56.100
+but you just say the thing and you can still find it.
+
+00:37:56.100 --> 00:37:58.100
+But it's still like, that's a lot, right?
+
+00:37:58.100 --> 00:37:59.100
+And you don't know.
+
+00:37:59.100 --> 00:38:04.100
+Some of them are taught presentation and some are not taught presentation, but still matter.
+
+00:38:04.100 --> 00:38:07.100
+Having the UI is really helpful.
+
+00:38:07.100 --> 00:38:16.100
+We're working on like having tighter integration with Toro and like Toro Hub with all of this.
+
+00:38:16.100 --> 00:38:21.100
+So when I made it, the Toro team was like, hey, we would like this eventually in,
+
+00:38:21.100 --> 00:38:25.100
+like just support it more natively.
+
+00:38:25.100 --> 00:38:26.100
+So that will happen.
+
+00:38:26.100 --> 00:38:32.100
+But right now this is the while you wait version.
+
+00:38:32.100 --> 00:38:38.100
+And I don't know how easy this would be on RStudio.
+
+00:38:38.100 --> 00:38:46.100
+Honestly, this should probably just be built in more directly because I'm doing some weird things that you might have noticed.
+
+00:38:46.100 --> 00:38:55.100
+So normally when you render preview here, Toro is like spinning up in the terminal.
+
+00:38:55.100 --> 00:39:02.100
+And then every time that we make a change, we see that it re-renders and it's being put into this window.
+
+00:39:02.100 --> 00:39:05.100
+And Positron knows about this.
+
+00:39:05.100 --> 00:39:09.100
+And like everyone plays together.
+
+00:39:09.100 --> 00:39:17.100
+My extension couldn't do any of this because this is all like in a walled garden of this is where the path ends up.
+
+00:39:17.100 --> 00:39:23.100
+So it is just doing its own thing that just happens to work.
+
+00:39:23.100 --> 00:39:25.100
+So it spins up its own Toro.
+
+00:39:25.100 --> 00:39:27.100
+It spins up a new window.
+
+00:39:27.100 --> 00:39:34.100
+So none of this is built into work and we will make that work better in the future.
+
+00:39:34.100 --> 00:39:37.100
+Because this semi-visual...
+
+00:39:37.100 --> 00:39:40.100
+This is obviously nice and programmers love it.
+
+00:39:40.100 --> 00:39:45.100
+But it's also so much easier just to...
+
+00:39:45.100 --> 00:39:51.100
+This looks so much nicer when you just do something fast.
+
+00:39:51.100 --> 00:40:01.100
+And obviously the slide is imperfect because you can only set the intervals that I've decided that is useful.
+
+00:40:01.100 --> 00:40:04.100
+But the groupings are nice.
+
+00:40:04.100 --> 00:40:07.100
+It's easy to see if something is taller or not.
+
+00:40:07.100 --> 00:40:09.100
+So this is wonderful.
+
+00:40:09.100 --> 00:40:15.100
+And also the whole inheritance doesn't work in the tweeter, right?
+
+00:40:15.100 --> 00:40:22.100
+So everything then becomes hard coded because you're not using predefined colors.
+
+00:40:22.100 --> 00:40:27.100
+But you could then see this being like, oh, I really like this magenta.
+
+00:40:27.100 --> 00:40:31.100
+You can put it up here.
+
+00:40:31.100 --> 00:40:34.100
+Magenta.
+
+00:40:34.100 --> 00:40:38.100
+Put it up here.
+
+00:40:39.100 --> 00:40:42.100
+And then it becomes...
+
+00:40:54.100 --> 00:41:06.100
+So you could, after you use the tweeter, then move it in and use these SAS variables and so on and so forth.
+
+00:41:06.100 --> 00:41:07.100
+Okay.
+
+00:41:07.100 --> 00:41:10.100
+We have covered so much.
+
+00:41:10.100 --> 00:41:13.100
+I think we covered almost all the questions.
+
+00:41:13.100 --> 00:41:15.100
+There were a couple that were lingering.
+
+00:41:15.100 --> 00:41:22.100
+One from NoTobeco about adding those SVG icons, which I think we can fit in in our last 15 minutes just to cover the extra on that part.
+
+00:41:22.100 --> 00:41:27.100
+And then there was one from Jessica that was a little bit more just like Korto-specific.
+
+00:41:27.100 --> 00:41:29.100
+Jessica, I'll follow up with you.
+
+00:41:29.100 --> 00:41:33.100
+Isabella and I will follow up with you about referencing a figure from another file.
+
+00:41:33.100 --> 00:41:39.100
+And then Jonathan had also asked, does ThemeTweaker integrate well with a brand file?
+
+00:41:39.100 --> 00:41:48.100
+So which one of those do you want to tackle first, the brand file question or the SVG icon question?
+
+00:41:48.100 --> 00:41:49.100
+I can answer the ThemeTweaker.
+
+00:41:49.100 --> 00:41:54.100
+So that will eventually work with the brand YAML idea.
+
+00:41:54.100 --> 00:42:02.100
+The issue with it a little bit is that I don't think the brand YAML is granular enough to do what I need it to do.
+
+00:42:02.100 --> 00:42:06.100
+So obviously, it sets a lot of settings, but it doesn't set enough.
+
+00:42:06.100 --> 00:42:10.100
+I actually started the project as, oh, it'll be a brand YAML thing.
+
+00:42:10.100 --> 00:42:16.100
+But it doesn't have enough, but that will work in the future.
+
+00:42:16.100 --> 00:42:25.100
+You can use the tweeter as a visual editor for your brand YAML file, and that should work.
+
+00:42:25.100 --> 00:42:27.100
+Okay.
+
+00:42:27.100 --> 00:42:36.100
+And then when we're saying SVG files, is that the background thing or like as a logo in our slides?
+
+00:42:36.100 --> 00:42:38.100
+Okay, let me read the question from No Tobacco.
+
+00:42:38.100 --> 00:42:41.100
+It says, what about adding SVG icons you've created?
+
+00:42:41.100 --> 00:42:47.100
+You added some really cool icons in the NES one that were like little stars and coins and stuff.
+
+00:42:47.100 --> 00:42:51.100
+I think it might have been right then.
+
+00:42:52.100 --> 00:42:56.100
+So you can do it in a different way.
+
+00:42:56.100 --> 00:43:00.100
+How did we even do it here?
+
+00:43:00.100 --> 00:43:03.100
+Oh, No Tobacco clarifies logos and icons.
+
+00:43:03.100 --> 00:43:06.100
+So that's probably more in here.
+
+00:43:06.100 --> 00:43:07.100
+All right.
+
+00:43:07.100 --> 00:43:15.100
+So then we have our theme, which is lovely, and we need an image.
+
+00:43:15.100 --> 00:43:22.100
+So I took a stupid little screenshot here.
+
+00:43:22.100 --> 00:43:27.100
+So icons just have to be some type of image.
+
+00:43:27.100 --> 00:43:33.100
+So here I'm making it a screenshot of the IDE, which is delightful.
+
+00:43:33.100 --> 00:43:41.100
+And then in, I think it's right here, we can say logo and logo PNG.
+
+00:43:41.100 --> 00:43:50.100
+And now the slides have this little logo, which is way too small right now.
+
+00:43:50.100 --> 00:43:52.100
+Itty bitty little thing.
+
+00:43:52.100 --> 00:43:54.100
+Yeah.
+
+00:43:55.100 --> 00:44:00.100
+So you can add a logo to your slides by setting the logo thing.
+
+00:44:00.100 --> 00:44:08.100
+And then it appears on all of them, which is a little unfortunate.
+
+00:44:08.100 --> 00:44:15.100
+And also the thing is, right now it says that it's always on the bottom right.
+
+00:44:15.100 --> 00:44:17.100
+So let's say you don't care about that.
+
+00:44:17.100 --> 00:44:19.100
+So then we fixed that fairly easily.
+
+00:44:19.100 --> 00:44:28.100
+So now I opened up my slide in my browser and I opened the developer page,
+
+00:44:28.100 --> 00:44:38.100
+which I don't remember how to do that.
+
+00:44:38.100 --> 00:44:44.100
+So on the mat for this browser, it's command option I.
+
+00:44:44.100 --> 00:44:51.100
+I picked this little selector and I find this is where the icon is.
+
+00:44:51.100 --> 00:44:56.100
+And I see that this, so it has the styling right here,
+
+00:44:56.100 --> 00:45:01.100
+which might be a little small to read.
+
+00:45:01.100 --> 00:45:09.100
+So I can see that this little image has the slide logo class
+
+00:45:09.100 --> 00:45:11.100
+and it's also like nested in reveal.
+
+00:45:11.100 --> 00:45:14.100
+So we can actually move around.
+
+00:45:14.100 --> 00:45:21.100
+So if we say bottom 100, it's right.
+
+00:45:21.100 --> 00:45:22.100
+But that's like a weird place.
+
+00:45:22.100 --> 00:45:24.100
+Let's say we want it top right.
+
+00:45:24.100 --> 00:45:30.100
+So we would remove the bottom one and we may say top zero.
+
+00:45:30.100 --> 00:45:35.100
+So now it's at the top right instead of bottom right.
+
+00:45:35.100 --> 00:45:37.100
+But obviously we don't want it like here.
+
+00:45:37.100 --> 00:45:44.100
+So what we do is we take this, the names.
+
+00:45:44.100 --> 00:45:52.100
+We go in here and then under rules and it already starts.
+
+00:45:52.100 --> 00:45:57.100
+So the first one is bottom or not.
+
+00:45:57.100 --> 00:45:59.100
+Am I spelling bottom right?
+
+00:45:59.100 --> 00:46:01.100
+B-O-T-T.
+
+00:46:01.100 --> 00:46:03.100
+Double O.
+
+00:46:03.100 --> 00:46:04.100
+There we go.
+
+00:46:05.100 --> 00:46:07.100
+And I'm saying unset because it's already set.
+
+00:46:07.100 --> 00:46:14.100
+And I'm saying top zero.
+
+00:46:14.100 --> 00:46:19.100
+And now it's at the top.
+
+00:46:19.100 --> 00:46:22.100
+So now we have changed where the icon is with,
+
+00:46:22.100 --> 00:46:31.100
+I want to say fairly minimal, like CSS, which will also,
+
+00:46:31.100 --> 00:46:33.100
+that might be hard.
+
+00:46:33.100 --> 00:46:36.100
+So we can.
+
+00:46:36.100 --> 00:46:38.100
+But that gets us most of the way there.
+
+00:46:38.100 --> 00:46:39.100
+I love it.
+
+00:46:39.100 --> 00:46:40.100
+That gets us most of the way.
+
+00:46:40.100 --> 00:46:41.100
+And now we have an icon.
+
+00:46:41.100 --> 00:46:46.100
+The thing, I don't remember how I did that, but we could.
+
+00:46:46.100 --> 00:46:50.100
+The only thing that might be like annoying is what if we don't want it,
+
+00:46:50.100 --> 00:46:52.100
+right?
+
+00:46:52.100 --> 00:46:59.100
+So we can say no logo, but obviously it still has the logo.
+
+00:46:59.100 --> 00:47:04.100
+But then we can be like that.
+
+00:47:04.100 --> 00:47:13.100
+No.
+
+00:47:13.100 --> 00:47:20.100
+Then we want to say.
+
+00:47:20.100 --> 00:47:23.100
+I love Emil quietly talking to himself as he life coats.
+
+00:47:23.100 --> 00:47:25.100
+It's very soothing.
+
+00:47:25.100 --> 00:47:27.100
+We don't get enough life coding.
+
+00:47:27.100 --> 00:47:29.100
+I was talking about that in the chat today,
+
+00:47:29.100 --> 00:47:32.100
+that like a lot of things have taken over the video tutorial spot.
+
+00:47:32.100 --> 00:47:33.100
+Right.
+
+00:47:33.100 --> 00:47:37.100
+People like just ask cloud questions, but life coding is still so,
+
+00:47:37.100 --> 00:47:40.100
+so valuable.
+
+00:47:40.100 --> 00:47:42.100
+So is this what we need?
+
+00:47:42.100 --> 00:47:44.100
+Oh, and then.
+
+00:47:44.100 --> 00:47:50.100
+Oh, it doesn't turn that.
+
+00:47:51.100 --> 00:47:57.100
+So.
+
+00:47:57.100 --> 00:48:06.100
+Why did you not say.
+
+00:48:06.100 --> 00:48:10.100
+This might be.
+
+00:48:10.100 --> 00:48:13.100
+I'll put it up later because I don't know if I can remember how to do
+
+00:48:13.100 --> 00:48:15.100
+this.
+
+00:48:15.100 --> 00:48:17.100
+That's okay.
+
+00:48:17.100 --> 00:48:18.100
+That is possible.
+
+00:48:19.100 --> 00:48:20.100
+So I did it at one point,
+
+00:48:20.100 --> 00:48:25.100
+but some does Toro has this weird ideas sometimes.
+
+00:48:25.100 --> 00:48:29.100
+So obviously it has the slides on,
+
+00:48:29.100 --> 00:48:34.100
+but the content on the slide is obviously on the slide itself.
+
+00:48:34.100 --> 00:48:38.100
+But like the background images are technically not part of the slides
+
+00:48:38.100 --> 00:48:39.100
+themselves.
+
+00:48:39.100 --> 00:48:43.100
+They are in a different diff next to it.
+
+00:48:43.100 --> 00:48:46.100
+That is then being shown behind it.
+
+00:48:46.100 --> 00:48:48.100
+So they're not part of the slide.
+
+00:48:48.100 --> 00:48:52.100
+So sometimes when you're trying to select something,
+
+00:48:52.100 --> 00:48:59.100
+I don't remember if the Loto is considered part of the slide or if it's
+
+00:48:59.100 --> 00:49:06.100
+like a theory or third thing that happens to just also be viewed at the
+
+00:49:06.100 --> 00:49:08.100
+same time.
+
+00:49:08.100 --> 00:49:10.100
+Right.
+
+00:49:10.100 --> 00:49:11.100
+I did at one point,
+
+00:49:11.100 --> 00:49:17.100
+someone asked me and I figured out how to basically make this wet.
+
+00:49:17.100 --> 00:49:19.100
+So you can have Loto and they're always there,
+
+00:49:19.100 --> 00:49:25.100
+but you can specify no Loto and you're just making it not appear on
+
+00:49:25.100 --> 00:49:27.100
+that specific slide.
+
+00:49:27.100 --> 00:49:29.100
+But that's sometimes nice to have.
+
+00:49:29.100 --> 00:49:34.100
+I'm going to go dig through your NES themes dot SCSS file and just see
+
+00:49:34.100 --> 00:49:35.100
+how you did.
+
+00:49:35.100 --> 00:49:36.100
+You did all of these amazing,
+
+00:49:36.100 --> 00:49:37.100
+many,
+
+00:49:37.100 --> 00:49:38.100
+many things,
+
+00:49:38.100 --> 00:49:43.100
+but also we have about eight minutes left and sorry,
+
+00:49:43.100 --> 00:49:45.100
+we had a question from Nathan,
+
+00:49:45.100 --> 00:49:46.100
+which was,
+
+00:49:46.100 --> 00:49:48.100
+so we make our amazing themes,
+
+00:49:48.100 --> 00:49:52.100
+then we push them to get hub and we can just use quarto use template,
+
+00:49:52.100 --> 00:49:53.100
+you know,
+
+00:49:53.100 --> 00:49:55.100
+my name slash my theme.
+
+00:49:55.100 --> 00:49:59.100
+Could you go over one more time how to use these themes using one of
+
+00:49:59.100 --> 00:50:00.100
+yours as an example,
+
+00:50:00.100 --> 00:50:02.100
+like the NES theme or something?
+
+00:50:02.100 --> 00:50:03.100
+Yes.
+
+00:50:03.100 --> 00:50:06.100
+So then,
+
+00:50:06.100 --> 00:50:07.100
+yeah.
+
+00:50:07.100 --> 00:50:15.100
+So we go to our terminal and I'll just open a new one.
+
+00:50:15.100 --> 00:50:16.100
+And we,
+
+00:50:16.100 --> 00:50:17.100
+oh,
+
+00:50:17.100 --> 00:50:18.100
+I'm on desktop already.
+
+00:50:18.100 --> 00:50:19.100
+It's fine.
+
+00:50:19.100 --> 00:50:21.100
+I'm close enough.
+
+00:50:21.100 --> 00:50:23.100
+So then you say use,
+
+00:50:23.100 --> 00:50:26.100
+so quarto use template,
+
+00:50:26.100 --> 00:50:32.100
+and then you have to put in the path or,
+
+00:50:32.100 --> 00:50:37.100
+let's say the path to a folder or part of the URL,
+
+00:50:37.100 --> 00:50:42.100
+or if you just use the name dash,
+
+00:50:42.100 --> 00:50:44.100
+that repo name,
+
+00:50:44.100 --> 00:50:46.100
+it knows to pull from GitHub.
+
+00:50:46.100 --> 00:50:51.100
+I'm feeling you can also use other ones.
+
+00:50:51.100 --> 00:50:54.100
+I don't exactly know how everything's passes,
+
+00:50:54.100 --> 00:50:57.100
+but I know that it's,
+
+00:50:57.100 --> 00:50:59.100
+so if I want to use the NES one,
+
+00:50:59.100 --> 00:51:02.100
+it's quarto NES theme.
+
+00:51:02.100 --> 00:51:09.100
+And because of the way we do things,
+
+00:51:09.100 --> 00:51:10.100
+we have to say,
+
+00:51:10.100 --> 00:51:11.100
+yes,
+
+00:51:11.100 --> 00:51:16.100
+I always create a subdirectory because of the way.
+
+00:51:16.100 --> 00:51:21.100
+When I use a theme,
+
+00:51:21.100 --> 00:51:23.100
+it's because I'm starting a new document.
+
+00:51:24.100 --> 00:51:28.100
+So I'll just want a folder with everything I need in it.
+
+00:51:28.100 --> 00:51:32.100
+You can also say no to the subdirectory part,
+
+00:51:32.100 --> 00:51:36.100
+and then it just copies the files into your torrent folder.
+
+00:51:36.100 --> 00:51:39.100
+And as long as filenames don't matter,
+
+00:51:39.100 --> 00:51:40.100
+it's fine.
+
+00:51:40.100 --> 00:51:45.100
+So here we're having new demo,
+
+00:51:45.100 --> 00:51:47.100
+and then you say,
+
+00:51:47.100 --> 00:51:48.100
+yes,
+
+00:51:49.100 --> 00:51:55.100
+and it is essentially a copy paste.
+
+00:51:55.100 --> 00:51:57.100
+So it said what it is.
+
+00:51:57.100 --> 00:52:00.100
+This is done as an extension,
+
+00:52:00.100 --> 00:52:02.100
+which is a little weird.
+
+00:52:02.100 --> 00:52:04.100
+And then I don't know why it doesn't open up.
+
+00:52:04.100 --> 00:52:07.100
+I feel like it used to just open up by default,
+
+00:52:07.100 --> 00:52:10.100
+but then you find it.
+
+00:52:11.100 --> 00:52:13.100
+And now.
+
+00:52:21.100 --> 00:52:22.100
+Oh,
+
+00:52:22.100 --> 00:52:23.100
+this might break.
+
+00:52:23.100 --> 00:52:27.100
+Can I find a new one?
+
+00:52:29.100 --> 00:52:31.100
+Maybe this one.
+
+00:52:32.100 --> 00:52:34.100
+Yeah.
+
+00:52:34.100 --> 00:52:38.100
+And so because the total use template really is just
+
+00:52:38.100 --> 00:52:41.100
+copying the files over for you.
+
+00:52:41.100 --> 00:52:44.100
+It's the thinnest of wrapper.
+
+00:52:44.100 --> 00:52:46.100
+It doesn't actually do that much.
+
+00:52:46.100 --> 00:52:47.100
+It just looks.
+
+00:52:47.100 --> 00:52:49.100
+This is a folder online.
+
+00:52:49.100 --> 00:52:51.100
+Can I copy it over?
+
+00:52:51.100 --> 00:52:55.100
+It may be checked if there's a total file in there.
+
+00:52:56.100 --> 00:52:58.100
+I don't even know.
+
+00:52:58.100 --> 00:53:04.100
+And then obviously it adheres to the total ignore file.
+
+00:53:04.100 --> 00:53:05.100
+But yeah,
+
+00:53:05.100 --> 00:53:10.100
+then you just have a file and you can modify it.
+
+00:53:10.100 --> 00:53:12.100
+And that's.
+
+00:53:12.100 --> 00:53:15.100
+And I think that it does too.
+
+00:53:15.100 --> 00:53:20.100
+If you name your file template,
+
+00:53:20.100 --> 00:53:22.100
+here in your extension,
+
+00:53:22.100 --> 00:53:27.100
+it will then inherit the name when you use the template.
+
+00:53:27.100 --> 00:53:32.100
+So here I told this repo new demo and the QMD file is
+
+00:53:32.100 --> 00:53:35.100
+called new demo QMD.
+
+00:53:35.100 --> 00:53:38.100
+But if you give it a different name,
+
+00:53:38.100 --> 00:53:42.100
+it doesn't rename this file.
+
+00:53:42.100 --> 00:53:45.100
+If that makes sense.
+
+00:53:46.100 --> 00:53:47.100
+Okay.
+
+00:53:47.100 --> 00:53:50.100
+I think I would have to walk through these steps one more time to
+
+00:53:50.100 --> 00:53:52.100
+make sure I get them all.
+
+00:53:52.100 --> 00:53:53.100
+But I'm loving it.
+
+00:53:53.100 --> 00:53:56.100
+And this is all something that you could put in a read me for
+
+00:53:56.100 --> 00:53:57.100
+somebody.
+
+00:53:57.100 --> 00:54:00.100
+If you wanted to share your, your template.
+
+00:54:00.100 --> 00:54:03.100
+And I also wanted to share a couple of things that I just put in
+
+00:54:03.100 --> 00:54:04.100
+the discord.
+
+00:54:04.100 --> 00:54:08.100
+And I will also put them in the chat.
+
+00:54:08.100 --> 00:54:10.100
+In just a second.
+
+00:54:11.100 --> 00:54:13.100
+I have two things.
+
+00:54:13.100 --> 00:54:14.100
+One is this Wednesday.
+
+00:54:14.100 --> 00:54:16.100
+One is in a couple of Wednesdays.
+
+00:54:16.100 --> 00:54:17.100
+This Wednesday,
+
+00:54:17.100 --> 00:54:21.100
+Isabella and I are going to be joining the our ladies Melbourne group.
+
+00:54:21.100 --> 00:54:24.100
+If you are in the United States, this is quite late at night for you.
+
+00:54:24.100 --> 00:54:27.100
+So for Isabella and I in central time is going to be starting at 8.
+
+00:54:27.100 --> 00:54:28.100
+PM.
+
+00:54:28.100 --> 00:54:29.100
+If you're on the East coast, it'll be at 9.
+
+00:54:29.100 --> 00:54:30.100
+PM.
+
+00:54:30.100 --> 00:54:33.100
+But it is going to be a gentle introduction to positron for our
+
+00:54:33.100 --> 00:54:34.100
+studio users.
+
+00:54:34.100 --> 00:54:37.100
+So if you are in the United States,
+
+00:54:37.100 --> 00:54:39.100
+This is going to be a gentle introduction to positron for our studio
+
+00:54:39.100 --> 00:54:40.100
+users.
+
+00:54:40.100 --> 00:54:42.100
+So a lot of people had questions today that were like, oh my gosh,
+
+00:54:42.100 --> 00:54:43.100
+this is all in positron.
+
+00:54:43.100 --> 00:54:45.100
+This is so cool.
+
+00:54:45.100 --> 00:54:49.100
+I'm still in our studio in like, there's some hesitation there.
+
+00:54:49.100 --> 00:54:50.100
+That is okay.
+
+00:54:50.100 --> 00:54:51.100
+We got you.
+
+00:54:51.100 --> 00:54:52.100
+Come join us.
+
+00:54:52.100 --> 00:54:53.100
+We'll give you a gentle introduction.
+
+00:54:53.100 --> 00:54:54.100
+I think it will be recorded.
+
+00:54:54.100 --> 00:54:55.100
+There was a question about that.
+
+00:54:55.100 --> 00:54:58.100
+It's up to the our ladies organizers, but we will for sure ask.
+
+00:54:58.100 --> 00:55:01.100
+And then that's something that they can share themselves.
+
+00:55:02.100 --> 00:55:05.100
+And then also Emil himself is hosting a two hour slide crafting
+
+00:55:05.100 --> 00:55:07.100
+workshop in a couple of weeks on a Wednesday.
+
+00:55:07.100 --> 00:55:08.100
+It's on August 12th.
+
+00:55:08.100 --> 00:55:10.100
+So I put a link to that as well.
+
+00:55:10.100 --> 00:55:12.100
+It's at the same time slot as the lab.
+
+00:55:12.100 --> 00:55:14.100
+If you are used to that.
+
+00:55:14.100 --> 00:55:16.100
+So 11 AM for me central it's 12 PM Eastern.
+
+00:55:16.100 --> 00:55:18.100
+And it's going to be on August 12th.
+
+00:55:18.100 --> 00:55:19.100
+Okay.
+
+00:55:19.100 --> 00:55:20.100
+I think that that's it for me.
+
+00:55:20.100 --> 00:55:22.100
+I know we only have two minutes left, so I will say.
+
+00:55:22.100 --> 00:55:23.100
+Thank you so much.
+
+00:55:23.100 --> 00:55:25.100
+I'm going to put the stuff in the, in the chat.
+
+00:55:26.100 --> 00:55:30.100
+But it's formatted hilariously because I copied the emojis from discord.
+
+00:55:30.100 --> 00:55:31.100
+So please ignore those.
+
+00:55:31.100 --> 00:55:32.100
+Yeah.
+
+00:55:32.100 --> 00:55:34.100
+Those, those paste artifacts, but this was so great.
+
+00:55:34.100 --> 00:55:35.100
+Thank you so much.
+
+00:55:35.100 --> 00:55:36.100
+Emil for joining us.
+
+00:55:36.100 --> 00:55:37.100
+This was so enlightening.
+
+00:55:37.100 --> 00:55:40.100
+I think a lot of people were amazed by your extension for positron.
+
+00:55:40.100 --> 00:55:43.100
+They were like, Oh, this is worth like heading over to positron.
+
+00:55:43.100 --> 00:55:44.100
+So thank you so much.
+
+00:55:44.100 --> 00:55:45.100
+Thank you.
+
+00:55:45.100 --> 00:55:46.100
+Thank you.
+
+00:55:46.100 --> 00:55:47.100
+Thank you.
+
+00:55:47.100 --> 00:55:48.100
+Thank you.
+
+00:55:48.100 --> 00:55:49.100
+Thank you.
+
+00:55:49.100 --> 00:55:50.100
+Thank you.
+
+00:55:50.100 --> 00:55:51.100
+Thank you.
+
+00:55:51.100 --> 00:55:52.100
+Thank you.
+
+00:55:52.100 --> 00:55:53.100
+Thank you.
+
+00:55:53.100 --> 00:55:54.100
+It's like heading over to positron.
+
+00:55:54.100 --> 00:55:57.100
+So thank you so much for everything you do developing for the quertet community.
+
+00:55:57.100 --> 00:55:59.100
+Thank you for having me.
+
+00:55:59.100 --> 00:56:04.100
+It's always a great talking to people and three time returning champion.
+
+00:56:04.100 --> 00:56:05.100
+Yeah.

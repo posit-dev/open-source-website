@@ -40,7 +40,7 @@
 
 <p><a data-t="364">So I'm going to see what happens if I ask Shiny Assistant to make some changes.</a> <a data-t="369">So let's say I only want to visualize the data for a certain amount of states.</a> <a data-t="372">This is kind of a lot of states for one plot.</a> <a data-t="376">I can't really see their names.</a> <a data-t="377">I could try to fix that, but maybe I'm only interested in a handful of the states.</a> <a data-t="383">Let's ask it to add an input for the states.</a></p>
 
-<p><a data-t="406">Okay, so I've asked it to add a selectize input</a> <a data-t="409">so that the user can select which states they want to visualize.</a> <a data-t="414">Okay, great.</a> <a data-t="414">So this is already easier to see.</a> <a data-t="417">So I can add states and or remove them,</a> <a data-t="424">and now the user can select both the metric that they want to see</a> <a data-t="429">and the states that they want to see that metric for.</a></p>
+<p><a data-t="406">Okay, so I've asked it to add a selectize input</a> <a data-t="409">so that the user can select which states they want to visualize.</a> <a data-t="413">Okay, great.</a> <a data-t="414">So this is already easier to see.</a> <a data-t="417">So I can add states and or remove them,</a> <a data-t="424">and now the user can select both the metric that they want to see</a> <a data-t="429">and the states that they want to see that metric for.</a></p>
 
 <p><a data-t="432">Okay, so this is a great start to a Shiny app.</a> <a data-t="435">It's not super polished or super finished,</a> <a data-t="437">but Shiny Assistant helped me get to a working, useful Shiny app very quickly,</a> <a data-t="442">and I now have a great starting point for continued development.</a></p>
 

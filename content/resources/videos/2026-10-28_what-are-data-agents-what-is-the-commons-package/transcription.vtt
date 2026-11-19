@@ -1,0 +1,731 @@
+WEBVTT
+
+00:00:00.320 --> 00:00:05.920
+Earlier this year, we started seeing something internally and at the organizations we work with
+
+00:00:05.920 --> 00:00:15.280
+that concerned us. And that's that it's becoming normal to vibe-analyze data. A broader population
+
+00:00:15.280 --> 00:00:23.440
+of people can now convincingly do data analysis by pulling up a coding agent and asking a data
+
+00:00:23.440 --> 00:00:30.080
+question. There was an episode of Posit's Test Set podcast earlier this year that
+
+00:00:31.440 --> 00:00:37.840
+phrased this pretty hilariously. The title is, Your VP is Doing a Rogue Analysis in Cursor
+
+00:00:37.840 --> 00:00:45.200
+Right Now. And in this podcast, Danielle Thomas describes how she's seeing this in her organization.
+
+00:00:45.200 --> 00:00:54.959
+I think data people are kind of horrified at the idea of vibe analysis. It sets a low bar for
+
+00:00:54.959 --> 00:01:02.799
+correctness, for reproducibility. You know, these coding agents, they tend to work in temp files.
+
+00:01:03.759 --> 00:01:08.559
+The harnesses that they work in tend to delete the conversation histories after a month.
+
+00:01:09.519 --> 00:01:15.760
+And so it doesn't set these models up well to write code that will be able to
+
+00:01:15.760 --> 00:01:25.519
+reproduce the same result even a month later. But at the same time, we can't just ignore this or say
+
+00:01:26.480 --> 00:01:31.120
+not to do it. People are going to reach for the technology that gives them answers.
+
+00:01:31.760 --> 00:01:37.760
+And we think that data people have the skill set to serve these people with chatbots that give more
+
+00:01:37.760 --> 00:01:45.360
+correct and more reproducible answers. So if these models are going to make mistakes, if they
+
+00:01:45.360 --> 00:01:52.000
+have bad habits in data analysis, how do we make data analysis agents that are trustworthy?
+
+00:01:54.559 --> 00:02:00.879
+I think there are kind of two problems that we have to speak to in order to really answer this.
+
+00:02:01.839 --> 00:02:10.399
+One is that we need the model to write the right code. And we also need the user,
+
+00:02:11.839 --> 00:02:18.800
+the user has to know how trustworthy that code is. So if it's code that the data team
+
+00:02:19.600 --> 00:02:26.160
+is maintaining already, and these are sources of trusted analysis already that might underlie
+
+00:02:26.160 --> 00:02:31.119
+like a Shiny app or a quarter report that exists from the data team, then that code is more
+
+00:02:31.119 --> 00:02:40.240
+trustworthy than code that the agent is sort of improvising on the spot. These are exactly the
+
+00:02:40.240 --> 00:02:48.000
+problems that we're trying to solve in a new open source package called Commons. Commons is a tool
+
+00:02:48.000 --> 00:02:54.240
+for data scientists to build trustworthy data agents for their collaborators. And those data
+
+00:02:54.240 --> 00:03:01.679
+agents are designed to be more correct, more reproducible, and more transparent than coding
+
+00:03:01.679 --> 00:03:11.440
+agents that are most popular. It's open source in both R and Python, and it's built on our open
+
+00:03:11.440 --> 00:03:18.880
+source AI stack with Shiny, Elmer, and Chatless. And you can use it with whatever model from
+
+00:03:18.880 --> 00:03:25.679
+whatever provider that you want. I'm often asked why it is that there's a bird on the hex.
+
+00:03:26.320 --> 00:03:36.639
+This is a common kingfisher. So Commons, common. One of the core ideas behind Commons is this
+
+00:03:36.639 --> 00:03:43.520
+concept of trusted code. So I mentioned earlier that the data team already has all sorts of
+
+00:03:43.520 --> 00:03:51.119
+code that produces analysis that is trusted by their collaborators and within their organization.
+
+00:03:51.919 --> 00:03:57.839
+So this could be R packages, Python packages, quarter reports, Shiny apps,
+
+00:03:58.559 --> 00:04:05.919
+semantic views inside of databases like Databricks or Snowflake. And one of the
+
+00:04:05.919 --> 00:04:10.720
+questions that Commons tries to answer is what would it look like if the model could reach for
+
+00:04:10.720 --> 00:04:18.160
+this code directly rather than sort of hand authoring code on its own. So instead of writing
+
+00:04:18.160 --> 00:04:25.679
+code afresh, it's just reaching for this trusted code when it's around. So in order to make that
+
+00:04:25.679 --> 00:04:31.920
+happen, Commons is doing three things. The first of them is providing a data structure that you can
+
+00:04:31.920 --> 00:04:39.279
+extract all of this trusted code and metadata about what that code means and how it's interpreted
+
+00:04:39.359 --> 00:04:47.920
+in the business context into this common data structure. And once that data structure exists,
+
+00:04:47.920 --> 00:04:55.519
+there's also a harness, so a set of prompts and tools that's provided to an LLM to try to give
+
+00:04:55.519 --> 00:05:03.519
+it the right context at the right time. And finally, once these agents exist and they're
+
+00:05:03.519 --> 00:05:10.799
+deployed in production, those agents will do a bunch of work live. And some of those
+
+00:05:11.679 --> 00:05:18.160
+conversations will result in the agent finding code that is trusted by the organization already
+
+00:05:18.160 --> 00:05:25.279
+and invoking it. But some of the other questions will result in the agent having to improvise
+
+00:05:25.279 --> 00:05:31.119
+R or Python code. And so in those cases where the agent has to improvise code,
+
+00:05:32.079 --> 00:05:36.559
+Commons provides some tools to try to push those responses up the trust ladder,
+
+00:05:38.160 --> 00:05:42.399
+allowing the data team to see what questions are being asked live
+
+00:05:42.399 --> 00:05:46.559
+and add new sources of trusted code over time.
+
+00:05:49.920 --> 00:05:56.480
+So let's see this in action from the perspective of the VP doing a rogue analysis,
+
+00:05:56.480 --> 00:06:02.640
+except this time the analysis is a bit less rogue. We're looking at a regular,
+
+00:06:02.640 --> 00:06:11.279
+regular chat application. We've designed Commons apps to look as much like regular coding agents
+
+00:06:11.279 --> 00:06:18.720
+as possible. So this should feel familiar to users of products like chat.com or cloud.ai.
+
+00:06:18.959 --> 00:06:28.000
+So that VP might ask, how is traffic trending for our site? So the first way that these
+
+00:06:28.000 --> 00:06:33.440
+Commons agents work a little bit differently than most coding agents is that the agent will first
+
+00:06:33.440 --> 00:06:40.000
+search for a trusted calculation. And if it can find some piece of code that the data team uses
+
+00:06:40.000 --> 00:06:47.519
+already, then it will invoke that directly rather than writing code on its own. And so
+
+00:06:48.480 --> 00:06:55.119
+so in this case, it's found a calculation that is trusted by the data team, and it can invoke it,
+
+00:06:55.760 --> 00:07:00.399
+and then it will write a bit of context about what it sees.
+
+00:07:02.399 --> 00:07:07.679
+The last thing you might notice is that the end of the response has this little green shield
+
+00:07:07.679 --> 00:07:13.920
+attached to the end. And if you hover over that green shield, you'll see that this answer comes
+
+00:07:13.920 --> 00:07:26.239
+from a trusted calculation. This green shield is added deterministically by the Commons system
+
+00:07:26.239 --> 00:07:32.640
+rather than by the agent, because the only way that the agent accessed and analyzed data
+
+00:07:33.200 --> 00:07:43.200
+is via the trusted calculation. We know that trusted code probably won't cover all of the
+
+00:07:43.200 --> 00:07:48.880
+possible questions that users might have of an application like this, so it is possible for
+
+00:07:48.880 --> 00:07:56.160
+Commons agents to write custom R and Python and SQL code in order to answer questions.
+
+00:07:58.640 --> 00:08:05.600
+So the first thing that the agent will do in this sort of situation is look through the trusted
+
+00:08:05.600 --> 00:08:11.839
+calculations at first, and if it can't find it, it will search through context defined by the data
+
+00:08:11.839 --> 00:08:20.399
+team about how these calculations are done in the organization. So this could be data dictionaries,
+
+00:08:20.399 --> 00:08:27.279
+markdown files, if you have them existing context layers from like Databricks or Snowflake,
+
+00:08:28.000 --> 00:08:31.279
+and then it can write whatever code it needs to find an answer.
+
+00:08:33.200 --> 00:08:38.479
+So in this case, it was able to make a plot with some R code and describe it to me,
+
+00:08:38.479 --> 00:08:45.679
+but it also knows how to interpret this plot because of some context that was defined by
+
+00:08:45.679 --> 00:08:54.080
+the data team. You'll notice at the end of this answer, there's a little blue citation icon,
+
+00:08:54.080 --> 00:09:02.559
+and if I hover over that, the agent has cited some piece of context that justifies its approach,
+
+00:09:03.440 --> 00:09:10.479
+and thus the response doesn't fall into the lowest trust tier, which I'll show now.
+
+00:09:12.000 --> 00:09:17.359
+If I ask a question and the agent doesn't necessarily find some piece of context
+
+00:09:17.359 --> 00:09:25.760
+that justifies its approach, the end of its response will have a little yellow exclamation point,
+
+00:09:26.159 --> 00:09:31.440
+and if I hover over that icon, it reads, this answer was not produced by a trusted calculation
+
+00:09:31.440 --> 00:09:38.719
+and does not cite trusted context. So you can think of this as like a normal response from
+
+00:09:38.719 --> 00:09:45.919
+any other coding agent. In this case, the agent is improvising code and using its own intuition
+
+00:09:45.919 --> 00:09:48.159
+in order to try to answer your questions.
+
+00:09:49.119 --> 00:09:53.520
+So if we revisit those two problems that we were originally trying to solve,
+
+00:09:53.520 --> 00:09:57.760
+the model has to write the right code and the user has to know how trustworthy that code is.
+
+00:09:58.719 --> 00:10:05.119
+So in order to help the model write the right code, we provide the model with calculations
+
+00:10:05.119 --> 00:10:10.239
+and context that the data team uses already in order to produce trustworthy analysis.
+
+00:10:10.320 --> 00:10:18.640
+Then depending on how effectively the agent was able to find context or code in order to
+
+00:10:18.640 --> 00:10:25.760
+solve that problem, we can signal to the user whether it used code that exists already in
+
+00:10:25.760 --> 00:10:33.280
+the organization to answer the question or whether it had to improvise its own code in order to
+
+00:10:34.000 --> 00:10:41.200
+answer that question. So each response that comes from a commons agent follows this sort of flow.
+
+00:10:41.200 --> 00:10:44.000
+Regardless of what the question is, the first thing that the agent will do
+
+00:10:44.559 --> 00:10:50.880
+is search for trusted calculations that can speak to this question. And if it finds one,
+
+00:10:50.880 --> 00:10:56.559
+it will use it and you'll get a green shield. Otherwise, the agent will poke around and
+
+00:10:56.640 --> 00:10:59.679
+if it finds one, it will use it and you'll get a green shield.
+
+00:11:01.280 --> 00:11:06.239
+Otherwise, the agent will poke around inside of the organizational context,
+
+00:11:06.239 --> 00:11:11.200
+freehand some R or Python or SQL code, and depending on whether or not it can justify
+
+00:11:11.200 --> 00:11:15.520
+its approach, it will get a little blue icon or a little yellow one.
+
+00:11:17.520 --> 00:11:21.039
+I'll hand it off to Sarah here to talk a little bit more about
+
+00:11:21.039 --> 00:11:24.719
+use cases of commons agents and what it looks like to build them.
+
+00:11:27.200 --> 00:11:32.719
+So I have a couple of demos to share. The first one is called DevRelAgent. This is
+
+00:11:32.719 --> 00:11:40.000
+a commons agent that looks at developer relations data for Posit inputs, so like
+
+00:11:41.119 --> 00:11:49.520
+GitHub repo stars, CRAN downloads, all of that. So this is DevRelAgent. Both the demos I'll share
+
+00:11:49.520 --> 00:11:56.960
+with you are deployed to Posit Connect Cloud. So for this one, we can ask questions like how
+
+00:11:56.960 --> 00:12:01.520
+many CRAN downloads were there for last month. Actually don't have last month's data yet,
+
+00:12:01.520 --> 00:12:08.880
+so I'm going to change this to August 2026. And again, it's going to look for a trusted
+
+00:12:08.880 --> 00:12:15.440
+calculation first, so it tries to find and go down that trusted path first before writing
+
+00:12:15.440 --> 00:12:21.200
+custom code. In this case, there is a trusted calculation for CRAN downloads, and if we expand
+
+00:12:22.320 --> 00:12:27.119
+this line that says ran a trusted calculation, we can learn more about what exactly was run.
+
+00:12:27.119 --> 00:12:31.679
+And then it gives us the answer, and because this came from a trusted calculation,
+
+00:12:31.679 --> 00:12:38.799
+we see this green shield icon. Okay, let's ask something else. So I'm going to say
+
+00:12:39.119 --> 00:12:46.960
+plot CRAN downloads the dplyr from 2023 to 2026.
+
+00:12:49.520 --> 00:12:55.359
+So in this case, it is going to run a trusted calculation, but that's not going to be enough.
+
+00:12:55.359 --> 00:13:01.760
+And so if in order to answer the user's question, it needs to do additional stuff, it still has the
+
+00:13:01.760 --> 00:13:06.799
+flexibility to do that. So it not only ran a trusted calculation here to get some current
+
+00:13:06.799 --> 00:13:15.760
+download data, it then, in order to plot it, wrote some custom R code. And then we have this
+
+00:13:15.760 --> 00:13:25.359
+plot, which could look a little better, but it's CRAN downloads over time. I think one important
+
+00:13:25.359 --> 00:13:31.840
+thing for data agents to be able to do is tell you when they can't answer something. So let's see if
+
+00:13:31.840 --> 00:13:37.919
+we ask it a question that I know it can't actually answer what it does. How many times has Positron
+
+00:13:38.640 --> 00:13:47.440
+been downloaded? And in this case, it doesn't have enough data, it doesn't have the right
+
+00:13:47.440 --> 00:13:52.239
+hookups to the data that could answer this kind of question, so it says that it can't tell us how
+
+00:13:52.239 --> 00:13:57.679
+many times Positron has been downloaded. Great. Okay, I have one other demo I want to show, which is
+
+00:13:58.400 --> 00:14:03.440
+this common agent called the Clinical Trials Agent. Again, this is deployed to Posit-Connect
+
+00:14:03.440 --> 00:14:10.239
+Cloud. You can use this agent to analyze simulated clinical trials data. All of the trusted code
+
+00:14:10.239 --> 00:14:18.960
+comes from Insight Engineering's TLG catalog. And so the thing I wanted to point out about this is
+
+00:14:18.960 --> 00:14:26.080
+that this agent, the trusted calculations, don't just output tables or data frames, they output
+
+00:14:26.080 --> 00:14:31.440
+GT tables and also plots, which I'll show in a minute. So for this question, this is a GT table.
+
+00:14:31.440 --> 00:14:37.520
+You can see it's sort of styled. And then the other thing is that if you have a source for the
+
+00:14:37.520 --> 00:14:42.239
+trusted code, Commons will show you this view source thing. You can click on that and see the
+
+00:14:42.239 --> 00:14:51.919
+code source. I'm going to show you how to make a plot with a trusted calculation. So we can also
+
+00:14:51.919 --> 00:14:57.200
+ask it to make a Kaplan-Meier plot of overall survival by treatment arm. It's going to look
+
+00:14:57.200 --> 00:15:00.960
+for a trusted calculation. In this case, it has one, and so it makes a plot for us.
+
+00:15:05.280 --> 00:15:10.400
+So I have the GitHub links to both these agents. If you want to take a look at the code, it's in
+
+00:15:10.400 --> 00:15:16.640
+that photo. We'll also have the links at the end. Okay, so after seeing these agents in action, I'm
+
+00:15:16.640 --> 00:15:20.000
+going to talk a little bit more about what it looks like for the person actually building and
+
+00:15:20.000 --> 00:15:27.280
+maintaining these Commons agents. And there's really three processes to making and maintaining
+
+00:15:27.280 --> 00:15:32.640
+a Commons agent. The first is the build process. This is when you're going to make your Commons
+
+00:15:32.640 --> 00:15:36.799
+agent. You need to hook it up to the trusted code and the data sources that you want to use.
+
+00:15:37.919 --> 00:15:43.760
+The second is to deploy it. It's really easy to deploy Commons agents to PositConnect Cloud or to
+
+00:15:43.840 --> 00:15:48.880
+PositConnect. And this allows your colleagues to use the agent.
+
+00:15:51.119 --> 00:15:57.440
+And then the third process is improvement. This is when you can review the agent's behavior and
+
+00:15:57.440 --> 00:16:02.320
+add more trusted code to cover more use cases. And Commons has a couple built-in functions that
+
+00:16:02.320 --> 00:16:08.080
+we'll talk about in a minute that help you do that. Okay, so how do you actually build a Commons agent?
+
+00:16:08.559 --> 00:16:14.479
+One helpful thing is that Commons ships with a built-in coding agent skill that helps you plus
+
+00:16:14.479 --> 00:16:20.320
+a coding agent like Posit Assistant or Cloud Code build a Commons agent. The skill walks you through
+
+00:16:20.320 --> 00:16:25.200
+the process of looking through all the data that you might want to make available to the Commons
+
+00:16:25.200 --> 00:16:29.760
+agent, all the code that might go into that trusted calculation layer, and then helps you
+
+00:16:29.760 --> 00:16:34.719
+construct everything together. I think this is really helpful and I would encourage you to try
+
+00:16:34.719 --> 00:16:38.799
+it out if you're building a Commons agent. I think it can help you get started faster than you would
+
+00:16:38.799 --> 00:16:45.679
+have otherwise. And there's instructions at this footer link about how to get that agent skill set
+
+00:16:45.679 --> 00:16:50.719
+up. Commons also has this idea of information layers, so it's not just that we're making
+
+00:16:50.719 --> 00:16:55.039
+trusted calculations available to the agent. There's two different layers and they provide
+
+00:16:55.039 --> 00:17:01.359
+different kinds of information that help the agent write the right code and get answers right.
+
+00:17:01.919 --> 00:17:09.280
+Okay, so these two layers are the semantic layer and the context layer. So, the semantic layer
+
+00:17:09.280 --> 00:17:14.400
+provides the trusted calculations and there's a couple forms that the trusted calculations
+
+00:17:14.400 --> 00:17:21.359
+can come in. They can either be in sort of normal R and Python scripts. We call these measures when
+
+00:17:21.359 --> 00:17:28.079
+they come in that format. These are basically just scripts of R or Python functions and then you
+
+00:17:28.640 --> 00:17:36.079
+add a measures tag or decorator that makes them into a measure. But they can also come
+
+00:17:36.079 --> 00:17:42.319
+from datadig.yaml definitions or from semantic models from Databricks or Snowflake.
+
+00:17:44.000 --> 00:17:48.079
+And so, this is the semantic layer. It defines all the trusted calculations.
+
+00:17:49.520 --> 00:17:54.079
+The second layer is the context layer and this is basically everything else. If the semantic
+
+00:17:54.160 --> 00:17:58.160
+layer is the trusted calculations, the context layer is where you put all the other information
+
+00:17:58.160 --> 00:18:03.520
+that you might want your Commons agent to have access to and it can use this information to
+
+00:18:03.520 --> 00:18:10.000
+guide how it writes custom code and also how it interprets results. The simplest form to put this
+
+00:18:10.000 --> 00:18:14.479
+in is probably markdown files. You can just sort of throw information. It doesn't have to be
+
+00:18:14.479 --> 00:18:19.359
+structured in any particular way into markdown files, but it can also come in the form of
+
+00:18:19.359 --> 00:18:27.599
+descriptive datadig.yaml fields. And datadig.yaml is just a particular specification for a data
+
+00:18:27.599 --> 00:18:33.839
+dictionary. The actual code that you need in order to put a Commons agent together
+
+00:18:33.839 --> 00:18:39.920
+isn't particularly complicated or long. This is basically all you need. There is obviously other
+
+00:18:39.920 --> 00:18:45.199
+code happening in these files that are referenced here, but this whole thing constructs the Commons
+
+00:18:45.199 --> 00:18:49.439
+agent and then builds the app. I'm just going to step through this really quickly.
+
+00:18:50.560 --> 00:18:57.280
+We need a connection to a model and like Simon said, you can basically use any model provider
+
+00:18:57.280 --> 00:19:02.000
+with any model that you want and this works through Elmer. Then we need to provide it the
+
+00:19:02.000 --> 00:19:08.959
+data sources. These are the pieces of data that the agent will have access to and can query and
+
+00:19:08.959 --> 00:19:14.479
+can run the trusted calculations or custom code on. And then we have our two layers that we just
+
+00:19:14.479 --> 00:19:19.119
+talked about. So, the semantic layer, we provide a semantic layer to the semantic layer argument,
+
+00:19:19.119 --> 00:19:23.680
+and then the context layer. And again, these two layers can come from different formats.
+
+00:19:25.760 --> 00:19:33.599
+And then we build the app. If you have semantic views from Databricks or Snowflake or semantic
+
+00:19:33.599 --> 00:19:38.719
+user metric views, you can use those with Commons. I'm not going to go through this in
+
+00:19:38.719 --> 00:19:44.959
+too much detail, but this is how you would do that. Okay, so that's the build process. This is
+
+00:19:44.959 --> 00:19:50.160
+where you construct the agent and set up the layers. And then we want to deploy it so that
+
+00:19:50.160 --> 00:19:54.479
+your colleagues can use the agent and actually start to get answers from it. You can basically
+
+00:19:54.479 --> 00:20:00.239
+deploy the Commons app like any other Shiny app, anywhere that you would deploy a Shiny app.
+
+00:20:00.239 --> 00:20:07.680
+So, PositConnect Cloud or PositConnect. Optionally, you can enable trajectory logging. So, if you
+
+00:20:07.680 --> 00:20:13.040
+enable this, this means that you would be able to see the conversations that people have with your
+
+00:20:13.040 --> 00:20:20.560
+Commons agent. This is optional, and only if you want to and, you know, it meets your data policy.
+
+00:20:20.560 --> 00:20:25.920
+But if you do that, you can analyze those trajectories and see how the conversations are
+
+00:20:25.920 --> 00:20:30.719
+going, what kinds of things people are asking the agent, if it's giving you the right answers, all
+
+00:20:30.719 --> 00:20:36.719
+that. So, that can be really useful. It's also possible to enforce access with warehouse permissions
+
+00:20:36.719 --> 00:20:45.040
+and viewer level credentials. Great. So, we built the agent, then we deployed it, and now you might
+
+00:20:45.040 --> 00:20:51.359
+want to improve it over time. In our experience, it sometimes takes a bit of work to get the agent
+
+00:20:51.359 --> 00:20:56.239
+set up and understand, you know, which pieces of context you want to provide to it, which data
+
+00:20:56.239 --> 00:21:00.719
+sources you want it to have. And it's possible that it's not going to work perfectly right away.
+
+00:21:00.719 --> 00:21:05.359
+So, we built in functions to Commons that help you analyze trajectories if you have that
+
+00:21:05.359 --> 00:21:11.280
+enabled, and then hopefully move stuff up the trust ladder so that the agent gets more correct
+
+00:21:11.280 --> 00:21:18.880
+over time. So, like I mentioned earlier, you can optionally enable trajectory logging with the
+
+00:21:18.880 --> 00:21:23.680
+log equals true argument to Commons, and this means that your conversation histories will be recorded.
+
+00:21:25.760 --> 00:21:31.920
+So, if you have enabled that, you can then use trajectory read to read in the trajectories.
+
+00:21:31.920 --> 00:21:35.119
+This either works from Connect or from local traces that you might have.
+
+00:21:36.479 --> 00:21:41.119
+And there's also a third function, trajectory review, which opens up a shiny app that ships
+
+00:21:41.119 --> 00:21:47.599
+with Commons where you can browse, flag, and annotate conversations. I'm going to show that
+
+00:21:47.599 --> 00:21:55.439
+trajectory reviewer really quick. So, this is a trajectory reviewer app for the clinical trials
+
+00:21:55.439 --> 00:22:02.479
+agent that I showed earlier. This is useful if you have trajectory logging turned on and you want
+
+00:22:02.479 --> 00:22:06.880
+to take a look at the conversations people are actually having with the agent and see if it's
+
+00:22:06.880 --> 00:22:13.199
+working as you expect. So, you can do things like select a conversation, take a look at what
+
+00:22:13.199 --> 00:22:22.160
+happened in that conversation, and then if you want, add a note to yourself or to whoever's
+
+00:22:22.160 --> 00:22:28.719
+reviewing the trajectories. You can also flag conversations. You can sort of glance at the trust
+
+00:22:28.719 --> 00:22:35.599
+levels of the various conversations. And then there's also this plot at the top that shows you
+
+00:22:35.599 --> 00:22:41.680
+the trust levels over time. So, I think ideally what you would see is that the trusted, the amount
+
+00:22:41.680 --> 00:22:46.079
+of trusted conversations would hopefully go up over time as you move more and more things into
+
+00:22:46.079 --> 00:22:54.400
+that trusted calculation layer. One of the primary principles that underlies Commons is that
+
+00:22:54.400 --> 00:22:59.199
+code is the foundation of what it does. And I think this sometimes can seem obvious, but isn't always
+
+00:22:59.199 --> 00:23:05.760
+obvious. And we often have to make decisions to force the model to follow this philosophy. And this
+
+00:23:05.760 --> 00:23:12.000
+is, you want code as the foundation basically of everything that the model does. And the reason
+
+00:23:12.000 --> 00:23:17.760
+this isn't a given is that LLMs can do things in their head, sort of. So, you can ask it to add
+
+00:23:17.760 --> 00:23:22.160
+two numbers together or do some kind of calculation. It doesn't have to write code to do that.
+
+00:23:22.160 --> 00:23:27.439
+It can do the calculation in its head. Then that means that that calculation is not accessible to
+
+00:23:27.439 --> 00:23:33.359
+you. It's not transparent. You can't take a look at it. You can't rerun it. And also, it's often worse.
+
+00:23:34.000 --> 00:23:38.479
+And part of the reason is that LLMs are really good at writing code. This is one of the things
+
+00:23:38.479 --> 00:23:43.920
+that they really excel at. And we want to take advantage of that. And then the second reason is
+
+00:23:43.920 --> 00:23:49.359
+that we know from years and years of using code to do data analysis that code is reproducible,
+
+00:23:49.359 --> 00:23:53.680
+it's transparent, and it's auditable. And we don't want to throw all that away just because
+
+00:23:53.680 --> 00:23:59.680
+you have this shiny new LLM tool. So, as much as possible, we want the model to be able to write
+
+00:23:59.680 --> 00:24:05.520
+code. And so, the Commons agent runs its trusted calculation, which is code that you as the data
+
+00:24:05.520 --> 00:24:11.760
+scientists have vetted, but also when it writes custom code. It's not, you know, to the greatest
+
+00:24:11.760 --> 00:24:17.199
+extent possible, it's not doing those calculations in its head. It's writing code to get an answer.
+
+00:24:17.199 --> 00:24:21.280
+It shows you the code if you want to see it, and then it interprets it.
+
+00:24:23.359 --> 00:24:30.560
+We get a lot of questions about the difference between these various AI tools that Posit makes,
+
+00:24:31.520 --> 00:24:38.719
+Posit Assistant, Commons, ShinyChat, QueryChat. So, Posit Assistant is really if you are writing
+
+00:24:38.719 --> 00:24:43.839
+code, you want to be close to the code when getting help with coding or data analysis,
+
+00:24:43.839 --> 00:24:48.319
+and you want to do that in your development environment. So, Posit Assistant might help
+
+00:24:48.319 --> 00:24:54.719
+you build a Commons agent, a ShinyChat app, or a QueryChat app. And then Commons, again,
+
+00:24:54.719 --> 00:25:02.560
+I think the differentiator is really this trusted code idea. And this is when you want to build a
+
+00:25:02.560 --> 00:25:08.640
+data analysis agent for your colleagues to use, and you have some trusted code, in particular,
+
+00:25:08.640 --> 00:25:15.680
+data sources that you want the agent to use. ShinyChat underpins Commons. This is if you want
+
+00:25:15.680 --> 00:25:21.040
+to build custom Shiny apps with chat components. So, if you want to get, you know, at the lower
+
+00:25:21.040 --> 00:25:25.119
+level and build something custom, you might want to use ShinyChat. And there's also QueryChat,
+
+00:25:25.119 --> 00:25:31.920
+which helps you explore tabular data through SQL-powered chat. QueryChat and Commons have a
+
+00:25:31.920 --> 00:25:37.439
+lot of similarities. A couple differentiators are that Commons, again, has this trusted
+
+00:25:37.439 --> 00:25:44.479
+calculation idea, and QueryChat also is the agent only writes SQL code by design,
+
+00:25:44.479 --> 00:25:48.880
+whereas a Commons agent might write custom R, Python, or SQL code.
+
+00:25:51.040 --> 00:25:57.680
+QueryChat also might be a bit more customizable. Thanks. We have links to both of those
+
+00:25:58.400 --> 00:26:01.760
+demos, or to the code for both the demos, as well as to Commons.
+
+00:26:03.439 --> 00:26:07.599
+Simon and I also write a newsletter every other week called the Posit.ai Newsletter,
+
+00:26:08.160 --> 00:26:11.599
+and that link goes to all the past editions on the Posit open source blog.
+
+00:26:13.439 --> 00:26:15.439
+We're looking forward to all of your questions.
+

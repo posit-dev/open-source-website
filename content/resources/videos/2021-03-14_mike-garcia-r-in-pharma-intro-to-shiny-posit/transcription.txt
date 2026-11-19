@@ -1,1 +1,325 @@
 <p><a data-t="0">Mike Garcia Data Scientist, Procog.io</a></p>
+
+<p><a data-t="30">Mike Garcia Data Scientist, Procog.io</a></p>
+
+<p><a data-t="60">Mike Garcia Data Scientist, Procog.io</a></p>
+
+<p><a data-t="90">Mike Garcia Data Scientist, Procog.io</a></p>
+
+<p><a data-t="120">Mike Garcia Data Scientist, Procog.io</a></p>
+
+<p><a data-t="150">Mike Garcia Data Scientist, Procog.io</a></p>
+
+<p><a data-t="180">Mike Garcia Data Scientist, Procog.io</a></p>
+
+<p><a data-t="210">CSS</a></p>
+
+<p><a data-t="240">CSS</a></p>
+
+<p><a data-t="256">CSS</a></p>
+
+<p><a href="/software/rstudio/">RStudio</a></p>
+
+<p><a data-t="276">RStudio</a></p>
+
+<p><a data-t="284">RStudio</a></p>
+
+<p><a data-t="292">RStudio</a></p>
+
+<p><a data-t="300">RStudio</a></p>
+
+<p><a data-t="308">RStudio</a></p>
+
+<p><a data-t="324">RStudio</a></p>
+
+<p><a data-t="336">RStudio</a></p>
+
+<p><a data-t="354">RStudio</a></p>
+
+<p><a data-t="362">RStudio</a></p>
+
+<p><a data-t="370">RStudio</a></p>
+
+<p><a data-t="378">RStudio</a></p>
+
+<p><a data-t="386">RStudio</a></p>
+
+<p><a data-t="396">RStudio</a></p>
+
+<p><a data-t="402">RStudio</a></p>
+
+<p><a data-t="410">RStudio</a></p>
+
+<p><a data-t="416">RStudio</a></p>
+
+<p><a data-t="422">RStudio</a></p>
+
+<p><a data-t="428">RStudio</a></p>
+
+<p><a data-t="434">RStudio</a></p>
+
+<p><a data-t="440">RStudio</a></p>
+
+<p><a data-t="446">RStudio</a></p>
+
+<p><a data-t="452">RStudio</a></p>
+
+<p><a data-t="458">RStudio</a></p>
+
+<p><a data-t="464">RStudio</a></p>
+
+<p><a data-t="470">RStudio</a></p>
+
+<p><a data-t="476">RStudio</a></p>
+
+<p><a data-t="482">RStudio</a></p>
+
+<p><a data-t="488">RStudio</a></p>
+
+<p><a data-t="494">RStudio</a></p>
+
+<p><a data-t="500">RStudio</a></p>
+
+<p><a data-t="506">RStudio</a></p>
+
+<p><a data-t="512">RStudio</a></p>
+
+<p><a data-t="518">RStudio</a></p>
+
+<p><a data-t="524">RStudio</a></p>
+
+<p><a data-t="530">RStudio</a></p>
+
+<p><a data-t="536">RStudio</a></p>
+
+<p><a data-t="542">RStudio</a></p>
+
+<p><a data-t="548">RStudio</a></p>
+
+<p><a data-t="554">RStudio</a></p>
+
+<p><a data-t="560">RStudio</a></p>
+
+<p><a data-t="566">RStudio</a></p>
+
+<p><a data-t="572">RStudio</a></p>
+
+<p><a data-t="578">RStudio</a></p>
+
+<p><a data-t="588">RStudio</a></p>
+
+<p><a data-t="598">RStudio</a></p>
+
+<p><a data-t="604">RStudio</a></p>
+
+<p><a data-t="610">RStudio</a></p>
+
+<p><a data-t="616">RStudio</a></p>
+
+<p><a data-t="622">RStudio</a></p>
+
+<p><a data-t="628">RStudio</a></p>
+
+<p><a data-t="634">RStudio</a></p>
+
+<p><a data-t="640">RStudio</a></p>
+
+<p><a data-t="646">RStudio</a></p>
+
+<p><a data-t="652">RStudio</a></p>
+
+<p><a data-t="658">RStudio</a></p>
+
+<p><a data-t="664">RStudio</a></p>
+
+<p><a data-t="670">RStudio</a></p>
+
+<p><a data-t="676">RStudio</a></p>
+
+<p><a data-t="682">RStudio</a></p>
+
+<p><a data-t="688">RStudio</a></p>
+
+<p><a data-t="694">RStudio</a></p>
+
+<p><a data-t="700">RStudio</a></p>
+
+<p><a data-t="706">RStudio</a></p>
+
+<p><a data-t="712">RStudio</a></p>
+
+<p><a data-t="718">RStudio</a></p>
+
+<p><a data-t="724">RStudio</a></p>
+
+<p><a data-t="730">RStudio</a></p>
+
+<p><a data-t="736">RStudio</a></p>
+
+<p><a data-t="742">RStudio</a></p>
+
+<p><a data-t="748">RStudio</a></p>
+
+<p><a data-t="754">RStudio</a></p>
+
+<p><a data-t="760">RStudio</a></p>
+
+<p><a data-t="766">RStudio</a></p>
+
+<p><a data-t="772">RStudio</a></p>
+
+<p><a data-t="778">RStudio</a></p>
+
+<p><a data-t="784">RStudio</a></p>
+
+<p><a data-t="790">RStudio</a></p>
+
+<p><a data-t="796">RStudio</a></p>
+
+<p><a data-t="802">RStudio</a></p>
+
+<p><a data-t="808">RStudio</a></p>
+
+<p><a data-t="814">RStudio</a></p>
+
+<p><a data-t="820">RStudio</a></p>
+
+<p><a data-t="826">RStudio</a></p>
+
+<p><a data-t="832">RStudio</a></p>
+
+<p><a data-t="838">RStudio</a></p>
+
+<p><a data-t="844">RStudio</a></p>
+
+<p><a data-t="850">RStudio</a></p>
+
+<p><a data-t="856">RStudio</a></p>
+
+<p><a data-t="862">RStudio</a></p>
+
+<p><a data-t="868">RStudio</a></p>
+
+<p><a data-t="874">RStudio</a></p>
+
+<p><a data-t="880">RStudio</a></p>
+<!-- segment separator -->
+<p><a data-t="886">RStudio</a> <a data-t="892">RStudio</a> <a data-t="898">RStudio</a> <a data-t="904">RStudio</a> <a data-t="910">RStudio</a> <a data-t="916">RStudio</a> <a data-t="922">RStudio</a> <a data-t="928">RStudio</a> <a data-t="934">RStudio</a> <a data-t="940">RStudio</a></p>
+
+<p><a data-t="946">RStudio</a> <a data-t="952">RStudio</a> <a data-t="958">RStudio</a> <a data-t="964">RStudio</a> <a data-t="970">RStudio</a> <a data-t="976">RStudio</a> <a data-t="982">RStudio</a> <a data-t="988">RStudio</a> <a data-t="994">RStudio</a> <a data-t="1000">RStudio</a></p>
+
+<p><a data-t="1006">RStudio</a> <a data-t="1012">RStudio</a> <a data-t="1018">RStudio</a> <a data-t="1024">RStudio</a> <a data-t="1030">RStudio</a> <a data-t="1036">RStudio</a> <a data-t="1042">RStudio</a> <a data-t="1048">RStudio</a> <a data-t="1054">RStudio</a> <a data-t="1060">RStudio</a></p>
+
+<p><a data-t="1066">RStudio</a> <a data-t="1072">RStudio</a> <a data-t="1078">RStudio</a> <a data-t="1084">RStudio</a> <a data-t="1090">RStudio</a> <a data-t="1096">RStudio</a> <a data-t="1102">RStudio</a> <a data-t="1108">RStudio</a> <a data-t="1114">RStudio</a> <a data-t="1120">RStudio</a></p>
+
+<p><a data-t="1126">RStudio</a> <a data-t="1132">RStudio</a> <a data-t="1138">RStudio</a> <a data-t="1144">RStudio</a> <a data-t="1150">RStudio</a> <a data-t="1156">RStudio</a> <a data-t="1162">RStudio</a> <a data-t="1168">RStudio</a> <a data-t="1174">RStudio</a> <a data-t="1180">RStudio</a></p>
+
+<p><a data-t="1186">RStudio</a> <a data-t="1192">RStudio</a> <a data-t="1198">RStudio</a> <a data-t="1204">RStudio</a> <a data-t="1210">RStudio</a> <a data-t="1216">RStudio</a> <a data-t="1222">RStudio</a> <a data-t="1228">RStudio</a> <a data-t="1234">RStudio</a> <a data-t="1240">RStudio</a></p>
+
+<p><a data-t="1246">RStudio</a> <a data-t="1252">RStudio</a> <a data-t="1258">RStudio</a> <a data-t="1264">RStudio</a> <a data-t="1270">RStudio</a> <a data-t="1276">RStudio</a> <a data-t="1282">RStudio</a> <a data-t="1288">RStudio</a> <a data-t="1294">RStudio</a> <a data-t="1300">RStudio</a></p>
+
+<p><a data-t="1306">RStudio</a> <a data-t="1312">RStudio</a> <a data-t="1318">RStudio</a> <a data-t="1324">RStudio</a> <a data-t="1330">RStudio</a> <a data-t="1336">RStudio</a> <a data-t="1342">RStudio</a> <a data-t="1348">RStudio</a> <a data-t="1354">RStudio</a> <a data-t="1360">RStudio</a></p>
+
+<p><a data-t="1366">RStudio</a> <a data-t="1372">RStudio</a> <a data-t="1378">RStudio</a> <a data-t="1384">RStudio</a> <a data-t="1390">RStudio</a> <a data-t="1396">RStudio</a> <a data-t="1402">RStudio</a> <a data-t="1408">RStudio</a> <a data-t="1414">RStudio</a> <a data-t="1420">RStudio</a></p>
+
+<p><a data-t="1426">RStudio</a> <a data-t="1432">RStudio</a> <a data-t="1438">RStudio</a> <a data-t="1444">RStudio</a> <a data-t="1450">RStudio</a> <a data-t="1456">RStudio</a> <a data-t="1462">RStudio</a> <a data-t="1468">RStudio</a> <a data-t="1474">RStudio</a> <a data-t="1480">RStudio</a></p>
+
+<p><a data-t="1486">RStudio</a> <a data-t="1492">RStudio</a> <a data-t="1498">RStudio</a> <a data-t="1504">RStudio</a> <a data-t="1510">RStudio</a> <a data-t="1516">RStudio</a> <a data-t="1522">RStudio</a> <a data-t="1528">RStudio</a> <a data-t="1534">RStudio</a> <a data-t="1540">RStudio</a></p>
+
+<p><a data-t="1546">RStudio</a> <a data-t="1552">RStudio</a> <a data-t="1558">RStudio</a> <a data-t="1564">RStudio</a> <a data-t="1570">RStudio</a> <a data-t="1576">RStudio</a> <a data-t="1582">RStudio</a> <a data-t="1588">RStudio</a> <a data-t="1594">RStudio</a> <a data-t="1600">RStudio</a></p>
+
+<p><a data-t="1606">RStudio</a> <a data-t="1612">RStudio</a> <a data-t="1618">RStudio</a> <a data-t="1624">RStudio</a> <a data-t="1630">RStudio</a> <a data-t="1636">RStudio</a> <a data-t="1642">RStudio</a> <a data-t="1648">RStudio</a> <a data-t="1654">RStudio</a> <a data-t="1660">RStudio</a></p>
+
+<p><a data-t="1666">RStudio</a> <a data-t="1672">RStudio</a> <a data-t="1678">RStudio</a> <a data-t="1684">RStudio</a> <a data-t="1690">RStudio</a> <a data-t="1696">RStudio</a> <a data-t="1702">RStudio</a> <a data-t="1708">RStudio</a> <a data-t="1714">RStudio</a> <a data-t="1720">RStudio</a></p>
+
+<p><a data-t="1726">RStudio</a> <a data-t="1732">RStudio</a> <a data-t="1738">RStudio</a> <a data-t="1744">RStudio</a> <a data-t="1750">RStudio</a> <a data-t="1756">RStudio</a> <a data-t="1762">RStudio</a> <a data-t="1768">RStudio</a> <a data-t="1774">RStudio</a> <a data-t="1780">RStudio</a></p>
+
+<p><a data-t="1786">RStudio</a></p>
+<!-- segment separator -->
+<p><a data-t="1792">RStudio</a> <a data-t="1798">RStudio</a> <a data-t="1804">RStudio</a> <a data-t="1810">RStudio</a> <a data-t="1816">RStudio</a> <a data-t="1822">RStudio</a> <a data-t="1828">RStudio</a> <a data-t="1834">RStudio</a> <a data-t="1840">RStudio</a> <a data-t="1846">RStudio</a></p>
+
+<p><a data-t="1852">RStudio</a> <a data-t="1858">RStudio</a> <a data-t="1864">RStudio</a> <a data-t="1870">RStudio</a> <a data-t="1876">RStudio</a> <a data-t="1882">RStudio</a> <a data-t="1888">RStudio</a> <a data-t="1894">RStudio</a> <a data-t="1900">RStudio</a> <a data-t="1906">RStudio</a></p>
+
+<p><a data-t="1912">RStudio</a> <a data-t="1918">RStudio</a> <a data-t="1924">RStudio</a> <a data-t="1930">RStudio</a> <a data-t="1936">RStudio</a> <a data-t="1942">RStudio</a> <a data-t="1948">RStudio</a> <a data-t="1954">RStudio</a> <a data-t="1960">RStudio</a> <a data-t="1966">RStudio</a></p>
+
+<p><a data-t="1972">RStudio</a> <a data-t="1978">RStudio</a> <a data-t="1984">RStudio</a> <a data-t="1990">RStudio</a> <a data-t="1996">RStudio</a> <a data-t="2002">RStudio</a> <a data-t="2008">RStudio</a> <a data-t="2014">RStudio</a> <a data-t="2020">RStudio</a> <a data-t="2026">RStudio</a></p>
+
+<p><a data-t="2032">RStudio</a> <a data-t="2038">RStudio</a> <a data-t="2044">RStudio</a> <a data-t="2050">RStudio</a> <a data-t="2056">RStudio</a> <a data-t="2062">RStudio</a> <a data-t="2068">RStudio</a> <a data-t="2074">RStudio</a> <a data-t="2080">RStudio</a> <a data-t="2086">RStudio</a></p>
+
+<p><a data-t="2092">RStudio</a> <a data-t="2098">RStudio</a> <a data-t="2104">RStudio</a> <a data-t="2110">RStudio</a> <a data-t="2116">RStudio</a> <a data-t="2122">RStudio</a> <a data-t="2128">RStudio</a> <a data-t="2134">RStudio</a> <a data-t="2140">RStudio</a> <a data-t="2146">RStudio</a></p>
+
+<p><a data-t="2152">RStudio</a> <a data-t="2158">RStudio</a> <a data-t="2164">RStudio</a> <a data-t="2170">RStudio</a> <a data-t="2176">RStudio</a> <a data-t="2182">RStudio</a> <a data-t="2188">RStudio</a> <a data-t="2194">RStudio</a> <a data-t="2200">RStudio</a> <a data-t="2206">RStudio</a></p>
+
+<p><a data-t="2212">RStudio</a> <a data-t="2218">RStudio</a> <a data-t="2224">RStudio</a> <a data-t="2230">RStudio</a> <a data-t="2236">RStudio</a> <a data-t="2242">RStudio</a> <a data-t="2248">RStudio</a> <a data-t="2254">RStudio</a> <a data-t="2260">RStudio</a> <a data-t="2266">RStudio</a></p>
+
+<p><a data-t="2272">RStudio</a> <a data-t="2278">RStudio</a> <a data-t="2284">RStudio</a> <a data-t="2290">RStudio</a> <a data-t="2296">RStudio</a> <a data-t="2302">RStudio</a> <a data-t="2308">RStudio</a> <a data-t="2314">RStudio</a> <a data-t="2320">RStudio</a> <a data-t="2326">RStudio</a></p>
+
+<p><a data-t="2332">RStudio</a> <a data-t="2338">RStudio</a> <a data-t="2344">RStudio</a> <a data-t="2350">RStudio</a> <a data-t="2356">RStudio</a> <a data-t="2362">RStudio</a> <a data-t="2368">RStudio</a> <a data-t="2374">RStudio</a> <a data-t="2380">RStudio</a> <a data-t="2386">RStudio</a></p>
+
+<p><a data-t="2392">RStudio</a> <a data-t="2398">RStudio</a> <a data-t="2404">RStudio</a> <a data-t="2410">RStudio</a> <a data-t="2416">RStudio</a> <a data-t="2422">RStudio</a> <a data-t="2428">RStudio</a> <a data-t="2434">RStudio</a> <a data-t="2440">RStudio</a> <a data-t="2446">RStudio</a></p>
+
+<p><a data-t="2452">RStudio</a> <a data-t="2458">RStudio</a> <a data-t="2464">RStudio</a> <a data-t="2470">RStudio</a> <a data-t="2476">RStudio</a> <a data-t="2482">RStudio</a> <a data-t="2488">RStudio</a> <a data-t="2494">RStudio</a> <a data-t="2500">RStudio</a> <a data-t="2506">RStudio</a></p>
+
+<p><a data-t="2512">RStudio</a> <a data-t="2518">RStudio</a> <a data-t="2524">RStudio</a> <a data-t="2530">RStudio</a> <a data-t="2536">RStudio</a> <a data-t="2542">RStudio</a> <a data-t="2548">RStudio</a> <a data-t="2554">RStudio</a> <a data-t="2560">RStudio</a> <a data-t="2566">RStudio</a></p>
+
+<p><a data-t="2572">RStudio</a> <a data-t="2578">RStudio</a> <a data-t="2584">RStudio</a> <a data-t="2590">RStudio</a> <a data-t="2596">RStudio</a> <a data-t="2602">RStudio</a> <a data-t="2608">RStudio</a> <a data-t="2614">RStudio</a> <a data-t="2620">RStudio</a> <a data-t="2626">RStudio</a></p>
+
+<p><a data-t="2632">RStudio</a> <a data-t="2638">RStudio</a> <a data-t="2644">RStudio</a> <a data-t="2650">RStudio</a> <a data-t="2656">RStudio</a> <a data-t="2662">RStudio</a> <a data-t="2668">RStudio</a> <a data-t="2674">RStudio</a> <a data-t="2680">RStudio</a> <a data-t="2686">RStudio</a></p>
+
+<p><a data-t="2692">RStudio</a></p>
+<!-- segment separator -->
+<p><a data-t="2698">RStudio</a> <a data-t="2704">RStudio</a> <a data-t="2710">RStudio</a> <a data-t="2716">RStudio</a> <a data-t="2722">RStudio</a> <a data-t="2728">RStudio</a> <a data-t="2734">RStudio</a> <a data-t="2740">RStudio</a> <a data-t="2746">RStudio</a> <a data-t="2752">RStudio</a> <a data-t="2758">RStudio</a> <a data-t="2764">RStudio</a> <a data-t="2770">RStudio</a> <a data-t="2776">RStudio</a> <a data-t="2782">RStudio</a> <a data-t="2788">RStudio</a> <a data-t="2794">RStudio</a> <a data-t="2800">RStudio</a> <a data-t="2806">RStudio</a> <a data-t="2812">RStudio</a> <a data-t="2818">RStudio</a> <a data-t="2824">RStudio</a> <a data-t="2830">RStudio</a> <a data-t="2836">RStudio</a> <a data-t="2842">RStudio</a> <a data-t="2848">RStudio</a> <a data-t="2854">RStudio</a> <a data-t="2860">RStudio</a> <a data-t="2866">RStudio</a> <a data-t="2872">RStudio</a> <a data-t="2878">RStudio</a> <a data-t="2884">RStudio</a> <a data-t="2890">RStudio</a> <a data-t="2896">RStudio</a> <a data-t="2902">RStudio</a> <a data-t="2908">RStudio</a> <a data-t="2914">RStudio</a> <a data-t="2920">RStudio</a> <a data-t="2926">RStudio</a> <a data-t="2932">RStudio</a> <a data-t="2938">RStudio</a> <a data-t="2944">RStudio</a> <a data-t="2950">RStudio</a> <a data-t="2956">RStudio</a> <a data-t="2962">RStudio</a> <a data-t="2968">RStudio</a> <a data-t="2974">RStudio</a> <a data-t="2980">RStudio</a> <a data-t="2986">RStudio</a> <a data-t="2992">RStudio</a> <a data-t="2998">RStudio</a> <a data-t="3004">RStudio</a> <a data-t="3010">RStudio</a> <a data-t="3016">RStudio</a> <a data-t="3022">RStudio</a> <a data-t="3028">RStudio</a> <a data-t="3034">RStudio</a> <a data-t="3040">RStudio</a> <a data-t="3046">RStudio</a> <a data-t="3052">RStudio</a> <a data-t="3058">RStudio</a> <a data-t="3064">RStudio</a> <a data-t="3070">RStudio</a> <a data-t="3076">RStudio</a> <a data-t="3082">RStudio</a> <a data-t="3088">RStudio</a> <a data-t="3094">RStudio</a> <a data-t="3100">RStudio</a> <a data-t="3106">RStudio</a> <a data-t="3112">RStudio</a> <a data-t="3118">RStudio</a> <a data-t="3124">RStudio</a> <a data-t="3130">RStudio</a> <a data-t="3136">RStudio</a> <a data-t="3142">RStudio</a> <a data-t="3148">RStudio</a> <a data-t="3154">RStudio</a> <a data-t="3160">RStudio</a> <a data-t="3166">RStudio</a> <a data-t="3172">RStudio</a> <a data-t="3178">RStudio</a> <a data-t="3184">RStudio</a> <a data-t="3190">RStudio</a> <a data-t="3196">RStudio</a> <a data-t="3202">RStudio</a> <a data-t="3208">RStudio</a> <a data-t="3214">RStudio</a> <a data-t="3220">RStudio</a> <a data-t="3226">RStudio</a> <a data-t="3232">RStudio</a> <a data-t="3238">RStudio</a> <a data-t="3244">RStudio</a> <a data-t="3250">RStudio</a> <a data-t="3256">RStudio</a> <a data-t="3262">RStudio</a> <a data-t="3268">RStudio</a> <a data-t="3274">RStudio</a> <a data-t="3280">RStudio</a> <a data-t="3286">RStudio</a> <a data-t="3292">RStudio</a> <a data-t="3298">RStudio</a> <a data-t="3304">RStudio</a> <a data-t="3310">RStudio</a> <a data-t="3316">RStudio</a> <a data-t="3322">RStudio</a> <a data-t="3328">RStudio</a> <a data-t="3334">RStudio</a> <a data-t="3340">RStudio</a> <a data-t="3346">RStudio</a> <a data-t="3352">RStudio</a> <a data-t="3358">RStudio</a> <a data-t="3364">RStudio</a> <a data-t="3370">RStudio</a> <a data-t="3376">RStudio</a> <a data-t="3382">RStudio</a> <a data-t="3388">RStudio</a> <a data-t="3394">RStudio</a> <a data-t="3400">RStudio</a> <a data-t="3406">RStudio</a> <a data-t="3412">RStudio</a> <a data-t="3418">RStudio</a> <a data-t="3424">RStudio</a> <a data-t="3430">RStudio</a> <a data-t="3436">RStudio</a> <a data-t="3442">RStudio</a> <a data-t="3448">RStudio</a> <a data-t="3454">RStudio</a> <a data-t="3460">RStudio</a> <a data-t="3466">RStudio</a> <a data-t="3472">RStudio</a> <a data-t="3478">RStudio</a> <a data-t="3484">RStudio</a> <a data-t="3490">RStudio</a> <a data-t="3496">RStudio</a> <a data-t="3502">RStudio</a> <a data-t="3508">RStudio</a> <a data-t="3514">RStudio</a> <a data-t="3520">RStudio</a> <a data-t="3526">RStudio</a> <a data-t="3532">RStudio</a> <a data-t="3538">RStudio</a> <a data-t="3544">RStudio</a> <a data-t="3550">RStudio</a> <a data-t="3556">RStudio</a> <a data-t="3562">RStudio</a> <a data-t="3568">RStudio</a> <a data-t="3574">RStudio</a> <a data-t="3580">RStudio</a> <a data-t="3586">RStudio</a> <a data-t="3592">RStudio</a> <a data-t="3598">RStudio</a></p>
+<!-- segment separator -->
+<p><a data-t="3604">RStudio</a> <a data-t="3610">RStudio</a> <a data-t="3616">RStudio</a> <a data-t="3622">RStudio</a> <a data-t="3628">RStudio</a> <a data-t="3634">RStudio</a> <a data-t="3640">RStudio</a> <a data-t="3646">RStudio</a> <a data-t="3652">RStudio</a> <a data-t="3658">RStudio</a></p>
+
+<p><a data-t="3664">RStudio</a> <a data-t="3670">RStudio</a> <a data-t="3676">RStudio</a> <a data-t="3682">RStudio</a> <a data-t="3688">RStudio</a> <a data-t="3694">RStudio</a> <a data-t="3700">RStudio</a> <a data-t="3706">RStudio</a> <a data-t="3712">RStudio</a> <a data-t="3718">RStudio</a></p>
+
+<p><a data-t="3724">RStudio</a> <a data-t="3730">RStudio</a> <a data-t="3736">RStudio</a> <a data-t="3742">RStudio</a> <a data-t="3748">RStudio</a> <a data-t="3754">RStudio</a> <a data-t="3760">RStudio</a> <a data-t="3766">RStudio</a> <a data-t="3772">RStudio</a> <a data-t="3778">RStudio</a></p>
+
+<p><a data-t="3784">RStudio</a> <a data-t="3790">RStudio</a> <a data-t="3796">RStudio</a> <a data-t="3802">RStudio</a> <a data-t="3808">RStudio</a> <a data-t="3814">RStudio</a> <a data-t="3820">RStudio</a> <a data-t="3826">RStudio</a> <a data-t="3832">RStudio</a> <a data-t="3838">RStudio</a></p>
+
+<p><a data-t="3844">RStudio</a> <a data-t="3850">RStudio</a> <a data-t="3856">RStudio</a> <a data-t="3862">RStudio</a> <a data-t="3868">RStudio</a> <a data-t="3874">RStudio</a> <a data-t="3880">RStudio</a> <a data-t="3886">RStudio</a> <a data-t="3892">RStudio</a> <a data-t="3898">RStudio</a></p>
+
+<p><a data-t="3904">RStudio</a> <a data-t="3910">RStudio</a> <a data-t="3916">RStudio</a> <a data-t="3922">RStudio</a> <a data-t="3928">RStudio</a> <a data-t="3934">RStudio</a> <a data-t="3940">RStudio</a> <a data-t="3946">RStudio</a> <a data-t="3952">RStudio</a> <a data-t="3958">RStudio</a></p>
+
+<p><a data-t="3964">RStudio</a> <a data-t="3970">RStudio</a> <a data-t="3976">RStudio</a> <a data-t="3982">RStudio</a> <a data-t="3988">RStudio</a> <a data-t="3994">RStudio</a> <a data-t="4000">RStudio</a> <a data-t="4006">RStudio</a> <a data-t="4012">RStudio</a> <a data-t="4018">RStudio</a></p>
+
+<p><a data-t="4024">RStudio</a> <a data-t="4030">RStudio</a> <a data-t="4036">RStudio</a> <a data-t="4042">RStudio</a> <a data-t="4048">RStudio</a> <a data-t="4054">RStudio</a> <a data-t="4060">RStudio</a> <a data-t="4066">RStudio</a> <a data-t="4072">RStudio</a> <a data-t="4078">RStudio</a></p>
+
+<p><a data-t="4084">RStudio</a> <a data-t="4090">RStudio</a> <a data-t="4096">RStudio</a> <a data-t="4102">RStudio</a> <a data-t="4108">RStudio</a> <a data-t="4114">RStudio</a> <a data-t="4120">RStudio</a> <a data-t="4126">RStudio</a> <a data-t="4132">RStudio</a> <a data-t="4138">RStudio</a></p>
+
+<p><a data-t="4144">RStudio</a> <a data-t="4150">RStudio</a> <a data-t="4156">RStudio</a> <a data-t="4162">RStudio</a> <a data-t="4168">RStudio</a> <a data-t="4174">RStudio</a> <a data-t="4180">RStudio</a> <a data-t="4186">RStudio</a> <a data-t="4192">RStudio</a> <a data-t="4198">RStudio</a></p>
+
+<p><a data-t="4204">RStudio</a> <a data-t="4210">RStudio</a> <a data-t="4216">RStudio</a> <a data-t="4222">RStudio</a> <a data-t="4228">RStudio</a> <a data-t="4234">RStudio</a> <a data-t="4240">RStudio</a> <a data-t="4246">RStudio</a> <a data-t="4252">RStudio</a> <a data-t="4258">RStudio</a></p>
+
+<p><a data-t="4264">RStudio</a> <a data-t="4270">RStudio</a> <a data-t="4276">RStudio</a> <a data-t="4282">RStudio</a> <a data-t="4288">RStudio</a> <a data-t="4294">RStudio</a> <a data-t="4300">RStudio</a> <a data-t="4306">RStudio</a> <a data-t="4312">RStudio</a> <a data-t="4318">RStudio</a></p>
+
+<p><a data-t="4324">RStudio</a> <a data-t="4330">RStudio</a> <a data-t="4336">RStudio</a> <a data-t="4342">RStudio</a> <a data-t="4348">RStudio</a> <a data-t="4354">RStudio</a> <a data-t="4360">RStudio</a> <a data-t="4366">RStudio</a> <a data-t="4372">RStudio</a> <a data-t="4378">RStudio</a></p>
+
+<p><a data-t="4384">RStudio</a> <a data-t="4390">RStudio</a> <a data-t="4396">RStudio</a> <a data-t="4402">RStudio</a> <a data-t="4408">RStudio</a> <a data-t="4414">RStudio</a> <a data-t="4420">RStudio</a> <a data-t="4426">RStudio</a> <a data-t="4432">RStudio</a> <a data-t="4438">RStudio</a></p>
+
+<p><a data-t="4444">RStudio</a> <a data-t="4450">RStudio</a> <a data-t="4456">RStudio</a> <a data-t="4462">RStudio</a> <a data-t="4468">RStudio</a> <a data-t="4474">RStudio</a> <a data-t="4480">RStudio</a> <a data-t="4486">RStudio</a> <a data-t="4492">RStudio</a> <a data-t="4498">RStudio</a></p>
+
+<p><a data-t="4504">RStudio</a> <a data-t="4510">RStudio</a> <a data-t="4516">RStudio</a> <a data-t="4522">RStudio</a> <a data-t="4528">RStudio</a> <a data-t="4534">RStudio</a> <a data-t="4540">RStudio</a> <a data-t="4546">RStudio</a> <a data-t="4552">RStudio</a> <a data-t="4558">RStudio</a></p>
+
+<p><a data-t="4564">RStudio</a> <a data-t="4570">RStudio</a> <a data-t="4576">RStudio</a> <a data-t="4582">RStudio</a> <a data-t="4588">RStudio</a> <a data-t="4594">RStudio</a> <a data-t="4600">RStudio</a> <a data-t="4606">RStudio</a> <a data-t="4612">RStudio</a> <a data-t="4618">RStudio</a></p>
+
+<p><a data-t="4624">RStudio</a> <a data-t="4630">RStudio</a> <a data-t="4636">RStudio</a> <a data-t="4642">RStudio</a> <a data-t="4648">RStudio</a> <a data-t="4654">RStudio</a> <a data-t="4660">RStudio</a> <a data-t="4666">RStudio</a> <a data-t="4672">RStudio</a> <a data-t="4678">RStudio</a></p>
+
+<p><a data-t="4684">RStudio</a> <a data-t="4690">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a></p>
+
+<p><a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a></p>
+
+<p><a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a></p>
+
+<p><a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a></p>
+
+<p><a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a></p>
+
+<p><a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a></p>
+
+<p><a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a> <a data-t="4696">RStudio</a></p>
+
+<p><a data-t="4696">RStudio</a></p>
+<!-- segment separator -->
+<p><a data-t="4504">RStudio</a> <a data-t="4510">RStudio</a> <a data-t="4516">RStudio</a> <a data-t="4522">RStudio</a> <a data-t="4528">RStudio</a> <a data-t="4534">RStudio</a> <a data-t="4540">RStudio</a> <a data-t="4546">RStudio</a> <a data-t="4552">RStudio</a> <a data-t="4558">RStudio</a> <a data-t="4564">RStudio</a> <a data-t="4570">RStudio</a> <a data-t="4576">RStudio</a> <a data-t="4582">RStudio</a> <a data-t="4588">RStudio</a> <a data-t="4594">RStudio</a> <a data-t="4600">RStudio</a> <a data-t="4606">RStudio</a> <a data-t="4612">RStudio</a> <a data-t="4618">RStudio</a> <a data-t="4624">RStudio</a> <a data-t="4630">RStudio</a> <a data-t="4636">RStudio</a> <a data-t="4642">RStudio</a> <a data-t="4648">RStudio</a> <a data-t="4654">RStudio</a> <a data-t="4660">RStudio</a> <a data-t="4666">RStudio</a> <a data-t="4672">RStudio</a> <a data-t="4678">RStudio</a> <a data-t="4684">RStudio</a> <a data-t="4690">RStudio</a> <a data-t="4696">RStudio</a></p>

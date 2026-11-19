@@ -1,0 +1,50 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.720
+positron has a package pane for managing the packages that are installed in your
+
+00:00:04.720 --> 00:00:09.520
+active R or Python sessions. So you can browse installed packages, search package
+
+00:00:09.520 --> 00:00:14.640
+repositories, and update or uninstall packages without ever leaving positron.
+
+00:00:14.640 --> 00:00:19.760
+The packages pane appears in the primary sidebar and you can select the icon in
+
+00:00:19.760 --> 00:00:24.280
+the activity bar or you can run view packages from the command palette. The
+
+00:00:24.280 --> 00:00:28.840
+packages pane lists packages installed in the active session library and so
+
+00:00:28.840 --> 00:00:33.320
+each entry shows a package name, version, and whether or not the package is
+
+00:00:33.320 --> 00:00:37.119
+currently attached. There are also buttons to open up the packages
+
+00:00:37.119 --> 00:00:42.279
+documentation in the help pane and when a package has a documentation site its
+
+00:00:42.279 --> 00:00:46.240
+website in your browser. So you can use the filter input at the top of the pane
+
+00:00:46.240 --> 00:00:51.400
+to search by name. So for example here I can search for ggplot2 and see that
+
+00:00:51.400 --> 00:00:56.680
+there's an update available and update it just directly from here. Or if I want
+
+00:00:56.680 --> 00:01:00.840
+to install patchwork in my script, I can search for patchwork and install it
+
+00:01:00.840 --> 00:01:05.400
+into the active session. So all of these actions are available from the command
+
+00:01:05.400 --> 00:01:10.800
+palette. What you do is you type packages to see the full list, so all the commands
+
+00:01:10.800 --> 00:01:17.279
+for installing, updating, uninstalling, and refreshing packages. Give it a try today!
+

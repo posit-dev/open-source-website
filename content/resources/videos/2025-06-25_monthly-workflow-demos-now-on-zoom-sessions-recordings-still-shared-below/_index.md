@@ -52,6 +52,7 @@ tags:
 - OSS
 - reticulate
 title: Monthly Workflow Demos now on Zoom Sessions | Recordings still shared below
+transcribe: false
 
 external:  # updated automatically, do not edit
   channel: Posit PBC

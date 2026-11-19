@@ -10,7 +10,7 @@
 
 <h3>Visualizing multiple variables with Shiny</h3>
 
-<p><a data-t="151">Okay, let's return to our map showing the average temperature per county.</a> <a data-t="156">Often, we are interested not only in one variable at the given point in time, but in multiple</a> <a data-t="161">variables and their relationship or their development over time.</a> <a data-t="165">So another question is, how can we visualize multiple variables simultaneously using a map?</a></p>
+<p><a data-t="146">Okay, let's return to our map showing the average temperature per county.</a> <a data-t="151">Often, we are interested not only in one variable at the given point in time, but in multiple</a> <a data-t="156">variables and their relationship or their development over time.</a> <a data-t="160">So another question is, how can we visualize multiple variables simultaneously using a map?</a></p>
 
 <p><a data-t="168">And one approach to do this is to embed the map in a Shiny dashboard and connect it to</a> <a data-t="173">other dashboard elements like charts or tables.</a> <a data-t="176">By selecting the regions of interest in the map, we can then display additional variables</a> <a data-t="181">or their development over time in the other dashboard elements.</a> <a data-t="185">In this case, this allows us to analyze the relationship between the average temperature</a> <a data-t="189">and monthly precipitation as well as the development of the average temperature over time.</a></p>
 

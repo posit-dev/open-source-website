@@ -1,24 +1,24 @@
-<p><a data-t="0">Posit Cloud is an online platform where you can easily do and share data work with just a few</a> <a data-t="5">clicks.</a> <a data-t="10">We recently added a new feature called Data Connections which lets you securely store</a> <a data-t="10">database credentials and share them across data projects and among your collaborators.</a></p>
+<p><a data-t="0">Posit Cloud is an online platform where you can easily do and share data work with just a few</a> <a data-t="5">clicks.</a> <a data-t="5">We recently added a new feature called Data Connections which lets you securely store</a> <a data-t="10">database credentials and share them across data projects and among your collaborators.</a></p>
 
-<p><a data-t="16">In this tutorial we will demonstrate how to achieve this by using a publicly available</a> <a data-t="20">Postgres database.</a> <a data-t="27">Let's get started.</a> <a data-t="27">The first thing we're going to do is create a new space.</a> <a data-t="27">You can find this in the upper left hand nav bar.</a></p>
+<p><a data-t="16">In this tutorial we will demonstrate how to achieve this by using a publicly available</a> <a data-t="20">Postgres database.</a> <a data-t="20">Let's get started.</a> <a data-t="20">The first thing we're going to do is create a new space.</a> <a data-t="27">You can find this in the upper left hand nav bar.</a></p>
 
 <p><a data-t="30">Let's go ahead and create a new space calling it RNA Project.</a></p>
 
-<p><a data-t="37">This will create a new space for us to do work and invite others to collaborate.</a> <a data-t="42">You can start a new project but before we do that let's go to Data.</a> <a data-t="48">This is where you're going to add your new data connection.</a> <a data-t="55">Click on Add Connection and we're going to make a new connection name.</a></p>
+<p><a data-t="37">This will create a new space for us to do work and invite others to collaborate.</a> <a data-t="37">You can start a new project but before we do that let's go to Data.</a> <a data-t="42">This is where you're going to add your new data connection.</a> <a data-t="48">Click on Add Connection and we're going to make a new connection name.</a></p>
 
 <h3>Creating a data connection</h3>
 
-<p><a data-t="56">Let's type in RNA Central which is going to be a Postgres database.</a> <a data-t="62">These credentials are publicly available and linked to in the description.</a> <a data-t="69">Our user is going to be Reader.</a> <a data-t="69">I'll paste in the password which you can find online and server.</a> <a data-t="78">Finally we're going to go ahead and put in our port number and our database name.</a> <a data-t="86">Once we do this we're going to click on OK.</a></p>
+<p><a data-t="56">Let's type in RNA Central which is going to be a Postgres database.</a> <a data-t="56">These credentials are publicly available and linked to in the description.</a> <a data-t="62">Our user is going to be Reader.</a> <a data-t="62">I'll paste in the password which you can find online and server.</a> <a data-t="69">Finally we're going to go ahead and put in our port number and our database name.</a> <a data-t="78">Once we do this we're going to click on OK.</a></p>
 
-<p><a data-t="88">The database connection is going to be stored and saved</a> <a data-t="94">and we're going to be able to use this in projects.</a> <a data-t="99">Let's go back to content</a> <a data-t="99">and now let's create a new </a><a href="/software/rstudio/">RStudio</a><a data-t="99"> IDE project from the drop down.</a></p>
+<p><a data-t="88">The database connection is going to be stored and saved</a> <a data-t="94">and we're going to be able to use this in projects.</a> <a data-t="94">Let's go back to content</a> <a data-t="99">and now let's create a new </a><a href="/software/rstudio/">RStudio</a><a data-t="99"> IDE project from the drop down.</a></p>
 
 <p><a data-t="108">While the project is loading let's rename it RNA Analysis.</a></p>
 
 <h3>Connecting to the database in RStudio</h3>
 
-<p><a data-t="118">Once Posit Cloud is done spinning up your individualized IDE we're going to be able</a> <a data-t="124">to access that database connection that we just defined.</a> <a data-t="131">So if you look in the upper right hand of the IDE and move to the connections tab we're going to start a new connection</a> <a data-t="138">and there it is the database connection we just saved RNA Central.</a></p>
+<p><a data-t="118">Once Posit Cloud is done spinning up your individualized IDE we're going to be able</a> <a data-t="124">to access that database connection that we just defined.</a> <a data-t="124">So if you look in the upper right hand of the IDE and move to the connections tab we're going to start a new connection</a> <a data-t="138">and there it is the database connection we just saved RNA Central.</a></p>
 
-<p><a data-t="144">Clicking on this is going to show you a code snippet which includes all the information</a> <a data-t="149">including the encrypted password.</a> <a data-t="158">Let's use a new R script to connect to and analyze the data.</a></p>
+<p><a data-t="144">Clicking on this is going to show you a code snippet which includes all the information</a> <a data-t="149">including the encrypted password.</a> <a data-t="149">Let's use a new R script to connect to and analyze the data.</a></p>
 
 <p><a data-t="159">The first thing this is going to do is load in a necessary package</a> <a data-t="163">and while it's doing that let's name the R script RNA Explore.</a></p>
 

@@ -6,7 +6,7 @@
 
 <h3>What is CRAN and why it matters</h3>
 
-<p><a data-t="46">But one of those that is based on that is, let's talk about CRAN.</a> <a data-t="47">You all know and love CRAN.</a> <a data-t="47">Whether you know it or not, you know, CRAN is the official home for over 20,000 packages.</a> <a data-t="52">And in my earnest belief, the biggest reason ours has become so popular for data science</a> <a data-t="56">is because of CRAN.</a> <a data-t="58">It is because you have all these packages there that really can solve everything that</a> <a data-t="61">you could possibly want to do and do really cool things.</a> <a data-t="64">And installing packages just works with installed packages.</a> <a data-t="68">But there's some better ways to do things even with CRAN.</a></p>
+<p><a data-t="41">But one of those that is based on that is, let's talk about CRAN.</a> <a data-t="46">You all know and love CRAN.</a> <a data-t="47">Whether you know it or not, you know, CRAN is the official home for over 20,000 packages.</a> <a data-t="52">And in my earnest belief, the biggest reason ours has become so popular for data science</a> <a data-t="56">is because of CRAN.</a> <a data-t="58">It is because you have all these packages there that really can solve everything that</a> <a data-t="61">you could possibly want to do and do really cool things.</a> <a data-t="64">And installing packages just works with installed packages.</a> <a data-t="68">But there's some better ways to do things even with CRAN.</a></p>
 
 <h3>Introducing Posit Public Package Manager</h3>
 

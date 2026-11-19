@@ -12,6 +12,6 @@
 
 <h3>Taking the next step in R</h3>
 
-<p><a data-t="79">And third, just to help you get better at R.</a> <a data-t="79">You might simply be looking for that next</a> <a data-t="83">step in your R programming journey and want to build some new skills.</a> <a data-t="88">If you feel like you've plateaued in developing your R skills, learning package development</a> <a data-t="92">can be a great next step in moving along in the continuum from data analysis to building</a> <a data-t="98">tools for yourself and other people and also to start to learn how and when to apply software</a> <a data-t="104">engineering principles to your work.</a></p>
+<p><a data-t="79">And third, just to help you get better at R.</a> <a data-t="79">You might simply be looking for that next</a> <a data-t="84">step in your R programming journey and want to build some new skills.</a> <a data-t="88">If you feel like you've plateaued in developing your R skills, learning package development</a> <a data-t="92">can be a great next step in moving along in the continuum from data analysis to building</a> <a data-t="98">tools for yourself and other people and also to start to learn how and when to apply software</a> <a data-t="104">engineering principles to your work.</a></p>
 
 <p><a data-t="106">So if any of these points or all of these points resonate with you, I hope that you'll</a> <a data-t="110">join us at our workshop at conf and I hope to see you there.</a> <a data-t="113">Thanks.</a></p>

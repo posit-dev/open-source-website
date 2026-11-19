@@ -1,0 +1,13 @@
+<p><a data-t="0">Polars is a Python library for transforming, analyzing, and visualizing your data.</a> <a data-t="5">A common saying about Polars is, come for the speed, stay for the API, which means that</a> <a data-t="12">when you first use Polars, you'll notice how fast it is, but then eventually you'll also</a> <a data-t="18">fall in love with the syntax it has.</a></p>
+
+<blockquote><a data-t="5">A common saying about Polars is, come for the speed, stay for the API, which means that</a> <a data-t="12">when you first use Polars, you'll notice how fast it is, but then eventually you'll also</a> <a data-t="18">fall in love with the syntax it has.</a></blockquote>
+
+<p><a data-t="21">So a while ago, Thijs Nieudorp and I, we wrote this book, Python Polars, The Definitive Guide,</a> <a data-t="28">and now recently, we've compressed these nearly 500 pages down to two.</a></p>
+
+<p><a data-t="33">If you go to our website, opensource.posit.co, and then go to Resources, Cheat Sheets, you</a> <a data-t="41">can find it and download it for free, and it has a lot of information on there.</a></p>
+
+<h3>What's in the cheat sheet</h3>
+
+<p><a data-t="48">We explain how to get started with Polars, so how to install it, then we talk about the</a> <a data-t="53">different data structures it contains, like Series, DataFrame, LazyFrame, the different</a> <a data-t="58">APIs Polars has, all the data types are on here as a quick reference.</a> <a data-t="64">Then we go on to reading and writing data, how you can transform that data, and then</a> <a data-t="69">on the other side, we continue with expressions, which is really the heart of Polars.</a> <a data-t="76">They come up everywhere when you're writing your Polars code.</a> <a data-t="80">And lastly, there's a section on how to visualize your data.</a></p>
+
+<p><a data-t="85">We can really recommend that you check out Polars and the cheat sheet that we created</a> <a data-t="89">for you.</a></p>

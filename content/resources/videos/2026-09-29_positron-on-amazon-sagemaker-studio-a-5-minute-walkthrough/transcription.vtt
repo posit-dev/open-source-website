@@ -1,0 +1,317 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:05.000
+This is a brief introduction to Positron on SageMaker Studio.
+
+00:00:05.000 --> 00:00:08.000
+Now, at this point, I've already logged into my AWS account
+
+00:00:08.000 --> 00:00:10.000
+and navigated into SageMaker Studio.
+
+00:00:10.000 --> 00:00:13.000
+And once I'm here, I can see that I have a Positron space
+
+00:00:13.000 --> 00:00:15.000
+that's already running that I can open up,
+
+00:00:15.000 --> 00:00:17.000
+which we'll do in just a moment.
+
+00:00:17.000 --> 00:00:19.000
+If I don't already have an existing Positron space,
+
+00:00:19.000 --> 00:00:22.000
+these are actually created under the JupyterLab tab over here.
+
+00:00:22.000 --> 00:00:24.000
+So if I come over to the left-hand side,
+
+00:00:24.000 --> 00:00:27.000
+I click on JupyterLab, create a new JupyterLab space.
+
+00:00:27.000 --> 00:00:31.000
+We'll call this Positron example,
+
+00:00:31.000 --> 00:00:33.000
+and go ahead and create the space.
+
+00:00:33.000 --> 00:00:36.000
+When I create a space, the space doesn't automatically start.
+
+00:00:36.000 --> 00:00:39.000
+Instead, it allows me to configure different details about the space.
+
+00:00:39.000 --> 00:00:41.000
+Here I can change the instance size
+
+00:00:41.000 --> 00:00:43.000
+to be something a little bit larger if I need to.
+
+00:00:43.000 --> 00:00:45.000
+And over here on the right-hand side is where I select the image
+
+00:00:45.000 --> 00:00:47.000
+that this space runs off of.
+
+00:00:47.000 --> 00:00:49.000
+Instead of the default SageMaker distribution image,
+
+00:00:49.000 --> 00:00:52.000
+I can click on this and then select a Positron image
+
+00:00:52.000 --> 00:00:55.000
+that's been made available for me by my AWS account admin.
+
+00:00:55.000 --> 00:00:58.000
+If your account admin has not already configured
+
+00:00:58.000 --> 00:01:00.000
+a Positron image to be available,
+
+00:01:00.000 --> 00:01:03.000
+details about how to do so are available in our administrator guide,
+
+00:01:03.000 --> 00:01:06.000
+step-by-step to walk through every part of the process
+
+00:01:06.000 --> 00:01:08.000
+to make the Positron image available for users
+
+00:01:08.000 --> 00:01:11.000
+to launch and create Positron spaces.
+
+00:01:11.000 --> 00:01:13.000
+Now, I already have a space that's running,
+
+00:01:13.000 --> 00:01:16.000
+so we're going to come back to our SageMaker Studio home,
+
+00:01:16.000 --> 00:01:18.000
+and then I can click Open, which will open Positron
+
+00:01:18.000 --> 00:01:20.000
+in a new browser tab.
+
+00:01:20.000 --> 00:01:23.000
+As this opens, you'll notice that this is Positron
+
+00:01:23.000 --> 00:01:27.000
+as you would expect it to be if you've been a previous user of this IDE.
+
+00:01:27.000 --> 00:01:30.000
+So I have Python and R installed and available.
+
+00:01:30.000 --> 00:01:33.000
+I can create different sessions for both Python and R execution,
+
+00:01:33.000 --> 00:01:35.000
+and I have some additional features here
+
+00:01:35.000 --> 00:01:40.000
+that make it really easy for me to work with other AWS resources and tools.
+
+00:01:40.000 --> 00:01:41.000
+So let's look at an example.
+
+00:01:41.000 --> 00:01:44.000
+If I open up a project here,
+
+00:01:44.000 --> 00:01:48.000
+now I have this project that has a number of different Python and R files
+
+00:01:48.000 --> 00:01:50.000
+that I might want to interact with,
+
+00:01:50.000 --> 00:01:52.000
+and I have this application file that's already pulled up.
+
+00:01:52.000 --> 00:01:55.000
+If I click on Run here inside of Positron,
+
+00:01:55.000 --> 00:01:57.000
+this will launch this application.
+
+00:01:57.000 --> 00:02:02.000
+This shiny application runs here inside of my Positron environment.
+
+00:02:02.000 --> 00:02:05.000
+Let's go ahead and let that run here.
+
+00:02:05.000 --> 00:02:11.000
+And what this does is this gives me sort of this chat-like interface.
+
+00:02:11.000 --> 00:02:13.000
+Let's change the light mode here. There we go.
+
+00:02:13.000 --> 00:02:16.000
+This gives me this chat interface that allows me to interact with some data
+
+00:02:16.000 --> 00:02:19.000
+that's hosted inside of Athena.
+
+00:02:19.000 --> 00:02:22.000
+Because I'm already logged in and authenticated into AWS,
+
+00:02:22.000 --> 00:02:25.000
+any sort of interaction I do with other AWS services,
+
+00:02:25.000 --> 00:02:28.000
+whether it's S3 or Athena or models on Bedrock,
+
+00:02:28.000 --> 00:02:32.000
+all of that can happen without me needing to reestablish credentials or identity.
+
+00:02:32.000 --> 00:02:36.000
+So in here I have this application that I've created in Positron,
+
+00:02:36.000 --> 00:02:40.000
+and then this application allows me to chat with this data
+
+00:02:40.000 --> 00:02:41.000
+that's hosted inside of Athena.
+
+00:02:41.000 --> 00:02:46.000
+So if we choose, let's create a FIGAR risk plot here.
+
+00:02:46.000 --> 00:02:49.000
+The model that I'm interacting with is hosted on Bedrock,
+
+00:02:49.000 --> 00:02:52.000
+and the data that I'm interacting with is hosted on Athena.
+
+00:02:52.000 --> 00:02:54.000
+So everything's happening natively inside of AWS.
+
+00:02:54.000 --> 00:02:56.000
+I don't have to establish any other permissions.
+
+00:02:56.000 --> 00:02:59.000
+And I get this sort of nice interface here that allows me to see,
+
+00:02:59.000 --> 00:03:02.000
+okay, here's the command that I gave.
+
+00:03:02.000 --> 00:03:05.000
+We're going through and generating a few, looking at the data,
+
+00:03:05.000 --> 00:03:07.000
+making sure that we understand kind of the source of truth,
+
+00:03:07.000 --> 00:03:11.000
+and then creating this nice sort of charge-off rate by FICO band plot
+
+00:03:11.000 --> 00:03:15.000
+with some interpretation that I can continue my conversation here.
+
+00:03:15.000 --> 00:03:19.000
+This sort of same pattern also exists inside of Posit Assistant.
+
+00:03:19.000 --> 00:03:23.000
+So if I come over to the left-hand sidebar, I can open up Posit Assistant.
+
+00:03:23.000 --> 00:03:26.000
+And this is the agent interface inside of Positron
+
+00:03:26.000 --> 00:03:30.000
+that allows me to interact with foundational AI models
+
+00:03:30.000 --> 00:03:33.000
+for code development, data science, those types of tasks.
+
+00:03:33.000 --> 00:03:36.000
+So in here, if we create a new chat,
+
+00:03:36.000 --> 00:03:38.000
+we can see some details about Posit Assistant.
+
+00:03:38.000 --> 00:03:40.000
+And if I come down here to the bottom,
+
+00:03:40.000 --> 00:03:42.000
+I can choose the model that I want to interact with,
+
+00:03:42.000 --> 00:03:45.000
+and I can see that I'm already configured automatically
+
+00:03:45.000 --> 00:03:48.000
+to interact with available models through AWS Bedrock.
+
+00:03:48.000 --> 00:03:51.000
+So if I wanted to work with Sonnet 5 or GPT,
+
+00:03:51.000 --> 00:03:54.000
+different models that are available here inside of my Amazon environment,
+
+00:03:54.000 --> 00:03:57.000
+I can select this, and then I can come in and I can say,
+
+00:03:57.000 --> 00:04:05.000
+let's create a simple Shiny app using the Diamonds data in R.
+
+00:04:05.000 --> 00:04:08.000
+Or whatever the case is. This is a fairly simple request,
+
+00:04:08.000 --> 00:04:10.000
+but it's going to submit this request,
+
+00:04:10.000 --> 00:04:13.000
+and then I can use Posit Assistant to evaluate and work with
+
+00:04:13.000 --> 00:04:16.000
+either data that I have available to me inside of my environment,
+
+00:04:16.000 --> 00:04:19.000
+data that's available inside of AWS,
+
+00:04:19.000 --> 00:04:22.000
+or do things like build interactive applications
+
+00:04:22.000 --> 00:04:25.000
+that I might want to share with broader users within my organization.
+
+00:04:25.000 --> 00:04:29.000
+As Posit Assistant is going through and starting to work on this task,
+
+00:04:29.000 --> 00:04:32.000
+I can see down here that I'm keeping track of the tokens that I have,
+
+00:04:32.000 --> 00:04:34.000
+what's available inside of my context window,
+
+00:04:34.000 --> 00:04:39.000
+as well as a cost estimate for how much this session has cost thus far.
+
+00:04:39.000 --> 00:04:42.000
+So there's some nice features here within Positron
+
+00:04:42.000 --> 00:04:45.000
+that allow me to take advantage of the latest and greatest tools
+
+00:04:45.000 --> 00:04:50.000
+in the AI space, but do so in a very sort of reproducible, governed way,
+
+00:04:50.000 --> 00:04:53.000
+alongside being able to sort of manage the cost
+
+00:04:53.000 --> 00:04:55.000
+and usage of these tools as well.
+
+00:04:55.000 --> 00:04:58.000
+Now, like I mentioned, this is a very short introduction.
+
+00:04:58.000 --> 00:05:00.000
+If you'd like to learn more about how to take advantage of
+
+00:05:00.000 --> 00:05:03.000
+and utilize Positron inside of SageMaker,
+
+00:05:03.000 --> 00:05:06.000
+you can visit the user guide, which provides some additional guidance
+
+00:05:06.000 --> 00:05:09.000
+and details about what's possible with this latest integration
+
+00:05:09.000 --> 00:05:11.000
+with the Amazon ecosystem.
+

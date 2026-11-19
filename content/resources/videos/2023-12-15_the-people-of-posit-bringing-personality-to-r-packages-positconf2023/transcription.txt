@@ -16,7 +16,7 @@
 
 <h3>Winston and Joe on the Posit community</h3>
 
-<p><a data-t="117">So hey, big Winston and Joe, tell us about the Posit community.</a> <a data-t="117">It is really nice to be in a community where there's a lot of people coming from a lot</a> <a data-t="123">of different places and everyone gets along.</a> <a data-t="125">In terms of inclusiveness, that is something that was very intentional.</a> <a data-t="132">There's also other users groups out there, like Our Ladies.</a> <a data-t="137">Those things just sort of developed organically.</a> <a data-t="140">People involved in that did a really great job.</a></p>
+<p><a data-t="113">So hey, big Winston and Joe, tell us about the Posit community.</a> <a data-t="117">It is really nice to be in a community where there's a lot of people coming from a lot</a> <a data-t="123">of different places and everyone gets along.</a> <a data-t="125">In terms of inclusiveness, that is something that was very intentional.</a> <a data-t="132">There's also other users groups out there, like Our Ladies.</a> <a data-t="137">Those things just sort of developed organically.</a> <a data-t="140">People involved in that did a really great job.</a></p>
 
 <p><a data-t="143">Every time I have an interaction with someone who not only has appreciation for what the</a> <a data-t="150">software does, but what it's allowed them to do or to become as a person, and especially</a> <a data-t="157">if that person feels like this is a space that they didn't necessarily feel like they</a> <a data-t="164">might be welcomed, it is just incredibly motivating for me and for us to go out and do our best</a> <a data-t="172">work year after year.</a></p>
 
@@ -26,7 +26,7 @@
 
 <p><a data-t="179">Winston and Joe, what are some things you do outside of package development?</a> <a data-t="183">In periods in the past, I've done photography pretty intensely.</a> <a data-t="187">I also do some woodworking.</a> <a data-t="190">I love cycling.</a> <a data-t="193">I don't get to do it as much as I would like to, but it's definitely a nice antidote to,</a> <a data-t="199">I feel like I cram my brain full at work and then cycling lets me sort of release.</a></p>
 
-<p><a data-t="206">And thanks again to you guys for talking to us.</a> <a data-t="211">And we found everyone we reached out to was really receptive to just chatting and answering</a> <a data-t="216">questions about their life and what they do outside of coding.</a></p>
+<p><a data-t="209">And thanks again to you guys for talking to us.</a> <a data-t="211">And we found everyone we reached out to was really receptive to just chatting and answering</a> <a data-t="216">questions about their life and what they do outside of coding.</a></p>
 
 <h3>The broader Posit community</h3>
 

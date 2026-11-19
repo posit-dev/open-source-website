@@ -9,7 +9,6 @@ people:
 resource_type: video
 resources: []
 software:
-- commons
 - ggbot2
 - nanoparquet
 - positron
@@ -37,7 +36,6 @@ external:  # updated automatically, do not edit
   - Simon Couch
   playlist: ''
   software:
-  - commons
   - ggbot2
   - nanoparquet
   - positron

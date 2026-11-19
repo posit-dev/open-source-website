@@ -8,8 +8,8 @@
 
 <h3>Reason two: deploying Python applications</h3>
 
-<p><a data-t="49">Number two.</a> <a data-t="49">Developing and deploying these Python applications is hard.</a> <a data-t="52">How do I get my local web app to run in a production environment?</a> <a data-t="55">How do I share my dash application with others?</a> <a data-t="58">In this workshop, we will introduce you to Posit's professional products so that you</a> <a data-t="62">can get hands-on experience with solving these problems.</a></p>
+<p><a data-t="47">Number two.</a> <a data-t="49">Developing and deploying these Python applications is hard.</a> <a data-t="52">How do I get my local web app to run in a production environment?</a> <a data-t="55">How do I share my dash application with others?</a> <a data-t="58">In this workshop, we will introduce you to Posit's professional products so that you</a> <a data-t="62">can get hands-on experience with solving these problems.</a></p>
 
 <h3>Reason three: community and fun</h3>
 
-<p><a data-t="67">Lastly, this workshop will be fun.</a> <a data-t="67">It will be a great place to meet with your fellow Pythonistas, whether you're a new Python</a> <a data-t="72">user or a seasoned Python veteran, there'll be something at this workshop for everyone.</a> <a data-t="76">We hope to see you in Chicago for the first ever Posit conference.</a></p>
+<p><a data-t="66">Lastly, this workshop will be fun.</a> <a data-t="67">It will be a great place to meet with your fellow Pythonistas, whether you're a new Python</a> <a data-t="72">user or a seasoned Python veteran, there'll be something at this workshop for everyone.</a> <a data-t="76">We hope to see you in Chicago for the first ever Posit conference.</a></p>

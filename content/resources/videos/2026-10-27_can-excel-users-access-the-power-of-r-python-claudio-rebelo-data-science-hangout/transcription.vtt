@@ -1,0 +1,1582 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.600
+Hey there. Welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.600 --> 00:00:21.959
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:21.959 --> 00:00:27.200
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.200 --> 00:00:30.639
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.639 --> 00:00:36.279
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.279 --> 00:00:41.200
+Can't wait to see you there. We will go ahead and get started with introducing you to our
+
+00:00:41.200 --> 00:00:48.880
+featured leader today. And I will do a little bit more introduction than I usually do, because
+
+00:00:48.880 --> 00:00:54.400
+we're going to be talking with Claudio Rebelo. He is from Swiss Re, but the reason why we
+
+00:00:54.400 --> 00:01:01.520
+know who Claudio is, is because Claudio applied for an Impact Award. And I wanted to share
+
+00:01:01.520 --> 00:01:08.680
+a little bit about the winners. Let's see. Yes, Rachel's got a link in the chat for us
+
+00:01:08.680 --> 00:01:15.199
+for winners. Thank you so much, Rachel. So the sort of context of this is, I would love
+
+00:01:15.199 --> 00:01:18.879
+Claudio to introduce himself to us, but I'd also really like him to talk just a little
+
+00:01:18.879 --> 00:01:24.879
+bit about his application for his Impact Award and give us a little recap of that.
+
+00:01:24.879 --> 00:01:28.839
+So Claudio, it is so wonderful to meet you. If you could tell us a little bit about what
+
+00:01:28.839 --> 00:01:33.559
+you do, what your role is, and then also a little bit about your application for your
+
+00:01:33.559 --> 00:01:34.559
+Impact Award.
+
+00:01:34.559 --> 00:01:39.639
+Sure, will do. So first of all, thank you so much for having me. I'm really excited
+
+00:01:39.639 --> 00:01:44.559
+to be here. And also before anything else, just to say that any views and opinions I
+
+00:01:45.080 --> 00:01:51.279
+express here are my own and do not reflect one of my employer. And so my name is Claudio
+
+00:01:51.279 --> 00:01:58.080
+Ribello. I'm a model validation actuary at Swiss Re. So Swiss Re is one of the main providers
+
+00:01:58.080 --> 00:02:03.800
+of reinsurance and insurance around the world. And insurance is all about uncertainty and
+
+00:02:03.800 --> 00:02:10.479
+risks. So we have actuaries, they build actuarial models to quantify and manage these risks.
+
+00:02:10.479 --> 00:02:17.479
+And my job is to provide an independent assessment of these models. So in essence, I have to
+
+00:02:17.479 --> 00:02:22.399
+answer the question if these models are fit for purpose. So it's a second line of defense
+
+00:02:22.399 --> 00:02:23.399
+role.
+
+00:02:23.399 --> 00:02:33.360
+So I've been at Swiss Re since 2012. And prior to this role, I was head of data analytics
+
+00:02:33.360 --> 00:02:40.080
+reserving of the commercial insurance unit of Swiss Re. And prior to that, I had actuarial
+
+00:02:40.080 --> 00:02:49.600
+roles in pricing and reserving as well. And my academic background is in economics and
+
+00:02:49.600 --> 00:02:56.279
+actuarial science. And outside of work, besides spending time with my family, I like to go
+
+00:02:56.279 --> 00:03:03.759
+to the library, play guitar and write music, or at least I try to. And then regarding the
+
+00:03:03.759 --> 00:03:11.800
+award, so I got the email for the impact award. So recently in the team, we've implemented
+
+00:03:11.800 --> 00:03:19.080
+a solution, which is how to make code easily accessible to our colleagues, including those
+
+00:03:19.080 --> 00:03:28.039
+who code and those who do not code. And the idea was to deploy your logic, your R functions
+
+00:03:28.039 --> 00:03:37.639
+into an API endpoint via R Plumber, and then make those endpoints accessible also via Excel
+
+00:03:37.639 --> 00:03:44.039
+in kind of an architecture that makes it very, very easy to use your code and the user doesn't
+
+00:03:44.039 --> 00:03:53.160
+need to learn any pseudo syntax or handle or deal with messy user forms. So this allows
+
+00:03:53.160 --> 00:03:55.960
+code to be easily accessible to everybody.
+
+00:03:58.199 --> 00:04:04.279
+Okay, and you won the impact award for the category of scale and reach. There were I think
+
+00:04:04.279 --> 00:04:09.559
+there were six different categories in the link that Rachel put in the chat. I highly encourage
+
+00:04:09.559 --> 00:04:18.760
+everybody to read through the stories of everybody that submitted and one and let yourself imagine
+
+00:04:18.760 --> 00:04:24.920
+what you could do at work with your suggestions and the things that you could sort of influence
+
+00:04:24.920 --> 00:04:31.239
+internally. Claudio, I would love to hear a little bit more about what drove you to do this.
+
+00:04:31.239 --> 00:04:36.600
+Like what were you seeing internally where you were like, okay, clearly we have smart people here
+
+00:04:36.600 --> 00:04:41.480
+who just are not coders the way that we are coders. What was going on?
+
+00:04:42.440 --> 00:04:48.920
+So maybe like a big bit of a backstory and kind of how we ended up here. So around 2019,
+
+00:04:48.920 --> 00:04:55.640
+the Arturia function launched an initiative called Atelier with the goal to upscale the
+
+00:04:55.640 --> 00:05:00.679
+Arturial function. So basically in data science, programming, and communication.
+
+00:05:01.399 --> 00:05:07.239
+And this has had a huge, huge impact and has been a huge success and is sponsored by our group,
+
+00:05:07.239 --> 00:05:14.920
+Chief Actuary. And it's now not only just an Arturial function, but has an impact on
+
+00:05:14.920 --> 00:05:20.920
+in the whole organization. So that means that we have all these analytical capabilities,
+
+00:05:21.559 --> 00:05:27.640
+but the question is now how do we share these capabilities among our colleagues? So including
+
+00:05:27.640 --> 00:05:31.239
+those who code and those who do not code. And if somebody asks, well, if you code, then you should
+
+00:05:31.239 --> 00:05:36.679
+not have a problem. You can use the code easily, but you have a problem where let's say there's a
+
+00:05:36.760 --> 00:05:40.519
+really great R exclusive package, but you basically work with Python.
+
+00:05:41.239 --> 00:05:45.320
+And there, this spec is no longer available to you. So you can then agree with your colleagues,
+
+00:05:45.320 --> 00:05:48.839
+so let's keep it simple. Let's all just code in R. We have everybody code in the same language,
+
+00:05:48.839 --> 00:05:53.320
+so we all can understand each other. So your colleague writes a script that can help you to
+
+00:05:53.320 --> 00:05:58.839
+do your work. And you open the script and you realize you can't make any sense of it. You don't
+
+00:05:58.839 --> 00:06:03.880
+know which functions to run first, what those arguments mean. You don't know if a variable is
+
+00:06:03.880 --> 00:06:09.079
+a data frame, a list, or a vector. So then either you spend a great deal trying to understand
+
+00:06:09.079 --> 00:06:16.279
+somebody else's code or you just give up and you rewrite your own script. So then you have a risk
+
+00:06:16.279 --> 00:06:22.679
+that you're not only duplicating efforts across teams, but sometimes you also end up duplicating
+
+00:06:22.679 --> 00:06:28.839
+efforts within the same team. So we end up basically splitting the expertise instead
+
+00:06:28.839 --> 00:06:36.519
+of leveraging it. So this is kind of the main problem that I've seen. And this solution is a
+
+00:06:36.519 --> 00:06:43.399
+way to kind of counter it. And that's why the way to go is to centralize your logic into an API.
+
+00:06:43.399 --> 00:06:48.279
+And that means you can have R and SAS, for example, calling an endpoint written in Python.
+
+00:06:49.320 --> 00:06:54.200
+So basically, later you can build a shiny app that calls that exactly same endpoint without
+
+00:06:54.200 --> 00:06:59.559
+having to duplicate that effort. So the idea is to bring the logic of your code where the user is
+
+00:06:59.559 --> 00:07:10.440
+already comfortable. And the place where most users are comfortable, whether we like it or not,
+
+00:07:11.079 --> 00:07:17.079
+is Excel. So Excel can make HTTP requests. And therefore, you can basically,
+
+00:07:18.040 --> 00:07:23.640
+you're no longer limited to the native capabilities of Excel. And it's installed
+
+00:07:23.640 --> 00:07:29.399
+in every machine. Every person, whether they like it or not, is opening Excel at least once a day.
+
+00:07:30.040 --> 00:07:37.559
+And basically, you can access exactly the same capabilities that you could do
+
+00:07:37.559 --> 00:07:44.600
+with any other application that can make an HTTP request. So that's kind of basically the idea.
+
+00:07:45.239 --> 00:07:49.559
+And then if it becomes really successful, then you can then build a shiny app on that,
+
+00:07:49.559 --> 00:07:54.040
+because now you have driven adoption, people are using it. You can then build a shiny app
+
+00:07:54.040 --> 00:07:58.920
+calling the exact same endpoint without having to duplicate the code. If you want to update,
+
+00:07:58.920 --> 00:08:05.399
+you can update the API and any client is updated automatically. So you maintain only one version
+
+00:08:05.399 --> 00:08:11.000
+control, one endpoint, easy to maintain and easier to share across teams.
+
+00:08:11.720 --> 00:08:17.959
+Okay. Sorry, I didn't mean to cut you off. We probably have a little bit of a delay. We are
+
+00:08:18.920 --> 00:08:25.880
+opposite sides of the world. I wanted to hop into Slido questions. But I also wanted to address
+
+00:08:26.839 --> 00:08:33.559
+the inevitable comments in the chat, which are, oh, no, low code or no code,
+
+00:08:33.559 --> 00:08:36.359
+like people who are code first, that kind of makes them nervous.
+
+00:08:37.080 --> 00:08:44.679
+Um, could you talk a little bit about the people who do code, how this works from their end,
+
+00:08:45.799 --> 00:08:49.719
+when they are interfacing with the results of like a no code environment?
+
+00:08:50.919 --> 00:08:55.320
+Yeah, so I think there are two kind of important aspects. So one of this is that
+
+00:08:56.200 --> 00:09:04.440
+Excel does not replace your coding preference. So if something is in an endpoint, and you want
+
+00:09:04.440 --> 00:09:11.159
+to code in R, you can call that endpoint from R itself. So nothing stops you from continuing your
+
+00:09:11.159 --> 00:09:16.440
+preferred workflow. And maybe somebody developed something in Python, that now it has deployed
+
+00:09:16.440 --> 00:09:21.960
+logic to an endpoint, and you can just continue your preferred method of working. So it's not
+
+00:09:21.960 --> 00:09:28.919
+taking anything away. On the other hand, if you have your own code, and you know that
+
+00:09:29.880 --> 00:09:34.280
+most people are not going to use your scripts, you're also less willing to share. But if you
+
+00:09:34.280 --> 00:09:39.080
+realize that, well, if I share these scripts, many people are going to use it, then you're also
+
+00:09:39.080 --> 00:09:44.359
+more willing to invest in your script, make it clearer, and be willing to share your work with
+
+00:09:44.359 --> 00:09:52.200
+others. So I think like if you prefer to code, the preference is that both that more and the
+
+00:09:52.200 --> 00:09:57.640
+more people use your code, the bigger the impact you have within the company. So I don't see that
+
+00:09:58.119 --> 00:10:03.880
+there's a conflict in that people prefer to code and don't prefer to code.
+
+00:10:04.599 --> 00:10:08.440
+Awesome. Thank you for the clarification. I wanted to make sure that we all knew we were
+
+00:10:08.440 --> 00:10:14.440
+talking about increasing accessibility in both directions, instead of making that smaller.
+
+00:10:15.000 --> 00:10:21.799
+Okay. Now let's hop over to some Slido questions. I saw a question from Natasha, which might help us
+
+00:10:22.520 --> 00:10:29.159
+build some context around what you do and what your team does and what you're facilitating,
+
+00:10:29.159 --> 00:10:33.080
+the type of work that you're facilitating. So Natasha has a little asterisk in her question,
+
+00:10:33.080 --> 00:10:37.719
+and I will ask it for her. It says, could you talk a little bit more about how you
+
+00:10:37.719 --> 00:10:43.080
+analyze insurance models to determine if they are good? I'm curious what that involves. And
+
+00:10:43.080 --> 00:10:46.440
+I think that that's a great question. How do you know if an insurance model is good?
+
+00:10:47.400 --> 00:10:54.200
+Oh, sorry. I lost you. I lost you for a second. Uh-oh. Can you still hear me? Yes. I can see
+
+00:10:54.200 --> 00:11:00.200
+internet unstable, but. Oh, no. Okay. Well, I'm going to put the question in the chat as well
+
+00:11:02.039 --> 00:11:06.840
+so that everybody can see it. And hopefully if you can look at the chat, you can see it as well.
+
+00:11:06.840 --> 00:11:11.799
+Natasha asks, could you talk a little bit more about how you analyze insurance models to determine
+
+00:11:11.799 --> 00:11:16.919
+if they are good? Yeah. So it really depends on the model that you're validating.
+
+00:11:17.479 --> 00:11:24.039
+But first you go through several stages. So it really depends. Sometimes models are very big
+
+00:11:24.039 --> 00:11:31.320
+and you only assess a certain part, but in general, you sit down with the model owners or
+
+00:11:31.320 --> 00:11:37.479
+the people who own the model. You ask them to give you all the documentation. So you study the models,
+
+00:11:37.479 --> 00:11:40.520
+you ask a lot of questions. So the first stage is like a research stage.
+
+00:11:41.159 --> 00:11:46.119
+Once you have your ideas, you can either ask them to stress test, to see all the validations that
+
+00:11:46.119 --> 00:11:50.679
+the first line of defense has done. And then because you have done many of these validations,
+
+00:11:50.679 --> 00:11:55.719
+you have your own list of tests like parameters. What happens if you change this parameter?
+
+00:11:55.719 --> 00:12:01.159
+What happens if you change your model assumptions? If you use a different model,
+
+00:12:02.039 --> 00:12:07.159
+where do you get the data? Is the data fit for purpose? Are the risks you're analyzing material
+
+00:12:07.640 --> 00:12:12.840
+or are there any blind spots? So a model validation contains many, many different
+
+00:12:13.880 --> 00:12:20.039
+aspects, but the main piece is, is the design of the model reasonable? And are the parameters
+
+00:12:20.039 --> 00:12:25.000
+well calibrated? And then you also try to assess what is the governance around it,
+
+00:12:25.000 --> 00:12:29.719
+around these models. So who owns the parameters? How many times are they updated? Where's the
+
+00:12:29.719 --> 00:12:34.200
+source of the data? Have you validate this data? Have you done the right adjustments to the data
+
+00:12:34.280 --> 00:12:40.200
+in order to model these particular risks? So there's many components on how to do this.
+
+00:12:41.960 --> 00:12:49.960
+Wonderful. Thank you. Let me see here. I have a question from Noor and I don't see an asterisk,
+
+00:12:49.960 --> 00:12:54.359
+so I will ask Noor to ask that question live. I'm going to highlight it in Slido and I will
+
+00:12:54.359 --> 00:13:03.960
+also put it in the chat. Uh-oh, Noor, we can't hear you. Oh, there you are. Okay,
+
+00:13:03.960 --> 00:13:06.760
+now I can hear you. Picked the right time because I was about to put food in my mouth.
+
+00:13:08.599 --> 00:13:15.719
+So how advanced, you would say, like coding computational or tech-wise would you say
+
+00:13:15.719 --> 00:13:21.719
+insurance or the actuarial field compared to other fields? I say this only because I was a math major
+
+00:13:21.719 --> 00:13:26.679
+and my best friend who's also a math major became an actuary. And she's like, yeah, I do everything
+
+00:13:26.679 --> 00:13:33.479
+in Excel. And I'm like, we have other tools in Excel. Why would you use Excel? So what are some
+
+00:13:33.479 --> 00:13:40.760
+of the challenges with dragging, not dragging, encouraging a field to move in a more modernized
+
+00:13:40.760 --> 00:13:46.599
+infrastructure and direction? Yeah, so Swiss Re really has invested in analytical capabilities
+
+00:13:46.679 --> 00:13:52.520
+in several years. So this initiative of Atelier really has transformed the company, which is
+
+00:13:52.520 --> 00:13:58.200
+almost unrecognizable today. Yes, there's still a lot of things that are done in Excel, but in fact,
+
+00:13:59.559 --> 00:14:05.799
+we have a lot of analytical capabilities even before that. So a lot of the things we do were
+
+00:14:05.799 --> 00:14:11.559
+either done in Java or in MATLAB, but this initiative has basically tried to promote
+
+00:14:12.200 --> 00:14:19.000
+open source code and make it much more accessible to, let's say, the average user.
+
+00:14:19.000 --> 00:14:25.400
+So before it was a clear separation between the developers, the technical actuaries, and the more
+
+00:14:25.400 --> 00:14:31.640
+business-oriented actuaries. And now you have quite across the whole organization
+
+00:14:33.000 --> 00:14:38.599
+capability. So we do use advanced analytics, machine learning, regression models,
+
+00:14:39.400 --> 00:14:44.760
+and of course, the traditional actuarial models across the company. So a lot of the things
+
+00:14:45.719 --> 00:14:50.599
+were done in Excel, but also we have our flagship tools and those are not done in Excel. Those are
+
+00:14:50.599 --> 00:14:57.479
+proper business-grade applications where you have a clear set of developers and the scientists and
+
+00:14:57.479 --> 00:15:03.880
+actuaries that maintain those main flagship tools. The benefit now is that there's a lot of things
+
+00:15:03.880 --> 00:15:09.479
+you do upstream and downstream that now you can also do using a coding environment.
+
+00:15:09.479 --> 00:15:16.119
+And this is exactly what brought me to this, let's say, capabilities, because a lot of the
+
+00:15:16.119 --> 00:15:23.880
+things we do is to report and communicate our results. So in 2019, actually, this is how I
+
+00:15:23.880 --> 00:15:29.239
+learned R via this initiative. Before that, I was doing a lot of VBA, Power Query, and Docs,
+
+00:15:29.239 --> 00:15:35.559
+and Power BI. And then via this initiative, I got in contact with R and I got the book R for
+
+00:15:35.559 --> 00:15:42.520
+Data Science. I read it cover to cover and there was no going back after that. It's like you found
+
+00:15:42.520 --> 00:15:50.039
+the light. And I was really impressed that you do not need to be like a data software engineer
+
+00:15:50.919 --> 00:15:58.679
+in order to automate reports or to create shiny apps or such a web-based applications.
+
+00:15:59.640 --> 00:16:07.719
+So it really felt like a superpower, but still requires a lot of investment in order to do and
+
+00:16:07.719 --> 00:16:13.000
+work with these things. So the ability for Excel to be able to communicate with R and Python
+
+00:16:13.000 --> 00:16:19.799
+basically says that Excel no longer needs to be, let's say, the weak link in this architecture,
+
+00:16:20.440 --> 00:16:26.679
+because now you can basically create a ggplot from Excel, acquire a document from Excel.
+
+00:16:28.119 --> 00:16:35.479
+You can do Monte Carlo simulation in Excel, copy lists within Excel, and you're just calling any
+
+00:16:35.479 --> 00:16:40.039
+code that is written in R or Python. So that's why I'm really happy with the initiative. At the
+
+00:16:40.039 --> 00:16:43.960
+same time, people don't need to install any libraries. They don't need to handle, they need
+
+00:16:43.960 --> 00:16:49.640
+to choose an IDE. And also, maybe the architecture, I can maybe elaborate a bit on the
+
+00:16:50.840 --> 00:16:58.200
+architecture, also makes it very easy for the user to use this code. So I think this is kind
+
+00:16:58.200 --> 00:17:03.640
+of the key aspect, because I have seen this. It was not fully original idea. I've seen
+
+00:17:05.079 --> 00:17:10.119
+an Excel tool that basically is calling a library in the backend written in Java,
+
+00:17:10.199 --> 00:17:17.959
+and the whole tool has a bunch of user forms, which really adds a lot of friction. So if you
+
+00:17:17.959 --> 00:17:22.119
+want to maximize adoption, you really have to minimize the friction. And I also didn't want
+
+00:17:22.119 --> 00:17:27.880
+the user to learn pseudocode. So the way that it's implemented makes it super, super easy,
+
+00:17:28.520 --> 00:17:34.040
+while still having access to most of all of the capabilities that you could do, let's say, in R.
+
+00:17:34.280 --> 00:17:37.239
+Wonderful. Thank you. And I think it's important to also
+
+00:17:38.920 --> 00:17:45.880
+build a little bit of empathy around the fact that not everybody is going to want to learn how
+
+00:17:45.880 --> 00:17:50.119
+to code as like a whole new skill set. Imagine that you've been in your field for a long time,
+
+00:17:50.119 --> 00:17:54.520
+you're a very smart and capable person. You're maybe an actuary, or you're a subject matter
+
+00:17:54.520 --> 00:18:02.040
+expert in risk of a different, in a different part of the organization. And you have
+
+00:18:02.760 --> 00:18:08.199
+and you have kids and a life and bills to pay, and you have very little free time.
+
+00:18:08.199 --> 00:18:11.959
+And then someone comes at you and says, Oh, I'm going to need you to learn this whole new skill
+
+00:18:11.959 --> 00:18:19.160
+set. What a relief it would be to be able to contribute your ideas and contribute to progress
+
+00:18:19.160 --> 00:18:23.719
+inside of your team and your organization in the tool that you already know how to use.
+
+00:18:23.719 --> 00:18:27.880
+Because investing in learning how to code is a lot. It's a very big ask for people.
+
+00:18:28.439 --> 00:18:34.680
+So keeping empathy in your heart for everybody is very, very important. And Claudio, I love this.
+
+00:18:35.239 --> 00:18:38.359
+I wanted to call out a couple of things that are happening in the chat,
+
+00:18:38.359 --> 00:18:45.160
+because there is a whole conversation around agent skills. Lots of questions around what skills are
+
+00:18:45.160 --> 00:18:49.880
+lots of resources that are shared around skills. For example, we had a whole data science lab
+
+00:18:49.880 --> 00:18:55.640
+episode, where we were joined by Eric Aiden Bowie, who described skills for us. Isabella has also
+
+00:18:55.640 --> 00:19:03.319
+given a talk at our pharma on skills as well. And at Posit, inside of the Posit repo, inside of one
+
+00:19:03.319 --> 00:19:09.319
+of the Posit repos, we have a whole skill repo on GitHub, full of skills from Posit developers.
+
+00:19:09.319 --> 00:19:13.079
+And those are, I think they're available automatically to Posit Assistant as well.
+
+00:19:13.079 --> 00:19:16.680
+So if you're using Posit Assistant, you have access to all of these or the model does.
+
+00:19:17.319 --> 00:19:21.640
+Isabella, do you want to unmute for just a minute and talk about that? So we can all get on the
+
+00:19:21.640 --> 00:19:26.439
+same page. And then maybe I can extend another question to Claudio from Slido that's a little
+
+00:19:26.439 --> 00:19:36.439
+bit about AI. Sure. Yeah, I think you summarized it extremely well. Skills are instructions,
+
+00:19:36.439 --> 00:19:42.760
+an instruction or a set of instructions, usually a skill.md, which is a markdown file.
+
+00:19:43.319 --> 00:19:48.680
+And skills are very helpful if you are giving your AI agents some sort of repeated
+
+00:19:49.319 --> 00:19:54.760
+instruction. So the example that I like is, for example, there is a shiny BSLib skill.
+
+00:19:54.760 --> 00:20:00.599
+Say you make a lot of shiny apps, instead of every single time telling your agent, please
+
+00:20:00.599 --> 00:20:09.400
+create me a shiny app using BSLib. If you just write a BSLib skill, the AI will know,
+
+00:20:09.400 --> 00:20:15.880
+based on the description of your skill.md file, whether or not to invoke or load the skill.
+
+00:20:15.880 --> 00:20:21.079
+And then it will follow whatever instructions you have written out in that full set of
+
+00:20:21.079 --> 00:20:25.959
+instructions. And so that way, it's just another way of kind of like not repeating yourself with
+
+00:20:25.959 --> 00:20:32.760
+AI. Yeah, it's the dry pence principle applied to utilizing an AI model. You don't want to repeat
+
+00:20:32.760 --> 00:20:40.439
+yourself every single time. And then Tamalu had said in the chat that it is a good example is
+
+00:20:40.520 --> 00:20:46.839
+maybe you prefer a particular style of UI. And every time you want your agent to do something
+
+00:20:46.839 --> 00:20:53.319
+for you, you want it to use that style. This is a way of avoiding having to detail that every
+
+00:20:53.319 --> 00:20:57.800
+single time. I want this particular style. I want things to look like this. It can just know that
+
+00:20:57.800 --> 00:21:03.319
+in the background for you with skills. So there are links to all those resources. And that lets
+
+00:21:03.319 --> 00:21:10.680
+me open up to ask some questions to Claudio about LLMs and AI and everything that are popping up in
+
+00:21:10.680 --> 00:21:19.239
+the Slido. So if you are up to that, Claudio, let's go over to a broad question that I see from
+
+00:21:19.239 --> 00:21:25.640
+Rizwan. If Rizwan is available to ask that live, if we could get them unmuted. Let's see.
+
+00:21:26.359 --> 00:21:31.319
+So maybe if I could, maybe before I forget, I have two colleagues who are also joining.
+
+00:21:31.400 --> 00:21:32.599
+Oh, yeah, yeah.
+
+00:21:32.599 --> 00:21:38.439
+So I have David Zadahi. He has been basically driving the internal promotion of the tool and
+
+00:21:38.439 --> 00:21:43.640
+is also helping me developing the R package and the source control. And he has had a lot of
+
+00:21:43.640 --> 00:21:52.680
+experience with providing an R solution in the Excel-driven team many years ago, which had
+
+00:21:52.680 --> 00:22:00.359
+clearly a lot of added value, but it was met with a lot of skepticism. So having a good tool is one
+
+00:22:00.359 --> 00:22:07.400
+part, but convincing people to adopt it is a whole other challenge. If any question for this
+
+00:22:07.400 --> 00:22:12.680
+topic, so David is kind enough to answer. And then I also have a colleague I used to work with in the
+
+00:22:12.680 --> 00:22:20.760
+Analytics team. His name is Sam Sekarsky. He was my hackathon partner, and he built an LLM workflow
+
+00:22:20.760 --> 00:22:28.359
+with the tool within Excel where the LLM, so he programmed with Elmer, trained the LLM to fill
+
+00:22:28.359 --> 00:22:33.479
+templates so you can give it a bunch of templates. It will learn based on the input and the output of
+
+00:22:34.439 --> 00:22:40.359
+your templates. And the training data then is saved in pins so you can then have the LLM fill
+
+00:22:40.359 --> 00:22:46.760
+the templates, the Excel templates for yourself inside Excel. So he is also on the call if any
+
+00:22:46.760 --> 00:22:53.959
+questions on this topic, he's also happy to discuss about it. Awesome. I have made it so that
+
+00:22:53.959 --> 00:23:01.079
+both Sam and David can unmute at will if they want to, if we call their names.
+
+00:23:01.079 --> 00:23:06.359
+So no worries there. And Rizwan, if you are available to ask your question,
+
+00:23:06.359 --> 00:23:09.560
+I would love that. I'm going to put it in the chat, and I'll also highlight it in Slido.
+
+00:23:12.680 --> 00:23:19.479
+Yeah. Hi, Claudio. So my question here is we have a mandate to integrate more and more LLM usage.
+
+00:23:19.479 --> 00:23:24.040
+We have an OpenAI and Cloud account. So there is a push from leadership to
+
+00:23:24.040 --> 00:23:30.680
+maximally utilize the token and try to convert all our data science process into an LLM driven
+
+00:23:30.680 --> 00:23:37.959
+process. Is there any push from similar experience you guys have? Yeah, but it's clearly, it's funny
+
+00:23:37.959 --> 00:23:42.119
+because when I was head of analytics, we started a discussion where other people should have
+
+00:23:42.119 --> 00:23:47.479
+co-pilot licenses, yes or no, that's really the beginning. And so this was a discussion,
+
+00:23:47.479 --> 00:23:53.880
+of course, I was advocating for, but this was kind of, oh, there's a cost and is it worth it?
+
+00:23:54.439 --> 00:24:00.839
+And then my main argument was, well, it's still very early, but we don't want to be,
+
+00:24:00.839 --> 00:24:07.079
+if it's something that's really going to take off, we don't want to lag behind. And funny enough,
+
+00:24:07.079 --> 00:24:13.640
+now, of course, the whole conversation has shifted around. So we live in a completely different world
+
+00:24:13.640 --> 00:24:20.119
+and now, yes, there's a lot of, let's say, strong encouragement to use AI and to implement LLM
+
+00:24:20.119 --> 00:24:26.839
+driven processes, right? And to talk about the Impact Award and also Sam, when he kind of used
+
+00:24:26.839 --> 00:24:33.800
+the LLM in order to help your Excel, I actually working on a prototype where I have basically
+
+00:24:36.599 --> 00:24:42.839
+a process, an LLM that can help you to do, let's say, apply a bunch of reserving models
+
+00:24:43.479 --> 00:24:49.719
+within Excel. And then this LLM can, in the end, create a PowerPoint with the officer down package
+
+00:24:50.439 --> 00:24:56.599
+that creates a bunch of stochastic analysis on your triangles and then tries to also not help,
+
+00:24:56.599 --> 00:25:02.520
+not only help to interpret the diagnostics, but also help you to select the model. So yeah,
+
+00:25:02.520 --> 00:25:07.400
+there's a lot of push and a lot of exciting things happening with LLMs and AIs within the company.
+
+00:25:07.719 --> 00:25:13.640
+Got it. Awesome. Thank you for your question, Rizwan. Okay. We had another one that was from
+
+00:25:14.199 --> 00:25:20.439
+Zach and has an asterisk. So I'm going to ask it for him so we can just stay on the topic of AI
+
+00:25:20.439 --> 00:25:27.719
+for just a second more. Zach asks, how much has AI influenced the field in general, the insurance or
+
+00:25:27.719 --> 00:25:34.599
+actuarial field in general? And are you reluctant at all to use it for sensitive data? Because
+
+00:25:35.319 --> 00:25:41.400
+insurance data is people data. Yeah. So first, insurance is a highly regulated industry.
+
+00:25:43.640 --> 00:25:51.319
+And for example, there are legal restrictions. So certain variables cannot be used, for example,
+
+00:25:51.319 --> 00:25:57.640
+for pricing or to discriminate in pricing. So everything is highly regulated and there's a
+
+00:25:57.640 --> 00:26:04.839
+lot of emphasis in being able to explain and justify your models and your results also to
+
+00:26:04.839 --> 00:26:12.599
+the regulators. So there is one part of the AI stripping, let's say, the pricing and the
+
+00:26:12.599 --> 00:26:19.319
+reserving and the financial aspect of the company. There's another part that AI is used to help you
+
+00:26:20.520 --> 00:26:27.239
+summarize your reports, produce your exhibits, write a code for you that you're still responsible,
+
+00:26:27.239 --> 00:26:37.160
+of course, to make sure that it's correct. So it's a bit trick, but you get a lot of submissions,
+
+00:26:37.160 --> 00:26:42.839
+a lot of data, a lot of big contracts. And in the industry in general, there's a lot of
+
+00:26:43.479 --> 00:26:49.880
+new tools that can basically scan all these documents and look for keywords and exclusions.
+
+00:26:50.520 --> 00:26:59.160
+So it's slowly but surely starting and creeping in in different areas. But there's still a lot of,
+
+00:26:59.160 --> 00:27:06.520
+let's say, a lot of upstream processes. But once you get really to the final stretch,
+
+00:27:06.520 --> 00:27:16.599
+then it's still quite a sensitive topic. But yeah, it is really almost scary how fast things are
+
+00:27:16.599 --> 00:27:21.160
+progressing. And the conversations that we're having today were almost like science fiction
+
+00:27:21.160 --> 00:27:27.640
+just a couple of years ago. But a lot is happening. There's a lot of initiative, a lot of
+
+00:27:28.280 --> 00:27:35.640
+projects that are really driven by AI and implementation of AI. And the most important
+
+00:27:35.640 --> 00:27:42.920
+about what I enjoy, what I think is at least partially reassuring, is that the narrative
+
+00:27:42.920 --> 00:27:50.359
+is to augment the human capabilities, not to replace it. So this is the main angle that
+
+00:27:51.319 --> 00:27:59.479
+things are being done. Awesome. Thank you, Claudio. I don't know if we want to have David or Sam
+
+00:28:00.119 --> 00:28:06.359
+chime in at all on this, but if either of you have extra thoughts to share around this topic
+
+00:28:06.359 --> 00:28:13.880
+about the integration of AI or push for AI or the good, the bad, any comments, feel free to hop in.
+
+00:28:15.079 --> 00:28:19.239
+No need to let us know in the chat. You could just unmute. Okay. I'll just give you a chance.
+
+00:28:20.040 --> 00:28:26.199
+Let's hop up over to Slido. And I would love to, I know we're at the half hour mark here, but
+
+00:28:27.239 --> 00:28:32.040
+get a little bit more context around, Claudio, your role from Natasha. Natasha asks,
+
+00:28:32.599 --> 00:28:38.119
+what does a typical day or week look like for you? What areas do you split your time between?
+
+00:28:38.119 --> 00:28:42.839
+Are you mostly programming? Are you in more meetings? What does that look like for you?
+
+00:28:44.760 --> 00:28:51.319
+So it really depends. My main role is model validation, but I'm very driven by data science.
+
+00:28:51.319 --> 00:28:58.040
+So I always find side projects to work on data science. But in terms of model validation,
+
+00:28:58.040 --> 00:29:02.760
+depends where I am in my validation. If it's in the beginning, I'm trying to set meetings,
+
+00:29:02.760 --> 00:29:07.800
+trying to find who's the owners of certain models. Then once that is set, trying to understand how
+
+00:29:07.800 --> 00:29:14.760
+the models work, read a lot of documentation. And then coding is quite important and helpful
+
+00:29:14.760 --> 00:29:20.359
+because you can, in certain cases, it's not, the point is that all validations are very
+
+00:29:20.359 --> 00:29:22.040
+different from each other. So it's not.
+
+00:29:22.311 --> 00:29:27.351
+comunications are different from each other. It's not a recipe that you can apply. You
+
+00:29:27.351 --> 00:29:32.091
+can't apply the same recipe to all the models you validate but you can replicate, in certain
+
+00:29:32.091 --> 00:29:38.191
+instances, pieces of the model and that allows you to be able to code and to replicate and
+
+00:29:38.191 --> 00:29:48.950
+to test and to communicate, building visuals, ggplot, or plotly. This is really key. And
+
+00:29:48.950 --> 00:29:55.070
+you spend a lot of time also writing the report. Here, it's interesting because I write these
+
+00:29:55.070 --> 00:30:00.631
+reports before AI so you have to really write every word for itself and it's not something
+
+00:30:00.631 --> 00:30:07.590
+I do naturally but I realize it's how you really think and deepen your thoughts when
+
+00:30:07.590 --> 00:30:13.070
+you're writing something and typing and try to explain because in the end you have to
+
+00:30:13.070 --> 00:30:17.570
+deliver this report to the main stakeholders and you need to be very careful and thoughtful
+
+00:30:17.691 --> 00:30:23.971
+how you present everything. It has to be clear but still detailed enough. Of course, AI is
+
+00:30:23.971 --> 00:30:30.571
+really, really helpful in writing and expressing your thoughts but I still try to word as much
+
+00:30:30.571 --> 00:30:37.811
+as possible myself because this is where a lot of new ideas or things that I didn't find
+
+00:30:37.811 --> 00:30:42.690
+while I was doing the review but when I'm writing and trying to explain it to others,
+
+00:30:42.690 --> 00:30:50.851
+you really get new insights. Writing the report is a part where I still invest a lot of time
+
+00:30:50.851 --> 00:30:54.131
+even though AI has made it much, much easier to do.
+
+00:30:54.131 --> 00:30:59.690
+Well, this allows us to follow right into Amrit's question. Let's see if we can get
+
+00:30:59.690 --> 00:31:07.370
+Amrit to unmute and ask. I see him. He's in the camera on crew today. Hey, Amrit. I will
+
+00:31:07.370 --> 00:31:11.010
+put your question in the chat as well.
+
+00:31:11.330 --> 00:31:20.211
+Thank you for the opportunity and welcome, Claudio. My question was I am from a fintech
+
+00:31:20.211 --> 00:31:29.050
+space and I don't know much about pricing or reserving projects. I was just wondering
+
+00:31:29.050 --> 00:31:35.331
+how do you get it implemented end-to-end? I think you answered a part of that question
+
+00:31:35.370 --> 00:31:41.730
+in our conversations now but yeah, and maybe an extension to that is how do you present
+
+00:31:41.730 --> 00:31:51.331
+it to senior executives? Maybe what gets them excited about the work you have done?
+
+00:31:51.331 --> 00:31:58.090
+I can't really go into too much detail when it comes to Swissy but generally speaking,
+
+00:31:58.090 --> 00:32:06.570
+insurance companies, they have what they call their flagship applications and there
+
+00:32:06.570 --> 00:32:11.450
+you still have clear separation between developers, business owners, so there's a whole kind of
+
+00:32:14.811 --> 00:32:22.971
+traditional way even before you add AI. The coding allows you then because these are kind
+
+00:32:22.971 --> 00:32:29.450
+of for the, let's say, the status quo but sometimes you have very peculiar
+
+00:32:31.691 --> 00:32:37.450
+types of policies or things that you need to review that can't be addressed by these,
+
+00:32:38.811 --> 00:32:46.971
+let's say, flagship tools. That's kind of where you can't have a one-size-fits-all.
+
+00:32:47.531 --> 00:32:53.290
+In terms of how these models are created, it really depends on the line of business.
+
+00:32:54.010 --> 00:32:58.331
+For example, life and health is very different from property and casualty. Within property and
+
+00:32:58.331 --> 00:33:03.051
+casualty, things are also very different and it also depends how much information you have.
+
+00:33:03.051 --> 00:33:07.691
+If you have a lot of data, then you can apply much more sophisticated statistical methods.
+
+00:33:07.691 --> 00:33:12.570
+If you have less data, then you require a lot of expert judgment and monitoring
+
+00:33:12.650 --> 00:33:20.570
+and you really require a lot of underwriting expertise to price a lot of these deals.
+
+00:33:25.611 --> 00:33:29.771
+You need this reserving function because once you sell the policy, you still know how much
+
+00:33:29.771 --> 00:33:35.370
+that has cost. First, you sell the product and only then it will cost you money in the way of
+
+00:33:35.370 --> 00:33:40.090
+claims. Therefore, you need to have the reserving function to ensure there are enough funds
+
+00:33:40.090 --> 00:33:46.890
+available in order for the company to be able to settle all these claims of the policy that
+
+00:33:46.890 --> 00:33:56.571
+has been written until now. It's very, very broad. It's very hard to synthesize in an answer,
+
+00:33:56.571 --> 00:34:04.650
+but it's a very fascinating field. Of course, statistics and math play a huge role. A lot of
+
+00:34:04.650 --> 00:34:11.691
+these are statistical-driven models. There you have GLM and then you have also live models.
+
+00:34:11.691 --> 00:34:17.291
+Of course, there's machine learning, but there's also a lot of underwriting expertise and judgment
+
+00:34:17.291 --> 00:34:25.210
+and monitoring and being very close to the risk. We also have engineering departments that can go
+
+00:34:25.210 --> 00:34:32.251
+for really the big policies. They can inspect the site and make also an appraisal of these risks.
+
+00:34:32.571 --> 00:34:34.890
+It's a whole world with many different pieces.
+
+00:34:35.610 --> 00:34:38.890
+It is. I was just going to say, I come from insurance. I come from a totally different
+
+00:34:38.890 --> 00:34:43.451
+side than Claudio does because I came from P&C, which is property and casualty. I think that
+
+00:34:43.451 --> 00:34:49.930
+Claudio is in more commercial. Then we have Ryan here in the chat today, who is a CAT modeler and
+
+00:34:49.930 --> 00:34:58.571
+that is catastrophe modeling. How much might it cost us if a hurricane hits this spot? There are
+
+00:34:58.571 --> 00:35:04.571
+all kinds of different modeling. Claudio mentioned GLM. So many of the models that
+
+00:35:04.571 --> 00:35:10.731
+you see in insurance are GLM. That's a generalized linear model. If you are a person who wants to get
+
+00:35:10.731 --> 00:35:16.330
+into insurance, that is a great place to focus. It's like looking at the different types of GLM
+
+00:35:16.330 --> 00:35:21.210
+models, but it's really, really broad. There's so many different pockets and then there's
+
+00:35:21.210 --> 00:35:27.691
+reinsurance and there are, yes, it's very, very complex. Find somebody in insurance who wants
+
+00:35:27.691 --> 00:35:34.330
+to talk to you. Actually, I'm from P&C, right? It's so different that I would be completely
+
+00:35:34.330 --> 00:35:38.490
+useless in life and health. Yes, I would be completely useless in life and health as well,
+
+00:35:38.490 --> 00:35:44.330
+but also I came from auto insurance and I would be useless in homeowner's insurance, for example.
+
+00:35:44.330 --> 00:35:52.330
+So I know a lot about car insurance, auto insurance, and personal property insurance,
+
+00:35:52.330 --> 00:35:57.930
+which is you could insure your computer, your phone, you could insure jewelry that you're
+
+00:35:57.930 --> 00:36:03.531
+wearing, right? Like my wedding ring is insured, my computer is insured, all kinds of stuff.
+
+00:36:04.251 --> 00:36:06.971
+Find somebody who works in insurance and let them talk your ear off.
+
+00:36:07.691 --> 00:36:12.650
+And one thing that Suisvi does operates business to business, so we don't do personal lines. So we
+
+00:36:12.650 --> 00:36:17.851
+are an insurance company, so we provide insurance to other insurance companies and we also have a
+
+00:36:17.851 --> 00:36:25.370
+commercial insurance business unit, besides life and health. Hopefully that explains why I don't
+
+00:36:25.370 --> 00:36:33.291
+know much about what Claudio does and he might not know much about what I do. Okay, so let's hop back
+
+00:36:33.291 --> 00:36:39.370
+over to Slido. We'll get off of our very, very specific what is insurance tangent and let's go
+
+00:36:39.370 --> 00:36:46.411
+grab another question. Amrit, thank you so much for your question. I wanted to address an anonymous
+
+00:36:46.411 --> 00:36:52.251
+question because I think it is very funny. It says, hey, you pitched your API idea to Posit and
+
+00:36:52.251 --> 00:36:58.330
+you won an impact award for it. Have you considered pitching it to Microsoft because it uses Excel?
+
+00:36:59.531 --> 00:37:04.011
+Yeah, well, I thought about it and actually I have other things. I have a bunch of
+
+00:37:05.131 --> 00:37:11.210
+add-ins which I've developed throughout the years in old school VBA on how to manage colors,
+
+00:37:11.210 --> 00:37:16.411
+how to put the Brewer color package into my Excel, so I can apply the Brewer color package
+
+00:37:16.411 --> 00:37:22.971
+or the Veritas package to all my plots just in one go. So I have a bunch of different solutions
+
+00:37:22.971 --> 00:37:32.011
+and in fact, I will deploy with my API a bunch of, you know, own custom made, because the idea
+
+00:37:32.011 --> 00:37:37.851
+about this package, of this API, it works as an add-in. So this is really, really key. So I didn't
+
+00:37:37.851 --> 00:37:43.610
+want to have the API to be limited to a specific file, because then this file gets spread around
+
+00:37:44.490 --> 00:37:49.770
+and you lose track and then it's chaos again. So the implementation is really as an add-in,
+
+00:37:49.770 --> 00:37:54.571
+so it's part of your Excel application. So yeah, I could, because I think the application is,
+
+00:37:54.571 --> 00:38:00.331
+the implementation is really, really nice, but, and I thought about it already before,
+
+00:38:00.331 --> 00:38:05.451
+but I have no idea where to start. I don't know how I would even contact
+
+00:38:06.011 --> 00:38:12.571
+Microsoft and pitch this idea. I don't know either. Anybody out there in Hangoutland have
+
+00:38:12.571 --> 00:38:17.771
+connections at Microsoft or know how to do this? I used to have a friend who worked at Microsoft.
+
+00:38:17.771 --> 00:38:22.490
+They don't work there anymore, or a few of them. Okay, maybe somebody in the Hangout group can
+
+00:38:22.490 --> 00:38:29.131
+connect Claudio with somebody at Microsoft, because I think that that would be amazing.
+
+00:38:29.850 --> 00:38:35.850
+And then you mentioned that you had some other things going on, and Noor asked a question,
+
+00:38:35.850 --> 00:38:40.891
+which was, what are some side projects, work or non-work related, that you are working on
+
+00:38:40.891 --> 00:38:45.050
+or excited about? I didn't know if you wanted to talk a little bit about any of your other
+
+00:38:45.050 --> 00:38:49.530
+little fun things you're doing. Yeah, well, this is, so one, just a completely
+
+00:38:51.370 --> 00:38:58.331
+kind of side project, which is this one to create an LLM driven reserving process
+
+00:38:59.131 --> 00:39:03.691
+and then, which is available in Excel, but it could be available in a Shiny app. So that's
+
+00:39:03.691 --> 00:39:13.771
+a nice thing as an API, where you can have all these kind of processes done with an LLM driven
+
+00:39:14.970 --> 00:39:20.490
+workflow. Another thing I would like to do, and this is kind of as a personal project,
+
+00:39:21.131 --> 00:39:25.131
+because of course, PositConnect makes deployment very easy. All I need to do is to click one
+
+00:39:25.131 --> 00:39:33.610
+button and the API is deployed in PositConnect, but I want to also deploy it privately in my
+
+00:39:33.610 --> 00:39:39.131
+own server. And I went to the workshop, so I went to the PositConf, I'm wearing the t-shirt,
+
+00:39:39.131 --> 00:39:44.970
+I don't know if you can see it, but I went to the tiny models workshop and I would like to
+
+00:39:44.970 --> 00:39:51.050
+translate all the tiny models into Excel, so people can do machine learning directly from
+
+00:39:51.050 --> 00:39:56.331
+Excel as well. So that's one of the side projects, which is not necessarily work related,
+
+00:39:56.331 --> 00:40:03.771
+but it's something I'm excited about. Awesome. We love side projects. I would love anybody to
+
+00:40:03.771 --> 00:40:08.410
+share side projects in the chat, but also in the Discord server, we have a, like a show and share
+
+00:40:08.410 --> 00:40:14.251
+channel. And there's also a channel in Discord called only the silliest projects, where I highly
+
+00:40:14.251 --> 00:40:20.410
+encourage you to go put your wackadoodle projects, because they're so much fun. And then also go find,
+
+00:40:20.410 --> 00:40:24.811
+go search ham clock, literally anywhere in the Discord, define Hubert's ham clock,
+
+00:40:25.451 --> 00:40:30.651
+because that will, ham clock launcher, because that will make you laugh. All right. Thank you so much
+
+00:40:31.530 --> 00:40:37.930
+to Noor for asking our questions here. I wanted to also ask, there was one anonymous question,
+
+00:40:38.571 --> 00:40:44.730
+which I felt fell sort of in line with Amrit's question of like, how are you communicating
+
+00:40:44.730 --> 00:40:50.331
+things to other people? Amrit was asking about executives. This anonymous question says,
+
+00:40:50.331 --> 00:40:56.730
+what are the most valuable packages that you use to share your work with those Excel first
+
+00:40:56.730 --> 00:41:01.211
+stakeholders? So this could be a broadened question of like, what is the best way to
+
+00:41:01.211 --> 00:41:07.850
+communicate with those Excel first stakeholders? And then also, are there any valuable R or Python
+
+00:41:07.850 --> 00:41:12.251
+packages that you have found in this sort of process of learning how to do that well?
+
+00:41:13.211 --> 00:41:20.811
+So, there's one package that I really, really, really enjoy. And I think it's really powerful.
+
+00:41:20.811 --> 00:41:26.011
+And it's actually written by one of, developed by one of your colleagues at Posit. I forget his name,
+
+00:41:26.011 --> 00:41:28.410
+Richard Ione, or I-
+
+00:41:28.410 --> 00:41:29.610
+Rich Ione.
+
+00:41:29.610 --> 00:41:36.170
+Ione. So one of the kind of really, really, and maybe it's kind of generally overlooked,
+
+00:41:36.170 --> 00:41:40.730
+it's the point blank package. So I think that's a really powerful package for data validation.
+
+00:41:41.050 --> 00:41:47.530
+And when I was at Analytics, I developed a shiny app where it's using point blank to validate data.
+
+00:41:47.530 --> 00:41:53.771
+And it's really, really powerful. And the syntax is so, so easy to learn. And so there's actually,
+
+00:41:53.771 --> 00:42:00.811
+you provided a webinar a couple of years ago, an R form, a webinar where point blank is presented.
+
+00:42:00.811 --> 00:42:05.691
+So I really use that a lot. I also use a lot what's called the officer package and
+
+00:42:06.651 --> 00:42:14.091
+office down in our markdown, because to automate reports, it's really good to have things to be
+
+00:42:14.091 --> 00:42:18.730
+knit in HTML. You have all the interactivity that's really great, but sometimes you cannot
+
+00:42:18.730 --> 00:42:24.490
+automate a hundred percent. So to knit things in PowerPoint in Word allows the final users to still
+
+00:42:24.490 --> 00:42:33.530
+edit or change the output. And then it becomes much easier for them to adjust anything that they
+
+00:42:33.530 --> 00:42:38.490
+need to adjust. So the officer package and office down package for our markdown is an
+
+00:42:38.490 --> 00:42:45.530
+extension of our markdown. It's really, really useful. And those are the packages that are
+
+00:42:45.530 --> 00:42:53.050
+probably overlooked. I will hop in here and say all my votes for the office verse of packages as
+
+00:42:53.050 --> 00:42:58.170
+well. If you are used to interfacing with Microsoft products in a programmatic way,
+
+00:42:58.170 --> 00:43:04.251
+you know how hard it is. And Corto is magical and does magical things. If you need to do
+
+00:43:04.251 --> 00:43:11.050
+some more complex custom things with styling for your word reports, Excel, whatever,
+
+00:43:11.771 --> 00:43:18.571
+the office versus packages by David Kohel are just fantastic. They are optimized for working
+
+00:43:18.571 --> 00:43:25.131
+with .RMD files. So with our markdown instead of .QMD files, please, please, please go check
+
+00:43:25.131 --> 00:43:31.131
+them out. If you have reached a limit with Corto and Pandoc, definitely all my votes for that.
+
+00:43:31.131 --> 00:43:38.251
+Claudia, thank you for mentioning it. Also, Rich Iannone is going to be joining us next week,
+
+00:43:38.251 --> 00:43:43.131
+I think, at the Data Science Lab. We have something that we're calling Testtober.
+
+00:43:43.131 --> 00:43:49.771
+Isabella and I host the Data Science Lab on Tuesdays. We did R testing, testing in R this
+
+00:43:49.771 --> 00:43:54.811
+week. Next week, Rich Iannone is joining us live on Tuesday. If you are interested in that,
+
+00:43:55.771 --> 00:43:59.850
+come join us. He's going to be talking about testing and validating in Python.
+
+00:44:00.571 --> 00:44:04.651
+And just getting started. You don't have to be an expert. This is like dipping toes in the water
+
+00:44:04.651 --> 00:44:10.811
+type of stuff. Okay. We had a question that I think it was from Brent because I saw it in the
+
+00:44:10.811 --> 00:44:15.771
+chat pass by me and then someone put it in anonymously in Slido. So I would love to ask it
+
+00:44:15.771 --> 00:44:22.651
+because it also is about communicating. So it says, how do you communicate the output details
+
+00:44:22.651 --> 00:44:28.811
+with no code individuals and what are some friction points in keeping source data or
+
+00:44:28.811 --> 00:44:35.370
+source models correct? Because I am just learning about the no code phrase. What a great question.
+
+00:44:36.410 --> 00:44:38.811
+Has a couple of parts to it. I'm going to put it in the chat here.
+
+00:44:42.011 --> 00:44:48.571
+And hopefully we can kind of dissect it a little bit. So one point is how do you communicate
+
+00:44:48.571 --> 00:44:53.930
+the output details with a no code individual? And then what are some friction points?
+
+00:44:57.451 --> 00:45:01.610
+So how do you communicate the result of my work to no code individuals?
+
+00:45:03.530 --> 00:45:08.651
+Yes. And then the friction points was in keeping the source data or the source models correct.
+
+00:45:08.651 --> 00:45:13.290
+And Brent, if you are up for elaborating or adding context to that.
+
+00:45:13.290 --> 00:45:18.170
+Not really sure about the end part. But the beginning. So again, it's hard to go really
+
+00:45:18.170 --> 00:45:22.651
+too much detail. But when I write a report, it's always a little bit, how much detail do you want
+
+00:45:22.651 --> 00:45:29.530
+to go? Because a lot of this goes to senior management. And so the style that I use,
+
+00:45:30.251 --> 00:45:37.691
+this is just the style that I'm happy with, is that these reports sometimes are quite big. So
+
+00:45:37.691 --> 00:45:43.451
+I always make sure that the executive summary and the first part of the report is much more high
+
+00:45:43.451 --> 00:45:51.131
+level. A CRO or a chief group actuary reading the report, and they don't have time for all the
+
+00:45:51.131 --> 00:45:58.170
+nitty gritty details. But I also want to make my output and communication useful for the modelers.
+
+00:45:58.170 --> 00:46:02.011
+So I think this is how you also add value. It's not only about validating and pointing what is
+
+00:46:02.011 --> 00:46:06.730
+wrong, but it's also you want to highlight what is good. And also because you see so many different
+
+00:46:06.730 --> 00:46:10.011
+things around the company, it's almost like a privilege because you go from team to team
+
+00:46:10.091 --> 00:46:15.850
+and basically picking everybody's brain and picking up all the amazing work that people
+
+00:46:15.850 --> 00:46:21.930
+are doing. And then you can then also share that knowledge in other validations. So the beginning
+
+00:46:21.930 --> 00:46:26.091
+is kind of more high level, simplified. And then I'll say, if you want more details, please read
+
+00:46:26.091 --> 00:46:35.530
+these sections. So it's clear enough for senior management, but also later in the report,
+
+00:46:36.170 --> 00:46:40.491
+more detail for the model owners. And then really the super, super highly detailed,
+
+00:46:40.491 --> 00:46:46.731
+I put everything in the appendix. So my appendix tends to be quite large, but then
+
+00:46:47.451 --> 00:46:52.731
+I don't want them to feel to have to go midway through the report and just be completely exhausted
+
+00:46:52.731 --> 00:47:02.250
+to look at all the details. I'm going to interrupt you really quickly because I saw Brent unmute,
+
+00:47:02.250 --> 00:47:08.010
+and I wonder if Brent might have a little bit more clarification on his question,
+
+00:47:08.010 --> 00:47:12.331
+because I'm also wondering if it is about collaborating with no-code teammates. Like
+
+00:47:12.331 --> 00:47:17.050
+if you have a subject matter expert who's like, knows a whole bunch about something,
+
+00:47:17.050 --> 00:47:24.491
+but isn't a coder themselves. Yeah, exactly. Thank you for presenting and congratulations
+
+00:47:24.491 --> 00:47:30.250
+on the impact award. But yeah, I was more about how you communicate with the no-code individuals
+
+00:47:30.250 --> 00:47:35.691
+to then get that message across, to get that output to the stakeholders. Because for me,
+
+00:47:35.691 --> 00:47:40.650
+I deal with that situation a lot with other medical professionals who don't know how to code.
+
+00:47:42.091 --> 00:47:46.410
+So it's a bit tricky because we work in a collaborative environment. So all my colleagues,
+
+00:47:46.410 --> 00:47:52.170
+other people I work together with, they're quite kind of experts in their field. And most people
+
+00:47:52.170 --> 00:47:57.130
+are coders. There are exceptions within the team who aren't coders, but they're extremely
+
+00:47:57.130 --> 00:48:03.130
+knowledgeable, or they code, for example, or they delve a bit into, let's say, other programming
+
+00:48:03.130 --> 00:48:09.130
+languages like MATLAB. So for me, it's almost like we cannot understand almost each other.
+
+00:48:09.130 --> 00:48:14.971
+But I basically work within the team with other experts in their field. So even if I present
+
+00:48:14.971 --> 00:48:22.091
+something that I did with R, they easily understand because we are all experts also. So it's also easy
+
+00:48:22.091 --> 00:48:27.691
+for my line manager. So because we are a second line of defense. So we are basically validating
+
+00:48:27.691 --> 00:48:34.091
+other people's work, and then our work basically goes to the experts and to the key stakeholders.
+
+00:48:34.091 --> 00:48:41.050
+So in this case, I see what you mean. You have to communicate with a doctor who has no idea about
+
+00:48:41.050 --> 00:48:46.811
+statistics, has no idea about models, or has no idea about data. They have some. It's not that
+
+00:48:46.811 --> 00:48:52.091
+they don't. It's just they're used to doing with Excel, or they're not really sure what to use
+
+00:48:52.091 --> 00:48:57.691
+in a statistical test or model. And then trying just to communicate those ideas of
+
+00:48:59.130 --> 00:49:04.091
+what the data actually means. Yeah. In my professional career, not in my current role,
+
+00:49:04.091 --> 00:49:09.290
+but in my professional career, I had to deal with underwriters. And sometimes this is
+
+00:49:09.290 --> 00:49:16.250
+kind of maybe more analogous to your situation, but you have to communicate, for example, the output
+
+00:49:16.250 --> 00:49:23.130
+of a pricing study, or you update a benchmark parameter, and you have to communicate this to
+
+00:49:23.130 --> 00:49:28.170
+underwriters. And yeah, this is always kind of a little bit challenging, but
+
+00:49:29.611 --> 00:49:34.971
+luckily, at least for me, people I deal with are quite knowledgeable in the business.
+
+00:49:35.611 --> 00:49:43.770
+And then I think as long as trying to avoid kind of very, let's say, fancy words, but also be
+
+00:49:44.410 --> 00:49:52.170
+clear, and honest, and open, and patient. But I see the struggle sometimes to communicate
+
+00:49:52.170 --> 00:49:58.250
+technical results to a non-technical audience. In that case, I think people are very visual,
+
+00:49:58.250 --> 00:50:04.650
+so I always try to communicate things visually. So for me, I love visual. I love visualizations.
+
+00:50:04.650 --> 00:50:10.491
+So when I did PositConf, one of the days was about visuals. It was very, very inspiring. I came back
+
+00:50:10.491 --> 00:50:17.130
+with lots of ideas. But I think communicating visually and clearly really, really helps to
+
+00:50:19.371 --> 00:50:24.650
+pass the message across. Wonderful. Thank you. Thank you, Brent, for asking your question.
+
+00:50:25.691 --> 00:50:32.091
+All right. We have three minutes left here. This has been a wonderful day, full of so many
+
+00:50:32.091 --> 00:50:37.770
+questions, so many thoughts that were probably boring for me on insurance. I'm so sorry,
+
+00:50:37.770 --> 00:50:42.971
+everybody. Claudio, I would love to ask you, in the next couple of minutes, if you could give us
+
+00:50:42.971 --> 00:50:48.650
+a piece of career advice. Is there something that you find really valuable, or that you wish you
+
+00:50:48.650 --> 00:50:57.211
+knew? What did you wish that you knew 20 years ago? And I'll put you, I'm just putting you directly
+
+00:50:57.211 --> 00:51:04.571
+on the spot. In terms of advice, that's good. Yeah. Well, we talk about challenging the status
+
+00:51:04.571 --> 00:51:09.930
+quo, right? But the advice I would give is, sometimes you got out of your way to build
+
+00:51:09.930 --> 00:51:16.091
+something that you think will have a really positive impact. And you work on it. And in the
+
+00:51:16.091 --> 00:51:22.010
+end, you show what you've done. And then the adoption is not really what you expected or were
+
+00:51:22.010 --> 00:51:27.611
+hoping for. And this can be discouraging, because you put so much effort doing something that nobody
+
+00:51:27.611 --> 00:51:33.050
+requested. You ran out of your way. And then it didn't have the impact that you were hoping for.
+
+00:51:33.050 --> 00:51:40.170
+And this can happen. And my advice is, do not stop trying. Listen to the feedback. Try to
+
+00:51:40.170 --> 00:51:46.731
+understand why it didn't land as you were hoping for. Take those lessons. And always try again,
+
+00:51:46.731 --> 00:51:53.930
+because even a small positive change can make a difference. So that would be one advice.
+
+00:51:53.930 --> 00:51:59.930
+And maybe another advice is, now we're talking about AI and LLMs. And sometimes you feel like,
+
+00:51:59.930 --> 00:52:06.890
+is it worth learning a new skill when LLMs is just going to do that better than us? And
+
+00:52:07.691 --> 00:52:12.331
+I think that, although I question this myself, so it's not that I don't.
+
+00:52:12.331 --> 00:52:13.611
+We're all questioning this, yeah.
+
+00:52:14.811 --> 00:52:21.691
+But I really think it's important to keep learning and to keep building your expert knowledge. Because
+
+00:52:21.691 --> 00:52:25.851
+in the end, LLMs will never be accountable, or at least not within the foreseeable future. But
+
+00:52:25.851 --> 00:52:29.371
+there's always a person who's going to be accountable for what the LLM is producing.
+
+00:52:30.010 --> 00:52:36.331
+So there's always going to be a need for people who can validate, because I think it's going to
+
+00:52:36.331 --> 00:52:42.650
+be just a proliferation of black boxes built by LLMs. And a human needs to be able to validate
+
+00:52:42.650 --> 00:52:47.130
+and to be accountable for that. And I think in the end of the day, we are curious creatures. And
+
+00:52:47.130 --> 00:52:51.611
+I think we're always happy to know something today that we didn't know yesterday.
+
+00:52:52.010 --> 00:52:57.930
+So I love it. Keep growing. Keep being curious. Don't give up on learning skills just because
+
+00:52:57.930 --> 00:53:04.091
+LLMs exist. And also keep trying. I learned today that the woman who wrote Lessons in Chemistry,
+
+00:53:04.091 --> 00:53:10.091
+if anyone has read the book or seen the show, got rejected like 98 times in a row for her novel
+
+00:53:10.091 --> 00:53:17.211
+and got accepted on that like 99th or 100th time. And I bet she's glad that she kept going for
+
+00:53:17.211 --> 00:53:21.130
+100 times, right? Michael says, he loves that book. I haven't read it yet.
+
+00:53:21.691 --> 00:53:24.971
+Somebody needs to tell me to read it. It needs to go into my 2D red pile.
+
+00:53:24.971 --> 00:53:30.571
+Okay, everybody, this was so much fun. We would love to see you next week at the Hangout. But
+
+00:53:30.571 --> 00:53:35.691
+Isabella and I would also love to hang out with you on Tuesday with Rich Iannone, creator of the
+
+00:53:35.691 --> 00:53:39.851
+GT package, creator of the point blank package. He's talking about testing in Python. Come hang
+
+00:53:39.851 --> 00:53:46.571
+out with us. It's so much fun. We chat on Discord, pos.it slash dslab if you would like to register.
+
+00:53:46.571 --> 00:53:52.650
+If you're not already, it's the same time slot as the Data Science Hangout. It is just the lab
+
+00:53:52.650 --> 00:53:59.371
+on Tuesdays. Okay, everybody, we are going to save the chat. Isabella just saved it for you
+
+00:53:59.371 --> 00:54:03.290
+if you'd like to download it. And I think she will also put it in the Data Science Hangout
+
+00:54:03.290 --> 00:54:07.050
+channel on the Discord server. I see a thumbs up. All right. If you'd like to save the chat yourself,
+
+00:54:07.050 --> 00:54:12.571
+there are three dots in the top right hand corner of your chat screen. Unless Zoom has updated and
+
+00:54:12.571 --> 00:54:17.050
+has changed that, hopefully that's still the same. Claudio, thank you so much for joining us
+
+00:54:17.050 --> 00:54:21.530
+today. I hope you had a wonderful time as well. Thanks for having me. Bye, everyone.

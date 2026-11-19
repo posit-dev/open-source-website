@@ -56,8 +56,8 @@ external:  # updated automatically, do not edit
     • The applied, people-and-process side of data science that keeps Julia energized'
   duration: 2214
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:07.658721+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 22
   people:
   - Julia Silge

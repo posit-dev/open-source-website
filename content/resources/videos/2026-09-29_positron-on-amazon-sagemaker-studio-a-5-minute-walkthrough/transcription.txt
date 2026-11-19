@@ -1,0 +1,43 @@
+<p><a data-t="1">This is a brief introduction to </a><a href="/software/positron/">Positron</a><a data-t="1"> on SageMaker Studio.</a> <a data-t="5">Now, at this point, I've already logged into my AWS account</a> <a data-t="8">and navigated into SageMaker Studio.</a> <a data-t="10">And once I'm here, I can see that I have a Positron space</a> <a data-t="13">that's already running that I can open up,</a> <a data-t="15">which we'll do in just a moment.</a></p>
+
+<h3>Creating a Positron space</h3>
+
+<p><a data-t="17">If I don't already have an existing Positron space,</a> <a data-t="19">these are actually created under the JupyterLab tab over here.</a> <a data-t="22">So if I come over to the left-hand side,</a> <a data-t="24">I click on JupyterLab, create a new JupyterLab space.</a> <a data-t="27">We'll call this Positron example,</a> <a data-t="31">and go ahead and create the space.</a></p>
+
+<p><a data-t="33">When I create a space, the space doesn't automatically start.</a> <a data-t="36">Instead, it allows me to configure different details about the space.</a> <a data-t="39">Here I can change the instance size</a> <a data-t="41">to be something a little bit larger if I need to.</a> <a data-t="43">And over here on the right-hand side is where I select the image</a> <a data-t="45">that this space runs off of.</a> <a data-t="47">Instead of the default SageMaker distribution image,</a> <a data-t="49">I can click on this and then select a Positron image</a> <a data-t="52">that's been made available for me by my AWS account admin.</a></p>
+
+<p><a data-t="55">If your account admin has not already configured</a> <a data-t="58">a Positron image to be available,</a> <a data-t="60">details about how to do so are available in our administrator guide,</a> <a data-t="63">step-by-step to walk through every part of the process</a> <a data-t="66">to make the Positron image available for users</a> <a data-t="68">to launch and create Positron spaces.</a></p>
+
+<h3>Opening Positron</h3>
+
+<p><a data-t="71">Now, I already have a space that's running,</a> <a data-t="73">so we're going to come back to our SageMaker Studio home,</a> <a data-t="76">and then I can click Open, which will open Positron</a> <a data-t="78">in a new browser tab.</a> <a data-t="80">As this opens, you'll notice that this is Positron</a> <a data-t="83">as you would expect it to be if you've been a previous user of this IDE.</a> <a data-t="87">So I have Python and R installed and available.</a> <a data-t="90">I can create different sessions for both Python and R execution,</a> <a data-t="93">and I have some additional features here</a> <a data-t="95">that make it really easy for me to work with other AWS resources and tools.</a></p>
+
+<h3>Running a <a href="/software/shiny-r/">Shiny</a> app with Athena and Bedrock</h3>
+
+<p><a data-t="100">So let's look at an example.</a> <a data-t="101">If I open up a project here,</a> <a data-t="104">now I have this project that has a number of different Python and R files</a> <a data-t="108">that I might want to interact with,</a> <a data-t="110">and I have this application file that's already pulled up.</a> <a data-t="112">If I click on Run here inside of Positron,</a> <a data-t="115">this will launch this application.</a> <a data-t="117">This Shiny application runs here inside of my Positron environment.</a></p>
+
+<p><a data-t="125">And what this does is this gives me sort of this chat-like interface.</a> <a data-t="131">Let's change the light mode here. There we go.</a> <a data-t="133">This gives me this chat interface that allows me to interact with some data</a> <a data-t="136">that's hosted inside of Athena.</a> <a data-t="139">Because I'm already logged in and authenticated into AWS,</a> <a data-t="142">any sort of interaction I do with other AWS services,</a> <a data-t="145">whether it's S3 or Athena or models on Bedrock,</a> <a data-t="148">all of that can happen without me needing to reestablish credentials or identity.</a></p>
+
+<p><a data-t="152">So in here I have this application that I've created in Positron,</a> <a data-t="156">and then this application allows me to chat with this data</a> <a data-t="160">that's hosted inside of Athena.</a> <a data-t="161">So if we choose, let's create a FIGAR risk plot here.</a> <a data-t="166">The model that I'm interacting with is hosted on Bedrock,</a> <a data-t="169">and the data that I'm interacting with is hosted on Athena.</a> <a data-t="172">So everything's happening natively inside of AWS.</a> <a data-t="174">I don't have to establish any other permissions.</a></p>
+
+<blockquote><a data-t="172">So everything's happening natively inside of AWS.</a> <a data-t="174">I don't have to establish any other permissions.</a></blockquote>
+
+<p><a data-t="176">And I get this sort of nice interface here that allows me to see,</a> <a data-t="179">okay, here's the command that I gave.</a> <a data-t="182">We're going through and generating a few, looking at the data,</a> <a data-t="185">making sure that we understand kind of the source of truth,</a> <a data-t="187">and then creating this nice sort of charge-off rate by FICO band plot</a> <a data-t="191">with some interpretation that I can continue my conversation here.</a></p>
+
+<h3>Posit Assistant with AWS Bedrock</h3>
+
+<p><a data-t="195">This sort of same pattern also exists inside of Posit Assistant.</a> <a data-t="199">So if I come over to the left-hand sidebar, I can open up Posit Assistant.</a> <a data-t="203">And this is the agent interface inside of Positron</a> <a data-t="206">that allows me to interact with foundational AI models</a> <a data-t="210">for code development, data science, those types of tasks.</a></p>
+
+<p><a data-t="213">So in here, if we create a new chat,</a> <a data-t="216">we can see some details about Posit Assistant.</a> <a data-t="218">And if I come down here to the bottom,</a> <a data-t="220">I can choose the model that I want to interact with,</a> <a data-t="222">and I can see that I'm already configured automatically</a> <a data-t="225">to interact with available models through AWS Bedrock.</a> <a data-t="228">So if I wanted to work with Sonnet 5 or GPT,</a> <a data-t="231">different models that are available here inside of my Amazon environment,</a> <a data-t="234">I can select this, and then I can come in and I can say,</a> <a data-t="237">let's create a simple Shiny app using the Diamonds data in R.</a></p>
+
+<p><a data-t="245">Or whatever the case is. This is a fairly simple request,</a> <a data-t="248">but it's going to submit this request,</a> <a data-t="250">and then I can use Posit Assistant to evaluate and work with</a> <a data-t="253">either data that I have available to me inside of my environment,</a> <a data-t="256">data that's available inside of AWS,</a> <a data-t="259">or do things like build interactive applications</a> <a data-t="262">that I might want to share with broader users within my organization.</a></p>
+
+<h3>Token usage and cost tracking</h3>
+
+<p><a data-t="265">As Posit Assistant is going through and starting to work on this task,</a> <a data-t="269">I can see down here that I'm keeping track of the tokens that I have,</a> <a data-t="272">what's available inside of my context window,</a> <a data-t="274">as well as a cost estimate for how much this session has cost thus far.</a></p>
+
+<p><a data-t="279">So there's some nice features here within Positron</a> <a data-t="282">that allow me to take advantage of the latest and greatest tools</a> <a data-t="285">in the AI space, but do so in a very sort of reproducible, governed way,</a> <a data-t="290">alongside being able to sort of manage the cost</a> <a data-t="293">and usage of these tools as well.</a></p>
+
+<blockquote><a data-t="285">in the AI space, but do so in a very sort of reproducible, governed way,</a> <a data-t="290">alongside being able to sort of manage the cost</a> <a data-t="293">and usage of these tools as well.</a></blockquote>
+
+<p><a data-t="295">Now, like I mentioned, this is a very short introduction.</a> <a data-t="298">If you'd like to learn more about how to take advantage of</a> <a data-t="300">and utilize Positron inside of SageMaker,</a> <a data-t="303">you can visit the user guide, which provides some additional guidance</a> <a data-t="306">and details about what's possible with this latest integration</a> <a data-t="309">with the Amazon ecosystem.</a></p>

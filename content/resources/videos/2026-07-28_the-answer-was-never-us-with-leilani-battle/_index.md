@@ -57,8 +57,8 @@ external:  # updated automatically, do not edit
     • A vegan pancake recipe'
   duration: 4696
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:06.406579+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 8
   playlist: ''
   tags: []

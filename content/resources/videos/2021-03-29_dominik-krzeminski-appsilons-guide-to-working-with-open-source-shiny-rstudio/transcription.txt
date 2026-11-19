@@ -16,11 +16,11 @@
 
 <p><a data-t="242">OK, and I wouldn't be myself if I haven't mentioned about some packages that help you style</a> <a data-t="247">your apps.</a> <a data-t="247">As in Appsilon, we care a lot about how the apps look.</a> <a data-t="252">So starting from the left, we have BS4Dash that provides you with bootstrap for admin LTE</a> <a data-t="260">skin for your dashboards.</a> <a data-t="262">Then we have Shiny Mobile that helps you create mobile-ready Shiny apps that look almost</a> <a data-t="268">like native apps for iOS and Android.</a> <a data-t="271">And then on the right, we have our own Shiny Semantic that helps you to attach an</a> <a data-t="276">alternative look to your Shiny applications.</a></p>
 
-<p><a data-t="280">OK, and I mentioned that I just scratched the surface here, so there is even more fantastic</a> <a data-t="287">Shiny extensions that you can find on this Shiny Awesome repository that I discovered</a> <a data-t="292">recently.</a> <a data-t="303">And this little repository summarizes and categorizes various Shiny extensions</a> <a data-t="307">such that you can always find something that you need there.</a> <a data-t="310">I encourage you to check it out.</a></p>
+<p><a data-t="280">OK, and I mentioned that I just scratched the surface here, so there is even more fantastic</a> <a data-t="287">Shiny extensions that you can find on this Shiny Awesome repository that I discovered</a> <a data-t="292">recently.</a> <a data-t="292">And this little repository summarizes and categorizes various Shiny extensions</a> <a data-t="303">such that you can always find something that you need there.</a> <a data-t="307">I encourage you to check it out.</a></p>
 
 <h3>How to contribute to open source Shiny</h3>
 
-<p><a data-t="315">OK, but using all those Shiny extensions is just like one way how you can take advantage of</a> <a data-t="320">Shiny open sourceness, but you can help yourself with building those tools.</a></p>
+<p><a data-t="310">OK, but using all those Shiny extensions is just like one way how you can take advantage of</a> <a data-t="315">Shiny open sourceness, but you can help yourself with building those tools.</a></p>
 
 <p><a data-t="323">So first of all, you can start from something as simple as reporting a bug or bringing some</a> <a data-t="330">new idea to the table by creating a new issue on GitHub repository or emailing an author</a> <a data-t="338">of the code.</a> <a data-t="338">But remember to be respectful with that, as very often open source code is</a> <a data-t="343">created by enthusiasts, or as in our case, this is something that we do outside of our</a> <a data-t="349">daily work with clients.</a></p>
 

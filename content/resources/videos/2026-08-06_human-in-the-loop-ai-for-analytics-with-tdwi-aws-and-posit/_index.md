@@ -14,7 +14,8 @@ description: 'Emerging AI agents, combined with human-in-the-loop (HITL) support
 
   Originally presented as a TDWI webinar with AWS and Posit, Nov 2025.'
 image: thumbnail.jpg
-people: []
+people:
+- James Blair
 resource_type: video
 resources: []
 software:
@@ -89,6 +90,8 @@ external:  # updated automatically, do not edit
   language: en
   last_updated: '2026-09-18T13:58:06.406409+00:00'
   like_count: 5
+  people:
+  - James Blair
   playlist: ''
   software:
   - positron

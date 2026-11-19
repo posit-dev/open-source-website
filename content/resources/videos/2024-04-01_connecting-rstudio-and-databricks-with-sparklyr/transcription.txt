@@ -1,5 +1,0 @@
-<p><a data-t="0">You can connect </a><a href="/software/rstudio/">RStudio</a><a data-t="0"> and Databricks with the sparklyr package.</a></p>
-
-<p><a data-t="5">First, load the necessary packages.</a> <a data-t="8">Next, set up the connection with sparklyr::spark_connect().</a> <a data-t="13">See your data in the Connections pane.</a></p>
-
-<p><a data-t="18">Check which databases you're connected to.</a> <a data-t="22">Navigate the data structure by expanding the levels.</a> <a data-t="27">Navigate to the table you want to explore...</a> <a data-t="31">and analyze your data in RStudio.</a></p>

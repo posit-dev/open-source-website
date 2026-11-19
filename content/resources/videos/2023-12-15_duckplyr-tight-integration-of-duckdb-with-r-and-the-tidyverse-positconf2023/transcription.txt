@@ -6,7 +6,7 @@
 
 <h3>Why dplyr over SQL</h3>
 
-<p><a data-t="82">But before we get to the how, let me start with why.</a> <a data-t="83">So I get a lot of joy of writing and reading dplyr code.</a> <a data-t="87">Even if you're not familiar with the syntax, you can read from top to bottom, you can see what each individual step is doing, and you can execute parts of the pipeline to inspect intermediate results.</a></p>
+<p><a data-t="78">But before we get to the how, let me start with why.</a> <a data-t="83">So I get a lot of joy of writing and reading dplyr code.</a> <a data-t="87">Even if you're not familiar with the syntax, you can read from top to bottom, you can see what each individual step is doing, and you can execute parts of the pipeline to inspect intermediate results.</a></p>
 
 <p><a data-t="104">Now this is a SQL version of the same query.</a> <a data-t="108">The order of operations is mixed up.</a> <a data-t="112">And to run a simplified version of this thing for, I don't know, debugging, you would have to carefully edit it.</a> <a data-t="119">So I find for incremental building and debugging, dplyr is easier, is better.</a></p>
 
@@ -16,9 +16,9 @@
 
 <p><a data-t="164">So can we have the icing and the cake?</a> <a data-t="166">Can we have fast dplyr?</a> <a data-t="168">Yes, this has worked before.</a> <a data-t="171">With </a><a href="/software/dbplyr/">dbplyr</a><a data-t="171">, we can take dplyr code, convert it into SQL, run it on the database, get it back as a data frame, continue operating in R.</a> <a data-t="182">And there are other such systems, such as datatable and </a><a href="/software/dtplyr/">dtplyr</a><a data-t="182">.</a> <a data-t="187">There is arrow, there is collapse, there may be more that are implementing the dplyr syntax.</a></p>
 
-<p><a data-t="194">What is wrong here?</a> <a data-t="195">Well, we inherit too many features from the underlying database.</a> <a data-t="200">DuckDB can read parquet, this is great, dbplyr can also read parquet, duckdb works with datasets larger than memory, perfect, dbplyr works with datasets larger than memory, but when we get the data from dbplyr, it's not a data frame, we have to collect it, transform it into a data frame.</a> <a data-t="240">We don't support all the R functions, we don't support all the R data types, and for some functions even the implementation or the semantics are a little different, bottom line chances are your dplyr code, if you take it and try to run this with dbplyr, will not work out of the box.</a></p>
+<p><a data-t="194">What is wrong here?</a> <a data-t="195">Well, we inherit too many features from the underlying database.</a> <a data-t="200">DuckDB can read parquet, this is great, dbplyr can also read parquet, duckdb works with datasets larger than memory, perfect, dbplyr works with datasets larger than memory, but when we get the data from dbplyr, it's not a data frame, we have to collect it, transform it into a data frame.</a> <a data-t="220">We don't support all the R functions, we don't support all the R data types, and for some functions even the implementation or the semantics are a little different, bottom line chances are your dplyr code, if you take it and try to run this with dbplyr, will not work out of the box.</a></p>
 
-<p><a data-t="262">Now unlike duckplyr, duckplyr is designed as a full drop-in replacement for dplyr, data frame in, data frame out.</a> <a data-t="273">Support for all data types, all R functions, I mean, yes, we try to do things in duckdb, if we can't we just offload to dplyr and handle it there without breaking your code.</a></p>
+<p><a data-t="262">Now unlike duckplyr, duckplyr is designed as a full drop-in replacement for dplyr, data frame in, data frame out.</a> <a data-t="253">Support for all data types, all R functions, I mean, yes, we try to do things in duckdb, if we can't we just offload to dplyr and handle it there without breaking your code.</a></p>
 
 <blockquote><a data-t="262">Now unlike duckplyr, duckplyr is designed as a full drop-in replacement for dplyr, data frame in, data frame out.</a></blockquote>
 
@@ -38,7 +38,7 @@
 
 <h3>Performance demo</h3>
 
-<p><a data-t="464">Now speaking about performance, I did not dare to make a live demo, but I'm showing you how this looks like in the </a><a href="/software/rstudio/">RStudio</a><a data-t="464"> IDE.</a> <a data-t="474">Now this starts in a clean R session.</a> <a data-t="477">I'm attaching the dplyr, I'm attaching the duckplyr package and I'm using conflicted here to reduce the noise and to be very specific about the functions I use.</a> <a data-t="487">If you're not familiar with that, I highly recommend this for your scripts.</a></p>
+<p><a data-t="464">Now speaking about performance, I did not dare to make a live demo, but I'm showing you how this looks like in the </a><a href="/software/rstudio/">RStudio</a><a data-t="469"> IDE.</a> <a data-t="474">Now this starts in a clean R session.</a> <a data-t="477">I'm attaching the dplyr, I'm attaching the duckplyr package and I'm using conflicted here to reduce the noise and to be very specific about the functions I use.</a> <a data-t="487">If you're not familiar with that, I highly recommend this for your scripts.</a></p>
 
 <p><a data-t="491">This is the same query I had in the beginning, the taxi data ingestion preparation summary and I'm running this in three statements and these take no time.</a> <a data-t="504">Push, push, push.</a> <a data-t="507">They're done immediately and this is because nothing has been actually computed here.</a> <a data-t="513">You see in the bottom the results, just don't know the number of rows just yet.</a> <a data-t="518">These are data frames, lazy data frames, but these are proxies and they need to be computed in order to be available as full data frames.</a> <a data-t="530">Yet they have a class, the class is DataFrame and the subclass, they have column names, they have column types, just not the data yet.</a></p>
 
@@ -74,14 +74,14 @@
 
 <h3>Q&A</h3>
 
-<p><a data-t="933">We have five minutes until the next talk so we have plenty of time for questions, so please do submit them on Slido if you have them.</a> <a data-t="939">I have a question, is the goal to one day support 100% compatibility with dplyr, including things like groupby?</a></p>
+<p><a data-t="913">We have five minutes until the next talk so we have plenty of time for questions, so please do submit them on Slido if you have them.</a> <a data-t="919">I have a question, is the goal to one day support 100% compatibility with dplyr, including things like groupby?</a></p>
 
-<p><a data-t="948">Including things like groupby.</a> <a data-t="951">I wouldn't place bets on groupby, but for the other parts of the question, yes.</a> <a data-t="959">If you find that something that works in dplyr does not work in duckplyr, this is a bug, because we really strive to near full compatibility.</a> <a data-t="970">I know this is elusive, because the slope gets very, very steep at the end, but I don't want to put a figure on it.</a> <a data-t="981">We will look at everything that you send our way.</a></p>
+<p><a data-t="928">Including things like groupby.</a> <a data-t="931">I wouldn't place bets on groupby, but for the other parts of the question, yes.</a> <a data-t="939">If you find that something that works in dplyr does not work in duckplyr, this is a bug, because we really strive to near full compatibility.</a> <a data-t="950">I know this is elusive, because the slope gets very, very steep at the end, but I don't want to put a figure on it.</a> <a data-t="961">We will look at everything that you send our way.</a></p>
 
-<p><a data-t="990">Do list columns in data frames work with duckplyr?</a> <a data-t="994">Come back next month.</a></p>
+<p><a data-t="966">Do list columns in data frames work with duckplyr?</a> <a data-t="970">Come back next month.</a></p>
 
-<p><a data-t="1003">Is there an advantage using duckplyr alone versus starting with a tbl, converting that tbl to an arrow table and piping it to arrow to duckdb?</a> <a data-t="1010">You can do that.</a> <a data-t="1011">One thing I forgot to mention, indeed, that you do not have to start with a parquet file.</a> <a data-t="1016">Hannes said this too, you can start with a data frame, I just didn't have the data in memory just yet in my demo, which is why I got this straight from the parquet, and this also gave a nice speed up.</a> <a data-t="1027">You can start with data frames, you can start with arrow, you can start with csv, with parquet, with anything that duckdb can ingest, and we have a function that allows you to read those files.</a></p>
+<p><a data-t="977">Is there an advantage using duckplyr alone versus starting with a tbl, converting that tbl to an arrow table and piping it to arrow to duckdb?</a> <a data-t="990">You can do that.</a> <a data-t="991">One thing I forgot to mention, indeed, that you do not have to start with a parquet file.</a> <a data-t="996">Hannes said this too, you can start with a data frame, I just didn't have the data in memory just yet in my demo, which is why I got this straight from the parquet, and this also gave a nice speed up.</a> <a data-t="1007">You can start with data frames, you can start with arrow, you can start with csv, with parquet, with anything that duckdb can ingest, and we have a function that allows you to read those files.</a></p>
 
-<p><a data-t="1046">What is on the roadmap for duckplyr that you are most excited about?</a> <a data-t="1051">Definitely nested and packed columns, and this is the low-hanging fruit, I think.</a></p>
+<p><a data-t="1021">What is on the roadmap for duckplyr that you are most excited about?</a> <a data-t="1026">Definitely nested and packed columns, and this is the low-hanging fruit, I think.</a></p>
 
-<p><a data-t="1064">I think that's all the questions I have, so let's give a hand again to Kirill for his talk.</a></p>
+<p><a data-t="1039">I think that's all the questions I have, so let's give a hand again to Kirill for his talk.</a></p>

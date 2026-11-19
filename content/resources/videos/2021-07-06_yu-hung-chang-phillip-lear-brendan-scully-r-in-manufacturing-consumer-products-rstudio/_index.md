@@ -86,8 +86,8 @@ external:  # updated automatically, do not edit
     Dr. Yu-Hung Chang is an Advanced Analytics Specialist working for AGCO’s Global Field Quality group. Her multi-disciplinary background combines technical fundamentals with leading-edge research and big data applications, using the most advanced technologies. She has authored numerous articles, published in inter-disciplinary journals, covering topics from Statistics and Computational Physics to Aeronautics and Automotive.'
   duration: 4370
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:16.539454+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 39
   playlist: ''
   software:

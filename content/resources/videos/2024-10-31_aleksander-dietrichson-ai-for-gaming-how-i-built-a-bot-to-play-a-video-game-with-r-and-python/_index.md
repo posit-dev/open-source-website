@@ -37,8 +37,8 @@ external:  # updated automatically, do not edit
     GitHub Repo: https://github.com/chi2labs/x-mas-3'
   duration: 1174
   has_captions: true
-  language: en
-  last_updated: '2026-09-18T13:58:10.192233+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 13
   playlist: ''
   software:

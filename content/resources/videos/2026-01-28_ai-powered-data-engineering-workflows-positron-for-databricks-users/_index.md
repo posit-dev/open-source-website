@@ -27,7 +27,8 @@ description: 'Modern data engineering demands more. Move beyond the limitations 
 
   Talk to us about integrating Posit & Databricks: https://posit.co/schedule-a-call/'
 image: thumbnail.jpg
-people: []
+people:
+- James Blair
 resource_type: video
 resources: []
 software:
@@ -115,6 +116,8 @@ external:  # updated automatically, do not edit
   language: en
   last_updated: '2026-09-18T13:58:07.250174+00:00'
   like_count: 19
+  people:
+  - James Blair
   playlist: ''
   software:
   - positron

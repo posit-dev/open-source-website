@@ -10,24 +10,32 @@
 
 <h3>Running the app locally</h3>
 
-<p><a data-t="60">Let's run this application locally first.</a> <a data-t="75">We'll open the app.py file and click the play button from the Shiny VS Code extension.</a></p>
+<p><a data-t="60">Let's run this application locally first.</a></p>
+
+<p><a data-t="75">We'll open the app.py file and click the play button from the Shiny VS Code extension.</a></p>
 
 <p><a data-t="90">We can see the reactivity of the application when we change the checkboxes.</a></p>
 
-<h3>Deploying to Connect Cloud</h3>
+<h3>Pushing code to GitHub and deploying</h3>
 
 <p><a data-t="97">Next, we need to get all the code to our GitHub repository.</a> <a data-t="110">Now that the code is on GitHub, let's go to Connect Cloud and deploy our application.</a></p>
 
 <p><a data-t="116">After you log in and connect your GitHub account to Connect Cloud,</a> <a data-t="119">we can click publish, Shiny, and select our repository.</a></p>
 
-<p><a data-t="130">Our current application is on the main branch and is named app.py.</a> <a data-t="146">We then hit publish.</a></p>
+<p><a data-t="130">Our current application is on the main page,</a> <a data-t="132">and we can see that we have a lot of code that we need to deploy.</a> <a data-t="135">Our current application is on the main branch and is named app.py.</a></p>
+
+<p><a data-t="146">We then hit publish.</a></p>
 
 <p><a data-t="165">Our app is now published at the URL.</a></p>
 
-<h3>Updating and sharing your content</h3>
+<h3>Updating content and auto-republish</h3>
 
-<p><a data-t="176">Now, let's make a change to the capitalization of the dashboard title.</a> <a data-t="195">The changes will automatically republish the application.</a> <a data-t="202">You do not need to click the republish button by default.</a></p>
+<p><a data-t="176">Now, let's make a change to the capitalization of the dashboard title.</a></p>
+
+<p><a data-t="195">The changes will automatically republish the application.</a> <a data-t="202">You do not need to click the republish button by default.</a></p>
 
 <p><a data-t="210">In the content settings, by clicking on it here,</a> <a data-t="214">you have the option to turn off auto-republish</a> <a data-t="216">and also the option to give your content a custom URL.</a> <a data-t="220">Posit Connect Cloud is an easy way to deploy straight from an existing GitHub repository</a> <a data-t="226">and share your data science work.</a></p>
 
 <blockquote><a data-t="220">Posit Connect Cloud is an easy way to deploy straight from an existing GitHub repository</a> <a data-t="226">and share your data science work.</a></blockquote>
+
+<p><a data-t="232">Posit Connect Cloud is an easy way to deploy straight from an existing GitHub repository</a> <a data-t="236">and share your data science work.</a></p>

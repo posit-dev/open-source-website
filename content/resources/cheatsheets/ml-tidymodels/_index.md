@@ -2,19 +2,20 @@
 title: Machine learning with tidymodels
 image: page-1.png
 resource_type: cheatsheet
+by: posit
 date: '2026-08-03'
-description: A map of the tidymodels packages, grouped by where each one fits in the
-  machine learning workflow.
+description: A map of the tidymodels packages, grouped by where each one fits in the machine learning workflow.
 download_url: ml-tidymodels.pdf
+people:
+- Edgar Ruiz
+- Mine Çetinkaya-Rundel
+thumbnails:
+- page-1.png
+- page-2.png
 software:
 - tidymodels
 languages:
 - R
-people:
-- Edgar Ruiz
-thumbnails:
-- page-1.png
-- page-2.png
 ---
 
 ## Intro

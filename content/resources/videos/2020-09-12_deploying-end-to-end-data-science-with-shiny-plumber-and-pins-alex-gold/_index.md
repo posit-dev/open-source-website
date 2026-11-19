@@ -19,8 +19,8 @@ external:  # updated automatically, do not edit
   description: "Alex Gold | January 30, 2020\r\nIt’s easier than ever to craft a complete R-centric data science pipeline thanks to packages like Shiny, Plumber, and Pins. In this talk, you’ll learn how to use R to bring your modeling and visualization work into production. You’ll walk away with recipes, tips, and tricks to deploy data, models, and apps to ensure your work is as impactful as possible."
   duration: 1269
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:18.221856+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 123
   playlist: ''
   software:

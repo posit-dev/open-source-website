@@ -1,0 +1,886 @@
+WEBVTT
+
+00:00:00.240 --> 00:00:06.480
+Hello everyone and welcome to episode 13 of the Shiny Developer Series. My name is Eric Nance
+
+00:00:06.480 --> 00:00:12.720
+and as promised we are continuing our conversation with RStudio software engineer and member of the
+
+00:00:12.720 --> 00:00:18.959
+Shiny Development Team, Barret Schloerke. In this episode we're going to dive into one of the
+
+00:00:18.959 --> 00:00:25.440
+awesome techniques that you can use to separate out some bits of processing from your Shiny
+
+00:00:25.440 --> 00:00:33.119
+application into an API. And sometimes you'll have the good fortune of using an API that's
+
+00:00:33.119 --> 00:00:38.639
+already been made for you, perhaps from an additional R package. But what can you do if
+
+00:00:38.639 --> 00:00:46.480
+you're able to make the API from scratch and make it all within the confines of R? And that's what
+
+00:00:46.480 --> 00:00:52.720
+we're going to talk about today when we dive into the Plumber package. And as I record this,
+
+00:00:52.720 --> 00:01:00.240
+by the time you're seeing this, Plumber version 1.0 will be out on CRAN and we're going to dive
+
+00:01:00.240 --> 00:01:06.080
+into some great demonstrations of the really exciting features that are part of this brand
+
+00:01:06.080 --> 00:01:12.879
+new release. So let's not wait any longer. Let's have fun talking about Plumber with our guest,
+
+00:01:12.879 --> 00:01:18.639
+Barret Schloerke. You think about the evolution of a Shiny developer, even myself, I'm starting to
+
+00:01:18.639 --> 00:01:25.040
+live this, where the apps I'm creating are not just using things like R on the back end, but they
+
+00:01:25.040 --> 00:01:30.879
+may have to tab in some other system that's available via an API call. And you have been
+
+00:01:30.879 --> 00:01:36.160
+doing some really awesome work with Plumber recently. I'd love for you to tell our audience
+
+00:01:36.160 --> 00:01:40.320
+a bit about Plumber if they haven't heard about it and some of the things that are exciting you
+
+00:01:40.320 --> 00:01:46.559
+about Plumber, especially how it relates to Shiny. That was a perfect introduction to Plumber
+
+00:01:47.519 --> 00:01:55.680
+because it is a wonderful way to make your R code into an API. And as apps start scaling,
+
+00:01:55.680 --> 00:02:01.199
+you know, we need to outsource where the data is being hosted. And I think Plumber just serves a
+
+00:02:01.199 --> 00:02:09.600
+wonderful use case of Shiny in that we move the data to a central location, central Plumber API,
+
+00:02:09.600 --> 00:02:15.199
+and then that way you can have 20 different Shiny instances to handle all of your traffic,
+
+00:02:15.279 --> 00:02:21.279
+but they don't need to duplicate that memory 20 times. And if you have a counter, that counter
+
+00:02:21.279 --> 00:02:27.360
+can be shared in one central location rather than trying to coordinate between those different
+
+00:02:27.360 --> 00:02:34.320
+Shiny instances. But, yes, Plumber, it allows you to create web APIs that are, I think, are
+
+00:02:34.320 --> 00:02:42.080
+very useful for workflows as well. So, you can imagine, like, the Twitter API. So, when you
+
+00:02:42.080 --> 00:02:48.080
+query Twitter and you ask for data back, there's nothing to say that that's not actually done with
+
+00:02:48.080 --> 00:02:53.759
+Plumber. I bet it's not done with Plumber. But the user does not need to know how it's actually
+
+00:02:53.759 --> 00:03:02.800
+being executed. And I've heard of some fun stories where some statisticians were told to set up a
+
+00:03:02.800 --> 00:03:10.160
+database and have a front end or an API for it, and they said, oh, I just did a quick Plumber API
+
+00:03:10.160 --> 00:03:16.160
+and, you know, it works and the boss doesn't need to know and it's very robust and it scales well.
+
+00:03:16.160 --> 00:03:21.360
+So, it's great. I'm going to keep using it. Let me jot that down for future work projects.
+
+00:03:21.360 --> 00:03:28.399
+That's a great idea. Yeah. And I think it works so well, it's because the, you know, R is this,
+
+00:03:28.399 --> 00:03:32.960
+you know, it's that one second language. You know, there's that whole spectrum of how fast you can
+
+00:03:32.960 --> 00:03:39.679
+iterate on things and, like, JavaScript may be faster in certain cases or certain situations, but
+
+00:03:40.399 --> 00:03:46.000
+if the visualization takes you 10 hours to produce, you can't iterate on that. Whereas,
+
+00:03:46.000 --> 00:03:51.360
+ggplot, you can iterate every one, two seconds and come out with a new plot, look at it, change it,
+
+00:03:51.360 --> 00:03:57.839
+submit, do it again. And so, we can leverage that fast iteration possibility inside Plumber to
+
+00:03:57.839 --> 00:04:03.279
+create web APIs that you're familiar with and it's also using comments that are very similar to
+
+00:04:03.279 --> 00:04:08.960
+the Rockstin style comments and so that we're in familiar territory and we don't need to relearn
+
+00:04:08.960 --> 00:04:16.320
+the wheel here. All right. So, let's go ahead and copy this example in for a hello world, you know,
+
+00:04:16.320 --> 00:04:23.839
+Plumber API. So, I have it here and functions, all the syntax highlighting highlights up.
+
+00:04:24.399 --> 00:04:31.119
+The new thing that we have to be aware of is the at post, at get, and at get, each takes a route
+
+00:04:31.920 --> 00:04:38.079
+and we've set our objects up. If we go ahead and plumb that using Plumber's plumb method,
+
+00:04:39.119 --> 00:04:45.440
+it will come back with an API of what is going on. Ooh. All right.
+
+00:04:46.399 --> 00:04:54.079
+So, in the new version, at PNG is being deprecated and we want you to be explicit in what's happening.
+
+00:04:54.079 --> 00:05:00.000
+So, we're saying, please make it a serializer with PNG. I'm going to save that. Let's rerun it.
+
+00:05:01.359 --> 00:05:08.320
+Cool. Now, I have my get route of echo, get route of plot, and post route of sum. And we can run
+
+00:05:08.559 --> 00:05:16.559
+that, typing it into our PR run, and the IDE will pop up with wonderful Swagger UI where we can look
+
+00:05:16.559 --> 00:05:25.760
+at our API and inspect it and test it. So, let's just do a quick echo test where I execute it. And
+
+00:05:25.760 --> 00:05:33.519
+the answer that I get back is the message is blank because I didn't provide any message. I think the
+
+00:05:33.760 --> 00:05:42.959
+neat one to see is we have A and B. So, I'll have, let's say, two and six. The answer should be
+
+00:05:42.959 --> 00:05:46.640
+eight. And the answer is eight. Perfect.
+
+00:05:46.640 --> 00:05:48.640
+Oh, my God. Mm-hmm.
+
+00:05:51.040 --> 00:05:56.559
+So, this is really cool. Like, you get started very quickly and that Swagger, you know, pop up
+
+00:05:56.640 --> 00:06:02.640
+is very helpful, too. I'll share a funny story from my end is that I was tasked with talking
+
+00:06:02.640 --> 00:06:09.679
+to a group at work about using Shiny and calling APIs from R. So, of course, I thought of Plumber
+
+00:06:09.679 --> 00:06:15.119
+first. And I had not used Plumber itself very much before that tutorial. I've always heard of it.
+
+00:06:15.119 --> 00:06:18.559
+Like, I've heard of it for a while. I mean, I've talked to Jeff Allen about it. I hadn't really
+
+00:06:18.559 --> 00:06:24.559
+put it in action. And it took me not too long to get up and running quickly. So, I'm glad to be
+
+00:06:24.559 --> 00:06:30.000
+not too long to get up and running quickly. So, I definitely commend you for the examples and the
+
+00:06:30.000 --> 00:06:35.920
+documentation on the functions. And like you said, the R oxygen-like syntax, as someone like me who's
+
+00:06:35.920 --> 00:06:42.239
+created some packages internally, it's easy to get into that workflow and to be able to test it out
+
+00:06:42.239 --> 00:06:47.279
+quite quickly. So, I was able to at least act like I've been using Plumber for years. And really,
+
+00:06:48.959 --> 00:06:51.679
+it really was easy to get up and running. So, I definitely appreciate that.
+
+00:06:52.559 --> 00:06:57.119
+Oh, you're welcome. Yeah, Jeff's work, it was really nice to step into that where,
+
+00:06:57.679 --> 00:07:04.480
+you know, we had this Roxgen style comments and everything was kind of set up. And I'm
+
+00:07:04.480 --> 00:07:09.200
+fortunate that I'm able to take it into, like, the next layer where we're starting to generalize it
+
+00:07:09.200 --> 00:07:16.559
+more and allow other people to opt into things. And one of the comments that people have been
+
+00:07:16.559 --> 00:07:25.200
+giving us is that the programmatic API is not that user-friendly. And working with James Blair,
+
+00:07:25.200 --> 00:07:32.239
+we've actually came up with a pipeable interface for Plumber. Wow. I haven't seen this before.
+
+00:07:32.239 --> 00:07:38.480
+This is really cool. So, this will be coming out in the next release. So, we can start off with our
+
+00:07:38.480 --> 00:07:46.959
+default Plumber object. And so, this used to be, like, Plumber dollar new. And, you know, this is
+
+00:07:46.959 --> 00:07:53.920
+very non-familiar territory, like R6 behavior. And so, we wanted to kind of get away from that
+
+00:07:53.920 --> 00:08:00.559
+and say, okay, we're going to create a new Plumber object. Let's add a get route of hi and hello. And
+
+00:08:00.559 --> 00:08:05.200
+this is the programmatic development of it. And then we can add a post route. And I could do this,
+
+00:08:05.519 --> 00:08:13.679
+you know, many times. I could have hi one, hi two. And, you know, that's great. I have multiple
+
+00:08:13.679 --> 00:08:20.799
+routes now. It's not just limited to one call. Yeah, so, it's great. I think it's a lot of fun
+
+00:08:20.799 --> 00:08:30.799
+doing that. So, if we actually Plumb this, it is an entry point. So, we'll do pipe. And we'll say
+
+00:08:31.359 --> 00:08:37.359
+directory equals this. And we'll run it. So, we have
+
+00:08:41.039 --> 00:08:43.280
+ah, I didn't save my file. That's why it came up different.
+
+00:08:45.200 --> 00:08:46.320
+Happens to the best of us.
+
+00:08:50.159 --> 00:08:59.200
+There we go. So, I have hi one, hi two, echo. If I look at hi two, and I try it out, execute,
+
+00:09:00.000 --> 00:09:08.320
+I get hello world. And for echo, I'll try it out. I can execute. And there was no input.
+
+00:09:08.320 --> 00:09:12.239
+But that's correct. The post body was blank. So, perfect.
+
+00:09:15.919 --> 00:09:23.039
+Speaking of the next release, one of the things that we worked on is Plumber now has a new
+
+00:09:23.039 --> 00:09:32.080
+hex. So, your backdrop is going to have some wonderful legacy in that. It will have
+
+00:09:32.960 --> 00:09:38.880
+historical Plumber hex sticker. And all the new ones will start having the pipes.
+
+00:09:39.679 --> 00:09:40.320
+Very cool.
+
+00:09:42.719 --> 00:09:47.280
+Also, involved with the new release for documentation, everything has been converted
+
+00:09:47.280 --> 00:09:54.719
+to package down. So, we have searching available now. And also, we have a reference of all the
+
+00:09:54.719 --> 00:10:01.119
+functions that will be added. Especially the PR methods for the pipeable interface.
+
+00:10:01.119 --> 00:10:01.679
+Very cool.
+
+00:10:04.159 --> 00:10:10.400
+Yeah. So, looking at these, all of a sudden, we have a lot of serializers. More than what is in
+
+00:10:10.400 --> 00:10:19.359
+the Crayon version. Yeah. CSVs, TSVs. Typical JSON and unboxed JSON, I believe. But now we can do
+
+00:10:19.359 --> 00:10:28.400
+RDS files and Feather files, YAML files. Yeah. It's really great on how we can do that. So, I'm
+
+00:10:28.400 --> 00:10:34.400
+just, you know, letting people know that there's more options out there. So, we'll just say, like,
+
+00:10:34.400 --> 00:10:42.239
+at serializer, JSON, at serializer, Feather, and it will be engaged. So, serializers, if we take a
+
+00:10:42.239 --> 00:10:50.159
+look at those, they're what is used to return the data back to the user. And so, if you want your
+
+00:10:50.159 --> 00:10:55.760
+data to be, you know, it's stored in R as a data frame, but I want the user to receive a CSV,
+
+00:10:56.559 --> 00:11:03.280
+then I will tell, hey, I need my serializer to be CSV. And it will be registered as CSV. Or TSV
+
+00:11:03.280 --> 00:11:10.159
+or JSON, you know, even YAML and Feather. And I think it's really powerful in how that can work,
+
+00:11:10.159 --> 00:11:16.880
+because it's just, you know, a one-line change in our hello, and that here I can say, at serializer,
+
+00:11:16.880 --> 00:11:26.479
+when this one's an image, but here I could say, at serializer, and we'll do, this isn't a data
+
+00:11:26.479 --> 00:11:37.840
+frame. Well, let's make a new route instead. So, at it slash demo, and I'm just going to
+
+00:11:38.880 --> 00:11:48.880
+return the at serializer and say, let's do YAML, right? YAML. And this will be,
+
+00:11:49.039 --> 00:12:00.960
+you know, inputs. And I will say, let's do the old faithful IRS, right? All right. So, if I run API,
+
+00:12:04.400 --> 00:12:12.080
+then the demo is here. And if I'll try it out, execute, then this is YAML code.
+
+00:12:12.799 --> 00:12:17.520
+Wow. Very nice. Very exciting.
+
+00:12:20.159 --> 00:12:24.559
+I see a lot of opportunities just with that serializer alone, or maybe you have to
+
+00:12:25.359 --> 00:12:31.039
+have some kind of service that produces the YAML that goes as input into some other pipeline you
+
+00:12:31.039 --> 00:12:35.679
+have. I'm thinking R Markdown or something like as a YAML header for that. I mean, there's lots of,
+
+00:12:36.640 --> 00:12:43.520
+it sounds like, yeah, these serializers are now saving us developers more time to not have to
+
+00:12:43.520 --> 00:12:48.239
+worry about, okay, now I have to massage this output in a certain way, have it redownload or
+
+00:12:48.239 --> 00:12:53.919
+recompile it or something, but that the HTML response is the way we want it coming back,
+
+00:12:53.919 --> 00:12:57.760
+and saves us some bookkeeping on there. So, I could see lots of potential for this.
+
+00:12:58.719 --> 00:13:06.320
+So, speaking about chaining those pipelines together, we now have the ability for Plumber
+
+00:13:06.320 --> 00:13:14.960
+to use parsers. Typically, Plumber had not allowed for anything other than a form or JSON,
+
+00:13:15.599 --> 00:13:23.760
+and now we have opened up the floodgates. So, you can register your own, like,
+
+00:13:23.760 --> 00:13:32.320
+we have a multi-part parser, we have our regular JSON and form so that people submit,
+
+00:13:33.520 --> 00:13:40.479
+but we've also added in extra things like if we believe it's going to be YAML input or CSV or TSV,
+
+00:13:41.440 --> 00:13:50.159
+feather input, and we even have RDS as well if you're ingesting an RDS file. I know a lot of
+
+00:13:50.159 --> 00:13:57.359
+users had, you know, they had their own way to parse the data, and so now they can register
+
+00:13:57.359 --> 00:14:03.119
+parsers and add them into their routes and have them be very specific to a particular route as
+
+00:14:03.119 --> 00:14:09.359
+well. So, that way, not all routes are taking in YAML, but just the route that you want.
+
+00:14:12.559 --> 00:14:16.320
+Yeah, I think it's going to be really great to have that.
+
+00:14:17.280 --> 00:14:22.080
+Yeah, I'll try this out, and when the new version's out, I'm going to give this a spin.
+
+00:14:22.799 --> 00:14:27.200
+Very cool. Whatever things are you excited about for the future of Plumber?
+
+00:14:28.080 --> 00:14:34.000
+So, with the serializers, I know I'm kind of jumping here, there's a method called as
+
+00:14:34.000 --> 00:14:40.479
+attachment, and all of the serializers right now work with as attachment, the Plumber serializers,
+
+00:14:40.559 --> 00:14:49.919
+at least. And I think this is really exciting. As attachment allows to add a content disposition
+
+00:14:49.919 --> 00:14:58.559
+header to your return value. And what this means to, you know, users who want to ingest it,
+
+00:14:58.559 --> 00:15:04.159
+is that if I'm visiting this in the browser, the browser will try to download it as an attachment
+
+00:15:04.159 --> 00:15:07.039
+rather than automatically displaying it in the browser.
+
+00:15:07.039 --> 00:15:12.080
+Oh, that could save us a lot of pain. If it's trying to display something that's totally
+
+00:15:12.080 --> 00:15:14.640
+cryptic to it, it'll just kind of bomb out. That's very cool.
+
+00:15:15.280 --> 00:15:22.000
+To even take this one step further, the content disposition can also allow you to give a file
+
+00:15:22.000 --> 00:15:29.679
+name. So, even if I'm going to a route of like, slash time, I can save it as a file name that
+
+00:15:29.679 --> 00:15:33.440
+has like the date in the file name. Yeah, right.
+
+00:15:33.440 --> 00:15:34.239
+Something that doesn't...
+
+00:15:34.479 --> 00:15:35.919
+Generate that. That's very cool.
+
+00:15:36.719 --> 00:15:44.000
+Yeah, something that doesn't agree with what's going on. Oh, I don't have that one.
+
+00:15:45.599 --> 00:15:52.799
+Okay. So, there's a demo that I can do where we download things as attachments. So, before I run
+
+00:15:52.799 --> 00:16:01.599
+this line of code, I do want to expose this new function of Plumb API and also available APIs.
+
+00:16:02.239 --> 00:16:10.719
+So, within Plumber, we will have the ability to have a consistent way to check for Plumber APIs.
+
+00:16:10.719 --> 00:16:14.719
+And this is new. So, currently, there's only Plumber. But if I were to run this,
+
+00:16:14.719 --> 00:16:19.039
+like, hopefully in like a year, I'll have multiple packages with different Plumber APIs.
+
+00:16:19.679 --> 00:16:23.359
+Oh, that's really slick. Okay. Yeah, I like it.
+
+00:16:23.359 --> 00:16:29.919
+And so, we're asking that people put their Plumber APIs inside the Inst Plumber folder,
+
+00:16:29.919 --> 00:16:36.000
+and then each subfolder is considered an independent API. And that allows you to be...
+
+00:16:36.000 --> 00:16:40.239
+Yeah, I could see this really advantageous for those of us in the enterprise. I want to start
+
+00:16:40.239 --> 00:16:46.960
+more building these APIs from Plumber, but have like a way to index them somehow or
+
+00:16:46.960 --> 00:16:51.119
+assemble them nicely on somebody's installation. This seems like a good first step to that.
+
+00:16:52.000 --> 00:16:56.000
+And you can also provide a package name as well that we will subset
+
+00:16:56.000 --> 00:16:59.679
+and look for that information rather than scouring your whole library.
+
+00:16:59.679 --> 00:17:00.479
+Yeah, very nice.
+
+00:17:01.679 --> 00:17:10.400
+But using this, we can say, okay, I'm going to plumb an API from the package Plumber. And the
+
+00:17:10.400 --> 00:17:17.439
+one that I'm going to plumb is 16 attachments. So, that's this name right here. And then let's
+
+00:17:17.439 --> 00:17:28.400
+go ahead and run it. Because this is so browser dependent, I'm going to pull it up because Swagger
+
+00:17:28.400 --> 00:17:36.800
+doesn't show off like the full aspect of it. But the routes that we have is name, no name,
+
+00:17:36.800 --> 00:17:44.800
+and inline. So, if I come here and I go to inline, this is the one that we expect. I'm going to see
+
+00:17:44.800 --> 00:17:56.000
+the time in the browser. Okay. Then we have no name. And this downloads a file of no name. And
+
+00:17:56.000 --> 00:18:00.640
+I've done this once already. So, this is the second file that I've downloaded. And so, that's,
+
+00:18:00.640 --> 00:18:05.439
+you know, a little bit more useful. But I think the one that I find useful is that if I go to the
+
+00:18:05.439 --> 00:18:12.800
+name route, I should expect typically that it would be downloading as name.txt. But with the
+
+00:18:12.800 --> 00:18:20.079
+content disposition, I can download it as time.txt. Very cool. So, you have full control over that.
+
+00:18:20.640 --> 00:18:28.319
+Full control for each route at runtime. Neat. All right. So, let me close up that demo.
+
+00:18:31.760 --> 00:18:40.160
+Another neat one coming through is the ability for asynchronous execution in Plumber.
+
+00:18:40.160 --> 00:18:44.880
+Oh, this is right up my alley because I've been starting to interact with more than one API at a
+
+00:18:44.880 --> 00:18:49.040
+given time. And I'd love to see how this plays out. Okay. Let's see what you got.
+
+00:18:50.079 --> 00:18:58.880
+So, Plumber, you know, it's R, right? Underneath the hood. So, R is by default single threaded
+
+00:18:58.880 --> 00:19:04.079
+single core. And, you know, even if you're doing all the work that you could do, you'd only max
+
+00:19:04.079 --> 00:19:10.479
+out that one core. And if you had a route that would take, like, let's say, ten seconds to
+
+00:19:10.479 --> 00:19:14.800
+compute, you would be stopping everyone else from using even the routes that are basically
+
+00:19:14.800 --> 00:19:24.640
+instantaneous. And so, we've done work in the internals to allow any of the hooks or the routes
+
+00:19:24.640 --> 00:19:32.479
+if they return a promise or future object, that we will execute them in asynchronous manner. But
+
+00:19:32.479 --> 00:19:38.000
+you don't need to know if your prior one was done asynchronously. And so, you just need to worry
+
+00:19:38.000 --> 00:19:46.719
+about your spot in the execution chain. So, if we look at this, if I go to slash future, this
+
+00:19:46.719 --> 00:19:53.199
+should sleep for ten seconds and then give me a result of the time. If I go to slash sync, it will
+
+00:19:53.199 --> 00:20:02.479
+just give me the time immediately. In the current CRAN version of Plumber, this would block for ten
+
+00:20:02.479 --> 00:20:08.000
+seconds and then this guy would solve immediately afterwards. So, the times would be the same.
+
+00:20:08.000 --> 00:20:15.199
+And now that we're doing it with future, this is actually offloaded to a different core and I'll
+
+00:20:15.199 --> 00:20:22.479
+get a different system process identifier and I'll get back with the time. But it will free up and
+
+00:20:22.479 --> 00:20:32.560
+allow me to do this multiple times. So, okay. Let me go ahead and run this API here. So, I have
+
+00:20:33.520 --> 00:20:44.959
+Plumb, Plumb future. Great. And that's loaded up. It takes a second because future and it's
+
+00:20:44.959 --> 00:20:53.760
+multiprocess. It's kicking on the cluster. And let's open up these two routes and we'll try it
+
+00:20:53.760 --> 00:21:02.079
+out and try it out. Okay. So, if I hit execute for the sync route, we should get the process time
+
+00:21:02.079 --> 00:21:09.520
+and, you know, the PID is ending in 31. If I hit execute again, still 31 and the time goes up.
+
+00:21:10.479 --> 00:21:25.280
+If I come down here and we say execute, two, three, four, five, six, seven, eight, nine, ten.
+
+00:21:25.280 --> 00:21:35.839
+And it's a different PID. So, we know it's done in a different process. So, now let's check to see
+
+00:21:36.560 --> 00:21:43.040
+if we can do one at the same time. So, if we do execute, this is loading. And I can come up here
+
+00:21:43.040 --> 00:21:51.839
+and say execute, execute, execute. And it's still loading. And it finished at 34. And this one is
+
+00:21:51.839 --> 00:22:02.800
+going to finish at response body. Sorry. This one finished at 36 seconds into the minute and this
+
+00:22:02.800 --> 00:22:08.079
+one finished at 40 seconds into the minute. So, there's definitely no way that this was held up
+
+00:22:08.079 --> 00:22:14.800
+by the future. And so, now all of a sudden Plumber is multi-core and, like, it's great. You don't need
+
+00:22:14.800 --> 00:22:20.479
+to be blocking on everything. Wow. I mean, the use case I'm thinking of right now and right now
+
+00:22:20.479 --> 00:22:25.359
+the APIs I'm thinking of aren't a Plumber API, but if I built them like this or converted them,
+
+00:22:25.439 --> 00:22:33.599
+I would love to have some offloading of, say, a model fit as some other server that's running
+
+00:22:33.599 --> 00:22:38.880
+via Plumber would take that and run a model fit. That's going to take maybe a long time. Who knows?
+
+00:22:39.599 --> 00:22:45.199
+But then you might have another that's running synchronously that's looking at a log of that
+
+00:22:45.199 --> 00:22:51.760
+model fit kind of periodically. But they can run at the same time instead of one blocking the other.
+
+00:22:52.239 --> 00:22:55.680
+That's what gets me thinking this would be a great workflow for.
+
+00:22:56.719 --> 00:23:03.040
+Absolutely. Especially if you had a three-route system. I've talked about this in an issue in
+
+00:23:03.040 --> 00:23:09.760
+Plumber. I like the result of a three-route system. One is submit, one is status, and the
+
+00:23:09.760 --> 00:23:14.640
+other one is result. Exactly. Yeah. I've been doing that kind of ad hoc in one of my production apps.
+
+00:23:15.439 --> 00:23:21.040
+And when you submit, all you'll get back is, like, a thank you and an ID. And it just said
+
+00:23:21.040 --> 00:23:26.079
+process submitted, here's your ID. Then you'll take that ID and use a get route or a post route
+
+00:23:26.640 --> 00:23:32.880
+and say, what is the status for this ID? And using something like callR, you can read the logs
+
+00:23:32.880 --> 00:23:38.400
+of what's happening in that R process, in that background R process. And then also,
+
+00:23:39.599 --> 00:23:46.719
+for your results, you can then say, if the value has been finished, then you can do, like, callR
+
+00:23:46.719 --> 00:23:53.760
+retrieve value. That's a little different than how this is working, but I think both of them have
+
+00:23:53.760 --> 00:24:00.239
+very, like, direct impact on using all of the cores in the machine. Yeah. I definitely want to
+
+00:24:00.239 --> 00:24:04.880
+explore all of that, because it would make my life easier as an app developer that's integrating
+
+00:24:04.880 --> 00:24:10.239
+these services and figuring out the best way to manage them, but not, you know, bog down the app
+
+00:24:10.239 --> 00:24:15.040
+experience at the same time. This is certainly something I'm going to do some homework on after
+
+00:24:15.119 --> 00:24:25.680
+this, for sure. The last demo that I want to show off is talking about this UI. So, this UI
+
+00:24:25.680 --> 00:24:30.880
+here is done by Swagger. Thank you, Swagger, for getting the conversation started and having the
+
+00:24:30.880 --> 00:24:38.400
+Swagger specification, which got transferred into OpenAPI, and having OpenAPI be that open
+
+00:24:38.400 --> 00:24:45.920
+source collective initiative there. But, you know, there's no need to force Swagger to be the
+
+00:24:45.920 --> 00:24:51.599
+only one that can view this. So, similar to the register, or sorry, the parsers and the serializers,
+
+00:24:51.599 --> 00:25:01.439
+we can register a new API UI. And so, if I have this one, and I look at this file, I can say
+
+00:25:01.439 --> 00:25:09.760
+library plumber library Rapidoc, and Rapidoc is a package that is created by the GitHub handle
+
+00:25:09.760 --> 00:25:16.959
+Meztes. His name is Bruno Tremblay, and he's been absolutely a great help for this last release of
+
+00:25:16.959 --> 00:25:23.359
+Plumber. Done a ton of work. We can thank him for all the parsers that have been added in. You know,
+
+00:25:23.359 --> 00:25:28.640
+his contribution has been just immense for this last release. Another win for open source. That's
+
+00:25:28.640 --> 00:25:36.479
+awesome. Absolutely. Absolutely. And so, if we go ahead and do this, so we could say install
+
+00:25:36.479 --> 00:25:43.119
+remotes, and then I say library plumber, Rapidoc, and then I'll just go ahead for the demo and say
+
+00:25:43.119 --> 00:25:50.959
+PR run, because I'm just running it from the command line, that now the UI is done using
+
+00:25:50.959 --> 00:26:03.119
+Rapidoc. And we get the plumber logo. It's just a real treat to use this one, I think. And, you
+
+00:26:03.119 --> 00:26:09.040
+know, the defaults that they have in here are a little bit nicer, I believe. You know, we can
+
+00:26:09.040 --> 00:26:15.760
+insert the default of 10 for the mean, and when we try it, you know, it's a little bit skinnier,
+
+00:26:15.760 --> 00:26:21.839
+so it's not as tall. So, it's just there's some nice aspects to it. But by default, because people
+
+00:26:21.839 --> 00:26:26.000
+are very familiar with Swagger, we're going to keep shipping Swagger, but now we can insert our
+
+00:26:26.000 --> 00:26:34.319
+own. We can even actually use another one called Redoc instead of Rapidoc. So, there's more.
+
+00:26:37.920 --> 00:26:44.319
+Well, it's nice that you're giving flexibility to us on one that we think is most intuitive
+
+00:26:44.319 --> 00:26:49.839
+for whatever situation. Now it's not just Swagger. It's like the only one. So, this is really cool.
+
+00:26:51.119 --> 00:26:56.959
+So, let's try this one with Redoc. So, I'll library plumber, library Redoc, and then I'll
+
+00:26:56.959 --> 00:27:03.040
+plumb the API, set the UI to Redoc, and we can run it. And it's captured it there. And I think
+
+00:27:03.040 --> 00:27:10.000
+this one looks a little bit more professional and sleek. Has a nice default. But, you know,
+
+00:27:10.000 --> 00:27:19.119
+it's a little bit more like, you know, thin typing. It's different. But my preference is
+
+00:27:19.119 --> 00:27:24.800
+towards Rapidoc. Yeah. I mean, they're all great alternatives, but it reminds me a lot about how
+
+00:27:25.599 --> 00:27:29.439
+going to something like R Markdown in the ecosystem, you have so many templates you can
+
+00:27:29.439 --> 00:27:34.959
+choose from for your R Markdown docs. Now we have templates for our API documentation. That's
+
+00:27:34.959 --> 00:27:39.439
+great that we have these two additional alternatives and perhaps more down the road that
+
+00:27:39.439 --> 00:27:45.680
+we can use to share with our colleagues who maybe are used to API documentation, but it's just a
+
+00:27:45.680 --> 00:27:52.800
+different spin on it. Very nice. Yeah. I think, you know, certainly what I want our listeners or
+
+00:27:52.800 --> 00:27:59.359
+viewers to get from at least my perspective, you can chime in too, is that Plumber itself,
+
+00:27:59.359 --> 00:28:05.280
+certainly you have now given us the ability to do any API with just our code, like no matter how
+
+00:28:05.280 --> 00:28:12.560
+complex or simple it is. To me, it still is quite a valid thing with Shiny itself, because now
+
+00:28:12.560 --> 00:28:19.119
+you have offloaded a lot of that business logic to a different service that maybe those in your
+
+00:28:19.119 --> 00:28:23.520
+company or your organization love to use your Shiny app and maybe have another department is
+
+00:28:23.520 --> 00:28:27.680
+like, well, we kind of like your Shiny app, but maybe we want to do our different UI to it. But
+
+00:28:27.680 --> 00:28:33.839
+then you can have this be decoupled from the app. So you don't have to worry about messing up your
+
+00:28:33.839 --> 00:28:39.359
+app code to please somebody else. But it's more about just having one place to update the backend
+
+00:28:39.359 --> 00:28:45.839
+and then many different front ends can call it. So like, I definitely have plans to use Plumber as
+
+00:28:45.839 --> 00:28:53.199
+API, you know, mechanisms for a Shiny app at work. But now I can say, well, it's saving me a lot of
+
+00:28:53.199 --> 00:28:58.640
+time from a development side to have that developed separately from the app itself. So
+
+00:28:58.640 --> 00:29:02.800
+certainly some of the advancements you're making there, that asynchronous stuff, especially I'm
+
+00:29:02.800 --> 00:29:03.280
+going to make.
+
+00:29:03.430 --> 00:29:08.390
+making there, that asynchronous stuff especially, I'm going to be doing a lot of homework on for sure.
+
+00:29:09.750 --> 00:29:16.550
+Yeah, the async is a lot of help by allowing more routes to be calculated at once and not
+
+00:29:16.550 --> 00:29:22.950
+be bogged down by your slowest route. But as he said about connecting to other interfaces,
+
+00:29:23.750 --> 00:29:31.750
+James did a very good presentation on how Plumber was a back-end for a mobile application
+
+00:29:31.750 --> 00:29:36.310
+to his friend who wrote a mobile app. He's like, all he knew about R was how to spell it.
+
+00:29:39.270 --> 00:29:42.630
+But Plumber was the data source that was backing that application.
+
+00:29:43.349 --> 00:29:49.110
+Yeah, I remember watching that talk live. I was amazed by what was possible with that. So
+
+00:29:49.110 --> 00:29:52.389
+certainly I'm going to be playing more with Plumber after this as well.
+
+00:29:53.349 --> 00:29:58.630
+Well, as you can tell, I really enjoyed learning more about Plumber and these awesome new features.
+
+00:29:58.630 --> 00:30:04.470
+And you can certainly see the enthusiasm and excitement that Barret has with this 1.0 release
+
+00:30:04.470 --> 00:30:11.349
+that I think is going to be a very vast improvement even on an already great Plumber package.
+
+00:30:11.910 --> 00:30:18.309
+And I'm already excited to try out a lot of those new things that we saw. In particular,
+
+00:30:18.309 --> 00:30:23.590
+although they're all great features, but the one that had the most, you might say, light bulbs in
+
+00:30:23.590 --> 00:30:30.150
+my head thinking about trying next is the asynchronous processing. Because I've had
+
+00:30:30.150 --> 00:30:37.269
+multiple situations recently where I'm not just calling an API in one at a time. I'm dealing with
+
+00:30:37.269 --> 00:30:42.470
+multiple ones, sometimes at the same time. And I'd love to be able to manage that more effectively.
+
+00:30:43.029 --> 00:30:49.750
+So this will be a very cool thing to try. And I'll be interested to see what I can come up with.
+
+00:30:50.069 --> 00:30:55.269
+Certainly, I'll be sharing that with all of you as I explore my journey on making my apps a lot
+
+00:30:55.269 --> 00:31:02.150
+better with these great improvements. So I hope you enjoyed that deep dive into Plumber. And we
+
+00:31:02.150 --> 00:31:08.949
+will have Barret back one last time, at least for this series next week, as we dive into some of the
+
+00:31:08.949 --> 00:31:16.469
+nuts and bolts around the LearnR package that has become such a mainstay in helping teach others
+
+00:31:16.469 --> 00:31:23.590
+how to use R or specific data science principles with an interactive interface. Barret's done a
+
+00:31:23.590 --> 00:31:28.150
+lot of excellent work on that front. And we're going to hear more about that in the next episode.
+
+00:31:28.950 --> 00:31:33.030
+So until then, if you want to catch up on our previous recordings,
+
+00:31:33.030 --> 00:31:37.189
+both from the webinars that we conducted last year, as well as the recent interviews we've
+
+00:31:37.189 --> 00:31:42.870
+done in 2020, the best place to go is our home site at ShinyDevSeries.com.
+
+00:31:43.829 --> 00:31:48.469
+The YouTube channel will be linked directly there. And we definitely invite you to subscribe
+
+00:31:48.469 --> 00:31:53.670
+to our channel for future updates. And if you like the videos, please give us a little thumbs up to
+
+00:31:53.670 --> 00:31:58.790
+let us know that you're enjoying it. And we have a lot of big plans in the works for our next
+
+00:31:59.510 --> 00:32:06.390
+episodes. And I can tell you right now that I've been making a huge investment in both time and,
+
+00:32:06.390 --> 00:32:12.390
+in some cases, money with the production quality. And very soon, you're going to see the fruits of
+
+00:32:12.390 --> 00:32:19.750
+those labors in our upcoming guests that we have coming up for you in the next part of the series.
+
+00:32:20.549 --> 00:32:26.950
+So until then, I'm Eric Nance. And feel free to drop me a line if you enjoyed this episode. I
+
+00:32:26.950 --> 00:32:34.230
+can be reached on Twitter with at the R cast. We also have a contact form on ShinyDevSeries.com
+
+00:32:34.230 --> 00:32:38.629
+if you want to leave your feedback on the series and any comments you have.
+
+00:32:38.629 --> 00:32:45.989
+So until then, we'll see you next time. Thanks a lot for joining. Bye-bye.
+
+00:33:08.629 --> 00:33:19.630
+Transcribed by https://otter.ai

@@ -19,8 +19,20 @@ source: ai
 hidesubscription: false
 ---
 
+<div class="callout callout-tip" role="note" aria-label="Tip">
+<div class="callout-header">
+<span class="callout-title"><strong>Learn more about commons at our Posit Monthly Workflow Demo</strong></span>
+</div>
+<div class="callout-body">
 
-We're hootin' and hollerin' to share [commons](https://posit-dev.github.io/commons/), an R and Python package that helps data scientists build trustworthy data analysis agents. 
+Join Sara and Simon on October 28th at 11:00 AM CT to explore Posit Commons!
+
+[Register here](https://events.zoom.us/ev/Ajss5j9VeRMe0zw-AtFKf7AUAsthzYhaYjYPeEIu1uYAQe1K0ud1~Agb_hSt1UGxd9fUyIDC32e6jAdEtbl7G_AaLZUYhRvyZR5cGpY5Kp_A0-w).
+
+</div>
+</div>
+
+We're hootin' and hollerin' to share [commons](https://posit-dev.github.io/commons/), an R and Python package that helps data scientists build trustworthy data analysis agents.
 
 <video class="column-page" autoplay loop muted playsinline controls preload="metadata" aria-label="Screen recording of a commons agent answering 'How is traffic trending for our site?' by running a trusted calculation and displaying a chart showing daily site visits increased 22%.">
   <source src="commons-01-traffic-trend.mp4" type="video/mp4">
@@ -41,7 +53,7 @@ To install the Python package from PyPI, run:
 pip install commons
 ```
 
-The Python package is currently in a pre-release beta stage, but you can install and play around with it today, with more features arriving over the next few weeks. 
+The Python package is currently in a pre-release beta stage, but you can install and play around with it today, with more features arriving over the next few weeks.
 
 ## Design philosophy
 

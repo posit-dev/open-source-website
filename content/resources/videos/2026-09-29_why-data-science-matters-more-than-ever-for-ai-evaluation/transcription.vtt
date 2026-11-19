@@ -1,0 +1,482 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:12.720
+What if the hardest part of artificial intelligence is not building tools, but measuring their
+
+00:00:12.720 --> 00:00:14.220
+effectiveness?
+
+00:00:14.220 --> 00:00:19.200
+We live in a world of incredible artificial intelligence capabilities between generative
+
+00:00:19.200 --> 00:00:24.280
+assistants, co-pilots, and AI agents, things that are possible today were not even dreamed
+
+00:00:24.280 --> 00:00:26.280
+about six months ago.
+
+00:00:26.280 --> 00:00:31.360
+It's faster than ever and easier than ever to build rapidly and arrive at concepts and
+
+00:00:31.360 --> 00:00:38.320
+ideas that previously would have taken months of time and now can happen in only an afternoon.
+
+00:00:38.320 --> 00:00:41.099
+But speed does not necessarily equal confidence.
+
+00:00:41.099 --> 00:00:44.799
+It's really easy to build something quickly, but it's much more difficult to understand
+
+00:00:44.799 --> 00:00:49.000
+if that thing that we've built, whether it's an agent, a tool, or some other AI native
+
+00:00:49.000 --> 00:00:53.759
+application is actually behaving the way that we expect and intend.
+
+00:00:53.759 --> 00:00:57.560
+My name is James Blair and I'm a senior product manager at Posit.
+
+00:00:57.560 --> 00:01:01.799
+Today we're going to be talking about artificial intelligence evaluations and how we can measure
+
+00:01:01.799 --> 00:01:07.120
+and evaluate the behavior of these AI tools and systems, and particularly why data scientists
+
+00:01:07.120 --> 00:01:11.559
+are particularly well positioned to succeed at this evaluation process.
+
+00:01:11.559 --> 00:01:17.000
+We'll look at ways to measure the input and output of these AI systems, how to effectively
+
+00:01:17.000 --> 00:01:22.400
+understand and evaluate whether they're behaving according to the expectations that we have,
+
+00:01:22.400 --> 00:01:26.440
+and how scalable infrastructure and tools can help make sure these evaluations happen
+
+00:01:26.440 --> 00:01:30.559
+not only in the initial design and build phase, but also throughout the lifetime of these
+
+00:01:30.559 --> 00:01:34.160
+AI tools and applications.
+
+00:01:34.160 --> 00:01:38.320
+If we look at the difference between traditional software development and the AI systems that
+
+00:01:38.320 --> 00:01:42.199
+we see today, it's clear that they don't behave the same.
+
+00:01:42.199 --> 00:01:45.639
+Traditional software, the same input would always lead to the same output.
+
+00:01:45.639 --> 00:01:47.040
+This made it easy to test.
+
+00:01:47.040 --> 00:01:52.440
+We could create tests that verified the output that we expected given some set of input,
+
+00:01:52.440 --> 00:01:57.400
+and those tests existed to provide scaffolding around how we expect that software to behave
+
+00:01:57.400 --> 00:02:00.400
+and alert us to any sort of unexpected changes.
+
+00:02:00.400 --> 00:02:01.839
+But AI systems behave differently.
+
+00:02:01.839 --> 00:02:06.879
+The same input can lead to various outputs and different paths that the AI tool chooses
+
+00:02:06.879 --> 00:02:08.320
+to get to that output.
+
+00:02:08.320 --> 00:02:11.160
+This doesn't signal that things are wrong necessarily.
+
+00:02:11.160 --> 00:02:17.759
+In fact, it's an inherent behavior of these AI systems that they behave in perhaps unexpected
+
+00:02:17.759 --> 00:02:21.440
+yet productive and valuable kind of ways.
+
+00:02:21.440 --> 00:02:26.080
+This variability means that we need to think more carefully about how we evaluate the output
+
+00:02:26.080 --> 00:02:31.119
+that's coming out of these kinds of systems, not only the output, but also what's contributing
+
+00:02:31.119 --> 00:02:35.000
+to the final decision or outcome that these systems create.
+
+00:02:35.000 --> 00:02:39.440
+The key issue here is not just whether a system can respond to a given set of input, but whether
+
+00:02:39.440 --> 00:02:45.000
+we understand how that response is generated and how that matches up against the real world
+
+00:02:45.000 --> 00:02:48.360
+expectations that we have for these AI systems.
+
+00:02:48.360 --> 00:02:53.080
+Many AI projects today start with a compelling prototype.
+
+00:02:53.080 --> 00:02:56.960
+As we mentioned in the beginning, it's easier than ever to create very compelling demonstrations
+
+00:02:56.960 --> 00:03:02.800
+and proof of concepts that even six or 12 months ago were not possible.
+
+00:03:02.800 --> 00:03:06.839
+We connect a model to some sort of a tool, a knowledge base, and suddenly we have a working
+
+00:03:06.839 --> 00:03:10.160
+example that illustrates the power of these systems.
+
+00:03:10.160 --> 00:03:13.820
+But these demos are not the same as production-grade systems.
+
+00:03:13.820 --> 00:03:16.240
+We have to face the more difficult questions.
+
+00:03:16.240 --> 00:03:17.600
+Are we using the right source?
+
+00:03:17.600 --> 00:03:20.479
+Does the model reach for the right tool at the right time?
+
+00:03:20.479 --> 00:03:26.399
+Does it confidently approach the answer when it doesn't have the appropriate source?
+
+00:03:26.399 --> 00:03:30.199
+All of these are questions that have to be considered, not just the final output, but
+
+00:03:30.199 --> 00:03:32.199
+how we arrive there.
+
+00:03:32.199 --> 00:03:36.839
+Looking at just a few examples of different model behaviors or different agent behaviors
+
+00:03:36.839 --> 00:03:37.919
+can be misleading.
+
+00:03:37.919 --> 00:03:45.000
+We need a way to rigorously test and verify model and agent behavior across a wide spectrum
+
+00:03:45.000 --> 00:03:50.800
+of different inputs and paths that the agent might take to arrive at some sort of output.
+
+00:03:50.800 --> 00:03:57.000
+This work follows an experimental loop, very naturally kind of aligned with traditional
+
+00:03:57.000 --> 00:03:58.500
+scientific experiments.
+
+00:03:58.500 --> 00:04:03.220
+We provide input, we evaluate what the model does and what the agent does, and then we
+
+00:04:03.220 --> 00:04:08.300
+investigate the output to determine why we arrived at a given conclusion or why a specific
+
+00:04:08.300 --> 00:04:10.699
+output was provided.
+
+00:04:10.699 --> 00:04:17.100
+This final output, while valuable, might hide different problems that exist in the actual
+
+00:04:17.100 --> 00:04:18.540
+agent journey.
+
+00:04:18.540 --> 00:04:23.059
+We might not see the actual sources that were used or the tool calls that were invoked to
+
+00:04:23.059 --> 00:04:25.220
+arrive at a specific output.
+
+00:04:25.220 --> 00:04:29.700
+Being able to evaluate not just the final output, but everything that goes into that
+
+00:04:29.700 --> 00:04:35.980
+final decision becomes critical in understanding and trusting these agent behaviors.
+
+00:04:35.980 --> 00:04:41.179
+In this kind of world, data science brings that necessary structure to this inherently
+
+00:04:41.179 --> 00:04:43.339
+uncertain type of problem.
+
+00:04:43.339 --> 00:04:48.420
+Data scientists come with a wealth of knowledge around statistical rigor, experiment management,
+
+00:04:48.420 --> 00:04:54.739
+and analysis that allow them to work very, very naturally with these AI systems.
+
+00:04:54.739 --> 00:04:59.019
+These data scientists understand how to run these experiments, how to provide targeted
+
+00:04:59.019 --> 00:05:05.019
+inputs that allow a proper evaluation of the agent system, not just its final output, but
+
+00:05:05.019 --> 00:05:08.480
+every sort of intermediate step that might happen along the way.
+
+00:05:08.480 --> 00:05:14.140
+These data scientists can define the appropriate success criteria, interpret signal from noise,
+
+00:05:14.140 --> 00:05:18.899
+and separate meaningful improvements from random variation.
+
+00:05:18.899 --> 00:05:23.760
+These data scientists have the ability to make AI evaluation rigorous so that we move
+
+00:05:23.760 --> 00:05:29.279
+from just operating off of vibes into a world where we can operate off of trustworthy evidence
+
+00:05:29.279 --> 00:05:33.399
+that our systems are behaving the way that we expect, and over time, improving as models
+
+00:05:33.399 --> 00:05:38.320
+and other features of these systems improve as well.
+
+00:05:38.320 --> 00:05:42.079
+There's no sort of universal metric that proves that AI is working.
+
+00:05:42.079 --> 00:05:45.959
+We've seen many different examples in pop culture and other places of AI systems that
+
+00:05:45.959 --> 00:05:49.600
+break down in unexpected ways once they hit the real world.
+
+00:05:49.600 --> 00:05:54.160
+Use cases from users interacting with chat agents and asking for things that go well
+
+00:05:54.160 --> 00:05:59.279
+outside the scope of what that agent was designed to answer to other sort of more nuanced examples
+
+00:05:59.279 --> 00:06:04.160
+where AI systems behave confidently or return confident results that are, in fact, factually
+
+00:06:04.160 --> 00:06:05.799
+inaccurate.
+
+00:06:05.799 --> 00:06:10.640
+We have to be able to move from generic scores and evaluations to very specific, detailed
+
+00:06:10.640 --> 00:06:15.799
+investigation around how these AI systems behave, and that varies across industries
+
+00:06:15.799 --> 00:06:17.760
+and across use cases.
+
+00:06:17.760 --> 00:06:21.160
+One metric does not satisfy every sort of AI opportunity.
+
+00:06:21.160 --> 00:06:27.880
+Instead, we need to consider what the expectations are for a given agent in its specific domain.
+
+00:06:27.880 --> 00:06:32.519
+Data scientists are particularly equipped to deal with this as they bring domain-specific
+
+00:06:32.519 --> 00:06:39.239
+knowledge to play along with their understanding of statistical analyses and general data acumen.
+
+00:06:39.239 --> 00:06:43.839
+If you consider a customer support agent or a policy assistant or a code assistant, all
+
+00:06:43.839 --> 00:06:48.359
+these things have similar ingredients, some sort of foundational model, tool calling,
+
+00:06:48.359 --> 00:06:52.839
+context, prompts, yet they're expected to behave differently, and the way that users
+
+00:06:52.839 --> 00:06:55.679
+interact with these systems are often unique.
+
+00:06:55.679 --> 00:07:00.399
+Being able to evaluate each of these systems in its own unique way becomes critical in
+
+00:07:00.399 --> 00:07:06.279
+understanding both the behavior of these systems as well as the output that they produce.
+
+00:07:06.279 --> 00:07:11.200
+We want to make sure that every step along the way, we're evaluating and capturing the
+
+00:07:11.200 --> 00:07:16.679
+necessary information to understand that these systems are behaving in expected ways,
+
+00:07:16.679 --> 00:07:22.359
+both in initial development as well as in final production.
+
+00:07:22.359 --> 00:07:25.359
+That leads us to this idea that this evaluation never stops.
+
+00:07:25.359 --> 00:07:28.119
+It's important to start with this goal in mind.
+
+00:07:28.119 --> 00:07:32.799
+When we start building these AI systems, it can be very easy to get caught up in the excitement
+
+00:07:32.799 --> 00:07:36.399
+of building something new and exciting, something that feels revolutionary.
+
+00:07:36.399 --> 00:07:40.559
+It's exciting, even still today, to build a system that responds to natural language
+
+00:07:40.559 --> 00:07:46.239
+requests and does things that even three months ago maybe seemed far-fetched, but we also
+
+00:07:46.239 --> 00:07:50.320
+have to consider the fact that we need to think about evaluating these systems from
+
+00:07:50.320 --> 00:07:51.920
+the very beginning.
+
+00:07:51.920 --> 00:07:56.359
+Capturing traces and logs along the way enable us to make sure that these agents are choosing
+
+00:07:56.359 --> 00:08:00.440
+the right path, not just today, but also tomorrow.
+
+00:08:00.440 --> 00:08:05.359
+These systems evolve as things like models change, the way the toolkits and frameworks
+
+00:08:05.359 --> 00:08:08.399
+that these models use evolve and grow over time.
+
+00:08:08.399 --> 00:08:12.920
+Our system prompts may be updated regularly based on new domain knowledge.
+
+00:08:12.920 --> 00:08:17.839
+As each of these changes are made to this system, we have to make sure that evaluations
+
+00:08:17.839 --> 00:08:23.160
+are in place that allow us to understand how these changes impact these AI systems.
+
+00:08:23.160 --> 00:08:25.720
+Are we seeing improvement where we expect improvement?
+
+00:08:25.720 --> 00:08:30.679
+Is the agent continuing to rely on the appropriate sources for its responses?
+
+00:08:30.679 --> 00:08:35.239
+This becomes particularly critical as foundational labs introduce newer and newer models with
+
+00:08:35.239 --> 00:08:37.140
+more and more capabilities.
+
+00:08:37.140 --> 00:08:41.159
+We need to make sure that introducing a new model to our system doesn't cause the behavior
+
+00:08:41.159 --> 00:08:46.119
+of that system to dramatically drift from our expectation.
+
+00:08:46.119 --> 00:08:50.659
+In addition to capturing these logs in our training and in our evaluation, we also need
+
+00:08:50.659 --> 00:08:55.559
+to make sure that we're capturing this information as real-world use cases build up with our
+
+00:08:55.559 --> 00:08:57.619
+systems and tools.
+
+00:08:57.619 --> 00:09:01.760
+Understanding how users are truly interacting with these systems in production enables us
+
+00:09:01.760 --> 00:09:07.000
+to understand and continue to verify that our system meets the needs of real use cases
+
+00:09:07.000 --> 00:09:12.919
+from real users, not just the test cases that we define in our initial evaluations.
+
+00:09:12.919 --> 00:09:16.719
+Data scientists are particularly equipped to set this up for success by building any
+
+00:09:16.719 --> 00:09:21.919
+evaluations from the beginning and making sure that those evaluations continue to apply
+
+00:09:21.919 --> 00:09:25.719
+even after a model or tool or system reaches production.
+
+00:09:25.719 --> 00:09:30.239
+These data scientists can work through this data and make sure that they're evaluating
+
+00:09:30.239 --> 00:09:34.320
+model performance on a continual basis to understand and make sure that these agent
+
+00:09:34.320 --> 00:09:41.960
+systems continue to meet business expectations long after the development is initially complete.
+
+00:09:41.960 --> 00:09:45.799
+In the real world, what this typically means is we need a set of infrastructure behind
+
+00:09:45.799 --> 00:09:50.780
+the scenes that enables these kinds of consistent, constant evaluations, as well as a reliable
+
+00:09:50.780 --> 00:09:55.359
+set of tools that allow us to build these evaluations and continue to iterate and test
+
+00:09:55.359 --> 00:09:57.000
+them over time.
+
+00:09:57.000 --> 00:10:02.479
+At Posit, we bring best-in-class tools for developers and data scientists who are looking
+
+00:10:02.479 --> 00:10:07.799
+to use frameworks like R and Python and the vast open-source ecosystem that is available
+
+00:10:07.799 --> 00:10:15.599
+in those languages to build rigorous evaluations for a variety of AI models, tools, and frameworks.
+
+00:10:15.599 --> 00:10:19.919
+AWS helps by providing foundational model access through platforms like Bedrock and
+
+00:10:19.919 --> 00:10:24.960
+providing flexible and scalable infrastructure that allows these evaluations to run continuously
+
+00:10:24.960 --> 00:10:29.719
+against AI systems so that we can flag and identify opportunities for future improvement
+
+00:10:29.719 --> 00:10:35.400
+or opportunities where things have degraded and performance has perhaps not met our expectations.
+
+00:10:35.400 --> 00:10:39.880
+Together, the flexible platform that Posit provides, along with the compute infrastructure
+
+00:10:39.880 --> 00:10:45.400
+from AWS, provide a very solid and stable environment for us to build evaluations that
+
+00:10:45.400 --> 00:10:50.080
+last not only today, but well into the future.
+
+00:10:50.080 --> 00:10:53.440
+In this world of exciting AI advancement and opportunity, we want to make sure that you're
+
+00:10:53.440 --> 00:10:57.760
+not only building with speed, but also with confidence, that you understand and know that
+
+00:10:57.760 --> 00:11:01.719
+your systems behave the way that you expect, that you've tested for edge cases, and that
+
+00:11:01.719 --> 00:11:06.119
+you are continually monitoring not just the final output of what these systems are producing,
+
+00:11:06.119 --> 00:11:10.039
+but the intermediate steps that contribute to that final output, so that you understand
+
+00:11:10.039 --> 00:11:14.080
+when these models or when these agents begin to drift or when there becomes an opportunity
+
+00:11:14.080 --> 00:11:18.119
+for new and unique improvements to enable these systems to continue to meet the needs
+
+00:11:18.119 --> 00:11:19.799
+of your end users.
+
+00:11:19.799 --> 00:11:22.880
+If you'd like to learn more about the work that we're doing here, feel free to scan
+
+00:11:22.880 --> 00:11:25.200
+the QR code on the screen now.
+
+00:11:25.200 --> 00:11:26.200
+Thank you.
+

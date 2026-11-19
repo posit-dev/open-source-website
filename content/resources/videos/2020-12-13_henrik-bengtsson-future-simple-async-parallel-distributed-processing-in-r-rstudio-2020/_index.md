@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: Future is a minimal and unifying framework for asynchronous, parallel, and distributed computing in R. It is designed for robustness, consistency, scalability, extendability, and adoptability - all in the spirit of "developer writes code once, user runs it anywhere". It is being used in production for high-performance computing and asynchronous UX, among other things. In this talk, I will discuss common feature requests, recent progress we have made, and what is the pipeline.
   duration: 1362
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:17.860935+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 124
   playlist: ''
   software:

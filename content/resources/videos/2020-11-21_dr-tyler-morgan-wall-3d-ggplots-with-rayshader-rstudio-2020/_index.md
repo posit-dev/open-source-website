@@ -63,8 +63,8 @@ external:  # updated automatically, do not edit
   description: Learn how a single line of code can transform your data visualizations into stunning 3D using the rayshader package. In this talk, I will show how you can use rayshader to create beautiful 3D figures and animations to help promote your research and analyses to the public. Find out how to use principles of cinematography to take users on a 3D tour of your data, scripted entirely within R. Leaving the 3D pie charts in the pantry at home, I will discuss how to build interpretable, engaging, and informative plots using all three dimensions.
   duration: 1385
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:17.861207+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 385
   playlist: ''
   software:

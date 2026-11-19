@@ -1,33 +1,34 @@
 ---
 color: '#d2604a'
 description: Shared Memory for R Objects
-github: shikokuchuo/mori
+github: r-lib/mori
 image: logo.svg
 languages:
-- R
-latest_release: '2026-06-09T11:58:34+00:00'
+- C
+latest_release: '2026-07-21T10:06:26+00:00'
 people:
 - Charlie Gao
 title: mori
 topics:
 - Best Practices
-website: https://shikokuchuo.net/mori/
+website: https://mori.r-lib.org/
 
 external:  # updated automatically, do not edit
   description: Shared Memory for R Objects
-  first_commit: '2026-04-16T12:27:58+01:00'
-  forks: 2
+  first_commit: '2026-04-16T11:27:41+00:00'
+  forks: 4
   languages:
-  - R
-  last_updated: '2026-07-01T13:29:07.286100+00:00'
-  latest_release: '2026-06-09T11:58:34+00:00'
-  license: MIT License
+  - C
+  last_updated: '2026-09-18T14:31:52.576012+00:00'
+  latest_release: '2026-07-21T10:06:26+00:00'
+  license: NOASSERTION
   people:
   - Charlie Gao
-  repo: shikokuchuo/mori
-  stars: 137
+  readme_image: man/figures/logo.svg
+  repo: r-lib/mori
+  stars: 144
   title: mori
-  website: https://shikokuchuo.net/mori/
+  website: https://mori.r-lib.org/
 ---
 
 mori shares R objects across processes on the same machine via a single copy in OS-level shared memory — POSIX shared memory on Linux and macOS, Win32 file mapping on Windows. Every process reads from the same physical pages through the R ALTREP framework, giving lazy, zero-copy access.

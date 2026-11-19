@@ -23,9 +23,12 @@
 {{- $color := "" -}}
 {{- $software_images := slice -}}
 
-{{- /* Special handling for cheatsheets: collect all software logos and colors */ -}}
+{{- /* Special handling for cheatsheets: collect all software logos and colors.
+       Only for Posit cheat sheets; community cheat sheets show their own
+       first page, since a package's logo would suggest it's about (or by)
+       that package. */ -}}
 {{- if eq $page.Type "resources" -}}
-  {{- if eq $page.Params.resource_type "cheatsheet" -}}
+  {{- if and (eq $page.Params.resource_type "cheatsheet") (eq (lower ($page.Params.by | default "")) "posit") -}}
     {{- with $page.Params.software -}}
       {{- range . -}}
         {{- $softwareName := . -}}

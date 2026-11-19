@@ -53,8 +53,8 @@ external:  # updated automatically, do not edit
     Presented at the 2024 R/Pharma Conference'
   duration: 1095
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:20.753413+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 12
   people:
   - Simon Couch

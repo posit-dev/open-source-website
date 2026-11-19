@@ -14,7 +14,7 @@
 
 <h3>Installing libraries</h3>
 
-<p><a data-t="101">Now that the virtual environment is active,</a> <a data-t="103">we can install the libraries that we'll need for our project.</a> <a data-t="106">We're going to open the terminal,</a> <a data-t="111">and then install Jupyter, Pandas, and Matplotlib.</a> <a data-t="122">We'll need Jupyter to render Quarto documents.</a></p>
+<p><a data-t="101">Now that the virtual environment is active,</a> <a data-t="103">we can install the libraries that we'll need for our project.</a> <a data-t="106">We're going to open the terminal,</a> <a data-t="113">and then install Jupyter, Pandas, and Matplotlib.</a> <a data-t="122">We'll need Jupyter to render Quarto documents.</a></p>
 
 <p><a data-t="128">Next, I'll capture the environment</a> <a data-t="131">in a requirements.txt file so it's reproducible.</a> <a data-t="141">Positron can recognize requirements.txt files</a> <a data-t="144">in a project and can prompt the user to install libraries</a> <a data-t="147">from the file, which makes it easy for others</a> <a data-t="150">to recreate the same environment.</a></p>
 

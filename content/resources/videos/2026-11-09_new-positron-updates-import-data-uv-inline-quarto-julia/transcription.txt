@@ -1,0 +1,17 @@
+<p><a data-t="0">What am I most excited for in the next release of </a><a href="/software/positron/">Positron</a><a data-t="0">?</a> <a data-t="3">I would say number one is the import data functionality.</a> <a data-t="7">Functionality.</a> <a data-t="8">Number one is the import data functionality.</a> <a data-t="10">So this is something that was highly requested by users, where</a> <a data-t="13">you can click on like a CSV or a parquet file.</a> <a data-t="16">You can open it up, play around with it in the data explorer,</a> <a data-t="19">add your filters, do whatever you want to it.</a> <a data-t="21">And then with the click of a button, it will turn it into a</a> <a data-t="23">full Python script, including your filters and import it from</a> <a data-t="28">like the file path itself.</a></p>
+
+<blockquote><a data-t="21">And then with the click of a button, it will turn it into a</a> <a data-t="23">full Python script, including your filters and import it from</a> <a data-t="28">like the file path itself.</a></blockquote>
+
+<h3>Python installation with uv</h3>
+
+<p><a data-t="30">In Positron, I'm really excited about the ways that you can</a> <a data-t="33">install Python.</a> <a data-t="34">It has been a joke in the Python system for a very long time,</a> <a data-t="38">but it's so hard to install.</a> <a data-t="39">Nowadays, I can delete all of the Pythons off of my laptop and</a> <a data-t="44">go to the select interpreter button inside of Positron and</a> <a data-t="47">it automatically comes up with a button to install Python.</a> <a data-t="51">I just choose whatever version I want and using uv, it will</a> <a data-t="54">set everything up for me and I don't have to sweat over installing</a> <a data-t="58">Python on a new machine anymore.</a></p>
+
+<h3>Inline <a href="/software/quarto/">Quarto</a> output</h3>
+
+<p><a data-t="60">A lot of people have been asking about inline output for Quarto</a> <a data-t="65">and now it is available in Positron.</a> <a data-t="67">Tell your friends, tell your enemies, inline output is in</a> <a data-t="71">Positron.</a> <a data-t="71">So if you've been waiting to try Positron because inline output</a> <a data-t="74">is not available, now is the time to download it.</a></p>
+
+<h3>Julia support</h3>
+
+<p><a data-t="78">One of my favorite things about working in open source is the</a> <a data-t="81">really cool people in our community.</a> <a data-t="83">And recently folks in the Julia community have made an extension.</a> <a data-t="87">So now you can install Julia for Python on OpenVSX and Julia</a> <a data-t="92">works inside Positron.</a> <a data-t="93">You can see all your variables.</a> <a data-t="95">You can use the console.</a> <a data-t="96">And so now Positron is a fantastic place to be running Julia</a> <a data-t="100">code.</a></p>
+
+<p><a data-t="100">We love to be involved in whatever projects or whatever</a> <a data-t="103">things you're seeing inside of Positron.</a> <a data-t="105">So if you ever see anything and you wish it existed or maybe</a> <a data-t="109">you wish it didn't exist, we're excited to hear about any feedback</a> <a data-t="112">you have for Positron.</a> <a data-t="112">Just like me on day two of conferences,</a> <a data-t="116">I'm just doing strange side quests.</a> <a data-t="118">That's my makeup now.</a></p>

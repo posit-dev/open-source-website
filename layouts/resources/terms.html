@@ -10,38 +10,37 @@
   </div>
   {{ end }}
 
-  {{/* Cheatsheets Section */}}
-  {{ $cheatsheets := partial "query-items" (dict "path" "/resources/cheatsheets/*/*" "sort-by" "date" "sort-direction" "desc" "limit" 4) }}
-  {{ if $cheatsheets }}
+  {{/* One section per resource type, in the same order as the Resources menu */}}
+  {{ $sections := slice
+    (dict "type" "books" "resource_type" "book" "title" "Books" "sort-by" "date" "sort-direction" "desc"
+          "text" "Books written by the people behind our open-source software, many of them free to read online.")
+    (dict "type" "cheatsheets" "resource_type" "cheatsheet" "title" "Cheatsheets" "sort-by" "date" "sort-direction" "desc"
+          "text" "Quick reference guides for your favorite data science tools and packages.")
+    (dict "type" "courses" "resource_type" "course" "title" "Courses" "sort-by" "weight" "sort-direction" "asc"
+          "text" "Learn our tools with courses and learning paths from Posit Academy.")
+    (dict "type" "videos" "resource_type" "video" "title" "Videos" "sort-by" "date" "sort-direction" "desc"
+          "text" "Watch demos, tutorials, and talks from our team and community.")
+  }}
+
+  {{ range $sections }}
+  {{/* The path is a regex that also matches the type's overview page and
+       empty term pages, so keep only actual items of this resource type */}}
+  {{ $filter := printf `{"==": [{"var": "resource_type"}, "%s"]}` .resource_type }}
+  {{ $items := partial "query-items" (dict "path" (printf "/resources/%s/*/*" .type) "sort-by" (index . "sort-by") "sort-direction" (index . "sort-direction") "filter" $filter "limit" 4) }}
+  {{ if $items }}
   <section class="mb-12">
-    {{ partial "heading.html" (dict "level" 2 "text" "Cheatsheets" "class" "text-2xl font-medium text-gray-800 mb-4") }}
-    <p class="text-gray-600 mb-6">Quick reference guides for your favorite data science tools and packages.</p>
+    {{ partial "heading.html" (dict "level" 2 "text" .title "class" "text-2xl font-medium text-gray-800 mb-4") }}
+    <p class="text-gray-600 mb-6">{{ .text }}</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8 mb-6">
-      {{ range $cheatsheets }}
+      {{ range $items }}
         {{ partial "item.html" (dict "page" . "hide-badge" true) }}
       {{ end }}
     </div>
 
-    {{ partial "button.html" (dict "url" "/resources/cheatsheets/" "text" "Browse all cheatsheets" "icon-right" "boxicons--chevron-right") }}
+    {{ partial "button.html" (dict "url" (printf "/resources/%s/" .type) "text" (printf "Browse all %s" (lower .title)) "icon-right" "boxicons--chevron-right") }}
   </section>
   {{ end }}
-
-  {{/* Videos Section */}}
-  {{ $videos := partial "query-items" (dict "path" "/resources/videos/*/*" "sort-by" "date" "sort-direction" "desc" "limit" 4) }}
-  {{ if $videos }}
-  <section class="mb-12">
-    {{ partial "heading.html" (dict "level" 2 "text" "Videos" "class" "text-2xl font-medium text-gray-800 mb-4") }}
-    <p class="text-gray-600 mb-6">Watch demos, tutorials, and talks from our team and community.</p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8 mb-6">
-      {{ range $videos }}
-        {{ partial "item.html" (dict "page" . "hide-badge" true) }}
-      {{ end }}
-    </div>
-
-    {{ partial "button.html" (dict "url" "/resources/videos/" "text" "Browse all videos" "icon-right" "boxicons--chevron-right") }}
-  </section>
   {{ end }}
 </div>
 {{ end }}

@@ -1,0 +1,1375 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:07.040
+Perfect. Well, thank you everyone for joining us today. This is our first academic webinar.
+
+00:00:07.040 --> 00:00:13.680
+My name is Amy McCorkle. I am an account manager here at Posit. I'm on a public sector team,
+
+00:00:13.680 --> 00:00:19.600
+and I solely focus on our academic accounts. That includes universities, school districts,
+
+00:00:20.480 --> 00:00:23.760
+ministries of education, departments of education, all around the globe.
+
+00:00:24.719 --> 00:00:30.480
+And over the past year, I've been hearing a lot more interest in how R is being used
+
+00:00:30.480 --> 00:00:36.480
+in the institutional research and advancements. So I've invited three of our customers to share
+
+00:00:36.480 --> 00:00:42.639
+what they've been building with the Posit tools. So to kick us off, we're going to have
+
+00:00:43.360 --> 00:00:49.599
+Inger and Lou from Harvard and Georgetown, both from the institutional research side.
+
+00:00:49.599 --> 00:00:54.959
+We also have Jason from the University of Pennsylvania from the advancement side.
+
+00:00:55.599 --> 00:01:03.040
+We're going to end with a demo of Commons, which is a new open source package that was just
+
+00:01:03.040 --> 00:01:08.000
+released last week at Posit Conf. John, our solutions architect, will be walking you through
+
+00:01:08.000 --> 00:01:15.040
+that. Like Allison said, if you do have any questions, we're leaving room at the end for
+
+00:01:15.040 --> 00:01:20.080
+15 minutes of answering those questions. So make sure you feel free to pop those in the chat.
+
+00:01:21.440 --> 00:01:26.480
+And lastly, one of the goals of putting this webinar together was to really help you guys
+
+00:01:26.480 --> 00:01:32.959
+build this community. Building community helps drive innovation, culture, and technology
+
+00:01:32.959 --> 00:01:39.360
+adoption. So we're going to be adding a link to our data community Discord server. It's a
+
+00:01:39.360 --> 00:01:44.480
+great place to meet other people, share your work, and have fun there. You can look around
+
+00:01:44.480 --> 00:01:50.639
+at different channels. There's one for introducing yourself and then another one for educators, so
+
+00:01:50.639 --> 00:01:55.839
+you'll be able to find your people there. And then at the end, stay tuned because we also want
+
+00:01:55.839 --> 00:02:02.320
+to introduce you. We have a new R and IR group that will be meeting next week. So we'll give you
+
+00:02:02.320 --> 00:02:08.960
+all the details at the end there. And then I'm going to be putting my email to the chat as well.
+
+00:02:09.520 --> 00:02:16.080
+So if you have any questions, feel free to reach out to me directly. So first,
+
+00:02:16.080 --> 00:02:20.720
+we're going to be going through some introductions and we will start off with Inger.
+
+00:02:25.360 --> 00:02:31.199
+Hi everyone. My name is Inger Burgum. I'm Associate Director for Data Science and Analytics at
+
+00:02:31.199 --> 00:02:35.600
+Harvard University within the Office of Institutional Research and Analytics. And just
+
+00:02:35.600 --> 00:02:41.039
+kind of concisely what we do, we develop systems and tools and analyses that support
+
+00:02:42.399 --> 00:02:51.199
+university research and planning. Thank you, Inger. Next, Lu, you want to go next?
+
+00:02:53.199 --> 00:02:59.759
+Sure. Hi, everyone. I am Lu Hao. I'm the Associate Director of Data Science and Analytics at
+
+00:02:59.759 --> 00:03:07.919
+Georgetown University. My office is the Office of Assessment and Decision Support, so we mainly
+
+00:03:07.919 --> 00:03:13.600
+handle institutional research and strategic analytics to support a different decision
+
+00:03:13.600 --> 00:03:19.839
+making process for the university. Thank you, Lu. And Jason.
+
+00:03:20.880 --> 00:03:28.559
+Hello. Yes. Jason Vale. I've got quite a few years of experience in non-profit and higher
+
+00:03:28.559 --> 00:03:34.160
+education advancement, mostly at the University of Pennsylvania. So I support the advancement
+
+00:03:34.160 --> 00:03:41.600
+division and that's fundraising and alumni relations for the most part. So I support the,
+
+00:03:41.600 --> 00:03:48.160
+or my group supports reporting dashboards, data analysis, data engineering, and most recently,
+
+00:03:48.160 --> 00:03:54.800
+some AI agentic solutions. So POSIT has been a cornerstone tool for us for at least the past
+
+00:03:54.800 --> 00:04:04.000
+decade, if not longer. So thank you. Thank you. Well, I will go ahead and pass it on to Inger to
+
+00:04:04.000 --> 00:04:19.920
+get us started. Thank you. I'm going to share my screen here. All right. Thanks so much, Amy. And
+
+00:04:19.920 --> 00:04:24.399
+thank you everyone for being here. It's great to be with you. So I work in the Office of
+
+00:04:24.399 --> 00:04:30.880
+Institutional Research and Analytics at Harvard, which is part of central administration. And our
+
+00:04:30.880 --> 00:04:37.359
+office supports decision making and reporting for the university as a whole. But of course, Harvard,
+
+00:04:37.359 --> 00:04:43.519
+like other large research universities, is made up of many different schools and colleges, each with
+
+00:04:43.519 --> 00:04:49.920
+its own priorities and data needs. So when our central office does a university-wide analysis,
+
+00:04:49.920 --> 00:04:54.079
+the results may need to be presented differently depending on the audience and what they care about.
+
+00:04:55.040 --> 00:05:00.880
+One example, say we have, if we do an analysis of high demand courses. So the business school
+
+00:05:00.880 --> 00:05:05.440
+is going to care probably about business school courses and less about medical school courses
+
+00:05:05.440 --> 00:05:12.720
+and vice versa. And then for sensitive data, something like a climate survey report, each
+
+00:05:12.720 --> 00:05:18.399
+school needs to see only its own results. So the challenge that I want to talk about and how we
+
+00:05:18.399 --> 00:05:24.559
+approached it is essentially a role-based permissions puzzle. Like how do we securely
+
+00:05:24.559 --> 00:05:30.799
+deliver school-specific views of basically the same analysis? In other words, how can we create
+
+00:05:30.799 --> 00:05:37.119
+a single report that kind of knows who the user is when they open it and presents only the data
+
+00:05:37.119 --> 00:05:46.079
+that that person needs to see? So we did have a way of doing this, and it just wasn't ideal.
+
+00:05:46.799 --> 00:05:50.799
+But just to kind of give you a sense of where we were coming from, we might do something like
+
+00:05:50.799 --> 00:05:57.760
+create a PDF and Excel file for each school, upload them to SharePoint, create school-specific
+
+00:05:57.760 --> 00:06:03.679
+folders and links, and then get the right link to the right person. And we tracked this all
+
+00:06:03.679 --> 00:06:08.959
+in a spreadsheet, and technically it was working and getting the job done, but it was really not
+
+00:06:08.959 --> 00:06:15.519
+efficient, and it created opportunities for mistakes like people getting the wrong link and
+
+00:06:16.320 --> 00:06:21.279
+us getting the dreaded email of somebody saying my link doesn't work. So what we really wanted was
+
+00:06:22.079 --> 00:06:27.679
+one report to maintain, one link to share, one pipeline instead of many different reports to
+
+00:06:27.679 --> 00:06:35.279
+manage, and a fragmented pipeline. But we also wanted to solve this using tools that we already
+
+00:06:35.279 --> 00:06:39.760
+had in our toolbox. We didn't want to have to go shopping for something new if we could help it,
+
+00:06:40.640 --> 00:06:48.079
+and we were already using R and Quarto and Shiny to create the data products, and we were
+
+00:06:48.079 --> 00:06:54.880
+using Posit Connect to deploy and share them. And the key for this solution that we ended up
+
+00:06:54.880 --> 00:07:01.040
+going with turned out to be something that was already available within Shiny, the session
+
+00:07:01.040 --> 00:07:09.279
+argument, and more specifically the session groups object. So if you're familiar with Shiny,
+
+00:07:09.279 --> 00:07:14.160
+you might have worked with the input and output arguments within that server function.
+
+00:07:15.279 --> 00:07:20.880
+So session is an optional argument that you can also pass through, and where you can pass
+
+00:07:20.880 --> 00:07:29.920
+information or metadata about the current user session. So when an authenticated user is running
+
+00:07:29.920 --> 00:07:36.640
+that app, that information can tell us something about the viewer that we can then use to tailor
+
+00:07:36.640 --> 00:07:44.880
+or kind of control what they see or how the app behaves. And there are actually a lot of different
+
+00:07:44.880 --> 00:07:51.040
+pieces of metadata that can be passed through that session argument. This is a list of different
+
+00:07:51.040 --> 00:07:56.720
+pieces of metadata that are available that you can pass through. The one that really mattered for us
+
+00:07:56.720 --> 00:08:03.600
+in our solution was the session groups object, which lets us pass the groups that are associated
+
+00:08:03.600 --> 00:08:08.959
+with that logged in user. In the case I was describing, this would be the group that identifies
+
+00:08:08.959 --> 00:08:17.519
+the user's school. So that's what allowed us to move from managing multiple school-specific reports
+
+00:08:18.079 --> 00:08:24.880
+to maintaining one single Shiny app on Posit Connect, but one that can serve up different
+
+00:08:24.880 --> 00:08:35.359
+views based on the school associated with that logged in user. So far I've talked about kind of
+
+00:08:35.359 --> 00:08:41.520
+the why and the what of it all, but now I want to focus more on the how. So what are the main
+
+00:08:41.520 --> 00:08:48.000
+building blocks behind this approach, and what are the key pieces of code that are making it all work?
+
+00:08:50.640 --> 00:08:55.840
+So a first step is creating the groups that are relevant to the project and assigning
+
+00:08:55.840 --> 00:09:01.200
+people to those groups. So you can do this directly within Posit Connect, or
+
+00:09:01.760 --> 00:09:07.520
+you can manage groups in an external application and then sync that information with Posit Connect.
+
+00:09:07.520 --> 00:09:14.159
+And the latter is what we ended up doing because in our particular environment, we already use
+
+00:09:14.159 --> 00:09:19.520
+something called Grouper for access governance. So that's where we can create the groups and
+
+00:09:19.520 --> 00:09:27.520
+assign people to them. So Grouper then is synced with Posit Connect so that group membership
+
+00:09:28.159 --> 00:09:35.919
+information is passed along to Posit Connect, and then Posit Connect has that group information
+
+00:09:35.919 --> 00:09:42.080
+and can pass it to the Shiny app through that session groups object. And the app can then use
+
+00:09:42.080 --> 00:09:47.039
+that information to determine what each viewer should be seeing when they log in.
+
+00:09:49.760 --> 00:09:53.919
+So putting all that together in our particular setup kind of looks like this. We have these
+
+00:09:53.919 --> 00:09:59.039
+three main building blocks. First is Grouper, where we create the groups and assign people to
+
+00:09:59.039 --> 00:10:05.760
+them. Second is Posit Connect, where we deploy the Shiny app. And third is the Shiny app itself,
+
+00:10:05.760 --> 00:10:12.000
+which uses the viewer's group information to kind of customize what they see.
+
+00:10:14.400 --> 00:10:19.599
+Now, to make this a little more concrete, I'm going to share this sample Shiny app that I made
+
+00:10:19.599 --> 00:10:26.320
+using Hogwarts course data that I made up just to kind of keep things simple. And this particular
+
+00:10:27.039 --> 00:10:34.640
+app has three parts that are customized based on my group membership. I'm a Gryffindor, so you'll
+
+00:10:34.640 --> 00:10:39.599
+see just Gryffindor-specific information here. And those three parts that are customized are the
+
+00:10:39.599 --> 00:10:47.200
+greeting, the course table, and the download file. So the same group information is being used in
+
+00:10:47.200 --> 00:10:54.640
+three different places. Now, just briefly, I'm going to take a look at kind of what's behind
+
+00:10:54.640 --> 00:11:00.320
+the curtain with this code and see what's making it work. The first step, and probably the most
+
+00:11:00.320 --> 00:11:07.919
+important step here, is to create a reactive that returns the user's house. So the session group
+
+00:11:07.919 --> 00:11:13.119
+object returns actually all of the groups associated with the user, whether or not the group
+
+00:11:13.119 --> 00:11:18.080
+is relevant to this particular report. So what's going on here is we're identifying the group that
+
+00:11:18.080 --> 00:11:25.119
+applies to that app and then assigning that to this reactive. So once we have that reactive value,
+
+00:11:25.840 --> 00:11:29.440
+we can just use it throughout the application.
+
+00:11:32.880 --> 00:11:40.960
+So for instance, this opening, this welcome text string, we can kind of plop that reactive value
+
+00:11:40.960 --> 00:11:44.880
+in that string and customize what the user sees in that welcome message.
+
+00:11:46.239 --> 00:11:55.280
+Second, we can use it as a filter to display courses in this table that only apply to the user's
+
+00:11:55.919 --> 00:12:05.520
+house. In this case, Gryffindor houses. Sorry, Gryffindor classes. And then finally, we can use
+
+00:12:05.520 --> 00:12:10.479
+that same reactive value to generate a house-specific download. So you don't have to
+
+00:12:10.479 --> 00:12:15.679
+necessarily read all this code, but basically what it's doing is it's using the user's house to
+
+00:12:15.679 --> 00:12:25.440
+determine which file to download. So that's the basic pattern. We use the viewers group membership
+
+00:12:25.440 --> 00:12:30.960
+to create one reactive value, and then we reuse that value throughout the app to control the
+
+00:12:30.960 --> 00:12:37.919
+greeting, to filter the data in the data table, and to select the appropriate download file.
+
+00:12:40.320 --> 00:12:45.679
+So before and after here, we were going from managing separate files and links for each school,
+
+00:12:45.679 --> 00:12:54.640
+and now we have one shiny app that provides each school with its own view. So what is this bias?
+
+00:12:54.640 --> 00:12:58.479
+Was it worth it for us? Yes, it was definitely worth it to kind of re-engineer this.
+
+00:12:59.039 --> 00:13:04.880
+For one thing, it gives us a single link to manage rather than 10 or 20, which means fewer
+
+00:13:04.880 --> 00:13:11.359
+opportunities for distribution errors and less headache overall. It also means a workflow that
+
+00:13:11.359 --> 00:13:17.359
+can scale. So for instance, we'll soon be using the same approach to distribute department-specific
+
+00:13:17.359 --> 00:13:24.719
+reports to about 50 to 60 departments within a single school. And then finally, everything is in
+
+00:13:24.719 --> 00:13:31.359
+one pipeline now. So we're no longer moving 10 PDFs and Excel files over to SharePoint,
+
+00:13:31.359 --> 00:13:37.359
+handling permissions there. So it's all in a single pipeline. So the benefit overall is not only
+
+00:13:38.400 --> 00:13:45.679
+a simpler workflow for us, but ultimately a more reliable and consistent experience for the campus
+
+00:13:45.679 --> 00:13:52.000
+partners that we're sharing these data products with. Thank you.
+
+00:13:56.239 --> 00:13:58.559
+And I will pass it over to, I think, Lu.
+
+00:13:58.559 --> 00:14:21.039
+Hi, everyone. My name is Lu. I work at Georgetown University in the Office of
+
+00:14:21.039 --> 00:14:27.280
+Assessment and Decision Support. Today, I wanted to share how we've transformed
+
+00:14:27.280 --> 00:14:36.640
+our workflow to handle data analytics more efficiently. A quick intro of our team. We're
+
+00:14:36.640 --> 00:14:45.039
+a small team of eight analysts with different areas of focus covering IR, survey research, BI,
+
+00:14:45.599 --> 00:14:54.000
+data science, data management, and course evaluation. And we all directly report to
+
+00:14:54.000 --> 00:15:03.840
+the Associate Vice President of Institutional Research. Since the fall of 2023, we have used
+
+00:15:03.840 --> 00:15:10.640
+Posit Connect to publish and share data insights with stakeholders across our campus.
+
+00:15:13.200 --> 00:15:21.440
+Before we had Posit, we were faced with some challenges, which ultimately drove us to rethink
+
+00:15:21.440 --> 00:15:28.880
+how we work. First is staff turnover. When people leave, they take most of the institutional
+
+00:15:28.880 --> 00:15:35.280
+contacts and knowledge they kept in their heads. So we realized the need to document things
+
+00:15:35.280 --> 00:15:40.559
+directly in code so that our work can remain consistent and reproducible.
+
+00:15:41.599 --> 00:15:48.159
+Then there's this increasing demand for more data, more up-to-date dashboards,
+
+00:15:48.880 --> 00:15:57.919
+more predictive modeling, and scenario simulators. It quickly became clear that our old workflow,
+
+00:15:58.479 --> 00:16:05.119
+which relied heavily on Excel and PowerPoint, just wasn't going to meet those needs.
+
+00:16:06.000 --> 00:16:13.200
+Then last but not least, our team handles many ad hoc requests on a daily basis. And a lot of them
+
+00:16:13.679 --> 00:16:18.400
+are really the same type of work, just with small variations. So we
+
+00:16:18.400 --> 00:16:22.479
+needed a more streamlined approach to handle them more efficiently.
+
+00:16:25.520 --> 00:16:29.840
+And how do we adjust those challenges? We come up with a new workflow.
+
+00:16:30.799 --> 00:16:39.840
+So this diagram shows how the workflow works. I'm going to start with the box in the top right
+
+00:16:40.559 --> 00:16:47.919
+where it says Google Cloud Platform, or GCP. This is where our enterprise data warehouse is built.
+
+00:16:48.880 --> 00:16:53.760
+And our PositConnect is also hosted in a virtual machine in GCP.
+
+00:16:54.799 --> 00:16:59.119
+So having them in the same environment makes authentication much simpler.
+
+00:17:00.880 --> 00:17:08.719
+The actual workflow starts in a local IDE. We create a portal document or a QMD file.
+
+00:17:08.719 --> 00:17:17.359
+So a portal document is a notebook where you can combine regular text and executable code within
+
+00:17:17.359 --> 00:17:25.520
+the same place. And in that portal file, we write the code to pull data from BigQuery,
+
+00:17:25.520 --> 00:17:31.680
+and that is our data warehouse. And we then do the data wrangling and then produce a clean,
+
+00:17:31.680 --> 00:17:40.319
+analysis-ready data set. Next, we use an R package called pings to take that cleaned data set
+
+00:17:40.319 --> 00:17:47.839
+and publish it to PositConnect, or ping it to PositConnect. So basically, pinging is putting
+
+00:17:47.839 --> 00:17:55.040
+the data in a central location where other applications can access it. And then the
+
+00:17:55.040 --> 00:18:03.199
+middle layer is where the automation takes place. We publish the portal file to PositConnect and set
+
+00:18:03.199 --> 00:18:12.400
+a schedule. It can be every day, every Sunday, or whatever cadence makes sense. PositConnect then
+
+00:18:12.400 --> 00:18:19.439
+runs the code automatically on that schedule. So every time it runs, it pulls fresh data from
+
+00:18:19.439 --> 00:18:26.400
+BigQuery, cleans it, and then updates the pings. Everything's automatic, so no one has to do any
+
+00:18:26.400 --> 00:18:37.520
+manual work. Then the bottom layer is where we have user-facing applications or data
+
+00:18:37.520 --> 00:18:45.119
+products. So anything downstream here that uses those pinged data sets gets updated automatically.
+
+00:18:45.119 --> 00:18:54.719
+So dashboards, reports, they all get updated. Everything is in sync. I know there are a lot of
+
+00:18:54.719 --> 00:19:04.959
+boxes and arrows here, but the underlying code is actually very straightforward. So here is a
+
+00:19:05.599 --> 00:19:14.959
+sample QMD file that handles the authentication and also sets up the pings. So this
+
+00:19:15.760 --> 00:19:23.359
+block shows the actual authentication code to establish a secure connection between PositConnect
+
+00:19:23.359 --> 00:19:30.160
+and BigQuery. So once that connection is established, the rest of the code can pull the data
+
+00:19:30.160 --> 00:19:37.280
+from BigQuery without anyone having to manually log in or provide credentials. And this is
+
+00:19:37.280 --> 00:19:43.199
+what allows this automated workflow to securely access the data and run on its own.
+
+00:19:45.520 --> 00:19:52.079
+And here is the actual pipeline. At the top here, we're just pulling
+
+00:19:52.880 --> 00:19:56.319
+the data from BigQuery using regular SQL queries.
+
+00:19:57.680 --> 00:20:03.760
+Then at the bottom, we take that cleaned up data and pin it to PositConnect.
+
+00:20:03.760 --> 00:20:06.400
+And this is really the whole pipeline.
+
+00:20:09.760 --> 00:20:15.599
+And once we have this automated data pipeline in place, that's where our team can get really
+
+00:20:15.599 --> 00:20:22.880
+creative. So we've built all kinds of products on top of it, dashboards, simulators, report
+
+00:20:22.880 --> 00:20:30.400
+surveys, and many more. So one pinged data set can serve multiple downstream applications. And then
+
+00:20:30.400 --> 00:20:34.160
+when the data updates, everything downstream updates automatically.
+
+00:20:35.280 --> 00:20:40.079
+So now I want to show what this looks like in practice with a few examples.
+
+00:20:40.959 --> 00:20:47.439
+So here's an example of a dashboard analyzing some synthetic iPads data.
+
+00:20:50.560 --> 00:20:58.239
+This is a scenario simulator where users can set different parameters on the left side
+
+00:20:58.239 --> 00:21:07.920
+to project seed capacity for a new campus. This is a static report on course evaluation results
+
+00:21:08.479 --> 00:21:14.319
+with searchable and sortable columns. So department chairs can quickly find their
+
+00:21:14.319 --> 00:21:18.719
+schools' data without needing to submit an ad hoc request.
+
+00:21:21.119 --> 00:21:28.560
+And this is a survey report of a very long questionnaire with over 100 or so questions.
+
+00:21:29.280 --> 00:21:34.880
+This report was built in Cordo with very detailed analysis that is searchable.
+
+00:21:34.959 --> 00:21:40.239
+And also, this makes things very easy to reproduce for future years.
+
+00:21:42.800 --> 00:21:50.959
+So to bring everything together, this workflow gives us a couple of benefits. First,
+
+00:21:50.959 --> 00:21:57.359
+it gives us a workflow that is documented, reproducible, and even version controlled.
+
+00:21:57.359 --> 00:22:03.280
+So the knowledge is now in the code rather than sitting in someone's head or Excel files
+
+00:22:03.359 --> 00:22:11.599
+or PowerPoint stack. Second, it gives us scalability. We can build the data pipeline
+
+00:22:11.599 --> 00:22:17.760
+once and use it to support many different products downstream without having to start
+
+00:22:17.760 --> 00:22:25.119
+from scratch every time. And finally, it makes us much more efficient with ad hoc requests.
+
+00:22:25.119 --> 00:22:31.839
+Instead of recreating similar analysis over and over again, we can now often point the
+
+00:22:32.800 --> 00:22:37.439
+requesters to an existing data product that already gives them what they need.
+
+00:22:40.640 --> 00:22:44.719
+Thank you for your time. I'm happy to take questions during the Q&A.
+
+00:22:44.719 --> 00:22:46.719
+Now I'm going to pass it over to Jason.
+
+00:22:52.079 --> 00:22:59.839
+Hello, everyone. So thank you to Inger and Lou. I've enjoyed your presentations. I made a note
+
+00:22:59.839 --> 00:23:08.560
+about session groups. I'm going to try that out. Okay. So I, again, I'm the Senior Director of
+
+00:23:08.560 --> 00:23:14.560
+Advancement Analytics here at the University of Pennsylvania. Today, I'd like to take you
+
+00:23:14.560 --> 00:23:20.479
+through how we've been using Posit here at Penn, what our environment looks like, how we've built
+
+00:23:20.479 --> 00:23:25.280
+our platform, and some of the exciting things we've been able to accomplish as a result of
+
+00:23:25.280 --> 00:23:32.079
+using Posit. So I hope you come away with a clearer picture of how Posit can support analytics
+
+00:23:32.079 --> 00:23:41.760
+in a complex higher education setting. The challenge for us, as I think for a lot of you, is
+
+00:23:42.319 --> 00:23:47.599
+we operate in a highly complex data environment. So we work across multiple systems. They don't
+
+00:23:48.239 --> 00:23:54.000
+always talk to each other very well. We've got academic data, financial data, and of course,
+
+00:23:54.400 --> 00:24:01.280
+our own advancement data. So the siloed nature of the systems creates challenges. At the same time,
+
+00:24:01.280 --> 00:24:07.040
+we are expected to move quickly, of course, to deliver results. And we also want to find space
+
+00:24:07.040 --> 00:24:14.479
+to innovate within our projects. And layered on top of that is our institutional data policies
+
+00:24:16.000 --> 00:24:21.359
+and our responsibility to keep our data secure, of course. So Posit really meets all of those
+
+00:24:21.359 --> 00:24:31.280
+demands for us. So the tools we're using here, a lot like Ingrid Liu, we're using Posit Connect.
+
+00:24:31.280 --> 00:24:37.040
+We use Posit Workbench for our development work. We have Posit Workbench and Connect running on
+
+00:24:37.040 --> 00:24:45.040
+Linux on-premises servers here that we administer. We also have recently a Posit team on Snowflake
+
+00:24:45.040 --> 00:24:50.079
+Snowpark container services. So just as of January this year, so nine months.
+
+00:24:51.359 --> 00:24:54.959
+I'll dig more into what we're doing with that tool a little bit later.
+
+00:24:58.000 --> 00:25:03.920
+So again, why it matters, what benefits do we get? Well, we get speed.
+
+00:25:04.880 --> 00:25:09.040
+Can you make sure you put your slides on the screen? I'm not seeing anything.
+
+00:25:09.839 --> 00:25:15.520
+Okay. Thank you for...
+
+00:25:17.119 --> 00:25:20.000
+No, you're totally fine. I was like, hmm. So yeah.
+
+00:25:20.640 --> 00:25:22.319
+So I'm just rattling away. Okay.
+
+00:25:23.119 --> 00:25:27.119
+Not too long. You're good. We caught it before it became too much rattling, you know?
+
+00:25:27.119 --> 00:25:30.640
+Okay. All right.
+
+00:25:33.839 --> 00:25:34.400
+There we go.
+
+00:25:41.280 --> 00:25:44.079
+Sorry about that. How's that?
+
+00:25:45.040 --> 00:25:47.599
+It is... Now I see it. Perfect. Thank you.
+
+00:25:47.599 --> 00:25:51.119
+Okay. Thanks, guys. So I don't think you've missed too much.
+
+00:25:51.760 --> 00:26:01.199
+So again, here are the tools we're using. And so the Posit platform really does, it gives us
+
+00:26:01.199 --> 00:26:05.359
+some... It gives us speed. It gives us some flexibility. We have access to a lot of different
+
+00:26:05.359 --> 00:26:13.680
+tools. We use primarily R. We have been getting more into Python. Python, we find it to be kind
+
+00:26:14.079 --> 00:26:21.119
+Python, we find it to be kind of what Snowflake prefers, but R works well as well, of course.
+
+00:26:23.119 --> 00:26:30.319
+But yeah, the ability to really host a lot of different dashboards. We built some custom APIs
+
+00:26:30.319 --> 00:26:36.239
+using the Plumber package. We can host those on Connect. And we do a lot of data integration
+
+00:26:36.239 --> 00:26:42.800
+and data wrangling and ETL work as well using... Leveraging the R markdowns, and in some cases,
+
+00:26:42.800 --> 00:26:48.079
+the Python notebooks, and then Connect's scheduling capabilities really help us out
+
+00:26:48.079 --> 00:27:02.560
+with providing data for various applications. So Posit team and Snowflake. This has been a
+
+00:27:02.560 --> 00:27:09.839
+huge upgrade for us. It's allowed us to really accelerate our development, accelerate our
+
+00:27:09.839 --> 00:27:18.800
+projects. And it's very secure. All of the data that we're working with, it stays within the
+
+00:27:18.800 --> 00:27:24.800
+Snowflake perimeter. So even with Posit Workbench, we're accessing the power of the Snowflake Cortex
+
+00:27:24.800 --> 00:27:32.880
+agents within the Posit Workbench, Posit team development environment. And we also get the
+
+00:27:32.880 --> 00:27:39.599
+benefit of the AI-assisted development. So command line, cloud code development experience
+
+00:27:39.599 --> 00:27:48.959
+as well. So all of that is done for the most part in the Positron IDE, which we've started to use
+
+00:27:49.520 --> 00:27:55.920
+after being really loyal users of the RStudio IDE for years and years. So
+
+00:27:56.880 --> 00:28:04.959
+yeah, so a significant improvement over our prior development environments,
+
+00:28:04.959 --> 00:28:10.479
+much more streamlined workflow. It really... Everything integrates in with Git and GitHub
+
+00:28:10.479 --> 00:28:16.079
+very well. If you haven't taken advantage of deploying your applications on Posit Connect
+
+00:28:16.079 --> 00:28:23.599
+using GitHub, it's really worth a look. It's a game changer in having automated application updates.
+
+00:28:25.343 --> 00:28:36.143
+in having automated application updates. And, you know, the Positron IDE is very
+
+00:28:36.143 --> 00:28:39.583
+familiar to a lot of programmers who've been using VS Code for years.
+
+00:28:42.062 --> 00:28:49.103
+So, again, just faster time to value, faster development, broader capabilities. We have
+
+00:28:49.103 --> 00:28:57.103
+access to a lot of tools, a lot of AI agents within the Posit team. So, those are some of
+
+00:28:57.103 --> 00:29:07.743
+the benefits. These are some agents in action. So, we have put these agents that we've built
+
+00:29:07.743 --> 00:29:13.183
+into production. This is a particular agent for annual giving. So, if you're familiar with
+
+00:29:13.262 --> 00:29:19.343
+advancement and development, you know how important annual giving is to the institution. It's,
+
+00:29:21.023 --> 00:29:27.423
+you know, sort of the lifeblood of unrestricted annual giving for Penn in particular. And so,
+
+00:29:27.423 --> 00:29:33.343
+this agent allows all of the annual giving programs. We have, you know, many, many schools
+
+00:29:33.343 --> 00:29:37.982
+and centers here at Penn, a lot like Harvard, 18 schools and centers. We also have central
+
+00:29:37.982 --> 00:29:45.902
+fundraising units as well. This is a conversational interface, a way to access
+
+00:29:45.902 --> 00:29:51.743
+the agent that we built. This is a Python shiny dashboard. And so, they have a prompt down at the
+
+00:29:51.743 --> 00:29:58.463
+bottom. They have some text to help them fill the prompts out on the top. And it's a really well
+
+00:29:59.423 --> 00:30:09.423
+guardrailed and compliant way to provide mail, email, and text marketing appeals for our annual
+
+00:30:09.423 --> 00:30:15.823
+giving folks. So, they can have a conversation and, you know, depending on how much information
+
+00:30:15.823 --> 00:30:21.663
+they provide initially, they may be prompted to answer, you know, additional questions. But it's
+
+00:30:21.743 --> 00:30:30.463
+really, it's delivering consistent, compliant output for these appeal channels in every case.
+
+00:30:30.463 --> 00:30:36.063
+And it's flexible enough to accommodate most of our annual giving programs here at Penn. So,
+
+00:30:36.063 --> 00:30:42.863
+athletics, the vet school, the dental school, all of those programs can use this agent. And
+
+00:30:43.423 --> 00:30:51.423
+we feel good knowing that we know what data they're getting. It's a predefined template that
+
+00:30:51.982 --> 00:30:57.742
+has been developed to work well with all of these different annual giving communication tools that
+
+00:30:57.742 --> 00:31:04.542
+we have. So, once they're done their discussion, they can go down to the left-hand side and
+
+00:31:04.542 --> 00:31:15.503
+download their results and use the appeal data. So, the second agent, this is the first one we
+
+00:31:15.503 --> 00:31:19.663
+developed this winter. This is one we had sort of floating around in our minds for a while.
+
+00:31:21.503 --> 00:31:25.102
+Anybody, again, in advancement who knows what contract reports are, these are the
+
+00:31:25.902 --> 00:31:32.143
+bread and butter of fundraisers, sort of one of their tools for just keeping track of
+
+00:31:33.022 --> 00:31:38.542
+interactions with our constituents. We have some contract reports going back more than
+
+00:31:38.542 --> 00:31:44.382
+40 years for alumni. These are a varying sort of, I would say, quality and format and length.
+
+00:31:45.022 --> 00:31:50.783
+And it's really never been possible in the past to synthesize all of those contract reports into
+
+00:31:50.783 --> 00:31:58.223
+a coherent summary. So, I would say the possibility arrived with the access to these large language
+
+00:31:58.223 --> 00:32:05.022
+models, particularly for us in Snowflake Cortex and the Posit Workbench environment, we were able to
+
+00:32:05.583 --> 00:32:15.262
+get the agent set up to work with some semantic layers of data in Snowflake and really do a good
+
+00:32:15.262 --> 00:32:23.822
+job of producing a comprehensive, well-written, concise, accurate contract report summary. I have
+
+00:32:23.822 --> 00:32:28.943
+a very highly redacted screenshot of one over here to the right, just to give you a flavor of what
+
+00:32:29.102 --> 00:32:36.703
+the output looks like. But again, they can get a bulleted or a more comprehensive executive summary
+
+00:32:37.742 --> 00:32:46.302
+of a few pages. And this is also being made accessible with a Python shiny dashboard on.
+
+00:32:47.182 --> 00:32:55.103
+In this case, we're putting our agents on Posit Connect, Posit team on Snowflake. So,
+
+00:32:56.063 --> 00:33:01.902
+again, we feel good about the sort of the security perimeter that that provides us
+
+00:33:01.902 --> 00:33:07.983
+and having those agents made accessible to our users from the Posit Connect on Posit team
+
+00:33:08.543 --> 00:33:14.223
+has been working really well for us. So, yeah, thanks for your time and looking forward to any
+
+00:33:14.223 --> 00:33:18.462
+questions that you might have. Thank you. Sorry for not bringing my slides up earlier.
+
+00:33:26.063 --> 00:33:31.103
+Great. Thank you, Jason. Thanks. John, I think you're next.
+
+00:33:34.223 --> 00:33:40.943
+Okay. I think I need Jason to stop sharing. Yes.
+
+00:33:43.503 --> 00:33:47.182
+I know Jason's a time hog. Yeah, there we go. Yeah.
+
+00:33:48.862 --> 00:33:52.543
+I will say the slides are great. So, at least you get to see a beautiful slide.
+
+00:33:53.503 --> 00:33:57.902
+You would think I would have mastered this having only done thousands of these. But okay. Yeah.
+
+00:34:01.022 --> 00:34:09.022
+Okay. All right. So, y'all should see my screen. So, very nice to be with you guys today.
+
+00:34:09.582 --> 00:34:15.503
+My name is John LaPlante. I'm a solutions architect with Posit. And I am really excited
+
+00:34:15.582 --> 00:34:23.022
+to share with you a brand new, highly experimental package from Posit that was
+
+00:34:23.022 --> 00:34:30.702
+just announced last week at Posit Conf, and it's called Posit Commons. So, let's talk about what
+
+00:34:30.702 --> 00:34:36.302
+Posit Commons is. So, I'm going to talk about Commons. I'm going to talk about the different
+
+00:34:36.302 --> 00:34:43.823
+pieces, parts regarding it, why we have Commons, and I'll do a little bit of a live demo. So,
+
+00:34:43.823 --> 00:34:50.622
+first of all, what is Commons? Commons is a framework for building self-service data analysis
+
+00:34:50.622 --> 00:34:58.943
+agents in R and Python. The package is built on Elmer, which if any of you know what Elmer is,
+
+00:34:58.943 --> 00:35:08.462
+Elmer is an R package that connects your programs to LLMs. Chatless is a similar package,
+
+00:35:08.462 --> 00:35:18.063
+but in Python. And then ShinyChat is what displays the connections that Elmer and Chatless make
+
+00:35:18.063 --> 00:35:22.543
+to a Shiny application. And I'm going to show you what those look like in just a little bit.
+
+00:35:23.742 --> 00:35:32.702
+So, those are our open source LLMs stack. Behind Elmer and Chatless, you can use whatever LLM you
+
+00:35:32.702 --> 00:35:40.223
+want, including locally developed LLMs, as long as they're written to the open AI standard, which
+
+00:35:40.223 --> 00:35:47.422
+almost all of them are. So, why did we do this? So, there are two ways that AI is currently failing
+
+00:35:47.422 --> 00:35:53.983
+resource teams. First of all, they're either too locked down that they're very narrow,
+
+00:35:53.983 --> 00:36:00.622
+they're very prescribed, it only answers certain highly regulated questions,
+
+00:36:01.182 --> 00:36:07.503
+or they're completely untrustworthy, where you just release Clod or Gemini or ChatGPT
+
+00:36:08.063 --> 00:36:12.383
+on your data, and you have no idea what they're doing, how they're doing it, or why they're doing
+
+00:36:12.383 --> 00:36:20.622
+it. So, Commons takes a third path. We have the flexibility of an agent anchored to the validity
+
+00:36:20.622 --> 00:36:29.823
+of the code your team already trusts and the definitions you already abide by. So, how it
+
+00:36:29.823 --> 00:36:36.783
+works. So, the user, starting from the left, the user asks a question. Those can be researchers,
+
+00:36:36.783 --> 00:36:43.103
+PIs, deans, vice presidents, board members, whomever you want to have ask a question.
+
+00:36:43.742 --> 00:36:51.022
+What Commons then does is search their trusted calculations. Those trusted calculations,
+
+00:36:51.022 --> 00:36:59.502
+that semantic layer, you create in code. So, it's a, if you think about a Shiny application
+
+00:36:59.502 --> 00:37:07.183
+where you have the server UI and the app.UI, you have a document that explains exactly your
+
+00:37:07.183 --> 00:37:16.142
+trusted calculations. If a user asks a trusted calculation question, Commons will find it,
+
+00:37:16.142 --> 00:37:22.863
+run the code, and then give them the answer, along with a little check mark saying this is a verified
+
+00:37:23.502 --> 00:37:30.623
+calculation and you can trust this. Now, in the low trust area, you've got two different
+
+00:37:30.623 --> 00:37:39.423
+possibilities. One, you have a cited calculation, which means it didn't find a calculation
+
+00:37:39.423 --> 00:37:49.343
+specifically, but in your documentation, it found a description of what a calculation might be.
+
+00:37:49.423 --> 00:37:54.303
+And in that case, it'll run the calculation for you, give you the answer, and then it will give
+
+00:37:54.303 --> 00:38:03.582
+you a cited tag. And then the last step is if it finds nothing having to do with either a trusted
+
+00:38:03.582 --> 00:38:12.303
+calculation or a citing, it'll still run a traditional AI code, but it'll give you a little
+
+00:38:12.303 --> 00:38:18.062
+note saying, hey, this is untrusted. You really need to research this before you use it for
+
+00:38:18.062 --> 00:38:25.822
+anything of interest. So, how does it work? So, first of all, you have your client, any LLM
+
+00:38:26.543 --> 00:38:35.502
+via Elmer or Chatless if you're using Python. So, AWS Bedrock, Anthropic, Azure, GitHub Copilot,
+
+00:38:35.502 --> 00:38:41.423
+whatever LLM you want to point it to. Then you have your data sources, anything you can connect
+
+00:38:41.423 --> 00:38:48.623
+to, whether it's any kind of DBI connection, Databricks, Snowflake, anything you can connect
+
+00:38:48.623 --> 00:38:56.382
+to regularly using Python or R, you can connect to a commons agent. Then, as I mentioned earlier,
+
+00:38:56.382 --> 00:39:01.902
+you have your semantic layer, validated R functions or Python functions tagged with an
+
+00:39:01.902 --> 00:39:09.663
+at measure tag. This is your trusted code that you have used and have agreed upon.
+
+00:39:09.663 --> 00:39:15.582
+Then you have your context layer. This is traditionally what you would have an MCP
+
+00:39:15.582 --> 00:39:21.423
+server for, a model context protocol. And then you can also have instructions that you create
+
+00:39:21.983 --> 00:39:27.502
+as well. And then that runs through commons, and then you get your governed agent. So,
+
+00:39:27.502 --> 00:39:36.303
+let's see what this looks like in action. So, I have a very simple application here. This is
+
+00:39:36.303 --> 00:39:43.262
+called Campus Lens. It's Meridian State University. I just used some Fall 22. This is a fictitional
+
+00:39:43.262 --> 00:39:49.262
+company or a fictitional university. So, here you'll see attrition by program. What percentage
+
+00:39:49.262 --> 00:39:56.462
+of students in each program withdrew or were dismissed? This is a verified, and this is just
+
+00:39:56.462 --> 00:40:01.423
+an example. You can type whatever message you want. I'm going to run attrition by program.
+
+00:40:02.223 --> 00:40:07.343
+So, what this is doing, it's searching for a trusted calculation. It's going to find that
+
+00:40:07.343 --> 00:40:14.783
+trusted calculation, and then it's going to run that. So, here is each program, the end, how many
+
+00:40:15.822 --> 00:40:21.663
+observations, how many withdrew, what percentage. And because I see this little green check mark,
+
+00:40:21.663 --> 00:40:25.582
+that's going to tell me that this answer comes from a trusted calculation.
+
+00:40:26.382 --> 00:40:35.423
+By contrast, if I run a program GPA calculation, so this says, what is the standard deviation of
+
+00:40:35.423 --> 00:40:42.783
+term one GPA by program? If I run that calculation, the commons agent is going to look through its
+
+00:40:42.783 --> 00:40:49.423
+semantic layer, see if it finds a trusted measure. It didn't, but it's going to run the calculation
+
+00:40:49.423 --> 00:41:01.103
+for me anyway. So, this is going to give me an untrusted calculation. And then the last one is,
+
+00:41:01.103 --> 00:41:08.062
+how is academic probation defined? If I come and run that, it's going to look through trusted
+
+00:41:08.062 --> 00:41:14.303
+calculations, but it's not going to find anything. But it is going to look through and it's going to
+
+00:41:15.022 --> 00:41:22.462
+a, academic probation is defined by a term GPA falling below two. And then this gives me
+
+00:41:22.462 --> 00:41:30.702
+the explanation of where it found that particular definition. So, it's in the term GPA table.
+
+00:41:30.702 --> 00:41:41.822
+It's also in an ACAE table. So, just as part of a live demo, that is what commons gives you,
+
+00:41:41.822 --> 00:41:51.103
+is it gives you the way to create these three different types of calculations, either verified,
+
+00:41:51.103 --> 00:42:01.423
+cited, or untrusted calculations. I'm going to drop in the chat here. Let me grab this.
+
+00:42:03.983 --> 00:42:09.262
+Put that in the chat here. I think I can put this in chat to everyone.
+
+00:42:11.822 --> 00:42:19.022
+This is the blog post that you can go check out. Again, this was just released.
+
+00:42:19.582 --> 00:42:27.103
+This blog post was nine days ago. So, this was released at Conf last week in Houston.
+
+00:42:27.983 --> 00:42:34.062
+So, again, this is highly experimental. I encourage all of you to go out and give it a try,
+
+00:42:34.062 --> 00:42:44.783
+but realize this is experimental. It can change, as you'll see by the 0.1.0 package version.
+
+00:42:45.663 --> 00:42:53.902
+But it is really exciting to start to put some guardrails and some expectations around AI.
+
+00:42:55.022 --> 00:43:00.382
+All right. The next thing I want to talk about, we mentioned this R in IR group.
+
+00:43:01.343 --> 00:43:08.942
+This is an institutional research focused R community. It meets once a month. We talk about
+
+00:43:08.942 --> 00:43:14.863
+how we're using R in institutional research, ask questions, share ideas, learn from each other,
+
+00:43:15.663 --> 00:43:22.783
+build connections with other higher ed R users, and then who we are. I thought that was a little
+
+00:43:22.783 --> 00:43:30.462
+clever. Who we are. IR professionals from across the U.S. IT, finance, business ops,
+
+00:43:31.022 --> 00:43:38.462
+registration, assessment, anyone curious about R, IR, or higher education. This is a small group.
+
+00:43:38.462 --> 00:43:49.103
+They've only met twice. I'm going to drop this link in the chat. Grab both of these links here.
+
+00:43:49.103 --> 00:43:56.783
+Let me copy these. I'm going to put these both in the chat. So, the first link, it's a bit.ly link.
+
+00:43:56.783 --> 00:44:01.743
+That will actually be a Google calendar invitation. You can click on that. You can join
+
+00:44:03.822 --> 00:44:12.543
+that meeting. If you, for whatever reason, if that bit.ly doesn't work for you, I've also included
+
+00:44:12.543 --> 00:44:20.623
+Kevin's information. Kevin's leading the creation of this group. So, if you have any questions
+
+00:44:20.623 --> 00:44:27.822
+whatsoever, Kevin is a great contact. Or if you can't get that Google calendar invite to work
+
+00:44:27.822 --> 00:44:39.183
+for you, reach out to Kevin and he can assist. I think with that, I think that of all the slides
+
+00:44:39.183 --> 00:44:47.663
+I have, I'm going to stop sharing my screen and I think I will turn the time back to Amy. Thank you
+
+00:44:47.663 --> 00:44:54.303
+all very much. Yeah, thank you all for joining. I know there's a couple questions that were
+
+00:44:54.942 --> 00:45:01.743
+in the chat that we haven't addressed yet. So, we can start addressing a few of those
+
+00:45:02.623 --> 00:45:10.142
+and great presentations today. Thank you for your participation. The first one that we have
+
+00:45:10.142 --> 00:45:15.822
+is from Keith. Any suggestions for making a case to senior leadership for Posit Connect
+
+00:45:16.382 --> 00:45:24.462
+and other tools like these to invest in? I have my thoughts on that, but Jason, Inger,
+
+00:45:24.462 --> 00:45:31.023
+or Lou, is there anything that you wanted to add from your perspective on getting these tools
+
+00:45:31.023 --> 00:45:37.662
+approved? Yeah, I mean, it's a great question. I would say Posit is just a really good
+
+00:45:37.662 --> 00:45:42.062
+value proposition for us when we compare it to some of the other tools that are available out
+
+00:45:42.062 --> 00:45:46.623
+there. So, depending on, you know, of course, what your budget is, what other tools you're
+
+00:45:46.623 --> 00:45:54.062
+using or looking at, I mean, we just really found that it compares quite well. And, you know,
+
+00:45:54.062 --> 00:45:59.582
+for instance, we're able to do unlimited installs of Connect and Workbench. So, that took care of
+
+00:45:59.582 --> 00:46:05.743
+us being able to install it on Linux and also onto the Snowflake container services. So,
+
+00:46:06.623 --> 00:46:11.343
+you know, for us, it's been, and there are other reasons as well, but those are the top of mind
+
+00:46:11.343 --> 00:46:20.623
+for me. And what I would say, what I think has worked really well is if you have just like a
+
+00:46:20.623 --> 00:46:26.782
+small use case, building those applications, showing those to leadership and building off
+
+00:46:27.343 --> 00:46:32.782
+from those and proving the value, that's what I've seen be successful. Inger, it looked like
+
+00:46:32.782 --> 00:46:38.863
+you were coming off mute. Was there anything else you wanted to add there? I was just going to add
+
+00:46:38.863 --> 00:46:47.582
+that we had already been using our, you know, all our workflows were in ours. So, it made sense as,
+
+00:46:47.582 --> 00:46:52.623
+you know, a product for helping us share the things we were creating. So,
+
+00:46:53.343 --> 00:46:58.223
+that made sense. The other thing I wanted to mention was like, I think it makes sense to bring
+
+00:46:58.223 --> 00:47:04.863
+in your IT folks as early as possible to make sure you like, you work out kind of who's responsible
+
+00:47:04.863 --> 00:47:12.942
+for what and how to get things set up on the back end and make sure you have a kind of buy-in from
+
+00:47:12.942 --> 00:47:19.983
+the IT side as well. Yeah, that's a great point. There's a lot of moving parts on making sure that
+
+00:47:20.942 --> 00:47:27.662
+these tools work well. So, IT is a big partner in helping not only getting those approved,
+
+00:47:27.662 --> 00:47:35.743
+but also getting their perspective from that as well. And I did put my email in the chat. So,
+
+00:47:36.542 --> 00:47:41.903
+if you're interested in exploring that and wanting to talk to us about those
+
+00:47:41.903 --> 00:47:45.343
+use cases that you have and help us build your use case, we can always do that.
+
+00:47:46.143 --> 00:47:52.383
+Greg was asking, is there a way for an analytics group for K-12? Every education group I've
+
+00:47:52.383 --> 00:47:59.422
+explored, it's more people teaching R. So, absolutely. Like I mentioned before,
+
+00:47:59.983 --> 00:48:06.462
+I work with a lot of R education accounts. One of them is universities. We also have a lot of the
+
+00:48:07.422 --> 00:48:17.182
+K-12 and school districts, departments of education. This was just the first webinar.
+
+00:48:17.182 --> 00:48:24.863
+We wanted to see who was interested. So, please send me an email. We can discuss on putting
+
+00:48:24.863 --> 00:48:30.143
+together a separate group for K-12 as well. And John, is there anything else you wanted to add
+
+00:48:30.143 --> 00:48:37.263
+there? Yeah, Amy, let me, and Greg, I think that's a great question. So, one of my, in my
+
+00:48:37.263 --> 00:48:43.263
+previous life, I went through Harvard's strategic data project, which teaches a lot of K-12 data
+
+00:48:43.263 --> 00:48:49.582
+sciences across country. So, I'd love to have that discussion with you as well. So, make sure you
+
+00:48:49.582 --> 00:48:56.143
+reach out to Amy and we can set up a follow-up to discuss that more in depth, but love the K-12
+
+00:48:56.143 --> 00:49:04.782
+focus as well. So, thank you. And then the other question is the R and IR group also interested
+
+00:49:04.782 --> 00:49:11.503
+for people from Europe. I think yes. This is, like I said, this is a small group that
+
+00:49:12.702 --> 00:49:19.983
+Kevin actually started. So, it's not even hosted from Posit. It's, I think we're just trying to
+
+00:49:19.983 --> 00:49:26.702
+build up this community. We've seen this built up in different industries and we see that,
+
+00:49:26.702 --> 00:49:32.223
+you know, there's a lot of you out there that are looking for support and looking for other
+
+00:49:32.223 --> 00:49:42.143
+ideas of how to get started. So, I would say go ahead and join that group and get connected there.
+
+00:49:42.383 --> 00:49:50.143
+And then the last question, it's actually not in the chat.
+
+00:49:52.143 --> 00:49:57.662
+Rishika, it looks like you have your hand up, but if you wanted to throw that in the chat,
+
+00:49:57.662 --> 00:50:02.702
+I'm not sure if you'll be able to access, be able to talk on the webinar.
+
+00:50:07.103 --> 00:50:07.903
+Anything else?
+
+00:50:12.702 --> 00:50:16.782
+There is just a few more questions in there. I don't know.
+
+00:50:17.903 --> 00:50:26.702
+Yeah, Logan's got a question about code versus no code. And I think that's a, it's a question
+
+00:50:26.702 --> 00:50:36.623
+that we get a lot. And it really, Logan, it comes down to reproducibility and trust as to
+
+00:50:36.623 --> 00:50:43.822
+the decisions that are being made with the analysis that you do. And we really talk about
+
+00:50:43.822 --> 00:50:50.223
+it as the decision is really, is this a business analytics thing or is this data science?
+
+00:50:51.103 --> 00:50:55.103
+You know, if you're just doing business analytics and you're doing, you know, Excel,
+
+00:50:55.103 --> 00:50:59.983
+you know, bar charts and pie charts, and you just need a quick little answer, that's one thing.
+
+00:50:59.983 --> 00:51:06.223
+But if you're writing a report that decisions are going to be made around, if you can't
+
+00:51:06.223 --> 00:51:12.942
+reproduce, if you can't stand behind, if you can't explain 100% where that came from and how
+
+00:51:12.942 --> 00:51:19.422
+to reproduce it, that's where the decision between business intelligence and data science comes in.
+
+00:51:20.462 --> 00:51:24.542
+And Logan, if you'd like to have a more in-depth conversation, Amy and I'd be happy to
+
+00:51:25.182 --> 00:51:29.263
+sit down and talk with you and show you a little more about how that works.
+
+00:51:29.263 --> 00:51:41.343
+Thanks, John. And then, is there a link to join the R and IR group?
+
+00:51:42.383 --> 00:51:46.542
+Do you guys have access to the chat? We did put it in the chat.
+
+00:51:49.822 --> 00:51:52.223
+Allison, they should have access to that, right? Okay.
+
+00:51:53.182 --> 00:51:57.903
+Yes. I was going to confirm. I think it's in the chat. And yeah, everyone should have access to it.
+
+00:51:57.903 --> 00:52:04.462
+And I'm going to repaste that message real quick. That is going to be a verbatim repeat of what
+
+00:52:04.462 --> 00:52:09.103
+Libby, who initially sent that message, is. So, I'm just going to go ahead and copy and paste that.
+
+00:52:09.103 --> 00:52:12.542
+So, if anyone didn't see it before, they should be able to see in the chat now.
+
+00:52:14.942 --> 00:52:19.103
+Yep. So, there's two of them. One was for the Discord, and then the other one
+
+00:52:19.103 --> 00:52:25.103
+John also put in there was for the R and IR group. That's one.
+
+00:52:25.263 --> 00:52:28.143
+John, do you mind linking that for me in the chat if you have a second?
+
+00:52:29.263 --> 00:52:31.903
+I think he already did. So, they should have access there.
+
+00:52:34.462 --> 00:52:40.143
+And again, this is just our first one. So, if any of you have anything else that you want to share,
+
+00:52:40.143 --> 00:52:44.062
+if you think this was helpful, we'd love to get your feedback.
+
+00:52:46.143 --> 00:52:50.302
+And we'd love to host something like this again if you guys are open to it.
+
+00:52:50.863 --> 00:52:57.023
+Yeah. I wanted to say thank you to everyone here who presented. And this was a really awesome
+
+00:52:57.582 --> 00:53:03.662
+first jab at something like this. So, very happy that we were able to pull this off. And so,
+
+00:53:03.662 --> 00:53:08.302
+a special thank you to Inger, Jason, and Lou as well. Amy and John, thank you so much for your
+
+00:53:08.302 --> 00:53:13.343
+time here. Now, for everyone else who's in the chat, I know I've mentioned this a few times,
+
+00:53:13.343 --> 00:53:19.343
+but you will be receiving a recording of this webinar within 48 business hours.
+
+00:53:19.343 --> 00:53:24.223
+It will be on YouTube. So, we will send you that link. And again, just reiterating,
+
+00:53:24.223 --> 00:53:28.702
+if you have any additional questions for anyone or more specifically Amy, she's been putting her
+
+00:53:28.702 --> 00:53:33.743
+email in the chat. Otherwise, I just want to say have a great rest of your day, afternoon,
+
+00:53:33.743 --> 00:53:38.383
+evening, from wherever you're joining. And yeah, thank you for spending your time today with us
+
+00:53:38.383 --> 00:53:43.743
+at Posit. And yet again, I just want to thank you, Inger, Jason, and Lou for your time. It was
+
+00:53:43.743 --> 00:53:50.302
+really awesome to see what you guys have done. Yes. Thank you all. All right. Well, have a great
+
+00:53:50.302 --> 00:53:57.182
+rest of your day and happy Thursday to everyone. Thank you. Thanks, everybody. Bye. Bye.

@@ -1,0 +1,1555 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:13.680
+All right, everybody. I am so excited to introduce our featured lab manager for today, Karan
+
+00:00:13.680 --> 00:00:17.320
+Gathani. Karan, would you like to introduce yourself and tell us a little bit about what
+
+00:00:17.320 --> 00:00:18.959
+you're going to be talking about today?
+
+00:00:18.959 --> 00:00:26.080
+Sure. Thank you, Libby. Hi, everyone. I'm Karan Gathani. I'm a QA engineer on the Shiny
+
+00:00:26.080 --> 00:00:32.680
+team. And today, I'm hoping to talk about one of the projects I've been working on,
+
+00:00:32.680 --> 00:00:39.720
+which is using LLMs to generate Shiny apps, which I think a lot of people might have tried.
+
+00:00:39.720 --> 00:00:45.720
+But then trying to evaluate when they do generate the Shiny apps, how do we gauge the quality
+
+00:00:45.720 --> 00:00:50.360
+of the Shiny apps? And like I said, I'll go through this thing where we started off with
+
+00:00:50.360 --> 00:00:55.520
+one thing, and then I found some discrepancies and started digging into that. So I'm hoping
+
+00:00:55.520 --> 00:01:01.599
+to share those things, because for me, that is super exciting and a thing that I did not
+
+00:01:01.599 --> 00:01:07.120
+think of when I started this adventure. But yeah, we are exploring and discovering new
+
+00:01:07.120 --> 00:01:11.879
+and new things. And so I'm excited to share those things with you folks today.
+
+00:01:11.879 --> 00:01:18.760
+Well, we are excited, too. This is a place where we do tons of screen sharing. So I say,
+
+00:01:18.760 --> 00:01:24.000
+Karan, go ahead and share your screen, and let's get started. And in the chat, I would
+
+00:01:24.000 --> 00:01:30.320
+love to hear who is using LLMs for making Shiny apps. Hubert is already saying, yep,
+
+00:01:30.320 --> 00:01:36.000
+I use Cloud for this all the time. I think a lot of people do. I, myself, like using
+
+00:01:36.000 --> 00:01:40.919
+it to create utility Shiny apps that I will use and throw away. No one's ever going to
+
+00:01:40.919 --> 00:01:45.199
+see them, but they're going to help me do an interactive task, whether that's data labeling
+
+00:01:45.199 --> 00:01:47.040
+or something else.
+
+00:01:48.040 --> 00:01:57.680
+Okay. So for folks who haven't ever created a Shiny app using LLMs or agents or whatever,
+
+00:01:57.680 --> 00:02:05.400
+it is pretty easy to get started. Right now for this demo, I use OpenCode. OpenCode is
+
+00:02:05.400 --> 00:02:13.720
+just like an agent harness. It allows you to talk to any LLMs, provided you have a subscription
+
+00:02:13.720 --> 00:02:22.039
+for that. And they have some free things. But the goal of this is it's similar to how
+
+00:02:22.039 --> 00:02:29.240
+you use Cloud Code or you use Codex or like something else, right? There's so many options.
+
+00:02:29.240 --> 00:02:34.720
+But this allows me to quickly change different models. So I can actually look over here,
+
+00:02:34.720 --> 00:02:39.759
+I can quickly go and select different models. And there are some free models and there are
+
+00:02:39.919 --> 00:02:46.320
+like the proprietary models. It's pretty easy to do that. And so for this example, let's
+
+00:02:46.320 --> 00:02:52.880
+say I'm selecting one of these. And for me to actually just create a Shiny app, it would
+
+00:02:52.880 --> 00:03:05.520
+be create a Shiny for our app using, and I have a data set. This data set is essentially
+
+00:03:05.520 --> 00:03:13.440
+an Airbnb listing of an actual neighborhood. And it has like all the ratings and prices and
+
+00:03:13.440 --> 00:03:18.000
+stuff like that. And right now, like I said, I'm not trying to actually look for anything specific,
+
+00:03:19.279 --> 00:03:29.600
+just point out to the CSV. And that allows the user to look at some interesting
+
+00:03:30.559 --> 00:03:35.839
+trends or whatever. Like I said, you can change it to however you need it. This is all based on
+
+00:03:35.839 --> 00:03:41.919
+vibes, right? And so the good thing about this is while it's like going on, and this is using
+
+00:03:41.919 --> 00:03:47.839
+a DeepSake Flash, which is like one of the cheapest models, you can actually see like
+
+00:03:47.839 --> 00:03:54.240
+how many tokens are being used, what's the cost being used, like how much you are spending and
+
+00:03:54.240 --> 00:03:59.199
+stuff like that. So you can like do it in real time and go through that and do a bunch of those
+
+00:03:59.360 --> 00:04:05.279
+things, right? And for me, though, when I'm actually evaluating one of the questions I
+
+00:04:05.279 --> 00:04:12.399
+frequently get is like, how are the LLMs doing in generating like Shiny apps or like in certain
+
+00:04:12.399 --> 00:04:18.880
+tasks? And that's one of the areas that I'm super interested in is how are the models doing? Like
+
+00:04:18.880 --> 00:04:24.160
+people have like different kinds of models that people are using. And like people have loyalists
+
+00:04:24.160 --> 00:04:30.880
+just like sports team. People are like, I am on team Anthropic or I'm on team OpenAI or I'm on
+
+00:04:30.880 --> 00:04:38.480
+team whatever, some other open weights models or whatever. I'll go over that later. And so for me,
+
+00:04:38.480 --> 00:04:45.679
+it is actually like looking objectively, which is like, can I show evidence on which model is
+
+00:04:45.679 --> 00:04:52.079
+doing better than this? Like if there's a new model that comes out, can I actually say, is it
+
+00:04:52.079 --> 00:04:56.559
+better than the previous one? Because some of the models are getting more expensive as they are
+
+00:04:56.559 --> 00:05:03.600
+coming out. And so one of the ways in the Shiny team we want to do is we want to evaluate how
+
+00:05:04.239 --> 00:05:12.559
+these apps are being generated or how these apps look like. Right now you can see within OpenCode,
+
+00:05:12.559 --> 00:05:20.399
+it will try to like create that. It'll give me like, hey, you want to run this. Some of the
+
+00:05:20.399 --> 00:05:27.679
+models that I have noticed is like the cheaper models, they'll run something or like they'll
+
+00:05:27.679 --> 00:05:35.200
+generate an app, but they won't like run it to see if it's working correctly. Some of the more
+
+00:05:35.200 --> 00:05:40.480
+expensive models will actually like go back and like, okay, this is the work I did. Let me actually
+
+00:05:40.480 --> 00:05:47.279
+see if it's actually working. And so one of the things I have noticed is usually with the cheaper
+
+00:05:47.279 --> 00:05:55.279
+models, sometimes occasionally you will have like issues. And right now it is using, which
+
+00:05:55.279 --> 00:06:04.399
+ideally it should, but okay. So ideally, like I said, you can like go through the whole thing.
+
+00:06:05.119 --> 00:06:15.600
+Did I miss my terminals? Run the app and figure out the issue. But yes, I don't want to harp too
+
+00:06:15.600 --> 00:06:20.720
+much on this one. The goal of this is like sometimes the apps will generate something,
+
+00:06:20.720 --> 00:06:26.160
+they'll run into an issue. And then you have to go through several iterations, which like I said,
+
+00:06:26.160 --> 00:06:32.079
+you can use a cheap model. You can spend time and fixing it, but your time is precious as well. And
+
+00:06:32.079 --> 00:06:37.359
+I think like the more time you spend in actually trying to direct these models, I think you are
+
+00:06:37.359 --> 00:06:44.720
+spending a lot more effort and time. Right. And so one thing that we do is anytime we are actually
+
+00:06:44.720 --> 00:06:53.279
+coming up with like any LLM integration within the Shiny team or we want to do something called
+
+00:06:53.279 --> 00:07:07.920
+as evals. So if you want to write in the chat, if folks have ever used evals in your products or in
+
+00:07:08.799 --> 00:07:16.239
+any LLM integration they all have ever done. I will add it right now.
+
+00:07:18.160 --> 00:07:19.839
+Are you gonna make a poll? Yes.
+
+00:07:24.640 --> 00:07:28.640
+All right. Did that work? Yes. Okay. I'll add one on Zoom as well.
+
+00:07:29.519 --> 00:07:35.679
+Well, I'm gonna say no. I'm in the no camp. It looks like most people are in the no camp.
+
+00:07:36.480 --> 00:07:41.600
+Live feedback on this poll is that over 80%. No.
+
+00:07:42.480 --> 00:07:48.239
+Perfect. So, okay. So let me actually go back to just explaining quickly what evals is.
+
+00:07:48.239 --> 00:07:51.760
+So evals, let me, you know what, let me actually show my
+
+00:07:53.679 --> 00:07:59.920
+whiteboarding skills, which are terrible because, okay. So essentially an eval
+
+00:08:00.799 --> 00:08:08.480
+will be like this. Eval. If you want to sound fancy, you can say evals or with a Z. I don't
+
+00:08:08.480 --> 00:08:15.679
+know. Whatever works for you. So evals essentially has different components. And this is like
+
+00:08:15.679 --> 00:08:22.480
+similar across any evals you will see in the wild. And this I think is a really important concept
+
+00:08:22.480 --> 00:08:31.440
+that I think is catching up more and more. And so evals essentially has four concepts.
+
+00:08:31.440 --> 00:08:44.000
+So it has a concept of a data set, has a concept of a solver, has a concept of a scorer,
+
+00:08:44.880 --> 00:08:57.919
+okay. And then the overlying of a task. Okay. And I'll break it down into simple words. So
+
+00:08:57.919 --> 00:09:05.919
+what data set essentially is, is data set, think of it as like a paper, like a score card,
+
+00:09:06.799 --> 00:09:16.559
+which gives you the question and the corresponding answer. So if this is a test sheet that you want
+
+00:09:16.559 --> 00:09:21.919
+to give for a pop quiz or something, what is the question and what is the corresponding answer?
+
+00:09:22.640 --> 00:09:28.640
+That is something that you would end up giving. And so data set essentially is this like key value
+
+00:09:28.640 --> 00:09:36.479
+pairs almost. It's a, you can have, it's like a CSV format or JSON format. And essentially it is
+
+00:09:36.479 --> 00:09:41.599
+like, which is the question and what is the corresponding answers. Since these are LLMs,
+
+00:09:41.599 --> 00:09:46.960
+they are smart enough that they do not need a singular answer. You can describe your vibe.
+
+00:09:48.320 --> 00:09:53.679
+And I'll give you an example of how this would be. So once you have that, you feed that to a
+
+00:09:53.679 --> 00:10:00.880
+solver. So solver is essentially this LLM, which like I'm representing it with this robot, like
+
+00:10:01.440 --> 00:10:08.640
+beep, beep, boop, boop, or whatever. So this one, it, you give them the question. They don't have
+
+00:10:08.640 --> 00:10:14.000
+access to the answers. You just give them the questions. So they give the question or whatever
+
+00:10:14.000 --> 00:10:20.000
+the question is like create a shiny app or whatever. And then it will actually take that in
+
+00:10:20.000 --> 00:10:25.840
+and do whatever calculations it's doing. And then it will actually spit out the answer.
+
+00:10:26.719 --> 00:10:33.840
+So this is one LLM and it can be any model you can think of. It can be Opus, it can be
+
+00:10:33.840 --> 00:10:40.239
+OpenAI, it can be OpenCode or whatever. And then it spits out that answer to the scorer.
+
+00:10:40.239 --> 00:10:47.679
+And scorer is someone, another LLM that's wearing glasses. So it can actually like
+
+00:10:47.679 --> 00:10:57.520
+look in detail on what answers this one gives, but the scorer actually has access
+
+00:10:58.479 --> 00:11:04.239
+to the test sheet as well. So they can actually take a look at this and it'll be like, okay,
+
+00:11:04.239 --> 00:11:09.280
+let me look at the answers that were provided to me and let me look at the questions.
+
+00:11:09.280 --> 00:11:15.679
+And then they'll be able to compare and then they'll be able to give a rating or a ranking or
+
+00:11:16.479 --> 00:11:25.200
+scoring. And the scoring usually is, so it uses something called as complete,
+
+00:11:26.479 --> 00:11:32.799
+has partial and it is incomplete. So if it's complete, you get a one point, it's partial,
+
+00:11:32.799 --> 00:11:40.880
+you get 0.5. And if it's incomplete, you get zero. And for all of these, you get scored and
+
+00:11:40.880 --> 00:11:45.520
+you can have 20 questions, you can have 300 questions, whatever. And then overall you'll
+
+00:11:45.520 --> 00:11:51.200
+be able to see. And the goal is to keep on running it multiple times to see how well
+
+00:11:51.200 --> 00:11:56.400
+the LLMs are doing. Because LLMs are mostly are not deterministic unless you lower the
+
+00:11:56.400 --> 00:12:01.840
+temperature quite a bit. And so to see if they are actually trying to be in the ballpark.
+
+00:12:01.840 --> 00:12:06.479
+And like, this is a different concept than when people are like writing unit tests,
+
+00:12:06.479 --> 00:12:10.640
+because unit tests you are essentially, or any kind of test you are, it's like, okay,
+
+00:12:10.640 --> 00:12:15.200
+what is two plus two? And then you're like, the answer should be four. This is not that,
+
+00:12:15.200 --> 00:12:20.239
+because LLMs are not, I mean, you could use LLMs for two plus two, but that's not what LLMs
+
+00:12:21.200 --> 00:12:26.320
+are like the most powerful at. It is like something that is used to synthesize data,
+
+00:12:26.320 --> 00:12:31.520
+or like create code and stuff like that. And judging them is also hard because it's not
+
+00:12:31.520 --> 00:12:38.479
+as straightforward. And so to show an example of how this might look like,
+
+00:12:40.320 --> 00:12:49.840
+I'll show you an example in the Positron. And so there is a package developed by Simon Couch
+
+00:12:51.119 --> 00:12:57.520
+on the Posit. And he created this, which is vitals. And it's essentially like checking
+
+00:12:57.520 --> 00:13:03.599
+the vitals of your LLM integrations. And the way, like I said, I'll go through the key concepts,
+
+00:13:03.599 --> 00:13:08.799
+which is you had the input and the target. So this is the data set. And so this is essentially
+
+00:13:08.799 --> 00:13:15.280
+asking if this is the capital of France, what is the correct answer? And again, it could give a
+
+00:13:15.280 --> 00:13:20.880
+one word answer as Paris, or it said like, oh, the best place in the world, Paris, or whatever.
+
+00:13:20.880 --> 00:13:26.080
+And as long as the LLMs know, because it's an LLM who's judging it, they can deduce that
+
+00:13:26.640 --> 00:13:30.559
+Paris is somewhere contained, they don't need to do a regex or something like that.
+
+00:13:31.599 --> 00:13:38.239
+So something like this, wherein it's something like a little more on the fence with like,
+
+00:13:38.239 --> 00:13:45.760
+should pineapple on pizza be allowed? I don't know, might drive a lot of people off. But again,
+
+00:13:45.760 --> 00:13:51.760
+like you can have whatever answer you expect the LLM should be giving kind of. And then you can go
+
+00:13:51.760 --> 00:13:57.679
+into like much more fuzzy topics where in like, okay, how do should we tackle if there are three
+
+00:13:57.679 --> 00:14:04.080
+different things and maybe something with like a little more like ethical dilemmas. And again,
+
+00:14:04.080 --> 00:14:09.840
+you have to provide what you think the answer should like be closer to kind of, because the
+
+00:14:09.840 --> 00:14:15.599
+LLM will give you an answer no matter what. And you can actually give and more context you give
+
+00:14:15.599 --> 00:14:22.000
+it, the easier it is for when it is actually judging it. And so essentially, so we create the
+
+00:14:22.000 --> 00:14:28.719
+task. So you remember task was the overarching like bucket, we create the solver, we create the
+
+00:14:28.719 --> 00:14:35.200
+scorer, and we create the data set. So those are the three concepts, like I said, and we have three
+
+00:14:35.200 --> 00:14:41.359
+questions, we have three answers, the input and the target, we have the solver and scorer. And I'm
+
+00:14:41.359 --> 00:14:49.119
+using a different model for creating the like, who is solving it, and who's judging it, it's just
+
+00:14:49.119 --> 00:14:54.159
+different models kind of, you can change it across different providers and stuff like it's really
+
+00:14:54.159 --> 00:15:00.320
+easy to mix and match. You can also have a panel of judges. So they will actually, you can have
+
+00:15:00.320 --> 00:15:10.080
+multiple judges over your judging. Okay, and so over here, if I wanted to run this, I would just
+
+00:15:10.239 --> 00:15:23.119
+just do I think, yeah, just ask if Yeah, I have. So I don't know. Yeah, so smart. Okay. All right.
+
+00:15:23.119 --> 00:15:32.159
+So so we are you see, it's just solving that. It's working through all the examples, and scoring it
+
+00:15:32.880 --> 00:15:42.320
+and we look at the results as well. And the results are should be over here. Let me stop my
+
+00:15:42.320 --> 00:15:51.359
+code. Let me look at evil report. So it's it can create an HTML file. And we can go live and check
+
+00:15:51.359 --> 00:15:59.679
+on this. Okay. So it looks at that. This is the target. This is the answer it gave. And you can
+
+00:15:59.679 --> 00:16:04.640
+click on each of them, but it will show you that this is the question you asked. And this is what
+
+00:16:04.640 --> 00:16:10.719
+it gave. And then you can see how the judge is actually reasoning as well. And the explanation
+
+00:16:10.719 --> 00:16:16.640
+on why the judge gave an answer, which is like, this was a complete because it thought it was
+
+00:16:16.640 --> 00:16:21.679
+really close to the target. And so that's what it ended up coming with. And like I said, some
+
+00:16:21.679 --> 00:16:26.159
+of them will go into details. And you can always give more instructions. So like, if you're going
+
+00:16:26.159 --> 00:16:31.840
+to lengthy, you're just blabbing kind of like just talking about a lot of stuff instead of being
+
+00:16:31.840 --> 00:16:38.000
+towards deduct marks. And yeah, it will follow those things. But yeah, so we have a different
+
+00:16:38.000 --> 00:16:44.559
+judge doing that. And so this is like the concept of evils, which I think as people are switching
+
+00:16:44.559 --> 00:16:50.320
+into like relying on LLMs for every single thing, or like a lot of things, I think people want to be
+
+00:16:50.320 --> 00:16:55.520
+confident that it is not going to hallucinate or it's not going to give you things that will
+
+00:16:55.520 --> 00:17:03.440
+embarrass you in front of other people. And that's why I think one of these things we wanted
+
+00:17:03.440 --> 00:17:10.000
+to do is the evals kind of. So this is the concept of evals that I showed. And this is like an
+
+00:17:10.000 --> 00:17:17.520
+example. It exists on Python, as well as R side, R side use vitals, Python use inspect. Vitals is
+
+00:17:17.520 --> 00:17:24.239
+built on top of inspect. But same concept. And you will see other packages that do something
+
+00:17:24.239 --> 00:17:29.680
+similar, but these concepts are universal of data set solver and scorer. They might use a little
+
+00:17:29.680 --> 00:17:35.760
+different terminology, but essentially, this is the whole concept. Okay, so this is the just evals
+
+00:17:35.760 --> 00:17:42.640
+in a nutshell, what ends up happening. And so one of the things we wanted to do in the Shiny team is
+
+00:17:43.280 --> 00:17:52.479
+when we actually have a Shiny, like we give the task of LLMs generate Shiny apps. And we want to
+
+00:17:52.479 --> 00:18:00.479
+do the evaluation, we want to do some judging, right. And so we started off with like judging
+
+00:18:00.479 --> 00:18:06.880
+on like four different things, like requirements, fidelity, like how maintainable is the code?
+
+00:18:07.680 --> 00:18:13.520
+How good is the visual quality? And like, how robust is the code? Like, does it do defensive
+
+00:18:13.520 --> 00:18:21.520
+coding, but then it can handle, like, it should not like this flop, when you have, like, CSV or
+
+00:18:21.520 --> 00:18:26.880
+like an input file that is like, not properly structured or whatever. So it does it like do
+
+00:18:26.880 --> 00:18:31.599
+defensive practices and stuff like that. And there's a lot of these things, which are like,
+
+00:18:31.599 --> 00:18:36.400
+all the stuff that you would see, like, oh, you should use these for best visual design for
+
+00:18:36.400 --> 00:18:42.239
+dashboards and stuff like that. And we'd like follow those things. And then asked it to like,
+
+00:18:42.239 --> 00:18:47.920
+judge, right? Like, and so I ran it across. So your answer, there's this repo that I work on
+
+00:18:48.239 --> 00:18:56.000
+called shiny gen, it just allows me to generate a lot of different, like the same task across
+
+00:18:56.000 --> 00:19:03.040
+different LLM models, right? Like, and so we'll have like 76, like the same task given to different
+
+00:19:03.040 --> 00:19:13.359
+76 different, like scenarios, and then trying to judge who is doing better kind of like judging
+
+00:19:13.359 --> 00:19:19.520
+what scoring they get. And so as an example, for us, it is super easy to actually just run
+
+00:19:20.560 --> 00:19:27.040
+something in like, given the same task, like I can actually run, like which framework I want
+
+00:19:27.040 --> 00:19:33.040
+in R or Python, which models I need, I just need to, like separate them by a CSV.
+
+00:19:35.439 --> 00:19:40.800
+And this is I'll talk about the skills and vanilla one, which data set I want to have some
+
+00:19:40.800 --> 00:19:46.239
+data sets that they can use, which prompt I want to share over your and then what is the
+
+00:19:46.239 --> 00:19:51.520
+maximum iterations I wanted to like keep on iterating on. And then this is a quality score
+
+00:19:51.520 --> 00:19:56.479
+of the judge. Like if you do not get that score, go back to the drawing board and keep on working.
+
+00:19:57.760 --> 00:20:02.319
+But yeah, so I think we have it. I have to stop for just two seconds,
+
+00:20:02.319 --> 00:20:08.800
+because I think Isabella and I are both baffled by what we are even seeing. Is this a GitHub action?
+
+00:20:09.680 --> 00:20:10.959
+But yes, this is amazing.
+
+00:20:12.880 --> 00:20:18.319
+Yes. So but it is essentially doing an evals under the hood. Okay.
+
+00:20:21.280 --> 00:20:26.560
+All right, when you construct the workflow, does it automatically build that drop down
+
+00:20:26.560 --> 00:20:31.760
+and their run workflow? Yes, this is my question to get that part on the right.
+
+00:20:32.719 --> 00:20:38.319
+So you can when you design your workflows, you can design that you want to drop down
+
+00:20:38.319 --> 00:20:42.079
+with any values you want. So anytime there's a new model that gets released,
+
+00:20:42.800 --> 00:20:47.040
+it automatically I'll add support to it, and it'll automatically like show up over here
+
+00:20:48.079 --> 00:20:55.760
+in the LLM. So I can show you the workflow, but essentially, we have like a bunch of these
+
+00:20:55.839 --> 00:21:02.239
+workflows that you can run. And then you can select like what options you want. And anything
+
+00:21:02.239 --> 00:21:08.400
+under options is something you can select from a drop down. Okay, amazing. I will I will not detour
+
+00:21:08.400 --> 00:21:13.760
+you any further. But we definitely need a data science lab episode on GitHub action workflows,
+
+00:21:13.760 --> 00:21:18.400
+because my mind feels a little bit blown, but I'm gonna let you continue.
+
+00:21:19.119 --> 00:21:24.959
+Yeah, yeah. But like, just to show you an example, like, again, like, I'm not gonna go
+
+00:21:24.959 --> 00:21:29.599
+too much on these. But when we run these, again, they do end up like running for quite a long time,
+
+00:21:29.599 --> 00:21:35.119
+because we are trying to run it across multiple things. And so when we select that, like we'll
+
+00:21:35.119 --> 00:21:40.079
+get through like, what was the cost of each of them? How much long it took? How many iterations
+
+00:21:40.079 --> 00:21:47.680
+and like you can see, it's running for shiny for Python, shiny for R. And we'll run it across all
+
+00:21:47.680 --> 00:21:54.800
+of these models, kind of to actually just see like how the models are able to deliver and stuff
+
+00:21:54.800 --> 00:21:59.439
+like that. And so one of the things that we want to do, because we want to be as scientific as
+
+00:21:59.439 --> 00:22:05.680
+possible when we are like doing the evaluations. One of the things the shiny team is trying to and
+
+00:22:05.680 --> 00:22:12.560
+this is the whole concept of how it works. When the user just decides they want to start
+
+00:22:12.880 --> 00:22:17.040
+this evaluation, it goes through everything runs in a
+
+00:22:18.719 --> 00:22:25.280
+container, because we don't want to like, have like a personal configuration be involved,
+
+00:22:25.280 --> 00:22:30.319
+because people might have skills or anything that might affect and like not be reproducible.
+
+00:22:30.319 --> 00:22:35.760
+So we want to run everything on a Docker container. And this is where we actually do the
+
+00:22:36.560 --> 00:22:41.839
+control and treatment. And so let me actually show you on a mirror board, how that would look like.
+
+00:22:41.839 --> 00:22:47.520
+So essentially, one of the things that you will hear is something called a skills. I don't know
+
+00:22:47.520 --> 00:22:54.319
+if people are aware of something called a skills that is like a word that is being thrown around a
+
+00:22:54.319 --> 00:23:02.800
+lot in the AI world right now. But skills essentially, if I can like draw is imagine
+
+00:23:02.800 --> 00:23:08.719
+you are getting a bagel every day on your way to work and you're like, can I get my and it's
+
+00:23:08.719 --> 00:23:14.319
+like maybe everything bagel with like, just regular cream cheese. And that's what you would
+
+00:23:14.319 --> 00:23:21.359
+get. So which is like everything bagel. This is the poppy seeds or whatever. And you get a cream
+
+00:23:21.359 --> 00:23:26.560
+cheese. A skill would be you tell the person who's making a bagel like can I get an extra
+
+00:23:26.560 --> 00:23:30.800
+toasted and can you be like a little light on the cream cheese because I'm trying to watch my
+
+00:23:30.800 --> 00:23:37.760
+calories. That's a skill. So LLMs can make a bagel, but like that specific thing like extra
+
+00:23:37.760 --> 00:23:43.439
+toasted and light on cream cheese. That's a skill because now you want it to be reproducible
+
+00:23:43.439 --> 00:23:48.560
+every single time. And so that you can be a skill and you're like anytime you make a bagel,
+
+00:23:48.560 --> 00:23:55.040
+make sure it's extra toasted. So that's a skill. You are mentioning it to the agent or the LLM
+
+00:23:55.040 --> 00:23:59.920
+and then make sure it's less on cream cheese because I'm watching my calories or whatever.
+
+00:23:59.920 --> 00:24:05.199
+So that's a skill that you can add. So one of the things when we do skills
+
+00:24:05.760 --> 00:24:12.640
+or when we are trying to make these skills is to actually see if the skills are actually
+
+00:24:12.640 --> 00:24:18.160
+even better, like making lives easier or like making the dashboards even better.
+
+00:24:19.359 --> 00:24:26.959
+And so what we do is when we give the prompt, we'll give the same prompt to an agent or an LLM
+
+00:24:26.959 --> 00:24:32.959
+with skills that has access to the skills and one without. Maybe we are just over engineering and
+
+00:24:32.959 --> 00:24:38.319
+maybe it's not something that's even helping the case. And you would always think you are
+
+00:24:38.319 --> 00:24:44.000
+making things better, but that's like a really subjective view. And so this one, no skills.
+
+00:24:45.199 --> 00:24:51.199
+And so we'll get that. So when we run those things, we'll do it across. So we have two arms,
+
+00:24:51.199 --> 00:24:56.079
+we have with skills and without skills. And skills essentially is like the best way to
+
+00:24:56.079 --> 00:25:02.560
+have plots, the best way to do tables, the best way to have value boxes and stuff like that.
+
+00:25:03.119 --> 00:25:09.280
+LLMs can generate value boxes, but maybe if you want to make sure you use icons or font awesome
+
+00:25:09.280 --> 00:25:16.719
+icons on your value boxes, that is a skill because you want it to be structured a specific way.
+
+00:25:17.520 --> 00:25:24.640
+And so we do that. We run that. Within that, it will take a screenshot. And then if you have
+
+00:25:24.640 --> 00:25:31.680
+judging enabled, the judge will actually look at that code. It will also look at the screenshot
+
+00:25:31.680 --> 00:25:38.560
+and it will actually evaluate and give it scoring. And this all went pretty well.
+
+00:25:38.560 --> 00:25:43.680
+One of the things I noticed when we are doing it for so many different iterations,
+
+00:25:44.400 --> 00:25:53.119
+when we had the 76 kind of things, and I asked it to rank it based on which dashboards,
+
+00:25:53.119 --> 00:25:58.479
+because if you just give it in isolation, it will be like, oh, this is a 10 on 10,
+
+00:25:58.479 --> 00:26:02.479
+this is a 10 on 10, this is a 10 on 10. And you're like, I don't know which is better than
+
+00:26:02.479 --> 00:26:08.160
+if you are saying everything is a 10 on 10. And so when you ask it to do relative ranking,
+
+00:26:08.800 --> 00:26:14.880
+one of the things I realized is like, I wouldn't agree with what it thought was like a number one
+
+00:26:14.880 --> 00:26:22.560
+or whatever. So I did an exercise wherein I actually created the top 20 that the LLM thought
+
+00:26:23.199 --> 00:26:30.000
+were really good dashboards, created a shiny app, wherein it was a double blind test,
+
+00:26:30.000 --> 00:26:34.400
+wherein users have to look at the shiny dashboards that are generated,
+
+00:26:34.400 --> 00:26:41.359
+and then rank it in the order of like, top to like the bottom 20. And people would like
+
+00:26:41.359 --> 00:26:47.119
+essentially like move it from like, if B is better than A or whatever. So they'll
+
+00:26:47.439 --> 00:26:53.439
+rearrange it that, and then they can submit their ranking. When they submitted that ranking,
+
+00:26:53.439 --> 00:26:58.880
+this is where the shocking part happens. I created a quarter dashboard is the model,
+
+00:26:59.520 --> 00:27:06.880
+when the LLM actually judged as number one, was like, number, I believe, 17 on what like,
+
+00:27:06.880 --> 00:27:12.239
+the what most people were judging as. So I was like, okay, there's a clear discrepancy on what
+
+00:27:12.239 --> 00:27:20.079
+LLMs are thinking a model is like, like a good dashboard. And what humans are thinking are quite
+
+00:27:20.079 --> 00:27:26.800
+different. So again, when you look at the number two that the LLMs thought were good, it was like
+
+00:27:26.800 --> 00:27:33.760
+number 11. And so this one, when I ran it, I ran it through two judges. So I ran it through,
+
+00:27:34.479 --> 00:27:41.280
+I think I believe at that point, it was Opus 4.6. And then I gave it to GPT 5.5. Like,
+
+00:27:41.280 --> 00:27:45.599
+do you all agree with this ranking? And then both of them said, yeah, this looks really good.
+
+00:27:46.160 --> 00:27:52.800
+But when I gave it like the double blind test to users, they did not agree on whatever was showing
+
+00:27:52.800 --> 00:28:02.239
+up. Let's see. And then number three, I think was getting a little closer and stuff like that. And
+
+00:28:02.239 --> 00:28:09.839
+the reason one of the questions is why even test all these models, right? And I think as we are
+
+00:28:10.000 --> 00:28:16.560
+progressing in the LLM age, one of the things at least most people might have started to notice,
+
+00:28:16.560 --> 00:28:24.800
+and I at least see it, is there is a lot of emphasis now on how much are we spending? And
+
+00:28:24.800 --> 00:28:30.800
+can we be more conservative on the amount of money we are spending on LLMs? Or can we
+
+00:28:31.920 --> 00:28:38.000
+get an idea of how much we are spending? And do we need to spend top dollar to get the best quality?
+
+00:28:38.800 --> 00:28:44.800
+And this exercise was a way to answer or even figure out if we can actually
+
+00:28:45.599 --> 00:28:52.319
+try to answer that question. So you can see how the discrepancy is just too wide at this point,
+
+00:28:53.280 --> 00:28:59.119
+what the LLM is rating or the LLM is judging as the best quality and what users are thinking
+
+00:29:00.479 --> 00:29:01.599
+as the best quality.
+
+00:29:03.604 --> 00:29:10.004
+as the best quality. But okay, and so this one actually you can see if which ones are using
+
+00:29:10.004 --> 00:29:15.284
+skills, which one I use in Manila, if it's a Python or R or whatever. But anyway, so this
+
+00:29:15.284 --> 00:29:21.204
+was the first iteration that I realized like, okay, so there's clearly this difference between
+
+00:29:21.204 --> 00:29:31.204
+what users are judging as a good-looking Shiny dashboard. I do feel LLMs were pretty good at
+
+00:29:31.683 --> 00:29:37.124
+figuring out like, at least the more expensive LLMs were figuring out where in, hey, is this
+
+00:29:37.124 --> 00:29:42.323
+code maintainable? Is it robust or whatever? But in terms of visually, they would start falling
+
+00:29:42.323 --> 00:29:48.003
+flat really quickly, like some of those that they would actually think it was good. When you would
+
+00:29:48.003 --> 00:29:54.244
+look, you'd be like, that's so basic, like, it's like pretty meh. Like, sometimes they would fail
+
+00:29:54.244 --> 00:29:59.124
+in rendering and the LLM would think it is like, oh, yeah, I like the minimalistic design. Like,
+
+00:29:59.124 --> 00:30:04.884
+there's nothing rendering because it didn't work. Yeah, yeah. So like, so those are the things that
+
+00:30:04.884 --> 00:30:10.243
+like, I think humans have a way in like, able to find out like, this does not look right.
+
+00:30:10.243 --> 00:30:15.844
+And I feel like LLMs were like, LLMs were really good at expressing what a good app is, but they
+
+00:30:15.844 --> 00:30:22.643
+were, I felt they were not good at actually judging what a good app is just by looking
+
+00:30:22.643 --> 00:30:27.364
+visually and stuff like that. And there's like explanation I can do on why that is the case.
+
+00:30:27.364 --> 00:30:36.084
+But that's at least something that I initially saw that was happening here. So that process
+
+00:30:37.283 --> 00:30:43.923
+ended up actually kicking off like a new thing that we ended up doing that I can share as well.
+
+00:30:43.923 --> 00:30:53.364
+So let's see. I think this relates to like, one of the questions that we got on Blue Sky,
+
+00:30:53.364 --> 00:31:01.444
+actually. So for the judging that you use for this experiment, was it only focused on
+
+00:31:02.164 --> 00:31:08.084
+aesthetics? Because the question was, like, quality gaps in LLM generated Shiny apps often
+
+00:31:08.084 --> 00:31:15.844
+show up in reactivity, logic and module structure. Curious what you use to evaluate good.
+
+00:31:16.644 --> 00:31:24.083
+Yeah, so when we do the screenshots, because if you look at across the board,
+
+00:31:24.803 --> 00:31:31.364
+every model has a different version of what makes a good Shiny dashboard, like when it's
+
+00:31:31.364 --> 00:31:37.603
+actually doing it. So some of them you'll see, they'll be like, take everything, just one page.
+
+00:31:37.603 --> 00:31:44.803
+Some of them will actually break it out into different nav tabs. And so for me, when
+
+00:31:46.083 --> 00:31:52.083
+I'm asking the LLM to judge, so in order to take a screenshot, I would be like, okay, make sure you
+
+00:31:52.083 --> 00:31:57.284
+like check something in a sidebar. So like the reactivity graph kicks off, and then something
+
+00:31:57.284 --> 00:32:02.564
+gets updated and then click through every nav tab. So if the reactivity would have broken,
+
+00:32:02.564 --> 00:32:07.364
+we would have caught the screenshot in that case, right? Like, because that would like be able to
+
+00:32:07.364 --> 00:32:13.044
+see if the reactivity thing was broken. But like in terms of the question, in the judging, like I
+
+00:32:13.044 --> 00:32:20.323
+said, we do it on four criteria. And the criteria for the judges is like, this is the visual one,
+
+00:32:20.323 --> 00:32:26.163
+but we also do based on code maintainability, like how well it is and stuff like that,
+
+00:32:27.044 --> 00:32:33.204
+we'll check. And this is just in general, in any dashboard or any apps people are generating,
+
+00:32:33.204 --> 00:32:38.644
+like how robust is it, how maintainable the code is kind of, we do that. But again, like I said,
+
+00:32:38.644 --> 00:32:43.844
+when we do that, like the other ones I was able to like agree on what it was able to find.
+
+00:32:44.404 --> 00:32:49.764
+But the delta I saw was the highest in the visual and UX quality. And that's where like that
+
+00:32:49.764 --> 00:32:55.764
+investigation like started, it's spurred off that investigation. And I started like digging more and
+
+00:32:55.764 --> 00:33:02.484
+more on why that is happening kind of. So I hope that answered the question. Yeah, very cool. I'm
+
+00:33:02.484 --> 00:33:10.564
+also curious, did an LLM write this? The judge? Yeah. So this one is yeah, like in the point,
+
+00:33:10.564 --> 00:33:15.924
+breaking it down into 10. But essentially, I was looking at like, how do you judge like on online,
+
+00:33:15.924 --> 00:33:20.563
+like you can, how do you judge a good app, and then you have like a bunch of articles, and I was
+
+00:33:20.563 --> 00:33:31.044
+like, alright, synthesize it for me, and give it a grade of top 10 or whatever. So okay. Any other
+
+00:33:31.044 --> 00:33:37.843
+questions before I can go do something else? Yeah, we had a question from Nathan earlier on
+
+00:33:39.123 --> 00:33:43.524
+about OpenCode. There was a lot of excitement about OpenCode. And I have never seen that before.
+
+00:33:43.524 --> 00:33:48.723
+That is so cool. The question was how this OpenCode compared to Posit Assistant.
+
+00:33:49.684 --> 00:33:54.723
+From what I remember, you can add a custom or local LLM as a back end and positron,
+
+00:33:54.723 --> 00:34:03.443
+which also kind of adds that agent harness. Yeah, so OpenCode, again, it's just an agent
+
+00:34:03.443 --> 00:34:12.003
+harness that you can use. The reason I use OpenCode to test it, like I'll use Cloud Code,
+
+00:34:12.003 --> 00:34:18.003
+I'll use Posit Assistant, depends on different things. But one of the things I feel Posit
+
+00:34:18.003 --> 00:34:22.883
+Assistant is really like, I think, in terms of like the tweaks that they have made to Posit
+
+00:34:22.883 --> 00:34:29.204
+Assistant, I think it is much better at like looking at graphs and being able to tell if like,
+
+00:34:30.323 --> 00:34:37.204
+there are tweaks that are made in Posit Assistant to be able to like render or like actually be able
+
+00:34:37.204 --> 00:34:44.084
+to info a graph that is being shown up, which in OpenCode, I think it's like you can do a lot of
+
+00:34:44.084 --> 00:34:51.044
+things. The reason I use OpenCode and I just just use it for this one is I use a subscription called
+
+00:34:51.123 --> 00:34:58.723
+OpenCode Go. I can show it over here. And it is, again, like I wouldn't like recommend people
+
+00:34:59.764 --> 00:35:05.924
+use that if you are using like sensitive company information or whatever. But OpenCode Go is like
+
+00:35:06.484 --> 00:35:10.883
+a subscription plan you can use. And it's like five bucks for the first month and 10 bucks for
+
+00:35:11.524 --> 00:35:17.603
+every month after, but allows you access to all the open weights models and they get updated
+
+00:35:17.603 --> 00:35:23.924
+right away. So you will be able to test any open weights models that come in. And I can cover what
+
+00:35:23.924 --> 00:35:30.163
+open weights model mean. But it is like again, it is so for me, it is like a flat fee that I can use
+
+00:35:30.163 --> 00:35:35.364
+it for testing all these different things instead of paying individual by tokens kind of that makes
+
+00:35:35.364 --> 00:35:41.443
+it much easier for me. And OpenCode Go is like one of the few providers that allows you across like
+
+00:35:41.443 --> 00:35:47.443
+I can buy a subscription, but then when will only allow me when this one allows me all the top
+
+00:35:47.443 --> 00:35:53.443
+open weights models. So for folks who might not know, and I don't want to. So we have like these
+
+00:35:53.443 --> 00:36:01.364
+different models. So you have something called as proprietary models. I did as this and this is like
+
+00:36:01.364 --> 00:36:08.644
+open AI and Anthropic. And then you have something called as open weights models.
+
+00:36:10.723 --> 00:36:15.204
+Weights. And then you have something called as open source models. So the open source and open
+
+00:36:15.204 --> 00:36:22.804
+weights are not the same. Okay, so, so we have these things. So open weights models would be
+
+00:36:22.804 --> 00:36:29.123
+something like GLM 5.2, which is like the new rage that people are talking about. It's minimax
+
+00:36:29.843 --> 00:36:37.283
+M3 and like bunch of different things like deep seek or whatever. So think of as proprietary
+
+00:36:37.283 --> 00:36:42.403
+models as like trying to think of an example that people would be able to relate. Let's say you go
+
+00:36:42.403 --> 00:36:49.443
+to Starbucks and you go order your coffee, like whatever, espresso or whatever. And Starbucks
+
+00:36:49.443 --> 00:36:54.804
+gives you that, whatever, espresso or like latte or like that rainbow latte or whatever, like the
+
+00:36:54.804 --> 00:37:02.563
+pink, blue, all the shades of the rainbow on your latte or Frappuccino. And, but they won't tell you
+
+00:37:02.563 --> 00:37:08.323
+the recipe. They'll make it and give it to you. So you get what you asked for. And this is your
+
+00:37:08.323 --> 00:37:14.563
+whatever Starbucks, I can draw the Starbucks, whatever you get this thing, which like loads
+
+00:37:14.563 --> 00:37:20.323
+and loads of whipped cream, which is don't get me wrong. It's really tasty. I just have to
+
+00:37:20.323 --> 00:37:27.364
+watch my calories. Okay. Open weights models is they will actually give you the coffee,
+
+00:37:27.364 --> 00:37:34.644
+but they will allow you to actually adjust the shots of coffee. They'll allow you how many pumps
+
+00:37:34.644 --> 00:37:42.564
+of syrup you want. So essentially there are these different knobs you can use that they can allow
+
+00:37:42.564 --> 00:37:47.763
+you. So you can tweak it a little bit based on how you want your coffee to be. You can do a little
+
+00:37:47.763 --> 00:37:53.044
+bit. You can't do one thing. They won't tell you is how they source the beans. They won't tell you
+
+00:37:53.044 --> 00:38:01.283
+where they got the syrup from. They won't tell you. The only thing you can do is like based on
+
+00:38:01.283 --> 00:38:06.804
+what you got is you can adjust like how many pumps of syrup or whatever coffee you need or
+
+00:38:06.804 --> 00:38:12.163
+whatever. If you need it like French toast or I don't know, whatever coffee terms people use.
+
+00:38:13.044 --> 00:38:18.244
+Open source is everything is open. They'll tell you where they source their coffee beans from.
+
+00:38:18.244 --> 00:38:24.004
+They'll tell you where they, how they made their coffee, the whole recipe, everything is out there.
+
+00:38:24.004 --> 00:38:29.044
+So there's not that many open source models. There's a lot of open weights models. Open weights
+
+00:38:29.044 --> 00:38:37.044
+models, you can actually host it on your server and you can run it locally. Some, yes, like the
+
+00:38:37.044 --> 00:38:42.643
+smaller models, but the bigger ones you cannot, you can store it on a server and run it. And so
+
+00:38:42.643 --> 00:38:47.603
+if you want that data to just stay with your company, you can use these. Open weights models
+
+00:38:47.603 --> 00:38:53.283
+do have different kinds of licenses. So you have to check if you can use it for commercial
+
+00:38:53.283 --> 00:38:58.484
+applications or not. So, but this is like the open weights models and open code go allows you
+
+00:38:58.484 --> 00:39:07.364
+to use all the open weights models. They claim the, the open weights models are like stored
+
+00:39:08.083 --> 00:39:14.804
+somewhere on a server and it won't be trained. I don't know with 10 bucks, I'm not really sure if
+
+00:39:14.804 --> 00:39:19.684
+like they hold true to that. But again, like I said, if you're just trying new things, I think
+
+00:39:19.684 --> 00:39:26.403
+it's good. I cannot vouch for like how safe it is for your like company data kind of. So you just
+
+00:39:26.403 --> 00:39:31.364
+want to be a little skeptical anytime you have something like that. But it is really good to
+
+00:39:31.364 --> 00:39:37.843
+actually try. And open weights models have come a long way. I'll show you one of those examples.
+
+00:39:37.843 --> 00:39:42.403
+But yeah, so these are, these are the difference between open weights proprietary models and open
+
+00:39:42.403 --> 00:39:47.283
+source models. Most people, when they're talking about like, oh, open, like people use these
+
+00:39:47.283 --> 00:39:51.444
+interchangeably, but they are not because open weights, they don't tell you where the beans came
+
+00:39:51.444 --> 00:40:00.723
+from. They don't tell you the recipe. So, okay. So, okay, cool. Going back. So I did that. And then
+
+00:40:01.924 --> 00:40:06.723
+one of the things when, so on the Shiny team, we are working on like the skills
+
+00:40:07.603 --> 00:40:13.843
+to see if the dashboards are being like made better. And we wanted to see. So, okay, before
+
+00:40:13.843 --> 00:40:22.804
+I actually cover the scale, let me actually show you the, no, maybe. Okay. So this is like the whole
+
+00:40:22.804 --> 00:40:28.163
+range of pricing that we have. So you have something that's like really cheap, like a deep
+
+00:40:28.163 --> 00:40:35.044
+seek, we flash to like a really expensive, like whatever, the Claude Fable or whatever, which I
+
+00:40:35.044 --> 00:40:40.884
+did not get to test it, which I like, even I don't usually test things on like the most expensive
+
+00:40:40.884 --> 00:40:46.163
+models, because this is not rocket science, like Shiny app. I mean, you can make rocket science
+
+00:40:46.163 --> 00:40:53.124
+with the Shiny app, but you don't need to just spend a lot of money to make, like I tested on
+
+00:40:53.124 --> 00:40:58.884
+Opus, but I did not feel like I wanted to test with Fable when the access was there, just because
+
+00:40:58.884 --> 00:41:03.603
+you can like just dump in a lot of money. And at some point you will get things that are like
+
+00:41:03.603 --> 00:41:11.444
+similar. One of the things when we test, we do not give explicit instructions. So if I go back
+
+00:41:11.444 --> 00:41:18.403
+to my Shiny generation, we'll give something that's a little more vague. So it will be like
+
+00:41:18.403 --> 00:41:24.163
+a build a professional grade Shiny dashboard for this data set. And then like these things,
+
+00:41:24.163 --> 00:41:30.884
+because if I be super prescriptive, it becomes really hard to judge because everyone will look
+
+00:41:30.884 --> 00:41:35.924
+the same. It's like saying, like, make sure everyone wears Nike sneakers tomorrow or whatever.
+
+00:41:35.924 --> 00:41:42.564
+And it's really specific, like whatever Jordans, I don't know, but like Jordans, the 1990 Jordans
+
+00:41:42.564 --> 00:41:46.484
+or whatever. And then everyone just looks the same. And it's really hard for me to judge
+
+00:41:46.484 --> 00:41:51.763
+what creativity did the LLMs bring. And so that's why the instructions are a little vague.
+
+00:41:52.564 --> 00:41:59.684
+And I wanted to see how well they do. Okay, so this is that. And then the pricing, like I said,
+
+00:41:59.684 --> 00:42:04.004
+it's all over the place. You have something that's really expensive and something that's like
+
+00:42:04.004 --> 00:42:09.364
+a fraction of the price kind of. And so the second exercise that I did, so we worked on the scales,
+
+00:42:09.364 --> 00:42:15.843
+made the scales a little better. And then I wanted to understand what actually humans,
+
+00:42:15.843 --> 00:42:22.244
+what kind of dashboards humans are looking for. And so again, this was another double blind test
+
+00:42:22.244 --> 00:42:28.564
+where humans can actually look at the dashboard, and then they can rank it into these tiers,
+
+00:42:28.564 --> 00:42:34.723
+which is what the Gen Z do these days, like S to F tier. And so you will essentially be like,
+
+00:42:34.723 --> 00:42:39.044
+taking like, oh, this is an S tier, or this is a B tier, which is like resonance with Gen Z. So
+
+00:42:39.044 --> 00:42:44.244
+if you have any Gen Z people you're working with, if you mentioned tiers, they'll like,
+
+00:42:44.244 --> 00:42:48.564
+be able to do it. But essentially, this is another double blind test, like I don't know which tier
+
+00:42:48.564 --> 00:42:57.924
+is which had 24 people submitted. Again, this was not judged by the LLM yet. Because right now,
+
+00:42:57.924 --> 00:43:02.324
+the goal of this is to actually understand what kind of dashboards appeal to people,
+
+00:43:02.884 --> 00:43:09.044
+and trying to learn those patterns, and then like formulate it as a skill, so that we can
+
+00:43:09.044 --> 00:43:14.083
+have the LLM judge based on that, like I said, there's a lot of trial and error that will happen.
+
+00:43:14.083 --> 00:43:18.643
+But one of the things that we started realizing when we are doing these, and these are like
+
+00:43:18.643 --> 00:43:26.324
+different, how people are judging this, like the, the honeybeehive graph or whatever, is you would
+
+00:43:26.324 --> 00:43:31.603
+have like some of the proprietary models that were being rated pretty high. But then you would
+
+00:43:31.603 --> 00:43:37.283
+see some of the models that are being rated like really high in the list, they are like a fraction
+
+00:43:37.283 --> 00:43:44.723
+of the cost of how much the more expensive models are being. And so I think this one now actually,
+
+00:43:44.723 --> 00:43:50.083
+we are trying to think is like, what do we have the more like the cheaper open weights model do
+
+00:43:50.083 --> 00:43:56.963
+compared to what the proprietary models would be doing. And so like, again, this is something
+
+00:43:56.963 --> 00:44:05.283
+that's a work in progress. I am planning to do a lot more local models as well, like something I
+
+00:44:05.283 --> 00:44:10.564
+can run on my machine to see how they generate, how they compare kind of, but one of the things
+
+00:44:10.564 --> 00:44:14.564
+that we do since this is double blind, people don't know if they are creating something with
+
+00:44:14.564 --> 00:44:20.004
+skills or without skills, this at least tells me if the skills are actually making a difference.
+
+00:44:20.004 --> 00:44:25.684
+So in this case, like, does the skill have an advantage over vanilla, maybe the LLMs are good
+
+00:44:25.684 --> 00:44:31.523
+enough that they don't need skills. And so this is a way we are measuring that same thing, like,
+
+00:44:31.523 --> 00:44:37.924
+are we doing like better with the skills in our, how do we make sure it's like level. And so those
+
+00:44:37.924 --> 00:44:44.564
+are the things that we are evaluating right now, making sure we keep on testing. And so
+
+00:44:45.843 --> 00:44:52.723
+and then hopefully, like I said, like making sure the judges are judging in a way that is similar
+
+00:44:52.723 --> 00:44:58.884
+to how humans would be judging as well. But yeah, I know there's a lot of stuff. But yeah, let me
+
+00:44:58.884 --> 00:45:04.324
+wait here for a second if people have questions. Who's coming out on top so far?
+
+00:45:05.283 --> 00:45:10.564
+All right, right now it's a GPT 5.5 is the design that most people like.
+
+00:45:12.564 --> 00:45:19.364
+But yeah, so like I said, that's something and this is not like the only thing because right now
+
+00:45:19.364 --> 00:45:25.044
+I'm going to add local testing and then we are constantly changing our skills to make sure
+
+00:45:25.044 --> 00:45:32.163
+something that did not work. So in this case, anthropic models fail. Like I mean, they did not
+
+00:45:32.163 --> 00:45:37.843
+fail massively. But like one of the things that happened is we found out that in our skills,
+
+00:45:37.843 --> 00:45:43.924
+we had examples that were using the test data sets in the R. And one of the things like,
+
+00:45:44.643 --> 00:45:50.163
+and at the bottom, we mentioned that do not use test data sets when you're creating it.
+
+00:45:50.163 --> 00:45:55.523
+But somehow the one on top, it would always use it. So even though you gave it a thing,
+
+00:45:55.523 --> 00:45:59.843
+it would end up making something with test data sets. So that's why it was ranked like pretty low
+
+00:45:59.843 --> 00:46:05.444
+in the list. It made a good app, but it did not follow the instructions correctly. So hopefully,
+
+00:46:05.444 --> 00:46:10.483
+so we are tweaking the skills to make sure it can be better in the next run.
+
+00:46:11.604 --> 00:46:15.924
+Very cool. Are these skills available? Like can folks go and try them out now?
+
+00:46:16.724 --> 00:46:25.844
+So the Python one is still being worked on, but the R one should be, I can send the link,
+
+00:46:25.924 --> 00:46:31.684
+but yeah, there should be in the deposit there. Okay, I can look it up. Thank you.
+
+00:46:33.363 --> 00:46:40.324
+Okay, we had a couple more questions that I would love to get in really quickly, because we only
+
+00:46:40.324 --> 00:46:46.804
+have 10 minutes left. Libby McKenna had asked, is there an SOP slash user guide for your whole
+
+00:46:46.804 --> 00:46:54.324
+process? Do you have this open sourced? Yeah, so this is in the Shinygen repo. I have like,
+
+00:46:54.964 --> 00:47:01.604
+Libby or Isabella can share the links later, but it should have all of it and it's like all public.
+
+00:47:02.483 --> 00:47:08.804
+Okay, great. And then the last one is someone asked, I don't see any Google frontier models
+
+00:47:08.804 --> 00:47:15.204
+on here. Is there a reason for that? No, there's no reason. So we wanted to test
+
+00:47:16.003 --> 00:47:21.523
+Google once again, like it started off like earlier, it was just actually trying to see
+
+00:47:21.523 --> 00:47:27.523
+the difference between OpenAI and Anthropic and then we ended up adding, but yeah, the goal would
+
+00:47:27.523 --> 00:47:36.163
+be to add like the Google one, the one of the reasons we stopped adding because Google, so
+
+00:47:36.163 --> 00:47:43.444
+Google release cycle is like different from other models. So usually OpenAI will do like a six week
+
+00:47:43.444 --> 00:47:49.444
+release, like a new model. So one of the things is Google right now has this thing, like it has
+
+00:47:49.444 --> 00:47:55.523
+3.5 flash, which is like their latest model, but their earlier model is like pretty old, like three,
+
+00:47:55.523 --> 00:48:02.243
+whatever, the 3.1 probe. I think they are going to plan it by the end of the month,
+
+00:48:02.243 --> 00:48:07.844
+but the delta between their model is like, I think it's like closer to five or six months.
+
+00:48:07.844 --> 00:48:12.403
+And so I did not want to run something that's outdated and then have a new one come up.
+
+00:48:12.403 --> 00:48:16.403
+So hopefully when the new one comes up, we can actually run it at the same time.
+
+00:48:16.564 --> 00:48:18.163
+Perfect. Thank you, Karan.
+
+00:48:20.564 --> 00:48:25.684
+If it's all right, I'd love to add on to Libby's question about like, if there's
+
+00:48:26.564 --> 00:48:31.204
+SOP for this, like if we wanted to do something like this, but with something that's not shiny,
+
+00:48:31.204 --> 00:48:33.924
+do you have any recommendations for that?
+
+00:48:33.924 --> 00:48:40.003
+I mean, depends on what your task is, because like the whole thing about evals, so evals is the
+
+00:48:40.324 --> 00:48:47.684
+underlying concept, which is like, can you have like a quiz that you can give your LLMs and can
+
+00:48:47.684 --> 00:48:54.403
+it like run that quiz every single time and like give results that are in line with expect, because
+
+00:48:54.403 --> 00:49:03.044
+the whole thing with evals is you are essentially generating the targets. You are actually telling
+
+00:49:03.044 --> 00:49:10.883
+what the LLM should be generating. And so I think you get to define which direction you
+
+00:49:10.883 --> 00:49:16.483
+want the LLMs to give you an answer. And if it's not giving the answer, you can make a skill
+
+00:49:16.483 --> 00:49:22.003
+to tweak it, to take it, like take the horse to the water. And so that's what essentially skills
+
+00:49:22.003 --> 00:49:29.204
+are. And evals actually checks, is the horse going close to the water? So that's the whole loop. So
+
+00:49:29.204 --> 00:49:34.084
+you keep on tweaking your scale to see if the horse is going. But like, that's the thing is
+
+00:49:34.084 --> 00:49:39.363
+like, you don't want to just rely on that, because when the new models come, they might be good
+
+00:49:39.363 --> 00:49:44.724
+inherently, they might not even need the skills. And so making sure that's why we have the vanilla
+
+00:49:44.724 --> 00:49:48.403
+and the scale arm to actually see if that is happening or not.
+
+00:49:49.523 --> 00:49:56.403
+Very cool. So many considerations. And there's time for one more question. We got a question
+
+00:49:56.403 --> 00:50:01.684
+about the, could you talk a little bit about the dashboard for performance evaluation?
+
+00:50:01.684 --> 00:50:07.523
+Is it a shiny app? And can it be customized for other projects? And then thank you for
+
+00:50:07.523 --> 00:50:15.444
+the explanations. Sure. So performance as in like, I'm just want to clarify. So performance as in
+
+00:50:15.444 --> 00:50:21.204
+like how well it does with like a lot of data or like a lot of different reactivities. Is that what
+
+00:50:21.204 --> 00:50:27.123
+was meant? I think it was just the dashboard of the performance of the LLMs, like the dashboard
+
+00:50:27.123 --> 00:50:31.844
+you showed that have the ranking. Oh, yeah. Oh, yeah. Asking if that was a shiny app and if it
+
+00:50:31.844 --> 00:50:38.483
+could be customized for something different. Oh, okay. So, so I had several dashboards. So this is
+
+00:50:39.523 --> 00:50:46.564
+you did. Yeah. So this is a shiny app. This is not again, like, so this is where,
+
+00:50:46.564 --> 00:50:55.363
+when you are using an LLM is the LLM will use a lot of custom CSS and JavaScript. So it's a you,
+
+00:50:55.363 --> 00:51:02.243
+you can use it, but it's not like a really clean, reusable way because they will like get things
+
+00:51:02.243 --> 00:51:07.924
+in a way how you want it like to get the task achieved. This is not in the best,
+
+00:51:08.964 --> 00:51:16.403
+like reusable format that people should be using kind of. But yeah, ideally, LLMs are pretty
+
+00:51:16.403 --> 00:51:21.204
+good. You can give it like, hey, I want the shiny app in this way. And they could like
+
+00:51:21.204 --> 00:51:24.564
+do a bunch of different things. But this one actually has a lot of custom
+
+00:51:26.324 --> 00:51:31.924
+JavaScript built on top of it. So it's not like it is a shiny app, but like shiny app,
+
+00:51:31.924 --> 00:51:37.763
+you can expand it however you want it. And but this is a lot of custom, like I said, stuff on
+
+00:51:37.763 --> 00:51:44.564
+top of it. Okay, awesome. Well, we have five minutes left. Is there one more thing that you
+
+00:51:44.564 --> 00:51:51.684
+wanted to chat about and show? Sure. So one of the things at least like I will like to talk about
+
+00:51:51.684 --> 00:51:59.523
+is, again, like, when I'm trying to find my mirror, but okay, that's okay, let me Okay.
+
+00:52:00.084 --> 00:52:06.564
+So one of the challenges that people are like, why are LLMs so bad at visualizing or whatever,
+
+00:52:06.564 --> 00:52:13.204
+like, and I think it's just understanding why, how LLMs process like images. So anytime you have
+
+00:52:13.204 --> 00:52:19.204
+an image of a dashboard, because we'll take a screenshot of like something over here and some
+
+00:52:19.204 --> 00:52:25.363
+graphs. So whenever LLMs you feed it to the LLM, which is like, hey, can you tell if this is a good
+
+00:52:25.363 --> 00:52:30.804
+or a bad thing? I think there's a lot of translation that goes on. And I think things get
+
+00:52:30.804 --> 00:52:37.123
+lost in those translations. So anytime it gets over here, what it does is actually it like breaks
+
+00:52:37.123 --> 00:52:43.523
+that image or it downscales the image. So it will like, let me show it like this. So it'll
+
+00:52:43.523 --> 00:52:48.643
+downscale the image like this into a smaller one, because the LLMs can only process like something
+
+00:52:48.643 --> 00:52:56.403
+that's smaller, it'll actually break it into tiles like these, and then convert each tiles into like
+
+00:52:56.403 --> 00:53:03.763
+vectors. It's a bunch of numbers. And each of them will actually be able to like, say like,
+
+00:53:03.763 --> 00:53:10.003
+oh, does this have a text? Is the text? Is there a box? What are the colors or like something? So
+
+00:53:10.003 --> 00:53:16.324
+the vectors will present that. And then there is something called as an adapter that actually takes
+
+00:53:16.324 --> 00:53:23.204
+all this like tiny information and it tries to synthesize that to an LLM. And so then the LLM
+
+00:53:23.204 --> 00:53:28.483
+is sitting over here. And it's like, okay, looking at all of this, let me judge if this is a good
+
+00:53:28.483 --> 00:53:35.844
+dashboard. But you see, in all of these things, something gets lost. And that's why like LLMs are
+
+00:53:35.844 --> 00:53:42.564
+at this point, not that good at it, because it's trying to like downsize it, cut it and then join
+
+00:53:42.564 --> 00:53:48.324
+it again. And that's where I feel like things are not being perfect. When you are looking, you are
+
+00:53:48.324 --> 00:53:54.003
+being able to look at the whole thing, all at once, you are not like looking at tiny keyhole things
+
+00:53:54.003 --> 00:53:59.604
+and trying to figure out what is happening. And so that's like essentially the reason why LLMs
+
+00:53:59.604 --> 00:54:04.804
+right now are struggling with visually judging something. So just wanted to give some context,
+
+00:54:04.804 --> 00:54:09.523
+like I'm not saying like, oh, LLMs are bad at this. Like it's understanding why they are not
+
+00:54:09.523 --> 00:54:13.763
+being able to do it. I think that's equally important. Yeah. It's like a computer vision
+
+00:54:13.763 --> 00:54:19.044
+problem, right? Where you're like, let's break this into numbers, basically. And then you sort
+
+00:54:19.044 --> 00:54:23.924
+of lose a lot of the context of the image composition and why it might be good or bad,
+
+00:54:23.924 --> 00:54:30.324
+appealing or not to human eyeballs and the human brain. Well, Karin, this was amazing.
+
+00:54:30.964 --> 00:54:38.643
+There was a part of our discussion where the chat slowed down so much because we were all just
+
+00:54:38.643 --> 00:54:44.003
+processing what you were saying. We were like, what is happening? I am so glad that there are
+
+00:54:44.003 --> 00:54:51.044
+smart people at Posit working on this problem and thinking about this in a detached and
+
+00:54:51.044 --> 00:54:55.283
+disinterested sort of way and making sure that we're doing good things and not just
+
+00:54:55.283 --> 00:55:02.564
+moving forward blindly. I think that this was amazing. If anybody is curious, they can go
+
+00:55:02.564 --> 00:55:10.804
+check out Shinygen, the repo. But also I wanted to reiterate for everybody, this is like your job,
+
+00:55:10.804 --> 00:55:18.883
+right? You are doing this for us so that we know that our tools that we're using are good at what
+
+00:55:18.883 --> 00:55:24.163
+they are supposed to be doing. It does not fall to us to do this for ourselves, but we can take
+
+00:55:24.163 --> 00:55:28.324
+this forward and adapt this for the things that we are trying to build and make better.
+
+00:55:29.044 --> 00:55:32.084
+And I think that that is what I would like everybody to take away, that you don't have
+
+00:55:32.084 --> 00:55:38.243
+to go replicate what the team is doing, QAing, all of this stuff. But all of these
+
+00:55:38.243 --> 00:55:44.724
+little bits and pieces can be taken forward. Thank you so much. I hope you had a good time.

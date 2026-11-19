@@ -1,0 +1,1921 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:14.080
+Let's go ahead and get started and I'm really excited to introduce our featured lab managers
+
+00:00:14.080 --> 00:00:20.559
+for today, Daniel Chen and Kylie Ainslie. Daniel, you are going to go first today. Would
+
+00:00:20.559 --> 00:00:22.719
+you like to introduce yourself first?
+
+00:00:23.520 --> 00:00:30.000
+Hello, yes, I am a lecturer at the University of British Columbia, which is up in Vancouver,
+
+00:00:30.000 --> 00:00:36.560
+Canada. And yeah, I'm gonna end up talking about a project that ends up being very local to the
+
+00:00:36.560 --> 00:00:43.439
+city that I'm currently living in. Sweet. I'm so excited. And you teach data science courses.
+
+00:00:43.439 --> 00:00:48.720
+And I believe that you mostly teach in Python, right? I teach data science courses. So we have
+
+00:00:48.880 --> 00:00:53.599
+the Masters of Data Science program at UBC. But that program actually gets taught in both
+
+00:00:53.599 --> 00:01:00.160
+languages, R and Python. So we have courses in both. Some of our project-based courses,
+
+00:01:00.160 --> 00:01:05.599
+they're sort of open to the students for them to pick. And then what ends up happening, at least
+
+00:01:05.599 --> 00:01:09.040
+in the last couple of years, is the students themselves just all pick Python projects. So
+
+00:01:10.559 --> 00:01:15.680
+even though we teach them both, it's up to them on what they want, because I guess they feel like
+
+00:01:15.680 --> 00:01:22.000
+Python's more popular in industry. But if you look at the TOPI index, R is slowly creeping up.
+
+00:01:22.000 --> 00:01:27.040
+It sure is. I still have questions about that index sometimes, though.
+
+00:01:27.919 --> 00:01:33.519
+Well, it's fantastic to get some insight into that grad program. A lot of people have questions
+
+00:01:33.519 --> 00:01:38.720
+about data science grad programs. That's something we can talk about in the Discord, too. Like,
+
+00:01:38.720 --> 00:01:42.959
+if you've been through a data science grad program, I have myself. If you've taught in one,
+
+00:01:42.959 --> 00:01:48.080
+I've taught in private programs. If you have questions, put them in the chat. We can chat
+
+00:01:48.080 --> 00:01:54.800
+about them later. And then we are also joined by our other project lab manager today, Kylie Ainsley,
+
+00:01:54.800 --> 00:01:58.000
+who's been on the lab before. Kylie, would you like to introduce yourself?
+
+00:01:58.639 --> 00:02:04.239
+Sure. Thanks, Livvy. My name's Kylie, and I currently work at the University of Melbourne
+
+00:02:04.239 --> 00:02:08.559
+in Melbourne, Australia. But luckily, I am not currently in Australia, because it's the middle
+
+00:02:08.559 --> 00:02:16.720
+of the night. I am in Central Time, US. Hooray. And I am an infectious disease modeler by training.
+
+00:02:17.360 --> 00:02:24.080
+And I work on a lot of projects that help the government make decisions about how to slow
+
+00:02:24.080 --> 00:02:27.919
+infectious disease spread and that kind of thing. But that's not at all what I'm going to talk about
+
+00:02:27.919 --> 00:02:32.720
+today. Today, I'm going to talk about a pet project that I spent a long, dark Northern
+
+00:02:32.720 --> 00:02:39.360
+European winter creating to better find the R packages that you need when you need them. So
+
+00:02:39.360 --> 00:02:46.080
+we'll talk about that more later. Sweet. I cannot wait. Also, I love that Michael has his cup of
+
+00:02:46.080 --> 00:02:51.759
+coffee or tea in his hands. I'm very jealous. It looks very warm and cozy, Michael. Okay,
+
+00:02:51.759 --> 00:02:56.639
+let's go ahead and get started. Daniel, would you like to share your screen and give us a little
+
+00:02:56.639 --> 00:03:01.520
+rundown on what you're going to be sharing today for your project? Everybody, I'm going to set a
+
+00:03:01.520 --> 00:03:08.479
+timer to help Dan out. I'm going to set it for about 25 minutes here, and you might hear me
+
+00:03:08.479 --> 00:03:13.520
+rudely interrupt and tell Dan how much time he has left. Please be patient with me. Take it away,
+
+00:03:13.520 --> 00:03:24.399
+Dan. Oh, wait, you're muted, Dan. Take it away after you unmute. Hello. Hi. So this is one of
+
+00:03:24.399 --> 00:03:32.559
+the end results of what I'm going to be showing you, which is here are the top 30 cherry blossom
+
+00:03:32.559 --> 00:03:41.679
+locations in the city of Vancouver and sort of a traveling salesman routing path to hit all 30
+
+00:03:41.679 --> 00:03:46.720
+points. So that's sort of like the end result that was originally when I started this project. It was
+
+00:03:46.720 --> 00:03:54.000
+hey, how do we go and find like places to go see cherry blossoms? And then given all of these
+
+00:03:54.000 --> 00:04:00.320
+points, like how do we like essentially move through them? And I'll sort of talk through
+
+00:04:00.880 --> 00:04:06.160
+like the thought process of what happened. So originally started with this LinkedIn post
+
+00:04:06.880 --> 00:04:11.679
+from Kyle Walker. So he's a good friend of ours in the art community doing all everything,
+
+00:04:13.119 --> 00:04:18.640
+everything and anything to do with maps and census data. More than he could possibly ever
+
+00:04:18.640 --> 00:04:24.720
+want to know about maps or any R package. He's amazing. Yeah. So he's got everything
+
+00:04:25.600 --> 00:04:30.480
+to do with maps in R. And then he had this post two months ago. Well, at the time, I just saw it
+
+00:04:31.600 --> 00:04:39.119
+around like this traveling salesman problem in R. And I thought that was pretty timely because it
+
+00:04:39.119 --> 00:04:44.320
+was oh, I know exactly how to apply this type of problem through like moving through like locate
+
+00:04:44.320 --> 00:04:52.799
+any set of locations in on like points on a map. So that was like sort of the starting point of
+
+00:04:52.799 --> 00:04:58.239
+like I think I have all the pieces. I know how to find like tree data, which comes from the Vancouver
+
+00:04:58.239 --> 00:05:03.519
+open data portal. That's because I knew that data set existed. And I was like, okay, we can
+
+00:05:03.519 --> 00:05:06.959
+totally map these two things together and then like route through the city.
+
+00:05:07.440 --> 00:05:17.359
+Yeah. So one of the things is Vancouver is actually they have a big giant open data portal.
+
+00:05:17.359 --> 00:05:23.359
+And what the city also has is they have information not just on cherry blossoms, but like every single
+
+00:05:23.359 --> 00:05:30.000
+tree planted by the city in a data set. So that's, you know, there's a lot of trees in the city,
+
+00:05:30.559 --> 00:05:35.119
+which is really nice. And then, you know, the thought process is, hey, you can go and filter
+
+00:05:35.119 --> 00:05:39.760
+this by, you know, something along the lines of like flowering cherries or cherry blossoms and
+
+00:05:39.760 --> 00:05:49.839
+stuff like that. So those are all the raw pieces that I whoops, that I had. And then I can go
+
+00:05:49.839 --> 00:05:57.839
+through. I have a question. Yes, question. So I have a question. I have a question.
+
+00:05:58.799 --> 00:06:02.399
+All right. Yes, question. Why, why were you doing this? Besides seeing
+
+00:06:02.959 --> 00:06:08.480
+Kyle's LinkedIn post? Why were you like, I must map all the cherry trees in Vancouver?
+
+00:06:09.600 --> 00:06:16.640
+Yeah, because cherry blossom season is only about a month in the city. They bloom in different
+
+00:06:16.640 --> 00:06:21.440
+points. My mom was actually coming to visit during this time. So I was like, hey, this is I need to
+
+00:06:21.440 --> 00:06:26.959
+go figure something out. So we would go and so I was like, okay, let me go find some certain
+
+00:06:26.959 --> 00:06:33.200
+locations just to be able to have a plan for where to go. And then I mapped out like the top
+
+00:06:33.200 --> 00:06:38.239
+whatever points just in case like certain place we're not in bloom, which we'll sort of talk about
+
+00:06:38.239 --> 00:06:45.600
+that as a follow up problem afterward. So that's, that's why. And then it was originally the thought
+
+00:06:45.600 --> 00:06:49.839
+process was, oh, if I map out enough of these points, maybe I can run through the city or bike
+
+00:06:49.839 --> 00:06:55.920
+through the city through all of these. And so that's sort of the thought process through all
+
+00:06:55.920 --> 00:07:07.040
+of that. All right, so here's some R codes. And this is a screen sharing session session.
+
+00:07:08.000 --> 00:07:12.480
+Could you make your text slightly bigger? So we can see, especially later on YouTube, because
+
+00:07:13.040 --> 00:07:14.640
+you know, we'll all be on a small phone.
+
+00:07:16.160 --> 00:07:21.279
+I'm gonna have to figure something out. Okay. So the other thing about this project was,
+
+00:07:22.079 --> 00:07:27.600
+since I this was like, slowly becoming a or thought I was thinking was going to be a larger
+
+00:07:27.600 --> 00:07:33.040
+project from the beginning. I also wanted it because I'm a teacher to try to like do this
+
+00:07:33.040 --> 00:07:39.679
+in a way where this becomes like a big teaching example. So I think if you go to the repository,
+
+00:07:39.679 --> 00:07:49.040
+which was in my big giant link dump, I believe there is. Yeah, so there's this like initial
+
+00:07:49.040 --> 00:07:57.760
+analysis.r file. And I would say this file was created as I was sort of vibe coding along with
+
+00:07:57.760 --> 00:08:03.679
+Claude just to be like, hey, just help me load some data sets. Also, I was using Claude because
+
+00:08:03.679 --> 00:08:10.399
+I don't actually make maps very often. I know enough about GIS techniques. But the actual
+
+00:08:10.399 --> 00:08:16.079
+function in the SF package, I haven't been working with that in such a really long time.
+
+00:08:16.239 --> 00:08:22.160
+So this was the initial analysis of like, oh, let's just go and load up this giant trees
+
+00:08:22.160 --> 00:08:28.399
+geo JSON file. They also had it in the shape file. But I think like I just wanted it as a single file,
+
+00:08:28.959 --> 00:08:36.799
+which is why I op and luckily the open data portal had this format, which was just a geo JSON file.
+
+00:08:36.799 --> 00:08:42.080
+So it's just one file. So it was easier to also share as well. And then the first thing I did was
+
+00:08:42.559 --> 00:08:47.840
+And then the first thing I did was like, okay, go look for they actually had this data set called
+
+00:08:47.840 --> 00:08:51.840
+common name. And then it was like, okay, go look for Japanese cherry blossoms. And then I very
+
+00:08:51.840 --> 00:08:59.440
+quickly realized that is not enough because there are so many I think I can actually run the code.
+
+00:09:00.320 --> 00:09:03.760
+I would love that. That was my first question was like, wait, when I was looking at the open
+
+00:09:03.760 --> 00:09:09.119
+data portal, it was just like scientific names and tree names and none of them said cherry.
+
+00:09:10.080 --> 00:09:16.479
+Yeah. Oh, no. I have a Oh, no, you guys. I didn't light my candle.
+
+00:09:17.760 --> 00:09:22.880
+This is the problem. All right. Hold on. Hold on. We can do this. We can do this.
+
+00:09:24.880 --> 00:09:36.719
+Where am I? Okay. All right. There we go. Oh, no. Oh, wait. I know what happened. There we go.
+
+00:09:37.520 --> 00:09:43.760
+Public, public, public trees. There we go. Okay. Yeah, I this was the original path. This was like
+
+00:09:43.760 --> 00:09:51.760
+at the original like vibe coded thing. And I've afterwards made it a lot. Like I formatted the
+
+00:09:51.760 --> 00:09:57.359
+data set, the folder structure, you know, to make it look prettier. So I never went back to edit
+
+00:09:57.359 --> 00:10:01.760
+this file after the initial pass. But there's a column called common name. And then I very quickly
+
+00:10:01.760 --> 00:10:05.039
+realized that like, there are a lot of things that are Japanese something there's like flower
+
+00:10:05.039 --> 00:10:12.400
+flowering ash and then, like, I clearly in very quickly realized I'm way over my head because I
+
+00:10:12.400 --> 00:10:18.080
+don't know what classifies as a cherry blossom or I realized that there were a lot of other things
+
+00:10:18.080 --> 00:10:22.559
+that were blooming in this time that wasn't exactly Japanese cherry blossom like that is like
+
+00:10:23.200 --> 00:10:28.400
+a species, one species of flowering cherries that are planted in the city, but that wasn't the only
+
+00:10:28.400 --> 00:10:36.320
+one. So how many are there? So So here's the thing. So you can see like, there's two regex patterns.
+
+00:10:37.599 --> 00:10:44.080
+One was look for the word cherry, and then look for like a sub thing of Japanese and flowering
+
+00:10:44.080 --> 00:10:51.440
+or flower because there are like something flowering cherries like those are those are
+
+00:10:51.440 --> 00:10:56.320
+different species that were listed or Japanese flowering cherries like one but then there's
+
+00:10:56.320 --> 00:11:02.080
+like Japanese cherry trees, and then like something flowering cherries. So that's like my
+
+00:11:02.080 --> 00:11:08.559
+sort of quick process over what was happening. And I think there's I want to say I don't remember
+
+00:11:08.559 --> 00:11:12.479
+the unique number of common names, but we can totally unique.
+
+00:11:14.000 --> 00:11:20.000
+I was just gonna say, yeah, give us a little distinct. I'm shocked that that all of the
+
+00:11:20.000 --> 00:11:26.159
+planted trees are tracked. Like, I don't know if my city tracks anything.
+
+00:11:28.080 --> 00:11:32.719
+Super interesting thing was the city tracked all their planted trees. I don't know how often it's
+
+00:11:32.719 --> 00:11:39.280
+updated. But it's like, having this information was good enough already. Which is, you know,
+
+00:11:39.280 --> 00:11:42.640
+fund your city government. That's one of the things I also learned about this project was
+
+00:11:43.760 --> 00:11:49.520
+the city does a really good job with this stuff. For time's sake, I can sort of go through what
+
+00:11:49.520 --> 00:11:53.840
+the process is. So what I ended up finding was like 10 different tree species that had some
+
+00:11:53.840 --> 00:12:01.359
+combination of flower, cherry and Jap. And this is what the plot looks like on just like using your
+
+00:12:01.359 --> 00:12:08.400
+normal GIS techniques. And I think I can make this bigger for the internet. So these are all the
+
+00:12:10.159 --> 00:12:15.359
+trees that I'm interested in. Again, this is also based off of my very naive understanding of all of
+
+00:12:15.359 --> 00:12:21.440
+this. And then, you know, here's our starting point. How do we get from here to let's go find
+
+00:12:22.000 --> 00:12:26.640
+where in the city to go look, right? And you can visually be like, hey, there's a big cluster of
+
+00:12:26.640 --> 00:12:32.719
+points there. If you don't live in a city, that might not be very obvious. But this right here is
+
+00:12:32.719 --> 00:12:38.880
+the Inland Park. This is actually where the Japanese cherry tree fest the cherry blossom
+
+00:12:38.880 --> 00:12:43.840
+festival is actually held right here in the city. So it kind of makes sense. Like there's a big
+
+00:12:43.840 --> 00:12:49.280
+giant cluster. And this species is actually Japanese flowering cherry. The other thing that
+
+00:12:49.280 --> 00:12:54.640
+was really useful, or the reason why I want to do this in cloud was I'm also very bad at plotting,
+
+00:12:54.640 --> 00:13:00.799
+especially plotting maps. And so it was sort of like I knew kind of how to think about this
+
+00:13:00.799 --> 00:13:08.640
+problem from a data analytics perspective, but very far removed, like rusty in the actual coding.
+
+00:13:08.640 --> 00:13:13.760
+So it was like, I can kind of audit the code, but not really write it, like off the top of my head,
+
+00:13:13.760 --> 00:13:18.719
+or at least not be able to write it within like a weekend. This definitely would have taken much
+
+00:13:18.719 --> 00:13:26.159
+longer without, you know, this, these AI coding assists. So if we go through this thought process
+
+00:13:26.159 --> 00:13:32.640
+of, hey, I want to just go somewhere to go take photos of cherry blossoms, you have all the points.
+
+00:13:32.640 --> 00:13:37.679
+The next thing you I thought about was, hey, let's go and we have neighborhood boundaries. Let's just
+
+00:13:37.679 --> 00:13:45.359
+map them by neighborhood. And so this is what we have. If we do it by density, originally it was
+
+00:13:45.359 --> 00:13:51.679
+make the thing by actual counts. But if you have sort of like a data science, data thinking
+
+00:13:54.159 --> 00:13:57.359
+mind thought process of answering the question, you kind of always want to
+
+00:13:58.159 --> 00:14:04.239
+normalize it by density. And so here's like the density, like I sort of, and then I also realized
+
+00:14:04.239 --> 00:14:08.159
+like, hey, I live in this neighborhood. Isn't that great? I live in the highest density cherry
+
+00:14:08.159 --> 00:14:14.080
+blossom trees part in the city. But then, you know, as a teaching moment, especially for my undergrad
+
+00:14:14.080 --> 00:14:18.159
+students, it's like, well, if you look at downtown, it's actually one of the lower locations, even
+
+00:14:18.159 --> 00:14:23.200
+though the festival is held here. Right. And it's because look how big downtown is, but all the trees
+
+00:14:23.200 --> 00:14:30.559
+are in one location. So that's another sort of like teaching process of like, no, like when we give
+
+00:14:30.559 --> 00:14:34.880
+you open ended questions, like, you know, we're trying to get you to think through the problems,
+
+00:14:34.880 --> 00:14:41.280
+not just give you a checklist of things to work on, which is. Yeah. Question everything. Yeah.
+
+00:14:42.640 --> 00:14:47.599
+Okay. So from there, the next question was, okay, I don't care about the neighborhood because that
+
+00:14:47.599 --> 00:14:51.840
+kind of gets me in the right area, but I still don't know where to go. So then the thought
+
+00:14:51.840 --> 00:14:58.159
+process is okay. So we, and everyone walks around the city because they're taking photos of cherry
+
+00:14:58.159 --> 00:15:03.119
+blossoms. So you need to know where the blossoms are. So that's the point. But you're going to
+
+00:15:03.119 --> 00:15:10.239
+specific locations. And if you've anyone seen like some of the Vancouver social media posts around
+
+00:15:10.239 --> 00:15:16.239
+cherry blossom season, like we have certain streets have like two rows, like both sides of the street.
+
+00:15:16.239 --> 00:15:20.880
+So all the sidewalks are just lines of cherry blossoms. So when you're driving or walking,
+
+00:15:20.880 --> 00:15:26.080
+it's just like everything's pink and it's really cool. And so that thought process is, well,
+
+00:15:26.080 --> 00:15:30.000
+you're not really looking at neighborhood density. You actually care about individual
+
+00:15:30.000 --> 00:15:38.479
+street density. So the city government also has street segment data. And then we, I learned later
+
+00:15:38.479 --> 00:15:44.080
+on that it's probably better to use open street maps, but the city had individual street data
+
+00:15:44.080 --> 00:15:51.440
+already. So I was able to load that up as its own geo JSON file. And then I have street or line data.
+
+00:15:51.440 --> 00:15:55.200
+I have point data. I should be able to calculate density in that sense.
+
+00:15:56.880 --> 00:16:02.080
+And then, so I want to go through one of the actual code examples.
+
+00:16:03.200 --> 00:16:06.880
+Sweet. Okay. And as a time check, you've got about 12 minutes left.
+
+00:16:06.880 --> 00:16:13.599
+Yeah. Cool. I think I'm good. Although why is my code not showing? That's not good.
+
+00:16:13.919 --> 00:16:16.960
+Ooh, we think we're good.
+
+00:16:19.840 --> 00:16:24.479
+Right. Are my candles still lit? They are. Okay.
+
+00:16:25.119 --> 00:16:34.080
+All right. We're just going to restart. It's okay. Is this open? Is it too zoomed in? It's
+
+00:16:34.080 --> 00:16:41.919
+too zoomed in. Okay. So one of the things, well, so this was what I ended up asking Claude, which
+
+00:16:41.919 --> 00:16:47.919
+was I have points and lines. How do I get the points to the nearest line, right? Because sometimes
+
+00:16:47.919 --> 00:16:53.119
+the trees are not always planted on a street and on a GIS perspective is definitely not always going
+
+00:16:53.119 --> 00:16:59.119
+to be on the actual line. Or if you're in a park, the trees are pointed or planted pretty far from
+
+00:16:59.119 --> 00:17:06.079
+an actual street. So I need to get to the closest street. So I totally forgot, but there is a built
+
+00:17:06.079 --> 00:17:11.920
+in function called ST nearest feature. And so what this is allowing you to do is given these points,
+
+00:17:11.920 --> 00:17:17.520
+like, can you snap the points to the nearest line? Is this in SF? This is in SF. This is like just
+
+00:17:17.520 --> 00:17:24.239
+built in. SF is so robust. It's wild. So because I am trying to do this and I really want to not
+
+00:17:24.239 --> 00:17:30.880
+make mistakes, I don't remember how this function worked. And so what was also nice, and again,
+
+00:17:30.880 --> 00:17:39.199
+as a good teaching moment was I made another example script where I tried to mock up, like,
+
+00:17:39.199 --> 00:17:44.800
+this exact problem because I don't remember how snap to nearest feature worked. So what I ended
+
+00:17:44.800 --> 00:17:50.880
+up doing was here's some mocked up data, and this was all kind of semi-vibe coded as well, which was
+
+00:17:50.880 --> 00:17:56.640
+like, hey, go mock up some lines, treat them as streets, randomly place some points, pretend those
+
+00:17:56.640 --> 00:18:02.800
+are trees, and then run the ST, snap to nearest, and then see what's happening. And then I also
+
+00:18:02.800 --> 00:18:07.040
+had it to, like, take point, draw a dotted line to what it actually got snapped on.
+
+00:18:10.239 --> 00:18:14.239
+And again, this was, like, my visual confirmation of, like, is this doing the right thing? Because
+
+00:18:14.239 --> 00:18:19.920
+I don't really remember how all this GIS stuff works other than I know it's possible. And so
+
+00:18:19.920 --> 00:18:24.079
+after seeing this, this was, like, my visual check of, like, okay, snap to nearest is the
+
+00:18:24.079 --> 00:18:30.239
+right thing. Because that's so the other thing I would like to point out is, like, this calculation
+
+00:18:30.239 --> 00:18:34.479
+or this transformation of data is, like, fundamental to how the entire analysis works,
+
+00:18:34.479 --> 00:18:39.680
+right? Like, if the point is not snapped to the road correctly, and I'm trying to calculate
+
+00:18:39.680 --> 00:18:47.040
+road density, none of this will work. So there is, like, confirm for yourself that this thing is
+
+00:18:47.040 --> 00:18:47.680
+doing right.
+
+00:18:47.680 --> 00:18:50.880
+Yeah, or it might work, but, like, not doing what you think it's doing. I think this is a really
+
+00:18:50.880 --> 00:18:56.959
+great example of, like, why I tell people it's so important to still know how to code and still
+
+00:18:56.959 --> 00:19:01.839
+know how to verify that things are right, even when you're vibe coding. Because if you can't,
+
+00:19:01.839 --> 00:19:05.439
+if you can't do this little, like, okay, I know I need to make a minimum viable example of this
+
+00:19:05.439 --> 00:19:11.599
+and make sure it runs, then, yeah, you are in grave danger of doing things that don't make sense.
+
+00:19:12.719 --> 00:19:17.359
+Yeah, and I would say, like, I was just scrolling down, because there's, like, this is 155 lines
+
+00:19:17.920 --> 00:19:24.000
+that was, like, even though it was vibe coded, but 155 lines was literally to confirm this one line
+
+00:19:24.000 --> 00:19:25.359
+in the actual analysis.
+
+00:19:25.920 --> 00:19:26.880
+This is real life, y'all.
+
+00:19:27.439 --> 00:19:34.319
+So that's what happened on that side. So then, okay, I have everything snapped to the nearest
+
+00:19:34.319 --> 00:19:37.680
+street, and that's great. And I was like, okay, now I can calculate my density.
+
+00:19:37.680 --> 00:19:40.079
+Now the other problem was I'm using the
+
+00:19:41.040 --> 00:19:48.079
+street data that's coming from the city, and I don't know what that looks like.
+
+00:19:49.599 --> 00:19:55.359
+Meaning the streets in the city were already plotted by segments.
+
+00:19:55.359 --> 00:19:57.119
+And I was like, what is a segment?
+
+00:19:57.119 --> 00:20:00.400
+Like, is that, like, you know, one of those concrete pavers?
+
+00:20:00.400 --> 00:20:03.359
+Like, I have no idea what is a segment, a street segment.
+
+00:20:03.359 --> 00:20:08.319
+So I originally tried to plant, do that whole confirmation for the entire city,
+
+00:20:08.319 --> 00:20:10.479
+but I realized there's way too many street segments.
+
+00:20:10.479 --> 00:20:13.199
+My computer was running for, like, hours in the background.
+
+00:20:13.199 --> 00:20:14.000
+It still wasn't done.
+
+00:20:14.719 --> 00:20:17.439
+So I did, like, one street, which was I was thinking about, like,
+
+00:20:17.439 --> 00:20:19.119
+what is one of the longest streets in the city?
+
+00:20:19.119 --> 00:20:20.160
+And it's Granville Street.
+
+00:20:21.280 --> 00:20:26.079
+And here I was able to be like, oh, this is actually what street segments look like.
+
+00:20:26.079 --> 00:20:28.319
+Each different color is, like, a different segment.
+
+00:20:29.199 --> 00:20:33.599
+So because my main worry was what if it treated this entire block as one block,
+
+00:20:34.239 --> 00:20:37.520
+and I have all of these cherry blossoms on it, and it'll throw it off,
+
+00:20:37.520 --> 00:20:40.880
+because I don't really need the density across the entire block.
+
+00:20:40.880 --> 00:20:44.959
+I'm looking for individual streets, because the block, like,
+
+00:20:44.959 --> 00:20:47.119
+one cross intersections into the other,
+
+00:20:47.119 --> 00:20:50.160
+that's kind of where you would go to go take photos, not the entire thing.
+
+00:20:51.839 --> 00:20:55.199
+So I was really worried about that throwing off the analysis as well.
+
+00:20:55.199 --> 00:20:58.800
+But again, small little example, here's one street.
+
+00:20:58.800 --> 00:21:00.160
+I was like, okay, it's not perfect.
+
+00:21:00.160 --> 00:21:02.400
+It might not be every single intersection or whatever,
+
+00:21:02.400 --> 00:21:06.239
+but it's good enough in the sense that, like, it's not one giant block.
+
+00:21:06.239 --> 00:21:09.280
+So that gave me enough confidence to be like, okay,
+
+00:21:09.280 --> 00:21:12.479
+this one line is doing what I want it to do.
+
+00:21:12.479 --> 00:21:14.400
+Every tree is going to be snapped.
+
+00:21:14.400 --> 00:21:18.640
+And then I can go and calculate density over, like, 100 meters.
+
+00:21:18.640 --> 00:21:21.439
+And then you have the individual densities.
+
+00:21:21.439 --> 00:21:23.119
+And then it becomes a very tidy verse,
+
+00:21:24.400 --> 00:21:28.400
+simple thing where you're sorting by density,
+
+00:21:28.400 --> 00:21:31.680
+and then picking off the top, like, 10 or 30.
+
+00:21:31.680 --> 00:21:32.800
+And then there you go.
+
+00:21:33.359 --> 00:21:39.599
+The other thing was, back to Kyle Walker's post around,
+
+00:21:39.599 --> 00:21:42.239
+hey, like, now that I have all of this stuff,
+
+00:21:42.239 --> 00:21:44.560
+I don't, I'm afraid to run this code.
+
+00:21:45.599 --> 00:21:46.560
+Actually, I should not be afraid.
+
+00:21:46.560 --> 00:21:48.239
+This should be totally reproducible, right?
+
+00:21:49.839 --> 00:21:52.800
+Always fear the life of code running.
+
+00:21:55.359 --> 00:21:58.800
+It might take a while, but we can, I can run it.
+
+00:21:59.680 --> 00:22:01.839
+I have a question while you're waiting.
+
+00:22:02.800 --> 00:22:03.839
+From Anna, which was,
+
+00:22:03.839 --> 00:22:06.800
+which projection did you use to snap to nearest?
+
+00:22:07.359 --> 00:22:09.439
+The default from SF or the GeoJSON?
+
+00:22:10.000 --> 00:22:11.680
+It is the GeoJSON.
+
+00:22:11.680 --> 00:22:14.719
+And hold on, I have it right here.
+
+00:22:14.719 --> 00:22:17.920
+So, like, you see 4326, like, everywhere.
+
+00:22:17.920 --> 00:22:20.479
+And I don't remember off the top of my head what it is now.
+
+00:22:20.479 --> 00:22:23.680
+But I think it is essentially WGS 84.
+
+00:22:23.680 --> 00:22:26.000
+So the Google map one.
+
+00:22:26.000 --> 00:22:30.719
+But then it's also the view in, like, this area of Vancouver too.
+
+00:22:31.280 --> 00:22:33.439
+I don't have to worry about the curvature of the earth at this point,
+
+00:22:33.439 --> 00:22:35.599
+because we're just looking at small distances.
+
+00:22:35.599 --> 00:22:38.719
+But that's, like, another part of the projection system
+
+00:22:41.040 --> 00:22:42.560
+that you have to think about as well.
+
+00:22:43.439 --> 00:22:45.119
+But look at that.
+
+00:22:45.119 --> 00:22:46.400
+Things are working.
+
+00:22:46.400 --> 00:22:48.079
+They are working.
+
+00:22:48.079 --> 00:22:50.880
+From, like, a project that was in existence two months ago.
+
+00:22:54.000 --> 00:22:56.160
+It might take a while to run, but it is running.
+
+00:22:56.160 --> 00:22:56.400
+Okay.
+
+00:22:57.119 --> 00:23:04.400
+I think I can open this in one of these is the data tab variables.
+
+00:23:04.400 --> 00:23:04.959
+There it is.
+
+00:23:06.479 --> 00:23:10.560
+And one of these, one of these.
+
+00:23:10.560 --> 00:23:11.199
+Which one?
+
+00:23:11.199 --> 00:23:12.239
+Tree summary.
+
+00:23:13.839 --> 00:23:14.479
+Yeah.
+
+00:23:14.479 --> 00:23:17.839
+So, we have each individual street segment.
+
+00:23:17.839 --> 00:23:21.199
+We have, like, and then the other thing I had to do as well is there's different
+
+00:23:21.199 --> 00:23:24.959
+types of street segments, because I realized that there were public,
+
+00:23:25.920 --> 00:23:31.680
+non-public, and then alleyways and, like, some of the bike trails.
+
+00:23:31.680 --> 00:23:33.439
+Those are all in different geo JSON files.
+
+00:23:33.439 --> 00:23:39.520
+So, I had to put them together, like, get the column names all mashed up and stuff like that.
+
+00:23:39.520 --> 00:23:41.280
+So, there's a bit of data cleaning involved there.
+
+00:23:42.400 --> 00:23:47.359
+But for each different segment, yeah, total trees, because it's all geospatial,
+
+00:23:47.359 --> 00:23:48.800
+it knows the length of the line.
+
+00:23:48.800 --> 00:23:52.000
+So, like, the total length is, like, not something I had to calculate.
+
+00:23:52.000 --> 00:23:54.719
+It's from the actual line of the segment.
+
+00:23:55.920 --> 00:23:57.920
+And then you can do something like density.
+
+00:23:57.920 --> 00:24:03.599
+And essentially, from here, it becomes, like, sort by density, take the top whatever.
+
+00:24:06.479 --> 00:24:11.680
+And then if we go back here, here's the top whatever, 30 points.
+
+00:24:11.680 --> 00:24:15.760
+I picked 30 because it was, like, I feel like that was, like, a lot to get all over the city.
+
+00:24:15.760 --> 00:24:21.920
+And then if it ended up being a very, like, if it ended up being close to, like, 50k routes,
+
+00:24:22.400 --> 00:24:23.439
+that's very bikeable.
+
+00:24:23.439 --> 00:24:25.680
+Or if you're an ultra runner, it's very runnable.
+
+00:24:26.400 --> 00:24:28.719
+And that became the starting point there.
+
+00:24:28.719 --> 00:24:34.400
+And then there's a lot of vibe coding to get, like, hey, like, put bounding boxes.
+
+00:24:34.400 --> 00:24:36.479
+Like, I already found all the top 30 spots.
+
+00:24:36.479 --> 00:24:42.640
+Like, make a transparent circle so people have a reference to, like, neighboring dense streets.
+
+00:24:43.599 --> 00:24:46.239
+And then I labeled them by, like, the rank order.
+
+00:24:46.239 --> 00:24:51.040
+And then this was the information that got popped in for Kyle Walker's, like, algorithm.
+
+00:24:51.599 --> 00:24:52.959
+It didn't work very well.
+
+00:24:52.959 --> 00:25:00.800
+Like, this is what I was able to do without doing the street level data.
+
+00:25:00.800 --> 00:25:06.560
+Because what ended up happening was I think there's, like, holes in the
+
+00:25:07.119 --> 00:25:09.439
+segments for the street data in the city.
+
+00:25:09.439 --> 00:25:13.599
+So, like, it couldn't route properly when you're, like, why couldn't it just cross the street?
+
+00:25:13.599 --> 00:25:16.319
+And it's because there was probably a hole in the intersection.
+
+00:25:16.319 --> 00:25:17.920
+Because they're all individual segments.
+
+00:25:17.920 --> 00:25:21.359
+So, like, the routing algorithm, like, went crazy.
+
+00:25:22.160 --> 00:25:26.239
+But this was another thing that I learned through vibe coding was, like, okay, I had
+
+00:25:26.239 --> 00:25:28.000
+this routing problem now.
+
+00:25:28.000 --> 00:25:33.439
+And then Claude was actually able to be, like, hey, you can actually put coordinates in, like,
+
+00:25:33.439 --> 00:25:34.959
+a really special URL.
+
+00:25:34.959 --> 00:25:36.880
+And you can just dump it in Google Maps.
+
+00:25:36.880 --> 00:25:37.380
+What?
+
+00:25:38.239 --> 00:25:43.199
+So, this is just a very fancy, like, put a question mark, like, whatever, into Google
+
+00:25:43.199 --> 00:25:43.520
+Maps.
+
+00:25:43.520 --> 00:25:46.880
+And then you get this, like, it maxes out at 10.
+
+00:25:46.880 --> 00:25:50.640
+But this was, like, oh, now you can just do this in Google Maps.
+
+00:25:50.640 --> 00:25:55.359
+And that started the process of, like, this would be a really great blog post to share
+
+00:25:55.359 --> 00:25:56.479
+with people in the city.
+
+00:25:56.479 --> 00:26:03.199
+Because Google Maps is a very accessible medium for, like, handling all of this.
+
+00:26:03.199 --> 00:26:07.599
+And, like, Google Maps has, like, this, like, reorder thing that you can do as well.
+
+00:26:08.239 --> 00:26:10.079
+So, that was the start of all of that.
+
+00:26:10.079 --> 00:26:14.160
+And then I did the same thing for the 30-point route.
+
+00:26:14.719 --> 00:26:16.880
+Because Google Maps only has, like, groups of 10.
+
+00:26:16.880 --> 00:26:18.800
+So, like, this became, like, sets of three.
+
+00:26:18.800 --> 00:26:21.199
+But, again, this became, like, a vipoded function.
+
+00:26:21.199 --> 00:26:22.319
+You're just piping things in.
+
+00:26:22.319 --> 00:26:27.280
+And it's just spitting out special URLs that get put into the site.
+
+00:26:27.280 --> 00:26:29.359
+STEPHANIE WONG This is so cool.
+
+00:26:29.359 --> 00:26:32.079
+Well, we have, like, this is, like, two minutes left.
+
+00:26:33.199 --> 00:26:38.319
+But for a sort of follow-up, I know that you posted this on the Vancouver Reddit.
+
+00:26:38.319 --> 00:26:40.000
+You were on the local news.
+
+00:26:40.800 --> 00:26:41.920
+And you did all of this stuff.
+
+00:26:41.920 --> 00:26:43.520
+There's so many teachable moments in here.
+
+00:26:44.400 --> 00:26:48.319
+Question one, are you using a lot of these as examples in your classes?
+
+00:26:48.319 --> 00:26:50.560
+Because I'm, like, this is so juicy and amazing.
+
+00:26:50.560 --> 00:26:53.199
+And, also, have you thought about making a Shiny app out of it?
+
+00:26:53.199 --> 00:26:54.880
+VINCENT WONG I have thought about a Shiny app.
+
+00:26:55.760 --> 00:27:01.280
+I haven't taught a class since I did this to sort of make it a teaching example.
+
+00:27:01.280 --> 00:27:03.599
+But that's sort of, like, on the way.
+
+00:27:03.599 --> 00:27:09.119
+And so, Stephanie Hicks, actually, she's one of the founders of Our Lady Baltimore.
+
+00:27:10.079 --> 00:27:12.880
+She was here in the stats department giving a guest lecture.
+
+00:27:12.880 --> 00:27:14.000
+I had dinner with her last night.
+
+00:27:14.800 --> 00:27:17.520
+She's working on this project called Analytic Design Theory,
+
+00:27:17.520 --> 00:27:20.400
+which was, like, because of all these LLM tools,
+
+00:27:20.400 --> 00:27:24.160
+like, we still have to be able to think through the problem.
+
+00:27:24.160 --> 00:27:28.239
+And, like, she's working on, like, teaching how to do the analytical thinking.
+
+00:27:28.959 --> 00:27:33.119
+Because coding is now, like, you don't really have to worry too much about the actual code.
+
+00:27:33.119 --> 00:27:37.119
+But what was always the problem and what's a skill that's always been,
+
+00:27:37.920 --> 00:27:41.119
+that will never go away, is, like, thinking about the problem.
+
+00:27:41.119 --> 00:27:42.239
+And how do you think?
+
+00:27:42.880 --> 00:27:46.880
+And, you know, right now it's, like, okay, now we have to change data science
+
+00:27:46.880 --> 00:27:50.479
+a little bit around, like, we have to teach you how to think more
+
+00:27:50.479 --> 00:27:54.239
+versus, like, going through these analytics problems.
+
+00:27:54.239 --> 00:27:57.520
+Because I think what ended up happening was, like, back in the day,
+
+00:27:58.560 --> 00:28:01.599
+you learn how to think this way by struggling through the code.
+
+00:28:01.599 --> 00:28:04.000
+But now, since you're not struggling through the code anymore,
+
+00:28:04.000 --> 00:28:06.880
+you're losing that cycle of, like, iteration.
+
+00:28:06.880 --> 00:28:09.280
+And so now we really have to rely on this, like,
+
+00:28:09.839 --> 00:28:13.680
+this more basic thought of, like, teaching people how to think and learn
+
+00:28:14.640 --> 00:28:15.760
+in our data science courses.
+
+00:28:15.760 --> 00:28:17.520
+STEPHANIE Amazing.
+
+00:28:17.520 --> 00:28:19.439
+Well, my timer just went off for Dan.
+
+00:28:19.439 --> 00:28:20.560
+This is so exciting.
+
+00:28:20.560 --> 00:28:22.959
+I feel like I should reach out to Stephanie.
+
+00:28:22.959 --> 00:28:29.439
+This is the whole reason why I wrote my blog post about my Ellsworth art app.
+
+00:28:29.439 --> 00:28:34.160
+Because I was like, people need to see the process, the thought process that goes into
+
+00:28:34.160 --> 00:28:36.400
+things, you know, that has nothing to do with the code.
+
+00:28:37.199 --> 00:28:39.040
+This has been so fun.
+
+00:28:39.040 --> 00:28:41.920
+Dan, there are a million links in the chat, everybody.
+
+00:28:41.920 --> 00:28:42.959
+Round of applause for Dan.
+
+00:28:42.959 --> 00:28:44.880
+Thank you so much for showing that to us.
+
+00:28:44.880 --> 00:28:50.400
+We look forward to maybe perhaps a future Shiny app that we can all play around with.
+
+00:28:50.959 --> 00:28:56.000
+I'm going to go play around with the Google URL building for routes and stuff,
+
+00:28:56.000 --> 00:28:57.119
+because that's super fun.
+
+00:28:57.839 --> 00:29:01.680
+And now we are going to transition over to chatting with Kylie Eensley.
+
+00:29:01.680 --> 00:29:04.160
+Kylie, how's it going?
+
+00:29:04.160 --> 00:29:07.119
+You ready for me to start my 25-minute timer?
+
+00:29:07.199 --> 00:29:08.000
+Okay.
+
+00:29:08.000 --> 00:29:08.640
+Please start.
+
+00:29:09.280 --> 00:29:10.000
+All right.
+
+00:29:10.000 --> 00:29:11.359
+You have 25 minutes on the clock.
+
+00:29:11.359 --> 00:29:12.079
+Let's go.
+
+00:29:12.079 --> 00:29:16.959
+And, you know, the top of the hour, I guess, is really our limit for you, Kylie.
+
+00:29:18.000 --> 00:29:24.400
+Yeah, well, I actually think it's great where we ended with Dan, like that whole process
+
+00:29:24.400 --> 00:29:28.719
+of thinking, because my example is going to be much more about thinking and actually
+
+00:29:28.719 --> 00:29:31.760
+letting AI help me do the heavy lifting.
+
+00:29:31.760 --> 00:29:36.319
+But me having a very clear idea of what I want and how.
+
+00:29:36.358 --> 00:29:41.118
+help me do the heavy lifting, but me having a very clear idea of of what I
+
+00:29:41.118 --> 00:29:47.198
+want and how it works and then what I've sort of learned along the way. So I'll
+
+00:29:47.198 --> 00:29:51.398
+just start by a little storytelling of how I came up with this project. So I
+
+00:29:51.398 --> 00:29:57.798
+basically was stuck in the dark over winter and was just kind of like how do
+
+00:29:57.798 --> 00:30:02.278
+you know what you don't know? So like there's all these incredible tools out
+
+00:30:02.278 --> 00:30:07.678
+there that people have built. And I'm a confident programmer, but I'm by no means
+
+00:30:07.678 --> 00:30:12.758
+a like software developer type person. And so I always assume that there's a
+
+00:30:12.758 --> 00:30:16.078
+tool out there that someone has built that's better than what I could build
+
+00:30:16.078 --> 00:30:20.838
+myself. But how do I find it if I don't know what it's called? How do I actually
+
+00:30:20.838 --> 00:30:25.678
+discover it if I haven't heard of it before? And so that started the wheels
+
+00:30:25.797 --> 00:30:30.718
+ticking. And I thought, well, what if you could search for something by what it
+
+00:30:30.718 --> 00:30:38.358
+does and not what it's called? And so that led me to what I call the warehouse.
+
+00:30:38.398 --> 00:30:47.597
+See if I can share my screen now that I've lost it. Oh, there it is. Okay. So
+
+00:30:47.597 --> 00:30:56.038
+let me switch. Oh, I gotta move this. Let me just switch tabs. So basically, I
+
+00:30:56.038 --> 00:30:59.678
+built this thing called the warehouse. And I started with the idea of, okay, I
+
+00:30:59.678 --> 00:31:04.038
+just want like a Korto website, because I've used Korto websites before. They're
+
+00:31:04.038 --> 00:31:07.718
+familiar, I like them, they're flexible. And I was like, I just want to start
+
+00:31:07.718 --> 00:31:11.718
+there. And I was like, what if it's simple? What if it just looks like
+
+00:31:11.718 --> 00:31:17.478
+Google, but it's for R packages. So I just had this, this idea in my mind, and
+
+00:31:17.478 --> 00:31:23.237
+it kind of grew from there. So I could do the Korto web design, I knew how to do
+
+00:31:23.237 --> 00:31:27.518
+it. But then when it came to there's a there's a there's several pieces to this
+
+00:31:27.518 --> 00:31:33.518
+project. So first, you have to search something. So what do you search? So the
+
+00:31:33.518 --> 00:31:39.078
+natural first step is all Crayon. But I know for a fact that there's some very
+
+00:31:39.078 --> 00:31:44.158
+useful packages in my personal research area that are not on Crayon may never be
+
+00:31:44.158 --> 00:31:47.518
+on Crayon. And I still want to be able to discover those. So it's like it has to
+
+00:31:47.518 --> 00:31:53.798
+be broader than Crayon. And so I thought, well, what if we just go directly to, to
+
+00:31:53.837 --> 00:32:01.678
+GitHub? And, and then that starts, okay, well, so now I have to scrape things. And
+
+00:32:01.678 --> 00:32:06.837
+then I have to be able to search things. And so it led me down this whole rabbit
+
+00:32:06.837 --> 00:32:11.518
+hole of just how to actually pull off something like this, because it's more
+
+00:32:11.518 --> 00:32:16.718
+than just here's a website, there's a whole bunch of stuff in the back end. And
+
+00:32:16.718 --> 00:32:22.397
+so basically, I've come up with some visualizations to try to describe kind of
+
+00:32:22.438 --> 00:32:28.557
+what it does. So I sort of figured out that I was like, I don't need to reinvent
+
+00:32:28.557 --> 00:32:32.518
+the wheel, right? There's things like the R universe that are fantastic. And they've
+
+00:32:32.518 --> 00:32:36.798
+curated all of these different packages. And if you're not familiar with the R
+
+00:32:36.798 --> 00:32:42.197
+universe, highly recommend it. And you can search for lots of stuff. But
+
+00:32:42.197 --> 00:32:47.637
+typically, the problem with this is that it needs to match a keyword. So let's say
+
+00:32:47.637 --> 00:32:52.718
+you wanted to search something like mixed models, that's very nonspecific, and
+
+00:32:52.718 --> 00:32:59.117
+would probably miss out on some useful packages. But I was like, I don't need to
+
+00:32:59.117 --> 00:33:05.078
+recreate our universe. So I just they have an API. So I just grabbed packages
+
+00:33:05.117 --> 00:33:15.757
+from our universe. And I also are weekly shares a lot of new packages. So I grabbed
+
+00:33:15.757 --> 00:33:21.917
+stuff from there. And like GitHub, bioconductor, I just everything I could
+
+00:33:21.917 --> 00:33:27.958
+think of. And I basically created this, this JSON file database, because JSON is
+
+00:33:27.958 --> 00:33:32.598
+very flat. So it doesn't take up a lot of space, which I also learned what a JSON
+
+00:33:32.598 --> 00:33:45.158
+file was. And so in the repo, there's this giant file full of 23,000 packages. And
+
+00:33:45.158 --> 00:33:49.397
+that's where we start. So it's like I have this JSON file. And it's got
+
+00:33:49.397 --> 00:34:00.518
+information. Let's see if I can pull it up. Oh, I'm 23,000. So many. Yeah.
+
+00:34:00.757 --> 00:34:04.917
+Sometimes I forget how many R packages there are. So so there's, so there's a
+
+00:34:04.917 --> 00:34:08.078
+ton. And so it was like, this was actually a really interesting project,
+
+00:34:08.078 --> 00:34:13.518
+because it I really pushed myself to try to do something very different. I live in
+
+00:34:13.678 --> 00:34:21.157
+sort of data, data analysis, mathematical modeling world. And this is very, very
+
+00:34:21.157 --> 00:34:26.358
+different. But it was really interesting to learn all the different pieces, but
+
+00:34:26.358 --> 00:34:31.197
+have I used cloud, cloud code, but to have someone to help me actually implement it.
+
+00:34:31.398 --> 00:34:36.757
+But yet I was very strict about this is what I want, make sure that it works. Am I
+
+00:34:36.757 --> 00:34:42.358
+getting the results that I expect? Now I can't find my zoom controls. This is fun.
+
+00:34:42.437 --> 00:34:48.518
+I was gonna try to share what a JSON file looks like. But I can't figure out how to
+
+00:34:48.558 --> 00:34:48.998
+switch.
+
+00:34:48.998 --> 00:34:53.238
+At the top of your screen, if you like hover your mouse up there, they come back
+
+00:34:53.238 --> 00:34:54.278
+wherever you hit them.
+
+00:34:55.078 --> 00:34:58.717
+Okay, I'm just gonna, just gonna hover.
+
+00:35:00.197 --> 00:35:03.717
+Zoom is the worst, because it puts stuff on your screen. And you're like, get out
+
+00:35:03.717 --> 00:35:08.757
+of here. And then you hide it. And it's like, Okay, I'm never coming back. You
+
+00:35:09.398 --> 00:35:10.278
+hit escape.
+
+00:35:11.558 --> 00:35:13.477
+Oh, I got him. Thanks, Libby. Yeah.
+
+00:35:15.558 --> 00:35:18.558
+Okay. So
+
+00:35:21.078 --> 00:35:24.037
+you know, I'm just gonna, we're just gonna go with it. You're gonna see my whole
+
+00:35:24.037 --> 00:35:24.637
+desktop.
+
+00:35:25.998 --> 00:35:27.597
+It's okay, we won't tend to you.
+
+00:35:28.398 --> 00:35:30.238
+Okay, so this is
+
+00:35:32.838 --> 00:35:36.717
+an example of a JSON file. And
+
+00:35:37.917 --> 00:35:41.838
+it's a lot of it's empty, it kind of depended on what information was available.
+
+00:35:42.637 --> 00:35:48.757
+But you basically, it's just a very flat file. So you've just got some kind of ID,
+
+00:35:49.157 --> 00:35:54.558
+you've got the package name, you have the package title, you have the description.
+
+00:35:55.358 --> 00:35:59.278
+And then you may have more information, like a version and maintainer, I think it
+
+00:35:59.278 --> 00:36:00.717
+depends on where it comes from.
+
+00:36:02.477 --> 00:36:06.238
+So like, for example, DuckDB has all the information.
+
+00:36:08.637 --> 00:36:12.717
+And a bunch of extra stuff, like what it exports topics, things like that. So I
+
+00:36:12.717 --> 00:36:17.278
+think if it comes from our universe, it has all this information. It even has a
+
+00:36:17.278 --> 00:36:22.317
+score to kind of give you an idea of, I guess, how good the package is.
+
+00:36:22.798 --> 00:36:28.238
+But anyway, so just imagine this over and over and over and over and over again. So
+
+00:36:28.238 --> 00:36:32.877
+this is basically where we start. It's like I've just, the first task was just get all
+
+00:36:32.877 --> 00:36:38.717
+the packages and find them wherever I could. And then the next challenge becomes, okay,
+
+00:36:38.717 --> 00:36:39.518
+how do we search it?
+
+00:36:40.717 --> 00:36:45.518
+This is so interesting to me, Kylie. And I'll come back to it. But like, seeing that
+
+00:36:45.518 --> 00:36:49.597
+what you're picking up is just what's available, like from somebody who actually
+
+00:36:49.597 --> 00:36:54.798
+wrote the description. When I was testing your website, some packages, I just could
+
+00:36:54.798 --> 00:36:59.678
+not find. And now that tells me why I could not find them, because maybe their
+
+00:36:59.678 --> 00:37:03.437
+description field wasn't very descriptive, or their title wasn't very descriptive of
+
+00:37:03.437 --> 00:37:07.518
+what the package did. And in my own brain, I'm like, okay, prioritize that for your
+
+00:37:07.518 --> 00:37:08.157
+packages.
+
+00:37:09.757 --> 00:37:14.717
+Yeah, exactly. Because the more information you give, the better people are able to
+
+00:37:14.717 --> 00:37:20.717
+find it. And I know from previous packages that I've made, like, I've just been like,
+
+00:37:20.717 --> 00:37:24.877
+oh, yeah, whatever description, like something, you know, nondescript and just kind of
+
+00:37:24.877 --> 00:37:28.798
+general. And it's like, oh, well, actually, that's not very useful to someone who's
+
+00:37:28.798 --> 00:37:39.518
+trying to find it if they want to use it. So basically, do I have a... Yeah, so the
+
+00:37:39.518 --> 00:37:45.597
+next problem was, how do we search it? And I started by, okay, let me come up with a
+
+00:37:45.597 --> 00:37:50.157
+search algorithm, and then quickly figured out, okay, I'm not a Google software engineer,
+
+00:37:50.157 --> 00:37:55.118
+like search algorithms are, I don't know anything about them. They're not my thing.
+
+00:37:55.757 --> 00:38:02.078
+And this is where I had the idea, what if I use AI? What if I use Claude to help me search?
+
+00:38:02.958 --> 00:38:07.678
+So the way that it does it is that you pass whatever you want to do. So in this example,
+
+00:38:08.157 --> 00:38:13.358
+on the screen, it's survival analysis. And then you say, okay, Claude, you know,
+
+00:38:14.157 --> 00:38:18.717
+there's a prompt that feeds to Claude that says, like, you're an expert R programmer,
+
+00:38:18.717 --> 00:38:23.277
+and you want to do whatever you've put into the search strategy, come up with
+
+00:38:23.277 --> 00:38:33.198
+suggested packages and search terms. So Claude then creates, like, a list of 20, 30 terms,
+
+00:38:33.758 --> 00:38:42.397
+and then passes those back. And then you use something called BM25 to search that giant JSON
+
+00:38:42.397 --> 00:38:50.157
+file based on those terms, because Claude can do semantic searching. So it'll come up with terms
+
+00:38:50.157 --> 00:38:57.198
+that aren't necessarily directly related to what you've put in, or like, they don't mirror the
+
+00:38:57.198 --> 00:39:01.438
+exact words that you use, but they're related. So like, if we go back to that mixed model,
+
+00:39:02.318 --> 00:39:08.318
+you would probably want to find the LME4 package, but you're never going to find that if all you
+
+00:39:08.318 --> 00:39:16.477
+search is mixed model. So and for those who don't know, because I also didn't know what
+
+00:39:17.037 --> 00:39:23.917
+BM25 was, I have included some information in the Git repo readme file, just as sort of a,
+
+00:39:23.917 --> 00:39:30.318
+oh, I learned all this stuff, let me help you learn with me. And so it's just a way of
+
+00:39:32.318 --> 00:39:42.077
+scoring search results. And basically, like, it looks at how often terms are used in a particular
+
+00:39:42.077 --> 00:39:49.998
+file, and weights those terms accordingly. So if it's a very rare term, like pharmacokinetics or
+
+00:39:49.998 --> 00:39:55.837
+something, it's going to weight that highly, whereas the is very frequently used in really
+
+00:39:56.077 --> 00:40:03.758
+any document. So that's going to be weighted quite low. And the basic idea is just because
+
+00:40:03.758 --> 00:40:09.917
+terms are repeated a bunch of times doesn't mean that that's many, many more times relevant to what
+
+00:40:09.917 --> 00:40:17.037
+you're looking for. Okay, so then basically, at the end, what happens is you've got all these
+
+00:40:17.037 --> 00:40:27.517
+search terms, you rank them based on this BM25 algorithm. And then you spit out kind of the
+
+00:40:29.358 --> 00:40:38.318
+the best results. And that's, that's the idea. And if for some reason, AI, the API fails, or AI
+
+00:40:38.318 --> 00:40:43.198
+fails, or whatever, there is a just a local fuzzy search that just kind of corrects for
+
+00:40:43.198 --> 00:40:49.277
+possible spelling mistakes. And that way, you could find something that has the words that you
+
+00:40:49.277 --> 00:40:56.638
+used in the title, or the description, but it's just not going to be as good. And then, of course,
+
+00:40:56.638 --> 00:41:01.998
+if you use the actual package name, it'll just skip all this like ggplot2, you'll just go to the
+
+00:41:01.998 --> 00:41:09.277
+end, right? And get ggplot2. So yeah, I guess we can we can give it a try.
+
+00:41:09.837 --> 00:41:16.238
+ggplot2 is definitely what I tested. So I tested, I was like, can it find the giraffe package,
+
+00:41:16.238 --> 00:41:22.558
+which I call ggiraffe in my own brain and heart. And so at the first search term, I gave it was
+
+00:41:22.558 --> 00:41:30.077
+like add interactivity to a plot, and it did not find ggiraffe at all. And I was like, why is this?
+
+00:41:30.077 --> 00:41:38.157
+I wonder why. And it's because the word plot is buried in ggplot2. And I'm wondering if maybe
+
+00:41:38.157 --> 00:41:44.238
+like if it doesn't decompose a bunch of words into their sort of, you know, their basic
+
+00:41:45.358 --> 00:41:49.358
+structures, then maybe it's not finding that. And I think that that's possibly what it is.
+
+00:41:49.358 --> 00:41:54.798
+Because if I change my search query to add interactivity to a ggplot2, then I do find
+
+00:41:54.798 --> 00:42:01.438
+ggiraffe like immediately. Oh, nice. Okay, so add interactive.
+
+00:42:02.157 --> 00:42:02.957
+Yeah, sort of.
+
+00:42:07.358 --> 00:42:12.558
+There it is. There it is. Yeah. But if I just had add interactivity to a plot,
+
+00:42:13.517 --> 00:42:17.597
+it did not show up. I love that. Like, I love search algorithms. I love the like sort of
+
+00:42:19.277 --> 00:42:22.638
+process of figuring out how to break things down to make them searchable.
+
+00:42:23.517 --> 00:42:28.717
+It's such a big juicy problem. It's, it's really hard to find a way to do that.
+
+00:42:28.717 --> 00:42:38.558
+It's really hard. One of the things about this project is that I learned so much about searching.
+
+00:42:39.758 --> 00:42:44.238
+And it wasn't what I expected. I just was like, I'm just going to build this cool little tool
+
+00:42:44.238 --> 00:42:50.397
+that helps me find what I want. But actually finding what you want is the hard part. And so
+
+00:42:50.397 --> 00:42:54.957
+I have had to go back and forth. And there are times when things break. And it's just been
+
+00:42:54.957 --> 00:43:02.558
+iteration on iteration on iteration of how do I get? How do I find what I want? And actually,
+
+00:43:02.558 --> 00:43:06.558
+when I first came out with this, I posted on LinkedIn, and I was like, please try it.
+
+00:43:07.438 --> 00:43:13.198
+And if you don't get the results you expect, let me know. Because then I can try to improve it. So
+
+00:43:13.198 --> 00:43:18.798
+like Libby with yours, maybe there's something I can do to improve it. Or I do have some
+
+00:43:19.517 --> 00:43:25.998
+um, actually, I could show you. So I have these categories, because I thought, Oh, maybe you just
+
+00:43:25.998 --> 00:43:32.477
+want to browse some packages that do certain things, right? So maybe you just want to look at
+
+00:43:32.477 --> 00:43:39.118
+data wrangling, and find packages that do it. And so you can actually just search a broad category
+
+00:43:39.118 --> 00:43:49.837
+of packages that do different things. So that's, that's also possible. I've got lots of fun stuff
+
+00:43:49.837 --> 00:43:57.037
+in here. But searching is not the only feature of the warehouse, because I noticed there are
+
+00:43:57.037 --> 00:44:05.358
+reviews on there. Oh, yeah. So the other thing that I thought about was that, and not many people
+
+00:44:05.358 --> 00:44:14.717
+have done them. And I think a lot of them are me making Claude do it for me to test out the feature.
+
+00:44:16.157 --> 00:44:21.118
+But basically, I thought, well, what if you could, what if you could review a package like,
+
+00:44:21.118 --> 00:44:29.517
+like a Google review, like there are get GitHub stars and things, but not everybody uses GitHub
+
+00:44:30.238 --> 00:44:36.477
+so much. And so this is a way of being able to tell people how you used something
+
+00:44:38.157 --> 00:44:42.717
+and what was good, what was bad. And there are questions on in the reviews that are
+
+00:44:44.077 --> 00:44:48.957
+designed for the user, but also for the developer, so that it can give you give feedback
+
+00:44:50.397 --> 00:44:55.517
+for new potential users. But also if there are there are features that were really good,
+
+00:44:55.517 --> 00:45:00.238
+or didn't work so well, the developer can then take that feedback on board and, and update.
+
+00:45:03.837 --> 00:45:07.358
+Yeah, so you can actually there's a little star up in the top
+
+00:45:07.358 --> 00:45:15.517
+right corner where it says write a review. And here's just a, we don't have to go through
+
+00:45:15.517 --> 00:45:19.517
+a review. But these are basically the questions that it asks. So it's what was the name?
+
+00:45:20.238 --> 00:45:25.837
+Who are you? And what was your experience level to figure out like, oh, if you're a beginner,
+
+00:45:25.837 --> 00:45:29.917
+maybe you're struggling with something that was designed for more advanced users, but
+
+00:45:31.037 --> 00:45:34.798
+could, you know, be usable to a beginner with increased documentation?
+
+00:45:34.798 --> 00:45:38.798
+And then what did you use it for? And whether or not it did what you wanted?
+
+00:45:41.517 --> 00:45:46.477
+And there's other things for developers like document quality, where the error message is
+
+00:45:46.477 --> 00:45:51.837
+helpful. Because that's always, that's always a tricky one. Or were there any bugs, things like
+
+00:45:51.837 --> 00:45:57.758
+that. And so again, this, this feature hasn't been widely used. But I really hope that people
+
+00:45:57.758 --> 00:46:05.118
+use it more, because it would be really helpful as both a developer and a user to get this kind
+
+00:46:05.118 --> 00:46:14.878
+of feedback. I think so too. Well, it's up to all of us to go post about the warehouse, share about
+
+00:46:14.878 --> 00:46:19.438
+it with people that you talk to share it with your students so that they can more easily find
+
+00:46:20.238 --> 00:46:25.597
+packages. I know that I've been in this route before. And I've had learners be in this route
+
+00:46:25.597 --> 00:46:32.397
+before. How many wheels has everybody reinvented? Like everybody in the chat? Let me know how many
+
+00:46:32.397 --> 00:46:36.957
+times have you like built something. And then you go and show it to somebody. And they're like,
+
+00:46:36.957 --> 00:46:40.878
+dude, why didn't you just use blah, blah, blah package? And you're like, what? And they're like,
+
+00:46:40.878 --> 00:46:47.038
+yeah, I like does that way easier than what you did. Exactly. So many times. Exactly. Gosh,
+
+00:46:47.038 --> 00:46:51.038
+I feel like a dummy. But how would I have known? And then when I find out about the package,
+
+00:46:51.038 --> 00:46:56.638
+the package name is something completely random that has nothing to do with what the package does.
+
+00:46:56.638 --> 00:47:00.317
+And I'm like, so how would I have ever known? Right?
+
+00:47:02.638 --> 00:47:05.837
+Exactly. So that's, that's what this is designed to tell you. But then,
+
+00:47:06.398 --> 00:47:13.758
+okay, if we go back to our add interactivity to a ggplot, right?
+
+00:47:13.758 --> 00:47:18.638
+I mean, even dplyr. I remember when I first heard about dplyr, I was like, pliers, why?
+
+00:47:21.197 --> 00:47:26.797
+So the other feature that I thought was, okay, but here are our results, right? There's,
+
+00:47:26.797 --> 00:47:31.437
+there's a bunch of packages. I don't know which one to use. And I thought, well,
+
+00:47:31.437 --> 00:47:38.717
+what if you could just ask AI? So there's a little chatbot that you could just say, which
+
+00:47:41.437 --> 00:47:43.597
+package should I use?
+
+00:47:53.197 --> 00:47:57.038
+I didn't realize that was there. Like when I was testing your website.
+
+00:47:57.998 --> 00:48:03.358
+Also, has anybody hopped on the posit.co website lately and been like surprised that a chatbot
+
+00:48:03.358 --> 00:48:07.677
+popped up? Because Noor mentioned last week in the chat that that happened. And I was like,
+
+00:48:07.677 --> 00:48:11.197
+wait, what? And then I opened it and I was like, whoa, I've never seen this before.
+
+00:48:12.717 --> 00:48:15.918
+Okay. So did it come up with some pretty good ones?
+
+00:48:16.717 --> 00:48:24.238
+Yeah. So basically it's just, yeah, it just says like, there's some options and it tells you,
+
+00:48:24.238 --> 00:48:31.118
+you know, this is the most popular, here's how you can grab it. What it's best for some tradeoffs.
+
+00:48:33.837 --> 00:48:39.918
+It did grab the three top ones that I think are probably recommended. That's awesome.
+
+00:48:40.557 --> 00:48:44.797
+Yeah. And so this can really help you if you're just like, okay, I've got these results, but which
+
+00:48:44.797 --> 00:48:50.717
+one do I use? And it just gives you just a little bit of starter code. Because again, I thought
+
+00:48:50.717 --> 00:48:56.077
+there's so many tools, like we're talking about 23 plus thousand that it's quite overwhelming
+
+00:48:56.638 --> 00:49:00.957
+if you're coming to a new tool and you're not quite sure which one to use or which one is
+
+00:49:00.957 --> 00:49:05.278
+best for your use case. I love it. Share this with a beginner today, y'all.
+
+00:49:05.998 --> 00:49:10.238
+Yeah. So I was really thinking about beginners, but I was also like, I'm lazy and I want to find
+
+00:49:10.238 --> 00:49:15.518
+what I want to use easier. Ooh, Isabella had a question. Isabella, you want to ask that?
+
+00:49:16.477 --> 00:49:22.077
+Oh, sure. I was wondering about that chatbot. Is that part of Shiny? Is it thing external?
+
+00:49:24.638 --> 00:49:35.998
+It's external. Cool. Yeah. And it feeds into... So basically my whole plan when I started this was to
+
+00:49:36.717 --> 00:49:46.878
+just host this completely on GitHub. But because the chatbot uses the cloud API and interacts with
+
+00:49:46.878 --> 00:49:54.717
+it and that you can't have on GitHub, which I think is why things like our universe don't have
+
+00:49:55.758 --> 00:50:02.317
+this kind of interactive chat body AI integration. Because if our universe could just integrate it,
+
+00:50:02.317 --> 00:50:11.758
+then that would basically solve my problem. But you need a hosting platform to do that. You need
+
+00:50:11.758 --> 00:50:19.518
+some additional features. So I had to go down a rabbit hole to find that out. So I pay for it.
+
+00:50:19.518 --> 00:50:23.837
+So I host this. It's not very expensive, but I'm just like, well, I'm going to pay for it because
+
+00:50:23.837 --> 00:50:29.358
+I think it's cool. I do the same thing. I'll be like, this is fine. I'll just pay this $5 a month
+
+00:50:29.358 --> 00:50:35.677
+for this little thing. I want to play with it. Everybody go use Kylie's tool so that it's worth
+
+00:50:35.677 --> 00:50:42.477
+the money that she's spending every month. Oh, and we had another question. Anna asked... Anna,
+
+00:50:42.477 --> 00:50:49.437
+I hope your name is Anna or Anna. Let me know. Why do some packages have numbers in red at the
+
+00:50:49.437 --> 00:50:56.717
+top right-hand corner and others don't? Yeah. Great question. So this comes from the R universe.
+
+00:50:56.717 --> 00:51:06.638
+So they have what's called a quality score and they base it on certain metrics. And so if
+
+00:51:06.638 --> 00:51:11.758
+there's a quality score from our universe, I just go ahead and post it. Because again,
+
+00:51:12.477 --> 00:51:16.638
+our universe has a ton of amazing stuff. They just didn't have that particular search feature
+
+00:51:16.638 --> 00:51:20.317
+that I was looking for. So I basically had to just... I scrape all their information
+
+00:51:20.957 --> 00:51:28.717
+and then just add my own search feature. And so it just tells you how... I think it's probably
+
+00:51:28.717 --> 00:51:35.038
+has something to do with like how popular it is and other like maybe how good the documentation
+
+00:51:35.038 --> 00:51:40.717
+is, whether it's frequently maintained, those kinds of things. Is it like out of 100 is red
+
+00:51:40.717 --> 00:51:48.158
+like a certain scale and other numbers are green? I don't think so. I don't know the answer to that.
+
+00:51:48.158 --> 00:51:49.998
+I might be asking a question that doesn't have an answer.
+
+00:51:53.197 --> 00:51:57.597
+I've definitely looked into this, but I just forgot what...
+
+00:51:59.918 --> 00:52:02.638
+Maybe we'll find out together. We do have two more questions too.
+
+00:52:03.197 --> 00:52:08.638
+Okay. While I'm doing this, fire away. One is from Andrew. Are there limits on
+
+00:52:08.638 --> 00:52:13.597
+the cloud calls so that the cost doesn't skyrocket for you if we all give it the hug of death?
+
+00:52:13.918 --> 00:52:19.837
+Well, I have a finite pot of money. So when that runs out, you can't. I'm also using a very simple
+
+00:52:19.837 --> 00:52:26.878
+model. So I'm using their Haiku, like the cheapest model. Because all I really want is for it to come
+
+00:52:26.878 --> 00:52:30.878
+up with the terms so that it... Yes, it doesn't need to do the actual searching.
+
+00:52:30.878 --> 00:52:34.878
+So it doesn't actually need to go and look through the whole database. It just comes up
+
+00:52:34.878 --> 00:52:39.758
+with the terms for me. Well, that was the other question from Victor, because Victor said,
+
+00:52:40.717 --> 00:52:46.557
+very cool project. Can you share a few more details about every search is handled by a
+
+00:52:46.557 --> 00:52:53.197
+Netlify serverless function about that part of it? I host on Netlify too.
+
+00:52:53.837 --> 00:53:06.557
+Yeah. So I've gone back and forth with... So here's my search function if you want to see it.
+
+00:53:07.278 --> 00:53:14.557
+But basically, because I realized that it would take way too long and be very expensive
+
+00:53:14.557 --> 00:53:30.717
+if I let AI do all the searching. So I just come up with term lists and do some other things like
+
+00:53:31.118 --> 00:53:41.358
+having to deal with common nouns. And then I also set the different BM25 parameters.
+
+00:53:42.638 --> 00:53:50.638
+And then it just passes those search terms back over the dataset.
+
+00:53:50.797 --> 00:54:03.677
+Looking at this code, I'm wondering if ggiraffes, the fact that ggplot2 is in quotation marks,
+
+00:54:03.677 --> 00:54:11.118
+might kick it out of being tokenized down to the word plot. I'm curious. This is totally
+
+00:54:11.118 --> 00:54:15.677
+outside the scope of this conversation because we have two minutes left. I'll message you later.
+
+00:54:16.557 --> 00:54:20.398
+This was so much fun. My alarm for you just went off.
+
+00:54:20.398 --> 00:54:21.038
+Oh, perfect.
+
+00:54:21.597 --> 00:54:26.797
+But we have two minutes left. Did I cut you off from anything? I interjected too many times.
+
+00:54:26.797 --> 00:54:32.638
+No, no, no. I hadn't planned to go super into detail just because there's a lot under the hood
+
+00:54:32.638 --> 00:54:37.998
+here. There is, but everybody can go check it out in your GitHub repo if they would like to.
+
+00:54:37.998 --> 00:54:42.638
+Yes. And they can play with the tool. And what's the best way to give you
+
+00:54:42.638 --> 00:54:45.837
+personal feedback? Is it in the Discord server, just tag Kylie?
+
+00:54:47.758 --> 00:54:48.638
+I'll send you a DM.
+
+00:54:49.597 --> 00:54:57.038
+Yeah, you can contact me on Discord. You can create a comment in the GitHub repo.
+
+00:54:59.118 --> 00:55:05.518
+You can find me on LinkedIn. Really, any way you want.
+
+00:55:06.957 --> 00:55:12.557
+Sweet. I am so excited that our timing worked out today. These projects were amazing.
+
+00:55:12.557 --> 00:55:18.158
+Thank you so much to Dan and to Kylie. This was a lot of fun. I am so glad that most of
+
+00:55:18.158 --> 00:55:25.278
+our live coding worked and our timelines worked out. Okay, everybody go check out Dan's blog post,
+
+00:55:25.278 --> 00:55:30.398
+share it with somebody. I cannot wait to have a Shiny app to play with as well.
+
+00:55:30.398 --> 00:55:36.557
+Go check out Kyle Walker's work because, wow, I mean, talk about prolific work in the
+
+00:55:37.278 --> 00:55:45.278
+R graphing space and the R mapping space. You can't find better resources than Kyle.
+
+00:55:45.278 --> 00:55:50.077
+And thank you, Kylie, for sharing your project. Everybody learned a lot more about our universe
+
+00:55:50.077 --> 00:55:55.597
+today. Crayon, descriptions, titles, why that's important. If you are a package author or
+
+00:55:55.597 --> 00:56:02.238
+maintainer, think about going and making your description field more descriptive of exactly
+
+00:56:02.238 --> 00:56:18.398
+what your package does and the problem it solves in plain language. And we will see you next time.

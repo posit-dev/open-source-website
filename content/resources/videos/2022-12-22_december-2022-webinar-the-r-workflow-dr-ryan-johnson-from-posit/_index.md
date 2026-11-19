@@ -54,10 +54,10 @@ external:  # updated automatically, do not edit
 
 
     Resource links can be found on the NHS-R Community website: https://nhsrcommunity.com/events/december-2022-webinar-the-r-workflow-dr-ryan-johnson-from-posit/'
-  duration: 3016
+  duration: 2973
   has_captions: false
   language: en-GB
-  last_updated: '2026-09-18T13:58:21.309328+00:00'
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 13
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:

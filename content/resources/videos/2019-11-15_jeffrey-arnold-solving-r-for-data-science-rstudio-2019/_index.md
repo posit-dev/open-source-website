@@ -61,8 +61,8 @@ external:  # updated automatically, do not edit
   description: "While teaching a course using \"R for Data Science\", I wrote a complete set of solutions to its exercises and posted them on GitHub. Then other people started finding them. And now I'm here. In this talk, I'll discuss why I did it, and what I learned from the process, both what I learned about the Tidyverse itself, and what I learned from teaching it.\r\n\r\nAbout Jeffrey:\nI am formerly an Assistant Professor of Political Science of Political Science University of Washington and Core Faculty Member in the Center for Statistics and the Social Sciences, an Instructor of Political Science and QuanTM Pre-Doctoral Fellow at Emory University. I received Ph.D. in political science at the University of Rochester. Prior to graduate studies, I was a Research Associate/Economist in the Money and Payments Studies research group at the Federal Reserve Bank of New York."
   duration: 932
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:18.222077+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 20
   playlist: ''
   software:

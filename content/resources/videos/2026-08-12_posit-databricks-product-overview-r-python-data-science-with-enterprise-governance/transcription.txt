@@ -4,7 +4,7 @@
 
 <h3>The problem with scattered data science workflows</h3>
 
-<p><a data-t="28">Here's the problem.</a> <a data-t="28">Data scientists need the freedom to use R, Python, </a><a href="/software/positron/">Positron</a><a data-t="28">, and other tools they prefer.</a> <a data-t="34">But they also need enterprise-grade governance, security, and scale.</a> <a data-t="39">Without this, people turn to workarounds, development happens outside the data platform,</a> <a data-t="44">and everything slows down.</a></p>
+<p><a data-t="26">Here's the problem.</a> <a data-t="28">Data scientists need the freedom to use R, Python, </a><a href="/software/positron/">Positron</a><a data-t="28">, and other tools they prefer.</a> <a data-t="34">But they also need enterprise-grade governance, security, and scale.</a> <a data-t="39">Without this, people turn to workarounds, development happens outside the data platform,</a> <a data-t="44">and everything slows down.</a></p>
 
 <h3>How Posit Team solves it</h3>
 

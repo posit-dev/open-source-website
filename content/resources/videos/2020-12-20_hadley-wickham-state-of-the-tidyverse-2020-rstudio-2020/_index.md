@@ -22,8 +22,8 @@ external:  # updated automatically, do not edit
   description: State of the Tidyverse 2020
   duration: 1403
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:17.860822+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 258
   people:
   - Hadley Wickham

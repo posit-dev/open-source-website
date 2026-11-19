@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: Longitudinal data (or panel data) arise when observations are recorded on the same individuals at multiple points in time. For example, a longitudinal baseball study might track individual player characteristics (team affiliation, age, height, weight, etc.) and outcomes (batting average, stolen bases, runs, strikeouts, etc.) over multiple seasons, where the number of seasons could vary across players. Neural network frameworks such as Long Short-Term Memory (LSTM) and Gated Recurrent Units (GRUs) can flexibly accommodate this data structure while preserving and exploiting temporal relationships. In this presentation, we highlight the use of neural networks for longitudinal data analysis with tensorflow and keras in R.
   duration: 1320
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:17.861136+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 72
   playlist: ''
   software:

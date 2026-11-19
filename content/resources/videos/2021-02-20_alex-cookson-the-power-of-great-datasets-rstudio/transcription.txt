@@ -8,7 +8,7 @@
 
 <p><a data-t="57">Now when I say great datasets, I'm talking about something pretty specific.</a> <a data-t="61">I'm talking about datasets that are both cool and interesting.</a> <a data-t="65">And when I say cool, I mean something that when you come across it, you say to yourself,</a> <a data-t="69">hey, that's cool, or that's really fun.</a> <a data-t="72">It's something that speaks to you on a deeper level, and it tends to be pretty personal.</a> <a data-t="77">So what's cool to you might not be cool to me.</a></p>
 
-<p><a data-t="80">And when I say interesting, I mean that it rouses your curiosity.</a> <a data-t="84">It makes you start asking a whole bunch of questions that you really want the answer to.</a> <a data-t="89">If you've ever played a video game where you say to yourself just five more minutes or</a> <a data-t="92">one more turn, and you're still playing it an hour later, this is the dataset version of that.</a> <a data-t="97">Just one more graph.</a></p>
+<p><a data-t="80">And when I say interesting, I mean that it rouses your curiosity.</a> <a data-t="84">It makes you start asking a whole bunch of questions that you really want the answer to.</a> <a data-t="89">If you've ever played a video game where you say to yourself just five more minutes or</a> <a data-t="92">one more turn, and you're still playing it an hour later, this is the dataset version of that.</a> <a data-t="98">Just one more graph.</a></p>
 
 <h3>Examples of great datasets</h3>
 
@@ -24,7 +24,7 @@
 
 <p><a data-t="192">But to put this together, I had to learn to do a whole bunch of things I didn't know</a> <a data-t="196">how to do before, like use custom fonts so I could get this Georgian era kind of handwriting</a> <a data-t="202">vibe, to tweak labels using the glue and ggtext packages.</a> <a data-t="207">I had to choose an appropriate color palette for the subject matter and adjust a ton of</a> <a data-t="211">theme elements using </a><a href="/software/ggplot2/">ggplot2</a><a data-t="211">.</a></p>
 
-<p><a data-t="214">A second question I had was, which characters are most similar to or different than one another?</a> <a data-t="219">And again, I put in a bunch of work and ended up with something like this, which looks at</a> <a data-t="224">reasonable versus deranged characters plotted against rugged versus refined characters.</a> <a data-t="229">So here we see that characters like Sandra Clegane and Jane Cobb are really similar to one another.</a> <a data-t="234">They're deranged and rugged.</a> <a data-t="236">And their opposites are Charlotte York from Sex and the City and Annie Edison, who are</a> <a data-t="240">reasonable and refined.</a></p>
+<p><a data-t="214">A second question I had was, which characters are most similar to or different than one another?</a> <a data-t="220">And again, I put in a bunch of work and ended up with something like this, which looks at</a> <a data-t="224">reasonable versus deranged characters plotted against rugged versus refined characters.</a> <a data-t="229">So here we see that characters like Sandra Clegane and Jane Cobb are really similar to one another.</a> <a data-t="234">They're deranged and rugged.</a> <a data-t="236">And their opposites are Charlotte York from Sex and the City and Annie Edison, who are</a> <a data-t="240">reasonable and refined.</a></p>
 
 <p><a data-t="242">And to do this, I had to conduct principal component analysis with tidy models because</a> <a data-t="248">these are actually principal components.</a> <a data-t="250">You don't find them in the data.</a> <a data-t="251">I had to learn to add text and arrow annotations to get this graph here.</a> <a data-t="255">And I wrote a blog post where this is an interactive chart.</a> <a data-t="259">So I had to learn how to make an interactive chart using Plotly.</a></p>
 
@@ -32,4 +32,4 @@
 
 <blockquote><a data-t="263">I never would have put this much effort, this</a> <a data-t="269">many hours into analyzing Titanic passengers.</a> <a data-t="273">It was because it was such a great, engaging data set where I had tons of questions that</a> <a data-t="277">I wanted the answers to that I had the drive and the curiosity to actually get those answers</a> <a data-t="282">and learn a whole bunch of stuff in the process.</a></blockquote>
 
-<p><a data-t="285">So I encourage you to get your own great data sets.</a> <a data-t="289">And to Allison, I very respectfully that we maybe add one thing to the balloon.</a> <a data-t="294">Thank you.</a></p>
+<p><a data-t="285">So I encourage you to get your own great data sets.</a> <a data-t="288">And to Allison, I very respectfully that we maybe add one thing to the balloon.</a> <a data-t="294">Thank you.</a></p>

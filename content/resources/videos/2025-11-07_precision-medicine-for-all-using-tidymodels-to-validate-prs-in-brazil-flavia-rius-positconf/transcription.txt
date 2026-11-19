@@ -28,13 +28,13 @@
 
 <p><a data-t="243">Once I gathered all my data all my cases and controls data it was already I decided to I</a> <a data-t="250">started to have a lot of questions and uncertainties and</a> <a data-t="255">the feeling reminded me of a very specific situation that I've been through in the spring of</a> <a data-t="262">2017 when I moved to New York, let me tell you a story about it.</a></p>
 
-<p><a data-t="268">So during my PhD</a> <a data-t="270">I got a scholarship to spend one year in the Weill Cornell Medicine Lab to do a part of my project there.</a> <a data-t="278">I was very excited it was my first time in New York and</a> <a data-t="282">once I got there and settled in the into the apartment with my roommates,</a> <a data-t="288">I noticed that I needed to buy some things like laundry detergent,</a> <a data-t="293">shampoo and yogurt.</a></p>
+<p><a data-t="268">So during my PhD</a> <a data-t="270">I got a scholarship to spend one year in the Weill Cornell Medicine Lab to do a part of my project there.</a> <a data-t="270">I was very excited it was my first time in New York and</a> <a data-t="282">once I got there and settled in the into the apartment with my roommates,</a> <a data-t="282">I noticed that I needed to buy some things like laundry detergent,</a> <a data-t="293">shampoo and yogurt.</a></p>
 
 <p><a data-t="295">So I made a list with 20 items and went to the grocery store.</a> <a data-t="302">When I got there and went and got into the fridge part to buy my yogurt I</a> <a data-t="307">simply got stuck.</a> <a data-t="309">There were so many options that I could not decide which one to pick.</a></p>
 
-<p><a data-t="314">The cheapest maybe? Oh the list of ingredients is too extense. I don't know.</a> <a data-t="322">What about the most expensive one? It must be good.</a> <a data-t="323">Too expensive. I don't know if it's worth it.</a> <a data-t="326">Which brand is this? Should I buy Greek or regular yogurt? What is skr?</a></p>
+<p><a data-t="314">The cheapest maybe? Oh the list of ingredients is too extense. I don't know.</a> <a data-t="314">What about the most expensive one? It must be good.</a> <a data-t="323">Too expensive. I don't know if it's worth it.</a> <a data-t="326">Which brand is this? Should I buy Greek or regular yogurt? What is skr?</a></p>
 
-<p><a data-t="336">So, oh my god, I need some help.</a> <a data-t="341">So that day I understood the meaning of the word overwhelmed.</a> <a data-t="341">I was so overwhelmed that I left the grocery store</a> <a data-t="348">with only half of my list checked off and a headache.</a></p>
+<p><a data-t="336">So, oh my god, I need some help.</a> <a data-t="336">So that day I understood the meaning of the word overwhelmed.</a> <a data-t="341">I was so overwhelmed that I left the grocery store</a> <a data-t="348">with only half of my list checked off and a headache.</a></p>
 
 <p><a data-t="354">So as many of you here are from the U.S.</a> <a data-t="358">I believe you might have never experienced the feeling of overwhelm by going to the grocery store,</a> <a data-t="365">but I'm sure you have experienced this from doing a data science project, right?</a> <a data-t="369">You have to pick so many things and it was not different for me in my PRS project.</a></p>
 
@@ -42,7 +42,7 @@
 
 <p><a data-t="401">Operationally, what about the ID? Should I stick with the one I know or try that newest fastest available?</a> <a data-t="408">Should I try the new tool they've shared in posit::conf or stick with the ones I don't know?</a> <a data-t="415">So as this and many more questions were going through my head, I</a> <a data-t="420">was overwhelmed in my project.</a></p>
 
-<p><a data-t="423">But once I've passed it all and got into the final part of my project what I needed to answer the question</a> <a data-t="431">can European based PRS be used in Brazil to identify a high breast cancer risk?</a> <a data-t="436">I knew that tidymodels was my the solution.</a> <a data-t="436">It was not be overwhelming at all.</a></p>
+<p><a data-t="423">But once I've passed it all and got into the final part of my project what I needed to answer the question</a> <a data-t="431">can European based PRS be used in Brazil to identify a high breast cancer risk?</a> <a data-t="436">I knew that tidymodels was my the solution.</a> <a data-t="437">It was not be overwhelming at all.</a></p>
 
 <h3>Why tidymodels</h3>
 
@@ -52,9 +52,9 @@
 
 <h3>Step-by-step workflow</h3>
 
-<p><a data-t="507">Let me show you better in a practical way of all of my step-by-step.</a> <a data-t="512">So first I want to show you a glance of my data.</a> <a data-t="514">I've read it with </a><a href="/software/readr/">readR</a><a data-t="514"> and here you can see I have ID,</a> <a data-t="522">status, sex, the PRS is and the principal components 1 through 10 all row.</a></p>
+<p><a data-t="507">Let me show you better in a practical way of all of my step-by-step.</a> <a data-t="512">So first I want to show you a glance of my data.</a> <a data-t="517">I've read it with </a><a href="/software/readr/">readR</a><a data-t="517"> and here you can see I have ID,</a> <a data-t="522">status, sex, the PRS is and the principal components 1 through 10 all row.</a></p>
 
-<p><a data-t="529">Then I started with my first tidymodels tool, which is </a><a href="/software/rsample/">rsample</a><a data-t="529"> to split my data easily into training and testing.</a> <a data-t="537">Here I've used</a> <a data-t="539">status as the strata because I wanted to balance cases and controls.</a></p>
+<p><a data-t="529">Then I started with my first tidymodels tool, which is </a><a href="/software/rsample/">rsample</a><a data-t="529"> to split my data easily into training and testing.</a> <a data-t="529">Here I've used</a> <a data-t="539">status as the strata because I wanted to balance cases and controls.</a></p>
 
 <p><a data-t="544">Then prior to the next step I normalize the PRS values by mean and standard deviation of</a> <a data-t="552">controls only because I didn't want it to bias by the selected patients.</a></p>
 
@@ -64,7 +64,7 @@
 
 <p><a data-t="604">Then workflows served as the orchestra conductor where it joined</a> <a data-t="611">the recipe and the engine and</a> <a data-t="615">it could be easily piped to a fit function and fit my data to get the results.</a></p>
 
-<p><a data-t="622">I could extract the statistics with the versatile tidy function from the broom package.</a> <a data-t="629">Here I said exponentiate to true to get the odds ratio and I use some</a> <a href="/software/dplyr/">dplyr</a><a data-t="635"> functions to get only the PRS</a> <a data-t="639">results. That's what I was interested in.</a></p>
+<p><a data-t="622">I could extract the statistics with the versatile tidy function from the broom package.</a> <a data-t="623">Here I said exponentiate to true to get the odds ratio and I use some</a> <a href="/software/dplyr/">dplyr</a><a data-t="635"> functions to get only the PRS</a> <a data-t="639">results. That's what I was interested in.</a></p>
 
 <p><a data-t="642">Then I did a new recipe</a> <a data-t="645">without the principal components to get the AUC metric for only PRS</a> <a data-t="652">and I could easily update the recipe with update_recipe from workflows.</a></p>
 
@@ -72,13 +72,13 @@
 
 <h3>Results</h3>
 
-<p><a data-t="684">So to get my final results, I just repeated that with all the other PRS's.</a> <a data-t="690">I split my data into PRS deciles in order to evaluate if higher PRS values would have</a> <a data-t="698">would identify a higher risk for the disease and</a> <a data-t="702">due to the heterogeneity of our ancestry sample,</a> <a data-t="706">I've split it into different groups to evaluate PRS for all</a> <a data-t="713">particularities of ancestries I'm going to show you better.</a></p>
+<p><a data-t="684">So to get my final results, I just repeated that with all the other PRS's.</a> <a data-t="684">I split my data into PRS deciles in order to evaluate if higher PRS values would have</a> <a data-t="698">would identify a higher risk for the disease and</a> <a data-t="702">due to the heterogeneity of our ancestry sample,</a> <a data-t="706">I've split it into different groups to evaluate PRS for all</a> <a data-t="713">particularities of ancestries I'm going to show you better.</a></p>
 
 <p><a data-t="717">So this is the first main result we had you can see that there is a positive correlation of</a> <a data-t="724">the odds ratio on the y-axis and the PRS deciles on the x-axis and</a> <a data-t="729">this is an indication that a higher values of PRS can predict better the disease and</a> <a data-t="736">this shows us that the three PRS's here generalized well to our population.</a></p>
 
 <p><a data-t="742">Then I did the split by ancestry composition.</a> <a data-t="746">The first group was an East Asian majority with over 50% of East Asian ancestry,</a> <a data-t="753">the second group non-european majority with less than 50% of European ancestry and</a> <a data-t="760">the third group European majority with 50% or more of European ancestry.</a></p>
 
-<p><a data-t="767">The overall results were good, very similar to the overall population with odds ratios — these are odds ratios per standard deviation —</a> <a data-t="778">but</a> <a data-t="778">particularly for the East Asian group one of the PRS's,</a> <a data-t="782">the broad PRS exhibited a wide confidence interval which included a less than one value of odds ratio</a> <a data-t="790">and a p-value higher than our threshold so we could not follow with it as a</a> <a data-t="796">valid PRS for our population.</a> <a data-t="796">So we validated both 380 and 313 PRS's,</a> <a data-t="803">by the way, their names are the number of variants they have and</a> <a data-t="808">with 380 exhibiting the best results.</a></p>
+<p><a data-t="767">The overall results were good, very similar to the overall population with odds ratios — these are odds ratios per standard deviation —</a> <a data-t="776">but</a> <a data-t="778">particularly for the East Asian group one of the PRS's,</a> <a data-t="782">the broad PRS exhibited a wide confidence interval which included a less than one value of odds ratio</a> <a data-t="790">and a p-value higher than our threshold so we could not follow with it as a</a> <a data-t="796">valid PRS for our population.</a> <a data-t="796">So we validated both 380 and 313 PRS's,</a> <a data-t="803">by the way, their names are the number of variants they have and</a> <a data-t="808">with 380 exhibiting the best results.</a></p>
 
 <p><a data-t="813">Remember the moderate risk variants?</a> <a data-t="816">So in this plot we compare some genes that are very important for a breast cancer risk and we could show that</a> <a data-t="823">the top PRS decile has an odds ratio that's comparable to</a> <a data-t="829">ATM and CHEK2 which are genes in which</a> <a data-t="833">moderate risk variants reside.</a> <a data-t="833">So this result is very important because it not only shows that it is</a> <a data-t="840">generalizable to our population, but also that it</a> <a data-t="843">has clinical use.</a></p>
 
@@ -96,6 +96,6 @@
 
 <p><a data-t="967">Excellent let's log any questions on Slido.</a> <a data-t="972">While we wait I should tell you that</a> <a data-t="974">the original name of the workflow package was orchestra really so I texted Davis that and</a> <a data-t="981">he thinks it's a great analogy.</a></p>
 
-<p><a data-t="988">One question, do you have any like pain points in the analysis process? Was there anything that was like exceedingly difficult?</a> <a data-t="996">Well, actually the whole bioinformatics part, the</a> <a data-t="999">principal components analysis I had to</a> <a data-t="1002">do everything kind of from scratch because I was using exome data and there was no</a> <a data-t="1009">process of doing this, I had to</a> <a data-t="1012">use an external database.</a> <a data-t="1015">It was the most complicated part so not so data science related more bioinformatics related.</a></p>
+<p><a data-t="988">One question, do you have any like pain points in the analysis process? Was there anything that was like exceedingly difficult?</a> <a data-t="988">Well, actually the whole bioinformatics part, the</a> <a data-t="999">principal components analysis I had to</a> <a data-t="1002">do everything kind of from scratch because I was using exome data and there was no</a> <a data-t="1009">process of doing this, I had to</a> <a data-t="1012">use an external database.</a> <a data-t="1015">It was the most complicated part so not so data science related more bioinformatics related.</a></p>
 
 <p><a data-t="1023">Okay. All right. Thank you very much.</a></p>

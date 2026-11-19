@@ -1,0 +1,1672 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.600
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.600 --> 00:00:21.959
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:21.959 --> 00:00:27.200
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.200 --> 00:00:30.639
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.639 --> 00:00:36.279
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.279 --> 00:00:45.400
+Can't wait to see you there. So some great questions today that I can give you to get
+
+00:00:45.400 --> 00:00:49.320
+us started. Are anything about community building? Because Rachel and I already have some things
+
+00:00:49.320 --> 00:00:56.299
+we'd love to chat about as a follow-up to our community building event that we had last
+
+00:00:56.299 --> 00:01:03.500
+month in early August. But also, anything about Conf? Anything about other organizations
+
+00:01:03.500 --> 00:01:07.260
+or the way that things work that you're just curious about? You could even tell them to
+
+00:01:07.260 --> 00:01:12.099
+me and I could put them up as a poll in Slido. In Slido, there's a little slider at the top
+
+00:01:12.099 --> 00:01:16.900
+where you get like a Q&A on one side, polls on the other. If we ask a poll, it'll be there.
+
+00:01:16.900 --> 00:01:23.500
+Okay, so as an opener, my name is Libby. I'm a data scientist by training and trade, but
+
+00:01:23.500 --> 00:01:28.059
+I do community stuff here at Posit, which means I help all of us in the data science
+
+00:01:28.059 --> 00:01:34.139
+community come together. My background is applied stats, especially business statistics,
+
+00:01:34.139 --> 00:01:37.940
+operations research, mathematical optimization, all of the super boring stuff that nobody
+
+00:01:37.940 --> 00:01:43.860
+likes to do. I love that stuff. But I also love community building. I run our Discord
+
+00:01:43.860 --> 00:01:49.139
+server. So if you have not joined, there'll be links in the chat for that. And I will
+
+00:01:49.139 --> 00:01:52.220
+hand it over to Rachel to say hi and introduce herself.
+
+00:01:52.220 --> 00:01:59.739
+Sure. So I'm Rachel Dempsey. I live in the Boston area, have been at Posit for almost
+
+00:01:59.739 --> 00:02:07.660
+officially nine years, which is wild. But yeah, I started off here on our sales team,
+
+00:02:07.660 --> 00:02:12.100
+made my way over to marketing and community. And that's where I've been ever since. So
+
+00:02:12.100 --> 00:02:17.899
+I lead our customer marketing team now. But I thought what might be interesting to talk
+
+00:02:17.979 --> 00:02:25.259
+about, Libby, is how the chaos mode started and became something that we're actually planning
+
+00:02:25.259 --> 00:02:31.940
+now. So for any community builders out there, you know, everything doesn't go perfect all
+
+00:02:31.940 --> 00:02:38.339
+the time. And for Hangouts, we always have like people lined up a few, like a month or
+
+00:02:38.339 --> 00:02:44.419
+so in advance. But sometimes someone gets sick and needs to reschedule or something
+
+00:02:44.419 --> 00:02:50.300
+comes up like travel. And we had a Hangout that was just like this chaos mode where we're
+
+00:02:50.300 --> 00:02:55.100
+like, well, everyone's still planning to get together at this time. So let's figure it
+
+00:02:55.100 --> 00:03:01.339
+out. And I feel like people just loved it. And then people were asking, like, when do
+
+00:03:01.339 --> 00:03:06.899
+we get to have another chaos mode again? So now Libby and I are trying to put them into
+
+00:03:06.899 --> 00:03:08.619
+the schedule once in a while too.
+
+00:03:09.580 --> 00:03:15.380
+Heck yeah, I'm really excited about that. I'd also love if Isabella, you could introduce
+
+00:03:15.380 --> 00:03:21.699
+yourself. You all might know Isabella. And also Isabella, I feel like and Rachel are
+
+00:03:21.699 --> 00:03:27.179
+the only ones who do in person get together sometimes. I never do. So please feel free
+
+00:03:27.179 --> 00:03:27.820
+to mention that.
+
+00:03:29.020 --> 00:03:35.860
+Well, sure. Hi, everyone. I'm Isabella Velasquez. So I've been at Posit for five years now.
+
+00:03:35.979 --> 00:03:43.380
+I can't believe it when it used to be called RStudio, hence the shirt. Before I came to
+
+00:03:43.380 --> 00:03:49.259
+RStudio Posit, I was a data analyst and so got to use a lot of R. I was living in Seattle
+
+00:03:49.259 --> 00:03:55.339
+at the time and one of the co-organizers for R Lady Seattle. It's an amazing time. I moved
+
+00:03:55.699 --> 00:04:02.059
+to Chicago a couple of years ago. And so really enjoying my time here. And I love being part
+
+00:04:02.059 --> 00:04:04.899
+of the data science Hangout community. So it's good to see everybody.
+
+00:04:06.820 --> 00:04:15.539
+Excellent, excellent. And so Isabella is in Chicago. I'm in San Antonio, Texas. Rachel's
+
+00:04:15.539 --> 00:04:19.540
+in Boston. Boston and Chicago are like great places to be if you're in the data science
+
+00:04:19.540 --> 00:04:26.299
+community. I feel like so many people congregate in those areas. Texas is way more spread out
+
+00:04:26.299 --> 00:04:29.739
+and it's much, much harder to get people together. Texas is like where data communities go to
+
+00:04:29.739 --> 00:04:31.739
+die for some reason if they're in person.
+
+00:04:32.619 --> 00:04:37.619
+Tom Mock is the founder of Tidy Tuesday in San Antonio, right?
+
+00:04:37.980 --> 00:04:44.899
+He wasn't originally though. We acquired Tom. You know, it's hilarious as Tom and I, Tom
+
+00:04:44.899 --> 00:04:49.179
+Mock and I live in the same city and we've never met. We've got to fix that.
+
+00:04:50.100 --> 00:04:55.100
+Maybe we'll get a coffee one day. Okay. I think Mike had a question right away. Mike,
+
+00:04:55.100 --> 00:04:57.059
+do you want to jump in here?
+
+00:04:57.459 --> 00:05:03.059
+Let's do it. I'm putting Mike's question in the chat for everybody.
+
+00:05:04.660 --> 00:05:05.540
+Can you hear me all right?
+
+00:05:06.500 --> 00:05:06.739
+Yes.
+
+00:05:07.380 --> 00:05:13.140
+So this is for people who are kind of leading communities, either at their place of work
+
+00:05:13.140 --> 00:05:18.980
+or a user group or anything like that, where you're just trying to kind of bring people
+
+00:05:18.980 --> 00:05:27.059
+together. What do you do when it just feels like you're pulling teeth? Like it's a huge
+
+00:05:27.059 --> 00:05:34.179
+effort to even get there, get people there, get them talking. I know that there's the
+
+00:05:34.179 --> 00:05:41.059
+kind of rule of just show up, right? Where if you show up and if you get people along,
+
+00:05:41.059 --> 00:05:48.339
+that's half the battle. But sometimes it just feels like torture. And I'm wondering, you
+
+00:05:48.339 --> 00:05:55.059
+know, what can you do to either energize the group or keep things fresh or change things
+
+00:05:55.059 --> 00:05:57.299
+up? I mean, chaos mode is an example, I guess.
+
+00:05:59.540 --> 00:06:04.980
+I mean, chaos mode, I will tell you, is somewhat anxiety inducing, right? Because there's like,
+
+00:06:06.179 --> 00:06:08.339
+there's no plan. It's up to you.
+
+00:06:09.059 --> 00:06:11.140
+But then you see everyone jump in.
+
+00:06:11.140 --> 00:06:11.380
+Yeah.
+
+00:06:11.940 --> 00:06:14.339
+Yeah. What do you got, Noor?
+
+00:06:18.500 --> 00:06:25.859
+So this is kind of a partial suggestion, may or may not work. But people like to know what
+
+00:06:25.859 --> 00:06:29.940
+they're getting into. So if there's some type of structure provided, especially with the type
+
+00:06:29.940 --> 00:06:36.260
+of people who tend to gravitate towards data science, they like having a plan coming in versus
+
+00:06:37.540 --> 00:06:42.500
+hi, we're just going to show up and meet, which is like, for me, who, contrary to popular belief,
+
+00:06:42.500 --> 00:06:48.100
+hates interaction, hates people, that sounds like my own miniature hell. So just knowing
+
+00:06:48.100 --> 00:06:55.459
+that there's like, okay, there's a formalized plan for this socialization, interaction, excellent.
+
+00:06:58.019 --> 00:07:00.660
+And sometimes assist with that process.
+
+00:07:01.779 --> 00:07:08.420
+I agree. Do you find that the Data Science Hangout has provided that? Like, what are some
+
+00:07:08.420 --> 00:07:09.700
+good examples, do you think?
+
+00:07:11.940 --> 00:07:17.059
+I do like this. I like the Slido aspect. Since it's an online meeting and so forth, I like the
+
+00:07:17.059 --> 00:07:22.019
+Slido aspect, one, to see questions being asked and also see what other people are asking and get
+
+00:07:22.019 --> 00:07:28.420
+a vibe of like, oh, this is not a stupid question or, oh, these are what other people are interested
+
+00:07:28.420 --> 00:07:33.540
+in and so forth. And also the Slido aspect is nice. So like people who don't want to speak up
+
+00:07:33.540 --> 00:07:35.940
+but still have a question are also represented as well.
+
+00:07:36.899 --> 00:07:43.299
+Yes. Okay. Noor just gave the answer that Rachel and I would have given, like, give people a way
+
+00:07:43.299 --> 00:07:49.459
+to ask questions in whatever way is comfortable for them, meet them where they are, right?
+
+00:07:49.459 --> 00:07:54.820
+Excellent, excellent. But also let people know what normal looks like. So in the beginning of
+
+00:07:54.820 --> 00:07:58.739
+the Hangout, I'm like, here's what we do, here's why we're here, here's how we ask questions,
+
+00:07:58.739 --> 00:08:04.579
+here's how this is going to go. Otherwise, everybody in the group is kind of sitting there
+
+00:08:05.779 --> 00:08:11.540
+wondering what they should be doing and afraid that they might do the wrong thing in front of
+
+00:08:11.540 --> 00:08:16.100
+a bunch of people, right? The best example of this is like, there's a bunch of cameras on right
+
+00:08:16.100 --> 00:08:23.059
+now. We are hanging out, we are like eating snacks, drinking tea, whatever. Camera on crew
+
+00:08:23.059 --> 00:08:28.500
+is representing hard today. But that's because over the course of five years,
+
+00:08:29.380 --> 00:08:35.380
+we have established that it's okay to have your camera on, it's okay to have it off. Libby and
+
+00:08:35.380 --> 00:08:39.299
+Rachel and whoever is talking are the only people who are going to end up recorded and on YouTube.
+
+00:08:39.940 --> 00:08:46.340
+This grid view of everybody is a pretty safe place to hang out and be. Just setting the norm
+
+00:08:46.340 --> 00:08:50.419
+is pretty good. But Mike, to your question of how do you keep showing up when it's really,
+
+00:08:50.419 --> 00:08:57.380
+really hard? And is the only answer just to keep showing up? I think the answer for me
+
+00:08:57.380 --> 00:09:05.140
+is recruiting good people to show up so that you have friendly faces too as an organizer.
+
+00:09:05.619 --> 00:09:13.299
+I hope your question was about being an organizer. Liz, Liz, what's going on? I hope you have me here.
+
+00:09:16.099 --> 00:09:20.900
+Hi, that was a great question. I liked Nora's answer a lot too. And I thought it was very
+
+00:09:20.900 --> 00:09:27.940
+ironic that we're in chaos mode talking about having a plan. So I think that the question,
+
+00:09:27.940 --> 00:09:34.099
+that what this all makes me think of is trust. And it seems that this community has built a
+
+00:09:34.099 --> 00:09:42.179
+culture of trust. And so that allows for more chaos mode. But if you're in a situation where
+
+00:09:42.179 --> 00:09:50.260
+you haven't yet built that trust, then some of the things that I've seen or had some discussions
+
+00:09:50.260 --> 00:09:57.700
+with people about are things like doing improv, like building structure in a way that can be
+
+00:09:57.780 --> 00:10:04.179
+kind of uncomfortable, but still structured. And I don't know that improv is like the answer to
+
+00:10:04.179 --> 00:10:09.700
+everything. That's one example. But there are kind of other facilitation activities like I've
+
+00:10:10.659 --> 00:10:15.700
+seen facilitate, I've been in meetings with facilitators, groups of facilitators that
+
+00:10:15.700 --> 00:10:21.219
+they have some interesting ways of bringing people together in structured and having a
+
+00:10:21.219 --> 00:10:27.140
+little bit of chaos in between ways. I'm curious if other people have experiences like that.
+
+00:10:28.419 --> 00:10:34.340
+Yeah, I'd love to hear from people because I have been in organizations where the structure
+
+00:10:34.340 --> 00:10:40.659
+is actually too structured. It's too much. It's like there's meeting minutes and they're
+
+00:10:40.659 --> 00:10:45.859
+planned out by the second and the minute. And if you reach minute 12 of the meeting,
+
+00:10:45.859 --> 00:10:51.059
+you're talking and you have two minutes to talk. And then we're going to cut you off at minute 17
+
+00:10:51.059 --> 00:10:57.140
+and somebody else's turn. I find that for me, that's a little too structured and it can create
+
+00:10:57.140 --> 00:11:02.739
+this sort of like fear of hands lapping, right? Where like, if people don't feel like they can
+
+00:11:02.739 --> 00:11:08.099
+have any flexibility inside of your structure, they might not participate at all. And indeed,
+
+00:11:08.099 --> 00:11:13.059
+in a lot of those meetings, no one says a word. The chat is just like completely empty and dead.
+
+00:11:13.780 --> 00:11:18.340
+And that goes back to that safety thing you were just saying. Psychological safety is really
+
+00:11:18.340 --> 00:11:23.539
+important. Okay, Mike, I hope that that answers your question.
+
+00:11:23.539 --> 00:11:28.820
+Libby, I remember back in the day when we kept recommending the book Subtract.
+
+00:11:29.460 --> 00:11:35.940
+And I do think it's important to take a step back sometimes and think about
+
+00:11:36.900 --> 00:11:43.940
+if it is really hard to get people to show up to this thing, is it the right format? And
+
+00:11:45.460 --> 00:11:50.419
+if it feels like pulling teeth, why? And I just had a, I put in the chat, I want to
+
+00:11:51.380 --> 00:11:58.500
+celebrate some community failures as well, because I recently been trying to get people
+
+00:11:58.500 --> 00:12:04.099
+together from the pharma community for just some high-level talks that they wanted to have with
+
+00:12:04.099 --> 00:12:11.140
+each other. But I kept being so hard to get people to show up for the time that they wanted,
+
+00:12:11.700 --> 00:12:15.859
+like once a month. And sometimes people would be there and then it'd be like two months before
+
+00:12:15.859 --> 00:12:22.979
+they came back. And I just was honest with them to say, this feels like it's not working.
+
+00:12:22.979 --> 00:12:29.859
+And I know that you all wanted to meet with each other. So what do you think we should do? And like
+
+00:12:29.859 --> 00:12:36.099
+here's some ideas I have. And so now we have this new thing where we're helping people meet one-on-one
+
+00:12:36.099 --> 00:12:42.179
+with each other. And so they can say like, these are one to three topics that I'm really interested
+
+00:12:42.179 --> 00:12:45.780
+in. And this is my availability. Cause like, I know they want to meet with each other,
+
+00:12:46.419 --> 00:12:51.460
+but that, that monthly meeting just was not working. And I was starting to dread it. And I'm
+
+00:12:51.460 --> 00:12:59.380
+like, Oh no, why am I like anxious about this this morning? I love it. Root cause analysis,
+
+00:12:59.380 --> 00:13:04.659
+even when it's uncomfortable, why is this not working? Why does this feel crappy? As a reminder,
+
+00:13:04.659 --> 00:13:09.140
+everybody, I forgot to say this. You can upvote questions in Slido. So head over, even if you
+
+00:13:09.140 --> 00:13:14.500
+don't want to ask a question, go skim through some and like sneakily upvote the ones that feel
+
+00:13:14.500 --> 00:13:20.900
+good to you so that they rise to the top for us as well. And I actually do a shout out real quick.
+
+00:13:22.500 --> 00:13:28.979
+Ryan is starting a new supply chain community and we just met this week to talk about it.
+
+00:13:29.539 --> 00:13:35.460
+And I just wanted to say, if anybody here is in the supply chain space and would be interested in
+
+00:13:36.260 --> 00:13:40.419
+like getting to start something new, it's a great opportunity to join Ryan on that.
+
+00:13:41.059 --> 00:13:43.859
+Ryan, sorry to put you like on the spot, but if you want to jump in.
+
+00:13:44.820 --> 00:13:47.380
+Yeah. Ryan or Connor to Ralph's here, I think.
+
+00:13:50.419 --> 00:13:55.619
+Hey everybody. Yeah. I'm happy to, to join in. And you know, this, these last couple of minutes
+
+00:13:55.619 --> 00:14:00.659
+of this conversation have been really interesting because well, I'll give a little bit of background.
+
+00:14:00.659 --> 00:14:05.140
+I had the idea to put this together maybe a few months ago to, to group up with some people in
+
+00:14:05.140 --> 00:14:10.820
+the supply chain community and then thought that I would run into a handful of people at
+
+00:14:11.460 --> 00:14:16.820
+the conf last week. And I think there were people there, but I didn't connect with a ton of them.
+
+00:14:16.820 --> 00:14:21.859
+And so I thought, well, let's, you know, let me talk with Rachel and Libby and see what we can do.
+
+00:14:23.140 --> 00:14:29.539
+And so that's, that's kind of the idea. And I think we would like to launch one in the next
+
+00:14:29.539 --> 00:14:36.020
+couple of weeks despite some of the conversation we just had about, are people going to show up to
+
+00:14:36.020 --> 00:14:43.619
+it? So I think we will go forward with it and I'm just trying to put together some ideas. And at the
+
+00:14:43.619 --> 00:14:50.580
+moment I have in mind this idea of doing kind of like lightning talks. So maybe there's a,
+
+00:14:52.179 --> 00:14:57.940
+this idea is less than 24 hours old, but maybe there's like a problem of the week or like a
+
+00:14:57.940 --> 00:15:06.260
+current event or, you know, what else could it be like a book review or help me with my resume.
+
+00:15:06.260 --> 00:15:11.940
+And we'll do these topics and people can maybe sign up to talk about those from session to
+
+00:15:11.940 --> 00:15:17.380
+session. And so we would have like a little bit of organization about what's going to be covered.
+
+00:15:17.380 --> 00:15:23.299
+And then, you know, we just kind of run it and everybody gets their few minutes to talk about
+
+00:15:23.299 --> 00:15:26.820
+what they want to. And then we sign up for more topics the next time around.
+
+00:15:27.940 --> 00:15:34.419
+Yeah. That sounds like an uncomf. I would Google uncomf if anybody is curious and uncomference is
+
+00:15:34.419 --> 00:15:42.020
+like, okay, we're all going to get together, show up with your topics, sign up, and then we will go
+
+00:15:42.020 --> 00:15:46.500
+through and vote on like whatever we want to do. There's different ways to do this different ways,
+
+00:15:46.500 --> 00:15:51.780
+different people, right. I've done it, but it could help figure out what people do want to
+
+00:15:51.780 --> 00:15:58.099
+talk about. Mike says an uncomf is a chaos mode conference. Hence why I absolutely love the
+
+00:15:58.580 --> 00:16:06.739
+concept. Some more ideas for that Ryan could be one of my favorites is like a confessional. Like
+
+00:16:06.739 --> 00:16:10.820
+what do you do that is that other people would tell you is wrong, but you do it anyway.
+
+00:16:11.780 --> 00:16:17.140
+You're just unabashed about it and defend it. Right. Like, like I actually read things
+
+00:16:17.940 --> 00:16:22.260
+straight into the environment or I, I do, you know, I just do things that other people wouldn't
+
+00:16:22.260 --> 00:16:27.859
+do. And here's why I do this. Yeah. Mike Smith says, how do I do this? Wrong answers only.
+
+00:16:27.859 --> 00:16:32.500
+It's something that I'll get people talking. So everybody reach out to Ryan, if you would like to
+
+00:16:33.299 --> 00:16:40.500
+get in on the supply chain stuff. And if I can just, I see a question from Marcus in here that
+
+00:16:40.500 --> 00:16:47.059
+says, can you define the term supply chain, which is a great question? Because if I had to estimate,
+
+00:16:47.059 --> 00:16:53.940
+I would say probably like half of the world's population works some on some level in supply
+
+00:16:53.940 --> 00:17:00.260
+chain. So because this is kind of connected with posit, it would be like people that work in any
+
+00:17:00.260 --> 00:17:04.099
+level of supply chain, whether it's like manufacturing or procurement or forecasting,
+
+00:17:04.099 --> 00:17:10.420
+or my own experiences in like the logistics and the actual freight movement part to demand planning,
+
+00:17:10.420 --> 00:17:17.219
+all of those where you're also involved on the data side and the data analytics side too. So
+
+00:17:19.060 --> 00:17:22.819
+don't, you know, definitely don't want to be exclusive and it may result in us splitting
+
+00:17:22.819 --> 00:17:31.060
+out into, into, into different groups as time goes on. But that's I guess to answer Marcus question,
+
+00:17:31.939 --> 00:17:37.300
+how can you define the term supply chain? We'll see. But if you're inclined to come and you think
+
+00:17:37.300 --> 00:17:42.979
+you fit, just, just come. We'll make it work. Amazing. All right. Thanks, Ryan. Let's hop over
+
+00:17:42.979 --> 00:17:47.300
+to the slider where we have so many questions that we won't be able to answer them all unless we get
+
+00:17:47.300 --> 00:17:52.660
+going. I saw that Olaya had a question and Olaya, I hope I'm saying your name correctly and that we
+
+00:17:52.660 --> 00:17:58.180
+can find you and help you unmute. And I will put your question in the chat as well. If you'd like
+
+00:17:58.260 --> 00:18:07.300
+to ask it live. Yeah. Hi. So yeah, I was wondering like how you guys deal with getting feedback from
+
+00:18:07.300 --> 00:18:12.819
+the community in not like a meeting way, but I'm thinking sort of like surveys that type of
+
+00:18:14.260 --> 00:18:22.900
+like online asynchronous feedback. What types of things do you guys do? And like,
+
+00:18:22.900 --> 00:18:33.619
+then what do you do with the data? How big is your group, Olaya? So I work for the preprint
+
+00:18:33.619 --> 00:18:41.459
+servers by Archive. I'm at Archive. So our user base is like 10 million people.
+
+00:18:45.219 --> 00:18:50.739
+So yeah, we, but we're interested in hearing from both like authors who put preprints on
+
+00:18:50.739 --> 00:18:57.380
+our websites, but also people who just read preprints. And those are harder to track because
+
+00:18:57.380 --> 00:19:03.219
+like they come to our site, but we don't track them. We don't collect any data on them. They
+
+00:19:03.219 --> 00:19:12.500
+don't log in. So it's harder to reach people we don't really know are using our service and how
+
+00:19:12.500 --> 00:19:20.180
+they're using it. So in the past, we've done surveys where we email our authors because we
+
+00:19:20.180 --> 00:19:25.540
+do have an email for those people and then post on social media and hope for the best.
+
+00:19:27.060 --> 00:19:36.099
+But we have struggled with getting a very biased sample because the people you reach and the people
+
+00:19:36.099 --> 00:19:43.219
+who are motivated to reply are kind of like the most engaged ones. So I guess as a follow-up,
+
+00:19:43.859 --> 00:19:49.380
+how do you reach the people who maybe use your products or participate in your community,
+
+00:19:49.380 --> 00:19:55.939
+but are not as like enthusiastic about it? They're just like, oh yeah, we use it, but like,
+
+00:19:55.939 --> 00:20:06.260
+I'm not a top advocate. I think that this is a like two or three part question and concept.
+
+00:20:07.140 --> 00:20:12.020
+One being the definition of a community versus a user base, right? Because you've got like a
+
+00:20:12.020 --> 00:20:18.900
+super big user base, but are they a community meaning they know that they belong to the group,
+
+00:20:18.900 --> 00:20:26.180
+they identify with each other, they know who each other are, that was structured strangely,
+
+00:20:27.459 --> 00:20:33.459
+and they also like have a way to connect with each other instead of just you, right? Because
+
+00:20:33.459 --> 00:20:39.619
+you're in like a one-to-many communication situation instead of a many-to-many opportunity.
+
+00:20:39.619 --> 00:20:46.260
+So like in the chat here, Arsenis could talk to Mike, Renato could talk to Connor, Aaron could
+
+00:20:46.260 --> 00:20:51.939
+talk to Noor, right? Like we could all talk to each other. So when you've got a sort of user base
+
+00:20:51.939 --> 00:20:57.459
+question, it becomes a product question. Like where do you put that? You could put that,
+
+00:20:57.459 --> 00:21:03.219
+one example that I could give you from Rachel and I, is that we have a registration survey. So if you
+
+00:21:03.219 --> 00:21:07.380
+register for the Data Science Hangout or the Data Science Lab, you get asked questions,
+
+00:21:07.380 --> 00:21:14.660
+and so we have data that way. We have questions that pop up in a survey after each of our
+
+00:21:15.140 --> 00:21:20.260
+sessions and say like, how did we do? Did we do okay? Did you feel okay? Did anything go wrong?
+
+00:21:20.260 --> 00:21:25.140
+Things like that. Or what do you want to see in the next session? And that stuff could be
+
+00:21:25.140 --> 00:21:29.859
+really helpful where it's like, if you're putting the survey where people are using the thing,
+
+00:21:31.859 --> 00:21:37.939
+but that might not be something that's within your power to do. But then also, do you have an
+
+00:21:37.939 --> 00:21:43.380
+organization set up or a community set up where archive members can talk to each other? Because
+
+00:21:43.380 --> 00:21:46.739
+I don't even know. Some people said in the chat that they're happy archive users, by the way. So
+
+00:21:46.739 --> 00:21:52.099
+there's a little bit of research for you. Yeah, no, but that's a great point. Like the difference
+
+00:21:52.099 --> 00:21:59.219
+between community and user base. And so I guess a follow-up to that, it's like, Posit is way
+
+00:21:59.219 --> 00:22:09.459
+bigger as an organization than we are. We're like 16 employees. But I guess what would be the
+
+00:22:10.099 --> 00:22:17.459
+people requirements to do something like this? Because in our current state, there's no way
+
+00:22:18.180 --> 00:22:23.540
+we could have a hangout like this. It's like, come chat with us and learn about
+
+00:22:23.540 --> 00:22:29.140
+rebrands, learn about the new features. I think I love that. I'm just like, my brain is starting to
+
+00:22:29.140 --> 00:22:35.219
+like, you know, all the things we could do. Literally cannot do them right now. Do you need
+
+00:22:35.300 --> 00:22:38.819
+a whole marketing department to be able to run these things?
+
+00:22:39.380 --> 00:22:47.380
+I will say when we first started this, it was just the Zoom meeting. And I tried it and was
+
+00:22:47.380 --> 00:22:54.339
+like, oh, 20 people came on and that's great. And then tried to build it up from there. But
+
+00:22:54.339 --> 00:23:01.459
+I think starting small is great. It's not going to be 200 people right away or 150.
+
+00:23:01.859 --> 00:23:05.540
+But I don't mean the people coming. I mean, how many people you need to like,
+
+00:23:05.540 --> 00:23:10.979
+organize it? Like, how long was it, like, employee time to run it?
+
+00:23:11.780 --> 00:23:17.780
+Yeah. I mean, it started with just Rachel. And Rachel wasn't even in a community-focused
+
+00:23:17.780 --> 00:23:21.859
+position. It wasn't like her full job or anything. It was like on the side. She was like,
+
+00:23:22.500 --> 00:23:25.060
+this sounds like something that would be beneficial, right? We could get people
+
+00:23:25.060 --> 00:23:30.579
+together to talk to each other. And she just started something, which is the advice I would
+
+00:23:30.579 --> 00:23:35.219
+give anybody. Like, get something on the calendar. Yeah. I think sometimes just, yeah,
+
+00:23:35.219 --> 00:23:39.939
+just getting started and not making it so it has to be this huge thing right away.
+
+00:23:39.939 --> 00:23:45.219
+Because it might be too daunting if we think about, like, needing to have had the full,
+
+00:23:45.219 --> 00:23:52.420
+like, data science hangout website and expecting this many people to come every week. Where I
+
+00:23:52.420 --> 00:23:57.219
+really just sent a few LinkedIn messages in the beginning to say, like, hey, we're going to try
+
+00:23:57.219 --> 00:24:02.900
+this thing. And I was wondering if you'd be interested in building it with us. And a few
+
+00:24:02.900 --> 00:24:07.459
+people came from the start. And some of those people are here still, like, five years later,
+
+00:24:07.459 --> 00:24:13.939
+which is amazing. So yeah. And I'm always happy to chat one-on-one if that would be helpful,
+
+00:24:13.939 --> 00:24:19.459
+too, about those early days. I feel like Marco's had a question about this in Slido, too.
+
+00:24:20.099 --> 00:24:23.859
+Yes. And we also have Nora and Mike with their hands raised. So I'm going to
+
+00:24:23.859 --> 00:24:27.300
+ask Nora to unmute and chime in here real quick, too.
+
+00:24:28.180 --> 00:24:32.020
+Yay. I'm slightly biased because I have heard of BioRxiv, but I'm
+
+00:24:32.020 --> 00:24:36.739
+shamefully was not aware that they had a blue sky. So that's on me. That being said, have you
+
+00:24:36.739 --> 00:24:43.060
+also, I guess, BioRxiv connected with some of, like, the training organizations and, like,
+
+00:24:45.540 --> 00:24:50.579
+professional societies like ASHG and things like that? Because those also may be a good
+
+00:24:51.300 --> 00:24:57.140
+source, because often the people using BioRxiv are often trainees and so forth, or they're using
+
+00:24:57.140 --> 00:25:01.939
+BioRxiv and uploading their stuff and so forth. That may be a good way of reaching out to your
+
+00:25:01.939 --> 00:25:19.060
+user base as well. Oh, I remuted. I fixed it. Yeah, I muted myself so that I could get a bite.
+
+00:25:20.020 --> 00:25:27.459
+Yeah, no, the Early Career Scientist is a great idea. We definitely, like, know that that is part
+
+00:25:27.459 --> 00:25:36.900
+of our user base and very engaged people. But, like, our main, and we had some projects sort of
+
+00:25:36.900 --> 00:25:45.380
+starting to try and reach those groups. But again, 16 employees is our biggest issue at the time.
+
+00:25:46.180 --> 00:25:52.420
+Um, so that's why I was like, how much effort does it take?
+
+00:25:54.260 --> 00:26:01.939
+This is a good point, though. Yeah, because our main job is not this. Like, we are, our main job
+
+00:26:01.939 --> 00:26:08.420
+is not community management. And so do you at least need, like, one dedicated person?
+
+00:26:09.380 --> 00:26:20.500
+I'm gonna say my vote is no. No. But you do need recognition from leadership that you are going to
+
+00:26:20.500 --> 00:26:25.939
+take the time and it's okay for you to invest the time and you can set some boundaries for yourself.
+
+00:26:25.939 --> 00:26:31.859
+So you can be like, okay, I'm one of 16 people, we are all pretty strapped for time. Is it okay
+
+00:26:31.859 --> 00:26:36.900
+if I take 10% of my week and put it towards this? And here's what I plan to do with that. And here's
+
+00:26:36.900 --> 00:26:42.099
+why I think it's going to be a good thing. And, you know, here's what feedback I think we'll get
+
+00:26:42.099 --> 00:26:47.300
+from it and how beneficial it will be. And that can be, you can set some pretty hard boundaries
+
+00:26:47.300 --> 00:26:51.699
+around that. You know, you can say, okay, here's what I plan to do. I'm going to set up a Google
+
+00:26:51.699 --> 00:26:56.979
+Meet event. I'm going to reach out to Libby and Rachel and get some advice on how this might work,
+
+00:26:56.979 --> 00:27:03.219
+right? And here's who I'm going to invite. I'm going to put an invite in this place where only,
+
+00:27:03.219 --> 00:27:09.939
+like, I think a hundred people might see it. And really just guard your time around it.
+
+00:27:11.140 --> 00:27:15.540
+That way it can start small and it won't spiral out of control. And then you can come back to
+
+00:27:15.540 --> 00:27:20.260
+leadership after you've had the event and say, here's what I learned. Here's how valuable it
+
+00:27:20.260 --> 00:27:24.900
+was, or be open to, it was not valuable at all. I'm not, I'm never doing that again.
+
+00:27:25.380 --> 00:27:30.979
+Or, or it was super valuable. I would like to do more. How can I
+
+00:27:32.660 --> 00:27:37.459
+advocate for spending more time on it? Mike, you had some advice, I think. Would you like to unmute?
+
+00:27:42.979 --> 00:27:44.739
+We're trying. We're getting there.
+
+00:27:45.300 --> 00:27:52.339
+There we go. Yep. So, and Marcus is actually probably still in the thunder here. So,
+
+00:27:52.339 --> 00:27:57.619
+if you go back and look at Rachel's PositConf talk or RStudioConf, whenever it was, because
+
+00:27:57.619 --> 00:28:04.020
+it was a few years back, I think it depends, the number of people and the kind of scope of what
+
+00:28:04.020 --> 00:28:11.300
+you're trying to do, I think that this DSH is a bit more like regulars at a bar, right? You know,
+
+00:28:11.300 --> 00:28:15.619
+you come in and it's like, hey, how's it been going? What are you working on? You know, tell
+
+00:28:15.619 --> 00:28:21.140
+us what you've been doing. Rather than a kind of, hey, you're here to learn all about deposit
+
+00:28:21.140 --> 00:28:28.260
+products. And I think that that former thing of the community is actually just a bunch of people
+
+00:28:28.260 --> 00:28:32.420
+who regularly use these tools and want to get together and just share what they're doing
+
+00:28:33.140 --> 00:28:40.739
+and kind of ask questions and get some answers. It's as simple as that in my mind. And I don't
+
+00:28:40.739 --> 00:28:47.540
+think that needs a huge kind of infrastructure or, you know, even a terribly well thought out
+
+00:28:47.540 --> 00:28:54.660
+plan. Sorry, Rachel. Sorry, Libby. Hey, I don't think it was overplanned at the beginning.
+
+00:28:55.699 --> 00:28:59.380
+No, not at all. Yeah. So, just, it's just some, I,
+
+00:28:59.745 --> 00:29:04.225
+Sorry, Libby. Hey, I don't think it was over planned at the beginning.
+
+00:29:05.265 --> 00:29:11.585
+No, not at all. Yeah, so just it's just some, I, okay, my red flag, though, is that I call
+
+00:29:11.585 --> 00:29:16.144
+everything an experiment so that people will say yes to it. And so I'm like, Oh, let's just try
+
+00:29:16.144 --> 00:29:25.665
+this experiment. So it was an experiment at first. But I, I will say that you will probably see the
+
+00:29:25.665 --> 00:29:33.264
+value right away. But it takes a little bit more time to help other people see the value of it. So
+
+00:29:35.505 --> 00:29:42.065
+it's not like things grow immediately and become like, become what they are immediately. It does
+
+00:29:42.065 --> 00:29:47.985
+take time and it takes effort. But I don't think that you need to have a full time person
+
+00:29:47.985 --> 00:29:57.185
+dedicated to it. Yep. And we, we didn't, I didn't work here for years before, you know, like Rachel
+
+00:29:57.185 --> 00:30:02.545
+did the hangout by herself for a really long time, with the support of other people inside, like
+
+00:30:02.545 --> 00:30:11.505
+Isabella, like, you know, people who would hop in and help. But, yeah, I was an attendee. And so
+
+00:30:11.505 --> 00:30:15.585
+that's a great point as well. Mike was saying Libby was a cheerleader on the sidelines. Yeah,
+
+00:30:15.585 --> 00:30:20.784
+for a long time, I showed up, I helped grow the community. I really loved the space. And there
+
+00:30:20.784 --> 00:30:27.185
+are people who keep showing up here always. Mike is a cheerleader, James, Noor, No Tobacco shows up
+
+00:30:27.185 --> 00:30:32.464
+all the time. Natasha always asks amazing questions. Luke is here. Sometimes his background
+
+00:30:32.464 --> 00:30:37.825
+is on fire. And that's my favorite thing in the world. Just like people who continue to show up
+
+00:30:37.825 --> 00:30:46.464
+and ask cool questions. Rachel reached out to me one on one, first or second hangout that she did
+
+00:30:46.464 --> 00:30:50.704
+said thank you for attending. And that can be one of the most impactful things that you can do.
+
+00:30:50.704 --> 00:30:55.505
+Reaching out one on one and saying hi to people and making friends. Because this is all about
+
+00:30:55.505 --> 00:31:05.104
+making friends. Okay, so let's, let's go on to another question in Slido here. And let's see,
+
+00:31:05.104 --> 00:31:11.025
+I wanted to go. Okay, sorry. Some things were jumping around. Marcos had a question. And I
+
+00:31:11.025 --> 00:31:19.105
+don't see an asterisk. Marcos, are you willing to ask live? I'll put it in the chat too.
+
+00:31:22.225 --> 00:31:26.784
+There we go. I can unmute now. I think Rachel kind of already answered it. I was just asking
+
+00:31:26.784 --> 00:31:30.704
+about the early days, the data science hangout, like how small did you start? It sounded like
+
+00:31:30.704 --> 00:31:35.745
+you said you were messaging people on LinkedIn to kind of get initial attendance? Like was the
+
+00:31:35.745 --> 00:31:41.344
+first meeting 10 people? Was it 20? Like what what gave you the idea to do such a thing? I mean,
+
+00:31:41.344 --> 00:31:44.064
+you kind of already answered this, but anything else you want to say in that regard?
+
+00:31:45.745 --> 00:31:49.184
+Good question. This is more specific. Yeah, no, I think it was.
+
+00:31:51.105 --> 00:31:55.505
+So as we were, we were hosting a lot of meetups, and we'd have presentations,
+
+00:31:55.505 --> 00:32:02.945
+like we had R and insurance, or we'd like have a virtual meetup. This was even before COVID when
+
+00:32:02.945 --> 00:32:07.424
+there were a bunch of virtual meetups. But it was a way to get to share what different customers
+
+00:32:07.424 --> 00:32:12.624
+were doing. Because I was in sales. And people would ask me like, what's this customer doing?
+
+00:32:12.624 --> 00:32:17.904
+And I couldn't just say like, hey, this is what they told me on a zoom meeting. But then all of
+
+00:32:17.904 --> 00:32:24.465
+the q&a part was always like crammed into the very end. And it felt like that was some of the best
+
+00:32:24.465 --> 00:32:30.305
+parts is when people were just like jumping in and asking questions. And then the same with like
+
+00:32:30.305 --> 00:32:36.465
+hosting that are meetups in Boston, like in person ones, I always had great conversations with people
+
+00:32:36.465 --> 00:32:44.945
+when I was in the elevator, or when I was like grabbing pizza after. And so this was to be
+
+00:32:45.745 --> 00:32:54.225
+all q&a, just open format the whole time. But I do think Rob Bethel, who used to work at
+
+00:32:54.945 --> 00:33:02.064
+our studio and posit really was a person who helped like put a brand around it. So like we
+
+00:33:02.064 --> 00:33:07.344
+were doing these meetups, but we didn't have like, the idea for this being like a data science hang
+
+00:33:07.344 --> 00:33:16.705
+out. So he helped with that. But also, I still struggle with how do I get the word out about
+
+00:33:16.705 --> 00:33:23.425
+things? You know how like, any company who sends you something and it says, do you want to receive
+
+00:33:23.425 --> 00:33:29.024
+marketing emails? Like we always say no, we don't want to receive marketing emails, but
+
+00:33:29.904 --> 00:33:35.425
+the hangout and community events, they're marketing emails. And so I don't know how to let
+
+00:33:35.425 --> 00:33:41.825
+some people know about these things unless they see it on my LinkedIn or Libby's LinkedIn or on
+
+00:33:41.825 --> 00:33:48.545
+Blue Sky. So that's something I'm still trying to figure out. A lot of it, I think is word of
+
+00:33:48.545 --> 00:33:52.464
+mouth. So thank you all, everybody here for letting people know about the hangouts.
+
+00:33:53.584 --> 00:33:54.464
+What do you think Libby?
+
+00:33:55.985 --> 00:33:59.265
+I will say that in the early days, the way that I found out was LinkedIn.
+
+00:34:00.225 --> 00:34:05.904
+However, LinkedIn was a different place. So I think Olaya said in the chat that like,
+
+00:34:05.904 --> 00:34:09.665
+social media is part of of what you're trying to do. And it's hard.
+
+00:34:10.464 --> 00:34:16.464
+Valid. It is hard. It's weird. It's a quagmire. The algorithms are feel very out of control.
+
+00:34:17.184 --> 00:34:21.904
+The people who actually follow you, whatever that means, can't see what you're posting.
+
+00:34:22.464 --> 00:34:25.904
+Often I'm like, hey, here's something that I'm doing, or here's something that's happening,
+
+00:34:25.904 --> 00:34:32.064
+or I'll post a question and like four people will see it. And you know, thousands of people
+
+00:34:32.064 --> 00:34:37.105
+supposedly follow me on LinkedIn, the follow count kind of means nothing in the grand scheme of
+
+00:34:37.105 --> 00:34:43.184
+things. So individual connections begin to mean more and more in that scenario, right? Where like,
+
+00:34:43.184 --> 00:34:47.024
+I can talk to Mike and be like, hey, Mike, can you post like on your internal teams
+
+00:34:47.904 --> 00:34:51.425
+that this is happening? So that the people who actually do data science can see it. And
+
+00:34:52.225 --> 00:34:57.344
+you know, I might reach out to Kevin and be like, Kevin, you work on a team with other people who
+
+00:34:57.344 --> 00:35:01.105
+do this and that. Do you want to like spread this around? Or do you know people and Kevin will be
+
+00:35:01.105 --> 00:35:05.985
+like, yes, I'm part of a listserv and I'll put that out there, right? Those things become,
+
+00:35:05.985 --> 00:35:12.705
+I think, more important. Also, I just put a poll in the Slido for you. I'm doing this on behalf of
+
+00:35:13.184 --> 00:35:19.825
+myself and Hadley, who have been talking about the idea of submitting a posit conf talk being scary.
+
+00:35:19.825 --> 00:35:28.385
+And this is about community as well, because I, I feel like the nerves people feel around
+
+00:35:28.385 --> 00:35:33.744
+something are not always super justified, because they just don't know enough about the thing.
+
+00:35:34.705 --> 00:35:39.184
+Starting your first community thing feels terrifying. Rachel and I are like, put it on
+
+00:35:39.184 --> 00:35:43.344
+the calendar. Just do it. Reach out to some people. And you're sitting there going, no,
+
+00:35:43.344 --> 00:35:47.584
+that feels terrifying. What if they say no? What if they don't show up? What if I'm there by myself?
+
+00:35:47.584 --> 00:35:52.784
+What if nobody talks, right? I feel like submitting a conf talk is really similar,
+
+00:35:52.784 --> 00:35:56.545
+where if you've never done it before, you don't know what the process is like, and it might feel
+
+00:35:56.545 --> 00:36:02.624
+scary. And we are just, you know, a week after conf. And I've talked to so many people who are
+
+00:36:02.624 --> 00:36:08.705
+like, oh, I wish I saw XYZ at posit conf. And I think, oh, well, have you ever submitted a talk?
+
+00:36:08.705 --> 00:36:13.265
+And they're like, no, no, never. I'm like, okay, well, you got to be the change you want to see in
+
+00:36:13.265 --> 00:36:20.545
+the world. If you want to see conf talks about XYZ, consider maybe pulling together a talk and
+
+00:36:20.545 --> 00:36:26.145
+submitting it, right? This is the same for community. If you want community, you've got to
+
+00:36:26.145 --> 00:36:32.705
+be community first. And often it takes that one person going, yes, I'm going to put the time
+
+00:36:32.705 --> 00:36:40.145
+towards this. One of the questions that we see frequently is how do I make community self
+
+00:36:40.145 --> 00:36:45.584
+sustaining? How do I make it so that one or two people don't have to do a bunch of work and
+
+00:36:45.584 --> 00:36:50.545
+community just happens? And the answer, unfortunately, is that that's not super realistic.
+
+00:36:50.545 --> 00:36:55.904
+Somebody is doing the work, right? And the way I would love to reframe this is like,
+
+00:36:56.784 --> 00:37:05.904
+um, if you are, you want to experience holiday magic, how do I get holiday magic at my house
+
+00:37:05.904 --> 00:37:12.545
+without doing any work, without anybody hanging decorations, cooking, baking, planning a party,
+
+00:37:12.545 --> 00:37:16.864
+inviting people over, cleaning the house, right? Holiday magic is not going to happen. And it
+
+00:37:16.864 --> 00:37:21.904
+doesn't just happen. Someone's doing a bunch of invisible work. That's the same for community
+
+00:37:21.904 --> 00:37:27.344
+building. There are people putting in a ton of effort behind the scenes. And so if what you want
+
+00:37:27.344 --> 00:37:32.304
+is to enjoy community without doing the work of it and putting in the time, it's going to feel
+
+00:37:32.304 --> 00:37:38.465
+really incongruous. It's going to feel really hard. So I would anticipate that it is work,
+
+00:37:38.465 --> 00:37:42.624
+advocate for yourself that it is work, right? Like go to your, go to your boss and be like,
+
+00:37:42.624 --> 00:37:47.345
+this, this would be really amazing for all these reasons. Can I put this much time towards it?
+
+00:37:48.304 --> 00:37:52.465
+And then I think you'll feel a lot better. You'll feel less bamboozled by like, oh,
+
+00:37:52.465 --> 00:37:58.304
+how much work it is. Yeah. Just anticipate it being work. Thank you for the 19 votes we've
+
+00:37:58.304 --> 00:38:04.224
+had so far. The majority of people are saying that the idea of submitting a conf talk does
+
+00:38:04.224 --> 00:38:09.104
+seem a little scary, does freak them out a little. I encourage you to head over to the
+
+00:38:09.104 --> 00:38:13.905
+slides and vote some more. But for right now, let's head over and get a question
+
+00:38:14.465 --> 00:38:19.265
+from an anonymous asker that says, if I was starting a community, such as an evening meetup,
+
+00:38:19.265 --> 00:38:25.505
+what is the best way to get speakers? What a great question. And also so many replies here.
+
+00:38:25.505 --> 00:38:29.905
+So Nor had said, if you're near universities, that's a great place to find speakers.
+
+00:38:29.905 --> 00:38:34.465
+Heck yeah, I agree with that. Make some friends with some professors. Also make some friends
+
+00:38:34.465 --> 00:38:39.585
+with some grad students who want to give lightning talks, right? Now I'm thinking of anybody who
+
+00:38:39.585 --> 00:38:45.585
+feels afraid of submitting a posit conf talk. What a great way to practice than my speaking
+
+00:38:45.585 --> 00:38:52.785
+at a local meetup. Absolutely. Also like come to a hangout like this and put in the chat.
+
+00:38:53.825 --> 00:38:57.984
+Hey, I'm thinking about submitting a conf talk. Has anybody done it before? Is it scary?
+
+00:38:57.984 --> 00:39:04.145
+And then they can let you know whether or not it is. I've submitted one. I was nervous. I got
+
+00:39:04.145 --> 00:39:10.705
+through it. Luke says, there's a good number of local R user group organizers and former
+
+00:39:10.705 --> 00:39:15.424
+organizers in the data science hangout crew. Look for them. A couple of names to start. Javier,
+
+00:39:16.544 --> 00:39:24.145
+Ted Ladaris. Yeah, absolutely. Isabella and I, Rachel, like we can probably point out to you
+
+00:39:24.145 --> 00:39:30.145
+some people who generally are, you know, in the community giving talks, but also check out
+
+00:39:31.104 --> 00:39:38.224
+YouTube. Look for R ladies and R user groups and Python user groups and find these other people
+
+00:39:38.224 --> 00:39:44.304
+who are actively already giving talks or showing up and attending or organizing and reach out to
+
+00:39:44.304 --> 00:39:49.664
+them and just chat with them and see what's going on. Generally people share their contact
+
+00:39:49.664 --> 00:39:54.544
+information, their LinkedIn. You can look for them there. And if you reach out with a LinkedIn
+
+00:39:54.544 --> 00:40:00.064
+connection message that says, hey, I'm a fellow organizer. I'm trying to get people together
+
+00:40:00.544 --> 00:40:10.385
+I saw your talk on XYZ or ABC. I am trying to get together people to do something in the community
+
+00:40:10.385 --> 00:40:15.744
+and we would love it if you would come and chat with us. Like that can feel really overwhelming
+
+00:40:15.744 --> 00:40:20.224
+even to make that connection and to reach out. But I promise if you do like 10 of those,
+
+00:40:20.224 --> 00:40:25.104
+you'll probably get half the people responding and saying, yeah, I'm happy to. What are your
+
+00:40:25.104 --> 00:40:28.785
+dates that you have open? And then you'll panic and realize you don't have any dates set up. And
+
+00:40:29.664 --> 00:40:33.825
+this is where getting something on the calendar ahead of time is really helpful
+
+00:40:33.825 --> 00:40:37.825
+and just planning towards it. Let's see.
+
+00:40:41.585 --> 00:40:46.945
+We had a question here. I'm going to mark that one as answered. Here we go.
+
+00:40:46.945 --> 00:40:51.905
+From Noor. Noor, would you like to ask your question? Because I think we were just talking
+
+00:40:51.905 --> 00:40:55.984
+about how nerve wracking it can be to do certain things. Could open up a little discussion
+
+00:40:56.945 --> 00:40:59.905
+and I'll put it in the chat. I didn't mean to talk this much,
+
+00:41:00.945 --> 00:41:05.664
+but this is sort of a broad question. We've touched a little bit on it through this whole
+
+00:41:05.664 --> 00:41:11.905
+entire session, but what are common barriers? I know we've addressed them with them, like
+
+00:41:11.905 --> 00:41:15.744
+getting people to show up, getting people to talk, but other barriers to community building
+
+00:41:15.744 --> 00:41:19.984
+and initiation, especially of the community building. And how have you addressed them?
+
+00:41:19.984 --> 00:41:24.785
+What's worked? What's failed? And also what's a good starting number to start off? I know
+
+00:41:24.785 --> 00:41:31.505
+some people are like, you just need two people. And I'm like, no, that sounds awful. I can
+
+00:41:31.505 --> 00:41:34.385
+talk to someone normally. Just I need something a bit more.
+
+00:41:35.905 --> 00:41:40.064
+I want to turn this around to everyone. What is a barrier that someone's facing right now?
+
+00:41:40.864 --> 00:41:46.624
+Yeah. Raise your hand. I would love, love, love, love. Also, Luke changed his background
+
+00:41:46.624 --> 00:41:48.864
+to be on fire and I couldn't be happier. Thank you, Luke.
+
+00:41:49.585 --> 00:41:52.145
+Mike says it depends on who those two people are, right?
+
+00:41:53.984 --> 00:42:01.184
+I totally recognize that having two people does not feel like a community. It's just a start.
+
+00:42:01.905 --> 00:42:03.104
+Kevin? Kevin has something.
+
+00:42:04.064 --> 00:42:10.304
+Yeah. I mean, a barrier I'm facing right now for my RNIR community is just advertising it. And it's
+
+00:42:10.864 --> 00:42:16.224
+hard to find time in your schedule to show up to events like this, or I was at the positive
+
+00:42:16.544 --> 00:42:22.465
+event that happened just before this one, the modernizing analytics and education. And it's
+
+00:42:22.465 --> 00:42:26.785
+just, it's hard to find the time when you are working to show up and promote your groups.
+
+00:42:26.785 --> 00:42:35.585
+So I think that's always a big challenge. Yeah, absolutely. I will say it's the same
+
+00:42:35.585 --> 00:42:42.224
+barrier that Rachel and I face too. Not any different. Like, how do you find people and
+
+00:42:42.224 --> 00:42:47.265
+let them know about the thing that you're doing? It's tough. Any suggestions in the chat here
+
+00:42:47.265 --> 00:42:50.785
+would be fantastic, but also like letting everybody in the hangout know and asking
+
+00:42:50.785 --> 00:42:54.224
+them if they'll share. Great stuff. Mike, what do you got?
+
+00:42:56.224 --> 00:43:01.104
+So I go along to an electronic music night here in Glasgow and it happens monthly.
+
+00:43:02.465 --> 00:43:07.905
+The organizers of that night have done an amazing job. They work super duper hard.
+
+00:43:08.224 --> 00:43:14.145
+They advertise the heck out of it. But what that means then is that when you go along,
+
+00:43:14.145 --> 00:43:21.184
+you kind of see the same faces month in, month out. And also, you know, it's like that in a way
+
+00:43:21.184 --> 00:43:26.705
+builds that community. And I think that's one of the things that I've found that's been really
+
+00:43:26.705 --> 00:43:31.184
+helpful. And I think that's one of the things that I've found that's been really helpful.
+
+00:43:31.905 --> 00:43:39.585
+And also, you know, it's like that in a way builds that community. And like,
+
+00:43:39.585 --> 00:43:44.385
+you feel a little bit guilty if you can't come. Like, I had a competing meeting with this one on
+
+00:43:44.385 --> 00:43:49.104
+today and I was like, oh, should I go to that one instead? But then I was like, I really feel the
+
+00:43:49.104 --> 00:43:54.624
+pull to actually be there for chaos mode at the data science hangout. And so I kind of flipped
+
+00:43:54.624 --> 00:44:00.785
+and went, never mind that internal work meeting. This is the place to be. And I think that kind of
+
+00:44:00.785 --> 00:44:05.984
+long-term, you just get that kind of, actually, I would feel guilty if I didn't show up here today.
+
+00:44:06.945 --> 00:44:11.424
+That's the sweet spot, right? Because that's where you want, that's what keeps people coming.
+
+00:44:12.465 --> 00:44:19.744
+But I think the part is like, it's no small effort to actually keep reminding people and
+
+00:44:19.744 --> 00:44:24.224
+make, you know, sending out the invitations, making them feel guilty if they don't come
+
+00:44:24.224 --> 00:44:28.705
+because you've got a personalized invite. You all get reminders from us, right? There's a
+
+00:44:28.705 --> 00:44:33.664
+two-hour before the thing that's like, is this on your calendar? I added that because it fell
+
+00:44:33.664 --> 00:44:38.705
+off of everybody's calendar. That's such a good point, Mike. And I actually have the same thing
+
+00:44:38.705 --> 00:44:43.265
+with the music community in Boston that we're starting up and it's every Thursday and it's
+
+00:44:43.265 --> 00:44:50.544
+different songwriters that get together. And we try and share it on Instagram and get it out there
+
+00:44:50.544 --> 00:44:58.705
+every week. But we started posting pictures of the group of 20 people who are sitting around
+
+00:44:58.705 --> 00:45:04.544
+and listening to the music. And I kind of feel that guilt too, where I'm like, I want to be one
+
+00:45:04.544 --> 00:45:10.145
+of the people building it up. So if I miss one, I'm like, oh, then am I not part of this initial
+
+00:45:10.705 --> 00:45:17.664
+crew here? But yeah, and it's fun seeing, it's been a few months now, but now I'm starting to
+
+00:45:17.664 --> 00:45:22.705
+hear other people talking about it. Like, oh, I saw that thing that you've been posting. And I feel
+
+00:45:22.705 --> 00:45:29.025
+silly posting it every single week, but I do. And over time people start to know about it.
+
+00:45:29.905 --> 00:45:34.864
+And I think people need, I think Nora, you said this too, like people need to know what to expect.
+
+00:45:34.864 --> 00:45:43.265
+And for this one, like it's in like a random place and you don't know like how to get into it,
+
+00:45:43.744 --> 00:45:47.905
+like which floor is it on? So we're like taking videos and showing people how to get into the
+
+00:45:47.905 --> 00:45:53.025
+building, things like that are important. Oh my gosh. If there's no parking, I'm not coming to
+
+00:45:53.025 --> 00:45:57.984
+your event in person. Like, honestly, there are so many barriers that will keep people away that
+
+00:45:57.984 --> 00:46:04.145
+you have no idea exist for them. And this is one thing that I was talking with Hadley about,
+
+00:46:04.145 --> 00:46:11.185
+about submitting Conf Talks. If you are a Conf Talk person, you've given a bunch of them,
+
+00:46:11.185 --> 00:46:14.224
+or you've written a bunch of blog articles, or you've done a bunch of things that are out
+
+00:46:14.224 --> 00:46:18.785
+in the open. Your brain is not in the mode of, this is a thing that intimidates other people
+
+00:46:19.584 --> 00:46:25.824
+because you're used to it. If you're the person who, you know, scouted out your in-person location,
+
+00:46:25.824 --> 00:46:30.145
+or you set up your Zoom event or your Google Meet event or whatever it is, it's all normal to you.
+
+00:46:30.145 --> 00:46:35.984
+You set it up, you know, all the details, but someone who is coming from the other side of it
+
+00:46:35.984 --> 00:46:41.344
+might be coming with a bunch of anxieties and fears and preconceived notions and questions
+
+00:46:41.344 --> 00:46:46.385
+that, you know, will keep them away from your event that you will have nothing, you will know
+
+00:46:46.385 --> 00:46:52.065
+nothing about. So all of that stuff, the wayfinding that you can do for people, it will be really
+
+00:46:52.065 --> 00:46:58.864
+helpful. Okay. So many freaking great questions. And I wanted to share some things that were
+
+00:46:58.864 --> 00:47:04.145
+happening in the chat. Allie Warren said, I want to recommend people submit positive conference
+
+00:47:04.145 --> 00:47:08.864
+talks. It was the most supportive experience I have ever had preparing for a talk. Amen.
+
+00:47:08.864 --> 00:47:15.905
+Absolutely. Me too. And I only gave a lightning talk at PositConf. Doing a talk at PositConf
+
+00:47:16.704 --> 00:47:20.624
+is transformative for a lot of reasons, because you learn how to give a talk and you are given
+
+00:47:20.624 --> 00:47:26.224
+a lot of support as a speaker in a group of people. Allie gave a virtual talk this year
+
+00:47:26.224 --> 00:47:30.305
+that was amazing and very well received. Thank you so much, Allie. It was a pleasure working with you.
+
+00:47:31.265 --> 00:47:37.425
+But also Francisco had said, academia left me with scars. I feel like my projects,
+
+00:47:37.425 --> 00:47:43.665
+dashboards and implementations are nothing new or worth presenting. This is a fantastic example of
+
+00:47:44.704 --> 00:47:50.545
+what people are feeling on the other side of you asking them, hey, does anybody want to give a talk?
+
+00:47:52.065 --> 00:47:56.464
+They might be feeling this and I feel it too. Everything that I do is boring. It's not worth
+
+00:47:56.464 --> 00:48:00.065
+talking about. And that's the most common response I get when I ask people to be on the Hangout.
+
+00:48:00.065 --> 00:48:03.824
+They go, me? You don't talk to me? You don't want to talk to me. Nobody cares what I think.
+
+00:48:04.545 --> 00:48:10.545
+Right. And then they come on the Hangout and they say, yeah, I just like do regression models.
+
+00:48:10.545 --> 00:48:13.905
+I don't know if anybody cares about that. And then the data science Hangout explodes with,
+
+00:48:13.905 --> 00:48:18.305
+what kind of regression models? I love regression models. Let's talk about regression for an hour.
+
+00:48:19.344 --> 00:48:25.905
+OK, so your people are out there. They are more excited about the stuff that you do than you
+
+00:48:25.905 --> 00:48:30.224
+think. And they're more interested in whatever you do than you think you are.
+
+00:48:31.905 --> 00:48:38.864
+But as an organizer specifically, understand that those scars behind the scenes, we all have them.
+
+00:48:38.864 --> 00:48:46.145
+We all grew up probably being told to be quiet all the time and or don't brag about things or
+
+00:48:46.145 --> 00:48:49.425
+nobody cares what you're talking about if you have a bunch of siblings like I do.
+
+00:48:50.944 --> 00:48:55.824
+So be cognizant of that. Rachel and I have found that the easiest way to get people engaged is to
+
+00:48:55.824 --> 00:49:00.545
+ask them specifically and individually to contribute. Because if you just say, hey,
+
+00:49:00.545 --> 00:49:04.464
+does anybody want to do this, which is also like asking for people to, you know,
+
+00:49:04.464 --> 00:49:09.665
+submit comp talks, it's this one to many invite that doesn't land on anybody specifically.
+
+00:49:10.704 --> 00:49:16.545
+So going individually to five different people and asking them, hey, I have openings on these
+
+00:49:16.545 --> 00:49:22.624
+three days. I would love it if you could come and talk about something that's that you're working
+
+00:49:22.624 --> 00:49:28.624
+on lately or like a subject that you'd like to talk about or teach. What do you got? They're
+
+00:49:28.624 --> 00:49:32.944
+going to be much more likely to respond to that. We only have four minutes left. Does
+
+00:49:32.944 --> 00:49:35.665
+anybody have a follow up to that? I just talked too much, y'all.
+
+00:49:39.744 --> 00:49:44.065
+Rachel, any anything extra? Okay. I'm going to go over to our questions and let's get
+
+00:49:44.704 --> 00:49:49.905
+one more in. Thank you so much. I just want to hang out with people all day. Like there's just
+
+00:49:49.905 --> 00:49:55.425
+so many questions we could keep going on. Can we just can we keep keep hanging out? Everybody just
+
+00:49:55.425 --> 00:50:03.744
+wants to work together for another hour. I wanted to also shout out Shivani, who said that like,
+
+00:50:03.744 --> 00:50:08.224
+hey, this is a the discord has been really fun. And it's been a great place to like, share my
+
+00:50:08.224 --> 00:50:14.624
+stuff. Shivani shared her portfolio that she created, and she put a link in the chat. And I'm
+
+00:50:14.624 --> 00:50:19.185
+gonna like, I'm going to copy it here and like put it again so that everybody can go click it,
+
+00:50:19.185 --> 00:50:26.145
+go give it the hug of death really quickly and, and check it out. It's so fun, styled, like
+
+00:50:26.145 --> 00:50:36.224
+Windows 95. Really, really cute. Go play with it. And I agree, the discord is super fun. And if you
+
+00:50:36.224 --> 00:50:39.905
+have not joined, please join and hang out with us because we're there all the time.
+
+00:50:41.744 --> 00:50:46.944
+I want to say also, it's a great place to ask questions like Monty. So Monty had asked a
+
+00:50:46.944 --> 00:50:51.744
+question. And I'm going to say Monty, please go ask that in the AI and LLM channel inside the
+
+00:50:51.744 --> 00:50:57.505
+discord. It says how do people personally stay optimistic and grounded while working with AI?
+
+00:50:57.505 --> 00:51:02.624
+How do you personally navigate that tension and avoid getting overwhelmed by the more pessimistic
+
+00:51:02.624 --> 00:51:08.065
+but very real narratives around AI? These are fantastic community questions that people have
+
+00:51:08.065 --> 00:51:13.665
+feelings about. And I am going to copy and paste, put it put it in the discord. And if you're there,
+
+00:51:13.744 --> 00:51:17.984
+I'll tag you. I would love to be able to talk with people about this
+
+00:51:17.984 --> 00:51:26.864
+at some point. Yeah. Because I, I did notice a lot of like AI fatigue in the conference chat
+
+00:51:26.864 --> 00:51:33.025
+as well, as people were watching some talks, like, obviously, people are very excited about what is
+
+00:51:33.025 --> 00:51:37.984
+being announced and all the talks, but I did see that happening at the same time as well. So
+
+00:51:38.464 --> 00:51:42.944
+I think it would be really good to talk more about. Let's do it. And maybe we could even have
+
+00:51:44.624 --> 00:51:50.624
+some more smaller group chats and talk about it as well. One thing to note, if you are thinking
+
+00:51:50.624 --> 00:51:57.984
+about AI fatigue and stuff like that, we were just talking about PositConf, the talks that get
+
+00:51:57.984 --> 00:52:05.344
+submitted are how the categories are created, right? So the talks that get submitted are what
+
+00:52:05.344 --> 00:52:11.025
+can be pulled from by the organizing committee to make the groupings. Posit doesn't ask ahead
+
+00:52:11.025 --> 00:52:15.344
+of time for like, Hey, we want AI talks. And then we want modeling talks. And then we want
+
+00:52:15.344 --> 00:52:19.984
+practical workflow talks. And then we want quarter talks. We just like say, Hey, submit talks. And we
+
+00:52:19.984 --> 00:52:25.744
+see what comes in. So if a ton of people submit AI talks, and that's what they want to talk about,
+
+00:52:25.744 --> 00:52:29.665
+that's what the groupings end up including. So if you would really love to talk about
+
+00:52:30.224 --> 00:52:35.104
+things other than AI, please submit talks that are on those topics, because that's how we can
+
+00:52:35.104 --> 00:52:42.785
+create the schedule. Okay. I am so sad that we can't just talk for four more hours about all
+
+00:52:42.785 --> 00:52:46.944
+of these questions. I'm going to post some of them on the Discord server. Please hop on the Discord
+
+00:52:46.944 --> 00:52:50.785
+server and hang out with us. I will post them in the Data Science Hangout channel, but we also have
+
+00:52:50.785 --> 00:52:57.505
+a Community Builders channel. And I hope that you will hang out with us again next week. And also,
+
+00:52:58.065 --> 00:53:02.464
+I will let you know who is hanging out with us next week. Oh, goodness, this is where I should
+
+00:53:03.025 --> 00:53:08.224
+have this ready. Y'all. Actually, while you're grabbing that too, I just want to say,
+
+00:53:08.224 --> 00:53:13.265
+we talked about community building a lot today. So I'm going to start a thread in here that is
+
+00:53:13.265 --> 00:53:20.864
+who wants to connect with other community builders one on one. Yeah, because we are starting to do
+
+00:53:20.864 --> 00:53:26.624
+that. And so maybe a few people have gotten to try it so far. But like I said, with the life
+
+00:53:26.624 --> 00:53:31.104
+science chats that we're trying, we can do that with community builders too. So you share your
+
+00:53:31.104 --> 00:53:37.505
+availability and we match you with someone. But you need to just let me know if you're interested
+
+00:53:37.505 --> 00:53:45.425
+in that. And I lost the thread. No, okay. Zoom jumps around. Also, I found who's speaking with
+
+00:53:45.425 --> 00:53:50.545
+us next week. It's Dwight Berry. He's a Principal Data Scientist at Seattle Children's Hospital.
+
+00:53:50.545 --> 00:53:53.984
+If you know anything about Seattle Children's Hospital, you know that if you're in the Pacific
+
+00:53:53.984 --> 00:54:00.385
+Northwest, it's the place to be take care of kids. I personally have a friend whose kiddo
+
+00:54:00.385 --> 00:54:04.944
+gets tons of care at Seattle Children's and I think that they are a magical and wonderful place.
+
+00:54:05.505 --> 00:54:10.145
+So I hope that you come and learn all about Dwight. I love talking with him. I know that
+
+00:54:10.145 --> 00:54:15.744
+you're going to love it too. Dwight, oh, where are you? Raise your hand.
+
+00:54:16.464 --> 00:54:21.905
+So I want everybody to meet Dwight, get to ask Dwight questions about his journey,
+
+00:54:21.905 --> 00:54:26.145
+his background, how he got to where he is, about Seattle Children's if you would like.
+
+00:54:26.145 --> 00:54:31.505
+He's a delight and I can't wait for you to meet him. So we will see you next week on Thursday.
+
+00:54:31.505 --> 00:54:36.305
+There's Dwight. Hey, Dwight. So good to see you. All right, everybody. Thanks for sticking
+
+00:54:36.305 --> 00:54:40.785
+a minute over with us. We love you. We'll see you next week. Bye.
+
+00:54:40.785 --> 00:54:41.505
+Bye, everybody.
+
+00:54:45.744 --> 00:54:46.785
+Bye.

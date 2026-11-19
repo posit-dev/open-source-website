@@ -20,15 +20,15 @@
 
 <h3>Arranging layouts with headings</h3>
 
-<p><a data-t="189">I wonder if those might look better side by side.</a> <a data-t="193">Well, in Quarto dashboards, you use headings to arrange things.</a> <a data-t="194">And so by adding a simple heading, I can basically say, okay, I'd like to, you know, I guess</a> <a data-t="201">maybe maybe the way to explain it is to do this is to say, you know, dashboards have</a> <a data-t="205">sort of an orientation, which by default is rows.</a></p>
+<p><a data-t="185">I wonder if those might look better side by side.</a> <a data-t="193">Well, in Quarto dashboards, you use headings to arrange things.</a> <a data-t="194">And so by adding a simple heading, I can basically say, okay, I'd like to, you know, I guess</a> <a data-t="201">maybe maybe the way to explain it is to do this is to say, you know, dashboards have</a> <a data-t="205">sort of an orientation, which by default is rows.</a></p>
 
 <p><a data-t="210">So by default, it's saying just everything that shows up is a row, I could change that</a> <a data-t="215">and say, actually, like, let's make everything columns instead.</a> <a data-t="219">And so when I do that, we'll actually get the layout now into columns.</a></p>
 
 <p><a data-t="224">Similarly, if I said, let's go back to rows, just a good old basic orientation that we</a> <a data-t="230">had.</a> <a data-t="231">If I said I want to make a row explicitly, I can add a heading and say, here's a row</a> <a data-t="236">that I made.</a> <a data-t="237">And so I made a row, and the row has two things side by side in it, it'll get even easier</a> <a data-t="243">to see if I do something like make another row and put some content in it.</a></p>
 
-<p><a data-t="264">So now I have made a dashboard that basically has here, a row with some content in it, and</a> <a data-t="271">then here a row with the plots in it.</a> <a data-t="274">And you can see that looks very straightforward.</a></p>
+<p><a data-t="254">So now I have made a dashboard that basically has here, a row with some content in it, and</a> <a data-t="264">then here a row with the plots in it.</a> <a data-t="267">And you can see that looks very straightforward.</a></p>
 
-<p><a data-t="277">And so that gives you the basic idea of arranging things now, you know, you can keep going.</a> <a data-t="283">So you know, I could say, I'm going to make a column inside here.</a> <a data-t="288">And then I'm going to make another column.</a> <a data-t="290">And I will put another plot inside that column.</a> <a data-t="294">So I'll put another plot cars in here.</a></p>
+<p><a data-t="271">And so that gives you the basic idea of arranging things now, you know, you can keep going.</a> <a data-t="277">So you know, I could say, I'm going to make a column inside here.</a> <a data-t="283">And then I'm going to make another column.</a> <a data-t="285">And I will put another plot inside that column.</a> <a data-t="291">So I'll put another plot cars in here.</a></p>
 
 <p><a data-t="297">And so you can see you can you can make some pretty fancy layouts with some pretty simple</a> <a data-t="302">constructs with just using headings to arrange content.</a></p>
 
@@ -52,11 +52,11 @@
 
 <p><a data-t="461">So let's just say my value is 26.</a> <a data-t="470">The color is going to be red.</a> <a data-t="474">And let's even put an icon on it for like envelope.</a> <a data-t="480">And then let's make two of those just because it'll look a little cooler.</a> <a data-t="486">Now we've got a red and a green value box that we've created.</a> <a data-t="492">And there they are.</a> <a data-t="493">They've showed up just as you'd expect.</a></p>
 
-<p><a data-t="495">And what's great about this is now these value boxes, of course, since they're built programmatically,</a> <a data-t="500">can be responsive.</a> <a data-t="501">You know, so obviously, they can be red and green.</a> <a data-t="504">The icons can update to reflect the status.</a> <a data-t="508">And so it's super straightforward now to make these types of arrangements using this Quarto</a> <a data-t="514">dashboard.</a></p>
+<p><a data-t="495">And what's great about this is now these value boxes, of course, since they're built programmatically,</a> <a data-t="499">can be responsive.</a> <a data-t="500">You know, so obviously, they can be red and green.</a> <a data-t="504">The icons can update to reflect the status.</a> <a data-t="508">And so it's super straightforward now to make these types of arrangements using this Quarto</a> <a data-t="514">dashboard.</a></p>
 
 <h3>Dashboards in Jupyter notebooks</h3>
 
-<p><a data-t="515">Now, I think the other thing to think about and one other area that we focused on was</a> <a data-t="520">trying to create experiences that were great inside notebooks as well.</a> <a data-t="526">And so here I've got a Jupyter notebook.</a> <a data-t="528">I was showing you a Quarto markdown document.</a> <a data-t="531">Now I've got a Jupyter notebook that's building a dashboard as well.</a></p>
+<p><a data-t="515">Now, I think the other thing to think about and one other area that we focused on was</a> <a data-t="520">trying to create experiences that were great inside notebooks as well.</a> <a data-t="526">And so here I've got a Jupyter notebook.</a> <a data-t="529">I was showing you a Quarto markdown document.</a> <a data-t="531">Now I've got a Jupyter notebook that's building a dashboard as well.</a></p>
 
 <p><a data-t="535">And part of what's great about using the cells as sort of atomic units, as you can see, this</a> <a data-t="542">notebook, which basically makes a pretty nice dashboard, is, you know, has some markdown</a> <a data-t="549">cells, but really is just a set of code cells with a little bit of markdown around it to</a> <a data-t="554">arrange it.</a></p>
 

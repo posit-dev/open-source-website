@@ -64,8 +64,8 @@ external:  # updated automatically, do not edit
   description: Use of R in the investment industry is established and growing. This talk will discuss changes seen in 15 years of practice within asset management firms. I hope discussion of lessons learned and recommendations will benefit those currently in finance and those interested in hearing how the flexibility of R manifests in the financial world.
   duration: 1195
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:17.360225+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 106
   playlist: ''
   tags:

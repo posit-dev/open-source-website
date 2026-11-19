@@ -25696,23 +25696,6 @@ contributors = [
 ]
 
 [[repos]]
-repo = "shikokuchuo/mori"
-name = "mori"
-description = "Shared Memory for R Objects"
-website = "https://shikokuchuo.net/mori/"
-stars = 137
-forks = 2
-latest_release = "2026-06-09T11:58:34+00:00"
-first_commit = "2026-04-16T12:27:58+01:00"
-license = "MIT License"
-contributors = [
-    "shikokuchuo",
-]
-last_updated = "2026-07-01T13:29:07.286100+00:00"
-releases = 3
-language = "R"
-
-[[repos]]
 repo = "mlverse/logo"
 name = "logo"
 description = "An over-engineered hex logo!"
@@ -27470,6 +27453,147 @@ contributors = [
 ]
 readme_image = "logo/shiny-react.png"
 last_updated = "2026-09-29T19:45:28.550123+00:00"
+
+[[repos]]
+repo = "samuelbharti/biobouncer"
+name = "biobouncer"
+description = "Best way to validate gene symbols, ontology terms, variant formats, and other biological database IDs in apps and pipelines"
+website = "https://www.samuelbharti.com/biobouncer/"
+stars = 4
+forks = 0
+license = "MIT"
+language = "Python"
+latest_release = "2026-09-04T18:58:14+00:00"
+releases = 5
+first_commit = "2026-07-09T09:22:29+00:00"
+contributors = [
+    "samuelbharti",
+]
+readme_image = "pkg-r/man/figures/logo.png"
+last_updated = "2026-10-05T09:25:51.400268+00:00"
+
+[[repos]]
+repo = "samuelbharti/biohttp"
+name = "biohttp"
+description = "HTTP layer for R clients of biological and other web services."
+website = "https://www.samuelbharti.com/biohttp/"
+stars = 2
+forks = 0
+license = "NOASSERTION"
+language = "R"
+latest_release = "2026-09-07T05:57:58+00:00"
+releases = 3
+first_commit = "2026-07-31T16:01:14+00:00"
+contributors = [
+    "samuelbharti",
+]
+readme_image = "man/figures/logo.svg"
+last_updated = "2026-10-05T09:25:51.400268+00:00"
+
+[[repos]]
+repo = "samuelbharti/bioclients"
+name = "bioclients"
+description = "Look up genes, variants and proteins from R. One consistent way to call gnomAD, ClinVar, UniProt, Ensembl and other biological databases, instead of writing a client for each one."
+website = "https://www.samuelbharti.com/bioclients/"
+stars = 2
+forks = 0
+license = "MIT"
+language = "R"
+latest_release = "2026-08-03T09:17:51+00:00"
+releases = 1
+first_commit = "2026-07-31T19:28:09+00:00"
+contributors = [
+    "samuelbharti",
+]
+readme_image = "pkg-r/man/figures/logo.svg"
+last_updated = "2026-10-05T09:25:51.400268+00:00"
+
+[[repos]]
+repo = "samuelbharti/plotomics"
+name = "plotomics"
+description = "GPU-accelerated bioinformatics visualization for R, Python and the web. Seventeen components, one TypeScript core."
+website = "https://www.samuelbharti.com/plotomics/"
+stars = 2
+forks = 0
+license = "MIT"
+language = "TypeScript"
+latest_release = "2026-08-14T09:07:47+00:00"
+releases = 2
+first_commit = "2026-07-01T00:11:36+00:00"
+contributors = [
+    "samuelbharti",
+]
+readme_image = "assets/logo.svg"
+last_updated = "2026-10-05T09:25:51.400268+00:00"
+
+[[repos]]
+repo = "samuelbharti/biocohort"
+name = "biocohort"
+description = "Keeps the subjects, samples, and analysis outputs of a genomics (or any omics) study in one validated R object."
+website = "https://www.samuelbharti.com/biocohort/"
+stars = 3
+forks = 0
+license = "MIT"
+language = "R"
+latest_release = "2026-09-10T05:59:37+00:00"
+releases = 1
+first_commit = "2026-02-05T02:16:14+00:00"
+contributors = [
+    "samuelbharti",
+]
+readme_image = "pkg-r/man/figures/logo.svg"
+last_updated = "2026-10-05T09:25:51.400268+00:00"
+
+[[repos]]
+repo = "shikokuchuo/mizu"
+name = "mizu"
+description = "Async and parallel R at thread speed over shared memory"
+website = "https://shikokuchuo.net/mizu/"
+stars = 23
+forks = 0
+license = "NOASSERTION"
+language = "R"
+releases = 0
+first_commit = "2026-08-21T09:26:17+00:00"
+contributors = [
+    "shikokuchuo",
+]
+readme_image = "man/figures/logo.svg"
+last_updated = "2026-11-02T14:09:48.089169+00:00"
+
+[[repos]]
+repo = "shikokuchuo/pymizu"
+name = "pymizu"
+description = "Async and parallel Python at thread speed over shared memory"
+website = "https://shikokuchuo.net/pymizu/"
+stars = 3
+forks = 0
+license = "MIT"
+language = "Python"
+releases = 0
+first_commit = "2026-08-21T09:24:40+00:00"
+contributors = [
+    "shikokuchuo",
+]
+readme_image = "https://raw.githubusercontent.com/shikokuchuo/pymizu/main/docs/assets/logo.svg"
+last_updated = "2026-11-02T14:24:06.438482+00:00"
+
+[[repos]]
+repo = "shikokuchuo/libmizu"
+name = "libmizu"
+description = "Lock-free shared memory IPC at thread speed in C11"
+website = "https://shikokuchuo.net/libmizu/"
+stars = 5
+forks = 0
+license = "MIT"
+language = "C"
+releases = 0
+first_commit = "2026-08-21T09:24:37+00:00"
+contributors = [
+    "shikokuchuo",
+]
+readme_image = "https://raw.githubusercontent.com/shikokuchuo/libmizu/main/docs/assets/logo.svg"
+last_updated = "2026-11-02T14:09:54.105049+00:00"
 
 [[repos]]
 repo = "RConsortium/S7"

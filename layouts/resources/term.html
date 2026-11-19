@@ -89,8 +89,12 @@
           </div>
           {{ end }}
         </div>
-        {{- /* Software pills */ -}}
+        {{- /* Software pills; other_software has no page on this site, so it
+               comes first, without a URL, as non-clickable pills (see item.html) */ -}}
         {{ $hero_software := slice }}
+        {{ range .Params.other_software }}
+          {{ $hero_software = $hero_software | append (dict "text" . "url" "") }}
+        {{ end }}
         {{ range .GetTerms "software" }}
           {{ $hero_software = $hero_software | append (dict "text" .LinkTitle "url" .RelPermalink) }}
         {{ end }}
@@ -98,7 +102,11 @@
         {{ if or $.Params.date $.Params.external.duration $.Params.external.view_count }}<span class="text-sm font-mono font-medium text-gray-600">|</span>{{ end }}
         <div class="flex flex-wrap gap-1">
           {{ range . }}
+          {{ if .url }}
           <a href="{{ .url }}" class="px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide hover:bg-blue-200">{{ .text }}</a>
+          {{ else }}
+          <span class="px-2 py-0.5 rounded-md text-xs font-semibold uppercase tracking-wide bg-blue-100 text-blue-700 grayscale cursor-default">{{ .text }}</span>
+          {{ end }}
           {{ end }}
         </div>
         {{ end }}
@@ -253,7 +261,8 @@
           {{ $pageNum := add $index 1 }}
           <div class="shrink-0">
             <img src="{{ $thumbnail.RelPermalink }}" alt="Page {{ $pageNum }} preview"
-              class="h-48 w-auto rounded-lg border border-gray-300 cursor-pointer"
+              width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}"
+              class="h-48 w-auto rounded-lg border border-gray-100 bg-gray-50 cursor-pointer"
               loading="lazy"
               data-gallery-group="cheatsheet-preview"
               data-gallery-src="{{ $thumbnail.RelPermalink }}"
@@ -269,7 +278,7 @@
       </div>
       {{ end }}
 
-      {{- /* Download, Source Code, and Translation buttons */ -}}
+      {{- /* Download button */ -}}
       <div class="flex flex-wrap gap-2 mt-6">
         {{ with .Params.download_url }}
         {{ $ext := path.Ext . | strings.TrimPrefix "." | upper }}
@@ -282,17 +291,6 @@
           Download{{ if $ext }} {{ $ext }}{{ end }}
         </a>
         {{ end }}
-
-        {{ with .Params.source_url }}
-        <a href="{{ . }}" target="_blank"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-600 hover:bg-gray-700 text-white font-medium transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-          </svg>
-          Source Code
-        </a>
-        {{ end }}
       </div>
 
       {{- /* Translations */ -}}
@@ -303,6 +301,34 @@
         </h3>
         <div class="flex flex-wrap gap-2">
           {{ range . }}
+          {{ if isset . "file" }}
+          {{- /* Translation entry: language, lang, file, edition, updated/added, people.
+                 Edition, date, and translators are shown in a tooltip. */ -}}
+          {{ $details := slice }}
+          {{ $meta := slice }}
+          {{ with .edition }}{{ $meta = $meta | append . }}{{ end }}
+          {{ with .updated }}{{ $meta = $meta | append (string .) }}{{ else }}{{ with .added }}{{ $meta = $meta | append (printf "added %s" (string .)) }}{{ end }}{{ end }}
+          {{ with $meta }}{{ $details = $details | append (delimit . " · ") }}{{ end }}
+          {{ with .people }}{{ $details = $details | append (printf "Translated by %s" (delimit . ", " " and ")) }}{{ end }}
+          {{ $tipID := printf "translation-tip-%s" (path.BaseName .file | urlize) }}
+          <span class="relative inline-flex group">
+            <a href="{{ .file }}" target="_blank"{{ with .lang }} hreflang="{{ . }}"{{ end }}{{ if $details }} aria-describedby="{{ $tipID }}"{{ end }}
+              class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              {{ .language }}
+            </a>
+            {{ with $details }}
+            <span id="{{ $tipID }}" role="tooltip"
+              class="pointer-events-none invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-opacity absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 w-max max-w-xs rounded bg-gray-900 px-2 py-1 text-xs font-medium text-white text-center">
+              {{ range $i, $line := . }}{{ if $i }}<br>{{ end }}{{ $line }}{{ end }}
+            </span>
+            {{ end }}
+          </span>
+          {{ else }}
+          {{- /* Legacy entry: {Language: file} */ -}}
           {{ range $lang, $file := . }}
           <a href="{{ $file }}" target="_blank"
             class="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
@@ -314,7 +340,26 @@
           </a>
           {{ end }}
           {{ end }}
+          {{ end }}
         </div>
+      </div>
+      {{ end }}
+    {{ end }}
+
+    {{- /* Link to Posit Academy for courses */ -}}
+    {{ if eq .Params.resource_type "course" }}
+      {{ with .Params.academy_url }}
+      <div class="mt-6">
+        {{ partial "button.html" (dict "url" . "text" "View on Posit Academy" "icon" "boxicons--book-open-filled") }}
+      </div>
+      {{ end }}
+    {{ end }}
+
+    {{- /* Read online button for books */ -}}
+    {{ if eq .Params.resource_type "book" }}
+      {{ with .Params.read_url }}
+      <div class="mt-6">
+        {{ partial "button.html" (dict "url" . "text" "Read online" "icon" "boxicons--book-open-filled") }}
       </div>
       {{ end }}
     {{ end }}
@@ -397,8 +442,20 @@
         {{ end }}
 
 
-        <!-- Resource Links (skip for cheatsheets - shown at top) -->
-        {{ if and (ne .Params.resource_type "video") (ne .Params.resource_type "cheatsheet") }}
+        {{- /* Courses in a learning path */ -}}
+        {{ if and (eq .Params.resource_type "course") .Params.courses }}
+        <div class="mt-10">
+          {{ partial "heading.html" (dict "level" 2 "text" "Courses in this learning path" "class" "text-2xl font-medium text-gray-800 mb-4") }}
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {{ range .Params.courses }}
+              {{ partial "item.html" (dict "item" (printf "courses/%s" .) "hide-badge" true) }}
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+        <!-- Resource Links (skip for cheatsheets - shown at top - and courses and books) -->
+        {{ if not (in (slice "video" "cheatsheet" "course" "book") .Params.resource_type) }}
         <div class="flex flex-wrap gap-2 mt-6">
           {{ $resourceUrl := or .Params.video_url .Params.url .Params.external.url }}
           {{ with $resourceUrl }}

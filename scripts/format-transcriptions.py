@@ -1,60 +1,82 @@
-#!/usr/bin/env -S uv run
+#!/usr/bin/env -S uv run --script
 # /// script
+# requires-python = ">=3.11"
 # dependencies = [
 #   "pyyaml>=6.0",
 #   "rich>=13.0.0",
 #   "anthropic>=0.40.0",
 #   "python-dotenv>=1.0.0",
-#   "tomli>=2.0.0; python_version < '3.11'",
 # ]
 # ///
 
 """
 Format VTT transcription files into HTML fragments using the Anthropic API.
 
-For each subdirectory under content/resources/videos/:
+For each subdirectory under content/resources/videos/, newest first:
 - Skip if transcription.txt already exists (unless --force).
 - Skip if _index.md frontmatter has transcribe: false.
 - Skip if transcription.vtt does not exist.
 - For long videos (> 90 min), split the VTT into chunks and process each
   segment separately, then concatenate the results.
-- After the API call, inject <a href="..."> links for known people and software.
+- Repair the data-t timestamps: the model copies the cue text verbatim but
+  often gets the seconds wrong, so each <a> is matched back to its VTT cue.
+- Validate the HTML: only <h3>, <p>, <a data-t>, and <blockquote>; every
+  data-t within the video; at least 90% of the spoken words present; and a
+  response that hit the max_tokens limit is rejected. Invalid output is
+  never written.
+- Inject <a href="..."> links for known people and software.
+
+Requires ANTHROPIC_API_KEY in the environment or .env. The model can be set
+with --model or $TRANSCRIPT_MODEL.
+
+Exit codes: 0 = success, 1 = fatal, 2 = partial (some videos failed).
 """
+
+from __future__ import annotations
 
 import argparse
 import asyncio
+import html as html_lib
+import logging
 import os
-import random
 import re
 import sys
+import time
+import tomllib
+from collections import Counter
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Awaitable, Callable
 
-import anthropic
-import yaml
-from dotenv import load_dotenv
-from rich.console import Console
-from rich.progress import (
-    BarColumn,
-    MofNCompleteColumn,
-    Progress,
-    SpinnerColumn,
-    TaskID,
-    TextColumn,
-    TimeElapsedColumn,
-)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-try:
-    import tomllib
-except ImportError:
-    import tomli as tomllib  # type: ignore[no-redef]
+import videolib  # noqa: E402
 
-console = Console(stderr=True)
+log = logging.getLogger("format-transcriptions")
 
-MAX_RETRIES = 5
-BASE_BACKOFF = 1.0
-CHUNK_DURATION_S = 1_800  # 30 min per chunk (default)
-LONG_VIDEO_THRESHOLD_S = 5_400  # 90 min — chunk automatically
+DEFAULT_MODEL = "claude-sonnet-4-6"
+# Long transcripts hit the output token limit or get condensed by the model:
+# before chunking at 20 minutes, 84-93% of the 45-90 minute videos lost more
+# than 10% of their words. 15-minute chunks behave like short videos.
+CHUNK_DURATION_S = 900  # 15 min per chunk (default)
+LONG_VIDEO_THRESHOLD_S = 1_200  # 20 min — chunk automatically
+
+ALLOWED_TAGS = {"h3", "p", "a", "blockquote"}
+# Share of the VTT's words that must appear in the HTML (outside pull quotes).
+MIN_COVERAGE = 0.90
+# data-t values beyond the end of the video: a warning beyond the slack, an
+# error beyond max(TOLERANCE_S, TOLERANCE_RATIO * duration). The model's
+# timestamp arithmetic is often off by tens of seconds (median 44 s in the
+# existing transcripts), which is annoying but not worth throwing away.
+DATA_T_SLACK_S = 5
+DATA_T_TOLERANCE_S = 60
+DATA_T_TOLERANCE_RATIO = 0.10
+
+# Estimated USD per million (input, output) tokens, matched by model prefix.
+PRICES_PER_MTOK = {
+    "claude-sonnet": (3.0, 15.0),
+    "claude-haiku": (1.0, 5.0),
+}
 
 PROMPT = """\
 You convert WebVTT transcription files into clean HTML fragments for video pages.
@@ -86,6 +108,11 @@ Conversion formula:  data-t = HH*3600 + MM*60 + SS  (discard milliseconds)
 Do NOT paraphrase, correct grammar, fix spelling, or improve wording.
 Copy the spoken words exactly as they appear in the VTT, including filler
 words ("um", "uh", "sort of", "you know") and false starts.
+
+Include EVERY cue, from the first to the last. Do NOT skip, shorten, or
+summarize any part — not small talk, not logistics ("can you see my
+screen?", "next slide"), not jokes, not audience questions, not the closing
+remarks. The output must contain all the words of the VTT.
 
 ## Correcting technology-name mishearings
 The metadata lists technologies used in this video. If a word is clearly a
@@ -211,74 +238,8 @@ HTML:
   <p><a data-t="558">Now let's actually build the app.</a> <a data-t="562">I'll start with a minimal ui definition.</a></p>
 """
 
-
 # ---------------------------------------------------------------------------
-# Helpers copied from transcribe.py
-# ---------------------------------------------------------------------------
-
-
-def parse_frontmatter(content: str) -> dict[str, Any]:
-    lines = content.split("\n")
-    if not lines or lines[0].strip() != "---":
-        return {}
-    end_idx = next((i for i in range(1, len(lines)) if lines[i].strip() == "---"), None)
-    if end_idx is None:
-        return {}
-    try:
-        return yaml.safe_load("\n".join(lines[1:end_idx])) or {}
-    except yaml.YAMLError:
-        return {}
-
-
-def parse_vtt_timestamp(ts: str) -> float:
-    parts = ts.strip().split(":")
-    if len(parts) == 3:
-        return int(parts[0]) * 3600 + int(parts[1]) * 60 + float(parts[2])
-    return int(parts[0]) * 60 + float(parts[1])
-
-
-def format_vtt_timestamp(seconds: float) -> str:
-    h = int(seconds // 3600)
-    m = int((seconds % 3600) // 60)
-    s = seconds % 60
-    return f"{h:02d}:{m:02d}:{s:06.3f}"
-
-
-def parse_vtt(content: str) -> list[tuple[float, float, str]]:
-    cues: list[tuple[float, float, str]] = []
-    for block in re.split(r"\n{2,}", content.strip()):
-        lines = block.strip().splitlines()
-        arrow = next((i for i, line in enumerate(lines) if "-->" in line), None)
-        if arrow is None:
-            continue
-        m = re.match(r"([\d:.]+)\s+-->\s+([\d:.]+)", lines[arrow])
-        if not m:
-            continue
-        start = parse_vtt_timestamp(m.group(1))
-        end = parse_vtt_timestamp(m.group(2))
-        text = "\n".join(lines[arrow + 1 :]).strip()
-        if text:
-            cues.append((start, end, text))
-    return cues
-
-
-class RateLimiter:
-    def __init__(self, min_interval: float = 1.0) -> None:
-        self._lock = asyncio.Lock()
-        self._last: float = 0.0
-        self._interval = min_interval
-
-    async def wait(self) -> None:
-        async with self._lock:
-            loop = asyncio.get_running_loop()
-            elapsed = loop.time() - self._last
-            if elapsed < self._interval:
-                await asyncio.sleep(self._interval - elapsed)
-            self._last = asyncio.get_running_loop().time()
-
-
-# ---------------------------------------------------------------------------
-# Phase 1 — Prompt helpers
+# Prompt helpers
 # ---------------------------------------------------------------------------
 
 
@@ -294,203 +255,12 @@ def build_user_message(vtt_content: str, frontmatter: dict[str, Any]) -> str:
     if people:
         header_parts.append(f"People featured: {', '.join(str(p) for p in people)}")
     if software:
-        header_parts.append(
-            f"Technologies mentioned: {', '.join(str(s) for s in software)}"
-        )
+        header_parts.append(f"Technologies mentioned: {', '.join(str(s) for s in software)}")
     if description:
         header_parts.append(f"Description: {description[:600]}")
 
     header = "\n".join(header_parts)
     return f"{header}\n\n---\n\n{vtt_content}" if header else vtt_content
-
-
-# ---------------------------------------------------------------------------
-# Phase 2 — Core script
-# ---------------------------------------------------------------------------
-
-
-def strip_markdown_fence(text: str) -> str:
-    text = text.strip()
-    if text.startswith("```"):
-        text = re.sub(r"^```[a-z]*\n?", "", text)
-        text = re.sub(r"\n?```$", "", text.strip())
-    return text.strip()
-
-
-def validate_html(html: str) -> None:
-    if not html.lstrip().startswith("<"):
-        raise ValueError("Response does not start with '<' — not HTML")
-    for bad in ("<html", "<body", "<head", "<div", "<span", "<h1", "<h2"):
-        if bad in html:
-            raise ValueError(f"Response contains disallowed element: {bad}")
-    if "<p>" not in html and "<blockquote>" not in html:
-        raise ValueError("Response contains no <p> or <blockquote> elements")
-
-
-async def call_api(
-    client: anthropic.AsyncAnthropic,
-    user_message: str,
-    model: str,
-    max_tokens: int,
-    rate_limiter: RateLimiter,
-    name: str,
-    system: str = PROMPT,
-) -> str:
-    for attempt in range(MAX_RETRIES):
-        if attempt > 0:
-            delay = BASE_BACKOFF * (2 ** (attempt - 1)) + random.uniform(0, 1)
-            console.print(
-                f"  [yellow]↻[/] {name}  retry {attempt + 1}/{MAX_RETRIES} in {delay:.1f}s"
-            )
-            await asyncio.sleep(delay)
-
-        await rate_limiter.wait()
-        try:
-            response = await client.messages.create(
-                model=model,
-                max_tokens=max_tokens,
-                system=system,
-                messages=[{"role": "user", "content": user_message}],
-            )
-            return response.content[0].text
-        except anthropic.RateLimitError:
-            if attempt == MAX_RETRIES - 1:
-                raise
-        except anthropic.APIStatusError as e:
-            if e.status_code < 500 or attempt == MAX_RETRIES - 1:
-                raise
-
-    raise RuntimeError("Exceeded max retries")
-
-
-def resolve_video_dir(name_or_path: str, videos_dir: Path) -> Path:
-    p = Path(name_or_path)
-    if p.is_absolute() and p.is_dir():
-        return p
-    candidate = videos_dir / name_or_path
-    if candidate.is_dir():
-        return candidate
-    matches = [
-        d
-        for d in videos_dir.iterdir()
-        if d.is_dir() and d.name.startswith(name_or_path)
-    ]
-    if len(matches) == 1:
-        return matches[0]
-    if len(matches) > 1:
-        listed = "\n  ".join(m.name for m in sorted(matches))
-        raise ValueError(f"Ambiguous --video value, matches:\n  {listed}")
-    raise ValueError(f"Video directory not found: {name_or_path}")
-
-
-async def process_video_async(
-    video_dir: Path,
-    client: anthropic.AsyncAnthropic,
-    semaphore: asyncio.Semaphore,
-    rate_limiter: RateLimiter,
-    progress: Progress,
-    overall_task: TaskID,
-    args: argparse.Namespace,
-    people: dict[str, str],
-    software: dict[str, str],
-) -> str:
-    async with semaphore:
-        name = video_dir.name
-        job_task = progress.add_task(f"[dim]{name}", total=None)
-        try:
-            html_file = video_dir / "transcription.txt"
-            vtt_file = video_dir / "transcription.vtt"
-            index_file = video_dir / "_index.md"
-
-            if html_file.exists() and not args.force:
-                return "skipped"
-
-            frontmatter = (
-                parse_frontmatter(index_file.read_text(encoding="utf-8"))
-                if index_file.exists()
-                else {}
-            )
-
-            if frontmatter.get("transcribe", True) is False:
-                return "excluded"
-
-            if not vtt_file.exists():
-                return "no_vtt"
-
-            vtt_content = vtt_file.read_text(encoding="utf-8")
-            duration = (frontmatter.get("external") or {}).get("duration", 0)
-
-            if duration > LONG_VIDEO_THRESHOLD_S:
-                progress.update(job_task, description=f"[cyan]{name}  chunking")
-                html = await format_chunked(
-                    vtt_content,
-                    frontmatter,
-                    client,
-                    rate_limiter,
-                    args,
-                    name,
-                    progress,
-                    job_task,
-                )
-            else:
-                user_message = build_user_message(vtt_content, frontmatter)
-                progress.update(job_task, description=f"[cyan]{name}  formatting")
-                raw = await call_api(
-                    client,
-                    user_message,
-                    args.model,
-                    args.max_tokens,
-                    rate_limiter,
-                    name,
-                )
-                html = strip_markdown_fence(raw)
-
-            validate_html(html)
-            html = inject_links(html, people, software)
-            html_file.write_text(html, encoding="utf-8")
-            return "formatted"
-
-        except Exception as e:
-            console.print(f"  [red]✗[/] {name}: {e}")
-            return "error"
-        finally:
-            progress.remove_task(job_task)
-            progress.advance(overall_task)
-
-
-# ---------------------------------------------------------------------------
-# Phase 3 — Chunked processing
-# ---------------------------------------------------------------------------
-
-
-def _render_vtt(cues: list[tuple[float, float, str]]) -> str:
-    lines = ["WEBVTT", ""]
-    for start, end, text in cues:
-        lines.append(f"{format_vtt_timestamp(start)} --> {format_vtt_timestamp(end)}")
-        lines.append(text)
-        lines.append("")
-    return "\n".join(lines)
-
-
-def split_vtt_into_chunks(
-    vtt_content: str, chunk_duration: int
-) -> list[tuple[str, int]]:
-    cues = parse_vtt(vtt_content)
-    chunks: list[tuple[str, int]] = []
-    seg_start = 0.0
-    seg_cues: list[tuple[float, float, str]] = []
-
-    for start, end, text in cues:
-        if seg_cues and (start - seg_start) >= chunk_duration:
-            chunks.append((_render_vtt(seg_cues), int(seg_start)))
-            seg_start = start
-            seg_cues = []
-        seg_cues.append((start, end, text))
-
-    if seg_cues:
-        chunks.append((_render_vtt(seg_cues), int(seg_start)))
-
-    return chunks
 
 
 def build_chunk_system(segment_index: int, total_segments: int) -> str:
@@ -503,46 +273,327 @@ def build_chunk_system(segment_index: int, total_segments: int) -> str:
     )
 
 
-async def format_chunked(
-    vtt_content: str,
-    frontmatter: dict[str, Any],
-    client: anthropic.AsyncAnthropic,
-    rate_limiter: RateLimiter,
-    args: argparse.Namespace,
-    name: str,
-    progress: Progress,
-    job_task: TaskID,
-) -> str:
-    chunks = split_vtt_into_chunks(vtt_content, args.chunk_duration)
-    total = len(chunks)
-    html_parts: list[str] = []
+def split_vtt_into_chunks(vtt_content: str, chunk_duration: int) -> list[tuple[str, int]]:
+    cues = videolib.parse_vtt(vtt_content)
+    chunks: list[tuple[str, int]] = []
+    seg_start = 0.0
+    seg_cues: list[videolib.Cue] = []
 
-    for i, (chunk_vtt, _seg_start) in enumerate(chunks):
-        progress.update(job_task, description=f"[cyan]{name}  chunk {i + 1}/{total}")
-        user_message = build_user_message(chunk_vtt, frontmatter)
-        chunk_system = build_chunk_system(i, total)
-        raw = await call_api(
-            client,
-            user_message,
-            args.model,
-            args.max_tokens,
-            rate_limiter,
-            name,
-            system=chunk_system,
+    for start, end, text in cues:
+        if seg_cues and (start - seg_start) >= chunk_duration:
+            chunks.append((videolib.render_vtt(seg_cues), int(seg_start)))
+            seg_start = start
+            seg_cues = []
+        seg_cues.append((start, end, text))
+
+    if seg_cues:
+        chunks.append((videolib.render_vtt(seg_cues), int(seg_start)))
+
+    return chunks
+
+
+# ---------------------------------------------------------------------------
+# Validation
+# ---------------------------------------------------------------------------
+
+
+class FormatError(Exception):
+    def __init__(self, reason: str, detail: str):
+        super().__init__(detail)
+        self.reason = reason
+
+
+def strip_markdown_fence(text: str) -> str:
+    text = text.strip()
+    if text.startswith("```"):
+        text = re.sub(r"^```[a-z]*\n?", "", text)
+        text = re.sub(r"\n?```$", "", text.strip())
+    return text.strip()
+
+
+# Typos the model makes in otherwise fine output, seen in real transcripts:
+# '<a a data-t="623">' and '<a data-t="="1876">'.
+ANCHOR_TYPOS = [
+    (re.compile(r"<a(?:\s+a)+\s+data-t="), "<a data-t="),
+    (re.compile(r'data-t="=+"?(\d+)"'), r'data-t="\1"'),
+]
+
+
+def fix_anchor_typos(html: str) -> tuple[str, int]:
+    """Repair known harmless typos in <a> tags; return (html, number fixed)."""
+    fixed = 0
+    for pattern, replacement in ANCHOR_TYPOS:
+        html, n = pattern.subn(replacement, html)
+        fixed += n
+    return html, fixed
+
+
+WORD_RE = re.compile(r"[\w']+")
+
+
+def word_counts(text: str) -> Counter:
+    return Counter(w.lower().strip("'") for w in WORD_RE.findall(text))
+
+
+def html_to_text(html: str, *, drop_blockquotes: bool = True) -> str:
+    if drop_blockquotes:
+        html = re.sub(r"<blockquote\b.*?</blockquote>", " ", html, flags=re.DOTALL | re.IGNORECASE)
+    html = re.sub(r"<h3\b.*?</h3>", " ", html, flags=re.DOTALL | re.IGNORECASE)
+    return html_lib.unescape(re.sub(r"<[^>]+>", " ", html))
+
+
+def coverage(cues: list[videolib.Cue], html: str) -> float:
+    """Share of the spoken words (with multiplicity) found in the HTML prose.
+
+    A cue whose text repeats an earlier cue counts once: Whisper sometimes
+    loops on a line (one VTT has a speaker's name nine times), and the model
+    rightly leaves the copies out.
+    """
+    seen: set[str] = set()
+    unique = []
+    for _, _, text in cues:
+        key = " ".join(_norm_words(text))
+        if key not in seen:
+            seen.add(key)
+            unique.append(text)
+    spoken = word_counts(" ".join(unique))
+    total = sum(spoken.values())
+    if not total:
+        return 1.0
+    written = word_counts(html_to_text(html))
+    return sum(min(n, written[w]) for w, n in spoken.items()) / total
+
+
+def validate_html(html: str, cues: list[videolib.Cue], duration: int) -> dict[str, Any]:
+    """Raise FormatError when the model output can't be used; return metrics."""
+    if not html.lstrip().startswith("<"):
+        raise FormatError("not_html", f"Response does not start with '<': {html[:80]!r}")
+
+    tags = {t.lower() for t in re.findall(r"</?\s*([a-zA-Z][a-zA-Z0-9]*)", html)}
+    disallowed = sorted(tags - ALLOWED_TAGS)
+    if disallowed:
+        raise FormatError("disallowed_tag", f"Disallowed elements: {', '.join(disallowed)}")
+
+    for m in re.finditer(r"<(h3|p|blockquote)(\s[^>]*)?>", html, flags=re.IGNORECASE):
+        if m.group(2) and m.group(2).strip():
+            raise FormatError("disallowed_attribute", f"Attributes on <{m.group(1)}>: {m.group(2).strip()}")
+
+    end = max([duration] + [end for _, end, _ in cues])
+    max_t = 0
+    anchors = 0
+    for m in re.finditer(r"<a(\s[^>]*)?>", html, flags=re.IGNORECASE):
+        attrs = (m.group(1) or "").strip()
+        am = re.fullmatch(r'data-t="(\d+)"', attrs)
+        if not am:
+            raise FormatError("disallowed_attribute", f"Bad <a> attributes: {attrs!r}")
+        max_t = max(max_t, int(am.group(1)))
+        anchors += 1
+
+    warnings: list[str] = []
+    overshoot = max_t - end
+    if overshoot > max(DATA_T_TOLERANCE_S, DATA_T_TOLERANCE_RATIO * end):
+        raise FormatError("bad_timestamp", f'data-t="{max_t}" is {overshoot:.0f}s beyond the end of the video ({end:.0f}s)')
+    if overshoot > DATA_T_SLACK_S:
+        warnings.append(f"timestamp_overshoot: data-t=\"{max_t}\" is {overshoot:.0f}s beyond the end of the video")
+
+    if "<p>" not in html and "<blockquote>" not in html:
+        raise FormatError("no_paragraphs", "Response contains no <p> or <blockquote> elements")
+
+    cov = coverage(cues, html)
+    if cov < MIN_COVERAGE:
+        raise FormatError("low_coverage", f"Only {cov:.1%} of the spoken words are in the HTML (minimum {MIN_COVERAGE:.0%})")
+    return {"coverage": round(cov, 4), "anchors": anchors, "warnings": warnings or None}
+
+
+# ---------------------------------------------------------------------------
+# Timestamp repair
+# ---------------------------------------------------------------------------
+
+# How far ahead (in words) to look for the next anchor's text in the VTT.
+REPAIR_WINDOW_WORDS = 800
+# Anchors shorter than REPAIR_KEY_WORDS ("For us,", "I came from") occur all
+# over a transcript, so they may only match this close to the previous one;
+# otherwise one false match far ahead derails all the anchors after it.
+REPAIR_SHORT_WINDOW_WORDS = 40
+# Words of an anchor used to find it in the VTT.
+REPAIR_KEY_WORDS = 4
+
+ANCHOR_RE = re.compile(r'<a data-t="(\d+)">(.*?)</a>', flags=re.DOTALL)
+BLOCKQUOTE_RE = re.compile(r"(<blockquote\b.*?</blockquote>)", flags=re.DOTALL | re.IGNORECASE)
+
+
+def _norm_words(text: str) -> list[str]:
+    return [w.lower().strip("'") for w in WORD_RE.findall(html_lib.unescape(re.sub(r"<[^>]+>", " ", text)))]
+
+
+def repair_timestamps(html: str, cues: list[videolib.Cue]) -> tuple[str, dict[str, int]]:
+    """Set every ``data-t`` to the start of the VTT cue its text comes from.
+
+    The model copies the cue text verbatim but often gets the seconds wrong
+    (in the existing transcripts typically by 5-20 s, sometimes by minutes).
+    Walk the anchors in document order and find each one's first words in
+    the VTT, searching forward from the previous match. Anchors that can't
+    be found keep the model's value. Pull quotes reuse the value of the
+    matching prose anchor. Consecutive anchors with the same original value
+    (split by inject_links) stay together.
+    """
+    words: list[tuple[str, int]] = []  # (word, cue start in whole seconds)
+    for start, _end, text in cues:
+        words.extend((w, int(start)) for w in _norm_words(text))
+    vocab = [w for w, _ in words]
+
+    def find(key: list[str], pos: int) -> int | None:
+        window = REPAIR_WINDOW_WORDS if len(key) >= REPAIR_KEY_WORDS else REPAIR_SHORT_WINDOW_WORDS
+        limit = min(len(vocab) - len(key) + 1, pos + window)
+        for i in range(pos, max(pos, limit)):
+            if vocab[i] == key[0] and vocab[i : i + len(key)] == key:
+                return i
+        return None
+
+    stats = {"anchors": 0, "matched": 0, "changed": 0, "unmatched": 0}
+    by_text: dict[str, int] = {}
+    pos = 0
+    prev: tuple[int, int] | None = None  # (original, repaired)
+
+    def repair_prose(m: re.Match) -> str:
+        nonlocal pos, prev
+        original, inner = int(m.group(1)), m.group(2)
+        stats["anchors"] += 1
+        ws = _norm_words(inner)
+        new = original
+        found = None
+        # Skip a leading word or two in case the model corrected it
+        # (e.g. "Korto" -> "Quarto").
+        for skip in (0, 1, 2):
+            key = ws[skip : skip + REPAIR_KEY_WORDS]
+            if not key:
+                break
+            i = find(key, pos)
+            if i is not None:
+                pos = i + len(ws) - skip
+                found = words[i][1]
+                break
+        if found is not None:
+            stats["matched"] += 1
+            new = found
+        else:
+            stats["unmatched"] += 1
+            if prev is not None and prev[0] == original:
+                new = prev[1]  # a piece of an anchor that inject_links split
+            elif words:
+                # Keep the model's value, but not beyond the last cue.
+                # (Clamping to the neighbours was measured to make things
+                # worse: one wrong match then drags the next anchors along.)
+                new = min(original, words[-1][1])
+        prev = (original, new)
+        if new != original:
+            stats["changed"] += 1
+        by_text.setdefault(" ".join(ws), new)
+        return f'<a data-t="{new}">{inner}</a>'
+
+    last_start = words[-1][1] if words else None
+
+    def repair_quote(m: re.Match) -> str:
+        new = by_text.get(" ".join(_norm_words(m.group(2))))
+        if new is None:
+            new = int(m.group(1))
+            if last_start is not None:
+                new = min(new, last_start)
+        return f'<a data-t="{new}">{m.group(2)}</a>'
+
+    parts = BLOCKQUOTE_RE.split(html)
+    parts = [p if i % 2 else ANCHOR_RE.sub(repair_prose, p) for i, p in enumerate(parts)]
+    parts = [ANCHOR_RE.sub(repair_quote, p) if i % 2 else p for i, p in enumerate(parts)]
+    return "".join(parts), stats
+
+
+def unlink_entities(html: str) -> str:
+    """Undo inject_links, so a published transcript can be validated again."""
+    return re.sub(r'<a href="[^"]*">(.*?)</a>', r"\1", html, flags=re.DOTALL)
+
+
+def check_existing(video_dir: Path) -> tuple[bool, str | None, str | None]:
+    """Validate a published transcription.txt: ``(ok, reason, detail)``."""
+    fm = videolib.read_frontmatter(video_dir / "_index.md")
+    duration = int((fm.get("external") or {}).get("duration") or 0)
+    cues = videolib.parse_vtt((video_dir / "transcription.vtt").read_text(encoding="utf-8"))
+    html = unlink_entities((video_dir / "transcription.txt").read_text(encoding="utf-8"))
+    try:
+        validate_html(html, cues, duration)
+    except FormatError as e:
+        return False, e.reason, str(e)
+    return True, None, None
+
+
+# ---------------------------------------------------------------------------
+# API
+# ---------------------------------------------------------------------------
+
+
+def estimate_cost(model: str, input_tokens: int, output_tokens: int) -> float | None:
+    for prefix, (price_in, price_out) in PRICES_PER_MTOK.items():
+        if model.startswith(prefix):
+            return round((input_tokens * price_in + output_tokens * price_out) / 1_000_000, 4)
+    return None
+
+
+async def call_api(
+    client: Any,
+    user_message: str,
+    *,
+    model: str,
+    max_tokens: int,
+    rate_limiter: videolib.RateLimiter,
+    label: str,
+    system: str = PROMPT,
+    sleep: Callable[[float], Awaitable[Any]] = asyncio.sleep,
+) -> tuple[str, dict[str, Any]]:
+    """Return ``(html, usage)``; raise FormatError if the output was cut off."""
+
+    async def call():
+        await rate_limiter.wait()
+        return await client.messages.create(
+            model=model,
+            max_tokens=max_tokens,
+            system=system,
+            messages=[{"role": "user", "content": user_message}],
         )
-        html_parts.append(strip_markdown_fence(raw))
 
-    return "\n<!-- segment separator -->\n".join(html_parts)
+    t0 = time.monotonic()
+    response = await videolib.retry_async(call, label=label, logger=log, sleep=sleep)
+    usage = {
+        "input_tokens": getattr(response.usage, "input_tokens", 0),
+        "output_tokens": getattr(response.usage, "output_tokens", 0),
+        "stop_reason": response.stop_reason,
+        "request_id": getattr(response, "_request_id", None),
+        "latency_s": round(time.monotonic() - t0, 1),
+    }
+    log.info(
+        "%s: %s responded in %.1fs (%d in / %d out tokens, stop_reason=%s, request_id=%s)",
+        label,
+        model,
+        usage["latency_s"],
+        usage["input_tokens"],
+        usage["output_tokens"],
+        usage["stop_reason"],
+        usage["request_id"],
+    )
+    if response.stop_reason == "max_tokens":
+        raise FormatError(
+            "truncated",
+            f"Response hit max_tokens={max_tokens} after {usage['output_tokens']} tokens "
+            f"(request_id={usage['request_id']}); try a smaller --chunk-duration",
+        )
+    text = "".join(getattr(block, "text", "") for block in response.content)
+    return strip_markdown_fence(text), usage
 
 
 # ---------------------------------------------------------------------------
-# Phase 4 — Entity linking
+# Entity linking
 # ---------------------------------------------------------------------------
 
 
-def build_entity_dicts(
-    repo_root: Path,
-) -> tuple[dict[str, str], dict[str, str]]:
+def build_entity_dicts(repo_root: Path) -> tuple[dict[str, str], dict[str, str]]:
     ignore_file = repo_root / "data" / "software-match-ignore.toml"
     ignored: set[str] = set()
     if ignore_file.exists():
@@ -552,13 +603,10 @@ def build_entity_dicts(
     people: dict[str, str] = {}
     people_dir = repo_root / "content" / "people"
     if people_dir.exists():
-        for d in people_dir.iterdir():
+        for d in sorted(people_dir.iterdir()):
             if not d.is_dir():
                 continue
-            index = d / "_index.md"
-            if not index.exists():
-                continue
-            fm = parse_frontmatter(index.read_text(encoding="utf-8"))
+            fm = videolib.read_frontmatter(d / "_index.md")
             title = (fm.get("title") or "").strip()
             if title:
                 people[title] = f"/people/{d.name}/"
@@ -566,13 +614,10 @@ def build_entity_dicts(
     software: dict[str, str] = {}
     software_dir = repo_root / "content" / "software"
     if software_dir.exists():
-        for d in software_dir.iterdir():
+        for d in sorted(software_dir.iterdir()):
             if not d.is_dir() or d.name in ignored:
                 continue
-            index = d / "_index.md"
-            if not index.exists():
-                continue
-            fm = parse_frontmatter(index.read_text(encoding="utf-8"))
+            fm = videolib.read_frontmatter(d / "_index.md")
             override = (fm.get("override") or {}).get("title")
             title = (override or fm.get("title") or "").strip()
             if title:
@@ -581,11 +626,11 @@ def build_entity_dicts(
     return people, software
 
 
-def _inject_into_text(
-    text: str,
-    entities: list[tuple[str, str, bool]],
-    linked: set[str],
-) -> str:
+def _inject_into_text(text: str, entities: list[tuple[str, str, bool]], linked: set[str]) -> str:
+    # Insert placeholders first and the links at the end, so a later, shorter
+    # name can't match inside an inserted link: "Shiny" in the URL of
+    # "Shiny for Python" once produced <a href="/software/<a href=...>...">.
+    links: list[str] = []
     for name, url, is_software in entities:
         if name in linked:
             continue
@@ -593,21 +638,17 @@ def _inject_into_text(
         pattern = r"\b" + re.escape(name) + r"\b"
         if re.search(pattern, text, flags=flags):
             linked.add(name)
-            text = re.sub(
-                pattern,
-                lambda m, u=url: f'<a href="{u}">{m.group(0)}</a>',
-                text,
-                count=1,
-                flags=flags,
-            )
-    return text
+
+            def placeholder(m: re.Match, u: str = url) -> str:
+                links.append(f'<a href="{u}">{m.group(0)}</a>')
+                return f"\ue000{len(links) - 1}\ue001"
+
+            text = re.sub(pattern, placeholder, text, count=1, flags=flags)
+    return re.sub("\ue000(\\d+)\ue001", lambda m: links[int(m.group(1))], text)
 
 
 def _inject_into_anchor(
-    content: str,
-    attrs: str,
-    entities: list[tuple[str, str, bool]],
-    linked: set[str],
+    content: str, attrs: str, entities: list[tuple[str, str, bool]], linked: set[str]
 ) -> str:
     for name, url, is_software in entities:
         if name in linked:
@@ -630,11 +671,7 @@ def _inject_into_anchor(
     return f"<a{attrs}>{content}</a>"
 
 
-def inject_links(
-    html: str,
-    people: dict[str, str],
-    software: dict[str, str],
-) -> str:
+def inject_links(html: str, people: dict[str, str], software: dict[str, str]) -> str:
     linked: set[str] = set()
 
     entities: list[tuple[str, str, bool]] = sorted(
@@ -658,116 +695,263 @@ def inject_links(
 
 
 # ---------------------------------------------------------------------------
-# Entry points
+# Per-video processing
 # ---------------------------------------------------------------------------
 
 
-async def main_async(args: argparse.Namespace) -> None:
-    console.print("\n[bold blue]Transcription Formatter[/]\n")
+@dataclass
+class Context:
+    client: Any
+    args: argparse.Namespace
+    semaphore: asyncio.Semaphore
+    rate_limiter: videolib.RateLimiter
+    people: dict[str, str]
+    software: dict[str, str]
+    sleep: Callable[[float], Awaitable[Any]]
 
-    load_dotenv()
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        console.print("[bold red]Error:[/] ANTHROPIC_API_KEY not set in .env")
-        sys.exit(1)
 
-    client = anthropic.AsyncAnthropic(api_key=api_key)
-    repo_root = Path(__file__).parent.parent
-    videos_dir = repo_root / "content" / "resources" / "videos"
+def select_videos(
+    dirs: list[Path],
+    summary: videolib.RunSummary,
+    *,
+    force: bool,
+    limit: int | None,
+    reformat_invalid: bool = False,
+) -> list[Path]:
+    selected: list[Path] = []
+    deferred: list[str] = []
+    needs_transcript: list[str] = []
+    for d in dirs:
+        fm = videolib.read_frontmatter(d / "_index.md")
+        if fm.get("transcribe", True) is False:
+            summary.tally("excluded")
+            continue
+        if not (d / "transcription.vtt").exists():
+            summary.tally("no_vtt")
+            needs_transcript.append(d.name)
+            continue
+        if (d / "transcription.txt").exists() and not force:
+            if not reformat_invalid:
+                summary.tally("already_formatted")
+                continue
+            ok, reason, _ = check_existing(d)
+            if ok:
+                summary.tally("already_formatted")
+                continue
+            log.info("%s: existing transcript is invalid (%s); reformatting", d.name, reason)
+        if limit is not None and len(selected) >= limit:
+            deferred.append(d.name)
+            continue
+        selected.append(d)
+    if deferred:
+        summary.tally("deferred", len(deferred))
+        summary.extra["deferred"] = deferred
+        log.info("Deferred %d videos to a later run (--limit)", len(deferred))
+    if needs_transcript:
+        # Newest first; video-sync-report.py lists them in the PR.
+        summary.extra["needs_transcript"] = needs_transcript
+        log.info("%d videos have no transcription.vtt yet (run transcribe.py)", len(needs_transcript))
+    return selected
 
-    if not videos_dir.exists():
-        console.print(f"[bold red]Error:[/] Videos directory not found: {videos_dir}")
-        sys.exit(1)
 
-    people, software = build_entity_dicts(repo_root)
-    console.print(
-        f"[dim]Loaded {len(people)} people and {len(software)} software entries[/]"
-    )
+async def process_video(video_dir: Path, ctx: Context) -> dict[str, Any]:
+    async with ctx.semaphore:
+        args = ctx.args
+        fm = videolib.read_frontmatter(video_dir / "_index.md")
+        external = fm.get("external") or {}
+        video_id = videolib.youtube_id(external.get("url"))
+        label = f"{video_dir.name} ({video_id})"
+        duration = int(external.get("duration") or 0)
+        item: dict[str, Any] = {"slug": video_dir.name, "video_id": video_id, "duration_s": duration, "model": args.model}
+        html: str | None = None
+        try:
+            vtt_content = (video_dir / "transcription.vtt").read_text(encoding="utf-8")
+            cues = videolib.parse_vtt(vtt_content)
+            if not cues:
+                raise FormatError("empty_vtt", "transcription.vtt has no cues")
 
-    if args.video:
-        dirs = [resolve_video_dir(args.video, videos_dir)]
-    else:
-        dirs = sorted(d for d in videos_dir.iterdir() if d.is_dir())
+            if duration > LONG_VIDEO_THRESHOLD_S:
+                chunks = split_vtt_into_chunks(vtt_content, args.chunk_duration)
+            else:
+                chunks = [(vtt_content, 0)]
+            item["chunks"] = len(chunks)
+            log.info("%s: formatting %d cues in %d chunk(s)", label, len(cues), len(chunks))
 
-    console.print(
-        f"[dim]Found {len(dirs)} director(ies) to process (--jobs {args.jobs})[/]\n"
-    )
-
-    semaphore = asyncio.Semaphore(args.jobs)
-    rate_limiter = RateLimiter(min_interval=1.0)
-
-    with Progress(
-        SpinnerColumn(),
-        TextColumn("{task.description}"),
-        BarColumn(),
-        MofNCompleteColumn(),
-        TimeElapsedColumn(),
-        console=console,
-    ) as progress:
-        overall_task = progress.add_task("[bold cyan]Formatting", total=len(dirs))
-        results: list[str] = await asyncio.gather(
-            *[
-                process_video_async(
-                    d,
-                    client,
-                    semaphore,
-                    rate_limiter,
-                    progress,
-                    overall_task,
-                    args,
-                    people,
-                    software,
+            def request(i: int):
+                return call_api(
+                    ctx.client,
+                    build_user_message(chunks[i][0], fm),
+                    model=args.model,
+                    max_tokens=args.max_tokens,
+                    rate_limiter=ctx.rate_limiter,
+                    label=f"{label} chunk {i + 1}/{len(chunks)}" if len(chunks) > 1 else label,
+                    system=build_chunk_system(i, len(chunks)) if len(chunks) > 1 else PROMPT,
+                    sleep=ctx.sleep,
                 )
-                for d in dirs
-            ]
+
+            # Chunks are independent, so request them concurrently (the rate
+            # limiter still spaces out the requests).
+            results = list(await asyncio.gather(*(request(i) for i in range(len(chunks)))))
+            parts = [html_part for html_part, _ in results]
+            usages = [usage for _, usage in results]
+            chunk_cues = [videolib.parse_vtt(chunk_vtt) for chunk_vtt, _ in chunks]
+            chunk_coverage = [coverage(cs, part) for cs, part in zip(chunk_cues, parts)]
+
+            # The model sometimes skips parts of a chunk. Ask once more for
+            # the chunks that lost too many words and keep the better answer.
+            retry = [i for i, c in enumerate(chunk_coverage) if c < MIN_COVERAGE]
+            if retry:
+                log.warning(
+                    "%s: %s lost words (%s); asking once more",
+                    label,
+                    "chunks " + ", ".join(str(i + 1) for i in retry) if len(chunks) > 1 else "the response",
+                    ", ".join(f"{chunk_coverage[i]:.1%}" for i in retry),
+                )
+                second = await asyncio.gather(*(request(i) for i in retry))
+                for i, (html_part, usage) in zip(retry, second):
+                    usages.append(usage)
+                    c = coverage(chunk_cues[i], html_part)
+                    log.info("%s: retry of chunk %d: %.1f%% coverage (was %.1f%%)", label, i + 1, c * 100, chunk_coverage[i] * 100)
+                    if c > chunk_coverage[i]:
+                        parts[i], chunk_coverage[i] = html_part, c
+                item["coverage_retries"] = len(retry)
+
+            html = "\n<!-- segment separator -->\n".join(parts)
+            if len(chunks) > 1:
+                # Which chunk lost words, if any: useful when coverage is low.
+                item["chunk_coverage"] = [round(c, 3) for c in chunk_coverage]
+                log.info("%s: coverage per chunk: %s", label, ", ".join(f"{c:.1%}" for c in chunk_coverage))
+
+            item["input_tokens"] = sum(u["input_tokens"] for u in usages)
+            item["output_tokens"] = sum(u["output_tokens"] for u in usages)
+            item["request_ids"] = [u["request_id"] for u in usages if u["request_id"]] or None
+            item["estimated_cost_usd"] = estimate_cost(args.model, item["input_tokens"], item["output_tokens"])
+
+            html, typos = fix_anchor_typos(html)
+            if typos:
+                item["typos_fixed"] = typos
+                log.info("%s: fixed %d malformed <a> tags", label, typos)
+            html, repair = repair_timestamps(html, cues)
+            item["timestamps_repaired"] = repair["changed"]
+            item["timestamps_unmatched"] = repair["unmatched"]
+            log.info(
+                "%s: repaired %d of %d timestamps (%d anchors not found in the VTT)",
+                label,
+                repair["changed"],
+                repair["anchors"],
+                repair["unmatched"],
+            )
+            metrics = validate_html(html, cues, duration)
+            item.update(metrics)
+            for w in metrics["warnings"] or []:
+                log.warning("%s: %s", label, w)
+            html = inject_links(html, ctx.people, ctx.software)
+            videolib.atomic_write_text(video_dir / "transcription.txt", html)
+        except FormatError as e:
+            log.error("%s: %s: %s", label, e.reason, e)
+            if args.rejected_dir and html is not None:
+                args.rejected_dir.mkdir(parents=True, exist_ok=True)
+                rejected = args.rejected_dir / f"{video_dir.name}.html"
+                videolib.atomic_write_text(rejected, html)
+                item["rejected_output"] = str(rejected)
+                log.info("%s: saved the rejected output to %s", label, rejected)
+            return {**item, "status": "error", "reason": e.reason, "detail": str(e)}
+        except Exception as e:  # noqa: BLE001 - every failure goes in the summary
+            log.exception("%s: formatting failed", label)
+            return {**item, "status": "error", "reason": "api_error", "detail": videolib.describe_api_error(e)}
+
+        log.info(
+            "%s: wrote transcription.txt (%d anchors, %.1f%% coverage%s)",
+            label,
+            item["anchors"],
+            item["coverage"] * 100,
+            f", ~${item['estimated_cost_usd']:.3f}" if item["estimated_cost_usd"] is not None else "",
+        )
+        return {**item, "status": "formatted"}
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+
+def run_check_existing(dirs: list[Path], summary: videolib.RunSummary) -> None:
+    """Report published transcripts that fail validation (no API calls)."""
+    for d in dirs:
+        if not ((d / "transcription.txt").exists() and (d / "transcription.vtt").exists()):
+            continue
+        ok, reason, detail = check_existing(d)
+        if ok:
+            summary.tally("valid")
+        else:
+            summary.add("invalid", slug=d.name, reason=reason, detail=detail)
+            log.warning("Invalid: %s: %s: %s", d.name, reason, detail)
+    invalid = summary.by_status("invalid")
+    reasons: dict[str, int] = {}
+    for i in invalid:
+        reasons[i["reason"]] = reasons.get(i["reason"], 0) + 1
+    summary.extra["invalid_by_reason"] = reasons
+    log.info(
+        "%d of %d transcripts are invalid %s; reformat them with --reformat-invalid",
+        len(invalid),
+        len(invalid) + summary.tallies.get("valid", 0),
+        reasons,
+    )
+
+
+def run_repair_timestamps(dirs: list[Path], summary: videolib.RunSummary, *, dry_run: bool) -> None:
+    """Fix the data-t values of published transcripts (no API calls)."""
+    for d in dirs:
+        txt, vtt = d / "transcription.txt", d / "transcription.vtt"
+        if not (txt.exists() and vtt.exists()):
+            continue
+        cues = videolib.parse_vtt(vtt.read_text(encoding="utf-8"))
+        if not cues:
+            summary.tally("no_cues")
+            continue
+        html = txt.read_text(encoding="utf-8")
+        repaired, stats = repair_timestamps(html, cues)
+        if repaired == html:
+            summary.tally("timestamps_ok")
+            continue
+        if not dry_run:
+            videolib.atomic_write_text(txt, repaired)
+        summary.add("timestamps_repaired", slug=d.name, **stats)
+        log.info(
+            "%s: %s %d of %d timestamps (%d anchors not found in the VTT)",
+            d.name,
+            "would repair" if dry_run else "repaired",
+            stats["changed"],
+            stats["anchors"],
+            stats["unmatched"],
         )
 
-    formatted = results.count("formatted")
-    skipped = results.count("skipped")
-    excluded = results.count("excluded")
-    no_vtt = results.count("no_vtt")
-    errors = results.count("error")
 
-    console.print("\n[bold]Summary:[/]")
-    console.print(f"  [green]✓[/] Formatted: {formatted}")
-    console.print(f"  [dim]○[/] Skipped:   {skipped}")
-    console.print(f"  [dim]○[/] Excluded:  {excluded}")
-    console.print(f"  [dim]○[/] No VTT:    {no_vtt}")
-    if errors:
-        console.print(f"  [red]✗[/] Errors:    {errors}")
-    console.print("\n[bold green]✓ Done![/]\n")
+def build_client(project_root: Path) -> Any:
+    import anthropic
+    from dotenv import load_dotenv
+
+    load_dotenv(project_root / ".env")
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    if not api_key:
+        raise RuntimeError("ANTHROPIC_API_KEY not set in .env or environment")
+    return anthropic.AsyncAnthropic(api_key=api_key, max_retries=0)  # we retry ourselves, with logging
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Format VTT transcriptions into HTML using the Anthropic API"
+def parse_args(argv: list[str] | None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Format VTT transcriptions into HTML using the Anthropic API")
+    parser.add_argument("--jobs", type=int, default=5, metavar="N", help="parallel formatting jobs (default: 5)")
+    parser.add_argument("--force", action="store_true", help="overwrite existing transcription.txt files")
+    parser.add_argument("--video", metavar="NAME", help="process only this video directory (name, prefix, or path)")
+    parser.add_argument("--limit", type=int, metavar="N", help="format at most N videos (newest first)")
+    parser.add_argument(
+        "--model",
+        default=os.getenv("TRANSCRIPT_MODEL") or DEFAULT_MODEL,
+        metavar="ID",
+        help=f"Anthropic model ID (default: $TRANSCRIPT_MODEL or {DEFAULT_MODEL})",
     )
     parser.add_argument(
-        "--jobs",
-        type=int,
-        default=5,
-        metavar="N",
-        help="parallel formatting jobs (default: 5)",
-    )
-    parser.add_argument(
-        "--force",
-        action="store_true",
-        help="overwrite existing transcription.txt files",
-    )
-    parser.add_argument(
-        "--video",
-        metavar="NAME",
-        help="process only this video directory (name or path)",
-    )
-    parser.add_argument(
-        "--model", default="claude-sonnet-4-6", metavar="ID", help="Anthropic model ID"
-    )
-    parser.add_argument(
-        "--max-tokens",
-        type=int,
-        default=16384,
-        metavar="N",
-        help="max output tokens per API call (default: 16384)",
+        "--max-tokens", type=int, default=16384, metavar="N", help="max output tokens per API call (default: 16384)"
     )
     parser.add_argument(
         "--chunk-duration",
@@ -776,9 +960,105 @@ def main() -> None:
         metavar="SECS",
         help=f"VTT seconds per chunk for long videos (default: {CHUNK_DURATION_S})",
     )
-    args = parser.parse_args()
-    asyncio.run(main_async(args))
+    parser.add_argument(
+        "--reformat-invalid",
+        action="store_true",
+        help="also reformat existing transcripts that fail validation (see --check-existing)",
+    )
+    parser.add_argument(
+        "--check-existing",
+        action="store_true",
+        help="only validate existing transcription.txt files and report the invalid ones (no API calls)",
+    )
+    parser.add_argument(
+        "--repair-timestamps",
+        action="store_true",
+        help="only fix the data-t values of existing transcription.txt files from their VTT (no API calls)",
+    )
+    parser.add_argument(
+        "--rejected-dir",
+        type=Path,
+        metavar="DIR",
+        help="save model output that fails validation to DIR/<slug>.html, for debugging",
+    )
+    parser.add_argument("--dry-run", action="store_true", help="list what would be formatted")
+    videolib.add_common_args(parser)
+    return parser.parse_args(argv)
+
+
+def main(
+    argv: list[str] | None = None,
+    client: Any = None,
+    sleep: Callable[[float], Awaitable[Any]] = asyncio.sleep,
+    min_request_interval: float = 1.0,
+) -> int:
+    args = parse_args(argv)
+    videolib.setup_logging("format-transcriptions", args.verbose)
+    summary = videolib.RunSummary("format-transcriptions")
+    summary.extra.update(model=args.model, dry_run=args.dry_run, limit=args.limit)
+    videos_dir = args.project_root / "content" / "resources" / "videos"
+
+    def body() -> None:
+        nonlocal client
+        summary.environment = videolib.log_environment(log, packages=["anthropic"])
+        if not videos_dir.exists():
+            summary.fatal = f"Videos directory not found: {videos_dir}"
+            return
+        people, software = build_entity_dicts(args.project_root)
+        log.info("Model: %s; loaded %d people and %d software entries for linking", args.model, len(people), len(software))
+
+        dirs = [videolib.resolve_video_dir(args.video, videos_dir)] if args.video else videolib.video_dirs(videos_dir)
+        if args.check_existing:
+            run_check_existing(dirs, summary)
+            return
+        if args.repair_timestamps:
+            run_repair_timestamps(dirs, summary, dry_run=args.dry_run)
+            return
+        selected = select_videos(
+            dirs, summary, force=args.force, limit=args.limit, reformat_invalid=args.reformat_invalid
+        )
+        log.info("Selected %d of %d video directories (--jobs %d)", len(selected), len(dirs), args.jobs)
+        if args.dry_run:
+            for d in selected:
+                log.info("Would format %s", d.name)
+                summary.add("would_format", slug=d.name)
+            return
+        if not selected:
+            return
+        if client is None:
+            client = build_client(args.project_root)
+
+        ctx = Context(
+            client=client,
+            args=args,
+            semaphore=asyncio.Semaphore(args.jobs),
+            rate_limiter=videolib.RateLimiter(min_interval=min_request_interval),
+            people=people,
+            software=software,
+            sleep=sleep,
+        )
+
+        async def go() -> list[dict[str, Any]]:
+            return await asyncio.gather(*(process_video(d, ctx) for d in selected))
+
+        for result in asyncio.run(go()):
+            summary.add(result.pop("status"), **result)
+
+        formatted = summary.by_status("formatted", "error")
+        costs = [i.get("estimated_cost_usd") for i in formatted if i.get("estimated_cost_usd") is not None]
+        summary.extra["estimated_cost_usd"] = round(sum(costs), 3)
+        summary.extra["input_tokens"] = sum(i.get("input_tokens", 0) for i in formatted)
+        summary.extra["output_tokens"] = sum(i.get("output_tokens", 0) for i in formatted)
+        log.info(
+            "Formatted %d videos (%d in / %d out tokens, ~$%.2f)",
+            len(summary.by_status("formatted")),
+            summary.extra["input_tokens"],
+            summary.extra["output_tokens"],
+            summary.extra["estimated_cost_usd"],
+        )
+
+    return videolib.run_main(summary, log, args.summary_json, body)
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

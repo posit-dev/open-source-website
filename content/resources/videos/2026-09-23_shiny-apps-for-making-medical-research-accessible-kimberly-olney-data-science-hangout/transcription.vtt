@@ -1,0 +1,1579 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.600
+Hey there, welcome to the Paws at Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.600 --> 00:00:21.959
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:21.959 --> 00:00:27.200
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.200 --> 00:00:30.639
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.639 --> 00:00:35.520
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:35.520 --> 00:00:40.680
+We can't wait to see you there. I am so happy to introduce you to our featured leader
+
+00:00:40.680 --> 00:00:48.200
+today, Kimberly Olney. Kimberly is a computational scientist at TGen. It's so nice to be joined
+
+00:00:48.200 --> 00:00:52.380
+by you today. I would love it if you could introduce yourself, tell us a little bit about
+
+00:00:52.380 --> 00:00:55.279
+what you do, and also something that you like to do for fun.
+
+00:00:55.880 --> 00:01:00.919
+Yeah, good morning, everyone. Firstly, I'm so excited to be here. Thank you for joining
+
+00:01:00.919 --> 00:01:07.480
+me today and the Pawsit team. I can see several of us are wearing our Pawsit conference shirts.
+
+00:01:07.480 --> 00:01:13.360
+I will be joining virtually this year, unfortunately, but I look forward to participating in person
+
+00:01:13.360 --> 00:01:18.519
+again in future years. It's just a wonderful community. So thank you again for having me
+
+00:01:18.519 --> 00:01:26.459
+today. My work is broadly in the field of omics, which is a broad term that includes
+
+00:01:26.459 --> 00:01:31.919
+genomics, which most people are familiar with, like DNA, what kind of variants you have and
+
+00:01:31.919 --> 00:01:37.540
+how that could be linked to your increased risk of certain diseases, as well as transcriptomics,
+
+00:01:37.540 --> 00:01:45.760
+so what genes are kind of expressed and turned on, or metabolomics or proteomics, so anything
+
+00:01:45.760 --> 00:01:51.639
+that ends in omics. And then something fun that I like to do, I'm in Arizona, and I love
+
+00:01:51.639 --> 00:01:56.800
+to garden, which sounds counterintuitive, being in the low desert of the heat definitely
+
+00:01:56.800 --> 00:02:01.480
+has its challenges, but I have over 30 fruit trees in my yard.
+
+00:02:01.480 --> 00:02:07.360
+Oh my goodness, that is some niche gardening. I lived in Arizona for nine months, and I
+
+00:02:07.360 --> 00:02:13.520
+realized that, wow, it sure depends on where you live in Arizona, you know, what your elevation
+
+00:02:13.520 --> 00:02:20.679
+is and stuff, what you can grow. It is really exciting to have somebody on talking about
+
+00:02:20.679 --> 00:02:25.080
+omics because I, every time we talk about this, I'm like, why are there so many omics?
+
+00:02:25.080 --> 00:02:29.600
+There's so many different types. We learn about a different one each time. So I know
+
+00:02:29.600 --> 00:02:37.240
+that you study Alzheimer's disease and Lewy body disease, and I was asking you all kinds
+
+00:02:37.240 --> 00:02:41.639
+of questions about shiny apps. I would love to just dig into some of that as a little
+
+00:02:41.639 --> 00:02:47.720
+bit of background for people so that they know what questions to ask. So if you could
+
+00:02:47.720 --> 00:02:56.320
+tell us a little bit about the way that you use shiny in your research and how you express
+
+00:02:56.320 --> 00:03:01.080
+your research to all of us so that we can understand it and other people can benefit
+
+00:03:01.080 --> 00:03:04.119
+from it. I think that would kick us off really well.
+
+00:03:04.119 --> 00:03:11.440
+Yeah, certainly. I'll start with shiny apps. For any research publication that me or my
+
+00:03:12.240 --> 00:03:16.800
+colleagues make, we always like to have a shiny app that accompanies that research publication
+
+00:03:16.800 --> 00:03:21.440
+because historically you would have, you know, maybe a max of six figures in that publication
+
+00:03:21.440 --> 00:03:27.000
+and then supplemental data, but there's only so much that you can put into a research paper
+
+00:03:27.000 --> 00:03:30.800
+because oftentimes there's like even word limits on it. You can't be like, this is all
+
+00:03:30.800 --> 00:03:34.679
+the things that we found. You just have to do the high level highlights, but you might
+
+00:03:34.679 --> 00:03:39.880
+have missed something that was really critical to other aspects of the field, but you didn't
+
+00:03:39.880 --> 00:03:45.559
+know to highlight that, but maybe other researchers would be really interested in that part of
+
+00:03:45.559 --> 00:03:51.080
+it. So with a shiny app, they can go and parse through the data much more easier than just
+
+00:03:51.080 --> 00:03:56.639
+looking at, you know, an Excel table and being like, all right, well, here's my gene of interest
+
+00:03:56.639 --> 00:04:00.919
+now, but how does this look compared to this other gene of interest in my different groups?
+
+00:04:00.919 --> 00:04:06.320
+And then they're basically having to redo the analysis based off of their unique viewpoint
+
+00:04:06.320 --> 00:04:13.639
+of it. But with a shiny app, they can already look at it and kind of parse through it without
+
+00:04:13.639 --> 00:04:18.480
+having to start over fresh each time. And that's something that I really enjoy about
+
+00:04:18.480 --> 00:04:24.040
+shiny apps is that it just makes it more accessible to not only to researchers, but also to the
+
+00:04:24.040 --> 00:04:30.119
+broader community as a whole. When other people see papers being highlighted in the news and
+
+00:04:30.119 --> 00:04:33.239
+they're like, oh, well, that sounds really interesting. But then they go and try to read
+
+00:04:33.239 --> 00:04:37.040
+this really dense paper that they're like, oh, I don't know what these topics are. And
+
+00:04:37.040 --> 00:04:41.359
+then they just kind of give up. But with a shiny app, it feels like they have more control
+
+00:04:41.359 --> 00:04:44.679
+over it because then they can kind of play around with it themselves without needing
+
+00:04:44.679 --> 00:04:49.720
+to know how to code or know any of the big terms that are used.
+
+00:04:49.720 --> 00:04:56.720
+So yeah, or without needing to process a massive amount of data, because if we could talk a
+
+00:04:56.720 --> 00:05:01.839
+little bit about the types of data that you process for all of us who probably work with
+
+00:05:01.839 --> 00:05:07.600
+totally different data types, I believe that your data is quite enormous. Can you talk
+
+00:05:07.600 --> 00:05:08.600
+about the size?
+
+00:05:08.600 --> 00:05:14.920
+Yeah. So as our lab as a whole, and this encompasses multiple projects. So this isn't just one
+
+00:05:14.920 --> 00:05:22.079
+project. We have over a hundred terabytes of data that we're currently sitting on for
+
+00:05:22.079 --> 00:05:27.040
+either research that has already been completed or is in the works of being completed. So
+
+00:05:27.040 --> 00:05:35.239
+with omics data, which typically includes sequencing data, you will have your A's, T's,
+
+00:05:35.239 --> 00:05:41.720
+G's, and C's, your nucleotide sequences, the blueprint of life. But with that, you also
+
+00:05:41.720 --> 00:05:47.959
+have quality scores that are associated with it. And it's not just linear where the human
+
+00:05:47.959 --> 00:05:54.119
+genome has like 3 billion base pairs. Well, you're not just looking at each one. You have
+
+00:05:54.119 --> 00:05:58.119
+to have a certain amount of coverage for it to be really confident and calling that
+
+00:05:58.119 --> 00:06:03.720
+because there's errors in sequencing when you get this. So if you have like one error,
+
+00:06:03.720 --> 00:06:08.079
+then you're like, okay, but the rest of the hundred read depth that I have is all saying
+
+00:06:08.079 --> 00:06:14.640
+the same thing. Then I'm really confident that this really is an A at this site. So
+
+00:06:14.640 --> 00:06:17.000
+it starts to add up really quickly.
+
+00:06:17.000 --> 00:06:22.079
+I mean, I cannot even imagine. I have never dealt with that much data and I don't know
+
+00:06:22.079 --> 00:06:27.399
+anybody else who does. If you deal with that much data in the chat, chime in and let me
+
+00:06:27.399 --> 00:06:31.839
+know because I would love to know if you are also doing omics stuff, if you're working
+
+00:06:31.839 --> 00:06:37.880
+with genes and if this is just a high throughput genomic problem that's really common or if
+
+00:06:37.880 --> 00:06:45.160
+anybody else has that much data, a hundred terabytes is a wild amount. I don't know if
+
+00:06:45.160 --> 00:06:52.679
+you already expressed exactly the research question that I think that we can share shiny
+
+00:06:52.679 --> 00:06:57.480
+apps on, but if you wanted to talk a little bit about it and if we wanted to share some
+
+00:06:57.480 --> 00:07:01.160
+links, I would love to do that if that's okay. So people can see the shiny apps that we're
+
+00:07:01.160 --> 00:07:02.160
+talking about.
+
+00:07:02.160 --> 00:07:08.880
+Yeah, certainly. So one of the most recent projects that we published on last year was
+
+00:07:08.880 --> 00:07:15.239
+comparing Lewy body disease to Alzheimer's disease. So this is postmortem human tissues.
+
+00:07:15.239 --> 00:07:21.299
+So these are individuals that donated their brains for science and Lewy body disease.
+
+00:07:21.299 --> 00:07:26.559
+Most people are familiar with Alzheimer's disease. It's the poster child of dementia,
+
+00:07:26.559 --> 00:07:32.760
+but dementia is really an umbrella term that can refer to vascular dementia, frontal temporal
+
+00:07:32.760 --> 00:07:39.640
+dementia, or dementia with Lewy bodies. And dementia with Lewy bodies is actually pretty
+
+00:07:39.640 --> 00:07:45.880
+common, but is often misdiagnosed as being Alzheimer's disease. And that has huge consequences
+
+00:07:45.880 --> 00:07:51.839
+for the types of treatments that they should be on and their long-term care. So being able
+
+00:07:51.839 --> 00:07:59.359
+to actually at the molecular level, parse out what is both shared and unique between
+
+00:07:59.359 --> 00:08:03.760
+dementia with Lewy bodies and those that have just pure Alzheimer's disease is important
+
+00:08:03.760 --> 00:08:10.679
+for moving the field forward and developing more targeted therapies to treat both of these
+
+00:08:10.679 --> 00:08:16.920
+diseases better. And these diseases, how they're actually defined is based off of their underlining
+
+00:08:16.920 --> 00:08:23.959
+pathology, which is like an accumulation of misfolded proteins in the brain.
+
+00:08:23.959 --> 00:08:30.239
+I don't know if anybody else has a history of Alzheimer's in their family, but I absolutely
+
+00:08:30.239 --> 00:08:36.559
+do. And I feel like this touches so, so many people in every community. So I'm really excited
+
+00:08:36.559 --> 00:08:41.239
+to be talking to somebody who works on this and is working on making things better. Now,
+
+00:08:41.239 --> 00:08:49.640
+I know I have two links, two shiny apps. I put one in the chat that is the LBD CWOW.
+
+00:08:49.640 --> 00:08:55.000
+And I'm hoping that that is the one that I am hoping to talk about. And we may give
+
+00:08:55.000 --> 00:08:58.919
+it the hug of death, but I want everybody to sort of like have it so that they can look
+
+00:08:58.919 --> 00:09:07.080
+at it is the one with two plots side by side. And I was wondering if you would be willing
+
+00:09:07.080 --> 00:09:10.159
+to talk a little bit about what that is showing us.
+
+00:09:10.159 --> 00:09:16.840
+Yeah. So this one, this project is currently under review for publication and what it's
+
+00:09:16.840 --> 00:09:23.280
+looking at is the actual cell types in the human brain. So everyone's familiar with neurons,
+
+00:09:23.280 --> 00:09:27.359
+right? That's what allows us to walk and talk and do all those wonderful things. You know,
+
+00:09:27.359 --> 00:09:34.719
+we have almost 86 billion cells in our brain, but only about half of those are neurons.
+
+00:09:34.719 --> 00:09:41.760
+The other half is other cell types, microglia and astrocytes and all good dendrocytes. And
+
+00:09:42.080 --> 00:09:49.440
+they're kind of broadly clumped into being called glial cells. They help support the neurons. And
+
+00:09:50.479 --> 00:09:54.799
+when we think about neurodegenerative diseases like Alzheimer's disease and dementia with
+
+00:09:54.799 --> 00:10:00.960
+Lewy bodies, we know broadly that the neurons are failing, right? Because of this accumulation
+
+00:10:00.960 --> 00:10:07.520
+of misfolded proteins, but what's kind of causing that to happen. So the microglia,
+
+00:10:07.520 --> 00:10:12.799
+which are the resident innate immune cells of the brain, they're the ones that typically are
+
+00:10:12.799 --> 00:10:20.080
+going to react to these misfolded proteins and hopefully recruit them to be processed and removed.
+
+00:10:20.080 --> 00:10:25.679
+Or if that doesn't happen, then you get kind of inflammation in the brain and too much of it.
+
+00:10:25.679 --> 00:10:31.200
+And then it becomes like this vicious feedback loop. So what you're looking at in that plot of
+
+00:10:31.200 --> 00:10:39.679
+side-by-side is it's a 2D plot of three-dimensional data of where you have your different cell types.
+
+00:10:39.679 --> 00:10:45.440
+So they're annotated based off of the genes that are expressed. So neurons express certain genes
+
+00:10:45.440 --> 00:10:50.400
+versus like the microglia express certain genes. So we can annotate like these are the microglia
+
+00:10:50.400 --> 00:10:55.119
+and these are the neurons. And then within that, we can compare between our different
+
+00:10:55.119 --> 00:10:58.640
+disease groups relative to individuals that didn't have any pathology.
+
+00:10:59.039 --> 00:11:04.559
+Okay. Wonderful. I promise I will stop talking. It's now up to everybody else to ask questions,
+
+00:11:04.559 --> 00:11:10.479
+but I knew that that was a heavy bit of explanation that I wanted to get out there
+
+00:11:10.479 --> 00:11:16.320
+for everybody. Very scientific. That I wanted everyone to hear. Well, I saw Hubert asked a
+
+00:11:16.320 --> 00:11:20.000
+question in the Slido that just popped up and I'd love to know the same. Hubert,
+
+00:11:20.000 --> 00:11:23.039
+if you were available to ask that live, that would be fantastic.
+
+00:11:23.679 --> 00:11:29.919
+Can you hear me? There he is. Hey, Hubert. Okay. I'm here. I'm here. Yes. So I'm curious about the
+
+00:11:29.919 --> 00:11:38.080
+data challenges. So you've got these huge, huge amount of data sitting around. So in your work,
+
+00:11:38.080 --> 00:11:44.080
+what's a current data challenge that you have, or maybe a prior data challenge you had to solve
+
+00:11:44.719 --> 00:11:51.280
+to keep moving forward? Because many of us work with data science and we know that data science
+
+00:11:51.840 --> 00:11:57.359
+many of us work with data sets that aren't nearly this large and this size has got to bring
+
+00:11:58.479 --> 00:12:03.359
+hardware, high-performance computing, whatever challenges there may have been in there.
+
+00:12:04.479 --> 00:12:10.239
+Yeah. Thank you for the question. So all my work that I do is on a high-performance computing
+
+00:12:10.239 --> 00:12:16.960
+cluster. So thankfully with GPUs being more readily available, that's really helpful.
+
+00:12:16.960 --> 00:12:22.559
+One of the biggest challenges, especially working with human data is missing information.
+
+00:12:25.280 --> 00:12:30.080
+Thankfully in this particular data set for the Shiny apps, all of these samples were
+
+00:12:30.080 --> 00:12:36.960
+annotated by the same neuropathologist. So they're all annotated based off the pathology,
+
+00:12:36.960 --> 00:12:44.239
+but any clinical notes such as even reported sex can sometimes be wrong because once you have
+
+00:12:44.799 --> 00:12:52.719
+over 500 individuals and then maybe 32 columns of information, it's just bound that there's going to
+
+00:12:52.719 --> 00:12:58.479
+be typos or mistakes that are within that data set. So I would say one of the biggest challenges
+
+00:12:58.479 --> 00:13:06.960
+is missing information. And then as far as managing the 100 terabytes, I, from really early on of
+
+00:13:06.960 --> 00:13:11.520
+working with omics data, I was like, this is going to get confusing really quickly and I'm going to
+
+00:13:11.520 --> 00:13:18.559
+need some kind of way to neatly organize all of this. And this is where my, I call it my type A
+
+00:13:18.559 --> 00:13:25.840
+plus personality is really helpful is that I have an Excel sheet. It's all color coordinated by
+
+00:13:25.840 --> 00:13:31.440
+projects. It lists the absolute paths to those projects and any Git repositories that are
+
+00:13:31.440 --> 00:13:35.359
+associated with them. And then the associating metadata with them so that I can be like,
+
+00:13:35.359 --> 00:13:40.159
+oh, what about this project? Where is that data? I have like a master read me.
+
+00:13:41.840 --> 00:13:47.760
+That is amazing. Type A plus cracks me up. I think I might be type A minus
+
+00:13:48.799 --> 00:13:56.159
+or type B plus plus. Thank you Hubert for that question. Because I was wondering the same too,
+
+00:13:56.159 --> 00:14:01.599
+when you have that much data, how do you possibly manage it all? Because even with much less data,
+
+00:14:01.599 --> 00:14:09.119
+those same problems are unmanageable. Sometimes I think like naming things and storing things
+
+00:14:09.119 --> 00:14:15.280
+is so, so hard. Okay. Let's hop over to our next question, which is from Noor. And I bet Noor
+
+00:14:15.280 --> 00:14:22.640
+could ask hers live. We'll just have to make sure Noor gets unmuted. Let's see. There you are. Hey,
+
+00:14:22.640 --> 00:14:31.039
+Noor. Okay. Hi, fellow bioinformatician. Very exciting. I was on microbiome though,
+
+00:14:31.039 --> 00:14:39.599
+not less brain, less neuro stuff. But this is sort of like a broad question, but AI is very big now
+
+00:14:39.599 --> 00:14:44.640
+because everyone loves AI, especially people who want to do AI and bioinformatics. And they're like,
+
+00:14:44.640 --> 00:14:49.599
+AI can replace bioinformaticians, obviously. And I'm like, but what are your thoughts about
+
+00:14:49.599 --> 00:14:54.559
+the push to incorporate AI as workflows into omics, as well as the assumption that it can
+
+00:14:54.559 --> 00:15:00.559
+revolutionize bioinformatics? Like I can understand from like a data munging, data cleaning standpoint,
+
+00:15:00.559 --> 00:15:06.880
+like why it can be incredibly useful because like we have huge datasets. But downstream aspects,
+
+00:15:06.880 --> 00:15:19.200
+I'm still very much like, it's not smart. Well, thank you so much for the question.
+
+00:15:19.200 --> 00:15:25.280
+I really appreciate that question so much. Cause I would say at first I was really hesitant of
+
+00:15:25.280 --> 00:15:30.640
+using AI. I, you know, there's all the talk of like, oh, like the more you use it, like the,
+
+00:15:30.640 --> 00:15:36.080
+you know, your skill, you're going to become de-skilled. Right. And then I read this book
+
+00:15:36.080 --> 00:15:42.960
+recently that I would recommend. It's called open to work. So it talks about AI and it essentially
+
+00:15:42.960 --> 00:15:48.400
+has like three different buckets of AI that you can like, you can totally push that work into
+
+00:15:49.359 --> 00:15:54.960
+AI without supervision. And then bucket two is AI with supervision. And then bucket three is
+
+00:15:54.960 --> 00:16:03.599
+things that AI can't do and what AI can't do. And I would agree with this is AI isn't creative.
+
+00:16:03.599 --> 00:16:10.960
+It's using what's already existing to rearrange it, but that's already there. So if you have a
+
+00:16:10.960 --> 00:16:16.719
+novel question, which is what research often is, it's research that we don't know the answer to
+
+00:16:16.719 --> 00:16:23.039
+this yet. So that's why we're going to investigate it. AI can't come up with those novel questions,
+
+00:16:23.039 --> 00:16:28.719
+but as far as using AI for coding, I have found it to be really helpful of being like,
+
+00:16:29.280 --> 00:16:33.840
+okay, here's, you know, I give it my prompt of what I need it to do. And it can generate
+
+00:16:34.400 --> 00:16:41.679
+a script so quickly that normally would have taken me like a half a day. But I do have that
+
+00:16:41.679 --> 00:16:48.479
+skill set of knowing how to read the script, which I do have a fear that some individuals that didn't
+
+00:16:48.479 --> 00:16:52.479
+have that prior background will just be like, hey, this is what I needed to do. And then I'll
+
+00:16:52.479 --> 00:16:58.000
+generate it and then they won't review it. So I think there does need to be a broader conversation
+
+00:16:58.000 --> 00:17:04.640
+as a whole about putting those things in bucket two, where you work with AI, but you continue as
+
+00:17:04.640 --> 00:17:11.119
+that supervision of it. And then recognizing that your creativity and your curiosity and your
+
+00:17:11.119 --> 00:17:19.680
+knowledge is, can't be replaced. Oh, absolutely. Well, thank you so much, Norah, for asking that
+
+00:17:19.680 --> 00:17:24.800
+question. And that leads me to a follow-up question, which was, where did you learn to code?
+
+00:17:25.359 --> 00:17:32.319
+Was it in undergrad? Was it in your PhD? So I only coded a small bit in my undergrad,
+
+00:17:32.319 --> 00:17:37.040
+and it was actually for an oceanography class that I was taking as an elective.
+
+00:17:37.040 --> 00:17:42.160
+But I was like, I was blown away. I was like, this is awesome. There was just something about
+
+00:17:42.160 --> 00:17:48.160
+it being like, well, I just quickly generated this code and now it made this beautiful plot
+
+00:17:48.160 --> 00:17:53.760
+that it explains exactly what we were wanting to look at, which was like the Mariana Trench
+
+00:17:53.839 --> 00:17:59.920
+and the length of it. I was like, this is awesome. Because prior to that, as a biology undergrad,
+
+00:17:59.920 --> 00:18:05.359
+it's a lot of wet lab work. And if you don't do those steps perfectly, you're not going to get
+
+00:18:05.359 --> 00:18:11.119
+anything left in your reagents at the end, which I felt like Murphy's law always applied to me
+
+00:18:11.119 --> 00:18:17.439
+in the wet lab. So I think that I really resonated towards coding, where it was okay
+
+00:18:17.439 --> 00:18:24.079
+to make a mistake because you could just quickly change it and then rerun it. And then when it
+
+00:18:24.079 --> 00:18:29.199
+worked, it was like this beautiful, oh, I can immediately see that it worked.
+
+00:18:30.640 --> 00:18:35.760
+I love it. I feel like when I started coding, I was terrified of making mistakes. I didn't feel
+
+00:18:35.760 --> 00:18:39.439
+that way. I didn't feel like, oh, I can just redo this. I was like, everything must be perfect.
+
+00:18:40.319 --> 00:18:44.239
+And I was terrified of when things wouldn't run because then I would feel so stuck and alone
+
+00:18:44.959 --> 00:18:50.479
+until I could go find a professor and ask them a question. Well, I also wanted to
+
+00:18:51.680 --> 00:19:00.640
+ask about Tijin itself, because we know, I think you were with City of Hope, right? And we have
+
+00:19:00.640 --> 00:19:04.800
+met Matt Maloney, who's from City of Hope. And so I was wondering how you two were connected
+
+00:19:05.439 --> 00:19:12.079
+and then also what tools you use. So if you learned how to code in oceanography class,
+
+00:19:12.079 --> 00:19:15.199
+what are you coding in now? Are you still using that same tool?
+
+00:19:15.199 --> 00:19:18.560
+And what do people use at Tijin for their tech stack?
+
+00:19:19.520 --> 00:19:24.160
+Yeah. So Tijin, which stands for the Translational Genomics Research Institute,
+
+00:19:24.160 --> 00:19:30.400
+is a nonprofit organization. They specialize in investigating rare diseases, primarily a lot of
+
+00:19:30.400 --> 00:19:36.239
+cancers, and they're part of City of Hope. So that's how I know Matt. I didn't work at City
+
+00:19:36.239 --> 00:19:42.640
+of Hope. It's just Tijin and City of Hope work together now. But prior to Tijin, I was actually
+
+00:19:42.640 --> 00:19:50.560
+at Mayo Clinic. Oh, nice. Awesome. So I feel like, Matt, when we were talking with him,
+
+00:19:50.560 --> 00:19:57.040
+they used a lot of Python. Are you all using Python, R, a mix of the two? Obviously,
+
+00:19:57.040 --> 00:20:04.000
+you're using ShinyApps. Are you also using Corto? So I definitely use a mix of both Python and R.
+
+00:20:04.000 --> 00:20:09.520
+I find that Python is really great for a lot of the data processing steps that I need to do
+
+00:20:09.520 --> 00:20:16.000
+before I get my nice table that I then want to plot in R or make ShinyApps with.
+
+00:20:16.560 --> 00:20:23.760
+I haven't done too much with Corto. Unfortunately, I would love to. Prior to learning about Corto,
+
+00:20:23.760 --> 00:20:30.719
+I used to make a lot of R markdowns for things. But I do want to get more into making Cortos and
+
+00:20:30.719 --> 00:20:36.640
+publishing them on dashboards. And I think that would be really useful to have. And then as far
+
+00:20:36.640 --> 00:20:42.959
+as learning coding, that was primarily done in graduate school. And then it's just expanded
+
+00:20:42.959 --> 00:20:48.479
+since then. And I love going to the POSIT conferences to learn about different tools
+
+00:20:48.479 --> 00:20:54.719
+and packages, like dbduck, being able to quickly parse through really large data sets. I'm like,
+
+00:20:55.359 --> 00:21:05.040
+thank you. Amazing. Yeah. I think that the jump from RMD files to Corto files,
+
+00:21:05.040 --> 00:21:09.839
+I was really hesitant at first. And I was kind of feeling like, oh, I don't want to make this change.
+
+00:21:09.839 --> 00:21:16.160
+Same thing with RStudio Depositron. But as with so many things, I needed to teach in Corto. So I
+
+00:21:16.160 --> 00:21:21.439
+just started using it because I needed to teach it and learning it. And now I'm like, I can't go
+
+00:21:21.439 --> 00:21:26.719
+back. It's so magical. But I asked because I know that you write papers. So I, you know, some people
+
+00:21:26.719 --> 00:21:34.400
+do a lot of their publishing in Corto. Or, you know, do a ton of LaTeX. Who knows? I know that
+
+00:21:34.400 --> 00:21:38.800
+that's still probably in everybody's tool bag. It's still in mine, for sure. Even though I tell
+
+00:21:38.800 --> 00:21:45.040
+myself I need to switch to Typed. All right. We have more questions in Slido. So let's talk about
+
+00:21:45.040 --> 00:21:50.000
+those. Natasha asked a question. It has an asterisk. So I will ask it. And it says, what does a typical
+
+00:21:50.000 --> 00:21:55.680
+day or week look like for you? What areas do you split your time between, like programming,
+
+00:21:55.680 --> 00:22:00.400
+meetings, et cetera? Thank you, Natasha. Yeah. Yeah. Thank you so much for the question.
+
+00:22:01.520 --> 00:22:07.119
+I would say I like to always have one focus for the day rather than kind of like splitting up my
+
+00:22:07.119 --> 00:22:14.239
+day. So one day might be dedicated just to coding and research. So really, like, if I need to do
+
+00:22:14.239 --> 00:22:22.160
+something for that project, then I will just be on the computer that entire time. And then other
+
+00:22:22.160 --> 00:22:28.640
+days will be more dedicated towards meetings, collaborations, or going to seminars, or reading
+
+00:22:28.640 --> 00:22:34.560
+papers. So I really like to kind of have one focus for the day. And that's what I do for that day and
+
+00:22:34.560 --> 00:22:39.920
+block out that time accordingly so that I'm not switching between things. Because I find if I
+
+00:22:39.920 --> 00:22:44.959
+do a bunch of coding and then leave it for three hours and then come back to it, I'm like, oh, wait,
+
+00:22:44.959 --> 00:22:49.760
+hang on. Where was I? So I like to kind of just stick with it for as long as I kind of need to.
+
+00:22:49.760 --> 00:22:55.199
+So it might be three days in a row, or it might just be one day, depending on whatever task it is,
+
+00:22:55.199 --> 00:22:59.920
+if I'm setting up something brand new that it might require, like, more dedicated days in a
+
+00:22:59.920 --> 00:23:09.599
+row of doing that same task. But I would say generally 50% of my time is coding and working
+
+00:23:09.599 --> 00:23:17.280
+with the data sets. And the other 50% of the time is meetings, seminars, reading research papers,
+
+00:23:17.280 --> 00:23:24.079
+and connecting with others. Okay, cool. I was wondering, is writing a big chunk of that? Do
+
+00:23:24.079 --> 00:23:29.920
+you have like a writing day? Or is writing something that happens more like at the end
+
+00:23:29.920 --> 00:23:34.719
+of something and all of your other writing is more documentation? I've been very curious about
+
+00:23:34.719 --> 00:23:38.959
+documentation lately because I feel like the game has changed a little bit with the way people are
+
+00:23:38.959 --> 00:23:45.359
+using AI. Also, a lot of people are writing documentation with AI in mind, right? Like, not
+
+00:23:45.359 --> 00:23:50.719
+just human readable, but machine readable. So I figured I'd ask. Yeah, I really appreciate that
+
+00:23:50.719 --> 00:23:55.839
+question. I used to have more of like, this is my writing day, which was always on Fridays. I'm like,
+
+00:23:55.839 --> 00:24:01.839
+oh, this seems like a good way to end the work week. But I actually find it best to just dedicate
+
+00:24:01.839 --> 00:24:08.160
+time every single day to writing. So whether that be like, if that was a day that was dedicated to
+
+00:24:08.160 --> 00:24:13.599
+coding, then at the end of the day, writing out the steps that I did and making sure that it's
+
+00:24:13.599 --> 00:24:17.680
+documented so that my future self will be like, oh, this is where you were at, and this is why
+
+00:24:17.680 --> 00:24:22.160
+you were doing it. And then same if I found anything interesting in the results that I was
+
+00:24:22.160 --> 00:24:27.040
+parsing through, I want to make sure that I write that down, even if it's not beautiful and well
+
+00:24:27.040 --> 00:24:33.359
+written. I have like a notes Word doc where I'm like, I'm just going to copy and paste my things
+
+00:24:33.359 --> 00:24:40.000
+in there. So then when I do have time, that's that day is dedicated to writing. It's not a blank
+
+00:24:40.000 --> 00:24:45.359
+page. I already have pieces that I can start putting the puzzle together. I feel like this
+
+00:24:45.359 --> 00:24:52.479
+is just a really great opportunity to ask a type A plus plus person questions as a type B plus person
+
+00:24:52.479 --> 00:24:58.800
+who like aspires to be that, but is definitely not. But that's so funny because I kind of
+
+00:24:59.680 --> 00:25:05.680
+leave myself half done things or partially started things as well, because I struggle
+
+00:25:05.680 --> 00:25:11.280
+with task initiation often and blank page syndrome for me is horrible. I don't like it at all.
+
+00:25:11.839 --> 00:25:16.719
+Blank task syndrome is even worse for me. So if I can like start a little bit of a task at the
+
+00:25:16.719 --> 00:25:21.680
+end of one day, and then I come back to my computer and there's like a video that's partially edited
+
+00:25:21.680 --> 00:25:28.400
+or something that's like almost ready to upload, but close, I can get myself so much more quickly
+
+00:25:28.400 --> 00:25:33.839
+into that thing. And I think I'm like that with writing for sure. Okay. Thanks everybody for
+
+00:25:33.839 --> 00:25:40.880
+putting up with my, my intrusive question there. I was just so curious. Um, we had a question from
+
+00:25:40.880 --> 00:25:45.760
+Victoria. It has risen to the top and I love it. Uh, it's got an asterisk, so I will read it for
+
+00:25:45.760 --> 00:25:50.880
+Victoria. It says, are there any particular challenges with peer review and shiny apps?
+
+00:25:50.880 --> 00:25:58.000
+Do you get any review on your shiny apps? I haven't gotten any feedback on the shiny apps
+
+00:25:58.000 --> 00:26:03.599
+particularly from the peer reviewers. But what I love about having like the shiny apps.io
+
+00:26:03.599 --> 00:26:08.640
+account is that I can actually see if anyone has like clicked on it and how much they've used it.
+
+00:26:08.640 --> 00:26:14.560
+So when we do send a paper out for peer review, um, since most people don't have that link, I can
+
+00:26:14.560 --> 00:26:18.959
+be like, all right, well, I'm pretty sure that a peer reviewer clicked on this link. It won't tell
+
+00:26:18.959 --> 00:26:23.040
+me, you know, where they were or anything like that. So it still stays anonymous, but I'm like,
+
+00:26:23.040 --> 00:26:28.719
+oh, at least they're like kind of going through it. But as far as peer reviews for publications,
+
+00:26:28.719 --> 00:26:33.680
+I've never had a peer reviewer actually specifically mentioned the shiny app.
+
+00:26:34.719 --> 00:26:41.040
+Oh man. So does that mean that your shiny apps are done before you send things into review and
+
+00:26:41.040 --> 00:26:45.040
+like you include links and stuff to them? Oh, that's very cool. I was thinking of them as like
+
+00:26:45.040 --> 00:26:51.119
+an after, after the fact thing. No, I really like them to be in the final publication as well. So
+
+00:26:51.119 --> 00:26:56.000
+once the paper is accepted for publication, I want to make sure that there's a shiny app right
+
+00:26:56.000 --> 00:27:00.640
+there in the publication so that when individuals are reading the paper and they're like, oh, well,
+
+00:27:00.640 --> 00:27:05.599
+what about this or that? Hopefully they can just go to the shiny app and kind of start playing
+
+00:27:05.599 --> 00:27:11.359
+around with themselves and see if the data will be of use to their own research. Yeah, that's
+
+00:27:11.359 --> 00:27:17.760
+amazing. It's shiny as, as a tool for, like you said, sort of extending what you can publish,
+
+00:27:17.920 --> 00:27:23.439
+you can include if you can't include everything in there. I think I've done this by adding a
+
+00:27:23.439 --> 00:27:27.920
+YouTube video to a cover letter one time where I was like, here, watch this YouTube video that I
+
+00:27:27.920 --> 00:27:33.920
+made, which actually was great. And I got that job. Oh, that's awesome. I love that idea.
+
+00:27:34.880 --> 00:27:41.119
+I mean, highly recommend. I feel like I come across better this way just to be able to explain
+
+00:27:41.119 --> 00:27:46.800
+something than I do making somebody read a whole paragraph. And I feel like the shiny app is sort
+
+00:27:46.800 --> 00:27:50.959
+of that as well. Like here, go play with this, be hands-on with it and be able to click around.
+
+00:27:52.479 --> 00:27:57.439
+I see that you have things deployed on shinyapps.io. I have to ask, are you ready for the
+
+00:27:57.439 --> 00:28:05.040
+switch to Posit Connect cloud? Because there is a migration coming. I actually cannot wait. I'm
+
+00:28:05.040 --> 00:28:12.160
+so excited because once I saw how the layout is where you can add like a little snapshot of like
+
+00:28:12.160 --> 00:28:19.119
+what the homepage is of the shiny app and then have them all listed, it sings to me. I'm more
+
+00:28:19.119 --> 00:28:25.520
+than ready. It's very exciting. I know that some people are nervous about it. Don't be nervous.
+
+00:28:25.520 --> 00:28:30.160
+It's very exciting. It's only nervous because we're all just kind of used to shinyapps.io,
+
+00:28:30.160 --> 00:28:36.560
+but I promise Connect cloud is featureful and amazing and it does all of this same stuff.
+
+00:28:37.119 --> 00:28:45.680
+And I love the vanity links. I love all of it. Okay. Let's see. What do we have next on our
+
+00:28:45.680 --> 00:28:54.560
+Slido here? Let's see. Let's see. Let's see. I had one from Saptarishi, which also has an asterisk.
+
+00:28:54.560 --> 00:29:00.479
+I will read it for Saptarishi. It says, have you used reticulate to work between Python and R?
+
+00:29:00.560 --> 00:29:12.239
+Unfortunately, I've only had to use it once. And it didn't work well in our HPC environment the
+
+00:29:12.239 --> 00:29:22.880
+way that we have it set up with containerization. So, no, unfortunately. But I love the idea of it
+
+00:29:22.880 --> 00:29:27.199
+and I wish I could work with it more easily. But I think that's something that
+
+00:29:28.075 --> 00:29:34.635
+But I love the idea of it and I wish I could work with it more easily but I think that's something
+
+00:29:34.635 --> 00:29:40.955
+that I'll be working with our HPC team to get that more easily implemented because I think
+
+00:29:40.955 --> 00:29:46.075
+it would be really helpful to just be able to more easily bridge R and Python together.
+
+00:29:46.715 --> 00:29:51.275
+Passing objects back and forth, I know that that's definitely one thing I've used it for
+
+00:29:51.275 --> 00:29:55.435
+but you're right, it's challenging in some of those containerized environments.
+
+00:29:56.314 --> 00:30:04.235
+Are you using an IDE that lets you do both like Positron or are you like working in VS
+
+00:30:04.235 --> 00:30:09.675
+Code for Python and RStudio for R? What does your IDE tool stack look like?
+
+00:30:10.555 --> 00:30:17.274
+Yeah, so with the Posit Workbench where I'm personally using Positron, which coming more
+
+00:30:17.274 --> 00:30:23.114
+from the RStudio at first I was like oh this this seems like too much but then once I started
+
+00:30:23.114 --> 00:30:28.155
+playing around with it I was like oh no this is the way and I would say like honestly my
+
+00:30:28.155 --> 00:30:34.634
+favorite feature of it, which I know RStudio now has but where it just automatically plots
+
+00:30:34.634 --> 00:30:39.675
+the distribution of your data and lets you know if there's anything that's missing.
+
+00:30:40.874 --> 00:30:47.594
+I love it, it's so helpful. Oh, you mean the Data Explorer? Yes. Yes, yeah that has been one of my
+
+00:30:47.594 --> 00:30:51.594
+favorite things too. I was just talking with somebody who was like I cannot let go of RStudio
+
+00:30:51.594 --> 00:30:55.355
+and I'm like first of all you don't have to let go of RStudio, it's not going anywhere,
+
+00:30:55.355 --> 00:31:00.155
+but if you're curious about playing in Positron the one thing that might get you is the Data
+
+00:31:00.155 --> 00:31:05.914
+Explorer because it got me and then also we had Nick Crane from the Arrow team join us on the
+
+00:31:05.914 --> 00:31:12.954
+Data Science Lab a while ago and we found out that the Positron Data Explorer just natively
+
+00:31:12.954 --> 00:31:19.274
+displays parquet files as well and I was like that's enough for me to be like this is everyone
+
+00:31:19.355 --> 00:31:24.075
+to go use this and you don't even have to load your data in it's just in your folder and you
+
+00:31:24.075 --> 00:31:28.715
+click it without loading it in and it just loads it shows you what's missing and it shows you
+
+00:31:28.715 --> 00:31:34.075
+histograms of all of your your columns and all their data types. I'm not going to share my screen
+
+00:31:34.075 --> 00:31:38.874
+because we're at the Data Science Hangout, not the lab, but everybody just know that I'm exuberant
+
+00:31:38.874 --> 00:31:45.354
+about that feature. All right Saptarishi, thank you for asking that wonderful question. We have
+
+00:31:45.354 --> 00:31:50.074
+another question from Noor. Noor, would you like to ask your question live? Wait, Noor has two
+
+00:31:50.074 --> 00:31:59.594
+questions. I will let you pick one. I can only choose one, that's so mean. Well, you got to pick
+
+00:31:59.594 --> 00:32:07.115
+one or the other I guess is what I mean. Fair, fair. I'll ask the more relevant one because
+
+00:32:07.115 --> 00:32:11.835
+the first one is probably more of a point of contention argument one, but when you're making
+
+00:32:11.835 --> 00:32:15.995
+shiny apps, what are some of the limitations you've noticed with working with omics data,
+
+00:32:15.995 --> 00:32:22.395
+especially with things like PII, PHI and so forth? I know that's a big issue working with genomics,
+
+00:32:22.395 --> 00:32:28.074
+especially when yes, you have public databases, but often you have your own data and that has
+
+00:32:28.074 --> 00:32:35.275
+a lot more limitations, especially with privacy and so forth. Yeah, another wonderful question.
+
+00:32:35.594 --> 00:32:41.835
+Since much of the data that I work with is human data, it's really important that they're
+
+00:32:41.835 --> 00:32:47.594
+de-identified or the type of data that we're working with, it can be made publicly available
+
+00:32:47.594 --> 00:32:52.555
+and if it can't be made publicly available, then I absolutely would not make a shiny app for it.
+
+00:32:52.555 --> 00:32:57.195
+Then it's something that would have to be where you'd have to have special permissions in order
+
+00:32:57.195 --> 00:33:04.635
+to work with it. It's only data that has been already approved prior consent from both the
+
+00:33:04.635 --> 00:33:09.354
+individuals prior to them deceasing that they were okay with their data being used in this way,
+
+00:33:09.354 --> 00:33:15.354
+and then IRB approval to make sure that we're checking all those boxes and that everything
+
+00:33:15.354 --> 00:33:21.354
+that we're doing is in line with ethical regulations to make sure that we're being
+
+00:33:21.354 --> 00:33:27.835
+respectful of the data. I think that's so important in scientific research is that trust
+
+00:33:27.835 --> 00:33:33.835
+aspect of that we're not going to be misusing the data in any kind of way or making it more
+
+00:33:33.835 --> 00:33:39.915
+accessible than how they wanted it or intended it to be used. There are limitations for some
+
+00:33:39.915 --> 00:33:45.995
+of the data sets to where we don't have permissions to do that, so I would not make a shiny app for it
+
+00:33:46.715 --> 00:33:52.074
+and then other permissions where we do and they want it to be readily accessible to the community,
+
+00:33:52.074 --> 00:33:58.474
+in which case then I would accompany a shiny app. In addition to almost all of our projects,
+
+00:33:58.474 --> 00:34:05.275
+the raw data as well as the process data also are available. There's resources like SRA,
+
+00:34:05.275 --> 00:34:12.315
+which stands for the Short Read Archive, that's hosted by the NIH where you can deposit your
+
+00:34:12.315 --> 00:34:18.794
+raw sequencing data so that people don't have to trust you of being like, oh yeah, they analyze this
+
+00:34:18.794 --> 00:34:23.115
+perfectly the same way that I would have analyzed it. Maybe they want to look at it
+
+00:34:23.115 --> 00:34:28.715
+differently and then you can deposit your data on there to make it even the raw data available.
+
+00:34:30.715 --> 00:34:35.675
+Thank you so much, Norah, for asking your questions. I just put a poll in the Slido.
+
+00:34:36.395 --> 00:34:42.954
+If anybody would like to head to Slido and go to the top and change the little slider to polls,
+
+00:34:42.954 --> 00:34:47.034
+I sure hope that's still how the UI works on your end because it used to work that way
+
+00:34:47.754 --> 00:34:51.354
+and you can go answer questions. But also let me know if I'm missing a category.
+
+00:34:51.354 --> 00:34:56.715
+The question I asked is, if you code in any language, where or when did you learn to code?
+
+00:34:56.715 --> 00:35:01.835
+I put on my own, which is like private courses, learning online, reading from books. I also put
+
+00:35:01.835 --> 00:35:07.194
+in school, but then also when I got on the job and that was like from co-workers or on my own
+
+00:35:08.794 --> 00:35:12.715
+so that I might be missing a category, but those are the ones that I was thinking about.
+
+00:35:14.315 --> 00:35:20.074
+And Norah has also staged her other question she was talking about that could be contagious
+
+00:35:20.074 --> 00:35:25.435
+to everybody in the chat, so go check out her question in the chat and answer. And we'll come
+
+00:35:25.435 --> 00:35:32.875
+back to our poll and see our results in just a minute. All right, thank you, Norah. Let's head
+
+00:35:32.875 --> 00:35:40.875
+over to Ken. Ken had a question. Let's see. Ken Roosevelt, if you are available to ask that live,
+
+00:35:40.875 --> 00:35:52.315
+that'd be great. Let's see. Do we have a Ken? Sorry, Ken. I went to press unmute again and
+
+00:35:52.315 --> 00:35:59.835
+I muted you. It happens. I do this all the time. There you go. Hey, how's it going?
+
+00:36:03.514 --> 00:36:06.555
+I don't know if my camera's on. I tried turning it on. Oh, it's covered.
+
+00:36:07.275 --> 00:36:16.155
+Hi. Okay, so is your data limited? I have a multi-part question, so I'll give it to you
+
+00:36:16.155 --> 00:36:20.315
+in pieces if that's all right. Is your data limited to patients with Alzheimer's or do you
+
+00:36:20.315 --> 00:36:25.194
+have some large data sets where the set of patients is much broader and where you're
+
+00:36:25.194 --> 00:36:32.715
+trying to predict the likelihood of Alzheimer's developing like a rare event? Yeah, really great
+
+00:36:32.715 --> 00:36:39.115
+question. So the data set includes controls that don't have any pathology. They died of other
+
+00:36:39.115 --> 00:36:45.034
+causes, as well as the individuals that have just pure Lewy body disease, as well as individuals
+
+00:36:45.034 --> 00:36:51.995
+that have both Lewy body disease and Alzheimer's disease. And then, of course, every single one of
+
+00:36:51.995 --> 00:36:58.794
+those individuals, they don't fit in this perfect little bin. They have other kind of...
+
+00:36:58.794 --> 00:37:06.395
+It's very just heterogeneous, I would say. But it is a large data set. So there's a little
+
+00:37:06.395 --> 00:37:12.794
+over 600 individuals in that one particular data set. And then that's just one project. We
+
+00:37:12.794 --> 00:37:22.555
+also have other projects looking at sepsis. But same thing that's on a spectrum of potentially
+
+00:37:22.555 --> 00:37:27.435
+how quickly they had sepsis, how long they had it for. And for those that don't know what sepsis is,
+
+00:37:27.754 --> 00:37:33.754
+your body is like severe reaction to an infection and it can cause long-term organ
+
+00:37:33.754 --> 00:37:41.835
+damage and long-term cognitive decline as well. Okay. Just for context, I work at a hospital
+
+00:37:41.835 --> 00:37:48.395
+and I'm working when I have time on a model that is going to predict falls. So I have a
+
+00:37:49.354 --> 00:37:57.514
+very broad set of covariates that I'm mining out, but a relatively rare event.
+
+00:37:58.954 --> 00:38:06.555
+So that leads to my next question. So again, multi-part. If so, what are your go-to methods
+
+00:38:06.555 --> 00:38:15.195
+for predicting rare events? And then in my reply there on quarto, it says sparsity. So predicting
+
+00:38:15.274 --> 00:38:20.955
+rare events, sparsity, and this one's a big one for me, are variables that are partial substitutes
+
+00:38:20.955 --> 00:38:27.834
+for other variables within your data. For example, you can have labs represent like a score in a lab
+
+00:38:27.834 --> 00:38:32.234
+can present a diagnosis. So the two things are saying the same thing, but different ways.
+
+00:38:32.794 --> 00:38:38.955
+Or a procedure can be a response, a treatment for that diagnosis in that lab. So all these
+
+00:38:38.955 --> 00:38:44.714
+things can be variables within your data set. And it's like, okay, how do I, but not all of those
+
+00:38:44.794 --> 00:38:50.315
+will be populated. So you don't want to just eliminate one. So what do you do? I'm just
+
+00:38:50.315 --> 00:38:59.034
+interested in your approaches. Yeah. So, oh, there's an echo. Oh, we have an echo. I'll mute Ken.
+
+00:39:01.594 --> 00:39:11.195
+Okay. So firstly, you're right about the sparsity. So you can do things like, I'm sure you're well
+
+00:39:11.195 --> 00:39:17.594
+aware of, of imputing. But if you have more than half of your samples are missing that variable,
+
+00:39:17.594 --> 00:39:23.755
+then I don't know if you would want to impute. So one of my favorite packages is actually called
+
+00:39:23.755 --> 00:39:30.875
+variance partition. So to look at how much of the different covariates can be, how much variation
+
+00:39:30.875 --> 00:39:36.315
+can be explained for each of those covariates in the model. And then also determining the most
+
+00:39:36.315 --> 00:39:41.515
+parsimonious model. This is probably getting a little bit too on the statistical side, but it
+
+00:39:41.515 --> 00:39:45.914
+will be great for those that love statistics, but making sure that you're picking a parsimonious
+
+00:39:45.914 --> 00:39:51.274
+model. So there's different approaches for that. So I use Bayesian information criteria for that.
+
+00:39:52.075 --> 00:39:57.675
+And essentially what that's doing is if you have, you know, a hundred different variables,
+
+00:39:57.675 --> 00:40:05.115
+age, sex, postmortem interval, how long they had the disease for, other symptoms that they might
+
+00:40:05.115 --> 00:40:11.274
+have had, other diseases, medications, how much of those different variables contribute to the
+
+00:40:11.274 --> 00:40:17.195
+overall variation that you're seeing in the data. And that's, I think essentially the type of
+
+00:40:17.195 --> 00:40:22.714
+question that you were asking Kenneth. But the other part that you were asking about this like
+
+00:40:22.714 --> 00:40:27.834
+prediction, can we predict early on, you know, how long they were going to have the disease for
+
+00:40:27.834 --> 00:40:34.875
+or the severity of it. And that's work that I'm hoping to do in the very near future now that I
+
+00:40:34.875 --> 00:40:41.195
+have multiple omics layers for the same set of individuals. So I have genomics, transcriptomics,
+
+00:40:41.195 --> 00:40:46.635
+and proteomics. And with that, it's a little bit different than just the clinical data,
+
+00:40:46.635 --> 00:40:51.435
+because I actually do have each one of those layers for every single one of those individuals.
+
+00:40:51.435 --> 00:40:58.635
+So there's not missing information in that sense. But the question is, is based off of these omic
+
+00:40:58.635 --> 00:41:06.875
+layers, do the combination of them, can we use that as like a system level approach for predicting
+
+00:41:06.875 --> 00:41:13.435
+their neuropathological outcome that they had, so that we can use that as early biomarkers and
+
+00:41:13.435 --> 00:41:18.154
+detectors, which would ultimately help individuals, because one of the biggest things with
+
+00:41:19.354 --> 00:41:24.154
+Alzheimer's disease and Lewy body disease treatment is being able to identify it early on.
+
+00:41:24.794 --> 00:41:31.435
+It's often that it's when they have symptoms, and that's when you're like, oh, well, you have
+
+00:41:31.435 --> 00:41:37.755
+Alzheimer's disease, and that's unfortunate, and we'll do the best. But if you can detect it very
+
+00:41:37.755 --> 00:41:42.315
+early on, then there actually is more treatment options available to those individuals.
+
+00:41:44.234 --> 00:41:49.675
+Thank you so much, Ken, for your question. And I love the connection of predicting falls
+
+00:41:50.315 --> 00:41:55.515
+also with Alzheimer's, because my grandmother who had Alzheimer's fell several times and made
+
+00:41:55.515 --> 00:42:00.875
+things much, much worse. And I think that these are problems that probably go together quite often.
+
+00:42:01.834 --> 00:42:09.034
+All right, let's head back over to Slido. We have 34 votes in for our Slido poll, which was,
+
+00:42:09.034 --> 00:42:14.394
+if you code in any language, where did you learn to code? 35% of us said in school,
+
+00:42:14.394 --> 00:42:23.354
+38% of us said on my own, and 26% said when I got to the job. So almost equal on that in school
+
+00:42:23.354 --> 00:42:27.354
+versus on my own. And as we get more votes coming in, I think that we'll see those equalize a little
+
+00:42:27.354 --> 00:42:35.115
+bit more. Actually, they just did. They're both at 37%. If you are somebody who learned on your own,
+
+00:42:35.115 --> 00:42:38.234
+do you wish that you went to school? If you're somebody who learned in school, do you wish that
+
+00:42:38.234 --> 00:42:41.675
+you did it on your own? That's just a personal question. Let me know in the chat, because
+
+00:42:41.675 --> 00:42:45.914
+I talk to people all the time who are like, oh, I wish I'd done it differently, right? The grass is
+
+00:42:45.914 --> 00:42:53.675
+always greener. Okay, we have 12 more minutes here. We have time for a couple more questions.
+
+00:42:54.474 --> 00:42:59.274
+But we also have such great conversation happening in the chat that I kind of want to bring it in
+
+00:42:59.274 --> 00:43:08.234
+a little bit, because it is about dimension reduction. Connor was asking about dimension
+
+00:43:08.234 --> 00:43:15.914
+reduction. I think this was in the context of Ken asking about missingness or dealing with
+
+00:43:15.914 --> 00:43:22.875
+missing data. Do you have any comment, Kimberly, on dimension reduction, or do you use that in
+
+00:43:22.875 --> 00:43:31.675
+your work at all? Yeah, so we definitely use it in our work. It's extremely useful for single-cell
+
+00:43:31.675 --> 00:43:37.594
+data. So that shiny app that was shared with those two plots side by side of actually
+
+00:43:37.594 --> 00:43:45.834
+clustering the neurons together versus like the microglia together. So dementia dimensionality
+
+00:43:45.834 --> 00:43:51.675
+reduction is really important for omics data, and it was difficult to follow the whole
+
+00:43:52.955 --> 00:44:00.315
+chat thread, but I loved that someone was talking about like, well, it's not randomly distributed,
+
+00:44:00.315 --> 00:44:06.714
+and how do you take these things into consideration with missingness? And I mentioned
+
+00:44:06.714 --> 00:44:11.834
+earlier like the omics data that we don't have missing data, but in omics data for an individual,
+
+00:44:11.834 --> 00:44:17.755
+there is sparsity where you could have that gene just didn't get the proper amount of coverage for
+
+00:44:17.755 --> 00:44:21.755
+it, but it doesn't necessarily mean that they don't have that gene or they're not expressing
+
+00:44:21.755 --> 00:44:27.675
+that gene. It's just the sparsity of the data. But they're absolutely right in that at least for
+
+00:44:27.675 --> 00:44:33.834
+an omics perspective, it's not random, especially for genes that are expressed. They tend to be
+
+00:44:33.834 --> 00:44:40.474
+co-expressed together, so you can have a set of genes that are co-expressed together, and often
+
+00:44:40.474 --> 00:44:47.354
+what has historically been viewed at for understanding these research questions for like,
+
+00:44:47.354 --> 00:44:53.195
+oh, is this gene expressed in this disease versus in the control samples? We're just looking at an
+
+00:44:53.195 --> 00:44:58.154
+individual gene perspective, but when you understand that the genes are co-expressed
+
+00:44:58.154 --> 00:45:02.714
+together, that does help for that system level analysis. Yes, WGCNA!
+
+00:45:05.914 --> 00:45:10.875
+Raha and Kimberly should get together after this. I have to introduce you two.
+
+00:45:10.875 --> 00:45:14.234
+I keep laughing thinking, oh, these two would have so much to talk about.
+
+00:45:14.955 --> 00:45:21.594
+Okay, if anybody wants to add a link to WGCNA analysis stuff in there for the rest of us
+
+00:45:22.555 --> 00:45:30.154
+plebs to learn about it, that would be amazing. Yeah, and they have a new one, HD-WGCNA,
+
+00:45:30.154 --> 00:45:34.555
+which is for that high dimensional weighted gene co-expression network analysis.
+
+00:45:35.755 --> 00:45:41.675
+I love that everybody threw in their little two cents on their favorite types of
+
+00:45:41.675 --> 00:45:48.075
+dimension reduction as well. There are some, I feel like, fields where PCA is really,
+
+00:45:48.075 --> 00:45:53.515
+really valuable and used a lot and like maybe not so much in this instance. Is there a certain
+
+00:45:53.515 --> 00:46:02.154
+type of method of dimension reduction that is your go-to? For single cell data, it's often
+
+00:46:02.154 --> 00:46:11.195
+UMAPs, but the UMAPs are also priorly built off of the PCA. We're on that knee for the PCA of
+
+00:46:11.195 --> 00:46:16.794
+how many components are actually contributing to the overall variation, but then you also have
+
+00:46:16.794 --> 00:46:21.914
+additional dimensionality reduction, which is those UMAPs, which is uniform manifold
+
+00:46:21.914 --> 00:46:28.794
+approximation projection. Oh man, I was about to say, let's define UMAPs. You didn't. You
+
+00:46:28.794 --> 00:46:35.114
+remembered the full acronym. I'm so proud. Yeah, so please don't ask me to spell out the math without
+
+00:46:35.114 --> 00:46:43.114
+a cheat sheet. I'm having flashbacks to interpreting scree plots incorrectly, like those
+
+00:46:43.114 --> 00:46:48.955
+elbow plots for PCA, feeling so much anxiety around them, but I do absolutely love PCA.
+
+00:46:50.315 --> 00:46:55.195
+If anybody, I'll put a link in the chat. We can't talk about PCA for eight minutes or else I would
+
+00:46:55.195 --> 00:47:02.154
+do it. Okay, thank you so much for fantastic discussion in the chat. We should do more of
+
+00:47:02.154 --> 00:47:07.355
+this. If you want to talk more about dimension reduction and PCA and UMAP, let's do it at the
+
+00:47:07.355 --> 00:47:15.114
+Discord. You can do it in Data Science Hangout channel as well. Okay, let's go over to Natasha's
+
+00:47:15.114 --> 00:47:21.114
+question, which was, do you have any tips for making shiny apps? For example, how to make them
+
+00:47:21.114 --> 00:47:26.555
+clearer or to use good ways of making them scalable? Maybe you have some tips in your
+
+00:47:26.555 --> 00:47:31.835
+pocket that you've learned over the years. Yeah, wonderful question, because one of the
+
+00:47:31.835 --> 00:47:38.235
+challenges that I had with the shiny app that was shared, which that shiny app, big shout out to
+
+00:47:38.235 --> 00:47:44.874
+ShinyCell. So those were the developers that actually made that package with the beautiful
+
+00:47:44.874 --> 00:47:51.355
+tabs and stuff, and then I was able to use ShinyCell to make my shiny app with my data, but
+
+00:47:51.355 --> 00:47:58.235
+use their already kind of pre-built nice app for it with the beautiful tabs and being able to
+
+00:47:58.235 --> 00:48:03.435
+parse the data. But one of the challenges that I had with it is because since we have almost four
+
+00:48:03.435 --> 00:48:10.075
+million individual cell points, is that the data set was quite large and even with the shinyapps.io
+
+00:48:10.075 --> 00:48:16.394
+I was having difficulties of it like uploading because then it would crash. So one of the things
+
+00:48:16.394 --> 00:48:23.274
+that I did to make it more feasible was not all the genes need to be in part of that matrix up
+
+00:48:23.274 --> 00:48:27.914
+within that our object, because some of them are just so lowly expressed that they're not
+
+00:48:27.914 --> 00:48:32.634
+contributing to the overall variation, they're not contributing to our differences in our disease
+
+00:48:32.634 --> 00:48:37.994
+group. So I was like one way to reduce this would just to be to remove those from the overall
+
+00:48:37.994 --> 00:48:42.874
+objects. They weren't removed from the total analysis or the results from the publication
+
+00:48:42.874 --> 00:48:48.394
+or anything like that, but it just helps to reduce the overall size of that object. So then that way
+
+00:48:48.394 --> 00:48:53.994
+I could make the shiny app, but that is one of the challenges with working such large data is
+
+00:48:53.994 --> 00:49:00.235
+being able to be like, okay I can't throw in the whole pie, but let me figure out the
+
+00:49:00.235 --> 00:49:06.634
+biggest pieces that I can that can still give you that full picture. And then as far as like,
+
+00:49:06.634 --> 00:49:13.835
+and I think this is true even of coding, I love to find an example and run through that example
+
+00:49:14.394 --> 00:49:18.634
+set to make sure that it works to be like, okay, I know how to make a shiny app, even if it was
+
+00:49:18.634 --> 00:49:24.394
+something totally unrelated, maybe like sales or something, but something somewhere someone posted
+
+00:49:24.394 --> 00:49:29.914
+of like, here's how to do it. And then once I've done a template run through, then that's where I
+
+00:49:29.914 --> 00:49:34.475
+feel more confident to make my own tweaks for it of how I want to put one together.
+
+00:49:35.994 --> 00:49:40.154
+Fantastic. That is my suggestion as well. Make the smallest possible thing that works.
+
+00:49:40.955 --> 00:49:46.794
+Daniel Chen, who teaches data science at UBC joined us on the data science lab this week to
+
+00:49:46.794 --> 00:49:53.835
+talk about how he gets that working example going. And he used cloud code to sort of just like spin
+
+00:49:53.835 --> 00:49:59.274
+up a working example. And then he walked through all the basic components of it, which was really,
+
+00:49:59.274 --> 00:50:05.835
+really helpful. Things like that, I think are the best possible advice. And speaking of advice,
+
+00:50:06.794 --> 00:50:11.355
+we have five minutes left, four minutes left. I would love to ask you a question we ask everybody
+
+00:50:11.355 --> 00:50:16.394
+here, which is, do you have a piece of career advice for us? Maybe something you wish you
+
+00:50:16.394 --> 00:50:20.715
+knew before you got into the field that you're in or just something you might, you think might
+
+00:50:20.715 --> 00:50:29.835
+help others? Yeah, I would say be authentic to yourself, which I think every single person
+
+00:50:29.835 --> 00:50:37.114
+is curious and creative and confident and courageous. And for whatever reason as society,
+
+00:50:37.114 --> 00:50:43.514
+maybe sometimes we're told like, oh, like, don't ask that silly question. I've been told throughout
+
+00:50:43.514 --> 00:50:48.715
+my career, there's no such thing as a silly question. A silly question is one that you don't
+
+00:50:48.715 --> 00:50:58.555
+ask. So I would just say, be yourself and ask, ask questions, you know, be open to listening to
+
+00:50:58.555 --> 00:51:07.034
+others and explore, have fun with it. That is the best advice, be yourself and have fun.
+
+00:51:07.034 --> 00:51:12.874
+Follow the fun, what feels fun. I think that I got a lot of advice when I was in undergrad and
+
+00:51:12.874 --> 00:51:19.355
+grad school that was like, follow the difficulty, follow the challenge, follow like, what feels hard.
+
+00:51:20.715 --> 00:51:27.435
+And that didn't get me anywhere. When I followed what felt right, I began to get somewhere and I,
+
+00:51:27.435 --> 00:51:31.514
+you know, didn't do that on purpose. I did it on accident and I felt I was battling myself
+
+00:51:31.514 --> 00:51:39.195
+the entire time. Yeah, when I graduated with my undergrad, my grandmother was like, oh,
+
+00:51:39.195 --> 00:51:45.195
+I really hope you find a job that you love and enjoy. And it sounds crazy, but I think that's
+
+00:51:45.195 --> 00:51:49.195
+the first time someone said that to me. I was always under the impression that you have to
+
+00:51:49.195 --> 00:51:53.114
+work for money. That's what you do. You work for money. So when she was like, oh, I hope you find
+
+00:51:53.114 --> 00:51:59.754
+something that, you know, you really enjoy. I was like, oh, well, that does make more sense.
+
+00:51:59.754 --> 00:52:05.514
+And I value my wise grandmother because she lived a wonderful life and was always happy,
+
+00:52:05.514 --> 00:52:10.394
+you know, drinking her wine. And so I was like, you know what, I'm going to listen to my wise
+
+00:52:10.394 --> 00:52:16.794
+grandmother. And I'm so glad I did. Oh, I love that. I think some of us in the chat probably
+
+00:52:16.794 --> 00:52:22.715
+have wise grandmothers that we can share experiences with it as well. I know Rachel definitely does.
+
+00:52:23.754 --> 00:52:30.475
+Well, this was a wonderful time. I hope everybody had a good one. I know that there were lots of
+
+00:52:30.475 --> 00:52:36.075
+scientific terms. We talked about all kinds of interesting things. If you don't know what any
+
+00:52:36.075 --> 00:52:41.595
+of that stuff is, I encourage you to go Google it, go check out Kimberly's app, and I will share it
+
+00:52:41.595 --> 00:52:46.394
+again in the chat really quickly. If you would like to save your chat, you can do that at the
+
+00:52:46.394 --> 00:52:51.514
+three dots, the top right corner, so that you don't lose our resources that we shared, but also
+
+00:52:51.514 --> 00:52:56.075
+come hang out in the Discord server, and we often share a link to that chat as well or a file.
+
+00:52:56.874 --> 00:53:01.034
+Kimberly, thank you so much for hanging out with us today, and I hope that you had a really good
+
+00:53:01.034 --> 00:53:08.075
+time. I had a wonderful time. Thank you all so much. Yay, thank you, everybody. We will see you
+
+00:53:08.075 --> 00:53:15.274
+again next week. I hope you have a wonderful day and weekend. Bye, everybody. See you on the Discord.
+
+00:53:21.514 --> 00:53:22.014
+Bye.

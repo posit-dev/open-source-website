@@ -1,0 +1,2503 @@
+WEBVTT
+
+00:00:00.320 --> 00:00:06.400
+Well hello and welcome back to another awesome edition of the Shiny Developer Series. My name
+
+00:00:06.400 --> 00:00:11.200
+is Eric Nance and as always thank you so much for tuning in. And if you like what you're going to
+
+00:00:11.200 --> 00:00:16.639
+be hearing in this episode, which I know you will, you'll also want to check out the back catalog
+
+00:00:16.639 --> 00:00:22.240
+that we have on the Shiny Dev Series YouTube channel. And also I've been having a little fun
+
+00:00:22.240 --> 00:00:28.879
+doing some live streaming lately and you'll see the recordings of those as well. So as you might
+
+00:00:28.879 --> 00:00:36.480
+know I like to do a little continuity here on the Dev Series and last episode we had a great
+
+00:00:36.480 --> 00:00:43.279
+conversation with a member of the Shiny team who recently joined Nick Strayer. He showed some of
+
+00:00:43.279 --> 00:00:49.680
+the awesome things he's been doing in particular with the new Shiny App Stories section. And if you
+
+00:00:49.680 --> 00:00:56.240
+saw in the example application he shared, it had some great showcases of some new functionality
+
+00:00:56.240 --> 00:01:02.720
+that's been added in Shiny as of this year. And one of those features that really got a lot of
+
+00:01:02.720 --> 00:01:09.279
+attention we're actually going to be talking about in-depth with the architect of
+
+00:01:09.279 --> 00:01:16.400
+much of that work. So it is my pleasure to welcome to the Shiny Dev Series for the very first time
+
+00:01:16.400 --> 00:01:21.760
+rstudio software engineer Carson Sievert. So Carson, thank you so much for joining me today.
+
+00:01:22.000 --> 00:01:28.959
+Yeah, great to be here. Thanks for the invite. Just want to say that I've really enjoyed all
+
+00:01:28.959 --> 00:01:34.559
+the service you've been providing with these videos. I think it's great that you're
+
+00:01:35.199 --> 00:01:41.440
+really putting a highlight on Shiny developer experience. So it's great to have this as an
+
+00:01:41.440 --> 00:01:47.680
+outlet to share our work. Oh, absolutely. This is one of the funnest things I do these days.
+
+00:01:47.760 --> 00:01:54.000
+And you and I have had a lot of conversations in previous conferences and I never was able to
+
+00:01:54.000 --> 00:01:59.519
+snag you on the podcast. But hey, we're here now. So I'm going to take full advantage of this. And
+
+00:02:00.160 --> 00:02:05.919
+for our listeners who may not be as familiar, maybe you could start off with sharing a bit
+
+00:02:05.919 --> 00:02:11.119
+about how you actually ended up joining rstudio and a little bit about the journey to
+
+00:02:11.119 --> 00:02:18.800
+arrive on the Shiny team. Yeah, so some viewers might know my work on the Plotly R package,
+
+00:02:19.440 --> 00:02:26.880
+which I started all the way back as a PhD student at Iowa State. I did a PhD in statistics there
+
+00:02:28.479 --> 00:02:34.320
+and had the great fortune of working with Heidi Hoffman and Dai Cook on my dissertation,
+
+00:02:34.320 --> 00:02:42.800
+who also advised Hadley Wickham. So I had already had an interest in interactive graphics,
+
+00:02:44.080 --> 00:02:52.960
+but being able to work with them was a great experience and was very fortunate to kind of
+
+00:02:54.080 --> 00:02:59.360
+almost have it fall into my lap that it just kind of made sense for me to start working on
+
+00:02:59.360 --> 00:03:07.199
+the Plotly R package. And I was fortunate enough to get paid for some of my time working on that,
+
+00:03:07.199 --> 00:03:16.720
+as well as writing about it a little bit for my PhD dissertation. So stars aligned for me pretty
+
+00:03:16.720 --> 00:03:22.880
+well in grad school to be able to work on that project and then continue working on that project
+
+00:03:22.880 --> 00:03:32.080
+after graduating. And so I did that pretty close to full time for a couple years after graduating
+
+00:03:34.320 --> 00:03:39.759
+and, you know, really enjoyed that project. And then it just kind of, you know, worked into a
+
+00:03:39.759 --> 00:03:46.479
+place where, you know, there was kind of mutual interest in me joining rstudio and rstudio having
+
+00:03:46.559 --> 00:03:54.639
+me join and potentially, you know, keep the Plotly project going. And, you know, also had
+
+00:03:54.639 --> 00:04:01.440
+the opportunity to learn more about the whole, like, Shiny ecosystem, the R Markdown ecosystem,
+
+00:04:01.440 --> 00:04:10.720
+and sort of grow my skills as an R developer. So yeah, that's been a really sort of seamless
+
+00:04:10.720 --> 00:04:15.679
+transition from those experiences in grad school and working on the Plotly project. And now
+
+00:04:16.559 --> 00:04:24.160
+I'm becoming more and more focused on sort of the whole front-end experience of developing Shiny
+
+00:04:24.160 --> 00:04:32.399
+apps. So yeah, since joining, I've sort of, you know, broadened my scope from just focusing on,
+
+00:04:32.399 --> 00:04:40.320
+like, highly interactive data visualizations to, you know, how do we bring more modern front-end
+
+00:04:40.320 --> 00:04:47.519
+web development to Shiny? Yeah, it's like a natural coupling, in my opinion. And I can
+
+00:04:47.519 --> 00:04:56.320
+speak, I'm sure for many in the community, Plotly has absolutely been a huge transformative kind of
+
+00:04:56.320 --> 00:05:02.160
+package, so to speak, in giving my outputs, whether they're in a Shiny app or even an
+
+00:05:02.160 --> 00:05:09.760
+interactive report, that extra bit that just takes it to such greater heights with the
+
+00:05:09.760 --> 00:05:14.640
+stakeholders I share these with. And I even have a little fun learning a little bit under the hood.
+
+00:05:14.640 --> 00:05:19.040
+I actually remember attending one of your workshops at a previous R Pharma, where you
+
+00:05:19.040 --> 00:05:24.480
+dived into a lot of the Plotly details. And I've been taking those learnings to this day,
+
+00:05:24.480 --> 00:05:29.760
+along with the awesome book that you authored, which I'll have a link to in the resources below.
+
+00:05:30.480 --> 00:05:35.920
+Highly recommend to check that out if you want to get into the hood of Plotly. And we'll even
+
+00:05:35.920 --> 00:05:40.799
+touch on that a little bit, I think, towards the end as well. So, of course, thank you for making
+
+00:05:40.799 --> 00:05:46.640
+that. Like I said, it's been transformative to a lot of the work I do in my day job and even
+
+00:05:46.640 --> 00:05:54.640
+outside of that. But that's really not all you do, for sure, these days. And I'm thinking back to
+
+00:05:55.279 --> 00:06:02.000
+RStudio Global earlier this year. And as kind of being involved in some of the community stuff with
+
+00:06:02.000 --> 00:06:08.480
+Shiny in the conference, and I started networking with others attending, there was a very common
+
+00:06:08.480 --> 00:06:16.000
+theme of a new development that got a lot of praise, a lot of excitement from myself included.
+
+00:06:16.000 --> 00:06:22.160
+And that is the awesome work that you've been doing with BS Lib and Thematic. And I'd love
+
+00:06:22.160 --> 00:06:27.279
+for you to take our listeners through kind of the journey to build those. And also, it looks like
+
+00:06:27.279 --> 00:06:32.799
+you have a great demo you want to share with us on how you can get started with BS Lib effectively
+
+00:06:32.799 --> 00:06:38.079
+and really customize your applications in a seamless way. So, let's dive into that.
+
+00:06:39.679 --> 00:06:46.640
+All right. Yeah. So, really, the more ambitious of the two projects, you know, you mentioned BS
+
+00:06:46.640 --> 00:06:53.679
+Lib and Thematic. BS Lib, I guess, is one of the more ambitious of the two. Both of them
+
+00:06:54.559 --> 00:07:03.200
+are sort of designed to give you the tools to make custom theming easier than it has been in the past.
+
+00:07:04.720 --> 00:07:11.359
+So, BS Lib is a pretty ambitious project in the sense that it completely rethinks
+
+00:07:12.160 --> 00:07:20.000
+the model for how we've traditionally implemented custom theming in the past, where if you've ever
+
+00:07:20.000 --> 00:07:26.320
+tried to change some of the default styles of Shiny, you might have written like custom CSS
+
+00:07:26.320 --> 00:07:35.760
+and HTML by hand. Right. Where BS Lib is trying to do as much work as possible to make custom
+
+00:07:36.160 --> 00:07:44.799
+theming as easy as possible. So, the sort of technology that makes this possible is something
+
+00:07:44.799 --> 00:07:54.160
+called SAS. It's a programming language that is designed to make writing CSS easier. And in
+
+00:07:54.160 --> 00:08:04.000
+particular, you know, really provides a nice infrastructure for sort of scaffolding your CSS
+
+00:08:04.000 --> 00:08:10.320
+in a way that you can allow somebody else to easily change like a main or primary color on a
+
+00:08:10.320 --> 00:08:19.279
+page and have that influence like hundreds of CSS rules on the page. So, we'll see some examples of
+
+00:08:19.279 --> 00:08:25.679
+that in a second, but that's kind of like the primary thing that has motivated all of this work,
+
+00:08:25.679 --> 00:08:36.239
+not only BS Lib, but thematic as well. So, BS Lib is really all about customizing the bootstrap CSS
+
+00:08:36.239 --> 00:08:44.320
+that goes on the page to really any Shiny app or markdown document. It's sort of providing that
+
+00:08:44.320 --> 00:08:53.679
+foundation to customize that CSS. Whereas thematic is more aimed specifically at static R plots
+
+00:08:54.400 --> 00:09:02.960
+generated by an R graphics device, which, you know, uses a different styling API than CSS. So,
+
+00:09:02.960 --> 00:09:08.320
+it's fundamentally kind of a different problem, which is why these are two separate packages.
+
+00:09:08.320 --> 00:09:17.760
+You can find both of them at rstudio.github.io slash BS Lib or slash thematic. Yeah. Well,
+
+00:09:17.760 --> 00:09:23.200
+definitely have links to all that in the show notes. Yeah. So, you'll even see in the sort of
+
+00:09:23.200 --> 00:09:30.239
+hello world example for thematic with Shiny, you'll notice that there's some BS Lib code
+
+00:09:31.840 --> 00:09:41.760
+in this example Shiny application that gives some like custom main colors to BS Lib to influence
+
+00:09:41.840 --> 00:09:50.479
+bootstrap CSS. It also brings in some custom fonts. And that will end up say, you know,
+
+00:09:50.479 --> 00:09:57.679
+customizing the look of a tab set panel in a Shiny application. And influence like pretty
+
+00:09:57.679 --> 00:10:04.880
+much anything that's styled through CSS on a Shiny application. But without thematic,
+
+00:10:04.880 --> 00:10:10.159
+you'll get a result like this where you'll see, you know, kind of the usual default styling that
+
+00:10:10.159 --> 00:10:17.599
+you would get with ggplot2 unless you're doing something custom. But the main idea of thematic
+
+00:10:18.479 --> 00:10:25.280
+package is with essentially one line of code, you can say, you know, throughout the life cycle
+
+00:10:25.280 --> 00:10:36.080
+of this application, all of the plot outputs in this Shiny application should use styling defaults
+
+00:10:36.080 --> 00:10:42.960
+that derive from the CSS on the page. Interesting. So, essentially, just by enabling thematic,
+
+00:10:43.599 --> 00:10:49.520
+now your static R plots will derive their global styling defaults from CSS.
+
+00:10:50.559 --> 00:10:55.520
+That right there is just amazing in and of itself. Because there are so many times that I did do some
+
+00:10:55.520 --> 00:11:03.119
+custom building of my CSS in a few major applications at the day job. But then the
+
+00:11:03.119 --> 00:11:08.559
+plots would stick out like a sore thumb. Because I wasn't an expert in styling them individually.
+
+00:11:08.559 --> 00:11:13.359
+But now you ease that transition into making the whole app have this kind of
+
+00:11:13.359 --> 00:11:21.039
+cohesive UX and UI experience. Yeah. And I would say that that's
+
+00:11:21.039 --> 00:11:26.320
+particularly relevant when you're going for sort of a dark mode kind of look.
+
+00:11:26.880 --> 00:11:35.359
+Thematic, you know, goes through a lot of trouble to make sure that, you know, all of the colors are
+
+00:11:35.359 --> 00:11:42.159
+kind of inverted in a sensible way. But then it also does a lot of hard work to make it so that
+
+00:11:43.440 --> 00:11:52.080
+you can do something like leverage BS Lib's ability to automatically import
+
+00:11:52.799 --> 00:12:02.880
+font files for any Google font that you want. So, with BS Lib, you can say, you know, font Google
+
+00:12:02.880 --> 00:12:11.359
+and then whatever font that you find on the Google font API. And it will go out and download
+
+00:12:11.359 --> 00:12:17.840
+those files the first time you run this application. Cache those font files locally so that it doesn't
+
+00:12:17.840 --> 00:12:23.599
+have to do it again in the future. And that essentially allows you to like when you deploy
+
+00:12:23.599 --> 00:12:30.000
+an application, the first time you visit the application on the hosted instance, it will go
+
+00:12:30.000 --> 00:12:35.200
+out and download those font files and cache it locally on the system. But then when the next
+
+00:12:35.200 --> 00:12:42.400
+viewer comes to the Shiny application or any other future visit to the application, those font files
+
+00:12:42.400 --> 00:12:48.159
+will be cached on the system so that it doesn't like it already has it locally on the file system.
+
+00:12:48.159 --> 00:12:50.960
+Oh, very nice. That definitely saves a lot of time.
+
+00:12:51.919 --> 00:12:58.799
+Yeah. So, this allows you to essentially just have this one function call and you could then
+
+00:12:58.799 --> 00:13:10.400
+distribute the Shiny application to somebody else. And they, you know, have basically Shiny will
+
+00:13:10.400 --> 00:13:16.960
+serve those font files to the browser so that even if, you know, you're in a shutdown system
+
+00:13:16.960 --> 00:13:22.719
+where you don't have access to the internet or you're, you know, you're in a firewalled environment,
+
+00:13:23.760 --> 00:13:29.679
+you can still render those fonts without an internet connection because those files are,
+
+00:13:29.679 --> 00:13:33.280
+you know, available locally and served by the Shiny application.
+
+00:13:34.000 --> 00:13:39.200
+Excellent. Yeah, that gets hugely important for some things I have to do where I have to share
+
+00:13:39.200 --> 00:13:44.479
+an app in somewhat more confidential way to have it be kind of self-contained like that. That's
+
+00:13:44.479 --> 00:13:54.239
+excellent. Right. So, this is functionality that's, you know, not only can you take advantage of this
+
+00:13:55.200 --> 00:14:03.919
+by providing a BS theme object to any sort of page layout in Shiny like FluidPage or NavBarPage
+
+00:14:05.200 --> 00:14:16.239
+or sort of the more fundamental BootstrapPage. You can also use a similar API for R Markdown as well.
+
+00:14:16.239 --> 00:14:25.359
+And there's support with the HTML document format at the moment, which you can see on BSLib's
+
+00:14:25.359 --> 00:14:31.440
+package down site. There's a getting started example towards the bottom where it kind of
+
+00:14:31.440 --> 00:14:42.640
+shows you the basic, most basic example of using BSLib's BS theme with Shiny. And then the usage
+
+00:14:42.640 --> 00:14:50.719
+with R Markdown is that if you just provide the theme parameter, any arguments to the BS theme
+
+00:14:50.719 --> 00:14:56.880
+function, it will use those values essentially in the same way that it would for the Shiny use case
+
+00:14:58.640 --> 00:15:06.640
+where all of the sort of customization options are documented on this BS theme reference page
+
+00:15:07.599 --> 00:15:12.479
+where you'll see there's named arguments for choosing a major Bootstrap version. So,
+
+00:15:12.479 --> 00:15:16.000
+this has been another big aspect of this project. Oh, yes.
+
+00:15:17.679 --> 00:15:22.799
+A lot of breaking changes happen in it going from Bootstrap 3 to Bootstrap 4.
+
+00:15:24.000 --> 00:15:32.640
+And this has vast enough consequences that we, at least for the foreseeable future,
+
+00:15:32.719 --> 00:15:40.880
+will probably be defaulting to Bootstrap 3 in Shiny. Possibly in R Markdown, there's talks
+
+00:15:40.880 --> 00:15:47.039
+about changing the defaults. But probably in Shiny, at least for the moment, we'll be defaulting
+
+00:15:47.039 --> 00:15:53.599
+to Bootstrap 3. But BSLib is kind of the recommended way if you want a more modern
+
+00:15:53.599 --> 00:16:00.719
+version of Bootstrap is to choose the version that you want to use in this BS theme.
+
+00:16:03.119 --> 00:16:11.119
+The default is actually subject to change. So, currently, the default is Bootstrap 4.
+
+00:16:12.000 --> 00:16:17.599
+But in the development version of BSLib, actually, we've just added support for Bootstrap 5.
+
+00:16:17.599 --> 00:16:23.200
+And in the future, the defaults will likely become Bootstrap 5.
+
+00:16:24.000 --> 00:16:28.640
+So, we do recommend when you actually use this for a real project
+
+00:16:28.880 --> 00:16:36.080
+that you specify the version of Bootstrap that you want to use when using BSLib.
+
+00:16:37.280 --> 00:16:42.960
+And that will sort of guarantee that if you come back to this project in the future and
+
+00:16:42.960 --> 00:16:47.200
+run it again, there's more of a guarantee that things are going to be reproducible
+
+00:16:48.320 --> 00:16:56.159
+if you pin a specific version of Bootstrap. Yeah, that's a huge detail that I think, yeah,
+
+00:16:56.239 --> 00:17:02.719
+definitely needs to be underscored as well. Because for me, reproducibility is not just about
+
+00:17:03.280 --> 00:17:09.680
+kind of the code itself, so to speak. It's also the dependencies that an app has. And yeah,
+
+00:17:09.680 --> 00:17:16.160
+BSLib is a front end to Bootstrap itself, which, of course, Shiny is heavily wrapping. So,
+
+00:17:17.520 --> 00:17:23.520
+even for someone like me who does package dependency management with Rm, for example,
+
+00:17:23.920 --> 00:17:30.079
+that's not quite enough. It's also, for the UI toolkit, if we're using BSLib,
+
+00:17:30.800 --> 00:17:36.239
+yes, you want to make sure you have that fully reproducible. And these are the kind of things
+
+00:17:36.239 --> 00:17:40.959
+that I've had to learn from experience, but it's great that you call out these examples of
+
+00:17:40.959 --> 00:17:46.319
+specifying it here directly. And hopefully that is something that if you're in a similar situation
+
+00:17:46.319 --> 00:17:52.400
+I am, and reproducibility is just hugely important on a lot of levels, that you take advantage of
+
+00:17:52.959 --> 00:18:00.400
+that parameter. Yeah. And especially if you're a sophisticated Shiny app user that's using
+
+00:18:01.599 --> 00:18:06.239
+pretty popular packages from the ecosystem that our studio itself doesn't maintain,
+
+00:18:07.520 --> 00:18:16.880
+say Shiny widgets or some other sort of UI creation framework, you might be relying on
+
+00:18:16.880 --> 00:18:23.839
+Bootstrap 3 functionality that might break with a more modern version of Bootstrap.
+
+00:18:24.640 --> 00:18:32.239
+So, that is why we're kind of, we'll still continue to default on Bootstrap 3 because
+
+00:18:34.079 --> 00:18:40.560
+we take backwards compatibility very seriously with Shiny. We always want you to be able to
+
+00:18:40.560 --> 00:18:46.800
+feel like you can upgrade to a modern version of Shiny without breaking your existing application.
+
+00:18:47.280 --> 00:18:55.359
+Right. So, and we've even gone so far as to with this BSLib project having support for Bootstrap 3
+
+00:18:55.359 --> 00:19:00.959
+customization in the sense that if you have a legacy project that happens to break with the
+
+00:19:00.959 --> 00:19:09.199
+more modern version of Bootstrap, you can still say BS theme version 3 and then leverage like
+
+00:19:09.199 --> 00:19:14.800
+some of the custom theming features where you can specify like maybe a dark background color
+
+00:19:14.800 --> 00:19:21.599
+and a light foreground color and a different primary color and some custom fonts to get
+
+00:19:21.599 --> 00:19:29.199
+something that looks more like this and even use that with Bootstrap 3, not just a more modern
+
+00:19:29.199 --> 00:19:33.359
+version of Bootstrap. Oh, that's interesting because some people might be concerned that,
+
+00:19:33.359 --> 00:19:39.760
+oh, if I'm still on the older Bootstrap, do I get access to all these nice features that BSLib
+
+00:19:39.839 --> 00:19:43.680
+is giving me? This sounds like, yes, that's not an issue in that sense.
+
+00:19:44.640 --> 00:19:54.160
+Right. So, we fully like ship full bundles of the Bootstrap project for all of these major versions
+
+00:19:54.880 --> 00:20:02.160
+and all of them at least have, so you'll notice on the reference page here,
+
+00:20:02.239 --> 00:20:11.199
+your BS theme has an argument for specifying the version. You can also specify a boot swatch theme,
+
+00:20:11.199 --> 00:20:17.119
+which if you've ever used the Shiny themes package, then you're probably familiar with
+
+00:20:17.119 --> 00:20:24.000
+boot swatch themes and with more modern versions of Bootstrap, there's actually more boot swatch
+
+00:20:24.000 --> 00:20:34.640
+themes available. So, there's actually kind of a section on this, on this getting started article
+
+00:20:34.640 --> 00:20:40.400
+that kind of goes through the links to different boot swatch themes and kind of mentions like, hey,
+
+00:20:40.959 --> 00:20:45.920
+more modern versions of Bootstrap have more boot swatch themes available to them.
+
+00:20:46.719 --> 00:20:55.760
+So, this is a new theme, boot swatch Minty, that has sort of like a nice primary green color and a
+
+00:20:55.760 --> 00:21:06.640
+pink secondary color and has both the usage for Shiny as well as R Markdown, but just to go back
+
+00:21:06.640 --> 00:21:17.520
+to the reference page for BS theme. So, yeah, sort of those two main controls is Bootstrap
+
+00:21:17.520 --> 00:21:24.400
+version and then boot swatch theme and then these named arguments are starting to get more into
+
+00:21:24.400 --> 00:21:32.800
+like the custom controls for custom fonts and custom colors. Sure. And these named arguments
+
+00:21:32.800 --> 00:21:40.880
+in BS theme are controls that we've basically said, we will support these controls across all
+
+00:21:40.880 --> 00:21:47.119
+Bootstrap versions. I see. So, you will be able to use these arguments with any version and be
+
+00:21:47.119 --> 00:21:54.239
+confident that it's going to work in a sensible way across those versions. But then the dot,
+
+00:21:54.319 --> 00:22:02.959
+dot, dot here is basically any Sass variable that Bootstrap has provided. So, this point here,
+
+00:22:02.959 --> 00:22:09.920
+customize like more specific variables for customizing more specific things,
+
+00:22:11.359 --> 00:22:19.280
+goes through this dot, dot, dot. So, in order to see like what theming options are available that
+
+00:22:19.280 --> 00:22:29.119
+are a little bit more specific, we have articles for both Bootstrap 5 now and Bootstrap 4 Sass
+
+00:22:29.119 --> 00:22:40.319
+variables where this is a big interactive table with hundreds of different settings for customizing
+
+00:22:40.319 --> 00:22:47.760
+everything from like the main border color setting to, you know, how much border radius there should
+
+00:22:47.760 --> 00:22:55.199
+be, what the background color should be on active components versus the foreground color.
+
+00:22:56.160 --> 00:23:04.400
+So, you can get very, very detailed with how you approach your theming. And you're basically just
+
+00:23:04.400 --> 00:23:12.560
+providing a CSS unit or value to this BS theme function rather than having to go and like write
+
+00:23:12.560 --> 00:23:21.040
+custom CSS that target special classes that might change in the future. So, it's a much
+
+00:23:21.040 --> 00:23:30.400
+better structured way of, you know, doing custom styles compared to writing custom CSS rules.
+
+00:23:30.400 --> 00:23:36.000
+Yeah, I admit I am not a CSS expert. I just know enough to be dangerous, as I say. But this
+
+00:23:36.000 --> 00:23:43.040
+makes that transition to it a lot easier. And also, what you've done in BSLibs, you've also
+
+00:23:43.040 --> 00:23:50.160
+given a great interactive component for users to actually explore the impact of these parameters
+
+00:23:50.959 --> 00:23:57.439
+right away. And maybe we could dive into that a bit too. Right. So, yeah. So, I like how we're
+
+00:23:57.439 --> 00:24:02.160
+kind of going logically through the getting started article where it kind of goes through
+
+00:24:02.479 --> 00:24:08.160
+what's going on with bootstrap versions, as well as boot swatch themes. And then it gets
+
+00:24:08.160 --> 00:24:13.680
+into custom themes where we sort of talked about these main color and font settings.
+
+00:24:14.640 --> 00:24:22.000
+And then the next section here is what you're referring to, which is real-time theming,
+
+00:24:22.880 --> 00:24:30.239
+where here I have a little screen recording of this interactive theming widget that you can overlay
+
+00:24:30.239 --> 00:24:38.319
+over any Shiny application and choose, like, basic colors and accent colors and in real time
+
+00:24:39.040 --> 00:24:47.199
+see the new CSS styles on the page interactively. Sort of refreshing the CSS styles.
+
+00:24:48.560 --> 00:24:52.160
+And this even works with thematic in the sense that if you enable thematic,
+
+00:24:53.119 --> 00:24:59.199
+you could have static plots in your Shiny application that automatically
+
+00:24:59.920 --> 00:25:04.640
+sort of refresh themselves based on new styles in the Shiny app.
+
+00:25:07.040 --> 00:25:12.479
+So, you can see a demo application, the same demo application with the screen recording that I have
+
+00:25:12.479 --> 00:25:20.000
+here by calling this BS theme preview. That will overlay this interactive widget with the demo
+
+00:25:20.000 --> 00:25:29.520
+application all in one shot. But you can also call this BS themer function inside of any Shiny
+
+00:25:29.520 --> 00:25:38.239
+application. And as long as you're using bootstrap core and higher, it will overlay this interactive
+
+00:25:38.239 --> 00:25:45.040
+theming widget that allows you to, in real time, theme your Shiny application. Very cool.
+
+00:25:46.000 --> 00:25:52.160
+I actually put this to good use when I did a, I knew it wasn't going to win, of course, but I did
+
+00:25:52.160 --> 00:25:57.359
+a couple submissions to the Shiny contest this year. And I kind of knew in general what I was
+
+00:25:57.359 --> 00:26:02.319
+looking for, but then to be able to play with this interactively and select the colors that
+
+00:26:02.959 --> 00:26:10.800
+matched my aesthetics to the game I was kind of using as inspiration, this got me started so much
+
+00:26:10.800 --> 00:26:16.640
+faster than trying to build all that up from the ground up. So, I made great use of it and it paid
+
+00:26:16.640 --> 00:26:25.359
+off nicely. That's great to hear. Yeah, because I think not only will people, I think, find this
+
+00:26:25.359 --> 00:26:31.760
+useful for Shiny, but I think potentially the R Markdown community is going to find this really
+
+00:26:32.719 --> 00:26:40.800
+useful for, as you said, more quickly iterating through a custom theme for your documents.
+
+00:26:42.319 --> 00:26:46.959
+So, you can do something similar where you'll have to call this BS themer function
+
+00:26:48.400 --> 00:26:55.520
+in an R Markdown document, but it has to be used with a Shiny runtime. That's kind of the one
+
+00:26:55.520 --> 00:27:04.079
+main catch here is you do need access to that Shiny runtime in order for
+
+00:27:06.000 --> 00:27:10.239
+the real-time theming widget, essentially, for it to be able to
+
+00:27:11.599 --> 00:27:18.160
+rerun SAS code and refresh CSS styles on the page. It needs to run through a Shiny runtime.
+
+00:27:19.119 --> 00:27:26.000
+Excellent. Yeah, and there's a lot that's going on under the hood that you're not seeing as just a
+
+00:27:26.000 --> 00:27:31.359
+typical end user to make all this happen, because I know when we were preparing for this episode,
+
+00:27:31.359 --> 00:27:36.640
+you mentioned a lot of the work you've had to do with even just upstream bootstrap itself
+
+00:27:37.199 --> 00:27:42.239
+to accommodate certain things that was in the vision of what you and the Shiny team wanted
+
+00:27:42.239 --> 00:27:49.680
+to do with BSLib and theming in general. Yeah, I mean, that gets into the territory of
+
+00:27:50.880 --> 00:27:58.880
+BSLib being a fairly low-level tool, and we're just providing bootstrap to any project that
+
+00:27:58.880 --> 00:28:06.319
+wants to use bootstrap. So, this goes beyond just Shiny and R Markdown, but even just focusing on
+
+00:28:06.319 --> 00:28:12.479
+those two ecosystems. There's lots of projects like Flex Dashboard and
+
+00:28:12.675 --> 00:28:20.835
+flexdashboard, and, you know, other R Markdown packages that kind of extend the HTML document
+
+00:28:20.835 --> 00:28:30.075
+format in some sense that want to make use of Bootstrap. And what we want is for bslib
+
+00:28:30.075 --> 00:28:40.075
+is to do sort of all the hard work to allow these packages to keep on sort of using Bootstrap
+
+00:28:40.075 --> 00:28:48.314
+3 features in a modern Bootstrap world. So we've had to provide some additional layers
+
+00:28:48.314 --> 00:28:57.835
+to kind of recognize Bootstrap 3 style HTML and CSS and make that still work in Bootstrap
+
+00:28:57.835 --> 00:29:04.195
+4. So that has actually led to me actually making some contributions to Bootstrap itself
+
+00:29:04.195 --> 00:29:13.075
+and also, you know, kind of updating, you know, trying to cover all of our bases in
+
+00:29:13.075 --> 00:29:17.795
+terms of making sure that, like, all of the features that you're used to using in a Bootstrap
+
+00:29:17.795 --> 00:29:29.914
+3 world will continue to work in modern Bootstrap world. So, and, yeah, I guess that's maybe
+
+00:29:29.914 --> 00:29:39.554
+a nice time to also mention that the development version of flexdashboard has gained support
+
+00:29:39.554 --> 00:29:40.554
+for using bslib.
+
+00:29:40.554 --> 00:29:44.715
+Oh, that's exciting.
+
+00:29:44.715 --> 00:29:51.675
+Similar way to how I was just demonstrating its use with HTML documents, where you basically
+
+00:29:51.675 --> 00:29:59.355
+supply parameters to this theme parameter. And there's a whole article now on the new
+
+00:29:59.355 --> 00:30:10.155
+flexdashboard website that talks about theming flexdashboards. So this kind of is written
+
+00:30:10.155 --> 00:30:17.675
+in such a way that it should be a gentle introduction to what Bootstrap is and what bslib is and
+
+00:30:17.675 --> 00:30:25.314
+how to use it with flexdashboard. So you do your typical thing of, say, output flexdashboard
+
+00:30:25.314 --> 00:30:32.835
+and then theme version 4 if you want to use Bootstrap 4. Or if you wanted to add on a
+
+00:30:32.835 --> 00:30:39.035
+boot swatch theme, say, Minty, we should actually update the screenshot here. This will actually
+
+00:30:39.035 --> 00:30:45.434
+look a little bit different now with the most recent version. But same sort of support for
+
+00:30:45.434 --> 00:30:54.154
+custom themes, where you, again, can supply custom colors to do, like, a dark mode look
+
+00:30:54.154 --> 00:31:02.915
+for your dashboard. And you can still make use of that sort of an intelligent ability
+
+00:31:02.915 --> 00:31:12.035
+to download and cache font files by using these different font settings in bslib and
+
+00:31:12.035 --> 00:31:18.675
+adding a special Google keyword and then just give it the font family that you want. And
+
+00:31:18.675 --> 00:31:22.314
+it will provide those font files for you.
+
+00:31:23.275 --> 00:31:28.115
+I'm so amazed at how that works. That's just really cool. But that those YAML parameters,
+
+00:31:28.115 --> 00:31:34.594
+again, the kind of remind what you mentioned earlier, those are basically parameters that
+
+00:31:34.594 --> 00:31:38.074
+you would use in a call to the BS theme function, right?
+
+00:31:38.714 --> 00:31:45.635
+Yeah, so this looks very, if you were to go back to the custom theme section here, you
+
+00:31:45.635 --> 00:31:47.395
+can kind of see these side by side.
+
+00:31:47.395 --> 00:31:49.074
+Ah, yes. Okay, very good.
+
+00:31:49.354 --> 00:31:56.514
+With the sort of normal programmatic Shiny usage, you use this font Google function, which
+
+00:31:56.514 --> 00:32:04.434
+also has some different arguments to it that are documented on this reference page. But if
+
+00:32:04.434 --> 00:32:10.395
+you wanted to compare these closely, you know, again, this is the programmatic use. And then
+
+00:32:10.395 --> 00:32:17.915
+we provided like a special YAML syntax for doing the same thing a little bit more in a
+
+00:32:17.915 --> 00:32:19.074
+YAML like way.
+
+00:32:19.354 --> 00:32:19.874
+I see.
+
+00:32:22.915 --> 00:32:33.115
+And yeah, so that YAML usage can be a hard thing to discover. So I suppose this is
+
+00:32:33.115 --> 00:32:38.995
+probably the best place to come and find it is this section with custom themes. Hopefully
+
+00:32:38.995 --> 00:32:44.715
+we'll make that a little bit more discoverable. I think, you know, one of the things that
+
+00:32:44.715 --> 00:32:50.074
+I've heard the IDE team and our markdown team wants a thing that they want to be working on
+
+00:32:50.074 --> 00:32:57.354
+is, you know, making YAML settings more discoverable in general for our markdown.
+
+00:32:57.435 --> 00:33:04.034
+Yeah. So hopefully that's, you know, something that we can try to solve a little bit more
+
+00:33:04.034 --> 00:33:06.315
+generally in the future as well.
+
+00:33:06.315 --> 00:33:12.395
+Yeah, it's amazing. I mean, it gets even just R itself, all the customization you can do. But
+
+00:33:12.435 --> 00:33:19.074
+honestly, yeah, the idea of being able to take advantage of this great work in Flex Dashboard is
+
+00:33:19.074 --> 00:33:24.794
+going to help a lot of people, especially people I work with who are now making, I'm even
+
+00:33:24.794 --> 00:33:32.234
+surprised by this sentence, but very sophisticated dashboards that almost, you know, if you
+
+00:33:32.234 --> 00:33:35.754
+look at it, you wouldn't even know that it technically was built with R markdown and not
+
+00:33:35.754 --> 00:33:40.634
+shining directly. But the fact that now they can change the appearance as kind of like that
+
+00:33:40.634 --> 00:33:49.435
+same experience. Yeah, it's going to make getting these kind of data driven outputs even
+
+00:33:49.435 --> 00:33:57.514
+easier to polish for those key customers that want a certain experience or certain things to be
+
+00:33:57.514 --> 00:34:01.354
+emphasized. So I'm I'm genuinely impressed by this for sure.
+
+00:34:01.914 --> 00:34:06.715
+Well, thanks. Yeah, hopefully we're trying to make it as easy as possible, but it's, it's, you
+
+00:34:06.715 --> 00:34:14.074
+know, it's a tough world to be working in, in the sense of, you know, trying to make these kind of
+
+00:34:14.074 --> 00:34:17.275
+things easier where everyone has like a different set of needs.
+
+00:34:18.155 --> 00:34:18.715
+That's true.
+
+00:34:19.675 --> 00:34:27.675
+So I think what we've landed on should be generally useful for folks. But I think, you know, in
+
+00:34:28.555 --> 00:34:34.715
+some cases, you're still going to need to know how to like write custom CSS rules. And if you
+
+00:34:34.715 --> 00:34:40.555
+get really advanced with this stuff, you know, it's going to be worth actually learning about
+
+00:34:40.555 --> 00:34:48.954
+SAS itself. Cause it has some useful, you know, it's, it's more of a programming language than
+
+00:34:48.954 --> 00:34:57.595
+CSS, which allows you to do like more fancy, sophisticated things. So you'll probably still
+
+00:34:57.595 --> 00:35:04.474
+end up in a world where you need to add on additional custom rules to these projects.
+
+00:35:04.474 --> 00:35:10.875
+And one thing that we've done recently with, you know, HTML document and flex dashboard,
+
+00:35:12.315 --> 00:35:17.354
+they've always had this CSS parameter where this has been kind of the typical way to
+
+00:35:18.954 --> 00:35:24.715
+you know, tack on custom rules to in our markdown document.
+
+00:35:24.715 --> 00:35:25.194
+Sure.
+
+00:35:25.194 --> 00:35:33.435
+And this parameter now has the ability to compile SAS files as well. So this dot
+
+00:35:33.435 --> 00:35:39.835
+S CSS extension is actually a SAS file that needs to run through a SAS compiler.
+
+00:35:41.514 --> 00:35:48.395
+And now you can provide files like this, and you can do it in such a way that if you're using
+
+00:35:48.395 --> 00:35:55.754
+BS lib like this, say theme version four, then you can have SAS rules that reference those
+
+00:35:55.754 --> 00:36:01.275
+bootstrap SAS variables that we were talking about earlier. So, you know, you could have your
+
+00:36:01.275 --> 00:36:07.995
+custom CSS rule like BS for bright, actually reference these SAS variables that are provided
+
+00:36:07.995 --> 00:36:15.354
+by bootstrap and can be themed through this custom theme object. And then, you know, those
+
+00:36:15.354 --> 00:36:18.794
+rules will be defined for your usage inside of the document.
+
+00:36:21.675 --> 00:36:27.914
+Yeah, that's, it's funny, as we talk about SAS in general, if you just take away the last S in
+
+00:36:27.914 --> 00:36:32.315
+that abbreviation, that is a totally different language that my industry has to deal with.
+
+00:36:32.315 --> 00:36:39.034
+That's absolutely nothing to do with theming. I always got to chuckle out of that. But I am
+
+00:36:39.034 --> 00:36:42.715
+slowly starting to get the hang of this. I haven't, you know, I certainly haven't mastered
+
+00:36:42.715 --> 00:36:50.955
+it by any means. But it's certainly if you have to go into this level, and it's a much easier way
+
+00:36:50.955 --> 00:36:57.594
+to kind of have more cleaner syntax on these different rules, these different declaratives,
+
+00:36:57.594 --> 00:37:02.794
+than if you just had to account for all these different possibilities in one massive CSS file.
+
+00:37:02.794 --> 00:37:11.594
+Right, right, right. Yeah. And you can almost view this as like, a nice way if you're working
+
+00:37:11.594 --> 00:37:19.515
+with like a front end developer, a front end developer who's more familiar with like working
+
+00:37:19.515 --> 00:37:27.755
+at the HTML, CSS and SAS level. One neat way to kind of think about the infrastructure that we've
+
+00:37:27.755 --> 00:37:37.115
+provided is you could, you know, have somebody define some sort of HTML component that you could
+
+00:37:37.115 --> 00:37:44.474
+then wrap in our code. So this is using HTML tools to like, create an HTML div with a class
+
+00:37:44.474 --> 00:37:50.555
+of person. Sure. And then there's a header and like two other divs for the title and company
+
+00:37:50.555 --> 00:37:57.435
+for this person. And then that, you know, front end developer could also write SAS rules that,
+
+00:37:58.234 --> 00:38:06.635
+you know, provide CSS styles for this person class. And these SAS rules could, you know,
+
+00:38:06.635 --> 00:38:14.474
+again, reference bootstrap SAS variables. So it's kind of binding to the semantics of bootstrap
+
+00:38:14.474 --> 00:38:19.834
+in the sense that it will inherit whatever the border styles are, or whatever kind of
+
+00:38:19.914 --> 00:38:28.154
+general setting there is for padding or border radiuses, and sort of define that general template
+
+00:38:29.354 --> 00:38:37.195
+that can then be customized through the BS theme object. Right. So it's a nice way to kind of
+
+00:38:37.195 --> 00:38:43.675
+decouple like the person defining the component from the person defining the custom theme.
+
+00:38:43.834 --> 00:38:51.034
+So like the HTML front end developer has provided the scaffolding to, you know, provide the HTML
+
+00:38:51.034 --> 00:38:59.834
+and general sort of generic CSS for these person cards. But then somebody else can come in and say,
+
+00:38:59.834 --> 00:39:03.914
+Oh, no, I actually want, you know, a slightly different background or foreground color,
+
+00:39:03.914 --> 00:39:11.675
+different primary color, and have that influence the end styles of a custom component.
+
+00:39:12.635 --> 00:39:19.354
+Yeah, that's really slick. I hadn't even gone this far in exploring this. But if I ever get the
+
+00:39:19.914 --> 00:39:26.315
+good fortune of working with, you know, designers on some of the bigger projects I have with Shiny,
+
+00:39:26.315 --> 00:39:30.234
+this will be a great way to kind of bridge that gap and some of the things that they would want
+
+00:39:30.234 --> 00:39:36.315
+to contribute from their end and how I can kind of be able to take advantage of that. We're still
+
+00:39:36.394 --> 00:39:43.914
+in the BS lib kind of paradigm. So that's really slick. Right? Yeah. And we're hoping that,
+
+00:39:43.914 --> 00:39:53.274
+you know, kind of the Shiny widget developers of the world will eventually shift to this kind
+
+00:39:53.274 --> 00:40:01.515
+of a structure for providing CSS to their custom widgets, where we've provided a
+
+00:40:02.315 --> 00:40:10.955
+couple helper functions that allow your components to work with real time theming,
+
+00:40:11.834 --> 00:40:17.515
+in the sense of, you know, if you have your person components, you know, the typical way
+
+00:40:17.515 --> 00:40:25.195
+to approach this is to just provide like a pre compiled CSS file to define the styles for this
+
+00:40:25.755 --> 00:40:32.635
+component. But we provided this BS dependency defer, which kind of provides a recipe for going
+
+00:40:32.635 --> 00:40:43.995
+from a theme object to a CSS CSV file, which allows like the interactive themer to basically
+
+00:40:44.234 --> 00:40:54.394
+like the interactive themer to basically recompute the CSS files that define the
+
+00:40:54.394 --> 00:41:01.034
+rules for these components. So this is almost defining like a runtime dependency that can change
+
+00:41:02.234 --> 00:41:13.755
+after page load, where this BS dependency defer is taking in a function that it's a function of
+
+00:41:13.755 --> 00:41:21.834
+the theme that if it's a BS theme, it actually ends up compiling SAS code and generating a CSS
+
+00:41:21.834 --> 00:41:28.555
+dependency from that. And if you don't want to use this component with bootstrap, you can also
+
+00:41:28.555 --> 00:41:37.755
+just provide like a pre pre compiled CSS file. So just because you're writing a dynamically
+
+00:41:37.755 --> 00:41:44.474
+themable component that can derive its styles from bootstrap, you can still do this in such a
+
+00:41:44.474 --> 00:41:52.394
+way that you can write a component that works without bootstrap as well. So hopefully, this
+
+00:41:52.394 --> 00:41:58.315
+kind of provides a it's it's kind of a complex thing to kind of wrap your head around at first,
+
+00:41:58.315 --> 00:42:06.635
+but hopefully, it's digestible enough that we'll start to see more people sort of adopt this
+
+00:42:06.635 --> 00:42:18.315
+approach. Because this is really the thing that makes if we go back to the real time theming
+
+00:42:20.154 --> 00:42:25.594
+screenshot here, like, this is what allows for instance, when I change the accent color here
+
+00:42:25.594 --> 00:42:32.875
+from pink to orange, if you watch the slider change to blue, and now orange, right? That's
+
+00:42:32.875 --> 00:42:42.394
+coming from a CSS file that is actually whenever we change that color in the real time themer is
+
+00:42:42.955 --> 00:42:49.354
+recompiling SAS code to provide a new CSS file. Yeah, so it's not like you had to in this app
+
+00:42:49.354 --> 00:42:55.515
+feed in like 100 different CSS files, each of a different color. This is all just taking advantage
+
+00:42:55.515 --> 00:43:01.594
+of SAS the dynamically inject that I kind of liken it to when I use the glue package to inject
+
+00:43:01.594 --> 00:43:08.154
+dynamic text in normal like long form text. I don't have to write all those text files myself
+
+00:43:08.154 --> 00:43:14.315
+and just let glue do it dynamically. This is a simplified example, but that's how I like in
+
+00:43:14.315 --> 00:43:19.594
+SAS to do it. It's just giving you that flexibility, having one rule for it instead of having the
+
+00:43:20.474 --> 00:43:24.714
+future, like try to think in your head how many different possibilities there are.
+
+00:43:25.675 --> 00:43:32.635
+Yeah, yeah, that's, that's basically the main idea of it. It's a little bit more complex in
+
+00:43:32.635 --> 00:43:38.474
+the sense that we bring in the new CSS file and then disable and remove the old one,
+
+00:43:38.474 --> 00:43:43.195
+right after the new one has been brought in. But yeah, that's essentially the idea.
+
+00:43:44.315 --> 00:43:51.914
+Yeah, I like I said, I'm hugely impressed with this. And it gives me cases where when I know I
+
+00:43:51.995 --> 00:43:57.675
+want to keep my applications dependencies somewhat streamlined, even from like the
+
+00:43:57.675 --> 00:44:07.354
+shiny architecting sense, that now I can treat the default shiny UI combined with bslib
+
+00:44:08.075 --> 00:44:14.955
+as a real alternative to creating a great UI UX experience in cases where I want to keep that
+
+00:44:14.955 --> 00:44:22.955
+dependency footprint smaller, and still get this great customization. And that can be that can be
+
+00:44:22.955 --> 00:44:29.274
+very helpful to certain situations. So again, I know it's early days for it. But it does sound
+
+00:44:29.274 --> 00:44:37.034
+like you've laid a lot of the foundation down for others in the shiny ecosystem to slowly adopt a
+
+00:44:37.034 --> 00:44:42.394
+similar mindset for some of the custom widgets or custom themes that they're producing in their
+
+00:44:42.394 --> 00:44:49.675
+packages. Yeah, yeah. So that's exactly it is. And where I view this as a contribution is not only
+
+00:44:49.675 --> 00:44:54.955
+like the cross, you know, bringing trying to bring the ecosystem to a modern bootstrap world,
+
+00:44:55.594 --> 00:45:01.274
+but also kind of laying that foundation to start thinking about custom theming a little
+
+00:45:01.274 --> 00:45:07.755
+bit differently, where we're really leveraging the runtime abilities of SAS and being able to
+
+00:45:07.755 --> 00:45:13.834
+compile these things at runtime, rather than, you know, at build time.
+
+00:45:15.274 --> 00:45:20.874
+Absolutely. And we'll have again, we'll have links to all the documentation sites that you have here,
+
+00:45:20.874 --> 00:45:26.555
+I can tell there's been a lot of effort to make this so that we can follow along and go in that
+
+00:45:26.555 --> 00:45:34.075
+progression of starting simple and then going to different layers of customization. So I always
+
+00:45:34.075 --> 00:45:40.075
+think the best way to learn is by doing so I'm yeah, the example theming app right there is a
+
+00:45:40.075 --> 00:45:46.634
+great way to start and then you can drill down and get more fine tuned detail as your application
+
+00:45:46.634 --> 00:45:52.955
+needs. But it's exciting to be able to play with this. And like I said, with my contest submission,
+
+00:45:53.675 --> 00:45:58.794
+it didn't have to go very far for it, I just needed a custom font, and some custom colors,
+
+00:45:58.794 --> 00:46:05.355
+which again, were easily defined. But then I could use the default shiny UI to do it all. It
+
+00:46:05.355 --> 00:46:13.914
+was it was amazing. Right? Very cool. It's great to hear. Yeah. And like I said, our studio global,
+
+00:46:13.914 --> 00:46:21.754
+this was all the talk in our breakout sessions for sure. But I certainly want our audience to
+
+00:46:21.754 --> 00:46:26.634
+know that this is definitely not been the only thing you've been focusing on. And I want to
+
+00:46:26.634 --> 00:46:32.874
+transition to something that actually has some history with folks like me and my particular
+
+00:46:32.874 --> 00:46:40.235
+industry as a way that the shiny team at our studios already been listening to feedback from
+
+00:46:40.235 --> 00:46:48.315
+certain users out there. So we had a situation where for us, we're using shiny a lot more in
+
+00:46:48.315 --> 00:46:54.715
+life sciences. And some of the things that would come up time and time again, we're having the
+
+00:46:54.715 --> 00:47:00.154
+ability to have these production grade applications in the hands of stakeholders.
+
+00:47:00.154 --> 00:47:05.835
+But if they're being used for like key decisions being made on like, should we move forward with
+
+00:47:05.835 --> 00:47:13.274
+this treatment or things like that? We wanted a way to have in our apps a way to kind of capture
+
+00:47:13.274 --> 00:47:19.754
+what's being done in there. So that if we had to go back and say, okay, this decision a year ago,
+
+00:47:20.475 --> 00:47:25.114
+what did we do in the app to make that call? Instead of somebody like trying to manually
+
+00:47:25.114 --> 00:47:32.475
+record all the steps in a text file somewhere. A lot of us try like, very, how do you say like
+
+00:47:32.475 --> 00:47:38.555
+hocus pocus ways of pulling it off. And it was always kind of variable. But then about maybe
+
+00:47:38.555 --> 00:47:45.435
+a year or so after those initial conversations, you and Joe Chang had shared shiny meta,
+
+00:47:46.075 --> 00:47:52.315
+which recently just had a milestone release on CRAN. So for our audiences as familiar shiny meta,
+
+00:47:52.315 --> 00:47:55.355
+where you could give a little bit about that background and how that's been
+
+00:47:55.355 --> 00:48:00.475
+helping that vision of reproducibility from a shiny perspective.
+
+00:48:02.154 --> 00:48:10.555
+Yeah, so as you mentioned, shiny meta has just hit CRAN. So I should be updating this
+
+00:48:10.555 --> 00:48:16.715
+installation section of the website. So you now can grab it from CRAN.
+
+00:48:19.355 --> 00:48:26.874
+And yeah, so shiny meta, you know, has started out, sort of the inspiration from it very much
+
+00:48:26.874 --> 00:48:36.154
+has some life science roots to it, where I kind of view it generally as this problem of,
+
+00:48:37.114 --> 00:48:45.514
+you know, you work on a team where maybe you as the shiny developer are getting
+
+00:48:47.195 --> 00:48:53.034
+some instruction from your project manager to say, you know, I want to add these specific features
+
+00:48:53.595 --> 00:49:02.394
+to the shiny application so that I or my other, you know, colleagues can, you know, explore what's
+
+00:49:02.394 --> 00:49:09.355
+in this shiny application, find the relevant bits of information from this model or from this data
+
+00:49:09.355 --> 00:49:19.034
+set. And then once we get to that point, we would love to have a reproducible R script to reproduce
+
+00:49:19.034 --> 00:49:30.154
+the outputs that the shiny app has generated. Because, you know, shiny at least for a while
+
+00:49:30.154 --> 00:49:37.114
+has had the ability to bookmark state on a shiny application, which can kind of get you to the same,
+
+00:49:38.154 --> 00:49:44.154
+kind of attacks the same problem in the sense that at least you can return to a specific state
+
+00:49:45.754 --> 00:49:55.195
+that you deemed as worth saving in a shiny application. But that still sort of relies
+
+00:49:55.195 --> 00:50:00.555
+on the fact that there's going to be a hosted shiny application instance somewhere that's working.
+
+00:50:01.274 --> 00:50:09.274
+And in some cases, you know, actually implementing that bookmarking feature can also be a pretty
+
+00:50:09.274 --> 00:50:15.195
+complicated thing to do. I could fill an entire episode on the tricks I've done in our shiny
+
+00:50:15.195 --> 00:50:20.715
+bookmarking state implementation that would make probably Winston in your head spin a little bit.
+
+00:50:21.195 --> 00:50:23.274
+It's been a very important feature, nonetheless.
+
+00:50:24.154 --> 00:50:30.794
+Sure. Yeah. And I don't want to market this project as like, you know, it's going to be easier than
+
+00:50:30.794 --> 00:50:37.754
+bookmarking in terms of providing a way for people to sort of save a certain state of your shiny
+
+00:50:37.754 --> 00:50:48.475
+application. Because actually adding shiny meta integration into a shiny app does involve kind of
+
+00:50:48.475 --> 00:50:53.754
+understanding this sort of custom way of meta programming, where you're supposed to use this
+
+00:50:53.754 --> 00:51:00.715
+dot operator, which conceptually, it's quite similar to bang bang from Arlang.
+
+00:51:01.835 --> 00:51:04.555
+Okay. But it's different. It's actually
+
+00:51:06.555 --> 00:51:13.435
+a little bit more complex in terms of understanding exactly what it's doing. So there's a whole
+
+00:51:14.394 --> 00:51:19.514
+article on this, on how to actually get your shiny app to generate code.
+
+00:51:20.394 --> 00:51:26.955
+But the main idea is you basically any sort of reactive read, like an input dollar variable,
+
+00:51:27.754 --> 00:51:35.355
+or a read of a reactive expression, like this bear, any sort of reactive read like that,
+
+00:51:35.355 --> 00:51:47.435
+if you just wrap that read in this dot operator, that is kind of one of the two main pieces of
+
+00:51:47.435 --> 00:51:55.994
+adding shiny meta integration to your application. So that, you know, this example here is showing,
+
+00:51:55.994 --> 00:52:01.195
+you know, how I can choose different variables to choose a summary, which is shown in this
+
+00:52:01.195 --> 00:52:11.355
+render print output here. But then if you read an output, like this output dollar summary
+
+00:52:11.355 --> 00:52:18.394
+inside of an expand chain context that has been marked appropriately with these dot operators,
+
+00:52:20.235 --> 00:52:29.195
+then the shiny app will, like the result of this expand chain call will be the R code that shiny
+
+00:52:29.195 --> 00:52:38.874
+is essentially used to produce the output in the application. So that's a real minimal example of
+
+00:52:38.874 --> 00:52:46.715
+how, you know, you can go from targeting a specific output where you want to provide reproducible code
+
+00:52:47.355 --> 00:52:55.274
+to regenerate that output outside of the shiny application runtime and provide it to your end
+
+00:52:55.274 --> 00:53:00.634
+user in a way that they can just copy and paste that code into to a different R session.
+
+00:53:01.994 --> 00:53:07.754
+And what do you what do you say to somebody that maybe has an existing application and they're
+
+00:53:07.754 --> 00:53:15.675
+intrigued by getting into shiny meta? What would you recommend they do to kind of ease that
+
+00:53:15.675 --> 00:53:22.075
+transition into maybe down the road, having an application that's fully compliant with this
+
+00:53:22.075 --> 00:53:30.955
+workflow? Yeah, so it's going to be a daunting thing if you already have a big complex shiny
+
+00:53:30.955 --> 00:53:39.754
+application to undertake the project as though you want to export all the code in the shiny app,
+
+00:53:39.754 --> 00:53:47.034
+that's going to be a difficult undertaking if you kind of approach it that way. But if you break it
+
+00:53:47.034 --> 00:53:52.715
+down into smaller pieces and just say this is an important output that I want to provide
+
+00:53:52.715 --> 00:53:59.514
+reproducible code for, the way you could kind of approach it is, you know, maybe you identify this
+
+00:53:59.514 --> 00:54:07.514
+output summary as an important output and that's being created through this render print reactive
+
+00:54:07.514 --> 00:54:14.794
+context. The first thing to do would be to change this render print into a meta render which allows
+
+00:54:14.794 --> 00:54:19.914
+this render context to then have this ability to sort of spit out code at the end.
+
+00:54:22.555 --> 00:54:28.955
+And then identify any reactive reads in that reactive expression. So the read of this bare
+
+00:54:28.955 --> 00:54:34.874
+reactive expression should then get the dot dot operator and then you just add that to all the
+
+00:54:34.874 --> 00:54:41.675
+reactive reads in this expression. And then you'll want to go back to all these reactive reads that
+
+00:54:41.675 --> 00:54:48.634
+you've marked with the dot dot operator and follow them back to the original creation.
+
+00:54:49.595 --> 00:54:57.114
+And in the case of reactive, we have a meta reactive variant which works just like reactive
+
+00:54:57.114 --> 00:55:05.994
+in the normal execution context but also gives it the ability to generate code when you call it
+
+00:55:05.994 --> 00:55:12.235
+inside of this expand chain context. Interesting. So it's kind of like working
+
+00:55:12.874 --> 00:55:19.034
+backwards in the sense of like identifying an output and then identifying all the dependencies
+
+00:55:19.034 --> 00:55:25.435
+of the reactive expressions that got you to that point. And marking all the reactive reads with
+
+00:55:25.435 --> 00:55:32.475
+the dot dot operator and using like the meta variant of reactive or meta render. There's
+
+00:55:32.475 --> 00:55:40.634
+also meta observed if you're using observed statements. But I'm not going to lie. Like,
+
+00:55:40.634 --> 00:55:45.675
+you know, with a more like very complex application, you know, you might be better
+
+00:55:45.675 --> 00:55:55.195
+off just kind of starting over again in terms of, you know, writing the shiny meta
+
+00:55:55.195 --> 00:56:03.514
+aspect to it first and getting that working in a state, in a working state. And then,
+
+00:56:03.514 --> 00:56:09.355
+you know, just kind of copying over the rest of the logic to get the rest of the pieces working.
+
+00:56:09.355 --> 00:56:14.075
+Yeah. Might be a better way to kind of break down that problem.
+
+00:56:14.075 --> 00:56:20.475
+Yeah. I see a lot of parallels, at least in my head, to like the idea of something that's
+
+00:56:21.195 --> 00:56:25.914
+new to Shiny modules. They may have heard me harp on it probably too many times to
+
+00:56:25.914 --> 00:56:31.034
+admit, but I've been beating that drum for a bit. And when you have an app that's been built,
+
+00:56:28.485 --> 00:56:29.485
+modules.
+
+00:56:29.485 --> 00:56:33.125
+They may have heard me harp on it probably too many times to admit, but I've been beating
+
+00:56:33.125 --> 00:56:34.605
+that drum for a bit.
+
+00:56:34.605 --> 00:56:40.165
+And when you have an app that's been built for maybe a long time, maybe for years, and
+
+00:56:40.165 --> 00:56:44.605
+you're able to kind of get away without them, but then you're at a point where you're tired
+
+00:56:44.605 --> 00:56:47.325
+of like reusing code everywhere and all that.
+
+00:56:47.325 --> 00:56:51.885
+I think there's similar principles where if you just think about converting the entire
+
+00:56:51.885 --> 00:56:57.925
+app to modules right away, that's not going to be smooth if you just think in that perspective.
+
+00:56:57.925 --> 00:57:04.485
+But if you take an important piece and just slowly go bit by bit, and then you can architect
+
+00:57:04.485 --> 00:57:10.084
+it in kind of a longer term play to take advantage of the module infrastructure, it sounds like
+
+00:57:10.084 --> 00:57:14.845
+this is kind of a similar thing where you just want to look at the most important outputs
+
+00:57:14.845 --> 00:57:20.404
+first that you want to reproduce, trace back to how they got there, and then kind of construct
+
+00:57:20.404 --> 00:57:22.805
+the shiny meta flow around that.
+
+00:57:22.885 --> 00:57:33.965
+Yeah, and the adding modules to the equation is, of course, going to add another layer
+
+00:57:33.965 --> 00:57:37.605
+of complexity to the whole thing.
+
+00:57:37.605 --> 00:57:47.044
+So what I would recommend is when you're first starting to learn shiny meta, I would start
+
+00:57:47.044 --> 00:57:48.165
+with simple examples.
+
+00:57:48.165 --> 00:57:53.525
+I would start with this article, actually, where we put a lot of work into trying to
+
+00:57:53.525 --> 00:58:02.764
+come up with good examples that kind of succinctly get across the whole API of how shiny meta
+
+00:58:02.764 --> 00:58:10.885
+works and how those concepts kind of relate to metaprogramming concepts.
+
+00:58:10.885 --> 00:58:13.165
+So this actually isn't too long of a read.
+
+00:58:13.165 --> 00:58:18.004
+It's got quite a bit of code because it's a real example that kind of demonstrates all
+
+00:58:18.004 --> 00:58:23.124
+of the things that you might want to know about when it comes to shiny meta.
+
+00:58:23.124 --> 00:58:30.044
+There's even sort of a video with smooth transitions of changing this code from a real shiny app
+
+00:58:30.044 --> 00:58:31.925
+to a shiny meta app.
+
+00:58:31.925 --> 00:58:33.485
+Very nice.
+
+00:58:33.485 --> 00:58:38.445
+So the idea is you identify domain logic, you capture the domain logic with the meta
+
+00:58:38.445 --> 00:58:40.684
+variants.
+
+00:58:40.684 --> 00:58:46.005
+There's even tools for ignoring code that you don't want to export to the user.
+
+00:58:46.005 --> 00:58:50.205
+You mark those reactive reads with the dot operator.
+
+00:58:50.205 --> 00:58:59.005
+There's even more sophisticated uses where you can evaluate code and then eventually
+
+00:58:59.005 --> 00:59:04.044
+call this expand chain to get the code behind.
+
+00:59:04.044 --> 00:59:09.205
+You can give it an output like this output dollar ply or reactive expressions as well
+
+00:59:09.365 --> 00:59:13.124
+if you just want to generate code behind a reactive expression.
+
+00:59:13.124 --> 00:59:15.764
+You can do that too.
+
+00:59:15.764 --> 00:59:20.645
+But I think this is a nice sort of succinct example that has a nice video demonstration
+
+00:59:20.645 --> 00:59:28.244
+on how to kind of modify your existing shiny app to a shiny meta app.
+
+00:59:28.244 --> 00:59:29.244
+Yeah.
+
+00:59:29.244 --> 00:59:31.124
+So I'm going to be exploring more.
+
+00:59:31.124 --> 00:59:37.524
+But this is going to be my place to start because I am in that camp, so to speak, of
+
+00:59:37.524 --> 00:59:42.404
+a lot of large code bases behind my existing apps.
+
+00:59:42.404 --> 00:59:47.044
+But if I start fresh, then if I know it's going to be one of those things that's used
+
+00:59:47.044 --> 00:59:53.285
+in highly important decisions or, you know, informing important decisions that I can take
+
+00:59:53.285 --> 00:59:58.805
+that investment at that point and be set up for success with it.
+
+00:59:58.805 --> 00:59:59.805
+Right.
+
+00:59:59.805 --> 01:00:00.805
+Yeah.
+
+01:00:00.805 --> 01:00:06.805
+And on the actual website, I don't think we have any great examples of modules, but just
+
+01:00:06.805 --> 01:00:15.485
+want to make you and your viewers aware there is underneath the instance and examples folders
+
+01:00:15.485 --> 01:00:19.684
+of the shiny meta source code.
+
+01:00:19.684 --> 01:00:26.604
+There's a modules example that demonstrates kind of like a basic modules example with
+
+01:00:26.604 --> 01:00:28.805
+shiny meta.
+
+01:00:28.805 --> 01:00:35.324
+And essentially there's I mean, it does add complexity in the sense that with modules,
+
+01:00:35.324 --> 01:00:40.124
+you know, you have to think a little bit differently about how your reactive code is
+
+01:00:40.124 --> 01:00:41.124
+set up.
+
+01:00:41.124 --> 01:00:42.124
+Sure.
+
+01:00:42.124 --> 01:00:45.685
+But it's a pretty similar concept in the sense that you could start from like your render
+
+01:00:45.685 --> 01:00:51.724
+text that you're creating within a module and same sort of workflow in the sense that
+
+01:00:51.724 --> 01:00:53.905
+you put a meta render around it.
+
+01:00:53.905 --> 01:00:58.965
+You put the dot dot around reactive reads, and then you follow kind of the dependency
+
+01:00:58.965 --> 01:01:01.564
+of these things up the chain.
+
+01:01:02.525 --> 01:01:05.085
+Yeah, it's definitely going to take some practice.
+
+01:01:05.085 --> 01:01:07.205
+But again, I said the same thing about modules, too.
+
+01:01:07.205 --> 01:01:10.645
+That took me quite a bit of practice to get the hang of.
+
+01:01:10.645 --> 01:01:12.645
+But we got examples to draw from at least.
+
+01:01:12.645 --> 01:01:18.685
+So we'll definitely have a link to shiny meta site and this specific example in the notes
+
+01:01:18.685 --> 01:01:23.925
+because I do remember perusing this once or twice in the early stages as I was thinking
+
+01:01:23.925 --> 01:01:28.645
+about that conversion, but I'll definitely be revisiting this.
+
+01:01:28.645 --> 01:01:29.645
+Cool.
+
+01:01:29.645 --> 01:01:30.645
+Yeah.
+
+01:01:30.724 --> 01:01:31.724
+Yeah.
+
+01:01:31.724 --> 01:01:37.085
+And I just before we move on from shiny meta, I want to make sure we I also demonstrate
+
+01:01:37.085 --> 01:01:45.925
+that shiny meta also provides some tools for providing the reproducible code in a more
+
+01:01:45.925 --> 01:01:53.205
+convenient format than just like displaying the code in line in an application.
+
+01:01:53.205 --> 01:01:59.685
+So here's a shiny app that allows me to like search for different R packages and get the
+
+01:01:59.724 --> 01:02:05.805
+number of downloads for those packages over time.
+
+01:02:05.805 --> 01:02:12.685
+So let me get that shiny.
+
+01:02:12.685 --> 01:02:18.724
+So I can see, you know, of course, shiny has a lot more downloads than Plotly.
+
+01:02:18.724 --> 01:02:22.284
+I could apply different transformations to this time series.
+
+01:02:22.284 --> 01:02:24.125
+So I'll do a weekly transformation.
+
+01:02:24.125 --> 01:02:27.764
+So there's less noise and the number of downloads.
+
+01:02:27.844 --> 01:02:34.805
+And then you could provide a button like this download reports, which will actually populate
+
+01:02:34.805 --> 01:02:44.444
+an RMD file with the reproducible code to reproduce this interactive graph inside of
+
+01:02:44.444 --> 01:02:47.685
+an R Markdown document and also render the results.
+
+01:02:47.685 --> 01:02:52.685
+So here you can see it's taking some time to actually call like R Markdown render on
+
+01:02:52.685 --> 01:03:01.965
+the results and provide everything in a zip bundle that I can then open.
+
+01:03:01.965 --> 01:03:11.405
+And this will have both the RMD source file as well as the HTML results.
+
+01:03:11.405 --> 01:03:16.604
+And sorry, my computer's freaking out a little bit.
+
+01:03:16.604 --> 01:03:22.245
+But that but that's huge, though, right, because then you can put this in the hands of other
+
+01:03:22.245 --> 01:03:30.004
+customers that may want to run these analyses later on, but keep that same exact interactions
+
+01:03:30.004 --> 01:03:32.965
+that were done at that earlier point.
+
+01:03:32.965 --> 01:03:39.125
+I could see this even being valuable for setting up kind of like a, you might say, a headless
+
+01:03:39.125 --> 01:03:40.805
+testing paradigm.
+
+01:03:40.805 --> 01:03:45.125
+Not that this replaces shiny test or anything, but it's a great way to kind of capture a
+
+01:03:45.125 --> 01:03:48.485
+use case and the steps you took to get there.
+
+01:03:48.485 --> 01:03:49.485
+Right.
+
+01:03:49.724 --> 01:03:50.724
+Yeah.
+
+01:03:50.724 --> 01:03:56.604
+So this is one of the, when I'm given a talk on Shinymeta, this is an example I like to
+
+01:03:56.604 --> 01:04:01.205
+demonstrate this idea of like exploration and then permanence.
+
+01:04:01.205 --> 01:04:09.004
+The exciting thing about this is, you know, you can have that permanence of saving the
+
+01:04:09.004 --> 01:04:13.125
+units of interest in this case, like Shiny and Plotly as two different R packages that
+
+01:04:13.125 --> 01:04:15.405
+I'm interested in.
+
+01:04:15.405 --> 01:04:22.805
+And also have a permanent record of the R code that was run to produce these results.
+
+01:04:22.805 --> 01:04:29.685
+And then apply that to like a dynamically updating data source that allows you to then
+
+01:04:29.685 --> 01:04:35.925
+use a service like provided by Connect, for instance, that allows you to like schedule
+
+01:04:35.925 --> 01:04:45.004
+this RMD file to re-render like once a week so that you have a constantly updating report
+
+01:04:45.004 --> 01:04:50.884
+of the packages that you're interested in.
+
+01:04:50.884 --> 01:04:56.004
+So I do actually have on Connect this updating, but I've since forgotten the link of where
+
+01:04:56.004 --> 01:04:57.004
+that was.
+
+01:04:57.004 --> 01:05:01.164
+Oh, we can definitely put that in the show notes when we release this.
+
+01:05:01.164 --> 01:05:02.164
+Yeah.
+
+01:05:02.164 --> 01:05:03.164
+Yeah.
+
+01:05:03.164 --> 01:05:04.164
+Very cool.
+
+01:05:04.404 --> 01:05:11.164
+Yeah, this this one, like I said, it was something that colleagues in my industry have been clamoring
+
+01:05:11.164 --> 01:05:17.365
+for and we've tried our own solutions for with varying degrees of success.
+
+01:05:17.365 --> 01:05:24.964
+But as we as we start to use Shiny in ways that maybe we're outside the box, so to speak,
+
+01:05:24.964 --> 01:05:31.644
+but give us that capability of understanding data, understanding insights and making actions
+
+01:05:31.644 --> 01:05:34.365
+based on those reviews.
+
+01:05:34.365 --> 01:05:38.565
+This does become quite important for traceability and reproducibility.
+
+01:05:38.565 --> 01:05:43.245
+So we're we're extremely excited to play with this a bit.
+
+01:05:43.245 --> 01:05:49.805
+And so I always like to conclude these with a kind of a more thought provoking question
+
+01:05:49.805 --> 01:05:53.724
+based on your experience and your journey with Shiny.
+
+01:05:53.724 --> 01:05:58.844
+I've always like we mentioned at the outset, your work with Plotly has been so impressive
+
+01:05:58.844 --> 01:06:04.325
+and not just what Plotly can do at a high level, but the learnings you've had to do
+
+01:06:04.325 --> 01:06:10.604
+with learning the HTML widget ecosystem and the tie ins with R and JavaScript.
+
+01:06:10.604 --> 01:06:17.164
+And viewers of my dev series may know I'm kind of on a journey, if you will, I'm climbing
+
+01:06:17.164 --> 01:06:22.765
+a little bit into getting more under the hood of customization of Shiny.
+
+01:06:22.765 --> 01:06:28.885
+And one of the things I'm trying to master is kind of the bindings between R and JavaScript
+
+01:06:28.885 --> 01:06:35.204
+and passing things back and forth when maybe the widget I'm using isn't quite coming up
+
+01:06:35.204 --> 01:06:38.524
+with that same tie in that I need.
+
+01:06:38.524 --> 01:06:43.445
+And even recently on a live stream, I went into kind of the bowels of doing that.
+
+01:06:43.445 --> 01:06:49.685
+And it took me a while to grip my head around being able to set a custom input from JavaScript
+
+01:06:49.685 --> 01:06:52.204
+and be able to bring that back into Shiny.
+
+01:06:52.204 --> 01:06:55.604
+But eventually I figured it out and it was a nice win for me.
+
+01:06:55.604 --> 01:06:58.365
+But I know I have a long way to go.
+
+01:06:58.365 --> 01:07:03.365
+But how do you recommend others that are watching our episode today, starting that journey of
+
+01:07:03.365 --> 01:07:10.005
+kind of like slowly getting more customization into their applications via the power of JavaScript
+
+01:07:10.005 --> 01:07:13.685
+or other kind of advanced techniques from your side?
+
+01:07:13.685 --> 01:07:22.005
+Yeah, so I think the most general piece of advice I can offer is to go to shiny.rstudio.com
+
+01:07:22.164 --> 01:07:33.724
+And I think we have at least a couple articles that should be, I think, under the like somewhere
+
+01:07:33.724 --> 01:07:38.204
+around Shiny extensions.
+
+01:07:38.204 --> 01:07:42.284
+These are some great articles that I wish had been around when I started learning these
+
+01:07:42.284 --> 01:07:49.204
+things where I was, you know, more in a space where there was maybe a few people even doing
+
+01:07:49.204 --> 01:07:54.885
+these things and I just had to follow very closely what they were doing in order to find
+
+01:07:54.885 --> 01:08:00.925
+out how to, you know, do something custom, like put in a custom D3 visualization inside
+
+01:08:00.925 --> 01:08:03.084
+of a Shiny app.
+
+01:08:03.084 --> 01:08:08.325
+You know, I was just basically forced to, you know, find examples that did what I wanted
+
+01:08:08.325 --> 01:08:14.565
+and read the source code and figure out how it works from there.
+
+01:08:14.565 --> 01:08:21.485
+But I would say like hopefully a fair amount of your users can come to these sections and
+
+01:08:21.485 --> 01:08:27.724
+at least have a glance through them and see if some of the, you know, whether the article
+
+01:08:27.724 --> 01:08:33.245
+is loosely talking to the use case that they're looking for.
+
+01:08:33.245 --> 01:08:41.644
+So I would say like if you're looking to, you know, take some existing JavaScript library
+
+01:08:41.765 --> 01:08:48.565
+and use that JavaScript library inside of Shiny, a nice framework for doing that is
+
+01:08:48.565 --> 01:08:55.844
+this HTML widgets framework, which the nice thing about going the HTML widgets framework
+
+01:08:55.844 --> 01:09:02.044
+route is that it allows you to provide an R wrapper around a JavaScript library in such
+
+01:09:02.044 --> 01:09:07.005
+a way that you can use it inside of Shiny, you can use it inside of R Markdown, you can
+
+01:09:07.005 --> 01:09:09.885
+use it at the R console.
+
+01:09:09.925 --> 01:09:14.724
+So it makes it very versatile in that sense that, you know, this is what Plotly is built
+
+01:09:14.724 --> 01:09:20.724
+on, this is what Leaflet is built on, this is what hundreds of R packages that bind to
+
+01:09:20.724 --> 01:09:24.524
+JavaScript libraries build upon.
+
+01:09:24.524 --> 01:09:31.245
+So if you think that this is going to be a longer term investment for you in terms of
+
+01:09:31.245 --> 01:09:39.344
+really investing in a JavaScript binding to some library, this would be a great direction
+
+01:09:39.344 --> 01:09:43.344
+to learn.
+
+01:09:43.344 --> 01:09:48.704
+But I think we have some other like more specific kind of use cases where if it's just like
+
+01:09:48.704 --> 01:09:55.104
+a one-off sort of thing that you want to do inside of a Shiny app, you should probably
+
+01:09:55.104 --> 01:10:03.305
+at least be aware of like kind of the main building blocks for sending data between a
+
+01:10:03.305 --> 01:10:07.425
+Shiny server and the client.
+
+01:10:07.425 --> 01:10:12.185
+So I think this article will do a good job of that where I think it will speak to the
+
+01:10:12.185 --> 01:10:20.344
+thing that you discovered recently, which is set input value, which is a way of taking
+
+01:10:20.344 --> 01:10:28.784
+like a piece of data on the client and creating a Shiny input value using that piece of data.
+
+01:10:28.784 --> 01:10:35.704
+So that it's accessible in your reactive Shiny code.
+
+01:10:35.704 --> 01:10:46.185
+And at that point, it's actually maybe worth discussing that I think especially if you
+
+01:10:46.185 --> 01:10:54.385
+are using a lot of Plotly and have interest in JavaScript, I did write this chapter in
+
+01:10:54.385 --> 01:10:57.144
+the book towards the end.
+
+01:10:57.144 --> 01:11:02.544
+Oh, actually, it's a whole part of several chapters.
+
+01:11:02.544 --> 01:11:03.544
+Well, even better.
+
+01:11:03.544 --> 01:11:07.904
+What I call event handling in JavaScript.
+
+01:11:07.904 --> 01:11:20.185
+I don't think it's super in-depth, but it's at least intended to be written at the typical
+
+01:11:20.185 --> 01:11:29.704
+R user that doesn't know much of anything about JavaScript or HTML, but at least has
+
+01:11:29.704 --> 01:11:36.825
+some motivation to maybe do something custom with a Plotly graph or, yeah, I mean, this
+
+01:11:36.825 --> 01:11:44.505
+is focused more on doing something custom with Plotly with JavaScript rather than through
+
+01:11:44.505 --> 01:11:50.265
+Shiny, but these techniques could be used inside of a Shiny app and some of these same
+
+01:11:50.265 --> 01:11:58.544
+techniques and ideas might be useful to you outside of Plotly as well, where I try to
+
+01:11:58.544 --> 01:12:03.625
+start out fairly simple with explaining how all these things are interconnected, like
+
+01:12:03.625 --> 01:12:11.865
+what JSON is, which is the sort of data structure that JavaScript works with, and talk about
+
+01:12:11.865 --> 01:12:20.584
+how you can use functions from HTML widgets like onRender to call a JavaScript function
+
+01:12:20.584 --> 01:12:24.104
+after the HTML widget has rendered.
+
+01:12:24.104 --> 01:12:31.305
+So this is an example of just saying, I want to execute this JavaScript function to print
+
+01:12:31.305 --> 01:12:38.825
+to the console the DOM element that's holding this visualization.
+
+01:12:38.825 --> 01:12:47.385
+So this is a little video of me opening up the developer tools to then see in the console
+
+01:12:47.385 --> 01:12:57.265
+a log of this DOM element and showing techniques to bring that out as a global variable in
+
+01:12:57.265 --> 01:13:04.704
+this JavaScript runtime and looking at the pieces of data that are attached to this DOM
+
+01:13:04.704 --> 01:13:05.704
+element.
+
+01:13:05.704 --> 01:13:06.704
+Nice.
+
+01:13:06.704 --> 01:13:12.185
+Boy, that's kind of why I like to do some of the things I'm doing with the streaming
+
+01:13:12.185 --> 01:13:13.664
+and hands-on development work.
+
+01:13:13.664 --> 01:13:18.385
+When you see this in action, it resonates a lot more than even just a wall of text saying
+
+01:13:18.385 --> 01:13:21.104
+like, open this, click this, this, this, this.
+
+01:13:21.104 --> 01:13:22.144
+Great job on making these.
+
+01:13:22.144 --> 01:13:27.425
+I've always liked that with the Plotly book, the great balance of the text and the hands-on
+
+01:13:27.425 --> 01:13:28.425
+demos.
+
+01:13:28.425 --> 01:13:29.425
+Yeah.
+
+01:13:29.425 --> 01:13:30.425
+Thanks.
+
+01:13:30.425 --> 01:13:31.425
+Yeah.
+
+01:13:31.425 --> 01:13:32.704
+Because I think it's really easy to forget.
+
+01:13:32.704 --> 01:13:39.665
+These are some pretty critical things to learn about if you're going down this world of front-end
+
+01:13:39.665 --> 01:13:40.665
+development, essentially.
+
+01:13:40.665 --> 01:13:41.665
+Right.
+
+01:13:41.665 --> 01:13:42.665
+Web page.
+
+01:13:42.665 --> 01:13:43.665
+Yeah.
+
+01:13:43.665 --> 01:13:47.584
+Because that's one thing with Shiny, whether you realize it or not in the beginning, you
+
+01:13:47.584 --> 01:13:54.184
+are becoming a designer or an engineer of sorts with what you're giving to the users
+
+01:13:54.184 --> 01:13:55.184
+as a front-end.
+
+01:13:55.184 --> 01:14:02.084
+So having mastery or at least getting to a mastery of these kind of debugging paradigms
+
+01:14:02.084 --> 01:14:06.865
+and getting under the hood of what Shiny is doing, it helps you immensely with kind of
+
+01:14:07.584 --> 01:14:10.385
+understanding the big picture of what's happening here.
+
+01:14:10.385 --> 01:14:11.385
+Right.
+
+01:14:11.385 --> 01:14:18.025
+And hopefully, like I was saying before, there should be some sort of shared or like some
+
+01:14:18.025 --> 01:14:21.745
+of the things that I'll go through here should be relevant if you're working with another
+
+01:14:21.745 --> 01:14:29.905
+JavaScript library where a lot of these sort of libraries will fire JavaScript events based
+
+01:14:29.905 --> 01:14:38.545
+on user interactions where this is using this on render function to then say, register
+
+01:14:38.545 --> 01:14:47.745
+on the Plotly hover event, this callback to print out data relevant to a hover event and
+
+01:14:47.745 --> 01:14:52.944
+then do the same thing for a click event and do the same thing for a brush event.
+
+01:14:52.944 --> 01:15:00.665
+So this kind of goes through me using the developer tools to see what data is emitted
+
+01:15:00.665 --> 01:15:03.625
+for each one of these user events.
+
+01:15:03.625 --> 01:15:04.625
+Excellent.
+
+01:15:04.625 --> 01:15:05.625
+Yeah.
+
+01:15:05.625 --> 01:15:10.265
+And it goes without saying, we'll have a link to the Plotly book and the show notes.
+
+01:15:10.265 --> 01:15:16.145
+But again, I have both the printed copy and I have this in my bookmarks.
+
+01:15:16.145 --> 01:15:19.824
+So whenever I do a Plotly plot, this is always open next to it.
+
+01:15:19.824 --> 01:15:20.824
+Yeah.
+
+01:15:20.824 --> 01:15:27.184
+And this is one advantage of using the free online version is, you know, I, I unfortunately
+
+01:15:27.184 --> 01:15:31.104
+in the printed form, I can't really get across these videos very well.
+
+01:15:31.104 --> 01:15:32.104
+So, yeah.
+
+01:15:32.104 --> 01:15:34.064
+If you, if you figure that out, you get a lot of money.
+
+01:15:34.064 --> 01:15:35.064
+I'll just say that.
+
+01:15:35.064 --> 01:15:40.424
+I want to figure it out with printed media, but that's very good to have both available
+
+01:15:40.424 --> 01:15:41.905
+to us.
+
+01:15:41.905 --> 01:15:43.025
+Right.
+
+01:15:43.025 --> 01:15:44.104
+Yeah.
+
+01:15:44.104 --> 01:15:49.704
+And just one sort of last thing on this is, I just want to mention there's this whole
+
+01:15:49.704 --> 01:15:59.464
+section where it really kind of explores the possibilities of this general idea of
+
+01:15:59.464 --> 01:16:03.824
+attaching metadata to graphical markers in Plotly.
+
+01:16:03.824 --> 01:16:09.704
+So here's like creating a scatter plot where I'm attaching some metadata that keeps track
+
+01:16:09.704 --> 01:16:16.745
+of a Google search query to visit whenever I click on a point, and then use this on render
+
+01:16:16.745 --> 01:16:23.985
+method to say, when you render, register this click event to get the custom data, and
+
+01:16:23.985 --> 01:16:28.385
+then open a new tab to this URL.
+
+01:16:28.385 --> 01:16:33.304
+And then the video, you know, shows that in action.
+
+01:16:33.304 --> 01:16:38.224
+Oh, that, that opens up a ton of possibilities.
+
+01:16:38.224 --> 01:16:39.224
+Yeah.
+
+01:16:39.224 --> 01:16:46.385
+I actually had a little fun with Plotly in one of my shiny contest apps where I had,
+
+01:16:46.545 --> 01:16:52.545
+it was like a horizontal kind of bar chart, but it ended up being kind of like a animated
+
+01:16:52.545 --> 01:16:57.145
+version of like race cars scrolling to like the number of points they have.
+
+01:16:57.145 --> 01:17:03.104
+But I was able to do it all in native shiny and hook into like the animation layer.
+
+01:17:03.104 --> 01:17:06.944
+But the book actually walked me through like 90% of the way there.
+
+01:17:06.944 --> 01:17:09.985
+And all I had to do was do a little more customization afterwards.
+
+01:17:09.985 --> 01:17:13.265
+And it was, it was a lot of fun to explore.
+
+01:17:13.265 --> 01:17:15.505
+And Plotly was the only way I can make that happen.
+
+01:17:15.625 --> 01:17:16.625
+I tried over packages.
+
+01:17:16.625 --> 01:17:17.625
+It didn't work.
+
+01:17:17.625 --> 01:17:22.224
+I was able to get the race car kind of little funny figures on it and have a little play
+
+01:17:22.224 --> 01:17:23.224
+button.
+
+01:17:23.224 --> 01:17:24.824
+And it was, it was great.
+
+01:17:24.824 --> 01:17:26.545
+So I love what's under the hood here.
+
+01:17:26.545 --> 01:17:32.265
+And the book covers immensely more details on all the different types of plots you can
+
+01:17:32.265 --> 01:17:33.265
+do.
+
+01:17:33.265 --> 01:17:34.265
+Yeah.
+
+01:17:34.265 --> 01:17:35.265
+Well, yeah, yeah.
+
+01:17:35.265 --> 01:17:36.265
+I saw that example.
+
+01:17:36.265 --> 01:17:37.265
+It's, it's really fun.
+
+01:17:37.265 --> 01:17:41.905
+That's, that's really great to hear that, you know, somebody is finding some use out
+
+01:17:41.905 --> 01:17:42.905
+of this documentation.
+
+01:17:42.905 --> 01:17:43.905
+Yeah.
+
+01:17:43.905 --> 01:17:49.265
+Well, trust me, it is definitely more than just me, but I remember having that next to
+
+01:17:49.265 --> 01:17:53.304
+me and I was like, okay, I got to look at the animation chapter, look at the annotation
+
+01:17:53.304 --> 01:17:54.304
+chapter.
+
+01:17:54.304 --> 01:17:57.905
+And once I figured it out, once I had the data in the right format, smooth sailing from
+
+01:17:57.905 --> 01:17:58.905
+there.
+
+01:17:58.905 --> 01:18:04.704
+So I, yeah, I'm a big fan of it and I'll be using it, I'm sure in the foreseeable future
+
+01:18:04.704 --> 01:18:07.265
+of a lot of my apps going forward.
+
+01:18:07.265 --> 01:18:12.665
+So yeah, I could geek out a lot of the, a lot of this stuff all day with you, Carson.
+
+01:18:13.424 --> 01:18:18.184
+I want to make sure I respect your time, but if you, if our listeners or our viewers want
+
+01:18:18.184 --> 01:18:24.304
+to get ahold of you or maybe help with contributions to various things in the Shiny ecosystem,
+
+01:18:24.304 --> 01:18:27.104
+where would you like to point them to?
+
+01:18:27.104 --> 01:18:29.265
+Yeah.
+
+01:18:29.265 --> 01:18:32.224
+So you can just reach out to me on Twitter.
+
+01:18:32.224 --> 01:18:41.424
+I'm at, I'm on Twitter, I'm on GitHub at the username cpsevert.
+
+01:18:41.424 --> 01:18:47.265
+So that's a good place to reach me is to just tweet at me about stuff and I'm usually
+
+01:18:47.265 --> 01:18:50.865
+pretty responsive when people are tweeting at me.
+
+01:18:50.865 --> 01:18:57.584
+Otherwise, you know, you can always email me, you can find my email on my GitHub profile.
+
+01:18:57.584 --> 01:19:01.304
+I'm pretty sure it's up there.
+
+01:19:01.304 --> 01:19:08.025
+And you know, you can, my RStudio email is Carson at RStudio.com so you can reach out
+
+01:19:08.025 --> 01:19:11.025
+to me if you have any questions or want to chat about anything.
+
+01:19:11.625 --> 01:19:17.104
+I'd be happy to, you know, answer any questions you might have.
+
+01:19:17.104 --> 01:19:18.104
+Excellent.
+
+01:19:18.104 --> 01:19:22.865
+Well, you are welcome back on the series anytime.
+
+01:19:22.865 --> 01:19:27.824
+I'm always learning a lot more whenever I talk to the brilliant Shiny team that you're
+
+01:19:27.824 --> 01:19:29.824
+a part of and yourself included.
+
+01:19:29.824 --> 01:19:34.385
+So I want to thank you again for taking the time to dive deep into some of the great work
+
+01:19:34.385 --> 01:19:35.584
+you've been doing.
+
+01:19:35.584 --> 01:19:43.104
+And yeah, I'll be watching the developments of BSLib and everything very closely as I
+
+01:19:43.104 --> 01:19:45.184
+supercharge my apps in the future.
+
+01:19:45.184 --> 01:19:48.304
+So again, thank you so much for joining me, Carson.
+
+01:19:48.304 --> 01:19:49.424
+Yeah, my pleasure.
+
+01:19:49.424 --> 01:19:50.424
+It's been great.
+
+01:19:50.424 --> 01:19:51.424
+All right.
+
+01:19:51.424 --> 01:19:52.424
+Excellent.
+
+01:19:52.424 --> 01:19:54.464
+And we'll be back right after this.
+
+01:19:54.464 --> 01:20:01.905
+All right, well, I certainly hope you were as impressed as I was with the immense work
+
+01:20:01.905 --> 01:20:11.385
+Carson has done with making BSLib and even this early state so easy to get started with
+
+01:20:11.385 --> 01:20:18.584
+and so easy to take it to another level for your customization of your Shiny apps, visual
+
+01:20:18.584 --> 01:20:21.025
+theme and styling.
+
+01:20:21.025 --> 01:20:26.905
+It's just going to make that transition for those like me who are primarily statisticians
+
+01:20:26.905 --> 01:20:31.865
+who have learned this kind of software engineering mindset on the fly, especially with Shiny
+
+01:20:31.865 --> 01:20:32.865
+development.
+
+01:20:32.865 --> 01:20:39.224
+It makes it even easier for us to achieve the same effects that a professional designer
+
+01:20:39.224 --> 01:20:42.785
+might do if they had to spin up some custom HTML.
+
+01:20:42.785 --> 01:20:46.625
+So I'm really excited to play with that more.
+
+01:20:46.625 --> 01:20:53.785
+And certainly, as I mentioned at the conclusion there, Plotly itself has been transformative
+
+01:20:53.944 --> 01:20:59.905
+to the fact that Carson's been behind each of these efforts and really getting into the
+
+01:20:59.905 --> 01:21:04.704
+nuts and bolts of how Shiny is conducting things on the back end.
+
+01:21:04.704 --> 01:21:06.625
+It's just it's just amazing to watch.
+
+01:21:06.625 --> 01:21:09.665
+So I really have fun talking with him.
+
+01:21:09.665 --> 01:21:14.985
+And as I said, he'll definitely be back on the Shiny dev series later on as we look at
+
+01:21:14.985 --> 01:21:17.704
+what's new coming up on the horizon.
+
+01:21:17.704 --> 01:21:22.985
+So in the meantime, if you enjoyed watching this episode just as much as I did talking
+
+01:21:22.985 --> 01:21:29.704
+to Carson, you can check out the full show notes with the link below in this video and
+
+01:21:29.704 --> 01:21:31.785
+definitely check out our previous guests.
+
+01:21:31.785 --> 01:21:35.745
+We've had, of course, a mix of members of the Shiny team.
+
+01:21:35.745 --> 01:21:44.344
+We've had practitioners and consultants and authors of various packages in the Shiny ecosystem.
+
+01:21:44.344 --> 01:21:49.064
+Every time I bring these excellent guests on, I learn something new.
+
+01:21:49.064 --> 01:21:51.545
+And I hope you all have that same experience.
+
+01:21:51.545 --> 01:21:56.224
+So please, if you want to stay up to date with future episodes, you just hit that little
+
+01:21:56.224 --> 01:21:58.785
+subscribe button somewhere down there.
+
+01:21:58.785 --> 01:22:02.224
+And also keep an eye out on the Twitter feed.
+
+01:22:02.224 --> 01:22:07.145
+We have a dedicated Twitter account of at Shiny dev series.
+
+01:22:07.145 --> 01:22:13.545
+And I also cross post a lot of those things from my own Twitter account of at the artcast.
+
+01:22:13.545 --> 01:22:20.564
+And also, if you have suggestions, feel free to leave a comment in the video directly below.
+
+01:22:20.564 --> 01:22:26.485
+And you're also welcome to go to ShinyDevSeries.com and go to the contact page and fill out a
+
+01:22:26.485 --> 01:22:31.844
+little Shiny powered contact form and I'll get that feedback directly.
+
+01:22:31.844 --> 01:22:36.844
+I'm actually going to be thinking about overhauling that site a little bit with some cool new
+
+01:22:36.844 --> 01:22:41.365
+R Markdown powered templates that I've been seeing a lot of great attention lately.
+
+01:22:41.365 --> 01:22:44.804
+So that might look a little different in the coming future.
+
+01:22:44.804 --> 01:22:51.525
+And if you like to see how I develop Shiny applications, kind of my process around that,
+
+01:22:51.525 --> 01:22:56.365
+I'm now trying to stream somewhat regularly on my Twitch channel.
+
+01:22:56.365 --> 01:23:00.245
+That's at twitch.tv slash rpodcast.
+
+01:23:00.245 --> 01:23:05.964
+And typically Wednesday nights, kind of later in the night, I work on Shiny projects and
+
+01:23:05.964 --> 01:23:11.564
+I'm trying to get one off the ground that's actually based on a calendar.
+
+01:23:11.564 --> 01:23:16.045
+And it's been fun to kind of explore new integrations.
+
+01:23:16.045 --> 01:23:20.564
+And best of all, those that show up on the chat have actually helped me debug a lot of
+
+01:23:20.564 --> 01:23:22.924
+interesting issues and give me good feedback.
+
+01:23:22.924 --> 01:23:27.125
+So if you're interested in watching that, yeah, you can see the link to all that in
+
+01:23:27.125 --> 01:23:29.844
+the show notes below.
+
+01:23:29.844 --> 01:23:34.045
+So that'll wrap up episode 22 of the Shiny Developer Series.
+
+01:23:34.045 --> 01:23:37.824
+Again, I'm very thankful that you tuned into this.
+
+01:23:37.824 --> 01:23:42.064
+And if you like it, please tweet about it, share with your friends.
+
+01:23:42.064 --> 01:23:48.145
+We love engaging with the R and Shiny community and always welcome your feedback.
+
+01:23:48.145 --> 01:23:51.184
+All right, that will do it for me.
+
+01:23:51.184 --> 01:23:54.025
+So until next time, I will see you later.
+
+01:23:54.025 --> 01:23:55.025
+Bye for now.

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Self-hosted site fonts (assets/css/main.css), so captures match the
+     website exactly and don't depend on the network. -->
+<style>
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300 800;
+    src: url('../../../../static/fonts/open-sans-latin.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 300 900;
+    src: url('../../../../static/fonts/source-code-pro-latin.woff2') format('woff2');
+  }
+</style>
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 675px; overflow: hidden; }
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #17324D;
+    background:
+      radial-gradient(700px 500px at 0% 100%, #DCEBF7 0%, rgba(220,235,247,0) 70%),
+      radial-gradient(800px 600px at 100% 0%, #FDE9DC 0%, rgba(253,233,220,0) 65%),
+      #F6F8FB;
+    position: relative;
+  }
+  .mono { font-family: "Source Code Pro", monospace; }
+
+  /* ---- headline ---- */
+  .headline { position: absolute; left: 64px; top: 0; height: 675px; width: 360px;
+              display: flex; flex-direction: column; justify-content: center; }
+  .eyebrow { font-size: 15px; font-weight: 700; letter-spacing: 0.14em;
+             text-transform: uppercase; color: #447099; margin-bottom: 18px; }
+  h1 { font-size: 50px; font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; }
+  h1 .ver { font-family: "Source Code Pro", monospace; font-weight: 600; color: #447099; }
+  .sub { margin-top: 22px; font-size: 19px; line-height: 1.5; color: #4A6178; }
+
+  /* ---- tiles ---- */
+  .tile {
+    position: absolute; width: 345px; height: 280px;
+    background: #fff; border-radius: 16px;
+    border: 1px solid #E1E8F0;
+    box-shadow: 0 18px 40px rgba(23, 50, 77, 0.10);
+    padding: 18px 20px; overflow: hidden;
+  }
+  .t1 { left: 450px; top: 48px; }
+  .t2 { left: 815px; top: 48px; }
+  .t3 { left: 450px; top: 347px; }
+  .t4 { left: 815px; top: 347px; }
+  .tag { font-family: "Source Code Pro", monospace; font-size: 15px; font-weight: 600;
+         display: inline-block; padding: 3px 10px; border-radius: 6px; }
+  .tag.blue   { background: #E5EFF8; color: #2F5F8A; }
+  .tag.green  { background: #E3F4E8; color: #1E7A3D; }
+  .tag.amber  { background: #FDF0DA; color: #9A5B00; }
+  .tag.purple { background: #EFE8FA; color: #6740A8; }
+  .body { position: absolute; left: 20px; right: 20px; top: 62px; bottom: 18px; }
+
+  /* tile 1: concurrent async */
+  .lane { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; font-size: 15px; }
+  .lane .who { width: 46px; color: #4A6178; }
+  .track { flex: 1; height: 16px; border-radius: 8px; background: #EEF2F6; overflow: hidden; }
+  .fill { height: 100%; width: 0; border-radius: 8px;
+          background: linear-gradient(90deg, #6FA8DC, #447099); }
+  .check { width: 22px; height: 22px; border-radius: 50%; background: #2E9E5B; color: #fff;
+           font-size: 14px; font-weight: 700; display: grid; place-items: center; opacity: 0; }
+  .clock { position: absolute; left: 0; bottom: 0; font-size: 15px; color: #4A6178; }
+  .clock b { font-family: "Source Code Pro", monospace; color: #17324D; font-size: 22px; }
+
+  /* tile 2: sidebar landmark */
+  .mini { position: absolute; inset: 0 0 46px 0; border: 1px solid #DCE3EB; border-radius: 10px; overflow: hidden; }
+  .mini-head { height: 34px; border-bottom: 1px solid #DCE3EB; padding: 6px 12px; font-weight: 600; font-size: 14px; }
+  .mini-side { position: absolute; left: 0; top: 34px; bottom: 0; width: 112px;
+               border-right: 1px solid #DCE3EB; background: #F9FBFD; padding: 10px; }
+  .mini-side .ttl { font-weight: 700; font-size: 13px; margin-bottom: 8px; }
+  .ph { height: 10px; border-radius: 4px; background: #E3E9F0; margin-bottom: 8px; }
+  .ph.box { height: 20px; background: #fff; border: 1px solid #D3DCE6; }
+  .mini-main { position: absolute; left: 124px; right: 12px; top: 46px; }
+  .ring { position: absolute; border: 3px solid #F2A33A; border-radius: 8px;
+          box-shadow: 0 0 0 4px rgba(242,163,58,0.22); }
+  .say { position: absolute; left: 0; right: 0; bottom: 0; height: 34px; border-radius: 8px;
+         background: #17324D; color: #fff; font-size: 14px; display: flex; align-items: center;
+         gap: 8px; padding: 0 12px; opacity: 0; }
+  .say svg { flex: none; }
+
+  /* tile 3: download button */
+  .btn { position: absolute; left: 50%; top: 40px; transform: translateX(-50%);
+         background: #198754; color: #fff; font-size: 18px; font-weight: 600;
+         padding: 12px 22px; border-radius: 8px; display: flex; align-items: center; gap: 10px;
+         white-space: nowrap; box-shadow: 0 6px 14px rgba(25,135,84,0.25); }
+  .cursor { position: absolute; left: 0; top: 0; width: 26px; height: 26px; }
+  .file { position: absolute; left: 50%; top: 122px; margin-left: -110px; width: 220px;
+          display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px;
+          background: #F3FAF5; border: 1px solid #CBE8D5; opacity: 0; }
+  .file .doc { width: 30px; height: 38px; border-radius: 4px; background: #fff; border: 2px solid #2E9E5B;
+               font-family: "Source Code Pro", monospace; font-size: 9px; font-weight: 700; color: #2E9E5B;
+               display: grid; place-items: end center; padding-bottom: 3px; }
+  .file .name { font-family: "Source Code Pro", monospace; font-size: 15px; }
+  .file .size { font-size: 13px; color: #4A6178; }
+
+  /* tile 4: data frame */
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid #E6ECF2; }
+  th { font-weight: 700; background: #F6F8FB; }
+  td.n { font-family: "Source Code Pro", monospace; }
+  tbody tr { opacity: 0; }
+  .badge { position: absolute; right: 0; bottom: 0; background: #6740A8; color: #fff;
+           font-weight: 700; font-size: 17px; padding: 8px 14px; border-radius: 10px;
+           box-shadow: 0 8px 18px rgba(103,64,168,0.3); opacity: 0; }
+</style>
+</head>
+<body>
+  <div class="headline">
+    <div class="eyebrow">New release</div>
+    <h1>Shiny for Python <span class="ver">1.9</span></h1>
+    <div class="sub">Concurrent async, sidebar landmarks, download icons, faster data frames &amp; more</div>
+  </div>
+
+  <!-- 1. Concurrent async -->
+  <div class="tile t1">
+    <span class="tag blue">concurrent async</span>
+    <div class="body">
+      <div class="lane"><span class="who">alice</span><div class="track"><div class="fill" id="f1"></div></div><span class="check" id="c1">&#10003;</span></div>
+      <div class="lane"><span class="who">bob</span><div class="track"><div class="fill" id="f2"></div></div><span class="check" id="c2">&#10003;</span></div>
+      <div class="lane"><span class="who">carol</span><div class="track"><div class="fill" id="f3"></div></div><span class="check" id="c3">&#10003;</span></div>
+      <div class="clock">all async outputs done in <b id="clock">0.0s</b></div>
+    </div>
+  </div>
+
+  <!-- 2. Sidebar landmark -->
+  <div class="tile t2">
+    <span class="tag amber">sidebar(role="search")</span>
+    <div class="body">
+      <div class="mini">
+        <div class="mini-head">Penguins</div>
+        <div class="mini-side">
+          <div class="ttl">Filters</div>
+          <div class="ph box"></div>
+          <div class="ph" style="width:70%"></div>
+          <div class="ph" style="width:85%"></div>
+          <div class="ph" style="width:60%"></div>
+        </div>
+        <div class="mini-main">
+          <div class="ph" style="width:90%"></div>
+          <div class="ph" style="width:75%"></div>
+          <div class="ph" style="width:82%"></div>
+        </div>
+        <div class="ring" id="ring"></div>
+      </div>
+      <div class="say" id="say">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
+        <span>"Filters, search landmark"</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Download button with icon -->
+  <div class="tile t3">
+    <span class="tag green">@render.download_button(icon=)</span>
+    <div class="body">
+      <div class="btn" id="btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4 6.3 10.7l1.4-1.4L11 12.6V3zM4 18h16v3H4z"/></svg>
+        Download CSV
+      </div>
+      <svg class="cursor" id="cursor" viewBox="0 0 24 24"><path d="M4 2l15 11-6.5 1 4 7-3 1.5-4-7L4 20z" fill="#17324D" stroke="#fff" stroke-width="1.5"/></svg>
+      <div class="file" id="file">
+        <div class="doc">CSV</div>
+        <div><div class="name">penguins.csv</div><div class="size">downloaded</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Faster data frames -->
+  <div class="tile t4">
+    <span class="tag purple">@render.data_frame</span>
+    <div class="body">
+      <table>
+        <thead><tr><th>species</th><th>island</th><th>bill</th></tr></thead>
+        <tbody>
+          <tr><td>Adelie</td><td>Torgersen</td><td class="n">39.1</td></tr>
+          <tr><td>Chinstrap</td><td>Dream</td><td class="n">46.5</td></tr>
+          <tr><td>Gentoo</td><td>Biscoe</td><td class="n">47.3</td></tr>
+          <tr><td>Adelie</td><td>Dream</td><td class="n">37.8</td></tr>
+        </tbody>
+      </table>
+      <div class="badge" id="badge">up to 3.5&times; faster</div>
+    </div>
+  </div>
+
+<script>
+  // Deterministic animation driven by seek(t) so frames can be captured
+  // one at a time. Loop length: 5000ms. seek(LOOP - 100) is the static poster.
+  const LOOP = 5000;
+  const $ = (id) => document.getElementById(id);
+
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const clamp01 = (x) => Math.max(0, Math.min(1, x));
+  const easeInOut = (p) => p < 0.5 ? 4*p*p*p : 1 - Math.pow(-2*p + 2, 3) / 2;
+  const phase = (t, from, to) => clamp01((t - from) / (to - from));
+  const pop = (el, p) => {
+    el.style.opacity = p;
+    el.style.transform = `scale(${lerp(0.6, 1, easeInOut(p))})`;
+  };
+
+  // Focus ring rectangles inside .mini: the page header, then the sidebar.
+  const RING_FROM = { x: 2, y: 2, w: 297, h: 30 };
+  const RING_TO = { x: 2, y: 36, w: 110, h: 114 };
+
+  window.seek = function (t) {
+    t = t % LOOP;
+
+    // 1. All three sessions' outputs fill together, then finish together.
+    const fill = easeInOut(phase(t, 300, 2300));
+    ['f1', 'f2', 'f3'].forEach((id) => { $(id).style.width = `${fill * 100}%`; });
+    ['c1', 'c2', 'c3'].forEach((id) => pop($(id), phase(t, 2300, 2450)));
+    $('clock').textContent = `${(2 * phase(t, 300, 2300)).toFixed(1)}s`;
+
+    // 2. Focus ring jumps from the header to the sidebar landmark.
+    const r = easeInOut(phase(t, 1300, 1700));
+    const ring = $('ring');
+    ring.style.left = `${lerp(RING_FROM.x, RING_TO.x, r)}px`;
+    ring.style.top = `${lerp(RING_FROM.y, RING_TO.y, r)}px`;
+    ring.style.width = `${lerp(RING_FROM.w, RING_TO.w, r)}px`;
+    ring.style.height = `${lerp(RING_FROM.h, RING_TO.h, r)}px`;
+    ring.style.opacity = phase(t, 500, 700);
+    const say = phase(t, 1750, 1950);
+    $('say').style.opacity = say;
+    $('say').style.transform = `translateY(${lerp(8, 0, say)}px)`;
+
+    // 3. Cursor glides to the button, clicks, and a file drops out.
+    const c = easeInOut(phase(t, 1000, 1900));
+    $('cursor').style.transform = `translate(${lerp(300, 222, c)}px, ${lerp(190, 70, c)}px)`;
+    const press = phase(t, 1950, 2050) - phase(t, 2050, 2150);
+    $('btn').style.transform = `translateX(-50%) scale(${1 - 0.06 * press})`;
+    const drop = easeInOut(phase(t, 2200, 2600));
+    $('file').style.opacity = drop;
+    $('file').style.transform = `translateY(${lerp(-24, 0, drop)}px)`;
+
+    // 4. Rows stream in quickly, then the speed badge pops.
+    document.querySelectorAll('tbody tr').forEach((row, i) => {
+      row.style.opacity = phase(t, 2500 + i * 90, 2600 + i * 90);
+    });
+    pop($('badge'), phase(t, 3100, 3300));
+  };
+
+  window.seek(0);
+</script>
+</body>
+</html>

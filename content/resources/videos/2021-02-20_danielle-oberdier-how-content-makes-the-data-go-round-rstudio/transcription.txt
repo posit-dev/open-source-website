@@ -4,38 +4,38 @@
 
 <h3>What type of content to make</h3>
 
-<p><a data-t="42">So what to make?</a> <a data-t="44">There are several types of content that you can make when you're starting out making content.</a> <a data-t="50">One obviously is an audio podcast, but that takes a ton of time editing, finding guests,</a> <a data-t="56">finding sponsors, and it's a lot of work, whereas a blog is only the amount of work</a> <a data-t="102">that you want to make it.</a> <a data-t="104">You can be amazing like Julia Siljan, do YouTube tutorials, but that is not something within</a> <a data-t="109">my expertise.</a></p>
+<p><a data-t="42">So what to make?</a> <a data-t="44">There are several types of content that you can make when you're starting out making content.</a> <a data-t="50">One obviously is an audio podcast, but that takes a ton of time editing, finding guests,</a> <a data-t="56">finding sponsors, and it's a lot of work, whereas a blog is only the amount of work</a> <a data-t="62">that you want to make it.</a> <a data-t="64">You can be amazing like Julia Siljan, do YouTube tutorials, but that is not something within</a> <a data-t="69">my expertise.</a></p>
 
-<p><a data-t="110">I do blog, I love it, I love making tutorials that people can just look at really quickly</a> <a data-t="116">without turning off their TV shows and just get right to the point.</a> <a data-t="120">I love writing about general trends, career trends in the industry.</a></p>
+<p><a data-t="70">I do blog, I love it, I love making tutorials that people can just look at really quickly</a> <a data-t="76">without turning off their TV shows and just get right to the point.</a> <a data-t="80">I love writing about general trends, career trends in the industry.</a></p>
 
-<p><a data-t="126">What's interesting is that long form content is totally in, average of 1,200 words is what</a> <a data-t="133">is the most popular.</a> <a data-t="135">So if you want to just write content every month, every two months, and you have something</a> <a data-t="140">to say, know that that long form piece is going to be something that people are interested</a> <a data-t="145">in.</a></p>
+<p><a data-t="86">What's interesting is that long form content is totally in, average of 1,200 words is what</a> <a data-t="93">is the most popular.</a> <a data-t="95">So if you want to just write content every month, every two months, and you have something</a> <a data-t="100">to say, know that that long form piece is going to be something that people are interested</a> <a data-t="105">in.</a></p>
 
 <h3>Where to share your content</h3>
 
-<p><a data-t="146">In terms of where to share, that's where I just want to give a shout out to email marketing.</a> <a data-t="152">Email marketing is very important.</a> <a data-t="154">Nine out of 10 marketers still use email to promote their products, and 81% of small businesses</a> <a data-t="204">use email as the primary way of connecting with their customers.</a> <a data-t="208">So I do have an email list, I suggest that if you have a product that you really want</a> <a data-t="213">to circulate to your audience, definitely set up on email.</a></p>
+<p><a data-t="106">In terms of where to share, that's where I just want to give a shout out to email marketing.</a> <a data-t="112">Email marketing is very important.</a> <a data-t="114">Nine out of 10 marketers still use email to promote their products, and 81% of small businesses</a> <a data-t="124">use email as the primary way of connecting with their customers.</a> <a data-t="128">So I do have an email list, I suggest that if you have a product that you really want</a> <a data-t="133">to circulate to your audience, definitely set up on email.</a></p>
 
-<p><a data-t="217">There are so many ways to set up an email list with your blog.</a> <a data-t="222">I recommend Squarespace, and I am always available to talk about this, like I said.</a></p>
+<p><a data-t="137">There are so many ways to set up an email list with your blog.</a> <a data-t="142">I recommend Squarespace, and I am always available to talk about this, like I said.</a></p>
 
 <h3>Who content helps</h3>
 
-<p><a data-t="229">Who it helps.</a> <a data-t="229">Obviously, having content in our industry really helps bring new talent into the fold.</a> <a data-t="235">You can't just expect to post on LinkedIn and have all the right people get to your</a> <a data-t="242">message.</a> <a data-t="243">You do have to write content that is targeted towards people that might not feel comfortable</a> <a data-t="248">addressing certain issues in the industry.</a> <a data-t="250">Talk to them, bring them in, definitely think about what kind of content you're addressing,</a> <a data-t="259">think about current events, and it obviously helps newcomers.</a></p>
+<p><a data-t="148">Who it helps.</a> <a data-t="149">Obviously, having content in our industry really helps bring new talent into the fold.</a> <a data-t="155">You can't just expect to post on LinkedIn and have all the right people get to your</a> <a data-t="162">message.</a> <a data-t="163">You do have to write content that is targeted towards people that might not feel comfortable</a> <a data-t="168">addressing certain issues in the industry.</a> <a data-t="170">Talk to them, bring them in, definitely think about what kind of content you're addressing,</a> <a data-t="179">think about current events, and it obviously helps newcomers.</a></p>
 
-<p><a data-t="306">It also helps all of us who might not be newcomers to the field.</a></p>
+<p><a data-t="186">It also helps all of us who might not be newcomers to the field.</a></p>
 
 <h3>Why content matters</h3>
 
-<p><a data-t="311">Why it matters.</a> <a data-t="312">A lot of us don't think about talking more about content after our work is over with</a> <a data-t="317">just the few packages that we've been working with all day that our projects tend to use.</a> <a data-t="324">If we want to think outside the box and relate to each other, then the content that we circulate</a> <a data-t="329">really fosters that discussion outside of the workplace.</a></p>
+<p><a data-t="190">Why it matters.</a> <a data-t="192">A lot of us don't think about talking more about content after our work is over with</a> <a data-t="197">just the few packages that we've been working with all day that our projects tend to use.</a> <a data-t="204">If we want to think outside the box and relate to each other, then the content that we circulate</a> <a data-t="209">really fosters that discussion outside of the workplace.</a></p>
 
-<p><a data-t="333">I think it gives those of us that are in higher positions a way to connect with other people</a> <a data-t="340">in other industries who are doing really good things that they didn't know about.</a> <a data-t="344">I know that Datafem is often a connector for people who never would have met but listened</a> <a data-t="349">to the same podcast and then end up having a discussion maybe on social media.</a></p>
+<p><a data-t="213">I think it gives those of us that are in higher positions a way to connect with other people</a> <a data-t="220">in other industries who are doing really good things that they didn't know about.</a> <a data-t="224">I know that Datafem is often a connector for people who never would have met but listened</a> <a data-t="229">to the same podcast and then end up having a discussion maybe on social media.</a></p>
 
 <h3>How to succeed</h3>
 
-<p><a data-t="356">And here we finally get to how to succeed.</a> <a data-t="360">Consistency is really important, but you can set the barometer for that.</a> <a data-t="363">You do not have to say that consistency means every day.</a> <a data-t="367">It could mean once a month.</a> <a data-t="369">It could even mean once a year for certain projects.</a></p>
+<p><a data-t="236">And here we finally get to how to succeed.</a> <a data-t="240">Consistency is really important, but you can set the barometer for that.</a> <a data-t="243">You do not have to say that consistency means every day.</a> <a data-t="247">It could mean once a month.</a> <a data-t="249">It could even mean once a year for certain projects.</a></p>
 
-<p><a data-t="373">Really what matters is that you're consistent about how you promote your content.</a> <a data-t="377">You're consistent in having discussions in person at work on social media.</a> <a data-t="382">That really matters because that is really the most important of your content's life</a> <a data-t="387">story is who it reaches and how.</a></p>
+<p><a data-t="253">Really what matters is that you're consistent about how you promote your content.</a> <a data-t="257">You're consistent in having discussions in person at work on social media.</a> <a data-t="262">That really matters because that is really the most important of your content's life</a> <a data-t="267">story is who it reaches and how.</a></p>
 
-<p><a data-t="390">So you can make the best content in the world, but if it never reaches anybody, you're not</a> <a data-t="395">going to really succeed in the way that the industry could benefit from.</a></p>
+<p><a data-t="270">So you can make the best content in the world, but if it never reaches anybody, you're not</a> <a data-t="275">going to really succeed in the way that the industry could benefit from.</a></p>
 
-<blockquote><a data-t="390">So you can make the best content in the world, but if it never reaches anybody, you're not</a> <a data-t="395">going to really succeed in the way that the industry could benefit from.</a></blockquote>
+<blockquote><a data-t="270">So you can make the best content in the world, but if it never reaches anybody, you're not</a> <a data-t="275">going to really succeed in the way that the industry could benefit from.</a></blockquote>
 
-<p><a data-t="442">So definitely no matter how much you write or record, make sure that you're always having</a> <a data-t="450">conversations to help you grow, your content grow, and the industry grow.</a> <a data-t="456">Thank you so much.</a></p>
+<p><a data-t="282">So definitely no matter how much you write or record, make sure that you're always having</a> <a data-t="290">conversations to help you grow, your content grow, and the industry grow.</a> <a data-t="296">Thank you so much.</a></p>

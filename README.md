@@ -76,7 +76,15 @@ open-source-website/
 │   ├── download-software-readmes.py     # Fetch README files
 │   ├── summarize-software-readmes.py    # Generate AI summaries
 │   ├── validate-blog-posts.py           # Validate blog post frontmatter and placement
-│   └── test-validate-blog-posts.py      # Tests for validation script
+│   ├── update-youtube-videos.py         # Fetch video metadata from YouTube (see Video Sync)
+│   ├── sync-videos.py                   # Create/update video pages from data/videos.toml
+│   ├── transcribe.py                    # Download audio and transcribe it with Whisper
+│   ├── format-transcriptions.py         # Turn VTT transcripts into HTML with Claude
+│   ├── video-sync-report.py             # PR description for the nightly video sync
+│   ├── videolib.py                      # Shared helpers of the video scripts
+│   ├── videotesting.py                  # Fakes and fixtures for the video script tests
+│   ├── run-tests.sh                     # Run all scripts/test-*.py (`just test`)
+│   └── test-*.py                        # Tests for the scripts
 │
 ├── archetypes/                  # Content templates for hugo new
 │   ├── default.md
@@ -194,6 +202,8 @@ just build-tailwind              # Build Tailwind CSS only
 just build-search                # Generate Pagefind search index
 just update-github-repos         # Sync GitHub repository metadata to data/github-repos.toml
 just update-software-frontmatter # Update software frontmatter from github-repos.toml
+just update-videos               # Run the whole video pipeline locally (see Video Sync)
+just test                        # Run the tests of the Python scripts
 just quarto-preview              # Preview Quarto documents
 just hugo-serve                  # Start Hugo dev server with drafts
 ```
@@ -407,6 +417,64 @@ uv run scripts/validate-blog-posts.py --no-date-check
 
 If your agent supports Agent Skills, the `check-post` skill runs validation interactively and can offer fixes.
 
+### Cheat Sheets
+
+Each cheat sheet is a directory under `content/resources/cheatsheets/<slug>/` with an `_index.md`, the PDF, page thumbnails (`page-N.png`), translation PDFs, and source files:
+
+```yaml
+---
+title: Data tidying with tidyr
+image: page-1.png
+resource_type: cheatsheet
+by: posit                 # or community (a missing `by` counts as community)
+date: '2026-08-01'
+description: Reshape data to tidy format with tidyr ...
+download_url: tidyr.pdf
+people: [Mine Çetinkaya-Rundel, ...]   # authors only
+thumbnails: [page-1.png, page-2.png]
+software: [tidyr]         # existing content/software/ slugs
+languages: [R]
+translations:
+- language: Spanish
+  lang: es
+  file: tidyr_es.pdf
+  edition: tidyr 1.3.1, tibble 3.2.1
+  updated: 2024-05        # or `added:` when the PDF has no date
+  people: [David Díaz Rodríguez]   # translators; edition, date, and translators show in a tooltip
+---
+```
+
+The overview page has a **By** filter (Posit / Community) that defaults to Posit.
+
+Source files (`*.key`, `*.pptx`, `*.ai`, plus LaTeX/SVG sources under `source/`) live next to the PDF. The build doesn't need them: Hugo ignores them and the site doesn't link to them, so they're only available in this repository.
+
+Keynote, PowerPoint, and Illustrator files (~800 MB) are stored with [Git LFS](https://git-lfs.com/). To keep clones small, `.lfsconfig` excludes them from downloads, so after cloning (or pulling) they're small pointer files. To work on a cheat sheet's source, install Git LFS (`git lfs install` once) and download only what you need. `--exclude=""` is required to override the exclusion in `.lfsconfig`:
+
+```bash
+# One cheat sheet
+git lfs pull --include="content/resources/cheatsheets/tidyr/*" --exclude=""
+
+# All cheat sheet source files
+git lfs pull --include="content/resources/cheatsheets/**" --exclude=""
+```
+
+Scripts:
+
+```bash
+# Compress PDFs without losing accessibility tags
+scripts/compress-cheatsheet-pdf.py content/resources/cheatsheets/tidyr/*.pdf
+
+# Regenerate page thumbnails
+scripts/create-cheatsheet-thumbnails.py --pdf content/resources/cheatsheets/tidyr/tidyr.pdf
+
+# Check all cheat sheets (missing files, labels, software slugs, LFS, tags)
+scripts/validate-cheatsheets.py
+
+# Re-sync cheat sheets from a local clone of rstudio/cheatsheets,
+# using the per-sheet data in scripts/cheatsheet-migration.yaml
+scripts/migrate-cheatsheet.py --old-repo ~/repos/rstudio/cheatsheets tidyr
+```
+
 ### Adding Team Members
 
 Create a new person profile:
@@ -453,6 +521,83 @@ just update-software-frontmatter
 - Contributors (top contributors by commit count)
 - README image paths
 
+### Video Sync
+
+Videos from Posit's YouTube channel and playlists (configured in
+`data/youtube.toml`) are synced by four scripts, in this order:
+
+| Step | Script | Writes | Needs |
+| --- | --- | --- | --- |
+| 1 | `update-youtube-videos.py` | `data/videos.toml` | `YOUTUBE_API_KEY` |
+| 2 | `sync-videos.py` | `content/resources/videos/<slug>/_index.md`, `thumbnail.jpg` | |
+| 3 | `transcribe.py` | `transcription.vtt` | `OPENAI_API_KEY`, ffmpeg, Deno |
+| 4 | `format-transcriptions.py` | `transcription.txt` (the transcript shown on the page) | `ANTHROPIC_API_KEY` |
+
+**Nightly workflow.** `.github/workflows/sync-videos.yml` runs all four steps
+at 05:00 UTC and opens (or updates) a pull request on the
+`automation/sync-videos` branch, using the same GitHub App as the course sync.
+Review the PR (it gets a deploy preview) and merge it to publish the changes.
+The PR description lists new, renamed, and changed videos, the new transcripts,
+and any problems, each with the command to fix it locally. If last night's PR
+is still open, the next run builds on it instead of transcribing the same
+videos again. You can also run the workflow by hand (Actions → Sync Videos →
+Run workflow), with options to refresh view counts, try transcription, change
+how many videos get formatted, or do a dry run.
+
+**Only real changes.** Every run fetches the metadata of all videos, but an
+entry (and its `last_updated`) only changes when a field changed. View, like,
+and comment counts are refreshed once a week, on Mondays, or with
+`--refresh-stats`. Pages and transcripts are only written when their content
+changes, so a quiet night produces no PR at all.
+
+**Transcripts are made locally.** Transcribing downloads the audio with
+yt-dlp, and YouTube blocks that on GitHub's runners ("Sign in to confirm
+you're not a bot"), even with a PO token provider. So the nightly run skips
+step 3. The PR lists the videos waiting for a transcript; transcribe them on
+the PR branch and push, and the next run formats them (step 4, with Claude)
+and updates the PR:
+
+```bash
+git fetch origin && git switch -C automation/sync-videos origin/automation/sync-videos
+just transcribe --limit 15      # add --cookies-from-browser chrome if YouTube asks you to sign in
+git add content/resources/videos && git commit -m "Add transcripts" && git push
+```
+
+To do everything locally instead (on any branch):
+
+```bash
+just update-videos              # all four steps, at most 15 new videos
+just update-videos 5 chrome     # at most 5, with YouTube cookies from Chrome
+just transcribe --video 2026-11-11_some-talk --cookies-from-browser chrome
+just format-transcriptions --video 2026-11-11_some-talk
+```
+
+Set `transcribe: false` in a video's `_index.md` to skip its transcript (e.g.
+for music or members-only videos), or `publish = false` in
+`data/videos.toml` to remove a video from the site.
+
+Formatted transcripts are validated before they're written: only `<h3>`,
+`<p>`, `<a data-t>`, and `<blockquote>`; timestamps within the video; at least
+90% of the spoken words; and no responses cut off at the token limit. Videos
+longer than 20 minutes are formatted in 15-minute chunks. The model's
+timestamps are often off by tens of seconds, so every `<a data-t>` is matched
+back to its VTT cue and gets that cue's start time. To check the transcripts on
+the site, and to fix the ones that fail:
+
+```bash
+just format-transcriptions --check-existing           # report only, no API calls
+just format-transcriptions --repair-timestamps        # fix timestamps only, no API calls
+just format-transcriptions --reformat-invalid --limit 10
+```
+
+**Logs.** Every script logs what it does per video (with the slug and YouTube
+ID), and with `--summary-json PATH` writes a machine-readable summary. The
+workflow attaches the logs and summaries of every run as an artifact, kept for
+30 days. All scripts exit with 0 on success, 1 on a fatal error (nothing
+useful written), and 2 when some videos failed but the rest were written.
+Pass `--dry-run` to see what a script would do, and `--verbose` for debug
+logging.
+
 ### Environment Variables
 
 Create a `.env` file in the project root (gitignored):
@@ -461,6 +606,11 @@ Create a `.env` file in the project root (gitignored):
 # GitHub personal access token (for update-github-repos.py)
 # Get one at: https://github.com/settings/tokens
 GH_TOKEN="ghp_your_token_here"
+
+# For the video sync (update-youtube-videos.py, transcribe.py, format-transcriptions.py)
+YOUTUBE_API_KEY="..."
+OPENAI_API_KEY="..."
+ANTHROPIC_API_KEY="..."
 
 # Plausible Analytics API key (optional, for analytics integration)
 PLAUSIBLE_KEY="your_key_here"

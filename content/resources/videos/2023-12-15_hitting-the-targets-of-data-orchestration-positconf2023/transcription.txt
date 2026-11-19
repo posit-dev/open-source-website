@@ -66,11 +66,11 @@
 
 <p><a data-t="582">So, you should be careful.</a> <a data-t="584">All the saved files, for example,</a> <a data-t="586">if you are in a cloud worker,</a> <a data-t="588">to push them to an external file storage.</a> <a data-t="591">That it is persistent.</a> <a data-t="593">And this is just part of a real pipeline in the wild.</a> <a data-t="598">This is a small pipeline,</a> <a data-t="600">and these are the components of the pipeline,</a> <a data-t="603">how they are connected together.</a> <a data-t="605">I think you will see in the next presentation</a> <a data-t="607">a bigger view of this.</a></p>
 
-<p><a data-t="609">And do I really want to take up all this complexity?</a> <a data-t="619">I'm prone to errors,</a> <a data-t="621">and it's much more difficult</a> <a data-t="621">to collaborate with other team members.</a> <a data-t="624">This is the chaos I was talking about.</a></p>
+<p><a data-t="609">And do I really want to take up all this complexity?</a> <a data-t="617">I'm prone to errors,</a> <a data-t="619">and it's much more difficult</a> <a data-t="621">to collaborate with other team members.</a> <a data-t="624">This is the chaos I was talking about.</a></p>
 
 <h3>Targets to the rescue</h3>
 
-<p><a data-t="630">So, here is where Targets comes into play.</a> <a data-t="633">Targets is an opinionated framework</a> <a data-t="637">about how to structure your data science workflows</a> <a data-t="639">and your data pipelines.</a> <a data-t="642">And if you follow its conventions</a> <a data-t="645">and the way that it suggests you to build your workflows,</a> <a data-t="648">then you get out of the box many benefits.</a></p>
+<p><a data-t="627">So, here is where Targets comes into play.</a> <a data-t="630">Targets is an opinionated framework</a> <a data-t="633">about how to structure your data science workflows</a> <a data-t="637">and your data pipelines.</a> <a data-t="639">And if you follow its conventions</a> <a data-t="642">and the way that it suggests you to build your workflows,</a> <a data-t="645">then you get out of the box many benefits.</a></p>
 
 <p><a data-t="649">Targets will automatically </a><a href="/software/infer/">infer</a> <a data-t="652">the directed acyclic graph for you.</a> <a data-t="655">It will strategically skip steps from the pipeline for you.</a> <a data-t="660">It will also keep strong reproducible evidence for you.</a> <a data-t="667">And it has great facilities to integrate with cloud storage.</a> <a data-t="673">And of course, it has great facilities</a> <a data-t="675">for distributed computing.</a></p>
 

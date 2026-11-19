@@ -118,8 +118,8 @@ external:  # updated automatically, do not edit
     1:38:48 Reflection'
   duration: 6079
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:08.949115+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 41
   people:
   - Jeroen Janssens

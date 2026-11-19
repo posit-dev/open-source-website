@@ -1,0 +1,2260 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:13.520
+So I'm excited to introduce our featured lab manager today, Nic Crane. Nic, would you like
+
+00:00:13.520 --> 00:00:17.760
+to say hello? Tell us a little bit about you and what you're gonna be talking about today?
+
+00:00:17.760 --> 00:00:23.600
+Yeah, so hi, I'm Nic. I am an open source maintainer and an R consultant as well.
+
+00:00:24.400 --> 00:00:28.320
+I've spent a lot of my time working on Apache Arrow, which is how I'm kind of so deeply involved
+
+00:00:28.320 --> 00:00:34.240
+in Parquet stuff. And yeah, I'm excited to be here and talking about Parquet. So hopefully I'll
+
+00:00:34.240 --> 00:00:39.360
+be talking a bit about like Parquet in general, how it compares to things like CSVs, which people
+
+00:00:39.360 --> 00:00:44.480
+might be more familiar with, and just anything people want to know about really. Wonderful. I
+
+00:00:44.480 --> 00:00:49.759
+am so excited to learn about Parquet. Isabella, I don't know about you, but I have literally never
+
+00:00:49.759 --> 00:00:55.439
+used a Parquet file. I'm seeing a shaking head. Maybe theoretically.
+
+00:00:57.599 --> 00:01:04.000
+I feel like I, yeah, I feel like I know Parquet theory a little bit, but not practically. And
+
+00:01:04.000 --> 00:01:08.559
+in the past week, as we've been talking about it, everyone's been so excited and full of enthusiasm
+
+00:01:09.199 --> 00:01:14.000
+because they love Parquet or they're excited to learn about it. So I say we go ahead and get
+
+00:01:14.000 --> 00:01:19.440
+started. Nic, if you would like to share your screen, and everybody watching at home, please
+
+00:01:19.440 --> 00:01:26.080
+let us know if you cannot see Nic's text on their screen so that we can stop and make it bigger,
+
+00:01:26.080 --> 00:01:32.080
+because we want you to be able to see things. So let us know how things look here. Can you
+
+00:01:32.080 --> 00:01:40.879
+read that library call to arrow? Let us know in the chat. Text looks good to Logan.
+
+00:01:41.839 --> 00:01:46.959
+Good, good. Renato says yes. If there is a problem that changes later, we hope that you will let us
+
+00:01:46.959 --> 00:01:53.599
+know in the chat. All right, Nic, take it away. Oh, you're muted. Take it away in just a second
+
+00:01:53.599 --> 00:01:57.839
+after you unmute. NICOLA WOODFORD-SMITH Thank you, Libby. That would have been awkward.
+
+00:01:59.279 --> 00:02:04.239
+Yeah, so I guess rather than jumping straight into code, just like a really quick thing about
+
+00:02:04.239 --> 00:02:08.960
+like what is Parquet, because that's probably useful, right? Parquet is a really, really
+
+00:02:08.960 --> 00:02:15.520
+useful, right? So like it's a file format. And effectively, you know, you can use it to store
+
+00:02:15.520 --> 00:02:21.360
+data. And the point here is, it's smaller than CSV files, it's usually faster to work with CSV
+
+00:02:21.360 --> 00:02:28.880
+files. So I guess historically, Parquet was talked a lot about more in terms of like big data sets,
+
+00:02:28.880 --> 00:02:33.919
+but it's actually really, really useful, regardless of the data set sizes, because it's a bit more,
+
+00:02:33.919 --> 00:02:39.119
+I guess it's more to it than things like CSV. So it stores things like the type of the data with
+
+00:02:39.119 --> 00:02:42.720
+the data. So there's some really cool things, actually, I'm going to maybe I'm going to start
+
+00:02:42.720 --> 00:02:47.679
+with some of my tiny examples. And then we can go down like different paths. Because there's a few
+
+00:02:47.679 --> 00:02:53.679
+bits and pieces working with data where I for years always ended up writing extra code to go
+
+00:02:53.679 --> 00:02:59.279
+with my, you know, like to go with my analysis, I didn't need to write, okay. So like, just to
+
+00:02:59.279 --> 00:03:04.720
+start off with a really, really, really simple example. And now I've got a question, actually,
+
+00:03:04.720 --> 00:03:08.800
+Libby, is it cheating at live coding, if I'm copying and pasting from something I made earlier?
+
+00:03:09.440 --> 00:03:12.960
+It is absolutely not cheating. I recommend it.
+
+00:03:12.960 --> 00:03:19.759
+Okay, okay. Amazing. So like, let's forget about all the sort of bigger data and it being faster
+
+00:03:19.759 --> 00:03:25.600
+and smaller for now. But just a really simple example. And this is how, like Parquet saves
+
+00:03:25.600 --> 00:03:30.800
+column types with the data. And that can be really, really useful. Okay. So what I've got here
+
+00:03:30.800 --> 00:03:36.479
+is I've made a data frame. And let's make this a little bit nicer on the screen. So like really,
+
+00:03:36.479 --> 00:03:41.360
+really, really simple data frame, I've got one column state, so like New York and New Jersey.
+
+00:03:41.360 --> 00:03:46.320
+And then another column zips like the zip code. Okay. And these are just like made up zip codes.
+
+00:03:46.320 --> 00:03:52.880
+I'm sure somebody in that state has a zip code, who knows. But like 11213 could be New York,
+
+00:03:52.880 --> 00:04:00.399
+and this one 07001 could be New Jersey. So like, pretty simple data. Okay, so let's just,
+
+00:04:01.039 --> 00:04:04.479
+and this is where I find out I haven't got positron quite confirmed. Okay, it's working.
+
+00:04:04.479 --> 00:04:09.279
+Cool. We're good. Nice. Okay. Okay. I just I had, I reinstalled some stuff recently,
+
+00:04:09.279 --> 00:04:14.240
+and I had an old version. And but this, this is great. Okay, amazing. So really simple data set
+
+00:04:14.240 --> 00:04:20.079
+there. And I'm just like, one thing to notice here is this zip code column, it kind of looks
+
+00:04:20.079 --> 00:04:23.679
+like numbers, but technically, you know, I want this to be string data, right? Because I want this
+
+00:04:23.679 --> 00:04:29.200
+zero in front of that at the start. And actually, some of the time when I'm working with CSVs,
+
+00:04:29.200 --> 00:04:34.880
+this is where it can kind of lead me into a bit of trouble. So using some more code I prepared earlier.
+
+00:04:36.320 --> 00:04:41.119
+So I'm going to start off just writing that to a CSV file. So write dot CSV,
+
+00:04:41.760 --> 00:04:49.839
+zip data to a file called zip dot CSV. Okay. And actually, if I just forget how I open this,
+
+00:04:49.839 --> 00:04:57.839
+actually, just to show the actual code itself, you know, I've, hmm. Ah, open as plain text file.
+
+00:04:57.839 --> 00:05:03.119
+Amazing. Okay, so like, if I look at the raw file, and how it's saved, I've got my two columns,
+
+00:05:03.119 --> 00:05:08.959
+I've got my two states, this is this has got quotes around it. Amazing. Okay, so let's now try
+
+00:05:08.959 --> 00:05:16.959
+reading that back in. So if I do read dot CSV, zip dot CSV. And like, what's happened here is
+
+00:05:16.959 --> 00:05:21.600
+that that first zero has been cut off. Because effectively, like in base R, when we read it in,
+
+00:05:21.600 --> 00:05:26.399
+it's gone, okay, I think this is a number, this is a number column. And it's a really tiny little
+
+00:05:26.399 --> 00:05:29.600
+example. But you can imagine if you've got a really big data set and lots of things going on,
+
+00:05:29.600 --> 00:05:33.920
+and you're, you know, you're sharing data with people and passing things back and forth,
+
+00:05:33.920 --> 00:05:38.559
+it can become a real pain. I mean, I'm sure like my biggest issue I've had around this
+
+00:05:38.559 --> 00:05:42.559
+is like having things between like Excel and saving it somewhere as a CSV and reading it in
+
+00:05:42.559 --> 00:05:46.559
+and just data getting corrupted. And like, this is one of the things that really excites me
+
+00:05:46.559 --> 00:05:54.000
+about Parquet actually. Because if I take that data and write it to a Parquet,
+
+00:05:56.000 --> 00:06:00.559
+and now I need to load a package to read Parquet. So I can use the arrow package actually to read
+
+00:06:00.559 --> 00:06:06.079
+Parquet files. Aha, this brings us to one of our questions, which we knew we would get, which was,
+
+00:06:06.799 --> 00:06:10.320
+well, what's arrow? What's the difference between arrow and Parquet?
+
+00:06:10.320 --> 00:06:15.279
+Oh, I can totally come back to that in a minute. But I'll just do this super, super quickly. So
+
+00:06:15.279 --> 00:06:18.959
+here, it's just preserved the data in the actual format it needs to be because Parquet basically,
+
+00:06:18.959 --> 00:06:24.079
+it saves the data type with the data. And it's a tiny example. But like, once you get bigger
+
+00:06:24.079 --> 00:06:29.679
+problems, it can kind of becomes really, really important. And if you had millions of rows,
+
+00:06:29.679 --> 00:06:34.239
+imagine you wouldn't know where that was happening, because it would be hidden and sneaky.
+
+00:06:35.119 --> 00:06:39.040
+Right. And then it's like, do I go back and edit like one row at a time? Or like,
+
+00:06:39.040 --> 00:06:42.079
+how do I get that back in there? And yeah, that's not fun.
+
+00:06:44.399 --> 00:06:48.320
+But yeah, I mean, I've got loads of other code examples I can run through here. I can like,
+
+00:06:48.320 --> 00:06:52.239
+answer that question of like, what is the difference between sort of like arrow and Parquet?
+
+00:06:53.119 --> 00:06:57.760
+Where should we go? I would say, because you are
+
+00:06:57.760 --> 00:07:04.160
+an arrow maintainer, and you have lots of arrow knowledge, would you like to answer that sort of
+
+00:07:04.160 --> 00:07:11.279
+initial? What is the difference between arrow, Parquet and feather? Because that tends to be
+
+00:07:11.279 --> 00:07:15.119
+the next question. Yeah, so that's a really good question.
+
+00:07:15.119 --> 00:07:18.720
+Actually, it's one of these things where there's bits of things written in different places,
+
+00:07:18.720 --> 00:07:24.079
+but it can be hard to find. So I'm going to start off with, let's start with Parquet, because that's
+
+00:07:24.079 --> 00:07:28.000
+that's sort of what we're here for. Yeah, everything else will minimize a little bit,
+
+00:07:28.000 --> 00:07:32.880
+but we can talk about differences. Yes. So Parquet, I guess the simplest way
+
+00:07:32.880 --> 00:07:40.079
+to explain Parquet, it's a file format for storing data on disk. And the key difference between like
+
+00:07:40.079 --> 00:07:45.519
+Parquet and say CSVs, is Parquet is a binary format. So it's designed for computers to be
+
+00:07:45.519 --> 00:07:49.760
+able to read it really easily and efficiently, rather than humans to be able to read it easily
+
+00:07:49.760 --> 00:07:55.519
+and efficiently. And it stores extra data, sort of metadata with the data, I guess, is the kind
+
+00:07:55.519 --> 00:08:01.359
+of simplest kind of way of explaining Parquet. And there's other bits we can get into about how
+
+00:08:02.079 --> 00:08:07.040
+all of the optimizations in it can make things fast, but let's leave that alone for the moment.
+
+00:08:07.040 --> 00:08:15.279
+Okay. Now, Arrow is one of these ones where Arrow, effectively, Arrow itself is a specification for
+
+00:08:15.279 --> 00:08:20.799
+how tabular data should be laid out in memory. And then we get to this confusing thing where we've
+
+00:08:20.799 --> 00:08:26.000
+got Arrow, the specification, this sort of description, and then we've got libraries
+
+00:08:26.000 --> 00:08:33.039
+that implement Arrow. So basically, like the Arrow R package implements, well, okay, the Arrow
+
+00:08:33.039 --> 00:08:38.640
+C++ library implements this specification and the Arrow R package allows you to access this C++
+
+00:08:38.640 --> 00:08:43.599
+library without having to deal with C++ because some of us don't know any C++ and don't have too
+
+00:08:43.599 --> 00:08:48.239
+much time for that stuff. But yeah, so Parquet versus Arrow. Parquet is for storing stuff on
+
+00:08:48.239 --> 00:08:55.760
+disk. Arrow is basically for working with tabular data in memory, effectively. And then, just to
+
+00:08:55.760 --> 00:09:01.440
+make life a little bit more confusing for us all, there is a format called the Arrow IPC format.
+
+00:09:02.799 --> 00:09:08.640
+The vast majority of people never need to use this. It's to do with sending memory between
+
+00:09:08.640 --> 00:09:14.320
+different sorry, sending data between different processes. I personally haven't actually used
+
+00:09:14.320 --> 00:09:18.880
+it in any of my data science stuff. I've just worked on, you know, obviously, the Arrow package
+
+00:09:18.880 --> 00:09:25.840
+itself. And then Feather is like this older name for this Arrow IPC format that used to be more
+
+00:09:25.840 --> 00:09:31.679
+popular. And it was all about like making it easier to pass, say, have data that we can kind
+
+00:09:31.679 --> 00:09:35.440
+of share between, say, R and Python without having to convert things back and forth in different
+
+00:09:35.440 --> 00:09:40.559
+formats. But Feather was awesome at the time, but it's kind of been a bit superseded effectively
+
+00:09:40.559 --> 00:09:50.719
+by Parquet. Okay, we have so many questions, but I want to hold them and we'll do a little
+
+00:09:50.719 --> 00:09:56.239
+question roundup in just a minute. Let's talk a little bit more about Parquet files in practice
+
+00:09:56.239 --> 00:10:02.080
+and what they look like. Yeah, that's a great question. So I'm just trying to think where to
+
+00:10:02.080 --> 00:10:08.159
+start because I've got a load of notes and things I could show you. So I guess what I'll do is I'll
+
+00:10:08.159 --> 00:10:12.239
+find a Parquet file that we can use and I will load that in. That's probably the easiest way to
+
+00:10:12.239 --> 00:10:19.599
+do it. And we have amazing. We have some sort of key things that we can talk about why it's better.
+
+00:10:19.599 --> 00:10:24.880
+We've said that it's faster and we've said that it's typed, right? Like it's going to preserve
+
+00:10:24.880 --> 00:10:31.679
+your types better. It's smaller to store, which is part of why it's faster to read and write from.
+
+00:10:32.239 --> 00:10:38.479
+And also it is column-oriented and we will get more into that later. We've said the word
+
+00:10:38.479 --> 00:10:44.960
+columnar a couple of times. Like what does that mean? We will get into what column-oriented means
+
+00:10:44.960 --> 00:10:49.840
+and if you have good links to column-oriented meaning resources, feel free to share them in
+
+00:10:49.840 --> 00:10:55.599
+the chat. I also want to say I know that there are going to be questions about DuckDB. I think
+
+00:10:55.599 --> 00:10:59.520
+we're going to have a whole DuckDB episode because it's such a big topic. So if you have a DuckDB
+
+00:10:59.520 --> 00:11:03.520
+question, hold on to it. We will have a DuckDB episode, I promise.
+
+00:11:05.599 --> 00:11:10.320
+Nice. So sorry, I forgot what the question was. It was columnar stuff, right?
+
+00:11:11.280 --> 00:11:16.880
+Yes. So I would say feel free to show anything you would like about what Parquet looks like
+
+00:11:18.239 --> 00:11:24.400
+in practice, maybe opening one up because I think that there was a question maybe somewhere about
+
+00:11:25.359 --> 00:11:31.039
+whether you need something special to open them up and actually Positron's data viewer will do
+
+00:11:31.039 --> 00:11:37.359
+that for us. Oh, that is an awesome place to start. So actually, I have, let me just find
+
+00:11:37.359 --> 00:11:43.119
+the code that I've got over here somewhere. I'm going to copy this a second. Okay, so I've got
+
+00:11:43.119 --> 00:11:52.880
+some code and this is quite a nice example file to work with. Sorry, the URL is quite long,
+
+00:11:52.880 --> 00:11:57.520
+but basically this is a Parquet file that's basically saved with a load of data sets on the
+
+00:11:57.520 --> 00:12:03.840
+Arrow project that we have for running examples and things. To load a Parquet file, there's
+
+00:12:03.840 --> 00:12:08.080
+multiple libraries we can use. Arrow is like the sort of main, I guess the main canonical one,
+
+00:12:09.679 --> 00:12:14.239
+but you can also use Nano Parquet, which let's totally come back to that because it's a really
+
+00:12:14.239 --> 00:12:18.799
+awesome package that's definitely worth knowing about. I'm using Arrow because I work on Arrow
+
+00:12:18.799 --> 00:12:24.479
+more, but there's different reasons why you might want to use each. You can also, again,
+
+00:12:24.479 --> 00:12:30.960
+like Libby said, work with it using DuckDB, but for now, Arrow is the focus. So I've loaded the
+
+00:12:30.960 --> 00:12:39.840
+Arrow package. I can read a Parquet file in by just using this function read Parquet. So just
+
+00:12:39.840 --> 00:12:45.280
+like if I was using, say, read CSV from the read R package or even just base R's read.csv,
+
+00:12:46.080 --> 00:12:51.679
+and I just, if I've got a file locally, I can just do read Parquet the path to the file.
+
+00:12:52.799 --> 00:12:59.039
+And if I've run that now, I'll just clear my screen. We'll take a look at this taxi object.
+
+00:13:00.640 --> 00:13:04.880
+So yeah, the default, it reads in, oh, sorry, this has got tons of columns, which is why it's
+
+00:13:04.880 --> 00:13:11.119
+showing up like that on my screen. But the default thing is it reads in as a data frame, or actually,
+
+00:13:11.119 --> 00:13:17.200
+let me just load the tbl library, because then it'll load it as a tbl, which is kind of a bit
+
+00:13:17.200 --> 00:13:22.719
+nicer. Now, let's have a look. Do I have to do that again, or just load it as a tbl? Yeah,
+
+00:13:22.719 --> 00:13:28.640
+here we go. Okay, so it's loaded it as a tbl now. So it feels a lot like if you're just loading a
+
+00:13:28.640 --> 00:13:36.559
+CSV file. So yeah, this is just a tbl, and now you can work with it exactly as you'd work with
+
+00:13:36.559 --> 00:13:43.599
+any other kind of like data frame or tbl. Now, the nice thing as well in Positron is that if I
+
+00:13:43.599 --> 00:13:48.960
+have so many files in this directory, but if I click on this Parquet file, what it'll do is it'll
+
+00:13:48.960 --> 00:13:55.440
+give us the same preview again, like if we had a CSV file. So like not just saying this, because
+
+00:13:55.440 --> 00:14:00.239
+you've all invited me to come here, but genuinely, like I think Positron is like my favorite tool to
+
+00:14:00.239 --> 00:14:03.599
+preview Parquet files in just because it's there, and it's easy, and it works for me.
+
+00:14:04.080 --> 00:14:09.039
+And because yeah, that is one of the slight kind of different things that you know, if you've got a
+
+00:14:09.039 --> 00:14:15.119
+CSV, you could open that in a text editor, like notepad or something like that. And you can see
+
+00:14:15.119 --> 00:14:19.280
+inside your file, but you can't do that with Parquet because of these binary files, you've
+
+00:14:19.280 --> 00:14:25.440
+got to use something like this, if you do want to get that kind of preview there. So yeah, I think
+
+00:14:25.440 --> 00:14:32.000
+that's exactly the same as we'd see with a CSV, right? Like if I click on? Yeah, yeah. Cool.
+
+00:14:32.960 --> 00:14:39.039
+Um, so yeah, I guess one of the things I've mentioned is about them, like being columnar,
+
+00:14:39.039 --> 00:14:43.520
+and then being really fast. So I'm just wondering, actually, if it's worth sort of, yeah,
+
+00:14:43.520 --> 00:14:48.159
+I'll show off a sort of a little bit of a speed difference thing, and maybe then go into like,
+
+00:14:48.159 --> 00:14:51.919
+how it's worked, and why it's been that been faster, that could be maybe useful.
+
+00:14:52.479 --> 00:14:56.880
+That would be amazing. I know that sometimes speed is hard to see when you're not comparing to
+
+00:14:57.840 --> 00:15:03.039
+extremely enormous things. Are you going to be able to compare it even with like stuff that we're
+
+00:15:03.039 --> 00:15:11.359
+working on in a CSV file that we can just open up here? Yeah, so what I've done is, I have let me
+
+00:15:11.359 --> 00:15:14.320
+just tell you, I'm going to clear all this stuff off the screen, so we can come back to if we want
+
+00:15:14.320 --> 00:15:20.719
+to make a bit clearer. And I've got these, let's have a look. I've got a few different Parquet
+
+00:15:20.799 --> 00:15:28.320
+files set around here. So let's have a think. I think this one, taxi underscore big,
+
+00:15:29.599 --> 00:15:35.039
+oh, taxi dot, sorry, I'm just getting what I've got here. So I'm using a function from the FS
+
+00:15:35.039 --> 00:15:40.559
+package called file size, so it'll just literally get us the size of that file. Okay, so this file
+
+00:15:40.559 --> 00:15:46.000
+that I've got here is 135 megabyte Parquet file, so that's going to be big enough. So I kind of
+
+00:15:46.000 --> 00:15:52.559
+mentioned that Parquet files are smaller than CSVs, so what we could actually do is try reading
+
+00:15:52.559 --> 00:15:59.280
+it as a Parquet and writing it as CSV, and we'll see how much bigger it is. So let's do, I'm going
+
+00:15:59.280 --> 00:16:11.840
+to call it taxi big equals read Parquet taxi dot Parquet. Okay, so that'll take a moment to read
+
+00:16:11.840 --> 00:16:23.840
+in. Cool. So let's just see how many rows there are. Okay, so that's like 7,667,000 rows, so
+
+00:16:23.840 --> 00:16:35.679
+decent sized data set. Yeah. So if I just do read R and then do write underscore CSV, I think when
+
+00:16:35.679 --> 00:16:39.200
+I did this last time, it took like 30 seconds, so I'm definitely gonna have to find things to say
+
+00:16:39.200 --> 00:16:43.840
+when we're doing this, but I'm gonna give it a new file name so it's not just named after anything
+
+00:16:43.840 --> 00:16:49.599
+I've already got in my directions. I'm gonna put my big CSV of taxis because I wanted to give it a
+
+00:16:49.599 --> 00:16:56.799
+really long name. In fact, okay, let's just do it with read R for now. Okay, so we'll give it a
+
+00:16:56.799 --> 00:17:01.919
+moment. Yeah, it did take 27 seconds last time, and being on a Zoom call can kind of slow things
+
+00:17:01.919 --> 00:17:07.199
+down because it, but anyway. Zoom slows everything down, yes. I know, I've had this before, I had
+
+00:17:07.199 --> 00:17:14.079
+this perfect demo, and then I get on Zoom and I'm like, no, but what I'm gonna do is I'm gonna
+
+00:17:14.079 --> 00:17:22.160
+prepare, and we're gonna use the FS file size function once again, and then because I gave
+
+00:17:22.160 --> 00:17:30.239
+a really long name, it means I can take longer to type it, which is amazing. Okay, yeah, so that's
+
+00:17:30.319 --> 00:17:37.439
+924 megabytes, so way bigger as a CSV, and for small things like this, okay,
+
+00:17:38.239 --> 00:17:42.719
+whatever, it's nothing crazy. This is reasonable, but just think if you've got tons and tons of
+
+00:17:42.719 --> 00:17:49.040
+data at a certain point, this is gonna get unmanageable for some things. Okay, but I guess
+
+00:17:49.040 --> 00:17:52.000
+the thing that could be worth doing actually is seeing how long it takes to read it in.
+
+00:17:53.040 --> 00:17:58.000
+So my favorite library for demonstrating this actually, just because it is just really simple
+
+00:17:58.000 --> 00:18:01.680
+functions, like actually, Libby, have you worked with the TikTok package before?
+
+00:18:02.479 --> 00:18:07.439
+I have used the TikTok package just a little bit. It predates the app TikTok.
+
+00:18:08.719 --> 00:18:09.280
+Yeah.
+
+00:18:09.280 --> 00:18:12.640
+I used this in undergrad, I think, because we had some assignments where we needed to
+
+00:18:13.280 --> 00:18:14.000
+time things.
+
+00:18:15.599 --> 00:18:18.880
+Oh, that's really cool, nice, like I never, because I'd never heard of it until I started
+
+00:18:18.880 --> 00:18:22.719
+doing kind of, you know, kind of making like arrow workshops and things, and I think it was
+
+00:18:22.719 --> 00:18:26.479
+Danielle Navarro that taught me about it, but I like that you just have a function called tick,
+
+00:18:26.479 --> 00:18:29.920
+then you do the thing you want to time, and then this function called tock, and then it
+
+00:18:29.920 --> 00:18:35.040
+finishes timing it. So if I run that, and we'll see how long it takes to read that in,
+
+00:18:35.680 --> 00:18:38.560
+and it should be faster this time than it was to write it.
+
+00:18:38.560 --> 00:18:44.160
+And to reiterate, we are reading the CSV that we made out of our Parquet file.
+
+00:18:44.880 --> 00:18:46.079
+Okay, thank you, yeah.
+
+00:18:46.959 --> 00:18:48.400
+Right? Okay, making sure I'm right.
+
+00:18:48.400 --> 00:18:53.680
+You know, we are, we are, we are, you absolutely, yeah, yeah, yeah. So that took us 6.43 seconds,
+
+00:18:53.680 --> 00:18:58.239
+okay. And now I'm going to read this Parquet file again. So this is the Parquet file that we
+
+00:18:58.239 --> 00:19:04.719
+used to make the CSV. So it's exactly, exactly the same data. If I run this here, and it took
+
+00:19:04.719 --> 00:19:09.760
+like 0.593 seconds. So like, just way faster. Yeah.
+
+00:19:12.800 --> 00:19:14.079
+Extremely faster.
+
+00:19:15.359 --> 00:19:20.560
+And hopefully, so I've got another fast thing. Now, sometimes when I do fast things, they don't
+
+00:19:20.719 --> 00:19:26.800
+end up being fast. Let's see what happens. Another cool thing we can do as well, is we can just read
+
+00:19:26.800 --> 00:19:33.119
+in like, say if we just needed one column from that data set. So let's do read in that date.
+
+00:19:33.119 --> 00:19:40.959
+And let's now do call select to say if we only care about the, and sorry, I've not even introduced
+
+00:19:40.959 --> 00:19:46.800
+this data set. I'm doing a terrible job of explaining things today. So this data set is
+
+00:19:46.800 --> 00:19:52.000
+about taxi rides in New York. And it's got all sorts of things like the time, the date time that
+
+00:19:52.000 --> 00:19:56.719
+the person was picked up and dropped off, how many people were in the taxi, how long the trip was,
+
+00:19:56.719 --> 00:20:00.959
+the longitude, latitude, and all that kind of stuff. But like, let's just pretend we only want
+
+00:20:00.959 --> 00:20:07.439
+to work with say, like the date time pick up column. So it was no point just under 0.6 seconds
+
+00:20:07.439 --> 00:20:14.319
+to do the whole data set. Okay, and then it's, yeah, so it's like way faster, just to read in
+
+00:20:14.319 --> 00:20:21.119
+one column, which you can't do with a lot of things. Okay, so to give a bit of context about
+
+00:20:21.119 --> 00:20:25.599
+why that's faster, I feel like using a diagram is always good for this kind of thing. So let me just
+
+00:20:25.599 --> 00:20:32.079
+find one in this big, messy Quoto document I made earlier. I am up for a diagram. And I hope that
+
+00:20:32.079 --> 00:20:35.359
+that answers some of the questions. Some of the questions that were coming in, I knew we'd get
+
+00:20:35.359 --> 00:20:41.119
+there, which were like, how much faster is it? Okay, here's this. But there are some questions
+
+00:20:41.119 --> 00:20:45.599
+that I'm not sure if we can answer and might require people to go deep dive on their own.
+
+00:20:45.599 --> 00:20:51.839
+Like Zach had asked, this is more of a CS question, but how are Parquet files so much smaller?
+
+00:20:52.560 --> 00:20:59.280
+Part of that, I think is Arrow. Yeah, there's like, it's a weird mix of things, right? So
+
+00:21:00.560 --> 00:21:04.719
+should we do smaller or faster? We can do, let's, yeah, okay, so smaller, basically.
+
+00:21:05.439 --> 00:21:10.000
+I don't have a good diagram for this one. But because it's like a binary file format,
+
+00:21:10.800 --> 00:21:15.280
+it's designed to be read by computers rather than humans, it doesn't need to have as much
+
+00:21:15.280 --> 00:21:20.640
+stuff in it as CSV. So there's encoding and compression. So not to get too much into the
+
+00:21:20.640 --> 00:21:26.400
+nitty gritty of these. But there's one example that I really like. Say if you've got a dataset,
+
+00:21:26.400 --> 00:21:31.359
+right? And you've got, let's say you've got like, person name as a column in your dataset. And say
+
+00:21:31.359 --> 00:21:36.880
+that Libby shows up like 10 times in a row. So in a CSV file, you'd have like the name Libby
+
+00:21:36.880 --> 00:21:43.280
+10 times. But what we can actually do with kind of Parquet files is we'd have a little thing that
+
+00:21:43.280 --> 00:21:48.880
+said Libby comma 10. And then that stored that value 10 times. So like, that's just like one of
+
+00:21:48.880 --> 00:21:54.239
+the kind of optimizations. So like, similar things to that is basically how it kind of ends up being
+
+00:21:54.239 --> 00:21:57.839
+smaller. And there's all sorts of because it's again, because it's a binary file, there's all
+
+00:21:57.839 --> 00:22:02.640
+of these kind of compression algorithms that to be honest, I don't know inside out. But they use
+
+00:22:02.640 --> 00:22:07.040
+clever tricks like that to make things smaller effectively. Yes. It's kind of if you think about
+
+00:22:07.040 --> 00:22:11.280
+the way that GitHub does things where it's like, hey, I'm not going to store everything, I'm only
+
+00:22:11.280 --> 00:22:16.400
+going to store what's different. That's like a way that you can compress things, right? Where you
+
+00:22:16.400 --> 00:22:20.719
+don't have to have a full copy of something. You can just say, I'm just going to store the difference
+
+00:22:20.719 --> 00:22:26.959
+between A and B. And that can effectively let me store two different copies of the same thing,
+
+00:22:26.959 --> 00:22:32.479
+copy A, copy B. It's a little bit like that. And I hope that that answers your question, Rebecca,
+
+00:22:32.479 --> 00:22:38.079
+on how much smaller Parquet files are. Rebecca also asked, does it scale linearly or something
+
+00:22:38.079 --> 00:22:43.439
+else? And I think we answered that right now. It's not exactly linear, because depending on how many,
+
+00:22:43.439 --> 00:22:49.280
+let's say repetitions you have in your data, that type of compression of we have 10 of Libby,
+
+00:22:49.280 --> 00:22:55.839
+and let's just mark that we have Libby comma 10, you could have completely unique data for 17
+
+00:22:55.839 --> 00:23:00.000
+million rows, and it's going to be bigger than something that potentially can be compressed
+
+00:23:00.000 --> 00:23:07.199
+further. So I don't think it's linear, but it does make such a big difference. Thank you, Christy,
+
+00:23:07.199 --> 00:23:12.800
+as well. Christy Wade for answering that in the chat. Christy said almost exactly what Nick was
+
+00:23:12.800 --> 00:23:18.319
+saying at the same time. Okay, so I think that we've answered a lot of questions that have come
+
+00:23:18.319 --> 00:23:24.800
+in, because I knew that we would get to them. And No Tobacco asked when I tagged John Harmon in,
+
+00:23:24.800 --> 00:23:31.839
+and he answered it. Thank you so much, John. Nick, Lauren had asked for later, can we convince Nick
+
+00:23:31.839 --> 00:23:38.719
+to share their Q&A, the one with the AWS URL for the tax data set? Okay, great. Lauren, we will
+
+00:23:38.719 --> 00:23:45.359
+get that shared later. Thank you so much for asking. I mean, do you want me to just share
+
+00:23:45.359 --> 00:23:51.920
+the URL now? Yeah, on the discord, but I'm happy to share it again. Oh, yeah, sorry. I just I just
+
+00:23:52.000 --> 00:23:54.719
+shoved it in the discord somewhere. Oh, thank you, Isabella. You're the best.
+
+00:23:56.239 --> 00:24:02.319
+Fantastic. Okay, let's keep going. Because I would like to do you do you want to talk about
+
+00:24:02.319 --> 00:24:08.319
+a little bit more about the columnar column? Yeah, yeah, that sounds good. So um,
+
+00:24:09.760 --> 00:24:14.959
+okay, so like, I've got the image on my screen at the moment. I am so example data set, right?
+
+00:24:14.959 --> 00:24:19.599
+We've got some data that's got like year, location and age for a load of people. So
+
+00:24:19.599 --> 00:24:26.400
+yeah, locations like a state in the US and age is a number. So and let me remember the kind of
+
+00:24:26.400 --> 00:24:30.800
+because there's different ways of explaining this. The idea is, this is all to do with are we
+
+00:24:30.800 --> 00:24:37.280
+storing rows in data? I'm sorry, are we storing data in rows or in columns? So when people talk
+
+00:24:37.280 --> 00:24:43.040
+about like row oriented formats, they mean things like CSVs. So the idea with a row oriented format
+
+00:24:43.040 --> 00:24:47.119
+is and actually, right, I didn't do computer science. And one of the really, really helpful
+
+00:24:47.119 --> 00:24:52.239
+things for me to like learn when I was putting all these things together, is if I'm trying to
+
+00:24:52.239 --> 00:24:57.280
+like have a concept of how data is stored in memory, I think of it as like a 1d thing, like
+
+00:24:57.280 --> 00:25:00.800
+you've just got this big long line. And it's not quite like that. But it was a really important
+
+00:25:00.800 --> 00:25:06.719
+concept. So on this image here, if we're storing things in rows, what that means is this first road
+
+00:25:06.719 --> 00:25:13.359
+row of data. So the year 2005, New York and age 70, we store that row, then we store the next row,
+
+00:25:13.359 --> 00:25:18.719
+then we store the next row, and so on, and so on, and so on. And when people talk about a column
+
+00:25:18.719 --> 00:25:24.000
+oriented layout, what that means is we store all the values for year, then all the values for
+
+00:25:24.000 --> 00:25:29.760
+location, and then all the values for age. So different ones have different advantages and
+
+00:25:29.760 --> 00:25:36.560
+disadvantages. But a lot of the time when we're doing analytical stuff, that's like asking questions
+
+00:25:36.640 --> 00:25:44.160
+about the data. So tell me the average age in the data set, or filter by rows for which year is 2005.
+
+00:25:44.880 --> 00:25:48.959
+We're doing this really kind of column oriented kind of way of doing things, right? Like it's
+
+00:25:48.959 --> 00:25:56.079
+focused on do things with a column. So if we are trying to get like, I don't know, like,
+
+00:25:57.599 --> 00:26:02.800
+the average age, for example, what happens here is in the row on if something's saved in rows,
+
+00:26:02.800 --> 00:26:06.400
+I'm going to pull out from this position, then okay, where's the next one, pull out from that,
+
+00:26:06.400 --> 00:26:10.160
+right, where's the next one, pull out from there, and so on, and so on, and so on. But when stuff's
+
+00:26:10.160 --> 00:26:15.760
+stood in columns, I can just pull a big chunk of things out really efficiently, really quick,
+
+00:26:15.760 --> 00:26:20.239
+and work on that in one go. And it's an oversimplified explanation, but that's roughly
+
+00:26:20.800 --> 00:26:26.640
+how it works. And it just makes it a lot faster to pull kind of data out to work with effectively.
+
+00:26:27.439 --> 00:26:29.040
+That makes so much sense.
+
+00:26:31.439 --> 00:26:36.800
+Yeah, so that's the column oriented thing. I've got loads of other things I can talk about,
+
+00:26:36.800 --> 00:26:39.280
+but I'm not sure where to go next, actually. What do you reckon?
+
+00:26:39.280 --> 00:26:44.239
+Let's let the community guide us. Because you had mentioned Nanoparquet, and you were like,
+
+00:26:44.239 --> 00:26:49.839
+we'll come back to it. And Becca had asked Arrow versus Nanoparquet. Maybe you want to
+
+00:26:49.839 --> 00:26:53.839
+talk a little bit about Nanoparquet now? Yeah, so actually, like, I was really excited
+
+00:26:53.839 --> 00:26:57.439
+to get invited to do this, because to be honest, I'd seen Nanoparquet, and I hadn't worked with it
+
+00:26:57.439 --> 00:27:02.319
+much. And in sort of preparing for this, I actually, I don't want to be too, here's what
+
+00:27:02.319 --> 00:27:09.280
+I made earlier. But let me... No, please, show us all the stuff you made earlier. This is why
+
+00:27:09.280 --> 00:27:13.680
+we're here. This is exciting. And as a time check, we're about halfway through. It's 32 minutes after
+
+00:27:13.680 --> 00:27:19.280
+the hour. And while you are doing that, I will say Zach asked, is there an application that
+
+00:27:19.280 --> 00:27:27.920
+opens .parquet files, like how Microsoft Excel opens .xlsx files? There are parquet file viewers
+
+00:27:27.920 --> 00:27:33.760
+that you can download standalone. I can't vouch for any of them. I think that the file viewer
+
+00:27:33.760 --> 00:27:39.599
+inside of Positron is the best way that I know to open a parquet file easily and look at it.
+
+00:27:40.479 --> 00:27:45.119
+But I don't think there's a dedicated platform or application the way that you would have for
+
+00:27:45.119 --> 00:27:50.560
+Excel files or Word files. Yeah, I think, yeah, exactly. That's right. Because I think,
+
+00:27:51.199 --> 00:27:54.560
+I don't know, parquet, because it's used in so many, in different things. So I think like
+
+00:27:54.560 --> 00:28:01.119
+Apache Spark uses parquet. And it almost ends up being a separate, a conceptually separate,
+
+00:28:01.119 --> 00:28:05.280
+like it's a standalone thing, I guess, more than with an Excel file is the way of doing it. But
+
+00:28:05.280 --> 00:28:12.800
+yeah, I use the viewer and then mostly kind of R code. But yeah, with Nanoparquet. Okay, so
+
+00:28:13.520 --> 00:28:20.719
+Nanoparquet, fantastic library. I think this table's right. But the idea is that, like,
+
+00:28:20.719 --> 00:28:26.160
+before Nanoparquet came around, the arrow package was really, and kind of WDB in some,
+
+00:28:26.160 --> 00:28:31.760
+to a certain extent, were the only ways to work with parquet files in R. And that's great. And
+
+00:28:31.760 --> 00:28:37.439
+that's, you know, that's fantastic and everything. But I guess if you want just like a really,
+
+00:28:37.439 --> 00:28:43.680
+really tiny package with like no external dependencies, then Nanoparquet is fantastic
+
+00:28:43.680 --> 00:28:48.959
+for this. So the sort of different advantages and disadvantages to each, like arrow is like the
+
+00:28:48.959 --> 00:28:53.599
+fully featured all the things. And I think Nanoparquet is like, oh, I've got like a small
+
+00:28:53.599 --> 00:28:58.000
+file in parquet. And I don't need to do tons of things with it. So like, this is just really
+
+00:28:58.000 --> 00:29:03.920
+efficient. So like, both of them can read and write single files. And the nice thing as well
+
+00:29:03.920 --> 00:29:08.959
+is like the function names for just read parquet, write parquet are the same with both packages.
+
+00:29:10.479 --> 00:29:14.560
+But then some of the like more, I guess, advanced functionality. So one of the things in arrow is
+
+00:29:14.560 --> 00:29:19.119
+you can have these data sets that are made of lots of different files that can just be easier
+
+00:29:19.119 --> 00:29:24.079
+to handle than having like one huge file. So arrow works with that Nanoparquet doesn't.
+
+00:29:24.293 --> 00:29:29.653
+like one huge file. So Arrow works with that, nanoparquet doesn't. And there's other bits
+
+00:29:29.653 --> 00:29:33.733
+and pieces, like if you've got stuff stored in an S3 bucket, or if you want to do some
+
+00:29:33.733 --> 00:29:37.133
+of that, you know, like I said about that filtering stuff before reading it in, then
+
+00:29:37.133 --> 00:29:41.493
+you need Arrow for that. But actually, there is one really nice feature of nanoparquet
+
+00:29:41.493 --> 00:29:46.373
+that Arrow doesn't have, which is that you can append data to existing files, rather
+
+00:29:46.373 --> 00:29:51.453
+than having to rewrite them. So that's, that's really cool. But yeah, I was like, if someone
+
+00:29:51.453 --> 00:29:54.653
+like if you've got a, if you've got a really, if you've got, I think for me, if I've got
+
+00:29:54.653 --> 00:29:59.693
+really big Parquet files, and just need like the more, some more of the advanced functionality,
+
+00:29:59.693 --> 00:30:03.693
+Arrow is the way to go. But actually, if you've got small things, like nanoparquet is fantastic.
+
+00:30:03.693 --> 00:30:08.533
+And it was written by Gabor Xardy, who works at Posit. And yeah, it's interesting to see
+
+00:30:08.533 --> 00:30:11.533
+what happens to that package. Because yeah, there's loads of cool things.
+
+00:30:11.533 --> 00:30:17.732
+Well, that was a fantastic question. Thank you for asking that, Becca. There were some
+
+00:30:17.732 --> 00:30:21.853
+that were much earlier on, and I wanted to touch on one, we talked about it a little
+
+00:30:21.853 --> 00:30:30.053
+bit. But it shows a good benefit of a CSV. Nathan had asked, do the benefits of Parquet
+
+00:30:30.053 --> 00:30:36.373
+extend to small files? I routinely use CSVs with only 10 to a couple hundred rows, and
+
+00:30:36.373 --> 00:30:40.693
+the human readability is nice. I agree, human readability is really great.
+
+00:30:40.693 --> 00:30:46.812
+Yeah, like 100%. Like if you've got, if it's all about what your priorities are, right?
+
+00:30:46.892 --> 00:30:50.812
+Like if you've got something that you really need human readability for, in whatever the
+
+00:30:50.812 --> 00:30:54.693
+workflow is, or how you're sharing things, then yeah, actually CSV, I mean, CSVs are
+
+00:30:54.693 --> 00:30:59.693
+fine. They've been around like for ages. Like I still use CSVs for a lot of tasks. Like
+
+00:30:59.693 --> 00:31:04.492
+if I don't have to care about the data types being read in and out, kind of, you know,
+
+00:31:04.492 --> 00:31:07.773
+in a reasonable thing, and I want something I can play around with, yeah, CSVs are great
+
+00:31:07.773 --> 00:31:13.093
+for that. It's more, as soon as we get these little annoying edge bits, then Parquet sort
+
+00:31:13.093 --> 00:31:16.932
+of ends up being better. And like, when you're doing like speed comparisons, yeah, to be
+
+00:31:16.932 --> 00:31:20.773
+honest, well, one, if you've got 10 rows, I don't think anything is going to be slow.
+
+00:31:20.773 --> 00:31:25.733
+But at that point, I'd expect them to be the same. I mean, Parquet could even be, it could
+
+00:31:25.733 --> 00:31:31.093
+even be slower, but it's such a tiny thing, it wouldn't make a difference. But yeah, yeah.
+
+00:31:31.093 --> 00:31:37.173
+Okay, great. Amelia, welcome back. Amelia learned a frustrating lesson about the Zoom
+
+00:31:37.173 --> 00:31:40.813
+links. They are unique to you. If you give them to somebody else, they will just join
+
+00:31:40.813 --> 00:31:45.692
+as you and kick you off. So if you have signed up for the Data Science Hangout or Data Science
+
+00:31:45.692 --> 00:31:49.613
+Lab, that link is yours alone. Other people need to sign up for themselves. Amelia, I'm
+
+00:31:49.613 --> 00:31:55.132
+so sorry that that happened today. But Amelia did have a question. She asked, does Parquet
+
+00:31:55.132 --> 00:32:01.373
+have any built-in support or functionality for database-style dataset linking? And I'm
+
+00:32:01.373 --> 00:32:06.492
+not sure if I know exactly what Amelia means, but you might know better than I do, Nick.
+
+00:32:06.492 --> 00:32:10.412
+I'm afraid I have no idea what that is. I'm on the weird corner of data engineering, where
+
+00:32:10.412 --> 00:32:15.212
+it's mainly arrow-focused. So I don't know if there's other terminology that I might
+
+00:32:15.212 --> 00:32:24.733
+know about that just is called something different. Maybe metadata-style things might be part
+
+00:32:24.733 --> 00:32:30.572
+of the question. Amelia, please feel free to add context for us. I see you typing. So
+
+00:32:30.572 --> 00:32:36.093
+we will come back. But we also have a question from Becca asking if you can write spatial
+
+00:32:36.093 --> 00:32:45.212
+files to Parquet. I do not see why not. But there are definitely spatial data file types
+
+00:32:45.212 --> 00:32:49.373
+which might not work with Parquet. Do you have any experience with that, Nick?
+
+00:32:49.373 --> 00:32:55.772
+So the way things work in Parquet is so like R has its own data types, right? Like we've
+
+00:32:55.772 --> 00:33:02.253
+got integers and logicals and all the rest of it. And Parquet has its own sort of set
+
+00:33:02.253 --> 00:33:06.813
+of data types. Because the idea is that like Parquet works whether you're in R or Python
+
+00:33:06.813 --> 00:33:13.373
+or Rust or Java or whatever. So if something can map to like a Parquet data type, and it
+
+00:33:13.373 --> 00:33:24.813
+does cover most things, then you can write it to Parquet. There are some specific like
+
+00:33:24.813 --> 00:33:28.893
+special cases. Like there's GeoParquet, which is kind of cool as well.
+
+00:33:29.052 --> 00:33:30.412
+Just put a link to that in the chat.
+
+00:33:32.173 --> 00:33:36.653
+So I think like some spatial stuff you can do. I don't know if there's some spatial stuff you
+
+00:33:36.653 --> 00:33:41.773
+can't do. But basically the sort of short answer is like if it maps to Parquet data types,
+
+00:33:41.773 --> 00:33:46.092
+then you can. Yeah. And if it ends up being a bit more complicated, then maybe not. But
+
+00:33:46.092 --> 00:33:48.013
+yeah, there'll be things you can do to go around that.
+
+00:33:48.652 --> 00:33:53.773
+Fantastic. And we do have a little bit more information from Amelia. She said like in
+
+00:33:53.773 --> 00:33:58.893
+Microsoft Access, there's linking between datasets via specified primary keys or foreign
+
+00:33:58.893 --> 00:34:04.013
+keys. So that's more like I want to join these two. I want to have each one to have a key in it
+
+00:34:05.372 --> 00:34:11.213
+as a column. I think that then, yes, like you could have a primary key in a Parquet
+
+00:34:11.213 --> 00:34:13.933
+file just like you could in a CSV or any other type of.
+
+00:34:15.852 --> 00:34:21.613
+Yeah. Like I guess with that stuff with Access, it's almost like that extra functionality is
+
+00:34:21.613 --> 00:34:26.572
+almost it feels like it's tied into that data storage. But I mean, you can store extra metadata
+
+00:34:26.572 --> 00:34:33.933
+about your data in your Parquet file, I guess. I guess for me that maybe would the cause of it.
+
+00:34:33.933 --> 00:34:38.572
+Yeah. You can store that in your data. I guess for me that I probably I feel like it live in
+
+00:34:38.572 --> 00:34:42.092
+my code. But again, it depends on exactly what you're doing. But yeah.
+
+00:34:42.733 --> 00:34:47.613
+Awesome. Thank you so much. OK. I wanted to
+
+00:34:48.572 --> 00:34:54.412
+pause on questions for just a second and dive into something that you slightly mentioned a
+
+00:34:54.412 --> 00:34:59.132
+little bit in the third line of this table of this Arrow versus Nano Parquet, which is
+
+00:34:59.132 --> 00:35:05.532
+partitioned datasets, which is partitioning as a function in Parquet files is pretty amazing.
+
+00:35:05.532 --> 00:35:09.372
+So let's talk about it. OK. Yeah, absolutely.
+
+00:35:09.372 --> 00:35:13.293
+So what is partitioning? Why is it possible?
+
+00:35:13.372 --> 00:35:18.972
+Is partitioning. So I've not explained this for ages. Let's let's give it a go. OK. Like
+
+00:35:20.092 --> 00:35:26.333
+imagine I mentioned before, actually, a little bit about how the fact that when we read in this,
+
+00:35:27.372 --> 00:35:31.132
+we want to just this one column of this file. Right. And when we read that and it was faster
+
+00:35:31.132 --> 00:35:35.053
+because effectively we were able to just pull that, you know, pull that one column out of our
+
+00:35:35.053 --> 00:35:40.733
+file. And I guess partitioning, it feels like it takes that concept further potentially. So
+
+00:35:41.213 --> 00:35:48.013
+I'm going to live code this without looking at a note. So my candle is lit. Amazing. OK,
+
+00:35:48.013 --> 00:35:54.333
+let me just check. I have my big, like huge data set here. Oh, OK. This is the 7000 row ones. Let's
+
+00:35:54.333 --> 00:36:04.173
+see. Taxi big. OK, OK. This is the yeah, this is the 7 million row one. So let's say that I have
+
+00:36:04.173 --> 00:36:08.812
+this data set. Sure, I can save it to a Parquet file all in one Parquet file. Fine. It's 142
+
+00:36:09.692 --> 00:36:15.773
+megabytes. But actually, maybe I don't want a 142 megabyte file. Maybe I want a smaller file
+
+00:36:15.773 --> 00:36:20.092
+because it's easy to share with the people. But also maybe I want to split it up because when
+
+00:36:20.092 --> 00:36:27.453
+I'm analyzing this data, I don't need all of that data anyway. So let's imagine a situation in which
+
+00:36:27.453 --> 00:36:33.132
+like the most typical data analysis I do is actually I'm going to like I'm going to do some
+
+00:36:33.132 --> 00:36:38.333
+all of my analyses are comparing these different vendors. OK, so in this data set,
+
+00:36:38.333 --> 00:36:43.613
+we've got these three letter acronym. In fact, let's have a look in the data. So if I load
+
+00:36:43.613 --> 00:36:51.852
+dplyr. Now I can do dplyr stuff. What was the file called? What was the data set called?
+
+00:36:51.852 --> 00:36:57.132
+Taxi big. It must have been taxi big. So if I see how many distinct values there are
+
+00:36:58.092 --> 00:37:05.132
+in a vendor name. OK, OK. Oh, there's only two, but whatever. That's fine.
+
+00:37:07.213 --> 00:37:11.852
+Because Parquet files are kind of split up in smaller chunks and we can do things in parallel.
+
+00:37:11.852 --> 00:37:16.092
+It's kind of nice to sometimes have things split out. So let me.
+
+00:37:18.972 --> 00:37:22.572
+Maybe the easiest thing to do is just show you an example of partitioning that we can talk through.
+
+00:37:23.532 --> 00:37:31.213
+So I'm going to save this right data set. So this is a function from the arrow package.
+
+00:37:32.493 --> 00:37:37.613
+I'm going to save it to a. I'm going to call the folder by vendor
+
+00:37:38.493 --> 00:37:45.213
+and I'm going to do partitioning equals. I haven't run this function for ages,
+
+00:37:45.213 --> 00:37:50.572
+so I think that's how we do it. And this is going to take a moment because it's right in
+
+00:37:50.572 --> 00:37:54.972
+this big 7 million thing to disk. But if I look in this file, it's done it now.
+
+00:37:54.972 --> 00:38:01.373
+It's by vendor folder. What it's done is it split it into vendor name equals CMT.
+
+00:38:01.373 --> 00:38:05.933
+That was one of the values and vendor name equals VTS. So what I can do now is
+
+00:38:06.493 --> 00:38:09.212
+I want to do an analysis. Let's do open data set.
+
+00:38:12.892 --> 00:38:15.532
+By vendor, do I put that in quote marks? This has been a while.
+
+00:38:16.412 --> 00:38:23.452
+And then I just want to say, like, I don't know, filter.
+
+00:38:24.972 --> 00:38:35.053
+Vendor equals it was it CMT. And then we'll do summarize and we'll just do like
+
+00:38:37.293 --> 00:38:39.613
+time equals me. What's the distance then?
+
+00:38:40.573 --> 00:38:46.652
+I mean, was there a trip distance column? I can't remember.
+
+00:38:46.652 --> 00:38:48.253
+Yeah, underscore distance.
+
+00:38:52.173 --> 00:38:56.652
+Oh, and then, of course, I've done something wrong here. It's vendor name, isn't it?
+
+00:38:58.173 --> 00:39:02.012
+And then sorry, I need to do something else a second. So there's a little bit more complexity.
+
+00:39:02.012 --> 00:39:06.493
+I need to do collect just to say, get this analysis ready and then pull it into R.
+
+00:39:06.652 --> 00:39:11.373
+Okay, so what has happened here is, because this is in a data set,
+
+00:39:11.373 --> 00:39:16.173
+and it's partitioned by this vendor name column, in other words, we've got three different directories.
+
+00:39:17.532 --> 00:39:23.452
+This is just for NA files. This one has a parquet file for just the data for CMT.
+
+00:39:23.452 --> 00:39:27.933
+And this one just has the data for VTS. So now what that means is it didn't even bother
+
+00:39:27.933 --> 00:39:32.092
+reading in these other partitions when it was doing that analysis.
+
+00:39:32.332 --> 00:39:37.373
+Because we've got it in this kind of partitioning, it knows it just needs to read in this one.
+
+00:39:37.373 --> 00:39:42.173
+So it makes it faster because you're not reading in all of the data to then filter it by CMT.
+
+00:39:42.173 --> 00:39:43.452
+It just filters like that.
+
+00:39:44.012 --> 00:39:48.012
+And it creates those folders for you automatically when you partition it, right?
+
+00:39:48.012 --> 00:39:48.573
+Exactly.
+
+00:39:48.573 --> 00:39:54.972
+Like that line that Nick ran on 35 and 36, where they have write data set by vendor,
+
+00:39:54.972 --> 00:39:59.053
+partitioning equals vendor name, that created that by vendor folder,
+
+00:39:59.293 --> 00:40:05.852
+which created subfolders for the vendor name, for the CMT data set, as well as the VTS data set.
+
+00:40:05.852 --> 00:40:11.613
+So imagine if you are partitioning by something like year, and you have 25 years of data,
+
+00:40:11.613 --> 00:40:14.092
+then you have 25 different partitioned data sets.
+
+00:40:14.092 --> 00:40:18.092
+And if you only want to look at 2009, it's only going to pull 2009.
+
+00:40:18.092 --> 00:40:21.852
+Even if you have 2 million rows in that one versus something else,
+
+00:40:22.412 --> 00:40:26.092
+that can speed you up a ton if you blow this up to a problem at scale.
+
+00:40:26.173 --> 00:40:26.733
+Exactly.
+
+00:40:26.733 --> 00:40:27.212
+Yeah.
+
+00:40:27.212 --> 00:40:30.012
+And it's all about taking that filter and just pushing it down
+
+00:40:30.012 --> 00:40:32.493
+onto disk rather than doing it in memory.
+
+00:40:33.532 --> 00:40:34.032
+Yeah.
+
+00:40:35.532 --> 00:40:36.332
+Fantastic.
+
+00:40:36.332 --> 00:40:36.832
+Okay.
+
+00:40:37.772 --> 00:40:40.493
+Does anybody have any questions about partitioning?
+
+00:40:40.493 --> 00:40:45.373
+I know that Renato had asked one, as you were going through and you were running distinct,
+
+00:40:45.373 --> 00:40:49.772
+he said, wait, did that just go through the entire 7 million rows to run that distinct call?
+
+00:40:50.652 --> 00:40:52.733
+Because we were talking about in the chat,
+
+00:40:52.972 --> 00:40:56.813
+when Parquet is loaded into R, does it become data just like everything else?
+
+00:40:56.813 --> 00:41:00.892
+And the answer is yes, it's just like a big blob of data, just like anything else.
+
+00:41:00.892 --> 00:41:04.332
+It is now stored in memory.
+
+00:41:05.133 --> 00:41:12.092
+But the way that we partitioned can help fix some of that, I think.
+
+00:41:14.092 --> 00:41:17.693
+So yes, it did go through an entire 7 million rows to run that distinct.
+
+00:41:17.693 --> 00:41:22.012
+And then we had another question come through.
+
+00:41:22.012 --> 00:41:29.293
+Oh, I'm going to go back because it was very, very early that Rachel and Noor had some questions.
+
+00:41:29.293 --> 00:41:33.532
+So Rachel had asked, is it possible to use Parquet for nested data structures?
+
+00:41:33.532 --> 00:41:36.652
+And if so, are there arrow tools for working with them in R?
+
+00:41:37.373 --> 00:41:40.253
+Oh, I love this question because I literally, the notes that I had there.
+
+00:41:40.253 --> 00:41:42.173
+I've been holding it, holding it in my brain.
+
+00:41:42.173 --> 00:41:45.212
+I'm like, don't forget, Rachel asked a great nested data question.
+
+00:41:45.373 --> 00:41:50.972
+Yeah, so I'm actually, so actually, so like last year, I ended up publishing a book about arrow.
+
+00:41:50.972 --> 00:41:54.253
+And there's way more examples of what you can do and can't do in there.
+
+00:41:54.253 --> 00:41:57.693
+And we made it like, I published this with John Keane and Neil Richardson,
+
+00:41:57.693 --> 00:41:59.053
+and we published it online for free.
+
+00:41:59.053 --> 00:42:00.573
+So it's like arrowrbook.com.
+
+00:42:02.253 --> 00:42:04.573
+But this is one of the examples from the book.
+
+00:42:06.092 --> 00:42:11.053
+I've got this table and I've got the first column, species.
+
+00:42:11.053 --> 00:42:13.053
+So it's like cat, dog, mouse, and mouse.
+
+00:42:13.053 --> 00:42:14.173
+First column, species.
+
+00:42:14.173 --> 00:42:15.693
+So it's like cat, dog, bird.
+
+00:42:16.253 --> 00:42:22.892
+And then I've got this list column here, which has got like meow per hiss for cat,
+
+00:42:22.892 --> 00:42:26.573
+woof bark, growl for dog, and tweet and squawk for bird.
+
+00:42:26.573 --> 00:42:30.173
+Because it's less, this particular bird is less versatile than it sounds.
+
+00:42:30.173 --> 00:42:30.652
+I don't know.
+
+00:42:30.652 --> 00:42:31.933
+I just gave up the example, right?
+
+00:42:34.012 --> 00:42:39.373
+So if I just look at that kind of table, nested data.
+
+00:42:40.012 --> 00:42:42.972
+Okay, so we can see those are kind of like list columns there.
+
+00:42:44.173 --> 00:42:48.412
+And one of the nice things about Parquet is I can, I think you,
+
+00:42:48.412 --> 00:42:51.693
+if you wanted to do this with a CSV, you'd have to just do a little bit more work.
+
+00:42:51.693 --> 00:42:57.933
+So you might want to save them in like one string separated by semicolons or something else.
+
+00:42:57.933 --> 00:43:01.133
+Whereas with Parquet, I can just write that to Parquet.
+
+00:43:01.693 --> 00:43:06.813
+And then if I read that back in, we've still got it as list columns effectively.
+
+00:43:06.813 --> 00:43:08.972
+And I can, yeah, yeah, yeah, yeah.
+
+00:43:10.972 --> 00:43:14.253
+I think we can do nested, I think we can do further nesting.
+
+00:43:14.253 --> 00:43:16.652
+It gets a little bit weird, the more nesting you get.
+
+00:43:16.652 --> 00:43:18.652
+But it's, yeah, a lot of this is possible.
+
+00:43:18.652 --> 00:43:22.173
+Like, if there's a different example that you want to know if that works or not, let me know.
+
+00:43:22.733 --> 00:43:26.173
+But I think the general idea is you can store nested things.
+
+00:43:27.053 --> 00:43:31.933
+You can't store like arbitrary objects, so say like ggplot objects and things like that.
+
+00:43:31.933 --> 00:43:35.133
+But if we've got kind of like list columns and kind of things like that,
+
+00:43:35.133 --> 00:43:38.493
+that can map to Parquet kind of type system, yeah, we can do that.
+
+00:43:38.493 --> 00:43:40.253
+Yes, I think that's a great designation.
+
+00:43:40.253 --> 00:43:45.693
+So the list of types, which would be readable by all kinds of programs.
+
+00:43:45.693 --> 00:43:51.452
+Yes, things that are super hyper specific to R, like a ggplot object, less so.
+
+00:43:52.573 --> 00:43:56.173
+Okay, we had a question from Dan.
+
+00:43:56.173 --> 00:44:04.012
+Daniel asked, is that by and partitioning similar to how relational databases index their data?
+
+00:44:04.332 --> 00:44:09.693
+And I don't know the answer to this because I am not a relational database expert.
+
+00:44:09.693 --> 00:44:11.933
+I'm afraid I'm not either.
+
+00:44:11.933 --> 00:44:12.972
+And that's okay.
+
+00:44:13.933 --> 00:44:14.733
+What was the by?
+
+00:44:14.733 --> 00:44:16.972
+Oh, maybe it's because the partitioning there.
+
+00:44:18.012 --> 00:44:21.053
+I guess the partition, right, okay.
+
+00:44:21.053 --> 00:44:24.892
+I have no idea, but I can give you a little bit of a brief thing about partitioning.
+
+00:44:24.892 --> 00:44:32.573
+It's like, say if you, it might be, I don't know if it's simpler or not.
+
+00:44:32.573 --> 00:44:35.212
+Because again, I don't know how relational databases do it.
+
+00:44:35.212 --> 00:44:40.012
+But effectively, all I want to do here is passing columns that I want to partition by.
+
+00:44:40.012 --> 00:44:42.412
+So like, it gets a bit more complicated.
+
+00:44:42.412 --> 00:44:47.852
+Say if I want to partition by multiple columns, but I need to have categorical things.
+
+00:44:47.852 --> 00:44:48.573
+Do I have them?
+
+00:44:49.133 --> 00:44:50.652
+I don't need to have categorical things.
+
+00:44:50.652 --> 00:44:51.772
+It just gets weird if not.
+
+00:44:51.772 --> 00:44:55.772
+Basically, I might end up having like nested kind of folders within folders.
+
+00:44:57.373 --> 00:45:02.173
+But I guess if we're saying, I mean, indexing makes things faster.
+
+00:45:02.173 --> 00:45:03.693
+Because we're not looking at every single thing.
+
+00:45:03.693 --> 00:45:05.373
+So it could be similar in that way.
+
+00:45:05.373 --> 00:45:09.772
+Yeah, I probably don't know more to answer that without ramping for a long time.
+
+00:45:10.493 --> 00:45:16.412
+We also had, Marcos had said, hey, I think we need a data lab on polars and lazy frames.
+
+00:45:16.412 --> 00:45:20.972
+I am so excited that you think that because we have Cameron Riddell
+
+00:45:20.972 --> 00:45:24.173
+joining us, who is a maintainer for narwhals.
+
+00:45:24.173 --> 00:45:28.972
+And he's going to be sharing a lot more information about narwhals, why it exists,
+
+00:45:28.972 --> 00:45:32.012
+which means we're going to be talking about data frames in Python.
+
+00:45:32.253 --> 00:45:32.972
+So get ready for that.
+
+00:45:32.972 --> 00:45:34.573
+I think it's going to be a fun time.
+
+00:45:34.573 --> 00:45:36.012
+And Cameron is fantastic.
+
+00:45:37.293 --> 00:45:41.053
+I wanted to go back up to Noor's question.
+
+00:45:41.053 --> 00:45:42.253
+Noor, where is it?
+
+00:45:42.253 --> 00:45:47.693
+It says, is the community moving towards polars or pandas still relevant?
+
+00:45:48.412 --> 00:45:53.452
+And I would say, yes, we are talking about R here.
+
+00:45:53.452 --> 00:45:57.133
+But how does Parquet function in Python is a good question.
+
+00:45:57.133 --> 00:45:59.852
+Nick, do you have any insights on the Python side?
+
+00:46:00.733 --> 00:46:01.852
+Yeah, that's a great question.
+
+00:46:02.253 --> 00:46:05.772
+So kind of at the very, very start, I kind of mentioned this idea,
+
+00:46:05.772 --> 00:46:09.452
+like arrows of specification and then different kind of implementations of it.
+
+00:46:09.452 --> 00:46:13.293
+And, you know, the arrow R package basically lets you access the C++ one
+
+00:46:13.293 --> 00:46:15.212
+without having to kind of do things in C++.
+
+00:46:16.173 --> 00:46:18.253
+And in Python, there's pyarrow.
+
+00:46:18.253 --> 00:46:20.412
+And it's a very similar concept.
+
+00:46:20.412 --> 00:46:24.173
+So it's also based on exactly the same C++ library.
+
+00:46:24.173 --> 00:46:26.892
+But this has got kind of like Python that's talking to it.
+
+00:46:26.892 --> 00:46:31.772
+So we might not have the exact same open data set functions.
+
+00:46:31.772 --> 00:46:34.093
+And because like the R stuff is tailored towards,
+
+00:46:34.093 --> 00:46:37.053
+okay, what's going to make sense to people working in R.
+
+00:46:37.053 --> 00:46:39.453
+But everything that's happening behind the scenes,
+
+00:46:39.453 --> 00:46:44.093
+kind of, you know, in terms of working with that C++ library
+
+00:46:44.093 --> 00:46:46.732
+is doing the same stuff behind the scenes.
+
+00:46:46.732 --> 00:46:46.973
+Yeah.
+
+00:46:46.973 --> 00:46:48.732
+So like in Python, you've got pyarrow.
+
+00:46:49.853 --> 00:46:52.333
+In like Java, I think it's just arrow Java.
+
+00:46:52.333 --> 00:46:55.132
+But yeah, like all different language versions of it.
+
+00:46:55.132 --> 00:46:58.892
+And yeah, and there's even things, yeah.
+
+00:46:59.612 --> 00:47:02.333
+And even like kind of pandas can use pyarrow as well.
+
+00:47:02.333 --> 00:47:04.333
+So like so much of this stuff is interconnected.
+
+00:47:05.772 --> 00:47:06.652
+It is, yes.
+
+00:47:07.213 --> 00:47:10.813
+And we had a question from Nathan that was,
+
+00:47:10.813 --> 00:47:13.293
+how does Parquet manage metadata?
+
+00:47:13.293 --> 00:47:17.453
+So for context, Nathan works with Likert scales a lot
+
+00:47:17.453 --> 00:47:21.053
+where numeric values and text labels are really important to go together.
+
+00:47:21.053 --> 00:47:24.492
+And anybody who works in SPSS knows that they have labeled data.
+
+00:47:25.693 --> 00:47:26.252
+Or SAS.
+
+00:47:26.973 --> 00:47:30.892
+Does Parquet support data labels in any way
+
+00:47:30.892 --> 00:47:34.333
+where it's not stored as a column itself,
+
+00:47:34.333 --> 00:47:37.053
+but is more stored as like associated metadata?
+
+00:47:38.012 --> 00:47:38.892
+Yes, it does.
+
+00:47:38.892 --> 00:47:40.252
+And annoyingly, this is one of the ones
+
+00:47:40.252 --> 00:47:43.132
+I didn't come up with an example ahead of time for.
+
+00:47:43.132 --> 00:47:44.492
+But I can definitely find you a link.
+
+00:47:44.492 --> 00:47:46.412
+Because we did have one in the book, actually.
+
+00:47:46.412 --> 00:47:47.693
+Because I'm trying to think,
+
+00:47:47.693 --> 00:47:49.853
+one of the ones that I kind of think
+
+00:47:49.853 --> 00:47:52.492
+there was something about Haven style data.
+
+00:47:53.213 --> 00:47:56.093
+I'm literally clicking through some stuff really fast to find it.
+
+00:47:56.093 --> 00:47:59.532
+And in fact, okay.
+
+00:47:59.532 --> 00:48:01.372
+I'm not going to be able to kind of read this
+
+00:48:01.372 --> 00:48:02.333
+and remember what we wrote.
+
+00:48:02.333 --> 00:48:03.453
+But I'll chuck something in.
+
+00:48:03.453 --> 00:48:07.693
+I'll pop something in Discord that will be useful for that.
+
+00:48:07.693 --> 00:48:11.612
+But effectively, yeah, we can work with quite a lot of metadata in Parquet.
+
+00:48:11.612 --> 00:48:12.892
+And we can store that with the data.
+
+00:48:12.892 --> 00:48:16.252
+I guess the only thing that can get a little bit like,
+
+00:48:17.612 --> 00:48:22.252
+if stuff's saved in columns, you know, Parquet data types,
+
+00:48:22.252 --> 00:48:24.813
+you can transfer that between, you know,
+
+00:48:24.813 --> 00:48:27.453
+whether you're going to Python to R to whatever, it's fine.
+
+00:48:27.453 --> 00:48:30.652
+But if we've got something that's quite R-specific metadata,
+
+00:48:30.652 --> 00:48:34.573
+then that's only going to work reading those Parquet files in and out of R.
+
+00:48:35.532 --> 00:48:37.612
+So that's just something to be aware of with those, I guess.
+
+00:48:38.252 --> 00:48:38.752
+Okay.
+
+00:48:40.093 --> 00:48:43.213
+And then I found the NOR question I was looking for,
+
+00:48:43.213 --> 00:48:48.252
+which was, can you store data schema in a Parquet?
+
+00:48:50.012 --> 00:48:51.213
+I guess it depends what you mean.
+
+00:48:51.213 --> 00:48:53.853
+Because people use the word schema like in a few different ways.
+
+00:48:55.372 --> 00:48:57.132
+So in like Parquet world,
+
+00:48:57.132 --> 00:49:01.213
+schema is like the mapping between the column names and the column types.
+
+00:49:01.213 --> 00:49:03.933
+And yeah, you absolutely, you have to effectively.
+
+00:49:05.612 --> 00:49:09.132
+Actually, I found a really cool function in nanoparquet.
+
+00:49:10.012 --> 00:49:11.453
+Again, I didn't know this before,
+
+00:49:12.333 --> 00:49:16.012
+that you can actually use to read the schema of the data set.
+
+00:49:16.012 --> 00:49:18.333
+So it's just nanoparquet readParquet schema.
+
+00:49:19.213 --> 00:49:19.713
+Oh.
+
+00:49:20.673 --> 00:49:23.073
+And now this is more information
+
+00:49:23.073 --> 00:49:26.193
+than you'll probably need most of the time working Parquet with Parquet.
+
+00:49:26.193 --> 00:49:27.953
+But you get loads of stuff here now.
+
+00:49:27.953 --> 00:49:30.833
+So you've got like the column name, the R type,
+
+00:49:30.833 --> 00:49:32.433
+and I think that's the Parquet type,
+
+00:49:32.433 --> 00:49:35.473
+and all this other sort of extra metadata.
+
+00:49:35.473 --> 00:49:37.553
+So I don't know if that's what the question was asking, but yeah.
+
+00:49:38.512 --> 00:49:40.992
+Yes, NOR says, that is what I meant.
+
+00:49:40.992 --> 00:49:41.713
+Fantastic.
+
+00:49:41.713 --> 00:49:43.152
+We have answered.
+
+00:49:43.953 --> 00:49:48.353
+Oh gosh, I hope and I think we've answered every single question.
+
+00:49:48.353 --> 00:49:50.193
+If we have missed a question,
+
+00:49:50.193 --> 00:49:53.152
+please, please jump in and let me know because we have six minutes left.
+
+00:49:53.872 --> 00:49:56.193
+There was a question from Renato that was about
+
+00:49:56.193 --> 00:49:58.912
+the advantages of Parquet over CSV, DuckDB.
+
+00:49:58.912 --> 00:50:02.272
+But I think that we hit that because we talked a little bit about,
+
+00:50:02.272 --> 00:50:04.433
+you know, if you work with smaller data files
+
+00:50:04.992 --> 00:50:08.193
+and you need them to be small enough to check in to GitHub and all that stuff,
+
+00:50:08.193 --> 00:50:11.872
+then sometimes CSV is still just the best file type
+
+00:50:11.872 --> 00:50:15.313
+for your working style or your instance.
+
+00:50:15.313 --> 00:50:17.232
+And I think that's totally fine.
+
+00:50:18.752 --> 00:50:22.353
+There have been so many amazing resources in the chat
+
+00:50:22.992 --> 00:50:27.953
+that I always hit this character limit with YouTube
+
+00:50:27.953 --> 00:50:30.433
+where I'm trying to put in every single resource
+
+00:50:30.433 --> 00:50:33.073
+and every single link and every single timestamp,
+
+00:50:33.073 --> 00:50:35.392
+and it'll tell me, you've put too much in the description, Libby,
+
+00:50:35.392 --> 00:50:36.752
+and I have to cut it down.
+
+00:50:36.752 --> 00:50:38.593
+I have a feeling we're going to hit that today.
+
+00:50:38.593 --> 00:50:40.353
+The only thing I wanted to ask is,
+
+00:50:40.353 --> 00:50:44.193
+if you wanted to go over the diagram
+
+00:50:44.193 --> 00:50:46.593
+of what the inside of a Parquet file looks like,
+
+00:50:46.593 --> 00:50:49.073
+because I know that there is one from the Arrow R book,
+
+00:50:50.433 --> 00:50:52.112
+and I was looking at it and I was like,
+
+00:50:52.112 --> 00:50:54.912
+I wonder if this would be useful in the last five minutes.
+
+00:50:54.912 --> 00:50:55.553
+That's the one.
+
+00:50:55.553 --> 00:50:56.992
+LIBBY SEGARRA Thank you.
+
+00:50:56.992 --> 00:50:58.433
+I would like, no, I was literally thinking,
+
+00:50:58.433 --> 00:51:00.673
+oh, I like that diagram, but I've not had time to talk about it.
+
+00:51:00.673 --> 00:51:05.152
+So like, this information is all in the Parquet docs,
+
+00:51:05.152 --> 00:51:08.512
+but I just wanted to kind of take it and make it a bit simpler
+
+00:51:08.512 --> 00:51:09.632
+because there's so much stuff in there.
+
+00:51:10.272 --> 00:51:12.512
+Like, one of the easiest ways, I think,
+
+00:51:12.512 --> 00:51:15.473
+to think about like why Parquet files can be faster
+
+00:51:16.272 --> 00:51:19.232
+than CSVs is because they're basically broken down
+
+00:51:19.232 --> 00:51:21.313
+into smaller subcomponents.
+
+00:51:21.313 --> 00:51:25.313
+So this is effectively part of the anatomy of a Parquet file.
+
+00:51:25.313 --> 00:51:28.593
+So like this data set is slightly like a different data set.
+
+00:51:28.593 --> 00:51:31.473
+So this data set has got columns, SPO.RT.
+
+00:51:31.473 --> 00:51:34.833
+This is actually from a census data set,
+
+00:51:34.833 --> 00:51:36.912
+but probably not worth going into now.
+
+00:51:36.912 --> 00:51:39.872
+But imagine this is all part of one big data set, right?
+
+00:51:39.872 --> 00:51:41.953
+And within the file, firstly,
+
+00:51:41.953 --> 00:51:44.032
+it's broken up into these things called row groups.
+
+00:51:44.673 --> 00:51:46.112
+Then it's broken up further
+
+00:51:46.112 --> 00:51:48.193
+into these things called column chunks.
+
+00:51:48.193 --> 00:51:51.313
+And then they're broken into smaller things called pages.
+
+00:51:51.313 --> 00:51:53.872
+And it doesn't really matter what each of those are,
+
+00:51:53.872 --> 00:51:55.152
+but the key thing to know is like,
+
+00:51:55.152 --> 00:51:57.632
+it's just smaller and smaller and smaller components.
+
+00:51:57.632 --> 00:51:58.833
+And the great thing about this is
+
+00:51:58.833 --> 00:52:01.632
+because the way Arrow is set up to read Parquet files,
+
+00:52:01.632 --> 00:52:03.392
+it can do things in parallel.
+
+00:52:03.392 --> 00:52:05.632
+So now instead of having to kind of go through
+
+00:52:05.632 --> 00:52:07.473
+all of this data in one big chunk,
+
+00:52:07.473 --> 00:52:09.073
+it can go through these individually.
+
+00:52:09.632 --> 00:52:13.073
+Now, Parquet files also store metadata
+
+00:52:13.073 --> 00:52:17.392
+about the row groups and the column chunks and the pages.
+
+00:52:17.392 --> 00:52:19.473
+So like if I'm trying to do some clever filter,
+
+00:52:19.473 --> 00:52:22.593
+like show me only values which aren't NA values,
+
+00:52:23.232 --> 00:52:24.673
+because I've got the metadata that says,
+
+00:52:24.673 --> 00:52:28.752
+okay, like this row group has like no NA values or something.
+
+00:52:28.752 --> 00:52:30.433
+It can just not even bother reading that
+
+00:52:31.313 --> 00:52:32.193
+when it's analyzing it.
+
+00:52:32.193 --> 00:52:33.473
+So it's all these little weird things
+
+00:52:33.473 --> 00:52:35.553
+about how it's subdivided that helps it kind of
+
+00:52:35.553 --> 00:52:36.752
+like be faster in that way.
+
+00:52:36.752 --> 00:52:37.793
+Yeah.
+
+00:52:38.512 --> 00:52:39.152
+Perfect.
+
+00:52:39.152 --> 00:52:41.152
+Okay, that is what I wanted to know.
+
+00:52:41.152 --> 00:52:43.313
+And it looks like Isabella has flagged a question
+
+00:52:43.313 --> 00:52:44.433
+that we might've missed.
+
+00:52:44.433 --> 00:52:45.392
+Hooray.
+
+00:52:45.392 --> 00:52:47.152
+Can we answer it in three minutes?
+
+00:52:48.593 --> 00:52:51.953
+It says, I have some data saved as a Parquet file.
+
+00:52:51.953 --> 00:52:53.793
+I'd like to load it with Arrow
+
+00:52:53.793 --> 00:52:56.353
+and then use pivot wider or pivot longer
+
+00:52:56.353 --> 00:52:57.632
+on it from dplyr.
+
+00:52:57.632 --> 00:52:58.512
+How would you do that?
+
+00:52:58.512 --> 00:53:01.152
+I resorted to DuckDB and then to Arrow,
+
+00:53:01.152 --> 00:53:02.433
+which seemed kind of clunky.
+
+00:53:04.193 --> 00:53:05.313
+Nope, that's a great way of doing it.
+
+00:53:05.313 --> 00:53:08.433
+So basically all of these dplyr functions
+
+00:53:08.433 --> 00:53:10.272
+that I was working with before kind of in Arrow,
+
+00:53:10.272 --> 00:53:13.473
+we've had to map them to the sort of underlying Arrow
+
+00:53:13.473 --> 00:53:14.593
+kind of code basically.
+
+00:53:14.593 --> 00:53:16.032
+And there aren't any mappings
+
+00:53:16.032 --> 00:53:18.353
+for pivot wider and pivot longer.
+
+00:53:18.353 --> 00:53:20.193
+So yeah, that approach is great.
+
+00:53:20.193 --> 00:53:22.193
+There's a function called toDuckDB,
+
+00:53:22.193 --> 00:53:24.752
+which basically lets DuckDB do that hard work
+
+00:53:24.752 --> 00:53:26.112
+and pass it back to Arrow.
+
+00:53:26.112 --> 00:53:29.473
+But because DuckDB understands Arrow internals,
+
+00:53:29.473 --> 00:53:31.313
+it means that we don't have to copy things backwards
+
+00:53:31.313 --> 00:53:32.752
+and forth and be slow.
+
+00:53:32.752 --> 00:53:34.353
+It just does it.
+
+00:53:34.353 --> 00:53:36.032
+So if the dataset is not something
+
+00:53:36.032 --> 00:53:39.313
+you just want to read in as like a table,
+
+00:53:39.313 --> 00:53:41.632
+then that is a fantastic way of solving that problem.
+
+00:53:42.433 --> 00:53:42.833
+Great.
+
+00:53:42.833 --> 00:53:45.232
+Well, then answer question, asker.
+
+00:53:45.232 --> 00:53:47.152
+Your answer is you're doing it the right way.
+
+00:53:47.152 --> 00:53:49.553
+This reminds me of an answer that Joe Chang
+
+00:53:49.553 --> 00:53:52.193
+gave once in a talk when he was at the Hangout.
+
+00:53:53.313 --> 00:53:55.553
+He was saying like, a lot of times people ask me
+
+00:53:55.553 --> 00:53:57.073
+what the right way of doing something is
+
+00:53:57.073 --> 00:53:58.752
+because they think that the only right way
+
+00:53:58.752 --> 00:54:00.992
+is some developer produced way.
+
+00:54:00.992 --> 00:54:02.992
+And he's like, if you did it and it works,
+
+00:54:02.992 --> 00:54:04.752
+congratulations, you did it the right way.
+
+00:54:05.793 --> 00:54:06.752
+If your code runs.
+
+00:54:07.793 --> 00:54:08.673
+Okay, we have one more.
+
+00:54:08.673 --> 00:54:09.553
+Can we get it in one minute?
+
+00:54:09.553 --> 00:54:10.112
+I don't know.
+
+00:54:10.112 --> 00:54:12.512
+It's from Kale and it says,
+
+00:54:12.512 --> 00:54:14.593
+I used Arrow for the first time about a month ago
+
+00:54:14.593 --> 00:54:16.512
+and I was confused when partitioning
+
+00:54:16.512 --> 00:54:18.272
+led to those variables being dropped
+
+00:54:18.272 --> 00:54:19.953
+from the files themselves,
+
+00:54:19.953 --> 00:54:22.673
+visible when saving as a CSV database,
+
+00:54:22.673 --> 00:54:25.632
+but then realized the Arrow picks it up again
+
+00:54:25.632 --> 00:54:27.232
+when reading the partitions back in.
+
+00:54:27.953 --> 00:54:31.073
+Is that variable stored inside parquet files at all?
+
+00:54:32.032 --> 00:54:34.912
+If an individual partition file is shared,
+
+00:54:34.912 --> 00:54:36.752
+this one might be a little more complex
+
+00:54:36.752 --> 00:54:38.433
+and needs to be answered in the chat,
+
+00:54:39.073 --> 00:54:40.272
+but we can tag Nick.
+
+00:54:40.272 --> 00:54:41.073
+Nick, do you have a?
+
+00:54:41.073 --> 00:54:42.193
+Yeah, pop it in the chat
+
+00:54:42.193 --> 00:54:43.793
+and I will definitely take a look at it.
+
+00:54:43.793 --> 00:54:45.473
+But yeah, definitely.
+
+00:54:45.473 --> 00:54:48.353
+It's a bit too many pieces there for one minute,
+
+00:54:48.353 --> 00:54:50.272
+but definitely happy to answer that.
+
+00:54:50.272 --> 00:54:51.152
+That's okay.
+
+00:54:51.152 --> 00:54:53.313
+Everybody say thank you to Nick so much
+
+00:54:53.313 --> 00:54:54.593
+for explaining parquet.
+
+00:54:55.232 --> 00:54:57.473
+Are you going to be using parquet more now
+
+00:54:57.473 --> 00:54:58.833
+if you have bigger files?
+
+00:54:58.833 --> 00:54:59.713
+I hope so.
+
+00:54:59.713 --> 00:55:02.433
+I hope that this has been a friendly introduction.
+
+00:55:02.433 --> 00:55:04.752
+So many clapping emojis in Zoom.
+
+00:55:04.752 --> 00:55:05.872
+My screen is just covered.
+
+00:55:06.673 --> 00:55:07.553
+Thank you so much, Nick.
+
+00:55:07.553 --> 00:55:09.392
+I hope you had a good time with us at the lab.
+
+00:55:10.193 --> 00:55:11.232
+Yeah, thanks for inviting me.
+
+00:55:11.232 --> 00:55:12.353
+This has been really fun.

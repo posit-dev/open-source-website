@@ -34,8 +34,8 @@ external:  # updated automatically, do not edit
     * Workshop GitHub repository: https://github.com/sol-eng/shiny-hpc-offload'
   duration: 7393
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:19.320851+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 5
   playlist: PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati
   software:

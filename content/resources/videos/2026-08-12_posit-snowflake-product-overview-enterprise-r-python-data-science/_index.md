@@ -126,10 +126,10 @@ external:  # updated automatically, do not edit
     Discover customer stories, technical resources, quickstart guides, and use cases for R, Python, AI, and data science on Snowflake:
 
     posit.co/solutions/snowflake'
-  duration: 154
+  duration: 155
   has_captions: false
   language: en
-  last_updated: '2026-09-18T13:58:06.406346+00:00'
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 8
   playlist: ''
   software:

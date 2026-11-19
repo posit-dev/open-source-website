@@ -57,6 +57,33 @@ topics:
         - event
         - video
         - cheatsheet
+        - book
+
+book:
+  search_help: [author, topic, language, date]
+  sort:
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+      default: true
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: date
+  filters:
+    - key: topics
+      label: Topics
+    - key: languages
+      label: Languages
+      values:
+        - Python
+        - R
+        - Other
+      other:
+        - Python
+        - R
 
 cheatsheet:
   search_help: [author, topic, language, date]
@@ -72,6 +99,14 @@ cheatsheet:
       direction: asc
   defaultSort: date
   filters:
+    - key: by
+      label: By
+      values:
+        - Posit
+        - Community
+      # Pre-selected values; deselecting all shows everything
+      default:
+        - Posit
     - key: topics
       label: Topics
     - key: languages
@@ -157,6 +192,8 @@ tags:
         - event
         - video
         - cheatsheet
+        - course
+        - book
 
 tutorial:
   search_help: [topic, date]
@@ -172,6 +209,32 @@ tutorial:
       direction: asc
   defaultSort: date
   filters:
+    - key: topics
+      label: Topics
+
+course:
+  search_help: [topic, duration]
+  sort:
+    - key: weight
+      label: Featured
+      type: number
+      direction: asc
+      default: true
+    - key: date
+      label: Date
+      type: date
+      direction: desc
+    - key: title
+      label: Title
+      type: string
+      direction: asc
+  defaultSort: weight
+  filters:
+    - key: type
+      label: Type
+      values:
+        - course
+        - learning path
     - key: topics
       label: Topics
 

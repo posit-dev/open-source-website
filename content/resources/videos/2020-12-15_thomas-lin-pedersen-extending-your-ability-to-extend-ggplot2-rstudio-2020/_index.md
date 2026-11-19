@@ -66,8 +66,8 @@ external:  # updated automatically, do not edit
   description: The ggplot2 package continue to be one of the most used frameworks for producing graphics in R. While being extremely flexible, the package itself can be constrained by the different types of graphic elements and statistic transformations available. Instead of continuing to add new features, the development in recent years have focused on making ggplot2 extensible by other packages, thus distributing development and maintenance. Despite the best of intentions, ggplot2 can feel daunting to extend, due unusual idiosyncrasies, a foreign object system, and a partly obscured rendering model. This talk intend to remove the mystery of extending ggplot2, by describing the basic ways that it can be extended and showcasing a couple of simple extensions that can be build with very little code. Lastly, it will include discussions of some best practices and gotchas that may come in handy when you start out.
   duration: 1276
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:17.860904+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 84
   people:
   - Thomas Lin Pedersen

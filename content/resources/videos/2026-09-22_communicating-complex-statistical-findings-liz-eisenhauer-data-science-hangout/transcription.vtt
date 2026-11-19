@@ -1,0 +1,1576 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:16.639
+Hey there, welcome to the POSIT Data Science Hangout. I'm Libby Herron, and this is a recording
+
+00:00:16.639 --> 00:00:22.000
+of our weekly community call that happens every Thursday at 12 p.m. U.S. Eastern Time.
+
+00:00:22.000 --> 00:00:27.240
+If you are not joining us live, you miss out on the amazing chat that's going on. So find
+
+00:00:27.240 --> 00:00:30.680
+the link in the description where you can add our call to your calendar and come hang
+
+00:00:30.680 --> 00:00:36.320
+out with the most supportive, friendly, and funny data community you'll ever experience.
+
+00:00:36.320 --> 00:00:41.119
+Can't wait to see you there. Okay, everybody, let's go ahead and get started. I'm so excited
+
+00:00:41.119 --> 00:00:48.939
+to introduce our featured leader today. She is a Data Science Hangout crew member. I met
+
+00:00:48.939 --> 00:00:53.560
+her through the Data Science Hangout years ago now, which is wild to think about. It's
+
+00:00:53.560 --> 00:00:59.720
+Liz Eisenhauer, Senior Statistical Associate at Westat. Liz, it's so great to have you
+
+00:00:59.720 --> 00:01:03.919
+here. Could you give us a little introduction? Tell us a little bit about what you do and
+
+00:01:03.919 --> 00:01:05.720
+something you like to do for fun.
+
+00:01:05.720 --> 00:01:10.599
+Absolutely. It's really, really amazing to be here. This is such a great community. I'm
+
+00:01:10.599 --> 00:01:15.480
+grateful to have been able to join whenever I can over the past few years. And it's nothing
+
+00:01:15.480 --> 00:01:22.080
+without its organizers. So you guys are really incredible. I will start and say that any
+
+00:01:22.080 --> 00:01:27.040
+of my views are my own and they're not the views of my organizations or affiliations
+
+00:01:27.040 --> 00:01:36.440
+or any of that. My kind of identification is as a statistician. So I'd like to start
+
+00:01:36.440 --> 00:01:42.800
+by saying what that means to me because that kind of has defined my entire career. If you've
+
+00:01:42.800 --> 00:01:50.519
+ever done a t-test or any, you know, thought about statistics at all, statistical thinking,
+
+00:01:50.519 --> 00:01:54.639
+then I would consider you a statistician. So I just want to say that up front when I
+
+00:01:54.639 --> 00:02:03.080
+say statistician, I'm talking about you. This kind of my background is that when I was in
+
+00:02:03.080 --> 00:02:08.279
+high school, I took a statistics class at my local community college down in South Jersey.
+
+00:02:08.279 --> 00:02:15.080
+So down near the shore in Seattle City, I waitressed in Seattle City for many years
+
+00:02:15.080 --> 00:02:20.479
+when I was younger. So I took this community college statistics course and it was, you know,
+
+00:02:20.479 --> 00:02:25.000
+great. I was like, this is really cool. And I think I'm decently good at it. So I should keep
+
+00:02:25.000 --> 00:02:32.080
+going with this. But I kept kind of going with statistics. And every time I would finish a goal,
+
+00:02:32.080 --> 00:02:38.440
+I would be like, am I a statistician yet? Like, like I finished the course and I was like, okay,
+
+00:02:38.440 --> 00:02:43.880
+I think I can go do statistics for, you know, my bachelor's degree. And I went and I got my
+
+00:02:43.960 --> 00:02:47.800
+bachelor's degree in math with a statistics specialization, but I was like, I still don't
+
+00:02:47.800 --> 00:02:54.279
+really know what it means to be a statistician. So I went and did the PhD and I got a PhD in
+
+00:02:54.279 --> 00:02:59.479
+statistics. And then I was thinking about going and teaching statistics, like in a kind of academic
+
+00:03:00.039 --> 00:03:05.960
+space. And I was like, well, I don't know if I feel like I can tell students that I'm a statistician,
+
+00:03:05.960 --> 00:03:13.240
+like have I really been a statistician yet? So I went to this company that I'm currently
+
+00:03:13.960 --> 00:03:20.360
+located in and it's called Westat. So this is, I don't know if this is true, but it seems to me
+
+00:03:20.360 --> 00:03:25.639
+like it's one of the biggest companies that's completely founded by statisticians. So these
+
+00:03:25.639 --> 00:03:33.800
+were, this was a group of statisticians that lived out in Colorado and they founded this company to
+
+00:03:33.800 --> 00:03:40.839
+do work for the federal government mostly and large surveys. And they called it Westat because
+
+00:03:40.839 --> 00:03:48.679
+they were in the West and they were statisticians. And so they called it Westat. And then of course,
+
+00:03:48.679 --> 00:03:52.039
+they realized that if they wanted to do work for the federal government, they would need to move
+
+00:03:52.039 --> 00:03:56.919
+to the East coast to be closer to DC. So they eventually moved to the East coast, which made
+
+00:03:56.919 --> 00:04:03.960
+the name kind of didn't really make sense anymore. But this pretty large company founded by
+
+00:04:03.960 --> 00:04:11.160
+statisticians. And so now I get to be a statistician and I feel like I've, you know, finally
+
+00:04:11.160 --> 00:04:15.960
+made it. But at this point I feel like I was a statistician back when I did my first t-test.
+
+00:04:17.559 --> 00:04:24.519
+So that's my kind of conclusion about how I got to where I am today. And I guess the other
+
+00:04:24.519 --> 00:04:30.200
+questions were where, I mean, I live in New Jersey now. I've started in New Jersey. I went Penn State.
+
+00:04:30.200 --> 00:04:34.920
+I went Boston for a short time. My husband's from Boston area. I wish I was still there so
+
+00:04:34.920 --> 00:04:41.480
+I could join the hangout, you know, gatherings that you all have there. But now I'm in North
+
+00:04:41.480 --> 00:04:50.119
+Jersey. My husband got a job at Merck. So we're hanging out in Rahway. And so what I do for fun,
+
+00:04:50.119 --> 00:04:56.279
+I think I spend a lot of time thinking about statistics. I don't know how to do other things.
+
+00:04:56.279 --> 00:05:01.160
+I do listen to audiobooks and I guess I listened to a pretty good audiobook recently
+
+00:05:01.720 --> 00:05:08.119
+called The Correspondent, which was, it's a fiction book, which I sometimes, I try to listen
+
+00:05:08.119 --> 00:05:12.920
+to fiction every once in a while. I do listen to a lot of non-fiction, but The Correspondent
+
+00:05:12.920 --> 00:05:19.320
+has been pretty interesting. It's a series of letters. The Correspondent by Virginia Evans,
+
+00:05:19.320 --> 00:05:24.760
+maybe? I think so. Yeah, that sounds right. I'm going to put a link in the chat.
+
+00:05:25.959 --> 00:05:34.040
+Okay. For anybody curious, I also put a poll in the Slido. If you were looking at the Slido
+
+00:05:34.040 --> 00:05:37.640
+in your browser, there's a little slider at the top between Q&A and polls.
+
+00:05:39.959 --> 00:05:45.239
+And so far we have 11 votes that my question was, have you ever felt statistics imposter syndrome,
+
+00:05:45.239 --> 00:05:50.040
+which is unnecessary feelings of inadequacy. I don't really like the phrase imposter syndrome.
+
+00:05:50.040 --> 00:05:55.640
+I like unnecessary feelings of inadequacy a little bit better. But so far, not one person
+
+00:05:55.640 --> 00:06:00.920
+has said no. Everybody has said yes. I think this might be a universal statsy feeling.
+
+00:06:03.559 --> 00:06:08.839
+But I also identify with taking a stats course and being like, oh, I like this. I don't want
+
+00:06:08.839 --> 00:06:17.959
+to do anything else. I really love this thing. But then I could not find anyone who needed me
+
+00:06:17.959 --> 00:06:22.920
+to do statistics. I got out of school and absolutely nobody needed me to do stats.
+
+00:06:24.040 --> 00:06:29.559
+And I realized that that was going to be a really hard thing to do. And when I met you, I was like,
+
+00:06:29.559 --> 00:06:35.239
+what is Westat? There's a whole organization of consultants who are doing statistics.
+
+00:06:35.239 --> 00:06:38.920
+This is amazing. I have since learned that there are lots of people doing statistics in
+
+00:06:38.920 --> 00:06:44.679
+lots of little places, including program evaluation, which was a whole new world to
+
+00:06:44.679 --> 00:06:52.200
+me. I know that you have some program evaluation on your resume as well. So I was hoping that you
+
+00:06:52.200 --> 00:06:56.920
+could talk a little bit about the types of work that you do, the types of problems that you get
+
+00:06:56.920 --> 00:07:02.679
+to solve, the types of data that you get to work with, and also the types of tools that you like
+
+00:07:02.679 --> 00:07:09.640
+to use. So like, did you learn everything in Excel and on paper? Were you an SPSS? Are you
+
+00:07:09.640 --> 00:07:18.200
+an R person? Are you a Python person? All that stuff. Sure. Yeah. Yeah. I think R has been kind
+
+00:07:18.200 --> 00:07:28.119
+of my main language since I was in the bachelor's degree program. R is just a great, yeah, I use it
+
+00:07:28.119 --> 00:07:33.239
+for everything, except when I have to use something else, then I use something else.
+
+00:07:33.239 --> 00:07:40.839
+But the thing that I'm kind of excited about in my work, and that has come up a lot in program
+
+00:07:40.839 --> 00:07:46.760
+evaluation context, like I said, Westat started as a survey organization. So they're very
+
+00:07:47.480 --> 00:07:57.239
+interested in really rigorous probability surveys. And they also have work that looks at
+
+00:07:57.239 --> 00:08:04.679
+if you have a program, can we determine whether this program works for whom and provide additional
+
+00:08:04.679 --> 00:08:12.359
+information to improve the program or policy? Policy is not similar questions. And so that work
+
+00:08:12.359 --> 00:08:20.119
+has kind of branched my statistical expertise into these two areas. And one area that's common
+
+00:08:20.119 --> 00:08:25.559
+across both of them that I've found to be really interesting recently is sample size justification.
+
+00:08:26.279 --> 00:08:32.840
+So when you start a study, I'm really interested in how people who are statsy or statisticians
+
+00:08:32.840 --> 00:08:40.679
+can join at the beginning of a project or beginning of a research endeavor and provide
+
+00:08:40.679 --> 00:08:48.440
+statistical justification for why this is worth it. I think a lot of science rests on
+
+00:08:49.400 --> 00:08:52.919
+statistical shoulders in terms of us being able to say,
+
+00:08:55.000 --> 00:08:59.799
+we should do this, and this is why we should do this. We should spend this money, we should
+
+00:08:59.799 --> 00:09:06.520
+collect this data, we should put together this infrastructure, because this is my statistical
+
+00:09:06.520 --> 00:09:14.760
+argument. And whether that's in a large survey context, where you often want a representative
+
+00:09:14.760 --> 00:09:23.000
+estimate for the US population a lot of times, or a large population, and you're interested in a
+
+00:09:23.000 --> 00:09:31.799
+really rigorous mean and confidence interval for a particular value, then you might look at the
+
+00:09:31.799 --> 00:09:38.679
+precision of that estimate and argue for why you need the certain number of people that you need,
+
+00:09:38.679 --> 00:09:43.719
+and you need it to be designed in a particular way so that you can get this precision in your
+
+00:09:43.719 --> 00:09:49.080
+estimate. Versus in something like a program evaluation, where you want to estimate the effect
+
+00:09:49.080 --> 00:09:55.799
+of something, your argument is we need to randomize, we need to put together this particular
+
+00:09:55.799 --> 00:10:05.479
+study design, and the goal is to have a particular statistical power for the effect that we're trying
+
+00:10:05.479 --> 00:10:09.640
+to estimate. So there are different kinds of studies, different kinds of ways of making the
+
+00:10:09.640 --> 00:10:16.679
+statistical argument at the beginning of a study, and I'm really interested in what that all means.
+
+00:10:16.679 --> 00:10:22.359
+I know there's a lot going on right now with funding mechanisms, and unless you've been living
+
+00:10:22.359 --> 00:10:27.080
+under a rock, you've probably heard about some grant things that have been happening. And a lot of this
+
+00:10:27.080 --> 00:10:34.520
+happens at the stage of designing studies, and so the statistical arguments behind these studies are
+
+00:10:34.520 --> 00:10:40.919
+just really fascinating to me. There seem to be two kind of camps of statisticians. There's the
+
+00:10:40.919 --> 00:10:46.520
+one that's like doing the calculation, that's like, you know, do whatever you can afford.
+
+00:10:47.559 --> 00:10:53.880
+If you can afford it, have a giant study. And then there's the camp of statisticians who are saying,
+
+00:10:54.440 --> 00:11:01.080
+we're reviewing these, and you need to give me a solid argument. So if you are telling me
+
+00:11:01.080 --> 00:11:07.559
+the effect size is 0.2, give me evidence that you actually think the effect size is 0.2.
+
+00:11:07.559 --> 00:11:14.760
+Show me previous data, show me pilot studies, show me something that convinces me that this is what
+
+00:11:14.760 --> 00:11:19.000
+you're actually going to see in the study. So there's two camps of statisticians on this, and I
+
+00:11:19.000 --> 00:11:25.479
+think it's a really open area that I'm working in this area right now. A lot of my work
+
+00:11:25.479 --> 00:11:32.039
+ends up falling in these series of questions. So that's kind of the big picture.
+
+00:11:33.159 --> 00:11:36.119
+We're going to continue talking about that, because we have some questions about this in
+
+00:11:36.119 --> 00:11:45.159
+the Slido. And I love Rowan's question, which has bubbled to the top here. It has an asterisk,
+
+00:11:45.159 --> 00:11:50.919
+so I will ask it for Rowan. And I know that you and I have talked about this, so let's dive in.
+
+00:11:50.919 --> 00:11:56.440
+How do you grapple with conveying statistical findings to audiences who are not well-versed
+
+00:11:56.440 --> 00:12:01.640
+in statistics? I have found statistics to be particularly difficult to properly explain
+
+00:12:01.640 --> 00:12:09.080
+at a layman level without losing nuance. Yeah, nuance is a big part of it, right?
+
+00:12:10.520 --> 00:12:16.520
+The statistical nuance that statisticians always end the conversation with like a caveat, right?
+
+00:12:17.239 --> 00:12:21.640
+But we can't really say this with certainty. I was saying in the chat when you were like,
+
+00:12:21.640 --> 00:12:29.400
+am I a statistician yet? I said, it depends. If you can answer everything with it depends,
+
+00:12:29.400 --> 00:12:36.359
+you might have made it to the statistics brain level. Because I feel like when I was learning,
+
+00:12:36.359 --> 00:12:39.880
+I was really frustrated by it depends. I was mad about it. I'm like, give me an answer, right?
+
+00:12:39.880 --> 00:12:43.799
+Like this is so frustrating that everything is it depends. You're going to make me use critical
+
+00:12:43.799 --> 00:12:49.159
+thinking skills for every single question? Come on. But then at some point, people were asking me
+
+00:12:49.159 --> 00:12:54.599
+questions. And I was like, oh, it does depend. It depends on so many things. I can't give you
+
+00:12:54.599 --> 00:12:59.239
+an answer either. The teacher had become the master, yeah. Or the student had become the
+
+00:12:59.239 --> 00:13:04.919
+teacher. But you and I have talked about boundary objects, which is one thing that could be helpful.
+
+00:13:04.919 --> 00:13:09.239
+So take it away, Liz. Yeah, yeah, yeah. I found it to be...
+
+00:13:09.239 --> 00:13:15.719
+So I work a lot with other technical people, people who are very technically minded,
+
+00:13:15.719 --> 00:13:21.719
+but not necessarily statisticians or they don't necessarily have a background in statistics.
+
+00:13:21.719 --> 00:13:27.960
+And so that perspective and that kind of interaction is often more interesting to me
+
+00:13:27.960 --> 00:13:37.159
+than talking to a lay person or a person that really has no skin... I don't know.
+
+00:13:37.960 --> 00:13:43.320
+They're not like stakeholders in whatever terminology you want to use. They're not
+
+00:13:43.320 --> 00:13:49.960
+actually one of the people that's making the decisions. Obviously, this is a whole other area
+
+00:13:49.960 --> 00:13:57.159
+of interest, people who are thinking about all the different types of people that
+
+00:13:57.159 --> 00:14:01.799
+could be involved in decision making. But in my experience, a lot of times when I'm talking to
+
+00:14:01.799 --> 00:14:08.359
+technical people, the question is really, can I find something that they understand?
+
+00:14:09.640 --> 00:14:17.960
+And can I then latch onto that and connect it to something that I'm trying to say?
+
+00:14:18.679 --> 00:14:25.400
+And that connection often happens more easily for me when I have something separate from what I'm
+
+00:14:25.400 --> 00:14:32.440
+saying, like a visual of some sort. And so I found flowcharts. I make flowcharts
+
+00:14:33.320 --> 00:14:38.359
+for all my projects. Anytime there's a question and someone is having a technical conversation
+
+00:14:38.359 --> 00:14:42.200
+and they're trying to figure out, well, this affects this and that affects that. How does
+
+00:14:42.200 --> 00:14:47.479
+this all work together? I make a flowchart and I send it to everyone and I say, this is probably
+
+00:14:47.479 --> 00:14:53.000
+wrong. Tell me where it's wrong. Let's fix it. Let's make this something that everyone can agree
+
+00:14:53.000 --> 00:14:59.320
+on. And then once you have the one term for this kind of thing is boundary objects,
+
+00:14:59.880 --> 00:15:06.599
+Susan Lee Starr is a person who came up with this terminology for objects that have
+
+00:15:07.400 --> 00:15:13.159
+meaning to different groups, but they mean something different to the two different groups.
+
+00:15:13.799 --> 00:15:18.840
+So you can use them to collaborate or coordinate around something because
+
+00:15:19.159 --> 00:15:25.719
+they have meaning for both groups. But the statisticians, I see it as, how do we adjust
+
+00:15:25.719 --> 00:15:31.239
+for these different things? How do we think about the causal relationships? Whereas maybe
+
+00:15:31.799 --> 00:15:38.039
+I put numbers on it, like this is the total number of people in this particular node on my flowchart.
+
+00:15:38.919 --> 00:15:43.479
+Someone who comes from a different technical background might say, okay, I understand that
+
+00:15:43.479 --> 00:15:47.080
+there are a certain number of people in this node and that's what that means.
+
+00:15:48.039 --> 00:15:51.799
+So they understand it a little bit differently, but we can have a conversation
+
+00:15:52.440 --> 00:15:58.119
+looking at the same visual. So that's something that I have found to be really useful. In general,
+
+00:15:58.119 --> 00:16:01.479
+I mean, just connecting with what people know, meeting people where they are is
+
+00:16:02.520 --> 00:16:08.119
+probably pretty good practice. Meet people where they are, figure out what their understanding is
+
+00:16:08.119 --> 00:16:15.239
+right now. This is important in all kinds of teaching. And also with toddlers, you look at
+
+00:16:15.239 --> 00:16:20.280
+them and you're like, what are you doing? Your adult brain says, this kid's making a mess. This
+
+00:16:20.280 --> 00:16:25.320
+kid's destroying something. But then if you ask yourself what they're seeing, they're experiencing
+
+00:16:25.320 --> 00:16:29.960
+something, right? That's all their own. They're like sensory experience or visual experience or
+
+00:16:29.960 --> 00:16:34.200
+whatever it is. It's totally different from whatever your adult perspective is of what
+
+00:16:34.200 --> 00:16:41.640
+that toddler is doing. And I feel like that is so similar to being a stats person or being a
+
+00:16:41.640 --> 00:16:45.960
+technical person and talking to someone that you are assuming is non-technical. They're a fully
+
+00:16:45.960 --> 00:16:50.840
+fledged human being, an adult. They're so smart and capable. They're just seeing something in a
+
+00:16:50.840 --> 00:16:56.840
+different way from you. Figure out what that is so that you can build bridges of connection between
+
+00:16:56.840 --> 00:17:03.320
+what they are thinking and what you need them to know about this. Okay. Teacher, teacher soapbox
+
+00:17:03.320 --> 00:17:07.560
+off the teacher soapbox Libby. Okay. Let's go back to Slido. Let's find some more questions.
+
+00:17:08.520 --> 00:17:13.479
+We had another one from Jared Allen. Jared has an asterisk. I'm going to ask for them.
+
+00:17:14.439 --> 00:17:19.880
+What is the most counterintuitive result that a stats analysis has thrown at you?
+
+00:17:19.880 --> 00:17:25.000
+Can you think of anything? Share in the chat too, if anybody has any that, that,
+
+00:17:25.000 --> 00:17:33.239
+that they're thinking of counterintuitive result. I mean, a lot of something that's interesting
+
+00:17:33.400 --> 00:17:41.640
+because I work in a policy space. Sometimes things that you think are going to change,
+
+00:17:41.640 --> 00:17:50.040
+don't change, right? Like particular types of measures. I did a study in my PhD where we were
+
+00:17:50.040 --> 00:17:58.599
+looking at students attitudes towards probability and the SATS, the survey of attitudes towards
+
+00:17:58.599 --> 00:18:05.000
+statistics was the instrument that I use to, to try to look at probability, not statistics.
+
+00:18:05.800 --> 00:18:12.199
+And it barely changes. Like the average, you know, students take a probability class and it goes a
+
+00:18:12.199 --> 00:18:20.040
+little bit up. Their attitudes barely changed on average. And I found since then that there are some
+
+00:18:20.839 --> 00:18:28.680
+scenarios where you just don't see the sensitivity to change that you would expect because either the
+
+00:18:28.680 --> 00:18:38.439
+measurement mechanism doesn't change or because the intervention itself is just in such a complex
+
+00:18:38.439 --> 00:18:46.040
+environment. Another case that I've seen is in job trainings. Like I've, I've gone to APAM,
+
+00:18:46.439 --> 00:18:51.959
+which is the association for public policy analysis and management conference. They had a
+
+00:18:51.959 --> 00:18:57.880
+session on job trainings and they showed that in almost all the cases, none of them had any
+
+00:18:57.880 --> 00:19:05.239
+significant differences. It was just a scenario where it's really hard to show change. So that
+
+00:19:05.239 --> 00:19:11.880
+can be kind of frustrating and also interesting. I love this. I will say in the chat, we are saying
+
+00:19:11.880 --> 00:19:15.880
+Simpson's paradox, right? Like that's, that's the funnest one, right? Where you've got,
+
+00:19:15.880 --> 00:19:22.119
+if you could imagine like a scatterplot where you have this big unified group of like
+
+00:19:22.839 --> 00:19:27.000
+positive association, and then you turn all the groups, different colors, and you realize that
+
+00:19:27.000 --> 00:19:32.760
+it's actually just negative associations that are stacked up together that look like one big
+
+00:19:32.760 --> 00:19:39.400
+positive association or vice versa. But another one that I really like is in marketing as a
+
+00:19:39.400 --> 00:19:47.640
+discipline. When you ask people what they want, they're often just wrong according to their
+
+00:19:47.640 --> 00:19:54.199
+actual behavior, right? They'll be like, what do I want? I want A or I want C or I want B, whatever.
+
+00:19:54.199 --> 00:19:58.280
+And they, people don't actually know what they want ahead of time. And then when you study their
+
+00:19:58.280 --> 00:20:03.640
+behavior, what they actually choose when they're in a store or retail environment or online,
+
+00:20:03.640 --> 00:20:09.319
+whatever is incorrect. That's, that's not right. Or study UX design is another thing. Like someone
+
+00:20:09.319 --> 00:20:13.160
+might say, oh, I would want a button that does this. And then in reality, when you test their
+
+00:20:13.160 --> 00:20:17.160
+user behavior, they don't click that button. They didn't want that button. They want something else,
+
+00:20:17.160 --> 00:20:24.359
+but they don't know. I really love it. Okay. Fantastic question, Jared. Let's head to Slido
+
+00:20:24.359 --> 00:20:30.199
+and ask Natasha's question. Another start. Nobody wants to ask out loud today. I'll read
+
+00:20:31.000 --> 00:20:33.319
+to be everyone asking the question. So I get this.
+
+00:20:36.359 --> 00:20:42.520
+What does a typical day or week look like for you? What areas do you split your time between
+
+00:20:42.520 --> 00:20:47.079
+programming meetings, for example? Yeah, that's a great question.
+
+00:20:47.880 --> 00:20:52.839
+There is a lot of both of those things, programming and meetings. And
+
+00:20:53.800 --> 00:21:05.319
+I work fully remote, as a lot of statisticians do. So I am looking at what the tasks of the day are.
+
+00:21:06.760 --> 00:21:12.760
+What are my deadlines that I have to make? If I have meetings where I'm advising,
+
+00:21:12.760 --> 00:21:17.640
+sometimes I have some of these projects where I'm in an advisory role, kind of
+
+00:21:18.199 --> 00:21:24.359
+coming in like on a power analysis and coming in with kind of suggestions or questions,
+
+00:21:24.359 --> 00:21:28.520
+and I need to make sure that I'm prepared to come into the meeting and have those conversations.
+
+00:21:30.040 --> 00:21:35.239
+And then other projects where there's an analysis that has to get done, and I'm
+
+00:21:36.280 --> 00:21:42.599
+walking off time to do that. So yeah, it really depends on the week.
+
+00:21:43.560 --> 00:21:48.040
+Sometimes it depends on the month or time of year for me. PositConf is coming. What
+
+00:21:48.040 --> 00:21:53.880
+will they be doing? Probably something to do with PositConf, right? Because it's just that time of
+
+00:21:53.880 --> 00:22:01.079
+year. The conferences is looming. Okay. Fantastic question, Natasha. Thank you.
+
+00:22:02.119 --> 00:22:06.760
+We have one from Sadie, and Sadie has an asterisk. Rachel, would you like to read Sadie's question?
+
+00:22:07.000 --> 00:22:12.839
+Sure. I was just jumping in so you could hear some other voices. I would love it. I love this.
+
+00:22:12.839 --> 00:22:18.839
+Mine or Sadie's question was, how do you explain the difference between causal and predictive
+
+00:22:18.839 --> 00:22:22.839
+modeling? When do you decide to use one type of model versus another?
+
+00:22:24.359 --> 00:22:26.839
+This is an excellent, excellent question.
+
+00:22:27.160 --> 00:22:37.719
+NIH just put out a request for information that I helped ASA submit a response to that we
+
+00:22:37.719 --> 00:22:47.719
+submitted yesterday, and ASA has it posted on their website. Part of the request that I made
+
+00:22:47.880 --> 00:22:57.640
+yesterday, and ASA has it posted on their website, part of the request for information
+
+00:22:59.160 --> 00:23:11.719
+asked this exact question, what makes research causal research? This is a very open question
+
+00:23:11.719 --> 00:23:19.719
+right now. I don't know the answer to that particular question because it's changing.
+
+00:23:21.000 --> 00:23:26.839
+It used to be statisticians would say randomization. If you randomize, you could
+
+00:23:26.839 --> 00:23:32.839
+make sure that you're accounting for all of the unobserved confounding, and you can say that you
+
+00:23:32.839 --> 00:23:38.599
+have a causal result. But now we have quasi-experimental designs, we have natural
+
+00:23:38.599 --> 00:23:47.239
+experiments, and that can make something causal too. You can justify it, right? If you have the
+
+00:23:47.239 --> 00:23:52.119
+assumptions that are appropriate and that you're able to make an argument for it being causal,
+
+00:23:52.119 --> 00:23:56.920
+then it can be a causal conclusion. That's a really challenging question.
+
+00:23:58.199 --> 00:24:04.280
+The other question related to what models to use is also a really challenging question because
+
+00:24:04.680 --> 00:24:11.560
+so many people just use the models that they're familiar with, and that's becoming more of a
+
+00:24:11.560 --> 00:24:17.560
+problem as there are more and more and more models. Now there's AI choosing models,
+
+00:24:18.119 --> 00:24:24.680
+and actually in the same RFI response that we put together for ASA, there's a lot of discussion
+
+00:24:24.680 --> 00:24:32.359
+about the extra degrees of freedom that are related to the analyst choosing the model.
+
+00:24:34.599 --> 00:24:43.239
+And how the conclusion changes when you have a different analyst, an AI is choosing the model,
+
+00:24:44.199 --> 00:24:50.520
+all of the different variability that comes into that, and quantifying that is a huge question.
+
+00:24:54.359 --> 00:24:59.959
+Choosing the model is a huge question too. I don't have answers, I feel like, for either
+
+00:24:59.959 --> 00:25:05.800
+of these questions. I'm sorry. Becomes like a complex problem or complex systems problem,
+
+00:25:05.800 --> 00:25:11.079
+right? Any problem in which a human being is involved is like automatically now a complex
+
+00:25:11.079 --> 00:25:17.000
+system. It feels like there's infinite possibility. Yeah, Morgana says, oh no,
+
+00:25:17.000 --> 00:25:24.359
+so many more new variables. It is a web of mystery. All right, thank you Sadie so much
+
+00:25:24.359 --> 00:25:30.680
+for your question. Thank you Rachel for asking for Sadie. Zach has a question, also has an
+
+00:25:30.680 --> 00:25:35.959
+asterisk, and it says, would you recommend in today's day and age someone getting a master's
+
+00:25:35.959 --> 00:25:43.400
+or a PhD in statistics? For someone getting a master's or a PhD? Would you recommend?
+
+00:25:43.400 --> 00:25:49.400
+Would you recommend getting it? Yes, in today's day and age, in today's climate, and I feel like
+
+00:25:49.400 --> 00:25:55.319
+the implicit thing is they're like in the age of AI too. What would you recommend personally?
+
+00:25:57.239 --> 00:26:01.959
+In terms of whether or not, I think I'm going to interpret this as whether or not to go for
+
+00:26:01.959 --> 00:26:06.839
+a master's or PhD in statistics, right? I think that's the question. Okay. I think so. Zach can
+
+00:26:06.839 --> 00:26:15.319
+confirm in the chat for us. Okay, so statistics as a discipline, I think is a pretty strong
+
+00:26:15.959 --> 00:26:23.880
+direction to go in. It's been around for a long time, and statistical thinking underlies a lot
+
+00:26:23.880 --> 00:26:33.400
+of science, and being the statistician in the room has its benefits. A lot of people that I talk to
+
+00:26:33.400 --> 00:26:40.199
+that did not go to a statistics route say, I wish I knew more statistics. So just based on that,
+
+00:26:41.160 --> 00:26:47.079
+I think it has a lot of value, and I think it will continue to have value in terms of
+
+00:26:47.959 --> 00:26:56.599
+conversations, just having discussions among people. AI can't be responsible for making
+
+00:26:56.599 --> 00:27:03.239
+decisions. At the end of the day, a human being has to be responsible for saying, I support this
+
+00:27:03.640 --> 00:27:11.640
+decision, and statisticians, I think, could be potentially the people who can be in that role.
+
+00:27:13.640 --> 00:27:21.560
+So I think it's a good direction to go, but maybe someone else will step into that position that's
+
+00:27:21.560 --> 00:27:25.479
+not a statistician, and maybe statisticians will become obsolete, and then I'll be wrong about all
+
+00:27:25.479 --> 00:27:33.079
+of it. Hey, the option to be wrong is part of being a statistician. Oh, yeah. You've
+
+00:27:34.040 --> 00:27:41.239
+always quantifying uncertainty and quantifying your own probability of wrongness, right? You're
+
+00:27:41.239 --> 00:27:46.839
+like, this might be wrong. I'm just giving you what might happen. I feel like that was a great
+
+00:27:46.839 --> 00:27:55.640
+chance for you to be able to use the answer, it depends. It depends on everything. Fantastic.
+
+00:27:55.640 --> 00:27:59.959
+There are also so many good conversations that are happening in the chat if you're listening to
+
+00:27:59.959 --> 00:28:06.119
+this later. Gosh, I wish you were here in person because the chat is so much fun. Noe was talking
+
+00:28:06.119 --> 00:28:13.800
+about how Simpsons Paradox is like the MAUP problem in geography. I have not had time to look
+
+00:28:13.800 --> 00:28:21.319
+up MAUP yet. Noe says it's Modifiable Aerial Unit Problem. When you have your data as a point,
+
+00:28:21.959 --> 00:28:28.040
+and you aggregate to hexagons, or you aggregate into stats area or states, and they have different
+
+00:28:28.040 --> 00:28:36.920
+results. It's still the same type of problem, but geographically. This is fantastic, fascinating.
+
+00:28:36.920 --> 00:28:41.160
+I'm going to go Google this after we get done. I wanted to share that because everybody who's
+
+00:28:41.160 --> 00:28:44.680
+listening and maybe not in the chat is not reading this fantastic conversation.
+
+00:28:45.959 --> 00:28:53.239
+Okay. Let's hop back over to the Slido here. If you do not know, I know that we're in our last
+
+00:28:53.239 --> 00:28:58.119
+half of the Hangout here, but if you have hopped in at the half, maybe you just got off a meeting,
+
+00:28:58.119 --> 00:29:04.119
+you can ask questions for Liz, who is a statistician at Westat in the Slido.
+
+00:29:04.839 --> 00:29:09.640
+We can paste some links in there to actually get there if you need it. Thank you, Rachel. Okay.
+
+00:29:10.920 --> 00:29:17.719
+Okay. We have a anonymous question. It says, since we deal with probabilities all the time,
+
+00:29:17.719 --> 00:29:23.880
+do you use phrases like chance of, or odds in your slides, et cetera?
+
+00:29:24.760 --> 00:29:30.119
+Yes, definitely. Language matters, doesn't it? Definitely. A lot of the work that we do at Westat
+
+00:29:30.119 --> 00:29:38.280
+is for government clients. The result is a report oftentimes, but
+
+00:29:38.997 --> 00:29:58.997
+Liz Eisenhauer, Dr.: That is for government clients and the result is a report, oftentimes, but sometimes it's a one page report, sometimes it's a presentation, sometimes it can change, but it is generally for
+
+00:29:58.997 --> 00:30:05.477
+a general audience and needs to be understandable. So I am still figuring out how to write for a
+
+00:30:05.477 --> 00:30:11.877
+general audience. It's really hard because in your statistics PhD, they drill into you.
+
+00:30:12.677 --> 00:30:17.557
+You need to be very careful how you say things and you need to follow this particular
+
+00:30:19.397 --> 00:30:27.237
+structure when you're providing a result. And then that gets kind of turned around when you
+
+00:30:27.237 --> 00:30:32.197
+have to write it for a general audience and you have to use things like the chance of,
+
+00:30:32.197 --> 00:30:41.477
+you have to use numbers instead of proportions. If you want to say 10%, or you wouldn't say 0.10,
+
+00:30:42.837 --> 00:30:47.636
+you would say maybe 10% if you're talking to a technical audience that's not statisticians.
+
+00:30:47.636 --> 00:30:54.916
+If you're talking to a general audience, you would say 10 in 100, 10 people out of 100 people.
+
+00:30:54.916 --> 00:31:01.717
+So you have to translate to what the, and there are a lot of people who are good at
+
+00:31:01.717 --> 00:31:09.477
+forcing me to do that and telling me what you've said does not make sense. And I listen to those
+
+00:31:09.477 --> 00:31:16.836
+people. And that's, I think the best way to make it better. Right. Some of those words are very
+
+00:31:16.836 --> 00:31:21.397
+contentious. Like Renato in the chat said the word significant is another example of that.
+
+00:31:21.477 --> 00:31:25.717
+That's really tough because significant is just a normal English word. We use it all the time.
+
+00:31:25.717 --> 00:31:30.437
+That's significant to me, a significant other, a significant object. And in statistics, it means
+
+00:31:30.437 --> 00:31:35.956
+something very specific to the person who's saying it. And yet it is very contentious. Do we even
+
+00:31:35.956 --> 00:31:42.516
+want to talk about significance? Do we want to fight about P-values? Do we want to use them at
+
+00:31:42.516 --> 00:31:48.756
+all? All of those things are tough. Thank you so much for your question, anonymous asker. It was
+
+00:31:48.756 --> 00:31:55.957
+great. All right. We have more questions popping up in Slido. We have one from Kelsey. It has an
+
+00:31:55.957 --> 00:32:01.157
+asterisk again. Nobody wants to ask any of their questions live today. This has never happened.
+
+00:32:01.157 --> 00:32:06.676
+Every single question has an asterisk. Don't be afraid y'all. I'm muting it. It's not too scary.
+
+00:32:07.317 --> 00:32:12.196
+Kelsey says, when you said you follow debates between statisticians about, for example,
+
+00:32:12.196 --> 00:32:17.237
+sample size calculations, where and how are you following these? Is it on socials like X or
+
+00:32:17.237 --> 00:32:23.157
+LinkedIn or in journals? I feel like I miss out on conversations like this after leaving Twitter.
+
+00:32:24.756 --> 00:32:31.556
+Yeah. It's a lot of times difficult just finding people to talk to about it is the best way that
+
+00:32:31.556 --> 00:32:40.357
+I've figured out. I will say there is a community, the isolated statisticians that have a listserv
+
+00:32:40.357 --> 00:32:44.916
+and there are a lot of statisticians on there that sometimes get into arguments. So that's
+
+00:32:44.916 --> 00:32:51.797
+one place that I find some fun arguments. There's often a discussion, a recurring discussion on
+
+00:32:51.797 --> 00:32:58.276
+there about statistical significance, whether it should be renamed to statistically discernible
+
+00:32:58.997 --> 00:33:04.836
+or something. Can we rephrase it in a way that will change the way that people think about
+
+00:33:04.836 --> 00:33:12.916
+what it means? That comes up on the isostat listserv a lot. So that's one place.
+
+00:33:13.476 --> 00:33:18.597
+But yeah, talking to people is just finding people that'll listen to me and answer my questions.
+
+00:33:20.357 --> 00:33:26.276
+Meeting people, building community. You can meet a lot of stats people here at the hangout too.
+
+00:33:26.276 --> 00:33:30.916
+You know, you could just put it up in the chat. Hello, I'm a stats person. I want to talk to
+
+00:33:30.916 --> 00:33:37.077
+other stats people. Let's connect. You can ask the same question in the discord or, you know,
+
+00:33:37.077 --> 00:33:42.916
+wherever you are, blue sky, like people will find you, but also just the blue sky, our stats
+
+00:33:43.556 --> 00:33:48.196
+group, our stats hashtag has been really nice. I really enjoyed blue sky.
+
+00:33:49.476 --> 00:33:54.196
+It's not 2018 Twitter. I think that's a, that was a flash in the pan that will never
+
+00:33:55.877 --> 00:34:01.477
+happen again. We are all mourning the loss of that type of sharing community. However,
+
+00:34:02.437 --> 00:34:08.836
+there are people that I like to follow on there, like Frank Carroll. Oh, Donald just mentioned
+
+00:34:08.836 --> 00:34:14.437
+Frank Carroll in the chat as well, which is hilarious. So yes, and Donald is posting some
+
+00:34:14.437 --> 00:34:17.796
+links. So anybody in the chat, go take a look at those. If you're listening later, I'm going to
+
+00:34:17.796 --> 00:34:24.676
+put them in the YouTube description. No fear. But I also there's JSM. Do you want to talk about JSM
+
+00:34:24.676 --> 00:34:29.556
+that you, I think you attend almost every year, right? Yeah. JSM is an incredible place and it
+
+00:34:29.556 --> 00:34:35.396
+gets better every year. I think the more you go to these conferences, the more you meet people.
+
+00:34:35.396 --> 00:34:40.037
+And then every year you're like, Oh, I have to connect with this person again from last year
+
+00:34:40.037 --> 00:34:45.076
+and this other person. And it's joint statistical meeting for anybody who's not, doesn't know what
+
+00:34:45.076 --> 00:34:50.437
+JSM means. I think it's always in the U S right. And it's in a different city every year, just
+
+00:34:50.437 --> 00:34:56.836
+like positive conference. If you want to go to JSM and you're interested, Donald's usually there.
+
+00:34:56.917 --> 00:35:01.317
+Liz is usually there. You could meet Donald. He's very nice. Liz will say hi to you,
+
+00:35:02.276 --> 00:35:05.877
+you know, reach out to people and say, Hey, I'm going to JSM for the first time next year. Can we
+
+00:35:05.877 --> 00:35:11.477
+meet up and have coffee or something? And I'm sure you will find nice people. All right. Thank you,
+
+00:35:11.477 --> 00:35:18.917
+Kelsey for asking. Let's see, what do we have here and what time is it? Okay. We have about 15 minutes
+
+00:35:18.917 --> 00:35:24.116
+left. We have an anonymous question that says, how do you fight over engineering and picking
+
+00:35:24.116 --> 00:35:30.836
+most involved models, et cetera, when you need to speed up delivery? For example, a good,
+
+00:35:30.836 --> 00:35:41.956
+good enough forecast work or forecasts would work. I don't do a lot of, I do some forecasting,
+
+00:35:41.956 --> 00:35:48.917
+I guess, but yeah, there might be other people who would have, who would be able to
+
+00:35:49.877 --> 00:35:55.877
+contribute interesting ideas on this. So feel free to jump in if you, if you have ideas, but
+
+00:35:55.877 --> 00:36:06.356
+in my experience, if there's the argument of interpretability and you can always lean on that
+
+00:36:06.356 --> 00:36:12.997
+kind of, if I give you a really complicated model and you don't understand how it works,
+
+00:36:12.997 --> 00:36:18.676
+then we can have a conversation about it. And I really want to have a conversation and have
+
+00:36:18.757 --> 00:36:26.997
+this be an interactive discussion, not just here's a number, go use it. So that's one of
+
+00:36:26.997 --> 00:36:33.477
+the arguments that I use a lot. And yeah, you try, you try not to go too complicated.
+
+00:36:35.956 --> 00:36:41.236
+I feel like model parsimony is something that is taught by a lot of statistics teachers and
+
+00:36:41.236 --> 00:36:46.676
+a lot of people kind of like as they're coming up, learning about statistics might have that
+
+00:36:47.236 --> 00:36:51.637
+drilled into them, that model parsimony is important. Model parsimony just means like
+
+00:36:51.637 --> 00:36:55.317
+striving for the most simple model that you can, that still explains things well.
+
+00:36:57.157 --> 00:37:02.276
+And this is a very interesting question because I think it's being asked in the context of
+
+00:37:02.276 --> 00:37:06.437
+business where often you have all of these like time constraints, let's go, let's go, let's go.
+
+00:37:06.437 --> 00:37:12.997
+This is where I would encourage anybody to look up operations research, which is my background,
+
+00:37:13.157 --> 00:37:16.917
+it really excites me, mathematical optimization and heuristics, right? Because
+
+00:37:18.116 --> 00:37:23.717
+a heuristic is kind of like a rule of thumb or maybe a business rule that might get you to
+
+00:37:24.997 --> 00:37:30.997
+maybe not the optimal solution, but a good enough solution in place of a model in place
+
+00:37:30.997 --> 00:37:38.197
+of a calculation or in conjunction with one. Because often with statistical modeling or with
+
+00:37:38.276 --> 00:37:43.477
+mathematical optimization, there might be many optimal solutions and it might take a lot of
+
+00:37:43.477 --> 00:37:48.437
+calculations to get to them and it's not worth the computational power that it's going to take
+
+00:37:48.437 --> 00:37:52.997
+or the time it's going to take to get to that optimal when there might be like 15 different
+
+00:37:53.556 --> 00:38:00.276
+slightly suboptimal but perfectly good solutions that you could go with using a heuristic or just
+
+00:38:00.276 --> 00:38:06.516
+a more simple model. All right, thank you so much for your question, that was fantastic.
+
+00:38:07.076 --> 00:38:12.437
+I wanted to ask because I did see a question here in the Slido that was about hiring,
+
+00:38:12.437 --> 00:38:15.957
+but Liz, I don't know if you do any hiring, do you do any hiring at Westat?
+
+00:38:16.757 --> 00:38:23.156
+Personally, no, I don't. Okay, anonymous asker, don't be mad at me for not asking your question,
+
+00:38:23.156 --> 00:38:30.596
+I'm so sorry, I don't think that Liz does a lot of hiring. But we could put this to the chat as
+
+00:38:30.596 --> 00:38:36.116
+well, if you are a person in the chat who does hiring or who is involved in hiring adjacently
+
+00:38:36.116 --> 00:38:40.517
+or maybe contributes thoughts to it. The question was, what are technical qualities
+
+00:38:40.517 --> 00:38:45.077
+that you look for in statisticians when you hire? I've seen hiring standards for statisticians
+
+00:38:45.796 --> 00:38:51.236
+be very varied and depends on teams, specific requirements, etc. So if anybody has
+
+00:38:52.517 --> 00:39:00.036
+any experience in this, please feel free to share it in the chat. Okay, we have Jared asking
+
+00:39:00.997 --> 00:39:07.236
+a burning question here in Slido, which is, are you Bayesian or Frequentist? Do you prefer
+
+00:39:07.236 --> 00:39:19.397
+Bayesian or Frequentist? I like both. Why use wise words? It depends. Yeah, I use Bayesian analysis
+
+00:39:19.397 --> 00:39:28.916
+in a lot of my projects and it can be for interpretability, it could definitely be useful
+
+00:39:29.476 --> 00:39:38.596
+at the end of the model for giving a statement that is in terms that can be understood a little
+
+00:39:38.596 --> 00:39:47.556
+bit better, like there is a 70% chance that the population parameter, the population mean,
+
+00:39:47.556 --> 00:39:55.236
+the population effect size, whatever it is, is greater than zero. Full stop. That's a really
+
+00:39:55.236 --> 00:40:00.837
+nice statement. It's way easier for people to understand than me saying, given the null
+
+00:40:00.837 --> 00:40:09.556
+hypothesis is true. So I do like it for interpretability. Often when I see it used,
+
+00:40:10.277 --> 00:40:19.796
+most often it's because of the usefulness of Bayesian methods for really complicated structures,
+
+00:40:19.796 --> 00:40:24.997
+like hierarchical structures where you have schools and students within schools and
+
+00:40:26.356 --> 00:40:30.356
+years within students or something like that. You have a really complicated structure,
+
+00:40:30.356 --> 00:40:36.036
+Bayesian methods can be really useful for that. It just creates this really convenient environment
+
+00:40:36.036 --> 00:40:41.637
+for you to put all of that into one model. And so that seems to be in a lot of cases where I
+
+00:40:41.637 --> 00:40:49.716
+see people actually using it. I don't know if it's because the interpretability argument,
+
+00:40:50.517 --> 00:40:56.676
+everyone's just so used to p-values and so in the end they want to see the p-value. If you
+
+00:40:57.556 --> 00:41:04.596
+give them the Bayesian argument, they also want to see the p-value. So you can do both,
+
+00:41:05.637 --> 00:41:10.596
+but then that's a lot more statistical explaining when you're presenting the results.
+
+00:41:11.476 --> 00:41:17.156
+So a lot more work too. Yeah. And what if your conclusions
+
+00:41:17.796 --> 00:41:21.476
+are slightly contradictory between the frequentist and the Bayesian approach?
+
+00:41:22.676 --> 00:41:28.916
+Yeah. There's a lot of discussion and there's some work that's coming out of Mathematica that's like
+
+00:41:28.916 --> 00:41:35.877
+Bayesi framework for education contexts where the goal is interpreting using Bayesian methods
+
+00:41:35.877 --> 00:41:44.197
+and you have to decide in the beginning what combination of the p-value being in this range
+
+00:41:44.757 --> 00:41:51.476
+and also the Bayesian probability being in this range will mean it works. You have to
+
+00:41:51.476 --> 00:42:00.277
+predefine what it works versus it didn't work, what that looks like. So it has some decisions
+
+00:42:00.277 --> 00:42:06.356
+involved that you need to reason through. Right. Deciding ahead of time on something
+
+00:42:06.356 --> 00:42:12.356
+is also how you prevent p-hacking, right? You're not just going to be like, well,
+
+00:42:12.356 --> 00:42:17.236
+let's just massage these until this all feels right. That was one of the things that also
+
+00:42:17.236 --> 00:42:21.796
+bothered me. I feel like when I was learning was like, oh, well, how do I know unless I run all
+
+00:42:21.796 --> 00:42:25.236
+these different models? I was like, no, you have to pick the model ahead of time. You have to figure
+
+00:42:25.236 --> 00:42:28.596
+out ahead of time what you're going to use before you use it on the real thing. And I'm like, but
+
+00:42:28.596 --> 00:42:34.837
+that doesn't seem like the most correct or right thing. And there's so many different definitions
+
+00:42:34.837 --> 00:42:40.437
+of correct and right when it comes to statistics. Okay. Fantastic question. Thank you, Jared.
+
+00:42:41.957 --> 00:42:46.837
+Also, as you were talking about levels and classes, I was like, oh, Markov chains as well,
+
+00:42:46.837 --> 00:42:53.077
+which feels to me like it's a secret third category. Okay. We won't talk about that.
+
+00:42:53.716 --> 00:42:57.317
+But guess what? We have a question that doesn't have an asterisk next to it.
+
+00:42:57.317 --> 00:43:01.716
+Donald asked a question in Slido. Donald, would you like to ask that question live?
+
+00:43:01.716 --> 00:43:06.356
+I would love to have reach out to you. Yay. I'll put it in the chat as well. So everybody can
+
+00:43:06.356 --> 00:43:11.317
+can see it too. Great. So I'm also a statistician. So I do a lot of work with my academic or and
+
+00:43:11.317 --> 00:43:16.036
+medical colleagues who know like a touch of statistics, but probably not as much as either
+
+00:43:16.036 --> 00:43:23.397
+of us do. And I was just curious, do you use like simulations or graphical examples in a simpler
+
+00:43:23.397 --> 00:43:28.517
+context to like what you're working on to help lead them to water, like for that type one type
+
+00:43:28.517 --> 00:43:33.236
+two error or that type M type S error? And have you found that extremely helpful?
+
+00:43:35.236 --> 00:43:43.877
+Yeah, I am not a huge simulation person. I know some people who are really intuitive and can come
+
+00:43:43.877 --> 00:43:51.397
+up with a really good simulation that then can make an argument. I'm I don't know that I gained
+
+00:43:51.397 --> 00:43:57.716
+that skill as fully as I probably could. Simulations can be extremely useful for power
+
+00:43:57.716 --> 00:44:07.877
+analyses too, like sample size justifications can be very complex and not just a closed form,
+
+00:44:07.877 --> 00:44:14.997
+you know, A plus B equals C. So simulations can be very useful if you have feasible
+
+00:44:15.877 --> 00:44:21.397
+assumptions that you can put into them and then produce, OK, this is the power that we roughly
+
+00:44:21.397 --> 00:44:29.796
+expect to get. So there's definitely opportunities for it to be to be useful. I haven't tried to
+
+00:44:29.796 --> 00:44:33.077
+explain a simulation to very many people recently.
+
+00:44:36.197 --> 00:44:42.356
+All right. I will hop in with my operations research brain and say, if you like simulation,
+
+00:44:42.837 --> 00:44:48.116
+go explore operations research. There's so much simulation in also like supply chain management.
+
+00:44:48.757 --> 00:44:53.877
+Imagine you have this like very complex supply chain and you want to model what's going to
+
+00:44:53.877 --> 00:45:01.236
+happen if I change one thing in this supply chain. Let's say our supplier in another country
+
+00:45:01.236 --> 00:45:06.517
+stops making this part. What happens or what happens if we run out of stock in this supply
+
+00:45:06.517 --> 00:45:12.356
+center or distribution center? How does that change all the downstream effects with price
+
+00:45:12.356 --> 00:45:18.116
+and availability of our product or getting it into our factories to be able to make our laptops,
+
+00:45:18.116 --> 00:45:24.036
+whatever? Fascinating. So if you really like simulation, check out supply chain as a field.
+
+00:45:26.036 --> 00:45:31.397
+Yeah, causal inference can be can use a lot of simulation to what you're describing,
+
+00:45:31.637 --> 00:45:36.197
+what if this happens? That also can be related to causal inference.
+
+00:45:36.197 --> 00:45:40.837
+Monte Carlo simulations. Go Google the heck out of all of these simulations. They're so interesting.
+
+00:45:41.796 --> 00:45:45.397
+Thank you, Donald, so much for asking. And you know what? I saw another question
+
+00:45:45.397 --> 00:45:51.156
+from Beverly that does not have an asterisk in it. Beverly, does that mean that you would be willing
+
+00:45:51.796 --> 00:45:56.997
+to ask your question live? Let's see if we can find Beverly to unmute.
+
+00:45:57.957 --> 00:46:03.716
+I did copy Beverly's question over from the chat as well. So that's OK, Beverly,
+
+00:46:03.716 --> 00:46:09.716
+if you can't unmute, I could ask it too. All right. I don't see Beverly unmuting,
+
+00:46:09.716 --> 00:46:13.957
+but that's OK. Rachel is going to ask it. Yeah. So Beverly's question was, how do you
+
+00:46:13.957 --> 00:46:20.116
+handle bias in the following examples? So one, some subgroups are not included in surveys. And
+
+00:46:20.116 --> 00:46:26.277
+two, the training data for model building has higher percentage from a particular subgroup.
+
+00:46:26.517 --> 00:46:31.397
+And I'm going to copy it into the chat too. Thank you, Rachel. Yeah, I love that. Two
+
+00:46:31.397 --> 00:46:36.116
+different things. Some subgroups are not included in the survey. And then the other one, even in
+
+00:46:36.116 --> 00:46:43.076
+balance of subgroups. In the training data. I will let you pick one. I know two-part questions
+
+00:46:43.076 --> 00:46:50.116
+are hard. Yeah. No, this is a great. I love this question. I'm really interested in transportability
+
+00:46:51.157 --> 00:46:55.877
+and generalizability. I went to a conference or workshop recently that IMSI did that was on
+
+00:46:56.436 --> 00:47:01.716
+exactly this question. And there are causal inference people who think about internal
+
+00:47:01.716 --> 00:47:05.797
+validity versus external validity. So internal validity for causal inference,
+
+00:47:05.797 --> 00:47:10.277
+thinking about how can we make sure that we identify the causal effect that we're interested in
+
+00:47:10.836 --> 00:47:17.076
+for the particular system that we actually are looking at. And then external validity, meaning
+
+00:47:18.116 --> 00:47:25.316
+you have either a bigger group that has some features that are not in the group that you
+
+00:47:25.316 --> 00:47:30.677
+actually have in your data, or you have a totally different group for transportability. You have a
+
+00:47:30.677 --> 00:47:36.436
+totally different group, a different population. Like you're looking at New York and you care about
+
+00:47:37.637 --> 00:47:42.436
+a different state. Then you're trying to see, well, this worked in New York, but does it
+
+00:47:42.436 --> 00:47:48.997
+transport to a different state? So there are a lot of lessons I think that can be learned from
+
+00:47:49.637 --> 00:47:56.677
+survey statistics, I think, in this area. That's my take on it because survey statisticians for
+
+00:47:56.677 --> 00:48:02.836
+years have been thinking about what does it look like for our population to be represented by the
+
+00:48:02.836 --> 00:48:10.757
+sample that we have. And they have very rigorous ways of quantifying the uncertainty through
+
+00:48:10.757 --> 00:48:23.076
+weighting. So creating probability weights that adjust for the non-response behavior. So we have
+
+00:48:23.076 --> 00:48:31.316
+something like a decision tree, and the decision tree will be an indicator of, the indicator is
+
+00:48:31.316 --> 00:48:37.076
+whether or not people responded. And you can use this decision tree to put people into cells,
+
+00:48:37.076 --> 00:48:42.037
+and then you can use those cells to say, well, the people in this cell are somewhat similar. The
+
+00:48:42.037 --> 00:48:46.436
+ones who responded can represent the ones who did not respond. And so we can adjust the weights based
+
+00:48:46.436 --> 00:48:52.997
+on that. Non-response weighting, there's other ways to do it, but that's one way. And then you can
+
+00:48:52.997 --> 00:49:00.116
+continue weighting to look at, if you're then taking a subsample, you're trying to up-weight
+
+00:49:00.116 --> 00:49:05.397
+a certain population, down-weight a different population. We do oversampling sometimes because
+
+00:49:05.397 --> 00:49:11.397
+we are trying to balance a particular subgroup that we want estimates for the subgroup versus the
+
+00:49:11.397 --> 00:49:16.997
+overall, making sure we have representation overall. And so we might oversample this one, and then we
+
+00:49:16.997 --> 00:49:24.277
+have to down-weight them for the overall estimate. So there are, it is a huge, yeah, there's so much
+
+00:49:24.277 --> 00:49:32.196
+you can do and so much you can think about. I think survey statistics is a place to go.
+
+00:49:32.917 --> 00:49:38.116
+I agree. It's really, really hard. And this is reflective of, I feel like the hardest subject
+
+00:49:38.116 --> 00:49:42.677
+when everybody's learning, which is missingness as a problem in general. Why does it matter? What
+
+00:49:42.677 --> 00:49:47.956
+are the different patterns of missingness? Missingness not at random, missing completely
+
+00:49:47.956 --> 00:49:54.196
+at random, and how patterns of missingness can tell a story about your data. Ask questions about
+
+00:49:54.196 --> 00:50:00.836
+that. And surveys are the number one example all the time. Like, okay, you're missing salary data
+
+00:50:00.836 --> 00:50:06.277
+from all of these respondents. What do all those respondents have in common? Maybe their salary is
+
+00:50:06.277 --> 00:50:11.877
+super, super high and they don't want to respond. Maybe they're all in a class, a socioeconomic
+
+00:50:11.877 --> 00:50:16.116
+group together. Maybe it's very, very low income. What does it mean if you leave those people out
+
+00:50:16.116 --> 00:50:21.557
+of your study? And what do you do about it? Gosh, I don't know. It depends, doesn't it,
+
+00:50:21.557 --> 00:50:27.316
+on every single thing because there's no answer that's straightforward. Beverly, thank you so much
+
+00:50:27.316 --> 00:50:36.517
+for your great question. I loved it. Ooh, Tom. Tom in the chat says, impute. Oh, no.
+
+00:50:36.517 --> 00:50:41.076
+Yeah, there's so many ways. I mean, there's imputation, there's waiting, there's regression,
+
+00:50:41.076 --> 00:50:44.917
+like using regression for adjustments, there's- Upsampling and downsampling.
+
+00:50:46.196 --> 00:50:48.677
+Yeah. All kinds of things. Smote. Uh-oh,
+
+00:50:48.677 --> 00:50:56.116
+go Google smote everybody and get real scared. Okay. We have time for one lightning round
+
+00:50:56.116 --> 00:50:59.956
+question, which is, do you have any career advice for us? Because we have two minutes left.
+
+00:51:00.517 --> 00:51:04.596
+What off the top of your head would you, what advice would you give people coming up in stats or
+
+00:51:04.596 --> 00:51:09.476
+getting into it for the first time? Advice that someone else, I heard from
+
+00:51:09.476 --> 00:51:16.436
+someone else, so it's not my original advice, but try to really understand something that's
+
+00:51:16.436 --> 00:51:24.436
+not statistics and see if you can connect the two. If you can, if you're interested in health
+
+00:51:24.436 --> 00:51:31.877
+research, try to figure out how to speak that language. And then you try to understand how the
+
+00:51:31.877 --> 00:51:37.797
+two languages connect to each other, because translating between different perspectives
+
+00:51:38.436 --> 00:51:46.116
+seems to me to be a really valuable skill to move statisticians, to move data people into
+
+00:51:46.116 --> 00:51:54.277
+more of a leadership role. We can lead if we can have a conversation with other types of people.
+
+00:51:54.677 --> 00:52:00.997
+So that would be my advice. Amazing. Thank you. This was so much fun.
+
+00:52:01.797 --> 00:52:08.116
+Stats people, I'm so glad we got to have a fun chat. If you made some stats friends in the chat
+
+00:52:08.116 --> 00:52:12.116
+and you want to remember who they are and what their LinkedIn profiles were, you can save the
+
+00:52:12.116 --> 00:52:16.757
+chat. There's three dots at the top. Click those, click save chat, unless you're joining in a browser,
+
+00:52:16.757 --> 00:52:22.196
+it might be harder to do that. But please also join the discord so you can stay connected. Liz
+
+00:52:22.196 --> 00:52:25.797
+is on the discord, but I don't know if she frequents the discord. I tagged her in the
+
+00:52:25.797 --> 00:52:30.836
+data science hangout channel. You can make your way there. Liz, I hope you had a good time.
+
+00:52:30.836 --> 00:52:35.797
+This was really fun. Thank you so much. Yay. Thank you so much for joining us.
+
+00:52:35.797 --> 00:52:39.637
+All right, everybody. Feel free to reach out to me if you, you know, anyone at all.
+
+00:52:40.196 --> 00:52:45.236
+Yes. She is Elizabeth Willow Eisenhower on LinkedIn. If you are looking, if you type in
+
+00:52:45.236 --> 00:52:52.356
+those three words, I think you will find her. And if you want to hang out with us on Tuesday
+
+00:52:52.356 --> 00:52:57.236
+at the data science lab, you will be hanging out with me and Isabella and Daniel Chen.
+
+00:52:58.037 --> 00:53:02.917
+Daniel Chen is here today. He might still be here in the chat. He's going to be talking about
+
+00:53:03.716 --> 00:53:08.596
+building the fundamentals of building a shiny app in 2026. Are you new to shiny app building?
+
+00:53:08.596 --> 00:53:12.917
+Has it been a while since you built one? Come hang out with us. Dan's a fantastic teacher.
+
+00:53:13.637 --> 00:53:17.316
+And we're going to be talking about, there he is waving. We're going to be talking about shiny
+
+00:53:17.316 --> 00:53:24.196
+on Tuesday at the data science lab. If you would like to register to join us and reminder,
+
+00:53:25.637 --> 00:53:31.236
+if we're not on your calendar, if today on Thursdays, this time slot on zoom is not on
+
+00:53:31.236 --> 00:53:37.236
+your calendar, please renew it for another, you know, course of however many weeks in your Google
+
+00:53:37.236 --> 00:53:42.196
+calendar, we're going to attempt to send out an email that might have a calendar link in it that
+
+00:53:42.196 --> 00:53:48.436
+will hopefully work. Look out for that for us. Yeah. Rowan says until forever. Yeah. So forever,
+
+00:53:48.436 --> 00:53:53.637
+forever. It's so hard. Google calendar. I don't know about outlook, but Google calendar, I think
+
+00:53:53.637 --> 00:53:57.236
+it has like a max number of instances that you can put on there. It's like 60 something.
+
+00:53:58.677 --> 00:54:02.596
+We also have that in zoom events, right? So I've gotten to the end of my events. I'm having to
+
+00:54:02.596 --> 00:54:07.236
+create new ones by hand. Every once in a while, I create one that has like a wrong time or date
+
+00:54:07.236 --> 00:54:12.677
+and have to go fix it. So bear with us while we, while we go through, you know, it's just been a
+
+00:54:12.677 --> 00:54:17.476
+year. I also wanted to just add real quickly, cause I see a few people jumping in right now.
+
+00:54:17.476 --> 00:54:23.877
+So it might be like a daylight savings time. Make sure that everyone has it on their calendar from
+
+00:54:23.877 --> 00:54:31.877
+12 to 1 PM Eastern time. I'm so sorry for anyone who's just joining right now. Thank you for
+
+00:54:31.877 --> 00:54:37.397
+jumping on, but we're, we're just wrapping up right now. But also if you do make your own
+
+00:54:38.037 --> 00:54:44.677
+calendar invite, you all have your own unique join URL. So like the link that you click in
+
+00:54:44.677 --> 00:54:49.956
+the email is your own. So just be careful about sharing. Don't share that with someone.
+
+00:54:52.997 --> 00:54:56.116
+Yes. If you give your link to somebody and they click your link to the hangout,
+
+00:54:56.757 --> 00:55:01.476
+they will kick you out of the hangout. If you are a professor, don't give your students your link,
+
+00:55:01.476 --> 00:55:06.277
+give them the link to sign up themselves. We've had that happen. Somebody was like,
+
+00:55:06.277 --> 00:55:09.397
+Oh no, I'm getting kicked out over and over again. And like her students were kicking her out.
+
+00:55:09.397 --> 00:55:16.997
+Basically the JASB. I just saw you join. I'm so sorry. I know the time zone woes have made it
+
+00:55:16.997 --> 00:55:26.757
+hard. We are the hour before 12 PM to 1 PM US Eastern time. All right, everybody. Fantastic
+
+00:55:26.757 --> 00:55:31.397
+seeing you today. Cannot wait to see you on Tuesday and next Thursday. Bye everybody. Thanks
+
+00:55:31.397 --> 00:55:32.836
+Liz again. Bye.

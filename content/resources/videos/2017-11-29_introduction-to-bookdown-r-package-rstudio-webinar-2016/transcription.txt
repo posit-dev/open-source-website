@@ -1,12 +1,12 @@
 <p><a data-t="0">Hello everyone, this is Yihui, and today I'm going to talk about a project that I have been working for the past half year, which is called </a><a href="/software/bookdown/">bookdown</a><a data-t="0">, and it's an R package for writing books with R Markdown.</a></p>
 
-<p><a data-t="20">So first I'd like to talk about some motivation behind this package.</a> <a data-t="27">Actually I wanted to do this two years ago, but I managed to get some time earlier this year, so I started this project earlier this year, and there are some problems that I want to solve.</a></p>
+<p><a data-t="20">So first I'd like to talk about some motivation behind this package.</a> <a data-t="20">Actually I wanted to do this two years ago, but I managed to get some time earlier this year, so I started this project earlier this year, and there are some problems that I want to solve.</a></p>
 
 <p><a data-t="47">And I have been a student in the major of statistics for over 10 years, and I believe that there are some problems that we should solve for books.</a></p>
 
-<p><a data-t="105">The first one is that books should have been much easier to write technically.</a> <a data-t="112">Normally people use LaTeX or Word to write books, but these things are either not flexible or too complicated, and there are too many technical challenges, and today I will show you how easy it can be to write a book.</a></p>
+<p><a data-t="65">The first one is that books should have been much easier to write technically.</a> <a data-t="65">Normally people use LaTeX or Word to write books, but these things are either not flexible or too complicated, and there are too many technical challenges, and today I will show you how easy it can be to write a book.</a></p>
 
-<p><a data-t="133">And the second problem is that I believe most of the books are just way too expensive, and my ideal price for the books are just like $10 or $20, and you know typically the books that you buy when you are a student, I mean the textbooks are typically like around $70 or $100 or sometimes even $200.</a> <a data-t="121">That's just too expensive, and I believe we can cut some cost in the books.</a></p>
+<p><a data-t="93">And the second problem is that I believe most of the books are just way too expensive, and my ideal price for the books are just like $10 or $20, and you know typically the books that you buy when you are a student, I mean the textbooks are typically like around $70 or $100 or sometimes even $200.</a> <a data-t="121">That's just too expensive, and I believe we can cut some cost in the books.</a></p>
 
 <p><a data-t="128">The third problem is that the books, especially the printed books, are never interactive, and the content is not rich enough.</a></p>
 
@@ -22,51 +22,51 @@
 
 <h3>Problems with traditional book writing</h3>
 
-<p><a data-t="277">So when you are thinking about writing a book, so you may open your LaTeX editor or Word to write a book, and when you want to buy a book, the book can be like $300, which is too expensive, and when you are considering writing another edition of the book, I guess you probably often look like this.</a> <a data-t="305">You just simply give up, because there are many problems.</a> <a data-t="309">For example, we need to solve these problems, we don't want these problems to happen over and over again.</a></p>
+<p><a data-t="277">So when you are thinking about writing a book, so you may open your LaTeX editor or Word to write a book, and when you want to buy a book, the book can be like $300, which is too expensive, and when you are considering writing another edition of the book, I guess you probably often look like this.</a> <a data-t="305">You just simply give up, because there are many problems.</a> <a data-t="305">For example, we need to solve these problems, we don't want these problems to happen over and over again.</a></p>
 
-<p><a data-t="318">We need to end that.</a> <a data-t="320">For example, if you are familiar with LaTeX, you should understand what I mean in this GIF.</a> <a data-t="326">So if you work with LaTeX, sometimes LaTeX can be very fragile, even if you change only a little bit in your document, you can totally screw up your layout.</a> <a data-t="342">Your figures and tables can float anywhere in the book, and it's just very distractive when you write the book.</a></p>
+<p><a data-t="318">We need to end that.</a> <a data-t="318">For example, if you are familiar with LaTeX, you should understand what I mean in this GIF.</a> <a data-t="318">So if you work with LaTeX, sometimes LaTeX can be very fragile, even if you change only a little bit in your document, you can totally screw up your layout.</a> <a data-t="342">Your figures and tables can float anywhere in the book, and it's just very distractive when you write the book.</a></p>
 
-<p><a data-t="352">And how about Word?</a> <a data-t="354">I know many people use Word, and Word is good if you write a few paragraphs, and sometimes maybe after you write a few other paragraphs, and you feel very good.</a> <a data-t="366">But if you write a long document, like a book or a very long report, eventually it will just blow up, like this.</a></p>
+<p><a data-t="352">And how about Word?</a> <a data-t="352">I know many people use Word, and Word is good if you write a few paragraphs, and sometimes maybe after you write a few other paragraphs, and you feel very good.</a> <a data-t="352">But if you write a long document, like a book or a very long report, eventually it will just blow up, like this.</a></p>
 
 <h3>Why Markdown?</h3>
 
-<p><a data-t="375">So we don't want you to be in that situation.</a> <a data-t="379">So what I would recommend is that you can use Markdown.</a> <a data-t="382">Markdown is a very simple language.</a> <a data-t="385">I assume most of our attendees today are reasonably familiar with Markdown.</a></p>
+<p><a data-t="375">So we don't want you to be in that situation.</a> <a data-t="375">So what I would recommend is that you can use Markdown.</a> <a data-t="375">Markdown is a very simple language.</a> <a data-t="375">I assume most of our attendees today are reasonably familiar with Markdown.</a></p>
 
-<p><a data-t="398">So basically, if you are able to write emails, you should be able to learn Markdown.</a> <a data-t="406">And actually, I have a personal award, which is if you are not able to learn the basics of Markdown in 10 minutes, I will just award you $10.</a></p>
+<p><a data-t="398">So basically, if you are able to write emails, you should be able to learn Markdown.</a> <a data-t="398">And actually, I have a personal award, which is if you are not able to learn the basics of Markdown in 10 minutes, I will just award you $10.</a></p>
 
-<p><a data-t="418">So Markdown is very simple to write.</a> <a data-t="421">It's just as simple as this.</a> <a data-t="423">You just hop on the car and you're ready to go.</a></p>
+<p><a data-t="418">So Markdown is very simple to write.</a> <a data-t="418">It's just as simple as this.</a> <a data-t="418">You just hop on the car and you're ready to go.</a></p>
 
-<p><a data-t="429">Actually, because Markdown is so simple, of course there are some features for writing books that are missing in Markdown.</a> <a data-t="438">Actually, the original Markdown was designed for writing HTML content, and it was very simple.</a></p>
+<p><a data-t="429">Actually, because Markdown is so simple, of course there are some features for writing books that are missing in Markdown.</a> <a data-t="429">Actually, the original Markdown was designed for writing HTML content, and it was very simple.</a></p>
 
 <p><a data-t="451">But we have developed a package called R Markdown, which added two powerful components to Markdown and makes it suitable for writing articles and books.</a></p>
 
-<p><a data-t="468">And these two components are Pandoc and R.</a> <a data-t="472">So first, we added R to Markdown, which means we can mix R code with your Markdown text.</a> <a data-t="479">So you can embed your computing right into your book.</a></p>
+<p><a data-t="468">And these two components are Pandoc and R.</a> <a data-t="468">So first, we added R to Markdown, which means we can mix R code with your Markdown text.</a> <a data-t="468">So you can embed your computing right into your book.</a></p>
 
-<p><a data-t="484">So when you write a book or an article, you can just embed R code chunks there and you click a button and the R code chunks will just be executed.</a> <a data-t="496">And you will get the output and you don't have to run the code separately and copy and paste the results.</a></p>
+<p><a data-t="484">So when you write a book or an article, you can just embed R code chunks there and you click a button and the R code chunks will just be executed.</a> <a data-t="484">And you will get the output and you don't have to run the code separately and copy and paste the results.</a></p>
 
-<p><a data-t="504">So we added R, which means you can do statistical computing, data analysis, data visualization in your document.</a> <a data-t="515">So that's one source of force in Markdown.</a></p>
+<p><a data-t="504">So we added R, which means you can do statistical computing, data analysis, data visualization in your document.</a> <a data-t="504">So that's one source of force in Markdown.</a></p>
 
-<p><a data-t="518">And the other component is Pandoc.</a> <a data-t="521">And Pandoc is a very powerful tool for converting documents.</a> <a data-t="526">And it can convert Markdown documents to many other formats, for example, to HTML or to LaTeX PDF or to ebooks and even Word documents and presentations.</a></p>
+<p><a data-t="518">And the other component is Pandoc.</a> <a data-t="518">And Pandoc is a very powerful tool for converting documents.</a> <a data-t="518">And it can convert Markdown documents to many other formats, for example, to HTML or to LaTeX PDF or to ebooks and even Word documents and presentations.</a></p>
 
-<p><a data-t="542">So it's another powerful tool.</a> <a data-t="545">So with R and Pandoc, Markdown can be as powerful as this.</a> <a data-t="550">So it has a lot of force.</a></p>
+<p><a data-t="542">So it's another powerful tool.</a> <a data-t="542">So with R and Pandoc, Markdown can be as powerful as this.</a> <a data-t="542">So it has a lot of force.</a></p>
 
 <h3>Introducing bookdown</h3>
 
-<p><a data-t="556">So that's R Markdown.</a> <a data-t="559">And the story has not ended there.</a> <a data-t="562">So now we have bookdown.</a> <a data-t="564">And just one sentence summary of bookdown.</a> <a data-t="567">It's a tool.</a> <a data-t="568">It's a very simple tool that makes you look awesome.</a></p>
+<p><a data-t="556">So that's R Markdown.</a> <a data-t="556">And the story has not ended there.</a> <a data-t="556">So now we have bookdown.</a> <a data-t="556">And just one sentence summary of bookdown.</a> <a data-t="556">It's a tool.</a> <a data-t="556">It's a very simple tool that makes you look awesome.</a></p>
 
-<p><a data-t="575">Because when you write a book, you know, when you tell other people, oh, I wrote a book, and of course you look very awesome.</a> <a data-t="584">So bookdown is just that simple tool behind you that makes you look awesome.</a></p>
+<p><a data-t="575">Because when you write a book, you know, when you tell other people, oh, I wrote a book, and of course you look very awesome.</a> <a data-t="575">So bookdown is just that simple tool behind you that makes you look awesome.</a></p>
 
-<p><a data-t="590">So you can write a book with very simple tools.</a> <a data-t="596">And so I'm just going to show you some demos using bookdown.</a> <a data-t="601">Before that, I want to briefly explain the basic structure of books.</a></p>
+<p><a data-t="590">So you can write a book with very simple tools.</a> <a data-t="590">And so I'm just going to show you some demos using bookdown.</a> <a data-t="590">Before that, I want to briefly explain the basic structure of books.</a></p>
 
-<p><a data-t="610">So when you write a book or a long report, you often do not want to write everything in one single R Markdown document.</a> <a data-t="620">Instead, you have multiple R Markdown documents.</a> <a data-t="624">And one R Markdown document is just one RMD file.</a></p>
+<p><a data-t="610">So when you write a book or a long report, you often do not want to write everything in one single R Markdown document.</a> <a data-t="610">Instead, you have multiple R Markdown documents.</a> <a data-t="610">And one R Markdown document is just one RMD file.</a></p>
 
-<p><a data-t="630">So you have multiple RMD files.</a> <a data-t="633">Typically, each RMD file is a chapter.</a> <a data-t="637">So you have multiple chapters, and bookdown can convert these multiple chapters into a book.</a> <a data-t="644">And the output format can be like PDF or HTML or EPUB.</a> <a data-t="649">EPUB is a format for ebooks.</a></p>
+<p><a data-t="630">So you have multiple RMD files.</a> <a data-t="630">Typically, each RMD file is a chapter.</a> <a data-t="630">So you have multiple chapters, and bookdown can convert these multiple chapters into a book.</a> <a data-t="630">And the output format can be like PDF or HTML or EPUB.</a> <a data-t="630">EPUB is a format for ebooks.</a></p>
 
-<p><a data-t="657">And in bookdown, I also extended some Markdown features.</a> <a data-t="663">For example, as I said, the original Markdown was very simple.</a> <a data-t="668">And in Pandoc's Markdown is more powerful, but it still lacks some common features, especially for academic writing, for example.</a></p>
+<p><a data-t="657">And in bookdown, I also extended some Markdown features.</a> <a data-t="657">For example, as I said, the original Markdown was very simple.</a> <a data-t="668">And in Pandoc's Markdown is more powerful, but it still lacks some common features, especially for academic writing, for example.</a></p>
 
-<p><a data-t="682">It currently does not have the feature of numbering your figures and tables or cross-reference your figures and tables.</a> <a data-t="692">And I added this feature in bookdown, and I will show you examples later.</a></p>
+<p><a data-t="682">It currently does not have the feature of numbering your figures and tables or cross-reference your figures and tables.</a> <a data-t="682">And I added this feature in bookdown, and I will show you examples later.</a></p>
 
-<p><a data-t="698">You can also embed interactive content, like videos or HTML widgets or Shiny applications in your book.</a> <a data-t="707">And you may ask, when the output is not HTML, for example, if it's PDF or EPUB, how can these HTML widgets or Shiny apps work?</a></p>
+<p><a data-t="698">You can also embed interactive content, like videos or HTML widgets or Shiny applications in your book.</a> <a data-t="698">And you may ask, when the output is not HTML, for example, if it's PDF or EPUB, how can these HTML widgets or Shiny apps work?</a></p>
 
 <p><a data-t="721">And that would be a very good question, and the answer is that if the output format is not HTML, bookdown will just automatically take screenshots of HTML widgets and Shiny apps and embed a static screenshot in your book.</a></p>
 
@@ -80,21 +80,21 @@
 
 <p><a data-t="812">And the Gitbook style is also very responsive in terms of that when you read the book on smaller devices like on your phone, the layout will just automatically adjust to the smaller devices.</a> <a data-t="833">And there are also different themes like lighter themes or darker themes, and I will show you these themes later.</a></p>
 
-<p><a data-t="842">And also you can click an edit button to edit the R Markdown source document, and there are other buttons on the toolbar.</a> <a data-t="855">And let me just quickly show you the example.</a></p>
+<p><a data-t="842">And also you can click an edit button to edit the R Markdown source document, and there are other buttons on the toolbar.</a> <a data-t="1064">And let me just quickly show you the example.</a></p>
 
 <p><a data-t="861">So the source document for this example is actually on GitHub.</a> <a data-t="868">It's under </a><a href="/software/rstudio/">RStudio</a><a data-t="868">'s account.</a> <a data-t="874">It's called </a><a href="/software/bookdown-demo/">bookdown-demo</a><a data-t="874">.</a> <a data-t="876">So if you are interested in trying that out right now, you can just go to this GitHub repository.</a></p>
 
-<p><a data-t="885">So this is just a minimal bookdown demo.</a> <a data-t="890">So as I said, a book consists of multiple RMD files, like I have an index RMD that is the first chapter or the homepage of your book.</a> <a data-t="905">And then you have like 01, 02, 03 up to 06, and these are R Markdown chapters.</a> <a data-t="914">So you have these chapters.</a></p>
+<p><a data-t="885">So this is just a minimal bookdown demo.</a> <a data-t="1413">So as I said, a book consists of multiple RMD files, like I have an index RMD that is the first chapter or the homepage of your book.</a> <a data-t="905">And then you have like 01, 02, 03 up to 06, and these are R Markdown chapters.</a> <a data-t="914">So you have these chapters.</a></p>
 
 <p><a data-t="916">As this is only a minimal example, these chapters are just pretty much like one sentence.</a> <a data-t="924">So you have multiple RMD files.</a></p>
 
 <p><a data-t="928">And if you have installed bookdown, actually I uploaded bookdown to CRAN just last night.</a> <a data-t="937">So you might be able to install bookdown from CRAN.</a> <a data-t="941">If it's not in your CRAN mirror yet, you can just install from GitHub using </a><a href="/software/devtools/">DevTools</a><a data-t="941">.</a></p>
 
-<p><a data-t="956">You can use DevTools, install GitHub, RStudio, bookdown.</a> <a data-t="962">So that's how you can install the package.</a></p>
+<p><a data-t="956">You can use DevTools, install GitHub, RStudio, bookdown.</a> <a data-t="1826">So that's how you can install the package.</a></p>
 
-<p><a data-t="965">Once it's installed, you will be able to compile these RMD files into a book.</a> <a data-t="972">So the minimal configuration is this.</a> <a data-t="979">So in the index.rmd, you have a site option, which is bookdown, bookdown site.</a> <a data-t="988">Then the output option, which is bookdown, colon, colon, Gitbook.</a> <a data-t="993">Gitbook is just one of the output formats in bookdown.</a></p>
+<p><a data-t="965">Once it's installed, you will be able to compile these RMD files into a book.</a> <a data-t="972">So the minimal configuration is this.</a> <a data-t="979">So in the index.rmd, you have a site option, which is bookdown, bookdown site.</a> <a data-t="988">Then the output option, which is bookdown, colon, colon, Gitbook.</a> <a data-t="2172">Gitbook is just one of the output formats in bookdown.</a></p>
 
-<p><a data-t="999">So let's just take a look at the Gitbook style first.</a> <a data-t="1006">So another thing I want to mention is that I'm using the preview version of RStudio now.</a> <a data-t="1013">So it's 0.99.1251.</a> <a data-t="1018">So that's the preview version.</a> <a data-t="1020">If you don't know where to download the preview version, you can simply Google for RStudio preview version.</a></p>
+<p><a data-t="999">So let's just take a look at the Gitbook style first.</a> <a data-t="2384">So another thing I want to mention is that I'm using the preview version of RStudio now.</a> <a data-t="1013">So it's 0.99.1251.</a> <a data-t="1018">So that's the preview version.</a> <a data-t="1020">If you don't know where to download the preview version, you can simply Google for RStudio preview version.</a></p>
 
 <p><a data-t="1026">So the reason to use the preview version of RStudio is that with RStudio preview version, you will see a build tab here, and there is a menu here listing the possible output formats of your book.</a> <a data-t="1046">And the first one is Gitbook.</a></p>
 
@@ -104,7 +104,7 @@
 
 <p><a data-t="1108">So you can navigate to the second chapter or the third chapter.</a> <a data-t="1115">So you can navigate through different pages.</a> <a data-t="1118">And so on the left side, you can see there's a table of contents showing the chapter titles.</a> <a data-t="1126">And of course, you can collapse the sidebar.</a></p>
 
-<p><a data-t="1130">So especially when your screen is too narrow, you may want to just hide the table of contents on the left.</a> <a data-t="1138">And you can search in the book.</a> <a data-t="1140">For example, if you want to know more, if you want to search for tables in the book, you can just type in that search box.</a> <a data-t="1151">For example, tab.</a> <a data-t="1151">And you will see that your keyword will be highlighted on the page.</a> <a data-t="1157">So that's the search button.</a></p>
+<p><a data-t="1130">So especially when your screen is too narrow, you may want to just hide the table of contents on the left.</a> <a data-t="1138">And you can search in the book.</a> <a data-t="2433">For example, if you want to know more, if you want to search for tables in the book, you can just type in that search box.</a> <a data-t="1151">For example, tab.</a> <a data-t="1151">And you will see that your keyword will be highlighted on the page.</a> <a data-t="1157">So that's the search button.</a></p>
 
 <p><a data-t="1160">And here is the button for setting the themes and font size of the book.</a> <a data-t="1167">For example, you can make the font bigger or smaller.</a> <a data-t="1172">You can choose different font families.</a> <a data-t="1176">You can use serif or sans serif.</a> <a data-t="1180">You can set the white theme, sepia theme, night theme.</a> <a data-t="1187">So different themes.</a></p>
 
@@ -154,7 +154,7 @@
 
 <p><a data-t="1749">You may say that the chapter number is weird here because I should have used the top level section header here, which means one single hash.</a> <a data-t="1760">Let's build the book again.</a> <a data-t="1767">OK, so now we've got one chapter.</a></p>
 
-<p><a data-t="1771">So it's pretty simple to start a book, right?</a> <a data-t="1775">You just set these two options.</a> <a data-t="1777">And if you want to add more chapters, you can simply add other chapters.</a> <a data-t="1783">So another R Markdown document.</a> <a data-t="1786">Let's save it as, for example, chapter2.rmd.</a></p>
+<p><a data-t="1771">So it's pretty simple to start a book, right?</a> <a data-t="1775">You just set these two options.</a> <a data-t="2610">And if you want to add more chapters, you can simply add other chapters.</a> <a data-t="1783">So another R Markdown document.</a> <a data-t="1786">Let's save it as, for example, chapter2.rmd.</a></p>
 
 <p><a data-t="1796">So a chapter title should start from one single hash.</a> <a data-t="1803">Let's use the chapter title, Hello World.</a> <a data-t="1811">Let's just leave two paragraphs here.</a> <a data-t="1815">Another chapter, let's build the book again.</a> <a data-t="1818">So we have two RMDs, so now we have two pages in the book.</a> <a data-t="1826">So that's how you can start a simple book.</a></p>
 
@@ -178,7 +178,7 @@
 
 <p><a data-t="2058">So this RStudio add-in can help you type the math expressions.</a> <a data-t="2064">And it also shows you the LaTeX source of the math content.</a> <a data-t="2071">So when you are done, you can click done, and you will see the math equation in your R Markdown source document.</a> <a data-t="2081">And you just add a pair of dollar signs, and there will be a math equation there.</a> <a data-t="2088">So that's the math.</a></p>
 
-<p><a data-t="2092">And you can embed R code chunks.</a> <a data-t="2095">You should be very familiar with that.</a> <a data-t="2098">You can number figures and tables and cross-references.</a> <a data-t="2103">And you can also have some custom blocks.</a> <a data-t="2106">Like sometimes you may want to write some notes or warnings or information in your book.</a> <a data-t="2114">So you can use these custom blocks.</a> <a data-t="2116">I'm not going to show you the detailed syntax, but I just want to let you know that this is a possibility.</a></p>
+<p><a data-t="2092">And you can embed R code chunks.</a> <a data-t="2095">You should be very familiar with that.</a> <a data-t="2098">You can number figures and tables and cross-references.</a> <a data-t="2103">And you can also have some custom blocks.</a> <a data-t="2106">Like sometimes you may want to write some notes or warnings or information in your book.</a> <a data-t="2997">So you can use these custom blocks.</a> <a data-t="2116">I'm not going to show you the detailed syntax, but I just want to let you know that this is a possibility.</a></p>
 
 <p><a data-t="2125">And I mentioned HTML widgets and Shiny apps.</a> <a data-t="2129">So when the output format is HTML, you will see the HTML widgets live in your book.</a></p>
 
@@ -192,7 +192,7 @@
 
 <p><a data-t="2242">Let me talk a little bit about customization.</a> <a data-t="2251">So actually these output formats are highly customizable.</a> <a data-t="2257">I just want to show you one simple example.</a> <a data-t="2263">Let's just use LaTeX output as an example.</a></p>
 
-<p><a data-t="2275">I'm not sure how many people have used a LaTeX document class called ComaScript.</a> <a data-t="2286">And that LaTeX document class is called SRCbook.</a> <a data-t="2291">And you may need to install a LaTeX package.</a> <a data-t="2295">But anyway, I just want to show you how you can change the style of the output.</a> <a data-t="2302">Just using some simple options.</a></p>
+<p><a data-t="3009">I'm not sure how many people have used a LaTeX document class called ComaScript.</a> <a data-t="2286">And that LaTeX document class is called SRCbook.</a> <a data-t="2291">And you may need to install a LaTeX package.</a> <a data-t="2295">But anyway, I just want to show you how you can change the style of the output.</a> <a data-t="2302">Just using some simple options.</a></p>
 
 <p><a data-t="2311">Oh, sorry. It's not SRC. It's SCR.</a> <a data-t="2313">Let's build this book to PDF again.</a> <a data-t="2318">So it will be using ComaScript to typeset your book.</a> <a data-t="2328">So you can see now the style is different.</a> <a data-t="2332">And just with a very simple change, you can totally change the appearance of your book.</a></p>
 
@@ -216,9 +216,9 @@
 
 <h3>Q&A</h3>
 
-<p><a data-t="2633">One person asked, how does one reorder the chapters?</a> <a data-t="2638">Okay, that's a very good question.</a> <a data-t="2640">Alright, yeah, that's a very good question.</a> <a data-t="2643">So you have multiple RMD files here and the default order is just the natural order.</a> <a data-t="2650">That's why I named these RMD files as 010203.</a> <a data-t="2655">If you want to reorder these chapters, there is a configuration file called bookdown.yaml.</a> <a data-t="2665">So there you can have an option named RMD files.</a> <a data-t="2673">It's this RMD files option.</a> <a data-t="2678">So you basically provide your own order of these RMD files using this RMD files option in the configuration file underscore bookdown.yaml.</a></p>
+<p><a data-t="2633">One person asked, how does one reorder the chapters?</a> <a data-t="3137">Okay, that's a very good question.</a> <a data-t="2640">Alright, yeah, that's a very good question.</a> <a data-t="2643">So you have multiple RMD files here and the default order is just the natural order.</a> <a data-t="2650">That's why I named these RMD files as 010203.</a> <a data-t="2655">If you want to reorder these chapters, there is a configuration file called bookdown.yaml.</a> <a data-t="2665">So there you can have an option named RMD files.</a> <a data-t="2673">It's this RMD files option.</a> <a data-t="2678">So you basically provide your own order of these RMD files using this RMD files option in the configuration file underscore bookdown.yaml.</a></p>
 
-<p><a data-t="2691">Someone asked, can cross references be forward references?</a> <a data-t="2697">And the answer is yes.</a> <a data-t="2699">It doesn't matter where your figures or tables are.</a> <a data-t="2705">You can simply use the chunk label with the syntax that I mentioned, the backslash at ref.</a> <a data-t="2713">You may generate a figure later in the chapter and refer to it earlier in the chapter.</a></p>
+<p><a data-t="2691">Someone asked, can cross references be forward references?</a> <a data-t="3139">And the answer is yes.</a> <a data-t="2699">It doesn't matter where your figures or tables are.</a> <a data-t="2705">You can simply use the chunk label with the syntax that I mentioned, the backslash at ref.</a> <a data-t="2713">You may generate a figure later in the chapter and refer to it earlier in the chapter.</a></p>
 
 <p><a data-t="2723">And the next one is, can you use Python with bookdown?</a> <a data-t="2727">And the answer is also yes.</a> <a data-t="2729">So to use Python, instead of 3 backticks with R, you just use 3 backticks Python.</a> <a data-t="2739">Actually this is not perfect at the moment and we will improve this in the future.</a></p>
 
@@ -242,4 +242,4 @@
 
 <p><a data-t="3123">And let me pick a shorter question.</a> <a data-t="3125">What is the possibility of using this in conjunction with something like IEEE journal data templates so that we can write conference and journal articles?</a> <a data-t="3137">That's also a very good question.</a> <a data-t="3139">And the answer is that instead of using bookdown, there's a package called Articles, also in the RStudio repository called Articles.</a> <a data-t="3151">And there are several examples of using RMD for journal articles.</a></p>
 
-<p><a data-t="3157">Probably I can show you a very quick example of writing a paper for journal of statistical software.</a> <a data-t="3164">Let's create a new document under Documents.</a> <a data-t="3177">So this is just an RMD document, and it's using the Articles package to compile this document.</a> <a data-t="3186">And now you can see you have a journal article.</a> <a data-t="3190">And the only thing you want to do is that you have to write a LaTeX template.</a> <a data-t="3202">And as I said, there are many examples here.</a> <a data-t="3206">So you can probably study these templates and then use the IEEE LaTeX style.</a> <a data-t="3214">And then you can combine RMD with these journal styles.</a></p>
+<p><a data-t="3157">Probably I can show you a very quick example of writing a paper for journal of statistical software.</a> <a data-t="3169">Let's create a new document under Documents.</a> <a data-t="3177">So this is just an RMD document, and it's using the Articles package to compile this document.</a> <a data-t="3186">And now you can see you have a journal article.</a> <a data-t="3190">And the only thing you want to do is that you have to write a LaTeX template.</a> <a data-t="3202">And as I said, there are many examples here.</a> <a data-t="3206">So you can probably study these templates and then use the IEEE LaTeX style.</a> <a data-t="3214">And then you can combine RMD with these journal styles.</a></p>

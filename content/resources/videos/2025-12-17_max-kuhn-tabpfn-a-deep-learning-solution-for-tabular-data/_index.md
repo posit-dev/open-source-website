@@ -43,8 +43,8 @@ external:  # updated automatically, do not edit
     - Presentation slides: https://topepo.github.io/2025-r-pharma/'
   duration: 1334
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:19.320980+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 27
   people:
   - Max Kuhn

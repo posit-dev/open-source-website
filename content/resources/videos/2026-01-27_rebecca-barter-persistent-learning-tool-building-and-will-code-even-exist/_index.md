@@ -67,8 +67,8 @@ external:  # updated automatically, do not edit
     • The uncertain future of code'
   duration: 3546
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:07.250210+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 7
   playlist: ''
   tags: []

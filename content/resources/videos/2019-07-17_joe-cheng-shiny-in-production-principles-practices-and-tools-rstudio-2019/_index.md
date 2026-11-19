@@ -65,8 +65,8 @@ external:  # updated automatically, do not edit
   description: "Shiny is a web framework for R, a language not traditionally known for web frameworks, to say the least. As such, Shiny has always faced questions about whether it can or should be used “in production”. In this talk we’ll explore what “production” even means, review some of the historical obstacles and objections to using Shiny for production purposes, and discuss practices and tools that can help your Shiny apps flourish.\r\n\r\nAbout the Author: Joe Cheng is the Chief Technology Officer at RStudio. Joe was the original creator of Shiny, and leads the team responsible for Shiny and Shiny Server. GitHub: https://github.com/jcheng5\r\n\r\nMaterials: https://speakerdeck.com/jcheng5/shiny-in-production"
   duration: 3027
   has_captions: false
-  language: en
-  last_updated: '2026-09-18T13:58:18.646028+00:00'
+  language: ''
+  last_updated: '2026-11-12T12:18:01.684986+00:00'
   like_count: 493
   people:
   - Joe Cheng
