@@ -114,7 +114,8 @@ Shiny v1.14 added [`session$destroy()`](../../blog/2026-08-04_shiny-r-1-14-pytho
 In v1.14, closing a session destroyed every reactive value and expression created in it. That sounds tidy, but async work often finishes *after* the browser has gone away. Refresh the page while an [`ExtendedTask`](https://shiny.posit.co/r/reference/shiny/latest/ExtendedTask.html) is running, and when the task settled you'd see an error like this in your R console:
 
 ``` text
-Can't access reactive `Theme Counter`; its module session has been destroyed
+Can't access reactive `Theme Counter`;
+its module session has been destroyed
 ```
 
 The same thing happened with any promise or `later()` callback that read or set a reactive after the session closed. And there was little you could do about it, since the access was often inside Shiny, bslib, or shinychat instead of your own code.
