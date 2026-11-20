@@ -40,7 +40,7 @@ This is a small release: one new feature, and a round of fixes for things that c
 
 ## Agent skill
 
-When we [shipped agent skills in Shiny for Python v1.7](../../blog/2026-08-04_shiny-r-1-14-python-1-7/#agent-skills), we said they were coming to R soon... they're here!
+When we [shipped agent skills in Shiny for Python v1.7](../../blog/2026-08-04_shiny-r-1-14-python-1-7/#agent-skills), we said they were coming to R soon. They're here!
 
 Coding agents write a lot of Shiny apps, and they tend to make the same mistakes: nested `fluidRow()` and `column()` pyramids instead of a bslib layout, tabs faked with buttons and `conditionalPanel()`, slow work that blocks all user sessions, and `print()` calls in place of a debugger. Shiny v1.15 ships a `shiny-for-r` skill that follows the [Agent Skills](https://agentskills.io) convention and steers agents toward what the framework already provides.
 
