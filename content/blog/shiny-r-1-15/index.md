@@ -1,6 +1,6 @@
 ---
 title: Shiny for R 1.15
-date: 2026-11-19T00:00:00.000Z
+date: 2026-11-23T00:00:00.000Z
 people:
   - Barret Schloerke
 description: >
