@@ -10,7 +10,7 @@ description: "PyCon Italia is the national conference that brings together profe
 people:
   - Alessandro Molina
 software:
-- orbital
+- orbital-python
 languages:
 - Python
 ---
