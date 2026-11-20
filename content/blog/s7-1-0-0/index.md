@@ -1,6 +1,6 @@
 ---
 title: S7 1.0.0
-date: 2026-11-19T00:00:00.000Z
+date: 2026-11-20T00:00:00.000Z
 people:
   - Tomasz Kalinowski
   - Hadley Wickham
