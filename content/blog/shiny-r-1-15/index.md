@@ -46,24 +46,15 @@ Coding agents write a lot of Shiny apps, and they tend to make the same mistakes
 
 To show the difference, here is one small app written both ways. The data, inputs, and outputs are the same; only the choice of layout and navigation changes.
 
-<div class="grid gap-12 items-start mt-12 md:grid-cols-2">
-<div class="prose max-w-none">
-
 <figure>
 <img src="skill-before.png" data-fig-alt="A plain Shiny app titled Fuel economy. A grey box of inputs sits on the left. Three numbers are shown as plain text under small headings, above two buttons labelled Plot and Data and an unstyled scatterplot." alt="The habits above: a fluidRow() and column() grid, with two buttons and conditionalPanel() standing in for tabs." />
 <figcaption aria-hidden="true">The habits above: a <code>fluidRow()</code> and <code>column()</code> grid, with two buttons and <code>conditionalPanel()</code> standing in for tabs.</figcaption>
 </figure>
 
-</div>
-<div class="prose max-w-none">
-
 <figure>
 <img src="skill-after.png" data-fig-alt="The same Fuel economy app as a bslib dashboard. Inputs sit in a sidebar. Three value boxes show the numbers in large type, above a card with Plot and Data tabs that holds a coloured scatterplot." alt="What the skill points to: a bslib page with a sidebar, value boxes, and a card with real tabs." />
 <figcaption aria-hidden="true">What the skill points to: a bslib page with a sidebar, value boxes, and a card with real tabs.</figcaption>
 </figure>
-
-</div>
-</div>
 
 The skill is an index. Its `SKILL.md` is a short table of topics, and each row points to one of 21 reference files. An agent reads the index, then opens only the one or two references its task touches:
 
