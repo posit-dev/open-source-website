@@ -18,7 +18,7 @@ external:  # updated automatically, do not edit
   id: 1iqf2y4yllgpo
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/3f78j44eedwi5/promo-image.1791469743.svg
   kind: course
-  modified_at: '2026-10-27T11:45:14.462796Z'
+  modified_at: '2026-11-20T12:19:28.494459Z'
   order: 34
   slug: collaborate-with-ai-on-an-r-analysis
   software:

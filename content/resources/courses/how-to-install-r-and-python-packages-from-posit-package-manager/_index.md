@@ -21,7 +21,7 @@ external:  # updated automatically, do not edit
   kind: course
   labels:
   - package-manager
-  modified_at: '2026-10-27T12:15:45.789019Z'
+  modified_at: '2026-11-20T12:24:13.183174Z'
   order: 19
   slug: how-to-install-r-and-python-packages-from-posit-package-manager
   software:
