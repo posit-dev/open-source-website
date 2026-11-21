@@ -39526,11 +39526,11 @@ view_count = 904
 like_count = 38
 comment_count = 1
 thumbnail = "https://i.ytimg.com/vi/gCbB3LleF_g/hqdefault.jpg"
-language = "en"
+language = ""
 has_captions = false
 definition = "hd"
 publish = true
-last_updated = "2026-11-12T12:18:01.684986+00:00"
+last_updated = "2026-11-21T05:09:09.956351+00:00"
 
 [[videos]]
 url = "https://www.youtube.com/watch?v=VMGQ3mVbYXI"
@@ -51983,11 +51983,11 @@ view_count = 1784
 like_count = 66
 comment_count = 2
 thumbnail = "https://i.ytimg.com/vi/0lUasIgzt9U/hqdefault.jpg"
-language = ""
+language = "en"
 has_captions = false
 definition = "hd"
 publish = true
-last_updated = "2026-11-12T12:18:01.684986+00:00"
+last_updated = "2026-11-21T05:09:09.956351+00:00"
 
 [[videos]]
 url = "https://www.youtube.com/watch?v=3sKTdh-xciY"
@@ -64359,11 +64359,11 @@ view_count = 382
 like_count = 13
 comment_count = 0
 thumbnail = "https://i.ytimg.com/vi/cPjlQAmw6xU/maxresdefault.jpg"
-language = "en"
+language = ""
 has_captions = false
 definition = "hd"
 publish = true
-last_updated = "2026-09-18T13:58:19.006177+00:00"
+last_updated = "2026-11-21T05:09:09.956351+00:00"
 
 [[videos]]
 url = "https://www.youtube.com/watch?v=MphOm5LDhi8"
@@ -66110,8 +66110,8 @@ last_updated = "2026-09-18T13:58:19.006122+00:00"
 
 [[videos]]
 url = "https://www.youtube.com/watch?v=v5iDW7g0h5w"
-title = "How can you add AI voice agents to a Shiny app? | Lucas Da Silva | DS Lab"
-slug = "2026-11-11_how-can-you-add-ai-voice-agents-to-a-shiny-app-lucas-da-silva-ds-lab"
+title = "How can you add AI voice agents to a mobile Shiny app? | Lucas Da Silva | DS Lab"
+slug = "2026-11-11_how-can-you-add-ai-voice-agents-to-a-mobile-shiny-app-lucas-da-silva-ds-lab"
 date = "2026-11-11T17:01:44Z"
 description = "Use shinyrealtime and GPT Realtime for a live voice agent, or MediaRecorder plus Deepgram for voice notes! Give the agent tools to do the work, and keep the app organized in Shiny modules.\n\nIn this Data Science Lab session, Lucas Da Silva, a data analyst at Suffolk Construction, demonstrates how his team uses AI and automation to bridge the gap between programming and construction field operations. Lucas presents the evolution of 'Vera,' a tool designed to solve the manual friction of construction scheduling. With Shiny for Python, Deepgram transcription, and an LLM, voice notes from the job site can be mapped to schedule tasks and reviewed later, no paper needed.\n\nThe Data Science Lab is a live weekly call. Register at pos.it/dslab! Discord invites go out each week on lives calls. We'd love to have you! It's is an open, messy space for learning and asking questions. Think of it like pair coding with a friend or two. Learn something new, and share what you know to help others grow.\n\nOriginally recorded September 29, 2026.\n\n0:00 Welcome to the Data Science Lab\n1:33 Meet Lucas Da Silva, Suffolk Construction\n2:53 How the session works\n4:26 Construction scheduling 101: planners and superintendents\n5:49 The problem: a digital schedule turned into paper and back\n7:42 The proposed solution: a voice assistant on the job site\n9:39 Getting buy-in for AI tools\n11:11 Demo: Vera, the voice agent (built with shinyrealtime)\n17:15 Q&A: speed, undo, and how the agent uses tools\n20:10 Q&A: BIM, change history, and exporting to P6\n22:07 Field-testing lessons: why friction isn't always a bad thing\n25:28 Q&A: security and privacy\n27:22 Demo: Vera Notes and Vera Review\n29:29 Q&A: accents and construction lingo\n34:07 Mapping notes to schedule tasks with an LLM\n37:11 Learning Shiny on the job\n40:37 Code walkthrough: Shiny modules\n42:19 Recording audio with JavaScript and MediaRecorder\n43:32 Transcription with Deepgram\n46:03 Don't one-shot it: building an app step by step\n47:42 How audio flows through the app\n49:04 Storing and structuring notes\n50:10 Q&A: Shiny vs. Streamlit, and why Shiny for Python\n52:00 Demo code on GitHub (QR code)\n54:17 Wrap-up and thank you\n\nResources:\n\n- Download Positron (the IDE Lucas uses): https://positron.posit.co/download.html\n- Lucas’ GitHub: https://github.com/Suffolk-Construction-Corporation-Inc/presentations_and_materials/tree/main/data_science_lab_2026 \n- Lucas’ presentation: https://github.com/Suffolk-Construction-Corporation-Inc/presentations_and_materials/tree/main/data_science_lab_2026\n- Shiny modules: https://mastering-shiny.org/scaling-modules.html\n- data-dict package: https://data-dict.tidyverse.org/\n\nVoice-Enabled Applications\n\n- Shinyrealtime: https://github.com/posit-dev/shinyrealtime \n- Deepgram: https://deepgram.com\n- Deepgram repo: https://github.com/deepgram/deepgram-python-sdk \n\nTalk To Your Data Applications\n\n- commons:  https://opensource.posit.co/blog/2026-09-15_commons-0-1-0/\n- commons repo: https://posit-dev.github.io/commons/\n\nOther Cool Things Lucas Saw At Conf That May (or May Not) Be Relevant\n\n- Shinyreact: https://github.com/posit-dev/shinyreact  \n- Data-dict: https://data-dict.tidyverse.org/"
 duration = 3383
@@ -66126,7 +66126,7 @@ language = "en"
 has_captions = true
 definition = "hd"
 publish = true
-last_updated = "2026-11-12T12:18:01.684986+00:00"
+last_updated = "2026-11-21T05:09:09.956351+00:00"
 
 [[videos]]
 url = "https://www.youtube.com/watch?v=EETn08zQMYw"
@@ -66530,11 +66530,11 @@ view_count = 3757
 like_count = 55
 comment_count = 4
 thumbnail = "https://i.ytimg.com/vi/4rUzyOIvAog/hqdefault.jpg"
-language = "en"
+language = ""
 has_captions = false
 definition = "hd"
 publish = true
-last_updated = "2026-11-12T12:18:01.684986+00:00"
+last_updated = "2026-11-21T05:09:09.956351+00:00"
 
 [[videos]]
 url = "https://www.youtube.com/watch?v=aYmMgJPUpu0"
@@ -67445,3 +67445,421 @@ has_captions = false
 definition = "hd"
 publish = true
 last_updated = "2026-11-12T12:18:01.684986+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=qgAJcatrTxk"
+title = "Sidebar landmarks for improved accessibility in Shiny for Python 1.9"
+slug = "2026-11-20_sidebar-landmarks-for-improved-accessibility-in-shiny-for-python-19"
+date = "2026-11-20T12:43:03Z"
+description = "Shiny for Python 1.9 introduces accessible sidebar landmarks, improving screen reader navigation and keyboard accessibility for web applications. Upgrade your Shiny UI layouts using ui.sidebar() with proper ARIA labels to make your data dashboards compliant with WCAG standards.\n\n#Shiny #Python"
+duration = 81
+channel = "Posit PBC"
+playlist = ""
+tags = [
+    "rstudio",
+    "data science",
+    "machine learning",
+    "python",
+    "stats",
+    "tidyverse",
+    "data visualization",
+    "data viz",
+    "ggplot",
+    "technology",
+    "coding",
+    "connect",
+    "server pro",
+    "shiny",
+    "rmarkdown",
+    "package manager",
+    "CRAN",
+    "interoperability",
+    "serious data science",
+    "dplyr",
+    "forcats",
+    "ggplot2",
+    "tibble",
+    "readr",
+    "stringr",
+    "tidyr",
+    "purrr",
+    "github",
+    "data wrangling",
+    "tidy data",
+    "odbc",
+    "rayshader",
+    "plumber",
+    "blogdown",
+    "gt",
+    "lazy evaluation",
+    "tidymodels",
+    "statistics",
+    "debugging",
+    "programming education",
+    "rstats",
+    "open source",
+    "OSS",
+    "reticulate",
+]
+view_count = 198
+like_count = 4
+comment_count = 0
+thumbnail = "https://i.ytimg.com/vi/qgAJcatrTxk/maxresdefault.jpg"
+language = "en"
+has_captions = false
+definition = "hd"
+publish = true
+last_updated = "2026-11-21T05:09:09.956351+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=L_k3jdPGbqI"
+title = "Governed AI for Data Science with Posit and Amazon Bedrock | Positron on SageMaker Demo"
+slug = "2026-11-18_governed-ai-for-data-science-with-posit-and-amazon-bedrock-positron-on-sagemaker-demo"
+date = "2026-11-18T23:44:05Z"
+description = "Governed AI for data science lets your team use AI assistants while IT controls models, data, logging and cost. In this demo and discussion, James Blair (Posit) and Rodrigo Gazzaneo (AWS) show how Posit Assistant, Positron and Amazon Bedrock work together.\n\nYou'll see:\nHow Amazon Bedrock keeps prompts and data inside AWS and lets you choose the regions that process your requests\n\nPosit Assistant in Positron on Amazon SageMaker, connected to Bedrock through your existing AWS permissions (Posit Assistant also runs in RStudio and Posit Workbench with the same controls)\n\nModel access by user, Bedrock guardrails that block PII and policy violations, and per-turn cost tracking\n\nAI-assisted analysis of a loan dataset in Amazon Athena, plus Bedrock usage reporting by user, model and tokens\n\nCommons, an R and Python package that helps data scientists build trustworthy data analysis agents.\n\n\nResources:\nPosit and Amazon Bedrock: A guide for security and platform teams\nhttps://blairj09.github.io/aws-webinar-november-2026/security-guide/security-guide.html\n\n5-minute video walkthrough: Positron on Sagemaker https://posit.co/product-demo/positron-amazon-sagemaker-studio-5-minute-walkthrough\n\nWhat is the commons package? \nhttps://youtu.be/4rUzyOIvAog?si=Jq24v4zQh_8OyS6g\n\nInfographic: Journey from prompt to production | Governed AI Workflows with Posit and AWS \nhttps://posit.co/infographic/prompt-production-governed-ai-workflows-posit-and-aws\n\nAbout Posit + AWS\nhttps://posit.co/solutions/aws\n\nMeet with an expert\nhttps://posit.co/schedule-a-call?utm_source=partner&utm_medium=web&utm_campaign=701qg00000npvwhiab&utm_term=aws&utm_content=contact-us"
+duration = 3191
+channel = "Posit PBC"
+playlist = ""
+tags = [
+    "rstudio",
+    "data science",
+    "machine learning",
+    "python",
+    "stats",
+    "tidyverse",
+    "data visualization",
+    "data viz",
+    "ggplot",
+    "technology",
+    "coding",
+    "connect",
+    "server pro",
+    "shiny",
+    "rmarkdown",
+    "package manager",
+    "CRAN",
+    "interoperability",
+    "serious data science",
+    "dplyr",
+    "forcats",
+    "ggplot2",
+    "tibble",
+    "readr",
+    "stringr",
+    "tidyr",
+    "purrr",
+    "github",
+    "data wrangling",
+    "tidy data",
+    "odbc",
+    "rayshader",
+    "plumber",
+    "blogdown",
+    "gt",
+    "lazy evaluation",
+    "tidymodels",
+    "statistics",
+    "debugging",
+    "programming education",
+    "rstats",
+    "open source",
+    "OSS",
+    "reticulate",
+]
+view_count = 695
+like_count = 3
+comment_count = 0
+thumbnail = "https://i.ytimg.com/vi/L_k3jdPGbqI/maxresdefault.jpg"
+language = "en"
+has_captions = false
+definition = "hd"
+publish = true
+last_updated = "2026-11-21T05:09:09.956351+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=y8A8uoWOi-U"
+title = "How do you get started with unit testing in R? | Jacci Ziebert | Data Science Lab"
+slug = "2026-11-18_how-do-you-get-started-with-unit-testing-in-r-jacci-ziebert-data-science-lab"
+date = "2026-11-18T13:45:26Z"
+description = "Start small: put your code in small functions inside a package, run `use_testthat()` to set up testing, and write one `test_that()` test that compares a function’s output to what you expect. Then try edge cases like zero or negative input, and use assertthat or cli for clear error messages. You’re probably testing informally already, so this just writes it down, and you can add snapshots, mocking, or the ensure add-in later.\n\nIn this Data Science Lab session, Jacci Ziebert, facilitate a community discussion on the fundamentals and importance of unit testing in R. We begin by addressing the common practice of writing monolithic functions and why modularity is essential for easier debugging and more reliable testing. Jacci does this by showcasing the use of the testthat package to create and run unit tests.\n\nThe Data Science Lab is a live weekly call. Register at pos.it/dslab! Discord invites go out each week on lives calls. We'd love to have you! It's is an open, messy space for learning and asking questions. Think of it like pair coding with a friend or two. Learn something new, and share what you know to help others grow.\n\nOriginally recorded on October 6, 2026.\n\nResources mentioned:\n- Jacci’s unit testing blog post: https://jacciz.github.io/portfolio/projects/unit_testing.html \n- Jacci’s blog post on clean code: https://jacciz.github.io/portfolio/projects/clean_code.html \n- usethis: https://usethis.r-lib.org/\n- testthat: https://testthat.r-lib.org/\n- assertthat: https://github.com/hadley/assertthat\n- waldo: https://waldo.r-lib.org/\n- glue: https://glue.tidyverse.org/\n- rlang: https://rlang.r-lib.org/\n- withr: https://withr.r-lib.org/\n- ensure: https://simonpcouch.github.io/ensure/ \n- cli: https://cli.r-lib.org/reference/index.html\n- cli progress bar! https://cli.r-lib.org/reference/cli_progress_step.html\n- echarts4r: https://echarts4r.john-coene.com/ \n- Positron keybindings: https://positron.posit.co/keyboard-shortcuts.html\n- Plotly for R: https://plotly.com/r/\n- Snapshot testing in R: https://testthat.r-lib.org/articles/snapshotting.html\n- autogradeR : https://math-mcshane.github.io/autogradeR/\n- Ryan McShane's unit testing for student code: https://ryanmcshane.com/talk/ecots_2026/ \n-  Riffomonas/ Pat Schloss' videowhere you write the test failing tests first: https://www.youtube.com/watch?v=TaNvqwMmHus\n- Custom expectations vignette in testthat: https://testthat.r-lib.org/articles/custom-expectation.html\n- Skill for testing R packages: https://github.com/posit-dev/skills/tree/main/r-lib/testing-r-packages\n\n0:00 Welcome to the Data Science Lab\n1:09 Poll: Do you do testing in R?\n3:21 Testober: what's coming (Python and Shiny testing)\n4:35 Why unit test? The \"monolith function\" problem\n9:18 Why modularity and testability help (Jacci's story)\n10:56 Q&A: Does input validation count as testing?\n12:54 Jacci shares her screen: building a test-friendly package\n13:47 Tip: add a Source column in RStudio\n17:06 Helpful packages: usethis, testthat, assertthat, cli\n18:32 Q&A: Package development shortcuts in Positron\n20:23 What a unit test is and setting up with use_testthat()\n23:52 Writing your first tests and testing edge cases\n31:44 Clearer error messages with assertthat\n35:35 Testing that errors and messages show up (expect_error)\n38:24 Snapshot testing with expect_snapshot()\n43:11 Q&A: Embedding values in error messages, and cli\n46:41 Q&A: Reusing tests and mocking functions\n50:22 Generating unit tests with the ensure add-in\n55:23 Agent skills for testing R packages\n58:22 Wrap-up and thank you to Jacci"
+duration = 3579
+channel = "Posit PBC"
+playlist = ""
+tags = []
+view_count = 1225
+like_count = 19
+comment_count = 2
+thumbnail = "https://i.ytimg.com/vi/y8A8uoWOi-U/maxresdefault.jpg"
+language = "en"
+has_captions = true
+definition = "hd"
+publish = true
+last_updated = "2026-11-21T05:09:09.956351+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=YXSSgnhnJ1M"
+title = "How do you use Nix & rix for data science? | Eric Nantz | Data Science Lab"
+slug = "2026-11-16_how-do-you-use-nix-rix-for-data-science-eric-nantz-data-science-lab"
+date = "2026-11-16T16:00:09Z"
+description = "You can use the {rix} R package as a bridge to Nix, allowing you to define a safe, sandboxed environment using familiar R syntax rather than mastering Nix’s complex DSL (domain-specific language)!\n\nThe Data Science Lab is a live weekly call. Register at pos.it/dslab! Discord invites go out each week on lives calls. We'd love to have you! It's is an open, messy space for learning and asking questions. Think of it like pair coding with a friend or two. Learn something new, and share what you know to help others grow.\n\nOn this Lab, Eric Nantz, Senior Directory - Innovation Statistics at Eli Lilly & Company, showcases how the {rix} R package, alongside Nix, empowers a data scientist to create reproducible, isolated, and efficient analytical environments.\n\nNOTE! Eric had some technical difficulties during this recording, so please give us some grace! There are a couple of times where he drops off Zoom because his system crashes (which has nothing to do with Nix or rix, we promise!), but you can follow the timestamps below to get back on track.\n\nHosting crew from Posit: Libby Heeren, Isabella Velásquez\nRecorded: September 1, 2026\n\nEric Nantz's socials and urls:\n\n- Bluesky: https://bsky.app/profile/rpodcast.bsky.social\n- Mastodon: https://podcastindex.social/@rpodcast\n- LinkedIn: https://www.linkedin.com/in/eric-nantz-6621617/\n- GitHub: https://github.com/rpodcast\n- R-Podcast: https://r-podcast.org\n- R Weekly Highlights Podcast: https://serve.podhome.fm/r-weekly-highlights\n- Shiny Developer Series: https://shinydevseries.com\n\nResources mentioned in video and/or the chat:\n\n- NixOS lab management example (nixos-lab): https://github.com/giovantenne/nixos-lab\n- DINUM (France) is switching to NixOS: https://discourse.nixos.org/t/dinum-france-is-switching-to-nixos/77558\n- devenv.sh: https://devenv.sh/\n- Eric's Nix/{rix} talk from R/Medicine: https://www.youtube.com/watch?v=-NARVwViEwA\n- Slides for Eric's Nix/{rix} talk: https://rpodcast.github.io/rixshiny-rmed2025/#/title-slide\n- Zero to Nix: https://zero-to-nix.com/\n- What is Nix (Shopify Engineering): https://shopify.engineering/what-is-nix\n- What is Nix (Serokell): https://serokell.io/blog/what-is-nix\n- xkcd: Dependency comic: https://xkcd.com/2347/\n\nTimestamps:\n\n00:00 Introduction\n03:04 \"Why do we need reproducible environments?\"\n05:42 What is Nix?\n06:40 Introducing the {rix} R package\n07:49 Demo: Project-specific R workflows with Nix\n09:05 R Weekly Quarto calendar dashboard demo\n11:15 Declaring dependencies in R with rix()\n12:57 Generating the default.nix configuration file\n15:38 \"Does this work with Positron?\"\n15:46 \"Can you add packages to the environment later?\"\n17:06 \"Who would find rix most useful?\"\n19:57 Building the environment with nix-build\n21:14 Entering the sandbox with nix-shell\n22:20 Connecting IDEs like Positron and VS Code to the Nix shell\n23:57 \"How does this work with Quarto and R/Python code chunks?\"\n26:22 \"Does rix handle transitive dependencies?\"\n27:54 The Nix store and immutable packages\n28:50 \"What does this mean for packages that are not on CRAN?\"\n30:55 Deploying with GitHub Actions and Nix\n31:58 Zoom drop\n35:40 Eric returns!\n34:28 Comparing Nix and rix to renv, arv, and uvr\n40:07 \"What is the status of Nix on Windows?\"\n41:52 \"Are dev containers analogous to Docker?\"\n43:27 Zoom drop 2\n45:27 Eric returns again!\n43:48 Using dev containers in Positron\n45:04 \"What are your opinions on rix versus devenv.sh?\"\n45:53 Collaborating and deploying projects with Nix\n48:29 Bit-for-bit reproducibility: Nix vs. renv restore\n52:01 \"Is it harder to use packages that are not on CRAN?\"\n54:26 \"Can arv and rix be installed on the same system, or do they conflict?\"\n55:30 Comparing rix, devenv, and direnv\n57:42 Wrap-up and mentioning Bioconductor packages"
+duration = 3541
+channel = "Posit PBC"
+playlist = ""
+tags = []
+view_count = 1694
+like_count = 18
+comment_count = 2
+thumbnail = "https://i.ytimg.com/vi/YXSSgnhnJ1M/maxresdefault.jpg"
+language = "en"
+has_captions = true
+definition = "hd"
+publish = true
+last_updated = "2026-11-21T05:09:09.956351+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=n1ArrhWGjbE"
+title = "Shiny for Python 1.9: Concurrent Async Is Here!"
+slug = "2026-11-16_shiny-for-python-19-concurrent-async-is-here"
+date = "2026-11-16T13:00:26Z"
+description = "Shiny for Python 1.9 introduces concurrent async execution, removing the global reactive lock so that async outputs, effects, and separate user sessions run in parallel without blocking each other. Previously, a single slow `await` call (like a database query or API request) paused the entire Shiny process; in version 1.9, multiple async tasks execute simultaneously within and across sessions.\n\nLearn more: shiny.posit.co"
+duration = 66
+channel = "Posit PBC"
+playlist = ""
+tags = [
+    "rstudio",
+    "data science",
+    "machine learning",
+    "python",
+    "stats",
+    "tidyverse",
+    "data visualization",
+    "data viz",
+    "ggplot",
+    "technology",
+    "coding",
+    "connect",
+    "server pro",
+    "shiny",
+    "rmarkdown",
+    "package manager",
+    "CRAN",
+    "interoperability",
+    "serious data science",
+    "dplyr",
+    "forcats",
+    "ggplot2",
+    "tibble",
+    "readr",
+    "stringr",
+    "tidyr",
+    "purrr",
+    "github",
+    "data wrangling",
+    "tidy data",
+    "odbc",
+    "rayshader",
+    "plumber",
+    "blogdown",
+    "gt",
+    "lazy evaluation",
+    "tidymodels",
+    "statistics",
+    "debugging",
+    "programming education",
+    "rstats",
+    "open source",
+    "OSS",
+    "reticulate",
+]
+view_count = 1042
+like_count = 26
+comment_count = 0
+thumbnail = "https://i.ytimg.com/vi/n1ArrhWGjbE/maxresdefault.jpg"
+language = "en"
+has_captions = false
+definition = "hd"
+publish = true
+last_updated = "2026-11-21T05:09:09.956351+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=JFPy0oDBDOg"
+title = "How can data scientists help bridge technical gaps? | Trang Le | Data Science Hangout"
+slug = "2026-11-15_how-can-data-scientists-help-bridge-technical-gaps-trang-le-data-science-hangout"
+date = "2026-11-15T03:20:59Z"
+description = "Prioritize empathy, simple, accessible language, and vulnerability. Speak plainly about technical stuff and ask for clarification rather than assuming knowledge. When you join a new team or department, start with a small, focused project and see it through to completion. You'll learn a ton along the way that will let you hit the ground running!\n\nADD THE DATA SCIENCE HANGOUT TO YOUR CALENDAR HERE: https://pos.it/dsh - All are welcome! We'd love to see you!\n\nThis week's guest was Trang Le, data scientist at Bristol Myers Squibb and an active contributor to the data science community through projects like {openalexR} and OpenSkiStats. She enjoys turning what she learns into talks, workshops, and useful tools for others, making complicated things a little less complicated, and data science a little more open, practical, and fun.\n\nTrang on LinkedIn: https://www.linkedin.com/in/trangthaole \nopenalexR docs on ropensci: https://docs.ropensci.org/openalexR/\nopenalexR GitHub repo: https://github.com/ropensci/openalexR/\nopenskistats scrollytelling website: https://openskistats.org/story/\nopenskistats GitHub repo: https://github.com/dhimmel/openskistats\n\n► Subscribe to Our Channel Here: https://bit.ly/2TzgcOu\n\nFollow Us Here:\nWebsite: https://www.posit.co\nHangout: https://pos.it/dsh\nThe Lab: https://pos.it/dslab\nLinkedIn:  https://www.linkedin.com/company/posit-software\nBluesky:  https://bsky.app/profile/posit.co\n\nThanks for hanging out with us! 💛\n\nTimestamps: \n00:00 Introduction\n02:25 \"Why did Open Ski Stats come about, and what made you curious enough to build a whole scrollytelling Quarto website about it?\"\n06:54 \"What does a typical day or week look like for you, and what areas do you split your time between?\"\n08:29 \"What types of problems are the teams you support solving, and what kinds of data do they use?\"\n12:27 \"You also developed something called Ada's Notes at BMS, which is separate from OpenAlex. Can you tell us about that initiative?\"\n15:48 \"What are the key skills for working in that intermediate space, so you're helping different camps talk to each other and get the best solutions?\"\n18:42 \"What strategies have you used to get people to keep using and updating the knowledge base so it stays a living resource?\"\n21:28 \"Has reaching out to people one-on-one to ask them to add things been valuable in getting others to contribute to projects like Ada's Notes?\"\n23:47 \"AI has drastically changed hiring needs at biomedical and pharma companies. For bioinformaticians trying to pivot into biotech or pharma, what would give them a leg up: going all in on AI tools, or developing side projects? And what are the benefits of using OpenAlex compared to PubMed?\"\n29:26 \"As someone who builds agents, how do you identify tasks or projects that are appropriate for agentic use? Is there a risk threshold, or what other guidelines do you consider?\"\n32:47 \"What are your thoughts on concerns about AI and reproducibility?\"\n34:43 \"How do you keep the structure of your knowledge space appropriate, and how do you make things searchable?\"\n37:19 \"Can you speak more about the data engineering side of things and what that work entails?\"\n42:01 \"BMS is a large organization spread across different continents. How do you get people to contribute when they speak different domain languages, such as an admin versus a biologist versus a data scientist?\"\n48:36 \"What career advice would you give to people who are new to the field, or what do you wish you had known?\"\n51:03 \"Do you ever make it back to Cambridge?\""
+duration = 3186
+channel = "Posit PBC"
+playlist = ""
+tags = []
+view_count = 894
+like_count = 9
+comment_count = 0
+thumbnail = "https://i.ytimg.com/vi/JFPy0oDBDOg/maxresdefault.jpg"
+language = "en"
+has_captions = true
+definition = "hd"
+publish = true
+last_updated = "2026-11-21T05:09:09.956351+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=EeFa708AgAE"
+title = "Secure Sharing in the Cloud with Posit Connect Cloud"
+slug = "2026-11-13_secure-sharing-in-the-cloud-with-posit-connect-cloud"
+date = "2026-11-13T19:35:44Z"
+description = "Sharing data science work means deciding who sees what: your team, your clients, or the public. Each needs different controls, and your security team will have questions about all three.\n\nIn this session, Chris deMontmollin and Alex Chisholm from the Posit Connect Cloud team walk through the security work Posit shipped over the past year and why it mattered: SOC 2 Type I attestation, enterprise SSO, role-based access control, encrypted secrets, and custom domains. Then they go hands-on with a live demo of private, gated, and public sharing on Connect Cloud, and how to manage all of it as an organization.\n\nYou’ll learn how to:\n\nChoose the right sharing mode for each audience and level of data sensitivity\nShare with clients and partners as external guests who only see what you choose\nSet up roles, permissions, and secrets so sharing scales with your team\nAnswer the questions your security team will ask, including where to get the SOC 2 report\n\nGet started with a free Connect Cloud account: https://connect.posit.cloud\nConnect Cloud plans for teams and organizations: https://connect.posit.cloud/plans\nSecurity details: https://docs.posit.co/connect-cloud/user/platform/security.html\nRequest the SOC 2 report: https://trust.posit.co\n\nPosit Connect Cloud is the fastest way to securely publish and share R and Python work in the cloud. Publish Shiny, Streamlit, Dash, Quarto, and more from GitHub or your IDE, and control exactly who sees it."
+duration = 3396
+channel = "Posit PBC"
+playlist = ""
+tags = []
+view_count = 709
+like_count = 4
+comment_count = 0
+thumbnail = "https://i.ytimg.com/vi/EeFa708AgAE/maxresdefault.jpg"
+language = ""
+has_captions = false
+definition = "hd"
+publish = true
+last_updated = "2026-11-21T05:09:09.956351+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=m-EHamzqOZE"
+title = "How to build dynamic reactive inputs in Shiny with {irid} | Kyle Husmann | Data Science Lab"
+slug = "2026-11-13_how-to-build-dynamic-reactive-inputs-in-shiny-with-irid-kyle-husmann-data-science-lab"
+date = "2026-11-13T02:00:23Z"
+description = "You can use the irid package, which complements Shiny, to help you build interactive, dynamically-changing reactive inputs and outputs that wont overwhelm or overly complicate your Shiny app.\n\nThe Data Science Lab is a live weekly call. Register at pos.it/dslab! Discord invites go out each week on lives calls. We'd love to have you! It's is an open, messy space for learning and asking questions. Think of it like pair coding with a friend or two. Learn something new, and share what you know to help others grow.\n\nOn this Lab, Kyle Husmann, software engineer at Posit, talks about his new irid package, which brings ideas from modern JavaScript component frameworks to Shiny, especially Solid.js, which pioneered fine-grained reactivity where each change updates only the specific DOM node it’s bound to.\n\nHosting crew from Posit: Libby Heeren\nRecorded: August 11, 2026\n\nKyle Husmann's socials and urls:\nhttps://bsky.app/profile/kylehusmann.bsky.social\nhttps://github.com/khusmann\nhttps://kylehusmann.com\n\nResources mentioned in video and/or the chat:\n{irid} website and docs: https://irid.kylehusmann.com/\n{irid} GitHub repo: https://github.com/khusmann/irid\nTemperature converter app example in {irid}: https://irid.kylehusmann.com/apps/temperature/index.html?_shinylive-mode=editor-terminal-viewer\nMore {irid} examples: https://irid.kylehusmann.com/articles/examples.html\nTo Do List example app using {irid}: https://irid.kylehusmann.com/apps/todo/index.html?_shinylive-mode=editor-terminal-viewer\n{irid} package vignette on CRAN: https://cran.rstudio.com/web//packages/irid/vignettes/irid.html\nReact JS: https://legacy.reactjs.org/\nshinystan: https://mc-stan.org/shinystan/\nUsing bslib in Shiny: https://shiny.posit.co/r/articles/build/themes/\nShiny for Python: https://shiny.posit.co/py/\nMastering Shiny book (free): https://mastering-shiny.org/\nWhat is reactivity? (from Mastering Shiny book): https://mastering-shiny.org/basic-reactivity.html\n\nTimestamps\n00:00 Introduction\n03:33 Interactivity and reactivity in standard Shiny\n06:08 \"Why did you make irid and what does it look like?\"\n06:57 Live coding a base Shiny app\n10:13 Adding reactivity in Shiny and UI/server split challenges\n12:57 Introducing {irid} and single-function app architecture\n16:18 \"Is this like implementing Shiny for Python's express mode, but in R?\"\n17:11 Hooking up reactive values in irid\n20:25 Dynamically styling HTML elements with reactive values\n21:50 \"What if you type something that isn't a color?\" (can we break this?)\n22:31 Circular observers and \"update chasing\" in Shiny\n25:48 \"Is it an anonymous function or a reference to the reactive value?\"\n28:57 Demoing the To Do list app in irid\n32:44 \"Can we build our own Shiny inputs using HTML widgets?\"\n33:15 Demoing the CodeMirror editor widget in irid\n35:55 Full tag tree re-renders vs. surgical DOM updates\n38:09 Demoing the bidirectional temperature converter\n39:19 Reviewing the To Do app source code\n42:20 Using conditional logic (when) and list loops (each)\n44:33 Component functions vs. traditional Shiny modules\n47:11 \"Component functions that handle UI and server reactivity sound like modules?\"\n47:44 Demoing the nested questions quiz builder\n48:54 \"Why did you call it Irid?\"\n49:19 Interoperability: Running irid components inside Shiny\n50:41 \"Do you have any specific recommendations when you want to convert an existing Shiny app to use irid?\"\n51:19 Exploring documentation, templates, and Claude skills for irid\n53:56 Diagnosing app freezes and refresh loops in complex apps\n55:26 \"Is the GitHub repo the best place for feedback?\""
+duration = 3415
+channel = "Posit PBC"
+playlist = ""
+tags = []
+view_count = 1506
+like_count = 23
+comment_count = 0
+thumbnail = "https://i.ytimg.com/vi/m-EHamzqOZE/maxresdefault.jpg"
+language = "en"
+has_captions = true
+definition = "hd"
+publish = true
+last_updated = "2026-11-21T05:09:09.956351+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=QKGpnrY5uK0"
+title = "What's new in Shiny for Python 1.9?"
+slug = "2026-11-12_whats-new-in-shiny-for-python-19"
+date = "2026-11-12T14:23:58Z"
+description = "Async effects and outputs now run concurrently, sidebars can be ARIA landmarks, Express download buttons take an icon, and UI updates from background tasks reach the browser right away.\n\nRead more: https://opensource.posit.co/blog/2026-10-29_shiny-python-1-9/"
+duration = 60
+channel = "Posit PBC"
+playlist = ""
+tags = [
+    "rstudio",
+    "data science",
+    "machine learning",
+    "python",
+    "stats",
+    "tidyverse",
+    "data visualization",
+    "data viz",
+    "ggplot",
+    "technology",
+    "coding",
+    "connect",
+    "server pro",
+    "shiny",
+    "rmarkdown",
+    "package manager",
+    "CRAN",
+    "interoperability",
+    "serious data science",
+    "dplyr",
+    "forcats",
+    "ggplot2",
+    "tibble",
+    "readr",
+    "stringr",
+    "tidyr",
+    "purrr",
+    "github",
+    "data wrangling",
+    "tidy data",
+    "odbc",
+    "rayshader",
+    "plumber",
+    "blogdown",
+    "gt",
+    "lazy evaluation",
+    "tidymodels",
+    "statistics",
+    "debugging",
+    "programming education",
+    "rstats",
+    "open source",
+    "OSS",
+    "reticulate",
+]
+view_count = 458
+like_count = 13
+comment_count = 0
+thumbnail = "https://i.ytimg.com/vi/QKGpnrY5uK0/maxresdefault.jpg"
+language = "en"
+has_captions = false
+definition = "hd"
+publish = true
+last_updated = "2026-11-21T05:09:09.956351+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=ZHYA-v4Vk2g"
+title = "Jeroen Janssens - The Modern Tool Builder_ CLIs, Agents, and PEP 723"
+slug = "2026-11-20_jeroen-janssens-the-modern-tool-builder_-clis-agents-and-pep-723"
+date = "2026-11-20T16:46:54Z"
+description = "**script** (_noun_, _Computing_) A sequence of instructions, often single-purpose and context-dependent, that is interpreted by another program.\n\n **tool** (_noun_, _Computing_) A reusable and flexible piece of software designed to solve problems across different contexts or aid in accomplishing diverse tasks.\n \n Being able to write Python scripts is an incredibly useful skill, allowing you to automate nearly any task imaginable. However, with a bit of extra effort, those brittle scripts can be transformed into robust, reusable tools. In particular, tools that you can run from the command line or that can be run by coding agents. Future-you will thank you for making the extra effort.\n \n In this talk, we will explore why you should graduate from writing scripts to building tools, particularly command-line interfaces (CLIs).\n \n CLIs have been around for over 50 years. Thanks to the rise of coding agents, being able to understand and use the command line is now more important than ever. I'd say there are three reasons for this. First, coding agents rely on CLI tools such as find, grep, and git (and maybe yours!). Second, some coding agents, such as Claude Code, are themselves CLI tools that you can incorporate into your scripts. Third, agents are actually really good at helping you to build your own tools, so if you use them there's really no excuse anymore.\n \n The talk first explains why you should consider turning your scripts into flexible, reusable tools. Then, it covers the steps needed in order to do so. Outline:\n \n - Introduction: The CLI Renaissance (5 mins)\n \n - The Unix Philosophy is the AI Tool Philosophy (5 mins)\n \n - Designing for Humans and Agents (10 mins)\n \n - Zero-Setup Execution with PEP 723 (5 mins)\n \n - Polishing the Interface (5 mins)\n\nwww.pydata.org\n\nPyData is an educational program of NumFOCUS, a 501(c)3 non-profit organization in the United States. PyData provides a forum for the international community of users and developers of data analysis tools to share ideas and learn from each other. The global PyData network promotes discussion of best practices, new approaches, and emerging technologies for data management, processing, analytics, and visualization. PyData communities approach data science using many languages, including (but not limited to) Python, Julia, and R. \n\nPyData conferences aim to be accessible and community-driven, with novice to advanced level presentations. PyData tutorials and talks bring attendees the latest project features along with cutting-edge use cases.\n\n00:00 Welcome!\n00:10 Help us add time stamps or captions to this video! See the description for details.\n\nWant to help add timestamps to our YouTube videos to help with discoverability? Find out more here: https://github.com/numfocus/YouTubeVideoTimestamps"
+duration = 2078
+channel = "PyData"
+playlist = "PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati"
+tags = [
+    "Python",
+    "Tutorial",
+    "Education",
+    "NumFOCUS",
+    "PyData",
+    "Opensource",
+    "learn",
+    "software",
+    "python 3",
+    "Julia",
+    "coding",
+    "learn to code",
+    "how to program",
+    "scientific programming",
+]
+view_count = 79
+like_count = 0
+comment_count = 0
+thumbnail = "https://i.ytimg.com/vi/ZHYA-v4Vk2g/maxresdefault.jpg"
+language = "en"
+has_captions = false
+definition = "hd"
+publish = true
+last_updated = "2026-11-21T05:09:09.956351+00:00"
+
+[[videos]]
+url = "https://www.youtube.com/watch?v=UuhXXIa7Ddg"
+title = "Beyond the Prompt"
+slug = "2026-11-19_beyond-the-prompt"
+date = "2026-11-19T17:00:37Z"
+description = "From R+AI 2026\n\nSpeaker: Mine Çetinkaya-Rundel, Professor of the Practice, Department of Statistical Science, Duke University; Senior Developer Advocate, Posit, PBC\n\nAbstract\nAI tools can generate a polished ggplot, scaffold a Quarto report, and debug a dplyr pipeline in seconds. Should students still learn to do these things themselves? I argue yes—and that teaching programming and reproducible workflows is more important than ever. When AI produces plausible code freely, students must be able to assess whether it works as intended, recognize when an analysis quietly goes wrong, and structure their work so every step can be verified. Programming also teaches students to think with data: to ask sharper questions, understand what data can and cannot answer, and reason rigorously about uncertainty and models. Drawing on experience designing introductory data science courses, this talk reframes programming as a pathway to statistical thinking rather than syntax acquisition. Through concrete examples, it explores assignments and assessments that reward genuine understanding and prepare students to use AI critically, reproducibly, and responsibly.\n\nBio\nMine Çetinkaya-Rundel is Professor of the Practice in the Department of Statistical Science at Duke University and Senior Developer Advocate at Posit, PBC, as well as an affiliated faculty member in the Computational Media, Arts, and Cultures program at Duke University. Her work is dedicated to advancing innovation in statistics and data science pedagogy, focusing particularly on computing, reproducible research, student-centered learning, and open-source education. She emphasizes integrating computation into the undergraduate statistics curriculum, employing reproducible research methodologies, and analyzing real and complex datasets.\n\nResources\nR+AI 2026: https://rconsortium.github.io/RplusAI_website/\nTalk Abstract and Bio: https://rconsortium.github.io/RplusAI_website/Abstracts.html#mine-cetinkaya-rundel\nR Consortium: https://www.r-consortium.org/"
+duration = 3048
+channel = "R Consortium"
+playlist = "PL9HYL-VRX0oRAlRLRnRa9YyAAeWuGRati"
+tags = [
+    "rstats",
+    "rconsortium",
+]
+view_count = 396
+like_count = 9
+comment_count = 0
+thumbnail = "https://i.ytimg.com/vi/UuhXXIa7Ddg/maxresdefault.jpg"
+language = "en"
+has_captions = false
+definition = "hd"
+publish = true
+last_updated = "2026-11-21T05:09:09.956351+00:00"
