@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Self-hosted site fonts (assets/css/main.css), so captures match the
+     website exactly and don't depend on the network. -->
+<style>
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300 800;
+    src: url('../../../../static/fonts/open-sans-latin.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 300 900;
+    src: url('../../../../static/fonts/source-code-pro-latin.woff2') format('woff2');
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 675px; overflow: hidden; }
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #17324D;
+    background:
+      radial-gradient(700px 500px at 0% 100%, #DCEBF7 0%, rgba(220,235,247,0) 70%),
+      radial-gradient(800px 600px at 100% 0%, #FDE9DC 0%, rgba(253,233,220,0) 65%),
+      #F6F8FB;
+    position: relative;
+  }
+  .mono { font-family: "Source Code Pro", monospace; }
+
+  .headline { position: absolute; left: 64px; top: 0; height: 675px; width: 360px;
+              display: flex; flex-direction: column; justify-content: center; }
+  .eyebrow { font-size: 15px; font-weight: 700; letter-spacing: 0.14em;
+             text-transform: uppercase; color: #447099; margin-bottom: 18px; }
+  h1 { font-size: 50px; font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; }
+  h1 .ver { font-family: "Source Code Pro", monospace; font-weight: 600; color: #447099; }
+  .sub { margin-top: 22px; font-size: 19px; line-height: 1.5; color: #4A6178; }
+
+  .tile {
+    position: absolute; background: #fff; border-radius: 16px;
+    border: 1px solid #E1E8F0;
+    box-shadow: 0 18px 40px rgba(23, 50, 77, 0.10);
+    padding: 18px 20px; overflow: hidden;
+  }
+  .t1 { left: 450px; top: 48px; width: 710px; height: 300px; }
+  .t2 { left: 870px; top: 367px; width: 290px; height: 260px; }
+  .t3 { left: 450px; top: 367px; width: 400px; height: 260px; }
+  .tag { font-family: "Source Code Pro", monospace; font-size: 15px; font-weight: 600;
+         display: inline-block; padding: 3px 10px; border-radius: 6px; }
+  .tag.blue   { background: #E5EFF8; color: #2F5F8A; }
+  .tag.green  { background: #E3F4E8; color: #1E7A3D; }
+  .tag.purple { background: #EFE8FA; color: #6740A8; }
+  .body { position: absolute; left: 20px; right: 20px; top: 62px; bottom: 18px; }
+
+  /* tile 1: agent skill */
+  .skill { display: flex; gap: 18px; height: 100%; }
+  .file { width: 190px; flex: none; border: 1px solid #DCE3EB; border-radius: 10px;
+          background: #F9FBFD; padding: 12px 14px; }
+  .file .name { font-family: "Source Code Pro", monospace; font-weight: 700; font-size: 18px; margin-bottom: 12px; }
+  .src { font-family: "Source Code Pro", monospace; font-size: 12.5px; font-weight: 500;
+         line-height: 1.5; white-space: pre; color: #17324D; }
+  .src .dim { color: #7A8FA3; }
+  .file .note { margin-top: 14px; font-size: 14.5px; line-height: 1.4; color: #4A6178; }
+  .refs { flex: 1; display: flex; flex-wrap: wrap; gap: 9px; align-content: flex-start; }
+  .ref { font-family: "Source Code Pro", monospace; font-size: 15px; font-weight: 500;
+         padding: 6px 11px; border-radius: 999px; border: 1px solid #C9DAEA;
+         background: #F3F8FC; color: #2F5F8A; }
+  .ref.more { background: #447099; color: #fff; border-color: #447099; }
+
+  /* tile 2: autoreload */
+  .save { display: flex; align-items: center; gap: 8px; font-size: 16px; margin-bottom: 16px; }
+  .key { font-family: "Source Code Pro", monospace; font-size: 14.5px; font-weight: 600;
+         padding: 4px 9px; border-radius: 6px; background: #17324D; color: #fff; }
+  .arrow { color: #8EA2B5; font-size: 20px; }
+  .win { border: 1px solid #DCE3EB; border-radius: 10px; overflow: hidden; }
+  .win-head { height: 26px; background: #F1F4F8; border-bottom: 1px solid #DCE3EB;
+              display: flex; align-items: center; gap: 5px; padding: 0 10px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #C8D2DD; }
+  .win-body { padding: 15px 12px; font-size: 16px; display: flex; align-items: center; gap: 10px; }
+  .ok { width: 22px; height: 22px; border-radius: 50%; background: #2E9E5B; color: #fff;
+        font-size: 14px; font-weight: 700; display: grid; place-items: center; flex: none; }
+  .small { margin-top: 14px; font-size: 15px; color: #4A6178; }
+
+  /* tile 3: install the skill with btw */
+  .term { font-family: "Source Code Pro", monospace; font-size: 13.5px; font-weight: 500;
+          background: #17324D; color: #fff; border-radius: 10px; padding: 16px 12px;
+          line-height: 1.7; white-space: nowrap; }
+  .term .prompt { color: #8FB4D9; }
+  .term .out { color: #9EE0B5; }
+  .copies { margin-top: 14px; font-size: 15px; color: #4A6178; }
+  .folder { display: flex; align-items: center; gap: 10px; margin-top: 7px; font-size: 16px;
+            font-weight: 600; padding: 11px 12px; border-radius: 10px;
+            background: #F6F1FC; border: 1px solid #DDD0F2; color: #4A2D80; }
+</style>
+</head>
+<body>
+  <div class="headline">
+    <div class="eyebrow">New release</div>
+    <h1>Shiny for R <span class="ver">1.15</span></h1>
+    <div class="sub">A bundled agent skill for your coding agent, and autoreload out of the box</div>
+  </div>
+
+  <div class="tile t1">
+    <span class="tag blue">Agent Skill</span>
+    <div class="body">
+      <div class="skill">
+        <div class="file">
+          <div class="name">SKILL.md</div>
+          <div class="src"><span class="dim">---</span>
+<span class="dim">name:</span> shiny-for-r
+<span class="dim">---</span>
+<b># Shiny for R</b></div>
+          <div class="note">An index that sends your coding agent to the right reference</div>
+        </div>
+        <div class="refs">
+          <span class="ref">reactivity</span><span class="ref">modules</span>
+          <span class="ref">async</span><span class="ref">extended-tasks</span>
+          <span class="ref">layouts</span><span class="ref">navigation</span>
+          <span class="ref">dashboard-design</span><span class="ref">dynamic-ui</span>
+          <span class="ref">plots</span><span class="ref">tables</span><span class="ref">files</span>
+          <span class="ref">bookmarking</span><span class="ref">theming-assets</span>
+          <span class="ref">testing</span><span class="ref">debugging</span>
+          <span class="ref">opentelemetry</span><span class="ref more">21 references</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tile t2">
+    <span class="tag green">shiny.autoreload = TRUE</span>
+    <div class="body">
+      <div class="save"><span class="key">Save app.R</span><span class="arrow">&rarr;</span><span>app reloads</span></div>
+      <div class="win">
+        <div class="win-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="win-body"><span class="ok">&#10003;</span><span>Reloaded on save</span></div>
+      </div>
+      <div class="small">watcher is now built in. No polling.</div>
+    </div>
+  </div>
+
+  <div class="tile t3">
+    <span class="tag purple">btw</span>
+    <div class="body">
+      <div class="term">
+        <div><span class="prompt">&gt;</span> btw::btw_skill_install_package("shiny")</div>
+      </div>
+      <div class="copies">copies the skill to</div>
+      <div class="folder">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#6740A8"><path d="M3 5h7l2 2h9v12H3z"/></svg>
+        <span class="mono">.btw/skills/shiny-for-r/</span>
+      </div>
+      <div class="small">Or attach shiny and let btw find it.</div>
+    </div>
+  </div>
+</body>
+</html>
