@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#72994E"
+color: '#72994E'
 description: Query git credentials from R
 github: r-lib/gitcreds
+image: logo.svg
 languages:
 - R
 latest_release: '2022-09-08T10:27:52+00:00'

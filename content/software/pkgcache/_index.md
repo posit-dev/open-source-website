@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: Cache CRAN-like metadata and package files
 github: r-lib/pkgcache
+image: logo.svg
 languages:
 - R
 latest_release: '2026-04-08T20:38:37+00:00'

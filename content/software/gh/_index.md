@@ -12,6 +12,7 @@ people:
 - Hadley Wickham
 - Garrick Aden-Buie
 - Christophe Dervieux
+- François Michonneau
 - Jeroen Ooms
 - Lionel Henry
 title: gh
@@ -38,6 +39,7 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   - Garrick Aden-Buie
   - Christophe Dervieux
+  - François Michonneau
   - Jeroen Janssens
   - Jeroen Ooms
   - Lionel Henry

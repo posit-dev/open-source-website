@@ -8,6 +8,7 @@ languages:
 latest_release: '2024-06-20T11:48:46+00:00'
 people:
 - Gábor Csárdi
+- François Michonneau
 - Davis Vaughan
 title: crayon
 topics:
@@ -30,6 +31,7 @@ external:  # updated automatically, do not edit
   people:
   - Gábor Csárdi
   - Jeroen Janssens
+  - François Michonneau
   - Davis Vaughan
   readme_image: https://user-images.githubusercontent.com/660288/102484487-41cd2900-405e-11eb-87d4-65793ad9db6a.png
   repo: r-lib/crayon

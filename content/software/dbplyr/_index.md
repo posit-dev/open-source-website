@@ -16,6 +16,7 @@ people:
 - Davis Vaughan
 - Mine Çetinkaya-Rundel
 - Carson Sievert
+- Jonathan Keane
 - Joe Cheng
 - Garrick Aden-Buie
 tags:
@@ -49,6 +50,7 @@ external:  # updated automatically, do not edit
   - Jeroen Janssens
   - Mine Çetinkaya-Rundel
   - Carson Sievert
+  - Jonathan Keane
   - Joe Cheng
   - Garrick Aden-Buie
   readme_image: man/figures/logo.png

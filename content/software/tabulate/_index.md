@@ -1,6 +1,8 @@
 ---
+color: '#282D35'
 description: Pretty Console Output for Tables
 github: mlverse/tabulate
+image: demo.svg
 languages:
 - C++
 latest_release: '2022-02-15T17:58:52+00:00'
@@ -8,7 +10,8 @@ people:
 - Daniel Falbel
 title: tabulate
 website: https://mlverse.github.io/tabulate/
-external:
+
+external:  # updated automatically, do not edit
   description: Pretty Console Output for Tables
   first_commit: '2022-02-05T12:28:11+00:00'
   forks: 2
@@ -24,8 +27,6 @@ external:
   stars: 39
   title: tabulate
   website: https://mlverse.github.io/tabulate/
-image: demo.svg
-color: "#282D35"
 ---
 
 tabulate is an R package that wraps the tabulate C++ library to pretty-print formatted tables in the console. It supports custom font styles, colors, borders, multi-byte characters, and nested tables.

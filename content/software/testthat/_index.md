@@ -20,6 +20,7 @@ people:
 - Max Kuhn
 - Emil Hvitfeldt
 - Charlie Gao
+- Jonathan Keane
 - Joe Cheng
 - Jeroen Ooms
 title: testthat
@@ -54,6 +55,7 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   - Emil Hvitfeldt
   - Charlie Gao
+  - Jonathan Keane
   - Joe Cheng
   - Jeroen Ooms
   - Jeroen Janssens

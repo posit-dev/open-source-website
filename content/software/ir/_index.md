@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: ''
 github: r-lib/ir
+image: logo.svg
 languages:
 - Rust
 latest_release: '2026-08-12T14:16:16+00:00'

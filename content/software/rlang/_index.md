@@ -21,6 +21,7 @@ people:
 - Max Kuhn
 - Winston Chang
 - George Stagg
+- Jonathan Keane
 tags:
 - tidyverse
 title: rlang
@@ -59,6 +60,7 @@ external:  # updated automatically, do not edit
   - Winston Chang
   - George Stagg
   - Jeroen Janssens
+  - Jonathan Keane
   readme_image: man/figures/logo.png
   repo: r-lib/rlang
   stars: 586

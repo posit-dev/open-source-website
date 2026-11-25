@@ -10,6 +10,7 @@ latest_release: '2026-01-16T22:03:17+00:00'
 people:
 - Hadley Wickham
 - Gábor Csárdi
+- François Michonneau
 title: rappdirs
 topics:
 - Best Practices
@@ -32,6 +33,7 @@ external:  # updated automatically, do not edit
   people:
   - Hadley Wickham
   - Gábor Csárdi
+  - François Michonneau
   - Jeroen Janssens
   repo: r-lib/rappdirs
   stars: 92

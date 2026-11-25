@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: ''
 github: tidyverse/data-dict
+image: logo.svg
 languages:
 - Rust
 latest_release: '2026-08-21T20:27:42+00:00'

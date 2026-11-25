@@ -1,6 +1,8 @@
 ---
+color: '#821E82'
 description: R interface to torchvision
 github: mlverse/torchvision
+image: torchvision.png
 languages:
 - R
 latest_release: '2026-04-23T09:08:21+00:00'
@@ -8,7 +10,8 @@ people:
 - Daniel Falbel
 title: torchvision
 website: https://torchvision.mlverse.org
-external:
+
+external:  # updated automatically, do not edit
   description: R interface to torchvision
   first_commit: '2020-07-24T16:31:00+00:00'
   forks: 31
@@ -24,8 +27,6 @@ external:
   stars: 77
   title: torchvision
   website: https://torchvision.mlverse.org
-image: torchvision.png
-color: "#821E82"
 ---
 
 torchvision is an R package that extends torch with tools for computer vision. It provides image loading, transformations, pre-trained model architectures, and access to commonly used datasets.

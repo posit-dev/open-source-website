@@ -11,6 +11,7 @@ people:
 - Mine Çetinkaya-Rundel
 - Kevin Ushey
 - Hadley Wickham
+- James Blair
 - Joe Cheng
 - Carson Sievert
 - Jenny Bryan
@@ -36,6 +37,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   - Kevin Ushey
   - Hadley Wickham
+  - James Blair
   - Joe Cheng
   - Carson Sievert
   - Jenny Bryan

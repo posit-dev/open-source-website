@@ -14,6 +14,7 @@ people:
 - Jenny Bryan
 - Davis Vaughan
 - Thomas Lin Pedersen
+- François Michonneau
 - Jeroen Ooms
 - Neal Richardson
 - Christophe Dervieux
@@ -44,6 +45,7 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Davis Vaughan
   - Thomas Lin Pedersen
+  - François Michonneau
   - Jeroen Ooms
   - Neal Richardson
   - Christophe Dervieux

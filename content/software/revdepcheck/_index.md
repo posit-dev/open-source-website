@@ -12,6 +12,7 @@ people:
 - Lionel Henry
 - Davis Vaughan
 - Christophe Dervieux
+- François Michonneau
 title: revdepcheck
 topics:
 - Best Practices
@@ -32,6 +33,7 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   - Davis Vaughan
   - Christophe Dervieux
+  - François Michonneau
   repo: r-lib/revdepcheck
   stars: 105
   title: revdepcheck

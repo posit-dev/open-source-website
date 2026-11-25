@@ -14,6 +14,7 @@ people:
 - Barret Schloerke
 - Christophe Dervieux
 - Hadley Wickham
+- Jonathan Keane
 title: packrat
 topics:
 - Best Practices
@@ -35,6 +36,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Christophe Dervieux
   - Hadley Wickham
+  - Jonathan Keane
   repo: rstudio/packrat
   stars: 408
   title: packrat

@@ -15,6 +15,7 @@ people:
 - Jeroen Ooms
 - Gábor Csárdi
 - Joe Cheng
+- Jonathan Keane
 - Rich Iannone
 - Mine Çetinkaya-Rundel
 - Lionel Henry
@@ -25,6 +26,7 @@ people:
 - Daniel Falbel
 - Charlie Gao
 - Kevin Ushey
+- François Michonneau
 title: pkgdown
 topics:
 - Publishing
@@ -52,6 +54,7 @@ external:  # updated automatically, do not edit
   - Jeroen Ooms
   - Gábor Csárdi
   - Joe Cheng
+  - Jonathan Keane
   - Rich Iannone
   - Mine Çetinkaya-Rundel
   - Lionel Henry
@@ -63,6 +66,7 @@ external:  # updated automatically, do not edit
   - Daniel Falbel
   - Charlie Gao
   - Kevin Ushey
+  - François Michonneau
   readme_image: man/figures/logo.png
   repo: r-lib/pkgdown
   stars: 775

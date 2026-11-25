@@ -21,6 +21,7 @@ people:
 - Garrick Aden-Buie
 - Thomas Lin Pedersen
 - Julia Silge
+- François Michonneau
 - Max Kuhn
 - Charlotte Wickham
 - Carson Sievert
@@ -61,6 +62,7 @@ external:  # updated automatically, do not edit
   - Thomas Lin Pedersen
   - Julia Silge
   - Jeroen Janssens
+  - François Michonneau
   - Max Kuhn
   - Charlotte Wickham
   - Carson Sievert

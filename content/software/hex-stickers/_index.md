@@ -12,6 +12,7 @@ people:
 - Barret Schloerke
 - Christophe Dervieux
 - Max Kuhn
+- James Blair
 - Edgar Ruiz
 - Thomas Lin Pedersen
 - Hannah Frick
@@ -50,6 +51,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Christophe Dervieux
   - Max Kuhn
+  - James Blair
   - Edgar Ruiz
   - Thomas Lin Pedersen
   - Hannah Frick

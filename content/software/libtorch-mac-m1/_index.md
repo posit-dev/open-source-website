@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#D44000"
+color: '#D44000'
 description: LibTorch builds for the M1 Macs
 github: mlverse/libtorch-mac-m1
+image: logo.svg
 latest_release: '2023-05-09T14:33:40+00:00'
 people:
 - Daniel Falbel

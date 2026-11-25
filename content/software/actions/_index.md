@@ -19,6 +19,7 @@ people:
 - Charlie Gao
 - Daniel Falbel
 - Emil Hvitfeldt
+- François Michonneau
 title: actions
 topics:
 - Best Practices
@@ -48,6 +49,7 @@ external:  # updated automatically, do not edit
   - Charlie Gao
   - Daniel Falbel
   - Emil Hvitfeldt
+  - François Michonneau
   repo: r-lib/actions
   stars: 1066
   title: actions

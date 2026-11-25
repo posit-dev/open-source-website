@@ -1,8 +1,8 @@
 ---
+color: '#348CFC'
 description: An easy-to-use documentation site generator for Python packages.
 github: posit-dev/great-docs
 image: great-docs.png
-color: "#348CFC"
 languages:
 - Python
 latest_release: '2026-05-18T15:05:01+00:00'

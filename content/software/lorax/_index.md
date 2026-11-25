@@ -1,9 +1,9 @@
 ---
+color: '#D2934A'
 description: R functions and methods to extract elements of tree- and     rule-based
   models.
 github: tidymodels/lorax
 image: logo.png
-color: "#D2934A"
 languages:
 - R
 people:

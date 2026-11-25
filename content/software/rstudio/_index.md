@@ -16,6 +16,7 @@ people:
 - Barret Schloerke
 - Jeroen Ooms
 - Simon Couch
+- Jonathan Keane
 - Gábor Csárdi
 - George Stagg
 title: rstudio
@@ -43,6 +44,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Jeroen Ooms
   - Simon Couch
+  - Jonathan Keane
   - Gábor Csárdi
   - George Stagg
   repo: rstudio/rstudio

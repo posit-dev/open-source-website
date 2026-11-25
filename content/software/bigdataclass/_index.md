@@ -8,6 +8,7 @@ languages:
 latest_release: '2019-01-16T21:53:30+00:00'
 people:
 - Edgar Ruiz
+- James Blair
 - Christophe Dervieux
 title: bigdataclass
 topics:
@@ -27,6 +28,7 @@ external:  # updated automatically, do not edit
   latest_release: '2019-01-16T21:53:30+00:00'
   people:
   - Edgar Ruiz
+  - James Blair
   - Christophe Dervieux
   repo: rstudio/bigdataclass
   stars: 115

@@ -12,6 +12,7 @@ people:
 - JJ Allaire
 - Hadley Wickham
 - Kevin Ushey
+- Jonathan Keane
 - Joe Cheng
 - Neal Richardson
 - Christophe Dervieux
@@ -43,6 +44,7 @@ external:  # updated automatically, do not edit
   - JJ Allaire
   - Hadley Wickham
   - Kevin Ushey
+  - Jonathan Keane
   - Joe Cheng
   - Neal Richardson
   - Christophe Dervieux

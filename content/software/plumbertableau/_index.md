@@ -8,6 +8,7 @@ languages:
 - R
 latest_release: '2021-08-05T14:49:01+00:00'
 people:
+- James Blair
 - Joe Cheng
 title: plumbertableau
 topics:
@@ -28,6 +29,7 @@ external:  # updated automatically, do not edit
   latest_release: '2021-08-05T14:49:01+00:00'
   license: NOASSERTION
   people:
+  - James Blair
   - Joe Cheng
   readme_image: man/figures/logo.svg
   repo: rstudio/plumbertableau

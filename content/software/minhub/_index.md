@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: Minimal implementation of Deep Learning models
 github: mlverse/minhub
+image: logo.svg
 languages:
 - R
 people:

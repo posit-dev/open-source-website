@@ -14,8 +14,10 @@ people:
 - Christophe Dervieux
 - Daniel Falbel
 - Gábor Csárdi
+- James Blair
 - Jenny Bryan
 - Joe Cheng
+- Jonathan Keane
 - Michael Chow
 title: pins-r
 topics:
@@ -41,8 +43,10 @@ external:  # updated automatically, do not edit
   - Christophe Dervieux
   - Daniel Falbel
   - Gábor Csárdi
+  - James Blair
   - Jenny Bryan
   - Joe Cheng
+  - Jonathan Keane
   - Michael Chow
   readme_image: man/figures/logo.png
   repo: rstudio/pins-r

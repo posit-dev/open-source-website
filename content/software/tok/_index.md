@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#419599"
+color: '#419599'
 description: Tokenizers from HuggingFace
 github: mlverse/tok
+image: logo.svg
 languages:
 - R
 latest_release: '2026-04-21T19:01:00+00:00'

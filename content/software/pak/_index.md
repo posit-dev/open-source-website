@@ -12,6 +12,7 @@ people:
 - Jenny Bryan
 - Neal Richardson
 - Mine Çetinkaya-Rundel
+- Jonathan Keane
 - Christophe Dervieux
 title: pak
 topics:
@@ -37,6 +38,7 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Neal Richardson
   - Mine Çetinkaya-Rundel
+  - Jonathan Keane
   - Jeroen Janssens
   - Christophe Dervieux
   readme_image: man/figures/cran.svg

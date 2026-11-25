@@ -10,6 +10,7 @@ people:
 - Rich Iannone
 - Joe Cheng
 - Neal Richardson
+- François Michonneau
 title: blastula
 topics:
 - MLOps and Admin
@@ -29,6 +30,7 @@ external:  # updated automatically, do not edit
   - Rich Iannone
   - Joe Cheng
   - Neal Richardson
+  - François Michonneau
   readme_image: man/figures/logo.svg
   repo: rstudio/blastula
   stars: 570

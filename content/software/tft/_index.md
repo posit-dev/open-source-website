@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#404041"
+color: '#404041'
 description: R implementation of Temporal Fusion Transformers
 github: mlverse/tft
+image: logo.svg
 languages:
 - R
 people:

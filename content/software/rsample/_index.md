@@ -13,6 +13,7 @@ people:
 - Davis Vaughan
 - Emil Hvitfeldt
 - Simon Couch
+- Jonathan Keane
 - Gábor Csárdi
 title: rsample
 topics:
@@ -41,6 +42,7 @@ external:  # updated automatically, do not edit
   - Emil Hvitfeldt
   - Simon Couch
   - Jeroen Janssens
+  - Jonathan Keane
   - Gábor Csárdi
   readme_image: man/figures/logo.png
   repo: tidymodels/rsample

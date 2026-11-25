@@ -10,6 +10,7 @@ people:
 - Gábor Csárdi
 - Barret Schloerke
 - Jenny Bryan
+- Jonathan Keane
 - Hadley Wickham
 - Hannah Frick
 - JJ Allaire
@@ -31,6 +32,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   - Barret Schloerke
   - Jenny Bryan
+  - Jonathan Keane
   - Hadley Wickham
   - Hannah Frick
   - JJ Allaire

@@ -8,6 +8,7 @@ languages:
 latest_release: '2026-02-09T15:06:24+00:00'
 people:
 - Barret Schloerke
+- James Blair
 - Thomas Lin Pedersen
 - Joe Cheng
 - Gary Ritchie
@@ -33,6 +34,7 @@ external:  # updated automatically, do not edit
   license: NOASSERTION
   people:
   - Barret Schloerke
+  - James Blair
   - Thomas Lin Pedersen
   - Joe Cheng
   - Gary Ritchie

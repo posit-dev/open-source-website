@@ -17,6 +17,7 @@ people:
 - Tomasz Kalinowski
 - Edgar Ruiz
 - Gábor Csárdi
+- James Blair
 title: parsnip
 topics:
 - Machine Learning
@@ -46,6 +47,7 @@ external:  # updated automatically, do not edit
   - Tomasz Kalinowski
   - Edgar Ruiz
   - Gábor Csárdi
+  - James Blair
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/parsnip

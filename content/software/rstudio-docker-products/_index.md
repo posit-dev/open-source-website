@@ -6,6 +6,7 @@ image: logo.svg
 languages:
 - Shell
 people:
+- James Blair
 - Neal Richardson
 - Kevin Ushey
 - Gary Ritchie
@@ -24,6 +25,7 @@ external:  # updated automatically, do not edit
   last_updated: '2026-05-20T08:05:38.793364+00:00'
   license: MIT
   people:
+  - James Blair
   - Neal Richardson
   - Kevin Ushey
   - Gary Ritchie

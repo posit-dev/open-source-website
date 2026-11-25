@@ -7,6 +7,7 @@ languages:
 - Shell
 people:
 - Gábor Csárdi
+- James Blair
 title: r-builds
 topics:
 - Best Practices
@@ -24,6 +25,7 @@ external:  # updated automatically, do not edit
   license: GPL-3.0
   people:
   - Gábor Csárdi
+  - James Blair
   repo: rstudio/r-builds
   stars: 117
   title: r-builds

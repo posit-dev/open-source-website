@@ -8,6 +8,7 @@ languages:
 latest_release: '2026-04-28T23:23:14+00:00'
 people:
 - Neal Richardson
+- Jonathan Keane
 - Hadley Wickham
 - Barret Schloerke
 title: connectapi
@@ -28,6 +29,7 @@ external:  # updated automatically, do not edit
   license: NOASSERTION
   people:
   - Neal Richardson
+  - Jonathan Keane
   - Hadley Wickham
   - Barret Schloerke
   readme_image: man/figures/logo.svg

@@ -11,6 +11,7 @@ people:
 - Hadley Wickham
 - Jenny Bryan
 - Gábor Csárdi
+- Jonathan Keane
 - Davis Vaughan
 title: withr
 topics:
@@ -36,6 +37,7 @@ external:  # updated automatically, do not edit
   - Hadley Wickham
   - Jenny Bryan
   - Gábor Csárdi
+  - Jonathan Keane
   - Jeroen Janssens
   - Davis Vaughan
   readme_image: man/figures/logo.png

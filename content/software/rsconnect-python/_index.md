@@ -11,6 +11,7 @@ people:
 - Isabel Zimmerman
 - Neal Richardson
 - Joe Cheng
+- Jonathan Keane
 title: rsconnect-python
 topics:
 - Best Practices
@@ -33,6 +34,7 @@ external:  # updated automatically, do not edit
   - Isabel Zimmerman
   - Neal Richardson
   - Joe Cheng
+  - Jonathan Keane
   repo: posit-dev/rsconnect-python
   stars: 37
   title: rsconnect-python

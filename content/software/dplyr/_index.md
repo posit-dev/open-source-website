@@ -23,6 +23,7 @@ people:
 - Barret Schloerke
 - Julia Silge
 - Joe Cheng
+- Jonathan Keane
 tags:
 - tidyverse
 title: dplyr
@@ -61,6 +62,7 @@ external:  # updated automatically, do not edit
   - Barret Schloerke
   - Julia Silge
   - Joe Cheng
+  - Jonathan Keane
   readme_image: man/figures/logo.png
   repo: tidyverse/dplyr
   stars: 5067

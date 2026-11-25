@@ -9,6 +9,7 @@ people:
 - Mine Çetinkaya-Rundel
 - Edgar Ruiz
 - Charlotte Wickham
+- James Blair
 - Tomasz Kalinowski
 - Carson Sievert
 - Rich Iannone
@@ -37,6 +38,7 @@ external:  # updated automatically, do not edit
   - Mine Çetinkaya-Rundel
   - Edgar Ruiz
   - Charlotte Wickham
+  - James Blair
   - Tomasz Kalinowski
   - Carson Sievert
   - Rich Iannone

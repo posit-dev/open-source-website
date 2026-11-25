@@ -1,6 +1,8 @@
 ---
+color: '#9FFAEB'
 description: Foundation Model for Tabular Data via reticulate
 github: tidymodels/tabpfn
+image: logo.png
 languages:
 - R
 latest_release: '2026-09-02T13:12:10+00:00'
@@ -10,7 +12,8 @@ people:
 - Tomasz Kalinowski
 title: tabpfn
 website: http://tabpfn.tidymodels.org/
-external:
+
+external:  # updated automatically, do not edit
   description: Foundation Model for Tabular Data via reticulate
   first_commit: '2025-01-27T16:59:44+00:00'
   forks: 5
@@ -28,8 +31,6 @@ external:
   stars: 34
   title: tabpfn
   website: http://tabpfn.tidymodels.org/
-image: logo.png
-color: "#9FFAEB"
 ---
 
 The tabpfn R package provides an interface to TabPFN (Prior-Fitted Networks), a deep-learning foundation model for tabular data that handles both classification and regression tasks. It wraps the Python TabPFN library via reticulate and exposes it through idiomatic R syntax with standard S3 methods, including formula, x/y, and recipes interfaces.

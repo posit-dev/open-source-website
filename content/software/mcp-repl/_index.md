@@ -1,8 +1,8 @@
 ---
-image: logo.svg
-color: "#447099"
+color: '#447099'
 description: ''
 github: posit-dev/mcp-repl
+image: logo.svg
 languages:
 - Rust
 latest_release: '2026-05-18T23:09:38+00:00'

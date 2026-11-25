@@ -10,6 +10,7 @@ people:
 - Lionel Henry
 - Jenny Bryan
 - Davis Vaughan
+- François Michonneau
 - Hannah Frick
 - Mine Çetinkaya-Rundel
 title: style
@@ -32,6 +33,7 @@ external:  # updated automatically, do not edit
   - Lionel Henry
   - Jenny Bryan
   - Davis Vaughan
+  - François Michonneau
   - Hannah Frick
   - Mine Çetinkaya-Rundel
   repo: tidyverse/style

@@ -13,6 +13,7 @@ people:
 - Simon Couch
 - Hannah Frick
 - Julia Silge
+- James Blair
 title: yardstick
 topics:
 - Data Wrangling
@@ -40,6 +41,7 @@ external:  # updated automatically, do not edit
   - Simon Couch
   - Hannah Frick
   - Julia Silge
+  - James Blair
   - Jeroen Janssens
   readme_image: man/figures/logo.png
   repo: tidymodels/yardstick

@@ -22,6 +22,7 @@ people:
 - Karan Gathani
 - Jeroen Ooms
 - Gary Ritchie
+- François Michonneau
 title: rmarkdown
 topics:
 - Best Practices
@@ -53,6 +54,7 @@ external:  # updated automatically, do not edit
   - Karan Gathani
   - Jeroen Ooms
   - Gary Ritchie
+  - François Michonneau
   readme_image: man/figures/logo.png
   repo: rstudio/rmarkdown
   stars: 3038

@@ -9,6 +9,7 @@ languages:
 latest_release: '2026-03-28T17:17:03+00:00'
 people:
 - Christophe Dervieux
+- Jonathan Keane
 - Gordon Woodhull
 - JJ Allaire
 title: tinytex
@@ -28,6 +29,7 @@ external:  # updated automatically, do not edit
   license: NOASSERTION
   people:
   - Christophe Dervieux
+  - Jonathan Keane
   - Gordon Woodhull
   - JJ Allaire
   readme_image: https://yihui.org/images/logo-tinytex.png

@@ -14,6 +14,7 @@ people:
 - Gábor Csárdi
 - Jeroen Ooms
 - Lionel Henry
+- François Michonneau
 - Thomas Lin Pedersen
 - JJ Allaire
 - Joe Cheng
@@ -45,6 +46,7 @@ external:  # updated automatically, do not edit
   - Gábor Csárdi
   - Jeroen Ooms
   - Lionel Henry
+  - François Michonneau
   - Thomas Lin Pedersen
   - JJ Allaire
   - Joe Cheng

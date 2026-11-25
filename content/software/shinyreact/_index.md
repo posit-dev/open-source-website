@@ -9,6 +9,7 @@ languages:
 latest_release: '2026-09-13T20:16:52+00:00'
 people:
 - Barret Schloerke
+- Samuel Bharti
 title: shinyreact
 website: https://posit-dev.github.io/shinyreact/
 
@@ -28,6 +29,7 @@ external:  # updated automatically, do not edit
   license: MIT
   people:
   - Barret Schloerke
+  - Samuel Bharti
   readme_image: logo/shiny-react.png
   repo: posit-dev/shinyreact
   stars: 17

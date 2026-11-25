@@ -14,6 +14,8 @@ people:
 - Jenny Bryan
 - Garrick Aden-Buie
 - Neal Richardson
+- Jonathan Keane
+- James Blair
 title: renv
 topics:
 - Best Practices
@@ -36,6 +38,8 @@ external:  # updated automatically, do not edit
   - Jenny Bryan
   - Garrick Aden-Buie
   - Neal Richardson
+  - Jonathan Keane
+  - James Blair
   readme_image: man/figures/logo.svg
   repo: rstudio/renv
   stars: 1148

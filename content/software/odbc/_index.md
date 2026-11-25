@@ -12,6 +12,7 @@ people:
 - Jonathan McPherson
 - Jeroen Ooms
 - Edgar Ruiz
+- James Blair
 - Gábor Csárdi
 - Kevin Ushey
 title: odbc
@@ -39,6 +40,7 @@ external:  # updated automatically, do not edit
   - Jonathan McPherson
   - Jeroen Ooms
   - Edgar Ruiz
+  - James Blair
   - Gábor Csárdi
   - Kevin Ushey
   - Jeroen Janssens

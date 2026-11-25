@@ -11,6 +11,7 @@ people:
 - Hadley Wickham
 - Davis Vaughan
 - Kevin Ushey
+- François Michonneau
 title: tidyselect
 topics:
 - Best Practices
@@ -36,6 +37,7 @@ external:  # updated automatically, do not edit
   - Davis Vaughan
   - Kevin Ushey
   - Jeroen Janssens
+  - François Michonneau
   repo: r-lib/tidyselect
   stars: 130
   title: tidyselect

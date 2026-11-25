@@ -12,8 +12,10 @@ people:
 - Max Kuhn
 - Winston Chang
 - Joe Cheng
+- François Michonneau
 - Barret Schloerke
 - Julia Silge
+- James Blair
 - Kristin Bott
 - Lionel Henry
 - Kevin Ushey
@@ -55,8 +57,10 @@ external:  # updated automatically, do not edit
   - Max Kuhn
   - Winston Chang
   - Joe Cheng
+  - François Michonneau
   - Barret Schloerke
   - Julia Silge
+  - James Blair
   - Kristin Bott
   - Lionel Henry
   - Kevin Ushey
