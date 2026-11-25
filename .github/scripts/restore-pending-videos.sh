@@ -7,7 +7,13 @@
 # the PR every night. So: take every file the PR branch *added* under
 # content/resources/videos/ (relative to its merge base with main) and put
 # it in the working tree, unless main has a file at that path by now.
-# Files the PR modified are not restored; the scripts regenerate them.
+#
+# Also take the PR's data/videos.toml, unless main changed it since the merge
+# base (then main's edits win). Otherwise a weekly stats refresh would be
+# undone the next night: the scripts keep the *stored* view counts, and the
+# stored ones would be main's old counts again. The video pages follow from
+# videos.toml, so the scripts regenerate them; other files the PR modified
+# are not restored.
 #
 # Usage: restore-pending-videos.sh [BRANCH] [BASE]
 #   BRANCH defaults to automation/sync-videos, BASE to main.
@@ -18,6 +24,7 @@ set -euo pipefail
 branch="${1:-automation/sync-videos}"
 base="${2:-main}"
 prefix="content/resources/videos/"
+videos_toml="data/videos.toml"
 
 if ! git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
   echo "No pending branch $branch; nothing to restore."
@@ -52,3 +59,13 @@ if ((${#restored[@]})); then
 fi
 
 echo "Restored ${#restored[@]} file(s) from $branch (${#added[@]} added there, $skipped already on $base)."
+
+merge_base=$(git merge-base "$remote_base" "$remote_branch")
+if git diff --quiet "$merge_base" "$remote_branch" -- "$videos_toml"; then
+  echo "$videos_toml: unchanged on $branch; using $base's version."
+elif ! git diff --quiet "$merge_base" "$remote_base" -- "$videos_toml"; then
+  echo "$videos_toml: changed on $base since $branch was created; using $base's version (the next stats refresh catches up)."
+else
+  git restore --source="$remote_branch" --worktree -- "$videos_toml"
+  echo "$videos_toml: restored from $branch."
+fi
