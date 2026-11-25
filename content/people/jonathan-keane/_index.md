@@ -9,6 +9,6 @@ social:
   linkedin: "jonkeane"
   mastodon: ""
   orcid: ""
-  website: "jonkeane.com"
+  website: "https://jonkeane.com"
   youtube: ""
 ---
