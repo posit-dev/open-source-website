@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   id: 30xqcubkppcsh
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/q4ob1o5rwz3j/promo-image.1791469580.svg
   kind: course
-  modified_at: '2026-10-27T11:51:03.551211Z'
+  modified_at: '2026-11-20T12:28:45.343070Z'
   order: 33
   slug: migrate-to-positron-from-rstudio
   software:

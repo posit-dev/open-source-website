@@ -19,7 +19,7 @@ external:  # updated automatically, do not edit
   id: 32n8d9shgolx8
   image_url: https://everpath-course-content.s3.amazonaws.com/instructor/dfepv3avie8n-posit-academy/courses/385h0oo9jtdkn/promo-image.1791469440.svg
   kind: course
-  modified_at: '2026-10-27T11:41:59.147592Z'
+  modified_at: '2026-11-20T12:20:33.063939Z'
   order: 35
   slug: first-data-analysis-with-python-in-a-jupyter-notebook
   software:
