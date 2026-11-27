@@ -11,7 +11,8 @@ description: 'Oops! I accidentally made a production dashboard
 
   As data scientists we love making decisions with data. But we also don’t always do this with our own work. Ever wonder if that dashboard you are about to spend hours updating from line charts to 3D pie charts is actually being used? With usage metrics it’s easy for you to see, analyze, and show just how much traction your app is getting. Not only does this let you decide where to prioritize your efforts, it can help you demonstrate the impact you have on your business. This talk will explore how to be data-driven with your own work and tools we have for maintaining our work when it becomes important. posit::conf(2025) Subscribe to posit::conf updates: https://posit.co/about/subscription-management/'
 image: thumbnail.jpg
-people: []
+people:
+- Jonathan Keane
 resource_type: video
 resources: []
 software: []
@@ -47,6 +48,8 @@ external:  # updated automatically, do not edit
   language: en
   last_updated: '2026-09-18T13:58:08.448261+00:00'
   like_count: 5
+  people:
+  - Jonathan Keane
   playlist: ''
   tags:
   - posit::conf(2025)
